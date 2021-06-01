@@ -10,6 +10,12 @@
         "grpc": {
           "libraryClient": "AnalyticsAdminServiceClient",
           "rpcs": {
+            "ArchiveCustomDimension": {
+              "methods": ["archiveCustomDimension", "archiveCustomDimension", "archiveCustomDimension", "archiveCustomDimensionCallable"]
+            },
+            "ArchiveCustomMetric": {
+              "methods": ["archiveCustomMetric", "archiveCustomMetric", "archiveCustomMetric", "archiveCustomMetricCallable"]
+            },
             "AuditUserLinks": {
               "methods": ["auditUserLinks", "auditUserLinksPagedCallable", "auditUserLinksCallable"]
             },
@@ -25,11 +31,23 @@
             "BatchUpdateUserLinks": {
               "methods": ["batchUpdateUserLinks", "batchUpdateUserLinksCallable"]
             },
+            "CreateConversionEvent": {
+              "methods": ["createConversionEvent", "createConversionEvent", "createConversionEvent", "createConversionEventCallable"]
+            },
+            "CreateCustomDimension": {
+              "methods": ["createCustomDimension", "createCustomDimension", "createCustomDimension", "createCustomDimensionCallable"]
+            },
+            "CreateCustomMetric": {
+              "methods": ["createCustomMetric", "createCustomMetric", "createCustomMetric", "createCustomMetricCallable"]
+            },
             "CreateFirebaseLink": {
               "methods": ["createFirebaseLink", "createFirebaseLink", "createFirebaseLink", "createFirebaseLinkCallable"]
             },
             "CreateGoogleAdsLink": {
               "methods": ["createGoogleAdsLink", "createGoogleAdsLink", "createGoogleAdsLink", "createGoogleAdsLinkCallable"]
+            },
+            "CreateMeasurementProtocolSecret": {
+              "methods": ["createMeasurementProtocolSecret", "createMeasurementProtocolSecret", "createMeasurementProtocolSecret", "createMeasurementProtocolSecretCallable"]
             },
             "CreateProperty": {
               "methods": ["createProperty", "createProperty", "createPropertyCallable"]
@@ -46,6 +64,9 @@
             "DeleteAndroidAppDataStream": {
               "methods": ["deleteAndroidAppDataStream", "deleteAndroidAppDataStream", "deleteAndroidAppDataStream", "deleteAndroidAppDataStreamCallable"]
             },
+            "DeleteConversionEvent": {
+              "methods": ["deleteConversionEvent", "deleteConversionEvent", "deleteConversionEvent", "deleteConversionEventCallable"]
+            },
             "DeleteFirebaseLink": {
               "methods": ["deleteFirebaseLink", "deleteFirebaseLink", "deleteFirebaseLink", "deleteFirebaseLinkCallable"]
             },
@@ -54,6 +75,9 @@
             },
             "DeleteIosAppDataStream": {
               "methods": ["deleteIosAppDataStream", "deleteIosAppDataStream", "deleteIosAppDataStream", "deleteIosAppDataStreamCallable"]
+            },
+            "DeleteMeasurementProtocolSecret": {
+              "methods": ["deleteMeasurementProtocolSecret", "deleteMeasurementProtocolSecret", "deleteMeasurementProtocolSecret", "deleteMeasurementProtocolSecretCallable"]
             },
             "DeleteProperty": {
               "methods": ["deleteProperty", "deleteProperty", "deleteProperty", "deletePropertyCallable"]
@@ -70,6 +94,15 @@
             "GetAndroidAppDataStream": {
               "methods": ["getAndroidAppDataStream", "getAndroidAppDataStream", "getAndroidAppDataStream", "getAndroidAppDataStreamCallable"]
             },
+            "GetConversionEvent": {
+              "methods": ["getConversionEvent", "getConversionEvent", "getConversionEvent", "getConversionEventCallable"]
+            },
+            "GetCustomDimension": {
+              "methods": ["getCustomDimension", "getCustomDimension", "getCustomDimension", "getCustomDimensionCallable"]
+            },
+            "GetCustomMetric": {
+              "methods": ["getCustomMetric", "getCustomMetric", "getCustomMetric", "getCustomMetricCallable"]
+            },
             "GetDataSharingSettings": {
               "methods": ["getDataSharingSettings", "getDataSharingSettings", "getDataSharingSettings", "getDataSharingSettingsCallable"]
             },
@@ -79,8 +112,14 @@
             "GetGlobalSiteTag": {
               "methods": ["getGlobalSiteTag", "getGlobalSiteTag", "getGlobalSiteTag", "getGlobalSiteTagCallable"]
             },
+            "GetGoogleSignalsSettings": {
+              "methods": ["getGoogleSignalsSettings", "getGoogleSignalsSettings", "getGoogleSignalsSettings", "getGoogleSignalsSettingsCallable"]
+            },
             "GetIosAppDataStream": {
               "methods": ["getIosAppDataStream", "getIosAppDataStream", "getIosAppDataStream", "getIosAppDataStreamCallable"]
+            },
+            "GetMeasurementProtocolSecret": {
+              "methods": ["getMeasurementProtocolSecret", "getMeasurementProtocolSecret", "getMeasurementProtocolSecret", "getMeasurementProtocolSecretCallable"]
             },
             "GetProperty": {
               "methods": ["getProperty", "getProperty", "getProperty", "getPropertyCallable"]
@@ -100,6 +139,15 @@
             "ListAndroidAppDataStreams": {
               "methods": ["listAndroidAppDataStreams", "listAndroidAppDataStreams", "listAndroidAppDataStreams", "listAndroidAppDataStreamsPagedCallable", "listAndroidAppDataStreamsCallable"]
             },
+            "ListConversionEvents": {
+              "methods": ["listConversionEvents", "listConversionEvents", "listConversionEvents", "listConversionEventsPagedCallable", "listConversionEventsCallable"]
+            },
+            "ListCustomDimensions": {
+              "methods": ["listCustomDimensions", "listCustomDimensions", "listCustomDimensions", "listCustomDimensionsPagedCallable", "listCustomDimensionsCallable"]
+            },
+            "ListCustomMetrics": {
+              "methods": ["listCustomMetrics", "listCustomMetrics", "listCustomMetrics", "listCustomMetricsPagedCallable", "listCustomMetricsCallable"]
+            },
             "ListFirebaseLinks": {
               "methods": ["listFirebaseLinks", "listFirebaseLinks", "listFirebaseLinks", "listFirebaseLinksPagedCallable", "listFirebaseLinksCallable"]
             },
@@ -108,6 +156,9 @@
             },
             "ListIosAppDataStreams": {
               "methods": ["listIosAppDataStreams", "listIosAppDataStreams", "listIosAppDataStreams", "listIosAppDataStreamsPagedCallable", "listIosAppDataStreamsCallable"]
+            },
+            "ListMeasurementProtocolSecrets": {
+              "methods": ["listMeasurementProtocolSecrets", "listMeasurementProtocolSecrets", "listMeasurementProtocolSecrets", "listMeasurementProtocolSecretsPagedCallable", "listMeasurementProtocolSecretsCallable"]
             },
             "ListProperties": {
               "methods": ["listProperties", "listPropertiesPagedCallable", "listPropertiesCallable"]
@@ -130,6 +181,12 @@
             "UpdateAndroidAppDataStream": {
               "methods": ["updateAndroidAppDataStream", "updateAndroidAppDataStream", "updateAndroidAppDataStreamCallable"]
             },
+            "UpdateCustomDimension": {
+              "methods": ["updateCustomDimension", "updateCustomDimension", "updateCustomDimensionCallable"]
+            },
+            "UpdateCustomMetric": {
+              "methods": ["updateCustomMetric", "updateCustomMetric", "updateCustomMetricCallable"]
+            },
             "UpdateEnhancedMeasurementSettings": {
               "methods": ["updateEnhancedMeasurementSettings", "updateEnhancedMeasurementSettings", "updateEnhancedMeasurementSettingsCallable"]
             },
@@ -139,8 +196,14 @@
             "UpdateGoogleAdsLink": {
               "methods": ["updateGoogleAdsLink", "updateGoogleAdsLink", "updateGoogleAdsLinkCallable"]
             },
+            "UpdateGoogleSignalsSettings": {
+              "methods": ["updateGoogleSignalsSettings", "updateGoogleSignalsSettings", "updateGoogleSignalsSettingsCallable"]
+            },
             "UpdateIosAppDataStream": {
               "methods": ["updateIosAppDataStream", "updateIosAppDataStream", "updateIosAppDataStreamCallable"]
+            },
+            "UpdateMeasurementProtocolSecret": {
+              "methods": ["updateMeasurementProtocolSecret", "updateMeasurementProtocolSecret", "updateMeasurementProtocolSecretCallable"]
             },
             "UpdateProperty": {
               "methods": ["updateProperty", "updateProperty", "updatePropertyCallable"]

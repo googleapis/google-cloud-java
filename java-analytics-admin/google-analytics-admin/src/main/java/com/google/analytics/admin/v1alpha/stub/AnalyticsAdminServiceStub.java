@@ -20,9 +20,13 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Aud
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAndroidAppDataStreamsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListIosAppDataStreamsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListWebDataStreamsPagedResponse;
@@ -30,6 +34,8 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Sea
 
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AndroidAppDataStream;
+import com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest;
+import com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.AuditUserLinksRequest;
 import com.google.analytics.admin.v1alpha.AuditUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest;
@@ -39,17 +45,26 @@ import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
+import com.google.analytics.admin.v1alpha.ConversionEvent;
+import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
+import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
+import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
 import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest;
+import com.google.analytics.admin.v1alpha.CustomDimension;
+import com.google.analytics.admin.v1alpha.CustomMetric;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteIosAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest;
@@ -57,15 +72,21 @@ import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
 import com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
+import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
+import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
+import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetIosAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
 import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
 import com.google.analytics.admin.v1alpha.GetWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
+import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
 import com.google.analytics.admin.v1alpha.IosAppDataStream;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
@@ -73,18 +94,27 @@ import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
 import com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsRequest;
 import com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsResponse;
+import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
+import com.google.analytics.admin.v1alpha.ListConversionEventsResponse;
+import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
+import com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse;
+import com.google.analytics.admin.v1alpha.ListCustomMetricsRequest;
+import com.google.analytics.admin.v1alpha.ListCustomMetricsResponse;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse;
 import com.google.analytics.admin.v1alpha.ListIosAppDataStreamsRequest;
 import com.google.analytics.admin.v1alpha.ListIosAppDataStreamsResponse;
+import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
+import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
 import com.google.analytics.admin.v1alpha.ListUserLinksRequest;
 import com.google.analytics.admin.v1alpha.ListUserLinksResponse;
 import com.google.analytics.admin.v1alpha.ListWebDataStreamsRequest;
 import com.google.analytics.admin.v1alpha.ListWebDataStreamsResponse;
+import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
@@ -92,10 +122,14 @@ import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
+import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
 import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateWebDataStreamRequest;
@@ -373,6 +407,44 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getDataSharingSettingsCallable()");
   }
 
+  public UnaryCallable<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      getMeasurementProtocolSecretCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getMeasurementProtocolSecretCallable()");
+  }
+
+  public UnaryCallable<
+          ListMeasurementProtocolSecretsRequest, ListMeasurementProtocolSecretsPagedResponse>
+      listMeasurementProtocolSecretsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listMeasurementProtocolSecretsPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListMeasurementProtocolSecretsRequest, ListMeasurementProtocolSecretsResponse>
+      listMeasurementProtocolSecretsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listMeasurementProtocolSecretsCallable()");
+  }
+
+  public UnaryCallable<CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      createMeasurementProtocolSecretCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createMeasurementProtocolSecretCallable()");
+  }
+
+  public UnaryCallable<DeleteMeasurementProtocolSecretRequest, Empty>
+      deleteMeasurementProtocolSecretCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteMeasurementProtocolSecretCallable()");
+  }
+
+  public UnaryCallable<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      updateMeasurementProtocolSecretCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateMeasurementProtocolSecretCallable()");
+  }
+
   public UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsPagedResponse>
       searchChangeHistoryEventsPagedCallable() {
     throw new UnsupportedOperationException(
@@ -382,6 +454,94 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
   public UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
       searchChangeHistoryEventsCallable() {
     throw new UnsupportedOperationException("Not implemented: searchChangeHistoryEventsCallable()");
+  }
+
+  public UnaryCallable<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+      getGoogleSignalsSettingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: getGoogleSignalsSettingsCallable()");
+  }
+
+  public UnaryCallable<UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+      updateGoogleSignalsSettingsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateGoogleSignalsSettingsCallable()");
+  }
+
+  public UnaryCallable<CreateConversionEventRequest, ConversionEvent>
+      createConversionEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: createConversionEventCallable()");
+  }
+
+  public UnaryCallable<GetConversionEventRequest, ConversionEvent> getConversionEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: getConversionEventCallable()");
+  }
+
+  public UnaryCallable<DeleteConversionEventRequest, Empty> deleteConversionEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteConversionEventCallable()");
+  }
+
+  public UnaryCallable<ListConversionEventsRequest, ListConversionEventsPagedResponse>
+      listConversionEventsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listConversionEventsPagedCallable()");
+  }
+
+  public UnaryCallable<ListConversionEventsRequest, ListConversionEventsResponse>
+      listConversionEventsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listConversionEventsCallable()");
+  }
+
+  public UnaryCallable<CreateCustomDimensionRequest, CustomDimension>
+      createCustomDimensionCallable() {
+    throw new UnsupportedOperationException("Not implemented: createCustomDimensionCallable()");
+  }
+
+  public UnaryCallable<UpdateCustomDimensionRequest, CustomDimension>
+      updateCustomDimensionCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCustomDimensionCallable()");
+  }
+
+  public UnaryCallable<ListCustomDimensionsRequest, ListCustomDimensionsPagedResponse>
+      listCustomDimensionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listCustomDimensionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListCustomDimensionsRequest, ListCustomDimensionsResponse>
+      listCustomDimensionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listCustomDimensionsCallable()");
+  }
+
+  public UnaryCallable<ArchiveCustomDimensionRequest, Empty> archiveCustomDimensionCallable() {
+    throw new UnsupportedOperationException("Not implemented: archiveCustomDimensionCallable()");
+  }
+
+  public UnaryCallable<GetCustomDimensionRequest, CustomDimension> getCustomDimensionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getCustomDimensionCallable()");
+  }
+
+  public UnaryCallable<CreateCustomMetricRequest, CustomMetric> createCustomMetricCallable() {
+    throw new UnsupportedOperationException("Not implemented: createCustomMetricCallable()");
+  }
+
+  public UnaryCallable<UpdateCustomMetricRequest, CustomMetric> updateCustomMetricCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCustomMetricCallable()");
+  }
+
+  public UnaryCallable<ListCustomMetricsRequest, ListCustomMetricsPagedResponse>
+      listCustomMetricsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listCustomMetricsPagedCallable()");
+  }
+
+  public UnaryCallable<ListCustomMetricsRequest, ListCustomMetricsResponse>
+      listCustomMetricsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listCustomMetricsCallable()");
+  }
+
+  public UnaryCallable<ArchiveCustomMetricRequest, Empty> archiveCustomMetricCallable() {
+    throw new UnsupportedOperationException("Not implemented: archiveCustomMetricCallable()");
+  }
+
+  public UnaryCallable<GetCustomMetricRequest, CustomMetric> getCustomMetricCallable() {
+    throw new UnsupportedOperationException("Not implemented: getCustomMetricCallable()");
   }
 
   @Override

@@ -20,9 +20,13 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Aud
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAndroidAppDataStreamsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListIosAppDataStreamsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListWebDataStreamsPagedResponse;
@@ -359,6 +363,44 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getDataSharingSettingsSettings();
   }
 
+  /** Returns the object with the settings used for calls to getMeasurementProtocolSecret. */
+  public UnaryCallSettings<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      getMeasurementProtocolSecretSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .getMeasurementProtocolSecretSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listMeasurementProtocolSecrets. */
+  public PagedCallSettings<
+          ListMeasurementProtocolSecretsRequest,
+          ListMeasurementProtocolSecretsResponse,
+          ListMeasurementProtocolSecretsPagedResponse>
+      listMeasurementProtocolSecretsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .listMeasurementProtocolSecretsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMeasurementProtocolSecret. */
+  public UnaryCallSettings<CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      createMeasurementProtocolSecretSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .createMeasurementProtocolSecretSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteMeasurementProtocolSecret. */
+  public UnaryCallSettings<DeleteMeasurementProtocolSecretRequest, Empty>
+      deleteMeasurementProtocolSecretSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .deleteMeasurementProtocolSecretSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateMeasurementProtocolSecret. */
+  public UnaryCallSettings<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      updateMeasurementProtocolSecretSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .updateMeasurementProtocolSecretSettings();
+  }
+
   /** Returns the object with the settings used for calls to searchChangeHistoryEvents. */
   public PagedCallSettings<
           SearchChangeHistoryEventsRequest,
@@ -367,6 +409,105 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       searchChangeHistoryEventsSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings())
         .searchChangeHistoryEventsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGoogleSignalsSettings. */
+  public UnaryCallSettings<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+      getGoogleSignalsSettingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .getGoogleSignalsSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGoogleSignalsSettings. */
+  public UnaryCallSettings<UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+      updateGoogleSignalsSettingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .updateGoogleSignalsSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createConversionEvent. */
+  public UnaryCallSettings<CreateConversionEventRequest, ConversionEvent>
+      createConversionEventSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createConversionEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getConversionEvent. */
+  public UnaryCallSettings<GetConversionEventRequest, ConversionEvent>
+      getConversionEventSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getConversionEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteConversionEvent. */
+  public UnaryCallSettings<DeleteConversionEventRequest, Empty> deleteConversionEventSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteConversionEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listConversionEvents. */
+  public PagedCallSettings<
+          ListConversionEventsRequest,
+          ListConversionEventsResponse,
+          ListConversionEventsPagedResponse>
+      listConversionEventsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listConversionEventsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createCustomDimension. */
+  public UnaryCallSettings<CreateCustomDimensionRequest, CustomDimension>
+      createCustomDimensionSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createCustomDimensionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomDimension. */
+  public UnaryCallSettings<UpdateCustomDimensionRequest, CustomDimension>
+      updateCustomDimensionSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateCustomDimensionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listCustomDimensions. */
+  public PagedCallSettings<
+          ListCustomDimensionsRequest,
+          ListCustomDimensionsResponse,
+          ListCustomDimensionsPagedResponse>
+      listCustomDimensionsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listCustomDimensionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to archiveCustomDimension. */
+  public UnaryCallSettings<ArchiveCustomDimensionRequest, Empty> archiveCustomDimensionSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).archiveCustomDimensionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getCustomDimension. */
+  public UnaryCallSettings<GetCustomDimensionRequest, CustomDimension>
+      getCustomDimensionSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getCustomDimensionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createCustomMetric. */
+  public UnaryCallSettings<CreateCustomMetricRequest, CustomMetric> createCustomMetricSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createCustomMetricSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomMetric. */
+  public UnaryCallSettings<UpdateCustomMetricRequest, CustomMetric> updateCustomMetricSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateCustomMetricSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listCustomMetrics. */
+  public PagedCallSettings<
+          ListCustomMetricsRequest, ListCustomMetricsResponse, ListCustomMetricsPagedResponse>
+      listCustomMetricsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listCustomMetricsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to archiveCustomMetric. */
+  public UnaryCallSettings<ArchiveCustomMetricRequest, Empty> archiveCustomMetricSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).archiveCustomMetricSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getCustomMetric. */
+  public UnaryCallSettings<GetCustomMetricRequest, CustomMetric> getCustomMetricSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getCustomMetricSettings();
   }
 
   public static final AnalyticsAdminServiceSettings create(AnalyticsAdminServiceStubSettings stub)
@@ -751,6 +892,41 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       return getStubSettingsBuilder().getDataSharingSettingsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getMeasurementProtocolSecret. */
+    public UnaryCallSettings.Builder<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+        getMeasurementProtocolSecretSettings() {
+      return getStubSettingsBuilder().getMeasurementProtocolSecretSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listMeasurementProtocolSecrets. */
+    public PagedCallSettings.Builder<
+            ListMeasurementProtocolSecretsRequest,
+            ListMeasurementProtocolSecretsResponse,
+            ListMeasurementProtocolSecretsPagedResponse>
+        listMeasurementProtocolSecretsSettings() {
+      return getStubSettingsBuilder().listMeasurementProtocolSecretsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMeasurementProtocolSecret. */
+    public UnaryCallSettings.Builder<
+            CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+        createMeasurementProtocolSecretSettings() {
+      return getStubSettingsBuilder().createMeasurementProtocolSecretSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMeasurementProtocolSecret. */
+    public UnaryCallSettings.Builder<DeleteMeasurementProtocolSecretRequest, Empty>
+        deleteMeasurementProtocolSecretSettings() {
+      return getStubSettingsBuilder().deleteMeasurementProtocolSecretSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateMeasurementProtocolSecret. */
+    public UnaryCallSettings.Builder<
+            UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+        updateMeasurementProtocolSecretSettings() {
+      return getStubSettingsBuilder().updateMeasurementProtocolSecretSettings();
+    }
+
     /** Returns the builder for the settings used for calls to searchChangeHistoryEvents. */
     public PagedCallSettings.Builder<
             SearchChangeHistoryEventsRequest,
@@ -758,6 +934,109 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
             SearchChangeHistoryEventsPagedResponse>
         searchChangeHistoryEventsSettings() {
       return getStubSettingsBuilder().searchChangeHistoryEventsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGoogleSignalsSettings. */
+    public UnaryCallSettings.Builder<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+        getGoogleSignalsSettingsSettings() {
+      return getStubSettingsBuilder().getGoogleSignalsSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGoogleSignalsSettings. */
+    public UnaryCallSettings.Builder<UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+        updateGoogleSignalsSettingsSettings() {
+      return getStubSettingsBuilder().updateGoogleSignalsSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createConversionEvent. */
+    public UnaryCallSettings.Builder<CreateConversionEventRequest, ConversionEvent>
+        createConversionEventSettings() {
+      return getStubSettingsBuilder().createConversionEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getConversionEvent. */
+    public UnaryCallSettings.Builder<GetConversionEventRequest, ConversionEvent>
+        getConversionEventSettings() {
+      return getStubSettingsBuilder().getConversionEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteConversionEvent. */
+    public UnaryCallSettings.Builder<DeleteConversionEventRequest, Empty>
+        deleteConversionEventSettings() {
+      return getStubSettingsBuilder().deleteConversionEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listConversionEvents. */
+    public PagedCallSettings.Builder<
+            ListConversionEventsRequest,
+            ListConversionEventsResponse,
+            ListConversionEventsPagedResponse>
+        listConversionEventsSettings() {
+      return getStubSettingsBuilder().listConversionEventsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomDimension. */
+    public UnaryCallSettings.Builder<CreateCustomDimensionRequest, CustomDimension>
+        createCustomDimensionSettings() {
+      return getStubSettingsBuilder().createCustomDimensionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomDimension. */
+    public UnaryCallSettings.Builder<UpdateCustomDimensionRequest, CustomDimension>
+        updateCustomDimensionSettings() {
+      return getStubSettingsBuilder().updateCustomDimensionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listCustomDimensions. */
+    public PagedCallSettings.Builder<
+            ListCustomDimensionsRequest,
+            ListCustomDimensionsResponse,
+            ListCustomDimensionsPagedResponse>
+        listCustomDimensionsSettings() {
+      return getStubSettingsBuilder().listCustomDimensionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to archiveCustomDimension. */
+    public UnaryCallSettings.Builder<ArchiveCustomDimensionRequest, Empty>
+        archiveCustomDimensionSettings() {
+      return getStubSettingsBuilder().archiveCustomDimensionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getCustomDimension. */
+    public UnaryCallSettings.Builder<GetCustomDimensionRequest, CustomDimension>
+        getCustomDimensionSettings() {
+      return getStubSettingsBuilder().getCustomDimensionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomMetric. */
+    public UnaryCallSettings.Builder<CreateCustomMetricRequest, CustomMetric>
+        createCustomMetricSettings() {
+      return getStubSettingsBuilder().createCustomMetricSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomMetric. */
+    public UnaryCallSettings.Builder<UpdateCustomMetricRequest, CustomMetric>
+        updateCustomMetricSettings() {
+      return getStubSettingsBuilder().updateCustomMetricSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listCustomMetrics. */
+    public PagedCallSettings.Builder<
+            ListCustomMetricsRequest, ListCustomMetricsResponse, ListCustomMetricsPagedResponse>
+        listCustomMetricsSettings() {
+      return getStubSettingsBuilder().listCustomMetricsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to archiveCustomMetric. */
+    public UnaryCallSettings.Builder<ArchiveCustomMetricRequest, Empty>
+        archiveCustomMetricSettings() {
+      return getStubSettingsBuilder().archiveCustomMetricSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getCustomMetric. */
+    public UnaryCallSettings.Builder<GetCustomMetricRequest, CustomMetric>
+        getCustomMetricSettings() {
+      return getStubSettingsBuilder().getCustomMetricSettings();
     }
 
     @Override

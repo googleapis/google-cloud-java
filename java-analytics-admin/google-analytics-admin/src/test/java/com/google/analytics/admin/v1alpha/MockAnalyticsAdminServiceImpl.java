@@ -1036,6 +1036,115 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
+  public void getMeasurementProtocolSecret(
+      GetMeasurementProtocolSecretRequest request,
+      StreamObserver<MeasurementProtocolSecret> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MeasurementProtocolSecret) {
+      requests.add(request);
+      responseObserver.onNext(((MeasurementProtocolSecret) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMeasurementProtocolSecret, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MeasurementProtocolSecret.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listMeasurementProtocolSecrets(
+      ListMeasurementProtocolSecretsRequest request,
+      StreamObserver<ListMeasurementProtocolSecretsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListMeasurementProtocolSecretsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListMeasurementProtocolSecretsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMeasurementProtocolSecrets, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListMeasurementProtocolSecretsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createMeasurementProtocolSecret(
+      CreateMeasurementProtocolSecretRequest request,
+      StreamObserver<MeasurementProtocolSecret> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MeasurementProtocolSecret) {
+      requests.add(request);
+      responseObserver.onNext(((MeasurementProtocolSecret) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateMeasurementProtocolSecret, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MeasurementProtocolSecret.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteMeasurementProtocolSecret(
+      DeleteMeasurementProtocolSecretRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteMeasurementProtocolSecret, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateMeasurementProtocolSecret(
+      UpdateMeasurementProtocolSecretRequest request,
+      StreamObserver<MeasurementProtocolSecret> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MeasurementProtocolSecret) {
+      requests.add(request);
+      responseObserver.onNext(((MeasurementProtocolSecret) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateMeasurementProtocolSecret, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MeasurementProtocolSecret.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void searchChangeHistoryEvents(
       SearchChangeHistoryEventsRequest request,
       StreamObserver<SearchChangeHistoryEventsResponse> responseObserver) {
@@ -1053,6 +1162,347 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                   "Unrecognized response type %s for method SearchChangeHistoryEvents, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchChangeHistoryEventsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getGoogleSignalsSettings(
+      GetGoogleSignalsSettingsRequest request,
+      StreamObserver<GoogleSignalsSettings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GoogleSignalsSettings) {
+      requests.add(request);
+      responseObserver.onNext(((GoogleSignalsSettings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGoogleSignalsSettings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GoogleSignalsSettings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateGoogleSignalsSettings(
+      UpdateGoogleSignalsSettingsRequest request,
+      StreamObserver<GoogleSignalsSettings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GoogleSignalsSettings) {
+      requests.add(request);
+      responseObserver.onNext(((GoogleSignalsSettings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateGoogleSignalsSettings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GoogleSignalsSettings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createConversionEvent(
+      CreateConversionEventRequest request, StreamObserver<ConversionEvent> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ConversionEvent) {
+      requests.add(request);
+      responseObserver.onNext(((ConversionEvent) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateConversionEvent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ConversionEvent.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getConversionEvent(
+      GetConversionEventRequest request, StreamObserver<ConversionEvent> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ConversionEvent) {
+      requests.add(request);
+      responseObserver.onNext(((ConversionEvent) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetConversionEvent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ConversionEvent.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteConversionEvent(
+      DeleteConversionEventRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteConversionEvent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listConversionEvents(
+      ListConversionEventsRequest request,
+      StreamObserver<ListConversionEventsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListConversionEventsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListConversionEventsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListConversionEvents, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListConversionEventsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createCustomDimension(
+      CreateCustomDimensionRequest request, StreamObserver<CustomDimension> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CustomDimension) {
+      requests.add(request);
+      responseObserver.onNext(((CustomDimension) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateCustomDimension, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CustomDimension.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateCustomDimension(
+      UpdateCustomDimensionRequest request, StreamObserver<CustomDimension> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CustomDimension) {
+      requests.add(request);
+      responseObserver.onNext(((CustomDimension) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateCustomDimension, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CustomDimension.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listCustomDimensions(
+      ListCustomDimensionsRequest request,
+      StreamObserver<ListCustomDimensionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListCustomDimensionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListCustomDimensionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListCustomDimensions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListCustomDimensionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void archiveCustomDimension(
+      ArchiveCustomDimensionRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ArchiveCustomDimension, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getCustomDimension(
+      GetCustomDimensionRequest request, StreamObserver<CustomDimension> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CustomDimension) {
+      requests.add(request);
+      responseObserver.onNext(((CustomDimension) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCustomDimension, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CustomDimension.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createCustomMetric(
+      CreateCustomMetricRequest request, StreamObserver<CustomMetric> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CustomMetric) {
+      requests.add(request);
+      responseObserver.onNext(((CustomMetric) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateCustomMetric, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CustomMetric.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateCustomMetric(
+      UpdateCustomMetricRequest request, StreamObserver<CustomMetric> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CustomMetric) {
+      requests.add(request);
+      responseObserver.onNext(((CustomMetric) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateCustomMetric, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CustomMetric.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listCustomMetrics(
+      ListCustomMetricsRequest request,
+      StreamObserver<ListCustomMetricsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListCustomMetricsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListCustomMetricsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListCustomMetrics, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListCustomMetricsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void archiveCustomMetric(
+      ArchiveCustomMetricRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ArchiveCustomMetric, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getCustomMetric(
+      GetCustomMetricRequest request, StreamObserver<CustomMetric> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CustomMetric) {
+      requests.add(request);
+      responseObserver.onNext(((CustomMetric) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCustomMetric, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CustomMetric.class.getName(),
                   Exception.class.getName())));
     }
   }

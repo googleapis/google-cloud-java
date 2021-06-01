@@ -27,10 +27,10 @@ public interface UserLinkOrBuilder
    *
    *
    * <pre>
-   * Example format: properties/1234/userLinks/5678
+   * Output only. Example format: properties/1234/userLinks/5678
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -39,10 +39,10 @@ public interface UserLinkOrBuilder
    *
    *
    * <pre>
-   * Example format: properties/1234/userLinks/5678
+   * Output only. Example format: properties/1234/userLinks/5678
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -52,10 +52,10 @@ public interface UserLinkOrBuilder
    *
    *
    * <pre>
-   * Email address of the user to link
+   * Immutable. Email address of the user to link
    * </pre>
    *
-   * <code>string email_address = 2;</code>
+   * <code>string email_address = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The emailAddress.
    */
@@ -64,10 +64,10 @@ public interface UserLinkOrBuilder
    *
    *
    * <pre>
-   * Email address of the user to link
+   * Immutable. Email address of the user to link
    * </pre>
    *
-   * <code>string email_address = 2;</code>
+   * <code>string email_address = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The bytes for emailAddress.
    */

@@ -20,9 +20,13 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Aud
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAndroidAppDataStreamsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListIosAppDataStreamsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListWebDataStreamsPagedResponse;
@@ -30,6 +34,8 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Sea
 
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AndroidAppDataStream;
+import com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest;
+import com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.AuditUserLinksRequest;
 import com.google.analytics.admin.v1alpha.AuditUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest;
@@ -39,17 +45,26 @@ import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
+import com.google.analytics.admin.v1alpha.ConversionEvent;
+import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
+import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
+import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
 import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest;
+import com.google.analytics.admin.v1alpha.CustomDimension;
+import com.google.analytics.admin.v1alpha.CustomMetric;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteIosAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest;
@@ -57,15 +72,21 @@ import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
 import com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
+import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
+import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
+import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetIosAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
 import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
 import com.google.analytics.admin.v1alpha.GetWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
+import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
 import com.google.analytics.admin.v1alpha.IosAppDataStream;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
@@ -73,18 +94,27 @@ import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
 import com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsRequest;
 import com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsResponse;
+import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
+import com.google.analytics.admin.v1alpha.ListConversionEventsResponse;
+import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
+import com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse;
+import com.google.analytics.admin.v1alpha.ListCustomMetricsRequest;
+import com.google.analytics.admin.v1alpha.ListCustomMetricsResponse;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse;
 import com.google.analytics.admin.v1alpha.ListIosAppDataStreamsRequest;
 import com.google.analytics.admin.v1alpha.ListIosAppDataStreamsResponse;
+import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
+import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
 import com.google.analytics.admin.v1alpha.ListUserLinksRequest;
 import com.google.analytics.admin.v1alpha.ListUserLinksResponse;
 import com.google.analytics.admin.v1alpha.ListWebDataStreamsRequest;
 import com.google.analytics.admin.v1alpha.ListWebDataStreamsResponse;
+import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
@@ -92,10 +122,14 @@ import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
+import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
 import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateWebDataStreamRequest;
@@ -650,6 +684,78 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .build();
 
   private static final MethodDescriptor<
+          GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      getMeasurementProtocolSecretMethodDescriptor =
+          MethodDescriptor
+              .<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetMeasurementProtocolSecret")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetMeasurementProtocolSecretRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(MeasurementProtocolSecret.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListMeasurementProtocolSecretsRequest, ListMeasurementProtocolSecretsResponse>
+      listMeasurementProtocolSecretsMethodDescriptor =
+          MethodDescriptor
+              .<ListMeasurementProtocolSecretsRequest, ListMeasurementProtocolSecretsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListMeasurementProtocolSecrets")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListMeasurementProtocolSecretsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListMeasurementProtocolSecretsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      createMeasurementProtocolSecretMethodDescriptor =
+          MethodDescriptor
+              .<CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateMeasurementProtocolSecret")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      CreateMeasurementProtocolSecretRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(MeasurementProtocolSecret.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteMeasurementProtocolSecretRequest, Empty>
+      deleteMeasurementProtocolSecretMethodDescriptor =
+          MethodDescriptor.<DeleteMeasurementProtocolSecretRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteMeasurementProtocolSecret")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      DeleteMeasurementProtocolSecretRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      updateMeasurementProtocolSecretMethodDescriptor =
+          MethodDescriptor
+              .<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateMeasurementProtocolSecret")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      UpdateMeasurementProtocolSecretRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(MeasurementProtocolSecret.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
           SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
       searchChangeHistoryEventsMethodDescriptor =
           MethodDescriptor
@@ -661,6 +767,187 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(SearchChangeHistoryEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchChangeHistoryEventsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+      getGoogleSignalsSettingsMethodDescriptor =
+          MethodDescriptor.<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetGoogleSignalsSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetGoogleSignalsSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GoogleSignalsSettings.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+      updateGoogleSignalsSettingsMethodDescriptor =
+          MethodDescriptor.<UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateGoogleSignalsSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateGoogleSignalsSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GoogleSignalsSettings.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateConversionEventRequest, ConversionEvent>
+      createConversionEventMethodDescriptor =
+          MethodDescriptor.<CreateConversionEventRequest, ConversionEvent>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateConversionEvent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateConversionEventRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ConversionEvent.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetConversionEventRequest, ConversionEvent>
+      getConversionEventMethodDescriptor =
+          MethodDescriptor.<GetConversionEventRequest, ConversionEvent>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetConversionEvent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetConversionEventRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ConversionEvent.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteConversionEventRequest, Empty>
+      deleteConversionEventMethodDescriptor =
+          MethodDescriptor.<DeleteConversionEventRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteConversionEvent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteConversionEventRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListConversionEventsRequest, ListConversionEventsResponse>
+      listConversionEventsMethodDescriptor =
+          MethodDescriptor.<ListConversionEventsRequest, ListConversionEventsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListConversionEvents")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListConversionEventsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListConversionEventsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateCustomDimensionRequest, CustomDimension>
+      createCustomDimensionMethodDescriptor =
+          MethodDescriptor.<CreateCustomDimensionRequest, CustomDimension>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateCustomDimension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateCustomDimensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CustomDimension.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateCustomDimensionRequest, CustomDimension>
+      updateCustomDimensionMethodDescriptor =
+          MethodDescriptor.<UpdateCustomDimensionRequest, CustomDimension>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateCustomDimension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateCustomDimensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CustomDimension.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListCustomDimensionsRequest, ListCustomDimensionsResponse>
+      listCustomDimensionsMethodDescriptor =
+          MethodDescriptor.<ListCustomDimensionsRequest, ListCustomDimensionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListCustomDimensions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListCustomDimensionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListCustomDimensionsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ArchiveCustomDimensionRequest, Empty>
+      archiveCustomDimensionMethodDescriptor =
+          MethodDescriptor.<ArchiveCustomDimensionRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ArchiveCustomDimension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ArchiveCustomDimensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetCustomDimensionRequest, CustomDimension>
+      getCustomDimensionMethodDescriptor =
+          MethodDescriptor.<GetCustomDimensionRequest, CustomDimension>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetCustomDimension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetCustomDimensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CustomDimension.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateCustomMetricRequest, CustomMetric>
+      createCustomMetricMethodDescriptor =
+          MethodDescriptor.<CreateCustomMetricRequest, CustomMetric>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateCustomMetric")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateCustomMetricRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CustomMetric.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateCustomMetricRequest, CustomMetric>
+      updateCustomMetricMethodDescriptor =
+          MethodDescriptor.<UpdateCustomMetricRequest, CustomMetric>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateCustomMetric")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateCustomMetricRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CustomMetric.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListCustomMetricsRequest, ListCustomMetricsResponse>
+      listCustomMetricsMethodDescriptor =
+          MethodDescriptor.<ListCustomMetricsRequest, ListCustomMetricsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListCustomMetrics")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListCustomMetricsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListCustomMetricsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ArchiveCustomMetricRequest, Empty>
+      archiveCustomMetricMethodDescriptor =
+          MethodDescriptor.<ArchiveCustomMetricRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ArchiveCustomMetric")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ArchiveCustomMetricRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetCustomMetricRequest, CustomMetric>
+      getCustomMetricMethodDescriptor =
+          MethodDescriptor.<GetCustomMetricRequest, CustomMetric>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetCustomMetric")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetCustomMetricRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CustomMetric.getDefaultInstance()))
               .build();
 
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
@@ -752,11 +1039,57 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       listGoogleAdsLinksPagedCallable;
   private final UnaryCallable<GetDataSharingSettingsRequest, DataSharingSettings>
       getDataSharingSettingsCallable;
+  private final UnaryCallable<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      getMeasurementProtocolSecretCallable;
+  private final UnaryCallable<
+          ListMeasurementProtocolSecretsRequest, ListMeasurementProtocolSecretsResponse>
+      listMeasurementProtocolSecretsCallable;
+  private final UnaryCallable<
+          ListMeasurementProtocolSecretsRequest, ListMeasurementProtocolSecretsPagedResponse>
+      listMeasurementProtocolSecretsPagedCallable;
+  private final UnaryCallable<CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      createMeasurementProtocolSecretCallable;
+  private final UnaryCallable<DeleteMeasurementProtocolSecretRequest, Empty>
+      deleteMeasurementProtocolSecretCallable;
+  private final UnaryCallable<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      updateMeasurementProtocolSecretCallable;
   private final UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
       searchChangeHistoryEventsCallable;
   private final UnaryCallable<
           SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsPagedResponse>
       searchChangeHistoryEventsPagedCallable;
+  private final UnaryCallable<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+      getGoogleSignalsSettingsCallable;
+  private final UnaryCallable<UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+      updateGoogleSignalsSettingsCallable;
+  private final UnaryCallable<CreateConversionEventRequest, ConversionEvent>
+      createConversionEventCallable;
+  private final UnaryCallable<GetConversionEventRequest, ConversionEvent>
+      getConversionEventCallable;
+  private final UnaryCallable<DeleteConversionEventRequest, Empty> deleteConversionEventCallable;
+  private final UnaryCallable<ListConversionEventsRequest, ListConversionEventsResponse>
+      listConversionEventsCallable;
+  private final UnaryCallable<ListConversionEventsRequest, ListConversionEventsPagedResponse>
+      listConversionEventsPagedCallable;
+  private final UnaryCallable<CreateCustomDimensionRequest, CustomDimension>
+      createCustomDimensionCallable;
+  private final UnaryCallable<UpdateCustomDimensionRequest, CustomDimension>
+      updateCustomDimensionCallable;
+  private final UnaryCallable<ListCustomDimensionsRequest, ListCustomDimensionsResponse>
+      listCustomDimensionsCallable;
+  private final UnaryCallable<ListCustomDimensionsRequest, ListCustomDimensionsPagedResponse>
+      listCustomDimensionsPagedCallable;
+  private final UnaryCallable<ArchiveCustomDimensionRequest, Empty> archiveCustomDimensionCallable;
+  private final UnaryCallable<GetCustomDimensionRequest, CustomDimension>
+      getCustomDimensionCallable;
+  private final UnaryCallable<CreateCustomMetricRequest, CustomMetric> createCustomMetricCallable;
+  private final UnaryCallable<UpdateCustomMetricRequest, CustomMetric> updateCustomMetricCallable;
+  private final UnaryCallable<ListCustomMetricsRequest, ListCustomMetricsResponse>
+      listCustomMetricsCallable;
+  private final UnaryCallable<ListCustomMetricsRequest, ListCustomMetricsPagedResponse>
+      listCustomMetricsPagedCallable;
+  private final UnaryCallable<ArchiveCustomMetricRequest, Empty> archiveCustomMetricCallable;
+  private final UnaryCallable<GetCustomMetricRequest, CustomMetric> getCustomMetricCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -1399,6 +1732,88 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+        getMeasurementProtocolSecretTransportSettings =
+            GrpcCallSettings
+                .<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>newBuilder()
+                .setMethodDescriptor(getMeasurementProtocolSecretMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<GetMeasurementProtocolSecretRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          GetMeasurementProtocolSecretRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<ListMeasurementProtocolSecretsRequest, ListMeasurementProtocolSecretsResponse>
+        listMeasurementProtocolSecretsTransportSettings =
+            GrpcCallSettings
+                .<ListMeasurementProtocolSecretsRequest, ListMeasurementProtocolSecretsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listMeasurementProtocolSecretsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListMeasurementProtocolSecretsRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          ListMeasurementProtocolSecretsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+        createMeasurementProtocolSecretTransportSettings =
+            GrpcCallSettings
+                .<CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>newBuilder()
+                .setMethodDescriptor(createMeasurementProtocolSecretMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<CreateMeasurementProtocolSecretRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          CreateMeasurementProtocolSecretRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<DeleteMeasurementProtocolSecretRequest, Empty>
+        deleteMeasurementProtocolSecretTransportSettings =
+            GrpcCallSettings.<DeleteMeasurementProtocolSecretRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteMeasurementProtocolSecretMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<DeleteMeasurementProtocolSecretRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          DeleteMeasurementProtocolSecretRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+        updateMeasurementProtocolSecretTransportSettings =
+            GrpcCallSettings
+                .<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>newBuilder()
+                .setMethodDescriptor(updateMeasurementProtocolSecretMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<UpdateMeasurementProtocolSecretRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          UpdateMeasurementProtocolSecretRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put(
+                            "measurement_protocol_secret.name",
+                            String.valueOf(request.getMeasurementProtocolSecret().getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
         searchChangeHistoryEventsTransportSettings =
             GrpcCallSettings
@@ -1414,6 +1829,230 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+        getGoogleSignalsSettingsTransportSettings =
+            GrpcCallSettings.<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>newBuilder()
+                .setMethodDescriptor(getGoogleSignalsSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<GetGoogleSignalsSettingsRequest>() {
+                      @Override
+                      public Map<String, String> extract(GetGoogleSignalsSettingsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+        updateGoogleSignalsSettingsTransportSettings =
+            GrpcCallSettings.<UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>newBuilder()
+                .setMethodDescriptor(updateGoogleSignalsSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<UpdateGoogleSignalsSettingsRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          UpdateGoogleSignalsSettingsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put(
+                            "google_signals_settings.name",
+                            String.valueOf(request.getGoogleSignalsSettings().getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<CreateConversionEventRequest, ConversionEvent>
+        createConversionEventTransportSettings =
+            GrpcCallSettings.<CreateConversionEventRequest, ConversionEvent>newBuilder()
+                .setMethodDescriptor(createConversionEventMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<CreateConversionEventRequest>() {
+                      @Override
+                      public Map<String, String> extract(CreateConversionEventRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<GetConversionEventRequest, ConversionEvent>
+        getConversionEventTransportSettings =
+            GrpcCallSettings.<GetConversionEventRequest, ConversionEvent>newBuilder()
+                .setMethodDescriptor(getConversionEventMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<GetConversionEventRequest>() {
+                      @Override
+                      public Map<String, String> extract(GetConversionEventRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<DeleteConversionEventRequest, Empty> deleteConversionEventTransportSettings =
+        GrpcCallSettings.<DeleteConversionEventRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteConversionEventMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteConversionEventRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteConversionEventRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ListConversionEventsRequest, ListConversionEventsResponse>
+        listConversionEventsTransportSettings =
+            GrpcCallSettings.<ListConversionEventsRequest, ListConversionEventsResponse>newBuilder()
+                .setMethodDescriptor(listConversionEventsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListConversionEventsRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListConversionEventsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<CreateCustomDimensionRequest, CustomDimension>
+        createCustomDimensionTransportSettings =
+            GrpcCallSettings.<CreateCustomDimensionRequest, CustomDimension>newBuilder()
+                .setMethodDescriptor(createCustomDimensionMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<CreateCustomDimensionRequest>() {
+                      @Override
+                      public Map<String, String> extract(CreateCustomDimensionRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<UpdateCustomDimensionRequest, CustomDimension>
+        updateCustomDimensionTransportSettings =
+            GrpcCallSettings.<UpdateCustomDimensionRequest, CustomDimension>newBuilder()
+                .setMethodDescriptor(updateCustomDimensionMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<UpdateCustomDimensionRequest>() {
+                      @Override
+                      public Map<String, String> extract(UpdateCustomDimensionRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put(
+                            "custom_dimension.name",
+                            String.valueOf(request.getCustomDimension().getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<ListCustomDimensionsRequest, ListCustomDimensionsResponse>
+        listCustomDimensionsTransportSettings =
+            GrpcCallSettings.<ListCustomDimensionsRequest, ListCustomDimensionsResponse>newBuilder()
+                .setMethodDescriptor(listCustomDimensionsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListCustomDimensionsRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListCustomDimensionsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<ArchiveCustomDimensionRequest, Empty> archiveCustomDimensionTransportSettings =
+        GrpcCallSettings.<ArchiveCustomDimensionRequest, Empty>newBuilder()
+            .setMethodDescriptor(archiveCustomDimensionMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ArchiveCustomDimensionRequest>() {
+                  @Override
+                  public Map<String, String> extract(ArchiveCustomDimensionRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetCustomDimensionRequest, CustomDimension>
+        getCustomDimensionTransportSettings =
+            GrpcCallSettings.<GetCustomDimensionRequest, CustomDimension>newBuilder()
+                .setMethodDescriptor(getCustomDimensionMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<GetCustomDimensionRequest>() {
+                      @Override
+                      public Map<String, String> extract(GetCustomDimensionRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<CreateCustomMetricRequest, CustomMetric> createCustomMetricTransportSettings =
+        GrpcCallSettings.<CreateCustomMetricRequest, CustomMetric>newBuilder()
+            .setMethodDescriptor(createCustomMetricMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateCustomMetricRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateCustomMetricRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<UpdateCustomMetricRequest, CustomMetric> updateCustomMetricTransportSettings =
+        GrpcCallSettings.<UpdateCustomMetricRequest, CustomMetric>newBuilder()
+            .setMethodDescriptor(updateCustomMetricMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateCustomMetricRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateCustomMetricRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put(
+                        "custom_metric.name", String.valueOf(request.getCustomMetric().getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ListCustomMetricsRequest, ListCustomMetricsResponse>
+        listCustomMetricsTransportSettings =
+            GrpcCallSettings.<ListCustomMetricsRequest, ListCustomMetricsResponse>newBuilder()
+                .setMethodDescriptor(listCustomMetricsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListCustomMetricsRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListCustomMetricsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<ArchiveCustomMetricRequest, Empty> archiveCustomMetricTransportSettings =
+        GrpcCallSettings.<ArchiveCustomMetricRequest, Empty>newBuilder()
+            .setMethodDescriptor(archiveCustomMetricMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ArchiveCustomMetricRequest>() {
+                  @Override
+                  public Map<String, String> extract(ArchiveCustomMetricRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetCustomMetricRequest, CustomMetric> getCustomMetricTransportSettings =
+        GrpcCallSettings.<GetCustomMetricRequest, CustomMetric>newBuilder()
+            .setMethodDescriptor(getCustomMetricMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetCustomMetricRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetCustomMetricRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.getAccountCallable =
         callableFactory.createUnaryCallable(
@@ -1653,6 +2292,36 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             getDataSharingSettingsTransportSettings,
             settings.getDataSharingSettingsSettings(),
             clientContext);
+    this.getMeasurementProtocolSecretCallable =
+        callableFactory.createUnaryCallable(
+            getMeasurementProtocolSecretTransportSettings,
+            settings.getMeasurementProtocolSecretSettings(),
+            clientContext);
+    this.listMeasurementProtocolSecretsCallable =
+        callableFactory.createUnaryCallable(
+            listMeasurementProtocolSecretsTransportSettings,
+            settings.listMeasurementProtocolSecretsSettings(),
+            clientContext);
+    this.listMeasurementProtocolSecretsPagedCallable =
+        callableFactory.createPagedCallable(
+            listMeasurementProtocolSecretsTransportSettings,
+            settings.listMeasurementProtocolSecretsSettings(),
+            clientContext);
+    this.createMeasurementProtocolSecretCallable =
+        callableFactory.createUnaryCallable(
+            createMeasurementProtocolSecretTransportSettings,
+            settings.createMeasurementProtocolSecretSettings(),
+            clientContext);
+    this.deleteMeasurementProtocolSecretCallable =
+        callableFactory.createUnaryCallable(
+            deleteMeasurementProtocolSecretTransportSettings,
+            settings.deleteMeasurementProtocolSecretSettings(),
+            clientContext);
+    this.updateMeasurementProtocolSecretCallable =
+        callableFactory.createUnaryCallable(
+            updateMeasurementProtocolSecretTransportSettings,
+            settings.updateMeasurementProtocolSecretSettings(),
+            clientContext);
     this.searchChangeHistoryEventsCallable =
         callableFactory.createUnaryCallable(
             searchChangeHistoryEventsTransportSettings,
@@ -1663,6 +2332,99 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             searchChangeHistoryEventsTransportSettings,
             settings.searchChangeHistoryEventsSettings(),
             clientContext);
+    this.getGoogleSignalsSettingsCallable =
+        callableFactory.createUnaryCallable(
+            getGoogleSignalsSettingsTransportSettings,
+            settings.getGoogleSignalsSettingsSettings(),
+            clientContext);
+    this.updateGoogleSignalsSettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateGoogleSignalsSettingsTransportSettings,
+            settings.updateGoogleSignalsSettingsSettings(),
+            clientContext);
+    this.createConversionEventCallable =
+        callableFactory.createUnaryCallable(
+            createConversionEventTransportSettings,
+            settings.createConversionEventSettings(),
+            clientContext);
+    this.getConversionEventCallable =
+        callableFactory.createUnaryCallable(
+            getConversionEventTransportSettings,
+            settings.getConversionEventSettings(),
+            clientContext);
+    this.deleteConversionEventCallable =
+        callableFactory.createUnaryCallable(
+            deleteConversionEventTransportSettings,
+            settings.deleteConversionEventSettings(),
+            clientContext);
+    this.listConversionEventsCallable =
+        callableFactory.createUnaryCallable(
+            listConversionEventsTransportSettings,
+            settings.listConversionEventsSettings(),
+            clientContext);
+    this.listConversionEventsPagedCallable =
+        callableFactory.createPagedCallable(
+            listConversionEventsTransportSettings,
+            settings.listConversionEventsSettings(),
+            clientContext);
+    this.createCustomDimensionCallable =
+        callableFactory.createUnaryCallable(
+            createCustomDimensionTransportSettings,
+            settings.createCustomDimensionSettings(),
+            clientContext);
+    this.updateCustomDimensionCallable =
+        callableFactory.createUnaryCallable(
+            updateCustomDimensionTransportSettings,
+            settings.updateCustomDimensionSettings(),
+            clientContext);
+    this.listCustomDimensionsCallable =
+        callableFactory.createUnaryCallable(
+            listCustomDimensionsTransportSettings,
+            settings.listCustomDimensionsSettings(),
+            clientContext);
+    this.listCustomDimensionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listCustomDimensionsTransportSettings,
+            settings.listCustomDimensionsSettings(),
+            clientContext);
+    this.archiveCustomDimensionCallable =
+        callableFactory.createUnaryCallable(
+            archiveCustomDimensionTransportSettings,
+            settings.archiveCustomDimensionSettings(),
+            clientContext);
+    this.getCustomDimensionCallable =
+        callableFactory.createUnaryCallable(
+            getCustomDimensionTransportSettings,
+            settings.getCustomDimensionSettings(),
+            clientContext);
+    this.createCustomMetricCallable =
+        callableFactory.createUnaryCallable(
+            createCustomMetricTransportSettings,
+            settings.createCustomMetricSettings(),
+            clientContext);
+    this.updateCustomMetricCallable =
+        callableFactory.createUnaryCallable(
+            updateCustomMetricTransportSettings,
+            settings.updateCustomMetricSettings(),
+            clientContext);
+    this.listCustomMetricsCallable =
+        callableFactory.createUnaryCallable(
+            listCustomMetricsTransportSettings,
+            settings.listCustomMetricsSettings(),
+            clientContext);
+    this.listCustomMetricsPagedCallable =
+        callableFactory.createPagedCallable(
+            listCustomMetricsTransportSettings,
+            settings.listCustomMetricsSettings(),
+            clientContext);
+    this.archiveCustomMetricCallable =
+        callableFactory.createUnaryCallable(
+            archiveCustomMetricTransportSettings,
+            settings.archiveCustomMetricSettings(),
+            clientContext);
+    this.getCustomMetricCallable =
+        callableFactory.createUnaryCallable(
+            getCustomMetricTransportSettings, settings.getCustomMetricSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1979,6 +2741,44 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   }
 
   @Override
+  public UnaryCallable<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      getMeasurementProtocolSecretCallable() {
+    return getMeasurementProtocolSecretCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListMeasurementProtocolSecretsRequest, ListMeasurementProtocolSecretsResponse>
+      listMeasurementProtocolSecretsCallable() {
+    return listMeasurementProtocolSecretsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListMeasurementProtocolSecretsRequest, ListMeasurementProtocolSecretsPagedResponse>
+      listMeasurementProtocolSecretsPagedCallable() {
+    return listMeasurementProtocolSecretsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      createMeasurementProtocolSecretCallable() {
+    return createMeasurementProtocolSecretCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteMeasurementProtocolSecretRequest, Empty>
+      deleteMeasurementProtocolSecretCallable() {
+    return deleteMeasurementProtocolSecretCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      updateMeasurementProtocolSecretCallable() {
+    return updateMeasurementProtocolSecretCallable;
+  }
+
+  @Override
   public UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
       searchChangeHistoryEventsCallable() {
     return searchChangeHistoryEventsCallable;
@@ -1988,6 +2788,112 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsPagedResponse>
       searchChangeHistoryEventsPagedCallable() {
     return searchChangeHistoryEventsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+      getGoogleSignalsSettingsCallable() {
+    return getGoogleSignalsSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+      updateGoogleSignalsSettingsCallable() {
+    return updateGoogleSignalsSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateConversionEventRequest, ConversionEvent>
+      createConversionEventCallable() {
+    return createConversionEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetConversionEventRequest, ConversionEvent> getConversionEventCallable() {
+    return getConversionEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteConversionEventRequest, Empty> deleteConversionEventCallable() {
+    return deleteConversionEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListConversionEventsRequest, ListConversionEventsResponse>
+      listConversionEventsCallable() {
+    return listConversionEventsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListConversionEventsRequest, ListConversionEventsPagedResponse>
+      listConversionEventsPagedCallable() {
+    return listConversionEventsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCustomDimensionRequest, CustomDimension>
+      createCustomDimensionCallable() {
+    return createCustomDimensionCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCustomDimensionRequest, CustomDimension>
+      updateCustomDimensionCallable() {
+    return updateCustomDimensionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomDimensionsRequest, ListCustomDimensionsResponse>
+      listCustomDimensionsCallable() {
+    return listCustomDimensionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomDimensionsRequest, ListCustomDimensionsPagedResponse>
+      listCustomDimensionsPagedCallable() {
+    return listCustomDimensionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ArchiveCustomDimensionRequest, Empty> archiveCustomDimensionCallable() {
+    return archiveCustomDimensionCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCustomDimensionRequest, CustomDimension> getCustomDimensionCallable() {
+    return getCustomDimensionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCustomMetricRequest, CustomMetric> createCustomMetricCallable() {
+    return createCustomMetricCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCustomMetricRequest, CustomMetric> updateCustomMetricCallable() {
+    return updateCustomMetricCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomMetricsRequest, ListCustomMetricsResponse>
+      listCustomMetricsCallable() {
+    return listCustomMetricsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomMetricsRequest, ListCustomMetricsPagedResponse>
+      listCustomMetricsPagedCallable() {
+    return listCustomMetricsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ArchiveCustomMetricRequest, Empty> archiveCustomMetricCallable() {
+    return archiveCustomMetricCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCustomMetricRequest, CustomMetric> getCustomMetricCallable() {
+    return getCustomMetricCallable;
   }
 
   @Override

@@ -4842,6 +4842,626 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lookup for a single "GA4" MeasurementProtocolSecret.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   MeasurementProtocolSecretName name =
+   *       MeasurementProtocolSecretName.of(
+   *           "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]");
+   *   MeasurementProtocolSecret response =
+   *       analyticsAdminServiceClient.getMeasurementProtocolSecret(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the measurement protocol secret to lookup. Format:
+   *     properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
+   *     Note: Any type of stream (WebDataStream, IosAppDataStream, AndroidAppDataStream) may be a
+   *     parent.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MeasurementProtocolSecret getMeasurementProtocolSecret(
+      MeasurementProtocolSecretName name) {
+    GetMeasurementProtocolSecretRequest request =
+        GetMeasurementProtocolSecretRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getMeasurementProtocolSecret(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single "GA4" MeasurementProtocolSecret.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       MeasurementProtocolSecretName.of(
+   *               "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
+   *           .toString();
+   *   MeasurementProtocolSecret response =
+   *       analyticsAdminServiceClient.getMeasurementProtocolSecret(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the measurement protocol secret to lookup. Format:
+   *     properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
+   *     Note: Any type of stream (WebDataStream, IosAppDataStream, AndroidAppDataStream) may be a
+   *     parent.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MeasurementProtocolSecret getMeasurementProtocolSecret(String name) {
+    GetMeasurementProtocolSecretRequest request =
+        GetMeasurementProtocolSecretRequest.newBuilder().setName(name).build();
+    return getMeasurementProtocolSecret(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single "GA4" MeasurementProtocolSecret.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetMeasurementProtocolSecretRequest request =
+   *       GetMeasurementProtocolSecretRequest.newBuilder()
+   *           .setName(
+   *               MeasurementProtocolSecretName.of(
+   *                       "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
+   *                   .toString())
+   *           .build();
+   *   MeasurementProtocolSecret response =
+   *       analyticsAdminServiceClient.getMeasurementProtocolSecret(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MeasurementProtocolSecret getMeasurementProtocolSecret(
+      GetMeasurementProtocolSecretRequest request) {
+    return getMeasurementProtocolSecretCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single "GA4" MeasurementProtocolSecret.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetMeasurementProtocolSecretRequest request =
+   *       GetMeasurementProtocolSecretRequest.newBuilder()
+   *           .setName(
+   *               MeasurementProtocolSecretName.of(
+   *                       "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<MeasurementProtocolSecret> future =
+   *       analyticsAdminServiceClient.getMeasurementProtocolSecretCallable().futureCall(request);
+   *   // Do something.
+   *   MeasurementProtocolSecret response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      getMeasurementProtocolSecretCallable() {
+    return stub.getMeasurementProtocolSecretCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns child MeasurementProtocolSecrets under the specified parent Property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   WebDataStreamName parent = WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]");
+   *   for (MeasurementProtocolSecret element :
+   *       analyticsAdminServiceClient.listMeasurementProtocolSecrets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent stream. Any type of stream
+   *     (WebDataStream, IosAppDataStream, AndroidAppDataStream) may be a parent. Format:
+   *     properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMeasurementProtocolSecretsPagedResponse listMeasurementProtocolSecrets(
+      WebDataStreamName parent) {
+    ListMeasurementProtocolSecretsRequest request =
+        ListMeasurementProtocolSecretsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listMeasurementProtocolSecrets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns child MeasurementProtocolSecrets under the specified parent Property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent =
+   *       MeasurementProtocolSecretName.of(
+   *               "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
+   *           .toString();
+   *   for (MeasurementProtocolSecret element :
+   *       analyticsAdminServiceClient.listMeasurementProtocolSecrets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent stream. Any type of stream
+   *     (WebDataStream, IosAppDataStream, AndroidAppDataStream) may be a parent. Format:
+   *     properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMeasurementProtocolSecretsPagedResponse listMeasurementProtocolSecrets(
+      String parent) {
+    ListMeasurementProtocolSecretsRequest request =
+        ListMeasurementProtocolSecretsRequest.newBuilder().setParent(parent).build();
+    return listMeasurementProtocolSecrets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns child MeasurementProtocolSecrets under the specified parent Property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListMeasurementProtocolSecretsRequest request =
+   *       ListMeasurementProtocolSecretsRequest.newBuilder()
+   *           .setParent(
+   *               MeasurementProtocolSecretName.of(
+   *                       "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (MeasurementProtocolSecret element :
+   *       analyticsAdminServiceClient.listMeasurementProtocolSecrets(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMeasurementProtocolSecretsPagedResponse listMeasurementProtocolSecrets(
+      ListMeasurementProtocolSecretsRequest request) {
+    return listMeasurementProtocolSecretsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns child MeasurementProtocolSecrets under the specified parent Property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListMeasurementProtocolSecretsRequest request =
+   *       ListMeasurementProtocolSecretsRequest.newBuilder()
+   *           .setParent(
+   *               MeasurementProtocolSecretName.of(
+   *                       "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<MeasurementProtocolSecret> future =
+   *       analyticsAdminServiceClient
+   *           .listMeasurementProtocolSecretsPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (MeasurementProtocolSecret element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListMeasurementProtocolSecretsRequest, ListMeasurementProtocolSecretsPagedResponse>
+      listMeasurementProtocolSecretsPagedCallable() {
+    return stub.listMeasurementProtocolSecretsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns child MeasurementProtocolSecrets under the specified parent Property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListMeasurementProtocolSecretsRequest request =
+   *       ListMeasurementProtocolSecretsRequest.newBuilder()
+   *           .setParent(
+   *               MeasurementProtocolSecretName.of(
+   *                       "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListMeasurementProtocolSecretsResponse response =
+   *         analyticsAdminServiceClient.listMeasurementProtocolSecretsCallable().call(request);
+   *     for (MeasurementProtocolSecret element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListMeasurementProtocolSecretsRequest, ListMeasurementProtocolSecretsResponse>
+      listMeasurementProtocolSecretsCallable() {
+    return stub.listMeasurementProtocolSecretsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a measurement protocol secret.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   WebDataStreamName parent = WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]");
+   *   MeasurementProtocolSecret measurementProtocolSecret =
+   *       MeasurementProtocolSecret.newBuilder().build();
+   *   MeasurementProtocolSecret response =
+   *       analyticsAdminServiceClient.createMeasurementProtocolSecret(
+   *           parent, measurementProtocolSecret);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this secret will be created. Any type of
+   *     stream (WebDataStream, IosAppDataStream, AndroidAppDataStream) may be a parent. Format:
+   *     properties/{property}/webDataStreams/{webDataStream}
+   * @param measurementProtocolSecret Required. The measurement protocol secret to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MeasurementProtocolSecret createMeasurementProtocolSecret(
+      WebDataStreamName parent, MeasurementProtocolSecret measurementProtocolSecret) {
+    CreateMeasurementProtocolSecretRequest request =
+        CreateMeasurementProtocolSecretRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setMeasurementProtocolSecret(measurementProtocolSecret)
+            .build();
+    return createMeasurementProtocolSecret(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a measurement protocol secret.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent =
+   *       MeasurementProtocolSecretName.of(
+   *               "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
+   *           .toString();
+   *   MeasurementProtocolSecret measurementProtocolSecret =
+   *       MeasurementProtocolSecret.newBuilder().build();
+   *   MeasurementProtocolSecret response =
+   *       analyticsAdminServiceClient.createMeasurementProtocolSecret(
+   *           parent, measurementProtocolSecret);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this secret will be created. Any type of
+   *     stream (WebDataStream, IosAppDataStream, AndroidAppDataStream) may be a parent. Format:
+   *     properties/{property}/webDataStreams/{webDataStream}
+   * @param measurementProtocolSecret Required. The measurement protocol secret to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MeasurementProtocolSecret createMeasurementProtocolSecret(
+      String parent, MeasurementProtocolSecret measurementProtocolSecret) {
+    CreateMeasurementProtocolSecretRequest request =
+        CreateMeasurementProtocolSecretRequest.newBuilder()
+            .setParent(parent)
+            .setMeasurementProtocolSecret(measurementProtocolSecret)
+            .build();
+    return createMeasurementProtocolSecret(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a measurement protocol secret.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateMeasurementProtocolSecretRequest request =
+   *       CreateMeasurementProtocolSecretRequest.newBuilder()
+   *           .setParent(
+   *               MeasurementProtocolSecretName.of(
+   *                       "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
+   *                   .toString())
+   *           .setMeasurementProtocolSecret(MeasurementProtocolSecret.newBuilder().build())
+   *           .build();
+   *   MeasurementProtocolSecret response =
+   *       analyticsAdminServiceClient.createMeasurementProtocolSecret(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MeasurementProtocolSecret createMeasurementProtocolSecret(
+      CreateMeasurementProtocolSecretRequest request) {
+    return createMeasurementProtocolSecretCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a measurement protocol secret.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateMeasurementProtocolSecretRequest request =
+   *       CreateMeasurementProtocolSecretRequest.newBuilder()
+   *           .setParent(
+   *               MeasurementProtocolSecretName.of(
+   *                       "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
+   *                   .toString())
+   *           .setMeasurementProtocolSecret(MeasurementProtocolSecret.newBuilder().build())
+   *           .build();
+   *   ApiFuture<MeasurementProtocolSecret> future =
+   *       analyticsAdminServiceClient.createMeasurementProtocolSecretCallable().futureCall(request);
+   *   // Do something.
+   *   MeasurementProtocolSecret response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      createMeasurementProtocolSecretCallable() {
+    return stub.createMeasurementProtocolSecretCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes target MeasurementProtocolSecret.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   MeasurementProtocolSecretName name =
+   *       MeasurementProtocolSecretName.of(
+   *           "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]");
+   *   analyticsAdminServiceClient.deleteMeasurementProtocolSecret(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the MeasurementProtocolSecret to delete. Format:
+   *     properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
+   *     Note: Any type of stream (WebDataStream, IosAppDataStream, AndroidAppDataStream) may be a
+   *     parent.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMeasurementProtocolSecret(MeasurementProtocolSecretName name) {
+    DeleteMeasurementProtocolSecretRequest request =
+        DeleteMeasurementProtocolSecretRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteMeasurementProtocolSecret(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes target MeasurementProtocolSecret.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       MeasurementProtocolSecretName.of(
+   *               "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
+   *           .toString();
+   *   analyticsAdminServiceClient.deleteMeasurementProtocolSecret(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the MeasurementProtocolSecret to delete. Format:
+   *     properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
+   *     Note: Any type of stream (WebDataStream, IosAppDataStream, AndroidAppDataStream) may be a
+   *     parent.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMeasurementProtocolSecret(String name) {
+    DeleteMeasurementProtocolSecretRequest request =
+        DeleteMeasurementProtocolSecretRequest.newBuilder().setName(name).build();
+    deleteMeasurementProtocolSecret(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes target MeasurementProtocolSecret.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteMeasurementProtocolSecretRequest request =
+   *       DeleteMeasurementProtocolSecretRequest.newBuilder()
+   *           .setName(
+   *               MeasurementProtocolSecretName.of(
+   *                       "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
+   *                   .toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteMeasurementProtocolSecret(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMeasurementProtocolSecret(
+      DeleteMeasurementProtocolSecretRequest request) {
+    deleteMeasurementProtocolSecretCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes target MeasurementProtocolSecret.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteMeasurementProtocolSecretRequest request =
+   *       DeleteMeasurementProtocolSecretRequest.newBuilder()
+   *           .setName(
+   *               MeasurementProtocolSecretName.of(
+   *                       "[PROPERTY]", "[WEB_DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteMeasurementProtocolSecretCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteMeasurementProtocolSecretRequest, Empty>
+      deleteMeasurementProtocolSecretCallable() {
+    return stub.deleteMeasurementProtocolSecretCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a measurement protocol secret.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   MeasurementProtocolSecret measurementProtocolSecret =
+   *       MeasurementProtocolSecret.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   MeasurementProtocolSecret response =
+   *       analyticsAdminServiceClient.updateMeasurementProtocolSecret(
+   *           measurementProtocolSecret, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param measurementProtocolSecret Required. The measurement protocol secret to update.
+   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MeasurementProtocolSecret updateMeasurementProtocolSecret(
+      MeasurementProtocolSecret measurementProtocolSecret, FieldMask updateMask) {
+    UpdateMeasurementProtocolSecretRequest request =
+        UpdateMeasurementProtocolSecretRequest.newBuilder()
+            .setMeasurementProtocolSecret(measurementProtocolSecret)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateMeasurementProtocolSecret(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a measurement protocol secret.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateMeasurementProtocolSecretRequest request =
+   *       UpdateMeasurementProtocolSecretRequest.newBuilder()
+   *           .setMeasurementProtocolSecret(MeasurementProtocolSecret.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   MeasurementProtocolSecret response =
+   *       analyticsAdminServiceClient.updateMeasurementProtocolSecret(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MeasurementProtocolSecret updateMeasurementProtocolSecret(
+      UpdateMeasurementProtocolSecretRequest request) {
+    return updateMeasurementProtocolSecretCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a measurement protocol secret.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateMeasurementProtocolSecretRequest request =
+   *       UpdateMeasurementProtocolSecretRequest.newBuilder()
+   *           .setMeasurementProtocolSecret(MeasurementProtocolSecret.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<MeasurementProtocolSecret> future =
+   *       analyticsAdminServiceClient.updateMeasurementProtocolSecretCallable().futureCall(request);
+   *   // Do something.
+   *   MeasurementProtocolSecret response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      updateMeasurementProtocolSecretCallable() {
+    return stub.updateMeasurementProtocolSecretCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Searches through all changes to an account or its children given the specified set of filters.
    *
    * <p>Sample code:
@@ -4952,6 +5572,1736 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   public final UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
       searchChangeHistoryEventsCallable() {
     return stub.searchChangeHistoryEventsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for Google Signals settings for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GoogleSignalsSettingsName name = GoogleSignalsSettingsName.of("[PROPERTY]");
+   *   GoogleSignalsSettings response = analyticsAdminServiceClient.getGoogleSignalsSettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the google signals settings to retrieve. Format:
+   *     properties/{property}/googleSignalsSettings
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GoogleSignalsSettings getGoogleSignalsSettings(GoogleSignalsSettingsName name) {
+    GetGoogleSignalsSettingsRequest request =
+        GetGoogleSignalsSettingsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getGoogleSignalsSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for Google Signals settings for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = GoogleSignalsSettingsName.of("[PROPERTY]").toString();
+   *   GoogleSignalsSettings response = analyticsAdminServiceClient.getGoogleSignalsSettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the google signals settings to retrieve. Format:
+   *     properties/{property}/googleSignalsSettings
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GoogleSignalsSettings getGoogleSignalsSettings(String name) {
+    GetGoogleSignalsSettingsRequest request =
+        GetGoogleSignalsSettingsRequest.newBuilder().setName(name).build();
+    return getGoogleSignalsSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for Google Signals settings for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetGoogleSignalsSettingsRequest request =
+   *       GetGoogleSignalsSettingsRequest.newBuilder()
+   *           .setName(GoogleSignalsSettingsName.of("[PROPERTY]").toString())
+   *           .build();
+   *   GoogleSignalsSettings response =
+   *       analyticsAdminServiceClient.getGoogleSignalsSettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GoogleSignalsSettings getGoogleSignalsSettings(
+      GetGoogleSignalsSettingsRequest request) {
+    return getGoogleSignalsSettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for Google Signals settings for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetGoogleSignalsSettingsRequest request =
+   *       GetGoogleSignalsSettingsRequest.newBuilder()
+   *           .setName(GoogleSignalsSettingsName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<GoogleSignalsSettings> future =
+   *       analyticsAdminServiceClient.getGoogleSignalsSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   GoogleSignalsSettings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+      getGoogleSignalsSettingsCallable() {
+    return stub.getGoogleSignalsSettingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates Google Signals settings for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GoogleSignalsSettings googleSignalsSettings = GoogleSignalsSettings.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   GoogleSignalsSettings response =
+   *       analyticsAdminServiceClient.updateGoogleSignalsSettings(
+   *           googleSignalsSettings, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param googleSignalsSettings Required. The settings to update. The `name` field is used to
+   *     identify the settings to be updated.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GoogleSignalsSettings updateGoogleSignalsSettings(
+      GoogleSignalsSettings googleSignalsSettings, FieldMask updateMask) {
+    UpdateGoogleSignalsSettingsRequest request =
+        UpdateGoogleSignalsSettingsRequest.newBuilder()
+            .setGoogleSignalsSettings(googleSignalsSettings)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateGoogleSignalsSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates Google Signals settings for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateGoogleSignalsSettingsRequest request =
+   *       UpdateGoogleSignalsSettingsRequest.newBuilder()
+   *           .setGoogleSignalsSettings(GoogleSignalsSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   GoogleSignalsSettings response =
+   *       analyticsAdminServiceClient.updateGoogleSignalsSettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GoogleSignalsSettings updateGoogleSignalsSettings(
+      UpdateGoogleSignalsSettingsRequest request) {
+    return updateGoogleSignalsSettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates Google Signals settings for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateGoogleSignalsSettingsRequest request =
+   *       UpdateGoogleSignalsSettingsRequest.newBuilder()
+   *           .setGoogleSignalsSettings(GoogleSignalsSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<GoogleSignalsSettings> future =
+   *       analyticsAdminServiceClient.updateGoogleSignalsSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   GoogleSignalsSettings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+      updateGoogleSignalsSettingsCallable() {
+    return stub.updateGoogleSignalsSettingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a conversion event with the specified attributes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   ConversionEvent conversionEvent = ConversionEvent.newBuilder().build();
+   *   ConversionEvent response =
+   *       analyticsAdminServiceClient.createConversionEvent(parent, conversionEvent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent property where this conversion event
+   *     will be created. Format: properties/123
+   * @param conversionEvent Required. The conversion event to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ConversionEvent createConversionEvent(
+      PropertyName parent, ConversionEvent conversionEvent) {
+    CreateConversionEventRequest request =
+        CreateConversionEventRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setConversionEvent(conversionEvent)
+            .build();
+    return createConversionEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a conversion event with the specified attributes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString();
+   *   ConversionEvent conversionEvent = ConversionEvent.newBuilder().build();
+   *   ConversionEvent response =
+   *       analyticsAdminServiceClient.createConversionEvent(parent, conversionEvent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent property where this conversion event
+   *     will be created. Format: properties/123
+   * @param conversionEvent Required. The conversion event to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ConversionEvent createConversionEvent(
+      String parent, ConversionEvent conversionEvent) {
+    CreateConversionEventRequest request =
+        CreateConversionEventRequest.newBuilder()
+            .setParent(parent)
+            .setConversionEvent(conversionEvent)
+            .build();
+    return createConversionEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a conversion event with the specified attributes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateConversionEventRequest request =
+   *       CreateConversionEventRequest.newBuilder()
+   *           .setConversionEvent(ConversionEvent.newBuilder().build())
+   *           .setParent(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+   *           .build();
+   *   ConversionEvent response = analyticsAdminServiceClient.createConversionEvent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ConversionEvent createConversionEvent(CreateConversionEventRequest request) {
+    return createConversionEventCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a conversion event with the specified attributes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateConversionEventRequest request =
+   *       CreateConversionEventRequest.newBuilder()
+   *           .setConversionEvent(ConversionEvent.newBuilder().build())
+   *           .setParent(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+   *           .build();
+   *   ApiFuture<ConversionEvent> future =
+   *       analyticsAdminServiceClient.createConversionEventCallable().futureCall(request);
+   *   // Do something.
+   *   ConversionEvent response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateConversionEventRequest, ConversionEvent>
+      createConversionEventCallable() {
+    return stub.createConversionEventCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a single conversion event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ConversionEventName name = ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]");
+   *   ConversionEvent response = analyticsAdminServiceClient.getConversionEvent(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the conversion event to retrieve. Format:
+   *     properties/{property}/conversionEvents/{conversion_event} Example:
+   *     "properties/123/conversionEvents/456"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ConversionEvent getConversionEvent(ConversionEventName name) {
+    GetConversionEventRequest request =
+        GetConversionEventRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getConversionEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a single conversion event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString();
+   *   ConversionEvent response = analyticsAdminServiceClient.getConversionEvent(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the conversion event to retrieve. Format:
+   *     properties/{property}/conversionEvents/{conversion_event} Example:
+   *     "properties/123/conversionEvents/456"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ConversionEvent getConversionEvent(String name) {
+    GetConversionEventRequest request =
+        GetConversionEventRequest.newBuilder().setName(name).build();
+    return getConversionEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a single conversion event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetConversionEventRequest request =
+   *       GetConversionEventRequest.newBuilder()
+   *           .setName(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+   *           .build();
+   *   ConversionEvent response = analyticsAdminServiceClient.getConversionEvent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ConversionEvent getConversionEvent(GetConversionEventRequest request) {
+    return getConversionEventCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a single conversion event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetConversionEventRequest request =
+   *       GetConversionEventRequest.newBuilder()
+   *           .setName(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+   *           .build();
+   *   ApiFuture<ConversionEvent> future =
+   *       analyticsAdminServiceClient.getConversionEventCallable().futureCall(request);
+   *   // Do something.
+   *   ConversionEvent response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetConversionEventRequest, ConversionEvent>
+      getConversionEventCallable() {
+    return stub.getConversionEventCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a conversion event in a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ConversionEventName name = ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]");
+   *   analyticsAdminServiceClient.deleteConversionEvent(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the conversion event to delete. Format:
+   *     properties/{property}/conversionEvents/{conversion_event} Example:
+   *     "properties/123/conversionEvents/456"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteConversionEvent(ConversionEventName name) {
+    DeleteConversionEventRequest request =
+        DeleteConversionEventRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteConversionEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a conversion event in a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString();
+   *   analyticsAdminServiceClient.deleteConversionEvent(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the conversion event to delete. Format:
+   *     properties/{property}/conversionEvents/{conversion_event} Example:
+   *     "properties/123/conversionEvents/456"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteConversionEvent(String name) {
+    DeleteConversionEventRequest request =
+        DeleteConversionEventRequest.newBuilder().setName(name).build();
+    deleteConversionEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a conversion event in a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteConversionEventRequest request =
+   *       DeleteConversionEventRequest.newBuilder()
+   *           .setName(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteConversionEvent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteConversionEvent(DeleteConversionEventRequest request) {
+    deleteConversionEventCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a conversion event in a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteConversionEventRequest request =
+   *       DeleteConversionEventRequest.newBuilder()
+   *           .setName(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteConversionEventCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteConversionEventRequest, Empty> deleteConversionEventCallable() {
+    return stub.deleteConversionEventCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of conversion events in the specified parent property.
+   *
+   * <p>Returns an empty list if no conversion events are found.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (ConversionEvent element :
+   *       analyticsAdminServiceClient.listConversionEvents(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent property. Example: 'properties/123'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListConversionEventsPagedResponse listConversionEvents(PropertyName parent) {
+    ListConversionEventsRequest request =
+        ListConversionEventsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listConversionEvents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of conversion events in the specified parent property.
+   *
+   * <p>Returns an empty list if no conversion events are found.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString();
+   *   for (ConversionEvent element :
+   *       analyticsAdminServiceClient.listConversionEvents(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent property. Example: 'properties/123'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListConversionEventsPagedResponse listConversionEvents(String parent) {
+    ListConversionEventsRequest request =
+        ListConversionEventsRequest.newBuilder().setParent(parent).build();
+    return listConversionEvents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of conversion events in the specified parent property.
+   *
+   * <p>Returns an empty list if no conversion events are found.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListConversionEventsRequest request =
+   *       ListConversionEventsRequest.newBuilder()
+   *           .setParent(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ConversionEvent element :
+   *       analyticsAdminServiceClient.listConversionEvents(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListConversionEventsPagedResponse listConversionEvents(
+      ListConversionEventsRequest request) {
+    return listConversionEventsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of conversion events in the specified parent property.
+   *
+   * <p>Returns an empty list if no conversion events are found.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListConversionEventsRequest request =
+   *       ListConversionEventsRequest.newBuilder()
+   *           .setParent(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ConversionEvent> future =
+   *       analyticsAdminServiceClient.listConversionEventsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ConversionEvent element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListConversionEventsRequest, ListConversionEventsPagedResponse>
+      listConversionEventsPagedCallable() {
+    return stub.listConversionEventsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of conversion events in the specified parent property.
+   *
+   * <p>Returns an empty list if no conversion events are found.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListConversionEventsRequest request =
+   *       ListConversionEventsRequest.newBuilder()
+   *           .setParent(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListConversionEventsResponse response =
+   *         analyticsAdminServiceClient.listConversionEventsCallable().call(request);
+   *     for (ConversionEvent element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListConversionEventsRequest, ListConversionEventsResponse>
+      listConversionEventsCallable() {
+    return stub.listConversionEventsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CustomDimension.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   CustomDimension customDimension = CustomDimension.newBuilder().build();
+   *   CustomDimension response =
+   *       analyticsAdminServiceClient.createCustomDimension(parent, customDimension);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @param customDimension Required. The CustomDimension to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomDimension createCustomDimension(
+      PropertyName parent, CustomDimension customDimension) {
+    CreateCustomDimensionRequest request =
+        CreateCustomDimensionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setCustomDimension(customDimension)
+            .build();
+    return createCustomDimension(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CustomDimension.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = CustomDimensionName.of("[PROPERTY]").toString();
+   *   CustomDimension customDimension = CustomDimension.newBuilder().build();
+   *   CustomDimension response =
+   *       analyticsAdminServiceClient.createCustomDimension(parent, customDimension);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @param customDimension Required. The CustomDimension to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomDimension createCustomDimension(
+      String parent, CustomDimension customDimension) {
+    CreateCustomDimensionRequest request =
+        CreateCustomDimensionRequest.newBuilder()
+            .setParent(parent)
+            .setCustomDimension(customDimension)
+            .build();
+    return createCustomDimension(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CustomDimension.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateCustomDimensionRequest request =
+   *       CreateCustomDimensionRequest.newBuilder()
+   *           .setParent(CustomDimensionName.of("[PROPERTY]").toString())
+   *           .setCustomDimension(CustomDimension.newBuilder().build())
+   *           .build();
+   *   CustomDimension response = analyticsAdminServiceClient.createCustomDimension(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomDimension createCustomDimension(CreateCustomDimensionRequest request) {
+    return createCustomDimensionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CustomDimension.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateCustomDimensionRequest request =
+   *       CreateCustomDimensionRequest.newBuilder()
+   *           .setParent(CustomDimensionName.of("[PROPERTY]").toString())
+   *           .setCustomDimension(CustomDimension.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CustomDimension> future =
+   *       analyticsAdminServiceClient.createCustomDimensionCallable().futureCall(request);
+   *   // Do something.
+   *   CustomDimension response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateCustomDimensionRequest, CustomDimension>
+      createCustomDimensionCallable() {
+    return stub.createCustomDimensionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a CustomDimension on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CustomDimension customDimension = CustomDimension.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   CustomDimension response =
+   *       analyticsAdminServiceClient.updateCustomDimension(customDimension, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param customDimension The CustomDimension to update
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
+   *     fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomDimension updateCustomDimension(
+      CustomDimension customDimension, FieldMask updateMask) {
+    UpdateCustomDimensionRequest request =
+        UpdateCustomDimensionRequest.newBuilder()
+            .setCustomDimension(customDimension)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateCustomDimension(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a CustomDimension on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateCustomDimensionRequest request =
+   *       UpdateCustomDimensionRequest.newBuilder()
+   *           .setCustomDimension(CustomDimension.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   CustomDimension response = analyticsAdminServiceClient.updateCustomDimension(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomDimension updateCustomDimension(UpdateCustomDimensionRequest request) {
+    return updateCustomDimensionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a CustomDimension on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateCustomDimensionRequest request =
+   *       UpdateCustomDimensionRequest.newBuilder()
+   *           .setCustomDimension(CustomDimension.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CustomDimension> future =
+   *       analyticsAdminServiceClient.updateCustomDimensionCallable().futureCall(request);
+   *   // Do something.
+   *   CustomDimension response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCustomDimensionRequest, CustomDimension>
+      updateCustomDimensionCallable() {
+    return stub.updateCustomDimensionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomDimensions on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (CustomDimension element :
+   *       analyticsAdminServiceClient.listCustomDimensions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomDimensionsPagedResponse listCustomDimensions(PropertyName parent) {
+    ListCustomDimensionsRequest request =
+        ListCustomDimensionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listCustomDimensions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomDimensions on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = CustomDimensionName.of("[PROPERTY]").toString();
+   *   for (CustomDimension element :
+   *       analyticsAdminServiceClient.listCustomDimensions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomDimensionsPagedResponse listCustomDimensions(String parent) {
+    ListCustomDimensionsRequest request =
+        ListCustomDimensionsRequest.newBuilder().setParent(parent).build();
+    return listCustomDimensions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomDimensions on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListCustomDimensionsRequest request =
+   *       ListCustomDimensionsRequest.newBuilder()
+   *           .setParent(CustomDimensionName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (CustomDimension element :
+   *       analyticsAdminServiceClient.listCustomDimensions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomDimensionsPagedResponse listCustomDimensions(
+      ListCustomDimensionsRequest request) {
+    return listCustomDimensionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomDimensions on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListCustomDimensionsRequest request =
+   *       ListCustomDimensionsRequest.newBuilder()
+   *           .setParent(CustomDimensionName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<CustomDimension> future =
+   *       analyticsAdminServiceClient.listCustomDimensionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (CustomDimension element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListCustomDimensionsRequest, ListCustomDimensionsPagedResponse>
+      listCustomDimensionsPagedCallable() {
+    return stub.listCustomDimensionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomDimensions on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListCustomDimensionsRequest request =
+   *       ListCustomDimensionsRequest.newBuilder()
+   *           .setParent(CustomDimensionName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListCustomDimensionsResponse response =
+   *         analyticsAdminServiceClient.listCustomDimensionsCallable().call(request);
+   *     for (CustomDimension element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListCustomDimensionsRequest, ListCustomDimensionsResponse>
+      listCustomDimensionsCallable() {
+    return stub.listCustomDimensionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Archives a CustomDimension on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CustomDimensionName name = CustomDimensionName.of("[PROPERTY]");
+   *   analyticsAdminServiceClient.archiveCustomDimension(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the CustomDimension to archive. Example format:
+   *     properties/1234/customDimensions/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void archiveCustomDimension(CustomDimensionName name) {
+    ArchiveCustomDimensionRequest request =
+        ArchiveCustomDimensionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    archiveCustomDimension(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Archives a CustomDimension on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = CustomDimensionName.of("[PROPERTY]").toString();
+   *   analyticsAdminServiceClient.archiveCustomDimension(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the CustomDimension to archive. Example format:
+   *     properties/1234/customDimensions/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void archiveCustomDimension(String name) {
+    ArchiveCustomDimensionRequest request =
+        ArchiveCustomDimensionRequest.newBuilder().setName(name).build();
+    archiveCustomDimension(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Archives a CustomDimension on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ArchiveCustomDimensionRequest request =
+   *       ArchiveCustomDimensionRequest.newBuilder()
+   *           .setName(CustomDimensionName.of("[PROPERTY]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.archiveCustomDimension(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void archiveCustomDimension(ArchiveCustomDimensionRequest request) {
+    archiveCustomDimensionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Archives a CustomDimension on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ArchiveCustomDimensionRequest request =
+   *       ArchiveCustomDimensionRequest.newBuilder()
+   *           .setName(CustomDimensionName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.archiveCustomDimensionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ArchiveCustomDimensionRequest, Empty>
+      archiveCustomDimensionCallable() {
+    return stub.archiveCustomDimensionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single CustomDimension.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CustomDimensionName name = CustomDimensionName.of("[PROPERTY]");
+   *   CustomDimension response = analyticsAdminServiceClient.getCustomDimension(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the CustomDimension to get. Example format:
+   *     properties/1234/customDimensions/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomDimension getCustomDimension(CustomDimensionName name) {
+    GetCustomDimensionRequest request =
+        GetCustomDimensionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getCustomDimension(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single CustomDimension.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = CustomDimensionName.of("[PROPERTY]").toString();
+   *   CustomDimension response = analyticsAdminServiceClient.getCustomDimension(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the CustomDimension to get. Example format:
+   *     properties/1234/customDimensions/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomDimension getCustomDimension(String name) {
+    GetCustomDimensionRequest request =
+        GetCustomDimensionRequest.newBuilder().setName(name).build();
+    return getCustomDimension(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single CustomDimension.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetCustomDimensionRequest request =
+   *       GetCustomDimensionRequest.newBuilder()
+   *           .setName(CustomDimensionName.of("[PROPERTY]").toString())
+   *           .build();
+   *   CustomDimension response = analyticsAdminServiceClient.getCustomDimension(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomDimension getCustomDimension(GetCustomDimensionRequest request) {
+    return getCustomDimensionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single CustomDimension.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetCustomDimensionRequest request =
+   *       GetCustomDimensionRequest.newBuilder()
+   *           .setName(CustomDimensionName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<CustomDimension> future =
+   *       analyticsAdminServiceClient.getCustomDimensionCallable().futureCall(request);
+   *   // Do something.
+   *   CustomDimension response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetCustomDimensionRequest, CustomDimension>
+      getCustomDimensionCallable() {
+    return stub.getCustomDimensionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CustomMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   CustomMetric customMetric = CustomMetric.newBuilder().build();
+   *   CustomMetric response = analyticsAdminServiceClient.createCustomMetric(parent, customMetric);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @param customMetric Required. The CustomMetric to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomMetric createCustomMetric(PropertyName parent, CustomMetric customMetric) {
+    CreateCustomMetricRequest request =
+        CreateCustomMetricRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setCustomMetric(customMetric)
+            .build();
+    return createCustomMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CustomMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = CustomMetricName.of("[PROPERTY]").toString();
+   *   CustomMetric customMetric = CustomMetric.newBuilder().build();
+   *   CustomMetric response = analyticsAdminServiceClient.createCustomMetric(parent, customMetric);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @param customMetric Required. The CustomMetric to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomMetric createCustomMetric(String parent, CustomMetric customMetric) {
+    CreateCustomMetricRequest request =
+        CreateCustomMetricRequest.newBuilder()
+            .setParent(parent)
+            .setCustomMetric(customMetric)
+            .build();
+    return createCustomMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CustomMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateCustomMetricRequest request =
+   *       CreateCustomMetricRequest.newBuilder()
+   *           .setParent(CustomMetricName.of("[PROPERTY]").toString())
+   *           .setCustomMetric(CustomMetric.newBuilder().build())
+   *           .build();
+   *   CustomMetric response = analyticsAdminServiceClient.createCustomMetric(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomMetric createCustomMetric(CreateCustomMetricRequest request) {
+    return createCustomMetricCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CustomMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateCustomMetricRequest request =
+   *       CreateCustomMetricRequest.newBuilder()
+   *           .setParent(CustomMetricName.of("[PROPERTY]").toString())
+   *           .setCustomMetric(CustomMetric.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CustomMetric> future =
+   *       analyticsAdminServiceClient.createCustomMetricCallable().futureCall(request);
+   *   // Do something.
+   *   CustomMetric response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateCustomMetricRequest, CustomMetric> createCustomMetricCallable() {
+    return stub.createCustomMetricCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a CustomMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CustomMetric customMetric = CustomMetric.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   CustomMetric response =
+   *       analyticsAdminServiceClient.updateCustomMetric(customMetric, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param customMetric The CustomMetric to update
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
+   *     fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomMetric updateCustomMetric(CustomMetric customMetric, FieldMask updateMask) {
+    UpdateCustomMetricRequest request =
+        UpdateCustomMetricRequest.newBuilder()
+            .setCustomMetric(customMetric)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateCustomMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a CustomMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateCustomMetricRequest request =
+   *       UpdateCustomMetricRequest.newBuilder()
+   *           .setCustomMetric(CustomMetric.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   CustomMetric response = analyticsAdminServiceClient.updateCustomMetric(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomMetric updateCustomMetric(UpdateCustomMetricRequest request) {
+    return updateCustomMetricCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a CustomMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateCustomMetricRequest request =
+   *       UpdateCustomMetricRequest.newBuilder()
+   *           .setCustomMetric(CustomMetric.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CustomMetric> future =
+   *       analyticsAdminServiceClient.updateCustomMetricCallable().futureCall(request);
+   *   // Do something.
+   *   CustomMetric response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCustomMetricRequest, CustomMetric> updateCustomMetricCallable() {
+    return stub.updateCustomMetricCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomMetrics on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (CustomMetric element :
+   *       analyticsAdminServiceClient.listCustomMetrics(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomMetricsPagedResponse listCustomMetrics(PropertyName parent) {
+    ListCustomMetricsRequest request =
+        ListCustomMetricsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listCustomMetrics(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomMetrics on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = CustomMetricName.of("[PROPERTY]").toString();
+   *   for (CustomMetric element :
+   *       analyticsAdminServiceClient.listCustomMetrics(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomMetricsPagedResponse listCustomMetrics(String parent) {
+    ListCustomMetricsRequest request =
+        ListCustomMetricsRequest.newBuilder().setParent(parent).build();
+    return listCustomMetrics(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomMetrics on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListCustomMetricsRequest request =
+   *       ListCustomMetricsRequest.newBuilder()
+   *           .setParent(CustomMetricName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (CustomMetric element :
+   *       analyticsAdminServiceClient.listCustomMetrics(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomMetricsPagedResponse listCustomMetrics(ListCustomMetricsRequest request) {
+    return listCustomMetricsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomMetrics on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListCustomMetricsRequest request =
+   *       ListCustomMetricsRequest.newBuilder()
+   *           .setParent(CustomMetricName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<CustomMetric> future =
+   *       analyticsAdminServiceClient.listCustomMetricsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (CustomMetric element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListCustomMetricsRequest, ListCustomMetricsPagedResponse>
+      listCustomMetricsPagedCallable() {
+    return stub.listCustomMetricsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomMetrics on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListCustomMetricsRequest request =
+   *       ListCustomMetricsRequest.newBuilder()
+   *           .setParent(CustomMetricName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListCustomMetricsResponse response =
+   *         analyticsAdminServiceClient.listCustomMetricsCallable().call(request);
+   *     for (CustomMetric element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListCustomMetricsRequest, ListCustomMetricsResponse>
+      listCustomMetricsCallable() {
+    return stub.listCustomMetricsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Archives a CustomMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CustomMetricName name = CustomMetricName.of("[PROPERTY]");
+   *   analyticsAdminServiceClient.archiveCustomMetric(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the CustomMetric to archive. Example format:
+   *     properties/1234/customMetrics/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void archiveCustomMetric(CustomMetricName name) {
+    ArchiveCustomMetricRequest request =
+        ArchiveCustomMetricRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    archiveCustomMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Archives a CustomMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = CustomMetricName.of("[PROPERTY]").toString();
+   *   analyticsAdminServiceClient.archiveCustomMetric(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the CustomMetric to archive. Example format:
+   *     properties/1234/customMetrics/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void archiveCustomMetric(String name) {
+    ArchiveCustomMetricRequest request =
+        ArchiveCustomMetricRequest.newBuilder().setName(name).build();
+    archiveCustomMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Archives a CustomMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ArchiveCustomMetricRequest request =
+   *       ArchiveCustomMetricRequest.newBuilder()
+   *           .setName(CustomMetricName.of("[PROPERTY]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.archiveCustomMetric(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void archiveCustomMetric(ArchiveCustomMetricRequest request) {
+    archiveCustomMetricCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Archives a CustomMetric on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ArchiveCustomMetricRequest request =
+   *       ArchiveCustomMetricRequest.newBuilder()
+   *           .setName(CustomMetricName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.archiveCustomMetricCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ArchiveCustomMetricRequest, Empty> archiveCustomMetricCallable() {
+    return stub.archiveCustomMetricCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single CustomMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CustomMetricName name = CustomMetricName.of("[PROPERTY]");
+   *   CustomMetric response = analyticsAdminServiceClient.getCustomMetric(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the CustomMetric to get. Example format:
+   *     properties/1234/customMetrics/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomMetric getCustomMetric(CustomMetricName name) {
+    GetCustomMetricRequest request =
+        GetCustomMetricRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getCustomMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single CustomMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = CustomMetricName.of("[PROPERTY]").toString();
+   *   CustomMetric response = analyticsAdminServiceClient.getCustomMetric(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the CustomMetric to get. Example format:
+   *     properties/1234/customMetrics/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomMetric getCustomMetric(String name) {
+    GetCustomMetricRequest request = GetCustomMetricRequest.newBuilder().setName(name).build();
+    return getCustomMetric(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single CustomMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetCustomMetricRequest request =
+   *       GetCustomMetricRequest.newBuilder()
+   *           .setName(CustomMetricName.of("[PROPERTY]").toString())
+   *           .build();
+   *   CustomMetric response = analyticsAdminServiceClient.getCustomMetric(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomMetric getCustomMetric(GetCustomMetricRequest request) {
+    return getCustomMetricCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single CustomMetric.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetCustomMetricRequest request =
+   *       GetCustomMetricRequest.newBuilder()
+   *           .setName(CustomMetricName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<CustomMetric> future =
+   *       analyticsAdminServiceClient.getCustomMetricCallable().futureCall(request);
+   *   // Do something.
+   *   CustomMetric response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetCustomMetricRequest, CustomMetric> getCustomMetricCallable() {
+    return stub.getCustomMetricCallable();
   }
 
   @Override
@@ -5842,6 +8192,110 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     }
   }
 
+  public static class ListMeasurementProtocolSecretsPagedResponse
+      extends AbstractPagedListResponse<
+          ListMeasurementProtocolSecretsRequest,
+          ListMeasurementProtocolSecretsResponse,
+          MeasurementProtocolSecret,
+          ListMeasurementProtocolSecretsPage,
+          ListMeasurementProtocolSecretsFixedSizeCollection> {
+
+    public static ApiFuture<ListMeasurementProtocolSecretsPagedResponse> createAsync(
+        PageContext<
+                ListMeasurementProtocolSecretsRequest,
+                ListMeasurementProtocolSecretsResponse,
+                MeasurementProtocolSecret>
+            context,
+        ApiFuture<ListMeasurementProtocolSecretsResponse> futureResponse) {
+      ApiFuture<ListMeasurementProtocolSecretsPage> futurePage =
+          ListMeasurementProtocolSecretsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<
+              ListMeasurementProtocolSecretsPage, ListMeasurementProtocolSecretsPagedResponse>() {
+            @Override
+            public ListMeasurementProtocolSecretsPagedResponse apply(
+                ListMeasurementProtocolSecretsPage input) {
+              return new ListMeasurementProtocolSecretsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListMeasurementProtocolSecretsPagedResponse(ListMeasurementProtocolSecretsPage page) {
+      super(page, ListMeasurementProtocolSecretsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListMeasurementProtocolSecretsPage
+      extends AbstractPage<
+          ListMeasurementProtocolSecretsRequest,
+          ListMeasurementProtocolSecretsResponse,
+          MeasurementProtocolSecret,
+          ListMeasurementProtocolSecretsPage> {
+
+    private ListMeasurementProtocolSecretsPage(
+        PageContext<
+                ListMeasurementProtocolSecretsRequest,
+                ListMeasurementProtocolSecretsResponse,
+                MeasurementProtocolSecret>
+            context,
+        ListMeasurementProtocolSecretsResponse response) {
+      super(context, response);
+    }
+
+    private static ListMeasurementProtocolSecretsPage createEmptyPage() {
+      return new ListMeasurementProtocolSecretsPage(null, null);
+    }
+
+    @Override
+    protected ListMeasurementProtocolSecretsPage createPage(
+        PageContext<
+                ListMeasurementProtocolSecretsRequest,
+                ListMeasurementProtocolSecretsResponse,
+                MeasurementProtocolSecret>
+            context,
+        ListMeasurementProtocolSecretsResponse response) {
+      return new ListMeasurementProtocolSecretsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListMeasurementProtocolSecretsPage> createPageAsync(
+        PageContext<
+                ListMeasurementProtocolSecretsRequest,
+                ListMeasurementProtocolSecretsResponse,
+                MeasurementProtocolSecret>
+            context,
+        ApiFuture<ListMeasurementProtocolSecretsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListMeasurementProtocolSecretsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListMeasurementProtocolSecretsRequest,
+          ListMeasurementProtocolSecretsResponse,
+          MeasurementProtocolSecret,
+          ListMeasurementProtocolSecretsPage,
+          ListMeasurementProtocolSecretsFixedSizeCollection> {
+
+    private ListMeasurementProtocolSecretsFixedSizeCollection(
+        List<ListMeasurementProtocolSecretsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListMeasurementProtocolSecretsFixedSizeCollection createEmptyCollection() {
+      return new ListMeasurementProtocolSecretsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListMeasurementProtocolSecretsFixedSizeCollection createCollection(
+        List<ListMeasurementProtocolSecretsPage> pages, int collectionSize) {
+      return new ListMeasurementProtocolSecretsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
   public static class SearchChangeHistoryEventsPagedResponse
       extends AbstractPagedListResponse<
           SearchChangeHistoryEventsRequest,
@@ -5941,6 +8395,269 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected SearchChangeHistoryEventsFixedSizeCollection createCollection(
         List<SearchChangeHistoryEventsPage> pages, int collectionSize) {
       return new SearchChangeHistoryEventsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListConversionEventsPagedResponse
+      extends AbstractPagedListResponse<
+          ListConversionEventsRequest,
+          ListConversionEventsResponse,
+          ConversionEvent,
+          ListConversionEventsPage,
+          ListConversionEventsFixedSizeCollection> {
+
+    public static ApiFuture<ListConversionEventsPagedResponse> createAsync(
+        PageContext<ListConversionEventsRequest, ListConversionEventsResponse, ConversionEvent>
+            context,
+        ApiFuture<ListConversionEventsResponse> futureResponse) {
+      ApiFuture<ListConversionEventsPage> futurePage =
+          ListConversionEventsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListConversionEventsPage, ListConversionEventsPagedResponse>() {
+            @Override
+            public ListConversionEventsPagedResponse apply(ListConversionEventsPage input) {
+              return new ListConversionEventsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListConversionEventsPagedResponse(ListConversionEventsPage page) {
+      super(page, ListConversionEventsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListConversionEventsPage
+      extends AbstractPage<
+          ListConversionEventsRequest,
+          ListConversionEventsResponse,
+          ConversionEvent,
+          ListConversionEventsPage> {
+
+    private ListConversionEventsPage(
+        PageContext<ListConversionEventsRequest, ListConversionEventsResponse, ConversionEvent>
+            context,
+        ListConversionEventsResponse response) {
+      super(context, response);
+    }
+
+    private static ListConversionEventsPage createEmptyPage() {
+      return new ListConversionEventsPage(null, null);
+    }
+
+    @Override
+    protected ListConversionEventsPage createPage(
+        PageContext<ListConversionEventsRequest, ListConversionEventsResponse, ConversionEvent>
+            context,
+        ListConversionEventsResponse response) {
+      return new ListConversionEventsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListConversionEventsPage> createPageAsync(
+        PageContext<ListConversionEventsRequest, ListConversionEventsResponse, ConversionEvent>
+            context,
+        ApiFuture<ListConversionEventsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListConversionEventsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListConversionEventsRequest,
+          ListConversionEventsResponse,
+          ConversionEvent,
+          ListConversionEventsPage,
+          ListConversionEventsFixedSizeCollection> {
+
+    private ListConversionEventsFixedSizeCollection(
+        List<ListConversionEventsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListConversionEventsFixedSizeCollection createEmptyCollection() {
+      return new ListConversionEventsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListConversionEventsFixedSizeCollection createCollection(
+        List<ListConversionEventsPage> pages, int collectionSize) {
+      return new ListConversionEventsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListCustomDimensionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListCustomDimensionsRequest,
+          ListCustomDimensionsResponse,
+          CustomDimension,
+          ListCustomDimensionsPage,
+          ListCustomDimensionsFixedSizeCollection> {
+
+    public static ApiFuture<ListCustomDimensionsPagedResponse> createAsync(
+        PageContext<ListCustomDimensionsRequest, ListCustomDimensionsResponse, CustomDimension>
+            context,
+        ApiFuture<ListCustomDimensionsResponse> futureResponse) {
+      ApiFuture<ListCustomDimensionsPage> futurePage =
+          ListCustomDimensionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListCustomDimensionsPage, ListCustomDimensionsPagedResponse>() {
+            @Override
+            public ListCustomDimensionsPagedResponse apply(ListCustomDimensionsPage input) {
+              return new ListCustomDimensionsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListCustomDimensionsPagedResponse(ListCustomDimensionsPage page) {
+      super(page, ListCustomDimensionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListCustomDimensionsPage
+      extends AbstractPage<
+          ListCustomDimensionsRequest,
+          ListCustomDimensionsResponse,
+          CustomDimension,
+          ListCustomDimensionsPage> {
+
+    private ListCustomDimensionsPage(
+        PageContext<ListCustomDimensionsRequest, ListCustomDimensionsResponse, CustomDimension>
+            context,
+        ListCustomDimensionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListCustomDimensionsPage createEmptyPage() {
+      return new ListCustomDimensionsPage(null, null);
+    }
+
+    @Override
+    protected ListCustomDimensionsPage createPage(
+        PageContext<ListCustomDimensionsRequest, ListCustomDimensionsResponse, CustomDimension>
+            context,
+        ListCustomDimensionsResponse response) {
+      return new ListCustomDimensionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListCustomDimensionsPage> createPageAsync(
+        PageContext<ListCustomDimensionsRequest, ListCustomDimensionsResponse, CustomDimension>
+            context,
+        ApiFuture<ListCustomDimensionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListCustomDimensionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListCustomDimensionsRequest,
+          ListCustomDimensionsResponse,
+          CustomDimension,
+          ListCustomDimensionsPage,
+          ListCustomDimensionsFixedSizeCollection> {
+
+    private ListCustomDimensionsFixedSizeCollection(
+        List<ListCustomDimensionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListCustomDimensionsFixedSizeCollection createEmptyCollection() {
+      return new ListCustomDimensionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListCustomDimensionsFixedSizeCollection createCollection(
+        List<ListCustomDimensionsPage> pages, int collectionSize) {
+      return new ListCustomDimensionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListCustomMetricsPagedResponse
+      extends AbstractPagedListResponse<
+          ListCustomMetricsRequest,
+          ListCustomMetricsResponse,
+          CustomMetric,
+          ListCustomMetricsPage,
+          ListCustomMetricsFixedSizeCollection> {
+
+    public static ApiFuture<ListCustomMetricsPagedResponse> createAsync(
+        PageContext<ListCustomMetricsRequest, ListCustomMetricsResponse, CustomMetric> context,
+        ApiFuture<ListCustomMetricsResponse> futureResponse) {
+      ApiFuture<ListCustomMetricsPage> futurePage =
+          ListCustomMetricsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListCustomMetricsPage, ListCustomMetricsPagedResponse>() {
+            @Override
+            public ListCustomMetricsPagedResponse apply(ListCustomMetricsPage input) {
+              return new ListCustomMetricsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListCustomMetricsPagedResponse(ListCustomMetricsPage page) {
+      super(page, ListCustomMetricsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListCustomMetricsPage
+      extends AbstractPage<
+          ListCustomMetricsRequest,
+          ListCustomMetricsResponse,
+          CustomMetric,
+          ListCustomMetricsPage> {
+
+    private ListCustomMetricsPage(
+        PageContext<ListCustomMetricsRequest, ListCustomMetricsResponse, CustomMetric> context,
+        ListCustomMetricsResponse response) {
+      super(context, response);
+    }
+
+    private static ListCustomMetricsPage createEmptyPage() {
+      return new ListCustomMetricsPage(null, null);
+    }
+
+    @Override
+    protected ListCustomMetricsPage createPage(
+        PageContext<ListCustomMetricsRequest, ListCustomMetricsResponse, CustomMetric> context,
+        ListCustomMetricsResponse response) {
+      return new ListCustomMetricsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListCustomMetricsPage> createPageAsync(
+        PageContext<ListCustomMetricsRequest, ListCustomMetricsResponse, CustomMetric> context,
+        ApiFuture<ListCustomMetricsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListCustomMetricsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListCustomMetricsRequest,
+          ListCustomMetricsResponse,
+          CustomMetric,
+          ListCustomMetricsPage,
+          ListCustomMetricsFixedSizeCollection> {
+
+    private ListCustomMetricsFixedSizeCollection(
+        List<ListCustomMetricsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListCustomMetricsFixedSizeCollection createEmptyCollection() {
+      return new ListCustomMetricsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListCustomMetricsFixedSizeCollection createCollection(
+        List<ListCustomMetricsPage> pages, int collectionSize) {
+      return new ListCustomMetricsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

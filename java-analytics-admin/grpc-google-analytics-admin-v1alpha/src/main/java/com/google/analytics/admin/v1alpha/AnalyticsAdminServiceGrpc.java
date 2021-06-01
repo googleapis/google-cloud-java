@@ -2282,6 +2282,271 @@ public final class AnalyticsAdminServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest,
+          com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+      getGetMeasurementProtocolSecretMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMeasurementProtocolSecret",
+      requestType = com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest,
+          com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+      getGetMeasurementProtocolSecretMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest,
+            com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+        getGetMeasurementProtocolSecretMethod;
+    if ((getGetMeasurementProtocolSecretMethod =
+            AnalyticsAdminServiceGrpc.getGetMeasurementProtocolSecretMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetMeasurementProtocolSecretMethod =
+                AnalyticsAdminServiceGrpc.getGetMeasurementProtocolSecretMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetMeasurementProtocolSecretMethod =
+              getGetMeasurementProtocolSecretMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest,
+                          com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetMeasurementProtocolSecret"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.MeasurementProtocolSecret
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "GetMeasurementProtocolSecret"))
+                      .build();
+        }
+      }
+    }
+    return getGetMeasurementProtocolSecretMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest,
+          com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse>
+      getListMeasurementProtocolSecretsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMeasurementProtocolSecrets",
+      requestType = com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest.class,
+      responseType =
+          com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest,
+          com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse>
+      getListMeasurementProtocolSecretsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest,
+            com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse>
+        getListMeasurementProtocolSecretsMethod;
+    if ((getListMeasurementProtocolSecretsMethod =
+            AnalyticsAdminServiceGrpc.getListMeasurementProtocolSecretsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListMeasurementProtocolSecretsMethod =
+                AnalyticsAdminServiceGrpc.getListMeasurementProtocolSecretsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListMeasurementProtocolSecretsMethod =
+              getListMeasurementProtocolSecretsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest,
+                          com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListMeasurementProtocolSecrets"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .ListMeasurementProtocolSecretsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .ListMeasurementProtocolSecretsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "ListMeasurementProtocolSecrets"))
+                      .build();
+        }
+      }
+    }
+    return getListMeasurementProtocolSecretsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest,
+          com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+      getCreateMeasurementProtocolSecretMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateMeasurementProtocolSecret",
+      requestType = com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest,
+          com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+      getCreateMeasurementProtocolSecretMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest,
+            com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+        getCreateMeasurementProtocolSecretMethod;
+    if ((getCreateMeasurementProtocolSecretMethod =
+            AnalyticsAdminServiceGrpc.getCreateMeasurementProtocolSecretMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateMeasurementProtocolSecretMethod =
+                AnalyticsAdminServiceGrpc.getCreateMeasurementProtocolSecretMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateMeasurementProtocolSecretMethod =
+              getCreateMeasurementProtocolSecretMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest,
+                          com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateMeasurementProtocolSecret"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .CreateMeasurementProtocolSecretRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.MeasurementProtocolSecret
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "CreateMeasurementProtocolSecret"))
+                      .build();
+        }
+      }
+    }
+    return getCreateMeasurementProtocolSecretMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest,
+          com.google.protobuf.Empty>
+      getDeleteMeasurementProtocolSecretMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteMeasurementProtocolSecret",
+      requestType = com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest,
+          com.google.protobuf.Empty>
+      getDeleteMeasurementProtocolSecretMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest,
+            com.google.protobuf.Empty>
+        getDeleteMeasurementProtocolSecretMethod;
+    if ((getDeleteMeasurementProtocolSecretMethod =
+            AnalyticsAdminServiceGrpc.getDeleteMeasurementProtocolSecretMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteMeasurementProtocolSecretMethod =
+                AnalyticsAdminServiceGrpc.getDeleteMeasurementProtocolSecretMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteMeasurementProtocolSecretMethod =
+              getDeleteMeasurementProtocolSecretMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteMeasurementProtocolSecret"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .DeleteMeasurementProtocolSecretRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "DeleteMeasurementProtocolSecret"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteMeasurementProtocolSecretMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest,
+          com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+      getUpdateMeasurementProtocolSecretMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateMeasurementProtocolSecret",
+      requestType = com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest,
+          com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+      getUpdateMeasurementProtocolSecretMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest,
+            com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+        getUpdateMeasurementProtocolSecretMethod;
+    if ((getUpdateMeasurementProtocolSecretMethod =
+            AnalyticsAdminServiceGrpc.getUpdateMeasurementProtocolSecretMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateMeasurementProtocolSecretMethod =
+                AnalyticsAdminServiceGrpc.getUpdateMeasurementProtocolSecretMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateMeasurementProtocolSecretMethod =
+              getUpdateMeasurementProtocolSecretMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest,
+                          com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateMeasurementProtocolSecret"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .UpdateMeasurementProtocolSecretRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.MeasurementProtocolSecret
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateMeasurementProtocolSecret"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateMeasurementProtocolSecretMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest,
           com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse>
       getSearchChangeHistoryEventsMethod;
@@ -2332,6 +2597,810 @@ public final class AnalyticsAdminServiceGrpc {
       }
     }
     return getSearchChangeHistoryEventsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest,
+          com.google.analytics.admin.v1alpha.GoogleSignalsSettings>
+      getGetGoogleSignalsSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetGoogleSignalsSettings",
+      requestType = com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.GoogleSignalsSettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest,
+          com.google.analytics.admin.v1alpha.GoogleSignalsSettings>
+      getGetGoogleSignalsSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest,
+            com.google.analytics.admin.v1alpha.GoogleSignalsSettings>
+        getGetGoogleSignalsSettingsMethod;
+    if ((getGetGoogleSignalsSettingsMethod =
+            AnalyticsAdminServiceGrpc.getGetGoogleSignalsSettingsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetGoogleSignalsSettingsMethod =
+                AnalyticsAdminServiceGrpc.getGetGoogleSignalsSettingsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetGoogleSignalsSettingsMethod =
+              getGetGoogleSignalsSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest,
+                          com.google.analytics.admin.v1alpha.GoogleSignalsSettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetGoogleSignalsSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GoogleSignalsSettings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "GetGoogleSignalsSettings"))
+                      .build();
+        }
+      }
+    }
+    return getGetGoogleSignalsSettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest,
+          com.google.analytics.admin.v1alpha.GoogleSignalsSettings>
+      getUpdateGoogleSignalsSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateGoogleSignalsSettings",
+      requestType = com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.GoogleSignalsSettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest,
+          com.google.analytics.admin.v1alpha.GoogleSignalsSettings>
+      getUpdateGoogleSignalsSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest,
+            com.google.analytics.admin.v1alpha.GoogleSignalsSettings>
+        getUpdateGoogleSignalsSettingsMethod;
+    if ((getUpdateGoogleSignalsSettingsMethod =
+            AnalyticsAdminServiceGrpc.getUpdateGoogleSignalsSettingsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateGoogleSignalsSettingsMethod =
+                AnalyticsAdminServiceGrpc.getUpdateGoogleSignalsSettingsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateGoogleSignalsSettingsMethod =
+              getUpdateGoogleSignalsSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest,
+                          com.google.analytics.admin.v1alpha.GoogleSignalsSettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateGoogleSignalsSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GoogleSignalsSettings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateGoogleSignalsSettings"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateGoogleSignalsSettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateConversionEventRequest,
+          com.google.analytics.admin.v1alpha.ConversionEvent>
+      getCreateConversionEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateConversionEvent",
+      requestType = com.google.analytics.admin.v1alpha.CreateConversionEventRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ConversionEvent.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateConversionEventRequest,
+          com.google.analytics.admin.v1alpha.ConversionEvent>
+      getCreateConversionEventMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateConversionEventRequest,
+            com.google.analytics.admin.v1alpha.ConversionEvent>
+        getCreateConversionEventMethod;
+    if ((getCreateConversionEventMethod = AnalyticsAdminServiceGrpc.getCreateConversionEventMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateConversionEventMethod =
+                AnalyticsAdminServiceGrpc.getCreateConversionEventMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateConversionEventMethod =
+              getCreateConversionEventMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateConversionEventRequest,
+                          com.google.analytics.admin.v1alpha.ConversionEvent>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateConversionEvent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateConversionEventRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ConversionEvent
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "CreateConversionEvent"))
+                      .build();
+        }
+      }
+    }
+    return getCreateConversionEventMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetConversionEventRequest,
+          com.google.analytics.admin.v1alpha.ConversionEvent>
+      getGetConversionEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetConversionEvent",
+      requestType = com.google.analytics.admin.v1alpha.GetConversionEventRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ConversionEvent.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetConversionEventRequest,
+          com.google.analytics.admin.v1alpha.ConversionEvent>
+      getGetConversionEventMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetConversionEventRequest,
+            com.google.analytics.admin.v1alpha.ConversionEvent>
+        getGetConversionEventMethod;
+    if ((getGetConversionEventMethod = AnalyticsAdminServiceGrpc.getGetConversionEventMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetConversionEventMethod = AnalyticsAdminServiceGrpc.getGetConversionEventMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetConversionEventMethod =
+              getGetConversionEventMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetConversionEventRequest,
+                          com.google.analytics.admin.v1alpha.ConversionEvent>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetConversionEvent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetConversionEventRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ConversionEvent
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("GetConversionEvent"))
+                      .build();
+        }
+      }
+    }
+    return getGetConversionEventMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteConversionEventRequest,
+          com.google.protobuf.Empty>
+      getDeleteConversionEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteConversionEvent",
+      requestType = com.google.analytics.admin.v1alpha.DeleteConversionEventRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteConversionEventRequest,
+          com.google.protobuf.Empty>
+      getDeleteConversionEventMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteConversionEventRequest,
+            com.google.protobuf.Empty>
+        getDeleteConversionEventMethod;
+    if ((getDeleteConversionEventMethod = AnalyticsAdminServiceGrpc.getDeleteConversionEventMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteConversionEventMethod =
+                AnalyticsAdminServiceGrpc.getDeleteConversionEventMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteConversionEventMethod =
+              getDeleteConversionEventMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteConversionEventRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteConversionEvent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DeleteConversionEventRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "DeleteConversionEvent"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteConversionEventMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListConversionEventsRequest,
+          com.google.analytics.admin.v1alpha.ListConversionEventsResponse>
+      getListConversionEventsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListConversionEvents",
+      requestType = com.google.analytics.admin.v1alpha.ListConversionEventsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListConversionEventsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListConversionEventsRequest,
+          com.google.analytics.admin.v1alpha.ListConversionEventsResponse>
+      getListConversionEventsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListConversionEventsRequest,
+            com.google.analytics.admin.v1alpha.ListConversionEventsResponse>
+        getListConversionEventsMethod;
+    if ((getListConversionEventsMethod = AnalyticsAdminServiceGrpc.getListConversionEventsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListConversionEventsMethod =
+                AnalyticsAdminServiceGrpc.getListConversionEventsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListConversionEventsMethod =
+              getListConversionEventsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListConversionEventsRequest,
+                          com.google.analytics.admin.v1alpha.ListConversionEventsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListConversionEvents"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListConversionEventsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListConversionEventsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("ListConversionEvents"))
+                      .build();
+        }
+      }
+    }
+    return getListConversionEventsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest,
+          com.google.analytics.admin.v1alpha.CustomDimension>
+      getCreateCustomDimensionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCustomDimension",
+      requestType = com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.CustomDimension.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest,
+          com.google.analytics.admin.v1alpha.CustomDimension>
+      getCreateCustomDimensionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest,
+            com.google.analytics.admin.v1alpha.CustomDimension>
+        getCreateCustomDimensionMethod;
+    if ((getCreateCustomDimensionMethod = AnalyticsAdminServiceGrpc.getCreateCustomDimensionMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateCustomDimensionMethod =
+                AnalyticsAdminServiceGrpc.getCreateCustomDimensionMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateCustomDimensionMethod =
+              getCreateCustomDimensionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest,
+                          com.google.analytics.admin.v1alpha.CustomDimension>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateCustomDimension"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CustomDimension
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "CreateCustomDimension"))
+                      .build();
+        }
+      }
+    }
+    return getCreateCustomDimensionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest,
+          com.google.analytics.admin.v1alpha.CustomDimension>
+      getUpdateCustomDimensionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCustomDimension",
+      requestType = com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.CustomDimension.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest,
+          com.google.analytics.admin.v1alpha.CustomDimension>
+      getUpdateCustomDimensionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest,
+            com.google.analytics.admin.v1alpha.CustomDimension>
+        getUpdateCustomDimensionMethod;
+    if ((getUpdateCustomDimensionMethod = AnalyticsAdminServiceGrpc.getUpdateCustomDimensionMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateCustomDimensionMethod =
+                AnalyticsAdminServiceGrpc.getUpdateCustomDimensionMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateCustomDimensionMethod =
+              getUpdateCustomDimensionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest,
+                          com.google.analytics.admin.v1alpha.CustomDimension>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateCustomDimension"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CustomDimension
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateCustomDimension"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateCustomDimensionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest,
+          com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse>
+      getListCustomDimensionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCustomDimensions",
+      requestType = com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest,
+          com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse>
+      getListCustomDimensionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest,
+            com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse>
+        getListCustomDimensionsMethod;
+    if ((getListCustomDimensionsMethod = AnalyticsAdminServiceGrpc.getListCustomDimensionsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListCustomDimensionsMethod =
+                AnalyticsAdminServiceGrpc.getListCustomDimensionsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListCustomDimensionsMethod =
+              getListCustomDimensionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest,
+                          com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListCustomDimensions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("ListCustomDimensions"))
+                      .build();
+        }
+      }
+    }
+    return getListCustomDimensionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest,
+          com.google.protobuf.Empty>
+      getArchiveCustomDimensionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ArchiveCustomDimension",
+      requestType = com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest,
+          com.google.protobuf.Empty>
+      getArchiveCustomDimensionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest,
+            com.google.protobuf.Empty>
+        getArchiveCustomDimensionMethod;
+    if ((getArchiveCustomDimensionMethod =
+            AnalyticsAdminServiceGrpc.getArchiveCustomDimensionMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getArchiveCustomDimensionMethod =
+                AnalyticsAdminServiceGrpc.getArchiveCustomDimensionMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getArchiveCustomDimensionMethod =
+              getArchiveCustomDimensionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ArchiveCustomDimension"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "ArchiveCustomDimension"))
+                      .build();
+        }
+      }
+    }
+    return getArchiveCustomDimensionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetCustomDimensionRequest,
+          com.google.analytics.admin.v1alpha.CustomDimension>
+      getGetCustomDimensionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCustomDimension",
+      requestType = com.google.analytics.admin.v1alpha.GetCustomDimensionRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.CustomDimension.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetCustomDimensionRequest,
+          com.google.analytics.admin.v1alpha.CustomDimension>
+      getGetCustomDimensionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetCustomDimensionRequest,
+            com.google.analytics.admin.v1alpha.CustomDimension>
+        getGetCustomDimensionMethod;
+    if ((getGetCustomDimensionMethod = AnalyticsAdminServiceGrpc.getGetCustomDimensionMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetCustomDimensionMethod = AnalyticsAdminServiceGrpc.getGetCustomDimensionMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetCustomDimensionMethod =
+              getGetCustomDimensionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetCustomDimensionRequest,
+                          com.google.analytics.admin.v1alpha.CustomDimension>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCustomDimension"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetCustomDimensionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CustomDimension
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("GetCustomDimension"))
+                      .build();
+        }
+      }
+    }
+    return getGetCustomDimensionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateCustomMetricRequest,
+          com.google.analytics.admin.v1alpha.CustomMetric>
+      getCreateCustomMetricMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCustomMetric",
+      requestType = com.google.analytics.admin.v1alpha.CreateCustomMetricRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.CustomMetric.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateCustomMetricRequest,
+          com.google.analytics.admin.v1alpha.CustomMetric>
+      getCreateCustomMetricMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateCustomMetricRequest,
+            com.google.analytics.admin.v1alpha.CustomMetric>
+        getCreateCustomMetricMethod;
+    if ((getCreateCustomMetricMethod = AnalyticsAdminServiceGrpc.getCreateCustomMetricMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateCustomMetricMethod = AnalyticsAdminServiceGrpc.getCreateCustomMetricMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateCustomMetricMethod =
+              getCreateCustomMetricMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateCustomMetricRequest,
+                          com.google.analytics.admin.v1alpha.CustomMetric>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateCustomMetric"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateCustomMetricRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CustomMetric.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("CreateCustomMetric"))
+                      .build();
+        }
+      }
+    }
+    return getCreateCustomMetricMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest,
+          com.google.analytics.admin.v1alpha.CustomMetric>
+      getUpdateCustomMetricMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCustomMetric",
+      requestType = com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.CustomMetric.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest,
+          com.google.analytics.admin.v1alpha.CustomMetric>
+      getUpdateCustomMetricMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest,
+            com.google.analytics.admin.v1alpha.CustomMetric>
+        getUpdateCustomMetricMethod;
+    if ((getUpdateCustomMetricMethod = AnalyticsAdminServiceGrpc.getUpdateCustomMetricMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateCustomMetricMethod = AnalyticsAdminServiceGrpc.getUpdateCustomMetricMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateCustomMetricMethod =
+              getUpdateCustomMetricMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest,
+                          com.google.analytics.admin.v1alpha.CustomMetric>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateCustomMetric"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CustomMetric.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("UpdateCustomMetric"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateCustomMetricMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListCustomMetricsRequest,
+          com.google.analytics.admin.v1alpha.ListCustomMetricsResponse>
+      getListCustomMetricsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCustomMetrics",
+      requestType = com.google.analytics.admin.v1alpha.ListCustomMetricsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListCustomMetricsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListCustomMetricsRequest,
+          com.google.analytics.admin.v1alpha.ListCustomMetricsResponse>
+      getListCustomMetricsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListCustomMetricsRequest,
+            com.google.analytics.admin.v1alpha.ListCustomMetricsResponse>
+        getListCustomMetricsMethod;
+    if ((getListCustomMetricsMethod = AnalyticsAdminServiceGrpc.getListCustomMetricsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListCustomMetricsMethod = AnalyticsAdminServiceGrpc.getListCustomMetricsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListCustomMetricsMethod =
+              getListCustomMetricsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListCustomMetricsRequest,
+                          com.google.analytics.admin.v1alpha.ListCustomMetricsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCustomMetrics"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListCustomMetricsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListCustomMetricsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("ListCustomMetrics"))
+                      .build();
+        }
+      }
+    }
+    return getListCustomMetricsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest, com.google.protobuf.Empty>
+      getArchiveCustomMetricMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ArchiveCustomMetric",
+      requestType = com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest, com.google.protobuf.Empty>
+      getArchiveCustomMetricMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest,
+            com.google.protobuf.Empty>
+        getArchiveCustomMetricMethod;
+    if ((getArchiveCustomMetricMethod = AnalyticsAdminServiceGrpc.getArchiveCustomMetricMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getArchiveCustomMetricMethod = AnalyticsAdminServiceGrpc.getArchiveCustomMetricMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getArchiveCustomMetricMethod =
+              getArchiveCustomMetricMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ArchiveCustomMetric"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("ArchiveCustomMetric"))
+                      .build();
+        }
+      }
+    }
+    return getArchiveCustomMetricMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetCustomMetricRequest,
+          com.google.analytics.admin.v1alpha.CustomMetric>
+      getGetCustomMetricMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCustomMetric",
+      requestType = com.google.analytics.admin.v1alpha.GetCustomMetricRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.CustomMetric.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetCustomMetricRequest,
+          com.google.analytics.admin.v1alpha.CustomMetric>
+      getGetCustomMetricMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetCustomMetricRequest,
+            com.google.analytics.admin.v1alpha.CustomMetric>
+        getGetCustomMetricMethod;
+    if ((getGetCustomMetricMethod = AnalyticsAdminServiceGrpc.getGetCustomMetricMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetCustomMetricMethod = AnalyticsAdminServiceGrpc.getGetCustomMetricMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetCustomMetricMethod =
+              getGetCustomMetricMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetCustomMetricRequest,
+                          com.google.analytics.admin.v1alpha.CustomMetric>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCustomMetric"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetCustomMetricRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CustomMetric.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("GetCustomMetric"))
+                      .build();
+        }
+      }
+    }
+    return getGetCustomMetricMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -3110,6 +4179,82 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Lookup for a single "GA4" MeasurementProtocolSecret.
+     * </pre>
+     */
+    public void getMeasurementProtocolSecret(
+        com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetMeasurementProtocolSecretMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns child MeasurementProtocolSecrets under the specified parent
+     * Property.
+     * </pre>
+     */
+    public void listMeasurementProtocolSecrets(
+        com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListMeasurementProtocolSecretsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a measurement protocol secret.
+     * </pre>
+     */
+    public void createMeasurementProtocolSecret(
+        com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateMeasurementProtocolSecretMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes target MeasurementProtocolSecret.
+     * </pre>
+     */
+    public void deleteMeasurementProtocolSecret(
+        com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteMeasurementProtocolSecretMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a measurement protocol secret.
+     * </pre>
+     */
+    public void updateMeasurementProtocolSecret(
+        com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateMeasurementProtocolSecretMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Searches through all changes to an account or its children given the
      * specified set of filters.
      * </pre>
@@ -3121,6 +4266,244 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSearchChangeHistoryEventsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for Google Signals settings for a property.
+     * </pre>
+     */
+    public void getGoogleSignalsSettings(
+        com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GoogleSignalsSettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetGoogleSignalsSettingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates Google Signals settings for a property.
+     * </pre>
+     */
+    public void updateGoogleSignalsSettings(
+        com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GoogleSignalsSettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateGoogleSignalsSettingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a conversion event with the specified attributes.
+     * </pre>
+     */
+    public void createConversionEvent(
+        com.google.analytics.admin.v1alpha.CreateConversionEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ConversionEvent>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateConversionEventMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a single conversion event.
+     * </pre>
+     */
+    public void getConversionEvent(
+        com.google.analytics.admin.v1alpha.GetConversionEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ConversionEvent>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetConversionEventMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a conversion event in a property.
+     * </pre>
+     */
+    public void deleteConversionEvent(
+        com.google.analytics.admin.v1alpha.DeleteConversionEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteConversionEventMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of conversion events in the specified parent property.
+     * Returns an empty list if no conversion events are found.
+     * </pre>
+     */
+    public void listConversionEvents(
+        com.google.analytics.admin.v1alpha.ListConversionEventsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListConversionEventsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListConversionEventsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomDimension.
+     * </pre>
+     */
+    public void createCustomDimension(
+        com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomDimension>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateCustomDimensionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CustomDimension on a property.
+     * </pre>
+     */
+    public void updateCustomDimension(
+        com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomDimension>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCustomDimensionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomDimensions on a property.
+     * </pre>
+     */
+    public void listCustomDimensions(
+        com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListCustomDimensionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Archives a CustomDimension on a property.
+     * </pre>
+     */
+    public void archiveCustomDimension(
+        com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getArchiveCustomDimensionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single CustomDimension.
+     * </pre>
+     */
+    public void getCustomDimension(
+        com.google.analytics.admin.v1alpha.GetCustomDimensionRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomDimension>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetCustomDimensionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomMetric.
+     * </pre>
+     */
+    public void createCustomMetric(
+        com.google.analytics.admin.v1alpha.CreateCustomMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomMetric>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateCustomMetricMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CustomMetric on a property.
+     * </pre>
+     */
+    public void updateCustomMetric(
+        com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomMetric>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCustomMetricMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomMetrics on a property.
+     * </pre>
+     */
+    public void listCustomMetrics(
+        com.google.analytics.admin.v1alpha.ListCustomMetricsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListCustomMetricsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListCustomMetricsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Archives a CustomMetric on a property.
+     * </pre>
+     */
+    public void archiveCustomMetric(
+        com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getArchiveCustomMetricMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single CustomMetric.
+     * </pre>
+     */
+    public void getCustomMetric(
+        com.google.analytics.admin.v1alpha.GetCustomMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomMetric>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetCustomMetricMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -3434,12 +4817,156 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.DataSharingSettings>(
                       this, METHODID_GET_DATA_SHARING_SETTINGS)))
           .addMethod(
+              getGetMeasurementProtocolSecretMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest,
+                      com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>(
+                      this, METHODID_GET_MEASUREMENT_PROTOCOL_SECRET)))
+          .addMethod(
+              getListMeasurementProtocolSecretsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest,
+                      com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse>(
+                      this, METHODID_LIST_MEASUREMENT_PROTOCOL_SECRETS)))
+          .addMethod(
+              getCreateMeasurementProtocolSecretMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest,
+                      com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>(
+                      this, METHODID_CREATE_MEASUREMENT_PROTOCOL_SECRET)))
+          .addMethod(
+              getDeleteMeasurementProtocolSecretMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest,
+                      com.google.protobuf.Empty>(
+                      this, METHODID_DELETE_MEASUREMENT_PROTOCOL_SECRET)))
+          .addMethod(
+              getUpdateMeasurementProtocolSecretMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest,
+                      com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>(
+                      this, METHODID_UPDATE_MEASUREMENT_PROTOCOL_SECRET)))
+          .addMethod(
               getSearchChangeHistoryEventsMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest,
                       com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse>(
                       this, METHODID_SEARCH_CHANGE_HISTORY_EVENTS)))
+          .addMethod(
+              getGetGoogleSignalsSettingsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest,
+                      com.google.analytics.admin.v1alpha.GoogleSignalsSettings>(
+                      this, METHODID_GET_GOOGLE_SIGNALS_SETTINGS)))
+          .addMethod(
+              getUpdateGoogleSignalsSettingsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest,
+                      com.google.analytics.admin.v1alpha.GoogleSignalsSettings>(
+                      this, METHODID_UPDATE_GOOGLE_SIGNALS_SETTINGS)))
+          .addMethod(
+              getCreateConversionEventMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.CreateConversionEventRequest,
+                      com.google.analytics.admin.v1alpha.ConversionEvent>(
+                      this, METHODID_CREATE_CONVERSION_EVENT)))
+          .addMethod(
+              getGetConversionEventMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.GetConversionEventRequest,
+                      com.google.analytics.admin.v1alpha.ConversionEvent>(
+                      this, METHODID_GET_CONVERSION_EVENT)))
+          .addMethod(
+              getDeleteConversionEventMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.DeleteConversionEventRequest,
+                      com.google.protobuf.Empty>(this, METHODID_DELETE_CONVERSION_EVENT)))
+          .addMethod(
+              getListConversionEventsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.ListConversionEventsRequest,
+                      com.google.analytics.admin.v1alpha.ListConversionEventsResponse>(
+                      this, METHODID_LIST_CONVERSION_EVENTS)))
+          .addMethod(
+              getCreateCustomDimensionMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest,
+                      com.google.analytics.admin.v1alpha.CustomDimension>(
+                      this, METHODID_CREATE_CUSTOM_DIMENSION)))
+          .addMethod(
+              getUpdateCustomDimensionMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest,
+                      com.google.analytics.admin.v1alpha.CustomDimension>(
+                      this, METHODID_UPDATE_CUSTOM_DIMENSION)))
+          .addMethod(
+              getListCustomDimensionsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest,
+                      com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse>(
+                      this, METHODID_LIST_CUSTOM_DIMENSIONS)))
+          .addMethod(
+              getArchiveCustomDimensionMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest,
+                      com.google.protobuf.Empty>(this, METHODID_ARCHIVE_CUSTOM_DIMENSION)))
+          .addMethod(
+              getGetCustomDimensionMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.GetCustomDimensionRequest,
+                      com.google.analytics.admin.v1alpha.CustomDimension>(
+                      this, METHODID_GET_CUSTOM_DIMENSION)))
+          .addMethod(
+              getCreateCustomMetricMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.CreateCustomMetricRequest,
+                      com.google.analytics.admin.v1alpha.CustomMetric>(
+                      this, METHODID_CREATE_CUSTOM_METRIC)))
+          .addMethod(
+              getUpdateCustomMetricMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest,
+                      com.google.analytics.admin.v1alpha.CustomMetric>(
+                      this, METHODID_UPDATE_CUSTOM_METRIC)))
+          .addMethod(
+              getListCustomMetricsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.ListCustomMetricsRequest,
+                      com.google.analytics.admin.v1alpha.ListCustomMetricsResponse>(
+                      this, METHODID_LIST_CUSTOM_METRICS)))
+          .addMethod(
+              getArchiveCustomMetricMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest,
+                      com.google.protobuf.Empty>(this, METHODID_ARCHIVE_CUSTOM_METRIC)))
+          .addMethod(
+              getGetCustomMetricMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.GetCustomMetricRequest,
+                      com.google.analytics.admin.v1alpha.CustomMetric>(
+                      this, METHODID_GET_CUSTOM_METRIC)))
           .build();
     }
   }
@@ -4280,6 +5807,92 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Lookup for a single "GA4" MeasurementProtocolSecret.
+     * </pre>
+     */
+    public void getMeasurementProtocolSecret(
+        com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMeasurementProtocolSecretMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns child MeasurementProtocolSecrets under the specified parent
+     * Property.
+     * </pre>
+     */
+    public void listMeasurementProtocolSecrets(
+        com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMeasurementProtocolSecretsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a measurement protocol secret.
+     * </pre>
+     */
+    public void createMeasurementProtocolSecret(
+        com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateMeasurementProtocolSecretMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes target MeasurementProtocolSecret.
+     * </pre>
+     */
+    public void deleteMeasurementProtocolSecret(
+        com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteMeasurementProtocolSecretMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a measurement protocol secret.
+     * </pre>
+     */
+    public void updateMeasurementProtocolSecret(
+        com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateMeasurementProtocolSecretMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Searches through all changes to an account or its children given the
      * specified set of filters.
      * </pre>
@@ -4291,6 +5904,276 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchChangeHistoryEventsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for Google Signals settings for a property.
+     * </pre>
+     */
+    public void getGoogleSignalsSettings(
+        com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GoogleSignalsSettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetGoogleSignalsSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates Google Signals settings for a property.
+     * </pre>
+     */
+    public void updateGoogleSignalsSettings(
+        com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GoogleSignalsSettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateGoogleSignalsSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a conversion event with the specified attributes.
+     * </pre>
+     */
+    public void createConversionEvent(
+        com.google.analytics.admin.v1alpha.CreateConversionEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ConversionEvent>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateConversionEventMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a single conversion event.
+     * </pre>
+     */
+    public void getConversionEvent(
+        com.google.analytics.admin.v1alpha.GetConversionEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ConversionEvent>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetConversionEventMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a conversion event in a property.
+     * </pre>
+     */
+    public void deleteConversionEvent(
+        com.google.analytics.admin.v1alpha.DeleteConversionEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteConversionEventMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of conversion events in the specified parent property.
+     * Returns an empty list if no conversion events are found.
+     * </pre>
+     */
+    public void listConversionEvents(
+        com.google.analytics.admin.v1alpha.ListConversionEventsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListConversionEventsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListConversionEventsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomDimension.
+     * </pre>
+     */
+    public void createCustomDimension(
+        com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomDimension>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateCustomDimensionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CustomDimension on a property.
+     * </pre>
+     */
+    public void updateCustomDimension(
+        com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomDimension>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateCustomDimensionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomDimensions on a property.
+     * </pre>
+     */
+    public void listCustomDimensions(
+        com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListCustomDimensionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Archives a CustomDimension on a property.
+     * </pre>
+     */
+    public void archiveCustomDimension(
+        com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getArchiveCustomDimensionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single CustomDimension.
+     * </pre>
+     */
+    public void getCustomDimension(
+        com.google.analytics.admin.v1alpha.GetCustomDimensionRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomDimension>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCustomDimensionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomMetric.
+     * </pre>
+     */
+    public void createCustomMetric(
+        com.google.analytics.admin.v1alpha.CreateCustomMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomMetric>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateCustomMetricMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CustomMetric on a property.
+     * </pre>
+     */
+    public void updateCustomMetric(
+        com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomMetric>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateCustomMetricMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomMetrics on a property.
+     * </pre>
+     */
+    public void listCustomMetrics(
+        com.google.analytics.admin.v1alpha.ListCustomMetricsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListCustomMetricsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListCustomMetricsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Archives a CustomMetric on a property.
+     * </pre>
+     */
+    public void archiveCustomMetric(
+        com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getArchiveCustomMetricMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single CustomMetric.
+     * </pre>
+     */
+    public void getCustomMetric(
+        com.google.analytics.admin.v1alpha.GetCustomMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomMetric>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCustomMetricMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -4968,6 +6851,76 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Lookup for a single "GA4" MeasurementProtocolSecret.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.MeasurementProtocolSecret
+        getMeasurementProtocolSecret(
+            com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMeasurementProtocolSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns child MeasurementProtocolSecrets under the specified parent
+     * Property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse
+        listMeasurementProtocolSecrets(
+            com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMeasurementProtocolSecretsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a measurement protocol secret.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.MeasurementProtocolSecret
+        createMeasurementProtocolSecret(
+            com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMeasurementProtocolSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes target MeasurementProtocolSecret.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteMeasurementProtocolSecret(
+        com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMeasurementProtocolSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a measurement protocol secret.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.MeasurementProtocolSecret
+        updateMeasurementProtocolSecret(
+            com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMeasurementProtocolSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Searches through all changes to an account or its children given the
      * specified set of filters.
      * </pre>
@@ -4977,6 +6930,215 @@ public final class AnalyticsAdminServiceGrpc {
             com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchChangeHistoryEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for Google Signals settings for a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.GoogleSignalsSettings getGoogleSignalsSettings(
+        com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGoogleSignalsSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates Google Signals settings for a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.GoogleSignalsSettings updateGoogleSignalsSettings(
+        com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGoogleSignalsSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a conversion event with the specified attributes.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ConversionEvent createConversionEvent(
+        com.google.analytics.admin.v1alpha.CreateConversionEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateConversionEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a single conversion event.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ConversionEvent getConversionEvent(
+        com.google.analytics.admin.v1alpha.GetConversionEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConversionEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a conversion event in a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteConversionEvent(
+        com.google.analytics.admin.v1alpha.DeleteConversionEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteConversionEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of conversion events in the specified parent property.
+     * Returns an empty list if no conversion events are found.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListConversionEventsResponse listConversionEvents(
+        com.google.analytics.admin.v1alpha.ListConversionEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConversionEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomDimension.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CustomDimension createCustomDimension(
+        com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCustomDimensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CustomDimension on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CustomDimension updateCustomDimension(
+        com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCustomDimensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomDimensions on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse listCustomDimensions(
+        com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCustomDimensionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Archives a CustomDimension on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty archiveCustomDimension(
+        com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getArchiveCustomDimensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single CustomDimension.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CustomDimension getCustomDimension(
+        com.google.analytics.admin.v1alpha.GetCustomDimensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCustomDimensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomMetric.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CustomMetric createCustomMetric(
+        com.google.analytics.admin.v1alpha.CreateCustomMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCustomMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CustomMetric on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CustomMetric updateCustomMetric(
+        com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCustomMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomMetrics on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListCustomMetricsResponse listCustomMetrics(
+        com.google.analytics.admin.v1alpha.ListCustomMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCustomMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Archives a CustomMetric on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty archiveCustomMetric(
+        com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getArchiveCustomMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single CustomMetric.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CustomMetric getCustomMetric(
+        com.google.analytics.admin.v1alpha.GetCustomMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCustomMetricMethod(), getCallOptions(), request);
     }
   }
 
@@ -5704,6 +7866,85 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Lookup for a single "GA4" MeasurementProtocolSecret.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+        getMeasurementProtocolSecret(
+            com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMeasurementProtocolSecretMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns child MeasurementProtocolSecrets under the specified parent
+     * Property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse>
+        listMeasurementProtocolSecrets(
+            com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMeasurementProtocolSecretsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a measurement protocol secret.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+        createMeasurementProtocolSecret(
+            com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateMeasurementProtocolSecretMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes target MeasurementProtocolSecret.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteMeasurementProtocolSecret(
+            com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteMeasurementProtocolSecretMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a measurement protocol secret.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
+        updateMeasurementProtocolSecret(
+            com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateMeasurementProtocolSecretMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Searches through all changes to an account or its children given the
      * specified set of filters.
      * </pre>
@@ -5714,6 +7955,237 @@ public final class AnalyticsAdminServiceGrpc {
             com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchChangeHistoryEventsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for Google Signals settings for a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.GoogleSignalsSettings>
+        getGoogleSignalsSettings(
+            com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetGoogleSignalsSettingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates Google Signals settings for a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.GoogleSignalsSettings>
+        updateGoogleSignalsSettings(
+            com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateGoogleSignalsSettingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a conversion event with the specified attributes.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ConversionEvent>
+        createConversionEvent(
+            com.google.analytics.admin.v1alpha.CreateConversionEventRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateConversionEventMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a single conversion event.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ConversionEvent>
+        getConversionEvent(com.google.analytics.admin.v1alpha.GetConversionEventRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetConversionEventMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a conversion event in a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteConversionEvent(
+            com.google.analytics.admin.v1alpha.DeleteConversionEventRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteConversionEventMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of conversion events in the specified parent property.
+     * Returns an empty list if no conversion events are found.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListConversionEventsResponse>
+        listConversionEvents(
+            com.google.analytics.admin.v1alpha.ListConversionEventsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListConversionEventsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomDimension.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.CustomDimension>
+        createCustomDimension(
+            com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateCustomDimensionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CustomDimension on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.CustomDimension>
+        updateCustomDimension(
+            com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateCustomDimensionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomDimensions on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse>
+        listCustomDimensions(
+            com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListCustomDimensionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Archives a CustomDimension on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        archiveCustomDimension(
+            com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getArchiveCustomDimensionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single CustomDimension.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.CustomDimension>
+        getCustomDimension(com.google.analytics.admin.v1alpha.GetCustomDimensionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCustomDimensionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomMetric.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.CustomMetric>
+        createCustomMetric(com.google.analytics.admin.v1alpha.CreateCustomMetricRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateCustomMetricMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CustomMetric on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.CustomMetric>
+        updateCustomMetric(com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateCustomMetricMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomMetrics on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListCustomMetricsResponse>
+        listCustomMetrics(com.google.analytics.admin.v1alpha.ListCustomMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListCustomMetricsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Archives a CustomMetric on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        archiveCustomMetric(com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getArchiveCustomMetricMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single CustomMetric.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.CustomMetric>
+        getCustomMetric(com.google.analytics.admin.v1alpha.GetCustomMetricRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCustomMetricMethod(), getCallOptions()), request);
     }
   }
 
@@ -5763,7 +8235,28 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_DELETE_GOOGLE_ADS_LINK = 43;
   private static final int METHODID_LIST_GOOGLE_ADS_LINKS = 44;
   private static final int METHODID_GET_DATA_SHARING_SETTINGS = 45;
-  private static final int METHODID_SEARCH_CHANGE_HISTORY_EVENTS = 46;
+  private static final int METHODID_GET_MEASUREMENT_PROTOCOL_SECRET = 46;
+  private static final int METHODID_LIST_MEASUREMENT_PROTOCOL_SECRETS = 47;
+  private static final int METHODID_CREATE_MEASUREMENT_PROTOCOL_SECRET = 48;
+  private static final int METHODID_DELETE_MEASUREMENT_PROTOCOL_SECRET = 49;
+  private static final int METHODID_UPDATE_MEASUREMENT_PROTOCOL_SECRET = 50;
+  private static final int METHODID_SEARCH_CHANGE_HISTORY_EVENTS = 51;
+  private static final int METHODID_GET_GOOGLE_SIGNALS_SETTINGS = 52;
+  private static final int METHODID_UPDATE_GOOGLE_SIGNALS_SETTINGS = 53;
+  private static final int METHODID_CREATE_CONVERSION_EVENT = 54;
+  private static final int METHODID_GET_CONVERSION_EVENT = 55;
+  private static final int METHODID_DELETE_CONVERSION_EVENT = 56;
+  private static final int METHODID_LIST_CONVERSION_EVENTS = 57;
+  private static final int METHODID_CREATE_CUSTOM_DIMENSION = 58;
+  private static final int METHODID_UPDATE_CUSTOM_DIMENSION = 59;
+  private static final int METHODID_LIST_CUSTOM_DIMENSIONS = 60;
+  private static final int METHODID_ARCHIVE_CUSTOM_DIMENSION = 61;
+  private static final int METHODID_GET_CUSTOM_DIMENSION = 62;
+  private static final int METHODID_CREATE_CUSTOM_METRIC = 63;
+  private static final int METHODID_UPDATE_CUSTOM_METRIC = 64;
+  private static final int METHODID_LIST_CUSTOM_METRICS = 65;
+  private static final int METHODID_ARCHIVE_CUSTOM_METRIC = 66;
+  private static final int METHODID_GET_CUSTOM_METRIC = 67;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -6065,11 +8558,142 @@ public final class AnalyticsAdminServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataSharingSettings>)
                   responseObserver);
           break;
+        case METHODID_GET_MEASUREMENT_PROTOCOL_SECRET:
+          serviceImpl.getMeasurementProtocolSecret(
+              (com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_MEASUREMENT_PROTOCOL_SECRETS:
+          serviceImpl.listMeasurementProtocolSecrets(
+              (com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_MEASUREMENT_PROTOCOL_SECRET:
+          serviceImpl.createMeasurementProtocolSecret(
+              (com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_MEASUREMENT_PROTOCOL_SECRET:
+          serviceImpl.deleteMeasurementProtocolSecret(
+              (com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_MEASUREMENT_PROTOCOL_SECRET:
+          serviceImpl.updateMeasurementProtocolSecret(
+              (com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>)
+                  responseObserver);
+          break;
         case METHODID_SEARCH_CHANGE_HISTORY_EVENTS:
           serviceImpl.searchChangeHistoryEvents(
               (com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_GOOGLE_SIGNALS_SETTINGS:
+          serviceImpl.getGoogleSignalsSettings(
+              (com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.GoogleSignalsSettings>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_GOOGLE_SIGNALS_SETTINGS:
+          serviceImpl.updateGoogleSignalsSettings(
+              (com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.GoogleSignalsSettings>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_CONVERSION_EVENT:
+          serviceImpl.createConversionEvent(
+              (com.google.analytics.admin.v1alpha.CreateConversionEventRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ConversionEvent>)
+                  responseObserver);
+          break;
+        case METHODID_GET_CONVERSION_EVENT:
+          serviceImpl.getConversionEvent(
+              (com.google.analytics.admin.v1alpha.GetConversionEventRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ConversionEvent>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_CONVERSION_EVENT:
+          serviceImpl.deleteConversionEvent(
+              (com.google.analytics.admin.v1alpha.DeleteConversionEventRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_CONVERSION_EVENTS:
+          serviceImpl.listConversionEvents(
+              (com.google.analytics.admin.v1alpha.ListConversionEventsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListConversionEventsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_CUSTOM_DIMENSION:
+          serviceImpl.createCustomDimension(
+              (com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomDimension>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_CUSTOM_DIMENSION:
+          serviceImpl.updateCustomDimension(
+              (com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomDimension>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_CUSTOM_DIMENSIONS:
+          serviceImpl.listCustomDimensions(
+              (com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_ARCHIVE_CUSTOM_DIMENSION:
+          serviceImpl.archiveCustomDimension(
+              (com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_GET_CUSTOM_DIMENSION:
+          serviceImpl.getCustomDimension(
+              (com.google.analytics.admin.v1alpha.GetCustomDimensionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomDimension>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_CUSTOM_METRIC:
+          serviceImpl.createCustomMetric(
+              (com.google.analytics.admin.v1alpha.CreateCustomMetricRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomMetric>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_CUSTOM_METRIC:
+          serviceImpl.updateCustomMetric(
+              (com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomMetric>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_CUSTOM_METRICS:
+          serviceImpl.listCustomMetrics(
+              (com.google.analytics.admin.v1alpha.ListCustomMetricsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListCustomMetricsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_ARCHIVE_CUSTOM_METRIC:
+          serviceImpl.archiveCustomMetric(
+              (com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_GET_CUSTOM_METRIC:
+          serviceImpl.getCustomMetric(
+              (com.google.analytics.admin.v1alpha.GetCustomMetricRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomMetric>)
                   responseObserver);
           break;
         default:
@@ -6182,7 +8806,28 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getDeleteGoogleAdsLinkMethod())
                       .addMethod(getListGoogleAdsLinksMethod())
                       .addMethod(getGetDataSharingSettingsMethod())
+                      .addMethod(getGetMeasurementProtocolSecretMethod())
+                      .addMethod(getListMeasurementProtocolSecretsMethod())
+                      .addMethod(getCreateMeasurementProtocolSecretMethod())
+                      .addMethod(getDeleteMeasurementProtocolSecretMethod())
+                      .addMethod(getUpdateMeasurementProtocolSecretMethod())
                       .addMethod(getSearchChangeHistoryEventsMethod())
+                      .addMethod(getGetGoogleSignalsSettingsMethod())
+                      .addMethod(getUpdateGoogleSignalsSettingsMethod())
+                      .addMethod(getCreateConversionEventMethod())
+                      .addMethod(getGetConversionEventMethod())
+                      .addMethod(getDeleteConversionEventMethod())
+                      .addMethod(getListConversionEventsMethod())
+                      .addMethod(getCreateCustomDimensionMethod())
+                      .addMethod(getUpdateCustomDimensionMethod())
+                      .addMethod(getListCustomDimensionsMethod())
+                      .addMethod(getArchiveCustomDimensionMethod())
+                      .addMethod(getGetCustomDimensionMethod())
+                      .addMethod(getCreateCustomMetricMethod())
+                      .addMethod(getUpdateCustomMetricMethod())
+                      .addMethod(getListCustomMetricsMethod())
+                      .addMethod(getArchiveCustomMetricMethod())
+                      .addMethod(getGetCustomMetricMethod())
                       .build();
         }
       }

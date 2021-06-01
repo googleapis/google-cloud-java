@@ -95,7 +95,7 @@ public interface GoogleAdsLinkOrBuilder
    * Enable personalized advertising features with this integration.
    * Automatically publish my Google Analytics audience lists and Google
    * Analytics remarketing events/parameters to the linked Google Ads account.
-   * If this field is not set on create/update it will be defaulted to true.
+   * If this field is not set on create/update, it will be defaulted to true.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue ads_personalization_enabled = 5;</code>
@@ -110,7 +110,7 @@ public interface GoogleAdsLinkOrBuilder
    * Enable personalized advertising features with this integration.
    * Automatically publish my Google Analytics audience lists and Google
    * Analytics remarketing events/parameters to the linked Google Ads account.
-   * If this field is not set on create/update it will be defaulted to true.
+   * If this field is not set on create/update, it will be defaulted to true.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue ads_personalization_enabled = 5;</code>
@@ -125,7 +125,7 @@ public interface GoogleAdsLinkOrBuilder
    * Enable personalized advertising features with this integration.
    * Automatically publish my Google Analytics audience lists and Google
    * Analytics remarketing events/parameters to the linked Google Ads account.
-   * If this field is not set on create/update it will be defaulted to true.
+   * If this field is not set on create/update, it will be defaulted to true.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue ads_personalization_enabled = 5;</code>

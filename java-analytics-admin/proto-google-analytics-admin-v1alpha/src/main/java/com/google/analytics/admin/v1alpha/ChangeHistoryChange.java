@@ -411,6 +411,192 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      */
     com.google.analytics.admin.v1alpha.GoogleAdsLinkOrBuilder getGoogleAdsLinkOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a GoogleSignalsSettings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.GoogleSignalsSettings google_signals_settings = 8;
+     * </code>
+     *
+     * @return Whether the googleSignalsSettings field is set.
+     */
+    boolean hasGoogleSignalsSettings();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a GoogleSignalsSettings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.GoogleSignalsSettings google_signals_settings = 8;
+     * </code>
+     *
+     * @return The googleSignalsSettings.
+     */
+    com.google.analytics.admin.v1alpha.GoogleSignalsSettings getGoogleSignalsSettings();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a GoogleSignalsSettings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.GoogleSignalsSettings google_signals_settings = 8;
+     * </code>
+     */
+    com.google.analytics.admin.v1alpha.GoogleSignalsSettingsOrBuilder
+        getGoogleSignalsSettingsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a ConversionEvent resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.ConversionEvent conversion_event = 11;</code>
+     *
+     * @return Whether the conversionEvent field is set.
+     */
+    boolean hasConversionEvent();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a ConversionEvent resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.ConversionEvent conversion_event = 11;</code>
+     *
+     * @return The conversionEvent.
+     */
+    com.google.analytics.admin.v1alpha.ConversionEvent getConversionEvent();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a ConversionEvent resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.ConversionEvent conversion_event = 11;</code>
+     */
+    com.google.analytics.admin.v1alpha.ConversionEventOrBuilder getConversionEventOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a MeasurementProtocolSecret resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.MeasurementProtocolSecret measurement_protocol_secret = 12;
+     * </code>
+     *
+     * @return Whether the measurementProtocolSecret field is set.
+     */
+    boolean hasMeasurementProtocolSecret();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a MeasurementProtocolSecret resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.MeasurementProtocolSecret measurement_protocol_secret = 12;
+     * </code>
+     *
+     * @return The measurementProtocolSecret.
+     */
+    com.google.analytics.admin.v1alpha.MeasurementProtocolSecret getMeasurementProtocolSecret();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a MeasurementProtocolSecret resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.MeasurementProtocolSecret measurement_protocol_secret = 12;
+     * </code>
+     */
+    com.google.analytics.admin.v1alpha.MeasurementProtocolSecretOrBuilder
+        getMeasurementProtocolSecretOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a CustomDimension resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.CustomDimension custom_dimension = 13;</code>
+     *
+     * @return Whether the customDimension field is set.
+     */
+    boolean hasCustomDimension();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a CustomDimension resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.CustomDimension custom_dimension = 13;</code>
+     *
+     * @return The customDimension.
+     */
+    com.google.analytics.admin.v1alpha.CustomDimension getCustomDimension();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a CustomDimension resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.CustomDimension custom_dimension = 13;</code>
+     */
+    com.google.analytics.admin.v1alpha.CustomDimensionOrBuilder getCustomDimensionOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a CustomMetric resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.CustomMetric custom_metric = 14;</code>
+     *
+     * @return Whether the customMetric field is set.
+     */
+    boolean hasCustomMetric();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a CustomMetric resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.CustomMetric custom_metric = 14;</code>
+     *
+     * @return The customMetric.
+     */
+    com.google.analytics.admin.v1alpha.CustomMetric getCustomMetric();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a CustomMetric resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.CustomMetric custom_metric = 14;</code>
+     */
+    com.google.analytics.admin.v1alpha.CustomMetricOrBuilder getCustomMetricOrBuilder();
+
     public com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource.ResourceCase
         getResourceCase();
   }
@@ -593,6 +779,103 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
                 resourceCase_ = 7;
                 break;
               }
+            case 66:
+              {
+                com.google.analytics.admin.v1alpha.GoogleSignalsSettings.Builder subBuilder = null;
+                if (resourceCase_ == 8) {
+                  subBuilder =
+                      ((com.google.analytics.admin.v1alpha.GoogleSignalsSettings) resource_)
+                          .toBuilder();
+                }
+                resource_ =
+                    input.readMessage(
+                        com.google.analytics.admin.v1alpha.GoogleSignalsSettings.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.analytics.admin.v1alpha.GoogleSignalsSettings) resource_);
+                  resource_ = subBuilder.buildPartial();
+                }
+                resourceCase_ = 8;
+                break;
+              }
+            case 90:
+              {
+                com.google.analytics.admin.v1alpha.ConversionEvent.Builder subBuilder = null;
+                if (resourceCase_ == 11) {
+                  subBuilder =
+                      ((com.google.analytics.admin.v1alpha.ConversionEvent) resource_).toBuilder();
+                }
+                resource_ =
+                    input.readMessage(
+                        com.google.analytics.admin.v1alpha.ConversionEvent.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.analytics.admin.v1alpha.ConversionEvent) resource_);
+                  resource_ = subBuilder.buildPartial();
+                }
+                resourceCase_ = 11;
+                break;
+              }
+            case 98:
+              {
+                com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.Builder subBuilder =
+                    null;
+                if (resourceCase_ == 12) {
+                  subBuilder =
+                      ((com.google.analytics.admin.v1alpha.MeasurementProtocolSecret) resource_)
+                          .toBuilder();
+                }
+                resource_ =
+                    input.readMessage(
+                        com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.analytics.admin.v1alpha.MeasurementProtocolSecret) resource_);
+                  resource_ = subBuilder.buildPartial();
+                }
+                resourceCase_ = 12;
+                break;
+              }
+            case 106:
+              {
+                com.google.analytics.admin.v1alpha.CustomDimension.Builder subBuilder = null;
+                if (resourceCase_ == 13) {
+                  subBuilder =
+                      ((com.google.analytics.admin.v1alpha.CustomDimension) resource_).toBuilder();
+                }
+                resource_ =
+                    input.readMessage(
+                        com.google.analytics.admin.v1alpha.CustomDimension.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.analytics.admin.v1alpha.CustomDimension) resource_);
+                  resource_ = subBuilder.buildPartial();
+                }
+                resourceCase_ = 13;
+                break;
+              }
+            case 114:
+              {
+                com.google.analytics.admin.v1alpha.CustomMetric.Builder subBuilder = null;
+                if (resourceCase_ == 14) {
+                  subBuilder =
+                      ((com.google.analytics.admin.v1alpha.CustomMetric) resource_).toBuilder();
+                }
+                resource_ =
+                    input.readMessage(
+                        com.google.analytics.admin.v1alpha.CustomMetric.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom((com.google.analytics.admin.v1alpha.CustomMetric) resource_);
+                  resource_ = subBuilder.buildPartial();
+                }
+                resourceCase_ = 14;
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -642,6 +925,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       IOS_APP_DATA_STREAM(5),
       FIREBASE_LINK(6),
       GOOGLE_ADS_LINK(7),
+      GOOGLE_SIGNALS_SETTINGS(8),
+      CONVERSION_EVENT(11),
+      MEASUREMENT_PROTOCOL_SECRET(12),
+      CUSTOM_DIMENSION(13),
+      CUSTOM_METRIC(14),
       RESOURCE_NOT_SET(0);
       private final int value;
 
@@ -674,6 +962,16 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             return FIREBASE_LINK;
           case 7:
             return GOOGLE_ADS_LINK;
+          case 8:
+            return GOOGLE_SIGNALS_SETTINGS;
+          case 11:
+            return CONVERSION_EVENT;
+          case 12:
+            return MEASUREMENT_PROTOCOL_SECRET;
+          case 13:
+            return CUSTOM_DIMENSION;
+          case 14:
+            return CUSTOM_METRIC;
           case 0:
             return RESOURCE_NOT_SET;
           default:
@@ -1052,6 +1350,275 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return com.google.analytics.admin.v1alpha.GoogleAdsLink.getDefaultInstance();
     }
 
+    public static final int GOOGLE_SIGNALS_SETTINGS_FIELD_NUMBER = 8;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a GoogleSignalsSettings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.GoogleSignalsSettings google_signals_settings = 8;
+     * </code>
+     *
+     * @return Whether the googleSignalsSettings field is set.
+     */
+    @java.lang.Override
+    public boolean hasGoogleSignalsSettings() {
+      return resourceCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a GoogleSignalsSettings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.GoogleSignalsSettings google_signals_settings = 8;
+     * </code>
+     *
+     * @return The googleSignalsSettings.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.GoogleSignalsSettings getGoogleSignalsSettings() {
+      if (resourceCase_ == 8) {
+        return (com.google.analytics.admin.v1alpha.GoogleSignalsSettings) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.GoogleSignalsSettings.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a GoogleSignalsSettings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.GoogleSignalsSettings google_signals_settings = 8;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.GoogleSignalsSettingsOrBuilder
+        getGoogleSignalsSettingsOrBuilder() {
+      if (resourceCase_ == 8) {
+        return (com.google.analytics.admin.v1alpha.GoogleSignalsSettings) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.GoogleSignalsSettings.getDefaultInstance();
+    }
+
+    public static final int CONVERSION_EVENT_FIELD_NUMBER = 11;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a ConversionEvent resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.ConversionEvent conversion_event = 11;</code>
+     *
+     * @return Whether the conversionEvent field is set.
+     */
+    @java.lang.Override
+    public boolean hasConversionEvent() {
+      return resourceCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a ConversionEvent resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.ConversionEvent conversion_event = 11;</code>
+     *
+     * @return The conversionEvent.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.ConversionEvent getConversionEvent() {
+      if (resourceCase_ == 11) {
+        return (com.google.analytics.admin.v1alpha.ConversionEvent) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.ConversionEvent.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a ConversionEvent resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.ConversionEvent conversion_event = 11;</code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.ConversionEventOrBuilder
+        getConversionEventOrBuilder() {
+      if (resourceCase_ == 11) {
+        return (com.google.analytics.admin.v1alpha.ConversionEvent) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.ConversionEvent.getDefaultInstance();
+    }
+
+    public static final int MEASUREMENT_PROTOCOL_SECRET_FIELD_NUMBER = 12;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a MeasurementProtocolSecret resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.MeasurementProtocolSecret measurement_protocol_secret = 12;
+     * </code>
+     *
+     * @return Whether the measurementProtocolSecret field is set.
+     */
+    @java.lang.Override
+    public boolean hasMeasurementProtocolSecret() {
+      return resourceCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a MeasurementProtocolSecret resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.MeasurementProtocolSecret measurement_protocol_secret = 12;
+     * </code>
+     *
+     * @return The measurementProtocolSecret.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.MeasurementProtocolSecret
+        getMeasurementProtocolSecret() {
+      if (resourceCase_ == 12) {
+        return (com.google.analytics.admin.v1alpha.MeasurementProtocolSecret) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a MeasurementProtocolSecret resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.MeasurementProtocolSecret measurement_protocol_secret = 12;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.MeasurementProtocolSecretOrBuilder
+        getMeasurementProtocolSecretOrBuilder() {
+      if (resourceCase_ == 12) {
+        return (com.google.analytics.admin.v1alpha.MeasurementProtocolSecret) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.getDefaultInstance();
+    }
+
+    public static final int CUSTOM_DIMENSION_FIELD_NUMBER = 13;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a CustomDimension resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.CustomDimension custom_dimension = 13;</code>
+     *
+     * @return Whether the customDimension field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomDimension() {
+      return resourceCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a CustomDimension resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.CustomDimension custom_dimension = 13;</code>
+     *
+     * @return The customDimension.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.CustomDimension getCustomDimension() {
+      if (resourceCase_ == 13) {
+        return (com.google.analytics.admin.v1alpha.CustomDimension) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.CustomDimension.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a CustomDimension resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.CustomDimension custom_dimension = 13;</code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.CustomDimensionOrBuilder
+        getCustomDimensionOrBuilder() {
+      if (resourceCase_ == 13) {
+        return (com.google.analytics.admin.v1alpha.CustomDimension) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.CustomDimension.getDefaultInstance();
+    }
+
+    public static final int CUSTOM_METRIC_FIELD_NUMBER = 14;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a CustomMetric resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.CustomMetric custom_metric = 14;</code>
+     *
+     * @return Whether the customMetric field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomMetric() {
+      return resourceCase_ == 14;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a CustomMetric resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.CustomMetric custom_metric = 14;</code>
+     *
+     * @return The customMetric.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.CustomMetric getCustomMetric() {
+      if (resourceCase_ == 14) {
+        return (com.google.analytics.admin.v1alpha.CustomMetric) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.CustomMetric.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a CustomMetric resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.CustomMetric custom_metric = 14;</code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.CustomMetricOrBuilder getCustomMetricOrBuilder() {
+      if (resourceCase_ == 14) {
+        return (com.google.analytics.admin.v1alpha.CustomMetric) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.CustomMetric.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1086,6 +1653,23 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       if (resourceCase_ == 7) {
         output.writeMessage(7, (com.google.analytics.admin.v1alpha.GoogleAdsLink) resource_);
+      }
+      if (resourceCase_ == 8) {
+        output.writeMessage(
+            8, (com.google.analytics.admin.v1alpha.GoogleSignalsSettings) resource_);
+      }
+      if (resourceCase_ == 11) {
+        output.writeMessage(11, (com.google.analytics.admin.v1alpha.ConversionEvent) resource_);
+      }
+      if (resourceCase_ == 12) {
+        output.writeMessage(
+            12, (com.google.analytics.admin.v1alpha.MeasurementProtocolSecret) resource_);
+      }
+      if (resourceCase_ == 13) {
+        output.writeMessage(13, (com.google.analytics.admin.v1alpha.CustomDimension) resource_);
+      }
+      if (resourceCase_ == 14) {
+        output.writeMessage(14, (com.google.analytics.admin.v1alpha.CustomMetric) resource_);
       }
       unknownFields.writeTo(output);
     }
@@ -1131,6 +1715,31 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 7, (com.google.analytics.admin.v1alpha.GoogleAdsLink) resource_);
       }
+      if (resourceCase_ == 8) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                8, (com.google.analytics.admin.v1alpha.GoogleSignalsSettings) resource_);
+      }
+      if (resourceCase_ == 11) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                11, (com.google.analytics.admin.v1alpha.ConversionEvent) resource_);
+      }
+      if (resourceCase_ == 12) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                12, (com.google.analytics.admin.v1alpha.MeasurementProtocolSecret) resource_);
+      }
+      if (resourceCase_ == 13) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                13, (com.google.analytics.admin.v1alpha.CustomDimension) resource_);
+      }
+      if (resourceCase_ == 14) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                14, (com.google.analytics.admin.v1alpha.CustomMetric) resource_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1171,6 +1780,22 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           break;
         case 7:
           if (!getGoogleAdsLink().equals(other.getGoogleAdsLink())) return false;
+          break;
+        case 8:
+          if (!getGoogleSignalsSettings().equals(other.getGoogleSignalsSettings())) return false;
+          break;
+        case 11:
+          if (!getConversionEvent().equals(other.getConversionEvent())) return false;
+          break;
+        case 12:
+          if (!getMeasurementProtocolSecret().equals(other.getMeasurementProtocolSecret()))
+            return false;
+          break;
+        case 13:
+          if (!getCustomDimension().equals(other.getCustomDimension())) return false;
+          break;
+        case 14:
+          if (!getCustomMetric().equals(other.getCustomMetric())) return false;
           break;
         case 0:
         default:
@@ -1214,6 +1839,26 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 7:
           hash = (37 * hash) + GOOGLE_ADS_LINK_FIELD_NUMBER;
           hash = (53 * hash) + getGoogleAdsLink().hashCode();
+          break;
+        case 8:
+          hash = (37 * hash) + GOOGLE_SIGNALS_SETTINGS_FIELD_NUMBER;
+          hash = (53 * hash) + getGoogleSignalsSettings().hashCode();
+          break;
+        case 11:
+          hash = (37 * hash) + CONVERSION_EVENT_FIELD_NUMBER;
+          hash = (53 * hash) + getConversionEvent().hashCode();
+          break;
+        case 12:
+          hash = (37 * hash) + MEASUREMENT_PROTOCOL_SECRET_FIELD_NUMBER;
+          hash = (53 * hash) + getMeasurementProtocolSecret().hashCode();
+          break;
+        case 13:
+          hash = (37 * hash) + CUSTOM_DIMENSION_FIELD_NUMBER;
+          hash = (53 * hash) + getCustomDimension().hashCode();
+          break;
+        case 14:
+          hash = (37 * hash) + CUSTOM_METRIC_FIELD_NUMBER;
+          hash = (53 * hash) + getCustomMetric().hashCode();
           break;
         case 0:
         default:
@@ -1458,6 +2103,41 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             result.resource_ = googleAdsLinkBuilder_.build();
           }
         }
+        if (resourceCase_ == 8) {
+          if (googleSignalsSettingsBuilder_ == null) {
+            result.resource_ = resource_;
+          } else {
+            result.resource_ = googleSignalsSettingsBuilder_.build();
+          }
+        }
+        if (resourceCase_ == 11) {
+          if (conversionEventBuilder_ == null) {
+            result.resource_ = resource_;
+          } else {
+            result.resource_ = conversionEventBuilder_.build();
+          }
+        }
+        if (resourceCase_ == 12) {
+          if (measurementProtocolSecretBuilder_ == null) {
+            result.resource_ = resource_;
+          } else {
+            result.resource_ = measurementProtocolSecretBuilder_.build();
+          }
+        }
+        if (resourceCase_ == 13) {
+          if (customDimensionBuilder_ == null) {
+            result.resource_ = resource_;
+          } else {
+            result.resource_ = customDimensionBuilder_.build();
+          }
+        }
+        if (resourceCase_ == 14) {
+          if (customMetricBuilder_ == null) {
+            result.resource_ = resource_;
+          } else {
+            result.resource_ = customMetricBuilder_.build();
+          }
+        }
         result.resourceCase_ = resourceCase_;
         onBuilt();
         return result;
@@ -1550,6 +2230,31 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           case GOOGLE_ADS_LINK:
             {
               mergeGoogleAdsLink(other.getGoogleAdsLink());
+              break;
+            }
+          case GOOGLE_SIGNALS_SETTINGS:
+            {
+              mergeGoogleSignalsSettings(other.getGoogleSignalsSettings());
+              break;
+            }
+          case CONVERSION_EVENT:
+            {
+              mergeConversionEvent(other.getConversionEvent());
+              break;
+            }
+          case MEASUREMENT_PROTOCOL_SECRET:
+            {
+              mergeMeasurementProtocolSecret(other.getMeasurementProtocolSecret());
+              break;
+            }
+          case CUSTOM_DIMENSION:
+            {
+              mergeCustomDimension(other.getCustomDimension());
+              break;
+            }
+          case CUSTOM_METRIC:
+            {
+              mergeCustomMetric(other.getCustomMetric());
               break;
             }
           case RESOURCE_NOT_SET:
@@ -3087,6 +3792,1102 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         onChanged();
         ;
         return googleAdsLinkBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.GoogleSignalsSettings,
+              com.google.analytics.admin.v1alpha.GoogleSignalsSettings.Builder,
+              com.google.analytics.admin.v1alpha.GoogleSignalsSettingsOrBuilder>
+          googleSignalsSettingsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a GoogleSignalsSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.GoogleSignalsSettings google_signals_settings = 8;
+       * </code>
+       *
+       * @return Whether the googleSignalsSettings field is set.
+       */
+      @java.lang.Override
+      public boolean hasGoogleSignalsSettings() {
+        return resourceCase_ == 8;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a GoogleSignalsSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.GoogleSignalsSettings google_signals_settings = 8;
+       * </code>
+       *
+       * @return The googleSignalsSettings.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.GoogleSignalsSettings getGoogleSignalsSettings() {
+        if (googleSignalsSettingsBuilder_ == null) {
+          if (resourceCase_ == 8) {
+            return (com.google.analytics.admin.v1alpha.GoogleSignalsSettings) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.GoogleSignalsSettings.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 8) {
+            return googleSignalsSettingsBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.GoogleSignalsSettings.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a GoogleSignalsSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.GoogleSignalsSettings google_signals_settings = 8;
+       * </code>
+       */
+      public Builder setGoogleSignalsSettings(
+          com.google.analytics.admin.v1alpha.GoogleSignalsSettings value) {
+        if (googleSignalsSettingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          googleSignalsSettingsBuilder_.setMessage(value);
+        }
+        resourceCase_ = 8;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a GoogleSignalsSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.GoogleSignalsSettings google_signals_settings = 8;
+       * </code>
+       */
+      public Builder setGoogleSignalsSettings(
+          com.google.analytics.admin.v1alpha.GoogleSignalsSettings.Builder builderForValue) {
+        if (googleSignalsSettingsBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          googleSignalsSettingsBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 8;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a GoogleSignalsSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.GoogleSignalsSettings google_signals_settings = 8;
+       * </code>
+       */
+      public Builder mergeGoogleSignalsSettings(
+          com.google.analytics.admin.v1alpha.GoogleSignalsSettings value) {
+        if (googleSignalsSettingsBuilder_ == null) {
+          if (resourceCase_ == 8
+              && resource_
+                  != com.google.analytics.admin.v1alpha.GoogleSignalsSettings
+                      .getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.GoogleSignalsSettings.newBuilder(
+                        (com.google.analytics.admin.v1alpha.GoogleSignalsSettings) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 8) {
+            googleSignalsSettingsBuilder_.mergeFrom(value);
+          }
+          googleSignalsSettingsBuilder_.setMessage(value);
+        }
+        resourceCase_ = 8;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a GoogleSignalsSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.GoogleSignalsSettings google_signals_settings = 8;
+       * </code>
+       */
+      public Builder clearGoogleSignalsSettings() {
+        if (googleSignalsSettingsBuilder_ == null) {
+          if (resourceCase_ == 8) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 8) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          googleSignalsSettingsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a GoogleSignalsSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.GoogleSignalsSettings google_signals_settings = 8;
+       * </code>
+       */
+      public com.google.analytics.admin.v1alpha.GoogleSignalsSettings.Builder
+          getGoogleSignalsSettingsBuilder() {
+        return getGoogleSignalsSettingsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a GoogleSignalsSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.GoogleSignalsSettings google_signals_settings = 8;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.GoogleSignalsSettingsOrBuilder
+          getGoogleSignalsSettingsOrBuilder() {
+        if ((resourceCase_ == 8) && (googleSignalsSettingsBuilder_ != null)) {
+          return googleSignalsSettingsBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 8) {
+            return (com.google.analytics.admin.v1alpha.GoogleSignalsSettings) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.GoogleSignalsSettings.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a GoogleSignalsSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.GoogleSignalsSettings google_signals_settings = 8;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.GoogleSignalsSettings,
+              com.google.analytics.admin.v1alpha.GoogleSignalsSettings.Builder,
+              com.google.analytics.admin.v1alpha.GoogleSignalsSettingsOrBuilder>
+          getGoogleSignalsSettingsFieldBuilder() {
+        if (googleSignalsSettingsBuilder_ == null) {
+          if (!(resourceCase_ == 8)) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.GoogleSignalsSettings.getDefaultInstance();
+          }
+          googleSignalsSettingsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.GoogleSignalsSettings,
+                  com.google.analytics.admin.v1alpha.GoogleSignalsSettings.Builder,
+                  com.google.analytics.admin.v1alpha.GoogleSignalsSettingsOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.GoogleSignalsSettings) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 8;
+        onChanged();
+        ;
+        return googleSignalsSettingsBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.ConversionEvent,
+              com.google.analytics.admin.v1alpha.ConversionEvent.Builder,
+              com.google.analytics.admin.v1alpha.ConversionEventOrBuilder>
+          conversionEventBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ConversionEvent resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ConversionEvent conversion_event = 11;</code>
+       *
+       * @return Whether the conversionEvent field is set.
+       */
+      @java.lang.Override
+      public boolean hasConversionEvent() {
+        return resourceCase_ == 11;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ConversionEvent resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ConversionEvent conversion_event = 11;</code>
+       *
+       * @return The conversionEvent.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.ConversionEvent getConversionEvent() {
+        if (conversionEventBuilder_ == null) {
+          if (resourceCase_ == 11) {
+            return (com.google.analytics.admin.v1alpha.ConversionEvent) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.ConversionEvent.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 11) {
+            return conversionEventBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.ConversionEvent.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ConversionEvent resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ConversionEvent conversion_event = 11;</code>
+       */
+      public Builder setConversionEvent(com.google.analytics.admin.v1alpha.ConversionEvent value) {
+        if (conversionEventBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          conversionEventBuilder_.setMessage(value);
+        }
+        resourceCase_ = 11;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ConversionEvent resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ConversionEvent conversion_event = 11;</code>
+       */
+      public Builder setConversionEvent(
+          com.google.analytics.admin.v1alpha.ConversionEvent.Builder builderForValue) {
+        if (conversionEventBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          conversionEventBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 11;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ConversionEvent resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ConversionEvent conversion_event = 11;</code>
+       */
+      public Builder mergeConversionEvent(
+          com.google.analytics.admin.v1alpha.ConversionEvent value) {
+        if (conversionEventBuilder_ == null) {
+          if (resourceCase_ == 11
+              && resource_
+                  != com.google.analytics.admin.v1alpha.ConversionEvent.getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.ConversionEvent.newBuilder(
+                        (com.google.analytics.admin.v1alpha.ConversionEvent) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 11) {
+            conversionEventBuilder_.mergeFrom(value);
+          }
+          conversionEventBuilder_.setMessage(value);
+        }
+        resourceCase_ = 11;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ConversionEvent resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ConversionEvent conversion_event = 11;</code>
+       */
+      public Builder clearConversionEvent() {
+        if (conversionEventBuilder_ == null) {
+          if (resourceCase_ == 11) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 11) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          conversionEventBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ConversionEvent resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ConversionEvent conversion_event = 11;</code>
+       */
+      public com.google.analytics.admin.v1alpha.ConversionEvent.Builder
+          getConversionEventBuilder() {
+        return getConversionEventFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ConversionEvent resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ConversionEvent conversion_event = 11;</code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.ConversionEventOrBuilder
+          getConversionEventOrBuilder() {
+        if ((resourceCase_ == 11) && (conversionEventBuilder_ != null)) {
+          return conversionEventBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 11) {
+            return (com.google.analytics.admin.v1alpha.ConversionEvent) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.ConversionEvent.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ConversionEvent resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ConversionEvent conversion_event = 11;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.ConversionEvent,
+              com.google.analytics.admin.v1alpha.ConversionEvent.Builder,
+              com.google.analytics.admin.v1alpha.ConversionEventOrBuilder>
+          getConversionEventFieldBuilder() {
+        if (conversionEventBuilder_ == null) {
+          if (!(resourceCase_ == 11)) {
+            resource_ = com.google.analytics.admin.v1alpha.ConversionEvent.getDefaultInstance();
+          }
+          conversionEventBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.ConversionEvent,
+                  com.google.analytics.admin.v1alpha.ConversionEvent.Builder,
+                  com.google.analytics.admin.v1alpha.ConversionEventOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.ConversionEvent) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 11;
+        onChanged();
+        ;
+        return conversionEventBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.MeasurementProtocolSecret,
+              com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.Builder,
+              com.google.analytics.admin.v1alpha.MeasurementProtocolSecretOrBuilder>
+          measurementProtocolSecretBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a MeasurementProtocolSecret resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.MeasurementProtocolSecret measurement_protocol_secret = 12;
+       * </code>
+       *
+       * @return Whether the measurementProtocolSecret field is set.
+       */
+      @java.lang.Override
+      public boolean hasMeasurementProtocolSecret() {
+        return resourceCase_ == 12;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a MeasurementProtocolSecret resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.MeasurementProtocolSecret measurement_protocol_secret = 12;
+       * </code>
+       *
+       * @return The measurementProtocolSecret.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.MeasurementProtocolSecret
+          getMeasurementProtocolSecret() {
+        if (measurementProtocolSecretBuilder_ == null) {
+          if (resourceCase_ == 12) {
+            return (com.google.analytics.admin.v1alpha.MeasurementProtocolSecret) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 12) {
+            return measurementProtocolSecretBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a MeasurementProtocolSecret resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.MeasurementProtocolSecret measurement_protocol_secret = 12;
+       * </code>
+       */
+      public Builder setMeasurementProtocolSecret(
+          com.google.analytics.admin.v1alpha.MeasurementProtocolSecret value) {
+        if (measurementProtocolSecretBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          measurementProtocolSecretBuilder_.setMessage(value);
+        }
+        resourceCase_ = 12;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a MeasurementProtocolSecret resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.MeasurementProtocolSecret measurement_protocol_secret = 12;
+       * </code>
+       */
+      public Builder setMeasurementProtocolSecret(
+          com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.Builder builderForValue) {
+        if (measurementProtocolSecretBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          measurementProtocolSecretBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 12;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a MeasurementProtocolSecret resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.MeasurementProtocolSecret measurement_protocol_secret = 12;
+       * </code>
+       */
+      public Builder mergeMeasurementProtocolSecret(
+          com.google.analytics.admin.v1alpha.MeasurementProtocolSecret value) {
+        if (measurementProtocolSecretBuilder_ == null) {
+          if (resourceCase_ == 12
+              && resource_
+                  != com.google.analytics.admin.v1alpha.MeasurementProtocolSecret
+                      .getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.newBuilder(
+                        (com.google.analytics.admin.v1alpha.MeasurementProtocolSecret) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 12) {
+            measurementProtocolSecretBuilder_.mergeFrom(value);
+          }
+          measurementProtocolSecretBuilder_.setMessage(value);
+        }
+        resourceCase_ = 12;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a MeasurementProtocolSecret resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.MeasurementProtocolSecret measurement_protocol_secret = 12;
+       * </code>
+       */
+      public Builder clearMeasurementProtocolSecret() {
+        if (measurementProtocolSecretBuilder_ == null) {
+          if (resourceCase_ == 12) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 12) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          measurementProtocolSecretBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a MeasurementProtocolSecret resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.MeasurementProtocolSecret measurement_protocol_secret = 12;
+       * </code>
+       */
+      public com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.Builder
+          getMeasurementProtocolSecretBuilder() {
+        return getMeasurementProtocolSecretFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a MeasurementProtocolSecret resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.MeasurementProtocolSecret measurement_protocol_secret = 12;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.MeasurementProtocolSecretOrBuilder
+          getMeasurementProtocolSecretOrBuilder() {
+        if ((resourceCase_ == 12) && (measurementProtocolSecretBuilder_ != null)) {
+          return measurementProtocolSecretBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 12) {
+            return (com.google.analytics.admin.v1alpha.MeasurementProtocolSecret) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a MeasurementProtocolSecret resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.MeasurementProtocolSecret measurement_protocol_secret = 12;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.MeasurementProtocolSecret,
+              com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.Builder,
+              com.google.analytics.admin.v1alpha.MeasurementProtocolSecretOrBuilder>
+          getMeasurementProtocolSecretFieldBuilder() {
+        if (measurementProtocolSecretBuilder_ == null) {
+          if (!(resourceCase_ == 12)) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.getDefaultInstance();
+          }
+          measurementProtocolSecretBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.MeasurementProtocolSecret,
+                  com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.Builder,
+                  com.google.analytics.admin.v1alpha.MeasurementProtocolSecretOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.MeasurementProtocolSecret) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 12;
+        onChanged();
+        ;
+        return measurementProtocolSecretBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.CustomDimension,
+              com.google.analytics.admin.v1alpha.CustomDimension.Builder,
+              com.google.analytics.admin.v1alpha.CustomDimensionOrBuilder>
+          customDimensionBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a CustomDimension resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.CustomDimension custom_dimension = 13;</code>
+       *
+       * @return Whether the customDimension field is set.
+       */
+      @java.lang.Override
+      public boolean hasCustomDimension() {
+        return resourceCase_ == 13;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a CustomDimension resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.CustomDimension custom_dimension = 13;</code>
+       *
+       * @return The customDimension.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.CustomDimension getCustomDimension() {
+        if (customDimensionBuilder_ == null) {
+          if (resourceCase_ == 13) {
+            return (com.google.analytics.admin.v1alpha.CustomDimension) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.CustomDimension.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 13) {
+            return customDimensionBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.CustomDimension.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a CustomDimension resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.CustomDimension custom_dimension = 13;</code>
+       */
+      public Builder setCustomDimension(com.google.analytics.admin.v1alpha.CustomDimension value) {
+        if (customDimensionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          customDimensionBuilder_.setMessage(value);
+        }
+        resourceCase_ = 13;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a CustomDimension resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.CustomDimension custom_dimension = 13;</code>
+       */
+      public Builder setCustomDimension(
+          com.google.analytics.admin.v1alpha.CustomDimension.Builder builderForValue) {
+        if (customDimensionBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          customDimensionBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 13;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a CustomDimension resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.CustomDimension custom_dimension = 13;</code>
+       */
+      public Builder mergeCustomDimension(
+          com.google.analytics.admin.v1alpha.CustomDimension value) {
+        if (customDimensionBuilder_ == null) {
+          if (resourceCase_ == 13
+              && resource_
+                  != com.google.analytics.admin.v1alpha.CustomDimension.getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.CustomDimension.newBuilder(
+                        (com.google.analytics.admin.v1alpha.CustomDimension) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 13) {
+            customDimensionBuilder_.mergeFrom(value);
+          }
+          customDimensionBuilder_.setMessage(value);
+        }
+        resourceCase_ = 13;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a CustomDimension resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.CustomDimension custom_dimension = 13;</code>
+       */
+      public Builder clearCustomDimension() {
+        if (customDimensionBuilder_ == null) {
+          if (resourceCase_ == 13) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 13) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          customDimensionBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a CustomDimension resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.CustomDimension custom_dimension = 13;</code>
+       */
+      public com.google.analytics.admin.v1alpha.CustomDimension.Builder
+          getCustomDimensionBuilder() {
+        return getCustomDimensionFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a CustomDimension resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.CustomDimension custom_dimension = 13;</code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.CustomDimensionOrBuilder
+          getCustomDimensionOrBuilder() {
+        if ((resourceCase_ == 13) && (customDimensionBuilder_ != null)) {
+          return customDimensionBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 13) {
+            return (com.google.analytics.admin.v1alpha.CustomDimension) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.CustomDimension.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a CustomDimension resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.CustomDimension custom_dimension = 13;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.CustomDimension,
+              com.google.analytics.admin.v1alpha.CustomDimension.Builder,
+              com.google.analytics.admin.v1alpha.CustomDimensionOrBuilder>
+          getCustomDimensionFieldBuilder() {
+        if (customDimensionBuilder_ == null) {
+          if (!(resourceCase_ == 13)) {
+            resource_ = com.google.analytics.admin.v1alpha.CustomDimension.getDefaultInstance();
+          }
+          customDimensionBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.CustomDimension,
+                  com.google.analytics.admin.v1alpha.CustomDimension.Builder,
+                  com.google.analytics.admin.v1alpha.CustomDimensionOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.CustomDimension) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 13;
+        onChanged();
+        ;
+        return customDimensionBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.CustomMetric,
+              com.google.analytics.admin.v1alpha.CustomMetric.Builder,
+              com.google.analytics.admin.v1alpha.CustomMetricOrBuilder>
+          customMetricBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a CustomMetric resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.CustomMetric custom_metric = 14;</code>
+       *
+       * @return Whether the customMetric field is set.
+       */
+      @java.lang.Override
+      public boolean hasCustomMetric() {
+        return resourceCase_ == 14;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a CustomMetric resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.CustomMetric custom_metric = 14;</code>
+       *
+       * @return The customMetric.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.CustomMetric getCustomMetric() {
+        if (customMetricBuilder_ == null) {
+          if (resourceCase_ == 14) {
+            return (com.google.analytics.admin.v1alpha.CustomMetric) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.CustomMetric.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 14) {
+            return customMetricBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.CustomMetric.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a CustomMetric resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.CustomMetric custom_metric = 14;</code>
+       */
+      public Builder setCustomMetric(com.google.analytics.admin.v1alpha.CustomMetric value) {
+        if (customMetricBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          customMetricBuilder_.setMessage(value);
+        }
+        resourceCase_ = 14;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a CustomMetric resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.CustomMetric custom_metric = 14;</code>
+       */
+      public Builder setCustomMetric(
+          com.google.analytics.admin.v1alpha.CustomMetric.Builder builderForValue) {
+        if (customMetricBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          customMetricBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 14;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a CustomMetric resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.CustomMetric custom_metric = 14;</code>
+       */
+      public Builder mergeCustomMetric(com.google.analytics.admin.v1alpha.CustomMetric value) {
+        if (customMetricBuilder_ == null) {
+          if (resourceCase_ == 14
+              && resource_
+                  != com.google.analytics.admin.v1alpha.CustomMetric.getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.CustomMetric.newBuilder(
+                        (com.google.analytics.admin.v1alpha.CustomMetric) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 14) {
+            customMetricBuilder_.mergeFrom(value);
+          }
+          customMetricBuilder_.setMessage(value);
+        }
+        resourceCase_ = 14;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a CustomMetric resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.CustomMetric custom_metric = 14;</code>
+       */
+      public Builder clearCustomMetric() {
+        if (customMetricBuilder_ == null) {
+          if (resourceCase_ == 14) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 14) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          customMetricBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a CustomMetric resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.CustomMetric custom_metric = 14;</code>
+       */
+      public com.google.analytics.admin.v1alpha.CustomMetric.Builder getCustomMetricBuilder() {
+        return getCustomMetricFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a CustomMetric resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.CustomMetric custom_metric = 14;</code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.CustomMetricOrBuilder getCustomMetricOrBuilder() {
+        if ((resourceCase_ == 14) && (customMetricBuilder_ != null)) {
+          return customMetricBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 14) {
+            return (com.google.analytics.admin.v1alpha.CustomMetric) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.CustomMetric.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a CustomMetric resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.CustomMetric custom_metric = 14;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.CustomMetric,
+              com.google.analytics.admin.v1alpha.CustomMetric.Builder,
+              com.google.analytics.admin.v1alpha.CustomMetricOrBuilder>
+          getCustomMetricFieldBuilder() {
+        if (customMetricBuilder_ == null) {
+          if (!(resourceCase_ == 14)) {
+            resource_ = com.google.analytics.admin.v1alpha.CustomMetric.getDefaultInstance();
+          }
+          customMetricBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.CustomMetric,
+                  com.google.analytics.admin.v1alpha.CustomMetric.Builder,
+                  com.google.analytics.admin.v1alpha.CustomMetricOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.CustomMetric) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 14;
+        onChanged();
+        ;
+        return customMetricBuilder_;
       }
 
       @java.lang.Override

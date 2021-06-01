@@ -20,9 +20,13 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Aud
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAndroidAppDataStreamsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListIosAppDataStreamsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListWebDataStreamsPagedResponse;
@@ -31,6 +35,8 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Sea
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AccountSummary;
 import com.google.analytics.admin.v1alpha.AndroidAppDataStream;
+import com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest;
+import com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.AuditUserLink;
 import com.google.analytics.admin.v1alpha.AuditUserLinksRequest;
 import com.google.analytics.admin.v1alpha.AuditUserLinksResponse;
@@ -42,17 +48,26 @@ import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.ChangeHistoryEvent;
+import com.google.analytics.admin.v1alpha.ConversionEvent;
+import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
+import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
+import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
 import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest;
+import com.google.analytics.admin.v1alpha.CustomDimension;
+import com.google.analytics.admin.v1alpha.CustomMetric;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteIosAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest;
@@ -60,15 +75,21 @@ import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
 import com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
+import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
+import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
+import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetIosAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
 import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
 import com.google.analytics.admin.v1alpha.GetWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
+import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
 import com.google.analytics.admin.v1alpha.IosAppDataStream;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
@@ -76,18 +97,27 @@ import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
 import com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsRequest;
 import com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsResponse;
+import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
+import com.google.analytics.admin.v1alpha.ListConversionEventsResponse;
+import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
+import com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse;
+import com.google.analytics.admin.v1alpha.ListCustomMetricsRequest;
+import com.google.analytics.admin.v1alpha.ListCustomMetricsResponse;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse;
 import com.google.analytics.admin.v1alpha.ListIosAppDataStreamsRequest;
 import com.google.analytics.admin.v1alpha.ListIosAppDataStreamsResponse;
+import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
+import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
 import com.google.analytics.admin.v1alpha.ListUserLinksRequest;
 import com.google.analytics.admin.v1alpha.ListUserLinksResponse;
 import com.google.analytics.admin.v1alpha.ListWebDataStreamsRequest;
 import com.google.analytics.admin.v1alpha.ListWebDataStreamsResponse;
+import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
@@ -95,10 +125,14 @@ import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
+import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
 import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateWebDataStreamRequest;
@@ -276,11 +310,61 @@ public class AnalyticsAdminServiceStubSettings
       listGoogleAdsLinksSettings;
   private final UnaryCallSettings<GetDataSharingSettingsRequest, DataSharingSettings>
       getDataSharingSettingsSettings;
+  private final UnaryCallSettings<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      getMeasurementProtocolSecretSettings;
+  private final PagedCallSettings<
+          ListMeasurementProtocolSecretsRequest,
+          ListMeasurementProtocolSecretsResponse,
+          ListMeasurementProtocolSecretsPagedResponse>
+      listMeasurementProtocolSecretsSettings;
+  private final UnaryCallSettings<CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      createMeasurementProtocolSecretSettings;
+  private final UnaryCallSettings<DeleteMeasurementProtocolSecretRequest, Empty>
+      deleteMeasurementProtocolSecretSettings;
+  private final UnaryCallSettings<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      updateMeasurementProtocolSecretSettings;
   private final PagedCallSettings<
           SearchChangeHistoryEventsRequest,
           SearchChangeHistoryEventsResponse,
           SearchChangeHistoryEventsPagedResponse>
       searchChangeHistoryEventsSettings;
+  private final UnaryCallSettings<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+      getGoogleSignalsSettingsSettings;
+  private final UnaryCallSettings<UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+      updateGoogleSignalsSettingsSettings;
+  private final UnaryCallSettings<CreateConversionEventRequest, ConversionEvent>
+      createConversionEventSettings;
+  private final UnaryCallSettings<GetConversionEventRequest, ConversionEvent>
+      getConversionEventSettings;
+  private final UnaryCallSettings<DeleteConversionEventRequest, Empty>
+      deleteConversionEventSettings;
+  private final PagedCallSettings<
+          ListConversionEventsRequest,
+          ListConversionEventsResponse,
+          ListConversionEventsPagedResponse>
+      listConversionEventsSettings;
+  private final UnaryCallSettings<CreateCustomDimensionRequest, CustomDimension>
+      createCustomDimensionSettings;
+  private final UnaryCallSettings<UpdateCustomDimensionRequest, CustomDimension>
+      updateCustomDimensionSettings;
+  private final PagedCallSettings<
+          ListCustomDimensionsRequest,
+          ListCustomDimensionsResponse,
+          ListCustomDimensionsPagedResponse>
+      listCustomDimensionsSettings;
+  private final UnaryCallSettings<ArchiveCustomDimensionRequest, Empty>
+      archiveCustomDimensionSettings;
+  private final UnaryCallSettings<GetCustomDimensionRequest, CustomDimension>
+      getCustomDimensionSettings;
+  private final UnaryCallSettings<CreateCustomMetricRequest, CustomMetric>
+      createCustomMetricSettings;
+  private final UnaryCallSettings<UpdateCustomMetricRequest, CustomMetric>
+      updateCustomMetricSettings;
+  private final PagedCallSettings<
+          ListCustomMetricsRequest, ListCustomMetricsResponse, ListCustomMetricsPagedResponse>
+      listCustomMetricsSettings;
+  private final UnaryCallSettings<ArchiveCustomMetricRequest, Empty> archiveCustomMetricSettings;
+  private final UnaryCallSettings<GetCustomMetricRequest, CustomMetric> getCustomMetricSettings;
 
   private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
       LIST_ACCOUNTS_PAGE_STR_DESC =
@@ -678,6 +762,55 @@ public class AnalyticsAdminServiceStubSettings
           };
 
   private static final PagedListDescriptor<
+          ListMeasurementProtocolSecretsRequest,
+          ListMeasurementProtocolSecretsResponse,
+          MeasurementProtocolSecret>
+      LIST_MEASUREMENT_PROTOCOL_SECRETS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListMeasurementProtocolSecretsRequest,
+              ListMeasurementProtocolSecretsResponse,
+              MeasurementProtocolSecret>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListMeasurementProtocolSecretsRequest injectToken(
+                ListMeasurementProtocolSecretsRequest payload, String token) {
+              return ListMeasurementProtocolSecretsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListMeasurementProtocolSecretsRequest injectPageSize(
+                ListMeasurementProtocolSecretsRequest payload, int pageSize) {
+              return ListMeasurementProtocolSecretsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListMeasurementProtocolSecretsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListMeasurementProtocolSecretsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<MeasurementProtocolSecret> extractResources(
+                ListMeasurementProtocolSecretsResponse payload) {
+              return payload.getMeasurementProtocolSecretsList() == null
+                  ? ImmutableList.<MeasurementProtocolSecret>of()
+                  : payload.getMeasurementProtocolSecretsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
           SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse, ChangeHistoryEvent>
       SEARCH_CHANGE_HISTORY_EVENTS_PAGE_STR_DESC =
           new PagedListDescriptor<
@@ -721,6 +854,128 @@ public class AnalyticsAdminServiceStubSettings
               return payload.getChangeHistoryEventsList() == null
                   ? ImmutableList.<ChangeHistoryEvent>of()
                   : payload.getChangeHistoryEventsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListConversionEventsRequest, ListConversionEventsResponse, ConversionEvent>
+      LIST_CONVERSION_EVENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListConversionEventsRequest, ListConversionEventsResponse, ConversionEvent>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListConversionEventsRequest injectToken(
+                ListConversionEventsRequest payload, String token) {
+              return ListConversionEventsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListConversionEventsRequest injectPageSize(
+                ListConversionEventsRequest payload, int pageSize) {
+              return ListConversionEventsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListConversionEventsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListConversionEventsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ConversionEvent> extractResources(
+                ListConversionEventsResponse payload) {
+              return payload.getConversionEventsList() == null
+                  ? ImmutableList.<ConversionEvent>of()
+                  : payload.getConversionEventsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListCustomDimensionsRequest, ListCustomDimensionsResponse, CustomDimension>
+      LIST_CUSTOM_DIMENSIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListCustomDimensionsRequest, ListCustomDimensionsResponse, CustomDimension>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListCustomDimensionsRequest injectToken(
+                ListCustomDimensionsRequest payload, String token) {
+              return ListCustomDimensionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListCustomDimensionsRequest injectPageSize(
+                ListCustomDimensionsRequest payload, int pageSize) {
+              return ListCustomDimensionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListCustomDimensionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListCustomDimensionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<CustomDimension> extractResources(
+                ListCustomDimensionsResponse payload) {
+              return payload.getCustomDimensionsList() == null
+                  ? ImmutableList.<CustomDimension>of()
+                  : payload.getCustomDimensionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListCustomMetricsRequest, ListCustomMetricsResponse, CustomMetric>
+      LIST_CUSTOM_METRICS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListCustomMetricsRequest, ListCustomMetricsResponse, CustomMetric>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListCustomMetricsRequest injectToken(
+                ListCustomMetricsRequest payload, String token) {
+              return ListCustomMetricsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListCustomMetricsRequest injectPageSize(
+                ListCustomMetricsRequest payload, int pageSize) {
+              return ListCustomMetricsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListCustomMetricsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListCustomMetricsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<CustomMetric> extractResources(ListCustomMetricsResponse payload) {
+              return payload.getCustomMetricsList() == null
+                  ? ImmutableList.<CustomMetric>of()
+                  : payload.getCustomMetricsList();
             }
           };
 
@@ -933,6 +1188,39 @@ public class AnalyticsAdminServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
+          ListMeasurementProtocolSecretsRequest,
+          ListMeasurementProtocolSecretsResponse,
+          ListMeasurementProtocolSecretsPagedResponse>
+      LIST_MEASUREMENT_PROTOCOL_SECRETS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListMeasurementProtocolSecretsRequest,
+              ListMeasurementProtocolSecretsResponse,
+              ListMeasurementProtocolSecretsPagedResponse>() {
+            @Override
+            public ApiFuture<ListMeasurementProtocolSecretsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListMeasurementProtocolSecretsRequest,
+                        ListMeasurementProtocolSecretsResponse>
+                    callable,
+                ListMeasurementProtocolSecretsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListMeasurementProtocolSecretsResponse> futureResponse) {
+              PageContext<
+                      ListMeasurementProtocolSecretsRequest,
+                      ListMeasurementProtocolSecretsResponse,
+                      MeasurementProtocolSecret>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_MEASUREMENT_PROTOCOL_SECRETS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListMeasurementProtocolSecretsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           SearchChangeHistoryEventsRequest,
           SearchChangeHistoryEventsResponse,
           SearchChangeHistoryEventsPagedResponse>
@@ -957,6 +1245,75 @@ public class AnalyticsAdminServiceStubSettings
                           callable, SEARCH_CHANGE_HISTORY_EVENTS_PAGE_STR_DESC, request, context);
               return SearchChangeHistoryEventsPagedResponse.createAsync(
                   pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListConversionEventsRequest,
+          ListConversionEventsResponse,
+          ListConversionEventsPagedResponse>
+      LIST_CONVERSION_EVENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListConversionEventsRequest,
+              ListConversionEventsResponse,
+              ListConversionEventsPagedResponse>() {
+            @Override
+            public ApiFuture<ListConversionEventsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListConversionEventsRequest, ListConversionEventsResponse> callable,
+                ListConversionEventsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListConversionEventsResponse> futureResponse) {
+              PageContext<
+                      ListConversionEventsRequest, ListConversionEventsResponse, ConversionEvent>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_CONVERSION_EVENTS_PAGE_STR_DESC, request, context);
+              return ListConversionEventsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListCustomDimensionsRequest,
+          ListCustomDimensionsResponse,
+          ListCustomDimensionsPagedResponse>
+      LIST_CUSTOM_DIMENSIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListCustomDimensionsRequest,
+              ListCustomDimensionsResponse,
+              ListCustomDimensionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListCustomDimensionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListCustomDimensionsRequest, ListCustomDimensionsResponse> callable,
+                ListCustomDimensionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListCustomDimensionsResponse> futureResponse) {
+              PageContext<
+                      ListCustomDimensionsRequest, ListCustomDimensionsResponse, CustomDimension>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_CUSTOM_DIMENSIONS_PAGE_STR_DESC, request, context);
+              return ListCustomDimensionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListCustomMetricsRequest, ListCustomMetricsResponse, ListCustomMetricsPagedResponse>
+      LIST_CUSTOM_METRICS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListCustomMetricsRequest,
+              ListCustomMetricsResponse,
+              ListCustomMetricsPagedResponse>() {
+            @Override
+            public ApiFuture<ListCustomMetricsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListCustomMetricsRequest, ListCustomMetricsResponse> callable,
+                ListCustomMetricsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListCustomMetricsResponse> futureResponse) {
+              PageContext<ListCustomMetricsRequest, ListCustomMetricsResponse, CustomMetric>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_CUSTOM_METRICS_PAGE_STR_DESC, request, context);
+              return ListCustomMetricsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1230,6 +1587,39 @@ public class AnalyticsAdminServiceStubSettings
     return getDataSharingSettingsSettings;
   }
 
+  /** Returns the object with the settings used for calls to getMeasurementProtocolSecret. */
+  public UnaryCallSettings<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      getMeasurementProtocolSecretSettings() {
+    return getMeasurementProtocolSecretSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listMeasurementProtocolSecrets. */
+  public PagedCallSettings<
+          ListMeasurementProtocolSecretsRequest,
+          ListMeasurementProtocolSecretsResponse,
+          ListMeasurementProtocolSecretsPagedResponse>
+      listMeasurementProtocolSecretsSettings() {
+    return listMeasurementProtocolSecretsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createMeasurementProtocolSecret. */
+  public UnaryCallSettings<CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      createMeasurementProtocolSecretSettings() {
+    return createMeasurementProtocolSecretSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteMeasurementProtocolSecret. */
+  public UnaryCallSettings<DeleteMeasurementProtocolSecretRequest, Empty>
+      deleteMeasurementProtocolSecretSettings() {
+    return deleteMeasurementProtocolSecretSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateMeasurementProtocolSecret. */
+  public UnaryCallSettings<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+      updateMeasurementProtocolSecretSettings() {
+    return updateMeasurementProtocolSecretSettings;
+  }
+
   /** Returns the object with the settings used for calls to searchChangeHistoryEvents. */
   public PagedCallSettings<
           SearchChangeHistoryEventsRequest,
@@ -1237,6 +1627,103 @@ public class AnalyticsAdminServiceStubSettings
           SearchChangeHistoryEventsPagedResponse>
       searchChangeHistoryEventsSettings() {
     return searchChangeHistoryEventsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getGoogleSignalsSettings. */
+  public UnaryCallSettings<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+      getGoogleSignalsSettingsSettings() {
+    return getGoogleSignalsSettingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateGoogleSignalsSettings. */
+  public UnaryCallSettings<UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+      updateGoogleSignalsSettingsSettings() {
+    return updateGoogleSignalsSettingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createConversionEvent. */
+  public UnaryCallSettings<CreateConversionEventRequest, ConversionEvent>
+      createConversionEventSettings() {
+    return createConversionEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getConversionEvent. */
+  public UnaryCallSettings<GetConversionEventRequest, ConversionEvent>
+      getConversionEventSettings() {
+    return getConversionEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteConversionEvent. */
+  public UnaryCallSettings<DeleteConversionEventRequest, Empty> deleteConversionEventSettings() {
+    return deleteConversionEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listConversionEvents. */
+  public PagedCallSettings<
+          ListConversionEventsRequest,
+          ListConversionEventsResponse,
+          ListConversionEventsPagedResponse>
+      listConversionEventsSettings() {
+    return listConversionEventsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createCustomDimension. */
+  public UnaryCallSettings<CreateCustomDimensionRequest, CustomDimension>
+      createCustomDimensionSettings() {
+    return createCustomDimensionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomDimension. */
+  public UnaryCallSettings<UpdateCustomDimensionRequest, CustomDimension>
+      updateCustomDimensionSettings() {
+    return updateCustomDimensionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listCustomDimensions. */
+  public PagedCallSettings<
+          ListCustomDimensionsRequest,
+          ListCustomDimensionsResponse,
+          ListCustomDimensionsPagedResponse>
+      listCustomDimensionsSettings() {
+    return listCustomDimensionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to archiveCustomDimension. */
+  public UnaryCallSettings<ArchiveCustomDimensionRequest, Empty> archiveCustomDimensionSettings() {
+    return archiveCustomDimensionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getCustomDimension. */
+  public UnaryCallSettings<GetCustomDimensionRequest, CustomDimension>
+      getCustomDimensionSettings() {
+    return getCustomDimensionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createCustomMetric. */
+  public UnaryCallSettings<CreateCustomMetricRequest, CustomMetric> createCustomMetricSettings() {
+    return createCustomMetricSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomMetric. */
+  public UnaryCallSettings<UpdateCustomMetricRequest, CustomMetric> updateCustomMetricSettings() {
+    return updateCustomMetricSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listCustomMetrics. */
+  public PagedCallSettings<
+          ListCustomMetricsRequest, ListCustomMetricsResponse, ListCustomMetricsPagedResponse>
+      listCustomMetricsSettings() {
+    return listCustomMetricsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to archiveCustomMetric. */
+  public UnaryCallSettings<ArchiveCustomMetricRequest, Empty> archiveCustomMetricSettings() {
+    return archiveCustomMetricSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getCustomMetric. */
+  public UnaryCallSettings<GetCustomMetricRequest, CustomMetric> getCustomMetricSettings() {
+    return getCustomMetricSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -1358,7 +1845,34 @@ public class AnalyticsAdminServiceStubSettings
     deleteGoogleAdsLinkSettings = settingsBuilder.deleteGoogleAdsLinkSettings().build();
     listGoogleAdsLinksSettings = settingsBuilder.listGoogleAdsLinksSettings().build();
     getDataSharingSettingsSettings = settingsBuilder.getDataSharingSettingsSettings().build();
+    getMeasurementProtocolSecretSettings =
+        settingsBuilder.getMeasurementProtocolSecretSettings().build();
+    listMeasurementProtocolSecretsSettings =
+        settingsBuilder.listMeasurementProtocolSecretsSettings().build();
+    createMeasurementProtocolSecretSettings =
+        settingsBuilder.createMeasurementProtocolSecretSettings().build();
+    deleteMeasurementProtocolSecretSettings =
+        settingsBuilder.deleteMeasurementProtocolSecretSettings().build();
+    updateMeasurementProtocolSecretSettings =
+        settingsBuilder.updateMeasurementProtocolSecretSettings().build();
     searchChangeHistoryEventsSettings = settingsBuilder.searchChangeHistoryEventsSettings().build();
+    getGoogleSignalsSettingsSettings = settingsBuilder.getGoogleSignalsSettingsSettings().build();
+    updateGoogleSignalsSettingsSettings =
+        settingsBuilder.updateGoogleSignalsSettingsSettings().build();
+    createConversionEventSettings = settingsBuilder.createConversionEventSettings().build();
+    getConversionEventSettings = settingsBuilder.getConversionEventSettings().build();
+    deleteConversionEventSettings = settingsBuilder.deleteConversionEventSettings().build();
+    listConversionEventsSettings = settingsBuilder.listConversionEventsSettings().build();
+    createCustomDimensionSettings = settingsBuilder.createCustomDimensionSettings().build();
+    updateCustomDimensionSettings = settingsBuilder.updateCustomDimensionSettings().build();
+    listCustomDimensionsSettings = settingsBuilder.listCustomDimensionsSettings().build();
+    archiveCustomDimensionSettings = settingsBuilder.archiveCustomDimensionSettings().build();
+    getCustomDimensionSettings = settingsBuilder.getCustomDimensionSettings().build();
+    createCustomMetricSettings = settingsBuilder.createCustomMetricSettings().build();
+    updateCustomMetricSettings = settingsBuilder.updateCustomMetricSettings().build();
+    listCustomMetricsSettings = settingsBuilder.listCustomMetricsSettings().build();
+    archiveCustomMetricSettings = settingsBuilder.archiveCustomMetricSettings().build();
+    getCustomMetricSettings = settingsBuilder.getCustomMetricSettings().build();
   }
 
   /** Builder for AnalyticsAdminServiceStubSettings. */
@@ -1467,11 +1981,67 @@ public class AnalyticsAdminServiceStubSettings
         listGoogleAdsLinksSettings;
     private final UnaryCallSettings.Builder<GetDataSharingSettingsRequest, DataSharingSettings>
         getDataSharingSettingsSettings;
+    private final UnaryCallSettings.Builder<
+            GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+        getMeasurementProtocolSecretSettings;
+    private final PagedCallSettings.Builder<
+            ListMeasurementProtocolSecretsRequest,
+            ListMeasurementProtocolSecretsResponse,
+            ListMeasurementProtocolSecretsPagedResponse>
+        listMeasurementProtocolSecretsSettings;
+    private final UnaryCallSettings.Builder<
+            CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+        createMeasurementProtocolSecretSettings;
+    private final UnaryCallSettings.Builder<DeleteMeasurementProtocolSecretRequest, Empty>
+        deleteMeasurementProtocolSecretSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+        updateMeasurementProtocolSecretSettings;
     private final PagedCallSettings.Builder<
             SearchChangeHistoryEventsRequest,
             SearchChangeHistoryEventsResponse,
             SearchChangeHistoryEventsPagedResponse>
         searchChangeHistoryEventsSettings;
+    private final UnaryCallSettings.Builder<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+        getGoogleSignalsSettingsSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+        updateGoogleSignalsSettingsSettings;
+    private final UnaryCallSettings.Builder<CreateConversionEventRequest, ConversionEvent>
+        createConversionEventSettings;
+    private final UnaryCallSettings.Builder<GetConversionEventRequest, ConversionEvent>
+        getConversionEventSettings;
+    private final UnaryCallSettings.Builder<DeleteConversionEventRequest, Empty>
+        deleteConversionEventSettings;
+    private final PagedCallSettings.Builder<
+            ListConversionEventsRequest,
+            ListConversionEventsResponse,
+            ListConversionEventsPagedResponse>
+        listConversionEventsSettings;
+    private final UnaryCallSettings.Builder<CreateCustomDimensionRequest, CustomDimension>
+        createCustomDimensionSettings;
+    private final UnaryCallSettings.Builder<UpdateCustomDimensionRequest, CustomDimension>
+        updateCustomDimensionSettings;
+    private final PagedCallSettings.Builder<
+            ListCustomDimensionsRequest,
+            ListCustomDimensionsResponse,
+            ListCustomDimensionsPagedResponse>
+        listCustomDimensionsSettings;
+    private final UnaryCallSettings.Builder<ArchiveCustomDimensionRequest, Empty>
+        archiveCustomDimensionSettings;
+    private final UnaryCallSettings.Builder<GetCustomDimensionRequest, CustomDimension>
+        getCustomDimensionSettings;
+    private final UnaryCallSettings.Builder<CreateCustomMetricRequest, CustomMetric>
+        createCustomMetricSettings;
+    private final UnaryCallSettings.Builder<UpdateCustomMetricRequest, CustomMetric>
+        updateCustomMetricSettings;
+    private final PagedCallSettings.Builder<
+            ListCustomMetricsRequest, ListCustomMetricsResponse, ListCustomMetricsPagedResponse>
+        listCustomMetricsSettings;
+    private final UnaryCallSettings.Builder<ArchiveCustomMetricRequest, Empty>
+        archiveCustomMetricSettings;
+    private final UnaryCallSettings.Builder<GetCustomMetricRequest, CustomMetric>
+        getCustomMetricSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1573,8 +2143,32 @@ public class AnalyticsAdminServiceStubSettings
       listGoogleAdsLinksSettings =
           PagedCallSettings.newBuilder(LIST_GOOGLE_ADS_LINKS_PAGE_STR_FACT);
       getDataSharingSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getMeasurementProtocolSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listMeasurementProtocolSecretsSettings =
+          PagedCallSettings.newBuilder(LIST_MEASUREMENT_PROTOCOL_SECRETS_PAGE_STR_FACT);
+      createMeasurementProtocolSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteMeasurementProtocolSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateMeasurementProtocolSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       searchChangeHistoryEventsSettings =
           PagedCallSettings.newBuilder(SEARCH_CHANGE_HISTORY_EVENTS_PAGE_STR_FACT);
+      getGoogleSignalsSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateGoogleSignalsSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createConversionEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getConversionEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteConversionEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listConversionEventsSettings =
+          PagedCallSettings.newBuilder(LIST_CONVERSION_EVENTS_PAGE_STR_FACT);
+      createCustomDimensionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateCustomDimensionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listCustomDimensionsSettings =
+          PagedCallSettings.newBuilder(LIST_CUSTOM_DIMENSIONS_PAGE_STR_FACT);
+      archiveCustomDimensionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getCustomDimensionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createCustomMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateCustomMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listCustomMetricsSettings = PagedCallSettings.newBuilder(LIST_CUSTOM_METRICS_PAGE_STR_FACT);
+      archiveCustomMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getCustomMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1624,7 +2218,28 @@ public class AnalyticsAdminServiceStubSettings
               deleteGoogleAdsLinkSettings,
               listGoogleAdsLinksSettings,
               getDataSharingSettingsSettings,
-              searchChangeHistoryEventsSettings);
+              getMeasurementProtocolSecretSettings,
+              listMeasurementProtocolSecretsSettings,
+              createMeasurementProtocolSecretSettings,
+              deleteMeasurementProtocolSecretSettings,
+              updateMeasurementProtocolSecretSettings,
+              searchChangeHistoryEventsSettings,
+              getGoogleSignalsSettingsSettings,
+              updateGoogleSignalsSettingsSettings,
+              createConversionEventSettings,
+              getConversionEventSettings,
+              deleteConversionEventSettings,
+              listConversionEventsSettings,
+              createCustomDimensionSettings,
+              updateCustomDimensionSettings,
+              listCustomDimensionsSettings,
+              archiveCustomDimensionSettings,
+              getCustomDimensionSettings,
+              createCustomMetricSettings,
+              updateCustomMetricSettings,
+              listCustomMetricsSettings,
+              archiveCustomMetricSettings,
+              getCustomMetricSettings);
       initDefaults(this);
     }
 
@@ -1679,7 +2294,34 @@ public class AnalyticsAdminServiceStubSettings
       deleteGoogleAdsLinkSettings = settings.deleteGoogleAdsLinkSettings.toBuilder();
       listGoogleAdsLinksSettings = settings.listGoogleAdsLinksSettings.toBuilder();
       getDataSharingSettingsSettings = settings.getDataSharingSettingsSettings.toBuilder();
+      getMeasurementProtocolSecretSettings =
+          settings.getMeasurementProtocolSecretSettings.toBuilder();
+      listMeasurementProtocolSecretsSettings =
+          settings.listMeasurementProtocolSecretsSettings.toBuilder();
+      createMeasurementProtocolSecretSettings =
+          settings.createMeasurementProtocolSecretSettings.toBuilder();
+      deleteMeasurementProtocolSecretSettings =
+          settings.deleteMeasurementProtocolSecretSettings.toBuilder();
+      updateMeasurementProtocolSecretSettings =
+          settings.updateMeasurementProtocolSecretSettings.toBuilder();
       searchChangeHistoryEventsSettings = settings.searchChangeHistoryEventsSettings.toBuilder();
+      getGoogleSignalsSettingsSettings = settings.getGoogleSignalsSettingsSettings.toBuilder();
+      updateGoogleSignalsSettingsSettings =
+          settings.updateGoogleSignalsSettingsSettings.toBuilder();
+      createConversionEventSettings = settings.createConversionEventSettings.toBuilder();
+      getConversionEventSettings = settings.getConversionEventSettings.toBuilder();
+      deleteConversionEventSettings = settings.deleteConversionEventSettings.toBuilder();
+      listConversionEventsSettings = settings.listConversionEventsSettings.toBuilder();
+      createCustomDimensionSettings = settings.createCustomDimensionSettings.toBuilder();
+      updateCustomDimensionSettings = settings.updateCustomDimensionSettings.toBuilder();
+      listCustomDimensionsSettings = settings.listCustomDimensionsSettings.toBuilder();
+      archiveCustomDimensionSettings = settings.archiveCustomDimensionSettings.toBuilder();
+      getCustomDimensionSettings = settings.getCustomDimensionSettings.toBuilder();
+      createCustomMetricSettings = settings.createCustomMetricSettings.toBuilder();
+      updateCustomMetricSettings = settings.updateCustomMetricSettings.toBuilder();
+      listCustomMetricsSettings = settings.listCustomMetricsSettings.toBuilder();
+      archiveCustomMetricSettings = settings.archiveCustomMetricSettings.toBuilder();
+      getCustomMetricSettings = settings.getCustomMetricSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1729,7 +2371,28 @@ public class AnalyticsAdminServiceStubSettings
               deleteGoogleAdsLinkSettings,
               listGoogleAdsLinksSettings,
               getDataSharingSettingsSettings,
-              searchChangeHistoryEventsSettings);
+              getMeasurementProtocolSecretSettings,
+              listMeasurementProtocolSecretsSettings,
+              createMeasurementProtocolSecretSettings,
+              deleteMeasurementProtocolSecretSettings,
+              updateMeasurementProtocolSecretSettings,
+              searchChangeHistoryEventsSettings,
+              getGoogleSignalsSettingsSettings,
+              updateGoogleSignalsSettingsSettings,
+              createConversionEventSettings,
+              getConversionEventSettings,
+              deleteConversionEventSettings,
+              listConversionEventsSettings,
+              createCustomDimensionSettings,
+              updateCustomDimensionSettings,
+              listCustomDimensionsSettings,
+              archiveCustomDimensionSettings,
+              getCustomDimensionSettings,
+              createCustomMetricSettings,
+              updateCustomMetricSettings,
+              listCustomMetricsSettings,
+              archiveCustomMetricSettings,
+              getCustomMetricSettings);
     }
 
     private static Builder createDefault() {
@@ -1975,7 +2638,112 @@ public class AnalyticsAdminServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .getMeasurementProtocolSecretSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listMeasurementProtocolSecretsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createMeasurementProtocolSecretSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteMeasurementProtocolSecretSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateMeasurementProtocolSecretSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .searchChangeHistoryEventsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getGoogleSignalsSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateGoogleSignalsSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createConversionEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getConversionEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteConversionEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listConversionEventsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createCustomDimensionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateCustomDimensionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listCustomDimensionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .archiveCustomDimensionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getCustomDimensionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createCustomMetricSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateCustomMetricSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listCustomMetricsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .archiveCustomMetricSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getCustomMetricSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2281,6 +3049,41 @@ public class AnalyticsAdminServiceStubSettings
       return getDataSharingSettingsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getMeasurementProtocolSecret. */
+    public UnaryCallSettings.Builder<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+        getMeasurementProtocolSecretSettings() {
+      return getMeasurementProtocolSecretSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listMeasurementProtocolSecrets. */
+    public PagedCallSettings.Builder<
+            ListMeasurementProtocolSecretsRequest,
+            ListMeasurementProtocolSecretsResponse,
+            ListMeasurementProtocolSecretsPagedResponse>
+        listMeasurementProtocolSecretsSettings() {
+      return listMeasurementProtocolSecretsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createMeasurementProtocolSecret. */
+    public UnaryCallSettings.Builder<
+            CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+        createMeasurementProtocolSecretSettings() {
+      return createMeasurementProtocolSecretSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMeasurementProtocolSecret. */
+    public UnaryCallSettings.Builder<DeleteMeasurementProtocolSecretRequest, Empty>
+        deleteMeasurementProtocolSecretSettings() {
+      return deleteMeasurementProtocolSecretSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateMeasurementProtocolSecret. */
+    public UnaryCallSettings.Builder<
+            UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
+        updateMeasurementProtocolSecretSettings() {
+      return updateMeasurementProtocolSecretSettings;
+    }
+
     /** Returns the builder for the settings used for calls to searchChangeHistoryEvents. */
     public PagedCallSettings.Builder<
             SearchChangeHistoryEventsRequest,
@@ -2288,6 +3091,109 @@ public class AnalyticsAdminServiceStubSettings
             SearchChangeHistoryEventsPagedResponse>
         searchChangeHistoryEventsSettings() {
       return searchChangeHistoryEventsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getGoogleSignalsSettings. */
+    public UnaryCallSettings.Builder<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+        getGoogleSignalsSettingsSettings() {
+      return getGoogleSignalsSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGoogleSignalsSettings. */
+    public UnaryCallSettings.Builder<UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>
+        updateGoogleSignalsSettingsSettings() {
+      return updateGoogleSignalsSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createConversionEvent. */
+    public UnaryCallSettings.Builder<CreateConversionEventRequest, ConversionEvent>
+        createConversionEventSettings() {
+      return createConversionEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getConversionEvent. */
+    public UnaryCallSettings.Builder<GetConversionEventRequest, ConversionEvent>
+        getConversionEventSettings() {
+      return getConversionEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteConversionEvent. */
+    public UnaryCallSettings.Builder<DeleteConversionEventRequest, Empty>
+        deleteConversionEventSettings() {
+      return deleteConversionEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listConversionEvents. */
+    public PagedCallSettings.Builder<
+            ListConversionEventsRequest,
+            ListConversionEventsResponse,
+            ListConversionEventsPagedResponse>
+        listConversionEventsSettings() {
+      return listConversionEventsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomDimension. */
+    public UnaryCallSettings.Builder<CreateCustomDimensionRequest, CustomDimension>
+        createCustomDimensionSettings() {
+      return createCustomDimensionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomDimension. */
+    public UnaryCallSettings.Builder<UpdateCustomDimensionRequest, CustomDimension>
+        updateCustomDimensionSettings() {
+      return updateCustomDimensionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listCustomDimensions. */
+    public PagedCallSettings.Builder<
+            ListCustomDimensionsRequest,
+            ListCustomDimensionsResponse,
+            ListCustomDimensionsPagedResponse>
+        listCustomDimensionsSettings() {
+      return listCustomDimensionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to archiveCustomDimension. */
+    public UnaryCallSettings.Builder<ArchiveCustomDimensionRequest, Empty>
+        archiveCustomDimensionSettings() {
+      return archiveCustomDimensionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getCustomDimension. */
+    public UnaryCallSettings.Builder<GetCustomDimensionRequest, CustomDimension>
+        getCustomDimensionSettings() {
+      return getCustomDimensionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomMetric. */
+    public UnaryCallSettings.Builder<CreateCustomMetricRequest, CustomMetric>
+        createCustomMetricSettings() {
+      return createCustomMetricSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomMetric. */
+    public UnaryCallSettings.Builder<UpdateCustomMetricRequest, CustomMetric>
+        updateCustomMetricSettings() {
+      return updateCustomMetricSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listCustomMetrics. */
+    public PagedCallSettings.Builder<
+            ListCustomMetricsRequest, ListCustomMetricsResponse, ListCustomMetricsPagedResponse>
+        listCustomMetricsSettings() {
+      return listCustomMetricsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to archiveCustomMetric. */
+    public UnaryCallSettings.Builder<ArchiveCustomMetricRequest, Empty>
+        archiveCustomMetricSettings() {
+      return archiveCustomMetricSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getCustomMetric. */
+    public UnaryCallSettings.Builder<GetCustomMetricRequest, CustomMetric>
+        getCustomMetricSettings() {
+      return getCustomMetricSettings;
     }
 
     @Override

@@ -108,6 +108,56 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>GOOGLE_ADS_LINK = 7;</code>
    */
   GOOGLE_ADS_LINK(7),
+  /**
+   *
+   *
+   * <pre>
+   * GoogleSignalsSettings resource
+   * </pre>
+   *
+   * <code>GOOGLE_SIGNALS_SETTINGS = 8;</code>
+   */
+  GOOGLE_SIGNALS_SETTINGS(8),
+  /**
+   *
+   *
+   * <pre>
+   * ConversionEvent resource
+   * </pre>
+   *
+   * <code>CONVERSION_EVENT = 9;</code>
+   */
+  CONVERSION_EVENT(9),
+  /**
+   *
+   *
+   * <pre>
+   * MeasurementProtocolSecret resource
+   * </pre>
+   *
+   * <code>MEASUREMENT_PROTOCOL_SECRET = 10;</code>
+   */
+  MEASUREMENT_PROTOCOL_SECRET(10),
+  /**
+   *
+   *
+   * <pre>
+   * CustomDimension resource
+   * </pre>
+   *
+   * <code>CUSTOM_DIMENSION = 11;</code>
+   */
+  CUSTOM_DIMENSION(11),
+  /**
+   *
+   *
+   * <pre>
+   * CustomMetric resource
+   * </pre>
+   *
+   * <code>CUSTOM_METRIC = 12;</code>
+   */
+  CUSTOM_METRIC(12),
   UNRECOGNIZED(-1),
   ;
 
@@ -191,6 +241,56 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>GOOGLE_ADS_LINK = 7;</code>
    */
   public static final int GOOGLE_ADS_LINK_VALUE = 7;
+  /**
+   *
+   *
+   * <pre>
+   * GoogleSignalsSettings resource
+   * </pre>
+   *
+   * <code>GOOGLE_SIGNALS_SETTINGS = 8;</code>
+   */
+  public static final int GOOGLE_SIGNALS_SETTINGS_VALUE = 8;
+  /**
+   *
+   *
+   * <pre>
+   * ConversionEvent resource
+   * </pre>
+   *
+   * <code>CONVERSION_EVENT = 9;</code>
+   */
+  public static final int CONVERSION_EVENT_VALUE = 9;
+  /**
+   *
+   *
+   * <pre>
+   * MeasurementProtocolSecret resource
+   * </pre>
+   *
+   * <code>MEASUREMENT_PROTOCOL_SECRET = 10;</code>
+   */
+  public static final int MEASUREMENT_PROTOCOL_SECRET_VALUE = 10;
+  /**
+   *
+   *
+   * <pre>
+   * CustomDimension resource
+   * </pre>
+   *
+   * <code>CUSTOM_DIMENSION = 11;</code>
+   */
+  public static final int CUSTOM_DIMENSION_VALUE = 11;
+  /**
+   *
+   *
+   * <pre>
+   * CustomMetric resource
+   * </pre>
+   *
+   * <code>CUSTOM_METRIC = 12;</code>
+   */
+  public static final int CUSTOM_METRIC_VALUE = 12;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -232,6 +332,16 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
         return FIREBASE_LINK;
       case 7:
         return GOOGLE_ADS_LINK;
+      case 8:
+        return GOOGLE_SIGNALS_SETTINGS;
+      case 9:
+        return CONVERSION_EVENT;
+      case 10:
+        return MEASUREMENT_PROTOCOL_SECRET;
+      case 11:
+        return CUSTOM_DIMENSION;
+      case 12:
+        return CUSTOM_METRIC;
       default:
         return null;
     }
