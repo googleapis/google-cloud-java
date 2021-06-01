@@ -186,4 +186,52 @@ public interface PropertyQuotaOrBuilder
    * <code>.google.analytics.data.v1beta.QuotaStatus server_errors_per_project_per_hour = 4;</code>
    */
   com.google.analytics.data.v1beta.QuotaStatusOrBuilder getServerErrorsPerProjectPerHourOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Analytics Properties can send up to 120 requests with potentially
+   * thresholded dimensions per hour. In a batch request, each report request
+   * is individually counted for this quota if the request contains potentially
+   * thresholded dimensions.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1beta.QuotaStatus potentially_thresholded_requests_per_hour = 5;
+   * </code>
+   *
+   * @return Whether the potentiallyThresholdedRequestsPerHour field is set.
+   */
+  boolean hasPotentiallyThresholdedRequestsPerHour();
+  /**
+   *
+   *
+   * <pre>
+   * Analytics Properties can send up to 120 requests with potentially
+   * thresholded dimensions per hour. In a batch request, each report request
+   * is individually counted for this quota if the request contains potentially
+   * thresholded dimensions.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1beta.QuotaStatus potentially_thresholded_requests_per_hour = 5;
+   * </code>
+   *
+   * @return The potentiallyThresholdedRequestsPerHour.
+   */
+  com.google.analytics.data.v1beta.QuotaStatus getPotentiallyThresholdedRequestsPerHour();
+  /**
+   *
+   *
+   * <pre>
+   * Analytics Properties can send up to 120 requests with potentially
+   * thresholded dimensions per hour. In a batch request, each report request
+   * is individually counted for this quota if the request contains potentially
+   * thresholded dimensions.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1beta.QuotaStatus potentially_thresholded_requests_per_hour = 5;
+   * </code>
+   */
+  com.google.analytics.data.v1beta.QuotaStatusOrBuilder
+      getPotentiallyThresholdedRequestsPerHourOrBuilder();
 }

@@ -394,4 +394,33 @@ public interface RunRealtimeReportResponseOrBuilder
    * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 8;</code>
    */
   com.google.analytics.data.v1beta.PropertyQuotaOrBuilder getPropertyQuotaOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Identifies what kind of resource this message is. This `kind` is always the
+   * fixed string "analyticsData#runRealtimeReport". Useful to distinguish
+   * between response types in JSON.
+   * </pre>
+   *
+   * <code>string kind = 9;</code>
+   *
+   * @return The kind.
+   */
+  java.lang.String getKind();
+  /**
+   *
+   *
+   * <pre>
+   * Identifies what kind of resource this message is. This `kind` is always the
+   * fixed string "analyticsData#runRealtimeReport". Useful to distinguish
+   * between response types in JSON.
+   * </pre>
+   *
+   * <code>string kind = 9;</code>
+   *
+   * @return The bytes for kind.
+   */
+  com.google.protobuf.ByteString getKindBytes();
 }

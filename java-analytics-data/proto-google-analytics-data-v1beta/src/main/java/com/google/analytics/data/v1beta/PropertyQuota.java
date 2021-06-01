@@ -134,6 +134,22 @@ public final class PropertyQuota extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 42:
+            {
+              com.google.analytics.data.v1beta.QuotaStatus.Builder subBuilder = null;
+              if (potentiallyThresholdedRequestsPerHour_ != null) {
+                subBuilder = potentiallyThresholdedRequestsPerHour_.toBuilder();
+              }
+              potentiallyThresholdedRequestsPerHour_ =
+                  input.readMessage(
+                      com.google.analytics.data.v1beta.QuotaStatus.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(potentiallyThresholdedRequestsPerHour_);
+                potentiallyThresholdedRequestsPerHour_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -385,6 +401,67 @@ public final class PropertyQuota extends com.google.protobuf.GeneratedMessageV3
     return getServerErrorsPerProjectPerHour();
   }
 
+  public static final int POTENTIALLY_THRESHOLDED_REQUESTS_PER_HOUR_FIELD_NUMBER = 5;
+  private com.google.analytics.data.v1beta.QuotaStatus potentiallyThresholdedRequestsPerHour_;
+  /**
+   *
+   *
+   * <pre>
+   * Analytics Properties can send up to 120 requests with potentially
+   * thresholded dimensions per hour. In a batch request, each report request
+   * is individually counted for this quota if the request contains potentially
+   * thresholded dimensions.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1beta.QuotaStatus potentially_thresholded_requests_per_hour = 5;
+   * </code>
+   *
+   * @return Whether the potentiallyThresholdedRequestsPerHour field is set.
+   */
+  @java.lang.Override
+  public boolean hasPotentiallyThresholdedRequestsPerHour() {
+    return potentiallyThresholdedRequestsPerHour_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Analytics Properties can send up to 120 requests with potentially
+   * thresholded dimensions per hour. In a batch request, each report request
+   * is individually counted for this quota if the request contains potentially
+   * thresholded dimensions.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1beta.QuotaStatus potentially_thresholded_requests_per_hour = 5;
+   * </code>
+   *
+   * @return The potentiallyThresholdedRequestsPerHour.
+   */
+  @java.lang.Override
+  public com.google.analytics.data.v1beta.QuotaStatus getPotentiallyThresholdedRequestsPerHour() {
+    return potentiallyThresholdedRequestsPerHour_ == null
+        ? com.google.analytics.data.v1beta.QuotaStatus.getDefaultInstance()
+        : potentiallyThresholdedRequestsPerHour_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Analytics Properties can send up to 120 requests with potentially
+   * thresholded dimensions per hour. In a batch request, each report request
+   * is individually counted for this quota if the request contains potentially
+   * thresholded dimensions.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1beta.QuotaStatus potentially_thresholded_requests_per_hour = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.analytics.data.v1beta.QuotaStatusOrBuilder
+      getPotentiallyThresholdedRequestsPerHourOrBuilder() {
+    return getPotentiallyThresholdedRequestsPerHour();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -411,6 +488,9 @@ public final class PropertyQuota extends com.google.protobuf.GeneratedMessageV3
     if (serverErrorsPerProjectPerHour_ != null) {
       output.writeMessage(4, getServerErrorsPerProjectPerHour());
     }
+    if (potentiallyThresholdedRequestsPerHour_ != null) {
+      output.writeMessage(5, getPotentiallyThresholdedRequestsPerHour());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -433,6 +513,11 @@ public final class PropertyQuota extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, getServerErrorsPerProjectPerHour());
+    }
+    if (potentiallyThresholdedRequestsPerHour_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, getPotentiallyThresholdedRequestsPerHour());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -468,6 +553,12 @@ public final class PropertyQuota extends com.google.protobuf.GeneratedMessageV3
       if (!getServerErrorsPerProjectPerHour().equals(other.getServerErrorsPerProjectPerHour()))
         return false;
     }
+    if (hasPotentiallyThresholdedRequestsPerHour()
+        != other.hasPotentiallyThresholdedRequestsPerHour()) return false;
+    if (hasPotentiallyThresholdedRequestsPerHour()) {
+      if (!getPotentiallyThresholdedRequestsPerHour()
+          .equals(other.getPotentiallyThresholdedRequestsPerHour())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -494,6 +585,10 @@ public final class PropertyQuota extends com.google.protobuf.GeneratedMessageV3
     if (hasServerErrorsPerProjectPerHour()) {
       hash = (37 * hash) + SERVER_ERRORS_PER_PROJECT_PER_HOUR_FIELD_NUMBER;
       hash = (53 * hash) + getServerErrorsPerProjectPerHour().hashCode();
+    }
+    if (hasPotentiallyThresholdedRequestsPerHour()) {
+      hash = (37 * hash) + POTENTIALLY_THRESHOLDED_REQUESTS_PER_HOUR_FIELD_NUMBER;
+      hash = (53 * hash) + getPotentiallyThresholdedRequestsPerHour().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -666,6 +761,12 @@ public final class PropertyQuota extends com.google.protobuf.GeneratedMessageV3
         serverErrorsPerProjectPerHour_ = null;
         serverErrorsPerProjectPerHourBuilder_ = null;
       }
+      if (potentiallyThresholdedRequestsPerHourBuilder_ == null) {
+        potentiallyThresholdedRequestsPerHour_ = null;
+      } else {
+        potentiallyThresholdedRequestsPerHour_ = null;
+        potentiallyThresholdedRequestsPerHourBuilder_ = null;
+      }
       return this;
     }
 
@@ -712,6 +813,12 @@ public final class PropertyQuota extends com.google.protobuf.GeneratedMessageV3
         result.serverErrorsPerProjectPerHour_ = serverErrorsPerProjectPerHour_;
       } else {
         result.serverErrorsPerProjectPerHour_ = serverErrorsPerProjectPerHourBuilder_.build();
+      }
+      if (potentiallyThresholdedRequestsPerHourBuilder_ == null) {
+        result.potentiallyThresholdedRequestsPerHour_ = potentiallyThresholdedRequestsPerHour_;
+      } else {
+        result.potentiallyThresholdedRequestsPerHour_ =
+            potentiallyThresholdedRequestsPerHourBuilder_.build();
       }
       onBuilt();
       return result;
@@ -773,6 +880,10 @@ public final class PropertyQuota extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasServerErrorsPerProjectPerHour()) {
         mergeServerErrorsPerProjectPerHour(other.getServerErrorsPerProjectPerHour());
+      }
+      if (other.hasPotentiallyThresholdedRequestsPerHour()) {
+        mergePotentiallyThresholdedRequestsPerHour(
+            other.getPotentiallyThresholdedRequestsPerHour());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1632,6 +1743,243 @@ public final class PropertyQuota extends com.google.protobuf.GeneratedMessageV3
         serverErrorsPerProjectPerHour_ = null;
       }
       return serverErrorsPerProjectPerHourBuilder_;
+    }
+
+    private com.google.analytics.data.v1beta.QuotaStatus potentiallyThresholdedRequestsPerHour_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.analytics.data.v1beta.QuotaStatus,
+            com.google.analytics.data.v1beta.QuotaStatus.Builder,
+            com.google.analytics.data.v1beta.QuotaStatusOrBuilder>
+        potentiallyThresholdedRequestsPerHourBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Analytics Properties can send up to 120 requests with potentially
+     * thresholded dimensions per hour. In a batch request, each report request
+     * is individually counted for this quota if the request contains potentially
+     * thresholded dimensions.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.data.v1beta.QuotaStatus potentially_thresholded_requests_per_hour = 5;
+     * </code>
+     *
+     * @return Whether the potentiallyThresholdedRequestsPerHour field is set.
+     */
+    public boolean hasPotentiallyThresholdedRequestsPerHour() {
+      return potentiallyThresholdedRequestsPerHourBuilder_ != null
+          || potentiallyThresholdedRequestsPerHour_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Analytics Properties can send up to 120 requests with potentially
+     * thresholded dimensions per hour. In a batch request, each report request
+     * is individually counted for this quota if the request contains potentially
+     * thresholded dimensions.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.data.v1beta.QuotaStatus potentially_thresholded_requests_per_hour = 5;
+     * </code>
+     *
+     * @return The potentiallyThresholdedRequestsPerHour.
+     */
+    public com.google.analytics.data.v1beta.QuotaStatus getPotentiallyThresholdedRequestsPerHour() {
+      if (potentiallyThresholdedRequestsPerHourBuilder_ == null) {
+        return potentiallyThresholdedRequestsPerHour_ == null
+            ? com.google.analytics.data.v1beta.QuotaStatus.getDefaultInstance()
+            : potentiallyThresholdedRequestsPerHour_;
+      } else {
+        return potentiallyThresholdedRequestsPerHourBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Analytics Properties can send up to 120 requests with potentially
+     * thresholded dimensions per hour. In a batch request, each report request
+     * is individually counted for this quota if the request contains potentially
+     * thresholded dimensions.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.data.v1beta.QuotaStatus potentially_thresholded_requests_per_hour = 5;
+     * </code>
+     */
+    public Builder setPotentiallyThresholdedRequestsPerHour(
+        com.google.analytics.data.v1beta.QuotaStatus value) {
+      if (potentiallyThresholdedRequestsPerHourBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        potentiallyThresholdedRequestsPerHour_ = value;
+        onChanged();
+      } else {
+        potentiallyThresholdedRequestsPerHourBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Analytics Properties can send up to 120 requests with potentially
+     * thresholded dimensions per hour. In a batch request, each report request
+     * is individually counted for this quota if the request contains potentially
+     * thresholded dimensions.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.data.v1beta.QuotaStatus potentially_thresholded_requests_per_hour = 5;
+     * </code>
+     */
+    public Builder setPotentiallyThresholdedRequestsPerHour(
+        com.google.analytics.data.v1beta.QuotaStatus.Builder builderForValue) {
+      if (potentiallyThresholdedRequestsPerHourBuilder_ == null) {
+        potentiallyThresholdedRequestsPerHour_ = builderForValue.build();
+        onChanged();
+      } else {
+        potentiallyThresholdedRequestsPerHourBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Analytics Properties can send up to 120 requests with potentially
+     * thresholded dimensions per hour. In a batch request, each report request
+     * is individually counted for this quota if the request contains potentially
+     * thresholded dimensions.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.data.v1beta.QuotaStatus potentially_thresholded_requests_per_hour = 5;
+     * </code>
+     */
+    public Builder mergePotentiallyThresholdedRequestsPerHour(
+        com.google.analytics.data.v1beta.QuotaStatus value) {
+      if (potentiallyThresholdedRequestsPerHourBuilder_ == null) {
+        if (potentiallyThresholdedRequestsPerHour_ != null) {
+          potentiallyThresholdedRequestsPerHour_ =
+              com.google.analytics.data.v1beta.QuotaStatus.newBuilder(
+                      potentiallyThresholdedRequestsPerHour_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          potentiallyThresholdedRequestsPerHour_ = value;
+        }
+        onChanged();
+      } else {
+        potentiallyThresholdedRequestsPerHourBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Analytics Properties can send up to 120 requests with potentially
+     * thresholded dimensions per hour. In a batch request, each report request
+     * is individually counted for this quota if the request contains potentially
+     * thresholded dimensions.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.data.v1beta.QuotaStatus potentially_thresholded_requests_per_hour = 5;
+     * </code>
+     */
+    public Builder clearPotentiallyThresholdedRequestsPerHour() {
+      if (potentiallyThresholdedRequestsPerHourBuilder_ == null) {
+        potentiallyThresholdedRequestsPerHour_ = null;
+        onChanged();
+      } else {
+        potentiallyThresholdedRequestsPerHour_ = null;
+        potentiallyThresholdedRequestsPerHourBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Analytics Properties can send up to 120 requests with potentially
+     * thresholded dimensions per hour. In a batch request, each report request
+     * is individually counted for this quota if the request contains potentially
+     * thresholded dimensions.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.data.v1beta.QuotaStatus potentially_thresholded_requests_per_hour = 5;
+     * </code>
+     */
+    public com.google.analytics.data.v1beta.QuotaStatus.Builder
+        getPotentiallyThresholdedRequestsPerHourBuilder() {
+
+      onChanged();
+      return getPotentiallyThresholdedRequestsPerHourFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Analytics Properties can send up to 120 requests with potentially
+     * thresholded dimensions per hour. In a batch request, each report request
+     * is individually counted for this quota if the request contains potentially
+     * thresholded dimensions.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.data.v1beta.QuotaStatus potentially_thresholded_requests_per_hour = 5;
+     * </code>
+     */
+    public com.google.analytics.data.v1beta.QuotaStatusOrBuilder
+        getPotentiallyThresholdedRequestsPerHourOrBuilder() {
+      if (potentiallyThresholdedRequestsPerHourBuilder_ != null) {
+        return potentiallyThresholdedRequestsPerHourBuilder_.getMessageOrBuilder();
+      } else {
+        return potentiallyThresholdedRequestsPerHour_ == null
+            ? com.google.analytics.data.v1beta.QuotaStatus.getDefaultInstance()
+            : potentiallyThresholdedRequestsPerHour_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Analytics Properties can send up to 120 requests with potentially
+     * thresholded dimensions per hour. In a batch request, each report request
+     * is individually counted for this quota if the request contains potentially
+     * thresholded dimensions.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.data.v1beta.QuotaStatus potentially_thresholded_requests_per_hour = 5;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.analytics.data.v1beta.QuotaStatus,
+            com.google.analytics.data.v1beta.QuotaStatus.Builder,
+            com.google.analytics.data.v1beta.QuotaStatusOrBuilder>
+        getPotentiallyThresholdedRequestsPerHourFieldBuilder() {
+      if (potentiallyThresholdedRequestsPerHourBuilder_ == null) {
+        potentiallyThresholdedRequestsPerHourBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.analytics.data.v1beta.QuotaStatus,
+                com.google.analytics.data.v1beta.QuotaStatus.Builder,
+                com.google.analytics.data.v1beta.QuotaStatusOrBuilder>(
+                getPotentiallyThresholdedRequestsPerHour(), getParentForChildren(), isClean());
+        potentiallyThresholdedRequestsPerHour_ = null;
+      }
+      return potentiallyThresholdedRequestsPerHourBuilder_;
     }
 
     @java.lang.Override

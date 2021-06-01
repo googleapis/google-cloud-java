@@ -43,6 +43,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
     metricHeaders_ = java.util.Collections.emptyList();
     rows_ = java.util.Collections.emptyList();
     aggregates_ = java.util.Collections.emptyList();
+    kind_ = "";
   }
 
   @java.lang.Override
@@ -165,6 +166,13 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
                 propertyQuota_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              kind_ = s;
               break;
             }
           default:
@@ -845,6 +853,59 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
     return getPropertyQuota();
   }
 
+  public static final int KIND_FIELD_NUMBER = 8;
+  private volatile java.lang.Object kind_;
+  /**
+   *
+   *
+   * <pre>
+   * Identifies what kind of resource this message is. This `kind` is always the
+   * fixed string "analyticsData#runPivotReport". Useful to distinguish between
+   * response types in JSON.
+   * </pre>
+   *
+   * <code>string kind = 8;</code>
+   *
+   * @return The kind.
+   */
+  @java.lang.Override
+  public java.lang.String getKind() {
+    java.lang.Object ref = kind_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kind_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Identifies what kind of resource this message is. This `kind` is always the
+   * fixed string "analyticsData#runPivotReport". Useful to distinguish between
+   * response types in JSON.
+   * </pre>
+   *
+   * <code>string kind = 8;</code>
+   *
+   * @return The bytes for kind.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKindBytes() {
+    java.lang.Object ref = kind_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kind_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -880,6 +941,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
     if (propertyQuota_ != null) {
       output.writeMessage(7, getPropertyQuota());
     }
+    if (!getKindBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, kind_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -910,6 +974,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
     if (propertyQuota_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getPropertyQuota());
     }
+    if (!getKindBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, kind_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -939,6 +1006,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
     if (hasPropertyQuota()) {
       if (!getPropertyQuota().equals(other.getPropertyQuota())) return false;
     }
+    if (!getKind().equals(other.getKind())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -978,6 +1046,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + PROPERTY_QUOTA_FIELD_NUMBER;
       hash = (53 * hash) + getPropertyQuota().hashCode();
     }
+    hash = (37 * hash) + KIND_FIELD_NUMBER;
+    hash = (53 * hash) + getKind().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1172,6 +1242,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
         propertyQuota_ = null;
         propertyQuotaBuilder_ = null;
       }
+      kind_ = "";
+
       return this;
     }
 
@@ -1255,6 +1327,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
       } else {
         result.propertyQuota_ = propertyQuotaBuilder_.build();
       }
+      result.kind_ = kind_;
       onBuilt();
       return result;
     }
@@ -1445,6 +1518,10 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
       }
       if (other.hasPropertyQuota()) {
         mergePropertyQuota(other.getPropertyQuota());
+      }
+      if (!other.getKind().isEmpty()) {
+        kind_ = other.kind_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4282,6 +4359,122 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
         propertyQuota_ = null;
       }
       return propertyQuotaBuilder_;
+    }
+
+    private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Identifies what kind of resource this message is. This `kind` is always the
+     * fixed string "analyticsData#runPivotReport". Useful to distinguish between
+     * response types in JSON.
+     * </pre>
+     *
+     * <code>string kind = 8;</code>
+     *
+     * @return The kind.
+     */
+    public java.lang.String getKind() {
+      java.lang.Object ref = kind_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kind_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifies what kind of resource this message is. This `kind` is always the
+     * fixed string "analyticsData#runPivotReport". Useful to distinguish between
+     * response types in JSON.
+     * </pre>
+     *
+     * <code>string kind = 8;</code>
+     *
+     * @return The bytes for kind.
+     */
+    public com.google.protobuf.ByteString getKindBytes() {
+      java.lang.Object ref = kind_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kind_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifies what kind of resource this message is. This `kind` is always the
+     * fixed string "analyticsData#runPivotReport". Useful to distinguish between
+     * response types in JSON.
+     * </pre>
+     *
+     * <code>string kind = 8;</code>
+     *
+     * @param value The kind to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKind(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      kind_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifies what kind of resource this message is. This `kind` is always the
+     * fixed string "analyticsData#runPivotReport". Useful to distinguish between
+     * response types in JSON.
+     * </pre>
+     *
+     * <code>string kind = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKind() {
+
+      kind_ = getDefaultInstance().getKind();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifies what kind of resource this message is. This `kind` is always the
+     * fixed string "analyticsData#runPivotReport". Useful to distinguish between
+     * response types in JSON.
+     * </pre>
+     *
+     * <code>string kind = 8;</code>
+     *
+     * @param value The bytes for kind to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKindBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      kind_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -74,4 +74,33 @@ public interface BatchRunReportsResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.RunReportResponse reports = 1;</code>
    */
   com.google.analytics.data.v1beta.RunReportResponseOrBuilder getReportsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Identifies what kind of resource this message is. This `kind` is always the
+   * fixed string "analyticsData#batchRunReports". Useful to distinguish between
+   * response types in JSON.
+   * </pre>
+   *
+   * <code>string kind = 2;</code>
+   *
+   * @return The kind.
+   */
+  java.lang.String getKind();
+  /**
+   *
+   *
+   * <pre>
+   * Identifies what kind of resource this message is. This `kind` is always the
+   * fixed string "analyticsData#batchRunReports". Useful to distinguish between
+   * response types in JSON.
+   * </pre>
+   *
+   * <code>string kind = 2;</code>
+   *
+   * @return The bytes for kind.
+   */
+  com.google.protobuf.ByteString getKindBytes();
 }

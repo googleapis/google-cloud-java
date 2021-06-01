@@ -89,6 +89,7 @@ public class BetaAnalyticsDataClientTest {
             .setRowCount(1340416618)
             .setMetadata(ResponseMetaData.newBuilder().build())
             .setPropertyQuota(PropertyQuota.newBuilder().build())
+            .setKind("kind3292052")
             .build();
     mockBetaAnalyticsData.addResponse(expectedResponse);
 
@@ -179,6 +180,7 @@ public class BetaAnalyticsDataClientTest {
             .addAllAggregates(new ArrayList<Row>())
             .setMetadata(ResponseMetaData.newBuilder().build())
             .setPropertyQuota(PropertyQuota.newBuilder().build())
+            .setKind("kind3292052")
             .build();
     mockBetaAnalyticsData.addResponse(expectedResponse);
 
@@ -253,6 +255,7 @@ public class BetaAnalyticsDataClientTest {
     BatchRunReportsResponse expectedResponse =
         BatchRunReportsResponse.newBuilder()
             .addAllReports(new ArrayList<RunReportResponse>())
+            .setKind("kind3292052")
             .build();
     mockBetaAnalyticsData.addResponse(expectedResponse);
 
@@ -300,6 +303,7 @@ public class BetaAnalyticsDataClientTest {
     BatchRunPivotReportsResponse expectedResponse =
         BatchRunPivotReportsResponse.newBuilder()
             .addAllPivotReports(new ArrayList<RunPivotReportResponse>())
+            .setKind("kind3292052")
             .build();
     mockBetaAnalyticsData.addResponse(expectedResponse);
 
@@ -435,6 +439,7 @@ public class BetaAnalyticsDataClientTest {
             .addAllMinimums(new ArrayList<Row>())
             .setRowCount(1340416618)
             .setPropertyQuota(PropertyQuota.newBuilder().build())
+            .setKind("kind3292052")
             .build();
     mockBetaAnalyticsData.addResponse(expectedResponse);
 
