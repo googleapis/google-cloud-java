@@ -3,7 +3,17 @@
 <differences>
   <difference>
     <differenceType>7012</differenceType>
-    <className>com/google/cloud/translate/v3/*RequestOrBuilder</className>
-    <method>* has*(*)</method>
+    <className>com/google/cloud/translate/v3/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/translate/v3/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/translate/v3/*OrBuilder</className>
+    <method>boolean has*(*)</method>
   </difference>
 </differences>
