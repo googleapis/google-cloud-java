@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.98.0](https://www.github.com/googleapis/java-translate/compare/v1.97.3...v1.98.0) (2021-05-31)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#542](https://www.github.com/googleapis/java-translate/issues/542)) ([f7e8d3b](https://www.github.com/googleapis/java-translate/commit/f7e8d3b191e037026c16ab6f1d84e8f47e4ad80e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#541](https://www.github.com/googleapis/java-translate/issues/541)) ([7a75c96](https://www.github.com/googleapis/java-translate/commit/7a75c96aa0ac544f4a5ab0f98a9632a86e36ebcf))
+
 ### [1.97.3](https://www.github.com/googleapis/java-translate/compare/v1.97.2...v1.97.3) (2021-05-13)
 
 
