@@ -1,6 +1,6 @@
-# Google Cloud AI Platform Client for Java
+# Google Vertex AI Client for Java
 
-Java idiomatic client for [Cloud AI Platform][product-docs].
+Java idiomatic client for [Vertex AI][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -59,8 +59,8 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Cloud AI Platform [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Cloud AI Platform.
+You will need a [Google Cloud Platform Console][developer-console] project with the Vertex AI [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Vertex AI.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -70,13 +70,13 @@ You will need to [enable billing][enable-billing] to use Google Cloud AI Platfor
 You'll need to obtain the `google-cloud-aiplatform` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-aiplatform` as a dependency in your code.
 
-## About Cloud AI Platform
+## About Vertex AI
 
 
-[Cloud AI Platform][product-docs] is an integrated suite of machine learning tools and services for building and using ML models with AutoML or custom code. It offers both novices and experts the best workbench for the entire machine learning development lifecycle.
+[Vertex AI][product-docs] is an integrated suite of machine learning tools and services for building and using ML models with AutoML or custom code. It offers both novices and experts the best workbench for the entire machine learning development lifecycle.
 
-See the [Cloud AI Platform client library docs][javadocs] to learn how to
-use this Cloud AI Platform Client Library.
+See the [Vertex AI client library docs][javadocs] to learn how to
+use this Vertex AI Client Library.
 
 
 
@@ -183,7 +183,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Cloud AI Platform uses gRPC for the transport layer.
+Vertex AI uses gRPC for the transport layer.
 
 ## Java Versions
 
@@ -225,7 +225,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 Java is a registered trademark of Oracle and/or its affiliates.
 
-[product-docs]: https://cloud.google.com/ai-platform-unified/docs
+[product-docs]: https://cloud.google.com/vertex-ai/docs
 [javadocs]: https://googleapis.dev/java/google-cloud-aiplatform/latest/index.html
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-aiplatform/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-aiplatform/java7.html
