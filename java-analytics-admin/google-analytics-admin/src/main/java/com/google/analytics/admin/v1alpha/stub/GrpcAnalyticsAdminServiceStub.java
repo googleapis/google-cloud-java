@@ -26,6 +26,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListWebDataStreamsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AndroidAppDataStream;
@@ -38,10 +39,8 @@ import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
-import com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
-import com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
 import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest;
@@ -89,6 +88,8 @@ import com.google.analytics.admin.v1alpha.ListWebDataStreamsResponse;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
+import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
+import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
@@ -222,15 +223,15 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Property.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<DeletePropertyRequest, Empty>
+  private static final MethodDescriptor<DeletePropertyRequest, Property>
       deletePropertyMethodDescriptor =
-          MethodDescriptor.<DeletePropertyRequest, Empty>newBuilder()
+          MethodDescriptor.<DeletePropertyRequest, Property>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
                   "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteProperty")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePropertyRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Property.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<UpdatePropertyRequest, Property>
@@ -445,17 +446,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(IosAppDataStream.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<CreateIosAppDataStreamRequest, IosAppDataStream>
-      createIosAppDataStreamMethodDescriptor =
-          MethodDescriptor.<CreateIosAppDataStreamRequest, IosAppDataStream>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateIosAppDataStream")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateIosAppDataStreamRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(IosAppDataStream.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse>
       listIosAppDataStreamsMethodDescriptor =
           MethodDescriptor.<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse>newBuilder()
@@ -499,18 +489,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateAndroidAppDataStream")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAndroidAppDataStreamRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(AndroidAppDataStream.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<CreateAndroidAppDataStreamRequest, AndroidAppDataStream>
-      createAndroidAppDataStreamMethodDescriptor =
-          MethodDescriptor.<CreateAndroidAppDataStreamRequest, AndroidAppDataStream>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateAndroidAppDataStream")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateAndroidAppDataStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AndroidAppDataStream.getDefaultInstance()))
               .build();
@@ -671,6 +649,20 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(DataSharingSettings.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
+      searchChangeHistoryEventsMethodDescriptor =
+          MethodDescriptor
+              .<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/SearchChangeHistoryEvents")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SearchChangeHistoryEventsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchChangeHistoryEventsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
@@ -688,7 +680,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   private final UnaryCallable<ListPropertiesRequest, ListPropertiesPagedResponse>
       listPropertiesPagedCallable;
   private final UnaryCallable<CreatePropertyRequest, Property> createPropertyCallable;
-  private final UnaryCallable<DeletePropertyRequest, Empty> deletePropertyCallable;
+  private final UnaryCallable<DeletePropertyRequest, Property> deletePropertyCallable;
   private final UnaryCallable<UpdatePropertyRequest, Property> updatePropertyCallable;
   private final UnaryCallable<GetUserLinkRequest, UserLink> getUserLinkCallable;
   private final UnaryCallable<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
@@ -722,8 +714,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   private final UnaryCallable<DeleteIosAppDataStreamRequest, Empty> deleteIosAppDataStreamCallable;
   private final UnaryCallable<UpdateIosAppDataStreamRequest, IosAppDataStream>
       updateIosAppDataStreamCallable;
-  private final UnaryCallable<CreateIosAppDataStreamRequest, IosAppDataStream>
-      createIosAppDataStreamCallable;
   private final UnaryCallable<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse>
       listIosAppDataStreamsCallable;
   private final UnaryCallable<ListIosAppDataStreamsRequest, ListIosAppDataStreamsPagedResponse>
@@ -734,8 +724,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       deleteAndroidAppDataStreamCallable;
   private final UnaryCallable<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
       updateAndroidAppDataStreamCallable;
-  private final UnaryCallable<CreateAndroidAppDataStreamRequest, AndroidAppDataStream>
-      createAndroidAppDataStreamCallable;
   private final UnaryCallable<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse>
       listAndroidAppDataStreamsCallable;
   private final UnaryCallable<
@@ -764,6 +752,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       listGoogleAdsLinksPagedCallable;
   private final UnaryCallable<GetDataSharingSettingsRequest, DataSharingSettings>
       getDataSharingSettingsCallable;
+  private final UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
+      searchChangeHistoryEventsCallable;
+  private final UnaryCallable<
+          SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsPagedResponse>
+      searchChangeHistoryEventsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -885,8 +878,8 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
         GrpcCallSettings.<CreatePropertyRequest, Property>newBuilder()
             .setMethodDescriptor(createPropertyMethodDescriptor)
             .build();
-    GrpcCallSettings<DeletePropertyRequest, Empty> deletePropertyTransportSettings =
-        GrpcCallSettings.<DeletePropertyRequest, Empty>newBuilder()
+    GrpcCallSettings<DeletePropertyRequest, Property> deletePropertyTransportSettings =
+        GrpcCallSettings.<DeletePropertyRequest, Property>newBuilder()
             .setMethodDescriptor(deletePropertyMethodDescriptor)
             .setParamsExtractor(
                 new RequestParamsExtractor<DeletePropertyRequest>() {
@@ -1158,20 +1151,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       }
                     })
                 .build();
-    GrpcCallSettings<CreateIosAppDataStreamRequest, IosAppDataStream>
-        createIosAppDataStreamTransportSettings =
-            GrpcCallSettings.<CreateIosAppDataStreamRequest, IosAppDataStream>newBuilder()
-                .setMethodDescriptor(createIosAppDataStreamMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<CreateIosAppDataStreamRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateIosAppDataStreamRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
-                    })
-                .build();
     GrpcCallSettings<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse>
         listIosAppDataStreamsTransportSettings =
             GrpcCallSettings
@@ -1229,21 +1208,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                         params.put(
                             "android_app_data_stream.name",
                             String.valueOf(request.getAndroidAppDataStream().getName()));
-                        return params.build();
-                      }
-                    })
-                .build();
-    GrpcCallSettings<CreateAndroidAppDataStreamRequest, AndroidAppDataStream>
-        createAndroidAppDataStreamTransportSettings =
-            GrpcCallSettings.<CreateAndroidAppDataStreamRequest, AndroidAppDataStream>newBuilder()
-                .setMethodDescriptor(createAndroidAppDataStreamMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<CreateAndroidAppDataStreamRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CreateAndroidAppDataStreamRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
                         return params.build();
                       }
                     })
@@ -1435,6 +1399,21 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
+        searchChangeHistoryEventsTransportSettings =
+            GrpcCallSettings
+                .<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>newBuilder()
+                .setMethodDescriptor(searchChangeHistoryEventsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<SearchChangeHistoryEventsRequest>() {
+                      @Override
+                      public Map<String, String> extract(SearchChangeHistoryEventsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("account", String.valueOf(request.getAccount()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.getAccountCallable =
         callableFactory.createUnaryCallable(
@@ -1571,11 +1550,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             updateIosAppDataStreamTransportSettings,
             settings.updateIosAppDataStreamSettings(),
             clientContext);
-    this.createIosAppDataStreamCallable =
-        callableFactory.createUnaryCallable(
-            createIosAppDataStreamTransportSettings,
-            settings.createIosAppDataStreamSettings(),
-            clientContext);
     this.listIosAppDataStreamsCallable =
         callableFactory.createUnaryCallable(
             listIosAppDataStreamsTransportSettings,
@@ -1600,11 +1574,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
         callableFactory.createUnaryCallable(
             updateAndroidAppDataStreamTransportSettings,
             settings.updateAndroidAppDataStreamSettings(),
-            clientContext);
-    this.createAndroidAppDataStreamCallable =
-        callableFactory.createUnaryCallable(
-            createAndroidAppDataStreamTransportSettings,
-            settings.createAndroidAppDataStreamSettings(),
             clientContext);
     this.listAndroidAppDataStreamsCallable =
         callableFactory.createUnaryCallable(
@@ -1684,6 +1653,16 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             getDataSharingSettingsTransportSettings,
             settings.getDataSharingSettingsSettings(),
             clientContext);
+    this.searchChangeHistoryEventsCallable =
+        callableFactory.createUnaryCallable(
+            searchChangeHistoryEventsTransportSettings,
+            settings.searchChangeHistoryEventsSettings(),
+            clientContext);
+    this.searchChangeHistoryEventsPagedCallable =
+        callableFactory.createPagedCallable(
+            searchChangeHistoryEventsTransportSettings,
+            settings.searchChangeHistoryEventsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1758,7 +1737,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   }
 
   @Override
-  public UnaryCallable<DeletePropertyRequest, Empty> deletePropertyCallable() {
+  public UnaryCallable<DeletePropertyRequest, Property> deletePropertyCallable() {
     return deletePropertyCallable;
   }
 
@@ -1881,12 +1860,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   }
 
   @Override
-  public UnaryCallable<CreateIosAppDataStreamRequest, IosAppDataStream>
-      createIosAppDataStreamCallable() {
-    return createIosAppDataStreamCallable;
-  }
-
-  @Override
   public UnaryCallable<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse>
       listIosAppDataStreamsCallable() {
     return listIosAppDataStreamsCallable;
@@ -1914,12 +1887,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
       updateAndroidAppDataStreamCallable() {
     return updateAndroidAppDataStreamCallable;
-  }
-
-  @Override
-  public UnaryCallable<CreateAndroidAppDataStreamRequest, AndroidAppDataStream>
-      createAndroidAppDataStreamCallable() {
-    return createAndroidAppDataStreamCallable;
   }
 
   @Override
@@ -2009,6 +1976,18 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<GetDataSharingSettingsRequest, DataSharingSettings>
       getDataSharingSettingsCallable() {
     return getDataSharingSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
+      searchChangeHistoryEventsCallable() {
+    return searchChangeHistoryEventsCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsPagedResponse>
+      searchChangeHistoryEventsPagedCallable() {
+    return searchChangeHistoryEventsPagedCallable;
   }
 
   @Override

@@ -17,35 +17,19 @@
     <method>boolean has*(*)</method>
   </difference>
 
-  <!-- TODO: remove after 0.3.0 is released -->
+  <!-- TODO: Remove after 0.4.0 is released -->
   <difference>
     <differenceType>6011</differenceType>
-    <className>com/google/analytics/admin/v1alpha/GoogleAdsLink</className>
-    <field>PARENT_FIELD_NUMBER</field>
+    <className>com/google/analytics/admin/v1alpha/Property</className>
+    <field>*FIELD_NUMBER</field>
   </difference>
   <difference>
     <differenceType>7002</differenceType>
-    <className>com/google/analytics/admin/v1alpha/GoogleAdsLink*</className>
-    <method>* *Parent*(*)</method>
+    <className>com/google/analytics/admin/v1alpha/Property*</className>
+    <method>* *Deleted(*)</method>
   </difference>
   <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/analytics/admin/v1alpha/Account</className>
-    <field>COUNTRY_CODE_FIELD_NUMBER</field>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/analytics/admin/v1alpha/Account*</className>
-    <method>* *CountryCode*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/analytics/admin/v1alpha/EnhancedMeasurementSettings</className>
-    <field>*_FIELD_NUMBER</field>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/analytics/admin/v1alpha/EnhancedMeasurementSettings*</className>
-    <method>*</method>
+    <differenceType>8001</differenceType>
+    <className>com/google/analytics/admin/v1alpha/Create*</className>
   </difference>
 </differences>

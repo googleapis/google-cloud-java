@@ -249,11 +249,11 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
 
   @Override
   public void deleteProperty(
-      DeletePropertyRequest request, StreamObserver<Empty> responseObserver) {
+      DeletePropertyRequest request, StreamObserver<Property> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof Empty) {
+    if (response instanceof Property) {
       requests.add(request);
-      responseObserver.onNext(((Empty) response));
+      responseObserver.onNext(((Property) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -263,7 +263,7 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
               String.format(
                   "Unrecognized response type %s for method DeleteProperty, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
+                  Property.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -671,27 +671,6 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
-  public void createIosAppDataStream(
-      CreateIosAppDataStreamRequest request, StreamObserver<IosAppDataStream> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof IosAppDataStream) {
-      requests.add(request);
-      responseObserver.onNext(((IosAppDataStream) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method CreateIosAppDataStream, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  IosAppDataStream.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
   public void listIosAppDataStreams(
       ListIosAppDataStreamsRequest request,
       StreamObserver<ListIosAppDataStreamsResponse> responseObserver) {
@@ -772,28 +751,6 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateAndroidAppDataStream, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  AndroidAppDataStream.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void createAndroidAppDataStream(
-      CreateAndroidAppDataStreamRequest request,
-      StreamObserver<AndroidAppDataStream> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof AndroidAppDataStream) {
-      requests.add(request);
-      responseObserver.onNext(((AndroidAppDataStream) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method CreateAndroidAppDataStream, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   AndroidAppDataStream.class.getName(),
                   Exception.class.getName())));
@@ -1074,6 +1031,28 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                   "Unrecognized response type %s for method GetDataSharingSettings, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DataSharingSettings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void searchChangeHistoryEvents(
+      SearchChangeHistoryEventsRequest request,
+      StreamObserver<SearchChangeHistoryEventsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchChangeHistoryEventsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchChangeHistoryEventsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchChangeHistoryEvents, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchChangeHistoryEventsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

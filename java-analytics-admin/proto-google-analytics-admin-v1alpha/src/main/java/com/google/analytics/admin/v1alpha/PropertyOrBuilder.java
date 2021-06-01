@@ -217,7 +217,7 @@ public interface PropertyOrBuilder
    *
    *
    * <pre>
-   * Reporting Time Zone, used as the day boundary for reports, regardless of
+   * Required. Reporting Time Zone, used as the day boundary for reports, regardless of
    * where the data originates. If the time zone honors DST, Analytics will
    * automatically adjust for the changes.
    * NOTE: Changing the time zone only affects data going forward, and is not
@@ -226,7 +226,7 @@ public interface PropertyOrBuilder
    * Example: "America/Los_Angeles"
    * </pre>
    *
-   * <code>string time_zone = 7;</code>
+   * <code>string time_zone = 7 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The timeZone.
    */
@@ -235,7 +235,7 @@ public interface PropertyOrBuilder
    *
    *
    * <pre>
-   * Reporting Time Zone, used as the day boundary for reports, regardless of
+   * Required. Reporting Time Zone, used as the day boundary for reports, regardless of
    * where the data originates. If the time zone honors DST, Analytics will
    * automatically adjust for the changes.
    * NOTE: Changing the time zone only affects data going forward, and is not
@@ -244,7 +244,7 @@ public interface PropertyOrBuilder
    * Example: "America/Los_Angeles"
    * </pre>
    *
-   * <code>string time_zone = 7;</code>
+   * <code>string time_zone = 7 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for timeZone.
    */
@@ -283,13 +283,84 @@ public interface PropertyOrBuilder
    *
    *
    * <pre>
-   * Output only. Indicates whether this Property is soft-deleted or not. Deleted properties
-   * are excluded from List results unless specifically requested.
+   * Output only. If set, the time at which this property was trashed. If not set, then this
+   * property is not currently in the trash can.
    * </pre>
    *
-   * <code>bool deleted = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Timestamp delete_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
-   * @return The deleted.
+   * @return Whether the deleteTime field is set.
    */
-  boolean getDeleted();
+  boolean hasDeleteTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If set, the time at which this property was trashed. If not set, then this
+   * property is not currently in the trash can.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp delete_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The deleteTime.
+   */
+  com.google.protobuf.Timestamp getDeleteTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If set, the time at which this property was trashed. If not set, then this
+   * property is not currently in the trash can.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp delete_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If set, the time at which this trashed property will be permanently
+   * deleted. If not set, then this property is not currently in the trash can
+   * and is not slated to be deleted.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the expireTime field is set.
+   */
+  boolean hasExpireTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If set, the time at which this trashed property will be permanently
+   * deleted. If not set, then this property is not currently in the trash can
+   * and is not slated to be deleted.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The expireTime.
+   */
+  com.google.protobuf.Timestamp getExpireTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If set, the time at which this trashed property will be permanently
+   * deleted. If not set, then this property is not currently in the trash can
+   * and is not slated to be deleted.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
 }

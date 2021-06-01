@@ -26,6 +26,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListWebDataStreamsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AndroidAppDataStream;
@@ -38,10 +39,8 @@ import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
-import com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
-import com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
 import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest;
@@ -89,6 +88,8 @@ import com.google.analytics.admin.v1alpha.ListWebDataStreamsResponse;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
+import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
+import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
@@ -168,7 +169,7 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createPropertyCallable()");
   }
 
-  public UnaryCallable<DeletePropertyRequest, Empty> deletePropertyCallable() {
+  public UnaryCallable<DeletePropertyRequest, Property> deletePropertyCallable() {
     throw new UnsupportedOperationException("Not implemented: deletePropertyCallable()");
   }
 
@@ -268,11 +269,6 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateIosAppDataStreamCallable()");
   }
 
-  public UnaryCallable<CreateIosAppDataStreamRequest, IosAppDataStream>
-      createIosAppDataStreamCallable() {
-    throw new UnsupportedOperationException("Not implemented: createIosAppDataStreamCallable()");
-  }
-
   public UnaryCallable<ListIosAppDataStreamsRequest, ListIosAppDataStreamsPagedResponse>
       listIosAppDataStreamsPagedCallable() {
     throw new UnsupportedOperationException(
@@ -299,12 +295,6 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
       updateAndroidAppDataStreamCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: updateAndroidAppDataStreamCallable()");
-  }
-
-  public UnaryCallable<CreateAndroidAppDataStreamRequest, AndroidAppDataStream>
-      createAndroidAppDataStreamCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: createAndroidAppDataStreamCallable()");
   }
 
   public UnaryCallable<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsPagedResponse>
@@ -381,6 +371,17 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
   public UnaryCallable<GetDataSharingSettingsRequest, DataSharingSettings>
       getDataSharingSettingsCallable() {
     throw new UnsupportedOperationException("Not implemented: getDataSharingSettingsCallable()");
+  }
+
+  public UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsPagedResponse>
+      searchChangeHistoryEventsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: searchChangeHistoryEventsPagedCallable()");
+  }
+
+  public UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
+      searchChangeHistoryEventsCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchChangeHistoryEventsCallable()");
   }
 
   @Override

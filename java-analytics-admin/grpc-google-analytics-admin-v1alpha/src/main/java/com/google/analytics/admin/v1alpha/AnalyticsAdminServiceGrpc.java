@@ -460,19 +460,22 @@ public final class AnalyticsAdminServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.DeletePropertyRequest, com.google.protobuf.Empty>
+          com.google.analytics.admin.v1alpha.DeletePropertyRequest,
+          com.google.analytics.admin.v1alpha.Property>
       getDeletePropertyMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "DeleteProperty",
       requestType = com.google.analytics.admin.v1alpha.DeletePropertyRequest.class,
-      responseType = com.google.protobuf.Empty.class,
+      responseType = com.google.analytics.admin.v1alpha.Property.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.DeletePropertyRequest, com.google.protobuf.Empty>
+          com.google.analytics.admin.v1alpha.DeletePropertyRequest,
+          com.google.analytics.admin.v1alpha.Property>
       getDeletePropertyMethod() {
     io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.DeletePropertyRequest, com.google.protobuf.Empty>
+            com.google.analytics.admin.v1alpha.DeletePropertyRequest,
+            com.google.analytics.admin.v1alpha.Property>
         getDeletePropertyMethod;
     if ((getDeletePropertyMethod = AnalyticsAdminServiceGrpc.getDeletePropertyMethod) == null) {
       synchronized (AnalyticsAdminServiceGrpc.class) {
@@ -481,7 +484,7 @@ public final class AnalyticsAdminServiceGrpc {
               getDeletePropertyMethod =
                   io.grpc.MethodDescriptor
                       .<com.google.analytics.admin.v1alpha.DeletePropertyRequest,
-                          com.google.protobuf.Empty>
+                          com.google.analytics.admin.v1alpha.Property>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteProperty"))
@@ -492,7 +495,7 @@ public final class AnalyticsAdminServiceGrpc {
                                   .getDefaultInstance()))
                       .setResponseMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.protobuf.Empty.getDefaultInstance()))
+                              com.google.analytics.admin.v1alpha.Property.getDefaultInstance()))
                       .setSchemaDescriptor(
                           new AnalyticsAdminServiceMethodDescriptorSupplier("DeleteProperty"))
                       .build();
@@ -1422,59 +1425,6 @@ public final class AnalyticsAdminServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest,
-          com.google.analytics.admin.v1alpha.IosAppDataStream>
-      getCreateIosAppDataStreamMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateIosAppDataStream",
-      requestType = com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest.class,
-      responseType = com.google.analytics.admin.v1alpha.IosAppDataStream.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest,
-          com.google.analytics.admin.v1alpha.IosAppDataStream>
-      getCreateIosAppDataStreamMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest,
-            com.google.analytics.admin.v1alpha.IosAppDataStream>
-        getCreateIosAppDataStreamMethod;
-    if ((getCreateIosAppDataStreamMethod =
-            AnalyticsAdminServiceGrpc.getCreateIosAppDataStreamMethod)
-        == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getCreateIosAppDataStreamMethod =
-                AnalyticsAdminServiceGrpc.getCreateIosAppDataStreamMethod)
-            == null) {
-          AnalyticsAdminServiceGrpc.getCreateIosAppDataStreamMethod =
-              getCreateIosAppDataStreamMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest,
-                          com.google.analytics.admin.v1alpha.IosAppDataStream>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "CreateIosAppDataStream"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.IosAppDataStream
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier(
-                              "CreateIosAppDataStream"))
-                      .build();
-        }
-      }
-    }
-    return getCreateIosAppDataStreamMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.admin.v1alpha.ListIosAppDataStreamsRequest,
           com.google.analytics.admin.v1alpha.ListIosAppDataStreamsResponse>
       getListIosAppDataStreamsMethod;
@@ -1682,59 +1632,6 @@ public final class AnalyticsAdminServiceGrpc {
       }
     }
     return getUpdateAndroidAppDataStreamMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest,
-          com.google.analytics.admin.v1alpha.AndroidAppDataStream>
-      getCreateAndroidAppDataStreamMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateAndroidAppDataStream",
-      requestType = com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest.class,
-      responseType = com.google.analytics.admin.v1alpha.AndroidAppDataStream.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest,
-          com.google.analytics.admin.v1alpha.AndroidAppDataStream>
-      getCreateAndroidAppDataStreamMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest,
-            com.google.analytics.admin.v1alpha.AndroidAppDataStream>
-        getCreateAndroidAppDataStreamMethod;
-    if ((getCreateAndroidAppDataStreamMethod =
-            AnalyticsAdminServiceGrpc.getCreateAndroidAppDataStreamMethod)
-        == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getCreateAndroidAppDataStreamMethod =
-                AnalyticsAdminServiceGrpc.getCreateAndroidAppDataStreamMethod)
-            == null) {
-          AnalyticsAdminServiceGrpc.getCreateAndroidAppDataStreamMethod =
-              getCreateAndroidAppDataStreamMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest,
-                          com.google.analytics.admin.v1alpha.AndroidAppDataStream>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "CreateAndroidAppDataStream"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.AndroidAppDataStream
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier(
-                              "CreateAndroidAppDataStream"))
-                      .build();
-        }
-      }
-    }
-    return getCreateAndroidAppDataStreamMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -2384,6 +2281,59 @@ public final class AnalyticsAdminServiceGrpc {
     return getGetDataSharingSettingsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest,
+          com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse>
+      getSearchChangeHistoryEventsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchChangeHistoryEvents",
+      requestType = com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest,
+          com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse>
+      getSearchChangeHistoryEventsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest,
+            com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse>
+        getSearchChangeHistoryEventsMethod;
+    if ((getSearchChangeHistoryEventsMethod =
+            AnalyticsAdminServiceGrpc.getSearchChangeHistoryEventsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getSearchChangeHistoryEventsMethod =
+                AnalyticsAdminServiceGrpc.getSearchChangeHistoryEventsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getSearchChangeHistoryEventsMethod =
+              getSearchChangeHistoryEventsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest,
+                          com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SearchChangeHistoryEvents"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "SearchChangeHistoryEvents"))
+                      .build();
+        }
+      }
+    }
+    return getSearchChangeHistoryEventsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AnalyticsAdminServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AnalyticsAdminServiceStub> factory =
@@ -2594,7 +2544,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void deleteProperty(
         com.google.analytics.admin.v1alpha.DeletePropertyRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeletePropertyMethod(), responseObserver);
     }
@@ -2894,27 +2844,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Creates an iOS app stream with the specified location and attributes.
-     * Note that an iOS app stream must be linked to a Firebase app to receive
-     * traffic.
-     * To create a working app stream, make sure your property is linked to a
-     * Firebase project. Then, use the Firebase API to create a Firebase app,
-     * which will also create an appropriate data stream in Analytics (may take up
-     * to 24 hours).
-     * </pre>
-     */
-    public void createIosAppDataStream(
-        com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.IosAppDataStream>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getCreateIosAppDataStreamMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Returns child iOS app data streams under the specified parent property.
      * iOS app data streams will be excluded if the caller does not have access.
      * Returns an empty list if no relevant iOS app data streams are found.
@@ -2971,27 +2900,6 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateAndroidAppDataStreamMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates an Android app stream with the specified location and attributes.
-     * Note that an Android app stream must be linked to a Firebase app to receive
-     * traffic.
-     * To create a working app stream, make sure your property is linked to a
-     * Firebase project. Then, use the Firebase API to create a Firebase app,
-     * which will also create an appropriate data stream in Analytics (may take up
-     * to 24 hours).
-     * </pre>
-     */
-    public void createAndroidAppDataStream(
-        com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AndroidAppDataStream>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getCreateAndroidAppDataStreamMethod(), responseObserver);
     }
 
     /**
@@ -3198,6 +3106,23 @@ public final class AnalyticsAdminServiceGrpc {
           getGetDataSharingSettingsMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Searches through all changes to an account or its children given the
+     * specified set of filters.
+     * </pre>
+     */
+    public void searchChangeHistoryEvents(
+        com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSearchChangeHistoryEventsMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -3264,7 +3189,7 @@ public final class AnalyticsAdminServiceGrpc {
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.analytics.admin.v1alpha.DeletePropertyRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_PROPERTY)))
+                      com.google.analytics.admin.v1alpha.Property>(this, METHODID_DELETE_PROPERTY)))
           .addMethod(
               getUpdatePropertyMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -3393,13 +3318,6 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.IosAppDataStream>(
                       this, METHODID_UPDATE_IOS_APP_DATA_STREAM)))
           .addMethod(
-              getCreateIosAppDataStreamMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest,
-                      com.google.analytics.admin.v1alpha.IosAppDataStream>(
-                      this, METHODID_CREATE_IOS_APP_DATA_STREAM)))
-          .addMethod(
               getListIosAppDataStreamsMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -3426,13 +3344,6 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest,
                       com.google.analytics.admin.v1alpha.AndroidAppDataStream>(
                       this, METHODID_UPDATE_ANDROID_APP_DATA_STREAM)))
-          .addMethod(
-              getCreateAndroidAppDataStreamMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest,
-                      com.google.analytics.admin.v1alpha.AndroidAppDataStream>(
-                      this, METHODID_CREATE_ANDROID_APP_DATA_STREAM)))
           .addMethod(
               getListAndroidAppDataStreamsMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -3522,6 +3433,13 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest,
                       com.google.analytics.admin.v1alpha.DataSharingSettings>(
                       this, METHODID_GET_DATA_SHARING_SETTINGS)))
+          .addMethod(
+              getSearchChangeHistoryEventsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest,
+                      com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse>(
+                      this, METHODID_SEARCH_CHANGE_HISTORY_EVENTS)))
           .build();
     }
   }
@@ -3722,7 +3640,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void deleteProperty(
         com.google.analytics.admin.v1alpha.DeletePropertyRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeletePropertyMethod(), getCallOptions()),
           request,
@@ -4062,29 +3980,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Creates an iOS app stream with the specified location and attributes.
-     * Note that an iOS app stream must be linked to a Firebase app to receive
-     * traffic.
-     * To create a working app stream, make sure your property is linked to a
-     * Firebase project. Then, use the Firebase API to create a Firebase app,
-     * which will also create an appropriate data stream in Analytics (may take up
-     * to 24 hours).
-     * </pre>
-     */
-    public void createIosAppDataStream(
-        com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.IosAppDataStream>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateIosAppDataStreamMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Returns child iOS app data streams under the specified parent property.
      * iOS app data streams will be excluded if the caller does not have access.
      * Returns an empty list if no relevant iOS app data streams are found.
@@ -4147,29 +4042,6 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateAndroidAppDataStreamMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates an Android app stream with the specified location and attributes.
-     * Note that an Android app stream must be linked to a Firebase app to receive
-     * traffic.
-     * To create a working app stream, make sure your property is linked to a
-     * Firebase project. Then, use the Firebase API to create a Firebase app,
-     * which will also create an appropriate data stream in Analytics (may take up
-     * to 24 hours).
-     * </pre>
-     */
-    public void createAndroidAppDataStream(
-        com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AndroidAppDataStream>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateAndroidAppDataStreamMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -4403,6 +4275,25 @@ public final class AnalyticsAdminServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches through all changes to an account or its children given the
+     * specified set of filters.
+     * </pre>
+     */
+    public void searchChangeHistoryEvents(
+        com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSearchChangeHistoryEventsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -4570,7 +4461,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns an error if the target is not found, or is not an GA4 Property.
      * </pre>
      */
-    public com.google.protobuf.Empty deleteProperty(
+    public com.google.analytics.admin.v1alpha.Property deleteProperty(
         com.google.analytics.admin.v1alpha.DeletePropertyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeletePropertyMethod(), getCallOptions(), request);
@@ -4841,25 +4732,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Creates an iOS app stream with the specified location and attributes.
-     * Note that an iOS app stream must be linked to a Firebase app to receive
-     * traffic.
-     * To create a working app stream, make sure your property is linked to a
-     * Firebase project. Then, use the Firebase API to create a Firebase app,
-     * which will also create an appropriate data stream in Analytics (may take up
-     * to 24 hours).
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.IosAppDataStream createIosAppDataStream(
-        com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateIosAppDataStreamMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Returns child iOS app data streams under the specified parent property.
      * iOS app data streams will be excluded if the caller does not have access.
      * Returns an empty list if no relevant iOS app data streams are found.
@@ -4908,25 +4780,6 @@ public final class AnalyticsAdminServiceGrpc {
         com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateAndroidAppDataStreamMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates an Android app stream with the specified location and attributes.
-     * Note that an Android app stream must be linked to a Firebase app to receive
-     * traffic.
-     * To create a working app stream, make sure your property is linked to a
-     * Firebase project. Then, use the Firebase API to create a Firebase app,
-     * which will also create an appropriate data stream in Analytics (may take up
-     * to 24 hours).
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.AndroidAppDataStream createAndroidAppDataStream(
-        com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateAndroidAppDataStreamMethod(), getCallOptions(), request);
     }
 
     /**
@@ -5110,6 +4963,21 @@ public final class AnalyticsAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDataSharingSettingsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches through all changes to an account or its children given the
+     * specified set of filters.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse
+        searchChangeHistoryEvents(
+            com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchChangeHistoryEventsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -5287,7 +5155,8 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns an error if the target is not found, or is not an GA4 Property.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.Property>
         deleteProperty(com.google.analytics.admin.v1alpha.DeletePropertyRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeletePropertyMethod(), getCallOptions()), request);
@@ -5578,27 +5447,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Creates an iOS app stream with the specified location and attributes.
-     * Note that an iOS app stream must be linked to a Firebase app to receive
-     * traffic.
-     * To create a working app stream, make sure your property is linked to a
-     * Firebase project. Then, use the Firebase API to create a Firebase app,
-     * which will also create an appropriate data stream in Analytics (may take up
-     * to 24 hours).
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.admin.v1alpha.IosAppDataStream>
-        createIosAppDataStream(
-            com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateIosAppDataStreamMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Returns child iOS app data streams under the specified parent property.
      * iOS app data streams will be excluded if the caller does not have access.
      * Returns an empty list if no relevant iOS app data streams are found.
@@ -5654,27 +5502,6 @@ public final class AnalyticsAdminServiceGrpc {
             com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateAndroidAppDataStreamMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates an Android app stream with the specified location and attributes.
-     * Note that an Android app stream must be linked to a Firebase app to receive
-     * traffic.
-     * To create a working app stream, make sure your property is linked to a
-     * Firebase project. Then, use the Firebase API to create a Firebase app,
-     * which will also create an appropriate data stream in Analytics (may take up
-     * to 24 hours).
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.admin.v1alpha.AndroidAppDataStream>
-        createAndroidAppDataStream(
-            com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateAndroidAppDataStreamMethod(), getCallOptions()), request);
     }
 
     /**
@@ -5872,6 +5699,22 @@ public final class AnalyticsAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetDataSharingSettingsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches through all changes to an account or its children given the
+     * specified set of filters.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse>
+        searchChangeHistoryEvents(
+            com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSearchChangeHistoryEventsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ACCOUNT = 0;
@@ -5903,25 +5746,24 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_GET_IOS_APP_DATA_STREAM = 26;
   private static final int METHODID_DELETE_IOS_APP_DATA_STREAM = 27;
   private static final int METHODID_UPDATE_IOS_APP_DATA_STREAM = 28;
-  private static final int METHODID_CREATE_IOS_APP_DATA_STREAM = 29;
-  private static final int METHODID_LIST_IOS_APP_DATA_STREAMS = 30;
-  private static final int METHODID_GET_ANDROID_APP_DATA_STREAM = 31;
-  private static final int METHODID_DELETE_ANDROID_APP_DATA_STREAM = 32;
-  private static final int METHODID_UPDATE_ANDROID_APP_DATA_STREAM = 33;
-  private static final int METHODID_CREATE_ANDROID_APP_DATA_STREAM = 34;
-  private static final int METHODID_LIST_ANDROID_APP_DATA_STREAMS = 35;
-  private static final int METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS = 36;
-  private static final int METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS = 37;
-  private static final int METHODID_CREATE_FIREBASE_LINK = 38;
-  private static final int METHODID_UPDATE_FIREBASE_LINK = 39;
-  private static final int METHODID_DELETE_FIREBASE_LINK = 40;
-  private static final int METHODID_LIST_FIREBASE_LINKS = 41;
-  private static final int METHODID_GET_GLOBAL_SITE_TAG = 42;
-  private static final int METHODID_CREATE_GOOGLE_ADS_LINK = 43;
-  private static final int METHODID_UPDATE_GOOGLE_ADS_LINK = 44;
-  private static final int METHODID_DELETE_GOOGLE_ADS_LINK = 45;
-  private static final int METHODID_LIST_GOOGLE_ADS_LINKS = 46;
-  private static final int METHODID_GET_DATA_SHARING_SETTINGS = 47;
+  private static final int METHODID_LIST_IOS_APP_DATA_STREAMS = 29;
+  private static final int METHODID_GET_ANDROID_APP_DATA_STREAM = 30;
+  private static final int METHODID_DELETE_ANDROID_APP_DATA_STREAM = 31;
+  private static final int METHODID_UPDATE_ANDROID_APP_DATA_STREAM = 32;
+  private static final int METHODID_LIST_ANDROID_APP_DATA_STREAMS = 33;
+  private static final int METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS = 34;
+  private static final int METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS = 35;
+  private static final int METHODID_CREATE_FIREBASE_LINK = 36;
+  private static final int METHODID_UPDATE_FIREBASE_LINK = 37;
+  private static final int METHODID_DELETE_FIREBASE_LINK = 38;
+  private static final int METHODID_LIST_FIREBASE_LINKS = 39;
+  private static final int METHODID_GET_GLOBAL_SITE_TAG = 40;
+  private static final int METHODID_CREATE_GOOGLE_ADS_LINK = 41;
+  private static final int METHODID_UPDATE_GOOGLE_ADS_LINK = 42;
+  private static final int METHODID_DELETE_GOOGLE_ADS_LINK = 43;
+  private static final int METHODID_LIST_GOOGLE_ADS_LINKS = 44;
+  private static final int METHODID_GET_DATA_SHARING_SETTINGS = 45;
+  private static final int METHODID_SEARCH_CHANGE_HISTORY_EVENTS = 46;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -5999,7 +5841,8 @@ public final class AnalyticsAdminServiceGrpc {
         case METHODID_DELETE_PROPERTY:
           serviceImpl.deleteProperty(
               (com.google.analytics.admin.v1alpha.DeletePropertyRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property>)
+                  responseObserver);
           break;
         case METHODID_UPDATE_PROPERTY:
           serviceImpl.updateProperty(
@@ -6117,12 +5960,6 @@ public final class AnalyticsAdminServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.IosAppDataStream>)
                   responseObserver);
           break;
-        case METHODID_CREATE_IOS_APP_DATA_STREAM:
-          serviceImpl.createIosAppDataStream(
-              (com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.IosAppDataStream>)
-                  responseObserver);
-          break;
         case METHODID_LIST_IOS_APP_DATA_STREAMS:
           serviceImpl.listIosAppDataStreams(
               (com.google.analytics.admin.v1alpha.ListIosAppDataStreamsRequest) request,
@@ -6144,12 +5981,6 @@ public final class AnalyticsAdminServiceGrpc {
         case METHODID_UPDATE_ANDROID_APP_DATA_STREAM:
           serviceImpl.updateAndroidAppDataStream(
               (com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AndroidAppDataStream>)
-                  responseObserver);
-          break;
-        case METHODID_CREATE_ANDROID_APP_DATA_STREAM:
-          serviceImpl.createAndroidAppDataStream(
-              (com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest) request,
               (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AndroidAppDataStream>)
                   responseObserver);
           break;
@@ -6232,6 +6063,13 @@ public final class AnalyticsAdminServiceGrpc {
           serviceImpl.getDataSharingSettings(
               (com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataSharingSettings>)
+                  responseObserver);
+          break;
+        case METHODID_SEARCH_CHANGE_HISTORY_EVENTS:
+          serviceImpl.searchChangeHistoryEvents(
+              (com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse>)
                   responseObserver);
           break;
         default:
@@ -6327,12 +6165,10 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getGetIosAppDataStreamMethod())
                       .addMethod(getDeleteIosAppDataStreamMethod())
                       .addMethod(getUpdateIosAppDataStreamMethod())
-                      .addMethod(getCreateIosAppDataStreamMethod())
                       .addMethod(getListIosAppDataStreamsMethod())
                       .addMethod(getGetAndroidAppDataStreamMethod())
                       .addMethod(getDeleteAndroidAppDataStreamMethod())
                       .addMethod(getUpdateAndroidAppDataStreamMethod())
-                      .addMethod(getCreateAndroidAppDataStreamMethod())
                       .addMethod(getListAndroidAppDataStreamsMethod())
                       .addMethod(getGetEnhancedMeasurementSettingsMethod())
                       .addMethod(getUpdateEnhancedMeasurementSettingsMethod())
@@ -6346,6 +6182,7 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getDeleteGoogleAdsLinkMethod())
                       .addMethod(getListGoogleAdsLinksMethod())
                       .addMethod(getGetDataSharingSettingsMethod())
+                      .addMethod(getSearchChangeHistoryEventsMethod())
                       .build();
         }
       }

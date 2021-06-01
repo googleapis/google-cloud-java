@@ -985,7 +985,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName name = PropertyName.of("[PROPERTY]");
-   *   analyticsAdminServiceClient.deleteProperty(name);
+   *   Property response = analyticsAdminServiceClient.deleteProperty(name);
    * }
    * }</pre>
    *
@@ -993,10 +993,10 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     Example: "properties/1000"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteProperty(PropertyName name) {
+  public final Property deleteProperty(PropertyName name) {
     DeletePropertyRequest request =
         DeletePropertyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteProperty(request);
+    return deleteProperty(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1018,7 +1018,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = PropertyName.of("[PROPERTY]").toString();
-   *   analyticsAdminServiceClient.deleteProperty(name);
+   *   Property response = analyticsAdminServiceClient.deleteProperty(name);
    * }
    * }</pre>
    *
@@ -1026,9 +1026,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     Example: "properties/1000"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteProperty(String name) {
+  public final Property deleteProperty(String name) {
     DeletePropertyRequest request = DeletePropertyRequest.newBuilder().setName(name).build();
-    deleteProperty(request);
+    return deleteProperty(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1053,15 +1053,15 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *       DeletePropertyRequest.newBuilder()
    *           .setName(PropertyName.of("[PROPERTY]").toString())
    *           .build();
-   *   analyticsAdminServiceClient.deleteProperty(request);
+   *   Property response = analyticsAdminServiceClient.deleteProperty(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteProperty(DeletePropertyRequest request) {
-    deletePropertyCallable().call(request);
+  public final Property deleteProperty(DeletePropertyRequest request) {
+    return deletePropertyCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1086,14 +1086,14 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *       DeletePropertyRequest.newBuilder()
    *           .setName(PropertyName.of("[PROPERTY]").toString())
    *           .build();
-   *   ApiFuture<Empty> future =
+   *   ApiFuture<Property> future =
    *       analyticsAdminServiceClient.deletePropertyCallable().futureCall(request);
    *   // Do something.
-   *   future.get();
+   *   Property response = future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<DeletePropertyRequest, Empty> deletePropertyCallable() {
+  public final UnaryCallable<DeletePropertyRequest, Property> deletePropertyCallable() {
     return stub.deletePropertyCallable();
   }
 
@@ -2924,143 +2924,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an iOS app stream with the specified location and attributes.
-   *
-   * <p>Note that an iOS app stream must be linked to a Firebase app to receive traffic.
-   *
-   * <p>To create a working app stream, make sure your property is linked to a Firebase project.
-   * Then, use the Firebase API to create a Firebase app, which will also create an appropriate data
-   * stream in Analytics (may take up to 24 hours).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   PropertyName parent = PropertyName.of("[PROPERTY]");
-   *   IosAppDataStream iosAppDataStream = IosAppDataStream.newBuilder().build();
-   *   IosAppDataStream response =
-   *       analyticsAdminServiceClient.createIosAppDataStream(parent, iosAppDataStream);
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The parent resource where this ios app data stream will be created.
-   *     Format: properties/123
-   * @param iosAppDataStream Required. The iOS app data stream to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final IosAppDataStream createIosAppDataStream(
-      PropertyName parent, IosAppDataStream iosAppDataStream) {
-    CreateIosAppDataStreamRequest request =
-        CreateIosAppDataStreamRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setIosAppDataStream(iosAppDataStream)
-            .build();
-    return createIosAppDataStream(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates an iOS app stream with the specified location and attributes.
-   *
-   * <p>Note that an iOS app stream must be linked to a Firebase app to receive traffic.
-   *
-   * <p>To create a working app stream, make sure your property is linked to a Firebase project.
-   * Then, use the Firebase API to create a Firebase app, which will also create an appropriate data
-   * stream in Analytics (may take up to 24 hours).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   String parent = IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString();
-   *   IosAppDataStream iosAppDataStream = IosAppDataStream.newBuilder().build();
-   *   IosAppDataStream response =
-   *       analyticsAdminServiceClient.createIosAppDataStream(parent, iosAppDataStream);
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The parent resource where this ios app data stream will be created.
-   *     Format: properties/123
-   * @param iosAppDataStream Required. The iOS app data stream to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final IosAppDataStream createIosAppDataStream(
-      String parent, IosAppDataStream iosAppDataStream) {
-    CreateIosAppDataStreamRequest request =
-        CreateIosAppDataStreamRequest.newBuilder()
-            .setParent(parent)
-            .setIosAppDataStream(iosAppDataStream)
-            .build();
-    return createIosAppDataStream(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates an iOS app stream with the specified location and attributes.
-   *
-   * <p>Note that an iOS app stream must be linked to a Firebase app to receive traffic.
-   *
-   * <p>To create a working app stream, make sure your property is linked to a Firebase project.
-   * Then, use the Firebase API to create a Firebase app, which will also create an appropriate data
-   * stream in Analytics (may take up to 24 hours).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   CreateIosAppDataStreamRequest request =
-   *       CreateIosAppDataStreamRequest.newBuilder()
-   *           .setIosAppDataStream(IosAppDataStream.newBuilder().build())
-   *           .setParent(IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString())
-   *           .build();
-   *   IosAppDataStream response = analyticsAdminServiceClient.createIosAppDataStream(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final IosAppDataStream createIosAppDataStream(CreateIosAppDataStreamRequest request) {
-    return createIosAppDataStreamCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates an iOS app stream with the specified location and attributes.
-   *
-   * <p>Note that an iOS app stream must be linked to a Firebase app to receive traffic.
-   *
-   * <p>To create a working app stream, make sure your property is linked to a Firebase project.
-   * Then, use the Firebase API to create a Firebase app, which will also create an appropriate data
-   * stream in Analytics (may take up to 24 hours).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   CreateIosAppDataStreamRequest request =
-   *       CreateIosAppDataStreamRequest.newBuilder()
-   *           .setIosAppDataStream(IosAppDataStream.newBuilder().build())
-   *           .setParent(IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString())
-   *           .build();
-   *   ApiFuture<IosAppDataStream> future =
-   *       analyticsAdminServiceClient.createIosAppDataStreamCallable().futureCall(request);
-   *   // Do something.
-   *   IosAppDataStream response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<CreateIosAppDataStreamRequest, IosAppDataStream>
-      createIosAppDataStreamCallable() {
-    return stub.createIosAppDataStreamCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
    * Returns child iOS app data streams under the specified parent property.
    *
    * <p>iOS app data streams will be excluded if the caller does not have access. Returns an empty
@@ -3520,148 +3383,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   public final UnaryCallable<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
       updateAndroidAppDataStreamCallable() {
     return stub.updateAndroidAppDataStreamCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates an Android app stream with the specified location and attributes.
-   *
-   * <p>Note that an Android app stream must be linked to a Firebase app to receive traffic.
-   *
-   * <p>To create a working app stream, make sure your property is linked to a Firebase project.
-   * Then, use the Firebase API to create a Firebase app, which will also create an appropriate data
-   * stream in Analytics (may take up to 24 hours).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   PropertyName parent = PropertyName.of("[PROPERTY]");
-   *   AndroidAppDataStream androidAppDataStream = AndroidAppDataStream.newBuilder().build();
-   *   AndroidAppDataStream response =
-   *       analyticsAdminServiceClient.createAndroidAppDataStream(parent, androidAppDataStream);
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The parent resource where this android app data stream will be created.
-   *     Format: properties/123
-   * @param androidAppDataStream Required. The android app stream to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final AndroidAppDataStream createAndroidAppDataStream(
-      PropertyName parent, AndroidAppDataStream androidAppDataStream) {
-    CreateAndroidAppDataStreamRequest request =
-        CreateAndroidAppDataStreamRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setAndroidAppDataStream(androidAppDataStream)
-            .build();
-    return createAndroidAppDataStream(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates an Android app stream with the specified location and attributes.
-   *
-   * <p>Note that an Android app stream must be linked to a Firebase app to receive traffic.
-   *
-   * <p>To create a working app stream, make sure your property is linked to a Firebase project.
-   * Then, use the Firebase API to create a Firebase app, which will also create an appropriate data
-   * stream in Analytics (may take up to 24 hours).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   String parent =
-   *       AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString();
-   *   AndroidAppDataStream androidAppDataStream = AndroidAppDataStream.newBuilder().build();
-   *   AndroidAppDataStream response =
-   *       analyticsAdminServiceClient.createAndroidAppDataStream(parent, androidAppDataStream);
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The parent resource where this android app data stream will be created.
-   *     Format: properties/123
-   * @param androidAppDataStream Required. The android app stream to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final AndroidAppDataStream createAndroidAppDataStream(
-      String parent, AndroidAppDataStream androidAppDataStream) {
-    CreateAndroidAppDataStreamRequest request =
-        CreateAndroidAppDataStreamRequest.newBuilder()
-            .setParent(parent)
-            .setAndroidAppDataStream(androidAppDataStream)
-            .build();
-    return createAndroidAppDataStream(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates an Android app stream with the specified location and attributes.
-   *
-   * <p>Note that an Android app stream must be linked to a Firebase app to receive traffic.
-   *
-   * <p>To create a working app stream, make sure your property is linked to a Firebase project.
-   * Then, use the Firebase API to create a Firebase app, which will also create an appropriate data
-   * stream in Analytics (may take up to 24 hours).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   CreateAndroidAppDataStreamRequest request =
-   *       CreateAndroidAppDataStreamRequest.newBuilder()
-   *           .setAndroidAppDataStream(AndroidAppDataStream.newBuilder().build())
-   *           .setParent(
-   *               AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString())
-   *           .build();
-   *   AndroidAppDataStream response =
-   *       analyticsAdminServiceClient.createAndroidAppDataStream(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final AndroidAppDataStream createAndroidAppDataStream(
-      CreateAndroidAppDataStreamRequest request) {
-    return createAndroidAppDataStreamCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates an Android app stream with the specified location and attributes.
-   *
-   * <p>Note that an Android app stream must be linked to a Firebase app to receive traffic.
-   *
-   * <p>To create a working app stream, make sure your property is linked to a Firebase project.
-   * Then, use the Firebase API to create a Firebase app, which will also create an appropriate data
-   * stream in Analytics (may take up to 24 hours).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   CreateAndroidAppDataStreamRequest request =
-   *       CreateAndroidAppDataStreamRequest.newBuilder()
-   *           .setAndroidAppDataStream(AndroidAppDataStream.newBuilder().build())
-   *           .setParent(
-   *               AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString())
-   *           .build();
-   *   ApiFuture<AndroidAppDataStream> future =
-   *       analyticsAdminServiceClient.createAndroidAppDataStreamCallable().futureCall(request);
-   *   // Do something.
-   *   AndroidAppDataStream response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<CreateAndroidAppDataStreamRequest, AndroidAppDataStream>
-      createAndroidAppDataStreamCallable() {
-    return stub.createAndroidAppDataStreamCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -5119,6 +4840,120 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     return stub.getDataSharingSettingsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches through all changes to an account or its children given the specified set of filters.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SearchChangeHistoryEventsRequest request =
+   *       SearchChangeHistoryEventsRequest.newBuilder()
+   *           .setAccount(AccountName.of("[ACCOUNT]").toString())
+   *           .setProperty(PropertyName.of("[PROPERTY]").toString())
+   *           .addAllResourceType(new ArrayList<ChangeHistoryResourceType>())
+   *           .addAllAction(new ArrayList<ActionType>())
+   *           .addAllActorEmail(new ArrayList<String>())
+   *           .setEarliestChangeTime(Timestamp.newBuilder().build())
+   *           .setLatestChangeTime(Timestamp.newBuilder().build())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ChangeHistoryEvent element :
+   *       analyticsAdminServiceClient.searchChangeHistoryEvents(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchChangeHistoryEventsPagedResponse searchChangeHistoryEvents(
+      SearchChangeHistoryEventsRequest request) {
+    return searchChangeHistoryEventsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches through all changes to an account or its children given the specified set of filters.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SearchChangeHistoryEventsRequest request =
+   *       SearchChangeHistoryEventsRequest.newBuilder()
+   *           .setAccount(AccountName.of("[ACCOUNT]").toString())
+   *           .setProperty(PropertyName.of("[PROPERTY]").toString())
+   *           .addAllResourceType(new ArrayList<ChangeHistoryResourceType>())
+   *           .addAllAction(new ArrayList<ActionType>())
+   *           .addAllActorEmail(new ArrayList<String>())
+   *           .setEarliestChangeTime(Timestamp.newBuilder().build())
+   *           .setLatestChangeTime(Timestamp.newBuilder().build())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ChangeHistoryEvent> future =
+   *       analyticsAdminServiceClient.searchChangeHistoryEventsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ChangeHistoryEvent element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsPagedResponse>
+      searchChangeHistoryEventsPagedCallable() {
+    return stub.searchChangeHistoryEventsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches through all changes to an account or its children given the specified set of filters.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SearchChangeHistoryEventsRequest request =
+   *       SearchChangeHistoryEventsRequest.newBuilder()
+   *           .setAccount(AccountName.of("[ACCOUNT]").toString())
+   *           .setProperty(PropertyName.of("[PROPERTY]").toString())
+   *           .addAllResourceType(new ArrayList<ChangeHistoryResourceType>())
+   *           .addAllAction(new ArrayList<ActionType>())
+   *           .addAllActorEmail(new ArrayList<String>())
+   *           .setEarliestChangeTime(Timestamp.newBuilder().build())
+   *           .setLatestChangeTime(Timestamp.newBuilder().build())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     SearchChangeHistoryEventsResponse response =
+   *         analyticsAdminServiceClient.searchChangeHistoryEventsCallable().call(request);
+   *     for (ChangeHistoryEvent element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
+      searchChangeHistoryEventsCallable() {
+    return stub.searchChangeHistoryEventsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -6004,6 +5839,108 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListGoogleAdsLinksFixedSizeCollection createCollection(
         List<ListGoogleAdsLinksPage> pages, int collectionSize) {
       return new ListGoogleAdsLinksFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class SearchChangeHistoryEventsPagedResponse
+      extends AbstractPagedListResponse<
+          SearchChangeHistoryEventsRequest,
+          SearchChangeHistoryEventsResponse,
+          ChangeHistoryEvent,
+          SearchChangeHistoryEventsPage,
+          SearchChangeHistoryEventsFixedSizeCollection> {
+
+    public static ApiFuture<SearchChangeHistoryEventsPagedResponse> createAsync(
+        PageContext<
+                SearchChangeHistoryEventsRequest,
+                SearchChangeHistoryEventsResponse,
+                ChangeHistoryEvent>
+            context,
+        ApiFuture<SearchChangeHistoryEventsResponse> futureResponse) {
+      ApiFuture<SearchChangeHistoryEventsPage> futurePage =
+          SearchChangeHistoryEventsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<SearchChangeHistoryEventsPage, SearchChangeHistoryEventsPagedResponse>() {
+            @Override
+            public SearchChangeHistoryEventsPagedResponse apply(
+                SearchChangeHistoryEventsPage input) {
+              return new SearchChangeHistoryEventsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private SearchChangeHistoryEventsPagedResponse(SearchChangeHistoryEventsPage page) {
+      super(page, SearchChangeHistoryEventsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchChangeHistoryEventsPage
+      extends AbstractPage<
+          SearchChangeHistoryEventsRequest,
+          SearchChangeHistoryEventsResponse,
+          ChangeHistoryEvent,
+          SearchChangeHistoryEventsPage> {
+
+    private SearchChangeHistoryEventsPage(
+        PageContext<
+                SearchChangeHistoryEventsRequest,
+                SearchChangeHistoryEventsResponse,
+                ChangeHistoryEvent>
+            context,
+        SearchChangeHistoryEventsResponse response) {
+      super(context, response);
+    }
+
+    private static SearchChangeHistoryEventsPage createEmptyPage() {
+      return new SearchChangeHistoryEventsPage(null, null);
+    }
+
+    @Override
+    protected SearchChangeHistoryEventsPage createPage(
+        PageContext<
+                SearchChangeHistoryEventsRequest,
+                SearchChangeHistoryEventsResponse,
+                ChangeHistoryEvent>
+            context,
+        SearchChangeHistoryEventsResponse response) {
+      return new SearchChangeHistoryEventsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchChangeHistoryEventsPage> createPageAsync(
+        PageContext<
+                SearchChangeHistoryEventsRequest,
+                SearchChangeHistoryEventsResponse,
+                ChangeHistoryEvent>
+            context,
+        ApiFuture<SearchChangeHistoryEventsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchChangeHistoryEventsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchChangeHistoryEventsRequest,
+          SearchChangeHistoryEventsResponse,
+          ChangeHistoryEvent,
+          SearchChangeHistoryEventsPage,
+          SearchChangeHistoryEventsFixedSizeCollection> {
+
+    private SearchChangeHistoryEventsFixedSizeCollection(
+        List<SearchChangeHistoryEventsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchChangeHistoryEventsFixedSizeCollection createEmptyCollection() {
+      return new SearchChangeHistoryEventsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchChangeHistoryEventsFixedSizeCollection createCollection(
+        List<SearchChangeHistoryEventsPage> pages, int collectionSize) {
+      return new SearchChangeHistoryEventsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

@@ -4,17 +4,17 @@
   <!-- TODO: Remove after 0.4.0 is released -->
   <difference>
     <differenceType>7002</differenceType>
-    <className>com/google/analytics/admin/v1alpha/*AnalyticsAdminService*</className>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceGrpc*</className>
     <method>* create*(*)</method>
   </difference>
   <difference>
     <differenceType>7002</differenceType>
-    <className>com/google/analytics/admin/v1alpha/stub/*AnalyticsAdminService*</className>
-    <method>* create*(*)</method>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceGrpc*</className>
+    <method>* get*(*)</method>
   </difference>
   <difference>
     <differenceType>7006</differenceType>
-    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminService*</className>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceGrpc*</className>
     <method>* deleteProperty(*)</method>
     <to>com.google.analytics.admin.v1alpha.Property</to>
   </difference>

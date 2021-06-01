@@ -26,6 +26,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListWebDataStreamsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -463,7 +464,8 @@ public class AnalyticsAdminServiceClientTest {
             .setIndustryCategory(IndustryCategory.forNumber(0))
             .setTimeZone("timeZone-2077180903")
             .setCurrencyCode("currencyCode1004773790")
-            .setDeleted(true)
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -509,7 +511,8 @@ public class AnalyticsAdminServiceClientTest {
             .setIndustryCategory(IndustryCategory.forNumber(0))
             .setTimeZone("timeZone-2077180903")
             .setCurrencyCode("currencyCode1004773790")
-            .setDeleted(true)
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -614,7 +617,8 @@ public class AnalyticsAdminServiceClientTest {
             .setIndustryCategory(IndustryCategory.forNumber(0))
             .setTimeZone("timeZone-2077180903")
             .setCurrencyCode("currencyCode1004773790")
-            .setDeleted(true)
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -650,12 +654,25 @@ public class AnalyticsAdminServiceClientTest {
 
   @Test
   public void deletePropertyTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    Property expectedResponse =
+        Property.newBuilder()
+            .setName(PropertyName.of("[PROPERTY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setParent("parent-995424086")
+            .setDisplayName("displayName1714148973")
+            .setIndustryCategory(IndustryCategory.forNumber(0))
+            .setTimeZone("timeZone-2077180903")
+            .setCurrencyCode("currencyCode1004773790")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
     PropertyName name = PropertyName.of("[PROPERTY]");
 
-    client.deleteProperty(name);
+    Property actualResponse = client.deleteProperty(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -684,12 +701,25 @@ public class AnalyticsAdminServiceClientTest {
 
   @Test
   public void deletePropertyTest2() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    Property expectedResponse =
+        Property.newBuilder()
+            .setName(PropertyName.of("[PROPERTY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setParent("parent-995424086")
+            .setDisplayName("displayName1714148973")
+            .setIndustryCategory(IndustryCategory.forNumber(0))
+            .setTimeZone("timeZone-2077180903")
+            .setCurrencyCode("currencyCode1004773790")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
     String name = "name3373707";
 
-    client.deleteProperty(name);
+    Property actualResponse = client.deleteProperty(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -728,7 +758,8 @@ public class AnalyticsAdminServiceClientTest {
             .setIndustryCategory(IndustryCategory.forNumber(0))
             .setTimeZone("timeZone-2077180903")
             .setCurrencyCode("currencyCode1004773790")
-            .setDeleted(true)
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -2047,100 +2078,6 @@ public class AnalyticsAdminServiceClientTest {
   }
 
   @Test
-  public void createIosAppDataStreamTest() throws Exception {
-    IosAppDataStream expectedResponse =
-        IosAppDataStream.newBuilder()
-            .setName(IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString())
-            .setFirebaseAppId("firebaseAppId1895156053")
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .setBundleId("bundleId-1294655171")
-            .setDisplayName("displayName1714148973")
-            .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
-
-    PropertyName parent = PropertyName.of("[PROPERTY]");
-    IosAppDataStream iosAppDataStream = IosAppDataStream.newBuilder().build();
-
-    IosAppDataStream actualResponse = client.createIosAppDataStream(parent, iosAppDataStream);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateIosAppDataStreamRequest actualRequest =
-        ((CreateIosAppDataStreamRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(iosAppDataStream, actualRequest.getIosAppDataStream());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void createIosAppDataStreamExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
-
-    try {
-      PropertyName parent = PropertyName.of("[PROPERTY]");
-      IosAppDataStream iosAppDataStream = IosAppDataStream.newBuilder().build();
-      client.createIosAppDataStream(parent, iosAppDataStream);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void createIosAppDataStreamTest2() throws Exception {
-    IosAppDataStream expectedResponse =
-        IosAppDataStream.newBuilder()
-            .setName(IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString())
-            .setFirebaseAppId("firebaseAppId1895156053")
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .setBundleId("bundleId-1294655171")
-            .setDisplayName("displayName1714148973")
-            .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
-
-    String parent = "parent-995424086";
-    IosAppDataStream iosAppDataStream = IosAppDataStream.newBuilder().build();
-
-    IosAppDataStream actualResponse = client.createIosAppDataStream(parent, iosAppDataStream);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateIosAppDataStreamRequest actualRequest =
-        ((CreateIosAppDataStreamRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(iosAppDataStream, actualRequest.getIosAppDataStream());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void createIosAppDataStreamExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
-
-    try {
-      String parent = "parent-995424086";
-      IosAppDataStream iosAppDataStream = IosAppDataStream.newBuilder().build();
-      client.createIosAppDataStream(parent, iosAppDataStream);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
   public void listIosAppDataStreamsTest() throws Exception {
     IosAppDataStream responsesElement = IosAppDataStream.newBuilder().build();
     ListIosAppDataStreamsResponse expectedResponse =
@@ -2437,104 +2374,6 @@ public class AnalyticsAdminServiceClientTest {
       AndroidAppDataStream androidAppDataStream = AndroidAppDataStream.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAndroidAppDataStream(androidAppDataStream, updateMask);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void createAndroidAppDataStreamTest() throws Exception {
-    AndroidAppDataStream expectedResponse =
-        AndroidAppDataStream.newBuilder()
-            .setName(
-                AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString())
-            .setFirebaseAppId("firebaseAppId1895156053")
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .setPackageName("packageName908759025")
-            .setDisplayName("displayName1714148973")
-            .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
-
-    PropertyName parent = PropertyName.of("[PROPERTY]");
-    AndroidAppDataStream androidAppDataStream = AndroidAppDataStream.newBuilder().build();
-
-    AndroidAppDataStream actualResponse =
-        client.createAndroidAppDataStream(parent, androidAppDataStream);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateAndroidAppDataStreamRequest actualRequest =
-        ((CreateAndroidAppDataStreamRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(androidAppDataStream, actualRequest.getAndroidAppDataStream());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void createAndroidAppDataStreamExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
-
-    try {
-      PropertyName parent = PropertyName.of("[PROPERTY]");
-      AndroidAppDataStream androidAppDataStream = AndroidAppDataStream.newBuilder().build();
-      client.createAndroidAppDataStream(parent, androidAppDataStream);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void createAndroidAppDataStreamTest2() throws Exception {
-    AndroidAppDataStream expectedResponse =
-        AndroidAppDataStream.newBuilder()
-            .setName(
-                AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString())
-            .setFirebaseAppId("firebaseAppId1895156053")
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .setPackageName("packageName908759025")
-            .setDisplayName("displayName1714148973")
-            .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
-
-    String parent = "parent-995424086";
-    AndroidAppDataStream androidAppDataStream = AndroidAppDataStream.newBuilder().build();
-
-    AndroidAppDataStream actualResponse =
-        client.createAndroidAppDataStream(parent, androidAppDataStream);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateAndroidAppDataStreamRequest actualRequest =
-        ((CreateAndroidAppDataStreamRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(androidAppDataStream, actualRequest.getAndroidAppDataStream());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void createAndroidAppDataStreamExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
-
-    try {
-      String parent = "parent-995424086";
-      AndroidAppDataStream androidAppDataStream = AndroidAppDataStream.newBuilder().build();
-      client.createAndroidAppDataStream(parent, androidAppDataStream);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -3540,6 +3379,82 @@ public class AnalyticsAdminServiceClientTest {
     try {
       String name = "name3373707";
       client.getDataSharingSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchChangeHistoryEventsTest() throws Exception {
+    ChangeHistoryEvent responsesElement = ChangeHistoryEvent.newBuilder().build();
+    SearchChangeHistoryEventsResponse expectedResponse =
+        SearchChangeHistoryEventsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllChangeHistoryEvents(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    SearchChangeHistoryEventsRequest request =
+        SearchChangeHistoryEventsRequest.newBuilder()
+            .setAccount(AccountName.of("[ACCOUNT]").toString())
+            .setProperty(PropertyName.of("[PROPERTY]").toString())
+            .addAllResourceType(new ArrayList<ChangeHistoryResourceType>())
+            .addAllAction(new ArrayList<ActionType>())
+            .addAllActorEmail(new ArrayList<String>())
+            .setEarliestChangeTime(Timestamp.newBuilder().build())
+            .setLatestChangeTime(Timestamp.newBuilder().build())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    SearchChangeHistoryEventsPagedResponse pagedListResponse =
+        client.searchChangeHistoryEvents(request);
+
+    List<ChangeHistoryEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getChangeHistoryEventsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchChangeHistoryEventsRequest actualRequest =
+        ((SearchChangeHistoryEventsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getAccount(), actualRequest.getAccount());
+    Assert.assertEquals(request.getProperty(), actualRequest.getProperty());
+    Assert.assertEquals(request.getResourceTypeList(), actualRequest.getResourceTypeList());
+    Assert.assertEquals(request.getActionList(), actualRequest.getActionList());
+    Assert.assertEquals(request.getActorEmailList(), actualRequest.getActorEmailList());
+    Assert.assertEquals(request.getEarliestChangeTime(), actualRequest.getEarliestChangeTime());
+    Assert.assertEquals(request.getLatestChangeTime(), actualRequest.getLatestChangeTime());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchChangeHistoryEventsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      SearchChangeHistoryEventsRequest request =
+          SearchChangeHistoryEventsRequest.newBuilder()
+              .setAccount(AccountName.of("[ACCOUNT]").toString())
+              .setProperty(PropertyName.of("[PROPERTY]").toString())
+              .addAllResourceType(new ArrayList<ChangeHistoryResourceType>())
+              .addAllAction(new ArrayList<ActionType>())
+              .addAllActorEmail(new ArrayList<String>())
+              .setEarliestChangeTime(Timestamp.newBuilder().build())
+              .setLatestChangeTime(Timestamp.newBuilder().build())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.searchChangeHistoryEvents(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

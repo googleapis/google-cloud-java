@@ -26,6 +26,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListWebDataStreamsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AccountSummary;
@@ -40,10 +41,9 @@ import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
-import com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest;
+import com.google.analytics.admin.v1alpha.ChangeHistoryEvent;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
-import com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
 import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest;
@@ -91,6 +91,8 @@ import com.google.analytics.admin.v1alpha.ListWebDataStreamsResponse;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
+import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
+import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
@@ -199,7 +201,7 @@ public class AnalyticsAdminServiceStubSettings
           ListPropertiesRequest, ListPropertiesResponse, ListPropertiesPagedResponse>
       listPropertiesSettings;
   private final UnaryCallSettings<CreatePropertyRequest, Property> createPropertySettings;
-  private final UnaryCallSettings<DeletePropertyRequest, Empty> deletePropertySettings;
+  private final UnaryCallSettings<DeletePropertyRequest, Property> deletePropertySettings;
   private final UnaryCallSettings<UpdatePropertyRequest, Property> updatePropertySettings;
   private final UnaryCallSettings<GetUserLinkRequest, UserLink> getUserLinkSettings;
   private final UnaryCallSettings<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
@@ -233,8 +235,6 @@ public class AnalyticsAdminServiceStubSettings
       deleteIosAppDataStreamSettings;
   private final UnaryCallSettings<UpdateIosAppDataStreamRequest, IosAppDataStream>
       updateIosAppDataStreamSettings;
-  private final UnaryCallSettings<CreateIosAppDataStreamRequest, IosAppDataStream>
-      createIosAppDataStreamSettings;
   private final PagedCallSettings<
           ListIosAppDataStreamsRequest,
           ListIosAppDataStreamsResponse,
@@ -246,8 +246,6 @@ public class AnalyticsAdminServiceStubSettings
       deleteAndroidAppDataStreamSettings;
   private final UnaryCallSettings<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
       updateAndroidAppDataStreamSettings;
-  private final UnaryCallSettings<CreateAndroidAppDataStreamRequest, AndroidAppDataStream>
-      createAndroidAppDataStreamSettings;
   private final PagedCallSettings<
           ListAndroidAppDataStreamsRequest,
           ListAndroidAppDataStreamsResponse,
@@ -278,6 +276,11 @@ public class AnalyticsAdminServiceStubSettings
       listGoogleAdsLinksSettings;
   private final UnaryCallSettings<GetDataSharingSettingsRequest, DataSharingSettings>
       getDataSharingSettingsSettings;
+  private final PagedCallSettings<
+          SearchChangeHistoryEventsRequest,
+          SearchChangeHistoryEventsResponse,
+          SearchChangeHistoryEventsPagedResponse>
+      searchChangeHistoryEventsSettings;
 
   private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
       LIST_ACCOUNTS_PAGE_STR_DESC =
@@ -674,6 +677,53 @@ public class AnalyticsAdminServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<
+          SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse, ChangeHistoryEvent>
+      SEARCH_CHANGE_HISTORY_EVENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              SearchChangeHistoryEventsRequest,
+              SearchChangeHistoryEventsResponse,
+              ChangeHistoryEvent>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchChangeHistoryEventsRequest injectToken(
+                SearchChangeHistoryEventsRequest payload, String token) {
+              return SearchChangeHistoryEventsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public SearchChangeHistoryEventsRequest injectPageSize(
+                SearchChangeHistoryEventsRequest payload, int pageSize) {
+              return SearchChangeHistoryEventsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchChangeHistoryEventsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchChangeHistoryEventsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ChangeHistoryEvent> extractResources(
+                SearchChangeHistoryEventsResponse payload) {
+              return payload.getChangeHistoryEventsList() == null
+                  ? ImmutableList.<ChangeHistoryEvent>of()
+                  : payload.getChangeHistoryEventsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListAccountsRequest, ListAccountsResponse, ListAccountsPagedResponse>
       LIST_ACCOUNTS_PAGE_STR_FACT =
@@ -882,6 +932,34 @@ public class AnalyticsAdminServiceStubSettings
             }
           };
 
+  private static final PagedListResponseFactory<
+          SearchChangeHistoryEventsRequest,
+          SearchChangeHistoryEventsResponse,
+          SearchChangeHistoryEventsPagedResponse>
+      SEARCH_CHANGE_HISTORY_EVENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchChangeHistoryEventsRequest,
+              SearchChangeHistoryEventsResponse,
+              SearchChangeHistoryEventsPagedResponse>() {
+            @Override
+            public ApiFuture<SearchChangeHistoryEventsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
+                    callable,
+                SearchChangeHistoryEventsRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchChangeHistoryEventsResponse> futureResponse) {
+              PageContext<
+                      SearchChangeHistoryEventsRequest,
+                      SearchChangeHistoryEventsResponse,
+                      ChangeHistoryEvent>
+                  pageContext =
+                      PageContext.create(
+                          callable, SEARCH_CHANGE_HISTORY_EVENTS_PAGE_STR_DESC, request, context);
+              return SearchChangeHistoryEventsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to getAccount. */
   public UnaryCallSettings<GetAccountRequest, Account> getAccountSettings() {
     return getAccountSettings;
@@ -936,7 +1014,7 @@ public class AnalyticsAdminServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to deleteProperty. */
-  public UnaryCallSettings<DeletePropertyRequest, Empty> deletePropertySettings() {
+  public UnaryCallSettings<DeletePropertyRequest, Property> deletePropertySettings() {
     return deletePropertySettings;
   }
 
@@ -1047,12 +1125,6 @@ public class AnalyticsAdminServiceStubSettings
     return updateIosAppDataStreamSettings;
   }
 
-  /** Returns the object with the settings used for calls to createIosAppDataStream. */
-  public UnaryCallSettings<CreateIosAppDataStreamRequest, IosAppDataStream>
-      createIosAppDataStreamSettings() {
-    return createIosAppDataStreamSettings;
-  }
-
   /** Returns the object with the settings used for calls to listIosAppDataStreams. */
   public PagedCallSettings<
           ListIosAppDataStreamsRequest,
@@ -1078,12 +1150,6 @@ public class AnalyticsAdminServiceStubSettings
   public UnaryCallSettings<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
       updateAndroidAppDataStreamSettings() {
     return updateAndroidAppDataStreamSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createAndroidAppDataStream. */
-  public UnaryCallSettings<CreateAndroidAppDataStreamRequest, AndroidAppDataStream>
-      createAndroidAppDataStreamSettings() {
-    return createAndroidAppDataStreamSettings;
   }
 
   /** Returns the object with the settings used for calls to listAndroidAppDataStreams. */
@@ -1162,6 +1228,15 @@ public class AnalyticsAdminServiceStubSettings
   public UnaryCallSettings<GetDataSharingSettingsRequest, DataSharingSettings>
       getDataSharingSettingsSettings() {
     return getDataSharingSettingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchChangeHistoryEvents. */
+  public PagedCallSettings<
+          SearchChangeHistoryEventsRequest,
+          SearchChangeHistoryEventsResponse,
+          SearchChangeHistoryEventsPagedResponse>
+      searchChangeHistoryEventsSettings() {
+    return searchChangeHistoryEventsSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -1262,15 +1337,12 @@ public class AnalyticsAdminServiceStubSettings
     getIosAppDataStreamSettings = settingsBuilder.getIosAppDataStreamSettings().build();
     deleteIosAppDataStreamSettings = settingsBuilder.deleteIosAppDataStreamSettings().build();
     updateIosAppDataStreamSettings = settingsBuilder.updateIosAppDataStreamSettings().build();
-    createIosAppDataStreamSettings = settingsBuilder.createIosAppDataStreamSettings().build();
     listIosAppDataStreamsSettings = settingsBuilder.listIosAppDataStreamsSettings().build();
     getAndroidAppDataStreamSettings = settingsBuilder.getAndroidAppDataStreamSettings().build();
     deleteAndroidAppDataStreamSettings =
         settingsBuilder.deleteAndroidAppDataStreamSettings().build();
     updateAndroidAppDataStreamSettings =
         settingsBuilder.updateAndroidAppDataStreamSettings().build();
-    createAndroidAppDataStreamSettings =
-        settingsBuilder.createAndroidAppDataStreamSettings().build();
     listAndroidAppDataStreamsSettings = settingsBuilder.listAndroidAppDataStreamsSettings().build();
     getEnhancedMeasurementSettingsSettings =
         settingsBuilder.getEnhancedMeasurementSettingsSettings().build();
@@ -1286,6 +1358,7 @@ public class AnalyticsAdminServiceStubSettings
     deleteGoogleAdsLinkSettings = settingsBuilder.deleteGoogleAdsLinkSettings().build();
     listGoogleAdsLinksSettings = settingsBuilder.listGoogleAdsLinksSettings().build();
     getDataSharingSettingsSettings = settingsBuilder.getDataSharingSettingsSettings().build();
+    searchChangeHistoryEventsSettings = settingsBuilder.searchChangeHistoryEventsSettings().build();
   }
 
   /** Builder for AnalyticsAdminServiceStubSettings. */
@@ -1311,7 +1384,7 @@ public class AnalyticsAdminServiceStubSettings
             ListPropertiesRequest, ListPropertiesResponse, ListPropertiesPagedResponse>
         listPropertiesSettings;
     private final UnaryCallSettings.Builder<CreatePropertyRequest, Property> createPropertySettings;
-    private final UnaryCallSettings.Builder<DeletePropertyRequest, Empty> deletePropertySettings;
+    private final UnaryCallSettings.Builder<DeletePropertyRequest, Property> deletePropertySettings;
     private final UnaryCallSettings.Builder<UpdatePropertyRequest, Property> updatePropertySettings;
     private final UnaryCallSettings.Builder<GetUserLinkRequest, UserLink> getUserLinkSettings;
     private final UnaryCallSettings.Builder<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
@@ -1350,8 +1423,6 @@ public class AnalyticsAdminServiceStubSettings
         deleteIosAppDataStreamSettings;
     private final UnaryCallSettings.Builder<UpdateIosAppDataStreamRequest, IosAppDataStream>
         updateIosAppDataStreamSettings;
-    private final UnaryCallSettings.Builder<CreateIosAppDataStreamRequest, IosAppDataStream>
-        createIosAppDataStreamSettings;
     private final PagedCallSettings.Builder<
             ListIosAppDataStreamsRequest,
             ListIosAppDataStreamsResponse,
@@ -1363,8 +1434,6 @@ public class AnalyticsAdminServiceStubSettings
         deleteAndroidAppDataStreamSettings;
     private final UnaryCallSettings.Builder<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
         updateAndroidAppDataStreamSettings;
-    private final UnaryCallSettings.Builder<CreateAndroidAppDataStreamRequest, AndroidAppDataStream>
-        createAndroidAppDataStreamSettings;
     private final PagedCallSettings.Builder<
             ListAndroidAppDataStreamsRequest,
             ListAndroidAppDataStreamsResponse,
@@ -1398,6 +1467,11 @@ public class AnalyticsAdminServiceStubSettings
         listGoogleAdsLinksSettings;
     private final UnaryCallSettings.Builder<GetDataSharingSettingsRequest, DataSharingSettings>
         getDataSharingSettingsSettings;
+    private final PagedCallSettings.Builder<
+            SearchChangeHistoryEventsRequest,
+            SearchChangeHistoryEventsResponse,
+            SearchChangeHistoryEventsPagedResponse>
+        searchChangeHistoryEventsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1479,13 +1553,11 @@ public class AnalyticsAdminServiceStubSettings
       getIosAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteIosAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateIosAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      createIosAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listIosAppDataStreamsSettings =
           PagedCallSettings.newBuilder(LIST_IOS_APP_DATA_STREAMS_PAGE_STR_FACT);
       getAndroidAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteAndroidAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateAndroidAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      createAndroidAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAndroidAppDataStreamsSettings =
           PagedCallSettings.newBuilder(LIST_ANDROID_APP_DATA_STREAMS_PAGE_STR_FACT);
       getEnhancedMeasurementSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1501,6 +1573,8 @@ public class AnalyticsAdminServiceStubSettings
       listGoogleAdsLinksSettings =
           PagedCallSettings.newBuilder(LIST_GOOGLE_ADS_LINKS_PAGE_STR_FACT);
       getDataSharingSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      searchChangeHistoryEventsSettings =
+          PagedCallSettings.newBuilder(SEARCH_CHANGE_HISTORY_EVENTS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1533,12 +1607,10 @@ public class AnalyticsAdminServiceStubSettings
               getIosAppDataStreamSettings,
               deleteIosAppDataStreamSettings,
               updateIosAppDataStreamSettings,
-              createIosAppDataStreamSettings,
               listIosAppDataStreamsSettings,
               getAndroidAppDataStreamSettings,
               deleteAndroidAppDataStreamSettings,
               updateAndroidAppDataStreamSettings,
-              createAndroidAppDataStreamSettings,
               listAndroidAppDataStreamsSettings,
               getEnhancedMeasurementSettingsSettings,
               updateEnhancedMeasurementSettingsSettings,
@@ -1551,7 +1623,8 @@ public class AnalyticsAdminServiceStubSettings
               updateGoogleAdsLinkSettings,
               deleteGoogleAdsLinkSettings,
               listGoogleAdsLinksSettings,
-              getDataSharingSettingsSettings);
+              getDataSharingSettingsSettings,
+              searchChangeHistoryEventsSettings);
       initDefaults(this);
     }
 
@@ -1587,12 +1660,10 @@ public class AnalyticsAdminServiceStubSettings
       getIosAppDataStreamSettings = settings.getIosAppDataStreamSettings.toBuilder();
       deleteIosAppDataStreamSettings = settings.deleteIosAppDataStreamSettings.toBuilder();
       updateIosAppDataStreamSettings = settings.updateIosAppDataStreamSettings.toBuilder();
-      createIosAppDataStreamSettings = settings.createIosAppDataStreamSettings.toBuilder();
       listIosAppDataStreamsSettings = settings.listIosAppDataStreamsSettings.toBuilder();
       getAndroidAppDataStreamSettings = settings.getAndroidAppDataStreamSettings.toBuilder();
       deleteAndroidAppDataStreamSettings = settings.deleteAndroidAppDataStreamSettings.toBuilder();
       updateAndroidAppDataStreamSettings = settings.updateAndroidAppDataStreamSettings.toBuilder();
-      createAndroidAppDataStreamSettings = settings.createAndroidAppDataStreamSettings.toBuilder();
       listAndroidAppDataStreamsSettings = settings.listAndroidAppDataStreamsSettings.toBuilder();
       getEnhancedMeasurementSettingsSettings =
           settings.getEnhancedMeasurementSettingsSettings.toBuilder();
@@ -1608,6 +1679,7 @@ public class AnalyticsAdminServiceStubSettings
       deleteGoogleAdsLinkSettings = settings.deleteGoogleAdsLinkSettings.toBuilder();
       listGoogleAdsLinksSettings = settings.listGoogleAdsLinksSettings.toBuilder();
       getDataSharingSettingsSettings = settings.getDataSharingSettingsSettings.toBuilder();
+      searchChangeHistoryEventsSettings = settings.searchChangeHistoryEventsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1640,12 +1712,10 @@ public class AnalyticsAdminServiceStubSettings
               getIosAppDataStreamSettings,
               deleteIosAppDataStreamSettings,
               updateIosAppDataStreamSettings,
-              createIosAppDataStreamSettings,
               listIosAppDataStreamsSettings,
               getAndroidAppDataStreamSettings,
               deleteAndroidAppDataStreamSettings,
               updateAndroidAppDataStreamSettings,
-              createAndroidAppDataStreamSettings,
               listAndroidAppDataStreamsSettings,
               getEnhancedMeasurementSettingsSettings,
               updateEnhancedMeasurementSettingsSettings,
@@ -1658,7 +1728,8 @@ public class AnalyticsAdminServiceStubSettings
               updateGoogleAdsLinkSettings,
               deleteGoogleAdsLinkSettings,
               listGoogleAdsLinksSettings,
-              getDataSharingSettingsSettings);
+              getDataSharingSettingsSettings,
+              searchChangeHistoryEventsSettings);
     }
 
     private static Builder createDefault() {
@@ -1819,11 +1890,6 @@ public class AnalyticsAdminServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
-          .createIosAppDataStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
           .listIosAppDataStreamsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -1840,11 +1906,6 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .updateAndroidAppDataStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .createAndroidAppDataStreamSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1910,6 +1971,11 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .getDataSharingSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .searchChangeHistoryEventsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1987,7 +2053,7 @@ public class AnalyticsAdminServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteProperty. */
-    public UnaryCallSettings.Builder<DeletePropertyRequest, Empty> deletePropertySettings() {
+    public UnaryCallSettings.Builder<DeletePropertyRequest, Property> deletePropertySettings() {
       return deletePropertySettings;
     }
 
@@ -2103,12 +2169,6 @@ public class AnalyticsAdminServiceStubSettings
       return updateIosAppDataStreamSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createIosAppDataStream. */
-    public UnaryCallSettings.Builder<CreateIosAppDataStreamRequest, IosAppDataStream>
-        createIosAppDataStreamSettings() {
-      return createIosAppDataStreamSettings;
-    }
-
     /** Returns the builder for the settings used for calls to listIosAppDataStreams. */
     public PagedCallSettings.Builder<
             ListIosAppDataStreamsRequest,
@@ -2134,12 +2194,6 @@ public class AnalyticsAdminServiceStubSettings
     public UnaryCallSettings.Builder<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
         updateAndroidAppDataStreamSettings() {
       return updateAndroidAppDataStreamSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to createAndroidAppDataStream. */
-    public UnaryCallSettings.Builder<CreateAndroidAppDataStreamRequest, AndroidAppDataStream>
-        createAndroidAppDataStreamSettings() {
-      return createAndroidAppDataStreamSettings;
     }
 
     /** Returns the builder for the settings used for calls to listAndroidAppDataStreams. */
@@ -2225,6 +2279,15 @@ public class AnalyticsAdminServiceStubSettings
     public UnaryCallSettings.Builder<GetDataSharingSettingsRequest, DataSharingSettings>
         getDataSharingSettingsSettings() {
       return getDataSharingSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchChangeHistoryEvents. */
+    public PagedCallSettings.Builder<
+            SearchChangeHistoryEventsRequest,
+            SearchChangeHistoryEventsResponse,
+            SearchChangeHistoryEventsPagedResponse>
+        searchChangeHistoryEventsSettings() {
+      return searchChangeHistoryEventsSettings;
     }
 
     @Override

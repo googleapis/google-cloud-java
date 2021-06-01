@@ -25,17 +25,11 @@
             "BatchUpdateUserLinks": {
               "methods": ["batchUpdateUserLinks", "batchUpdateUserLinksCallable"]
             },
-            "CreateAndroidAppDataStream": {
-              "methods": ["createAndroidAppDataStream", "createAndroidAppDataStream", "createAndroidAppDataStream", "createAndroidAppDataStreamCallable"]
-            },
             "CreateFirebaseLink": {
               "methods": ["createFirebaseLink", "createFirebaseLink", "createFirebaseLink", "createFirebaseLinkCallable"]
             },
             "CreateGoogleAdsLink": {
               "methods": ["createGoogleAdsLink", "createGoogleAdsLink", "createGoogleAdsLink", "createGoogleAdsLinkCallable"]
-            },
-            "CreateIosAppDataStream": {
-              "methods": ["createIosAppDataStream", "createIosAppDataStream", "createIosAppDataStream", "createIosAppDataStreamCallable"]
             },
             "CreateProperty": {
               "methods": ["createProperty", "createProperty", "createPropertyCallable"]
@@ -126,6 +120,9 @@
             },
             "ProvisionAccountTicket": {
               "methods": ["provisionAccountTicket", "provisionAccountTicketCallable"]
+            },
+            "SearchChangeHistoryEvents": {
+              "methods": ["searchChangeHistoryEvents", "searchChangeHistoryEventsPagedCallable", "searchChangeHistoryEventsCallable"]
             },
             "UpdateAccount": {
               "methods": ["updateAccount", "updateAccount", "updateAccountCallable"]
