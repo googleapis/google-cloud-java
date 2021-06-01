@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.6.0](https://www.github.com/googleapis/java-securitycenter/compare/v1.5.1...v1.6.0) (2021-05-31)
+
+
+### Features
+
+* add gcf-owl-bot[bot] to ignoreAuthors ([#513](https://www.github.com/googleapis/java-securitycenter/issues/513)) ([a2b3195](https://www.github.com/googleapis/java-securitycenter/commit/a2b3195808bbddcb947474743fe3d8c5092e649b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#503](https://www.github.com/googleapis/java-securitycenter/issues/503)) ([1d1ab0e](https://www.github.com/googleapis/java-securitycenter/commit/1d1ab0e3a86d9dfb2d76f192670e45cc7c0350b1))
+* update dependency com.google.protobuf:protobuf-java-util to v3.17.1 ([#506](https://www.github.com/googleapis/java-securitycenter/issues/506)) ([ce6370e](https://www.github.com/googleapis/java-securitycenter/commit/ce6370ee42591800719428d8f602600b12cd2d10))
+
 ### [1.5.1](https://www.github.com/googleapis/java-securitycenter/compare/v1.5.0...v1.5.1) (2021-05-14)
 
 
