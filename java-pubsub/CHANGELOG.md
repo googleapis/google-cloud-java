@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.113.0](https://www.github.com/googleapis/java-pubsub/compare/v1.112.5...v1.113.0) (2021-05-31)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#673](https://www.github.com/googleapis/java-pubsub/issues/673)) ([51dfca3](https://www.github.com/googleapis/java-pubsub/commit/51dfca3049f87e8bc1163c03eaef0556be3eefdf))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#672](https://www.github.com/googleapis/java-pubsub/issues/672)) ([2cc9ec5](https://www.github.com/googleapis/java-pubsub/commit/2cc9ec5f1418f23a89129bdfc038dcf461097b88))
+* update dependency com.google.errorprone:error_prone_annotations to v2.7.1 ([#667](https://www.github.com/googleapis/java-pubsub/issues/667)) ([885be5c](https://www.github.com/googleapis/java-pubsub/commit/885be5c37992b8b1175c55b407db0f833241a0d1))
+* update dependency com.google.protobuf:protobuf-java-util to v3.17.1 ([#679](https://www.github.com/googleapis/java-pubsub/issues/679)) ([e7ef708](https://www.github.com/googleapis/java-pubsub/commit/e7ef7088999f60dc8bd5268c0315a8e1e4639ae0))
+
 ### [1.112.5](https://www.github.com/googleapis/java-pubsub/compare/v1.112.4...v1.112.5) (2021-05-14)
 
 
