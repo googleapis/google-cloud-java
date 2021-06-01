@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-websecurityscanner/compare/v1.1.6...v1.2.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#459](https://www.github.com/googleapis/java-websecurityscanner/issues/459)) ([52492f6](https://www.github.com/googleapis/java-websecurityscanner/commit/52492f60681c64da05a044482d679d103539f0a2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#458](https://www.github.com/googleapis/java-websecurityscanner/issues/458)) ([4e5633f](https://www.github.com/googleapis/java-websecurityscanner/commit/4e5633fa067b5e5f6ed45fb735de0eac050615e6))
+
 ### [1.1.6](https://www.github.com/googleapis/java-websecurityscanner/compare/v1.1.5...v1.1.6) (2021-05-11)
 
 
