@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-redis/compare/v1.1.15...v1.2.0) (2021-06-01)
+
+
+### Features
+
+* add gcf-owl-bot[bot] to ignoreAuthors  ([#421](https://www.github.com/googleapis/java-redis/issues/421)) ([ad75ae2](https://www.github.com/googleapis/java-redis/commit/ad75ae2d232a1dfd3bb7dcfed80793382e337ccb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#414](https://www.github.com/googleapis/java-redis/issues/414)) ([14a170e](https://www.github.com/googleapis/java-redis/commit/14a170ec74a311cd8ffcb2688e8700e305562151))
+
 ### [1.1.15](https://www.github.com/googleapis/java-redis/compare/v1.1.14...v1.1.15) (2021-05-11)
 
 
