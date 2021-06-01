@@ -67,6 +67,30 @@ public final class EnvironmentProto {
       internal_static_google_cloud_dialogflow_cx_v3_LookupEnvironmentHistoryResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3_LookupEnvironmentHistoryResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3_ContinuousTestResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3_ContinuousTestResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3_RunContinuousTestRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3_RunContinuousTestRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3_RunContinuousTestResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3_RunContinuousTestResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3_RunContinuousTestMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3_RunContinuousTestMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3_ListContinuousTestResultsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3_ListContinuousTestResultsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3_ListContinuousTestResultsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3_ListContinuousTestResultsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -121,48 +145,89 @@ public final class EnvironmentProto {
           + "kupEnvironmentHistoryResponse\022@\n\014environ"
           + "ments\030\001 \003(\0132*.google.cloud.dialogflow.cx"
           + ".v3.Environment\022\027\n\017next_page_token\030\002 \001(\t"
-          + "2\324\013\n\014Environments\022\317\001\n\020ListEnvironments\0226"
-          + ".google.cloud.dialogflow.cx.v3.ListEnvir"
-          + "onmentsRequest\0327.google.cloud.dialogflow"
-          + ".cx.v3.ListEnvironmentsResponse\"J\202\323\344\223\002;\022"
-          + "9/v3/{parent=projects/*/locations/*/agen"
-          + "ts/*}/environments\332A\006parent\022\274\001\n\016GetEnvir"
-          + "onment\0224.google.cloud.dialogflow.cx.v3.G"
-          + "etEnvironmentRequest\032*.google.cloud.dial"
-          + "ogflow.cx.v3.Environment\"H\202\323\344\223\002;\0229/v3/{n"
-          + "ame=projects/*/locations/*/agents/*/envi"
-          + "ronments/*}\332A\004name\022\371\001\n\021CreateEnvironment"
-          + "\0227.google.cloud.dialogflow.cx.v3.CreateE"
-          + "nvironmentRequest\032\035.google.longrunning.O"
-          + "peration\"\213\001\202\323\344\223\002H\"9/v3/{parent=projects/"
-          + "*/locations/*/agents/*}/environments:\013en"
-          + "vironment\332A\022parent,environment\312A%\n\013Envir"
-          + "onment\022\026google.protobuf.Struct\022\212\002\n\021Updat"
-          + "eEnvironment\0227.google.cloud.dialogflow.c"
-          + "x.v3.UpdateEnvironmentRequest\032\035.google.l"
-          + "ongrunning.Operation\"\234\001\202\323\344\223\002T2E/v3/{envi"
-          + "ronment.name=projects/*/locations/*/agen"
-          + "ts/*/environments/*}:\013environment\332A\027envi"
-          + "ronment,update_mask\312A%\n\013Environment\022\026goo"
-          + "gle.protobuf.Struct\022\256\001\n\021DeleteEnvironmen"
-          + "t\0227.google.cloud.dialogflow.cx.v3.Delete"
-          + "EnvironmentRequest\032\026.google.protobuf.Emp"
-          + "ty\"H\202\323\344\223\002;*9/v3/{name=projects/*/locatio"
-          + "ns/*/agents/*/environments/*}\332A\004name\022\376\001\n"
-          + "\030LookupEnvironmentHistory\022>.google.cloud"
-          + ".dialogflow.cx.v3.LookupEnvironmentHisto"
-          + "ryRequest\032?.google.cloud.dialogflow.cx.v"
-          + "3.LookupEnvironmentHistoryResponse\"a\202\323\344\223"
-          + "\002T\022R/v3/{name=projects/*/locations/*/age"
-          + "nts/*/environments/*}:lookupEnvironmentH"
-          + "istory\332A\004name\032x\312A\031dialogflow.googleapis."
-          + "com\322AYhttps://www.googleapis.com/auth/cl"
-          + "oud-platform,https://www.googleapis.com/"
-          + "auth/dialogflowB\240\001\n!com.google.cloud.dia"
-          + "logflow.cx.v3B\020EnvironmentProtoP\001Z?googl"
-          + "e.golang.org/genproto/googleapis/cloud/d"
-          + "ialogflow/cx/v3;cx\370\001\001\242\002\002DF\252\002\035Google.Clou"
-          + "d.Dialogflow.Cx.V3b\006proto3"
+          + "\"\210\004\n\024ContinuousTestResult\022\014\n\004name\030\001 \001(\t\022"
+          + "X\n\006result\030\002 \001(\0162H.google.cloud.dialogflo"
+          + "w.cx.v3.ContinuousTestResult.AggregatedT"
+          + "estResult\022H\n\021test_case_results\030\003 \003(\tB-\372A"
+          + "*\n(dialogflow.googleapis.com/TestCaseRes"
+          + "ult\022,\n\010run_time\030\004 \001(\0132\032.google.protobuf."
+          + "Timestamp\"V\n\024AggregatedTestResult\022&\n\"AGG"
+          + "REGATED_TEST_RESULT_UNSPECIFIED\020\000\022\n\n\006PAS"
+          + "SED\020\001\022\n\n\006FAILED\020\002:\267\001\352A\263\001\n.dialogflow.goo"
+          + "gleapis.com/ContinuousTestResult\022\200\001proje"
+          + "cts/{project}/locations/{location}/agent"
+          + "s/{agent}/environments/{environment}/con"
+          + "tinuousTestResults/{continuous_test_resu"
+          + "lt}\"^\n\030RunContinuousTestRequest\022B\n\013envir"
+          + "onment\030\001 \001(\tB-\340A\002\372A\'\n%dialogflow.googlea"
+          + "pis.com/Environment\"p\n\031RunContinuousTest"
+          + "Response\022S\n\026continuous_test_result\030\001 \001(\013"
+          + "23.google.cloud.dialogflow.cx.v3.Continu"
+          + "ousTestResult\"U\n\031RunContinuousTestMetada"
+          + "ta\0228\n\006errors\030\001 \003(\0132(.google.cloud.dialog"
+          + "flow.cx.v3.TestError\"\221\001\n ListContinuousT"
+          + "estResultsRequest\022F\n\006parent\030\001 \001(\tB6\340A\002\372A"
+          + "0\022.dialogflow.googleapis.com/ContinuousT"
+          + "estResult\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_tok"
+          + "en\030\003 \001(\t\"\222\001\n!ListContinuousTestResultsRe"
+          + "sponse\022T\n\027continuous_test_results\030\001 \003(\0132"
+          + "3.google.cloud.dialogflow.cx.v3.Continuo"
+          + "usTestResult\022\027\n\017next_page_token\030\002 \001(\t2\340\017"
+          + "\n\014Environments\022\317\001\n\020ListEnvironments\0226.go"
+          + "ogle.cloud.dialogflow.cx.v3.ListEnvironm"
+          + "entsRequest\0327.google.cloud.dialogflow.cx"
+          + ".v3.ListEnvironmentsResponse\"J\202\323\344\223\002;\0229/v"
+          + "3/{parent=projects/*/locations/*/agents/"
+          + "*}/environments\332A\006parent\022\274\001\n\016GetEnvironm"
+          + "ent\0224.google.cloud.dialogflow.cx.v3.GetE"
+          + "nvironmentRequest\032*.google.cloud.dialogf"
+          + "low.cx.v3.Environment\"H\202\323\344\223\002;\0229/v3/{name"
+          + "=projects/*/locations/*/agents/*/environ"
+          + "ments/*}\332A\004name\022\371\001\n\021CreateEnvironment\0227."
+          + "google.cloud.dialogflow.cx.v3.CreateEnvi"
+          + "ronmentRequest\032\035.google.longrunning.Oper"
+          + "ation\"\213\001\202\323\344\223\002H\"9/v3/{parent=projects/*/l"
+          + "ocations/*/agents/*}/environments:\013envir"
+          + "onment\332A\022parent,environment\312A%\n\013Environm"
+          + "ent\022\026google.protobuf.Struct\022\212\002\n\021UpdateEn"
+          + "vironment\0227.google.cloud.dialogflow.cx.v"
+          + "3.UpdateEnvironmentRequest\032\035.google.long"
+          + "running.Operation\"\234\001\202\323\344\223\002T2E/v3/{environ"
+          + "ment.name=projects/*/locations/*/agents/"
+          + "*/environments/*}:\013environment\332A\027environ"
+          + "ment,update_mask\312A%\n\013Environment\022\026google"
+          + ".protobuf.Struct\022\256\001\n\021DeleteEnvironment\0227"
+          + ".google.cloud.dialogflow.cx.v3.DeleteEnv"
+          + "ironmentRequest\032\026.google.protobuf.Empty\""
+          + "H\202\323\344\223\002;*9/v3/{name=projects/*/locations/"
+          + "*/agents/*/environments/*}\332A\004name\022\376\001\n\030Lo"
+          + "okupEnvironmentHistory\022>.google.cloud.di"
+          + "alogflow.cx.v3.LookupEnvironmentHistoryR"
+          + "equest\032?.google.cloud.dialogflow.cx.v3.L"
+          + "ookupEnvironmentHistoryResponse\"a\202\323\344\223\002T\022"
+          + "R/v3/{name=projects/*/locations/*/agents"
+          + "/*/environments/*}:lookupEnvironmentHist"
+          + "ory\332A\004name\022\204\002\n\021RunContinuousTest\0227.googl"
+          + "e.cloud.dialogflow.cx.v3.RunContinuousTe"
+          + "stRequest\032\035.google.longrunning.Operation"
+          + "\"\226\001\202\323\344\223\002W\"R/v3/{environment=projects/*/l"
+          + "ocations/*/agents/*/environments/*}:runC"
+          + "ontinuousTest:\001*\312A6\n\031RunContinuousTestRe"
+          + "sponse\022\031RunContinuousTestMetadata\022\202\002\n\031Li"
+          + "stContinuousTestResults\022?.google.cloud.d"
+          + "ialogflow.cx.v3.ListContinuousTestResult"
+          + "sRequest\032@.google.cloud.dialogflow.cx.v3"
+          + ".ListContinuousTestResultsResponse\"b\202\323\344\223"
+          + "\002S\022Q/v3/{parent=projects/*/locations/*/a"
+          + "gents/*/environments/*}/continuousTestRe"
+          + "sults\332A\006parent\032x\312A\031dialogflow.googleapis"
+          + ".com\322AYhttps://www.googleapis.com/auth/c"
+          + "loud-platform,https://www.googleapis.com"
+          + "/auth/dialogflowB\240\001\n!com.google.cloud.di"
+          + "alogflow.cx.v3B\020EnvironmentProtoP\001Z?goog"
+          + "le.golang.org/genproto/googleapis/cloud/"
+          + "dialogflow/cx/v3;cx\370\001\001\242\002\002DF\252\002\035Google.Clo"
+          + "ud.Dialogflow.Cx.V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -259,6 +324,54 @@ public final class EnvironmentProto {
             internal_static_google_cloud_dialogflow_cx_v3_LookupEnvironmentHistoryResponse_descriptor,
             new java.lang.String[] {
               "Environments", "NextPageToken",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3_ContinuousTestResult_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_dialogflow_cx_v3_ContinuousTestResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3_ContinuousTestResult_descriptor,
+            new java.lang.String[] {
+              "Name", "Result", "TestCaseResults", "RunTime",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3_RunContinuousTestRequest_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_dialogflow_cx_v3_RunContinuousTestRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3_RunContinuousTestRequest_descriptor,
+            new java.lang.String[] {
+              "Environment",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3_RunContinuousTestResponse_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_dialogflow_cx_v3_RunContinuousTestResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3_RunContinuousTestResponse_descriptor,
+            new java.lang.String[] {
+              "ContinuousTestResult",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3_RunContinuousTestMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_dialogflow_cx_v3_RunContinuousTestMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3_RunContinuousTestMetadata_descriptor,
+            new java.lang.String[] {
+              "Errors",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3_ListContinuousTestResultsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_dialogflow_cx_v3_ListContinuousTestResultsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3_ListContinuousTestResultsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3_ListContinuousTestResultsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_dialogflow_cx_v3_ListContinuousTestResultsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3_ListContinuousTestResultsResponse_descriptor,
+            new java.lang.String[] {
+              "ContinuousTestResults", "NextPageToken",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

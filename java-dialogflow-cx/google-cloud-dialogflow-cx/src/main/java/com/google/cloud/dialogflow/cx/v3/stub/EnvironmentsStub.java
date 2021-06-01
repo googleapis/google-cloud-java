@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.cx.v3.stub;
 
+import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.ListContinuousTestResultsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.LookupEnvironmentHistoryPagedResponse;
 
@@ -26,10 +27,15 @@ import com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteEnvironmentRequest;
 import com.google.cloud.dialogflow.cx.v3.Environment;
 import com.google.cloud.dialogflow.cx.v3.GetEnvironmentRequest;
+import com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest;
+import com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsResponse;
 import com.google.cloud.dialogflow.cx.v3.ListEnvironmentsRequest;
 import com.google.cloud.dialogflow.cx.v3.ListEnvironmentsResponse;
 import com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest;
 import com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryResponse;
+import com.google.cloud.dialogflow.cx.v3.RunContinuousTestMetadata;
+import com.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest;
+import com.google.cloud.dialogflow.cx.v3.RunContinuousTestResponse;
 import com.google.cloud.dialogflow.cx.v3.UpdateEnvironmentRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -97,6 +103,28 @@ public abstract class EnvironmentsStub implements BackgroundResource {
   public UnaryCallable<LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse>
       lookupEnvironmentHistoryCallable() {
     throw new UnsupportedOperationException("Not implemented: lookupEnvironmentHistoryCallable()");
+  }
+
+  public OperationCallable<
+          RunContinuousTestRequest, RunContinuousTestResponse, RunContinuousTestMetadata>
+      runContinuousTestOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: runContinuousTestOperationCallable()");
+  }
+
+  public UnaryCallable<RunContinuousTestRequest, Operation> runContinuousTestCallable() {
+    throw new UnsupportedOperationException("Not implemented: runContinuousTestCallable()");
+  }
+
+  public UnaryCallable<ListContinuousTestResultsRequest, ListContinuousTestResultsPagedResponse>
+      listContinuousTestResultsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listContinuousTestResultsPagedCallable()");
+  }
+
+  public UnaryCallable<ListContinuousTestResultsRequest, ListContinuousTestResultsResponse>
+      listContinuousTestResultsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listContinuousTestResultsCallable()");
   }
 
   @Override

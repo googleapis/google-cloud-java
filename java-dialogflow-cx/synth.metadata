@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dialogflow-cx.git",
-        "sha": "684faba2ec4325b45a9cfc592c9115626b0003af"
+        "sha": "c7cd77f0e13ca6092448c632b29558d94e2d27b7"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "31313cb7f81b4323d25fb0a320e688a7c6c22502",
-        "internalRef": "374994233"
+        "sha": "b2c4b3d62150a73507cbd3aa816fc0f177873556",
+        "internalRef": "375809988"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "31313cb7f81b4323d25fb0a320e688a7c6c22502",
-        "internalRef": "374994233"
+        "sha": "b2c4b3d62150a73507cbd3aa816fc0f177873556",
+        "internalRef": "375809988"
       }
     },
     {
@@ -428,6 +428,9 @@
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/CalculateCoverageRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/CalculateCoverageResponse.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/CalculateCoverageResponseOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ContinuousTestResult.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ContinuousTestResultName.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ContinuousTestResultOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ConversationTurn.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ConversationTurnOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/CreateAgentRequest.java",
@@ -591,6 +594,10 @@
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ListAgentsRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ListAgentsResponse.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ListAgentsResponseOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ListContinuousTestResultsRequest.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ListContinuousTestResultsRequestOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ListContinuousTestResultsResponse.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ListContinuousTestResultsResponseOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ListEntityTypesRequest.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ListEntityTypesRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ListEntityTypesResponse.java",
@@ -680,6 +687,12 @@
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ResponseMessageProto.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/RestoreAgentRequest.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/RestoreAgentRequestOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/RunContinuousTestMetadata.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/RunContinuousTestMetadataOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/RunContinuousTestRequest.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/RunContinuousTestRequestOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/RunContinuousTestResponse.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/RunContinuousTestResponseOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/RunTestCaseMetadata.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/RunTestCaseMetadataOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/RunTestCaseRequest.java",

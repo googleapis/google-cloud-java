@@ -312,6 +312,103 @@ public final class EnvironmentsGrpc {
     return getLookupEnvironmentHistoryMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest,
+          com.google.longrunning.Operation>
+      getRunContinuousTestMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RunContinuousTest",
+      requestType = com.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest,
+          com.google.longrunning.Operation>
+      getRunContinuousTestMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest,
+            com.google.longrunning.Operation>
+        getRunContinuousTestMethod;
+    if ((getRunContinuousTestMethod = EnvironmentsGrpc.getRunContinuousTestMethod) == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getRunContinuousTestMethod = EnvironmentsGrpc.getRunContinuousTestMethod) == null) {
+          EnvironmentsGrpc.getRunContinuousTestMethod =
+              getRunContinuousTestMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RunContinuousTest"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnvironmentsMethodDescriptorSupplier("RunContinuousTest"))
+                      .build();
+        }
+      }
+    }
+    return getRunContinuousTestMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest,
+          com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsResponse>
+      getListContinuousTestResultsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListContinuousTestResults",
+      requestType = com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest.class,
+      responseType = com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest,
+          com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsResponse>
+      getListContinuousTestResultsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest,
+            com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsResponse>
+        getListContinuousTestResultsMethod;
+    if ((getListContinuousTestResultsMethod = EnvironmentsGrpc.getListContinuousTestResultsMethod)
+        == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getListContinuousTestResultsMethod =
+                EnvironmentsGrpc.getListContinuousTestResultsMethod)
+            == null) {
+          EnvironmentsGrpc.getListContinuousTestResultsMethod =
+              getListContinuousTestResultsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest,
+                          com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListContinuousTestResults"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnvironmentsMethodDescriptorSupplier("ListContinuousTestResults"))
+                      .build();
+        }
+      }
+    }
+    return getListContinuousTestResultsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EnvironmentsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EnvironmentsStub> factory =
@@ -450,6 +547,36 @@ public final class EnvironmentsGrpc {
           getLookupEnvironmentHistoryMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
+    public void runContinuousTest(
+        com.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRunContinuousTestMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a list of continuous test results for a given environment.
+     * </pre>
+     */
+    public void listContinuousTestResults(
+        com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListContinuousTestResultsMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -492,6 +619,19 @@ public final class EnvironmentsGrpc {
                       com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest,
                       com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryResponse>(
                       this, METHODID_LOOKUP_ENVIRONMENT_HISTORY)))
+          .addMethod(
+              getRunContinuousTestMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest,
+                      com.google.longrunning.Operation>(this, METHODID_RUN_CONTINUOUS_TEST)))
+          .addMethod(
+              getListContinuousTestResultsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest,
+                      com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsResponse>(
+                      this, METHODID_LIST_CONTINUOUS_TEST_RESULTS)))
           .build();
     }
   }
@@ -613,6 +753,40 @@ public final class EnvironmentsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
+    public void runContinuousTest(
+        com.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRunContinuousTestMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a list of continuous test results for a given environment.
+     * </pre>
+     */
+    public void listContinuousTestResults(
+        com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListContinuousTestResultsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -711,6 +885,33 @@ public final class EnvironmentsGrpc {
             com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLookupEnvironmentHistoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
+    public com.google.longrunning.Operation runContinuousTest(
+        com.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunContinuousTestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a list of continuous test results for a given environment.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsResponse
+        listContinuousTestResults(
+            com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListContinuousTestResultsMethod(), getCallOptions(), request);
     }
   }
 
@@ -814,6 +1015,34 @@ public final class EnvironmentsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLookupEnvironmentHistoryMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        runContinuousTest(com.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRunContinuousTestMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a list of continuous test results for a given environment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsResponse>
+        listContinuousTestResults(
+            com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListContinuousTestResultsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_ENVIRONMENTS = 0;
@@ -822,6 +1051,8 @@ public final class EnvironmentsGrpc {
   private static final int METHODID_UPDATE_ENVIRONMENT = 3;
   private static final int METHODID_DELETE_ENVIRONMENT = 4;
   private static final int METHODID_LOOKUP_ENVIRONMENT_HISTORY = 5;
+  private static final int METHODID_RUN_CONTINUOUS_TEST = 6;
+  private static final int METHODID_LIST_CONTINUOUS_TEST_RESULTS = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -873,6 +1104,18 @@ public final class EnvironmentsGrpc {
               (com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryResponse>)
+                  responseObserver);
+          break;
+        case METHODID_RUN_CONTINUOUS_TEST:
+          serviceImpl.runContinuousTest(
+              (com.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_CONTINUOUS_TEST_RESULTS:
+          serviceImpl.listContinuousTestResults(
+              (com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsResponse>)
                   responseObserver);
           break;
         default:
@@ -945,6 +1188,8 @@ public final class EnvironmentsGrpc {
                       .addMethod(getUpdateEnvironmentMethod())
                       .addMethod(getDeleteEnvironmentMethod())
                       .addMethod(getLookupEnvironmentHistoryMethod())
+                      .addMethod(getRunContinuousTestMethod())
+                      .addMethod(getListContinuousTestResultsMethod())
                       .build();
         }
       }

@@ -922,6 +922,262 @@ public class EnvironmentsClient implements BackgroundResource {
     return stub.lookupEnvironmentHistoryCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Kicks off a continuous test under the specified
+   * [Environment][google.cloud.dialogflow.cx.v3.Environment].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   RunContinuousTestRequest request =
+   *       RunContinuousTestRequest.newBuilder()
+   *           .setEnvironment(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
+   *           .build();
+   *   RunContinuousTestResponse response = environmentsClient.runContinuousTestAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RunContinuousTestResponse, RunContinuousTestMetadata>
+      runContinuousTestAsync(RunContinuousTestRequest request) {
+    return runContinuousTestOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Kicks off a continuous test under the specified
+   * [Environment][google.cloud.dialogflow.cx.v3.Environment].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   RunContinuousTestRequest request =
+   *       RunContinuousTestRequest.newBuilder()
+   *           .setEnvironment(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<RunContinuousTestResponse, RunContinuousTestMetadata> future =
+   *       environmentsClient.runContinuousTestOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RunContinuousTestResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RunContinuousTestRequest, RunContinuousTestResponse, RunContinuousTestMetadata>
+      runContinuousTestOperationCallable() {
+    return stub.runContinuousTestOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Kicks off a continuous test under the specified
+   * [Environment][google.cloud.dialogflow.cx.v3.Environment].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   RunContinuousTestRequest request =
+   *       RunContinuousTestRequest.newBuilder()
+   *           .setEnvironment(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       environmentsClient.runContinuousTestCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RunContinuousTestRequest, Operation> runContinuousTestCallable() {
+    return stub.runContinuousTestCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a list of continuous test results for a given environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   EnvironmentName parent =
+   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
+   *   for (ContinuousTestResult element :
+   *       environmentsClient.listContinuousTestResults(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The environment to list results for. Format: `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/ environments/&lt;Environment
+   *     ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListContinuousTestResultsPagedResponse listContinuousTestResults(
+      EnvironmentName parent) {
+    ListContinuousTestResultsRequest request =
+        ListContinuousTestResultsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listContinuousTestResults(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a list of continuous test results for a given environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   String parent =
+   *       ContinuousTestResultName.of(
+   *               "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[CONTINUOUS_TEST_RESULT]")
+   *           .toString();
+   *   for (ContinuousTestResult element :
+   *       environmentsClient.listContinuousTestResults(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The environment to list results for. Format: `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/ environments/&lt;Environment
+   *     ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListContinuousTestResultsPagedResponse listContinuousTestResults(String parent) {
+    ListContinuousTestResultsRequest request =
+        ListContinuousTestResultsRequest.newBuilder().setParent(parent).build();
+    return listContinuousTestResults(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a list of continuous test results for a given environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ListContinuousTestResultsRequest request =
+   *       ListContinuousTestResultsRequest.newBuilder()
+   *           .setParent(
+   *               ContinuousTestResultName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[AGENT]",
+   *                       "[ENVIRONMENT]",
+   *                       "[CONTINUOUS_TEST_RESULT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ContinuousTestResult element :
+   *       environmentsClient.listContinuousTestResults(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListContinuousTestResultsPagedResponse listContinuousTestResults(
+      ListContinuousTestResultsRequest request) {
+    return listContinuousTestResultsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a list of continuous test results for a given environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ListContinuousTestResultsRequest request =
+   *       ListContinuousTestResultsRequest.newBuilder()
+   *           .setParent(
+   *               ContinuousTestResultName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[AGENT]",
+   *                       "[ENVIRONMENT]",
+   *                       "[CONTINUOUS_TEST_RESULT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ContinuousTestResult> future =
+   *       environmentsClient.listContinuousTestResultsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ContinuousTestResult element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListContinuousTestResultsRequest, ListContinuousTestResultsPagedResponse>
+      listContinuousTestResultsPagedCallable() {
+    return stub.listContinuousTestResultsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a list of continuous test results for a given environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ListContinuousTestResultsRequest request =
+   *       ListContinuousTestResultsRequest.newBuilder()
+   *           .setParent(
+   *               ContinuousTestResultName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[AGENT]",
+   *                       "[ENVIRONMENT]",
+   *                       "[CONTINUOUS_TEST_RESULT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListContinuousTestResultsResponse response =
+   *         environmentsClient.listContinuousTestResultsCallable().call(request);
+   *     for (ContinuousTestResult element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListContinuousTestResultsRequest, ListContinuousTestResultsResponse>
+      listContinuousTestResultsCallable() {
+    return stub.listContinuousTestResultsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -1120,6 +1376,108 @@ public class EnvironmentsClient implements BackgroundResource {
     protected LookupEnvironmentHistoryFixedSizeCollection createCollection(
         List<LookupEnvironmentHistoryPage> pages, int collectionSize) {
       return new LookupEnvironmentHistoryFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListContinuousTestResultsPagedResponse
+      extends AbstractPagedListResponse<
+          ListContinuousTestResultsRequest,
+          ListContinuousTestResultsResponse,
+          ContinuousTestResult,
+          ListContinuousTestResultsPage,
+          ListContinuousTestResultsFixedSizeCollection> {
+
+    public static ApiFuture<ListContinuousTestResultsPagedResponse> createAsync(
+        PageContext<
+                ListContinuousTestResultsRequest,
+                ListContinuousTestResultsResponse,
+                ContinuousTestResult>
+            context,
+        ApiFuture<ListContinuousTestResultsResponse> futureResponse) {
+      ApiFuture<ListContinuousTestResultsPage> futurePage =
+          ListContinuousTestResultsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListContinuousTestResultsPage, ListContinuousTestResultsPagedResponse>() {
+            @Override
+            public ListContinuousTestResultsPagedResponse apply(
+                ListContinuousTestResultsPage input) {
+              return new ListContinuousTestResultsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListContinuousTestResultsPagedResponse(ListContinuousTestResultsPage page) {
+      super(page, ListContinuousTestResultsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListContinuousTestResultsPage
+      extends AbstractPage<
+          ListContinuousTestResultsRequest,
+          ListContinuousTestResultsResponse,
+          ContinuousTestResult,
+          ListContinuousTestResultsPage> {
+
+    private ListContinuousTestResultsPage(
+        PageContext<
+                ListContinuousTestResultsRequest,
+                ListContinuousTestResultsResponse,
+                ContinuousTestResult>
+            context,
+        ListContinuousTestResultsResponse response) {
+      super(context, response);
+    }
+
+    private static ListContinuousTestResultsPage createEmptyPage() {
+      return new ListContinuousTestResultsPage(null, null);
+    }
+
+    @Override
+    protected ListContinuousTestResultsPage createPage(
+        PageContext<
+                ListContinuousTestResultsRequest,
+                ListContinuousTestResultsResponse,
+                ContinuousTestResult>
+            context,
+        ListContinuousTestResultsResponse response) {
+      return new ListContinuousTestResultsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListContinuousTestResultsPage> createPageAsync(
+        PageContext<
+                ListContinuousTestResultsRequest,
+                ListContinuousTestResultsResponse,
+                ContinuousTestResult>
+            context,
+        ApiFuture<ListContinuousTestResultsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListContinuousTestResultsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListContinuousTestResultsRequest,
+          ListContinuousTestResultsResponse,
+          ContinuousTestResult,
+          ListContinuousTestResultsPage,
+          ListContinuousTestResultsFixedSizeCollection> {
+
+    private ListContinuousTestResultsFixedSizeCollection(
+        List<ListContinuousTestResultsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListContinuousTestResultsFixedSizeCollection createEmptyCollection() {
+      return new ListContinuousTestResultsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListContinuousTestResultsFixedSizeCollection createCollection(
+        List<ListContinuousTestResultsPage> pages, int collectionSize) {
+      return new ListContinuousTestResultsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

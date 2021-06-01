@@ -79,11 +79,17 @@
             "GetEnvironment": {
               "methods": ["getEnvironment", "getEnvironment", "getEnvironment", "getEnvironmentCallable"]
             },
+            "ListContinuousTestResults": {
+              "methods": ["listContinuousTestResults", "listContinuousTestResults", "listContinuousTestResults", "listContinuousTestResultsPagedCallable", "listContinuousTestResultsCallable"]
+            },
             "ListEnvironments": {
               "methods": ["listEnvironments", "listEnvironments", "listEnvironments", "listEnvironmentsPagedCallable", "listEnvironmentsCallable"]
             },
             "LookupEnvironmentHistory": {
               "methods": ["lookupEnvironmentHistory", "lookupEnvironmentHistory", "lookupEnvironmentHistory", "lookupEnvironmentHistoryPagedCallable", "lookupEnvironmentHistoryCallable"]
+            },
+            "RunContinuousTest": {
+              "methods": ["runContinuousTestAsync", "runContinuousTestOperationCallable", "runContinuousTestCallable"]
             },
             "UpdateEnvironment": {
               "methods": ["updateEnvironmentAsync", "updateEnvironmentAsync", "updateEnvironmentOperationCallable", "updateEnvironmentCallable"]
