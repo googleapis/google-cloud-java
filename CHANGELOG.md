@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.121.0](https://www.github.com/googleapis/java-logging-logback/compare/v0.120.8...v0.121.0) (2021-06-01)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#418](https://www.github.com/googleapis/java-logging-logback/issues/418)) ([1900bbe](https://www.github.com/googleapis/java-logging-logback/commit/1900bbef7f000652d57d47a1110ad820ad42f86a))
+
+
+### Bug Fixes
+
+* update dead link ([#414](https://www.github.com/googleapis/java-logging-logback/issues/414)) ([2ff2886](https://www.github.com/googleapis/java-logging-logback/commit/2ff2886c11a13c223a5c7b114ccb7c7d189c41dd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-logging to v2.3.0 ([#425](https://www.github.com/googleapis/java-logging-logback/issues/425)) ([788d46a](https://www.github.com/googleapis/java-logging-logback/commit/788d46a437f2e8ea1b7c1869c243051fd98a3f95))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#415](https://www.github.com/googleapis/java-logging-logback/issues/415)) ([d5e79c8](https://www.github.com/googleapis/java-logging-logback/commit/d5e79c88e575234f837a933e5e1e5305b74eff4e))
+
 ### [0.120.8](https://www.github.com/googleapis/java-logging-logback/compare/v0.120.7...v0.120.8) (2021-05-13)
 
 
