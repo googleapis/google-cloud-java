@@ -41,7 +41,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>
-      <version>1.114.0</version>
+      <version>1.115.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
