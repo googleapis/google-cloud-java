@@ -121,10 +121,10 @@
 
   <modules>
     <module>google-cloud-aiplatform</module>
-    <module>proto-google-cloud-aiplatform-v1beta1</module>
-    <module>proto-google-cloud-aiplatform-v1</module>
-    <module>grpc-google-cloud-aiplatform-v1beta1</module>
     <module>grpc-google-cloud-aiplatform-v1</module>
+    <module>grpc-google-cloud-aiplatform-v1beta1</module>
+    <module>proto-google-cloud-aiplatform-v1</module>
+    <module>proto-google-cloud-aiplatform-v1beta1</module>
     <module>google-cloud-aiplatform-bom</module>
   </modules>
 
