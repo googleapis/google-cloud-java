@@ -39,7 +39,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-texttospeech</artifactId>
-  <version>1.4.2</version>
+  <version>1.5.0</version>
 </dependency>
 
 ```
@@ -52,12 +52,12 @@ compile 'com.google.cloud:google-cloud-texttospeech'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-texttospeech:1.4.2'
+compile 'com.google.cloud:google-cloud-texttospeech:1.5.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-texttospeech" % "1.4.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-texttospeech" % "1.5.0"
 ```
 
 ## Authentication
