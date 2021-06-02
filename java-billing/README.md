@@ -38,7 +38,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-billing</artifactId>
-  <version>1.1.18</version>
+  <version>1.2.0</version>
 </dependency>
 
 ```
@@ -51,12 +51,12 @@ compile 'com.google.cloud:google-cloud-billing'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-billing:1.1.18'
+compile 'com.google.cloud:google-cloud-billing:1.2.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-billing" % "1.1.18"
+libraryDependencies += "com.google.cloud" % "google-cloud-billing" % "1.2.0"
 ```
 
 ## Authentication
