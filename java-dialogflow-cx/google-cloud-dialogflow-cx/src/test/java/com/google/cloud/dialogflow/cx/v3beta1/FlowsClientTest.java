@@ -50,8 +50,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class FlowsClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockFlows mockFlows;
+  private static MockServiceHelper mockServiceHelper;
   private FlowsClient client;
   private LocalChannelProvider channelProvider;
 

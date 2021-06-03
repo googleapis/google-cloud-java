@@ -45,9 +45,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class SecuritySettingsServiceClientTest {
+  private static MockSecuritySettingsService mockSecuritySettingsService;
   private static MockServiceHelper mockServiceHelper;
   private SecuritySettingsServiceClient client;
-  private static MockSecuritySettingsService mockSecuritySettingsService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
