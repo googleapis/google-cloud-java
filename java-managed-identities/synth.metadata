@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-managed-identities.git",
-        "sha": "f6c9b2c1b66adb6b09c6ccd82653369f7f821e72"
+        "sha": "0c0ffb75c0f950255f6bc5d047dfd9cc6e7e8fde"
       }
     },
     {
       "git": {
         "name": "googleapis-gen",
         "remote": "https://github.com/googleapis/googleapis-gen.git",
-        "sha": "e9b9ff5f15e8ad21c260508538e7ac6101afb02f",
-        "internalRef": "362943541"
+        "sha": "19ed6ced80e406dd4a7e2d0870c629427309d439",
+        "internalRef": "377081269"
       }
     },
     {
