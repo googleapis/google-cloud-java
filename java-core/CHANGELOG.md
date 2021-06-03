@@ -1,5 +1,31 @@
 # Changelog
 
+## [1.95.0](https://www.github.com/googleapis/java-core/compare/v1.94.8...v1.95.0) (2021-06-03)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#453](https://www.github.com/googleapis/java-core/issues/453)) ([33d8edf](https://www.github.com/googleapis/java-core/commit/33d8edf12d20f2bbdaedb1f1cd5a9194357934f1))
+
+
+### Dependencies
+
+* update dependency com.google.api-client:google-api-client-bom to v1.31.5 ([#446](https://www.github.com/googleapis/java-core/issues/446)) ([fa83a61](https://www.github.com/googleapis/java-core/commit/fa83a618050cdac519eadda5e8a72c2f9cbfeac0))
+* update dependency com.google.api:gax-bom to v1.64.0-sp.1 ([#443](https://www.github.com/googleapis/java-core/issues/443)) ([19efb61](https://www.github.com/googleapis/java-core/commit/19efb61af60bb5867ebc4c603ac528f277ef6ed0))
+* update dependency com.google.api:gax-bom to v1.65.0 ([#464](https://www.github.com/googleapis/java-core/issues/464)) ([bb15bf9](https://www.github.com/googleapis/java-core/commit/bb15bf9fb9cf571afc5050e4eaf055e556cb534b))
+* update dependency com.google.api.grpc:proto-google-common-protos to v2.2.2 ([#449](https://www.github.com/googleapis/java-core/issues/449)) ([42bf8ea](https://www.github.com/googleapis/java-core/commit/42bf8eae15854e01566bac7e094f9b08f273c24e))
+* update dependency com.google.api.grpc:proto-google-common-protos to v2.3.0 ([#458](https://www.github.com/googleapis/java-core/issues/458)) ([eb930c2](https://www.github.com/googleapis/java-core/commit/eb930c2c690e58d0e1c00abe16ee5671a0bb5144))
+* update dependency com.google.api.grpc:proto-google-common-protos to v2.3.1 ([#463](https://www.github.com/googleapis/java-core/issues/463)) ([c2b2907](https://www.github.com/googleapis/java-core/commit/c2b29070e5d07b8c7e1d4c76d297d349f6c4d7a3))
+* update dependency com.google.api.grpc:proto-google-common-protos to v2.3.2 ([#466](https://www.github.com/googleapis/java-core/issues/466)) ([fd68350](https://www.github.com/googleapis/java-core/commit/fd683505e85dd92f77d4a9723015f610716283f7))
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v1.0.14 ([#439](https://www.github.com/googleapis/java-core/issues/439)) ([c32bd33](https://www.github.com/googleapis/java-core/commit/c32bd33a9d79bc4388b75842a629c582e1c91526))
+* update dependency com.google.auth:google-auth-library-bom to v0.26.0 ([#456](https://www.github.com/googleapis/java-core/issues/456)) ([97bb7a9](https://www.github.com/googleapis/java-core/commit/97bb7a9c2beb17169de17e2a2d0aa37c051933ee))
+* update dependency com.google.code.gson:gson to v2.8.7 ([#461](https://www.github.com/googleapis/java-core/issues/461)) ([4381e02](https://www.github.com/googleapis/java-core/commit/4381e02d9147440822b2639e59c4d5ca60b4b3c5))
+* update dependency com.google.errorprone:error_prone_annotations to v2.7.1 ([#451](https://www.github.com/googleapis/java-core/issues/451)) ([8bf562f](https://www.github.com/googleapis/java-core/commit/8bf562f42fca37b8d0b14a498f47a2bf8c49277d))
+* update dependency com.google.protobuf:protobuf-bom to v3.17.0 ([#445](https://www.github.com/googleapis/java-core/issues/445)) ([aa9d87c](https://www.github.com/googleapis/java-core/commit/aa9d87ca138714a47c2d4b3e0bca33037a861959))
+* update dependency com.google.protobuf:protobuf-bom to v3.17.1 ([#460](https://www.github.com/googleapis/java-core/issues/460)) ([4edf784](https://www.github.com/googleapis/java-core/commit/4edf7849261c3b427719a434db2c5dc251facc26))
+* update dependency com.google.protobuf:protobuf-bom to v3.17.2 ([#465](https://www.github.com/googleapis/java-core/issues/465)) ([f9b847a](https://www.github.com/googleapis/java-core/commit/f9b847af7d3660de79a2b68abee33842daabddf8))
+* update dependency io.grpc:grpc-bom to v1.38.0 ([#450](https://www.github.com/googleapis/java-core/issues/450)) ([bde03c1](https://www.github.com/googleapis/java-core/commit/bde03c10c2921f8b2bdf47fdaa0a46c277af382a))
+
 ### [1.94.8](https://www.github.com/googleapis/java-core/compare/v1.94.7...v1.94.8) (2021-04-23)
 
 
