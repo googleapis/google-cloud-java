@@ -95,10 +95,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ConfigClientTest {
+  private static MockConfigServiceV2 mockConfigServiceV2;
   private static MockServiceHelper mockServiceHelper;
   private ConfigClient client;
   private LocalChannelProvider channelProvider;
-  private static MockConfigServiceV2 mockConfigServiceV2;
 
   @BeforeClass
   public static void startStaticServer() {
