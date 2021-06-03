@@ -124,9 +124,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class DlpServiceClientTest {
+  private static MockDlpService mockDlpService;
   private static MockServiceHelper mockServiceHelper;
   private DlpServiceClient client;
-  private static MockDlpService mockDlpService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
