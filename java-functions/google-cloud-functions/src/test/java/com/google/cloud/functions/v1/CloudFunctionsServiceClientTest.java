@@ -59,9 +59,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class CloudFunctionsServiceClientTest {
+  private static MockCloudFunctionsService mockCloudFunctionsService;
   private static MockServiceHelper mockServiceHelper;
   private CloudFunctionsServiceClient client;
-  private static MockCloudFunctionsService mockCloudFunctionsService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
