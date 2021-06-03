@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-binary-authorization</artifactId>
-      <version>0.0.0</version>
+      <version>0.1.0</version>
     </dependency>
     <!-- [END binary-authorization_install_without_bom] -->
 
