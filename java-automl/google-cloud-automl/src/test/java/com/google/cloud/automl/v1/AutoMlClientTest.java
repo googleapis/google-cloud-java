@@ -52,9 +52,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class AutoMlClientTest {
+  private static MockAutoMl mockAutoMl;
   private static MockServiceHelper mockServiceHelper;
   private AutoMlClient client;
-  private static MockAutoMl mockAutoMl;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
