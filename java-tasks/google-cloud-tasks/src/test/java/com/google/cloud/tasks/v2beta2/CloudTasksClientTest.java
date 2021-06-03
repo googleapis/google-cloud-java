@@ -56,9 +56,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class CloudTasksClientTest {
+  private static MockCloudTasks mockCloudTasks;
   private static MockServiceHelper mockServiceHelper;
   private CloudTasksClient client;
-  private static MockCloudTasks mockCloudTasks;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
