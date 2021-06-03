@@ -5,12 +5,12 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-gsuite-addons-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-gsuite-addons:current} -->
+    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gsuite-addons:current} -->
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-apps-script-type-protos</artifactId>
-  <version>0.1.0</version><!-- {x-version-update:proto-google-apps-script-type-protos:current} -->
+  <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-apps-script-type-protos:current} -->
 
   <dependencies>
     <dependency>
