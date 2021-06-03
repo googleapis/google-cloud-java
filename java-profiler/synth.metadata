@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-profiler.git",
-        "sha": "d4018623db2bfa44cab6305e81fd959954380ae0"
+        "sha": "8c6a2c9dafaa6ee334bd1e39b72dd1cf3cb683d3"
       }
     },
     {
       "git": {
         "name": "googleapis-gen",
         "remote": "https://github.com/googleapis/googleapis-gen.git",
-        "sha": "ebd77e76effb65c4fba8c64f31c15062c250a4c2",
-        "internalRef": "362856902"
+        "sha": "19ed6ced80e406dd4a7e2d0870c629427309d439",
+        "internalRef": "377081269"
       }
     },
     {

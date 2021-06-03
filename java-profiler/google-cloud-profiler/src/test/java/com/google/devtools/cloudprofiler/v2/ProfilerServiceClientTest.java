@@ -44,10 +44,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ProfilerServiceClientTest {
+  private static MockProfilerService mockProfilerService;
   private static MockServiceHelper mockServiceHelper;
   private ProfilerServiceClient client;
   private LocalChannelProvider channelProvider;
-  private static MockProfilerService mockProfilerService;
 
   @BeforeClass
   public static void startStaticServer() {
