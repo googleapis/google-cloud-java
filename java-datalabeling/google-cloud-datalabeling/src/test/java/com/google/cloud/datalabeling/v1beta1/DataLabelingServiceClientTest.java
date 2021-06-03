@@ -58,9 +58,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class DataLabelingServiceClientTest {
+  private static MockDataLabelingService mockDataLabelingService;
   private static MockServiceHelper mockServiceHelper;
   private DataLabelingServiceClient client;
-  private static MockDataLabelingService mockDataLabelingService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
