@@ -46,8 +46,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class TranscoderServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockTranscoderService mockTranscoderService;
+  private static MockServiceHelper mockServiceHelper;
   private TranscoderServiceClient client;
   private LocalChannelProvider channelProvider;
 
