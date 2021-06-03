@@ -73,8 +73,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class NotificationChannelServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockNotificationChannelService mockNotificationChannelService;
+  private static MockServiceHelper mockServiceHelper;
   private NotificationChannelServiceClient client;
   private LocalChannelProvider channelProvider;
 

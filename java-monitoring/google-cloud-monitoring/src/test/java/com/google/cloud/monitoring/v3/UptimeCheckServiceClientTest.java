@@ -62,8 +62,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class UptimeCheckServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockUptimeCheckService mockUptimeCheckService;
+  private static MockServiceHelper mockServiceHelper;
   private UptimeCheckServiceClient client;
   private LocalChannelProvider channelProvider;
 

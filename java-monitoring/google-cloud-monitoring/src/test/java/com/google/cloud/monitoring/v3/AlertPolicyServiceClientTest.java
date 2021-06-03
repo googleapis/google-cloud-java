@@ -60,9 +60,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class AlertPolicyServiceClientTest {
+  private static MockAlertPolicyService mockAlertPolicyService;
   private static MockServiceHelper mockServiceHelper;
   private AlertPolicyServiceClient client;
-  private static MockAlertPolicyService mockAlertPolicyService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

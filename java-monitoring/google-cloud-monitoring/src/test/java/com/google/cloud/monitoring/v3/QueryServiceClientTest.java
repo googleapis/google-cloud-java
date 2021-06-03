@@ -45,8 +45,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class QueryServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockQueryService mockQueryService;
+  private static MockServiceHelper mockServiceHelper;
   private QueryServiceClient client;
   private LocalChannelProvider channelProvider;
 
