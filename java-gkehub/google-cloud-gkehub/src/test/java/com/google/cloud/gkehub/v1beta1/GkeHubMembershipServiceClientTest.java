@@ -53,8 +53,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class GkeHubMembershipServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockGkeHubMembershipService mockGkeHubMembershipService;
+  private static MockServiceHelper mockServiceHelper;
   private GkeHubMembershipServiceClient client;
   private LocalChannelProvider channelProvider;
 
