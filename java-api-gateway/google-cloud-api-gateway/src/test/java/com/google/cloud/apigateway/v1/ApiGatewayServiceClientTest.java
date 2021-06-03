@@ -53,8 +53,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ApiGatewayServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockApiGatewayService mockApiGatewayService;
+  private static MockServiceHelper mockServiceHelper;
   private ApiGatewayServiceClient client;
   private LocalChannelProvider channelProvider;
 
