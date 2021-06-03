@@ -43,8 +43,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class PredictionApiKeyRegistryClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockPredictionApiKeyRegistry mockPredictionApiKeyRegistry;
+  private static MockServiceHelper mockServiceHelper;
   private PredictionApiKeyRegistryClient client;
   private LocalChannelProvider channelProvider;
 
