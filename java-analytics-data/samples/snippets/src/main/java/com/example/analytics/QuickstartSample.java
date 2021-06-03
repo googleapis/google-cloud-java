@@ -53,8 +53,8 @@ public class QuickstartSample {
   // on the provided GA4 property id.
   static void sampleRunReport(String propertyId) throws Exception {
     /**
-     * TODO(developer): Uncomment this variable and replace with your
-     * Google Analytics 4 property ID before running the sample.
+     * TODO(developer): Uncomment this variable and replace with your Google Analytics 4 property ID
+     * before running the sample.
      */
     // propertyId = "YOUR-GA4-PROPERTY-ID";
 
@@ -65,13 +65,13 @@ public class QuickstartSample {
       // [END analyticsdata_initialize]
 
       // [START analyticsdata_run_report]
-      RunReportRequest request = RunReportRequest.newBuilder()
-          .setProperty("properties/" + propertyId)
-          .addDimensions(
-              Dimension.newBuilder().setName("city"))
-          .addMetrics(Metric.newBuilder().setName("activeUsers"))
-          .addDateRanges(
-              DateRange.newBuilder().setStartDate("2020-03-31").setEndDate("today")).build();
+      RunReportRequest request =
+          RunReportRequest.newBuilder()
+              .setProperty("properties/" + propertyId)
+              .addDimensions(Dimension.newBuilder().setName("city"))
+              .addMetrics(Metric.newBuilder().setName("activeUsers"))
+              .addDateRanges(DateRange.newBuilder().setStartDate("2020-03-31").setEndDate("today"))
+              .build();
 
       // Make the request.
       RunReportResponse response = analyticsData.runReport(request);
@@ -81,8 +81,8 @@ public class QuickstartSample {
       System.out.println("Report result:");
       // Iterate through every row of the API response.
       for (Row row : response.getRowsList()) {
-        System.out.printf("%s, %s%n", row.getDimensionValues(0).getValue(),
-            row.getMetricValues(0).getValue());
+        System.out.printf(
+            "%s, %s%n", row.getDimensionValues(0).getValue(), row.getMetricValues(0).getValue());
       }
       // [END analyticsdata_print_report]
     }

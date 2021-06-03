@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.analytics</groupId>
@@ -64,21 +64,10 @@
 
   <dependencyManagement>
     <dependencies>
-
       <dependency>
         <groupId>com.google.analytics</groupId>
         <artifactId>google-analytics-data</artifactId>
         <version>0.7.2-SNAPSHOT</version><!-- {x-version-update:google-analytics-data:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-analytics-data-v1alpha</artifactId>
-        <version>0.7.2-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-data-v1alpha:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-analytics-data-v1beta</artifactId>
-        <version>0.7.2-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-data-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -89,6 +78,16 @@
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-analytics-data-v1beta</artifactId>
         <version>0.7.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-data-v1beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-analytics-data-v1alpha</artifactId>
+        <version>0.7.2-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-data-v1alpha:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-analytics-data-v1beta</artifactId>
+        <version>0.7.2-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-data-v1beta:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

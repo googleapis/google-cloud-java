@@ -24,9 +24,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Tests for quickstart sample.
- */
+/** Tests for quickstart sample. */
 @RunWith(JUnit4.class)
 public class QuickstartJsonCredentialsSampleTest {
 
@@ -34,7 +32,6 @@ public class QuickstartJsonCredentialsSampleTest {
       System.getProperty("analyticsdata.quickstart.ga4PropertyId", "222596558");
 
   private String credentialsJsonPath = System.getenv("GOOGLE_APPLICATION_CREDENTIALS");
-
 
   private String runSample(String ga4PropertyId) throws Exception {
     PrintStream stdOut = System.out;

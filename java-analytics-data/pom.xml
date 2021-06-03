@@ -122,10 +122,10 @@
 
   <modules>
     <module>google-analytics-data</module>
-    <module>proto-google-analytics-data-v1alpha</module>
-    <module>proto-google-analytics-data-v1beta</module>
     <module>grpc-google-analytics-data-v1alpha</module>
     <module>grpc-google-analytics-data-v1beta</module>
+    <module>proto-google-analytics-data-v1alpha</module>
+    <module>proto-google-analytics-data-v1beta</module>
     <module>google-analytics-data-bom</module>
   </modules>
 

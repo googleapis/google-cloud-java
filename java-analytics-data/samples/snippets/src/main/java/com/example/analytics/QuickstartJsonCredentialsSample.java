@@ -53,8 +53,9 @@ public class QuickstartJsonCredentialsSample {
      */
     String propertyId = "YOUR-GA4-PROPERTY-ID";
 
-    /** TODO(developer): Replace this variable with a valid path to the credentials.json file
-     * for your service account downloaded from the Cloud Console.
+    /**
+     * TODO(developer): Replace this variable with a valid path to the credentials.json file for
+     * your service account downloaded from the Cloud Console.
      */
     String credentialsJsonPath = "/path/to/credentials.json";
     sampleRunReport(propertyId, credentialsJsonPath);
@@ -66,8 +67,8 @@ public class QuickstartJsonCredentialsSample {
     // [START analyticsdata_json_credentials_initialize]
     // Explicitly use service account credentials by specifying
     // the private key file.
-    GoogleCredentials credentials = GoogleCredentials
-        .fromStream(new FileInputStream(credentialsJsonPath));
+    GoogleCredentials credentials =
+        GoogleCredentials.fromStream(new FileInputStream(credentialsJsonPath));
 
     BetaAnalyticsDataSettings betaAnalyticsDataSettings =
         BetaAnalyticsDataSettings.newBuilder()
@@ -79,13 +80,13 @@ public class QuickstartJsonCredentialsSample {
       // [END analyticsdata_json_credentials_initialize]
 
       // [START analyticsdata_json_credentials_run_report]
-      RunReportRequest request = RunReportRequest.newBuilder()
-          .setProperty("properties/" + propertyId)
-          .addDimensions(
-              Dimension.newBuilder().setName("city"))
-          .addMetrics(Metric.newBuilder().setName("activeUsers"))
-          .addDateRanges(
-              DateRange.newBuilder().setStartDate("2020-03-31").setEndDate("today")).build();
+      RunReportRequest request =
+          RunReportRequest.newBuilder()
+              .setProperty("properties/" + propertyId)
+              .addDimensions(Dimension.newBuilder().setName("city"))
+              .addMetrics(Metric.newBuilder().setName("activeUsers"))
+              .addDateRanges(DateRange.newBuilder().setStartDate("2020-03-31").setEndDate("today"))
+              .build();
 
       // Make the request.
       RunReportResponse response = analyticsData.runReport(request);
@@ -95,12 +96,11 @@ public class QuickstartJsonCredentialsSample {
       System.out.println("Report result:");
       // Iterate through every row of the API response.
       for (Row row : response.getRowsList()) {
-        System.out.printf("%s, %s%n", row.getDimensionValues(0).getValue(),
-            row.getMetricValues(0).getValue());
+        System.out.printf(
+            "%s, %s%n", row.getDimensionValues(0).getValue(), row.getMetricValues(0).getValue());
       }
       // [END analyticsdata_json_credentials_print_report]
     }
   }
 }
 // [END analyticsdata_json_credentials_quickstart]
-
