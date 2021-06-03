@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/calendar/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/calendar/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/calendar/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/docs/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/docs/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/docs/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/drive/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/drive/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/drive/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/gmail/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/gmail/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/gmail/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/sheets/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/sheets/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/sheets/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/slides/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/slides/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/apps/script/type/slides/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>
+</differences>

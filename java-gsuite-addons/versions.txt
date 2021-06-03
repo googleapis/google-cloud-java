@@ -4,3 +4,4 @@
 google-cloud-gsuite-addons:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-gsuite-addons-v1:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-gsuite-addons-v1:0.0.0:0.0.1-SNAPSHOT
+proto-google-apps-script-type-protos:0.0.0:0.0.1-SNAPSHOT

@@ -64,6 +64,11 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-apps-script-type-protos</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-apps-script-type-protos:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-gsuite-addons-v1</artifactId>
         <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-gsuite-addons-v1:current} -->
       </dependency>
@@ -104,8 +109,8 @@
     <module>google-cloud-gsuite-addons</module>
     <module>grpc-google-cloud-gsuite-addons-v1</module>
     <module>proto-google-cloud-gsuite-addons-v1</module>
-    <module>google-cloud-gsuite-addons-bom</module>
     <module>proto-google-apps-script-type-protos</module>
+    <module>google-cloud-gsuite-addons-bom</module>
   </modules>
 
   <reporting>
