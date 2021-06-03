@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.26.0](https://www.github.com/googleapis/java-bigtable/compare/v1.25.0...v1.26.0) (2021-06-03)
+
+
+### Features
+
+* promote stream wait timeouts to deadlines for point reads ([#848](https://www.github.com/googleapis/java-bigtable/issues/848)) ([9b3c601](https://www.github.com/googleapis/java-bigtable/commit/9b3c6013fef396fcc923e53c13f73a03a48c9c02))
+
+
+### Bug Fixes
+
+* add back in extraFiles and fix file path ([#833](https://www.github.com/googleapis/java-bigtable/issues/833)) ([f914954](https://www.github.com/googleapis/java-bigtable/commit/f91495474cb34e1f178d9362ab0251d364079f6d))
+* exclude protobuf from conformance-tests ([#845](https://www.github.com/googleapis/java-bigtable/issues/845)) ([1d89191](https://www.github.com/googleapis/java-bigtable/commit/1d89191a2453b5565aafe72367329eddb36ea90a))
+* Fix the race condition in decay average ([#850](https://www.github.com/googleapis/java-bigtable/issues/850)) ([66a9c9e](https://www.github.com/googleapis/java-bigtable/commit/66a9c9ebc520dd20c336a5cf4040912138137be6))
+* revert conformance test version ([#846](https://www.github.com/googleapis/java-bigtable/issues/846)) ([b23b0d7](https://www.github.com/googleapis/java-bigtable/commit/b23b0d7a7d8a2b9bed1cdabce420cb6568cf82ef))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-conformance-tests to v0.1.1 ([#852](https://www.github.com/googleapis/java-bigtable/issues/852)) ([e1c951c](https://www.github.com/googleapis/java-bigtable/commit/e1c951c549bf455cdd6e997756d9464a1e06dad2))
+
 ## [1.25.0](https://www.github.com/googleapis/java-bigtable/compare/v1.24.1...v1.25.0) (2021-05-19)
 
 
