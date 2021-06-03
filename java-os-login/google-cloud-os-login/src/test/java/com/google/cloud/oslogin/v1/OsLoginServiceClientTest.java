@@ -44,8 +44,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class OsLoginServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockOsLoginService mockOsLoginService;
+  private static MockServiceHelper mockServiceHelper;
   private OsLoginServiceClient client;
   private LocalChannelProvider channelProvider;
 
