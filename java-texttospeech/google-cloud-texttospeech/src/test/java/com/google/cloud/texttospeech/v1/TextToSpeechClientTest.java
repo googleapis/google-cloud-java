@@ -41,8 +41,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class TextToSpeechClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockTextToSpeech mockTextToSpeech;
+  private static MockServiceHelper mockServiceHelper;
   private TextToSpeechClient client;
   private LocalChannelProvider channelProvider;
 
