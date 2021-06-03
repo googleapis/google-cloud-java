@@ -16,4 +16,13 @@
     <className>com/google/cloud/asset/v1beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <!-- Todo: remove after 3.0.0 release -->
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/asset/v1beta1/AssetService*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/asset/v1beta1/stub/*AssetService*</className>
+  </difference>
 </differences>
