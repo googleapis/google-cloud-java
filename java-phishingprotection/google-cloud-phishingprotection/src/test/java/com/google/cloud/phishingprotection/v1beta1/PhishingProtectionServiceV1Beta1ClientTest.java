@@ -42,9 +42,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class PhishingProtectionServiceV1Beta1ClientTest {
+  private static MockPhishingProtectionServiceV1Beta1 mockPhishingProtectionServiceV1Beta1;
   private static MockServiceHelper mockServiceHelper;
   private PhishingProtectionServiceV1Beta1Client client;
-  private static MockPhishingProtectionServiceV1Beta1 mockPhishingProtectionServiceV1Beta1;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
