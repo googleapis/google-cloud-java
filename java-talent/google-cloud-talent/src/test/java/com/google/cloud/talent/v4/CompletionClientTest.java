@@ -40,9 +40,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class CompletionClientTest {
+  private static MockCompletion mockCompletion;
   private static MockServiceHelper mockServiceHelper;
   private CompletionClient client;
-  private static MockCompletion mockCompletion;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
