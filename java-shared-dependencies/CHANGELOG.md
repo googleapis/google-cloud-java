@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/googleapis/java-shared-dependencies/compare/1.2.0...v1.3.0) (2021-06-03)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#365](https://www.github.com/googleapis/java-shared-dependencies/issues/365)) ([7e8309b](https://www.github.com/googleapis/java-shared-dependencies/commit/7e8309bf67ade0fe2b09f792848136cd88b4d2e4))
+
+
+### Dependencies
+
+* update dependency com.google.auth:google-auth-library-bom to v0.26.0 ([#368](https://www.github.com/googleapis/java-shared-dependencies/issues/368)) ([38256a8](https://www.github.com/googleapis/java-shared-dependencies/commit/38256a82cb6896c3f5e5ea6ca5d8d671c412bf84))
+* update dependency com.google.cloud:google-cloud-core-bom to v1.95.0 ([#377](https://www.github.com/googleapis/java-shared-dependencies/issues/377)) ([297ea62](https://www.github.com/googleapis/java-shared-dependencies/commit/297ea621e02f8c0679c8b07ed399d11eaacecc14))
+* update dependency com.google.code.gson:gson to v2.8.7 ([#370](https://www.github.com/googleapis/java-shared-dependencies/issues/370)) ([cdc1b8e](https://www.github.com/googleapis/java-shared-dependencies/commit/cdc1b8ea1c93f97b712081ca8dc8ea57f342b69e))
+* update dependency com.google.protobuf:protobuf-bom to v3.17.1 ([#369](https://www.github.com/googleapis/java-shared-dependencies/issues/369)) ([5a19574](https://www.github.com/googleapis/java-shared-dependencies/commit/5a19574bc626bb3c6b573ed1d177e8907188dec1))
+* update dependency com.google.protobuf:protobuf-bom to v3.17.2 ([#374](https://www.github.com/googleapis/java-shared-dependencies/issues/374)) ([83516e6](https://www.github.com/googleapis/java-shared-dependencies/commit/83516e691b99e5e5d22d27e561781a5ade5fb514))
+* update dependency io.grpc:grpc-bom to v1.38.0 ([#364](https://www.github.com/googleapis/java-shared-dependencies/issues/364)) ([00db570](https://www.github.com/googleapis/java-shared-dependencies/commit/00db5701c3b0aa609f3778c06911a9a0248ca342))
+* update gax.version to v1.65.0 ([#376](https://www.github.com/googleapis/java-shared-dependencies/issues/376)) ([b793a0d](https://www.github.com/googleapis/java-shared-dependencies/commit/b793a0d7744ff1b0f8ae5d3d13ec4776ae8d3089))
+* update google.common-protos.version to v2.3.1 ([#366](https://www.github.com/googleapis/java-shared-dependencies/issues/366)) ([7d6a7fa](https://www.github.com/googleapis/java-shared-dependencies/commit/7d6a7fa7a2cad2b3f2ecf45e42d2ed5db0b60a43))
+* update google.common-protos.version to v2.3.2 ([#375](https://www.github.com/googleapis/java-shared-dependencies/issues/375)) ([68a47ad](https://www.github.com/googleapis/java-shared-dependencies/commit/68a47ad3243f3e980db74c9c8505a1b3063c131b))
+
 ## [1.2.0](https://www.github.com/googleapis/java-shared-dependencies/compare/1.1.0...v1.2.0) (2021-05-18)
 
 
