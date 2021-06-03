@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-tpu:0.0.0:0.0.1-SNAPSHOT
-grpc-google-cloud-tpu-v1:0.0.0:0.0.1-SNAPSHOT
-proto-google-cloud-tpu-v1:0.0.0:0.0.1-SNAPSHOT
+google-cloud-tpu:0.1.0:0.1.0
+grpc-google-cloud-tpu-v1:0.1.0:0.1.0
+proto-google-cloud-tpu-v1:0.1.0:0.1.0
