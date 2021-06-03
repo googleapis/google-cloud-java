@@ -51,9 +51,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class CloudMemcacheClientTest {
+  private static MockCloudMemcache mockCloudMemcache;
   private static MockServiceHelper mockServiceHelper;
   private CloudMemcacheClient client;
-  private static MockCloudMemcache mockCloudMemcache;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
