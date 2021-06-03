@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.6.2](https://www.github.com/googleapis/java-securitycenter/compare/v1.6.1...v1.6.2) (2021-06-03)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java-util to v3.17.2 ([#523](https://www.github.com/googleapis/java-securitycenter/issues/523)) ([54389df](https://www.github.com/googleapis/java-securitycenter/commit/54389dfbf12fa58423e75d00781cbf706aa939bd))
+
 ### [1.6.1](https://www.github.com/googleapis/java-securitycenter/compare/v1.6.0...v1.6.1) (2021-06-02)
 
 
