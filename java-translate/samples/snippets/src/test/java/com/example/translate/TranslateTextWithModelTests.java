@@ -34,7 +34,7 @@ import org.junit.runners.JUnit4;
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class TranslateTextWithModelTests {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String MODEL_ID = "TRL2188848820815848149";
+  private static final String MODEL_ID = "TRL3645318651705294848";
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -72,6 +72,6 @@ public class TranslateTextWithModelTests {
     TranslateTextWithModel.translateTextWithModel(
         PROJECT_ID, "en", "ja", "That' il do it. deception", MODEL_ID);
     String got = bout.toString();
-    assertThat(got).contains("それはそうだ");
+    assertThat(got).contains("やるよ欺瞞");
   }
 }
