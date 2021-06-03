@@ -44,8 +44,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class KnowledgeBasesClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockKnowledgeBases mockKnowledgeBases;
+  private static MockServiceHelper mockServiceHelper;
   private KnowledgeBasesClient client;
   private LocalChannelProvider channelProvider;
 

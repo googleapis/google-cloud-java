@@ -44,9 +44,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ConversationsClientTest {
+  private static MockConversations mockConversations;
   private static MockServiceHelper mockServiceHelper;
   private ConversationsClient client;
-  private static MockConversations mockConversations;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

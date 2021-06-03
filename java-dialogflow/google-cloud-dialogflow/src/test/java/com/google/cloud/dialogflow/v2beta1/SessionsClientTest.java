@@ -48,10 +48,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class SessionsClientTest {
+  private static MockSessions mockSessions;
   private static MockServiceHelper mockServiceHelper;
   private SessionsClient client;
   private LocalChannelProvider channelProvider;
-  private static MockSessions mockSessions;
 
   @BeforeClass
   public static void startStaticServer() {
