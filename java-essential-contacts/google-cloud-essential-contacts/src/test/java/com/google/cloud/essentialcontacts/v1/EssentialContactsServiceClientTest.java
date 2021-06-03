@@ -47,9 +47,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class EssentialContactsServiceClientTest {
+  private static MockEssentialContactsService mockEssentialContactsService;
   private static MockServiceHelper mockServiceHelper;
   private EssentialContactsServiceClient client;
-  private static MockEssentialContactsService mockEssentialContactsService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
