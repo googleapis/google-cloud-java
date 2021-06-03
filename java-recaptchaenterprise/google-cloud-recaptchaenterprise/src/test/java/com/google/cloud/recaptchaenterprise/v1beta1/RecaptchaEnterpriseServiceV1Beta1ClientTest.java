@@ -61,10 +61,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class RecaptchaEnterpriseServiceV1Beta1ClientTest {
+  private static MockRecaptchaEnterpriseServiceV1Beta1 mockRecaptchaEnterpriseServiceV1Beta1;
   private static MockServiceHelper mockServiceHelper;
   private RecaptchaEnterpriseServiceV1Beta1Client client;
   private LocalChannelProvider channelProvider;
-  private static MockRecaptchaEnterpriseServiceV1Beta1 mockRecaptchaEnterpriseServiceV1Beta1;
 
   @BeforeClass
   public static void startStaticServer() {

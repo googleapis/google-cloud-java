@@ -63,8 +63,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class RecaptchaEnterpriseServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockRecaptchaEnterpriseService mockRecaptchaEnterpriseService;
+  private static MockServiceHelper mockServiceHelper;
   private RecaptchaEnterpriseServiceClient client;
   private LocalChannelProvider channelProvider;
 
