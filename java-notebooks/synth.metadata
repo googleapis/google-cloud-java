@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-notebooks.git",
-        "sha": "8fc862caf287cfccd223e20a06945e135676ea04"
+        "sha": "255d6e91ec21c2ae86dea1cc5c498872fa1751be"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "cbf8e95fbd0cba135d997762044f6ed5725045c0",
-        "internalRef": "365159240"
+        "sha": "a5f96d06ef57e325761bad010f460d0c5dbeccda",
+        "internalRef": "377081269"
       }
     },
     {
