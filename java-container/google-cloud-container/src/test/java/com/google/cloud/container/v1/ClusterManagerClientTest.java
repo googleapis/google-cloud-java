@@ -114,9 +114,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ClusterManagerClientTest {
+  private static MockClusterManager mockClusterManager;
   private static MockServiceHelper mockServiceHelper;
   private ClusterManagerClient client;
-  private static MockClusterManager mockClusterManager;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
