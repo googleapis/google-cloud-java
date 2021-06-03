@@ -46,8 +46,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class AccessApprovalAdminClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockAccessApproval mockAccessApproval;
+  private static MockServiceHelper mockServiceHelper;
   private AccessApprovalAdminClient client;
   private LocalChannelProvider channelProvider;
 
