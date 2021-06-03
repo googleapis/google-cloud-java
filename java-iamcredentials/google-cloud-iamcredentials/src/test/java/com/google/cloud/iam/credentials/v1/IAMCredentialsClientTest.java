@@ -43,8 +43,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class IAMCredentialsClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockIAMCredentials mockIAMCredentials;
+  private static MockServiceHelper mockServiceHelper;
   private IamCredentialsClient client;
   private LocalChannelProvider channelProvider;
 
