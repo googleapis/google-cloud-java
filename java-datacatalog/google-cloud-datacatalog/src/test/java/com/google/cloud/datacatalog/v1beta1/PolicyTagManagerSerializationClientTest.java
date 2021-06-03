@@ -40,9 +40,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class PolicyTagManagerSerializationClientTest {
+  private static MockPolicyTagManagerSerialization mockPolicyTagManagerSerialization;
   private static MockServiceHelper mockServiceHelper;
   private PolicyTagManagerSerializationClient client;
-  private static MockPolicyTagManagerSerialization mockPolicyTagManagerSerialization;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

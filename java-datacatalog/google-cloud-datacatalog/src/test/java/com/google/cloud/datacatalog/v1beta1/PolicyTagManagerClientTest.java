@@ -53,8 +53,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class PolicyTagManagerClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockPolicyTagManager mockPolicyTagManager;
+  private static MockServiceHelper mockServiceHelper;
   private PolicyTagManagerClient client;
   private LocalChannelProvider channelProvider;
 
