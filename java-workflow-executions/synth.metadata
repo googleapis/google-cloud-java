@@ -4,21 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-workflow-executions.git",
-        "sha": "a759fc93cbafccd4eaaaa528293934c0efd1f8b0"
+        "sha": "f19b135e02a877e689bcc5ae5f9e70e67b0d3cae"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "ed6d0d5d05d75ba5800ed56a2bca924a1b8ec317"
+        "sha": "a5f96d06ef57e325761bad010f460d0c5dbeccda",
+        "internalRef": "377081269"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "ed6d0d5d05d75ba5800ed56a2bca924a1b8ec317"
+        "sha": "a5f96d06ef57e325761bad010f460d0c5dbeccda",
+        "internalRef": "377081269"
       }
     },
     {
