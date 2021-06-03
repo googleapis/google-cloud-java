@@ -86,9 +86,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class BaseBigtableInstanceAdminClientTest {
+  private static MockBigtableInstanceAdmin mockBigtableInstanceAdmin;
   private static MockServiceHelper mockServiceHelper;
   private BaseBigtableInstanceAdminClient client;
-  private static MockBigtableInstanceAdmin mockBigtableInstanceAdmin;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
