@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.stub;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.core.ApiClock;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -24,43 +25,48 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 @RunWith(JUnit4.class)
 public class DynamicFlowControlStatsTest {
 
+  @Rule public final MockitoRule rule = MockitoJUnit.rule();
+
+  @Mock private ApiClock clock;
+
   @Test
   public void testUpdate() {
-    DynamicFlowControlStats stats = new DynamicFlowControlStats();
-    long now = System.currentTimeMillis();
 
-    stats.updateLatency(10, now);
-    assertThat(stats.getMeanLatency(now)).isEqualTo(10);
-
-    stats.updateLatency(10, now);
-    stats.updateLatency(10, now);
-    assertThat(stats.getMeanLatency(now)).isEqualTo(10);
+    Mockito.when(clock.millisTime()).thenReturn(0L);
+    DynamicFlowControlStats stats = new DynamicFlowControlStats(0.015, clock);
+    stats.updateLatency(10);
+    assertThat(stats.getMeanLatency()).isEqualTo(10);
+    stats.updateLatency(10);
+    stats.updateLatency(10);
+    assertThat(stats.getMeanLatency()).isEqualTo(10);
 
     // In five minutes the previous latency should be decayed to under 1. And the new average should
     // be very close to 20
-    long fiveMinutesLater = now + TimeUnit.MINUTES.toMillis(5);
-    assertThat(stats.getMeanLatency(fiveMinutesLater)).isLessThan(1);
-    stats.updateLatency(20, fiveMinutesLater);
-    assertThat(stats.getMeanLatency(fiveMinutesLater)).isGreaterThan(19);
-    assertThat(stats.getMeanLatency(fiveMinutesLater)).isLessThan(20);
+    Mockito.when(clock.millisTime()).thenReturn(TimeUnit.MINUTES.toMillis(5));
+    stats.updateLatency(20);
+    assertThat(stats.getMeanLatency()).isGreaterThan(19);
+    assertThat(stats.getMeanLatency()).isLessThan(20);
 
-    long aDayLater = now + TimeUnit.HOURS.toMillis(24);
-    assertThat(stats.getMeanLatency(aDayLater)).isZero();
-
-    long timestamp = aDayLater;
+    // After a day
+    long aDay = TimeUnit.DAYS.toMillis(1);
     for (int i = 0; i < 10; i++) {
-      timestamp += TimeUnit.SECONDS.toMillis(i);
-      stats.updateLatency(i, timestamp);
+      Mockito.when(clock.millisTime()).thenReturn(aDay + TimeUnit.SECONDS.toMillis(i));
+      stats.updateLatency(i);
     }
-    assertThat(stats.getMeanLatency(timestamp)).isGreaterThan(4.5);
-    assertThat(stats.getMeanLatency(timestamp)).isLessThan(6);
+    assertThat(stats.getMeanLatency()).isGreaterThan(4.5);
+    assertThat(stats.getMeanLatency()).isLessThan(6);
   }
 
   @Test(timeout = 1000)
