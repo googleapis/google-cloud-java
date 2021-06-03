@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-game-servers.git",
-        "sha": "6008f848a5a4128fb9af2fb04c347602a912612f"
+        "sha": "75a316ce9f5a936b3046ccb07b566ce84bcaa03b"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "001f72d55eba0da1f651dc252084eb7522fbe19d",
-        "internalRef": "368737560"
+        "sha": "a5f96d06ef57e325761bad010f460d0c5dbeccda",
+        "internalRef": "377081269"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "001f72d55eba0da1f651dc252084eb7522fbe19d",
-        "internalRef": "368737560"
+        "sha": "a5f96d06ef57e325761bad010f460d0c5dbeccda",
+        "internalRef": "377081269"
       }
     },
     {

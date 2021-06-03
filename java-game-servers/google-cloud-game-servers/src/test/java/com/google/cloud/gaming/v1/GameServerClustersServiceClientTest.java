@@ -50,9 +50,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class GameServerClustersServiceClientTest {
+  private static MockGameServerClustersService mockGameServerClustersService;
   private static MockServiceHelper mockServiceHelper;
   private GameServerClustersServiceClient client;
-  private static MockGameServerClustersService mockGameServerClustersService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

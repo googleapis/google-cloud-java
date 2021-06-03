@@ -50,10 +50,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class RealmsServiceClientTest {
+  private static MockRealmsService mockRealmsService;
   private static MockServiceHelper mockServiceHelper;
   private RealmsServiceClient client;
   private LocalChannelProvider channelProvider;
-  private static MockRealmsService mockRealmsService;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -50,8 +50,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class GameServerConfigsServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockGameServerConfigsService mockGameServerConfigsService;
+  private static MockServiceHelper mockServiceHelper;
   private GameServerConfigsServiceClient client;
   private LocalChannelProvider channelProvider;
 
