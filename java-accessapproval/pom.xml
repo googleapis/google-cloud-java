@@ -119,9 +119,9 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-accessapproval-v1</module>
-    <module>grpc-google-cloud-accessapproval-v1</module>
     <module>google-cloud-accessapproval</module>
+    <module>grpc-google-cloud-accessapproval-v1</module>
+    <module>proto-google-cloud-accessapproval-v1</module>
     <module>google-cloud-accessapproval-bom</module>
   </modules>
 
