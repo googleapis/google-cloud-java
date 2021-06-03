@@ -42,8 +42,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class StreamingVideoIntelligenceServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockStreamingVideoIntelligenceService mockStreamingVideoIntelligenceService;
+  private static MockServiceHelper mockServiceHelper;
   private StreamingVideoIntelligenceServiceClient client;
   private LocalChannelProvider channelProvider;
 
