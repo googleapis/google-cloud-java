@@ -45,8 +45,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class BudgetServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockBudgetService mockBudgetService;
+  private static MockServiceHelper mockServiceHelper;
   private BudgetServiceClient client;
   private LocalChannelProvider channelProvider;
 
