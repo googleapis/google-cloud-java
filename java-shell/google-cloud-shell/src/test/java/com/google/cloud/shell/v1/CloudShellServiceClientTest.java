@@ -45,9 +45,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class CloudShellServiceClientTest {
+  private static MockCloudShellService mockCloudShellService;
   private static MockServiceHelper mockServiceHelper;
   private CloudShellServiceClient client;
-  private static MockCloudShellService mockCloudShellService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
