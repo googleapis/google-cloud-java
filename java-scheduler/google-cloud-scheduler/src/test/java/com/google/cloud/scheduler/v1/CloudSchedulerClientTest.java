@@ -47,10 +47,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class CloudSchedulerClientTest {
+  private static MockCloudScheduler mockCloudScheduler;
   private static MockServiceHelper mockServiceHelper;
   private CloudSchedulerClient client;
   private LocalChannelProvider channelProvider;
-  private static MockCloudScheduler mockCloudScheduler;
 
   @BeforeClass
   public static void startStaticServer() {
