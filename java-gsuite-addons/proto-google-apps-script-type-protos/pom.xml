@@ -10,7 +10,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-apps-script-type-protos</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-apps-script-type-protos:current} -->
 
   <dependencies>
     <dependency>
