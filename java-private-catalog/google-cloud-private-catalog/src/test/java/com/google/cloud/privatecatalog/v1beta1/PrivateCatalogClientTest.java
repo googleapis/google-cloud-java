@@ -44,8 +44,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class PrivateCatalogClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockPrivateCatalog mockPrivateCatalog;
+  private static MockServiceHelper mockServiceHelper;
   private PrivateCatalogClient client;
   private LocalChannelProvider channelProvider;
 
