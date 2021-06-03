@@ -52,9 +52,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class HubServiceClientTest {
+  private static MockHubService mockHubService;
   private static MockServiceHelper mockServiceHelper;
   private HubServiceClient client;
-  private static MockHubService mockHubService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
