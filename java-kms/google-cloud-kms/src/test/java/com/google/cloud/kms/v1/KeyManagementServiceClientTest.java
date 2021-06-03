@@ -61,9 +61,9 @@ import org.junit.Test;
 @Generated("by gapic-generator-java")
 public class KeyManagementServiceClientTest {
   private static MockKeyManagementService mockKeyManagementService;
+  private static MockIAMPolicy mockIAMPolicy;
   private static MockServiceHelper mockServiceHelper;
   private KeyManagementServiceClient client;
-  private static MockIAMPolicy mockIAMPolicy;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
