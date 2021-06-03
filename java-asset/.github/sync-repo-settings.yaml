@@ -26,7 +26,7 @@ branchProtectionRules:
   # Defaults to `false`
   requiresCodeOwnerReviews: true
   # Require up to date branches
-  requiresStrictStatusChecks: false
+  requiresStrictStatusChecks: true
   # List of required status check contexts that must pass for commits to be accepted to matching branches.
   requiredStatusCheckContexts:
     - "dependencies (8)"
