@@ -17,12 +17,10 @@
 package com.google.cloud.examples.securitycenter.snippets;
 
 // [START securitycenter_get_notification_config]
-// [START scc_get_notification_config]
 import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.NotificationConfigName;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import java.io.IOException;
-// [END scc_get_notification_config]
 // [END securitycenter_get_notification_config]
 
 /** Snippets for how to GetNotificationConfig. */
@@ -30,7 +28,6 @@ final class GetNotificationConfigSnippets {
   private GetNotificationConfigSnippets() {}
 
   // [START securitycenter_get_notification_config]
-  // [START scc_get_notification_config]
   public static NotificationConfig getNotificationConfig(
       String organizationId, String notificationConfigId) throws IOException {
 
@@ -49,6 +46,5 @@ final class GetNotificationConfigSnippets {
       return response;
     }
   }
-  // [END scc_get_notification_config]
   // [END securitycenter_get_notification_config]
 }

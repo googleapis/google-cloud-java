@@ -17,14 +17,12 @@
 package com.google.cloud.examples.securitycenter.snippets;
 
 // [START securitycenter_list_notification_configs]
-// [START scc_list_notification_configs]
 import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.OrganizationName;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
-// [END scc_list_notification_configs]
 // [END securitycenter_list_notification_configs]
 
 /** Snippets for how to ListNotificationConfig. */
@@ -32,7 +30,6 @@ final class ListNotificationConfigSnippets {
   private ListNotificationConfigSnippets() {}
 
   // [START securitycenter_list_notification_configs]
-  // [START scc_list_notification_configs]
   public static ImmutableList<NotificationConfig> listNotificationConfigs(String organizationId)
       throws IOException {
     // String organizationId = "{your-org-id}";
@@ -50,7 +47,6 @@ final class ListNotificationConfigSnippets {
       return notificationConfigs;
     }
   }
-  // [END scc_list_notification_configs]
   // [END securitycenter_list_notification_configs]
 
 }
