@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.1](https://www.github.com/googleapis/java-gkehub/compare/v0.2.0...v0.2.1) (2021-06-04)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#51](https://www.github.com/googleapis/java-gkehub/issues/51)) ([1627fdd](https://www.github.com/googleapis/java-gkehub/commit/1627fdd9e3461f2142e101552c2835956b70d2e1))
+
 ## [0.2.0](https://www.github.com/googleapis/java-gkehub/compare/v0.1.0...v0.2.0) (2021-05-26)
 
 
