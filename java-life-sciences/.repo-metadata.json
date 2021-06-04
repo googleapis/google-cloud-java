@@ -10,6 +10,7 @@
   "repo": "googleapis/java-life-sciences",
   "repo_short": "java-life-sciences",
   "distribution_name": "com.google.cloud:google-cloud-life-sciences",
-  "api_id": "life-sciences.googleapis.com",
-  "requires_billing": true
+  "api_id": "lifesciences.googleapis.com",
+  "requires_billing": true,
+  "library_type": "GAPIC_AUTO"
 }
