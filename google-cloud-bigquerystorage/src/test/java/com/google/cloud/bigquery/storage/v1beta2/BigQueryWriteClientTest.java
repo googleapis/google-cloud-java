@@ -47,10 +47,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class BigQueryWriteClientTest {
+  private static MockBigQueryWrite mockBigQueryWrite;
   private static MockServiceHelper mockServiceHelper;
   private BigQueryWriteClient client;
   private LocalChannelProvider channelProvider;
-  private static MockBigQueryWrite mockBigQueryWrite;
 
   @BeforeClass
   public static void startStaticServer() {
