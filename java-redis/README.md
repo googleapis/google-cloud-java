@@ -51,12 +51,12 @@ compile 'com.google.cloud:google-cloud-redis'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-redis:1.1.15'
+compile 'com.google.cloud:google-cloud-redis:1.2.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-redis" % "1.1.15"
+libraryDependencies += "com.google.cloud" % "google-cloud-redis" % "1.2.0"
 ```
 
 ## Authentication
