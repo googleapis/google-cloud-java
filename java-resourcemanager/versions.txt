@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-resourcemanager:0.119.6-alpha:0.119.6-alpha
-grpc-google-cloud-resourcemanager-v3:0.119.6-alpha:0.119.6-alpha
-proto-google-cloud-resourcemanager-v3:0.119.6-alpha:0.119.6-alpha
+google-cloud-resourcemanager:0.119.6-alpha:0.119.7-alpha-SNAPSHOT
+grpc-google-cloud-resourcemanager-v3:0.119.6-alpha:0.119.7-alpha-SNAPSHOT
+proto-google-cloud-resourcemanager-v3:0.119.6-alpha:0.119.7-alpha-SNAPSHOT
