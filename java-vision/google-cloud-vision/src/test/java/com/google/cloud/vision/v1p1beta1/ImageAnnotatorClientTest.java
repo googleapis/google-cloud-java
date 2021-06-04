@@ -40,9 +40,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ImageAnnotatorClientTest {
+  private static MockImageAnnotator mockImageAnnotator;
   private static MockServiceHelper mockServiceHelper;
   private ImageAnnotatorClient client;
-  private static MockImageAnnotator mockImageAnnotator;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
