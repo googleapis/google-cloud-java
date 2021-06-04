@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.1](https://www.github.com/googleapis/java-bigqueryreservation/compare/v1.2.0...v1.2.1) (2021-06-04)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#412](https://www.github.com/googleapis/java-bigqueryreservation/issues/412)) ([7158744](https://www.github.com/googleapis/java-bigqueryreservation/commit/7158744b59e0dedd6a9d6a560e0430eb41cb5acd))
+
 ## [1.2.0](https://www.github.com/googleapis/java-bigqueryreservation/compare/v1.1.6...v1.2.0) (2021-05-26)
 
 
