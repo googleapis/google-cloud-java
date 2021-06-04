@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigtable.git",
-        "sha": "e7773eed9f34ab4d104df5c09aefb5a302ab4186"
+        "sha": "642551e220c1965127e5a8e74c62ec8937e1276c"
       }
     },
     {
