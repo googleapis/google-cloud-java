@@ -10,6 +10,7 @@
   "repo": "googleapis/java-apigee-connect",
   "repo_short": "java-apigee-connect",
   "distribution_name": "com.google.cloud:google-cloud-apigee-connect",
-  "api_id": "apigee-connect.googleapis.com",
-  "requires_billing": true
+  "api_id": "apigeeconnect.googleapis.com",
+  "requires_billing": true,
+  "library_type": "GAPIC_AUTO"
 }
