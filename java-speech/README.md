@@ -52,12 +52,12 @@ compile 'com.google.cloud:google-cloud-speech'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-speech:1.29.0'
+compile 'com.google.cloud:google-cloud-speech:1.29.1'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "1.29.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "1.29.1"
 ```
 
 ## Authentication
@@ -152,6 +152,7 @@ has instructions for running the samples.
 | Detecting language spoken automatically (Local File) (Beta) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeMultilanguageBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeMultilanguageBeta.java) |
 | Adding recognition metadata (Local File) (Beta) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeRecognitionMetadataBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeRecognitionMetadataBeta.java) |
 | Enabling word-level confidence (Local File) (Beta) | [source code](https://github.com/googleapis/java-speech/blob/master/samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeWordLevelConfidenceBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeWordLevelConfidenceBeta.java) |
+| Export To Storage Beta | [source code](https://github.com/googleapis/java-speech/blob/master/samples/snippets/src/main/java/com/example/speech/ExportToStorageBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/ExportToStorageBeta.java) |
 | Infinite Stream Recognize | [source code](https://github.com/googleapis/java-speech/blob/master/samples/snippets/src/main/java/com/example/speech/InfiniteStreamRecognize.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/InfiniteStreamRecognize.java) |
 | Infinite Stream Recognize Options | [source code](https://github.com/googleapis/java-speech/blob/master/samples/snippets/src/main/java/com/example/speech/InfiniteStreamRecognizeOptions.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/InfiniteStreamRecognizeOptions.java) |
 | Quickstart Sample | [source code](https://github.com/googleapis/java-speech/blob/master/samples/snippets/src/main/java/com/example/speech/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/QuickstartSample.java) |
