@@ -1,0 +1,15 @@
+{
+  "name": "life-sciences",
+  "name_pretty": "Cloud Life Sciences",
+  "product_documentation": "https://cloud.google.com/life-sciences/docs",
+  "api_description": "is a suite of services and tools for managing, processing, and transforming life sciences data.",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-life-sciences/latest/index.html",
+  "release_level": "beta",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-life-sciences",
+  "repo_short": "java-life-sciences",
+  "distribution_name": "com.google.cloud:google-cloud-life-sciences",
+  "api_id": "life-sciences.googleapis.com",
+  "requires_billing": true
+}
