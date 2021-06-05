@@ -124,13 +124,13 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datacatalog</artifactId>
-        <version>1.4.0</version>
+        <version>1.4.1</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datacatalog-v1</artifactId>
-        <version>1.4.0</version>
+        <version>1.4.1</version>
         <scope>test</scope>
       </dependency>
       <dependency>
