@@ -317,6 +317,10 @@ public class StreamWriterV2 implements AutoCloseable {
     }
     if (this.ownsBigQueryWriteClient) {
       this.client.close();
+      try {
+        this.client.awaitTermination(1, TimeUnit.MINUTES);
+      } catch (InterruptedException ignored) {
+      }
     }
   }
 
