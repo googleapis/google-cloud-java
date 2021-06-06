@@ -23,11 +23,16 @@ import com.google.cloud.compute.v1.AttachedDisk;
 import com.google.cloud.compute.v1.AttachedDiskInitializeParams;
 import com.google.cloud.compute.v1.GetInstanceRequest;
 import com.google.cloud.compute.v1.Instance;
+import com.google.cloud.compute.v1.InstanceGroupManager;
+import com.google.cloud.compute.v1.InstanceGroupManagersClient;
+import com.google.cloud.compute.v1.InstanceTemplate;
+import com.google.cloud.compute.v1.InstanceTemplatesClient;
 import com.google.cloud.compute.v1.InstancesClient;
 import com.google.cloud.compute.v1.InstancesScopedList;
 import com.google.cloud.compute.v1.InstancesSettings;
 import com.google.cloud.compute.v1.NetworkInterface;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.ShieldedInstanceConfig;
 import com.google.cloud.compute.v1.ZoneOperationsClient;
 import com.google.cloud.compute.v1.ZoneOperationsSettings;
 import java.io.IOException;
@@ -38,6 +43,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITSmokeInstancesTest extends BaseTest {
@@ -88,6 +94,89 @@ public class ITSmokeInstancesTest extends BaseTest {
   public void testInsertInstance() {
     Instance resultInstance = insertInstance();
     assertInstanceDetails(resultInstance);
+  }
+
+  @Test
+  public void testUpdateInstanceDescToEmpty() {
+    // We test here: 1)set body field to an empty string
+    //               2)unset body field
+    Instance resultInstance = insertInstance();
+    Assert.assertEquals("test", resultInstance.getDescription());
+    Assert.assertEquals(0, resultInstance.getScheduling().getMinNodeCpus());
+    Instance descInstance = resultInstance.toBuilder().setDescription("").build();
+    Operation updateOp =
+        instancesClient.update(DEFAULT_PROJECT, DEFAULT_ZONE, INSTANCE, descInstance);
+    waitUntilStatusChangeTo(updateOp);
+    Instance updated = getInstance();
+    assertInstanceDetails(updated);
+    Assert.assertEquals("", updated.getDescription());
+    Assert.assertEquals(0, resultInstance.getScheduling().getMinNodeCpus());
+  }
+
+  @Test
+  public void testResizeGroupToZero() throws IOException {
+    // We test here: 1)set body field to zero
+    //               2)set query param to zero
+    List<String> instanceGroupManagersToClean = new ArrayList<>();
+    List<String> instanceTemplatesToClean = new ArrayList<>();
+    InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create();
+    InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create();
+    String templateName = generateRandomName("template");
+    String instanceGroupManagerName = generateRandomName("igm");
+    Instance instance = insertInstance();
+    InstanceTemplate instanceTemplate =
+        InstanceTemplate.newBuilder()
+            .setSourceInstance(instance.getSelfLink())
+            .setName(templateName)
+            .build();
+    Operation insertOperation = instanceTemplatesClient.insert(DEFAULT_PROJECT, instanceTemplate);
+    waitGlobalOperation(insertOperation);
+    instanceTemplatesToClean.add(templateName);
+    try {
+      InstanceGroupManager instanceGroupManager =
+          InstanceGroupManager.newBuilder()
+              .setName(instanceGroupManagerName)
+              .setBaseInstanceName("java-gapic")
+              .setInstanceTemplate(insertOperation.getTargetLink())
+              .setTargetSize(0)
+              .build();
+      Operation igmOperation =
+          instanceGroupManagersClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManager);
+      waitUntilStatusChangeTo(igmOperation);
+      instanceGroupManagersToClean.add(instanceGroupManagerName);
+      InstanceGroupManager fetched =
+          instanceGroupManagersClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName);
+      Assert.assertEquals(0, fetched.getTargetSize());
+
+      Operation resize =
+          instanceGroupManagersClient.resize(
+              DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName, 1);
+      waitUntilStatusChangeTo(resize);
+
+      InstanceGroupManager resizedIGM =
+          instanceGroupManagersClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName);
+      Assert.assertEquals(1, resizedIGM.getTargetSize());
+
+      Operation resizeOp =
+          instanceGroupManagersClient.resize(
+              DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName, 0);
+      waitUntilStatusChangeTo(resizeOp);
+
+      InstanceGroupManager instanceGroupManagerResized =
+          instanceGroupManagersClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName);
+      Assert.assertEquals(0, instanceGroupManagerResized.getTargetSize());
+
+    } finally {
+      for (String name : instanceGroupManagersToClean) {
+        Operation deleteOperation =
+            instanceGroupManagersClient.delete(DEFAULT_PROJECT, DEFAULT_ZONE, name);
+        waitUntilStatusChangeTo(deleteOperation);
+      }
+      for (String name : instanceTemplatesToClean) {
+        Operation deleteOperation = instanceTemplatesClient.delete(DEFAULT_PROJECT, name);
+        waitGlobalOperation(deleteOperation);
+      }
+    }
   }
 
   @Test
@@ -148,39 +237,22 @@ public class ITSmokeInstancesTest extends BaseTest {
     }
   }
 
-  /*
-  GAPIC error:
-  Caused by: com.google.api.gax.rpc.UnknownException: com.google.api.pathtemplate.ValidationException: Unbound variable 'zone'. Bindings: {project=cloudsdktest}
-  @Test(expected = ValidationException.class)
-  public void testEmptyZone(){
-      Instance instanceResource =
-              Instance.newBuilder().build();
-      InsertInstanceRequest request = InsertInstanceRequest.newBuilder().setInstanceResource(instanceResource)
-              .setProject(DEFAULT_PROJECT).build();
-      instancesClient.insert(request);
-
-  }
-
-  LRO feature is not finished.
+  @Ignore("Patch is not supported")
   @Test
-  public void testFutureInsert() throws InterruptedException, ExecutionException {
-      Instance instanceResource =
-              Instance.newBuilder()
-                      .setName(INSTANCE)
-                      .setMachineType(MACHINE_TYPE)
-                      .addDisks(DISK)
-                      .addNetworkInterfaces(NETWORK_INTERFACE)
-                      .build();
-      InsertInstanceRequest request = InsertInstanceRequest.newBuilder().
-              setProject(DEFAULT_PROJECT).
-              setZone(DEFAULT_ZONE).
-              setInstanceResource(instanceResource).
-              build();
-      ApiFuture<Operation> future = instancesClient.insertCallable().futureCall(request);
-      Operation response = future.get();
-      Assert.assertEquals(response.getStatus(), Operation.Status.DONE);
-      assertInstanceDetails(getInstance());
-  }*/
+  public void testPatch() {
+    Instance resultInstance = insertInstance();
+    Assert.assertFalse(resultInstance.getShieldedInstanceConfig().getEnableSecureBoot());
+    Operation op = instancesClient.stop(DEFAULT_PROJECT, DEFAULT_ZONE, INSTANCE);
+    waitUntilStatusChangeTo(op);
+    ShieldedInstanceConfig shieldedInstanceConfigResource =
+        ShieldedInstanceConfig.newBuilder().setEnableSecureBoot(true).build();
+    Operation opPatch =
+        instancesClient.updateShieldedInstanceConfig(
+            DEFAULT_PROJECT, DEFAULT_ZONE, INSTANCE, shieldedInstanceConfigResource);
+    waitUntilStatusChangeTo(opPatch);
+    Instance updInstance = getInstance();
+    Assert.assertTrue(updInstance.getShieldedInstanceConfig().getEnableSecureBoot());
+  }
 
   private Instance insertInstance() {
     Instance instanceResource =
@@ -189,6 +261,7 @@ public class ITSmokeInstancesTest extends BaseTest {
             .setMachineType(MACHINE_TYPE)
             .addDisks(DISK)
             .addNetworkInterfaces(NETWORK_INTERFACE)
+            .setDescription("test")
             .build();
     Operation insertResponse =
         instancesClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
@@ -219,7 +292,10 @@ public class ITSmokeInstancesTest extends BaseTest {
 
   private void waitUntilStatusChangeTo(Operation operation) {
     long startTime = System.currentTimeMillis();
-    while ((System.currentTimeMillis() - startTime) < 20000) {
+    while (true) {
+      if ((System.currentTimeMillis() - startTime) > 200000) {
+        fail("Operation " + operation.getName() + " took more than 200 sec to finish");
+      }
       Operation tempOperation =
           operationsClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, operation.getName());
       if (tempOperation.getStatus().equals(Operation.Status.UNRECOGNIZED)) {
@@ -232,6 +308,11 @@ public class ITSmokeInstancesTest extends BaseTest {
       }
       if (tempOperation.getStatus().equals(Operation.Status.DONE)) {
         break;
+      }
+      try {
+        Thread.sleep(2000);
+      } catch (InterruptedException e) {
+        fail("Interrupted");
       }
     }
   }

@@ -32,6 +32,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITAddressesTest extends BaseTest {
@@ -67,6 +68,7 @@ public class ITAddressesTest extends BaseTest {
     insertAddress();
     Address address = addressesClient.get(DEFAULT_PROJECT, DEFAULT_REGION, name);
     Assert.assertEquals(name, address.getName());
+    Assert.assertEquals("test", address.getDescription());
   }
 
   @Test
@@ -82,25 +84,6 @@ public class ITAddressesTest extends BaseTest {
     }
     System.out.println(presented);
     Assert.assertTrue(presented);
-  }
-
-  public void insertAddress() {
-    Address address = Address.newBuilder().setName(name).build();
-    Operation operation = addressesClient.insert(DEFAULT_PROJECT, DEFAULT_REGION, address);
-    addresses.add(address);
-    boolean success = false;
-    long startTime = System.currentTimeMillis();
-    while ((System.currentTimeMillis() - startTime) < 15000) {
-      Operation op =
-          regionOperationsClient.get(DEFAULT_PROJECT, DEFAULT_REGION, operation.getName());
-      if (op.getStatus() == Status.DONE) {
-        success = true;
-        break;
-      }
-    }
-    if (!success) {
-      fail("Insert did not finish with success.");
-    }
   }
 
   @Test
@@ -119,5 +102,42 @@ public class ITAddressesTest extends BaseTest {
       }
     }
     Assert.assertTrue(presented);
+  }
+
+  @Ignore("Non ascii symbols are not converted correctly, b/188905787")
+  @Test
+  public void testNonAscii() {
+    insertAddress("тест");
+    Address address = addressesClient.get(DEFAULT_PROJECT, DEFAULT_REGION, name);
+    Assert.assertEquals(name, address.getName());
+    Assert.assertEquals("тест", address.getDescription());
+  }
+
+  private void insertAddress() {
+    insertAddress("test");
+  }
+
+  private void insertAddress(String description) {
+    Address address = Address.newBuilder().setName(name).setDescription(description).build();
+    Operation operation = addressesClient.insert(DEFAULT_PROJECT, DEFAULT_REGION, address);
+    addresses.add(address);
+    boolean success = false;
+    long startTime = System.currentTimeMillis();
+    while ((System.currentTimeMillis() - startTime) < 15000) {
+      Operation op =
+          regionOperationsClient.get(DEFAULT_PROJECT, DEFAULT_REGION, operation.getName());
+      if (op.getStatus() == Status.DONE) {
+        success = true;
+        break;
+      }
+      try {
+        Thread.sleep(2000);
+      } catch (InterruptedException e) {
+        fail("Interrupted");
+      }
+    }
+    if (!success) {
+      fail("Insert did not finish with success.");
+    }
   }
 }
