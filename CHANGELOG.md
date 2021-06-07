@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.22.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.22.0...v1.22.1) (2021-06-05)
+
+
+### Bug Fixes
+
+* call awaitTermination when close the stream writer ([#1111](https://www.github.com/googleapis/java-bigquerystorage/issues/1111)) ([0f7db50](https://www.github.com/googleapis/java-bigquerystorage/commit/0f7db50bdd8f653f8087550cb2d1eeb47975eadf))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.132.0 ([#1109](https://www.github.com/googleapis/java-bigquerystorage/issues/1109)) ([fc91b02](https://www.github.com/googleapis/java-bigquerystorage/commit/fc91b02a5361b7d80191489405967182445e3b44))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#1108](https://www.github.com/googleapis/java-bigquerystorage/issues/1108)) ([05a936a](https://www.github.com/googleapis/java-bigquerystorage/commit/05a936a7c34c495010d18c2038d08d2662420958))
+
 ## [1.22.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.21.1...v1.22.0) (2021-05-31)
 
 
