@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dms.git",
-        "sha": "22a828c7c7e4c52aae2e591bbf3ae7183bed7aa0"
+        "sha": "451defa92ba690723e9f8fc668652d3dd421eb0b"
       }
     },
     {
