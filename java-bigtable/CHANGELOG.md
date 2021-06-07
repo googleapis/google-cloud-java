@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.26.1](https://www.github.com/googleapis/java-bigtable/compare/v1.26.0...v1.26.1) (2021-06-07)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#857](https://www.github.com/googleapis/java-bigtable/issues/857)) ([fd2bf65](https://www.github.com/googleapis/java-bigtable/commit/fd2bf656629e21e01e9a877c00eaed018889cc37))
+* update truth-proto-extension to 1.1.3 and exclude protobuf-java from its dependencies ([#854](https://www.github.com/googleapis/java-bigtable/issues/854)) ([e7773ee](https://www.github.com/googleapis/java-bigtable/commit/e7773eed9f34ab4d104df5c09aefb5a302ab4186))
+
 ## [1.26.0](https://www.github.com/googleapis/java-bigtable/compare/v1.25.0...v1.26.0) (2021-06-03)
 
 
