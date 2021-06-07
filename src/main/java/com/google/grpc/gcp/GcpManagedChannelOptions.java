@@ -57,11 +57,21 @@ public class GcpManagedChannelOptions {
     return new Builder();
   }
 
+  /** Creates a new GcpManagedChannelOptions.Builder from GcpManagedChannelOptions. */
+  public static Builder newBuilder(GcpManagedChannelOptions options) {
+    return new Builder(options);
+  }
+
   public static class Builder {
     private GcpMetricsOptions metricsOptions;
     private GcpResiliencyOptions resiliencyOptions;
 
     public Builder() {}
+
+    public Builder(GcpManagedChannelOptions options) {
+      this.metricsOptions = options.getMetricsOptions();
+      this.resiliencyOptions = options.getResiliencyOptions();
+    }
 
     public GcpManagedChannelOptions build() {
       return new GcpManagedChannelOptions(this);
@@ -150,35 +160,47 @@ public class GcpManagedChannelOptions {
       return namePrefix;
     }
 
-    /**
-     * Creates a new GcpMetricsOptions.Builder.
-     *
-     * @param metricRegistry {@link MetricRegistry} to create and register metrics.
-     */
-    public static Builder newBuilder(MetricRegistry metricRegistry) {
-      return new Builder(metricRegistry);
+    /** Creates a new GcpMetricsOptions.Builder. */
+    public static Builder newBuilder() {
+      return new Builder();
+    }
+
+    /** Creates a new GcpMetricsOptions.Builder from GcpMetricsOptions. */
+    public static Builder newBuilder(GcpMetricsOptions options) {
+      return new Builder(options);
     }
 
     public static class Builder {
-      private final MetricRegistry metricRegistry;
+      private MetricRegistry metricRegistry;
       private List<LabelKey> labelKeys;
       private List<LabelValue> labelValues;
       private String namePrefix;
 
-      /**
-       * Constructor for GcpMetricsOptions.Builder.
-       *
-       * @param metricRegistry {@link MetricRegistry} to create and register metrics.
-       */
-      public Builder(MetricRegistry metricRegistry) {
-        this.metricRegistry = metricRegistry;
+      /** Constructor for GcpMetricsOptions.Builder. */
+      public Builder() {
         labelKeys = new ArrayList<>();
         labelValues = new ArrayList<>();
         namePrefix = "";
       }
 
+      public Builder(GcpMetricsOptions options) {
+        this();
+        if (options == null) {
+          return;
+        }
+        this.metricRegistry = options.getMetricRegistry();
+        this.labelKeys = options.getLabelKeys();
+        this.labelValues = options.getLabelValues();
+        this.namePrefix = options.getNamePrefix();
+      }
+
       public GcpMetricsOptions build() {
         return new GcpMetricsOptions(this);
+      }
+
+      public Builder withMetricRegistry(MetricRegistry registry) {
+        this.metricRegistry = registry;
+        return this;
       }
 
       /**
@@ -229,6 +251,11 @@ public class GcpManagedChannelOptions {
       return new Builder();
     }
 
+    /** Creates a new GcpResiliencyOptions.Builder from GcpResiliencyOptions. */
+    public static Builder newBuilder(GcpResiliencyOptions options) {
+      return new Builder(options);
+    }
+
     public boolean isNotReadyFallbackEnabled() {
       return notReadyFallbackEnabled;
     }
@@ -253,17 +280,24 @@ public class GcpManagedChannelOptions {
 
       public Builder() {}
 
+      public Builder(GcpResiliencyOptions options) {
+        this.notReadyFallbackEnabled = options.isNotReadyFallbackEnabled();
+        this.unresponsiveDetectionEnabled = options.isUnresponsiveDetectionEnabled();
+        this.unresponsiveDetectionMs = options.getUnresponsiveDetectionMs();
+        this.unresponsiveDetectionDroppedCount = options.getUnresponsiveDetectionDroppedCount();
+      }
+
       public GcpResiliencyOptions build() {
         return new GcpResiliencyOptions(this);
       }
 
       /**
-       * Temporarily fallback requests to a ready channel from a channel which is not ready to send
-       * a request immediately. The fallback will happen if the pool has another channel in the
-       * READY state and that channel has less than maximum allowed concurrent active streams.
+       * If true, temporarily fallback requests to a ready channel from a channel which is not ready
+       * to send a request immediately. The fallback will happen if the pool has another channel in
+       * the READY state and that channel has less than maximum allowed concurrent active streams.
        */
-      public Builder enableNotReadyFallback() {
-        notReadyFallbackEnabled = true;
+      public Builder setNotReadyFallback(boolean enabled) {
+        notReadyFallbackEnabled = enabled;
         return this;
       }
 
@@ -294,6 +328,12 @@ public class GcpManagedChannelOptions {
         unresponsiveDetectionEnabled = true;
         unresponsiveDetectionMs = ms;
         unresponsiveDetectionDroppedCount = numDroppedRequests;
+        return this;
+      }
+
+      /** Disable unresponsive connection detection. */
+      public Builder disableUnresponsiveConnectionDetection() {
+        unresponsiveDetectionEnabled = false;
         return this;
       }
     }

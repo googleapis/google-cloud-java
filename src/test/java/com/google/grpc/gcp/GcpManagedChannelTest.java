@@ -312,7 +312,8 @@ public final class GcpManagedChannelTest {
                 .withOptions(
                     GcpManagedChannelOptions.newBuilder()
                         .withMetricsOptions(
-                            GcpMetricsOptions.newBuilder(fakeRegistry)
+                            GcpMetricsOptions.newBuilder()
+                                .withMetricRegistry(fakeRegistry)
                                 .withNamePrefix(prefix)
                                 .withLabels(labelKeys, labelValues)
                                 .build())
