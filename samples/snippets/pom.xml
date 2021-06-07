@@ -79,7 +79,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigtable</artifactId>
-      <version>1.26.0</version>
+      <version>1.26.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
