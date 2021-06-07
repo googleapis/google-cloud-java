@@ -39,6 +39,7 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
+import io.grpc.Status.Code;
 import io.opencensus.common.ToLongFunction;
 import io.opencensus.metrics.DerivedLongGauge;
 import io.opencensus.metrics.LabelKey;
@@ -701,7 +702,7 @@ public class GcpManagedChannel extends ManagedChannel {
 
     private void detectUnresponsiveConnection(
         long startNanos, Status status, boolean fromClientSide) {
-      if (status == Status.DEADLINE_EXCEEDED) {
+      if (status.getCode().equals(Code.DEADLINE_EXCEEDED)) {
         if (startNanos < lastResponseNanos) {
           // Skip deadline exceeded from past calls.
           return;

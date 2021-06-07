@@ -19,7 +19,9 @@ package com.google.grpc.gcp;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 
+import com.google.grpc.gcp.GcpManagedChannel.ChannelRef;
 import com.google.grpc.gcp.GcpManagedChannelOptions.GcpMetricsOptions;
+import com.google.grpc.gcp.GcpManagedChannelOptions.GcpResiliencyOptions;
 import com.google.grpc.gcp.MetricRegistryTestUtils.FakeMetricRegistry;
 import com.google.grpc.gcp.MetricRegistryTestUtils.MetricsRecord;
 import com.google.grpc.gcp.MetricRegistryTestUtils.PointWithFunction;
@@ -29,9 +31,14 @@ import com.google.grpc.gcp.proto.ChannelPoolConfig;
 import com.google.grpc.gcp.proto.MethodConfig;
 import com.google.spanner.v1.PartitionReadRequest;
 import com.google.spanner.v1.TransactionSelector;
+import io.grpc.CallOptions;
+import io.grpc.ClientCall;
 import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.MethodDescriptor;
+import io.grpc.Status;
+import io.grpc.Status.Code;
 import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import java.io.File;
@@ -39,6 +46,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -161,8 +170,8 @@ public final class GcpManagedChannelTest {
   @Test
   public void testBindUnbindKey() throws Exception {
     // Initialize the channel and bind the key, check the affinity count.
-    GcpManagedChannel.ChannelRef cf1 = gcpChannel.new ChannelRef(builder.build(), 1, 0, 5);
-    GcpManagedChannel.ChannelRef cf2 = gcpChannel.new ChannelRef(builder.build(), 1, 0, 4);
+    ChannelRef cf1 = gcpChannel.new ChannelRef(builder.build(), 1, 0, 5);
+    ChannelRef cf2 = gcpChannel.new ChannelRef(builder.build(), 1, 0, 4);
     gcpChannel.channelRefs.add(cf1);
     gcpChannel.channelRefs.add(cf2);
     gcpChannel.bind(cf1, Arrays.asList("key1"));
@@ -367,6 +376,138 @@ public final class GcpManagedChannelTest {
       assertThat(totalActiveStreams.get(0).values()).isEqualTo(expectedLabelValues);
     } finally {
       pool.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testUnresponsiveDetection() throws InterruptedException {
+    // Creating a pool with unresponsive connection detection for 100 ms, 3 dropped requests.
+    final GcpManagedChannel pool =
+        (GcpManagedChannel)
+            GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                .withOptions(
+                    GcpManagedChannelOptions.newBuilder()
+                        .withResiliencyOptions(
+                            GcpResiliencyOptions.newBuilder()
+                                .withUnresponsiveConnectionDetection(100, 3)
+                                .build())
+                        .build())
+                .build();
+    final AtomicInteger idleCounter = new AtomicInteger();
+    ManagedChannel channel = new FakeIdleCountingManagedChannel(idleCounter);
+    ChannelRef chRef = pool.new ChannelRef(channel, 0);
+    assertEquals(0, idleCounter.get());
+
+    TimeUnit.MILLISECONDS.sleep(105);
+
+    // Report 3 deadline exceeded errors after 100 ms.
+    long startNanos = System.nanoTime();
+    final Status deStatus = Status.fromCode(Code.DEADLINE_EXCEEDED);
+    chRef.activeStreamsCountDecr(startNanos, deStatus, false);
+    assertEquals(0, idleCounter.get());
+    chRef.activeStreamsCountDecr(startNanos, deStatus, false);
+    assertEquals(0, idleCounter.get());
+    chRef.activeStreamsCountDecr(startNanos, deStatus, false);
+    // Reconnected after 3rd deadline exceeded.
+    assertEquals(1, idleCounter.get());
+
+    // Any message from the server must reset the dropped requests count and timestamp.
+    TimeUnit.MILLISECONDS.sleep(105);
+    startNanos = System.nanoTime();
+    chRef.activeStreamsCountDecr(startNanos, deStatus, false);
+    assertEquals(1, idleCounter.get());
+    chRef.activeStreamsCountDecr(startNanos, deStatus, false);
+    assertEquals(1, idleCounter.get());
+    // A message received from the server.
+    chRef.messageReceived();
+    chRef.activeStreamsCountDecr(startNanos, deStatus, false);
+    // No idle increment expected because dropped requests count and timestamp were reset.
+    assertEquals(1, idleCounter.get());
+
+    // Any non-deadline exceeded response must reset the dropped requests count and timestamp.
+    TimeUnit.MILLISECONDS.sleep(105);
+    startNanos = System.nanoTime();
+    chRef.activeStreamsCountDecr(startNanos, deStatus, false);
+    assertEquals(1, idleCounter.get());
+    chRef.activeStreamsCountDecr(startNanos, deStatus, false);
+    assertEquals(1, idleCounter.get());
+    // Response with UNAVAILABLE status received from the server.
+    final Status unavailableStatus = Status.fromCode(Code.UNAVAILABLE);
+    chRef.activeStreamsCountDecr(startNanos, unavailableStatus, false);
+    chRef.activeStreamsCountDecr(startNanos, deStatus, false);
+    // No idle increment expected because dropped requests count and timestamp were reset.
+    assertEquals(1, idleCounter.get());
+
+    // Even if dropped requests count is reached, it must also respect 100 ms configured.
+    startNanos = System.nanoTime();
+    chRef.activeStreamsCountDecr(startNanos, deStatus, false);
+    assertEquals(1, idleCounter.get());
+    chRef.activeStreamsCountDecr(startNanos, deStatus, false);
+    assertEquals(1, idleCounter.get());
+    chRef.activeStreamsCountDecr(startNanos, deStatus, false);
+    // Even it's third deadline exceeded no idle increment is expected because 100ms has not pass.
+    assertEquals(1, idleCounter.get());
+
+    TimeUnit.MILLISECONDS.sleep(105);
+    // Any subsequent deadline exceeded after 100ms must trigger the reconnect.
+    chRef.activeStreamsCountDecr(startNanos, deStatus, false);
+    assertEquals(2, idleCounter.get());
+  }
+
+  class FakeIdleCountingManagedChannel extends ManagedChannel {
+    private AtomicInteger idleCounter;
+
+    FakeIdleCountingManagedChannel(AtomicInteger idleCounter) {
+      this.idleCounter = idleCounter;
+    }
+
+    @Override
+    public void enterIdle() {
+      idleCounter.incrementAndGet();
+    }
+
+    @Override
+    public ConnectivityState getState(boolean requestConnection) {
+      return ConnectivityState.IDLE;
+    }
+
+    @Override
+    public void notifyWhenStateChanged(ConnectivityState source, Runnable callback) {}
+
+    @Override
+    public ManagedChannel shutdown() {
+      return null;
+    }
+
+    @Override
+    public boolean isShutdown() {
+      return false;
+    }
+
+    @Override
+    public boolean isTerminated() {
+      return false;
+    }
+
+    @Override
+    public ManagedChannel shutdownNow() {
+      return null;
+    }
+
+    @Override
+    public boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException {
+      return false;
+    }
+
+    @Override
+    public <RequestT, ResponseT> ClientCall<RequestT, ResponseT> newCall(
+        MethodDescriptor<RequestT, ResponseT> methodDescriptor, CallOptions callOptions) {
+      return null;
+    }
+
+    @Override
+    public String authority() {
+      return null;
     }
   }
 }
