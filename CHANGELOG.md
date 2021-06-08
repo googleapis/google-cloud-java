@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.133.0](https://www.github.com/googleapis/java-bigquery/compare/v1.132.1...v1.133.0) (2021-06-08)
+
+
+### Features
+
+* add support for DecimalTargetTypes ([#1345](https://www.github.com/googleapis/java-bigquery/issues/1345)) ([ba528df](https://www.github.com/googleapis/java-bigquery/commit/ba528df03def71907e2811cf267718f090605d95))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigtable to v1.26.1 ([#1360](https://www.github.com/googleapis/java-bigquery/issues/1360)) ([bf55699](https://www.github.com/googleapis/java-bigquery/commit/bf55699d849de7e873577de04e44fbfe0f078ab1))
+
 ### [1.132.1](https://www.github.com/googleapis/java-bigquery/compare/v1.132.0...v1.132.1) (2021-06-07)
 
 
