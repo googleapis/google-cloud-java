@@ -2748,6 +2748,54 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testLoadJobWithDecimalTargetTypes() throws InterruptedException {
+    String tableName = "test_load_job_table_parquet_decimalTargetTypes";
+    TableId destinationTable = TableId.of(DATASET, tableName);
+    String sourceUri = "gs://" + CLOUD_SAMPLES_DATA + "/bigquery/numeric/numeric_38_12.parquet";
+    try {
+      LoadJobConfiguration configuration =
+          LoadJobConfiguration.newBuilder(destinationTable, sourceUri, FormatOptions.parquet())
+              .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+              .setDecimalTargetTypes(ImmutableList.of("NUMERIC", "BIGNUMERIC", "STRING"))
+              .build();
+      Job job = bigquery.create(JobInfo.of(configuration));
+      job = job.waitFor();
+      assertNull(job.getStatus().getError());
+      LoadJobConfiguration loadJobConfiguration = job.getConfiguration();
+      assertEquals(
+          ImmutableList.of("NUMERIC", "BIGNUMERIC", "STRING"),
+          loadJobConfiguration.getDecimalTargetTypes());
+      Table remoteTable = bigquery.getTable(DATASET, tableName);
+      assertNotNull(remoteTable);
+      assertEquals(
+          remoteTable.getDefinition().getSchema().getFields().get(0).getType().toString(),
+          "BIGNUMERIC");
+    } finally {
+      bigquery.delete(destinationTable);
+    }
+  }
+
+  @Test
+  public void testExternalTableWithDecimalTargetTypes() throws InterruptedException {
+    String tableName = "test_create_external_table_parquet_decimalTargetTypes";
+    TableId destinationTable = TableId.of(DATASET, tableName);
+    String sourceUri = "gs://" + CLOUD_SAMPLES_DATA + "/bigquery/numeric/numeric_38_12.parquet";
+    ExternalTableDefinition externalTableDefinition =
+        ExternalTableDefinition.newBuilder(sourceUri, FormatOptions.parquet())
+            .setDecimalTargetTypes(ImmutableList.of("NUMERIC", "BIGNUMERIC", "STRING"))
+            .build();
+    TableInfo tableInfo = TableInfo.of(destinationTable, externalTableDefinition);
+    Table createdTable = bigquery.create(tableInfo);
+    assertNotNull(createdTable);
+    Table remoteTable = bigquery.getTable(DATASET, tableName);
+    assertNotNull(remoteTable);
+    assertEquals(
+        remoteTable.getDefinition().getSchema().getFields().get(0).getType().toString(),
+        "BIGNUMERIC");
+    assertTrue(remoteTable.delete());
+  }
+
+  @Test
   public void testQueryJobWithDryRun() throws InterruptedException, TimeoutException {
     String tableName = "test_query_job_table";
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.getTable();

@@ -38,6 +38,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
 
   private final List<String> sourceUris;
   private final TableId destinationTable;
+  private final List<String> decimalTargetTypes;
   private final EncryptionConfiguration destinationEncryptionConfiguration;
   private final JobInfo.CreateDisposition createDisposition;
   private final JobInfo.WriteDisposition writeDisposition;
@@ -61,6 +62,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
 
     private List<String> sourceUris;
     private TableId destinationTable;
+    private List<String> decimalTargetTypes;
     private EncryptionConfiguration destinationEncryptionConfiguration;
     private JobInfo.CreateDisposition createDisposition;
     private JobInfo.WriteDisposition writeDisposition;
@@ -87,6 +89,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     private Builder(LoadJobConfiguration loadConfiguration) {
       this();
       this.destinationTable = loadConfiguration.destinationTable;
+      this.decimalTargetTypes = loadConfiguration.decimalTargetTypes;
       this.createDisposition = loadConfiguration.createDisposition;
       this.writeDisposition = loadConfiguration.writeDisposition;
       this.formatOptions = loadConfiguration.formatOptions;
@@ -112,6 +115,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       this();
       JobConfigurationLoad loadConfigurationPb = configurationPb.getLoad();
       this.destinationTable = TableId.fromPb(loadConfigurationPb.getDestinationTable());
+      if (loadConfigurationPb.getDecimalTargetTypes() != null) {
+        this.decimalTargetTypes = ImmutableList.copyOf(loadConfigurationPb.getDecimalTargetTypes());
+      }
       if (loadConfigurationPb.getCreateDisposition() != null) {
         this.createDisposition =
             JobInfo.CreateDisposition.valueOf(loadConfigurationPb.getCreateDisposition());
@@ -278,6 +284,20 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
+    /**
+     * Defines the list of possible SQL data types to which the source decimal values are converted.
+     * This list and the precision and the scale parameters of the decimal field determine the
+     * target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in
+     * the specified list and if it supports the precision and the scale. STRING supports all
+     * precision and scale values.
+     *
+     * @param decimalTargetTypes decimalTargetType or {@code null} for none
+     */
+    public Builder setDecimalTargetTypes(List<String> decimalTargetTypes) {
+      this.decimalTargetTypes = decimalTargetTypes;
+      return this;
+    }
+
     public Builder setAutodetect(Boolean autodetect) {
       this.autodetect = autodetect;
       return this;
@@ -341,6 +361,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     super(builder);
     this.sourceUris = builder.sourceUris;
     this.destinationTable = builder.destinationTable;
+    this.decimalTargetTypes = builder.decimalTargetTypes;
     this.createDisposition = builder.createDisposition;
     this.writeDisposition = builder.writeDisposition;
     this.formatOptions = builder.formatOptions;
@@ -430,6 +451,10 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return sourceUris;
   }
 
+  public List<String> getDecimalTargetTypes() {
+    return decimalTargetTypes;
+  }
+
   public Boolean getAutodetect() {
     return autodetect;
   }
@@ -482,6 +507,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   ToStringHelper toStringHelper() {
     return super.toStringHelper()
         .add("destinationTable", destinationTable)
+        .add("decimalTargetTypes", decimalTargetTypes)
         .add("destinationEncryptionConfiguration", destinationEncryptionConfiguration)
         .add("createDisposition", createDisposition)
         .add("writeDisposition", writeDisposition)
@@ -567,6 +593,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     }
     if (sourceUris != null) {
       loadConfigurationPb.setSourceUris(ImmutableList.copyOf(sourceUris));
+    }
+    if (decimalTargetTypes != null) {
+      loadConfigurationPb.setDecimalTargetTypes(ImmutableList.copyOf(decimalTargetTypes));
     }
     if (schemaUpdateOptions != null) {
       ImmutableList.Builder<String> schemaUpdateOptionsBuilder = new ImmutableList.Builder<>();

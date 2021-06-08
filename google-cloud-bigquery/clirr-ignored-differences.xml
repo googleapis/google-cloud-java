@@ -4,32 +4,12 @@
   <!-- TODO: REMOVE AFTER RELEASE -->
   <difference>
     <differenceType>7013</differenceType>
-    <className>com/google/cloud/bigquery/MaterializedViewDefinition</className>
-    <method>com.google.cloud.bigquery.Clustering getClustering()</method>
+    <className>com/google/cloud/bigquery/ExternalTableDefinition</className>
+    <method>com.google.common.collect.ImmutableList getDecimalTargetTypes()</method>
   </difference>
   <difference>
     <differenceType>7013</differenceType>
-    <className>com/google/cloud/bigquery/MaterializedViewDefinition</className>
-    <method>com.google.cloud.bigquery.RangePartitioning getRangePartitioning()</method>
-  </difference>
-  <difference>
-    <differenceType>7013</differenceType>
-    <className>com/google/cloud/bigquery/MaterializedViewDefinition</className>
-    <method>com.google.cloud.bigquery.TimePartitioning getTimePartitioning()</method>
-  </difference>
-  <difference>
-    <differenceType>7013</differenceType>
-    <className>com/google/cloud/bigquery/MaterializedViewDefinition$Builder</className>
-    <method>com.google.cloud.bigquery.MaterializedViewDefinition$Builder setClustering(com.google.cloud.bigquery.Clustering)</method>
-  </difference>
-  <difference>
-    <differenceType>7013</differenceType>
-    <className>com/google/cloud/bigquery/MaterializedViewDefinition$Builder</className>
-    <method>com.google.cloud.bigquery.MaterializedViewDefinition$Builder setRangePartitioning(com.google.cloud.bigquery.RangePartitioning)</method>
-  </difference>
-  <difference>
-    <differenceType>7013</differenceType>
-    <className>com/google/cloud/bigquery/MaterializedViewDefinition$Builder</className>
-    <method>com.google.cloud.bigquery.MaterializedViewDefinition$Builder setTimePartitioning(com.google.cloud.bigquery.TimePartitioning)</method>
+    <className>com/google/cloud/bigquery/ExternalTableDefinition$Builder</className>
+    <method> com.google.cloud.bigquery.ExternalTableDefinition$Builder setDecimalTargetTypes(java.util.List)</method>
   </difference>
 </differences>

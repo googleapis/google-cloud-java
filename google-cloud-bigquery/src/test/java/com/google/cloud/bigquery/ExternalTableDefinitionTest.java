@@ -27,6 +27,8 @@ import org.junit.Test;
 public class ExternalTableDefinitionTest {
 
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
+  private static final List<String> DECIMAL_TARGET_TYPES =
+      ImmutableList.of("NUMERIC", "BIGNUMERIC", "STRING");
   private static final Field FIELD_SCHEMA1 =
       Field.newBuilder("StringField", LegacySQLTypeName.STRING)
           .setMode(Field.Mode.NULLABLE)
@@ -56,6 +58,7 @@ public class ExternalTableDefinitionTest {
           .build();
   private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION =
       ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
+          .setDecimalTargetTypes(DECIMAL_TARGET_TYPES)
           .setCompression(COMPRESSION)
           .setConnectionId(CONNECTION_ID)
           .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
@@ -111,6 +114,7 @@ public class ExternalTableDefinitionTest {
     assertEquals(MAX_BAD_RECORDS, EXTERNAL_TABLE_DEFINITION.getMaxBadRecords());
     assertEquals(TABLE_SCHEMA, EXTERNAL_TABLE_DEFINITION.getSchema());
     assertEquals(SOURCE_URIS, EXTERNAL_TABLE_DEFINITION.getSourceUris());
+    assertEquals(DECIMAL_TARGET_TYPES, EXTERNAL_TABLE_DEFINITION.getDecimalTargetTypes());
     assertEquals(AUTODETECT, EXTERNAL_TABLE_DEFINITION.getAutodetect());
     assertEquals(HIVE_PARTITIONING_OPTIONS, EXTERNAL_TABLE_DEFINITION.getHivePartitioningOptions());
     assertNotEquals(EXTERNAL_TABLE_DEFINITION, TableDefinition.Type.EXTERNAL);
@@ -130,6 +134,7 @@ public class ExternalTableDefinitionTest {
   private void compareExternalTableDefinition(
       ExternalTableDefinition expected, ExternalTableDefinition value) {
     assertEquals(expected, value);
+    assertEquals(expected.getDecimalTargetTypes(), value.getDecimalTargetTypes());
     assertEquals(expected.getCompression(), value.getCompression());
     assertEquals(expected.getConnectionId(), value.getConnectionId());
     assertEquals(expected.getFormatOptions(), value.getFormatOptions());

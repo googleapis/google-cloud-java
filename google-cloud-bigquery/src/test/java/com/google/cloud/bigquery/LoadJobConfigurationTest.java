@@ -50,6 +50,8 @@ public class LoadJobConfigurationTest {
           .setDescription("FieldDescription")
           .build();
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
+  private static final List<String> DECIMAL_TARGET_TYPES =
+      ImmutableList.of("NUMERIC", "BIGNUMERIC", "STRING");
   private static final List<SchemaUpdateOption> SCHEMA_UPDATE_OPTIONS =
       ImmutableList.of(SchemaUpdateOption.ALLOW_FIELD_ADDITION);
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA);
@@ -76,6 +78,7 @@ public class LoadJobConfigurationTest {
           .build();
   private static final LoadJobConfiguration LOAD_CONFIGURATION_CSV =
       LoadJobConfiguration.newBuilder(TABLE_ID, SOURCE_URIS)
+          .setDecimalTargetTypes(DECIMAL_TARGET_TYPES)
           .setCreateDisposition(CREATE_DISPOSITION)
           .setWriteDisposition(WRITE_DISPOSITION)
           .setFormatOptions(CSV_OPTIONS)
@@ -228,6 +231,7 @@ public class LoadJobConfigurationTest {
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
     assertEquals(expected.getDestinationTable(), value.getDestinationTable());
+    assertEquals(expected.getDecimalTargetTypes(), value.getDecimalTargetTypes());
     assertEquals(expected.getCreateDisposition(), value.getCreateDisposition());
     assertEquals(expected.getWriteDisposition(), value.getWriteDisposition());
     assertEquals(expected.getCsvOptions(), value.getCsvOptions());

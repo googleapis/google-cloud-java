@@ -93,6 +93,17 @@ public abstract class ExternalTableDefinition extends TableDefinition {
       return setFormatOptionsInner(formatOptions);
     }
 
+    /**
+     * Defines the list of possible SQL data types to which the source decimal values are converted.
+     * This list and the precision and the scale parameters of the decimal field determine the
+     * target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in
+     * the specified list and if it supports the precision and the scale. STRING supports all
+     * precision and scale values.
+     *
+     * @param decimalTargetTypes decimalTargetType or {@code null} for none
+     */
+    public abstract Builder setDecimalTargetTypes(List<String> decimalTargetTypes);
+
     abstract Builder setFormatOptionsInner(FormatOptions formatOptions);
 
     /**
@@ -229,6 +240,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
   @Nullable
   abstract FormatOptions getFormatOptionsInner();
 
+  @Nullable
+  public abstract ImmutableList<String> getDecimalTargetTypes();
+
   /**
    * [Experimental] Returns whether automatic detection of schema and format options should be
    * performed.
@@ -282,6 +296,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     }
     if (getSourceUris() != null) {
       externalConfigurationPb.setSourceUris(getSourceUris());
+    }
+    if (getDecimalTargetTypes() != null) {
+      externalConfigurationPb.setDecimalTargetTypes(getDecimalTargetTypes());
     }
     if (getFormatOptions() != null && FormatOptions.CSV.equals(getFormatOptions().getType())) {
       externalConfigurationPb.setCsvOptions(((CsvOptions) getFormatOptions()).toPb());
@@ -430,6 +447,10 @@ public abstract class ExternalTableDefinition extends TableDefinition {
       if (externalDataConfiguration.getSourceUris() != null) {
         builder.setSourceUris(ImmutableList.copyOf(externalDataConfiguration.getSourceUris()));
       }
+      if (externalDataConfiguration.getDecimalTargetTypes() != null) {
+        builder.setDecimalTargetTypes(
+            ImmutableList.copyOf(externalDataConfiguration.getDecimalTargetTypes()));
+      }
       if (externalDataConfiguration.getSourceFormat() != null) {
         builder.setFormatOptions(FormatOptions.of(externalDataConfiguration.getSourceFormat()));
       }
@@ -468,6 +489,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     Builder builder = newBuilder();
     if (externalDataConfiguration.getSourceUris() != null) {
       builder.setSourceUris(externalDataConfiguration.getSourceUris());
+    }
+    if (externalDataConfiguration.getDecimalTargetTypes() != null) {
+      builder.setDecimalTargetTypes(externalDataConfiguration.getDecimalTargetTypes());
     }
     if (externalDataConfiguration.getSchema() != null) {
       builder.setSchema(Schema.fromPb(externalDataConfiguration.getSchema()));
