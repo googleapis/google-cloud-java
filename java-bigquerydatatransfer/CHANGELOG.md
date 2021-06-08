@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.3.4](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.3.3...v1.3.4) (2021-06-08)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.132.0 ([#874](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/874)) ([31d8fc7](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/31d8fc74cc317602579bf7889205db257d0ec120))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.132.1 ([#879](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/879)) ([ee0a884](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/ee0a8842a0e432cd686329428cb8c631c6b864bb))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.113.1 ([#881](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/881)) ([6949e7d](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/6949e7d8d4b81d7e9bb8aadec33d38d37b648c7d))
+
 ### [1.3.3](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.3.2...v1.3.3) (2021-06-04)
 
 
