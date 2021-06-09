@@ -74,12 +74,15 @@ public final class ConnectionProto {
           + "rent=projects/*/endpoints/*}/connections"
           + "\332A\006parent\032P\312A\034apigeeconnect.googleapis.c"
           + "om\322A.https://www.googleapis.com/auth/clo"
-          + "ud-platformB\325\001\n!com.google.cloud.apigeec"
+          + "ud-platformB\270\002\n!com.google.cloud.apigeec"
           + "onnect.v1B\017ConnectionProtoP\001ZJgoogle.gol"
           + "ang.org/genproto/googleapis/cloud/apigee"
-          + "connect/v1;apigeeconnect\352AP\n%apigeeconne"
-          + "ct.googleapis.com/Endpoint\022\'projects/{pr"
-          + "oject}/endpoints/{endpoint}b\006proto3"
+          + "connect/v1;apigeeconnect\252\002\035Google.Cloud."
+          + "ApigeeConnect.V1\312\002\035Google\\Cloud\\ApigeeCo"
+          + "nnect\\V1\352\002 Google::Cloud::ApigeeConnect:"
+          + ":V1\352AP\n%apigeeconnect.googleapis.com/End"
+          + "point\022\'projects/{project}/endpoints/{end"
+          + "point}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
