@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-life-sciences</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
+  <version>0.1.0</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Life Sciences</name>
   <url>https://github.com/googleapis/java-life-sciences</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-life-sciences-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
+    <version>0.1.0</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-life-sciences</site.installationModule>
