@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.95.2](https://www.github.com/googleapis/java-core/compare/v1.95.1...v1.95.2) (2021-06-09)
+
+
+### Dependencies
+
+* update dependency com.google.api:gax-bom to v1.65.1 ([#471](https://www.github.com/googleapis/java-core/issues/471)) ([3814364](https://www.github.com/googleapis/java-core/commit/381436415073b728b4deb3f82fd129c887205c19))
+
 ### [1.95.1](https://www.github.com/googleapis/java-core/compare/v1.95.0...v1.95.1) (2021-06-09)
 
 
