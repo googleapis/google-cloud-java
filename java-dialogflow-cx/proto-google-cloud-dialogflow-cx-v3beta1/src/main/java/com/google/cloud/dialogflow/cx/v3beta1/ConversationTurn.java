@@ -235,6 +235,19 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * @return The isWebhookEnabled.
      */
     boolean getIsWebhookEnabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether sentiment analysis is enabled.
+     * </pre>
+     *
+     * <code>bool enable_sentiment_analysis = 7;</code>
+     *
+     * @return The enableSentimentAnalysis.
+     */
+    boolean getEnableSentimentAnalysis();
   }
   /**
    *
@@ -321,6 +334,11 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
                   input_ = subBuilder.buildPartial();
                 }
 
+                break;
+              }
+            case 56:
+              {
+                enableSentimentAnalysis_ = input.readBool();
                 break;
               }
             default:
@@ -479,6 +497,24 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       return isWebhookEnabled_;
     }
 
+    public static final int ENABLE_SENTIMENT_ANALYSIS_FIELD_NUMBER = 7;
+    private boolean enableSentimentAnalysis_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether sentiment analysis is enabled.
+     * </pre>
+     *
+     * <code>bool enable_sentiment_analysis = 7;</code>
+     *
+     * @return The enableSentimentAnalysis.
+     */
+    @java.lang.Override
+    public boolean getEnableSentimentAnalysis() {
+      return enableSentimentAnalysis_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -502,6 +538,9 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       if (input_ != null) {
         output.writeMessage(5, getInput());
       }
+      if (enableSentimentAnalysis_ != false) {
+        output.writeBool(7, enableSentimentAnalysis_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -520,6 +559,9 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       }
       if (input_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getInput());
+      }
+      if (enableSentimentAnalysis_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, enableSentimentAnalysis_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -546,6 +588,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         if (!getInjectedParameters().equals(other.getInjectedParameters())) return false;
       }
       if (getIsWebhookEnabled() != other.getIsWebhookEnabled()) return false;
+      if (getEnableSentimentAnalysis() != other.getEnableSentimentAnalysis()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -567,6 +610,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       }
       hash = (37 * hash) + IS_WEBHOOK_ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsWebhookEnabled());
+      hash = (37 * hash) + ENABLE_SENTIMENT_ANALYSIS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableSentimentAnalysis());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -731,6 +776,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         isWebhookEnabled_ = false;
 
+        enableSentimentAnalysis_ = false;
+
         return this;
       }
 
@@ -771,6 +818,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           result.injectedParameters_ = injectedParametersBuilder_.build();
         }
         result.isWebhookEnabled_ = isWebhookEnabled_;
+        result.enableSentimentAnalysis_ = enableSentimentAnalysis_;
         onBuilt();
         return result;
       }
@@ -834,6 +882,9 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         if (other.getIsWebhookEnabled() != false) {
           setIsWebhookEnabled(other.getIsWebhookEnabled());
+        }
+        if (other.getEnableSentimentAnalysis() != false) {
+          setEnableSentimentAnalysis(other.getEnableSentimentAnalysis());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1309,6 +1360,58 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public Builder clearIsWebhookEnabled() {
 
         isWebhookEnabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableSentimentAnalysis_;
+      /**
+       *
+       *
+       * <pre>
+       * Whether sentiment analysis is enabled.
+       * </pre>
+       *
+       * <code>bool enable_sentiment_analysis = 7;</code>
+       *
+       * @return The enableSentimentAnalysis.
+       */
+      @java.lang.Override
+      public boolean getEnableSentimentAnalysis() {
+        return enableSentimentAnalysis_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether sentiment analysis is enabled.
+       * </pre>
+       *
+       * <code>bool enable_sentiment_analysis = 7;</code>
+       *
+       * @param value The enableSentimentAnalysis to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableSentimentAnalysis(boolean value) {
+
+        enableSentimentAnalysis_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether sentiment analysis is enabled.
+       * </pre>
+       *
+       * <code>bool enable_sentiment_analysis = 7;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableSentimentAnalysis() {
+
+        enableSentimentAnalysis_ = false;
         onChanged();
         return this;
       }
