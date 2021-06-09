@@ -1,5 +1,51 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-aiplatform/compare/v0.4.1...v1.0.0) (2021-06-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove display_name from FeatureStore
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#362](https://www.github.com/googleapis/java-aiplatform/issues/362)) ([778f54a](https://www.github.com/googleapis/java-aiplatform/commit/778f54afcf852da2cdb371fc1b2303ce54589e02))
+* add aiplatform API Vizier service ([fee522f](https://www.github.com/googleapis/java-aiplatform/commit/fee522f6184de7ae89c1cc471142fbab44116aff))
+* add featurestore, index, metadata, monitoring, pipeline, and tensorboard services to aiplatform v1beta1 ([#341](https://www.github.com/googleapis/java-aiplatform/issues/341)) ([ca54151](https://www.github.com/googleapis/java-aiplatform/commit/ca541512ffd89f43d236eab8a657f7b8f4bade3d))
+* add invalid_row_count to ImportFeatureValuesResponse and ImportFeatureValuesOperationMetadata ([d73ec5a](https://www.github.com/googleapis/java-aiplatform/commit/d73ec5afeb71ce752dbec975ac7562b92ef2ceef))
+* adds enhanced protos for time series forecasting ([#356](https://www.github.com/googleapis/java-aiplatform/issues/356)) ([d73ec5a](https://www.github.com/googleapis/java-aiplatform/commit/d73ec5afeb71ce752dbec975ac7562b92ef2ceef))
+* promote to 1.0.0 ([#402](https://www.github.com/googleapis/java-aiplatform/issues/402)) ([b22d40b](https://www.github.com/googleapis/java-aiplatform/commit/b22d40ba091698eb14ed9f421a8749ba62a1c6fd))
+* remove unsupported accelerator types ([fee522f](https://www.github.com/googleapis/java-aiplatform/commit/fee522f6184de7ae89c1cc471142fbab44116aff))
+* removes unneeded protos and files from v1beta1 ([#198](https://www.github.com/googleapis/java-aiplatform/issues/198)) ([5c0de9f](https://www.github.com/googleapis/java-aiplatform/commit/5c0de9f6ac27685170644f467610dc89d2f0e34b))
+
+
+### Bug Fixes
+
+* configuring timeouts for aiplatform v1 methods ([fee522f](https://www.github.com/googleapis/java-aiplatform/commit/fee522f6184de7ae89c1cc471142fbab44116aff))
+* release scripts from issuing overlapping phases ([#245](https://www.github.com/googleapis/java-aiplatform/issues/245)) ([43ec06b](https://www.github.com/googleapis/java-aiplatform/commit/43ec06bd4809bc97dda6f5a913452381389541d1))
+* remove display_name from FeatureStore ([d73ec5a](https://www.github.com/googleapis/java-aiplatform/commit/d73ec5afeb71ce752dbec975ac7562b92ef2ceef))
+
+
+### Documentation
+
+* changes product name to 'Vertex AI' ([#367](https://www.github.com/googleapis/java-aiplatform/issues/367)) ([0141e15](https://www.github.com/googleapis/java-aiplatform/commit/0141e15e6cdd0428d65ebd99842ee66fd917d627))
+* changes product name to 'Vertex AI' ([#397](https://www.github.com/googleapis/java-aiplatform/issues/397)) ([348a87f](https://www.github.com/googleapis/java-aiplatform/commit/348a87fb714f7be84befe57d461857b0409a804f))
+* correct link to fieldmask ([0141e15](https://www.github.com/googleapis/java-aiplatform/commit/0141e15e6cdd0428d65ebd99842ee66fd917d627))
+* removes tinyurl links ([348a87f](https://www.github.com/googleapis/java-aiplatform/commit/348a87fb714f7be84befe57d461857b0409a804f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#253](https://www.github.com/googleapis/java-aiplatform/issues/253)) ([f8e020f](https://www.github.com/googleapis/java-aiplatform/commit/f8e020f7750511bfc3358dd44d465c03d9becf62))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#329](https://www.github.com/googleapis/java-aiplatform/issues/329)) ([591c274](https://www.github.com/googleapis/java-aiplatform/commit/591c274ff3ffca5e0d964148eaeebaca5551ecaa))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#346](https://www.github.com/googleapis/java-aiplatform/issues/346)) ([d2aec6c](https://www.github.com/googleapis/java-aiplatform/commit/d2aec6c92e56362a5bfb2601dc1558bc081f3dae))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#361](https://www.github.com/googleapis/java-aiplatform/issues/361)) ([e1506a8](https://www.github.com/googleapis/java-aiplatform/commit/e1506a804d82f1289c60a9d5056f20df1cd6c11f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#398](https://www.github.com/googleapis/java-aiplatform/issues/398)) ([dafca5d](https://www.github.com/googleapis/java-aiplatform/commit/dafca5d9fc1c0d77fc0c3f26c08c6827e53492a3))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.16 ([#334](https://www.github.com/googleapis/java-aiplatform/issues/334)) ([5659ceb](https://www.github.com/googleapis/java-aiplatform/commit/5659cebd87fd1ccd730a817049c05865b8ce240c))
+* update dependency com.google.cloud:google-cloud-storage to v1.114.0 ([#349](https://www.github.com/googleapis/java-aiplatform/issues/349)) ([596eb79](https://www.github.com/googleapis/java-aiplatform/commit/596eb795a30cfe319daed0dde7492ea55b1737a2))
+* update dependency com.google.cloud:google-cloud-storage to v1.115.0 ([#396](https://www.github.com/googleapis/java-aiplatform/issues/396)) ([8e2f7cc](https://www.github.com/googleapis/java-aiplatform/commit/8e2f7cc9b83fbd2f3cc326f1370b27d30cde636a))
+* update dependency com.google.code.gson:gson to v2.8.7 ([#382](https://www.github.com/googleapis/java-aiplatform/issues/382)) ([90bfc56](https://www.github.com/googleapis/java-aiplatform/commit/90bfc56459cf1da02b9c6efde01791742b5e5161))
+
 ### [0.4.1](https://www.github.com/googleapis/java-aiplatform/compare/v0.4.0...v0.4.1) (2021-04-15)
 
 
