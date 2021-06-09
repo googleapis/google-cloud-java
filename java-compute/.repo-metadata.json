@@ -11,5 +11,6 @@
   "repo_short": "java-compute",
   "distribution_name": "com.google.cloud:google-cloud-compute",
   "api_id": "compute.googleapis.com",
-  "requires_billing": true
+  "requires_billing": true,
+  "library_type": "GAPIC_AUTO"
 }
