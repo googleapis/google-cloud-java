@@ -56,8 +56,8 @@ import org.junit.Test;
 public class ContactCenterInsightsClientTest {
   private static MockContactCenterInsights mockContactCenterInsights;
   private static MockServiceHelper mockServiceHelper;
-  private ContactCenterInsightsClient client;
   private LocalChannelProvider channelProvider;
+  private ContactCenterInsightsClient client;
 
   @BeforeClass
   public static void startStaticServer() {
