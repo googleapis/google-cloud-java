@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.1](https://www.github.com/googleapis/java-binary-authorization/compare/v0.1.0...v0.1.1) (2021-06-09)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#16](https://www.github.com/googleapis/java-binary-authorization/issues/16)) ([5221465](https://www.github.com/googleapis/java-binary-authorization/commit/522146545b9f56a65a87a282f7bb057c626a6b47))
+
 ## 0.1.0 (2021-06-03)
 
 
