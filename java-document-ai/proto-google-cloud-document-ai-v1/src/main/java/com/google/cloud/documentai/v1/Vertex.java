@@ -137,7 +137,7 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Y coordinate.
+   * Y coordinate (starts from the top of the image).
    * </pre>
    *
    * <code>int32 y = 2;</code>
@@ -535,7 +535,7 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      * </pre>
      *
      * <code>int32 y = 2;</code>
@@ -550,7 +550,7 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      * </pre>
      *
      * <code>int32 y = 2;</code>
@@ -568,7 +568,7 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      * </pre>
      *
      * <code>int32 y = 2;</code>

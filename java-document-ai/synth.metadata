@@ -4,39 +4,39 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-document-ai.git",
-        "sha": "dd8a78652d562c51b6a3b4f5e015f7c8622d6380"
+        "sha": "aad8db8c46e83ec2b488734432d1465711ac0429"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "204809ddb580527550e61a7ca524e837b5a8409d",
-        "internalRef": "377114643"
+        "sha": "3e0f7ebfbbd2344412e7622fab4bc0c9004c5932",
+        "internalRef": "377562108"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "204809ddb580527550e61a7ca524e837b5a8409d",
-        "internalRef": "377114643"
+        "sha": "3e0f7ebfbbd2344412e7622fab4bc0c9004c5932",
+        "internalRef": "377562108"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "204809ddb580527550e61a7ca524e837b5a8409d",
-        "internalRef": "377114643"
+        "sha": "3e0f7ebfbbd2344412e7622fab4bc0c9004c5932",
+        "internalRef": "377562108"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "204809ddb580527550e61a7ca524e837b5a8409d",
-        "internalRef": "377114643"
+        "sha": "3e0f7ebfbbd2344412e7622fab4bc0c9004c5932",
+        "internalRef": "377562108"
       }
     },
     {
@@ -234,6 +234,7 @@
     "proto-google-cloud-document-ai-v1/src/main/java/com/google/cloud/documentai/v1/HumanReviewStatusOrBuilder.java",
     "proto-google-cloud-document-ai-v1/src/main/java/com/google/cloud/documentai/v1/NormalizedVertex.java",
     "proto-google-cloud-document-ai-v1/src/main/java/com/google/cloud/documentai/v1/NormalizedVertexOrBuilder.java",
+    "proto-google-cloud-document-ai-v1/src/main/java/com/google/cloud/documentai/v1/OperationMetadataProto.java",
     "proto-google-cloud-document-ai-v1/src/main/java/com/google/cloud/documentai/v1/ProcessRequest.java",
     "proto-google-cloud-document-ai-v1/src/main/java/com/google/cloud/documentai/v1/ProcessRequestOrBuilder.java",
     "proto-google-cloud-document-ai-v1/src/main/java/com/google/cloud/documentai/v1/ProcessResponse.java",
@@ -253,6 +254,7 @@
     "proto-google-cloud-document-ai-v1/src/main/proto/google/cloud/documentai/v1/document_io.proto",
     "proto-google-cloud-document-ai-v1/src/main/proto/google/cloud/documentai/v1/document_processor_service.proto",
     "proto-google-cloud-document-ai-v1/src/main/proto/google/cloud/documentai/v1/geometry.proto",
+    "proto-google-cloud-document-ai-v1/src/main/proto/google/cloud/documentai/v1/operation_metadata.proto",
     "proto-google-cloud-document-ai-v1beta1/src/main/java/com/google/cloud/documentai/v1beta1/BatchProcessDocumentsRequest.java",
     "proto-google-cloud-document-ai-v1beta1/src/main/java/com/google/cloud/documentai/v1beta1/BatchProcessDocumentsRequestOrBuilder.java",
     "proto-google-cloud-document-ai-v1beta1/src/main/java/com/google/cloud/documentai/v1beta1/BatchProcessDocumentsResponse.java",
