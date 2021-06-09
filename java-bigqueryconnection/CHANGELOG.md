@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.3](https://www.github.com/googleapis/java-bigqueryconnection/compare/v1.1.2...v1.1.3) (2021-06-09)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java-util to v3.17.3 ([#436](https://www.github.com/googleapis/java-bigqueryconnection/issues/436)) ([5058054](https://www.github.com/googleapis/java-bigqueryconnection/commit/5058054efe44026ae5519aaf8877a088b8860236))
+
 ### [1.1.2](https://www.github.com/googleapis/java-bigqueryconnection/compare/v1.1.1...v1.1.2) (2021-06-04)
 
 
