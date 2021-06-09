@@ -150,8 +150,8 @@ public interface ModelOrBuilder
    * Immutable. Points to a YAML file stored on Google Cloud Storage describing additional
    * information about the Model, that is specific to it. Unset if the Model
    * does not have any additional information.
-   * The schema is defined as an OpenAPI 3.0.2
-   * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+   * The schema is defined as an OpenAPI 3.0.2 [Schema
+   * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * AutoML Models always have this field populated by Vertex AI, if no
    * additional metadata is needed, this field is set to an empty string.
    * Note: The URI given on output will be immutable and probably different,
@@ -171,8 +171,8 @@ public interface ModelOrBuilder
    * Immutable. Points to a YAML file stored on Google Cloud Storage describing additional
    * information about the Model, that is specific to it. Unset if the Model
    * does not have any additional information.
-   * The schema is defined as an OpenAPI 3.0.2
-   * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+   * The schema is defined as an OpenAPI 3.0.2 [Schema
+   * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * AutoML Models always have this field populated by Vertex AI, if no
    * additional metadata is needed, this field is set to an empty string.
    * Note: The URI given on output will be immutable and probably different,

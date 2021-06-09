@@ -150,7 +150,7 @@ public interface HyperparameterTuningJobOrBuilder
    * <pre>
    * The number of failed Trials that need to be seen before failing
    * the HyperparameterTuningJob.
-   * If set to 0, AI Platform decides how many Trials must fail
+   * If set to 0, Vertex AI decides how many Trials must fail
    * before the whole job fails.
    * </pre>
    *

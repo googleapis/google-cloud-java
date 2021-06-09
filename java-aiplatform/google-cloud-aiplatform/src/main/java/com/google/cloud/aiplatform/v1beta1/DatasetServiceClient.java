@@ -398,8 +398,7 @@ public class DatasetServiceClient implements BackgroundResource {
    *
    * @param dataset Required. The Dataset which replaces the resource on the server.
    * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
-   *     definition, see [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
-   *     Updatable fields:
+   *     definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask]. Updatable fields:
    *     <p>&#42; `display_name` &#42; `description` &#42; `labels`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

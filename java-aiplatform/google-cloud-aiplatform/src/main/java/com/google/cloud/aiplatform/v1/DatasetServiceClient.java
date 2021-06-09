@@ -397,8 +397,7 @@ public class DatasetServiceClient implements BackgroundResource {
    *
    * @param dataset Required. The Dataset which replaces the resource on the server.
    * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
-   *     definition, see [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
-   *     Updatable fields:
+   *     definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask]. Updatable fields:
    *     <p>&#42; `display_name` &#42; `description` &#42; `labels`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1141,7 +1140,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the AnnotationSpec resource. Format:
-   *     <p>`projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotationSpec getAnnotationSpec(AnnotationSpecName name) {
@@ -1168,7 +1167,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the AnnotationSpec resource. Format:
-   *     <p>`projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotationSpec getAnnotationSpec(String name) {
@@ -1244,7 +1243,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the DataItem to list Annotations from. Format:
-   *     <p>`projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAnnotationsPagedResponse listAnnotations(DataItemName parent) {
@@ -1272,7 +1271,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the DataItem to list Annotations from. Format:
-   *     <p>`projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAnnotationsPagedResponse listAnnotations(String parent) {

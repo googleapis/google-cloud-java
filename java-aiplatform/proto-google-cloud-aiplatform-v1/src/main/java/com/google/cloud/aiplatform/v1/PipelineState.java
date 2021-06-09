@@ -42,7 +42,7 @@ public enum PipelineState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The pipeline has been just created or resumed and processing has not yet
+   * The pipeline has been created or resumed, and processing has not yet
    * begun.
    * </pre>
    *
@@ -93,7 +93,7 @@ public enum PipelineState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The pipeline is being cancelled. From this state the pipeline may only go
+   * The pipeline is being cancelled. From this state, the pipeline may only go
    * to either PIPELINE_STATE_SUCCEEDED, PIPELINE_STATE_FAILED or
    * PIPELINE_STATE_CANCELLED.
    * </pre>
@@ -138,7 +138,7 @@ public enum PipelineState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The pipeline has been just created or resumed and processing has not yet
+   * The pipeline has been created or resumed, and processing has not yet
    * begun.
    * </pre>
    *
@@ -189,7 +189,7 @@ public enum PipelineState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The pipeline is being cancelled. From this state the pipeline may only go
+   * The pipeline is being cancelled. From this state, the pipeline may only go
    * to either PIPELINE_STATE_SUCCEEDED, PIPELINE_STATE_FAILED or
    * PIPELINE_STATE_CANCELLED.
    * </pre>

@@ -27,7 +27,7 @@ public interface MigrateResourceRequestOrBuilder
    *
    *
    * <pre>
-   * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+   * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface MigrateResourceRequestOrBuilder
    *
    *
    * <pre>
-   * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+   * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
    * </pre>
    *
    * <code>
@@ -56,7 +56,7 @@ public interface MigrateResourceRequestOrBuilder
    *
    *
    * <pre>
-   * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+   * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
    * </pre>
    *
    * <code>
@@ -70,7 +70,7 @@ public interface MigrateResourceRequestOrBuilder
    *
    *
    * <pre>
-   * Config for migrating Model in automl.googleapis.com to AI Platform's
+   * Config for migrating Model in automl.googleapis.com to Vertex AI's
    * Model.
    * </pre>
    *
@@ -85,7 +85,7 @@ public interface MigrateResourceRequestOrBuilder
    *
    *
    * <pre>
-   * Config for migrating Model in automl.googleapis.com to AI Platform's
+   * Config for migrating Model in automl.googleapis.com to Vertex AI's
    * Model.
    * </pre>
    *
@@ -101,7 +101,7 @@ public interface MigrateResourceRequestOrBuilder
    *
    *
    * <pre>
-   * Config for migrating Model in automl.googleapis.com to AI Platform's
+   * Config for migrating Model in automl.googleapis.com to Vertex AI's
    * Model.
    * </pre>
    *
@@ -116,7 +116,7 @@ public interface MigrateResourceRequestOrBuilder
    *
    *
    * <pre>
-   * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+   * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
    * Dataset.
    * </pre>
    *
@@ -131,7 +131,7 @@ public interface MigrateResourceRequestOrBuilder
    *
    *
    * <pre>
-   * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+   * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
    * Dataset.
    * </pre>
    *
@@ -147,7 +147,7 @@ public interface MigrateResourceRequestOrBuilder
    *
    *
    * <pre>
-   * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+   * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
    * Dataset.
    * </pre>
    *
@@ -163,7 +163,7 @@ public interface MigrateResourceRequestOrBuilder
    *
    * <pre>
    * Config for migrating Dataset in datalabeling.googleapis.com to
-   * AI Platform's Dataset.
+   * Vertex AI's Dataset.
    * </pre>
    *
    * <code>
@@ -178,7 +178,7 @@ public interface MigrateResourceRequestOrBuilder
    *
    * <pre>
    * Config for migrating Dataset in datalabeling.googleapis.com to
-   * AI Platform's Dataset.
+   * Vertex AI's Dataset.
    * </pre>
    *
    * <code>
@@ -194,7 +194,7 @@ public interface MigrateResourceRequestOrBuilder
    *
    * <pre>
    * Config for migrating Dataset in datalabeling.googleapis.com to
-   * AI Platform's Dataset.
+   * Vertex AI's Dataset.
    * </pre>
    *
    * <code>

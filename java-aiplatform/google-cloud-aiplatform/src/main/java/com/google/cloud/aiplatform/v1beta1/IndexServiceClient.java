@@ -542,7 +542,7 @@ public class IndexServiceClient implements BackgroundResource {
    *
    * @param index Required. The Index which updates the resource on the server.
    * @param updateMask The update mask applies to the resource. For the `FieldMask` definition, see
-   *     [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+   *     [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Index, UpdateIndexOperationMetadata> updateIndexAsync(

@@ -194,9 +194,7 @@ public final class UpdateIndexEndpointRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The update mask applies to the resource.
-   * See
-   * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+   * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -212,9 +210,7 @@ public final class UpdateIndexEndpointRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The update mask applies to the resource.
-   * See
-   * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+   * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -230,9 +226,7 @@ public final class UpdateIndexEndpointRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The update mask applies to the resource.
-   * See
-   * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+   * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -819,9 +813,7 @@ public final class UpdateIndexEndpointRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The update mask applies to the resource.
-     * See
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -836,9 +828,7 @@ public final class UpdateIndexEndpointRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The update mask applies to the resource.
-     * See
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -859,9 +849,7 @@ public final class UpdateIndexEndpointRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The update mask applies to the resource.
-     * See
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -884,9 +872,7 @@ public final class UpdateIndexEndpointRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The update mask applies to the resource.
-     * See
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -906,9 +892,7 @@ public final class UpdateIndexEndpointRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The update mask applies to the resource.
-     * See
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -933,9 +917,7 @@ public final class UpdateIndexEndpointRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The update mask applies to the resource.
-     * See
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -956,9 +938,7 @@ public final class UpdateIndexEndpointRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The update mask applies to the resource.
-     * See
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -973,9 +953,7 @@ public final class UpdateIndexEndpointRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The update mask applies to the resource.
-     * See
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -994,9 +972,7 @@ public final class UpdateIndexEndpointRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The update mask applies to the resource.
-     * See
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

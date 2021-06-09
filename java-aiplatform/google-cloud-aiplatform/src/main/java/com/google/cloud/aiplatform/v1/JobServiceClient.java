@@ -41,7 +41,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: A service for creating and managing AI Platform's jobs.
+ * Service Description: A service for creating and managing Vertex AI's jobs.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -854,7 +854,7 @@ public class JobServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the DataLabelingJob. Format:
-   *     <p>`projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
+   *     `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataLabelingJob getDataLabelingJob(DataLabelingJobName name) {
@@ -880,7 +880,7 @@ public class JobServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the DataLabelingJob. Format:
-   *     <p>`projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
+   *     `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataLabelingJob getDataLabelingJob(String name) {
@@ -1107,7 +1107,7 @@ public class JobServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the DataLabelingJob to be deleted. Format:
-   *     <p>`projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
+   *     `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteDataLabelingJobAsync(
@@ -1134,7 +1134,7 @@ public class JobServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the DataLabelingJob to be deleted. Format:
-   *     <p>`projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
+   *     `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteDataLabelingJobAsync(
@@ -1237,7 +1237,7 @@ public class JobServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the DataLabelingJob. Format:
-   *     <p>`projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
+   *     `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void cancelDataLabelingJob(DataLabelingJobName name) {
@@ -1263,7 +1263,7 @@ public class JobServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the DataLabelingJob. Format:
-   *     <p>`projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
+   *     `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void cancelDataLabelingJob(String name) {
@@ -1449,7 +1449,7 @@ public class JobServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the HyperparameterTuningJob resource. Format:
-   *     <p>`projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
+   *     `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HyperparameterTuningJob getHyperparameterTuningJob(
@@ -1477,7 +1477,7 @@ public class JobServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the HyperparameterTuningJob resource. Format:
-   *     <p>`projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
+   *     `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HyperparameterTuningJob getHyperparameterTuningJob(String name) {
@@ -1711,7 +1711,7 @@ public class JobServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the HyperparameterTuningJob resource to be deleted. Format:
-   *     <p>`projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
+   *     `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteHyperparameterTuningJobAsync(
@@ -1739,7 +1739,7 @@ public class JobServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the HyperparameterTuningJob resource to be deleted. Format:
-   *     <p>`projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
+   *     `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteHyperparameterTuningJobAsync(
@@ -1857,7 +1857,7 @@ public class JobServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the HyperparameterTuningJob to cancel. Format:
-   *     <p>`projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
+   *     `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void cancelHyperparameterTuningJob(HyperparameterTuningJobName name) {
@@ -1895,7 +1895,7 @@ public class JobServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the HyperparameterTuningJob to cancel. Format:
-   *     <p>`projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
+   *     `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void cancelHyperparameterTuningJob(String name) {
@@ -2108,7 +2108,7 @@ public class JobServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the BatchPredictionJob resource. Format:
-   *     <p>`projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
+   *     `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchPredictionJob getBatchPredictionJob(BatchPredictionJobName name) {
@@ -2134,7 +2134,7 @@ public class JobServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the BatchPredictionJob resource. Format:
-   *     <p>`projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
+   *     `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchPredictionJob getBatchPredictionJob(String name) {
@@ -2361,7 +2361,7 @@ public class JobServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the BatchPredictionJob resource to be deleted. Format:
-   *     <p>`projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
+   *     `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteBatchPredictionJobAsync(
@@ -2388,7 +2388,7 @@ public class JobServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the BatchPredictionJob resource to be deleted. Format:
-   *     <p>`projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
+   *     `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteBatchPredictionJobAsync(
@@ -2500,7 +2500,7 @@ public class JobServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the BatchPredictionJob to cancel. Format:
-   *     <p>`projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
+   *     `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void cancelBatchPredictionJob(BatchPredictionJobName name) {
@@ -2535,7 +2535,7 @@ public class JobServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the BatchPredictionJob to cancel. Format:
-   *     <p>`projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
+   *     `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void cancelBatchPredictionJob(String name) {

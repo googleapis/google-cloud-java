@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-aiplatform.git",
-        "sha": "d27e6bf744470176c6c086c1b6b0fa5999c3b9f3"
+        "sha": "0141e15e6cdd0428d65ebd99842ee66fd917d627"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "77da865645466fe96d9e48829f5aca16c3d45112",
-        "internalRef": "374890837"
+        "sha": "f465a6dfa999f996d2c13d109dfc55cba86f790e",
+        "internalRef": "375484379"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "77da865645466fe96d9e48829f5aca16c3d45112",
-        "internalRef": "374890837"
+        "sha": "f465a6dfa999f996d2c13d109dfc55cba86f790e",
+        "internalRef": "375484379"
       }
     },
     {

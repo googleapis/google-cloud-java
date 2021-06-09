@@ -51,7 +51,7 @@ public interface AutomaticResourcesOrBuilder
    * outages). If traffic against the DeployedModel increases beyond what its
    * replicas at maximum may handle, a portion of the traffic will be dropped.
    * If this value is not provided, a no upper bound for scaling under heavy
-   * traffic will be assume, though AI Platform may be unable to scale beyond
+   * traffic will be assume, though Vertex AI may be unable to scale beyond
    * certain replica number.
    * </pre>
    *

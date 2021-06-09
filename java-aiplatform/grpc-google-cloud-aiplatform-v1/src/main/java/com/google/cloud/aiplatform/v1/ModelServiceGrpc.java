@@ -21,7 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * A service for managing AI Platform's machine learning Models.
+ * A service for managing Vertex AI's machine learning Models.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -530,7 +530,7 @@ public final class ModelServiceGrpc {
    *
    *
    * <pre>
-   * A service for managing AI Platform's machine learning Models.
+   * A service for managing Vertex AI's machine learning Models.
    * </pre>
    */
   public abstract static class ModelServiceImplBase implements io.grpc.BindableService {
@@ -539,7 +539,7 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
-     * Uploads a Model artifact into AI Platform.
+     * Uploads a Model artifact into Vertex AI.
      * </pre>
      */
     public void uploadModel(
@@ -759,7 +759,7 @@ public final class ModelServiceGrpc {
    *
    *
    * <pre>
-   * A service for managing AI Platform's machine learning Models.
+   * A service for managing Vertex AI's machine learning Models.
    * </pre>
    */
   public static final class ModelServiceStub
@@ -777,7 +777,7 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
-     * Uploads a Model artifact into AI Platform.
+     * Uploads a Model artifact into Vertex AI.
      * </pre>
      */
     public void uploadModel(
@@ -944,7 +944,7 @@ public final class ModelServiceGrpc {
    *
    *
    * <pre>
-   * A service for managing AI Platform's machine learning Models.
+   * A service for managing Vertex AI's machine learning Models.
    * </pre>
    */
   public static final class ModelServiceBlockingStub
@@ -963,7 +963,7 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
-     * Uploads a Model artifact into AI Platform.
+     * Uploads a Model artifact into Vertex AI.
      * </pre>
      */
     public com.google.longrunning.Operation uploadModel(
@@ -1099,7 +1099,7 @@ public final class ModelServiceGrpc {
    *
    *
    * <pre>
-   * A service for managing AI Platform's machine learning Models.
+   * A service for managing Vertex AI's machine learning Models.
    * </pre>
    */
   public static final class ModelServiceFutureStub
@@ -1118,7 +1118,7 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
-     * Uploads a Model artifact into AI Platform.
+     * Uploads a Model artifact into Vertex AI.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

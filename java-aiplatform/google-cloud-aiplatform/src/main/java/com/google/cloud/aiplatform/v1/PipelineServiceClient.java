@@ -41,7 +41,9 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: A service for creating and managing AI Platform's pipelines.
+ * Service Description: A service for creating and managing Vertex AI's pipelines. This includes
+ * both `TrainingPipeline` resources (used for AutoML and custom training) and `PipelineJob`
+ * resources (used for Vertex Pipelines).
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -292,7 +294,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the TrainingPipeline resource. Format:
-   *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+   *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TrainingPipeline getTrainingPipeline(TrainingPipelineName name) {
@@ -318,7 +320,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the TrainingPipeline resource. Format:
-   *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+   *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TrainingPipeline getTrainingPipeline(String name) {
@@ -545,7 +547,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the TrainingPipeline resource to be deleted. Format:
-   *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+   *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteTrainingPipelineAsync(
@@ -572,7 +574,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the TrainingPipeline resource to be deleted. Format:
-   *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+   *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteTrainingPipelineAsync(
@@ -685,7 +687,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the TrainingPipeline to cancel. Format:
-   *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+   *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void cancelTrainingPipeline(TrainingPipelineName name) {
@@ -721,7 +723,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the TrainingPipeline to cancel. Format:
-   *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+   *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void cancelTrainingPipeline(String name) {

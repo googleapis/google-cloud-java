@@ -41,7 +41,7 @@
  *
  * <p>======================= JobServiceClient =======================
  *
- * <p>Service Description: A service for creating and managing AI Platform's jobs.
+ * <p>Service Description: A service for creating and managing Vertex AI's jobs.
  *
  * <p>Sample for JobServiceClient:
  *
@@ -56,7 +56,7 @@
  * <p>======================= MigrationServiceClient =======================
  *
  * <p>Service Description: A service that migrates resources from automl.googleapis.com,
- * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+ * datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
  *
  * <p>Sample for MigrationServiceClient:
  *
@@ -72,7 +72,7 @@
  *
  * <p>======================= ModelServiceClient =======================
  *
- * <p>Service Description: A service for managing AI Platform's machine learning Models.
+ * <p>Service Description: A service for managing Vertex AI's machine learning Models.
  *
  * <p>Sample for ModelServiceClient:
  *
@@ -85,7 +85,9 @@
  *
  * <p>======================= PipelineServiceClient =======================
  *
- * <p>Service Description: A service for creating and managing AI Platform's pipelines.
+ * <p>Service Description: A service for creating and managing Vertex AI's pipelines. This includes
+ * both `TrainingPipeline` resources (used for AutoML and custom training) and `PipelineJob`
+ * resources (used for Vertex Pipelines).
  *
  * <p>Sample for PipelineServiceClient:
  *

@@ -540,7 +540,7 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * @param model Required. The Model which replaces the resource on the server.
    * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
-   *     definition, see [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+   *     definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Model updateModel(Model model, FieldMask updateMask) {

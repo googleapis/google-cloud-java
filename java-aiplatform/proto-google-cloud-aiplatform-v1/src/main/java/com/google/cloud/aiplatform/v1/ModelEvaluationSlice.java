@@ -1170,8 +1170,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
    * <pre>
    * Output only. Points to a YAML file stored on Google Cloud Storage describing the
    * [metrics][google.cloud.aiplatform.v1.ModelEvaluationSlice.metrics] of this ModelEvaluationSlice. The
-   * schema is defined as an OpenAPI 3.0.2
-   * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+   * schema is defined as an OpenAPI 3.0.2 [Schema
+   * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * </pre>
    *
    * <code>string metrics_schema_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1196,8 +1196,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
    * <pre>
    * Output only. Points to a YAML file stored on Google Cloud Storage describing the
    * [metrics][google.cloud.aiplatform.v1.ModelEvaluationSlice.metrics] of this ModelEvaluationSlice. The
-   * schema is defined as an OpenAPI 3.0.2
-   * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+   * schema is defined as an OpenAPI 3.0.2 [Schema
+   * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * </pre>
    *
    * <code>string metrics_schema_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2051,8 +2051,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      * <pre>
      * Output only. Points to a YAML file stored on Google Cloud Storage describing the
      * [metrics][google.cloud.aiplatform.v1.ModelEvaluationSlice.metrics] of this ModelEvaluationSlice. The
-     * schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
      * <code>string metrics_schema_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2076,8 +2076,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      * <pre>
      * Output only. Points to a YAML file stored on Google Cloud Storage describing the
      * [metrics][google.cloud.aiplatform.v1.ModelEvaluationSlice.metrics] of this ModelEvaluationSlice. The
-     * schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
      * <code>string metrics_schema_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2101,8 +2101,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      * <pre>
      * Output only. Points to a YAML file stored on Google Cloud Storage describing the
      * [metrics][google.cloud.aiplatform.v1.ModelEvaluationSlice.metrics] of this ModelEvaluationSlice. The
-     * schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
      * <code>string metrics_schema_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2125,8 +2125,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      * <pre>
      * Output only. Points to a YAML file stored on Google Cloud Storage describing the
      * [metrics][google.cloud.aiplatform.v1.ModelEvaluationSlice.metrics] of this ModelEvaluationSlice. The
-     * schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
      * <code>string metrics_schema_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2145,8 +2145,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
      * <pre>
      * Output only. Points to a YAML file stored on Google Cloud Storage describing the
      * [metrics][google.cloud.aiplatform.v1.ModelEvaluationSlice.metrics] of this ModelEvaluationSlice. The
-     * schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
      * <code>string metrics_schema_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

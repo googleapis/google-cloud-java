@@ -69,8 +69,7 @@ public interface UpdateModelRequestOrBuilder
    *
    * <pre>
    * Required. The update mask applies to the resource.
-   * For the `FieldMask` definition, see
-   * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+   * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -84,8 +83,7 @@ public interface UpdateModelRequestOrBuilder
    *
    * <pre>
    * Required. The update mask applies to the resource.
-   * For the `FieldMask` definition, see
-   * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+   * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -99,8 +97,7 @@ public interface UpdateModelRequestOrBuilder
    *
    * <pre>
    * Required. The update mask applies to the resource.
-   * For the `FieldMask` definition, see
-   * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+   * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

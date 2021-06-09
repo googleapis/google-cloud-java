@@ -177,7 +177,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The default algorithm used by AI Platform Optimization service.
+     * The default algorithm used by Vertex AI for [hyperparameter
+     * tuning](https://cloud.google.com/vertex-ai/docs/training/hyperparameter-tuning-overview)
+     * and [Vertex Vizier](https://cloud.google.com/vertex-ai/docs/vizier).
      * </pre>
      *
      * <code>ALGORITHM_UNSPECIFIED = 0;</code>
@@ -211,7 +213,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The default algorithm used by AI Platform Optimization service.
+     * The default algorithm used by Vertex AI for [hyperparameter
+     * tuning](https://cloud.google.com/vertex-ai/docs/training/hyperparameter-tuning-overview)
+     * and [Vertex Vizier](https://cloud.google.com/vertex-ai/docs/vizier).
      * </pre>
      *
      * <code>ALGORITHM_UNSPECIFIED = 0;</code>
@@ -338,7 +342,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The default noise level chosen by the AI Platform service.
+     * The default noise level chosen by Vertex AI.
      * </pre>
      *
      * <code>OBSERVATION_NOISE_UNSPECIFIED = 0;</code>
@@ -348,7 +352,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * AI Platform Vizier assumes that the objective function is (nearly)
+     * Vertex AI assumes that the objective function is (nearly)
      * perfectly reproducible, and will never repeat the same Trial
      * parameters.
      * </pre>
@@ -360,7 +364,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * AI Platform Vizier will estimate the amount of noise in metric
+     * Vertex AI will estimate the amount of noise in metric
      * evaluations, it may repeat the same Trial parameters more than once.
      * </pre>
      *
@@ -374,7 +378,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The default noise level chosen by the AI Platform service.
+     * The default noise level chosen by Vertex AI.
      * </pre>
      *
      * <code>OBSERVATION_NOISE_UNSPECIFIED = 0;</code>
@@ -384,7 +388,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * AI Platform Vizier assumes that the objective function is (nearly)
+     * Vertex AI assumes that the objective function is (nearly)
      * perfectly reproducible, and will never repeat the same Trial
      * parameters.
      * </pre>
@@ -396,7 +400,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * AI Platform Vizier will estimate the amount of noise in metric
+     * Vertex AI will estimate the amount of noise in metric
      * evaluations, it may repeat the same Trial parameters more than once.
      * </pre>
      *

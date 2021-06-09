@@ -24,8 +24,8 @@ package com.google.cloud.aiplatform.v1;
  * <pre>
  * The TrainingPipeline orchestrates tasks associated with training a Model. It
  * always executes the training task, and optionally may also
- * export data from AI Platform's Dataset which becomes the training input,
- * [upload][google.cloud.aiplatform.v1.ModelService.UploadModel] the Model to AI Platform, and evaluate the
+ * export data from Vertex AI's Dataset which becomes the training input,
+ * [upload][google.cloud.aiplatform.v1.ModelService.UploadModel] the Model to Vertex AI, and evaluate the
  * Model.
  * </pre>
  *
@@ -420,7 +420,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Specifies AI Platform owned input data that may be used for training the
+   * Specifies Vertex AI owned input data that may be used for training the
    * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1.TrainingPipeline.training_task_definition] should make
    * clear whether this config is used and if there are any special requirements
    * on how it should be filled. If nothing about this config is mentioned in
@@ -440,7 +440,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Specifies AI Platform owned input data that may be used for training the
+   * Specifies Vertex AI owned input data that may be used for training the
    * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1.TrainingPipeline.training_task_definition] should make
    * clear whether this config is used and if there are any special requirements
    * on how it should be filled. If nothing about this config is mentioned in
@@ -462,7 +462,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Specifies AI Platform owned input data that may be used for training the
+   * Specifies Vertex AI owned input data that may be used for training the
    * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1.TrainingPipeline.training_task_definition] should make
    * clear whether this config is used and if there are any special requirements
    * on how it should be filled. If nothing about this config is mentioned in
@@ -679,7 +679,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    * a need of this information, or that training task does not support
    * uploading a Model as part of the pipeline.
    * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
-   * the trained Model had been uploaded into AI Platform, then the
+   * the trained Model had been uploaded into Vertex AI, then the
    * model_to_upload's resource [name][google.cloud.aiplatform.v1.Model.name] is populated. The Model
    * is always uploaded into the Project and Location in which this pipeline
    * is.
@@ -707,7 +707,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    * a need of this information, or that training task does not support
    * uploading a Model as part of the pipeline.
    * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
-   * the trained Model had been uploaded into AI Platform, then the
+   * the trained Model had been uploaded into Vertex AI, then the
    * model_to_upload's resource [name][google.cloud.aiplatform.v1.Model.name] is populated. The Model
    * is always uploaded into the Project and Location in which this pipeline
    * is.
@@ -737,7 +737,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    * a need of this information, or that training task does not support
    * uploading a Model as part of the pipeline.
    * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
-   * the trained Model had been uploaded into AI Platform, then the
+   * the trained Model had been uploaded into Vertex AI, then the
    * model_to_upload's resource [name][google.cloud.aiplatform.v1.Model.name] is populated. The Model
    * is always uploaded into the Project and Location in which this pipeline
    * is.
@@ -1567,8 +1567,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The TrainingPipeline orchestrates tasks associated with training a Model. It
    * always executes the training task, and optionally may also
-   * export data from AI Platform's Dataset which becomes the training input,
-   * [upload][google.cloud.aiplatform.v1.ModelService.UploadModel] the Model to AI Platform, and evaluate the
+   * export data from Vertex AI's Dataset which becomes the training input,
+   * [upload][google.cloud.aiplatform.v1.ModelService.UploadModel] the Model to Vertex AI, and evaluate the
    * Model.
    * </pre>
    *
@@ -2132,7 +2132,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies AI Platform owned input data that may be used for training the
+     * Specifies Vertex AI owned input data that may be used for training the
      * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1.TrainingPipeline.training_task_definition] should make
      * clear whether this config is used and if there are any special requirements
      * on how it should be filled. If nothing about this config is mentioned in
@@ -2151,7 +2151,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies AI Platform owned input data that may be used for training the
+     * Specifies Vertex AI owned input data that may be used for training the
      * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1.TrainingPipeline.training_task_definition] should make
      * clear whether this config is used and if there are any special requirements
      * on how it should be filled. If nothing about this config is mentioned in
@@ -2176,7 +2176,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies AI Platform owned input data that may be used for training the
+     * Specifies Vertex AI owned input data that may be used for training the
      * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1.TrainingPipeline.training_task_definition] should make
      * clear whether this config is used and if there are any special requirements
      * on how it should be filled. If nothing about this config is mentioned in
@@ -2203,7 +2203,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies AI Platform owned input data that may be used for training the
+     * Specifies Vertex AI owned input data that may be used for training the
      * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1.TrainingPipeline.training_task_definition] should make
      * clear whether this config is used and if there are any special requirements
      * on how it should be filled. If nothing about this config is mentioned in
@@ -2228,7 +2228,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies AI Platform owned input data that may be used for training the
+     * Specifies Vertex AI owned input data that may be used for training the
      * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1.TrainingPipeline.training_task_definition] should make
      * clear whether this config is used and if there are any special requirements
      * on how it should be filled. If nothing about this config is mentioned in
@@ -2259,7 +2259,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies AI Platform owned input data that may be used for training the
+     * Specifies Vertex AI owned input data that may be used for training the
      * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1.TrainingPipeline.training_task_definition] should make
      * clear whether this config is used and if there are any special requirements
      * on how it should be filled. If nothing about this config is mentioned in
@@ -2284,7 +2284,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies AI Platform owned input data that may be used for training the
+     * Specifies Vertex AI owned input data that may be used for training the
      * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1.TrainingPipeline.training_task_definition] should make
      * clear whether this config is used and if there are any special requirements
      * on how it should be filled. If nothing about this config is mentioned in
@@ -2303,7 +2303,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies AI Platform owned input data that may be used for training the
+     * Specifies Vertex AI owned input data that may be used for training the
      * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1.TrainingPipeline.training_task_definition] should make
      * clear whether this config is used and if there are any special requirements
      * on how it should be filled. If nothing about this config is mentioned in
@@ -2326,7 +2326,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies AI Platform owned input data that may be used for training the
+     * Specifies Vertex AI owned input data that may be used for training the
      * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1.TrainingPipeline.training_task_definition] should make
      * clear whether this config is used and if there are any special requirements
      * on how it should be filled. If nothing about this config is mentioned in
@@ -2965,7 +2965,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * a need of this information, or that training task does not support
      * uploading a Model as part of the pipeline.
      * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
-     * the trained Model had been uploaded into AI Platform, then the
+     * the trained Model had been uploaded into Vertex AI, then the
      * model_to_upload's resource [name][google.cloud.aiplatform.v1.Model.name] is populated. The Model
      * is always uploaded into the Project and Location in which this pipeline
      * is.
@@ -2992,7 +2992,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * a need of this information, or that training task does not support
      * uploading a Model as part of the pipeline.
      * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
-     * the trained Model had been uploaded into AI Platform, then the
+     * the trained Model had been uploaded into Vertex AI, then the
      * model_to_upload's resource [name][google.cloud.aiplatform.v1.Model.name] is populated. The Model
      * is always uploaded into the Project and Location in which this pipeline
      * is.
@@ -3025,7 +3025,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * a need of this information, or that training task does not support
      * uploading a Model as part of the pipeline.
      * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
-     * the trained Model had been uploaded into AI Platform, then the
+     * the trained Model had been uploaded into Vertex AI, then the
      * model_to_upload's resource [name][google.cloud.aiplatform.v1.Model.name] is populated. The Model
      * is always uploaded into the Project and Location in which this pipeline
      * is.
@@ -3060,7 +3060,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * a need of this information, or that training task does not support
      * uploading a Model as part of the pipeline.
      * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
-     * the trained Model had been uploaded into AI Platform, then the
+     * the trained Model had been uploaded into Vertex AI, then the
      * model_to_upload's resource [name][google.cloud.aiplatform.v1.Model.name] is populated. The Model
      * is always uploaded into the Project and Location in which this pipeline
      * is.
@@ -3092,7 +3092,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * a need of this information, or that training task does not support
      * uploading a Model as part of the pipeline.
      * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
-     * the trained Model had been uploaded into AI Platform, then the
+     * the trained Model had been uploaded into Vertex AI, then the
      * model_to_upload's resource [name][google.cloud.aiplatform.v1.Model.name] is populated. The Model
      * is always uploaded into the Project and Location in which this pipeline
      * is.
@@ -3131,7 +3131,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * a need of this information, or that training task does not support
      * uploading a Model as part of the pipeline.
      * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
-     * the trained Model had been uploaded into AI Platform, then the
+     * the trained Model had been uploaded into Vertex AI, then the
      * model_to_upload's resource [name][google.cloud.aiplatform.v1.Model.name] is populated. The Model
      * is always uploaded into the Project and Location in which this pipeline
      * is.
@@ -3164,7 +3164,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * a need of this information, or that training task does not support
      * uploading a Model as part of the pipeline.
      * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
-     * the trained Model had been uploaded into AI Platform, then the
+     * the trained Model had been uploaded into Vertex AI, then the
      * model_to_upload's resource [name][google.cloud.aiplatform.v1.Model.name] is populated. The Model
      * is always uploaded into the Project and Location in which this pipeline
      * is.
@@ -3191,7 +3191,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * a need of this information, or that training task does not support
      * uploading a Model as part of the pipeline.
      * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
-     * the trained Model had been uploaded into AI Platform, then the
+     * the trained Model had been uploaded into Vertex AI, then the
      * model_to_upload's resource [name][google.cloud.aiplatform.v1.Model.name] is populated. The Model
      * is always uploaded into the Project and Location in which this pipeline
      * is.
@@ -3222,7 +3222,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * a need of this information, or that training task does not support
      * uploading a Model as part of the pipeline.
      * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
-     * the trained Model had been uploaded into AI Platform, then the
+     * the trained Model had been uploaded into Vertex AI, then the
      * model_to_upload's resource [name][google.cloud.aiplatform.v1.Model.name] is populated. The Model
      * is always uploaded into the Project and Location in which this pipeline
      * is.
