@@ -28,4 +28,6 @@ for version in versions:
       bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
   )
 
-java.common_templates()
+java.common_templates(excludes=[
+    ".github/blunderbuss.yml",
+])
