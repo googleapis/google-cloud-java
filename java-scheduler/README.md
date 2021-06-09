@@ -38,7 +38,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-scheduler</artifactId>
-  <version>1.24.1</version>
+  <version>1.24.2</version>
 </dependency>
 
 ```
@@ -51,12 +51,12 @@ compile 'com.google.cloud:google-cloud-scheduler'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-scheduler:1.24.2'
+compile 'com.google.cloud:google-cloud-scheduler:1.24.3'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-scheduler" % "1.24.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-scheduler" % "1.24.3"
 ```
 
 ## Authentication
