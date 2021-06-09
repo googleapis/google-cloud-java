@@ -35,7 +35,7 @@
     <dependency>
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java-util</artifactId>
-      <version>3.17.2</version>
+      <version>3.17.3</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
