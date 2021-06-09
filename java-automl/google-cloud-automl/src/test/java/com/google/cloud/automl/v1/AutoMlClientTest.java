@@ -54,8 +54,8 @@ import org.junit.Test;
 public class AutoMlClientTest {
   private static MockAutoMl mockAutoMl;
   private static MockServiceHelper mockServiceHelper;
-  private AutoMlClient client;
   private LocalChannelProvider channelProvider;
+  private AutoMlClient client;
 
   @BeforeClass
   public static void startStaticServer() {
