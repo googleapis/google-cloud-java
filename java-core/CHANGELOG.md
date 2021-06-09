@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.95.1](https://www.github.com/googleapis/java-core/compare/v1.95.0...v1.95.1) (2021-06-09)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-bom to v3.17.3 ([#468](https://www.github.com/googleapis/java-core/issues/468)) ([d456df2](https://www.github.com/googleapis/java-core/commit/d456df20269cfb531adf7bcc7694d0ffff7b1962))
+
 ## [1.95.0](https://www.github.com/googleapis/java-core/compare/v1.94.8...v1.95.0) (2021-06-03)
 
 
