@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/vertex-ai/docs",
   "api_description": "is an integrated suite of machine learning tools and services for building and using ML models with AutoML or custom code. It offers both novices and experts the best workbench for the entire machine learning development lifecycle.",
   "client_documentation": "https://googleapis.dev/java/google-cloud-aiplatform/latest/index.html",
-  "release_level": "beta",
+  "release_level": "ga",
   "transport": "grpc",
   "language": "java",
   "repo": "googleapis/java-aiplatform",
