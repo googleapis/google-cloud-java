@@ -98,8 +98,8 @@ import org.junit.Test;
 public class BaseBigtableTableAdminClientTest {
   private static MockBigtableTableAdmin mockBigtableTableAdmin;
   private static MockServiceHelper mockServiceHelper;
-  private BaseBigtableTableAdminClient client;
   private LocalChannelProvider channelProvider;
+  private BaseBigtableTableAdminClient client;
 
   @BeforeClass
   public static void startStaticServer() {
