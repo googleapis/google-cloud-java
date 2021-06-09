@@ -38,7 +38,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-language</artifactId>
-  <version>1.103.0</version>
+  <version>1.103.1</version>
 </dependency>
 
 ```
