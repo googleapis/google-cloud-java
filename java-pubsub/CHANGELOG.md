@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.113.3](https://www.github.com/googleapis/java-pubsub/compare/v1.113.2...v1.113.3) (2021-06-09)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.95.2 ([#707](https://www.github.com/googleapis/java-pubsub/issues/707)) ([60c7a68](https://www.github.com/googleapis/java-pubsub/commit/60c7a68fefd54525958c3b195142d8613405f5d2))
+
 ### [1.113.2](https://www.github.com/googleapis/java-pubsub/compare/v1.113.1...v1.113.2) (2021-06-09)
 
 
