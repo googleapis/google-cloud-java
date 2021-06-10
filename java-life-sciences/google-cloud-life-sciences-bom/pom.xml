@@ -8,7 +8,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-shared-config</artifactId>
-    <version>0.11.0</version>
+    <version>0.12.0</version>
   </parent>
 
   <name>Google Cloud Life Sciences BOM</name>
