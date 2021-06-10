@@ -52,8 +52,8 @@ import org.junit.Test;
 public class ReservationServiceClientTest {
   private static MockReservationService mockReservationService;
   private static MockServiceHelper mockServiceHelper;
-  private ReservationServiceClient client;
   private LocalChannelProvider channelProvider;
+  private ReservationServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
