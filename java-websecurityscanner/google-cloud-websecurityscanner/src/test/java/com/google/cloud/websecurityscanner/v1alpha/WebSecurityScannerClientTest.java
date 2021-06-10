@@ -49,10 +49,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class WebSecurityScannerClientTest {
-  private static MockWebSecurityScanner mockWebSecurityScanner;
   private static MockServiceHelper mockServiceHelper;
-  private WebSecurityScannerClient client;
+  private static MockWebSecurityScanner mockWebSecurityScanner;
   private LocalChannelProvider channelProvider;
+  private WebSecurityScannerClient client;
 
   @BeforeClass
   public static void startStaticServer() {
