@@ -45,8 +45,8 @@ import org.junit.Test;
 public class IAMCredentialsClientTest {
   private static MockIAMCredentials mockIAMCredentials;
   private static MockServiceHelper mockServiceHelper;
-  private IamCredentialsClient client;
   private LocalChannelProvider channelProvider;
+  private IamCredentialsClient client;
 
   @BeforeClass
   public static void startStaticServer() {
