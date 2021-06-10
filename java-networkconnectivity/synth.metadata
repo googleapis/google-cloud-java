@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-networkconnectivity.git",
-        "sha": "2719d6c7023d231d66344c5289fd1028509a8dac"
+        "sha": "23c12cd0d1dad9296ff9064aabc9a62e09911dc3"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "a5f96d06ef57e325761bad010f460d0c5dbeccda",
-        "internalRef": "377081269"
+        "sha": "9e3105549a35520f215359065c11e8dce15e18af",
+        "internalRef": "378266372"
       }
     },
     {
