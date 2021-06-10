@@ -45,8 +45,8 @@ import org.junit.Test;
 public class PredictionApiKeyRegistryClientTest {
   private static MockPredictionApiKeyRegistry mockPredictionApiKeyRegistry;
   private static MockServiceHelper mockServiceHelper;
-  private PredictionApiKeyRegistryClient client;
   private LocalChannelProvider channelProvider;
+  private PredictionApiKeyRegistryClient client;
 
   @BeforeClass
   public static void startStaticServer() {
