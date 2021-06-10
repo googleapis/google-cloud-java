@@ -48,8 +48,8 @@ import org.junit.Test;
 public class AdaptationClientTest {
   private static MockAdaptation mockAdaptation;
   private static MockServiceHelper mockServiceHelper;
-  private AdaptationClient client;
   private LocalChannelProvider channelProvider;
+  private AdaptationClient client;
 
   @BeforeClass
   public static void startStaticServer() {
