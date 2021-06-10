@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-billing.git",
-        "sha": "0b665a3305f0df063c54e1ae26546530879c5c97"
+        "sha": "d2e73c280868add94a5c55e2d9ac6747c98980f3"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1305ca41d554eb0725237561e34129373bb8cbc1",
-        "internalRef": "362856902"
+        "sha": "9e3105549a35520f215359065c11e8dce15e18af",
+        "internalRef": "378266372"
       }
     },
     {

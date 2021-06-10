@@ -54,8 +54,8 @@ import org.junit.Test;
 public class CloudBillingClientTest {
   private static MockCloudBilling mockCloudBilling;
   private static MockServiceHelper mockServiceHelper;
-  private CloudBillingClient client;
   private LocalChannelProvider channelProvider;
+  private CloudBillingClient client;
 
   @BeforeClass
   public static void startStaticServer() {
