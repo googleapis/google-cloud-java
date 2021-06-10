@@ -42,8 +42,8 @@ import org.junit.Test;
 public class ImageAnnotatorClientTest {
   private static MockImageAnnotator mockImageAnnotator;
   private static MockServiceHelper mockServiceHelper;
-  private ImageAnnotatorClient client;
   private LocalChannelProvider channelProvider;
+  private ImageAnnotatorClient client;
 
   @BeforeClass
   public static void startStaticServer() {

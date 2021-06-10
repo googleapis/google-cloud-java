@@ -22,6 +22,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.vision.v1.AsyncBatchAnnotateFilesRequest;
 import com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse;
@@ -32,11 +33,13 @@ import com.google.cloud.vision.v1.BatchAnnotateFilesResponse;
 import com.google.cloud.vision.v1.BatchAnnotateImagesRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
 import com.google.cloud.vision.v1.OperationMetadata;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -153,21 +156,57 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
         batchAnnotateImagesTransportSettings =
             GrpcCallSettings.<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>newBuilder()
                 .setMethodDescriptor(batchAnnotateImagesMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<BatchAnnotateImagesRequest>() {
+                      @Override
+                      public Map<String, String> extract(BatchAnnotateImagesRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>
         batchAnnotateFilesTransportSettings =
             GrpcCallSettings.<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>newBuilder()
                 .setMethodDescriptor(batchAnnotateFilesMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<BatchAnnotateFilesRequest>() {
+                      @Override
+                      public Map<String, String> extract(BatchAnnotateFilesRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<AsyncBatchAnnotateImagesRequest, Operation>
         asyncBatchAnnotateImagesTransportSettings =
             GrpcCallSettings.<AsyncBatchAnnotateImagesRequest, Operation>newBuilder()
                 .setMethodDescriptor(asyncBatchAnnotateImagesMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<AsyncBatchAnnotateImagesRequest>() {
+                      @Override
+                      public Map<String, String> extract(AsyncBatchAnnotateImagesRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<AsyncBatchAnnotateFilesRequest, Operation>
         asyncBatchAnnotateFilesTransportSettings =
             GrpcCallSettings.<AsyncBatchAnnotateFilesRequest, Operation>newBuilder()
                 .setMethodDescriptor(asyncBatchAnnotateFilesMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<AsyncBatchAnnotateFilesRequest>() {
+                      @Override
+                      public Map<String, String> extract(AsyncBatchAnnotateFilesRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
                 .build();
 
     this.batchAnnotateImagesCallable =

@@ -56,8 +56,8 @@ import org.junit.Test;
 public class ProductSearchClientTest {
   private static MockProductSearch mockProductSearch;
   private static MockServiceHelper mockServiceHelper;
-  private ProductSearchClient client;
   private LocalChannelProvider channelProvider;
+  private ProductSearchClient client;
 
   @BeforeClass
   public static void startStaticServer() {
