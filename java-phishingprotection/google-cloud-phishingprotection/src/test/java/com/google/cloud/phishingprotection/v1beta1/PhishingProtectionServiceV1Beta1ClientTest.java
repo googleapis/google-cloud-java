@@ -44,8 +44,8 @@ import org.junit.Test;
 public class PhishingProtectionServiceV1Beta1ClientTest {
   private static MockPhishingProtectionServiceV1Beta1 mockPhishingProtectionServiceV1Beta1;
   private static MockServiceHelper mockServiceHelper;
-  private PhishingProtectionServiceV1Beta1Client client;
   private LocalChannelProvider channelProvider;
+  private PhishingProtectionServiceV1Beta1Client client;
 
   @BeforeClass
   public static void startStaticServer() {
