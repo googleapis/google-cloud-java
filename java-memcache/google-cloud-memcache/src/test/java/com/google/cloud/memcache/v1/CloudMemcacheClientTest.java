@@ -53,8 +53,8 @@ import org.junit.Test;
 public class CloudMemcacheClientTest {
   private static MockCloudMemcache mockCloudMemcache;
   private static MockServiceHelper mockServiceHelper;
-  private CloudMemcacheClient client;
   private LocalChannelProvider channelProvider;
+  private CloudMemcacheClient client;
 
   @BeforeClass
   public static void startStaticServer() {
