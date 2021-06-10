@@ -309,6 +309,13 @@ public final class GcpManagedChannelTest {
     final GcpManagedChannel pool =
         (GcpManagedChannel)
             GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                .withApiConfig(
+                    ApiConfig.newBuilder()
+                        .setChannelPool(
+                            ChannelPoolConfig.newBuilder()
+                                .setMaxConcurrentStreamsLowWatermark(1)
+                                .build())
+                        .build())
                 .withOptions(
                     GcpManagedChannelOptions.newBuilder()
                         .withMetricsOptions(
@@ -329,19 +336,20 @@ public final class GcpManagedChannelTest {
     expectedLabelValues.add(LabelValue.create("pool-0"));
 
     try {
-      // When we created the pool it creates the first channel automatically. Now let's add another
-      // four.
-      int[] streams = new int[] {0, 5, 7, 1};
-      for (int i = 0; i < 4; i++) {
-        ManagedChannel channel = builder.build();
-        pool.channelRefs.add(gcpChannel.new ChannelRef(channel, i, i, streams[i]));
+      // Let's fill five channels with some fake streams.
+      int[] streams = new int[] {3, 2, 5, 7, 1};
+      for (int count : streams) {
+        ChannelRef ref = pool.getChannelRef(null);
+        for (int j = 0; j < count; j++) {
+          ref.activeStreamsCountIncr();
+        }
       }
 
       MetricsRecord record = fakeRegistry.pollRecord();
-      assertThat(record.getMetrics().size()).isEqualTo(5);
+      assertThat(record.getMetrics().size()).isEqualTo(19);
 
       List<PointWithFunction> numChannels =
-          record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_NUM_CHANNELS);
+          record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MAX_CHANNELS);
       assertThat(numChannels.size()).isEqualTo(1);
       assertThat(numChannels.get(0).value()).isEqualTo(5L);
       assertThat(numChannels.get(0).keys()).isEqualTo(expectedLabelKeys);
@@ -369,7 +377,7 @@ public final class GcpManagedChannelTest {
       assertThat(maxActiveStreams.get(0).values()).isEqualTo(expectedLabelValues);
 
       List<PointWithFunction> totalActiveStreams =
-          record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_NUM_TOTAL_ACTIVE_STREAMS);
+          record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MAX_TOTAL_ACTIVE_STREAMS);
       assertThat(totalActiveStreams.size()).isEqualTo(1);
       assertThat(totalActiveStreams.get(0).value())
           .isEqualTo(Arrays.stream(streams).asLongStream().sum());

@@ -16,13 +16,33 @@
 
 package com.google.grpc.gcp;
 
+import static com.google.grpc.gcp.GcpMetricsConstants.COUNT;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_AVG_CHANNEL_READINESS_TIME;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_ACTIVE_STREAMS;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_AFFINITY;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_ALLOWED_CHANNELS;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_CALLS;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_CHANNELS;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_CHANNEL_READINESS_TIME;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_READY_CHANNELS;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_TOTAL_ACTIVE_STREAMS;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_ACTIVE_STREAMS;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_CHANNELS;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_TOTAL_ACTIVE_STREAMS;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_AFFINITY;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_CALLS;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_CHANNEL_READINESS_TIME;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_READY_CHANNELS;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_TOTAL_ACTIVE_STREAMS;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_AFFINITY;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_CALLS_COMPLETED;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_CHANNEL_CONNECT;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_CHANNEL_DISCONNECT;
+import static com.google.grpc.gcp.GcpMetricsConstants.MICROSECOND;
 import static com.google.grpc.gcp.GcpMetricsConstants.POOL_INDEX_DESC;
 import static com.google.grpc.gcp.GcpMetricsConstants.POOL_INDEX_LABEL;
+import static com.google.grpc.gcp.GcpMetricsConstants.RESULT_DESC;
+import static com.google.grpc.gcp.GcpMetricsConstants.RESULT_ERROR;
+import static com.google.grpc.gcp.GcpMetricsConstants.RESULT_LABEL;
+import static com.google.grpc.gcp.GcpMetricsConstants.RESULT_SUCCESS;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.grpc.gcp.GcpManagedChannelOptions.GcpMetricsOptions;
@@ -41,23 +61,28 @@ import io.grpc.MethodDescriptor;
 import io.grpc.Status;
 import io.grpc.Status.Code;
 import io.opencensus.common.ToLongFunction;
+import io.opencensus.metrics.DerivedLongCumulative;
 import io.opencensus.metrics.DerivedLongGauge;
 import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import io.opencensus.metrics.MetricOptions;
 import io.opencensus.metrics.MetricRegistry;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.LongSummaryStatistics;
 import java.util.Map;
 import java.util.OptionalInt;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 
@@ -95,10 +120,46 @@ public class GcpManagedChannel extends ManagedChannel {
 
   private final Object bindLock = new Object();
 
+  // Metrics configuration.
   private MetricRegistry metricRegistry;
-  private List<LabelKey> labelKeys = new ArrayList<>();
-  private List<LabelValue> labelValues = new ArrayList<>();
+  private final List<LabelKey> labelKeys = new ArrayList<>();
+  private final List<LabelKey> labelKeysWithResult =
+      new ArrayList<>(Collections.singletonList(LabelKey.create(RESULT_LABEL, RESULT_DESC)));
+  private final List<LabelValue> labelValues = new ArrayList<>();
+  private final List<LabelValue> labelValuesSuccess =
+      new ArrayList<>(Collections.singletonList(LabelValue.create(RESULT_SUCCESS)));
+  private final List<LabelValue> labelValuesError =
+      new ArrayList<>(Collections.singletonList(LabelValue.create(RESULT_ERROR)));
   private String metricPrefix;
+
+  // Metrics counters.
+  private final AtomicInteger readyChannels = new AtomicInteger();
+  private int minReadyChannels = 0;
+  private int maxReadyChannels = 0;
+  private final AtomicLong numChannelConnect = new AtomicLong();
+  private final AtomicLong numChannelDisconnect = new AtomicLong();
+  private long minReadinessTime = 0;
+  private long maxReadinessTime = 0;
+  private final AtomicLong totalReadinessTime = new AtomicLong();
+  private final AtomicLong readinessTimeOccurrences = new AtomicLong();
+  private final AtomicInteger totalActiveStreams = new AtomicInteger();
+  private int minActiveStreams = 0;
+  private int maxActiveStreams = 0;
+  private int minTotalActiveStreams = 0;
+  private int maxTotalActiveStreams = 0;
+  private long minOkCalls = 0;
+  private long maxOkCalls = 0;
+  private final AtomicLong totalOkCalls = new AtomicLong();
+  private boolean minOkReported = false;
+  private boolean maxOkReported = false;
+  private long minErrCalls = 0;
+  private long maxErrCalls = 0;
+  private final AtomicLong totalErrCalls = new AtomicLong();
+  private boolean minErrReported = false;
+  private boolean maxErrReported = false;
+  private int minAffinity = 0;
+  private int maxAffinity = 0;
+  private final AtomicInteger totalAffinityCount = new AtomicInteger();
 
   /**
    * Constructor for GcpManagedChannel.
@@ -152,62 +213,397 @@ public class GcpManagedChannel extends ManagedChannel {
     logger.info("Metrics enabled.");
 
     metricRegistry = metricsOptions.getMetricRegistry();
-    labelKeys = new ArrayList<>(metricsOptions.getLabelKeys());
-    labelValues = new ArrayList<>(metricsOptions.getLabelValues());
-    labelKeys.add(LabelKey.create(POOL_INDEX_LABEL, POOL_INDEX_DESC));
-    labelValues.add(
-        LabelValue.create(String.format("pool-%d", channelPoolIndex.getAndIncrement())));
+    labelKeys.addAll(metricsOptions.getLabelKeys());
+    labelKeysWithResult.addAll(metricsOptions.getLabelKeys());
+    labelValues.addAll(metricsOptions.getLabelValues());
+    labelValuesSuccess.addAll(metricsOptions.getLabelValues());
+    labelValuesError.addAll(metricsOptions.getLabelValues());
+
+    final LabelKey poolKey = LabelKey.create(POOL_INDEX_LABEL, POOL_INDEX_DESC);
+    labelKeys.add(poolKey);
+    labelKeysWithResult.add(poolKey);
+    final LabelValue poolIndex =
+        LabelValue.create(String.format("pool-%d", channelPoolIndex.getAndIncrement()));
+    labelValues.add(poolIndex);
+    labelValuesSuccess.add(poolIndex);
+    labelValuesError.add(poolIndex);
+
     metricPrefix = metricsOptions.getNamePrefix();
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_NUM_CHANNELS,
-        "The number of channels in the pool.",
-        GcpMetricsOptions.COUNT,
+        METRIC_MIN_READY_CHANNELS,
+        "The minimum number of channels simultaneously in the READY state.",
+        COUNT,
         this,
-        GcpManagedChannel::getNumberOfChannels);
+        GcpManagedChannel::reportMinReadyChannels);
+
+    createDerivedLongGaugeTimeSeries(
+        METRIC_MAX_READY_CHANNELS,
+        "The maximum number of channels simultaneously in the READY state.",
+        COUNT,
+        this,
+        GcpManagedChannel::reportMaxReadyChannels);
+
+    createDerivedLongGaugeTimeSeries(
+        METRIC_MAX_CHANNELS,
+        "The maximum number of channels in the pool.",
+        COUNT,
+        this,
+        GcpManagedChannel::reportMaxChannels);
 
     createDerivedLongGaugeTimeSeries(
         METRIC_MAX_ALLOWED_CHANNELS,
-        "The maximum number of channels allowed in the pool.",
-        GcpMetricsOptions.COUNT,
+        "The maximum number of channels allowed in the pool. (The poll max size)",
+        COUNT,
         this,
-        GcpManagedChannel::getMaxSize);
+        GcpManagedChannel::reportMaxAllowedChannels);
+
+    createDerivedLongCumulativeTimeSeries(
+        METRIC_NUM_CHANNEL_DISCONNECT,
+        "The number of disconnections (occurrences when a channel deviates from the READY state)",
+        COUNT,
+        this,
+        GcpManagedChannel::reportNumChannelDisconnect);
+
+    createDerivedLongCumulativeTimeSeries(
+        METRIC_NUM_CHANNEL_CONNECT,
+        "The number of times when a channel reached the READY state.",
+        COUNT,
+        this,
+        GcpManagedChannel::reportNumChannelConnect);
+
+    createDerivedLongGaugeTimeSeries(
+        METRIC_MIN_CHANNEL_READINESS_TIME,
+        "The minimum time it took to transition a channel to the READY state.",
+        MICROSECOND,
+        this,
+        GcpManagedChannel::reportMinReadinessTime);
+
+    createDerivedLongGaugeTimeSeries(
+        METRIC_AVG_CHANNEL_READINESS_TIME,
+        "The average time it took to transition a channel to the READY state.",
+        MICROSECOND,
+        this,
+        GcpManagedChannel::reportAvgReadinessTime);
+
+    createDerivedLongGaugeTimeSeries(
+        METRIC_MAX_CHANNEL_READINESS_TIME,
+        "The maximum time it took to transition a channel to the READY state.",
+        MICROSECOND,
+        this,
+        GcpManagedChannel::reportMaxReadinessTime);
 
     createDerivedLongGaugeTimeSeries(
         METRIC_MIN_ACTIVE_STREAMS,
         "The minimum number of active streams on any channel.",
-        GcpMetricsOptions.COUNT,
+        COUNT,
         this,
-        GcpManagedChannel::getMinActiveStreams);
+        GcpManagedChannel::reportMinActiveStreams);
 
     createDerivedLongGaugeTimeSeries(
         METRIC_MAX_ACTIVE_STREAMS,
         "The maximum number of active streams on any channel.",
-        GcpMetricsOptions.COUNT,
+        COUNT,
         this,
-        GcpManagedChannel::getMaxActiveStreams);
+        GcpManagedChannel::reportMaxActiveStreams);
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_NUM_TOTAL_ACTIVE_STREAMS,
-        "The total number of active streams across all channels.",
-        GcpMetricsOptions.COUNT,
+        METRIC_MIN_TOTAL_ACTIVE_STREAMS,
+        "The minimum total number of active streams across all channels.",
+        COUNT,
         this,
-        GcpManagedChannel::getTotalActiveStreams);
+        GcpManagedChannel::reportMinTotalActiveStreams);
+
+    createDerivedLongGaugeTimeSeries(
+        METRIC_MAX_TOTAL_ACTIVE_STREAMS,
+        "The maximum total number of active streams across all channels.",
+        COUNT,
+        this,
+        GcpManagedChannel::reportMaxTotalActiveStreams);
+
+    createDerivedLongGaugeTimeSeries(
+        METRIC_MIN_AFFINITY,
+        "The minimum number of affinity count on any channel.",
+        COUNT,
+        this,
+        GcpManagedChannel::reportMinAffinity);
+
+    createDerivedLongGaugeTimeSeries(
+        METRIC_MAX_AFFINITY,
+        "The maximum number of affinity count on any channel.",
+        COUNT,
+        this,
+        GcpManagedChannel::reportMaxAffinity);
+
+    createDerivedLongGaugeTimeSeries(
+        METRIC_NUM_AFFINITY,
+        "The total number of affinity count across all channels.",
+        COUNT,
+        this,
+        GcpManagedChannel::reportNumAffinity);
+
+    createDerivedLongGaugeTimeSeriesWithResult(
+        METRIC_MIN_CALLS,
+        "The minimum number of completed calls on any channel.",
+        COUNT,
+        this,
+        GcpManagedChannel::reportMinOkCalls,
+        GcpManagedChannel::reportMinErrCalls);
+
+    createDerivedLongGaugeTimeSeriesWithResult(
+        METRIC_MAX_CALLS,
+        "The maximum number of completed calls on any channel.",
+        COUNT,
+        this,
+        GcpManagedChannel::reportMaxOkCalls,
+        GcpManagedChannel::reportMaxErrCalls);
+
+    createDerivedLongCumulativeTimeSeriesWithResult(
+        METRIC_NUM_CALLS_COMPLETED,
+        "The number of calls completed across all channels.",
+        COUNT,
+        this,
+        GcpManagedChannel::reportTotalOkCalls,
+        GcpManagedChannel::reportTotalErrCalls);
+  }
+
+  private MetricOptions createMetricOptions(
+      String description, List<LabelKey> labelKeys, String unit) {
+    return MetricOptions.builder()
+        .setDescription(description)
+        .setLabelKeys(labelKeys)
+        .setUnit(unit)
+        .build();
   }
 
   private <T> void createDerivedLongGaugeTimeSeries(
       String name, String description, String unit, T obj, ToLongFunction<T> func) {
-    final DerivedLongGauge gauge =
+    final DerivedLongGauge metric =
         metricRegistry.addDerivedLongGauge(
-            metricPrefix + name,
-            MetricOptions.builder()
-                .setDescription(description)
-                .setLabelKeys(labelKeys)
-                .setUnit(unit)
-                .build());
+            metricPrefix + name, createMetricOptions(description, labelKeys, unit));
 
-    gauge.removeTimeSeries(labelValues);
-    gauge.createTimeSeries(labelValues, obj, func);
+    metric.removeTimeSeries(labelValues);
+    metric.createTimeSeries(labelValues, obj, func);
+  }
+
+  private <T> void createDerivedLongGaugeTimeSeriesWithResult(
+      String name,
+      String description,
+      String unit,
+      T obj,
+      ToLongFunction<T> funcSucc,
+      ToLongFunction<T> funcErr) {
+    final DerivedLongGauge metric =
+        metricRegistry.addDerivedLongGauge(
+            metricPrefix + name, createMetricOptions(description, labelKeysWithResult, unit));
+
+    metric.removeTimeSeries(labelValuesSuccess);
+    metric.createTimeSeries(labelValuesSuccess, obj, funcSucc);
+    metric.removeTimeSeries(labelValuesError);
+    metric.createTimeSeries(labelValuesError, obj, funcErr);
+  }
+
+  private <T> void createDerivedLongCumulativeTimeSeries(
+      String name, String description, String unit, T obj, ToLongFunction<T> func) {
+    final DerivedLongCumulative metric =
+        metricRegistry.addDerivedLongCumulative(
+            metricPrefix + name, createMetricOptions(description, labelKeys, unit));
+
+    metric.removeTimeSeries(labelValues);
+    metric.createTimeSeries(labelValues, obj, func);
+  }
+
+  private <T> void createDerivedLongCumulativeTimeSeriesWithResult(
+      String name,
+      String description,
+      String unit,
+      T obj,
+      ToLongFunction<T> funcSucc,
+      ToLongFunction<T> funcErr) {
+    final DerivedLongCumulative metric =
+        metricRegistry.addDerivedLongCumulative(
+            metricPrefix + name, createMetricOptions(description, labelKeysWithResult, unit));
+
+    metric.removeTimeSeries(labelValuesSuccess);
+    metric.createTimeSeries(labelValuesSuccess, obj, funcSucc);
+    metric.removeTimeSeries(labelValuesError);
+    metric.createTimeSeries(labelValuesError, obj, funcErr);
+  }
+
+  private long reportMaxChannels() {
+    return channelRefs.size();
+  }
+
+  private long reportMaxAllowedChannels() {
+    return maxSize;
+  }
+
+  private long reportMinReadyChannels() {
+    int value = minReadyChannels;
+    minReadyChannels = readyChannels.get();
+    return value;
+  }
+
+  private long reportMaxReadyChannels() {
+    int value = maxReadyChannels;
+    maxReadyChannels = readyChannels.get();
+    return value;
+  }
+
+  private long reportNumChannelConnect() {
+    return numChannelConnect.get();
+  }
+
+  private long reportNumChannelDisconnect() {
+    return numChannelDisconnect.get();
+  }
+
+  private long reportMinReadinessTime() {
+    long value = minReadinessTime;
+    minReadinessTime = 0;
+    return value;
+  }
+
+  private long reportAvgReadinessTime() {
+    long value = 0;
+    long total = totalReadinessTime.getAndSet(0);
+    long occ = readinessTimeOccurrences.getAndSet(0);
+    if (occ != 0) {
+      value = total / occ;
+    }
+    return value;
+  }
+
+  private long reportMaxReadinessTime() {
+    long value = maxReadinessTime;
+    maxReadinessTime = 0;
+    return value;
+  }
+
+  private int reportMinActiveStreams() {
+    int value = minActiveStreams;
+    minActiveStreams =
+        channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).min().orElse(0);
+    return value;
+  }
+
+  private int reportMaxActiveStreams() {
+    int value = maxActiveStreams;
+    maxActiveStreams =
+        channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).max().orElse(0);
+    return value;
+  }
+
+  private int reportMinTotalActiveStreams() {
+    int value = minTotalActiveStreams;
+    minTotalActiveStreams = totalActiveStreams.get();
+    return value;
+  }
+
+  private int reportMaxTotalActiveStreams() {
+    int value = maxTotalActiveStreams;
+    maxTotalActiveStreams = totalActiveStreams.get();
+    return value;
+  }
+
+  private int reportMinAffinity() {
+    int value = minAffinity;
+    minAffinity = channelRefs.stream().mapToInt(ChannelRef::getAffinityCount).min().orElse(0);
+    return value;
+  }
+
+  private int reportMaxAffinity() {
+    int value = maxAffinity;
+    maxAffinity = channelRefs.stream().mapToInt(ChannelRef::getAffinityCount).max().orElse(0);
+    return value;
+  }
+
+  private int reportNumAffinity() {
+    return totalAffinityCount.get();
+  }
+
+  private synchronized long reportMinOkCalls() {
+    minOkReported = true;
+    calcMinMaxOkCalls();
+    return minOkCalls;
+  }
+
+  private synchronized long reportMaxOkCalls() {
+    maxOkReported = true;
+    calcMinMaxOkCalls();
+    return maxOkCalls;
+  }
+
+  public long reportTotalOkCalls() {
+    return totalOkCalls.get();
+  }
+
+  private void calcMinMaxOkCalls() {
+    if (minOkReported && maxOkReported) {
+      minOkReported = false;
+      maxOkReported = false;
+      return;
+    }
+    final LongSummaryStatistics stats =
+        channelRefs.stream().collect(Collectors.summarizingLong(ChannelRef::getAndResetOkCalls));
+    minOkCalls = stats.getMin();
+    maxOkCalls = stats.getMax();
+  }
+
+  public synchronized long reportMinErrCalls() {
+    minErrReported = true;
+    calcMinMaxErrCalls();
+    return minErrCalls;
+  }
+
+  public synchronized long reportMaxErrCalls() {
+    maxErrReported = true;
+    calcMinMaxErrCalls();
+    return maxErrCalls;
+  }
+
+  public long reportTotalErrCalls() {
+    return totalErrCalls.get();
+  }
+
+  private void calcMinMaxErrCalls() {
+    if (minErrReported && maxErrReported) {
+      minErrReported = false;
+      maxErrReported = false;
+      return;
+    }
+    final LongSummaryStatistics stats =
+        channelRefs.stream().collect(Collectors.summarizingLong(ChannelRef::getAndResetErrCalls));
+    minErrCalls = stats.getMin();
+    maxErrCalls = stats.getMax();
+  }
+
+  private void incReadyChannels() {
+    numChannelConnect.incrementAndGet();
+    final int newReady = readyChannels.incrementAndGet();
+    if (maxReadyChannels < newReady) {
+      maxReadyChannels = newReady;
+    }
+  }
+
+  private void decReadyChannels() {
+    numChannelDisconnect.incrementAndGet();
+    final int newReady = readyChannels.decrementAndGet();
+    if (minReadyChannels > newReady) {
+      minReadyChannels = newReady;
+    }
+  }
+
+  private void saveReadinessTime(long readinessNanos) {
+    long readinessTimeUs = readinessNanos / 1000;
+    if (minReadinessTime == 0 || readinessTimeUs < minReadinessTime) {
+      minReadinessTime = readinessTimeUs;
+    }
+    if (readinessTimeUs > maxReadinessTime) {
+      maxReadinessTime = readinessTimeUs;
+    }
+    totalReadinessTime.addAndGet(readinessTimeUs);
+    readinessTimeOccurrences.incrementAndGet();
   }
 
   /**
@@ -218,6 +614,8 @@ public class GcpManagedChannel extends ManagedChannel {
   private class ChannelStateMonitor implements Runnable {
     private final int channelId;
     private final ManagedChannel channel;
+    private ConnectivityState currentState;
+    private long connectingStartNanos;
 
     private ChannelStateMonitor(ManagedChannel channel, int channelId) {
       this.channelId = channelId;
@@ -231,6 +629,18 @@ public class GcpManagedChannel extends ManagedChannel {
         return;
       }
       ConnectivityState newState = channel.getState(false);
+      if (newState == ConnectivityState.READY && currentState != ConnectivityState.READY) {
+        incReadyChannels();
+        saveReadinessTime(System.nanoTime() - connectingStartNanos);
+      }
+      if (newState != ConnectivityState.READY && currentState == ConnectivityState.READY) {
+        decReadyChannels();
+      }
+      if (newState == ConnectivityState.CONNECTING
+          && currentState != ConnectivityState.CONNECTING) {
+        connectingStartNanos = System.nanoTime();
+      }
+      currentState = newState;
       processChannelStateChange(channelId, newState);
       if (newState != ConnectivityState.SHUTDOWN) {
         channel.notifyWhenStateChanged(newState, this);
@@ -279,10 +689,6 @@ public class GcpManagedChannel extends ManagedChannel {
       return maxStreams.getAsInt();
     }
     return 0;
-  }
-
-  public int getTotalActiveStreams() {
-    return channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).sum();
   }
 
   /**
@@ -487,11 +893,9 @@ public class GcpManagedChannel extends ManagedChannel {
     synchronized (bindLock) {
       if (affinityKeys != null && channelRef != null) {
         for (String affinityKey : affinityKeys) {
-          if (!affinityKeyToChannelRef.containsKey(affinityKey)) {
-            affinityKeyToChannelRef.put(affinityKey, channelRef);
-          }
-          affinityKeyToChannelRef.get(affinityKey).affinityCountIncr();
+          affinityKeyToChannelRef.putIfAbsent(affinityKey, channelRef);
         }
+        channelRef.affinityCountIncr(affinityKeys.size());
       }
     }
   }
@@ -646,6 +1050,8 @@ public class GcpManagedChannel extends ManagedChannel {
     private final AtomicInteger activeStreamsCount;
     private long lastResponseNanos = System.nanoTime();
     private final AtomicInteger deadlineExceededCount = new AtomicInteger();
+    private final AtomicLong okCalls = new AtomicLong();
+    private final AtomicLong errCalls = new AtomicLong();
 
     protected ChannelRef(ManagedChannel channel, int channelId) {
       this(channel, channelId, 0, 0);
@@ -668,20 +1074,43 @@ public class GcpManagedChannel extends ManagedChannel {
       return channelId;
     }
 
-    protected void affinityCountIncr() {
-      affinityCount++;
+    protected void affinityCountIncr(int amount) {
+      affinityCount += amount;
+      totalAffinityCount.addAndGet(amount);
     }
 
     protected void affinityCountDecr() {
       affinityCount--;
+      totalAffinityCount.decrementAndGet();
     }
 
     protected void activeStreamsCountIncr() {
-      activeStreamsCount.incrementAndGet();
+      int actStreams = activeStreamsCount.incrementAndGet();
+      if (maxActiveStreams < actStreams) {
+        maxActiveStreams = actStreams;
+      }
+      int totalActStreams = totalActiveStreams.incrementAndGet();
+      if (maxTotalActiveStreams < totalActStreams) {
+        maxTotalActiveStreams = totalActStreams;
+      }
     }
 
     protected void activeStreamsCountDecr(long startNanos, Status status, boolean fromClientSide) {
-      activeStreamsCount.decrementAndGet();
+      int actStreams = activeStreamsCount.decrementAndGet();
+      if (minActiveStreams > actStreams) {
+        minActiveStreams = actStreams;
+      }
+      int totalActStreams = totalActiveStreams.decrementAndGet();
+      if (minTotalActiveStreams > totalActStreams) {
+        minTotalActiveStreams = totalActStreams;
+      }
+      if (status.isOk()) {
+        okCalls.incrementAndGet();
+        totalOkCalls.incrementAndGet();
+      } else {
+        errCalls.incrementAndGet();
+        totalErrCalls.incrementAndGet();
+      }
       if (unresponsiveDetectionEnabled) {
         detectUnresponsiveConnection(startNanos, status, fromClientSide);
       }
@@ -698,6 +1127,14 @@ public class GcpManagedChannel extends ManagedChannel {
 
     protected int getActiveStreamsCount() {
       return activeStreamsCount.get();
+    }
+
+    protected long getAndResetOkCalls() {
+      return okCalls.getAndSet(0);
+    }
+
+    protected long getAndResetErrCalls() {
+      return errCalls.getAndSet(0);
     }
 
     private void detectUnresponsiveConnection(

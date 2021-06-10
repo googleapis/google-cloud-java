@@ -129,9 +129,6 @@ public class GcpManagedChannelOptions {
 
   /** Metrics configuration for the GCP managed channel. */
   public static class GcpMetricsOptions {
-    // Unit to represent count.
-    static final String COUNT = "1";
-
     private final MetricRegistry metricRegistry;
     private final List<LabelKey> labelKeys;
     private final List<LabelValue> labelValues;
