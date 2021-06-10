@@ -51,10 +51,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class TraceServiceClientTest {
-  private static MockTraceService mockTraceService;
   private static MockServiceHelper mockServiceHelper;
-  private TraceServiceClient client;
+  private static MockTraceService mockTraceService;
   private LocalChannelProvider channelProvider;
+  private TraceServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
