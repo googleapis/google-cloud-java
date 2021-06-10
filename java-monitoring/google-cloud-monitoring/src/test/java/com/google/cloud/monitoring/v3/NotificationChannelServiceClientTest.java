@@ -75,8 +75,8 @@ import org.junit.Test;
 public class NotificationChannelServiceClientTest {
   private static MockNotificationChannelService mockNotificationChannelService;
   private static MockServiceHelper mockServiceHelper;
-  private NotificationChannelServiceClient client;
   private LocalChannelProvider channelProvider;
+  private NotificationChannelServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -62,8 +62,8 @@ import org.junit.Test;
 public class AlertPolicyServiceClientTest {
   private static MockAlertPolicyService mockAlertPolicyService;
   private static MockServiceHelper mockServiceHelper;
-  private AlertPolicyServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AlertPolicyServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

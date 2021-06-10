@@ -64,10 +64,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ServiceMonitoringServiceClientTest {
-  private static MockServiceMonitoringService mockServiceMonitoringService;
   private static MockServiceHelper mockServiceHelper;
-  private ServiceMonitoringServiceClient client;
+  private static MockServiceMonitoringService mockServiceMonitoringService;
   private LocalChannelProvider channelProvider;
+  private ServiceMonitoringServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

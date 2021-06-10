@@ -47,8 +47,8 @@ import org.junit.Test;
 public class QueryServiceClientTest {
   private static MockQueryService mockQueryService;
   private static MockServiceHelper mockServiceHelper;
-  private QueryServiceClient client;
   private LocalChannelProvider channelProvider;
+  private QueryServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

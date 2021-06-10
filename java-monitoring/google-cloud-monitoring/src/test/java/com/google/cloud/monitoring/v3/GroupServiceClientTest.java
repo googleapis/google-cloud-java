@@ -60,8 +60,8 @@ import org.junit.Test;
 public class GroupServiceClientTest {
   private static MockGroupService mockGroupService;
   private static MockServiceHelper mockServiceHelper;
-  private GroupServiceClient client;
   private LocalChannelProvider channelProvider;
+  private GroupServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
