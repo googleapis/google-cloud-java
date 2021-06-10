@@ -54,8 +54,8 @@ import org.junit.Test;
 public class DataTransferServiceClientTest {
   private static MockDataTransferService mockDataTransferService;
   private static MockServiceHelper mockServiceHelper;
-  private DataTransferServiceClient client;
   private LocalChannelProvider channelProvider;
+  private DataTransferServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
