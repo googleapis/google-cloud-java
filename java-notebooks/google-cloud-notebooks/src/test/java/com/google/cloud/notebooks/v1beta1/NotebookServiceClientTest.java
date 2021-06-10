@@ -53,8 +53,8 @@ import org.junit.Test;
 public class NotebookServiceClientTest {
   private static MockNotebookService mockNotebookService;
   private static MockServiceHelper mockServiceHelper;
-  private NotebookServiceClient client;
   private LocalChannelProvider channelProvider;
+  private NotebookServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
