@@ -20,12 +20,10 @@ package beta.automl;
 // [START automl_video_object_tracking_list_datasets_beta]
 // [START automl_tables_list_datasets]
 import com.google.cloud.automl.v1beta1.AutoMlClient;
-import com.google.cloud.automl.v1beta1.AutoMlSettings;
 import com.google.cloud.automl.v1beta1.Dataset;
 import com.google.cloud.automl.v1beta1.ListDatasetsRequest;
 import com.google.cloud.automl.v1beta1.LocationName;
 import java.io.IOException;
-import org.threeten.bp.Duration;
 
 class ListDatasets {
 

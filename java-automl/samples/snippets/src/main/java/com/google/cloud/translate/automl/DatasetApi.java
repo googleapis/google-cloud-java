@@ -88,7 +88,6 @@ public class DatasetApi {
     importDataParser.addArgument("datasetId");
     importDataParser.addArgument("path");
 
-
     String projectId = System.getenv("PROJECT_ID");
     String computeRegion = System.getenv("REGION_NAME");
 

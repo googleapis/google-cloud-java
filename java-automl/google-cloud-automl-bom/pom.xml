@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
@@ -61,6 +61,11 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-automl</artifactId>
+        <version>1.5.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-automl:current} -->
+      </dependency>
+      <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-automl-v1beta1</artifactId>
         <version>0.86.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-automl-v1beta1:current} -->
@@ -79,11 +84,6 @@
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-automl-v1</artifactId>
         <version>1.5.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-automl-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-automl</artifactId>
-        <version>1.5.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-automl:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

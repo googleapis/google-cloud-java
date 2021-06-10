@@ -18,12 +18,10 @@ package com.example.automl;
 
 // [START automl_list_models]
 import com.google.cloud.automl.v1.AutoMlClient;
-import com.google.cloud.automl.v1.AutoMlSettings;
 import com.google.cloud.automl.v1.ListModelsRequest;
 import com.google.cloud.automl.v1.LocationName;
 import com.google.cloud.automl.v1.Model;
 import java.io.IOException;
-import org.threeten.bp.Duration;
 
 class ListModels {
 

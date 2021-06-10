@@ -129,11 +129,11 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-automl-v1beta1</module>
-    <module>proto-google-cloud-automl-v1</module>
+    <module>google-cloud-automl</module>
     <module>grpc-google-cloud-automl-v1beta1</module>
     <module>grpc-google-cloud-automl-v1</module>
-    <module>google-cloud-automl</module>
+    <module>proto-google-cloud-automl-v1beta1</module>
+    <module>proto-google-cloud-automl-v1</module>
     <module>google-cloud-automl-bom</module>
   </modules>
 

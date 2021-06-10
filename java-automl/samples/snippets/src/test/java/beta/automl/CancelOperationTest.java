@@ -73,8 +73,7 @@ public class CancelOperationTest {
   public void testCancelOperation() throws IOException {
     String operationFullPathId =
         String.format(
-            "projects/%s/locations/%s/operations/%s", PROJECT_ID, "us-central1",
-            "TCN0000000000");
+            "projects/%s/locations/%s/operations/%s", PROJECT_ID, "us-central1", "TCN0000000000");
     // Any cancelled operation on models or datasets will be hidden once the operations are flagged
     // as failed operations
     // which makes them hard to delete in the teardown.

@@ -38,8 +38,7 @@ public class TablesBatchPredictBigQueryTest {
   private static final String MODEL_ID = "TBL0000000000000000000";
   private static final String INPUT_URI =
       String.format(
-          "bq://%s.automl_do_not_delete_predict_test.automl_predict_test_table",
-          PROJECT_ID);
+          "bq://%s.automl_do_not_delete_predict_test.automl_predict_test_table", PROJECT_ID);
   private static final String OUTPUT_URI = "bq://" + PROJECT_ID;
   private ByteArrayOutputStream bout;
   private PrintStream out;

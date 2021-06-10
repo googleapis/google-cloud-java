@@ -59,11 +59,10 @@ public class DatasetApiIT {
   }
 
   @Test
-  public void testCreateImportDeleteDataset()
-      throws IOException, InterruptedException {
+  public void testCreateImportDeleteDataset() throws IOException, InterruptedException {
     try {
       DatasetApi.importData(
-              PROJECT_ID, COMPUTE_REGION, datasetId, "gs://" + BUCKET + "/en-ja-short.csv");
+          PROJECT_ID, COMPUTE_REGION, datasetId, "gs://" + BUCKET + "/en-ja-short.csv");
       String got = bout.toString();
       assertThat(got).contains("The Dataset doesn't exist ");
     } catch (NotFoundException | ExecutionException | StatusRuntimeException ex) {

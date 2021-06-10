@@ -49,9 +49,9 @@ class LanguageEntityExtractionPredict {
       // https://cloud.google.com/automl/docs/reference/rest/v1/projects.locations.models/predict#textsnippet
       TextSnippet textSnippet =
           TextSnippet.newBuilder()
-                  .setContent(content)
-                  .setMimeType("text/plain") // Types: text/plain, text/html
-                  .build();
+              .setContent(content)
+              .setMimeType("text/plain") // Types: text/plain, text/html
+              .build();
       ExamplePayload payload = ExamplePayload.newBuilder().setTextSnippet(textSnippet).build();
       PredictRequest predictRequest =
           PredictRequest.newBuilder().setName(name.toString()).setPayload(payload).build();

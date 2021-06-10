@@ -14,6 +14,6 @@
   <difference>
     <differenceType>7012</differenceType>
     <className>com/google/cloud/automl/v1beta1/*OrBuilder</className>
-    <method>* has*(*)</method>
+    <method>boolean has*(*)</method>
   </difference>
 </differences>

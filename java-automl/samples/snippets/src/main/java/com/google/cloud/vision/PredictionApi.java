@@ -61,7 +61,8 @@ public class PredictionApi {
       String computeRegion,
       String modelId,
       String filePath,
-      String scoreThreshold) throws IOException {
+      String scoreThreshold)
+      throws IOException {
 
     // Instantiate client for prediction service.
     try (PredictionServiceClient predictionClient = PredictionServiceClient.create()) {

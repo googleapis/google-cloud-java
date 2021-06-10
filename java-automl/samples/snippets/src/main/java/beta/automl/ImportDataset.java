@@ -69,8 +69,8 @@ class ImportDataset {
       System.out.println("Processing import...");
 
       // Start the import job
-      OperationFuture<Empty, OperationMetadata> operation = client
-          .importDataAsync(datasetFullId, inputConfig);
+      OperationFuture<Empty, OperationMetadata> operation =
+          client.importDataAsync(datasetFullId, inputConfig);
 
       System.out.format("Operation name: %s%n", operation.getName());
 

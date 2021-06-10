@@ -19,12 +19,10 @@ package beta.automl;
 // [START automl_tables_list_models]
 // [START automl_list_models_beta]
 import com.google.cloud.automl.v1beta1.AutoMlClient;
-import com.google.cloud.automl.v1beta1.AutoMlSettings;
 import com.google.cloud.automl.v1beta1.ListModelsRequest;
 import com.google.cloud.automl.v1beta1.LocationName;
 import com.google.cloud.automl.v1beta1.Model;
 import java.io.IOException;
-import org.threeten.bp.Duration;
 
 class ListModels {
 
