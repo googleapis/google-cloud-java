@@ -42,8 +42,8 @@ import org.junit.Test;
 public class CompletionClientTest {
   private static MockCompletion mockCompletion;
   private static MockServiceHelper mockServiceHelper;
-  private CompletionClient client;
   private LocalChannelProvider channelProvider;
+  private CompletionClient client;
 
   @BeforeClass
   public static void startStaticServer() {

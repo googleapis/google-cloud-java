@@ -54,8 +54,8 @@ import org.junit.Test;
 public class JobServiceClientTest {
   private static MockJobService mockJobService;
   private static MockServiceHelper mockServiceHelper;
-  private JobServiceClient client;
   private LocalChannelProvider channelProvider;
+  private JobServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
