@@ -53,8 +53,8 @@ import org.junit.Test;
 public class DocumentsClientTest {
   private static MockDocuments mockDocuments;
   private static MockServiceHelper mockServiceHelper;
-  private DocumentsClient client;
   private LocalChannelProvider channelProvider;
+  private DocumentsClient client;
 
   @BeforeClass
   public static void startStaticServer() {

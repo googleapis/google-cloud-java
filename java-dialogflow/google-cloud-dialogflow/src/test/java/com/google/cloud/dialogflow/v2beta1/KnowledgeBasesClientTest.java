@@ -46,8 +46,8 @@ import org.junit.Test;
 public class KnowledgeBasesClientTest {
   private static MockKnowledgeBases mockKnowledgeBases;
   private static MockServiceHelper mockServiceHelper;
-  private KnowledgeBasesClient client;
   private LocalChannelProvider channelProvider;
+  private KnowledgeBasesClient client;
 
   @BeforeClass
   public static void startStaticServer() {

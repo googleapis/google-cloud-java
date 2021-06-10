@@ -47,8 +47,8 @@ import org.junit.Test;
 public class ContextsClientTest {
   private static MockContexts mockContexts;
   private static MockServiceHelper mockServiceHelper;
-  private ContextsClient client;
   private LocalChannelProvider channelProvider;
+  private ContextsClient client;
 
   @BeforeClass
   public static void startStaticServer() {

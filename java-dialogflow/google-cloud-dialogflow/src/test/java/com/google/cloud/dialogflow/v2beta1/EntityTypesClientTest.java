@@ -51,8 +51,8 @@ import org.junit.Test;
 public class EntityTypesClientTest {
   private static MockEntityTypes mockEntityTypes;
   private static MockServiceHelper mockServiceHelper;
-  private EntityTypesClient client;
   private LocalChannelProvider channelProvider;
+  private EntityTypesClient client;
 
   @BeforeClass
   public static void startStaticServer() {

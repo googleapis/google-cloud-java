@@ -43,8 +43,8 @@ import org.junit.Test;
 public class FulfillmentsClientTest {
   private static MockFulfillments mockFulfillments;
   private static MockServiceHelper mockServiceHelper;
-  private FulfillmentsClient client;
   private LocalChannelProvider channelProvider;
+  private FulfillmentsClient client;
 
   @BeforeClass
   public static void startStaticServer() {

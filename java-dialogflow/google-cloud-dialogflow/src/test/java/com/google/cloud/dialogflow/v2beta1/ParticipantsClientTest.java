@@ -47,8 +47,8 @@ import org.junit.Test;
 public class ParticipantsClientTest {
   private static MockParticipants mockParticipants;
   private static MockServiceHelper mockServiceHelper;
-  private ParticipantsClient client;
   private LocalChannelProvider channelProvider;
+  private ParticipantsClient client;
 
   @BeforeClass
   public static void startStaticServer() {
