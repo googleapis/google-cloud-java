@@ -59,8 +59,8 @@ import org.junit.Test;
 public class DeviceManagerClientTest {
   private static MockDeviceManager mockDeviceManager;
   private static MockServiceHelper mockServiceHelper;
-  private DeviceManagerClient client;
   private LocalChannelProvider channelProvider;
+  private DeviceManagerClient client;
 
   @BeforeClass
   public static void startStaticServer() {
