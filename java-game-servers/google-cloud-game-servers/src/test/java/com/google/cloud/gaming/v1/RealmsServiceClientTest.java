@@ -52,8 +52,8 @@ import org.junit.Test;
 public class RealmsServiceClientTest {
   private static MockRealmsService mockRealmsService;
   private static MockServiceHelper mockServiceHelper;
-  private RealmsServiceClient client;
   private LocalChannelProvider channelProvider;
+  private RealmsServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

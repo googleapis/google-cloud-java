@@ -52,8 +52,8 @@ import org.junit.Test;
 public class GameServerConfigsServiceClientTest {
   private static MockGameServerConfigsService mockGameServerConfigsService;
   private static MockServiceHelper mockServiceHelper;
-  private GameServerConfigsServiceClient client;
   private LocalChannelProvider channelProvider;
+  private GameServerConfigsServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

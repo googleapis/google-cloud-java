@@ -53,8 +53,8 @@ import org.junit.Test;
 public class GameServerDeploymentsServiceClientTest {
   private static MockGameServerDeploymentsService mockGameServerDeploymentsService;
   private static MockServiceHelper mockServiceHelper;
-  private GameServerDeploymentsServiceClient client;
   private LocalChannelProvider channelProvider;
+  private GameServerDeploymentsServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
