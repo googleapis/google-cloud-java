@@ -97,8 +97,8 @@ import org.junit.Test;
 public class ConfigClientTest {
   private static MockConfigServiceV2 mockConfigServiceV2;
   private static MockServiceHelper mockServiceHelper;
-  private ConfigClient client;
   private LocalChannelProvider channelProvider;
+  private ConfigClient client;
 
   @BeforeClass
   public static void startStaticServer() {

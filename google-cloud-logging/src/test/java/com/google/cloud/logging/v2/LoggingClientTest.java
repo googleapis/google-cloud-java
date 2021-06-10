@@ -75,8 +75,8 @@ import org.junit.Test;
 public class LoggingClientTest {
   private static MockLoggingServiceV2 mockLoggingServiceV2;
   private static MockServiceHelper mockServiceHelper;
-  private LoggingClient client;
   private LocalChannelProvider channelProvider;
+  private LoggingClient client;
 
   @BeforeClass
   public static void startStaticServer() {

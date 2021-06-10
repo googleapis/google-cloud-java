@@ -58,8 +58,8 @@ import org.junit.Test;
 public class MetricsClientTest {
   private static MockMetricsServiceV2 mockMetricsServiceV2;
   private static MockServiceHelper mockServiceHelper;
-  private MetricsClient client;
   private LocalChannelProvider channelProvider;
+  private MetricsClient client;
 
   @BeforeClass
   public static void startStaticServer() {
