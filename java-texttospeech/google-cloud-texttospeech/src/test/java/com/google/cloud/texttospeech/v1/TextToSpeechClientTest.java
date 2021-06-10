@@ -41,10 +41,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class TextToSpeechClientTest {
-  private static MockTextToSpeech mockTextToSpeech;
   private static MockServiceHelper mockServiceHelper;
-  private TextToSpeechClient client;
+  private static MockTextToSpeech mockTextToSpeech;
   private LocalChannelProvider channelProvider;
+  private TextToSpeechClient client;
 
   @BeforeClass
   public static void startStaticServer() {
