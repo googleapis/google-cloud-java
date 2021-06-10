@@ -45,8 +45,8 @@ import org.junit.Test;
 public class DocumentProcessorServiceClientTest {
   private static MockDocumentProcessorService mockDocumentProcessorService;
   private static MockServiceHelper mockServiceHelper;
-  private DocumentProcessorServiceClient client;
   private LocalChannelProvider channelProvider;
+  private DocumentProcessorServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

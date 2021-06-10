@@ -47,8 +47,8 @@ import org.junit.Test;
 public class DocumentUnderstandingServiceClientTest {
   private static MockDocumentUnderstandingService mockDocumentUnderstandingService;
   private static MockServiceHelper mockServiceHelper;
-  private DocumentUnderstandingServiceClient client;
   private LocalChannelProvider channelProvider;
+  private DocumentUnderstandingServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
