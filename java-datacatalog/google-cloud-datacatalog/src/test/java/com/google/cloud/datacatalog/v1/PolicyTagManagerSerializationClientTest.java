@@ -42,8 +42,8 @@ import org.junit.Test;
 public class PolicyTagManagerSerializationClientTest {
   private static MockPolicyTagManagerSerialization mockPolicyTagManagerSerialization;
   private static MockServiceHelper mockServiceHelper;
-  private PolicyTagManagerSerializationClient client;
   private LocalChannelProvider channelProvider;
+  private PolicyTagManagerSerializationClient client;
 
   @BeforeClass
   public static void startStaticServer() {

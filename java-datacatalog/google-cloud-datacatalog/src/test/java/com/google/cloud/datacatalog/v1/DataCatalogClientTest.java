@@ -59,8 +59,8 @@ import org.junit.Test;
 public class DataCatalogClientTest {
   private static MockDataCatalog mockDataCatalog;
   private static MockServiceHelper mockServiceHelper;
-  private DataCatalogClient client;
   private LocalChannelProvider channelProvider;
+  private DataCatalogClient client;
 
   @BeforeClass
   public static void startStaticServer() {

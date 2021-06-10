@@ -55,8 +55,8 @@ import org.junit.Test;
 public class PolicyTagManagerClientTest {
   private static MockPolicyTagManager mockPolicyTagManager;
   private static MockServiceHelper mockServiceHelper;
-  private PolicyTagManagerClient client;
   private LocalChannelProvider channelProvider;
+  private PolicyTagManagerClient client;
 
   @BeforeClass
   public static void startStaticServer() {
