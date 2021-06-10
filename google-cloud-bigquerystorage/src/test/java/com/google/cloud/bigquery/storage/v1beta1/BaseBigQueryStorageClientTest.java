@@ -48,8 +48,8 @@ import org.junit.Test;
 public class BaseBigQueryStorageClientTest {
   private static MockBigQueryStorage mockBigQueryStorage;
   private static MockServiceHelper mockServiceHelper;
-  private BaseBigQueryStorageClient client;
   private LocalChannelProvider channelProvider;
+  private BaseBigQueryStorageClient client;
 
   @BeforeClass
   public static void startStaticServer() {

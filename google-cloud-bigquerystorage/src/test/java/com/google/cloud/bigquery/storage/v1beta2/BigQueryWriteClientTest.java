@@ -49,8 +49,8 @@ import org.junit.Test;
 public class BigQueryWriteClientTest {
   private static MockBigQueryWrite mockBigQueryWrite;
   private static MockServiceHelper mockServiceHelper;
-  private BigQueryWriteClient client;
   private LocalChannelProvider channelProvider;
+  private BigQueryWriteClient client;
 
   @BeforeClass
   public static void startStaticServer() {

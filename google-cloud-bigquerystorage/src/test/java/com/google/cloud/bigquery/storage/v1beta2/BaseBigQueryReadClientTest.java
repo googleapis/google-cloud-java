@@ -47,8 +47,8 @@ import org.junit.Test;
 public class BaseBigQueryReadClientTest {
   private static MockBigQueryRead mockBigQueryRead;
   private static MockServiceHelper mockServiceHelper;
-  private BaseBigQueryReadClient client;
   private LocalChannelProvider channelProvider;
+  private BaseBigQueryReadClient client;
 
   @BeforeClass
   public static void startStaticServer() {
