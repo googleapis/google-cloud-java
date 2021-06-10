@@ -50,8 +50,8 @@ import org.junit.Test;
 public class SecurityCenterSettingsServiceClientTest {
   private static MockSecurityCenterSettingsService mockSecurityCenterSettingsService;
   private static MockServiceHelper mockServiceHelper;
-  private SecurityCenterSettingsServiceClient client;
   private LocalChannelProvider channelProvider;
+  private SecurityCenterSettingsServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
