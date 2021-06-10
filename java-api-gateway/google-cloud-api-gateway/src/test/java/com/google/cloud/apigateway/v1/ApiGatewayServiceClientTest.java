@@ -55,8 +55,8 @@ import org.junit.Test;
 public class ApiGatewayServiceClientTest {
   private static MockApiGatewayService mockApiGatewayService;
   private static MockServiceHelper mockServiceHelper;
-  private ApiGatewayServiceClient client;
   private LocalChannelProvider channelProvider;
+  private ApiGatewayServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
