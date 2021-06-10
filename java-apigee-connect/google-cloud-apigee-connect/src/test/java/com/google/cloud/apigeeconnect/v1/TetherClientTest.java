@@ -43,10 +43,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class TetherClientTest {
-  private static MockTether mockTether;
   private static MockServiceHelper mockServiceHelper;
-  private TetherClient client;
+  private static MockTether mockTether;
   private LocalChannelProvider channelProvider;
+  private TetherClient client;
 
   @BeforeClass
   public static void startStaticServer() {
