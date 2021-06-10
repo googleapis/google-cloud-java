@@ -43,8 +43,8 @@ import org.junit.Test;
 public class IamCheckerClientTest {
   private static MockIamChecker mockIamChecker;
   private static MockServiceHelper mockServiceHelper;
-  private IamCheckerClient client;
   private LocalChannelProvider channelProvider;
+  private IamCheckerClient client;
 
   @BeforeClass
   public static void startStaticServer() {
