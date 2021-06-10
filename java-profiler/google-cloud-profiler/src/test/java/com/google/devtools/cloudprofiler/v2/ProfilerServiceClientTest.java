@@ -46,8 +46,8 @@ import org.junit.Test;
 public class ProfilerServiceClientTest {
   private static MockProfilerService mockProfilerService;
   private static MockServiceHelper mockServiceHelper;
-  private ProfilerServiceClient client;
   private LocalChannelProvider channelProvider;
+  private ProfilerServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
