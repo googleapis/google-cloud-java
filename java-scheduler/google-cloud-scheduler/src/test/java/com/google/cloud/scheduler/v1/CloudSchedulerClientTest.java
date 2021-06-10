@@ -49,8 +49,8 @@ import org.junit.Test;
 public class CloudSchedulerClientTest {
   private static MockCloudScheduler mockCloudScheduler;
   private static MockServiceHelper mockServiceHelper;
-  private CloudSchedulerClient client;
   private LocalChannelProvider channelProvider;
+  private CloudSchedulerClient client;
 
   @BeforeClass
   public static void startStaticServer() {
