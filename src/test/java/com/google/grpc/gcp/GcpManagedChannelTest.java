@@ -333,7 +333,7 @@ public final class GcpManagedChannelTest {
         LabelKey.create(GcpMetricsConstants.POOL_INDEX_LABEL, GcpMetricsConstants.POOL_INDEX_DESC));
     List<LabelValue> expectedLabelValues = new ArrayList<>();
     expectedLabelValues.addAll(labelValues);
-    expectedLabelValues.add(LabelValue.create("pool-0"));
+    expectedLabelValues.add(LabelValue.create("pool-1"));
 
     try {
       // Let's fill five channels with some fake streams.

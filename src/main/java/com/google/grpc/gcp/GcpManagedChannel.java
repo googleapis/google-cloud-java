@@ -223,7 +223,7 @@ public class GcpManagedChannel extends ManagedChannel {
     labelKeys.add(poolKey);
     labelKeysWithResult.add(poolKey);
     final LabelValue poolIndex =
-        LabelValue.create(String.format("pool-%d", channelPoolIndex.getAndIncrement()));
+        LabelValue.create(String.format("pool-%d", channelPoolIndex.incrementAndGet()));
     labelValues.add(poolIndex);
     labelValuesSuccess.add(poolIndex);
     labelValuesError.add(poolIndex);
