@@ -46,8 +46,8 @@ import org.junit.Test;
 public class OsLoginServiceClientTest {
   private static MockOsLoginService mockOsLoginService;
   private static MockServiceHelper mockServiceHelper;
-  private OsLoginServiceClient client;
   private LocalChannelProvider channelProvider;
+  private OsLoginServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
