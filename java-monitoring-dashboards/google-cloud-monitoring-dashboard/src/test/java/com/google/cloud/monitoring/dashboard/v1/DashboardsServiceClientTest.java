@@ -54,8 +54,8 @@ import org.junit.Test;
 public class DashboardsServiceClientTest {
   private static MockDashboardsService mockDashboardsService;
   private static MockServiceHelper mockServiceHelper;
-  private DashboardsServiceClient client;
   private LocalChannelProvider channelProvider;
+  private DashboardsServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
