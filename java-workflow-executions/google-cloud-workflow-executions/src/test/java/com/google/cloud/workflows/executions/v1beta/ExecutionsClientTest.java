@@ -45,8 +45,8 @@ import org.junit.Test;
 public class ExecutionsClientTest {
   private static MockExecutions mockExecutions;
   private static MockServiceHelper mockServiceHelper;
-  private ExecutionsClient client;
   private LocalChannelProvider channelProvider;
+  private ExecutionsClient client;
 
   @BeforeClass
   public static void startStaticServer() {
