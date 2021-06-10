@@ -65,8 +65,8 @@ import org.junit.Test;
 public class RecaptchaEnterpriseServiceClientTest {
   private static MockRecaptchaEnterpriseService mockRecaptchaEnterpriseService;
   private static MockServiceHelper mockServiceHelper;
-  private RecaptchaEnterpriseServiceClient client;
   private LocalChannelProvider channelProvider;
+  private RecaptchaEnterpriseServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
