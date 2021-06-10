@@ -101,10 +101,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ServiceManagerClientTest {
-  private static MockServiceManager mockServiceManager;
   private static MockServiceHelper mockServiceHelper;
-  private ServiceManagerClient client;
+  private static MockServiceManager mockServiceManager;
   private LocalChannelProvider channelProvider;
+  private ServiceManagerClient client;
 
   @BeforeClass
   public static void startStaticServer() {
