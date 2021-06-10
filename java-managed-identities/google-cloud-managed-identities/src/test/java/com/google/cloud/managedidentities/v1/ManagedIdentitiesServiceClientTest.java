@@ -53,8 +53,8 @@ import org.junit.Test;
 public class ManagedIdentitiesServiceClientTest {
   private static MockManagedIdentitiesService mockManagedIdentitiesService;
   private static MockServiceHelper mockServiceHelper;
-  private ManagedIdentitiesServiceClient client;
   private LocalChannelProvider channelProvider;
+  private ManagedIdentitiesServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
