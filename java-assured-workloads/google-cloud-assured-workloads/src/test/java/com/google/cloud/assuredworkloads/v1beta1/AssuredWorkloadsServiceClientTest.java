@@ -53,8 +53,8 @@ import org.junit.Test;
 public class AssuredWorkloadsServiceClientTest {
   private static MockAssuredWorkloadsService mockAssuredWorkloadsService;
   private static MockServiceHelper mockServiceHelper;
-  private AssuredWorkloadsServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AssuredWorkloadsServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
