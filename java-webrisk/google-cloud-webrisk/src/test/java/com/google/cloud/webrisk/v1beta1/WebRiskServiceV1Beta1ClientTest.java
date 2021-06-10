@@ -51,10 +51,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class WebRiskServiceV1Beta1ClientTest {
-  private static MockWebRiskServiceV1Beta1 mockWebRiskServiceV1Beta1;
   private static MockServiceHelper mockServiceHelper;
-  private WebRiskServiceV1Beta1Client client;
+  private static MockWebRiskServiceV1Beta1 mockWebRiskServiceV1Beta1;
   private LocalChannelProvider channelProvider;
+  private WebRiskServiceV1Beta1Client client;
 
   @BeforeClass
   public static void startStaticServer() {
