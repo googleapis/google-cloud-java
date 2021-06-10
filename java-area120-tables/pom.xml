@@ -112,8 +112,8 @@
 
   <modules>
     <module>google-area120-tables</module>
-    <module>proto-google-area120-tables-v1alpha1</module>
     <module>grpc-google-area120-tables-v1alpha1</module>
+    <module>proto-google-area120-tables-v1alpha1</module>
     <module>google-area120-tables-bom</module>
   </modules>
 
