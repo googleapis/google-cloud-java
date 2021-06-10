@@ -52,8 +52,8 @@ import org.junit.Test;
 public class ProductServiceClientTest {
   private static MockProductService mockProductService;
   private static MockServiceHelper mockServiceHelper;
-  private ProductServiceClient client;
   private LocalChannelProvider channelProvider;
+  private ProductServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
