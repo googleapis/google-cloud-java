@@ -46,10 +46,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class TranscoderServiceClientTest {
-  private static MockTranscoderService mockTranscoderService;
   private static MockServiceHelper mockServiceHelper;
-  private TranscoderServiceClient client;
+  private static MockTranscoderService mockTranscoderService;
   private LocalChannelProvider channelProvider;
+  private TranscoderServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
