@@ -47,8 +47,8 @@ import org.junit.Test;
 public class BudgetServiceClientTest {
   private static MockBudgetService mockBudgetService;
   private static MockServiceHelper mockServiceHelper;
-  private BudgetServiceClient client;
   private LocalChannelProvider channelProvider;
+  private BudgetServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
