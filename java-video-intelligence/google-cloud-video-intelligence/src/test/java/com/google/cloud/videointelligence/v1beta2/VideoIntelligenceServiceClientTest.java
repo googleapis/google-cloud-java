@@ -44,10 +44,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class VideoIntelligenceServiceClientTest {
-  private static MockVideoIntelligenceService mockVideoIntelligenceService;
   private static MockServiceHelper mockServiceHelper;
-  private VideoIntelligenceServiceClient client;
+  private static MockVideoIntelligenceService mockVideoIntelligenceService;
   private LocalChannelProvider channelProvider;
+  private VideoIntelligenceServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
