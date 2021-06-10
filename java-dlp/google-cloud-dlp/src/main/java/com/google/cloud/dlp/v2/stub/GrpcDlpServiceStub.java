@@ -601,6 +601,15 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
     GrpcCallSettings<ListInfoTypesRequest, ListInfoTypesResponse> listInfoTypesTransportSettings =
         GrpcCallSettings.<ListInfoTypesRequest, ListInfoTypesResponse>newBuilder()
             .setMethodDescriptor(listInfoTypesMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListInfoTypesRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListInfoTypesRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CreateInspectTemplateRequest, InspectTemplate>
         createInspectTemplateTransportSettings =

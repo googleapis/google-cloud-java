@@ -126,8 +126,8 @@ import org.junit.Test;
 public class DlpServiceClientTest {
   private static MockDlpService mockDlpService;
   private static MockServiceHelper mockServiceHelper;
-  private DlpServiceClient client;
   private LocalChannelProvider channelProvider;
+  private DlpServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
