@@ -58,8 +58,8 @@ import org.junit.Test;
 public class SecretManagerServiceClientTest {
   private static MockSecretManagerService mockSecretManagerService;
   private static MockServiceHelper mockServiceHelper;
-  private SecretManagerServiceClient client;
   private LocalChannelProvider channelProvider;
+  private SecretManagerServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
