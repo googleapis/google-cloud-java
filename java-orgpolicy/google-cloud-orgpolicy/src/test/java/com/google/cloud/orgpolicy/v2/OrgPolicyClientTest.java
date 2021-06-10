@@ -46,8 +46,8 @@ import org.junit.Test;
 public class OrgPolicyClientTest {
   private static MockOrgPolicy mockOrgPolicy;
   private static MockServiceHelper mockServiceHelper;
-  private OrgPolicyClient client;
   private LocalChannelProvider channelProvider;
+  private OrgPolicyClient client;
 
   @BeforeClass
   public static void startStaticServer() {
