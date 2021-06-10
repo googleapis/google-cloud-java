@@ -60,8 +60,8 @@ import org.junit.Test;
 public class DataLabelingServiceClientTest {
   private static MockDataLabelingService mockDataLabelingService;
   private static MockServiceHelper mockServiceHelper;
-  private DataLabelingServiceClient client;
   private LocalChannelProvider channelProvider;
+  private DataLabelingServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
