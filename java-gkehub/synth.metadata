@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-gkehub.git",
-        "sha": "11fba883de5a71236c2f12127031c42c4d4aeb84"
+        "sha": "4040cfef163feca87c4a7226cb44c3b9277f71fe"
       }
     },
     {
       "git": {
         "name": "googleapis-gen",
         "remote": "https://github.com/googleapis/googleapis-gen.git",
-        "sha": "19ed6ced80e406dd4a7e2d0870c629427309d439",
-        "internalRef": "377081269"
+        "sha": "14629f6b39dfee67009f79a96d2077d5bb17d1c3",
+        "internalRef": "378266372"
       }
     },
     {
