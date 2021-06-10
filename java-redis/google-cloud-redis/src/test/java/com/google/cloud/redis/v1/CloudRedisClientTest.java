@@ -52,8 +52,8 @@ import org.junit.Test;
 public class CloudRedisClientTest {
   private static MockCloudRedis mockCloudRedis;
   private static MockServiceHelper mockServiceHelper;
-  private CloudRedisClient client;
   private LocalChannelProvider channelProvider;
+  private CloudRedisClient client;
 
   @BeforeClass
   public static void startStaticServer() {
