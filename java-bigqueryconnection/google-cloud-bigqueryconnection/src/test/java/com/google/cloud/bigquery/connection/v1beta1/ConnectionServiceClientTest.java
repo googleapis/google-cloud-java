@@ -54,8 +54,8 @@ import org.junit.Test;
 public class ConnectionServiceClientTest {
   private static MockConnectionService mockConnectionService;
   private static MockServiceHelper mockServiceHelper;
-  private ConnectionServiceClient client;
   private LocalChannelProvider channelProvider;
+  private ConnectionServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
