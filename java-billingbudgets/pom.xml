@@ -134,11 +134,11 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-billingbudgets-v1beta1</module>
-    <module>proto-google-cloud-billingbudgets-v1</module>
+    <module>google-cloud-billingbudgets</module>
     <module>grpc-google-cloud-billingbudgets-v1beta1</module>
     <module>grpc-google-cloud-billingbudgets-v1</module>
-    <module>google-cloud-billingbudgets</module>
+    <module>proto-google-cloud-billingbudgets-v1beta1</module>
+    <module>proto-google-cloud-billingbudgets-v1</module>
     <module>google-cloud-billingbudgets-bom</module>
   </modules>
 
