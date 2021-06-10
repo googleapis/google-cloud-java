@@ -52,8 +52,8 @@ import org.junit.Test;
 public class ClusterControllerClientTest {
   private static MockClusterController mockClusterController;
   private static MockServiceHelper mockServiceHelper;
-  private ClusterControllerClient client;
   private LocalChannelProvider channelProvider;
+  private ClusterControllerClient client;
 
   @BeforeClass
   public static void startStaticServer() {

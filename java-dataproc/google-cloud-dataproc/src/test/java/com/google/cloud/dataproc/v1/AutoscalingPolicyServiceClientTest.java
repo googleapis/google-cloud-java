@@ -45,8 +45,8 @@ import org.junit.Test;
 public class AutoscalingPolicyServiceClientTest {
   private static MockAutoscalingPolicyService mockAutoscalingPolicyService;
   private static MockServiceHelper mockServiceHelper;
-  private AutoscalingPolicyServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AutoscalingPolicyServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
