@@ -118,9 +118,9 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-billing-v1</module>
-    <module>grpc-google-cloud-billing-v1</module>
     <module>google-cloud-billing</module>
+    <module>grpc-google-cloud-billing-v1</module>
+    <module>proto-google-cloud-billing-v1</module>
     <module>google-cloud-billing-bom</module>
   </modules>
 
