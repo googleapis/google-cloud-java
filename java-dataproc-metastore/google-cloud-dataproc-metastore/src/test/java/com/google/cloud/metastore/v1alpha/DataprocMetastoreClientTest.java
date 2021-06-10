@@ -54,8 +54,8 @@ import org.junit.Test;
 public class DataprocMetastoreClientTest {
   private static MockDataprocMetastore mockDataprocMetastore;
   private static MockServiceHelper mockServiceHelper;
-  private DataprocMetastoreClient client;
   private LocalChannelProvider channelProvider;
+  private DataprocMetastoreClient client;
 
   @BeforeClass
   public static void startStaticServer() {
