@@ -112,8 +112,8 @@
 
   <modules>
     <module>google-cloud-assured-workloads</module>
-    <module>proto-google-cloud-assured-workloads-v1beta1</module>
     <module>grpc-google-cloud-assured-workloads-v1beta1</module>
+    <module>proto-google-cloud-assured-workloads-v1beta1</module>
     <module>google-cloud-assured-workloads-bom</module>
   </modules>
 
