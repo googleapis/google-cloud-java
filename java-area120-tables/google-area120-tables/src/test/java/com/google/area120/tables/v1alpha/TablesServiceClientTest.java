@@ -73,10 +73,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class TablesServiceClientTest {
-  private static MockTablesService mockTablesService;
   private static MockServiceHelper mockServiceHelper;
-  private TablesServiceClient client;
+  private static MockTablesService mockTablesService;
   private LocalChannelProvider channelProvider;
+  private TablesServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
