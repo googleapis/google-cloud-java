@@ -45,10 +45,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class WebhooksClientTest {
-  private static MockWebhooks mockWebhooks;
   private static MockServiceHelper mockServiceHelper;
-  private WebhooksClient client;
+  private static MockWebhooks mockWebhooks;
   private LocalChannelProvider channelProvider;
+  private WebhooksClient client;
 
   @BeforeClass
   public static void startStaticServer() {

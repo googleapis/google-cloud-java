@@ -45,10 +45,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class TransitionRouteGroupsClientTest {
-  private static MockTransitionRouteGroups mockTransitionRouteGroups;
   private static MockServiceHelper mockServiceHelper;
-  private TransitionRouteGroupsClient client;
+  private static MockTransitionRouteGroups mockTransitionRouteGroups;
   private LocalChannelProvider channelProvider;
+  private TransitionRouteGroupsClient client;
 
   @BeforeClass
   public static void startStaticServer() {

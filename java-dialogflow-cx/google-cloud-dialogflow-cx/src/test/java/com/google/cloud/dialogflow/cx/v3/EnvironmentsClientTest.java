@@ -54,8 +54,8 @@ import org.junit.Test;
 public class EnvironmentsClientTest {
   private static MockEnvironments mockEnvironments;
   private static MockServiceHelper mockServiceHelper;
-  private EnvironmentsClient client;
   private LocalChannelProvider channelProvider;
+  private EnvironmentsClient client;
 
   @BeforeClass
   public static void startStaticServer() {

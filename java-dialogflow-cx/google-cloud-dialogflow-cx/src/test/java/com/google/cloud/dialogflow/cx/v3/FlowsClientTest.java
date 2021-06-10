@@ -52,8 +52,8 @@ import org.junit.Test;
 public class FlowsClientTest {
   private static MockFlows mockFlows;
   private static MockServiceHelper mockServiceHelper;
-  private FlowsClient client;
   private LocalChannelProvider channelProvider;
+  private FlowsClient client;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -48,8 +48,8 @@ import org.junit.Test;
 public class IntentsClientTest {
   private static MockIntents mockIntents;
   private static MockServiceHelper mockServiceHelper;
-  private IntentsClient client;
   private LocalChannelProvider channelProvider;
+  private IntentsClient client;
 
   @BeforeClass
   public static void startStaticServer() {
