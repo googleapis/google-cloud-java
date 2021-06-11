@@ -112,8 +112,8 @@
 
   <modules>
     <module>google-cloud-artifact-registry</module>
-    <module>proto-google-cloud-artifact-registry-v1beta2</module>
     <module>grpc-google-cloud-artifact-registry-v1beta2</module>
+    <module>proto-google-cloud-artifact-registry-v1beta2</module>
     <module>google-cloud-artifact-registry-bom</module>
   </modules>
 
