@@ -51,9 +51,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ContainerAnalysisClientTest {
+  private static MockContainerAnalysis mockContainerAnalysis;
   private static MockServiceHelper mockServiceHelper;
   private ContainerAnalysisClient client;
-  private static MockContainerAnalysis mockContainerAnalysis;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
