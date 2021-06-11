@@ -349,6 +349,11 @@ public class DomainsStubSettings extends StubSettings<DomainsStubSettings> {
     return "domains.googleapis.com:443";
   }
 
+  /** Returns the default mTLS service endpoint. */
+  public static String getDefaultMtlsEndpoint() {
+    return "domains.mtls.googleapis.com:443";
+  }
+
   /** Returns the default service scopes. */
   public static List<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
@@ -597,6 +602,8 @@ public class DomainsStubSettings extends StubSettings<DomainsStubSettings> {
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
 
       return initDefaults(builder);
     }

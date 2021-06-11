@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-domains.git",
-        "sha": "c313c0d48fe333b008d8132fe36f44d846df6b29"
+        "sha": "262f1c0f96abf5c2c6b3ccee1dd55999820b5690"
       }
     },
     {
       "git": {
         "name": "googleapis-gen",
         "remote": "https://github.com/googleapis/googleapis-gen.git",
-        "sha": "14629f6b39dfee67009f79a96d2077d5bb17d1c3",
-        "internalRef": "378266372"
+        "sha": "9a27cb4181a8823727458705f4343f0dccdb40d6",
+        "internalRef": "378718217"
       }
     },
     {
