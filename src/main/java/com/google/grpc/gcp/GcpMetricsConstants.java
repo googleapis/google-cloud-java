@@ -27,6 +27,7 @@ class GcpMetricsConstants {
   // Unit to represent count.
   static final String COUNT = "1";
   static final String MICROSECOND = "us";
+  static final String MILLISECOND = "ms";
 
   public static String METRIC_MAX_CHANNELS = "max_channels";
   public static String METRIC_MIN_READY_CHANNELS = "min_ready_channels";
@@ -48,4 +49,9 @@ class GcpMetricsConstants {
   public static String METRIC_MAX_CALLS = "max_calls_per_channel";
   public static String METRIC_NUM_CALLS_COMPLETED = "num_calls_completed";
   public static String METRIC_NUM_FALLBACKS = "num_fallbacks";
+  public static String METRIC_NUM_UNRESPONSIVE_DETECTIONS = "num_unresponsive_detections";
+  public static String METRIC_MIN_UNRESPONSIVE_DETECTION_TIME = "min_unresponsive_detection_time";
+  public static String METRIC_MAX_UNRESPONSIVE_DETECTION_TIME = "max_unresponsive_detection_time";
+  public static String METRIC_MIN_UNRESPONSIVE_DROPPED_CALLS = "min_unresponsive_dropped_calls";
+  public static String METRIC_MAX_UNRESPONSIVE_DROPPED_CALLS = "max_unresponsive_dropped_calls";
 }

@@ -26,18 +26,24 @@ import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_CHANNELS;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_CHANNEL_READINESS_TIME;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_READY_CHANNELS;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_TOTAL_ACTIVE_STREAMS;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DETECTION_TIME;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DROPPED_CALLS;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_ACTIVE_STREAMS;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_AFFINITY;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_CALLS;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_CHANNEL_READINESS_TIME;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_READY_CHANNELS;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_TOTAL_ACTIVE_STREAMS;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DETECTION_TIME;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DROPPED_CALLS;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_AFFINITY;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_CALLS_COMPLETED;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_CHANNEL_CONNECT;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_CHANNEL_DISCONNECT;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_FALLBACKS;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS;
 import static com.google.grpc.gcp.GcpMetricsConstants.MICROSECOND;
+import static com.google.grpc.gcp.GcpMetricsConstants.MILLISECOND;
 import static com.google.grpc.gcp.GcpMetricsConstants.POOL_INDEX_DESC;
 import static com.google.grpc.gcp.GcpMetricsConstants.POOL_INDEX_LABEL;
 import static com.google.grpc.gcp.GcpMetricsConstants.RESULT_DESC;
@@ -90,7 +96,7 @@ import javax.annotation.concurrent.GuardedBy;
 /** A channel management factory that implements grpc.Channel APIs. */
 public class GcpManagedChannel extends ManagedChannel {
   private static final Logger logger = Logger.getLogger(GcpManagedChannel.class.getName());
-  private static final AtomicInteger channelPoolIndex = new AtomicInteger();
+  static final AtomicInteger channelPoolIndex = new AtomicInteger();
   private static final int DEFAULT_MAX_CHANNEL = 10;
   private static final int DEFAULT_MAX_STREAM = 100;
 
@@ -163,6 +169,11 @@ public class GcpManagedChannel extends ManagedChannel {
   private final AtomicInteger totalAffinityCount = new AtomicInteger();
   private final AtomicLong fallbacksSucceeded = new AtomicLong();
   private final AtomicLong fallbacksFailed = new AtomicLong();
+  private final AtomicLong unresponsiveDetectionCount = new AtomicLong();
+  private long minUnresponsiveMs = 0;
+  private long maxUnresponsiveMs = 0;
+  private long minUnresponsiveDrops = 0;
+  private long maxUnresponsiveDrops = 0;
 
   /**
    * Constructor for GcpManagedChannel.
@@ -376,6 +387,41 @@ public class GcpManagedChannel extends ManagedChannel {
         this,
         GcpManagedChannel::reportSucceededFallbacks,
         GcpManagedChannel::reportFailedFallbacks);
+
+    createDerivedLongCumulativeTimeSeries(
+        METRIC_NUM_UNRESPONSIVE_DETECTIONS,
+        "The number of unresponsive connections detected.",
+        COUNT,
+        this,
+        GcpManagedChannel::reportUnresponsiveDetectionCount);
+
+    createDerivedLongGaugeTimeSeries(
+        METRIC_MIN_UNRESPONSIVE_DETECTION_TIME,
+        "The minimum time it took to detect an unresponsive connection.",
+        MILLISECOND,
+        this,
+        GcpManagedChannel::reportMinUnresponsiveMs);
+
+    createDerivedLongGaugeTimeSeries(
+        METRIC_MAX_UNRESPONSIVE_DETECTION_TIME,
+        "The maximum time it took to detect an unresponsive connection.",
+        MILLISECOND,
+        this,
+        GcpManagedChannel::reportMaxUnresponsiveMs);
+
+    createDerivedLongGaugeTimeSeries(
+        METRIC_MIN_UNRESPONSIVE_DROPPED_CALLS,
+        "The minimum calls dropped before detection of an unresponsive connection.",
+        MILLISECOND,
+        this,
+        GcpManagedChannel::reportMinUnresponsiveDrops);
+
+    createDerivedLongGaugeTimeSeries(
+        METRIC_MAX_UNRESPONSIVE_DROPPED_CALLS,
+        "The maximum calls dropped before detection of an unresponsive connection.",
+        MILLISECOND,
+        this,
+        GcpManagedChannel::reportMaxUnresponsiveDrops);
   }
 
   private MetricOptions createMetricOptions(
@@ -597,6 +643,34 @@ public class GcpManagedChannel extends ManagedChannel {
     return fallbacksFailed.get();
   }
 
+  private long reportUnresponsiveDetectionCount() {
+    return unresponsiveDetectionCount.get();
+  }
+
+  private long reportMinUnresponsiveMs() {
+    long value = minUnresponsiveMs;
+    minUnresponsiveMs = 0;
+    return value;
+  }
+
+  private long reportMaxUnresponsiveMs() {
+    long value = maxUnresponsiveMs;
+    maxUnresponsiveMs = 0;
+    return value;
+  }
+
+  private long reportMinUnresponsiveDrops() {
+    long value = minUnresponsiveDrops;
+    minUnresponsiveDrops = 0;
+    return value;
+  }
+
+  private long reportMaxUnresponsiveDrops() {
+    long value = maxUnresponsiveDrops;
+    maxUnresponsiveDrops = 0;
+    return value;
+  }
+
   private void incReadyChannels() {
     numChannelConnect.incrementAndGet();
     final int newReady = readyChannels.incrementAndGet();
@@ -623,6 +697,23 @@ public class GcpManagedChannel extends ManagedChannel {
     }
     totalReadinessTime.addAndGet(readinessTimeUs);
     readinessTimeOccurrences.incrementAndGet();
+  }
+
+  private void recordUnresponsiveDetection(long nanos, long dropCount) {
+    unresponsiveDetectionCount.incrementAndGet();
+    final long ms = nanos / 1000000;
+    if (minUnresponsiveMs == 0 || minUnresponsiveMs > ms) {
+      minUnresponsiveMs = ms;
+    }
+    if (maxUnresponsiveMs < ms) {
+      maxUnresponsiveMs = ms;
+    }
+    if (minUnresponsiveDrops == 0 || minUnresponsiveDrops > dropCount) {
+      minUnresponsiveDrops = dropCount;
+    }
+    if (maxUnresponsiveDrops < dropCount) {
+      maxUnresponsiveDrops = dropCount;
+    }
   }
 
   /**
@@ -1190,6 +1281,8 @@ public class GcpManagedChannel extends ManagedChannel {
     private synchronized void maybeReconnectUnresponsive() {
       if (deadlineExceededCount.get() >= unresponsiveDropCount
           && unresponsiveTimingConditionMet()) {
+        recordUnresponsiveDetection(
+            System.nanoTime() - lastResponseNanos, deadlineExceededCount.get());
         delegate.enterIdle();
         lastResponseNanos = System.nanoTime();
         deadlineExceededCount.set(0);

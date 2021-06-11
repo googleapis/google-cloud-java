@@ -333,7 +333,8 @@ public final class GcpManagedChannelTest {
         LabelKey.create(GcpMetricsConstants.POOL_INDEX_LABEL, GcpMetricsConstants.POOL_INDEX_DESC));
     List<LabelValue> expectedLabelValues = new ArrayList<>();
     expectedLabelValues.addAll(labelValues);
-    expectedLabelValues.add(LabelValue.create("pool-1"));
+    int currentIndex = GcpManagedChannel.channelPoolIndex.get();
+    expectedLabelValues.add(LabelValue.create(String.format("pool-%d", currentIndex)));
 
     try {
       // Let's fill five channels with some fake streams.
@@ -346,7 +347,7 @@ public final class GcpManagedChannelTest {
       }
 
       MetricsRecord record = fakeRegistry.pollRecord();
-      assertThat(record.getMetrics().size()).isEqualTo(20);
+      assertThat(record.getMetrics().size()).isEqualTo(25);
 
       List<PointWithFunction> numChannels =
           record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MAX_CHANNELS);
@@ -390,6 +391,7 @@ public final class GcpManagedChannelTest {
 
   @Test
   public void testUnresponsiveDetection() throws InterruptedException {
+    final FakeMetricRegistry fakeRegistry = new FakeMetricRegistry();
     // Creating a pool with unresponsive connection detection for 100 ms, 3 dropped requests.
     final GcpManagedChannel pool =
         (GcpManagedChannel)
@@ -400,6 +402,8 @@ public final class GcpManagedChannelTest {
                             GcpResiliencyOptions.newBuilder()
                                 .withUnresponsiveConnectionDetection(100, 3)
                                 .build())
+                        .withMetricsOptions(
+                            GcpMetricsOptions.newBuilder().withMetricRegistry(fakeRegistry).build())
                         .build())
                 .build();
     final AtomicInteger idleCounter = new AtomicInteger();
@@ -419,6 +423,24 @@ public final class GcpManagedChannelTest {
     chRef.activeStreamsCountDecr(startNanos, deStatus, false);
     // Reconnected after 3rd deadline exceeded.
     assertEquals(1, idleCounter.get());
+
+    MetricsRecord record = fakeRegistry.pollRecord();
+    List<PointWithFunction> metric =
+        record.getMetrics().get(GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS);
+    assertThat(metric.size()).isEqualTo(1);
+    assertThat(metric.get(0).value()).isEqualTo(1L);
+    metric = record.getMetrics().get(GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DROPPED_CALLS);
+    assertThat(metric.size()).isEqualTo(1);
+    assertThat(metric.get(0).value()).isEqualTo(3L);
+    metric = record.getMetrics().get(GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DROPPED_CALLS);
+    assertThat(metric.size()).isEqualTo(1);
+    assertThat(metric.get(0).value()).isEqualTo(3L);
+    metric = record.getMetrics().get(GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DETECTION_TIME);
+    assertThat(metric.size()).isEqualTo(1);
+    assertThat(metric.get(0).value()).isAtLeast(100L);
+    metric = record.getMetrics().get(GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DETECTION_TIME);
+    assertThat(metric.size()).isEqualTo(1);
+    assertThat(metric.get(0).value()).isAtLeast(100L);
 
     // Any message from the server must reset the dropped requests count and timestamp.
     TimeUnit.MILLISECONDS.sleep(105);
