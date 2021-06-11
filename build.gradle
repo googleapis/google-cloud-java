@@ -18,6 +18,7 @@ group = 'com.google.cloud'
 description = 'GRPC-GCP-Extension Java'
 sourceCompatibility = '1.8'
 
+def title = 'gRPC extension library for Google Cloud Platform'
 def grpcVersion = '1.36.0'
 def protobufVersion = '3.12.0'
 def protocVersion = '3.12.0'
@@ -88,6 +89,15 @@ task sourcesJar(type: Jar) {
     from sourceSets.main.allJava
 }
 
+jar {
+    manifest {
+        attributes(
+                'Implementation-Title': title,
+                'Implementation-Version': project.version
+        )
+    }
+}
+
 publishing {
     publications {
         maven(MavenPublication) {
@@ -98,7 +108,7 @@ publishing {
             artifactId = 'grpc-gcp'
             version = version
             pom {
-                name = "gRPC extension library for Google Cloud Library"
+                name = title
                 url = 'https://github.com/GoogleCloudPlatform/grpc-gcp-java/tree/master/grpc-gcp'
                 afterEvaluate {
                     // description is not available until evaluated.
