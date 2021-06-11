@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.grpc.gcp;
+package com.google.cloud.grpc;
 
 import com.google.common.base.Preconditions;
 import io.opencensus.metrics.LabelKey;

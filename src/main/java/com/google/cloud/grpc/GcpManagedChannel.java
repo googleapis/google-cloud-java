@@ -14,49 +14,14 @@
  * limitations under the License.
  */
 
-package com.google.grpc.gcp;
+package com.google.cloud.grpc;
 
-import static com.google.grpc.gcp.GcpMetricsConstants.COUNT;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_AVG_CHANNEL_READINESS_TIME;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_ACTIVE_STREAMS;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_AFFINITY;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_ALLOWED_CHANNELS;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_CALLS;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_CHANNELS;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_CHANNEL_READINESS_TIME;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_READY_CHANNELS;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_TOTAL_ACTIVE_STREAMS;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DETECTION_TIME;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DROPPED_CALLS;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_ACTIVE_STREAMS;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_AFFINITY;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_CALLS;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_CHANNEL_READINESS_TIME;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_READY_CHANNELS;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_TOTAL_ACTIVE_STREAMS;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DETECTION_TIME;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DROPPED_CALLS;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_AFFINITY;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_CALLS_COMPLETED;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_CHANNEL_CONNECT;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_CHANNEL_DISCONNECT;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_FALLBACKS;
-import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS;
-import static com.google.grpc.gcp.GcpMetricsConstants.MICROSECOND;
-import static com.google.grpc.gcp.GcpMetricsConstants.MILLISECOND;
-import static com.google.grpc.gcp.GcpMetricsConstants.POOL_INDEX_DESC;
-import static com.google.grpc.gcp.GcpMetricsConstants.POOL_INDEX_LABEL;
-import static com.google.grpc.gcp.GcpMetricsConstants.RESULT_DESC;
-import static com.google.grpc.gcp.GcpMetricsConstants.RESULT_ERROR;
-import static com.google.grpc.gcp.GcpMetricsConstants.RESULT_LABEL;
-import static com.google.grpc.gcp.GcpMetricsConstants.RESULT_SUCCESS;
-
+import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
+import com.google.cloud.grpc.GcpManagedChannelOptions.GcpResiliencyOptions;
+import com.google.cloud.grpc.proto.AffinityConfig;
+import com.google.cloud.grpc.proto.ApiConfig;
+import com.google.cloud.grpc.proto.MethodConfig;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.grpc.gcp.GcpManagedChannelOptions.GcpMetricsOptions;
-import com.google.grpc.gcp.GcpManagedChannelOptions.GcpResiliencyOptions;
-import com.google.grpc.gcp.proto.AffinityConfig;
-import com.google.grpc.gcp.proto.ApiConfig;
-import com.google.grpc.gcp.proto.MethodConfig;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.MessageOrBuilder;
 import io.grpc.CallOptions;
@@ -131,12 +96,16 @@ public class GcpManagedChannel extends ManagedChannel {
   private MetricRegistry metricRegistry;
   private final List<LabelKey> labelKeys = new ArrayList<>();
   private final List<LabelKey> labelKeysWithResult =
-      new ArrayList<>(Collections.singletonList(LabelKey.create(RESULT_LABEL, RESULT_DESC)));
+      new ArrayList<>(
+          Collections.singletonList(
+              LabelKey.create(GcpMetricsConstants.RESULT_LABEL, GcpMetricsConstants.RESULT_DESC)));
   private final List<LabelValue> labelValues = new ArrayList<>();
   private final List<LabelValue> labelValuesSuccess =
-      new ArrayList<>(Collections.singletonList(LabelValue.create(RESULT_SUCCESS)));
+      new ArrayList<>(
+          Collections.singletonList(LabelValue.create(GcpMetricsConstants.RESULT_SUCCESS)));
   private final List<LabelValue> labelValuesError =
-      new ArrayList<>(Collections.singletonList(LabelValue.create(RESULT_ERROR)));
+      new ArrayList<>(
+          Collections.singletonList(LabelValue.create(GcpMetricsConstants.RESULT_ERROR)));
   private String metricPrefix;
 
   // Metrics counters.
@@ -231,7 +200,8 @@ public class GcpManagedChannel extends ManagedChannel {
     labelValuesSuccess.addAll(metricsOptions.getLabelValues());
     labelValuesError.addAll(metricsOptions.getLabelValues());
 
-    final LabelKey poolKey = LabelKey.create(POOL_INDEX_LABEL, POOL_INDEX_DESC);
+    final LabelKey poolKey =
+        LabelKey.create(GcpMetricsConstants.POOL_INDEX_LABEL, GcpMetricsConstants.POOL_INDEX_DESC);
     labelKeys.add(poolKey);
     labelKeysWithResult.add(poolKey);
     final LabelValue poolIndex =
@@ -243,181 +213,181 @@ public class GcpManagedChannel extends ManagedChannel {
     metricPrefix = metricsOptions.getNamePrefix();
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_MIN_READY_CHANNELS,
+        GcpMetricsConstants.METRIC_MIN_READY_CHANNELS,
         "The minimum number of channels simultaneously in the READY state.",
-        COUNT,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportMinReadyChannels);
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_MAX_READY_CHANNELS,
+        GcpMetricsConstants.METRIC_MAX_READY_CHANNELS,
         "The maximum number of channels simultaneously in the READY state.",
-        COUNT,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportMaxReadyChannels);
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_MAX_CHANNELS,
+        GcpMetricsConstants.METRIC_MAX_CHANNELS,
         "The maximum number of channels in the pool.",
-        COUNT,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportMaxChannels);
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_MAX_ALLOWED_CHANNELS,
+        GcpMetricsConstants.METRIC_MAX_ALLOWED_CHANNELS,
         "The maximum number of channels allowed in the pool. (The poll max size)",
-        COUNT,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportMaxAllowedChannels);
 
     createDerivedLongCumulativeTimeSeries(
-        METRIC_NUM_CHANNEL_DISCONNECT,
+        GcpMetricsConstants.METRIC_NUM_CHANNEL_DISCONNECT,
         "The number of disconnections (occurrences when a channel deviates from the READY state)",
-        COUNT,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportNumChannelDisconnect);
 
     createDerivedLongCumulativeTimeSeries(
-        METRIC_NUM_CHANNEL_CONNECT,
+        GcpMetricsConstants.METRIC_NUM_CHANNEL_CONNECT,
         "The number of times when a channel reached the READY state.",
-        COUNT,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportNumChannelConnect);
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_MIN_CHANNEL_READINESS_TIME,
+        GcpMetricsConstants.METRIC_MIN_CHANNEL_READINESS_TIME,
         "The minimum time it took to transition a channel to the READY state.",
-        MICROSECOND,
+        GcpMetricsConstants.MICROSECOND,
         this,
         GcpManagedChannel::reportMinReadinessTime);
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_AVG_CHANNEL_READINESS_TIME,
+        GcpMetricsConstants.METRIC_AVG_CHANNEL_READINESS_TIME,
         "The average time it took to transition a channel to the READY state.",
-        MICROSECOND,
+        GcpMetricsConstants.MICROSECOND,
         this,
         GcpManagedChannel::reportAvgReadinessTime);
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_MAX_CHANNEL_READINESS_TIME,
+        GcpMetricsConstants.METRIC_MAX_CHANNEL_READINESS_TIME,
         "The maximum time it took to transition a channel to the READY state.",
-        MICROSECOND,
+        GcpMetricsConstants.MICROSECOND,
         this,
         GcpManagedChannel::reportMaxReadinessTime);
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_MIN_ACTIVE_STREAMS,
+        GcpMetricsConstants.METRIC_MIN_ACTIVE_STREAMS,
         "The minimum number of active streams on any channel.",
-        COUNT,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportMinActiveStreams);
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_MAX_ACTIVE_STREAMS,
+        GcpMetricsConstants.METRIC_MAX_ACTIVE_STREAMS,
         "The maximum number of active streams on any channel.",
-        COUNT,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportMaxActiveStreams);
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_MIN_TOTAL_ACTIVE_STREAMS,
+        GcpMetricsConstants.METRIC_MIN_TOTAL_ACTIVE_STREAMS,
         "The minimum total number of active streams across all channels.",
-        COUNT,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportMinTotalActiveStreams);
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_MAX_TOTAL_ACTIVE_STREAMS,
+        GcpMetricsConstants.METRIC_MAX_TOTAL_ACTIVE_STREAMS,
         "The maximum total number of active streams across all channels.",
-        COUNT,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportMaxTotalActiveStreams);
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_MIN_AFFINITY,
+        GcpMetricsConstants.METRIC_MIN_AFFINITY,
         "The minimum number of affinity count on any channel.",
-        COUNT,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportMinAffinity);
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_MAX_AFFINITY,
+        GcpMetricsConstants.METRIC_MAX_AFFINITY,
         "The maximum number of affinity count on any channel.",
-        COUNT,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportMaxAffinity);
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_NUM_AFFINITY,
+        GcpMetricsConstants.METRIC_NUM_AFFINITY,
         "The total number of affinity count across all channels.",
-        COUNT,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportNumAffinity);
 
     createDerivedLongGaugeTimeSeriesWithResult(
-        METRIC_MIN_CALLS,
+        GcpMetricsConstants.METRIC_MIN_CALLS,
         "The minimum number of completed calls on any channel.",
-        COUNT,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportMinOkCalls,
         GcpManagedChannel::reportMinErrCalls);
 
     createDerivedLongGaugeTimeSeriesWithResult(
-        METRIC_MAX_CALLS,
+        GcpMetricsConstants.METRIC_MAX_CALLS,
         "The maximum number of completed calls on any channel.",
-        COUNT,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportMaxOkCalls,
         GcpManagedChannel::reportMaxErrCalls);
 
     createDerivedLongCumulativeTimeSeriesWithResult(
-        METRIC_NUM_CALLS_COMPLETED,
+        GcpMetricsConstants.METRIC_NUM_CALLS_COMPLETED,
         "The number of calls completed across all channels.",
-        COUNT,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportTotalOkCalls,
         GcpManagedChannel::reportTotalErrCalls);
 
     createDerivedLongCumulativeTimeSeriesWithResult(
-        METRIC_NUM_FALLBACKS,
+        GcpMetricsConstants.METRIC_NUM_FALLBACKS,
         "The number of calls that had fallback to another channel.",
-        COUNT,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportSucceededFallbacks,
         GcpManagedChannel::reportFailedFallbacks);
 
     createDerivedLongCumulativeTimeSeries(
-        METRIC_NUM_UNRESPONSIVE_DETECTIONS,
+        GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS,
         "The number of unresponsive connections detected.",
-        COUNT,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportUnresponsiveDetectionCount);
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_MIN_UNRESPONSIVE_DETECTION_TIME,
+        GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DETECTION_TIME,
         "The minimum time it took to detect an unresponsive connection.",
-        MILLISECOND,
+        GcpMetricsConstants.MILLISECOND,
         this,
         GcpManagedChannel::reportMinUnresponsiveMs);
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_MAX_UNRESPONSIVE_DETECTION_TIME,
+        GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DETECTION_TIME,
         "The maximum time it took to detect an unresponsive connection.",
-        MILLISECOND,
+        GcpMetricsConstants.MILLISECOND,
         this,
         GcpManagedChannel::reportMaxUnresponsiveMs);
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_MIN_UNRESPONSIVE_DROPPED_CALLS,
+        GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DROPPED_CALLS,
         "The minimum calls dropped before detection of an unresponsive connection.",
-        MILLISECOND,
+        GcpMetricsConstants.MILLISECOND,
         this,
         GcpManagedChannel::reportMinUnresponsiveDrops);
 
     createDerivedLongGaugeTimeSeries(
-        METRIC_MAX_UNRESPONSIVE_DROPPED_CALLS,
+        GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DROPPED_CALLS,
         "The maximum calls dropped before detection of an unresponsive connection.",
-        MILLISECOND,
+        GcpMetricsConstants.MILLISECOND,
         this,
         GcpManagedChannel::reportMaxUnresponsiveDrops);
   }

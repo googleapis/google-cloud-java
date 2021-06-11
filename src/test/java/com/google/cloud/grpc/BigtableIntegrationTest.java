@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.grpc.gcp;
+package com.google.cloud.grpc;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;

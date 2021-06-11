@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.grpc.gcp;
+package com.google.cloud.grpc;
 
+import com.google.cloud.grpc.proto.ApiConfig;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.grpc.gcp.proto.ApiConfig;
 import com.google.protobuf.util.JsonFormat;
 import io.grpc.ForwardingChannelBuilder;
 import io.grpc.ManagedChannel;

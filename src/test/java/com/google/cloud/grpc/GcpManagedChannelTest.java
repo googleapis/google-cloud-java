@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-package com.google.grpc.gcp;
+package com.google.cloud.grpc;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 
-import com.google.grpc.gcp.GcpManagedChannel.ChannelRef;
-import com.google.grpc.gcp.GcpManagedChannelOptions.GcpMetricsOptions;
-import com.google.grpc.gcp.GcpManagedChannelOptions.GcpResiliencyOptions;
-import com.google.grpc.gcp.MetricRegistryTestUtils.FakeMetricRegistry;
-import com.google.grpc.gcp.MetricRegistryTestUtils.MetricsRecord;
-import com.google.grpc.gcp.MetricRegistryTestUtils.PointWithFunction;
-import com.google.grpc.gcp.proto.AffinityConfig;
-import com.google.grpc.gcp.proto.ApiConfig;
-import com.google.grpc.gcp.proto.ChannelPoolConfig;
-import com.google.grpc.gcp.proto.MethodConfig;
+import com.google.cloud.grpc.GcpManagedChannel.ChannelRef;
+import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
+import com.google.cloud.grpc.GcpManagedChannelOptions.GcpResiliencyOptions;
+import com.google.cloud.grpc.MetricRegistryTestUtils.FakeMetricRegistry;
+import com.google.cloud.grpc.MetricRegistryTestUtils.MetricsRecord;
+import com.google.cloud.grpc.MetricRegistryTestUtils.PointWithFunction;
+import com.google.cloud.grpc.proto.AffinityConfig;
+import com.google.cloud.grpc.proto.ApiConfig;
+import com.google.cloud.grpc.proto.ChannelPoolConfig;
+import com.google.cloud.grpc.proto.MethodConfig;
 import com.google.spanner.v1.PartitionReadRequest;
 import com.google.spanner.v1.TransactionSelector;
 import io.grpc.CallOptions;
@@ -49,6 +49,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -219,7 +220,7 @@ public final class GcpManagedChannelTest {
             .apiConfig;
     ChannelPoolConfig expectedChannel =
         ChannelPoolConfig.newBuilder().setMaxSize(3).setMaxConcurrentStreamsLowWatermark(2).build();
-    assertEquals(expectedChannel, apiconfig.getChannelPool());
+    Assert.assertEquals(expectedChannel, apiconfig.getChannelPool());
 
     assertEquals(3, apiconfig.getMethodCount());
     MethodConfig.Builder expectedMethod1 = MethodConfig.newBuilder();
@@ -263,7 +264,7 @@ public final class GcpManagedChannelTest {
             .setIdleTimeout(1000)
             .setMaxConcurrentStreamsLowWatermark(5)
             .build();
-    assertEquals(expectedChannel, apiconfig.getChannelPool());
+    Assert.assertEquals(expectedChannel, apiconfig.getChannelPool());
 
     assertEquals(0, apiconfig.getMethodCount());
   }
@@ -277,7 +278,7 @@ public final class GcpManagedChannelTest {
         GcpManagedChannelBuilder.forDelegateBuilder(builder)
             .withApiConfigJsonFile(configFile)
             .apiConfig;
-    assertEquals(ChannelPoolConfig.getDefaultInstance(), apiconfig.getChannelPool());
+    Assert.assertEquals(ChannelPoolConfig.getDefaultInstance(), apiconfig.getChannelPool());
 
     assertEquals(3, apiconfig.getMethodCount());
     MethodConfig.Builder expectedMethod1 = MethodConfig.newBuilder();

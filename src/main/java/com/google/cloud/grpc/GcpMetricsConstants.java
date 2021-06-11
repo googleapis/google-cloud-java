@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.grpc.gcp;
+package com.google.cloud.grpc;
 
 class GcpMetricsConstants {
   public static String POOL_INDEX_LABEL = "pool_index";

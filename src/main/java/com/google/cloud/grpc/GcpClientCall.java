@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.grpc.gcp;
+package com.google.cloud.grpc;
 
+import com.google.cloud.grpc.proto.AffinityConfig;
 import com.google.common.base.MoreObjects;
-import com.google.grpc.gcp.proto.AffinityConfig;
 import io.grpc.Attributes;
 import io.grpc.CallOptions;
 import io.grpc.ClientCall;

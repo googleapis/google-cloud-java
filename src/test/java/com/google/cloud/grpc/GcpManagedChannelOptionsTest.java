@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package com.google.grpc.gcp;
+package com.google.cloud.grpc;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.grpc.gcp.GcpManagedChannelOptions.GcpMetricsOptions;
-import com.google.grpc.gcp.GcpManagedChannelOptions.GcpResiliencyOptions;
+import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
+import com.google.cloud.grpc.GcpManagedChannelOptions.GcpResiliencyOptions;
 import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import io.opencensus.metrics.MetricRegistry;

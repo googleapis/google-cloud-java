@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.grpc.gcp;
+package com.google.cloud.grpc;
 
 import com.google.common.collect.Maps;
 import io.opencensus.common.ToLongFunction;
