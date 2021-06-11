@@ -31,7 +31,7 @@ public class Errors {
     String description = status.getDescription();
     return status.getCode() == Status.Code.INTERNAL
         && description != null
-        && (description.contains("Received unexpected EOS on DATA frame from server")
+        && (description.contains("Received unexpected EOS ")
             || description.contains(" Rst ")
             || description.contains("RST_STREAM")
             || description.contains("Connection closed with unknown cause")
