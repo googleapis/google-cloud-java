@@ -50,9 +50,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class GrafeasClientTest {
+  private static MockGrafeas mockGrafeas;
   private static MockServiceHelper mockServiceHelper;
   private GrafeasClient client;
-  private static MockGrafeas mockGrafeas;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
