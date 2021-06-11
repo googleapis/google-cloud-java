@@ -36,6 +36,7 @@ import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_AFFINITY;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_CALLS_COMPLETED;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_CHANNEL_CONNECT;
 import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_CHANNEL_DISCONNECT;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_FALLBACKS;
 import static com.google.grpc.gcp.GcpMetricsConstants.MICROSECOND;
 import static com.google.grpc.gcp.GcpMetricsConstants.POOL_INDEX_DESC;
 import static com.google.grpc.gcp.GcpMetricsConstants.POOL_INDEX_LABEL;
@@ -160,6 +161,8 @@ public class GcpManagedChannel extends ManagedChannel {
   private int minAffinity = 0;
   private int maxAffinity = 0;
   private final AtomicInteger totalAffinityCount = new AtomicInteger();
+  private final AtomicLong fallbacksSucceeded = new AtomicLong();
+  private final AtomicLong fallbacksFailed = new AtomicLong();
 
   /**
    * Constructor for GcpManagedChannel.
@@ -365,6 +368,14 @@ public class GcpManagedChannel extends ManagedChannel {
         this,
         GcpManagedChannel::reportTotalOkCalls,
         GcpManagedChannel::reportTotalErrCalls);
+
+    createDerivedLongCumulativeTimeSeriesWithResult(
+        METRIC_NUM_FALLBACKS,
+        "The number of calls that had fallback to another channel.",
+        COUNT,
+        this,
+        GcpManagedChannel::reportSucceededFallbacks,
+        GcpManagedChannel::reportFailedFallbacks);
   }
 
   private MetricOptions createMetricOptions(
@@ -534,7 +545,7 @@ public class GcpManagedChannel extends ManagedChannel {
     return maxOkCalls;
   }
 
-  public long reportTotalOkCalls() {
+  private long reportTotalOkCalls() {
     return totalOkCalls.get();
   }
 
@@ -550,19 +561,19 @@ public class GcpManagedChannel extends ManagedChannel {
     maxOkCalls = stats.getMax();
   }
 
-  public synchronized long reportMinErrCalls() {
+  private synchronized long reportMinErrCalls() {
     minErrReported = true;
     calcMinMaxErrCalls();
     return minErrCalls;
   }
 
-  public synchronized long reportMaxErrCalls() {
+  private synchronized long reportMaxErrCalls() {
     maxErrReported = true;
     calcMinMaxErrCalls();
     return maxErrCalls;
   }
 
-  public long reportTotalErrCalls() {
+  private long reportTotalErrCalls() {
     return totalErrCalls.get();
   }
 
@@ -576,6 +587,14 @@ public class GcpManagedChannel extends ManagedChannel {
         channelRefs.stream().collect(Collectors.summarizingLong(ChannelRef::getAndResetErrCalls));
     minErrCalls = stats.getMin();
     maxErrCalls = stats.getMax();
+  }
+
+  private long reportSucceededFallbacks() {
+    return fallbacksSucceeded.get();
+  }
+
+  private long reportFailedFallbacks() {
+    return fallbacksFailed.get();
   }
 
   private void incReadyChannels() {
@@ -696,15 +715,14 @@ public class GcpManagedChannel extends ManagedChannel {
    * true in the {@link GcpResiliencyOptions} then instead of a channel in a non-READY state another
    * channel in the READY state and having fewer than maximum allowed number of active streams will
    * be provided if available. Subsequent calls with the same affinity key will provide the same
-   * fallback channel as long as the fallback channel is in the READY state and has fewer than
-   * maximum allowed number of active streams.
+   * fallback channel as long as the fallback channel is in the READY state.
    *
    * @param key affinity key. If it is specified, pick the ChannelRef bound with the affinity key.
    *     Otherwise pick the one with the smallest number of streams.
    */
   protected ChannelRef getChannelRef(@Nullable String key) {
     if (key == null || key.equals("")) {
-      return pickLeastBusyChannel();
+      return pickLeastBusyChannel(false);
     }
     ChannelRef channelRef = affinityKeyToChannelRef.get(key);
     if (channelRef == null || !fallbackEnabled) {
@@ -720,11 +738,12 @@ public class GcpManagedChannel extends ManagedChannel {
     Integer channelId = tempMap.get(key);
     if (channelId == null || fallbackMap.containsKey(channelId)) {
       // No temp mapping for this key or fallback channelId is also broken.
-      channelRef = pickLeastBusyChannel();
+      channelRef = pickLeastBusyChannel(true);
       tempMap.put(key, channelRef.getId());
       return channelRef;
     }
     // Fallback channelId is ready.
+    fallbacksSucceeded.incrementAndGet();
     return channelRefById.get(channelId);
   }
 
@@ -734,7 +753,7 @@ public class GcpManagedChannel extends ManagedChannel {
    * channel in the READY state and having fewer than maximum allowed number of active streams will
    * be provided if available.
    */
-  private synchronized ChannelRef pickLeastBusyChannel() {
+  private synchronized ChannelRef pickLeastBusyChannel(boolean forFallback) {
     int size = channelRefs.size();
     channelRefs.sort(Comparator.comparingInt(ChannelRef::getActiveStreamsCount));
 
@@ -762,9 +781,16 @@ public class GcpManagedChannel extends ManagedChannel {
       if (fallbackMap.containsKey(channelRef.getId())) {
         continue;
       }
+      if (forFallback) {
+        fallbacksSucceeded.incrementAndGet();
+      }
       return channelRef;
     }
-    // Return the least busy non-ready channel if all others are not ready or overloaded.
+    // Return the least busy non-ready or overloaded channel if all channels are not ready or
+    // overloaded.
+    if (forFallback) {
+      fallbacksFailed.incrementAndGet();
+    }
     return channelRefs.get(0);
   }
 

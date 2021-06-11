@@ -346,7 +346,7 @@ public final class GcpManagedChannelTest {
       }
 
       MetricsRecord record = fakeRegistry.pollRecord();
-      assertThat(record.getMetrics().size()).isEqualTo(19);
+      assertThat(record.getMetrics().size()).isEqualTo(20);
 
       List<PointWithFunction> numChannels =
           record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MAX_CHANNELS);

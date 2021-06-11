@@ -19,8 +19,8 @@ package com.google.grpc.gcp;
 class GcpMetricsConstants {
   public static String POOL_INDEX_LABEL = "pool_index";
   public static String POOL_INDEX_DESC = "gRPC GCP channel pool index.";
-  public static String RESULT_LABEL = "rpc_result";
-  public static String RESULT_DESC = "RPC call result.";
+  public static String RESULT_LABEL = "result";
+  public static String RESULT_DESC = "Outcome.";
   public static String RESULT_SUCCESS = "SUCCESS";
   public static String RESULT_ERROR = "ERROR";
 
@@ -47,4 +47,5 @@ class GcpMetricsConstants {
   public static String METRIC_MIN_CALLS = "min_calls_per_channel";
   public static String METRIC_MAX_CALLS = "max_calls_per_channel";
   public static String METRIC_NUM_CALLS_COMPLETED = "num_calls_completed";
+  public static String METRIC_NUM_FALLBACKS = "num_fallbacks";
 }
