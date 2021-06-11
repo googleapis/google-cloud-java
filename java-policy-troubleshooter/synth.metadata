@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-policy-troubleshooter.git",
-        "sha": "907eea9e7f498518894f76a2ccf4c39b73b0f83a"
+        "sha": "f9e4854c62dbe8674e68a079acb98c05b07ad132"
       }
     },
     {
       "git": {
         "name": "googleapis-gen",
         "remote": "https://github.com/googleapis/googleapis-gen.git",
-        "sha": "14629f6b39dfee67009f79a96d2077d5bb17d1c3",
-        "internalRef": "378266372"
+        "sha": "9a27cb4181a8823727458705f4343f0dccdb40d6",
+        "internalRef": "378718217"
       }
     },
     {

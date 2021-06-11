@@ -111,6 +111,11 @@ public class IamCheckerStubSettings extends StubSettings<IamCheckerStubSettings>
     return "policytroubleshooter.googleapis.com:443";
   }
 
+  /** Returns the default mTLS service endpoint. */
+  public static String getDefaultMtlsEndpoint() {
+    return "policytroubleshooter.mtls.googleapis.com:443";
+  }
+
   /** Returns the default service scopes. */
   public static List<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
@@ -224,6 +229,8 @@ public class IamCheckerStubSettings extends StubSettings<IamCheckerStubSettings>
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
 
       return initDefaults(builder);
     }
