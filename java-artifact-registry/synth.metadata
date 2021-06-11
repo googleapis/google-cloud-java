@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-artifact-registry.git",
-        "sha": "ebcaf92de1617a2897c8c68c00211b02d93485b1"
+        "sha": "f16c9b03be285a502f590884a1ccc2ae84b86a2f"
       }
     },
     {
       "git": {
         "name": "googleapis-gen",
         "remote": "https://github.com/googleapis/googleapis-gen.git",
-        "sha": "ebd77e76effb65c4fba8c64f31c15062c250a4c2",
-        "internalRef": "362856902"
+        "sha": "14629f6b39dfee67009f79a96d2077d5bb17d1c3",
+        "internalRef": "378266372"
       }
     },
     {

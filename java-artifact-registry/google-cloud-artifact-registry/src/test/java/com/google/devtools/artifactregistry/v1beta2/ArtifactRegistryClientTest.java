@@ -65,8 +65,8 @@ import org.junit.Test;
 public class ArtifactRegistryClientTest {
   private static MockArtifactRegistry mockArtifactRegistry;
   private static MockServiceHelper mockServiceHelper;
-  private ArtifactRegistryClient client;
   private LocalChannelProvider channelProvider;
+  private ArtifactRegistryClient client;
 
   @BeforeClass
   public static void startStaticServer() {
