@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-memcache.git",
-        "sha": "d3e48160cd85ddd9735c3aa22dbaef848e87bdbd"
+        "sha": "aa7d57a8c79c2d77a5dbe93d93c3d7366d7a992a"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "9e3105549a35520f215359065c11e8dce15e18af",
-        "internalRef": "378266372"
+        "sha": "08c4eeb531c01ad031134dca94b18e3f7dd35902",
+        "internalRef": "378718217"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "9e3105549a35520f215359065c11e8dce15e18af",
-        "internalRef": "378266372"
+        "sha": "08c4eeb531c01ad031134dca94b18e3f7dd35902",
+        "internalRef": "378718217"
       }
     },
     {
