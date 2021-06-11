@@ -95,8 +95,8 @@ import org.junit.Test;
 public class CloudBuildClientTest {
   private static MockCloudBuild mockCloudBuild;
   private static MockServiceHelper mockServiceHelper;
-  private CloudBuildClient client;
   private LocalChannelProvider channelProvider;
+  private CloudBuildClient client;
 
   @BeforeClass
   public static void startStaticServer() {
