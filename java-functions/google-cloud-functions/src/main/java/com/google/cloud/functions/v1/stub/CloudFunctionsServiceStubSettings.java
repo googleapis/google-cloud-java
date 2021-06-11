@@ -291,6 +291,11 @@ public class CloudFunctionsServiceStubSettings
     return "cloudfunctions.googleapis.com:443";
   }
 
+  /** Returns the default mTLS service endpoint. */
+  public static String getDefaultMtlsEndpoint() {
+    return "cloudfunctions.mtls.googleapis.com:443";
+  }
+
   /** Returns the default service scopes. */
   public static List<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
@@ -510,6 +515,8 @@ public class CloudFunctionsServiceStubSettings
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
 
       return initDefaults(builder);
     }
