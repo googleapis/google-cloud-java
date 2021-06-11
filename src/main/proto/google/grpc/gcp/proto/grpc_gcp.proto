@@ -36,6 +36,8 @@ message ChannelPoolConfig {
   // The low watermark of max number of concurrent streams in a channel.
   // New channel will be created once it get hit, until we reach the max size
   // of the channel pool.
+  // Values outside of [0..100] will be ignored. 0 = always create a new channel
+  // until max size is reached.
   uint32 max_concurrent_streams_low_watermark = 3;
 }
 

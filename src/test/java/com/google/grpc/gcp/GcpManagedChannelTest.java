@@ -96,7 +96,7 @@ public final class GcpManagedChannelTest {
             GcpManagedChannelBuilder.forDelegateBuilder(builder)
                 .withApiConfigJsonFile(configFile)
                 .build();
-    assertEquals(1, gcpChannel.channelRefs.size());
+    assertEquals(0, gcpChannel.channelRefs.size());
     assertEquals(3, gcpChannel.getMaxSize());
     assertEquals(2, gcpChannel.getStreamsLowWatermark());
     assertEquals(3, gcpChannel.methodToAffinity.size());
@@ -117,7 +117,7 @@ public final class GcpManagedChannelTest {
             GcpManagedChannelBuilder.forDelegateBuilder(builder)
                 .withApiConfigJsonString(sb.toString())
                 .build();
-    assertEquals(1, gcpChannel.channelRefs.size());
+    assertEquals(0, gcpChannel.channelRefs.size());
     assertEquals(3, gcpChannel.getMaxSize());
     assertEquals(2, gcpChannel.getStreamsLowWatermark());
     assertEquals(3, gcpChannel.methodToAffinity.size());
@@ -125,8 +125,9 @@ public final class GcpManagedChannelTest {
 
   @Test
   public void testGetChannelRefInitialization() throws Exception {
-    // Should have a managedchannel by default.
-    assertEquals(1, gcpChannel.channelRefs.size());
+    // Should not have a managedchannel by default.
+    assertEquals(0, gcpChannel.channelRefs.size());
+    // But once requested it's there.
     assertEquals(0, gcpChannel.getChannelRef(null).getAffinityCount());
     // The state of this channel is idle.
     assertEquals(ConnectivityState.IDLE, gcpChannel.getState(false));
@@ -177,8 +178,8 @@ public final class GcpManagedChannelTest {
     gcpChannel.bind(cf1, Arrays.asList("key1"));
     gcpChannel.bind(cf2, Arrays.asList("key2"));
     gcpChannel.bind(cf1, Arrays.asList("key1"));
-    assertEquals(2, gcpChannel.channelRefs.get(1).getAffinityCount());
-    assertEquals(1, gcpChannel.channelRefs.get(2).getAffinityCount());
+    assertEquals(2, gcpChannel.channelRefs.get(0).getAffinityCount());
+    assertEquals(1, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(2, gcpChannel.affinityKeyToChannelRef.size());
 
     // Unbind the affinity key.
@@ -187,8 +188,8 @@ public final class GcpManagedChannelTest {
     gcpChannel.unbind(Arrays.asList("key1"));
     gcpChannel.unbind(Arrays.asList("key2"));
     assertEquals(0, gcpChannel.affinityKeyToChannelRef.size());
+    assertEquals(0, gcpChannel.channelRefs.get(0).getAffinityCount());
     assertEquals(0, gcpChannel.channelRefs.get(1).getAffinityCount());
-    assertEquals(0, gcpChannel.channelRefs.get(2).getAffinityCount());
   }
 
   @Test
