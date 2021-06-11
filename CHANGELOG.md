@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.22.3](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.22.2...v1.22.3) (2021-06-11)
+
+
+### Bug Fixes
+
+* Make EOS Matching more robust ([#1128](https://www.github.com/googleapis/java-bigquerystorage/issues/1128)) ([3b5cdbe](https://www.github.com/googleapis/java-bigquerystorage/commit/3b5cdbe769fcebeebc571922c84c129066e76aaf))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.133.0 ([#1124](https://www.github.com/googleapis/java-bigquerystorage/issues/1124)) ([aea80e9](https://www.github.com/googleapis/java-bigquerystorage/commit/aea80e930ac5a9cb5fa8f751c977166d45f1341f))
+
 ### [1.22.2](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.22.1...v1.22.2) (2021-06-08)
 
 
