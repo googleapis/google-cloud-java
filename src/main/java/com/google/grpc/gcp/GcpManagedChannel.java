@@ -885,7 +885,13 @@ public class GcpManagedChannel extends ManagedChannel {
 
   @Override
   public synchronized String authority() {
-    return channelRefs.get(0).getChannel().authority();
+    if (channelRefs.size() > 0) {
+      return channelRefs.get(0).getChannel().authority();
+    }
+    final ManagedChannel channel = delegateChannelBuilder.build();
+    final String authority = channel.authority();
+    channel.shutdownNow();
+    return authority;
   }
 
   /**
