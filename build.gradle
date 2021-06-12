@@ -2,8 +2,10 @@ plugins {
     id 'java'
     id 'maven'
     id 'maven-publish'
+    id 'signing'
     id 'com.google.protobuf' version '0.8.10'
     id 'com.github.sherter.google-java-format' version '0.8'
+    id 'io.codearte.nexus-staging' version '0.8.0'
 }
 
 repositories {
@@ -13,7 +15,7 @@ repositories {
     mavenLocal()
 }
 
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0-SNAPSHOT'
 group = 'com.google.cloud'
 description = 'GRPC-GCP-Extension Java'
 sourceCompatibility = '1.8'
@@ -62,8 +64,8 @@ test {
         outputs.upToDateWhen {false}
         showStandardStreams = true
     }
-    exclude 'com/google/grpc/gcp/SpannerIntegrationTest.class'
-    exclude 'com/google/grpc/gcp/BigtableIntegrationTest.class'
+    exclude 'com/google/cloud/grpc/SpannerIntegrationTest.class'
+    exclude 'com/google/cloud/grpc/BigtableIntegrationTest.class'
 }
 
 task allTests( type: Test ) {
@@ -89,12 +91,13 @@ task sourcesJar(type: Jar) {
     from sourceSets.main.allJava
 }
 
-jar {
-    manifest {
-        attributes(
-                'Implementation-Title': title,
-                'Implementation-Version': project.version
-        )
+if (project.hasProperty('ossrhUsername') && project.hasProperty('ossrhPassword')) {
+    // Nexus staging plugin only works at root project level
+    // See https://github.com/Codearte/gradle-nexus-staging-plugin/issues/47
+    nexusStaging {
+        username = ossrhUsername
+        password = ossrhPassword
+        packageGroup = group
     }
 }
 
@@ -139,5 +142,23 @@ publishing {
                 }
             }
         }
+    }
+    repositories {
+        maven {
+            url 'https://google.oss.sonatype.org/service/local/staging/deploy/maven2/'
+            credentials {
+                username = project.hasProperty('ossrhUsername') ? project.getProperty('ossrhUsername') : null
+                password = project.hasProperty('ossrhPassword') ? project.getProperty('ossrhPassword') : null
+            }
+        }
+    }
+}
+
+signing {
+    if (!project.hasProperty('skip.signing')) {
+        if (project.hasProperty('signing.gnupg.executable')) {
+            useGpgCmd()
+        }
+        sign publishing.publications.maven
     }
 }
