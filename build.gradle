@@ -15,7 +15,7 @@ repositories {
     mavenLocal()
 }
 
-version = '1.0.0-SNAPSHOT'
+version = '1.0.0'
 group = 'com.google.cloud'
 description = 'GRPC-GCP-Extension Java'
 sourceCompatibility = '1.8'
