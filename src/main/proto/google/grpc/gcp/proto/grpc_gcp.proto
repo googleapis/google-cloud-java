@@ -18,7 +18,7 @@ package grpc.gcp;
 
 option java_multiple_files = true;
 option java_outer_classname = "GcpExtensionProto";
-option java_package = "com.google.grpc.gcp.proto";
+option java_package = "com.google.cloud.grpc.proto";
 
 message ApiConfig {
   // The channel pool configurations.
