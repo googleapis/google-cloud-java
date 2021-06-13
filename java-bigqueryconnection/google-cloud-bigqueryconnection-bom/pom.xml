@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
@@ -60,16 +60,10 @@
 
   <dependencyManagement>
     <dependencies>
-
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigqueryconnection</artifactId>
         <version>1.1.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigqueryconnection:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-bigqueryconnection-v1</artifactId>
-        <version>1.1.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigqueryconnection-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -78,13 +72,18 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-bigqueryconnection-v1beta1</artifactId>
-        <version>0.6.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigqueryconnection-v1beta1:current} -->
+        <artifactId>grpc-google-cloud-bigqueryconnection-v1beta1</artifactId>
+        <version>0.6.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigqueryconnection-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-bigqueryconnection-v1beta1</artifactId>
-        <version>0.6.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigqueryconnection-v1beta1:current} -->
+        <artifactId>proto-google-cloud-bigqueryconnection-v1</artifactId>
+        <version>1.1.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigqueryconnection-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-bigqueryconnection-v1beta1</artifactId>
+        <version>0.6.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigqueryconnection-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

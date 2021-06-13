@@ -140,10 +140,10 @@
 
   <modules>
     <module>google-cloud-bigqueryconnection</module>
-    <module>proto-google-cloud-bigqueryconnection-v1</module>
     <module>grpc-google-cloud-bigqueryconnection-v1</module>
-    <module>proto-google-cloud-bigqueryconnection-v1beta1</module>
     <module>grpc-google-cloud-bigqueryconnection-v1beta1</module>
+    <module>proto-google-cloud-bigqueryconnection-v1</module>
+    <module>proto-google-cloud-bigqueryconnection-v1beta1</module>
     <module>google-cloud-bigqueryconnection-bom</module>
   </modules>
 
