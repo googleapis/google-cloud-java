@@ -134,6 +134,11 @@ public class BigQueryReadStubSettings extends StubSettings<BigQueryReadStubSetti
     return "bigquerystorage.googleapis.com:443";
   }
 
+  /** Returns the default mTLS service endpoint. */
+  public static String getDefaultMtlsEndpoint() {
+    return "bigquerystorage.mtls.googleapis.com:443";
+  }
+
   /** Returns the default service scopes. */
   public static List<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
@@ -294,6 +299,8 @@ public class BigQueryReadStubSettings extends StubSettings<BigQueryReadStubSetti
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
 
       return initDefaults(builder);
     }
