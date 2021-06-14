@@ -112,8 +112,8 @@
 
   <modules>
     <module>google-cloud-channel</module>
-    <module>proto-google-cloud-channel-v1</module>
     <module>grpc-google-cloud-channel-v1</module>
+    <module>proto-google-cloud-channel-v1</module>
     <module>google-cloud-channel-bom</module>
   </modules>
 

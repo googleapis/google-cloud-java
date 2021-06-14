@@ -63,8 +63,8 @@ import org.junit.Test;
 public class CloudChannelServiceClientTest {
   private static MockCloudChannelService mockCloudChannelService;
   private static MockServiceHelper mockServiceHelper;
-  private CloudChannelServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CloudChannelServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

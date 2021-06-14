@@ -2,5 +2,5 @@
 # module:released-version:current-version
 
 google-cloud-channel:2.2.1:2.2.2-SNAPSHOT
-proto-google-cloud-channel-v1:2.2.1:2.2.2-SNAPSHOT
 grpc-google-cloud-channel-v1:2.2.1:2.2.2-SNAPSHOT
+proto-google-cloud-channel-v1:2.2.1:2.2.2-SNAPSHOT
