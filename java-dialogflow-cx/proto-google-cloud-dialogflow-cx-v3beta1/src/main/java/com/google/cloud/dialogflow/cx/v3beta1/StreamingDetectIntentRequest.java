@@ -149,6 +149,11 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
 
               break;
             }
+          case 40:
+            {
+              enablePartialResponse_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -411,6 +416,27 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     return getOutputAudioConfig();
   }
 
+  public static final int ENABLE_PARTIAL_RESPONSE_FIELD_NUMBER = 5;
+  private boolean enablePartialResponse_;
+  /**
+   *
+   *
+   * <pre>
+   * Enable partial detect intent response. If this flag is not enabled,
+   * response stream still contains only one final `DetectIntentResponse` even
+   * if some `Fulfillment`s in the agent have been configured to return partial
+   * responses.
+   * </pre>
+   *
+   * <code>bool enable_partial_response = 5;</code>
+   *
+   * @return The enablePartialResponse.
+   */
+  @java.lang.Override
+  public boolean getEnablePartialResponse() {
+    return enablePartialResponse_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -437,6 +463,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     if (outputAudioConfig_ != null) {
       output.writeMessage(4, getOutputAudioConfig());
     }
+    if (enablePartialResponse_ != false) {
+      output.writeBool(5, enablePartialResponse_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -457,6 +486,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     }
     if (outputAudioConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getOutputAudioConfig());
+    }
+    if (enablePartialResponse_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, enablePartialResponse_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -487,6 +519,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     if (hasOutputAudioConfig()) {
       if (!getOutputAudioConfig().equals(other.getOutputAudioConfig())) return false;
     }
+    if (getEnablePartialResponse() != other.getEnablePartialResponse()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -512,6 +545,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
       hash = (37 * hash) + OUTPUT_AUDIO_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getOutputAudioConfig().hashCode();
     }
+    hash = (37 * hash) + ENABLE_PARTIAL_RESPONSE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnablePartialResponse());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -701,6 +736,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
         outputAudioConfig_ = null;
         outputAudioConfigBuilder_ = null;
       }
+      enablePartialResponse_ = false;
+
       return this;
     }
 
@@ -746,6 +783,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
       } else {
         result.outputAudioConfig_ = outputAudioConfigBuilder_.build();
       }
+      result.enablePartialResponse_ = enablePartialResponse_;
       onBuilt();
       return result;
     }
@@ -811,6 +849,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
       }
       if (other.hasOutputAudioConfig()) {
         mergeOutputAudioConfig(other.getOutputAudioConfig());
+      }
+      if (other.getEnablePartialResponse() != false) {
+        setEnablePartialResponse(other.getEnablePartialResponse());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1599,6 +1640,67 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
         outputAudioConfig_ = null;
       }
       return outputAudioConfigBuilder_;
+    }
+
+    private boolean enablePartialResponse_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable partial detect intent response. If this flag is not enabled,
+     * response stream still contains only one final `DetectIntentResponse` even
+     * if some `Fulfillment`s in the agent have been configured to return partial
+     * responses.
+     * </pre>
+     *
+     * <code>bool enable_partial_response = 5;</code>
+     *
+     * @return The enablePartialResponse.
+     */
+    @java.lang.Override
+    public boolean getEnablePartialResponse() {
+      return enablePartialResponse_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable partial detect intent response. If this flag is not enabled,
+     * response stream still contains only one final `DetectIntentResponse` even
+     * if some `Fulfillment`s in the agent have been configured to return partial
+     * responses.
+     * </pre>
+     *
+     * <code>bool enable_partial_response = 5;</code>
+     *
+     * @param value The enablePartialResponse to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnablePartialResponse(boolean value) {
+
+      enablePartialResponse_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable partial detect intent response. If this flag is not enabled,
+     * response stream still contains only one final `DetectIntentResponse` even
+     * if some `Fulfillment`s in the agent have been configured to return partial
+     * responses.
+     * </pre>
+     *
+     * <code>bool enable_partial_response = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnablePartialResponse() {
+
+      enablePartialResponse_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

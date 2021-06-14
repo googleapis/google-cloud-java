@@ -90,6 +90,7 @@ public class SessionsClientTest {
             .setQueryResult(QueryResult.newBuilder().build())
             .setOutputAudio(ByteString.EMPTY)
             .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+            .setAllowCancellation(true)
             .build();
     mockSessions.addResponse(expectedResponse);
 
@@ -158,6 +159,7 @@ public class SessionsClientTest {
             .setQueryParams(QueryParameters.newBuilder().build())
             .setQueryInput(QueryInput.newBuilder().build())
             .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+            .setEnablePartialResponse(true)
             .build();
 
     MockStreamObserver<StreamingDetectIntentResponse> responseObserver = new MockStreamObserver<>();
@@ -188,6 +190,7 @@ public class SessionsClientTest {
             .setQueryParams(QueryParameters.newBuilder().build())
             .setQueryInput(QueryInput.newBuilder().build())
             .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+            .setEnablePartialResponse(true)
             .build();
 
     MockStreamObserver<StreamingDetectIntentResponse> responseObserver = new MockStreamObserver<>();

@@ -140,6 +140,11 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
                       extensionRegistry));
               break;
             }
+          case 64:
+            {
+              returnPartialResponses_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -5150,6 +5155,32 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int RETURN_PARTIAL_RESPONSES_FIELD_NUMBER = 8;
+  private boolean returnPartialResponses_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether Dialogflow should return currently queued fulfillment response
+   * messages in streaming APIs. If a webhook is specified, it happens before
+   * Dialogflow invokes webhook.
+   * Warning:
+   * 1) This flag only affects streaming API. Responses are still queued
+   * and returned once in non-streaming API.
+   * 2) The flag can be enabled in any fulfillment but only the first 3 partial
+   * responses will be returned. You may only want to apply it to fulfillments
+   * that have slow webhooks.
+   * </pre>
+   *
+   * <code>bool return_partial_responses = 8;</code>
+   *
+   * @return The returnPartialResponses.
+   */
+  @java.lang.Override
+  public boolean getReturnPartialResponses() {
+    return returnPartialResponses_;
+  }
+
   public static final int TAG_FIELD_NUMBER = 3;
   private volatile java.lang.Object tag_;
   /**
@@ -5398,6 +5429,9 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < conditionalCases_.size(); i++) {
       output.writeMessage(5, conditionalCases_.get(i));
     }
+    if (returnPartialResponses_ != false) {
+      output.writeBool(8, returnPartialResponses_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -5423,6 +5457,9 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < conditionalCases_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, conditionalCases_.get(i));
     }
+    if (returnPartialResponses_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, returnPartialResponses_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5441,6 +5478,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
     if (!getMessagesList().equals(other.getMessagesList())) return false;
     if (!getWebhook().equals(other.getWebhook())) return false;
+    if (getReturnPartialResponses() != other.getReturnPartialResponses()) return false;
     if (!getTag().equals(other.getTag())) return false;
     if (!getSetParameterActionsList().equals(other.getSetParameterActionsList())) return false;
     if (!getConditionalCasesList().equals(other.getConditionalCasesList())) return false;
@@ -5461,6 +5499,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + WEBHOOK_FIELD_NUMBER;
     hash = (53 * hash) + getWebhook().hashCode();
+    hash = (37 * hash) + RETURN_PARTIAL_RESPONSES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialResponses());
     hash = (37 * hash) + TAG_FIELD_NUMBER;
     hash = (53 * hash) + getTag().hashCode();
     if (getSetParameterActionsCount() > 0) {
@@ -5636,6 +5676,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
       webhook_ = "";
 
+      returnPartialResponses_ = false;
+
       tag_ = "";
 
       if (setParameterActionsBuilder_ == null) {
@@ -5688,6 +5730,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         result.messages_ = messagesBuilder_.build();
       }
       result.webhook_ = webhook_;
+      result.returnPartialResponses_ = returnPartialResponses_;
       result.tag_ = tag_;
       if (setParameterActionsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
@@ -5787,6 +5830,9 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       if (!other.getWebhook().isEmpty()) {
         webhook_ = other.webhook_;
         onChanged();
+      }
+      if (other.getReturnPartialResponses() != false) {
+        setReturnPartialResponses(other.getReturnPartialResponses());
       }
       if (!other.getTag().isEmpty()) {
         tag_ = other.tag_;
@@ -6350,6 +6396,82 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       webhook_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean returnPartialResponses_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether Dialogflow should return currently queued fulfillment response
+     * messages in streaming APIs. If a webhook is specified, it happens before
+     * Dialogflow invokes webhook.
+     * Warning:
+     * 1) This flag only affects streaming API. Responses are still queued
+     * and returned once in non-streaming API.
+     * 2) The flag can be enabled in any fulfillment but only the first 3 partial
+     * responses will be returned. You may only want to apply it to fulfillments
+     * that have slow webhooks.
+     * </pre>
+     *
+     * <code>bool return_partial_responses = 8;</code>
+     *
+     * @return The returnPartialResponses.
+     */
+    @java.lang.Override
+    public boolean getReturnPartialResponses() {
+      return returnPartialResponses_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether Dialogflow should return currently queued fulfillment response
+     * messages in streaming APIs. If a webhook is specified, it happens before
+     * Dialogflow invokes webhook.
+     * Warning:
+     * 1) This flag only affects streaming API. Responses are still queued
+     * and returned once in non-streaming API.
+     * 2) The flag can be enabled in any fulfillment but only the first 3 partial
+     * responses will be returned. You may only want to apply it to fulfillments
+     * that have slow webhooks.
+     * </pre>
+     *
+     * <code>bool return_partial_responses = 8;</code>
+     *
+     * @param value The returnPartialResponses to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReturnPartialResponses(boolean value) {
+
+      returnPartialResponses_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether Dialogflow should return currently queued fulfillment response
+     * messages in streaming APIs. If a webhook is specified, it happens before
+     * Dialogflow invokes webhook.
+     * Warning:
+     * 1) This flag only affects streaming API. Responses are still queued
+     * and returned once in non-streaming API.
+     * 2) The flag can be enabled in any fulfillment but only the first 3 partial
+     * responses will be returned. You may only want to apply it to fulfillments
+     * that have slow webhooks.
+     * </pre>
+     *
+     * <code>bool return_partial_responses = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReturnPartialResponses() {
+
+      returnPartialResponses_ = false;
       onChanged();
       return this;
     }
