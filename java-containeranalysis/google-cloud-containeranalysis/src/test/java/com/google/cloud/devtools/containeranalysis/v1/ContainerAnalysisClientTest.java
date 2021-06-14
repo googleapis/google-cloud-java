@@ -53,8 +53,8 @@ import org.junit.Test;
 public class ContainerAnalysisClientTest {
   private static MockContainerAnalysis mockContainerAnalysis;
   private static MockServiceHelper mockServiceHelper;
-  private ContainerAnalysisClient client;
   private LocalChannelProvider channelProvider;
+  private ContainerAnalysisClient client;
 
   @BeforeClass
   public static void startStaticServer() {
