@@ -118,10 +118,10 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-container-v1</module>
-    <module>grpc-google-cloud-container-v1</module>
     <module>google-cloud-container</module>
-  <module>google-cloud-container-bom</module>
+    <module>grpc-google-cloud-container-v1</module>
+    <module>proto-google-cloud-container-v1</module>
+    <module>google-cloud-container-bom</module>
   </modules>
 
   <reporting>
