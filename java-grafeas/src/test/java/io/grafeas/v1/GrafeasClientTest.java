@@ -52,8 +52,8 @@ import org.junit.Test;
 public class GrafeasClientTest {
   private static MockGrafeas mockGrafeas;
   private static MockServiceHelper mockServiceHelper;
-  private GrafeasClient client;
   private LocalChannelProvider channelProvider;
+  private GrafeasClient client;
 
   @BeforeClass
   public static void startStaticServer() {

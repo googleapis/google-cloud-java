@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-grafeas.git",
-        "sha": "d6e45c032f5f29604411487eb5a48b7feec5995c"
+        "sha": "8abf7dd2f3d9445a53684ca9d21d2d33bfbf461b"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "a5f96d06ef57e325761bad010f460d0c5dbeccda",
-        "internalRef": "377081269"
+        "sha": "08c4eeb531c01ad031134dca94b18e3f7dd35902",
+        "internalRef": "378718217"
       }
     },
     {
