@@ -1199,12 +1199,12 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>This method should be used by human agent client software to fetch auto generated
    * suggestions in real-time, while the conversation with an end user is in progress. The
    * functionality is implemented in terms of the [list
-   * pagination](/apis/design/design_patterns#list_pagination) design pattern. The client app should
-   * use the `next_page_token` field to fetch the next batch of suggestions. `suggestions` are
-   * sorted by `create_time` in descending order. To fetch latest suggestion, just set `page_size`
-   * to 1. To fetch new suggestions without duplication, send request with filter
-   * `create_time_epoch_microseconds &gt; [first item's create_time of previous request]` and empty
-   * page_token.
+   * pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination) design
+   * pattern. The client app should use the `next_page_token` field to fetch the next batch of
+   * suggestions. `suggestions` are sorted by `create_time` in descending order. To fetch latest
+   * suggestion, just set `page_size` to 1. To fetch new suggestions without duplication, send
+   * request with filter `create_time_epoch_microseconds &gt; [first item's create_time of previous
+   * request]` and empty page_token.
    *
    * <p>Sample code:
    *
@@ -1243,12 +1243,12 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>This method should be used by human agent client software to fetch auto generated
    * suggestions in real-time, while the conversation with an end user is in progress. The
    * functionality is implemented in terms of the [list
-   * pagination](/apis/design/design_patterns#list_pagination) design pattern. The client app should
-   * use the `next_page_token` field to fetch the next batch of suggestions. `suggestions` are
-   * sorted by `create_time` in descending order. To fetch latest suggestion, just set `page_size`
-   * to 1. To fetch new suggestions without duplication, send request with filter
-   * `create_time_epoch_microseconds &gt; [first item's create_time of previous request]` and empty
-   * page_token.
+   * pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination) design
+   * pattern. The client app should use the `next_page_token` field to fetch the next batch of
+   * suggestions. `suggestions` are sorted by `create_time` in descending order. To fetch latest
+   * suggestion, just set `page_size` to 1. To fetch new suggestions without duplication, send
+   * request with filter `create_time_epoch_microseconds &gt; [first item's create_time of previous
+   * request]` and empty page_token.
    *
    * <p>Sample code:
    *
@@ -1289,12 +1289,12 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>This method should be used by human agent client software to fetch auto generated
    * suggestions in real-time, while the conversation with an end user is in progress. The
    * functionality is implemented in terms of the [list
-   * pagination](/apis/design/design_patterns#list_pagination) design pattern. The client app should
-   * use the `next_page_token` field to fetch the next batch of suggestions. `suggestions` are
-   * sorted by `create_time` in descending order. To fetch latest suggestion, just set `page_size`
-   * to 1. To fetch new suggestions without duplication, send request with filter
-   * `create_time_epoch_microseconds &gt; [first item's create_time of previous request]` and empty
-   * page_token.
+   * pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination) design
+   * pattern. The client app should use the `next_page_token` field to fetch the next batch of
+   * suggestions. `suggestions` are sorted by `create_time` in descending order. To fetch latest
+   * suggestion, just set `page_size` to 1. To fetch new suggestions without duplication, send
+   * request with filter `create_time_epoch_microseconds &gt; [first item's create_time of previous
+   * request]` and empty page_token.
    *
    * <p>Sample code:
    *
