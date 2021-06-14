@@ -116,8 +116,8 @@ import org.junit.Test;
 public class ClusterManagerClientTest {
   private static MockClusterManager mockClusterManager;
   private static MockServiceHelper mockServiceHelper;
-  private ClusterManagerClient client;
   private LocalChannelProvider channelProvider;
+  private ClusterManagerClient client;
 
   @BeforeClass
   public static void startStaticServer() {
