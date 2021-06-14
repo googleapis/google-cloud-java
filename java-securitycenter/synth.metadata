@@ -4,31 +4,31 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-securitycenter.git",
-        "sha": "c3db56c442ec17fc98924ccb9f938a7f3cb997c7"
+        "sha": "d9fdcc595e28a60576b4539093f95b25ee98388b"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "a5f96d06ef57e325761bad010f460d0c5dbeccda",
-        "internalRef": "377081269"
+        "sha": "8a1a19c970a8b2fef9f0b6ade8c8c924dc13f7ef",
+        "internalRef": "378302468"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "a5f96d06ef57e325761bad010f460d0c5dbeccda",
-        "internalRef": "377081269"
+        "sha": "8a1a19c970a8b2fef9f0b6ade8c8c924dc13f7ef",
+        "internalRef": "378302468"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "a5f96d06ef57e325761bad010f460d0c5dbeccda",
-        "internalRef": "377081269"
+        "sha": "8a1a19c970a8b2fef9f0b6ade8c8c924dc13f7ef",
+        "internalRef": "378302468"
       }
     },
     {
