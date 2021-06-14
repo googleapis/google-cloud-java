@@ -119,8 +119,8 @@
 
   <modules>
     <module>google-cloud-functions</module>
-    <module>proto-google-cloud-functions-v1</module>
     <module>grpc-google-cloud-functions-v1</module>
+    <module>proto-google-cloud-functions-v1</module>
     <module>google-cloud-functions-bom</module>
   </modules>
 
