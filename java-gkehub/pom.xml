@@ -112,8 +112,8 @@
 
   <modules>
     <module>google-cloud-gkehub</module>
-    <module>proto-google-cloud-gkehub-v1beta1</module>
     <module>grpc-google-cloud-gkehub-v1beta1</module>
+    <module>proto-google-cloud-gkehub-v1beta1</module>
     <module>google-cloud-gkehub-bom</module>
   </modules>
 

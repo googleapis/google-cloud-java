@@ -2,5 +2,5 @@
 # module:released-version:current-version
 
 google-cloud-gkehub:0.2.1:0.2.2-SNAPSHOT
-proto-google-cloud-gkehub-v1beta1:0.2.1:0.2.2-SNAPSHOT
 grpc-google-cloud-gkehub-v1beta1:0.2.1:0.2.2-SNAPSHOT
+proto-google-cloud-gkehub-v1beta1:0.2.1:0.2.2-SNAPSHOT
