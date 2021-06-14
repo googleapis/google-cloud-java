@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-channel.git",
-        "sha": "40c490928d97f45ffafe84f09a5ee578dba85cd8"
+        "sha": "aedb38abe0d8e67fe5668b0dea16b1331fa979c9"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "a5f96d06ef57e325761bad010f460d0c5dbeccda",
-        "internalRef": "377081269"
+        "sha": "97d42c651f42bc3173b39ac8a9f97ea1d6b1196c",
+        "internalRef": "378177991"
       }
     },
     {
@@ -224,6 +224,8 @@
     "proto-google-cloud-channel-v1/src/main/java/com/google/cloud/channel/v1/ListTransferableSkusRequestOrBuilder.java",
     "proto-google-cloud-channel-v1/src/main/java/com/google/cloud/channel/v1/ListTransferableSkusResponse.java",
     "proto-google-cloud-channel-v1/src/main/java/com/google/cloud/channel/v1/ListTransferableSkusResponseOrBuilder.java",
+    "proto-google-cloud-channel-v1/src/main/java/com/google/cloud/channel/v1/LookupOfferRequest.java",
+    "proto-google-cloud-channel-v1/src/main/java/com/google/cloud/channel/v1/LookupOfferRequestOrBuilder.java",
     "proto-google-cloud-channel-v1/src/main/java/com/google/cloud/channel/v1/MarketingInfo.java",
     "proto-google-cloud-channel-v1/src/main/java/com/google/cloud/channel/v1/MarketingInfoOrBuilder.java",
     "proto-google-cloud-channel-v1/src/main/java/com/google/cloud/channel/v1/Media.java",

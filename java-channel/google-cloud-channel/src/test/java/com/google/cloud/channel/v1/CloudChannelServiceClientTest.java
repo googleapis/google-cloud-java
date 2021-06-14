@@ -1672,6 +1672,60 @@ public class CloudChannelServiceClientTest {
   }
 
   @Test
+  public void lookupOfferTest() throws Exception {
+    Offer expectedResponse =
+        Offer.newBuilder()
+            .setName(OfferName.of("[ACCOUNT]", "[OFFER]").toString())
+            .setMarketingInfo(MarketingInfo.newBuilder().build())
+            .setSku(Sku.newBuilder().build())
+            .setPlan(Plan.newBuilder().build())
+            .setConstraints(Constraints.newBuilder().build())
+            .addAllPriceByResources(new ArrayList<PriceByResource>())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .addAllParameterDefinitions(new ArrayList<ParameterDefinition>())
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    LookupOfferRequest request =
+        LookupOfferRequest.newBuilder()
+            .setEntitlement(
+                EntitlementName.of("[ACCOUNT]", "[CUSTOMER]", "[ENTITLEMENT]").toString())
+            .build();
+
+    Offer actualResponse = client.lookupOffer(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    LookupOfferRequest actualRequest = ((LookupOfferRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getEntitlement(), actualRequest.getEntitlement());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void lookupOfferExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      LookupOfferRequest request =
+          LookupOfferRequest.newBuilder()
+              .setEntitlement(
+                  EntitlementName.of("[ACCOUNT]", "[CUSTOMER]", "[ENTITLEMENT]").toString())
+              .build();
+      client.lookupOffer(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listProductsTest() throws Exception {
     Product responsesElement = Product.newBuilder().build();
     ListProductsResponse expectedResponse =

@@ -164,6 +164,10 @@ public final class ServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_channel_v1_ActivateEntitlementRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_channel_v1_LookupOfferRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_channel_v1_LookupOfferRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_channel_v1_ListProductsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_channel_v1_ListProductsRequest_fieldAccessorTable;
@@ -384,239 +388,253 @@ public final class ServiceProto {
           + "(\tB\003\340A\001\"G\n\031SuspendEntitlementRequest\022\021\n\004"
           + "name\030\001 \001(\tB\003\340A\002\022\027\n\nrequest_id\030\003 \001(\tB\003\340A\001"
           + "\"H\n\032ActivateEntitlementRequest\022\021\n\004name\030\001"
-          + " \001(\tB\003\340A\002\022\027\n\nrequest_id\030\003 \001(\tB\003\340A\001\"x\n\023Li"
-          + "stProductsRequest\022\024\n\007account\030\001 \001(\tB\003\340A\002\022"
-          + "\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 "
-          + "\001(\tB\003\340A\001\022\032\n\rlanguage_code\030\004 \001(\tB\003\340A\001\"c\n\024"
-          + "ListProductsResponse\0222\n\010products\030\001 \003(\0132 "
-          + ".google.cloud.channel.v1.Product\022\027\n\017next"
-          + "_page_token\030\002 \001(\t\"\261\001\n\017ListSkusRequest\022;\n"
-          + "\006parent\030\001 \001(\tB+\340A\002\372A%\n#cloudchannel.goog"
-          + "leapis.com/Product\022\024\n\007account\030\002 \001(\tB\003\340A\002"
-          + "\022\026\n\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\npage_token\030\004"
-          + " \001(\tB\003\340A\001\022\032\n\rlanguage_code\030\005 \001(\tB\003\340A\001\"W\n"
-          + "\020ListSkusResponse\022*\n\004skus\030\001 \003(\0132\034.google"
-          + ".cloud.channel.v1.Sku\022\027\n\017next_page_token"
-          + "\030\002 \001(\t\"\212\001\n\021ListOffersRequest\022\023\n\006parent\030\001"
-          + " \001(\tB\003\340A\002\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npag"
-          + "e_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022"
-          + "\032\n\rlanguage_code\030\005 \001(\tB\003\340A\001\"]\n\022ListOffer"
-          + "sResponse\022.\n\006offers\030\001 \003(\0132\036.google.cloud"
-          + ".channel.v1.Offer\022\027\n\017next_page_token\030\002 \001"
-          + "(\t\"\266\005\n\032ListPurchasableSkusRequest\022t\n\033cre"
-          + "ate_entitlement_purchase\030\002 \001(\0132M.google."
-          + "cloud.channel.v1.ListPurchasableSkusRequ"
-          + "est.CreateEntitlementPurchaseH\000\022h\n\025chang"
-          + "e_offer_purchase\030\003 \001(\0132G.google.cloud.ch"
-          + "annel.v1.ListPurchasableSkusRequest.Chan"
-          + "geOfferPurchaseH\000\022>\n\010customer\030\001 \001(\tB,\340A\002"
-          + "\372A&\n$cloudchannel.googleapis.com/Custome"
-          + "r\022\026\n\tpage_size\030\004 \001(\005B\003\340A\001\022\027\n\npage_token\030"
-          + "\005 \001(\tB\003\340A\001\022\032\n\rlanguage_code\030\006 \001(\tB\003\340A\001\0321"
-          + "\n\031CreateEntitlementPurchase\022\024\n\007product\030\001"
-          + " \001(\tB\003\340A\002\032\344\001\n\023ChangeOfferPurchase\022\030\n\013ent"
-          + "itlement\030\001 \001(\tB\003\340A\002\022l\n\013change_type\030\002 \001(\016"
-          + "2R.google.cloud.channel.v1.ListPurchasab"
-          + "leSkusRequest.ChangeOfferPurchase.Change"
-          + "TypeB\003\340A\002\"E\n\nChangeType\022\033\n\027CHANGE_TYPE_U"
-          + "NSPECIFIED\020\000\022\013\n\007UPGRADE\020\001\022\r\n\tDOWNGRADE\020\002"
-          + "B\021\n\017purchase_option\"y\n\033ListPurchasableSk"
-          + "usResponse\022A\n\020purchasable_skus\030\001 \003(\0132\'.g"
-          + "oogle.cloud.channel.v1.PurchasableSku\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\";\n\016PurchasableSku"
-          + "\022)\n\003sku\030\001 \001(\0132\034.google.cloud.channel.v1."
-          + "Sku\"\230\004\n\034ListPurchasableOffersRequest\022v\n\033"
-          + "create_entitlement_purchase\030\002 \001(\0132O.goog"
-          + "le.cloud.channel.v1.ListPurchasableOffer"
-          + "sRequest.CreateEntitlementPurchaseH\000\022j\n\025"
-          + "change_offer_purchase\030\003 \001(\0132I.google.clo"
-          + "ud.channel.v1.ListPurchasableOffersReque"
-          + "st.ChangeOfferPurchaseH\000\022>\n\010customer\030\001 \001"
-          + "(\tB,\340A\002\372A&\n$cloudchannel.googleapis.com/"
-          + "Customer\022\026\n\tpage_size\030\004 \001(\005B\003\340A\001\022\027\n\npage"
-          + "_token\030\005 \001(\tB\003\340A\001\022\032\n\rlanguage_code\030\006 \001(\t"
-          + "B\003\340A\001\032-\n\031CreateEntitlementPurchase\022\020\n\003sk"
-          + "u\030\001 \001(\tB\003\340A\002\032E\n\023ChangeOfferPurchase\022\030\n\013e"
-          + "ntitlement\030\001 \001(\tB\003\340A\002\022\024\n\007new_sku\030\002 \001(\tB\003"
-          + "\340A\001B\021\n\017purchase_option\"\177\n\035ListPurchasabl"
-          + "eOffersResponse\022E\n\022purchasable_offers\030\001 "
-          + "\003(\0132).google.cloud.channel.v1.Purchasabl"
-          + "eOffer\022\027\n\017next_page_token\030\002 \001(\t\"A\n\020Purch"
-          + "asableOffer\022-\n\005offer\030\001 \001(\0132\036.google.clou"
-          + "d.channel.v1.Offer\"O\n\031RegisterSubscriber"
-          + "Request\022\024\n\007account\030\001 \001(\tB\003\340A\002\022\034\n\017service"
-          + "_account\030\002 \001(\tB\003\340A\002\"+\n\032RegisterSubscribe"
-          + "rResponse\022\r\n\005topic\030\001 \001(\t\"Q\n\033UnregisterSu"
-          + "bscriberRequest\022\024\n\007account\030\001 \001(\tB\003\340A\002\022\034\n"
-          + "\017service_account\030\002 \001(\tB\003\340A\002\"-\n\034Unregiste"
-          + "rSubscriberResponse\022\r\n\005topic\030\001 \001(\t\"_\n\026Li"
-          + "stSubscribersRequest\022\024\n\007account\030\001 \001(\tB\003\340"
-          + "A\002\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token"
-          + "\030\003 \001(\tB\003\340A\001\"[\n\027ListSubscribersResponse\022\r"
-          + "\n\005topic\030\001 \001(\t\022\030\n\020service_accounts\030\002 \003(\t\022"
-          + "\027\n\017next_page_token\030\003 \001(\t2\3011\n\023CloudChanne"
-          + "lService\022\231\001\n\rListCustomers\022-.google.clou"
-          + "d.channel.v1.ListCustomersRequest\032..goog"
-          + "le.cloud.channel.v1.ListCustomersRespons"
-          + "e\")\202\323\344\223\002#\022!/v1/{parent=accounts/*}/custo"
-          + "mers\022\217\001\n\013GetCustomer\022+.google.cloud.chan"
-          + "nel.v1.GetCustomerRequest\032!.google.cloud"
-          + ".channel.v1.Customer\"0\202\323\344\223\002#\022!/v1/{name="
-          + "accounts/*/customers/*}\332A\004name\022\350\001\n\037Check"
-          + "CloudIdentityAccountsExist\022?.google.clou"
-          + "d.channel.v1.CheckCloudIdentityAccountsE"
-          + "xistRequest\032@.google.cloud.channel.v1.Ch"
-          + "eckCloudIdentityAccountsExistResponse\"B\202"
-          + "\323\344\223\002<\"7/v1/{parent=accounts/*}:checkClou"
-          + "dIdentityAccountsExist:\001*\022\230\001\n\016CreateCust"
-          + "omer\022..google.cloud.channel.v1.CreateCus"
-          + "tomerRequest\032!.google.cloud.channel.v1.C"
-          + "ustomer\"3\202\323\344\223\002-\"!/v1/{parent=accounts/*}"
-          + "/customers:\010customer\022\241\001\n\016UpdateCustomer\022"
-          + "..google.cloud.channel.v1.UpdateCustomer"
-          + "Request\032!.google.cloud.channel.v1.Custom"
-          + "er\"<\202\323\344\223\00262*/v1/{customer.name=accounts/"
-          + "*/customers/*}:\010customer\022\212\001\n\016DeleteCusto"
-          + "mer\022..google.cloud.channel.v1.DeleteCust"
-          + "omerRequest\032\026.google.protobuf.Empty\"0\202\323\344"
-          + "\223\002#*!/v1/{name=accounts/*/customers/*}\332A"
-          + "\004name\022\330\001\n\026ProvisionCloudIdentity\0226.googl"
-          + "e.cloud.channel.v1.ProvisionCloudIdentit"
-          + "yRequest\032\035.google.longrunning.Operation\""
-          + "g\202\323\344\223\002A\"</v1/{customer=accounts/*/custom"
-          + "ers/*}:provisionCloudIdentity:\001*\312A\035\n\010Cus"
-          + "tomer\022\021OperationMetadata\022\261\001\n\020ListEntitle"
-          + "ments\0220.google.cloud.channel.v1.ListEnti"
-          + "tlementsRequest\0321.google.cloud.channel.v"
-          + "1.ListEntitlementsResponse\"8\202\323\344\223\0022\0220/v1/"
-          + "{parent=accounts/*/customers/*}/entitlem"
-          + "ents\022\274\001\n\024ListTransferableSkus\0224.google.c"
-          + "loud.channel.v1.ListTransferableSkusRequ"
-          + "est\0325.google.cloud.channel.v1.ListTransf"
-          + "erableSkusResponse\"7\202\323\344\223\0021\",/v1/{parent="
-          + "accounts/*}:listTransferableSkus:\001*\022\304\001\n\026"
-          + "ListTransferableOffers\0226.google.cloud.ch"
-          + "annel.v1.ListTransferableOffersRequest\0327"
-          + ".google.cloud.channel.v1.ListTransferabl"
-          + "eOffersResponse\"9\202\323\344\223\0023\"./v1/{parent=acc"
-          + "ounts/*}:listTransferableOffers:\001*\022\240\001\n\016G"
-          + "etEntitlement\022..google.cloud.channel.v1."
-          + "GetEntitlementRequest\032$.google.cloud.cha"
-          + "nnel.v1.Entitlement\"8\202\323\344\223\0022\0220/v1/{name=a"
-          + "ccounts/*/customers/*/entitlements/*}\022\305\001"
-          + "\n\021CreateEntitlement\0221.google.cloud.chann"
-          + "el.v1.CreateEntitlementRequest\032\035.google."
-          + "longrunning.Operation\"^\202\323\344\223\0025\"0/v1/{pare"
-          + "nt=accounts/*/customers/*}/entitlements:"
-          + "\001*\312A \n\013Entitlement\022\021OperationMetadata\022\324\001"
-          + "\n\020ChangeParameters\0220.google.cloud.channe"
-          + "l.v1.ChangeParametersRequest\032\035.google.lo"
-          + "ngrunning.Operation\"o\202\323\344\223\002F\"A/v1/{name=a"
-          + "ccounts/*/customers/*/entitlements/*}:ch"
-          + "angeParameters:\001*\312A \n\013Entitlement\022\021Opera"
-          + "tionMetadata\022\343\001\n\025ChangeRenewalSettings\0225"
-          + ".google.cloud.channel.v1.ChangeRenewalSe"
-          + "ttingsRequest\032\035.google.longrunning.Opera"
-          + "tion\"t\202\323\344\223\002K\"F/v1/{name=accounts/*/custo"
-          + "mers/*/entitlements/*}:changeRenewalSett"
-          + "ings:\001*\312A \n\013Entitlement\022\021OperationMetada"
-          + "ta\022\305\001\n\013ChangeOffer\022+.google.cloud.channe"
-          + "l.v1.ChangeOfferRequest\032\035.google.longrun"
-          + "ning.Operation\"j\202\323\344\223\002A\"</v1/{name=accoun"
-          + "ts/*/customers/*/entitlements/*}:changeO"
-          + "ffer:\001*\312A \n\013Entitlement\022\021OperationMetada"
-          + "ta\022\324\001\n\020StartPaidService\0220.google.cloud.c"
-          + "hannel.v1.StartPaidServiceRequest\032\035.goog"
-          + "le.longrunning.Operation\"o\202\323\344\223\002F\"A/v1/{n"
-          + "ame=accounts/*/customers/*/entitlements/"
-          + "*}:startPaidService:\001*\312A \n\013Entitlement\022\021"
-          + "OperationMetadata\022\317\001\n\022SuspendEntitlement"
-          + "\0222.google.cloud.channel.v1.SuspendEntitl"
-          + "ementRequest\032\035.google.longrunning.Operat"
-          + "ion\"f\202\323\344\223\002=\"8/v1/{name=accounts/*/custom"
-          + "ers/*/entitlements/*}:suspend:\001*\312A \n\013Ent"
-          + "itlement\022\021OperationMetadata\022\326\001\n\021CancelEn"
-          + "titlement\0221.google.cloud.channel.v1.Canc"
-          + "elEntitlementRequest\032\035.google.longrunnin"
-          + "g.Operation\"o\202\323\344\223\002<\"7/v1/{name=accounts/"
-          + "*/customers/*/entitlements/*}:cancel:\001*\312"
-          + "A*\n\025google.protobuf.Empty\022\021OperationMeta"
-          + "data\022\322\001\n\023ActivateEntitlement\0223.google.cl"
-          + "oud.channel.v1.ActivateEntitlementReques"
-          + "t\032\035.google.longrunning.Operation\"g\202\323\344\223\002>"
-          + "\"9/v1/{name=accounts/*/customers/*/entit"
-          + "lements/*}:activate:\001*\312A \n\013Entitlement\022\021"
-          + "OperationMetadata\022\344\001\n\024TransferEntitlemen"
-          + "ts\0224.google.cloud.channel.v1.TransferEnt"
-          + "itlementsRequest\032\035.google.longrunning.Op"
-          + "eration\"w\202\323\344\223\002=\"8/v1/{parent=accounts/*/"
-          + "customers/*}:transferEntitlements:\001*\312A1\n"
-          + "\034TransferEntitlementsResponse\022\021Operation"
-          + "Metadata\022\365\001\n\034TransferEntitlementsToGoogl"
-          + "e\022<.google.cloud.channel.v1.TransferEnti"
-          + "tlementsToGoogleRequest\032\035.google.longrun"
-          + "ning.Operation\"x\202\323\344\223\002E\"@/v1/{parent=acco"
-          + "unts/*/customers/*}:transferEntitlements"
-          + "ToGoogle:\001*\312A*\n\025google.protobuf.Empty\022\021O"
-          + "perationMetadata\022\301\001\n\027ListChannelPartnerL"
-          + "inks\0227.google.cloud.channel.v1.ListChann"
-          + "elPartnerLinksRequest\0328.google.cloud.cha"
-          + "nnel.v1.ListChannelPartnerLinksResponse\""
-          + "3\202\323\344\223\002-\022+/v1/{parent=accounts/*}/channel"
-          + "PartnerLinks\022\260\001\n\025GetChannelPartnerLink\0225"
-          + ".google.cloud.channel.v1.GetChannelPartn"
-          + "erLinkRequest\032+.google.cloud.channel.v1."
-          + "ChannelPartnerLink\"3\202\323\344\223\002-\022+/v1/{name=ac"
-          + "counts/*/channelPartnerLinks/*}\022\314\001\n\030Crea"
-          + "teChannelPartnerLink\0228.google.cloud.chan"
-          + "nel.v1.CreateChannelPartnerLinkRequest\032+"
-          + ".google.cloud.channel.v1.ChannelPartnerL"
-          + "ink\"I\202\323\344\223\002C\"+/v1/{parent=accounts/*}/cha"
-          + "nnelPartnerLinks:\024channel_partner_link\022\271"
-          + "\001\n\030UpdateChannelPartnerLink\0228.google.clo"
-          + "ud.channel.v1.UpdateChannelPartnerLinkRe"
-          + "quest\032+.google.cloud.channel.v1.ChannelP"
-          + "artnerLink\"6\202\323\344\223\00202+/v1/{name=accounts/*"
-          + "/channelPartnerLinks/*}:\001*\022\201\001\n\014ListProdu"
-          + "cts\022,.google.cloud.channel.v1.ListProduc"
-          + "tsRequest\032-.google.cloud.channel.v1.List"
-          + "ProductsResponse\"\024\202\323\344\223\002\016\022\014/v1/products\022\205"
-          + "\001\n\010ListSkus\022(.google.cloud.channel.v1.Li"
-          + "stSkusRequest\032).google.cloud.channel.v1."
-          + "ListSkusResponse\"$\202\323\344\223\002\036\022\034/v1/{parent=pr"
-          + "oducts/*}/skus\022\215\001\n\nListOffers\022*.google.c"
-          + "loud.channel.v1.ListOffersRequest\032+.goog"
-          + "le.cloud.channel.v1.ListOffersResponse\"&"
-          + "\202\323\344\223\002 \022\036/v1/{parent=accounts/*}/offers\022\303"
-          + "\001\n\023ListPurchasableSkus\0223.google.cloud.ch"
-          + "annel.v1.ListPurchasableSkusRequest\0324.go"
-          + "ogle.cloud.channel.v1.ListPurchasableSku"
-          + "sResponse\"A\202\323\344\223\002;\0229/v1/{customer=account"
-          + "s/*/customers/*}:listPurchasableSkus\022\313\001\n"
-          + "\025ListPurchasableOffers\0225.google.cloud.ch"
-          + "annel.v1.ListPurchasableOffersRequest\0326."
-          + "google.cloud.channel.v1.ListPurchasableO"
-          + "ffersResponse\"C\202\323\344\223\002=\022;/v1/{customer=acc"
-          + "ounts/*/customers/*}:listPurchasableOffe"
-          + "rs\022\253\001\n\022RegisterSubscriber\0222.google.cloud"
-          + ".channel.v1.RegisterSubscriberRequest\0323."
-          + "google.cloud.channel.v1.RegisterSubscrib"
-          + "erResponse\",\202\323\344\223\002&\"!/v1/{account=account"
-          + "s/*}:register:\001*\022\263\001\n\024UnregisterSubscribe"
-          + "r\0224.google.cloud.channel.v1.UnregisterSu"
-          + "bscriberRequest\0325.google.cloud.channel.v"
-          + "1.UnregisterSubscriberResponse\".\202\323\344\223\002(\"#"
-          + "/v1/{account=accounts/*}:unregister:\001*\022\246"
-          + "\001\n\017ListSubscribers\022/.google.cloud.channe"
-          + "l.v1.ListSubscribersRequest\0320.google.clo"
-          + "ud.channel.v1.ListSubscribersResponse\"0\202"
-          + "\323\344\223\002*\022(/v1/{account=accounts/*}:listSubs"
-          + "cribers\032K\312A\033cloudchannel.googleapis.com\322"
-          + "A*https://www.googleapis.com/auth/apps.o"
-          + "rderBm\n\033com.google.cloud.channel.v1B\014Ser"
-          + "viceProtoP\001Z>google.golang.org/genproto/"
-          + "googleapis/cloud/channel/v1;channelb\006pro"
-          + "to3"
+          + " \001(\tB\003\340A\002\022\027\n\nrequest_id\030\003 \001(\tB\003\340A\001\"Z\n\022Lo"
+          + "okupOfferRequest\022D\n\013entitlement\030\001 \001(\tB/\340"
+          + "A\002\372A)\n\'cloudchannel.googleapis.com/Entit"
+          + "lement\"x\n\023ListProductsRequest\022\024\n\007account"
+          + "\030\001 \001(\tB\003\340A\002\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\np"
+          + "age_token\030\003 \001(\tB\003\340A\001\022\032\n\rlanguage_code\030\004 "
+          + "\001(\tB\003\340A\001\"c\n\024ListProductsResponse\0222\n\010prod"
+          + "ucts\030\001 \003(\0132 .google.cloud.channel.v1.Pro"
+          + "duct\022\027\n\017next_page_token\030\002 \001(\t\"\261\001\n\017ListSk"
+          + "usRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\n#cloud"
+          + "channel.googleapis.com/Product\022\024\n\007accoun"
+          + "t\030\002 \001(\tB\003\340A\002\022\026\n\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\004 \001(\tB\003\340A\001\022\032\n\rlanguage_code\030\005"
+          + " \001(\tB\003\340A\001\"W\n\020ListSkusResponse\022*\n\004skus\030\001 "
+          + "\003(\0132\034.google.cloud.channel.v1.Sku\022\027\n\017nex"
+          + "t_page_token\030\002 \001(\t\"\212\001\n\021ListOffersRequest"
+          + "\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\026\n\tpage_size\030\002 \001(\005"
+          + "B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter"
+          + "\030\004 \001(\tB\003\340A\001\022\032\n\rlanguage_code\030\005 \001(\tB\003\340A\001\""
+          + "]\n\022ListOffersResponse\022.\n\006offers\030\001 \003(\0132\036."
+          + "google.cloud.channel.v1.Offer\022\027\n\017next_pa"
+          + "ge_token\030\002 \001(\t\"\266\005\n\032ListPurchasableSkusRe"
+          + "quest\022t\n\033create_entitlement_purchase\030\002 \001"
+          + "(\0132M.google.cloud.channel.v1.ListPurchas"
+          + "ableSkusRequest.CreateEntitlementPurchas"
+          + "eH\000\022h\n\025change_offer_purchase\030\003 \001(\0132G.goo"
+          + "gle.cloud.channel.v1.ListPurchasableSkus"
+          + "Request.ChangeOfferPurchaseH\000\022>\n\010custome"
+          + "r\030\001 \001(\tB,\340A\002\372A&\n$cloudchannel.googleapis"
+          + ".com/Customer\022\026\n\tpage_size\030\004 \001(\005B\003\340A\001\022\027\n"
+          + "\npage_token\030\005 \001(\tB\003\340A\001\022\032\n\rlanguage_code\030"
+          + "\006 \001(\tB\003\340A\001\0321\n\031CreateEntitlementPurchase\022"
+          + "\024\n\007product\030\001 \001(\tB\003\340A\002\032\344\001\n\023ChangeOfferPur"
+          + "chase\022\030\n\013entitlement\030\001 \001(\tB\003\340A\002\022l\n\013chang"
+          + "e_type\030\002 \001(\0162R.google.cloud.channel.v1.L"
+          + "istPurchasableSkusRequest.ChangeOfferPur"
+          + "chase.ChangeTypeB\003\340A\002\"E\n\nChangeType\022\033\n\027C"
+          + "HANGE_TYPE_UNSPECIFIED\020\000\022\013\n\007UPGRADE\020\001\022\r\n"
+          + "\tDOWNGRADE\020\002B\021\n\017purchase_option\"y\n\033ListP"
+          + "urchasableSkusResponse\022A\n\020purchasable_sk"
+          + "us\030\001 \003(\0132\'.google.cloud.channel.v1.Purch"
+          + "asableSku\022\027\n\017next_page_token\030\002 \001(\t\";\n\016Pu"
+          + "rchasableSku\022)\n\003sku\030\001 \001(\0132\034.google.cloud"
+          + ".channel.v1.Sku\"\230\004\n\034ListPurchasableOffer"
+          + "sRequest\022v\n\033create_entitlement_purchase\030"
+          + "\002 \001(\0132O.google.cloud.channel.v1.ListPurc"
+          + "hasableOffersRequest.CreateEntitlementPu"
+          + "rchaseH\000\022j\n\025change_offer_purchase\030\003 \001(\0132"
+          + "I.google.cloud.channel.v1.ListPurchasabl"
+          + "eOffersRequest.ChangeOfferPurchaseH\000\022>\n\010"
+          + "customer\030\001 \001(\tB,\340A\002\372A&\n$cloudchannel.goo"
+          + "gleapis.com/Customer\022\026\n\tpage_size\030\004 \001(\005B"
+          + "\003\340A\001\022\027\n\npage_token\030\005 \001(\tB\003\340A\001\022\032\n\rlanguag"
+          + "e_code\030\006 \001(\tB\003\340A\001\032-\n\031CreateEntitlementPu"
+          + "rchase\022\020\n\003sku\030\001 \001(\tB\003\340A\002\032E\n\023ChangeOfferP"
+          + "urchase\022\030\n\013entitlement\030\001 \001(\tB\003\340A\002\022\024\n\007new"
+          + "_sku\030\002 \001(\tB\003\340A\001B\021\n\017purchase_option\"\177\n\035Li"
+          + "stPurchasableOffersResponse\022E\n\022purchasab"
+          + "le_offers\030\001 \003(\0132).google.cloud.channel.v"
+          + "1.PurchasableOffer\022\027\n\017next_page_token\030\002 "
+          + "\001(\t\"A\n\020PurchasableOffer\022-\n\005offer\030\001 \001(\0132\036"
+          + ".google.cloud.channel.v1.Offer\"O\n\031Regist"
+          + "erSubscriberRequest\022\024\n\007account\030\001 \001(\tB\003\340A"
+          + "\002\022\034\n\017service_account\030\002 \001(\tB\003\340A\002\"+\n\032Regis"
+          + "terSubscriberResponse\022\r\n\005topic\030\001 \001(\t\"Q\n\033"
+          + "UnregisterSubscriberRequest\022\024\n\007account\030\001"
+          + " \001(\tB\003\340A\002\022\034\n\017service_account\030\002 \001(\tB\003\340A\002\""
+          + "-\n\034UnregisterSubscriberResponse\022\r\n\005topic"
+          + "\030\001 \001(\t\"_\n\026ListSubscribersRequest\022\024\n\007acco"
+          + "unt\030\001 \001(\tB\003\340A\002\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027"
+          + "\n\npage_token\030\003 \001(\tB\003\340A\001\"[\n\027ListSubscribe"
+          + "rsResponse\022\r\n\005topic\030\001 \001(\t\022\030\n\020service_acc"
+          + "ounts\030\002 \003(\t\022\027\n\017next_page_token\030\003 \001(\t2\2615\n"
+          + "\023CloudChannelService\022\324\001\n\rListCustomers\022-"
+          + ".google.cloud.channel.v1.ListCustomersRe"
+          + "quest\032..google.cloud.channel.v1.ListCust"
+          + "omersResponse\"d\202\323\344\223\002^\022!/v1/{parent=accou"
+          + "nts/*}/customersZ9\0227/v1/{parent=accounts"
+          + "/*/channelPartnerLinks/*}/customers\022\312\001\n\013"
+          + "GetCustomer\022+.google.cloud.channel.v1.Ge"
+          + "tCustomerRequest\032!.google.cloud.channel."
+          + "v1.Customer\"k\202\323\344\223\002^\022!/v1/{name=accounts/"
+          + "*/customers/*}Z9\0227/v1/{name=accounts/*/c"
+          + "hannelPartnerLinks/*/customers/*}\332A\004name"
+          + "\022\350\001\n\037CheckCloudIdentityAccountsExist\022?.g"
+          + "oogle.cloud.channel.v1.CheckCloudIdentit"
+          + "yAccountsExistRequest\032@.google.cloud.cha"
+          + "nnel.v1.CheckCloudIdentityAccountsExistR"
+          + "esponse\"B\202\323\344\223\002<\"7/v1/{parent=accounts/*}"
+          + ":checkCloudIdentityAccountsExist:\001*\022\335\001\n\016"
+          + "CreateCustomer\022..google.cloud.channel.v1"
+          + ".CreateCustomerRequest\032!.google.cloud.ch"
+          + "annel.v1.Customer\"x\202\323\344\223\002r\"!/v1/{parent=a"
+          + "ccounts/*}/customers:\010customerZC\"7/v1/{p"
+          + "arent=accounts/*/channelPartnerLinks/*}/"
+          + "customers:\010customer\022\361\001\n\016UpdateCustomer\022."
+          + ".google.cloud.channel.v1.UpdateCustomerR"
+          + "equest\032!.google.cloud.channel.v1.Custome"
+          + "r\"\213\001\202\323\344\223\002\204\0012*/v1/{customer.name=accounts"
+          + "/*/customers/*}:\010customerZL2@/v1/{custom"
+          + "er.name=accounts/*/channelPartnerLinks/*"
+          + "/customers/*}:\010customer\022\305\001\n\016DeleteCustom"
+          + "er\022..google.cloud.channel.v1.DeleteCusto"
+          + "merRequest\032\026.google.protobuf.Empty\"k\202\323\344\223"
+          + "\002^*!/v1/{name=accounts/*/customers/*}Z9*"
+          + "7/v1/{name=accounts/*/channelPartnerLink"
+          + "s/*/customers/*}\332A\004name\022\330\001\n\026ProvisionClo"
+          + "udIdentity\0226.google.cloud.channel.v1.Pro"
+          + "visionCloudIdentityRequest\032\035.google.long"
+          + "running.Operation\"g\202\323\344\223\002A\"</v1/{customer"
+          + "=accounts/*/customers/*}:provisionCloudI"
+          + "dentity:\001*\312A\035\n\010Customer\022\021OperationMetada"
+          + "ta\022\261\001\n\020ListEntitlements\0220.google.cloud.c"
+          + "hannel.v1.ListEntitlementsRequest\0321.goog"
+          + "le.cloud.channel.v1.ListEntitlementsResp"
+          + "onse\"8\202\323\344\223\0022\0220/v1/{parent=accounts/*/cus"
+          + "tomers/*}/entitlements\022\274\001\n\024ListTransfera"
+          + "bleSkus\0224.google.cloud.channel.v1.ListTr"
+          + "ansferableSkusRequest\0325.google.cloud.cha"
+          + "nnel.v1.ListTransferableSkusResponse\"7\202\323"
+          + "\344\223\0021\",/v1/{parent=accounts/*}:listTransf"
+          + "erableSkus:\001*\022\304\001\n\026ListTransferableOffers"
+          + "\0226.google.cloud.channel.v1.ListTransfera"
+          + "bleOffersRequest\0327.google.cloud.channel."
+          + "v1.ListTransferableOffersResponse\"9\202\323\344\223\002"
+          + "3\"./v1/{parent=accounts/*}:listTransfera"
+          + "bleOffers:\001*\022\240\001\n\016GetEntitlement\022..google"
+          + ".cloud.channel.v1.GetEntitlementRequest\032"
+          + "$.google.cloud.channel.v1.Entitlement\"8\202"
+          + "\323\344\223\0022\0220/v1/{name=accounts/*/customers/*/"
+          + "entitlements/*}\022\305\001\n\021CreateEntitlement\0221."
+          + "google.cloud.channel.v1.CreateEntitlemen"
+          + "tRequest\032\035.google.longrunning.Operation\""
+          + "^\202\323\344\223\0025\"0/v1/{parent=accounts/*/customer"
+          + "s/*}/entitlements:\001*\312A \n\013Entitlement\022\021Op"
+          + "erationMetadata\022\324\001\n\020ChangeParameters\0220.g"
+          + "oogle.cloud.channel.v1.ChangeParametersR"
+          + "equest\032\035.google.longrunning.Operation\"o\202"
+          + "\323\344\223\002F\"A/v1/{name=accounts/*/customers/*/"
+          + "entitlements/*}:changeParameters:\001*\312A \n\013"
+          + "Entitlement\022\021OperationMetadata\022\343\001\n\025Chang"
+          + "eRenewalSettings\0225.google.cloud.channel."
+          + "v1.ChangeRenewalSettingsRequest\032\035.google"
+          + ".longrunning.Operation\"t\202\323\344\223\002K\"F/v1/{nam"
+          + "e=accounts/*/customers/*/entitlements/*}"
+          + ":changeRenewalSettings:\001*\312A \n\013Entitlemen"
+          + "t\022\021OperationMetadata\022\305\001\n\013ChangeOffer\022+.g"
+          + "oogle.cloud.channel.v1.ChangeOfferReques"
+          + "t\032\035.google.longrunning.Operation\"j\202\323\344\223\002A"
+          + "\"</v1/{name=accounts/*/customers/*/entit"
+          + "lements/*}:changeOffer:\001*\312A \n\013Entitlemen"
+          + "t\022\021OperationMetadata\022\324\001\n\020StartPaidServic"
+          + "e\0220.google.cloud.channel.v1.StartPaidSer"
+          + "viceRequest\032\035.google.longrunning.Operati"
+          + "on\"o\202\323\344\223\002F\"A/v1/{name=accounts/*/custome"
+          + "rs/*/entitlements/*}:startPaidService:\001*"
+          + "\312A \n\013Entitlement\022\021OperationMetadata\022\317\001\n\022"
+          + "SuspendEntitlement\0222.google.cloud.channe"
+          + "l.v1.SuspendEntitlementRequest\032\035.google."
+          + "longrunning.Operation\"f\202\323\344\223\002=\"8/v1/{name"
+          + "=accounts/*/customers/*/entitlements/*}:"
+          + "suspend:\001*\312A \n\013Entitlement\022\021OperationMet"
+          + "adata\022\326\001\n\021CancelEntitlement\0221.google.clo"
+          + "ud.channel.v1.CancelEntitlementRequest\032\035"
+          + ".google.longrunning.Operation\"o\202\323\344\223\002<\"7/"
+          + "v1/{name=accounts/*/customers/*/entitlem"
+          + "ents/*}:cancel:\001*\312A*\n\025google.protobuf.Em"
+          + "pty\022\021OperationMetadata\022\322\001\n\023ActivateEntit"
+          + "lement\0223.google.cloud.channel.v1.Activat"
+          + "eEntitlementRequest\032\035.google.longrunning"
+          + ".Operation\"g\202\323\344\223\002>\"9/v1/{name=accounts/*"
+          + "/customers/*/entitlements/*}:activate:\001*"
+          + "\312A \n\013Entitlement\022\021OperationMetadata\022\344\001\n\024"
+          + "TransferEntitlements\0224.google.cloud.chan"
+          + "nel.v1.TransferEntitlementsRequest\032\035.goo"
+          + "gle.longrunning.Operation\"w\202\323\344\223\002=\"8/v1/{"
+          + "parent=accounts/*/customers/*}:transferE"
+          + "ntitlements:\001*\312A1\n\034TransferEntitlementsR"
+          + "esponse\022\021OperationMetadata\022\365\001\n\034TransferE"
+          + "ntitlementsToGoogle\022<.google.cloud.chann"
+          + "el.v1.TransferEntitlementsToGoogleReques"
+          + "t\032\035.google.longrunning.Operation\"x\202\323\344\223\002E"
+          + "\"@/v1/{parent=accounts/*/customers/*}:tr"
+          + "ansferEntitlementsToGoogle:\001*\312A*\n\025google"
+          + ".protobuf.Empty\022\021OperationMetadata\022\301\001\n\027L"
+          + "istChannelPartnerLinks\0227.google.cloud.ch"
+          + "annel.v1.ListChannelPartnerLinksRequest\032"
+          + "8.google.cloud.channel.v1.ListChannelPar"
+          + "tnerLinksResponse\"3\202\323\344\223\002-\022+/v1/{parent=a"
+          + "ccounts/*}/channelPartnerLinks\022\260\001\n\025GetCh"
+          + "annelPartnerLink\0225.google.cloud.channel."
+          + "v1.GetChannelPartnerLinkRequest\032+.google"
+          + ".cloud.channel.v1.ChannelPartnerLink\"3\202\323"
+          + "\344\223\002-\022+/v1/{name=accounts/*/channelPartne"
+          + "rLinks/*}\022\314\001\n\030CreateChannelPartnerLink\0228"
+          + ".google.cloud.channel.v1.CreateChannelPa"
+          + "rtnerLinkRequest\032+.google.cloud.channel."
+          + "v1.ChannelPartnerLink\"I\202\323\344\223\002C\"+/v1/{pare"
+          + "nt=accounts/*}/channelPartnerLinks:\024chan"
+          + "nel_partner_link\022\271\001\n\030UpdateChannelPartne"
+          + "rLink\0228.google.cloud.channel.v1.UpdateCh"
+          + "annelPartnerLinkRequest\032+.google.cloud.c"
+          + "hannel.v1.ChannelPartnerLink\"6\202\323\344\223\00202+/v"
+          + "1/{name=accounts/*/channelPartnerLinks/*"
+          + "}:\001*\022\247\001\n\013LookupOffer\022+.google.cloud.chan"
+          + "nel.v1.LookupOfferRequest\032\036.google.cloud"
+          + ".channel.v1.Offer\"K\202\323\344\223\002E\022C/v1/{entitlem"
+          + "ent=accounts/*/customers/*/entitlements/"
+          + "*}:lookupOffer\022\201\001\n\014ListProducts\022,.google"
+          + ".cloud.channel.v1.ListProductsRequest\032-."
+          + "google.cloud.channel.v1.ListProductsResp"
+          + "onse\"\024\202\323\344\223\002\016\022\014/v1/products\022\205\001\n\010ListSkus\022"
+          + "(.google.cloud.channel.v1.ListSkusReques"
+          + "t\032).google.cloud.channel.v1.ListSkusResp"
+          + "onse\"$\202\323\344\223\002\036\022\034/v1/{parent=products/*}/sk"
+          + "us\022\215\001\n\nListOffers\022*.google.cloud.channel"
+          + ".v1.ListOffersRequest\032+.google.cloud.cha"
+          + "nnel.v1.ListOffersResponse\"&\202\323\344\223\002 \022\036/v1/"
+          + "{parent=accounts/*}/offers\022\303\001\n\023ListPurch"
+          + "asableSkus\0223.google.cloud.channel.v1.Lis"
+          + "tPurchasableSkusRequest\0324.google.cloud.c"
+          + "hannel.v1.ListPurchasableSkusResponse\"A\202"
+          + "\323\344\223\002;\0229/v1/{customer=accounts/*/customer"
+          + "s/*}:listPurchasableSkus\022\313\001\n\025ListPurchas"
+          + "ableOffers\0225.google.cloud.channel.v1.Lis"
+          + "tPurchasableOffersRequest\0326.google.cloud"
+          + ".channel.v1.ListPurchasableOffersRespons"
+          + "e\"C\202\323\344\223\002=\022;/v1/{customer=accounts/*/cust"
+          + "omers/*}:listPurchasableOffers\022\253\001\n\022Regis"
+          + "terSubscriber\0222.google.cloud.channel.v1."
+          + "RegisterSubscriberRequest\0323.google.cloud"
+          + ".channel.v1.RegisterSubscriberResponse\","
+          + "\202\323\344\223\002&\"!/v1/{account=accounts/*}:registe"
+          + "r:\001*\022\263\001\n\024UnregisterSubscriber\0224.google.c"
+          + "loud.channel.v1.UnregisterSubscriberRequ"
+          + "est\0325.google.cloud.channel.v1.Unregister"
+          + "SubscriberResponse\".\202\323\344\223\002(\"#/v1/{account"
+          + "=accounts/*}:unregister:\001*\022\246\001\n\017ListSubsc"
+          + "ribers\022/.google.cloud.channel.v1.ListSub"
+          + "scribersRequest\0320.google.cloud.channel.v"
+          + "1.ListSubscribersResponse\"0\202\323\344\223\002*\022(/v1/{"
+          + "account=accounts/*}:listSubscribers\032K\312A\033"
+          + "cloudchannel.googleapis.com\322A*https://ww"
+          + "w.googleapis.com/auth/apps.orderBm\n\033com."
+          + "google.cloud.channel.v1B\014ServiceProtoP\001Z"
+          + ">google.golang.org/genproto/googleapis/c"
+          + "loud/channel/v1;channelb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -922,8 +940,16 @@ public final class ServiceProto {
             new java.lang.String[] {
               "Name", "RequestId",
             });
-    internal_static_google_cloud_channel_v1_ListProductsRequest_descriptor =
+    internal_static_google_cloud_channel_v1_LookupOfferRequest_descriptor =
         getDescriptor().getMessageTypes().get(34);
+    internal_static_google_cloud_channel_v1_LookupOfferRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_channel_v1_LookupOfferRequest_descriptor,
+            new java.lang.String[] {
+              "Entitlement",
+            });
+    internal_static_google_cloud_channel_v1_ListProductsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_channel_v1_ListProductsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_ListProductsRequest_descriptor,
@@ -931,7 +957,7 @@ public final class ServiceProto {
               "Account", "PageSize", "PageToken", "LanguageCode",
             });
     internal_static_google_cloud_channel_v1_ListProductsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_channel_v1_ListProductsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_ListProductsResponse_descriptor,
@@ -939,7 +965,7 @@ public final class ServiceProto {
               "Products", "NextPageToken",
             });
     internal_static_google_cloud_channel_v1_ListSkusRequest_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_channel_v1_ListSkusRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_ListSkusRequest_descriptor,
@@ -947,7 +973,7 @@ public final class ServiceProto {
               "Parent", "Account", "PageSize", "PageToken", "LanguageCode",
             });
     internal_static_google_cloud_channel_v1_ListSkusResponse_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_channel_v1_ListSkusResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_ListSkusResponse_descriptor,
@@ -955,7 +981,7 @@ public final class ServiceProto {
               "Skus", "NextPageToken",
             });
     internal_static_google_cloud_channel_v1_ListOffersRequest_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_channel_v1_ListOffersRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_ListOffersRequest_descriptor,
@@ -963,7 +989,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken", "Filter", "LanguageCode",
             });
     internal_static_google_cloud_channel_v1_ListOffersResponse_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_channel_v1_ListOffersResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_ListOffersResponse_descriptor,
@@ -971,7 +997,7 @@ public final class ServiceProto {
               "Offers", "NextPageToken",
             });
     internal_static_google_cloud_channel_v1_ListPurchasableSkusRequest_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_channel_v1_ListPurchasableSkusRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_ListPurchasableSkusRequest_descriptor,
@@ -1005,7 +1031,7 @@ public final class ServiceProto {
               "Entitlement", "ChangeType",
             });
     internal_static_google_cloud_channel_v1_ListPurchasableSkusResponse_descriptor =
-        getDescriptor().getMessageTypes().get(41);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_channel_v1_ListPurchasableSkusResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_ListPurchasableSkusResponse_descriptor,
@@ -1013,7 +1039,7 @@ public final class ServiceProto {
               "PurchasableSkus", "NextPageToken",
             });
     internal_static_google_cloud_channel_v1_PurchasableSku_descriptor =
-        getDescriptor().getMessageTypes().get(42);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_cloud_channel_v1_PurchasableSku_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_PurchasableSku_descriptor,
@@ -1021,7 +1047,7 @@ public final class ServiceProto {
               "Sku",
             });
     internal_static_google_cloud_channel_v1_ListPurchasableOffersRequest_descriptor =
-        getDescriptor().getMessageTypes().get(43);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_cloud_channel_v1_ListPurchasableOffersRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_ListPurchasableOffersRequest_descriptor,
@@ -1055,7 +1081,7 @@ public final class ServiceProto {
               "Entitlement", "NewSku",
             });
     internal_static_google_cloud_channel_v1_ListPurchasableOffersResponse_descriptor =
-        getDescriptor().getMessageTypes().get(44);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_cloud_channel_v1_ListPurchasableOffersResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_ListPurchasableOffersResponse_descriptor,
@@ -1063,7 +1089,7 @@ public final class ServiceProto {
               "PurchasableOffers", "NextPageToken",
             });
     internal_static_google_cloud_channel_v1_PurchasableOffer_descriptor =
-        getDescriptor().getMessageTypes().get(45);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_cloud_channel_v1_PurchasableOffer_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_PurchasableOffer_descriptor,
@@ -1071,7 +1097,7 @@ public final class ServiceProto {
               "Offer",
             });
     internal_static_google_cloud_channel_v1_RegisterSubscriberRequest_descriptor =
-        getDescriptor().getMessageTypes().get(46);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_cloud_channel_v1_RegisterSubscriberRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_RegisterSubscriberRequest_descriptor,
@@ -1079,7 +1105,7 @@ public final class ServiceProto {
               "Account", "ServiceAccount",
             });
     internal_static_google_cloud_channel_v1_RegisterSubscriberResponse_descriptor =
-        getDescriptor().getMessageTypes().get(47);
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_cloud_channel_v1_RegisterSubscriberResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_RegisterSubscriberResponse_descriptor,
@@ -1087,7 +1113,7 @@ public final class ServiceProto {
               "Topic",
             });
     internal_static_google_cloud_channel_v1_UnregisterSubscriberRequest_descriptor =
-        getDescriptor().getMessageTypes().get(48);
+        getDescriptor().getMessageTypes().get(49);
     internal_static_google_cloud_channel_v1_UnregisterSubscriberRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_UnregisterSubscriberRequest_descriptor,
@@ -1095,7 +1121,7 @@ public final class ServiceProto {
               "Account", "ServiceAccount",
             });
     internal_static_google_cloud_channel_v1_UnregisterSubscriberResponse_descriptor =
-        getDescriptor().getMessageTypes().get(49);
+        getDescriptor().getMessageTypes().get(50);
     internal_static_google_cloud_channel_v1_UnregisterSubscriberResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_UnregisterSubscriberResponse_descriptor,
@@ -1103,7 +1129,7 @@ public final class ServiceProto {
               "Topic",
             });
     internal_static_google_cloud_channel_v1_ListSubscribersRequest_descriptor =
-        getDescriptor().getMessageTypes().get(50);
+        getDescriptor().getMessageTypes().get(51);
     internal_static_google_cloud_channel_v1_ListSubscribersRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_ListSubscribersRequest_descriptor,
@@ -1111,7 +1137,7 @@ public final class ServiceProto {
               "Account", "PageSize", "PageToken",
             });
     internal_static_google_cloud_channel_v1_ListSubscribersResponse_descriptor =
-        getDescriptor().getMessageTypes().get(51);
+        getDescriptor().getMessageTypes().get(52);
     internal_static_google_cloud_channel_v1_ListSubscribersResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_ListSubscribersResponse_descriptor,

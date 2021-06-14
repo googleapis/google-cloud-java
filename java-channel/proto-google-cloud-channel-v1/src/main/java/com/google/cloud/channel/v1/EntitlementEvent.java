@@ -252,6 +252,16 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      * <code>LICENSE_ASSIGNMENT_CHANGED = 12;</code>
      */
     LICENSE_ASSIGNMENT_CHANGED(12),
+    /**
+     *
+     *
+     * <pre>
+     * License cap was changed for the entitlement.
+     * </pre>
+     *
+     * <code>LICENSE_CAP_CHANGED = 13;</code>
+     */
+    LICENSE_CAP_CHANGED(13),
     UNRECOGNIZED(-1),
     ;
 
@@ -378,6 +388,16 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      * <code>LICENSE_ASSIGNMENT_CHANGED = 12;</code>
      */
     public static final int LICENSE_ASSIGNMENT_CHANGED_VALUE = 12;
+    /**
+     *
+     *
+     * <pre>
+     * License cap was changed for the entitlement.
+     * </pre>
+     *
+     * <code>LICENSE_CAP_CHANGED = 13;</code>
+     */
+    public static final int LICENSE_CAP_CHANGED_VALUE = 13;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -427,6 +447,8 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
           return PAID_SERVICE_STARTED;
         case 12:
           return LICENSE_ASSIGNMENT_CHANGED;
+        case 13:
+          return LICENSE_CAP_CHANGED;
         default:
           return null;
       }

@@ -75,6 +75,8 @@ import com.google.cloud.channel.v1.ListTransferableOffersRequest;
 import com.google.cloud.channel.v1.ListTransferableOffersResponse;
 import com.google.cloud.channel.v1.ListTransferableSkusRequest;
 import com.google.cloud.channel.v1.ListTransferableSkusResponse;
+import com.google.cloud.channel.v1.LookupOfferRequest;
+import com.google.cloud.channel.v1.Offer;
 import com.google.cloud.channel.v1.OperationMetadata;
 import com.google.cloud.channel.v1.ProvisionCloudIdentityRequest;
 import com.google.cloud.channel.v1.RegisterSubscriberRequest;
@@ -377,6 +379,14 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ChannelPartnerLink.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<LookupOfferRequest, Offer> lookupOfferMethodDescriptor =
+      MethodDescriptor.<LookupOfferRequest, Offer>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.channel.v1.CloudChannelService/LookupOffer")
+          .setRequestMarshaller(ProtoUtils.marshaller(LookupOfferRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Offer.getDefaultInstance()))
+          .build();
+
   private static final MethodDescriptor<ListProductsRequest, ListProductsResponse>
       listProductsMethodDescriptor =
           MethodDescriptor.<ListProductsRequest, ListProductsResponse>newBuilder()
@@ -531,6 +541,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
       createChannelPartnerLinkCallable;
   private final UnaryCallable<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
       updateChannelPartnerLinkCallable;
+  private final UnaryCallable<LookupOfferRequest, Offer> lookupOfferCallable;
   private final UnaryCallable<ListProductsRequest, ListProductsResponse> listProductsCallable;
   private final UnaryCallable<ListProductsRequest, ListProductsPagedResponse>
       listProductsPagedCallable;
@@ -942,6 +953,19 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<LookupOfferRequest, Offer> lookupOfferTransportSettings =
+        GrpcCallSettings.<LookupOfferRequest, Offer>newBuilder()
+            .setMethodDescriptor(lookupOfferMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<LookupOfferRequest>() {
+                  @Override
+                  public Map<String, String> extract(LookupOfferRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("entitlement", String.valueOf(request.getEntitlement()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
         GrpcCallSettings.<ListProductsRequest, ListProductsResponse>newBuilder()
             .setMethodDescriptor(listProductsMethodDescriptor)
@@ -1236,6 +1260,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             updateChannelPartnerLinkTransportSettings,
             settings.updateChannelPartnerLinkSettings(),
             clientContext);
+    this.lookupOfferCallable =
+        callableFactory.createUnaryCallable(
+            lookupOfferTransportSettings, settings.lookupOfferSettings(), clientContext);
     this.listProductsCallable =
         callableFactory.createUnaryCallable(
             listProductsTransportSettings, settings.listProductsSettings(), clientContext);
@@ -1529,6 +1556,11 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
   public UnaryCallable<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
       updateChannelPartnerLinkCallable() {
     return updateChannelPartnerLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<LookupOfferRequest, Offer> lookupOfferCallable() {
+    return lookupOfferCallable;
   }
 
   @Override

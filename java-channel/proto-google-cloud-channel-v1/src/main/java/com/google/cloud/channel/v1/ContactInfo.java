@@ -157,7 +157,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * First name of the contact in the customer account.
+   * The customer account contact's first name.
    * </pre>
    *
    * <code>string first_name = 1;</code>
@@ -180,7 +180,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * First name of the contact in the customer account.
+   * The customer account contact's first name.
    * </pre>
    *
    * <code>string first_name = 1;</code>
@@ -206,7 +206,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Last name of the contact in the customer account.
+   * The customer account contact's last name.
    * </pre>
    *
    * <code>string last_name = 2;</code>
@@ -229,7 +229,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Last name of the contact in the customer account.
+   * The customer account contact's last name.
    * </pre>
    *
    * <code>string last_name = 2;</code>
@@ -255,8 +255,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Display name of the contact in the customer account.
-   * Populated by combining customer first name and last name.
+   * Output only. The customer account contact's display name, formatted as a
+   * combination of the customer's first and last name.
    * </pre>
    *
    * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -279,8 +279,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Display name of the contact in the customer account.
-   * Populated by combining customer first name and last name.
+   * Output only. The customer account contact's display name, formatted as a
+   * combination of the customer's first and last name.
    * </pre>
    *
    * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -306,10 +306,9 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Email of the contact in the customer account.
-   * Email is required for entitlements that need creation of admin.google.com
-   * accounts. The email will be the username used in credentials to access the
-   * admin.google.com account.
+   * The customer account's contact email. Required for entitlements that create
+   * admin.google.com accounts, and serves as the customer's username for those
+   * accounts.
    * </pre>
    *
    * <code>string email = 5;</code>
@@ -332,10 +331,9 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Email of the contact in the customer account.
-   * Email is required for entitlements that need creation of admin.google.com
-   * accounts. The email will be the username used in credentials to access the
-   * admin.google.com account.
+   * The customer account's contact email. Required for entitlements that create
+   * admin.google.com accounts, and serves as the customer's username for those
+   * accounts.
    * </pre>
    *
    * <code>string email = 5;</code>
@@ -361,7 +359,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Job title of the contact in the customer account.
+   * Optional. The customer account contact's job title.
    * </pre>
    *
    * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -384,7 +382,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Job title of the contact in the customer account.
+   * Optional. The customer account contact's job title.
    * </pre>
    *
    * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -410,7 +408,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Phone number of the contact in the customer account.
+   * The customer account's contact phone number.
    * </pre>
    *
    * <code>string phone = 7;</code>
@@ -433,7 +431,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Phone number of the contact in the customer account.
+   * The customer account's contact phone number.
    * </pre>
    *
    * <code>string phone = 7;</code>
@@ -853,7 +851,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * First name of the contact in the customer account.
+     * The customer account contact's first name.
      * </pre>
      *
      * <code>string first_name = 1;</code>
@@ -875,7 +873,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * First name of the contact in the customer account.
+     * The customer account contact's first name.
      * </pre>
      *
      * <code>string first_name = 1;</code>
@@ -897,7 +895,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * First name of the contact in the customer account.
+     * The customer account contact's first name.
      * </pre>
      *
      * <code>string first_name = 1;</code>
@@ -918,7 +916,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * First name of the contact in the customer account.
+     * The customer account contact's first name.
      * </pre>
      *
      * <code>string first_name = 1;</code>
@@ -935,7 +933,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * First name of the contact in the customer account.
+     * The customer account contact's first name.
      * </pre>
      *
      * <code>string first_name = 1;</code>
@@ -959,7 +957,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Last name of the contact in the customer account.
+     * The customer account contact's last name.
      * </pre>
      *
      * <code>string last_name = 2;</code>
@@ -981,7 +979,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Last name of the contact in the customer account.
+     * The customer account contact's last name.
      * </pre>
      *
      * <code>string last_name = 2;</code>
@@ -1003,7 +1001,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Last name of the contact in the customer account.
+     * The customer account contact's last name.
      * </pre>
      *
      * <code>string last_name = 2;</code>
@@ -1024,7 +1022,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Last name of the contact in the customer account.
+     * The customer account contact's last name.
      * </pre>
      *
      * <code>string last_name = 2;</code>
@@ -1041,7 +1039,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Last name of the contact in the customer account.
+     * The customer account contact's last name.
      * </pre>
      *
      * <code>string last_name = 2;</code>
@@ -1065,8 +1063,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Display name of the contact in the customer account.
-     * Populated by combining customer first name and last name.
+     * Output only. The customer account contact's display name, formatted as a
+     * combination of the customer's first and last name.
      * </pre>
      *
      * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1088,8 +1086,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Display name of the contact in the customer account.
-     * Populated by combining customer first name and last name.
+     * Output only. The customer account contact's display name, formatted as a
+     * combination of the customer's first and last name.
      * </pre>
      *
      * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1111,8 +1109,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Display name of the contact in the customer account.
-     * Populated by combining customer first name and last name.
+     * Output only. The customer account contact's display name, formatted as a
+     * combination of the customer's first and last name.
      * </pre>
      *
      * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1133,8 +1131,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Display name of the contact in the customer account.
-     * Populated by combining customer first name and last name.
+     * Output only. The customer account contact's display name, formatted as a
+     * combination of the customer's first and last name.
      * </pre>
      *
      * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1151,8 +1149,8 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Display name of the contact in the customer account.
-     * Populated by combining customer first name and last name.
+     * Output only. The customer account contact's display name, formatted as a
+     * combination of the customer's first and last name.
      * </pre>
      *
      * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1176,10 +1174,9 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Email of the contact in the customer account.
-     * Email is required for entitlements that need creation of admin.google.com
-     * accounts. The email will be the username used in credentials to access the
-     * admin.google.com account.
+     * The customer account's contact email. Required for entitlements that create
+     * admin.google.com accounts, and serves as the customer's username for those
+     * accounts.
      * </pre>
      *
      * <code>string email = 5;</code>
@@ -1201,10 +1198,9 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Email of the contact in the customer account.
-     * Email is required for entitlements that need creation of admin.google.com
-     * accounts. The email will be the username used in credentials to access the
-     * admin.google.com account.
+     * The customer account's contact email. Required for entitlements that create
+     * admin.google.com accounts, and serves as the customer's username for those
+     * accounts.
      * </pre>
      *
      * <code>string email = 5;</code>
@@ -1226,10 +1222,9 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Email of the contact in the customer account.
-     * Email is required for entitlements that need creation of admin.google.com
-     * accounts. The email will be the username used in credentials to access the
-     * admin.google.com account.
+     * The customer account's contact email. Required for entitlements that create
+     * admin.google.com accounts, and serves as the customer's username for those
+     * accounts.
      * </pre>
      *
      * <code>string email = 5;</code>
@@ -1250,10 +1245,9 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Email of the contact in the customer account.
-     * Email is required for entitlements that need creation of admin.google.com
-     * accounts. The email will be the username used in credentials to access the
-     * admin.google.com account.
+     * The customer account's contact email. Required for entitlements that create
+     * admin.google.com accounts, and serves as the customer's username for those
+     * accounts.
      * </pre>
      *
      * <code>string email = 5;</code>
@@ -1270,10 +1264,9 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Email of the contact in the customer account.
-     * Email is required for entitlements that need creation of admin.google.com
-     * accounts. The email will be the username used in credentials to access the
-     * admin.google.com account.
+     * The customer account's contact email. Required for entitlements that create
+     * admin.google.com accounts, and serves as the customer's username for those
+     * accounts.
      * </pre>
      *
      * <code>string email = 5;</code>
@@ -1297,7 +1290,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job title of the contact in the customer account.
+     * Optional. The customer account contact's job title.
      * </pre>
      *
      * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1319,7 +1312,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job title of the contact in the customer account.
+     * Optional. The customer account contact's job title.
      * </pre>
      *
      * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1341,7 +1334,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job title of the contact in the customer account.
+     * Optional. The customer account contact's job title.
      * </pre>
      *
      * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1362,7 +1355,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job title of the contact in the customer account.
+     * Optional. The customer account contact's job title.
      * </pre>
      *
      * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1379,7 +1372,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job title of the contact in the customer account.
+     * Optional. The customer account contact's job title.
      * </pre>
      *
      * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1403,7 +1396,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Phone number of the contact in the customer account.
+     * The customer account's contact phone number.
      * </pre>
      *
      * <code>string phone = 7;</code>
@@ -1425,7 +1418,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Phone number of the contact in the customer account.
+     * The customer account's contact phone number.
      * </pre>
      *
      * <code>string phone = 7;</code>
@@ -1447,7 +1440,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Phone number of the contact in the customer account.
+     * The customer account's contact phone number.
      * </pre>
      *
      * <code>string phone = 7;</code>
@@ -1468,7 +1461,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Phone number of the contact in the customer account.
+     * The customer account's contact phone number.
      * </pre>
      *
      * <code>string phone = 7;</code>
@@ -1485,7 +1478,7 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Phone number of the contact in the customer account.
+     * The customer account's contact phone number.
      * </pre>
      *
      * <code>string phone = 7;</code>

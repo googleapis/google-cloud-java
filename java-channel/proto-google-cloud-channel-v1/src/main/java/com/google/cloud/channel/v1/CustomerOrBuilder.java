@@ -79,11 +79,10 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Required. Address of the organization of the customer entity.
-   * Region and zip codes are required to enforce US laws and embargoes.
-   * Valid address lines are required for all customers.
-   * Language code is discarded. Use the Customer-level language code to set the
-   * customer's language.
+   * Required. The organization address for the customer. To enforce US laws and
+   * embargoes, we require a region and zip code. You must provide valid
+   * addresses for every customer. To set the customer's language, use the
+   * Customer-level language code.
    * </pre>
    *
    * <code>
@@ -97,11 +96,10 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Required. Address of the organization of the customer entity.
-   * Region and zip codes are required to enforce US laws and embargoes.
-   * Valid address lines are required for all customers.
-   * Language code is discarded. Use the Customer-level language code to set the
-   * customer's language.
+   * Required. The organization address for the customer. To enforce US laws and
+   * embargoes, we require a region and zip code. You must provide valid
+   * addresses for every customer. To set the customer's language, use the
+   * Customer-level language code.
    * </pre>
    *
    * <code>
@@ -115,11 +113,10 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Required. Address of the organization of the customer entity.
-   * Region and zip codes are required to enforce US laws and embargoes.
-   * Valid address lines are required for all customers.
-   * Language code is discarded. Use the Customer-level language code to set the
-   * customer's language.
+   * Required. The organization address for the customer. To enforce US laws and
+   * embargoes, we require a region and zip code. You must provide valid
+   * addresses for every customer. To set the customer's language, use the
+   * Customer-level language code.
    * </pre>
    *
    * <code>
@@ -167,11 +164,10 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Secondary contact email.
-   * Alternate email and primary contact email are required to have different
-   * domains if primary contact email is present.
-   * When creating admin.google.com accounts, users get notified credentials at
-   * this email. This email address is also used as a recovery email.
+   * Secondary contact email. You need to provide an alternate email to create
+   * different domains if a primary contact email already exists. Users will
+   * receive a notification with credentials when you create an admin.google.com
+   * account. Secondary emails are also recovery email addresses.
    * </pre>
    *
    * <code>string alternate_email = 5;</code>
@@ -183,11 +179,10 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Secondary contact email.
-   * Alternate email and primary contact email are required to have different
-   * domains if primary contact email is present.
-   * When creating admin.google.com accounts, users get notified credentials at
-   * this email. This email address is also used as a recovery email.
+   * Secondary contact email. You need to provide an alternate email to create
+   * different domains if a primary contact email already exists. Users will
+   * receive a notification with credentials when you create an admin.google.com
+   * account. Secondary emails are also recovery email addresses.
    * </pre>
    *
    * <code>string alternate_email = 5;</code>
@@ -200,9 +195,8 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Required. Primary domain used by the customer.
-   * Domain of primary contact email is required to be same as the provided
-   * domain.
+   * Required. The customer's primary domain. Must match the primary contact
+   * email's domain.
    * </pre>
    *
    * <code>string domain = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -214,9 +208,8 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Required. Primary domain used by the customer.
-   * Domain of primary contact email is required to be same as the provided
-   * domain.
+   * Required. The customer's primary domain. Must match the primary contact
+   * email's domain.
    * </pre>
    *
    * <code>string domain = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -229,7 +222,7 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the customer is created.
+   * Output only. Time when the customer was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -242,7 +235,7 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the customer is created.
+   * Output only. Time when the customer was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -255,7 +248,7 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the customer is created.
+   * Output only. Time when the customer was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -267,7 +260,7 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the customer is updated.
+   * Output only. Time when the customer was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -280,7 +273,7 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the customer is updated.
+   * Output only. Time when the customer was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -293,7 +286,7 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the customer is updated.
+   * Output only. Time when the customer was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -305,8 +298,8 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Output only. Customer's cloud_identity_id.
-   * Populated only if a Cloud Identity resource exists for this customer.
+   * Output only. The customer's Cloud Identity ID if the customer has a Cloud
+   * Identity resource.
    * </pre>
    *
    * <code>string cloud_identity_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -318,8 +311,8 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Output only. Customer's cloud_identity_id.
-   * Populated only if a Cloud Identity resource exists for this customer.
+   * Output only. The customer's Cloud Identity ID if the customer has a Cloud
+   * Identity resource.
    * </pre>
    *
    * <code>string cloud_identity_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

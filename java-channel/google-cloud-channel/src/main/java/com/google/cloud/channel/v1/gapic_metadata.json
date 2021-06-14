@@ -82,6 +82,9 @@
             "ListTransferableSkus": {
               "methods": ["listTransferableSkus", "listTransferableSkusPagedCallable", "listTransferableSkusCallable"]
             },
+            "LookupOffer": {
+              "methods": ["lookupOffer", "lookupOfferCallable"]
+            },
             "ProvisionCloudIdentity": {
               "methods": ["provisionCloudIdentityAsync", "provisionCloudIdentityOperationCallable", "provisionCloudIdentityCallable"]
             },

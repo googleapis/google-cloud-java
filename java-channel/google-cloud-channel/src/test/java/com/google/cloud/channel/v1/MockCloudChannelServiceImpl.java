@@ -590,6 +590,26 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
   }
 
   @Override
+  public void lookupOffer(LookupOfferRequest request, StreamObserver<Offer> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Offer) {
+      requests.add(request);
+      responseObserver.onNext(((Offer) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method LookupOffer, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Offer.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listProducts(
       ListProductsRequest request, StreamObserver<ListProductsResponse> responseObserver) {
     Object response = responses.poll();

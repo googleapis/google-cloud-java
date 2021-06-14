@@ -93,6 +93,7 @@ import com.google.cloud.channel.v1.ListTransferableOffersRequest;
 import com.google.cloud.channel.v1.ListTransferableOffersResponse;
 import com.google.cloud.channel.v1.ListTransferableSkusRequest;
 import com.google.cloud.channel.v1.ListTransferableSkusResponse;
+import com.google.cloud.channel.v1.LookupOfferRequest;
 import com.google.cloud.channel.v1.Offer;
 import com.google.cloud.channel.v1.OperationMetadata;
 import com.google.cloud.channel.v1.Product;
@@ -237,6 +238,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
       createChannelPartnerLinkSettings;
   private final UnaryCallSettings<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
       updateChannelPartnerLinkSettings;
+  private final UnaryCallSettings<LookupOfferRequest, Offer> lookupOfferSettings;
   private final PagedCallSettings<
           ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
       listProductsSettings;
@@ -1133,6 +1135,11 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     return updateChannelPartnerLinkSettings;
   }
 
+  /** Returns the object with the settings used for calls to lookupOffer. */
+  public UnaryCallSettings<LookupOfferRequest, Offer> lookupOfferSettings() {
+    return lookupOfferSettings;
+  }
+
   /** Returns the object with the settings used for calls to listProducts. */
   public PagedCallSettings<ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
       listProductsSettings() {
@@ -1301,6 +1308,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     getChannelPartnerLinkSettings = settingsBuilder.getChannelPartnerLinkSettings().build();
     createChannelPartnerLinkSettings = settingsBuilder.createChannelPartnerLinkSettings().build();
     updateChannelPartnerLinkSettings = settingsBuilder.updateChannelPartnerLinkSettings().build();
+    lookupOfferSettings = settingsBuilder.lookupOfferSettings().build();
     listProductsSettings = settingsBuilder.listProductsSettings().build();
     listSkusSettings = settingsBuilder.listSkusSettings().build();
     listOffersSettings = settingsBuilder.listOffersSettings().build();
@@ -1403,6 +1411,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
         createChannelPartnerLinkSettings;
     private final UnaryCallSettings.Builder<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
         updateChannelPartnerLinkSettings;
+    private final UnaryCallSettings.Builder<LookupOfferRequest, Offer> lookupOfferSettings;
     private final PagedCallSettings.Builder<
             ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
         listProductsSettings;
@@ -1517,6 +1526,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
       getChannelPartnerLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createChannelPartnerLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateChannelPartnerLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      lookupOfferSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listProductsSettings = PagedCallSettings.newBuilder(LIST_PRODUCTS_PAGE_STR_FACT);
       listSkusSettings = PagedCallSettings.newBuilder(LIST_SKUS_PAGE_STR_FACT);
       listOffersSettings = PagedCallSettings.newBuilder(LIST_OFFERS_PAGE_STR_FACT);
@@ -1555,6 +1565,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
               getChannelPartnerLinkSettings,
               createChannelPartnerLinkSettings,
               updateChannelPartnerLinkSettings,
+              lookupOfferSettings,
               listProductsSettings,
               listSkusSettings,
               listOffersSettings,
@@ -1613,6 +1624,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
       getChannelPartnerLinkSettings = settings.getChannelPartnerLinkSettings.toBuilder();
       createChannelPartnerLinkSettings = settings.createChannelPartnerLinkSettings.toBuilder();
       updateChannelPartnerLinkSettings = settings.updateChannelPartnerLinkSettings.toBuilder();
+      lookupOfferSettings = settings.lookupOfferSettings.toBuilder();
       listProductsSettings = settings.listProductsSettings.toBuilder();
       listSkusSettings = settings.listSkusSettings.toBuilder();
       listOffersSettings = settings.listOffersSettings.toBuilder();
@@ -1649,6 +1661,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
               getChannelPartnerLinkSettings,
               createChannelPartnerLinkSettings,
               updateChannelPartnerLinkSettings,
+              lookupOfferSettings,
               listProductsSettings,
               listSkusSettings,
               listOffersSettings,
@@ -1793,6 +1806,11 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
       builder
           .updateChannelPartnerLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .lookupOfferSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2365,6 +2383,11 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     public UnaryCallSettings.Builder<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
         updateChannelPartnerLinkSettings() {
       return updateChannelPartnerLinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to lookupOffer. */
+    public UnaryCallSettings.Builder<LookupOfferRequest, Offer> lookupOfferSettings() {
+      return lookupOfferSettings;
     }
 
     /** Returns the builder for the settings used for calls to listProducts. */

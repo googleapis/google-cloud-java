@@ -310,6 +310,11 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
     return ((CloudChannelServiceStubSettings) getStubSettings()).updateChannelPartnerLinkSettings();
   }
 
+  /** Returns the object with the settings used for calls to lookupOffer. */
+  public UnaryCallSettings<LookupOfferRequest, Offer> lookupOfferSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings()).lookupOfferSettings();
+  }
+
   /** Returns the object with the settings used for calls to listProducts. */
   public PagedCallSettings<ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
       listProductsSettings() {
@@ -684,6 +689,11 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
     public UnaryCallSettings.Builder<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
         updateChannelPartnerLinkSettings() {
       return getStubSettingsBuilder().updateChannelPartnerLinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to lookupOffer. */
+    public UnaryCallSettings.Builder<LookupOfferRequest, Offer> lookupOfferSettings() {
+      return getStubSettingsBuilder().lookupOfferSettings();
     }
 
     /** Returns the builder for the settings used for calls to listProducts. */

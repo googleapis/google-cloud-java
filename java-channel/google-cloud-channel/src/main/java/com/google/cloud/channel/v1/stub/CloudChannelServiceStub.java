@@ -70,6 +70,8 @@ import com.google.cloud.channel.v1.ListTransferableOffersRequest;
 import com.google.cloud.channel.v1.ListTransferableOffersResponse;
 import com.google.cloud.channel.v1.ListTransferableSkusRequest;
 import com.google.cloud.channel.v1.ListTransferableSkusResponse;
+import com.google.cloud.channel.v1.LookupOfferRequest;
+import com.google.cloud.channel.v1.Offer;
 import com.google.cloud.channel.v1.OperationMetadata;
 import com.google.cloud.channel.v1.ProvisionCloudIdentityRequest;
 import com.google.cloud.channel.v1.RegisterSubscriberRequest;
@@ -302,6 +304,10 @@ public abstract class CloudChannelServiceStub implements BackgroundResource {
   public UnaryCallable<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
       updateChannelPartnerLinkCallable() {
     throw new UnsupportedOperationException("Not implemented: updateChannelPartnerLinkCallable()");
+  }
+
+  public UnaryCallable<LookupOfferRequest, Offer> lookupOfferCallable() {
+    throw new UnsupportedOperationException("Not implemented: lookupOfferCallable()");
   }
 
   public UnaryCallable<ListProductsRequest, ListProductsPagedResponse> listProductsPagedCallable() {

@@ -306,7 +306,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a requested [Customer][google.cloud.channel.v1.Customer] resource.
+   * Returns the requested [Customer][google.cloud.channel.v1.Customer] resource.
    *
    * <p>Possible error codes:
    *
@@ -341,7 +341,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a requested [Customer][google.cloud.channel.v1.Customer] resource.
+   * Returns the requested [Customer][google.cloud.channel.v1.Customer] resource.
    *
    * <p>Possible error codes:
    *
@@ -375,7 +375,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a requested [Customer][google.cloud.channel.v1.Customer] resource.
+   * Returns the requested [Customer][google.cloud.channel.v1.Customer] resource.
    *
    * <p>Possible error codes:
    *
@@ -410,7 +410,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a requested [Customer][google.cloud.channel.v1.Customer] resource.
+   * Returns the requested [Customer][google.cloud.channel.v1.Customer] resource.
    *
    * <p>Possible error codes:
    *
@@ -679,7 +679,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the given [Customer][google.cloud.channel.v1.Customer] permanently and irreversibly.
+   * Deletes the given [Customer][google.cloud.channel.v1.Customer] permanently.
    *
    * <p>Possible error codes:
    *
@@ -711,7 +711,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the given [Customer][google.cloud.channel.v1.Customer] permanently and irreversibly.
+   * Deletes the given [Customer][google.cloud.channel.v1.Customer] permanently.
    *
    * <p>Possible error codes:
    *
@@ -742,7 +742,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the given [Customer][google.cloud.channel.v1.Customer] permanently and irreversibly.
+   * Deletes the given [Customer][google.cloud.channel.v1.Customer] permanently.
    *
    * <p>Possible error codes:
    *
@@ -775,7 +775,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the given [Customer][google.cloud.channel.v1.Customer] permanently and irreversibly.
+   * Deletes the given [Customer][google.cloud.channel.v1.Customer] permanently.
    *
    * <p>Possible error codes:
    *
@@ -1361,7 +1361,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a requested [Entitlement][google.cloud.channel.v1.Entitlement] resource.
+   * Returns the requested [Entitlement][google.cloud.channel.v1.Entitlement] resource.
    *
    * <p>Possible error codes:
    *
@@ -1394,7 +1394,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a requested [Entitlement][google.cloud.channel.v1.Entitlement] resource.
+   * Returns the requested [Entitlement][google.cloud.channel.v1.Entitlement] resource.
    *
    * <p>Possible error codes:
    *
@@ -3064,8 +3064,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a requested [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resource.
-   * You must be a distributor to call this method.
+   * Returns the requested [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]
+   * resource. You must be a distributor to call this method.
    *
    * <p>Possible error codes:
    *
@@ -3101,8 +3101,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a requested [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resource.
-   * You must be a distributor to call this method.
+   * Returns the requested [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]
+   * resource. You must be a distributor to call this method.
    *
    * <p>Possible error codes:
    *
@@ -3315,6 +3315,73 @@ public class CloudChannelServiceClient implements BackgroundResource {
   public final UnaryCallable<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
       updateChannelPartnerLinkCallable() {
     return stub.updateChannelPartnerLinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the requested [Offer][google.cloud.channel.v1.Offer] resource.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The entitlement doesn't belong to the reseller.
+   *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
+   *   <li>NOT_FOUND: Entitlement or offer was not found.
+   * </ul>
+   *
+   * <p>Return value: The [Offer][google.cloud.channel.v1.Offer] resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   LookupOfferRequest request =
+   *       LookupOfferRequest.newBuilder()
+   *           .setEntitlement(
+   *               EntitlementName.of("[ACCOUNT]", "[CUSTOMER]", "[ENTITLEMENT]").toString())
+   *           .build();
+   *   Offer response = cloudChannelServiceClient.lookupOffer(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Offer lookupOffer(LookupOfferRequest request) {
+    return lookupOfferCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the requested [Offer][google.cloud.channel.v1.Offer] resource.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The entitlement doesn't belong to the reseller.
+   *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
+   *   <li>NOT_FOUND: Entitlement or offer was not found.
+   * </ul>
+   *
+   * <p>Return value: The [Offer][google.cloud.channel.v1.Offer] resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   LookupOfferRequest request =
+   *       LookupOfferRequest.newBuilder()
+   *           .setEntitlement(
+   *               EntitlementName.of("[ACCOUNT]", "[CUSTOMER]", "[ENTITLEMENT]").toString())
+   *           .build();
+   *   ApiFuture<Offer> future = cloudChannelServiceClient.lookupOfferCallable().futureCall(request);
+   *   // Do something.
+   *   Offer response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<LookupOfferRequest, Offer> lookupOfferCallable() {
+    return stub.lookupOfferCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
