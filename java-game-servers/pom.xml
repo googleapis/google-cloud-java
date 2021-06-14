@@ -128,11 +128,11 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-game-servers-v1</module>
-    <module>proto-google-cloud-game-servers-v1beta</module>
+    <module>google-cloud-game-servers</module>
     <module>grpc-google-cloud-game-servers-v1</module>
     <module>grpc-google-cloud-game-servers-v1beta</module>
-    <module>google-cloud-game-servers</module>
+    <module>proto-google-cloud-game-servers-v1</module>
+    <module>proto-google-cloud-game-servers-v1beta</module>
     <module>google-cloud-game-servers-bom</module>
   </modules>
 
