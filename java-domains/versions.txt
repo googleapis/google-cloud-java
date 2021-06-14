@@ -2,5 +2,7 @@
 # module:released-version:current-version
 
 google-cloud-domains:0.2.1:0.2.2-SNAPSHOT
-proto-google-cloud-domains-v1beta1:0.2.1:0.2.2-SNAPSHOT
 grpc-google-cloud-domains-v1beta1:0.2.1:0.2.2-SNAPSHOT
+grpc-google-cloud-domains-v1alpha2:0.2.1:0.2.2-SNAPSHOT
+proto-google-cloud-domains-v1beta1:0.2.1:0.2.2-SNAPSHOT
+proto-google-cloud-domains-v1alpha2:0.2.1:0.2.2-SNAPSHOT
