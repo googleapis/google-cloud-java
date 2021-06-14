@@ -524,4 +524,6 @@ for version in versions:
 
 java.common_templates(excludes=[
   ".github/workflows/samples.yaml",
+  ".kokoro/build.sh",
+  ".github/sync-repo-settings.yaml",
 ])

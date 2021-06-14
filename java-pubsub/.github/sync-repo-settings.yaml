@@ -17,6 +17,7 @@ branchProtectionRules:
       - units (8)
       - units (11)
       - 'Kokoro - Test: Integration'
+      - 'Kokoro - Against Pub/Sub Lite samples'
       - cla/google
   - pattern: 1.111.0-sp
     isAdminEnforced: true
@@ -33,6 +34,7 @@ branchProtectionRules:
       - units (8)
       - units (11)
       - 'Kokoro - Test: Integration'
+      - 'Kokoro - Against Pub/Sub Lite samples'
       - cla/google
 permissionRules:
   - team: yoshi-admins

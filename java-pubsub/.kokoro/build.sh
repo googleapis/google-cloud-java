@@ -99,6 +99,41 @@ samples)
         echo "no sample pom.xml found - skipping sample tests"
     fi
     ;;
+presubmit-against-pubsublite-samples)
+    ## cd to the directory one level above the root of the repo
+    cd ${scriptDir}/../..
+    git clone https://github.com/googleapis/java-pubsublite.git
+    pushd java-pubsublite/
+
+    SAMPLES_DIR=samples
+    # Only run ITs in in snippets/ on presubmit PRs.
+    if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]
+    then
+      SAMPLES_DIR=samples/snippets
+    fi
+
+    if [[ -f ${SAMPLES_DIR}/pom.xml ]]
+    then
+        for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
+          [[ -f "$FILE" ]] || continue
+          source "$FILE"
+        done
+
+        pushd ${SAMPLES_DIR}
+        mvn -B \
+          -Penable-samples \
+          -ntp \
+          -DtrimStackTrace=false \
+          -Dclirr.skip=true \
+          -Denforcer.skip=true \
+          -fae \
+          verify
+        RETURN_CODE=$?
+        popd
+    else
+        echo "no sample pom.xml found - skipping sample tests"
+    fi
+    ;;
 clirr)
     mvn -B -Denforcer.skip=true clirr:check
     RETURN_CODE=$?
