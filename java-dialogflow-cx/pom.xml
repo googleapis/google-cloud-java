@@ -122,10 +122,10 @@
 
   <modules>
     <module>google-cloud-dialogflow-cx</module>
-    <module>proto-google-cloud-dialogflow-cx-v3beta1</module>
-    <module>proto-google-cloud-dialogflow-cx-v3</module>
     <module>grpc-google-cloud-dialogflow-cx-v3beta1</module>
     <module>grpc-google-cloud-dialogflow-cx-v3</module>
+    <module>proto-google-cloud-dialogflow-cx-v3beta1</module>
+    <module>proto-google-cloud-dialogflow-cx-v3</module>
     <module>google-cloud-dialogflow-cx-bom</module>
   </modules>
 
