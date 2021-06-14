@@ -118,10 +118,10 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-iot-v1</module>
-    <module>grpc-google-cloud-iot-v1</module>
     <module>google-cloud-iot</module>
-  <module>google-cloud-iot-bom</module>
+    <module>grpc-google-cloud-iot-v1</module>
+    <module>proto-google-cloud-iot-v1</module>
+    <module>google-cloud-iot-bom</module>
   </modules>
 
   <reporting>
