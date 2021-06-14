@@ -41,8 +41,7 @@ public class SubmitJob {
     submitJob(projectId, region, clusterName);
   }
 
-  public static void submitJob(
-      String projectId, String region, String clusterName)
+  public static void submitJob(String projectId, String region, String clusterName)
       throws IOException, InterruptedException {
     String myEndpoint = String.format("%s-dataproc.googleapis.com:443", region);
 

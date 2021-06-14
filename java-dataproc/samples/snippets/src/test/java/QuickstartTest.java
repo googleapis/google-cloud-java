@@ -60,8 +60,7 @@ public class QuickstartTest {
           + "rdd = sc.parallelize((1,2,3,4,5))\n"
           + "sum = rdd.reduce(lambda x, y: x + y)\n";
 
-  @Rule
-  public StdOutCaptureRule stdOutCapture = new StdOutCaptureRule();
+  @Rule public StdOutCaptureRule stdOutCapture = new StdOutCaptureRule();
   private Bucket bucket;
   private Blob blob;
 

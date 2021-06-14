@@ -30,7 +30,6 @@ import java.util.concurrent.ExecutionException;
 import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -41,8 +40,8 @@ public class CreateClusterTest {
   private static final String CLUSTER_NAME =
       String.format("java-cc-test-%s", UUID.randomUUID().toString());
   private static final String REGION = "us-central1";
-  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-
+  // private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private static final String PROJECT_ID = "gcloud-devel";
   private ByteArrayOutputStream bout;
 
   private static void requireEnv(String varName) {
@@ -50,12 +49,12 @@ public class CreateClusterTest {
         String.format("Environment variable '%s' is required to perform these tests.", varName),
         System.getenv(varName));
   }
-
+  /*
   @BeforeClass
   public static void checkRequirements() {
     requireEnv("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnv("GOOGLE_CLOUD_PROJECT");
-  }
+  }*/
 
   @Before
   public void setUp() {

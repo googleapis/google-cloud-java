@@ -85,7 +85,7 @@ public class CreateClusterWithAutoscaling {
     // try-with-resources closes the client, but this can also be done manually with the .close()
     // method.
     try (ClusterControllerClient clusterControllerClient =
-        ClusterControllerClient.create(clusterControllerSettings);
+            ClusterControllerClient.create(clusterControllerSettings);
         AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
             AutoscalingPolicyServiceClient.create(autoscalingPolicyServiceSettings)) {
 

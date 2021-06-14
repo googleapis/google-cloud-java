@@ -46,10 +46,7 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import com.google.protobuf.Empty;
 import java.io.IOException;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

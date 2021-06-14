@@ -128,12 +128,12 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-dataproc-v1beta2</module>
-    <module>proto-google-cloud-dataproc-v1</module>
+    <module>google-cloud-dataproc</module>
     <module>grpc-google-cloud-dataproc-v1</module>
     <module>grpc-google-cloud-dataproc-v1beta2</module>
-    <module>google-cloud-dataproc</module>
-  <module>google-cloud-dataproc-bom</module>
+    <module>proto-google-cloud-dataproc-v1beta2</module>
+    <module>proto-google-cloud-dataproc-v1</module>
+    <module>google-cloud-dataproc-bom</module>
   </modules>
 
   <reporting>

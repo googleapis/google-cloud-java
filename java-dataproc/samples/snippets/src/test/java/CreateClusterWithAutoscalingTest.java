@@ -79,7 +79,7 @@ public class CreateClusterWithAutoscalingTest {
         AutoscalingPolicyServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
 
     try (ClusterControllerClient clusterControllerClient =
-        ClusterControllerClient.create(clusterControllerSettings);
+            ClusterControllerClient.create(clusterControllerSettings);
         AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
             AutoscalingPolicyServiceClient.create(autoscalingPolicyServiceSettings)) {
 
