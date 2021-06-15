@@ -48,8 +48,8 @@ import org.junit.Test;
 public class AccessApprovalAdminClientTest {
   private static MockAccessApproval mockAccessApproval;
   private static MockServiceHelper mockServiceHelper;
-  private AccessApprovalAdminClient client;
   private LocalChannelProvider channelProvider;
+  private AccessApprovalAdminClient client;
 
   @BeforeClass
   public static void startStaticServer() {
