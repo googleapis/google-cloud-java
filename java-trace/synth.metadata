@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-trace.git",
-        "sha": "5170143892c42269b34cf8599d3d24e02d2ebc95"
+        "sha": "be19745d1ec295d600d560830d708885bdaba6bc"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -118,6 +118,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-trace/src/main/java/com/google/cloud/trace/v1/TraceServiceClient.java",
     "google-cloud-trace/src/main/java/com/google/cloud/trace/v1/TraceServiceSettings.java",
