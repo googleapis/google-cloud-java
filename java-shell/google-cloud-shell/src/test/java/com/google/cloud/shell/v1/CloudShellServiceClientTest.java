@@ -47,8 +47,8 @@ import org.junit.Test;
 public class CloudShellServiceClientTest {
   private static MockCloudShellService mockCloudShellService;
   private static MockServiceHelper mockServiceHelper;
-  private CloudShellServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CloudShellServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
