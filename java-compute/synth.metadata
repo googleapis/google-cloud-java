@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-compute.git",
-        "sha": "7dc4522fd618edd755485c7427b45db04093ce02"
+        "sha": "b13c4137b54577689a89e011129a8d03cff536d6"
       }
     },
     {
@@ -18,7 +18,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -100,6 +100,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-compute/src/main/java/com/google/cloud/compute/v1/AcceleratorTypesClient.java",
     "google-cloud-compute/src/main/java/com/google/cloud/compute/v1/AcceleratorTypesSettings.java",
