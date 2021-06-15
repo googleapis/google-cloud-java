@@ -57,10 +57,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class TagValuesClientTest {
-  private static MockTagValues mockTagValues;
   private static MockServiceHelper mockServiceHelper;
-  private TagValuesClient client;
+  private static MockTagValues mockTagValues;
   private LocalChannelProvider channelProvider;
+  private TagValuesClient client;
 
   @BeforeClass
   public static void startStaticServer() {

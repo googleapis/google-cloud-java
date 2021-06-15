@@ -60,8 +60,8 @@ import org.junit.Test;
 public class FoldersClientTest {
   private static MockFolders mockFolders;
   private static MockServiceHelper mockServiceHelper;
-  private FoldersClient client;
   private LocalChannelProvider channelProvider;
+  private FoldersClient client;
 
   @BeforeClass
   public static void startStaticServer() {

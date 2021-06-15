@@ -59,8 +59,8 @@ import org.junit.Test;
 public class TagKeysClientTest {
   private static MockServiceHelper mockServiceHelper;
   private static MockTagKeys mockTagKeys;
-  private TagKeysClient client;
   private LocalChannelProvider channelProvider;
+  private TagKeysClient client;
 
   @BeforeClass
   public static void startStaticServer() {

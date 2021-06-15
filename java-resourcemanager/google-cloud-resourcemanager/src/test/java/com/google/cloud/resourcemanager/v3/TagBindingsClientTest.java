@@ -48,10 +48,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class TagBindingsClientTest {
-  private static MockTagBindings mockTagBindings;
   private static MockServiceHelper mockServiceHelper;
-  private TagBindingsClient client;
+  private static MockTagBindings mockTagBindings;
   private LocalChannelProvider channelProvider;
+  private TagBindingsClient client;
 
   @BeforeClass
   public static void startStaticServer() {
