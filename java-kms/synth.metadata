@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-kms.git",
-        "sha": "bbbf8e99e4816479831c132520421b3c6ecead47"
+        "sha": "d6068f20f05acf77f01a3e6b8f43925efedcc191"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -101,6 +101,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-kms/src/main/java/com/google/cloud/kms/v1/KeyManagementServiceClient.java",
     "google-cloud-kms/src/main/java/com/google/cloud/kms/v1/KeyManagementServiceSettings.java",
