@@ -11,7 +11,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquerystorage.git",
-        "sha": "8ab7626c02c22bc0ad3761d1d8eeb4c140b79d37"
+        "sha": "224cabad99856d80ce0b922388997efcdcf247c2"
       }
     },
     {
@@ -42,7 +42,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "7332178a11ddddc91188dc0f25bca1ccadcaa6c6"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -139,6 +139,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/BaseBigQueryReadClient.java",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/BaseBigQueryReadSettings.java",
