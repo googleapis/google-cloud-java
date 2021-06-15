@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-securitycenter.git",
-        "sha": "54241a4a28e63433abf4fc301da28d924438dd23"
+        "sha": "2cc66ba13197f0ef95cdad6555c3d46086dab2b5"
       }
     },
     {
@@ -35,7 +35,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -135,6 +135,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-securitycenter/src/main/java/com/google/cloud/securitycenter/v1/SecurityCenterClient.java",
     "google-cloud-securitycenter/src/main/java/com/google/cloud/securitycenter/v1/SecurityCenterSettings.java",
