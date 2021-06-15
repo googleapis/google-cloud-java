@@ -51,10 +51,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class TpuClientTest {
-  private static MockTpu mockTpu;
   private static MockServiceHelper mockServiceHelper;
-  private TpuClient client;
+  private static MockTpu mockTpu;
   private LocalChannelProvider channelProvider;
+  private TpuClient client;
 
   @BeforeClass
   public static void startStaticServer() {
