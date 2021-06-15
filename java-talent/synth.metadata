@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-talent.git",
-        "sha": "7cf8fe2b877e2777c03d836cbdc326f656aa220c"
+        "sha": "8e4050750ed41dad2627d83f1d834838cbe91ac3"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "7332178a11ddddc91188dc0f25bca1ccadcaa6c6"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -115,6 +115,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-talent/src/main/java/com/google/cloud/talent/v4/CompanyServiceClient.java",
     "google-cloud-talent/src/main/java/com/google/cloud/talent/v4/CompanyServiceSettings.java",
