@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-redis.git",
-        "sha": "04b1c0de08ced47cbdee32b9aa1adcdaf9c6c79f"
+        "sha": "b6ab21a14fad40d2f08697f425d4a721b226646a"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -116,6 +116,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-redis/src/main/java/com/google/cloud/redis/v1/CloudRedisClient.java",
     "google-cloud-redis/src/main/java/com/google/cloud/redis/v1/CloudRedisSettings.java",
