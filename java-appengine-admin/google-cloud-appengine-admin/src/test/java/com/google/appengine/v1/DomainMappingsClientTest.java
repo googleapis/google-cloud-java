@@ -49,10 +49,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class DomainMappingsClientTest {
-  private static MockServiceHelper mockServiceHelper;
-  private DomainMappingsClient client;
   private static MockDomainMappings mockDomainMappings;
+  private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
+  private DomainMappingsClient client;
 
   @BeforeClass
   public static void startStaticServer() {

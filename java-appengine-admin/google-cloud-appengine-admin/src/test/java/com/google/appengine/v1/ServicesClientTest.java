@@ -50,8 +50,8 @@ import org.junit.Test;
 public class ServicesClientTest {
   private static MockServiceHelper mockServiceHelper;
   private static MockServices mockServices;
-  private ServicesClient client;
   private LocalChannelProvider channelProvider;
+  private ServicesClient client;
 
   @BeforeClass
   public static void startStaticServer() {

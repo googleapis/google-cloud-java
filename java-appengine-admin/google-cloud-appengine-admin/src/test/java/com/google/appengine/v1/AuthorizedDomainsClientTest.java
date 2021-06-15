@@ -44,8 +44,8 @@ import org.junit.Test;
 public class AuthorizedDomainsClientTest {
   private static MockAuthorizedDomains mockAuthorizedDomains;
   private static MockServiceHelper mockServiceHelper;
-  private AuthorizedDomainsClient client;
   private LocalChannelProvider channelProvider;
+  private AuthorizedDomainsClient client;
 
   @BeforeClass
   public static void startStaticServer() {
