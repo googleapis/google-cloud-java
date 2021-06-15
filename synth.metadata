@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-logging.git",
-        "sha": "80bcc53f99a5332966fca266864e3497de60a371"
+        "sha": "8916fd626f102215bb865854619818cafd9ccd6e"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -98,6 +98,7 @@
     ".kokoro/trampoline.sh",
     "CODE_OF_CONDUCT.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/ConfigClient.java",
     "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/ConfigSettings.java",
