@@ -16,19 +16,4 @@
     <className>com/google/cloud/documentai/v1beta3/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
-
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/documentai/v1beta3/Document*</className>
-    <method>*</method>
-  </difference>
-  <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/cloud/documentai/v1beta3/Document*</className>
-  </difference>
-  <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/cloud/documentai/v1beta3/Document*</className>
-    <field>*FIELD_NUMBER</field>
-  </difference>
 </differences>
