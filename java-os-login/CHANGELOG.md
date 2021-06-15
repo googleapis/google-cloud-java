@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/googleapis/java-os-login/compare/v1.2.6...v1.3.0) (2021-06-11)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#455](https://www.github.com/googleapis/java-os-login/issues/455)) ([e75bc19](https://www.github.com/googleapis/java-os-login/commit/e75bc192d39270bccaa28ec400c54c37988862ac))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#467](https://www.github.com/googleapis/java-os-login/issues/467)) ([33e7427](https://www.github.com/googleapis/java-os-login/commit/33e7427bcbd1c9ac4892abc3c131c3f086a17ce1))
+
 ### [1.2.6](https://www.github.com/googleapis/java-os-login/compare/v1.2.5...v1.2.6) (2021-05-19)
 
 
