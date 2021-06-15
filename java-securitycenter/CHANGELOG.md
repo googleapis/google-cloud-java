@@ -1,5 +1,24 @@
 # Changelog
 
+### [1.6.3](https://www.github.com/googleapis/java-securitycenter/compare/v1.6.2...v1.6.3) (2021-06-15)
+
+
+### Bug Fixes
+
+* Update dependencies.sh to not break on mac ([#541](https://www.github.com/googleapis/java-securitycenter/issues/541)) ([87a8fef](https://www.github.com/googleapis/java-securitycenter/commit/87a8fefdd6145fd223bedcc12df98dfdb206bcf6))
+
+
+### Documentation
+
+* remove unused region tags ([#407](https://www.github.com/googleapis/java-securitycenter/issues/407)) ([ce983f3](https://www.github.com/googleapis/java-securitycenter/commit/ce983f33d2492e8db6eca1cb1f357f40f6ceeac7))
+* update currently supported Finding filter fields ([#537](https://www.github.com/googleapis/java-securitycenter/issues/537)) ([75eb8a6](https://www.github.com/googleapis/java-securitycenter/commit/75eb8a6e4e68a348e06ed42483a6674367bf6edb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.113.3 ([#535](https://www.github.com/googleapis/java-securitycenter/issues/535)) ([2cc66ba](https://www.github.com/googleapis/java-securitycenter/commit/2cc66ba13197f0ef95cdad6555c3d46086dab2b5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#530](https://www.github.com/googleapis/java-securitycenter/issues/530)) ([eb3a2f0](https://www.github.com/googleapis/java-securitycenter/commit/eb3a2f09798b63819ed4e244f6f4b93f5fcc3254))
+
 ### [1.6.2](https://www.github.com/googleapis/java-securitycenter/compare/v1.6.1...v1.6.2) (2021-06-03)
 
 
