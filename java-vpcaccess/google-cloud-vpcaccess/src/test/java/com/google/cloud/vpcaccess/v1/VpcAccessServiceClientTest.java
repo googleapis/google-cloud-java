@@ -48,10 +48,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class VpcAccessServiceClientTest {
-  private static MockVpcAccessService mockVpcAccessService;
   private static MockServiceHelper mockServiceHelper;
-  private VpcAccessServiceClient client;
+  private static MockVpcAccessService mockVpcAccessService;
   private LocalChannelProvider channelProvider;
+  private VpcAccessServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
