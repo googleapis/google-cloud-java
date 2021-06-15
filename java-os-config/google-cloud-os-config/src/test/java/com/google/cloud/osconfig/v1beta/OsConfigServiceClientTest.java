@@ -50,10 +50,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class OsConfigServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockOsConfigService mockOsConfigService;
-  private OsConfigServiceClient client;
+  private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
+  private OsConfigServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

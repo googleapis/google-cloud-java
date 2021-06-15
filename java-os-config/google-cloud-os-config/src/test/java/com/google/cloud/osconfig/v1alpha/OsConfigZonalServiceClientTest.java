@@ -57,8 +57,8 @@ import org.junit.Test;
 public class OsConfigZonalServiceClientTest {
   private static MockOsConfigZonalService mockOsConfigZonalService;
   private static MockServiceHelper mockServiceHelper;
-  private OsConfigZonalServiceClient client;
   private LocalChannelProvider channelProvider;
+  private OsConfigZonalServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
