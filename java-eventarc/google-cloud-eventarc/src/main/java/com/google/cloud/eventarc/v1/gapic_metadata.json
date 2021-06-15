@@ -1,0 +1,33 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.eventarc.v1",
+  "libraryPackage": "com.google.cloud.eventarc.v1",
+  "services": {
+    "Eventarc": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EventarcClient",
+          "rpcs": {
+            "CreateTrigger": {
+              "methods": ["createTriggerAsync", "createTriggerAsync", "createTriggerAsync", "createTriggerOperationCallable", "createTriggerCallable"]
+            },
+            "DeleteTrigger": {
+              "methods": ["deleteTriggerAsync", "deleteTriggerAsync", "deleteTriggerAsync", "deleteTriggerOperationCallable", "deleteTriggerCallable"]
+            },
+            "GetTrigger": {
+              "methods": ["getTrigger", "getTrigger", "getTrigger", "getTriggerCallable"]
+            },
+            "ListTriggers": {
+              "methods": ["listTriggers", "listTriggers", "listTriggers", "listTriggersPagedCallable", "listTriggersCallable"]
+            },
+            "UpdateTrigger": {
+              "methods": ["updateTriggerAsync", "updateTriggerAsync", "updateTriggerOperationCallable", "updateTriggerCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
