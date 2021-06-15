@@ -439,7 +439,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent, which owns this collection of migration jobs.
    * @param migrationJob Required. Represents a [migration
-   *     job](https://cloud.google.com/database-migration/reference/rest/v1/projects.locations.migrationJobs)
+   *     job](https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs)
    *     object.
    * @param migrationJobId Required. The ID of the instance to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -476,7 +476,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent, which owns this collection of migration jobs.
    * @param migrationJob Required. Represents a [migration
-   *     job](https://cloud.google.com/database-migration/reference/rest/v1/projects.locations.migrationJobs)
+   *     job](https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs)
    *     object.
    * @param migrationJobId Required. The ID of the instance to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
