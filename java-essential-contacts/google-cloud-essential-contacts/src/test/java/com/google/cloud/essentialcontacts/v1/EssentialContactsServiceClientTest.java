@@ -49,8 +49,8 @@ import org.junit.Test;
 public class EssentialContactsServiceClientTest {
   private static MockEssentialContactsService mockEssentialContactsService;
   private static MockServiceHelper mockServiceHelper;
-  private EssentialContactsServiceClient client;
   private LocalChannelProvider channelProvider;
+  private EssentialContactsServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
