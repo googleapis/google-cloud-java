@@ -53,9 +53,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class DataMigrationServiceClientTest {
+  private static MockDataMigrationService mockDataMigrationService;
   private static MockServiceHelper mockServiceHelper;
   private DataMigrationServiceClient client;
-  private static MockDataMigrationService mockDataMigrationService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
