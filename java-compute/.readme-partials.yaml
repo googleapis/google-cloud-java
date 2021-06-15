@@ -1,0 +1,51 @@
+custom_content: |
+  ### Example
+  The following example creates a GCE address, then lists all the available addresses in the region and in the whole project and eventually deletes the newly created address.
+
+  ```java
+  import com.google.cloud.compute.v1.Address;
+  import com.google.cloud.compute.v1.AddressesClient;
+  import com.google.cloud.compute.v1.AddressesScopedList;
+  import com.google.cloud.compute.v1.Operation;
+  import com.google.protobuf.util.JsonFormat;
+  import java.io.IOException;
+  import java.util.Map;
+
+  public class ComputeExample {
+
+    public static void main(String[] args) throws IOException, InterruptedException {
+      final String project = "PROJECT_NAME";
+      final String region = "REGION";
+      final String address = "test-address-21";
+
+      AddressesClient addressesClient = AddressesClient.create();
+
+      // AddressClient#insert()
+      System.out.println("\n===============\nAddressClient#insert()\n===============");
+      Operation insertResponse =
+          addressesClient.insert(project, region, Address.newBuilder().setName(address).build());
+      System.out.println(JsonFormat.printer().print(insertResponse) + "\n");
+      Thread.sleep(1000L);
+
+      // AddressClient#list()
+      System.out.println("\n===============\nAddressClient#list()\n===============");
+      for (Address addr : addressesClient.list(project, region).iterateAll()) {
+        System.out.println(JsonFormat.printer().print(addr));
+      }
+
+      // AddressClient#aggregatedList()
+      System.out.println("\n===============\nAddressClient#aggregatedList()\n===============");
+      for (Map.Entry<String, AddressesScopedList> addr :
+          addressesClient.aggregatedList(project).iterateAll()) {
+        System.out.println("KEY: " + addr.getKey());
+        System.out.println(JsonFormat.printer().print(addr.getValue()));
+      }
+
+      // AddressClient#delete()
+      System.out.println("\n===============\nAddressClient#delete()\n===============");
+      Operation deleteResponse = addressesClient.delete(project, region, address);
+      System.out.println(JsonFormat.printer().print(deleteResponse) + "\n");
+    }
+  }
+
+  ```
