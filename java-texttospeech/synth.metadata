@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-texttospeech.git",
-        "sha": "ac733583b6593eeede99215d2309b3e8c898664c"
+        "sha": "86670aabd727c93d723886dbed4c1f7040d7bf40"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -118,6 +118,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-texttospeech/src/main/java/com/google/cloud/texttospeech/v1/TextToSpeechClient.java",
     "google-cloud-texttospeech/src/main/java/com/google/cloud/texttospeech/v1/TextToSpeechSettings.java",
