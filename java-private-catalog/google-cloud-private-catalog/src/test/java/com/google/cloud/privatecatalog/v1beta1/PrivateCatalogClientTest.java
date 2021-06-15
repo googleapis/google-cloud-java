@@ -46,8 +46,8 @@ import org.junit.Test;
 public class PrivateCatalogClientTest {
   private static MockPrivateCatalog mockPrivateCatalog;
   private static MockServiceHelper mockServiceHelper;
-  private PrivateCatalogClient client;
   private LocalChannelProvider channelProvider;
+  private PrivateCatalogClient client;
 
   @BeforeClass
   public static void startStaticServer() {
