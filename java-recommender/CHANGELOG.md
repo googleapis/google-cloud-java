@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.6.0](https://www.github.com/googleapis/java-recommender/compare/v1.5.4...v1.6.0) (2021-06-11)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#505](https://www.github.com/googleapis/java-recommender/issues/505)) ([b944a1f](https://www.github.com/googleapis/java-recommender/commit/b944a1ff525ba4d24918adfa8b29e7b6b5954e5d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#517](https://www.github.com/googleapis/java-recommender/issues/517)) ([5e894e8](https://www.github.com/googleapis/java-recommender/commit/5e894e8f3018130a68dffe22222117c7f24a71e7))
+
 ### [1.5.4](https://www.github.com/googleapis/java-recommender/compare/v1.5.3...v1.5.4) (2021-05-19)
 
 
