@@ -58,8 +58,8 @@ import org.junit.Test;
 public class RegistrationServiceClientTest {
   private static MockRegistrationService mockRegistrationService;
   private static MockServiceHelper mockServiceHelper;
-  private RegistrationServiceClient client;
   private LocalChannelProvider channelProvider;
+  private RegistrationServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

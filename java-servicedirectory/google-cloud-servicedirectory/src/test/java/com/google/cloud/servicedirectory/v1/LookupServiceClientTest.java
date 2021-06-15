@@ -41,8 +41,8 @@ import org.junit.Test;
 public class LookupServiceClientTest {
   private static MockLookupService mockLookupService;
   private static MockServiceHelper mockServiceHelper;
-  private LookupServiceClient client;
   private LocalChannelProvider channelProvider;
+  private LookupServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
