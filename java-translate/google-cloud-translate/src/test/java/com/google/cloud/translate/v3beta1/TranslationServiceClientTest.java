@@ -50,9 +50,9 @@ import org.junit.Test;
 @Generated("by gapic-generator-java")
 public class TranslationServiceClientTest {
   private static MockServiceHelper mockServiceHelper;
-  private TranslationServiceClient client;
-  private LocalChannelProvider channelProvider;
   private static MockTranslationService mockTranslationService;
+  private LocalChannelProvider channelProvider;
+  private TranslationServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
