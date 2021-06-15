@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-iamcredentials.git",
-        "sha": "692f90d0b5ecc5f4b758699bdf8ec13d8dd56273"
+        "sha": "ce0b9bd3d01855446bd9f5b5e406e6dcd8c8b1c9"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -101,6 +101,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-iamcredentials/src/main/java/com/google/cloud/iam/credentials/v1/IamCredentialsClient.java",
     "google-cloud-iamcredentials/src/main/java/com/google/cloud/iam/credentials/v1/IamCredentialsSettings.java",
