@@ -55,8 +55,8 @@ import org.junit.Test;
 public class DataMigrationServiceClientTest {
   private static MockDataMigrationService mockDataMigrationService;
   private static MockServiceHelper mockServiceHelper;
-  private DataMigrationServiceClient client;
   private LocalChannelProvider channelProvider;
+  private DataMigrationServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
