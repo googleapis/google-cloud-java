@@ -48,8 +48,8 @@ import org.junit.Test;
 public class BinauthzManagementServiceV1Beta1ClientTest {
   private static MockBinauthzManagementServiceV1Beta1 mockBinauthzManagementServiceV1Beta1;
   private static MockServiceHelper mockServiceHelper;
-  private BinauthzManagementServiceV1Beta1Client client;
   private LocalChannelProvider channelProvider;
+  private BinauthzManagementServiceV1Beta1Client client;
 
   @BeforeClass
   public static void startStaticServer() {
