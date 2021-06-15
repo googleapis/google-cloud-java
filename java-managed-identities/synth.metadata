@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-managed-identities.git",
-        "sha": "9f80f33922f99e0a264e852c143569bd48f0a5f3"
+        "sha": "fb02e55abc1e1c9c1d299b1f17b03008f7dfb55d"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -90,6 +90,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-managed-identities/src/main/java/com/google/cloud/managedidentities/v1/ManagedIdentitiesServiceClient.java",
     "google-cloud-managed-identities/src/main/java/com/google/cloud/managedidentities/v1/ManagedIdentitiesServiceSettings.java",
