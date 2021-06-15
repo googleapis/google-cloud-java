@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-document-ai/compare/v1.0.0...v1.1.0) (2021-06-15)
+
+
+### Features
+
+* Move CommonOperationMetadata into a separate proto file for potential reuse ([#502](https://www.github.com/googleapis/java-document-ai/issues/502)) ([aad8db8](https://www.github.com/googleapis/java-document-ai/commit/aad8db8c46e83ec2b488734432d1465711ac0429))
+* Move CommonOperationMetadata into a separate proto file for potential reuse ([#505](https://www.github.com/googleapis/java-document-ai/issues/505)) ([481e545](https://www.github.com/googleapis/java-document-ai/commit/481e545d82d7bd292fbed3b90037df87984fcf5d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#503](https://www.github.com/googleapis/java-document-ai/issues/503)) ([07cef28](https://www.github.com/googleapis/java-document-ai/commit/07cef28d83cb87814579b37a98e765a342fe2dff))
+
 ## [1.0.0](https://www.github.com/googleapis/java-document-ai/compare/v0.8.2...v1.0.0) (2021-05-26)
 
 
