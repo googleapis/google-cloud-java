@@ -50,10 +50,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class WorkflowsClientTest {
+  private static MockWorkflows mockWorkflows;
   private static MockServiceHelper mockServiceHelper;
   private WorkflowsClient client;
   private LocalChannelProvider channelProvider;
-  private static MockWorkflows mockWorkflows;
 
   @BeforeClass
   public static void startStaticServer() {
