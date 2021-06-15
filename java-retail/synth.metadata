@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-retail.git",
-        "sha": "1b373c2dbbc3a95e27138dd2d96c264907e8177d"
+        "sha": "a1bf8336692c4c93f6114b743cbe0333afa07228"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -101,6 +101,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-retail/src/main/java/com/google/cloud/retail/v2/CatalogServiceClient.java",
     "google-cloud-retail/src/main/java/com/google/cloud/retail/v2/CatalogServiceSettings.java",
