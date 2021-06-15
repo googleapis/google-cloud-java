@@ -39,9 +39,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class LookupServiceClientTest {
+  private static MockLookupService mockLookupService;
   private static MockServiceHelper mockServiceHelper;
   private LookupServiceClient client;
-  private static MockLookupService mockLookupService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
