@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigqueryreservation.git",
-        "sha": "68563d81c2e480bd6c0729eb6481ecf24f6e7ec6"
+        "sha": "1cc937432de54d4884adf0483fc779b7d34e552b"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -101,6 +101,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-bigqueryreservation/src/main/java/com/google/cloud/bigquery/reservation/v1/ReservationServiceClient.java",
     "google-cloud-bigqueryreservation/src/main/java/com/google/cloud/bigquery/reservation/v1/ReservationServiceSettings.java",
