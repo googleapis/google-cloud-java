@@ -37,7 +37,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     super(builder);
   }
 
-  private AutomatedAgentReply() {}
+  private AutomatedAgentReply() {
+    automatedAgentReplyType_ = 0;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -85,6 +87,18 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
 
               break;
             }
+          case 56:
+            {
+              int rawValue = input.readEnum();
+
+              automatedAgentReplyType_ = rawValue;
+              break;
+            }
+          case 64:
+            {
+              allowCancellation_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -117,6 +131,172 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
         .ensureFieldAccessorsInitialized(
             com.google.cloud.dialogflow.v2.AutomatedAgentReply.class,
             com.google.cloud.dialogflow.v2.AutomatedAgentReply.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents different automated agent reply types.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType}
+   */
+  public enum AutomatedAgentReplyType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Not specified. This should never happen.
+     * </pre>
+     *
+     * <code>AUTOMATED_AGENT_REPLY_TYPE_UNSPECIFIED = 0;</code>
+     */
+    AUTOMATED_AGENT_REPLY_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Partial reply. e.g. Aggregated responses in a `Fulfillment` that enables
+     * `return_partial_response` can be returned as partial reply.
+     * WARNING: partial reply is not eligible for barge-in.
+     * </pre>
+     *
+     * <code>PARTIAL = 1;</code>
+     */
+    PARTIAL(1),
+    /**
+     *
+     *
+     * <pre>
+     * Final reply.
+     * </pre>
+     *
+     * <code>FINAL = 2;</code>
+     */
+    FINAL(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Not specified. This should never happen.
+     * </pre>
+     *
+     * <code>AUTOMATED_AGENT_REPLY_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int AUTOMATED_AGENT_REPLY_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Partial reply. e.g. Aggregated responses in a `Fulfillment` that enables
+     * `return_partial_response` can be returned as partial reply.
+     * WARNING: partial reply is not eligible for barge-in.
+     * </pre>
+     *
+     * <code>PARTIAL = 1;</code>
+     */
+    public static final int PARTIAL_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Final reply.
+     * </pre>
+     *
+     * <code>FINAL = 2;</code>
+     */
+    public static final int FINAL_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AutomatedAgentReplyType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static AutomatedAgentReplyType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return AUTOMATED_AGENT_REPLY_TYPE_UNSPECIFIED;
+        case 1:
+          return PARTIAL;
+        case 2:
+          return FINAL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AutomatedAgentReplyType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<AutomatedAgentReplyType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<AutomatedAgentReplyType>() {
+              public AutomatedAgentReplyType findValueByNumber(int number) {
+                return AutomatedAgentReplyType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2.AutomatedAgentReply.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final AutomatedAgentReplyType[] VALUES = values();
+
+    public static AutomatedAgentReplyType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AutomatedAgentReplyType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType)
   }
 
   public static final int DETECT_INTENT_RESPONSE_FIELD_NUMBER = 1;
@@ -168,6 +348,70 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     return getDetectIntentResponse();
   }
 
+  public static final int AUTOMATED_AGENT_REPLY_TYPE_FIELD_NUMBER = 7;
+  private int automatedAgentReplyType_;
+  /**
+   *
+   *
+   * <pre>
+   * AutomatedAgentReply type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType automated_agent_reply_type = 7;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for automatedAgentReplyType.
+   */
+  @java.lang.Override
+  public int getAutomatedAgentReplyTypeValue() {
+    return automatedAgentReplyType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * AutomatedAgentReply type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType automated_agent_reply_type = 7;
+   * </code>
+   *
+   * @return The automatedAgentReplyType.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType
+      getAutomatedAgentReplyType() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType result =
+        com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType.valueOf(
+            automatedAgentReplyType_);
+    return result == null
+        ? com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int ALLOW_CANCELLATION_FIELD_NUMBER = 8;
+  private boolean allowCancellation_;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the partial automated agent reply is interruptible when a
+   * later reply message arrives. e.g. if the agent specified some music as
+   * partial response, it can be cancelled.
+   * </pre>
+   *
+   * <code>bool allow_cancellation = 8;</code>
+   *
+   * @return The allowCancellation.
+   */
+  @java.lang.Override
+  public boolean getAllowCancellation() {
+    return allowCancellation_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -185,6 +429,15 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     if (detectIntentResponse_ != null) {
       output.writeMessage(1, getDetectIntentResponse());
     }
+    if (automatedAgentReplyType_
+        != com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType
+            .AUTOMATED_AGENT_REPLY_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(7, automatedAgentReplyType_);
+    }
+    if (allowCancellation_ != false) {
+      output.writeBool(8, allowCancellation_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -197,6 +450,15 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     if (detectIntentResponse_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDetectIntentResponse());
+    }
+    if (automatedAgentReplyType_
+        != com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType
+            .AUTOMATED_AGENT_REPLY_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, automatedAgentReplyType_);
+    }
+    if (allowCancellation_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, allowCancellation_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -218,6 +480,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     if (hasDetectIntentResponse()) {
       if (!getDetectIntentResponse().equals(other.getDetectIntentResponse())) return false;
     }
+    if (automatedAgentReplyType_ != other.automatedAgentReplyType_) return false;
+    if (getAllowCancellation() != other.getAllowCancellation()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -233,6 +497,10 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + DETECT_INTENT_RESPONSE_FIELD_NUMBER;
       hash = (53 * hash) + getDetectIntentResponse().hashCode();
     }
+    hash = (37 * hash) + AUTOMATED_AGENT_REPLY_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + automatedAgentReplyType_;
+    hash = (37 * hash) + ALLOW_CANCELLATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowCancellation());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -384,6 +652,10 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
         detectIntentResponse_ = null;
         detectIntentResponseBuilder_ = null;
       }
+      automatedAgentReplyType_ = 0;
+
+      allowCancellation_ = false;
+
       return this;
     }
 
@@ -416,6 +688,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       } else {
         result.detectIntentResponse_ = detectIntentResponseBuilder_.build();
       }
+      result.automatedAgentReplyType_ = automatedAgentReplyType_;
+      result.allowCancellation_ = allowCancellation_;
       onBuilt();
       return result;
     }
@@ -468,6 +742,12 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
         return this;
       if (other.hasDetectIntentResponse()) {
         mergeDetectIntentResponse(other.getDetectIntentResponse());
+      }
+      if (other.automatedAgentReplyType_ != 0) {
+        setAutomatedAgentReplyTypeValue(other.getAutomatedAgentReplyTypeValue());
+      }
+      if (other.getAllowCancellation() != false) {
+        setAllowCancellation(other.getAllowCancellation());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -687,6 +967,170 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
         detectIntentResponse_ = null;
       }
       return detectIntentResponseBuilder_;
+    }
+
+    private int automatedAgentReplyType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * AutomatedAgentReply type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType automated_agent_reply_type = 7;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for automatedAgentReplyType.
+     */
+    @java.lang.Override
+    public int getAutomatedAgentReplyTypeValue() {
+      return automatedAgentReplyType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AutomatedAgentReply type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType automated_agent_reply_type = 7;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for automatedAgentReplyType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutomatedAgentReplyTypeValue(int value) {
+
+      automatedAgentReplyType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AutomatedAgentReply type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType automated_agent_reply_type = 7;
+     * </code>
+     *
+     * @return The automatedAgentReplyType.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType
+        getAutomatedAgentReplyType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType result =
+          com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType.valueOf(
+              automatedAgentReplyType_);
+      return result == null
+          ? com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AutomatedAgentReply type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType automated_agent_reply_type = 7;
+     * </code>
+     *
+     * @param value The automatedAgentReplyType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutomatedAgentReplyType(
+        com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      automatedAgentReplyType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AutomatedAgentReply type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType automated_agent_reply_type = 7;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutomatedAgentReplyType() {
+
+      automatedAgentReplyType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean allowCancellation_;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the partial automated agent reply is interruptible when a
+     * later reply message arrives. e.g. if the agent specified some music as
+     * partial response, it can be cancelled.
+     * </pre>
+     *
+     * <code>bool allow_cancellation = 8;</code>
+     *
+     * @return The allowCancellation.
+     */
+    @java.lang.Override
+    public boolean getAllowCancellation() {
+      return allowCancellation_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the partial automated agent reply is interruptible when a
+     * later reply message arrives. e.g. if the agent specified some music as
+     * partial response, it can be cancelled.
+     * </pre>
+     *
+     * <code>bool allow_cancellation = 8;</code>
+     *
+     * @param value The allowCancellation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowCancellation(boolean value) {
+
+      allowCancellation_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the partial automated agent reply is interruptible when a
+     * later reply message arrives. e.g. if the agent specified some music as
+     * partial response, it can be cancelled.
+     * </pre>
+     *
+     * <code>bool allow_cancellation = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowCancellation() {
+
+      allowCancellation_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

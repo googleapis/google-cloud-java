@@ -57,4 +57,49 @@ public interface AutomatedAgentReplyOrBuilder
    * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
    */
   com.google.cloud.dialogflow.v2.DetectIntentResponseOrBuilder getDetectIntentResponseOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * AutomatedAgentReply type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType automated_agent_reply_type = 7;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for automatedAgentReplyType.
+   */
+  int getAutomatedAgentReplyTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * AutomatedAgentReply type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType automated_agent_reply_type = 7;
+   * </code>
+   *
+   * @return The automatedAgentReplyType.
+   */
+  com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType
+      getAutomatedAgentReplyType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the partial automated agent reply is interruptible when a
+   * later reply message arrives. e.g. if the agent specified some music as
+   * partial response, it can be cancelled.
+   * </pre>
+   *
+   * <code>bool allow_cancellation = 8;</code>
+   *
+   * @return The allowCancellation.
+   */
+  boolean getAllowCancellation();
 }
