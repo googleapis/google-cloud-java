@@ -283,9 +283,9 @@ public class RunName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(runName.pathTemplate, PROJECT_TRANSFER_CONFIG_RUN),
           "toBuilder is only supported when RunName has the pattern of projects/{project}/transferConfigs/{transfer_config}/runs/{run}");
-      project = runName.project;
-      transferConfig = runName.transferConfig;
-      run = runName.run;
+      this.project = runName.project;
+      this.transferConfig = runName.transferConfig;
+      this.run = runName.run;
     }
 
     public RunName build() {

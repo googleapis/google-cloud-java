@@ -239,8 +239,8 @@ public class DataSourceName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(dataSourceName.pathTemplate, PROJECT_DATA_SOURCE),
           "toBuilder is only supported when DataSourceName has the pattern of projects/{project}/dataSources/{data_source}");
-      project = dataSourceName.project;
-      dataSource = dataSourceName.dataSource;
+      this.project = dataSourceName.project;
+      this.dataSource = dataSourceName.dataSource;
     }
 
     public DataSourceName build() {
