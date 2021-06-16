@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-errorreporting.git",
-        "sha": "b700e58c312b63264aa10bf1a2a4119ad8288782"
+        "sha": "c626163319a6f85ea3e7ecead07f7fff9436310b"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -101,6 +101,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/ErrorGroupServiceClient.java",
     "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/ErrorGroupServiceSettings.java",
