@@ -215,9 +215,9 @@ public class WorkloadName implements ResourceName {
     }
 
     private Builder(WorkloadName workloadName) {
-      organization = workloadName.organization;
-      location = workloadName.location;
-      workload = workloadName.workload;
+      this.organization = workloadName.organization;
+      this.location = workloadName.location;
+      this.workload = workloadName.workload;
     }
 
     public WorkloadName build() {

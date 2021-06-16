@@ -181,8 +181,8 @@ public class LocationName implements ResourceName {
     }
 
     private Builder(LocationName locationName) {
-      organization = locationName.organization;
-      location = locationName.location;
+      this.organization = locationName.organization;
+      this.location = locationName.location;
     }
 
     public LocationName build() {
