@@ -23,6 +23,7 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.Batcher;
+import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStream;
@@ -1073,7 +1074,40 @@ public class BigtableDataClient implements AutoCloseable {
    */
   @BetaApi("This surface is likely to change as the batching surface evolves.")
   public Batcher<RowMutationEntry, Void> newBulkMutationBatcher(@Nonnull String tableId) {
-    return stub.newMutateRowsBatcher(tableId);
+    return newBulkMutationBatcher(tableId, null);
+  }
+
+  /**
+   * Mutates multiple rows in a batch. Each individual row is mutated atomically as in MutateRow,
+   * but the entire batch is not executed atomically. The returned Batcher instance is not
+   * threadsafe, it can only be used from single thread. This method allows customization of the
+   * underlying RPCs by passing in a {@link com.google.api.gax.grpc.GrpcCallContext}. The same
+   * context will be reused for all batches. This can be used to customize things like per attempt
+   * timeouts.
+   *
+   * <p>Sample Code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   try (Batcher<RowMutationEntry, Void> batcher = bigtableDataClient.newBulkMutationBatcher("[TABLE]", GrpcCallContext.createDefault().withTimeout(Duration.ofSeconds(10)))) {
+   *     for (String someValue : someCollection) {
+   *       ApiFuture<Void> entryFuture =
+   *           batcher.add(
+   *               RowMutationEntry.create("[ROW KEY]")
+   *                   .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]"));
+   *     }
+   *
+   *     // Blocks until mutations are applied on all submitted row entries.
+   *     batcher.flush();
+   *   }
+   *   // Before `batcher` is closed, all remaining(If any) mutations are applied.
+   * }
+   * }</pre>
+   */
+  @BetaApi("This surface is likely to change as the batching surface evolves.")
+  public Batcher<RowMutationEntry, Void> newBulkMutationBatcher(
+      @Nonnull String tableId, @Nullable GrpcCallContext ctx) {
+    return stub.newMutateRowsBatcher(tableId, ctx);
   }
 
   /**
@@ -1159,11 +1193,61 @@ public class BigtableDataClient implements AutoCloseable {
    */
   public Batcher<ByteString, Row> newBulkReadRowsBatcher(
       String tableId, @Nullable Filters.Filter filter) {
+    return newBulkReadRowsBatcher(tableId, filter, null);
+  }
+
+  /**
+   * Reads rows for given tableId and filter criteria in a batch. If the row does not exist, the
+   * value will be null. The returned Batcher instance is not threadsafe, it can only be used from a
+   * single thread. This method allows customization of the underlying RPCs by passing in a {@link
+   * com.google.api.gax.grpc.GrpcCallContext}. The same context will be reused for all batches. This
+   * can be used to customize things like per attempt timeouts.
+   *
+   * <p>Performance notice: The ReadRows protocol requires that rows are sent in ascending key
+   * order, which means that the keys are processed sequentially on the server-side, so batching
+   * allows improving throughput but not latency. Lower latencies can be achieved by sending smaller
+   * requests concurrently.
+   *
+   * <p>Sample Code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *
+   *  // Build the filter expression
+   *  Filter filter = FILTERS.chain()
+   *         .filter(FILTERS.key().regex("prefix.*"))
+   *         .filter(FILTERS.limit().cellsPerRow(10));
+   *
+   *   List<ApiFuture<Row>> rows = new ArrayList<>();
+   *
+   *   try (Batcher<ByteString, Row> batcher = bigtableDataClient.newBulkReadRowsBatcher(
+   *    "[TABLE]", filter, GrpcCallContext.createDefault().withTimeout(Duration.ofSeconds(10)))) {
+   *     for (String someValue : someCollection) {
+   *       ApiFuture<Row> rowFuture =
+   *           batcher.add(ByteString.copyFromUtf8("[ROW KEY]"));
+   *       rows.add(rowFuture);
+   *     }
+   *
+   *     // [Optional] Sends collected elements for batching asynchronously.
+   *     batcher.sendOutstanding();
+   *
+   *     // [Optional] Invokes sendOutstanding() and awaits until all pending entries are resolved.
+   *     batcher.flush();
+   *   }
+   *   // batcher.close() invokes `flush()` which will in turn invoke `sendOutstanding()` with await for
+   *   pending batches until its resolved.
+   *
+   *   List<Row> actualRows = ApiFutures.allAsList(rows).get();
+   * }
+   * }</pre>
+   */
+  public Batcher<ByteString, Row> newBulkReadRowsBatcher(
+      String tableId, @Nullable Filters.Filter filter, @Nullable GrpcCallContext ctx) {
     Query query = Query.create(tableId);
     if (filter != null) {
-      query = query.filter(filter);
+      query.filter(filter);
     }
-    return stub.newBulkReadRowsBatcher(query);
+    return stub.newBulkReadRowsBatcher(query, ctx);
   }
 
   /**

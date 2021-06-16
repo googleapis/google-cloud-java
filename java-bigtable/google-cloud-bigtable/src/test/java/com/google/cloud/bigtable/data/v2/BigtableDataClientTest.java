@@ -22,6 +22,7 @@ import static org.mockito.Matchers.any;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.batching.Batcher;
+import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -80,9 +81,13 @@ public class BigtableDataClientTest {
     Mockito.when(mockStub.bulkMutateRowsCallable()).thenReturn(mockBulkMutateRowsCallable);
     Mockito.when(mockStub.checkAndMutateRowCallable()).thenReturn(mockCheckAndMutateRowCallable);
     Mockito.when(mockStub.readModifyWriteRowCallable()).thenReturn(mockReadModifyWriteRowCallable);
-    Mockito.when(mockStub.newMutateRowsBatcher(Mockito.any(String.class)))
+    Mockito.when(
+            mockStub.newMutateRowsBatcher(
+                Mockito.any(String.class), Mockito.any(GrpcCallContext.class)))
         .thenReturn(mockBulkMutationBatcher);
-    Mockito.when(mockStub.newBulkReadRowsBatcher(Mockito.any(Query.class)))
+    Mockito.when(
+            mockStub.newBulkReadRowsBatcher(
+                Mockito.any(Query.class), Mockito.any(GrpcCallContext.class)))
         .thenReturn(mockBulkReadRowsBatcher);
   }
 
@@ -374,7 +379,8 @@ public class BigtableDataClientTest {
     ApiFuture<Void> actualRes = batcher.add(request);
     assertThat(actualRes).isSameInstanceAs(expectedResponse);
 
-    Mockito.verify(mockStub).newMutateRowsBatcher(Mockito.any(String.class));
+    Mockito.verify(mockStub)
+        .newMutateRowsBatcher(Mockito.any(String.class), Mockito.any(GrpcCallContext.class));
   }
 
   @Test
@@ -390,7 +396,8 @@ public class BigtableDataClientTest {
     ApiFuture<Row> actualResponse = batcher.add(request);
     assertThat(actualResponse).isSameInstanceAs(expectedResponse);
 
-    Mockito.verify(mockStub).newBulkReadRowsBatcher(Mockito.any(Query.class));
+    Mockito.verify(mockStub)
+        .newBulkReadRowsBatcher(Mockito.any(Query.class), Mockito.any(GrpcCallContext.class));
   }
 
   @Test
@@ -407,7 +414,8 @@ public class BigtableDataClientTest {
     ApiFuture<Row> actualResponse = batcher.add(request);
     assertThat(actualResponse).isSameInstanceAs(expectedResponse);
 
-    Mockito.verify(mockStub).newBulkReadRowsBatcher(Mockito.any(Query.class));
+    Mockito.verify(mockStub)
+        .newBulkReadRowsBatcher(Mockito.any(Query.class), Mockito.any(GrpcCallContext.class));
   }
 
   @Test
