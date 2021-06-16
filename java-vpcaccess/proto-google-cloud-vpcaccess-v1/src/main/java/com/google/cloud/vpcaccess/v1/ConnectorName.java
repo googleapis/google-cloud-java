@@ -211,9 +211,9 @@ public class ConnectorName implements ResourceName {
     }
 
     private Builder(ConnectorName connectorName) {
-      project = connectorName.project;
-      location = connectorName.location;
-      connector = connectorName.connector;
+      this.project = connectorName.project;
+      this.location = connectorName.location;
+      this.connector = connectorName.connector;
     }
 
     public ConnectorName build() {
