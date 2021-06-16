@@ -244,10 +244,10 @@ public class InstanceName implements ResourceName {
     }
 
     private Builder(InstanceName instanceName) {
-      app = instanceName.app;
-      service = instanceName.service;
-      version = instanceName.version;
-      instance = instanceName.instance;
+      this.app = instanceName.app;
+      this.service = instanceName.service;
+      this.version = instanceName.version;
+      this.instance = instanceName.instance;
     }
 
     public InstanceName build() {
