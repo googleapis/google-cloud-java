@@ -181,8 +181,8 @@ public class BudgetName implements ResourceName {
     }
 
     private Builder(BudgetName budgetName) {
-      billingAccount = budgetName.billingAccount;
-      budget = budgetName.budget;
+      this.billingAccount = budgetName.billingAccount;
+      this.budget = budgetName.budget;
     }
 
     public BudgetName build() {
