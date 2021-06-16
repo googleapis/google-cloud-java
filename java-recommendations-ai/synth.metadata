@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-recommendations-ai.git",
-        "sha": "fada3546a5f558f1629b626aa02587bb4d04a505"
+        "sha": "5af3d064f67e86680c6cd8b8d3c90eb59bf8f526"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -101,6 +101,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-recommendations-ai/src/main/java/com/google/cloud/recommendationengine/v1beta1/CatalogServiceClient.java",
     "google-cloud-recommendations-ai/src/main/java/com/google/cloud/recommendationengine/v1beta1/CatalogServiceSettings.java",
