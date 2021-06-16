@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-monitoring.git",
-        "sha": "1e348c6b0781d3b0c3f85df54b0422597e4c5f52"
+        "sha": "e91b6065440e558b8bd62ee2c7cb16ae3950b0c8"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -101,6 +101,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/AlertPolicyServiceClient.java",
     "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/AlertPolicyServiceSettings.java",
