@@ -84,7 +84,11 @@ class StreamingShotChangeDetection {
 
       for (StreamingAnnotateVideoResponse response : call) {
         StreamingVideoAnnotationResults annotationResults = response.getAnnotationResults();
-
+        if (response.hasError()) {
+          System.out.println(response.getError().getMessage());
+          System.out.format("Error was occured with the following status: %s\n",
+              response.getError());
+        }
         for (VideoSegment segment : annotationResults.getShotAnnotationsList()) {
           double startTimeOffset =
               segment.getStartTimeOffset().getSeconds()
