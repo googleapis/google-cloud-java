@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-memcache.git",
-        "sha": "aa7d57a8c79c2d77a5dbe93d93c3d7366d7a992a"
+        "sha": "8b82a782fec0b91a0826a103e396175edced1327"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -118,6 +118,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-memcache/src/main/java/com/google/cloud/memcache/v1/CloudMemcacheClient.java",
     "google-cloud-memcache/src/main/java/com/google/cloud/memcache/v1/CloudMemcacheSettings.java",
