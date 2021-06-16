@@ -180,8 +180,8 @@ public class RegionName implements ResourceName {
     }
 
     private Builder(RegionName regionName) {
-      project = regionName.project;
-      region = regionName.region;
+      this.project = regionName.project;
+      this.region = regionName.region;
     }
 
     public RegionName build() {

@@ -308,9 +308,9 @@ public class WorkflowTemplateName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(workflowTemplateName.pathTemplate, PROJECT_REGION_WORKFLOW_TEMPLATE),
           "toBuilder is only supported when WorkflowTemplateName has the pattern of projects/{project}/regions/{region}/workflowTemplates/{workflow_template}");
-      project = workflowTemplateName.project;
-      region = workflowTemplateName.region;
-      workflowTemplate = workflowTemplateName.workflowTemplate;
+      this.project = workflowTemplateName.project;
+      this.region = workflowTemplateName.region;
+      this.workflowTemplate = workflowTemplateName.workflowTemplate;
     }
 
     public WorkflowTemplateName build() {

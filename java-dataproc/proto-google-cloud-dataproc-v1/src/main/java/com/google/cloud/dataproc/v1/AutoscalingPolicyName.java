@@ -311,9 +311,9 @@ public class AutoscalingPolicyName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(autoscalingPolicyName.pathTemplate, PROJECT_LOCATION_AUTOSCALING_POLICY),
           "toBuilder is only supported when AutoscalingPolicyName has the pattern of projects/{project}/locations/{location}/autoscalingPolicies/{autoscaling_policy}");
-      project = autoscalingPolicyName.project;
-      location = autoscalingPolicyName.location;
-      autoscalingPolicy = autoscalingPolicyName.autoscalingPolicy;
+      this.project = autoscalingPolicyName.project;
+      this.location = autoscalingPolicyName.location;
+      this.autoscalingPolicy = autoscalingPolicyName.autoscalingPolicy;
     }
 
     public AutoscalingPolicyName build() {
