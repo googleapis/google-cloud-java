@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-workflow-executions.git",
-        "sha": "b1418988ba53e7718229e04e32ec4a3ed2297091"
+        "sha": "798bbd171403384569b3e3e273df94b67cd2bf02"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "1778de119522ea9c9b18763c2a4577e22a60433c"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -118,6 +118,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-workflow-executions/src/main/java/com/google/cloud/workflows/executions/v1/ExecutionsClient.java",
     "google-cloud-workflow-executions/src/main/java/com/google/cloud/workflows/executions/v1/ExecutionsSettings.java",
