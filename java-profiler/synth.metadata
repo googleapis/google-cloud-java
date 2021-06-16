@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-profiler.git",
-        "sha": "e517434744093ef891d82b55adee8f68be3807b0"
+        "sha": "6e7bcc247305c35603fc3a6e7dc2789f701099b7"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -90,6 +90,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-profiler/src/main/java/com/google/devtools/cloudprofiler/v2/ProfilerServiceClient.java",
     "google-cloud-profiler/src/main/java/com/google/devtools/cloudprofiler/v2/ProfilerServiceSettings.java",
