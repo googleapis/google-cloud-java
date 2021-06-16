@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-networkconnectivity.git",
-        "sha": "fd731ae916eca6c47cb567c6174a2f8255b4a70b"
+        "sha": "1af596d9203ce359bb49a9e92cfd286872d8064f"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -101,6 +101,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-networkconnectivity/src/main/java/com/google/cloud/networkconnectivity/v1alpha1/HubServiceClient.java",
     "google-cloud-networkconnectivity/src/main/java/com/google/cloud/networkconnectivity/v1alpha1/HubServiceSettings.java",
