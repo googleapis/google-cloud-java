@@ -38,7 +38,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datastore</artifactId>
-  <version>1.106.5</version>
+  <version>1.107.0</version>
 </dependency>
 
 ```
@@ -51,12 +51,12 @@ compile 'com.google.cloud:google-cloud-datastore'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-datastore:1.106.5-sp.1'
+compile 'com.google.cloud:google-cloud-datastore:1.107.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "1.106.5-sp.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "1.107.0"
 ```
 
 ## Authentication
