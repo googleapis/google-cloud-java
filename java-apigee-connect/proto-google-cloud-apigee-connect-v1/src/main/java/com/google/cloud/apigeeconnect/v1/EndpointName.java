@@ -181,8 +181,8 @@ public class EndpointName implements ResourceName {
     }
 
     private Builder(EndpointName endpointName) {
-      project = endpointName.project;
-      endpoint = endpointName.endpoint;
+      this.project = endpointName.project;
+      this.endpoint = endpointName.endpoint;
     }
 
     public EndpointName build() {
