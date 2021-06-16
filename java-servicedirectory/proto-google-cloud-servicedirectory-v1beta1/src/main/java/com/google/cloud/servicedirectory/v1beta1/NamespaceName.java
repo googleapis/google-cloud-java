@@ -211,9 +211,9 @@ public class NamespaceName implements ResourceName {
     }
 
     private Builder(NamespaceName namespaceName) {
-      project = namespaceName.project;
-      location = namespaceName.location;
-      namespace = namespaceName.namespace;
+      this.project = namespaceName.project;
+      this.location = namespaceName.location;
+      this.namespace = namespaceName.namespace;
     }
 
     public NamespaceName build() {

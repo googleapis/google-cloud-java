@@ -246,10 +246,10 @@ public class ServiceName implements ResourceName {
     }
 
     private Builder(ServiceName serviceName) {
-      project = serviceName.project;
-      location = serviceName.location;
-      namespace = serviceName.namespace;
-      service = serviceName.service;
+      this.project = serviceName.project;
+      this.location = serviceName.location;
+      this.namespace = serviceName.namespace;
+      this.service = serviceName.service;
     }
 
     public ServiceName build() {

@@ -284,11 +284,11 @@ public class EndpointName implements ResourceName {
     }
 
     private Builder(EndpointName endpointName) {
-      project = endpointName.project;
-      location = endpointName.location;
-      namespace = endpointName.namespace;
-      service = endpointName.service;
-      endpoint = endpointName.endpoint;
+      this.project = endpointName.project;
+      this.location = endpointName.location;
+      this.namespace = endpointName.namespace;
+      this.service = endpointName.service;
+      this.endpoint = endpointName.endpoint;
     }
 
     public EndpointName build() {
