@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-recommender.git",
-        "sha": "48fce4314da3c58350b126b1673388c3a2777e8e"
+        "sha": "111979022e22baabf744f9a71eded47edc68a5df"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -118,6 +118,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1/RecommenderClient.java",
     "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1/RecommenderSettings.java",
