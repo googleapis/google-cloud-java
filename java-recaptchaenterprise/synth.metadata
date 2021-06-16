@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-recaptchaenterprise.git",
-        "sha": "111c1b09ac6187a5886441fb65e692eaec32efc8"
+        "sha": "4d338aaf2d91915a9bcd4262beaee7b7909cb58b"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -118,6 +118,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-recaptchaenterprise/src/main/java/com/google/cloud/recaptchaenterprise/v1/RecaptchaEnterpriseServiceClient.java",
     "google-cloud-recaptchaenterprise/src/main/java/com/google/cloud/recaptchaenterprise/v1/RecaptchaEnterpriseServiceSettings.java",
