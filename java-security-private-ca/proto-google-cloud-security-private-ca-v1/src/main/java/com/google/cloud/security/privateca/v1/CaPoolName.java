@@ -211,9 +211,9 @@ public class CaPoolName implements ResourceName {
     }
 
     private Builder(CaPoolName caPoolName) {
-      project = caPoolName.project;
-      location = caPoolName.location;
-      caPool = caPoolName.caPool;
+      this.project = caPoolName.project;
+      this.location = caPoolName.location;
+      this.caPool = caPoolName.caPool;
     }
 
     public CaPoolName build() {

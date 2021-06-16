@@ -220,9 +220,9 @@ public class CertificateTemplateName implements ResourceName {
     }
 
     private Builder(CertificateTemplateName certificateTemplateName) {
-      project = certificateTemplateName.project;
-      location = certificateTemplateName.location;
-      certificateTemplate = certificateTemplateName.certificateTemplate;
+      this.project = certificateTemplateName.project;
+      this.location = certificateTemplateName.location;
+      this.certificateTemplate = certificateTemplateName.certificateTemplate;
     }
 
     public CertificateTemplateName build() {

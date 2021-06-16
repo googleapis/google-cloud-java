@@ -215,9 +215,9 @@ public class ReusableConfigName implements ResourceName {
     }
 
     private Builder(ReusableConfigName reusableConfigName) {
-      project = reusableConfigName.project;
-      location = reusableConfigName.location;
-      reusableConfig = reusableConfigName.reusableConfig;
+      this.project = reusableConfigName.project;
+      this.location = reusableConfigName.location;
+      this.reusableConfig = reusableConfigName.reusableConfig;
     }
 
     public ReusableConfigName build() {

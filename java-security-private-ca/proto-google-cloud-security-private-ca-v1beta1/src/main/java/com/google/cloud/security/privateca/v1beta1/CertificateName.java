@@ -256,10 +256,10 @@ public class CertificateName implements ResourceName {
     }
 
     private Builder(CertificateName certificateName) {
-      project = certificateName.project;
-      location = certificateName.location;
-      certificateAuthority = certificateName.certificateAuthority;
-      certificate = certificateName.certificate;
+      this.project = certificateName.project;
+      this.location = certificateName.location;
+      this.certificateAuthority = certificateName.certificateAuthority;
+      this.certificate = certificateName.certificate;
     }
 
     public CertificateName build() {

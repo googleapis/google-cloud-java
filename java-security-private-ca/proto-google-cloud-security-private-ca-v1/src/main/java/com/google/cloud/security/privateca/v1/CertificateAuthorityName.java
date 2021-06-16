@@ -256,10 +256,10 @@ public class CertificateAuthorityName implements ResourceName {
     }
 
     private Builder(CertificateAuthorityName certificateAuthorityName) {
-      project = certificateAuthorityName.project;
-      location = certificateAuthorityName.location;
-      caPool = certificateAuthorityName.caPool;
-      certificateAuthority = certificateAuthorityName.certificateAuthority;
+      this.project = certificateAuthorityName.project;
+      this.location = certificateAuthorityName.location;
+      this.caPool = certificateAuthorityName.caPool;
+      this.certificateAuthority = certificateAuthorityName.certificateAuthority;
     }
 
     public CertificateAuthorityName build() {

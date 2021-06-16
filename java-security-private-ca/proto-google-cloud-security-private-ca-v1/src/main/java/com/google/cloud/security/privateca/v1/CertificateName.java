@@ -248,10 +248,10 @@ public class CertificateName implements ResourceName {
     }
 
     private Builder(CertificateName certificateName) {
-      project = certificateName.project;
-      location = certificateName.location;
-      caPool = certificateName.caPool;
-      certificate = certificateName.certificate;
+      this.project = certificateName.project;
+      this.location = certificateName.location;
+      this.caPool = certificateName.caPool;
+      this.certificate = certificateName.certificate;
     }
 
     public CertificateName build() {

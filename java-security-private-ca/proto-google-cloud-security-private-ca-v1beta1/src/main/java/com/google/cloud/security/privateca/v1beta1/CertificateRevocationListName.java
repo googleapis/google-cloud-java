@@ -265,10 +265,10 @@ public class CertificateRevocationListName implements ResourceName {
     }
 
     private Builder(CertificateRevocationListName certificateRevocationListName) {
-      project = certificateRevocationListName.project;
-      location = certificateRevocationListName.location;
-      certificateAuthority = certificateRevocationListName.certificateAuthority;
-      certificateRevocationList = certificateRevocationListName.certificateRevocationList;
+      this.project = certificateRevocationListName.project;
+      this.location = certificateRevocationListName.location;
+      this.certificateAuthority = certificateRevocationListName.certificateAuthority;
+      this.certificateRevocationList = certificateRevocationListName.certificateRevocationList;
     }
 
     public CertificateRevocationListName build() {
