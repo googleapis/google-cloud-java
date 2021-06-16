@@ -211,9 +211,9 @@ public class GlossaryName implements ResourceName {
     }
 
     private Builder(GlossaryName glossaryName) {
-      project = glossaryName.project;
-      location = glossaryName.location;
-      glossary = glossaryName.glossary;
+      this.project = glossaryName.project;
+      this.location = glossaryName.location;
+      this.glossary = glossaryName.glossary;
     }
 
     public GlossaryName build() {
