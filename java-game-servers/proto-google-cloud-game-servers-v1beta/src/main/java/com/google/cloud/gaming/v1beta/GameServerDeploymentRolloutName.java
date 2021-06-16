@@ -215,9 +215,9 @@ public class GameServerDeploymentRolloutName implements ResourceName {
     }
 
     private Builder(GameServerDeploymentRolloutName gameServerDeploymentRolloutName) {
-      project = gameServerDeploymentRolloutName.project;
-      location = gameServerDeploymentRolloutName.location;
-      deployment = gameServerDeploymentRolloutName.deployment;
+      this.project = gameServerDeploymentRolloutName.project;
+      this.location = gameServerDeploymentRolloutName.location;
+      this.deployment = gameServerDeploymentRolloutName.deployment;
     }
 
     public GameServerDeploymentRolloutName build() {

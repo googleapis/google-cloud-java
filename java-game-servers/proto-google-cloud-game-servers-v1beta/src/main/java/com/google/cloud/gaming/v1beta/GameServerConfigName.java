@@ -248,10 +248,10 @@ public class GameServerConfigName implements ResourceName {
     }
 
     private Builder(GameServerConfigName gameServerConfigName) {
-      project = gameServerConfigName.project;
-      location = gameServerConfigName.location;
-      deployment = gameServerConfigName.deployment;
-      config = gameServerConfigName.config;
+      this.project = gameServerConfigName.project;
+      this.location = gameServerConfigName.location;
+      this.deployment = gameServerConfigName.deployment;
+      this.config = gameServerConfigName.config;
     }
 
     public GameServerConfigName build() {

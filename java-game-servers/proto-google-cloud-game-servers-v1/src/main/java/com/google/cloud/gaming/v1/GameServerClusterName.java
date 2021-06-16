@@ -248,10 +248,10 @@ public class GameServerClusterName implements ResourceName {
     }
 
     private Builder(GameServerClusterName gameServerClusterName) {
-      project = gameServerClusterName.project;
-      location = gameServerClusterName.location;
-      realm = gameServerClusterName.realm;
-      cluster = gameServerClusterName.cluster;
+      this.project = gameServerClusterName.project;
+      this.location = gameServerClusterName.location;
+      this.realm = gameServerClusterName.realm;
+      this.cluster = gameServerClusterName.cluster;
     }
 
     public GameServerClusterName build() {

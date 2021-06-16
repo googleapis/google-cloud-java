@@ -211,9 +211,9 @@ public class RealmName implements ResourceName {
     }
 
     private Builder(RealmName realmName) {
-      project = realmName.project;
-      location = realmName.location;
-      realm = realmName.realm;
+      this.project = realmName.project;
+      this.location = realmName.location;
+      this.realm = realmName.realm;
     }
 
     public RealmName build() {
