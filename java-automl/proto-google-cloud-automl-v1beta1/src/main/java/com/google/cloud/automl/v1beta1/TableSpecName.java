@@ -247,10 +247,10 @@ public class TableSpecName implements ResourceName {
     }
 
     private Builder(TableSpecName tableSpecName) {
-      project = tableSpecName.project;
-      location = tableSpecName.location;
-      dataset = tableSpecName.dataset;
-      tableSpec = tableSpecName.tableSpec;
+      this.project = tableSpecName.project;
+      this.location = tableSpecName.location;
+      this.dataset = tableSpecName.dataset;
+      this.tableSpec = tableSpecName.tableSpec;
     }
 
     public TableSpecName build() {

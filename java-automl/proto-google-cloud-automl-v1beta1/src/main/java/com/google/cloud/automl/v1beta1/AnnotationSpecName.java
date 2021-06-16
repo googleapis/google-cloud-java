@@ -256,10 +256,10 @@ public class AnnotationSpecName implements ResourceName {
     }
 
     private Builder(AnnotationSpecName annotationSpecName) {
-      project = annotationSpecName.project;
-      location = annotationSpecName.location;
-      dataset = annotationSpecName.dataset;
-      annotationSpec = annotationSpecName.annotationSpec;
+      this.project = annotationSpecName.project;
+      this.location = annotationSpecName.location;
+      this.dataset = annotationSpecName.dataset;
+      this.annotationSpec = annotationSpecName.annotationSpec;
     }
 
     public AnnotationSpecName build() {

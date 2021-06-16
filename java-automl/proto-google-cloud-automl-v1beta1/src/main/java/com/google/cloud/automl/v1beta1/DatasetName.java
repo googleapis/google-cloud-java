@@ -211,9 +211,9 @@ public class DatasetName implements ResourceName {
     }
 
     private Builder(DatasetName datasetName) {
-      project = datasetName.project;
-      location = datasetName.location;
-      dataset = datasetName.dataset;
+      this.project = datasetName.project;
+      this.location = datasetName.location;
+      this.dataset = datasetName.dataset;
     }
 
     public DatasetName build() {

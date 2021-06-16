@@ -284,11 +284,11 @@ public class ColumnSpecName implements ResourceName {
     }
 
     private Builder(ColumnSpecName columnSpecName) {
-      project = columnSpecName.project;
-      location = columnSpecName.location;
-      dataset = columnSpecName.dataset;
-      tableSpec = columnSpecName.tableSpec;
-      columnSpec = columnSpecName.columnSpec;
+      this.project = columnSpecName.project;
+      this.location = columnSpecName.location;
+      this.dataset = columnSpecName.dataset;
+      this.tableSpec = columnSpecName.tableSpec;
+      this.columnSpec = columnSpecName.columnSpec;
     }
 
     public ColumnSpecName build() {

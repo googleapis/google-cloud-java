@@ -211,9 +211,9 @@ public class ModelName implements ResourceName {
     }
 
     private Builder(ModelName modelName) {
-      project = modelName.project;
-      location = modelName.location;
-      model = modelName.model;
+      this.project = modelName.project;
+      this.location = modelName.location;
+      this.model = modelName.model;
     }
 
     public ModelName build() {
