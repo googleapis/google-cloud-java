@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.107.0](https://www.github.com/googleapis/java-datastore/compare/v1.106.5...v1.107.0) (2021-06-16)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#433](https://www.github.com/googleapis/java-datastore/issues/433)) ([a8bc795](https://www.github.com/googleapis/java-datastore/commit/a8bc7957719c10a323eba17a68137476de068c5d))
+
+
+### Bug Fixes
+
+* Update dependencies.sh to not break on mac ([#456](https://www.github.com/googleapis/java-datastore/issues/456)) ([1e514c0](https://www.github.com/googleapis/java-datastore/commit/1e514c00c4f0f3735295330b255c52eb61af72aa))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#451](https://www.github.com/googleapis/java-datastore/issues/451)) ([00ca1a6](https://www.github.com/googleapis/java-datastore/commit/00ca1a680f744ea3c5855136b79ba6de384583ed))
+
 ### [1.106.5](https://www.github.com/googleapis/java-datastore/compare/v1.106.4...v1.106.5) (2021-05-19)
 
 
