@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-vision.git",
-        "sha": "e8a78cd12c6e9435323cdd7f19829d86853c0cc8"
+        "sha": "d570c091b5654de779d2aec3c068155efeff6ae9"
       }
     },
     {
@@ -51,7 +51,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -169,6 +169,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ImageAnnotatorClient.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ImageAnnotatorSettings.java",
