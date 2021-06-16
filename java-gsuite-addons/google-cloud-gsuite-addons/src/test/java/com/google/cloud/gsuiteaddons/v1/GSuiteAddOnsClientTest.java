@@ -47,8 +47,8 @@ import org.junit.Test;
 public class GSuiteAddOnsClientTest {
   private static MockGSuiteAddOns mockGSuiteAddOns;
   private static MockServiceHelper mockServiceHelper;
-  private GSuiteAddOnsClient client;
   private LocalChannelProvider channelProvider;
+  private GSuiteAddOnsClient client;
 
   @BeforeClass
   public static void startStaticServer() {

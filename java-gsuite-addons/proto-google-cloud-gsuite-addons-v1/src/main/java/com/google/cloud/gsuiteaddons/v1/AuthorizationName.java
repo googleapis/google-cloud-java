@@ -158,7 +158,7 @@ public class AuthorizationName implements ResourceName {
     }
 
     private Builder(AuthorizationName authorizationName) {
-      project = authorizationName.project;
+      this.project = authorizationName.project;
     }
 
     public AuthorizationName build() {

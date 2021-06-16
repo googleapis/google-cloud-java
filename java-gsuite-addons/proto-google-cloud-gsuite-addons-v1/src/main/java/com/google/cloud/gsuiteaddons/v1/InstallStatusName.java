@@ -182,8 +182,8 @@ public class InstallStatusName implements ResourceName {
     }
 
     private Builder(InstallStatusName installStatusName) {
-      project = installStatusName.project;
-      deployment = installStatusName.deployment;
+      this.project = installStatusName.project;
+      this.deployment = installStatusName.deployment;
     }
 
     public InstallStatusName build() {

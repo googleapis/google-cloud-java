@@ -181,8 +181,8 @@ public class DeploymentName implements ResourceName {
     }
 
     private Builder(DeploymentName deploymentName) {
-      project = deploymentName.project;
-      deployment = deploymentName.deployment;
+      this.project = deploymentName.project;
+      this.deployment = deploymentName.deployment;
     }
 
     public DeploymentName build() {
