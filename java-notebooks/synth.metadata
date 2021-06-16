@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-notebooks.git",
-        "sha": "5d0004a260fcfce91998c892d6faa7fc751089d4"
+        "sha": "6dc522e8367374bafda9d07a72fff41de8daf567"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -101,6 +101,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-notebooks/src/main/java/com/google/cloud/notebooks/v1beta1/NotebookServiceClient.java",
     "google-cloud-notebooks/src/main/java/com/google/cloud/notebooks/v1beta1/NotebookServiceSettings.java",
