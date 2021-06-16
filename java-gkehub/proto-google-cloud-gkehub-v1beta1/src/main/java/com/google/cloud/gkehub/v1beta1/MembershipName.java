@@ -211,9 +211,9 @@ public class MembershipName implements ResourceName {
     }
 
     private Builder(MembershipName membershipName) {
-      project = membershipName.project;
-      location = membershipName.location;
-      membership = membershipName.membership;
+      this.project = membershipName.project;
+      this.location = membershipName.location;
+      this.membership = membershipName.membership;
     }
 
     public MembershipName build() {
