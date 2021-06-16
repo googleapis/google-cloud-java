@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.133.1](https://www.github.com/googleapis/java-bigquery/compare/v1.133.0...v1.133.1) (2021-06-16)
+
+
+### Bug Fixes
+
+* handle specific exceptions ([#1370](https://www.github.com/googleapis/java-bigquery/issues/1370)) ([68808e9](https://www.github.com/googleapis/java-bigquery/commit/68808e9f47c07af598324f3f07dd996bc1e5297b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v1.116.0 ([#1375](https://www.github.com/googleapis/java-bigquery/issues/1375)) ([d064b7b](https://www.github.com/googleapis/java-bigquery/commit/d064b7b363508d1a958b92563c5df1d1c429c69d))
+
 ## [1.133.0](https://www.github.com/googleapis/java-bigquery/compare/v1.132.1...v1.133.0) (2021-06-08)
 
 
