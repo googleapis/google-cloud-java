@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-orgpolicy.git",
-        "sha": "d10f51c40fc121c935d99d15a03d419ed1747437"
+        "sha": "a4eab4c160888d3a5ffca700a356de374203a168"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -108,6 +108,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-orgpolicy/src/main/java/com/google/cloud/orgpolicy/v2/OrgPolicyClient.java",
     "google-cloud-orgpolicy/src/main/java/com/google/cloud/orgpolicy/v2/OrgPolicySettings.java",
