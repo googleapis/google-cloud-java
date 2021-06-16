@@ -38,7 +38,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-recommender</artifactId>
-  <version>1.5.4</version>
+  <version>1.6.0</version>
 </dependency>
 
 ```
@@ -51,12 +51,12 @@ compile 'com.google.cloud:google-cloud-recommender'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-recommender:1.5.4'
+compile 'com.google.cloud:google-cloud-recommender:1.6.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-recommender" % "1.5.4"
+libraryDependencies += "com.google.cloud" % "google-cloud-recommender" % "1.6.0"
 ```
 
 ## Authentication
