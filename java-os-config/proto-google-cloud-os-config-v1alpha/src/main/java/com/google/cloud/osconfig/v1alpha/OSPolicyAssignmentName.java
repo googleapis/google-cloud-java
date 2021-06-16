@@ -219,9 +219,9 @@ public class OSPolicyAssignmentName implements ResourceName {
     }
 
     private Builder(OSPolicyAssignmentName oSPolicyAssignmentName) {
-      project = oSPolicyAssignmentName.project;
-      location = oSPolicyAssignmentName.location;
-      osPolicyAssignment = oSPolicyAssignmentName.osPolicyAssignment;
+      this.project = oSPolicyAssignmentName.project;
+      this.location = oSPolicyAssignmentName.location;
+      this.osPolicyAssignment = oSPolicyAssignmentName.osPolicyAssignment;
     }
 
     public OSPolicyAssignmentName build() {

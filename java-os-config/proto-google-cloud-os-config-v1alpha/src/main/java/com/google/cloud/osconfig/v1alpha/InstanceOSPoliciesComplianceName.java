@@ -215,9 +215,9 @@ public class InstanceOSPoliciesComplianceName implements ResourceName {
     }
 
     private Builder(InstanceOSPoliciesComplianceName instanceOSPoliciesComplianceName) {
-      project = instanceOSPoliciesComplianceName.project;
-      location = instanceOSPoliciesComplianceName.location;
-      instance = instanceOSPoliciesComplianceName.instance;
+      this.project = instanceOSPoliciesComplianceName.project;
+      this.location = instanceOSPoliciesComplianceName.location;
+      this.instance = instanceOSPoliciesComplianceName.instance;
     }
 
     public InstanceOSPoliciesComplianceName build() {

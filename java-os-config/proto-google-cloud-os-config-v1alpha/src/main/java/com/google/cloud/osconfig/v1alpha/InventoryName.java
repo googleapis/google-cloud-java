@@ -211,9 +211,9 @@ public class InventoryName implements ResourceName {
     }
 
     private Builder(InventoryName inventoryName) {
-      project = inventoryName.project;
-      location = inventoryName.location;
-      instance = inventoryName.instance;
+      this.project = inventoryName.project;
+      this.location = inventoryName.location;
+      this.instance = inventoryName.instance;
     }
 
     public InventoryName build() {

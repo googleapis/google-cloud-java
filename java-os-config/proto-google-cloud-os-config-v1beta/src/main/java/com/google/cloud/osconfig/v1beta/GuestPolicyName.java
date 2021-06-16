@@ -181,8 +181,8 @@ public class GuestPolicyName implements ResourceName {
     }
 
     private Builder(GuestPolicyName guestPolicyName) {
-      project = guestPolicyName.project;
-      guestPolicy = guestPolicyName.guestPolicy;
+      this.project = guestPolicyName.project;
+      this.guestPolicy = guestPolicyName.guestPolicy;
     }
 
     public GuestPolicyName build() {

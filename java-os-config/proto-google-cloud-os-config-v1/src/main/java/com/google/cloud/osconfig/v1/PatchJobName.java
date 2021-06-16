@@ -181,8 +181,8 @@ public class PatchJobName implements ResourceName {
     }
 
     private Builder(PatchJobName patchJobName) {
-      project = patchJobName.project;
-      patchJob = patchJobName.patchJob;
+      this.project = patchJobName.project;
+      this.patchJob = patchJobName.patchJob;
     }
 
     public PatchJobName build() {

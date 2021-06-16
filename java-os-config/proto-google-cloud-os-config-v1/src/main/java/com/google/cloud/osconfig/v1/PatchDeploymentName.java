@@ -183,8 +183,8 @@ public class PatchDeploymentName implements ResourceName {
     }
 
     private Builder(PatchDeploymentName patchDeploymentName) {
-      project = patchDeploymentName.project;
-      patchDeployment = patchDeploymentName.patchDeployment;
+      this.project = patchDeploymentName.project;
+      this.patchDeployment = patchDeploymentName.patchDeployment;
     }
 
     public PatchDeploymentName build() {
