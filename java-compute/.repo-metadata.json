@@ -12,5 +12,6 @@
   "distribution_name": "com.google.cloud:google-cloud-compute",
   "api_id": "compute.googleapis.com",
   "requires_billing": true,
+  "codeowner_team": "@googleapis/actools-java",
   "library_type": "GAPIC_AUTO"
 }
