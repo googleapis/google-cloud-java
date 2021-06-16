@@ -16,6 +16,8 @@
 
 package com.google.cloud.documentai.v1beta3.stub;
 
+import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListProcessorsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -28,14 +30,29 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.documentai.v1beta3.BatchProcessMetadata;
 import com.google.cloud.documentai.v1beta3.BatchProcessRequest;
 import com.google.cloud.documentai.v1beta3.BatchProcessResponse;
+import com.google.cloud.documentai.v1beta3.CreateProcessorRequest;
+import com.google.cloud.documentai.v1beta3.DeleteProcessorMetadata;
+import com.google.cloud.documentai.v1beta3.DeleteProcessorRequest;
+import com.google.cloud.documentai.v1beta3.DisableProcessorMetadata;
+import com.google.cloud.documentai.v1beta3.DisableProcessorRequest;
+import com.google.cloud.documentai.v1beta3.DisableProcessorResponse;
+import com.google.cloud.documentai.v1beta3.EnableProcessorMetadata;
+import com.google.cloud.documentai.v1beta3.EnableProcessorRequest;
+import com.google.cloud.documentai.v1beta3.EnableProcessorResponse;
+import com.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest;
+import com.google.cloud.documentai.v1beta3.FetchProcessorTypesResponse;
+import com.google.cloud.documentai.v1beta3.ListProcessorsRequest;
+import com.google.cloud.documentai.v1beta3.ListProcessorsResponse;
 import com.google.cloud.documentai.v1beta3.ProcessRequest;
 import com.google.cloud.documentai.v1beta3.ProcessResponse;
+import com.google.cloud.documentai.v1beta3.Processor;
 import com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata;
 import com.google.cloud.documentai.v1beta3.ReviewDocumentRequest;
 import com.google.cloud.documentai.v1beta3.ReviewDocumentResponse;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -72,6 +89,74 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<FetchProcessorTypesRequest, FetchProcessorTypesResponse>
+      fetchProcessorTypesMethodDescriptor =
+          MethodDescriptor.<FetchProcessorTypesRequest, FetchProcessorTypesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.documentai.v1beta3.DocumentProcessorService/FetchProcessorTypes")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchProcessorTypesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FetchProcessorTypesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListProcessorsRequest, ListProcessorsResponse>
+      listProcessorsMethodDescriptor =
+          MethodDescriptor.<ListProcessorsRequest, ListProcessorsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.documentai.v1beta3.DocumentProcessorService/ListProcessors")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListProcessorsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListProcessorsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateProcessorRequest, Processor>
+      createProcessorMethodDescriptor =
+          MethodDescriptor.<CreateProcessorRequest, Processor>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.documentai.v1beta3.DocumentProcessorService/CreateProcessor")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateProcessorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Processor.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteProcessorRequest, Operation>
+      deleteProcessorMethodDescriptor =
+          MethodDescriptor.<DeleteProcessorRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.documentai.v1beta3.DocumentProcessorService/DeleteProcessor")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteProcessorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<EnableProcessorRequest, Operation>
+      enableProcessorMethodDescriptor =
+          MethodDescriptor.<EnableProcessorRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.documentai.v1beta3.DocumentProcessorService/EnableProcessor")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(EnableProcessorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DisableProcessorRequest, Operation>
+      disableProcessorMethodDescriptor =
+          MethodDescriptor.<DisableProcessorRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.documentai.v1beta3.DocumentProcessorService/DisableProcessor")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DisableProcessorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ReviewDocumentRequest, Operation>
       reviewDocumentMethodDescriptor =
           MethodDescriptor.<ReviewDocumentRequest, Operation>newBuilder()
@@ -87,6 +172,23 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
   private final UnaryCallable<BatchProcessRequest, Operation> batchProcessDocumentsCallable;
   private final OperationCallable<BatchProcessRequest, BatchProcessResponse, BatchProcessMetadata>
       batchProcessDocumentsOperationCallable;
+  private final UnaryCallable<FetchProcessorTypesRequest, FetchProcessorTypesResponse>
+      fetchProcessorTypesCallable;
+  private final UnaryCallable<ListProcessorsRequest, ListProcessorsResponse> listProcessorsCallable;
+  private final UnaryCallable<ListProcessorsRequest, ListProcessorsPagedResponse>
+      listProcessorsPagedCallable;
+  private final UnaryCallable<CreateProcessorRequest, Processor> createProcessorCallable;
+  private final UnaryCallable<DeleteProcessorRequest, Operation> deleteProcessorCallable;
+  private final OperationCallable<DeleteProcessorRequest, Empty, DeleteProcessorMetadata>
+      deleteProcessorOperationCallable;
+  private final UnaryCallable<EnableProcessorRequest, Operation> enableProcessorCallable;
+  private final OperationCallable<
+          EnableProcessorRequest, EnableProcessorResponse, EnableProcessorMetadata>
+      enableProcessorOperationCallable;
+  private final UnaryCallable<DisableProcessorRequest, Operation> disableProcessorCallable;
+  private final OperationCallable<
+          DisableProcessorRequest, DisableProcessorResponse, DisableProcessorMetadata>
+      disableProcessorOperationCallable;
   private final UnaryCallable<ReviewDocumentRequest, Operation> reviewDocumentCallable;
   private final OperationCallable<
           ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
@@ -163,6 +265,86 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   }
                 })
             .build();
+    GrpcCallSettings<FetchProcessorTypesRequest, FetchProcessorTypesResponse>
+        fetchProcessorTypesTransportSettings =
+            GrpcCallSettings.<FetchProcessorTypesRequest, FetchProcessorTypesResponse>newBuilder()
+                .setMethodDescriptor(fetchProcessorTypesMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<FetchProcessorTypesRequest>() {
+                      @Override
+                      public Map<String, String> extract(FetchProcessorTypesRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<ListProcessorsRequest, ListProcessorsResponse>
+        listProcessorsTransportSettings =
+            GrpcCallSettings.<ListProcessorsRequest, ListProcessorsResponse>newBuilder()
+                .setMethodDescriptor(listProcessorsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListProcessorsRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListProcessorsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<CreateProcessorRequest, Processor> createProcessorTransportSettings =
+        GrpcCallSettings.<CreateProcessorRequest, Processor>newBuilder()
+            .setMethodDescriptor(createProcessorMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateProcessorRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateProcessorRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteProcessorRequest, Operation> deleteProcessorTransportSettings =
+        GrpcCallSettings.<DeleteProcessorRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteProcessorMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteProcessorRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteProcessorRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<EnableProcessorRequest, Operation> enableProcessorTransportSettings =
+        GrpcCallSettings.<EnableProcessorRequest, Operation>newBuilder()
+            .setMethodDescriptor(enableProcessorMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<EnableProcessorRequest>() {
+                  @Override
+                  public Map<String, String> extract(EnableProcessorRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DisableProcessorRequest, Operation> disableProcessorTransportSettings =
+        GrpcCallSettings.<DisableProcessorRequest, Operation>newBuilder()
+            .setMethodDescriptor(disableProcessorMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DisableProcessorRequest>() {
+                  @Override
+                  public Map<String, String> extract(DisableProcessorRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<ReviewDocumentRequest, Operation> reviewDocumentTransportSettings =
         GrpcCallSettings.<ReviewDocumentRequest, Operation>newBuilder()
             .setMethodDescriptor(reviewDocumentMethodDescriptor)
@@ -190,6 +372,47 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
         callableFactory.createOperationCallable(
             batchProcessDocumentsTransportSettings,
             settings.batchProcessDocumentsOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.fetchProcessorTypesCallable =
+        callableFactory.createUnaryCallable(
+            fetchProcessorTypesTransportSettings,
+            settings.fetchProcessorTypesSettings(),
+            clientContext);
+    this.listProcessorsCallable =
+        callableFactory.createUnaryCallable(
+            listProcessorsTransportSettings, settings.listProcessorsSettings(), clientContext);
+    this.listProcessorsPagedCallable =
+        callableFactory.createPagedCallable(
+            listProcessorsTransportSettings, settings.listProcessorsSettings(), clientContext);
+    this.createProcessorCallable =
+        callableFactory.createUnaryCallable(
+            createProcessorTransportSettings, settings.createProcessorSettings(), clientContext);
+    this.deleteProcessorCallable =
+        callableFactory.createUnaryCallable(
+            deleteProcessorTransportSettings, settings.deleteProcessorSettings(), clientContext);
+    this.deleteProcessorOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteProcessorTransportSettings,
+            settings.deleteProcessorOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.enableProcessorCallable =
+        callableFactory.createUnaryCallable(
+            enableProcessorTransportSettings, settings.enableProcessorSettings(), clientContext);
+    this.enableProcessorOperationCallable =
+        callableFactory.createOperationCallable(
+            enableProcessorTransportSettings,
+            settings.enableProcessorOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.disableProcessorCallable =
+        callableFactory.createUnaryCallable(
+            disableProcessorTransportSettings, settings.disableProcessorSettings(), clientContext);
+    this.disableProcessorOperationCallable =
+        callableFactory.createOperationCallable(
+            disableProcessorTransportSettings,
+            settings.disableProcessorOperationSettings(),
             clientContext,
             operationsStub);
     this.reviewDocumentCallable =
@@ -224,6 +447,62 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
   public OperationCallable<BatchProcessRequest, BatchProcessResponse, BatchProcessMetadata>
       batchProcessDocumentsOperationCallable() {
     return batchProcessDocumentsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchProcessorTypesRequest, FetchProcessorTypesResponse>
+      fetchProcessorTypesCallable() {
+    return fetchProcessorTypesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListProcessorsRequest, ListProcessorsResponse> listProcessorsCallable() {
+    return listProcessorsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListProcessorsRequest, ListProcessorsPagedResponse>
+      listProcessorsPagedCallable() {
+    return listProcessorsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateProcessorRequest, Processor> createProcessorCallable() {
+    return createProcessorCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteProcessorRequest, Operation> deleteProcessorCallable() {
+    return deleteProcessorCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteProcessorRequest, Empty, DeleteProcessorMetadata>
+      deleteProcessorOperationCallable() {
+    return deleteProcessorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<EnableProcessorRequest, Operation> enableProcessorCallable() {
+    return enableProcessorCallable;
+  }
+
+  @Override
+  public OperationCallable<EnableProcessorRequest, EnableProcessorResponse, EnableProcessorMetadata>
+      enableProcessorOperationCallable() {
+    return enableProcessorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DisableProcessorRequest, Operation> disableProcessorCallable() {
+    return disableProcessorCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          DisableProcessorRequest, DisableProcessorResponse, DisableProcessorMetadata>
+      disableProcessorOperationCallable() {
+    return disableProcessorOperationCallable;
   }
 
   @Override

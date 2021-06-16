@@ -13,6 +13,24 @@
             "BatchProcessDocuments": {
               "methods": ["batchProcessDocumentsAsync", "batchProcessDocumentsAsync", "batchProcessDocumentsAsync", "batchProcessDocumentsOperationCallable", "batchProcessDocumentsCallable"]
             },
+            "CreateProcessor": {
+              "methods": ["createProcessor", "createProcessor", "createProcessor", "createProcessorCallable"]
+            },
+            "DeleteProcessor": {
+              "methods": ["deleteProcessorAsync", "deleteProcessorAsync", "deleteProcessorAsync", "deleteProcessorOperationCallable", "deleteProcessorCallable"]
+            },
+            "DisableProcessor": {
+              "methods": ["disableProcessorAsync", "disableProcessorOperationCallable", "disableProcessorCallable"]
+            },
+            "EnableProcessor": {
+              "methods": ["enableProcessorAsync", "enableProcessorOperationCallable", "enableProcessorCallable"]
+            },
+            "FetchProcessorTypes": {
+              "methods": ["fetchProcessorTypes", "fetchProcessorTypes", "fetchProcessorTypes", "fetchProcessorTypesCallable"]
+            },
+            "ListProcessors": {
+              "methods": ["listProcessors", "listProcessors", "listProcessors", "listProcessorsPagedCallable", "listProcessorsCallable"]
+            },
             "ProcessDocument": {
               "methods": ["processDocument", "processDocument", "processDocument", "processDocumentCallable"]
             },

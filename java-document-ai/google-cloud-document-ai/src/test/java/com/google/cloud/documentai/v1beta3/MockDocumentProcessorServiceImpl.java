@@ -102,6 +102,133 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
   }
 
   @Override
+  public void fetchProcessorTypes(
+      FetchProcessorTypesRequest request,
+      StreamObserver<FetchProcessorTypesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchProcessorTypesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchProcessorTypesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchProcessorTypes, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchProcessorTypesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listProcessors(
+      ListProcessorsRequest request, StreamObserver<ListProcessorsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListProcessorsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListProcessorsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListProcessors, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListProcessorsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createProcessor(
+      CreateProcessorRequest request, StreamObserver<Processor> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Processor) {
+      requests.add(request);
+      responseObserver.onNext(((Processor) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateProcessor, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Processor.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteProcessor(
+      DeleteProcessorRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteProcessor, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void enableProcessor(
+      EnableProcessorRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method EnableProcessor, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void disableProcessor(
+      DisableProcessorRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DisableProcessor, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void reviewDocument(
       ReviewDocumentRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
