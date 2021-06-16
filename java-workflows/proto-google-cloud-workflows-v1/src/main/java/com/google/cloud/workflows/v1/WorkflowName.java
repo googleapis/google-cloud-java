@@ -211,9 +211,9 @@ public class WorkflowName implements ResourceName {
     }
 
     private Builder(WorkflowName workflowName) {
-      project = workflowName.project;
-      location = workflowName.location;
-      workflow = workflowName.workflow;
+      this.project = workflowName.project;
+      this.location = workflowName.location;
+      this.workflow = workflowName.workflow;
     }
 
     public WorkflowName build() {
