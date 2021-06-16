@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-service-management.git",
-        "sha": "1481c8e386307429bfead64b10be1bb58ca1cbf0"
+        "sha": "5dc1b0065b692def10e4bb92f7bcebd18603ebee"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -90,6 +90,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-service-management/src/main/java/com/google/cloud/api/servicemanagement/v1/ServiceManagerClient.java",
     "google-cloud-service-management/src/main/java/com/google/cloud/api/servicemanagement/v1/ServiceManagerSettings.java",
