@@ -158,7 +158,7 @@ public class ServiceName implements ResourceName {
     }
 
     private Builder(ServiceName serviceName) {
-      service = serviceName.service;
+      this.service = serviceName.service;
     }
 
     public ServiceName build() {

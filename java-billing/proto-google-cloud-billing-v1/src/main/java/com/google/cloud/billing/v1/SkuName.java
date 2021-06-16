@@ -180,8 +180,8 @@ public class SkuName implements ResourceName {
     }
 
     private Builder(SkuName skuName) {
-      service = skuName.service;
-      sku = skuName.sku;
+      this.service = skuName.service;
+      this.sku = skuName.sku;
     }
 
     public SkuName build() {

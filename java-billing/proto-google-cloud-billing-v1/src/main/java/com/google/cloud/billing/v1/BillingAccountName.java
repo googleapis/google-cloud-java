@@ -158,7 +158,7 @@ public class BillingAccountName implements ResourceName {
     }
 
     private Builder(BillingAccountName billingAccountName) {
-      billingAccount = billingAccountName.billingAccount;
+      this.billingAccount = billingAccountName.billingAccount;
     }
 
     public BillingAccountName build() {
