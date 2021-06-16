@@ -211,9 +211,9 @@ public class CloudFunctionName implements ResourceName {
     }
 
     private Builder(CloudFunctionName cloudFunctionName) {
-      project = cloudFunctionName.project;
-      location = cloudFunctionName.location;
-      function = cloudFunctionName.function;
+      this.project = cloudFunctionName.project;
+      this.location = cloudFunctionName.location;
+      this.function = cloudFunctionName.function;
     }
 
     public CloudFunctionName build() {
