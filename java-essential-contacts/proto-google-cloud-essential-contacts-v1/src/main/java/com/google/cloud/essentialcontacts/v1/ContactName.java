@@ -298,8 +298,8 @@ public class ContactName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(contactName.pathTemplate, PROJECT_CONTACT),
           "toBuilder is only supported when ContactName has the pattern of projects/{project}/contacts/{contact}");
-      project = contactName.project;
-      contact = contactName.contact;
+      this.project = contactName.project;
+      this.contact = contactName.contact;
     }
 
     public ContactName build() {
