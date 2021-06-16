@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-api-gateway.git",
-        "sha": "418893ff87c449bfd824c75fdc9ea2e0adac94b3"
+        "sha": "ea16645bd0290bee5265f84086ef72a3db0dac50"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -90,6 +90,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-api-gateway/src/main/java/com/google/cloud/apigateway/v1/ApiGatewayServiceClient.java",
     "google-cloud-api-gateway/src/main/java/com/google/cloud/apigateway/v1/ApiGatewayServiceSettings.java",
