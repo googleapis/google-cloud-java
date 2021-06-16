@@ -205,9 +205,9 @@ public class NodeName implements ResourceName {
     }
 
     private Builder(NodeName nodeName) {
-      project = nodeName.project;
-      location = nodeName.location;
-      node = nodeName.node;
+      this.project = nodeName.project;
+      this.location = nodeName.location;
+      this.node = nodeName.node;
     }
 
     public NodeName build() {

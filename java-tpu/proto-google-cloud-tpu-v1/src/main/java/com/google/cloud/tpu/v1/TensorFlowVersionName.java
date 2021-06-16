@@ -219,9 +219,9 @@ public class TensorFlowVersionName implements ResourceName {
     }
 
     private Builder(TensorFlowVersionName tensorFlowVersionName) {
-      project = tensorFlowVersionName.project;
-      location = tensorFlowVersionName.location;
-      tensorFlowVersion = tensorFlowVersionName.tensorFlowVersion;
+      this.project = tensorFlowVersionName.project;
+      this.location = tensorFlowVersionName.location;
+      this.tensorFlowVersion = tensorFlowVersionName.tensorFlowVersion;
     }
 
     public TensorFlowVersionName build() {

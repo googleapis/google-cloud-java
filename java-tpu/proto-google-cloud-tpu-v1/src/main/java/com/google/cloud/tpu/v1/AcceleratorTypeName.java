@@ -215,9 +215,9 @@ public class AcceleratorTypeName implements ResourceName {
     }
 
     private Builder(AcceleratorTypeName acceleratorTypeName) {
-      project = acceleratorTypeName.project;
-      location = acceleratorTypeName.location;
-      acceleratorType = acceleratorTypeName.acceleratorType;
+      this.project = acceleratorTypeName.project;
+      this.location = acceleratorTypeName.location;
+      this.acceleratorType = acceleratorTypeName.acceleratorType;
     }
 
     public AcceleratorTypeName build() {
