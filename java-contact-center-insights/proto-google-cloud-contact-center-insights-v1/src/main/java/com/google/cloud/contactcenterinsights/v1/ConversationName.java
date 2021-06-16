@@ -215,9 +215,9 @@ public class ConversationName implements ResourceName {
     }
 
     private Builder(ConversationName conversationName) {
-      project = conversationName.project;
-      location = conversationName.location;
-      conversation = conversationName.conversation;
+      this.project = conversationName.project;
+      this.location = conversationName.location;
+      this.conversation = conversationName.conversation;
     }
 
     public ConversationName build() {

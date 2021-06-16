@@ -256,10 +256,10 @@ public class AnalysisName implements ResourceName {
     }
 
     private Builder(AnalysisName analysisName) {
-      project = analysisName.project;
-      location = analysisName.location;
-      conversation = analysisName.conversation;
-      analysis = analysisName.analysis;
+      this.project = analysisName.project;
+      this.location = analysisName.location;
+      this.conversation = analysisName.conversation;
+      this.analysis = analysisName.analysis;
     }
 
     public AnalysisName build() {

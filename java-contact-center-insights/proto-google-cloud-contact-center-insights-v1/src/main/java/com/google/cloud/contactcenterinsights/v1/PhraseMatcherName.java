@@ -215,9 +215,9 @@ public class PhraseMatcherName implements ResourceName {
     }
 
     private Builder(PhraseMatcherName phraseMatcherName) {
-      project = phraseMatcherName.project;
-      location = phraseMatcherName.location;
-      phraseMatcher = phraseMatcherName.phraseMatcher;
+      this.project = phraseMatcherName.project;
+      this.location = phraseMatcherName.location;
+      this.phraseMatcher = phraseMatcherName.phraseMatcher;
     }
 
     public PhraseMatcherName build() {

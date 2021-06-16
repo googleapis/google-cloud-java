@@ -181,8 +181,8 @@ public class SettingsName implements ResourceName {
     }
 
     private Builder(SettingsName settingsName) {
-      project = settingsName.project;
-      location = settingsName.location;
+      this.project = settingsName.project;
+      this.location = settingsName.location;
     }
 
     public SettingsName build() {

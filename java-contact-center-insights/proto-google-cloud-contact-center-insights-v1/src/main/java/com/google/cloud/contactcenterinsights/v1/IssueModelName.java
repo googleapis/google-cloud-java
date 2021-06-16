@@ -211,9 +211,9 @@ public class IssueModelName implements ResourceName {
     }
 
     private Builder(IssueModelName issueModelName) {
-      project = issueModelName.project;
-      location = issueModelName.location;
-      issueModel = issueModelName.issueModel;
+      this.project = issueModelName.project;
+      this.location = issueModelName.location;
+      this.issueModel = issueModelName.issueModel;
     }
 
     public IssueModelName build() {

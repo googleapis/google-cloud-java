@@ -246,10 +246,10 @@ public class IssueName implements ResourceName {
     }
 
     private Builder(IssueName issueName) {
-      project = issueName.project;
-      location = issueName.location;
-      issueModel = issueName.issueModel;
-      issue = issueName.issue;
+      this.project = issueName.project;
+      this.location = issueName.location;
+      this.issueModel = issueName.issueModel;
+      this.issue = issueName.issue;
     }
 
     public IssueName build() {
