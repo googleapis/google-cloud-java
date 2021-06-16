@@ -211,9 +211,9 @@ public class VersionName implements ResourceName {
     }
 
     private Builder(VersionName versionName) {
-      catalog = versionName.catalog;
-      product = versionName.product;
-      version = versionName.version;
+      this.catalog = versionName.catalog;
+      this.product = versionName.product;
+      this.version = versionName.version;
     }
 
     public VersionName build() {

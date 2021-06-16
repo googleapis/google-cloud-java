@@ -158,7 +158,7 @@ public class CatalogName implements ResourceName {
     }
 
     private Builder(CatalogName catalogName) {
-      catalog = catalogName.catalog;
+      this.catalog = catalogName.catalog;
     }
 
     public CatalogName build() {
