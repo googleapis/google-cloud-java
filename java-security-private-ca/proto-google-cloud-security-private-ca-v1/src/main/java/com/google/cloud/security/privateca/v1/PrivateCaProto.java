@@ -549,7 +549,7 @@ public final class PrivateCaProto {
           + "eca/v1;privateca\370\001\001\252\002\"Google.Cloud.Secur"
           + "ity.PrivateCA.V1\312\002\"Google\\Cloud\\Security"
           + "\\PrivateCA\\V1\352\002&Google::Cloud::Security:"
-          + ":PrivateCA::v1b\006proto3"
+          + ":PrivateCA::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
