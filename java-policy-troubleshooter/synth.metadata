@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-policy-troubleshooter.git",
-        "sha": "f9e4854c62dbe8674e68a079acb98c05b07ad132"
+        "sha": "bc2aaddaa9570a86c0379d2eb3c3e19c300b8635"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "8f76a885deaaf2fe234daeba4a8cc4d1b3de8086"
       }
     }
   ],
@@ -90,6 +90,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-policy-troubleshooter/src/main/java/com/google/cloud/policytroubleshooter/v1/IamCheckerClient.java",
     "google-cloud-policy-troubleshooter/src/main/java/com/google/cloud/policytroubleshooter/v1/IamCheckerSettings.java",
