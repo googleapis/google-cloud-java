@@ -215,9 +215,9 @@ public class MigrationJobName implements ResourceName {
     }
 
     private Builder(MigrationJobName migrationJobName) {
-      project = migrationJobName.project;
-      location = migrationJobName.location;
-      migrationJob = migrationJobName.migrationJob;
+      this.project = migrationJobName.project;
+      this.location = migrationJobName.location;
+      this.migrationJob = migrationJobName.migrationJob;
     }
 
     public MigrationJobName build() {

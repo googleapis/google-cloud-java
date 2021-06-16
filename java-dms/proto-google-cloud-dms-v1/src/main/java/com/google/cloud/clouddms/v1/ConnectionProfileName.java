@@ -219,9 +219,9 @@ public class ConnectionProfileName implements ResourceName {
     }
 
     private Builder(ConnectionProfileName connectionProfileName) {
-      project = connectionProfileName.project;
-      location = connectionProfileName.location;
-      connectionProfile = connectionProfileName.connectionProfile;
+      this.project = connectionProfileName.project;
+      this.location = connectionProfileName.location;
+      this.connectionProfile = connectionProfileName.connectionProfile;
     }
 
     public ConnectionProfileName build() {
