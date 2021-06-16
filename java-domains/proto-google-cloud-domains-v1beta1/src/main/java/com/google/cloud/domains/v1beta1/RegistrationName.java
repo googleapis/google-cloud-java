@@ -215,9 +215,9 @@ public class RegistrationName implements ResourceName {
     }
 
     private Builder(RegistrationName registrationName) {
-      project = registrationName.project;
-      location = registrationName.location;
-      registration = registrationName.registration;
+      this.project = registrationName.project;
+      this.location = registrationName.location;
+      this.registration = registrationName.registration;
     }
 
     public RegistrationName build() {
