@@ -158,7 +158,7 @@ public class PolicyName implements ResourceName {
     }
 
     private Builder(PolicyName policyName) {
-      project = policyName.project;
+      this.project = policyName.project;
     }
 
     public PolicyName build() {

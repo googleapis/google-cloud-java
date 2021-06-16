@@ -181,8 +181,8 @@ public class AttestorName implements ResourceName {
     }
 
     private Builder(AttestorName attestorName) {
-      project = attestorName.project;
-      attestor = attestorName.attestor;
+      this.project = attestorName.project;
+      this.attestor = attestorName.attestor;
     }
 
     public AttestorName build() {
