@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-workflow-executions/compare/v0.2.1...v1.0.0) (2021-06-17)
+
+
+### Features
+
+* promote to 1.0.0 ([#135](https://www.github.com/googleapis/java-workflow-executions/issues/135)) ([6381003](https://www.github.com/googleapis/java-workflow-executions/commit/63810036ad291041014e7a4cf0ce4de37bdb2eee))
+
+
+### Bug Fixes
+
+* Update dependencies.sh to not break on mac ([#132](https://www.github.com/googleapis/java-workflow-executions/issues/132)) ([71cf7fc](https://www.github.com/googleapis/java-workflow-executions/commit/71cf7fcf92e395899e37273efedc046a1b101d7e))
+
 ### [0.2.1](https://www.github.com/googleapis/java-workflow-executions/compare/v0.2.0...v0.2.1) (2021-06-04)
 
 
