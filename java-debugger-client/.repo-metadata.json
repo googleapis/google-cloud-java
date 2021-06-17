@@ -10,7 +10,7 @@
   "repo": "googleapis/java-debugger-client",
   "repo_short": "java-debugger-client",
   "distribution_name": "com.google.cloud:google-cloud-debugger-client",
-  "api_id": "debugger-client.googleapis.com",
+  "api_id": "clouddebugger.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
