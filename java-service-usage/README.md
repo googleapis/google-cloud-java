@@ -17,18 +17,18 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-service-usage</artifactId>
-  <version>0.2.1</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-service-usage:0.2.1'
+compile 'com.google.cloud:google-cloud-service-usage:1.0.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-service-usage" % "0.2.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-service-usage" % "1.0.0"
 ```
 
 ## Authentication
