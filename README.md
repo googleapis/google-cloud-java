@@ -10,8 +10,8 @@ Libraries are available on GitHub and Maven Central for developing Java applicat
 
 [//]: # (API_TABLE_START)
 
-| Client | Release Level | Version |
-| ------ | ------------- | ------- |
+| Client | Release Level | Java 8+ | Java 7 legacy |
+| ------ | ------------- | ------- | ------------- |
 | [API Gateway](https://github.com/googleapis/java-api-gateway) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-api-gateway.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-api-gateway&core=gav) |
 | [Access Approval](https://github.com/googleapis/java-accessapproval) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-accessapproval.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-accessapproval&core=gav) |
 | [Asset Inventory](https://github.com/googleapis/java-asset) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-asset.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-asset&core=gav) |
