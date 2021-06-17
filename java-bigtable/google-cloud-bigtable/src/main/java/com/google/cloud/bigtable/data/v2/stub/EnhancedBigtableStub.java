@@ -23,7 +23,6 @@ import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
-import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcRawCallableFactory;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -99,7 +98,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 /**
  * The core client that converts method calls to RPCs.
@@ -538,15 +536,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *   <li>Split the responses using {@link MutateRowsBatchingDescriptor}.
    * </ul>
    */
-  public Batcher<RowMutationEntry, Void> newMutateRowsBatcher(
-      @Nonnull String tableId, @Nullable GrpcCallContext ctx) {
-    UnaryCallable<BulkMutation, Void> callable = this.bulkMutateRowsCallable;
-    if (ctx != null) {
-      callable = callable.withDefaultCallContext(ctx);
-    }
+  public Batcher<RowMutationEntry, Void> newMutateRowsBatcher(@Nonnull String tableId) {
     return new BatcherImpl<>(
         settings.bulkMutateRowsSettings().getBatchingDescriptor(),
-        callable,
+        bulkMutateRowsCallable,
         BulkMutation.create(tableId),
         settings.bulkMutateRowsSettings().getBatchingSettings(),
         clientContext.getExecutor(),
@@ -568,16 +561,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *   <li>Split the responses using {@link ReadRowsBatchingDescriptor}.
    * </ul>
    */
-  public Batcher<ByteString, Row> newBulkReadRowsBatcher(
-      @Nonnull Query query, @Nullable GrpcCallContext ctx) {
+  public Batcher<ByteString, Row> newBulkReadRowsBatcher(@Nonnull Query query) {
     Preconditions.checkNotNull(query, "query cannot be null");
-    UnaryCallable<Query, List<Row>> callable = readRowsCallable().all();
-    if (ctx != null) {
-      callable = callable.withDefaultCallContext(ctx);
-    }
     return new BatcherImpl<>(
         settings.bulkReadRowsSettings().getBatchingDescriptor(),
-        callable,
+        readRowsCallable().all(),
         query,
         settings.bulkReadRowsSettings().getBatchingSettings(),
         clientContext.getExecutor());

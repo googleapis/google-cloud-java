@@ -17,18 +17,14 @@ package com.google.cloud.bigtable.data.v2.stub;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.batching.BatcherImpl;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
-import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.bigtable.v2.BigtableGrpc;
-import com.google.bigtable.v2.MutateRowsRequest;
-import com.google.bigtable.v2.MutateRowsResponse;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.RowSet;
@@ -40,15 +36,10 @@ import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.DefaultRowAdapter;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
-import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Queues;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.BytesValue;
 import com.google.protobuf.StringValue;
-import io.grpc.BindableService;
-import io.grpc.Context;
-import io.grpc.Deadline;
 import io.grpc.Metadata;
 import io.grpc.ServerCall;
 import io.grpc.ServerCall.Listener;
@@ -66,14 +57,12 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class EnhancedBigtableStubTest {
@@ -86,7 +75,6 @@ public class EnhancedBigtableStubTest {
 
   FakeServiceHelper serviceHelper;
   private MetadataInterceptor metadataInterceptor;
-  private ContextInterceptor contextInterceptor;
   private FakeDataService fakeDataService;
   private EnhancedBigtableStubSettings defaultSettings;
   private EnhancedBigtableStub enhancedBigtableStub;
@@ -94,14 +82,8 @@ public class EnhancedBigtableStubTest {
   @Before
   public void setUp() throws IOException, IllegalAccessException, InstantiationException {
     metadataInterceptor = new MetadataInterceptor();
-    contextInterceptor = new ContextInterceptor();
     fakeDataService = new FakeDataService();
-
-    serviceHelper =
-        new FakeServiceHelper(
-            ImmutableList.of(contextInterceptor, metadataInterceptor),
-            null,
-            ImmutableList.<BindableService>of(fakeDataService));
+    serviceHelper = new FakeServiceHelper(metadataInterceptor, fakeDataService);
     serviceHelper.start();
 
     defaultSettings =
@@ -273,8 +255,8 @@ public class EnhancedBigtableStubTest {
 
       // Creating 2 batchers from the same stub, they should share the same FlowController and
       // FlowControlEventStats
-      try (BatcherImpl batcher1 = (BatcherImpl) stub1.newMutateRowsBatcher("my-table1", null);
-          BatcherImpl batcher2 = (BatcherImpl) stub1.newMutateRowsBatcher("my-table2", null)) {
+      try (BatcherImpl batcher1 = (BatcherImpl) stub1.newMutateRowsBatcher("my-table1");
+          BatcherImpl batcher2 = (BatcherImpl) stub1.newMutateRowsBatcher("my-table2")) {
         assertThat(batcher1.getFlowController()).isNotNull();
         assertThat(batcher1.getFlowController().getFlowControlEventStats()).isNotNull();
         assertThat(batcher1).isNotSameInstanceAs(batcher2);
@@ -298,8 +280,8 @@ public class EnhancedBigtableStubTest {
 
       // Creating 2 batchers from different stubs, they should not share the same FlowController and
       // FlowControlEventStats
-      try (BatcherImpl batcher1 = (BatcherImpl) stub1.newMutateRowsBatcher("my-table1", null);
-          BatcherImpl batcher2 = (BatcherImpl) stub2.newMutateRowsBatcher("my-table2", null)) {
+      try (BatcherImpl batcher1 = (BatcherImpl) stub1.newMutateRowsBatcher("my-table1");
+          BatcherImpl batcher2 = (BatcherImpl) stub2.newMutateRowsBatcher("my-table2")) {
         assertThat(batcher1.getFlowController()).isNotNull();
         assertThat(batcher1.getFlowController().getFlowControlEventStats()).isNotNull();
         assertThat(batcher1.getFlowController()).isNotSameInstanceAs(batcher2.getFlowController());
@@ -316,73 +298,11 @@ public class EnhancedBigtableStubTest {
                     .build()
                     .getStubSettings()); ) {
 
-      try (BatcherImpl batcher = (BatcherImpl) stub2.newMutateRowsBatcher("my-table", null)) {
+      try (BatcherImpl batcher = (BatcherImpl) stub2.newMutateRowsBatcher("my-table")) {
         assertThat(batcher.getFlowController().getMaxElementCountLimit()).isEqualTo(100L);
         assertThat(batcher.getFlowController().getCurrentElementCountLimit()).isEqualTo(100L);
         assertThat(batcher.getFlowController().getMinElementCountLimit()).isEqualTo(100L);
       }
-    }
-  }
-
-  @Test
-  public void testCallContextPropagatedInMutationBatcher()
-      throws IOException, InterruptedException, ExecutionException {
-    EnhancedBigtableStubSettings settings =
-        defaultSettings
-            .toBuilder()
-            .setRefreshingChannel(true)
-            .setPrimedTableIds("table1", "table2")
-            .build();
-
-    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings)) {
-      // clear the previous contexts
-      contextInterceptor.contexts.clear();
-
-      // Override the timeout
-      GrpcCallContext clientCtx =
-          GrpcCallContext.createDefault().withTimeout(Duration.ofMinutes(10));
-
-      // Send a batch
-      try (Batcher<RowMutationEntry, Void> batcher =
-          stub.newMutateRowsBatcher("table1", clientCtx)) {
-        batcher.add(RowMutationEntry.create("key").deleteRow()).get();
-      }
-
-      // Ensure that the server got the overriden deadline
-      Context serverCtx = contextInterceptor.contexts.poll();
-      assertThat(serverCtx).isNotNull();
-      assertThat(serverCtx.getDeadline()).isAtLeast(Deadline.after(8, TimeUnit.MINUTES));
-    }
-  }
-
-  @Test
-  public void testCallContextPropagatedInReadBatcher()
-      throws IOException, InterruptedException, ExecutionException {
-    EnhancedBigtableStubSettings settings =
-        defaultSettings
-            .toBuilder()
-            .setRefreshingChannel(true)
-            .setPrimedTableIds("table1", "table2")
-            .build();
-
-    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings)) {
-      // clear the previous contexts
-      contextInterceptor.contexts.clear();
-
-      // Override the timeout
-      GrpcCallContext clientCtx =
-          GrpcCallContext.createDefault().withTimeout(Duration.ofMinutes(10));
-
-      // Send a batch
-      try (Batcher<ByteString, Row> batcher =
-          stub.newBulkReadRowsBatcher(Query.create("table1"), clientCtx)) {
-        batcher.add(ByteString.copyFromUtf8("key")).get();
-      }
-
-      // Ensure that the server got the overriden deadline
-      Context serverCtx = contextInterceptor.contexts.poll();
-      assertThat(serverCtx).isNotNull();
-      assertThat(serverCtx.getDeadline()).isAtLeast(Deadline.after(8, TimeUnit.MINUTES));
     }
   }
 
@@ -399,36 +319,12 @@ public class EnhancedBigtableStubTest {
     }
   }
 
-  private static class ContextInterceptor implements ServerInterceptor {
-    final BlockingQueue<Context> contexts = Queues.newLinkedBlockingDeque();
-
-    @Override
-    public <ReqT, RespT> Listener<ReqT> interceptCall(
-        ServerCall<ReqT, RespT> serverCall,
-        Metadata metadata,
-        ServerCallHandler<ReqT, RespT> serverCallHandler) {
-      contexts.add(Context.current());
-      return serverCallHandler.startCall(serverCall, metadata);
-    }
-  }
-
   private static class FakeDataService extends BigtableGrpc.BigtableImplBase {
     final BlockingQueue<ReadRowsRequest> requests = Queues.newLinkedBlockingDeque();
 
     @SuppressWarnings("unchecked")
     ReadRowsRequest popLastRequest() throws InterruptedException {
       return requests.poll(1, TimeUnit.SECONDS);
-    }
-
-    @Override
-    public void mutateRows(
-        MutateRowsRequest request, StreamObserver<MutateRowsResponse> responseObserver) {
-      MutateRowsResponse.Builder builder = MutateRowsResponse.newBuilder();
-      for (int i = 0; i < request.getEntriesCount(); i++) {
-        builder.addEntries(MutateRowsResponse.Entry.newBuilder().setIndex(i).build());
-      }
-      responseObserver.onNext(builder.build());
-      responseObserver.onCompleted();
     }
 
     @Override

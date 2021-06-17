@@ -176,8 +176,7 @@ class MutateRowsAttemptCallable implements Callable<Void> {
 
       // Configure the deadline
       ApiCallContext currentCallContext = callContext;
-      if (currentCallContext.getTimeout() == null
-          && !externalFuture.getAttemptSettings().getRpcTimeout().isZero()) {
+      if (!externalFuture.getAttemptSettings().getRpcTimeout().isZero()) {
         currentCallContext =
             currentCallContext.withTimeout(externalFuture.getAttemptSettings().getRpcTimeout());
       }

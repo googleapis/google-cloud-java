@@ -35,11 +35,8 @@ import com.google.bigtable.v2.RowSet;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import io.grpc.Attributes;
-import io.grpc.BindableService;
-import io.grpc.ServerInterceptor;
 import io.grpc.ServerTransportFilter;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
@@ -98,11 +95,7 @@ public class BigtableDataClientFactoryTest {
             terminateAttributes.add(transportAttrs);
           }
         };
-    serviceHelper =
-        new FakeServiceHelper(
-            ImmutableList.<ServerInterceptor>of(),
-            transportFilter,
-            ImmutableList.<BindableService>of(service));
+    serviceHelper = new FakeServiceHelper(null, transportFilter, service);
     port = serviceHelper.getPort();
     serviceHelper.start();
 

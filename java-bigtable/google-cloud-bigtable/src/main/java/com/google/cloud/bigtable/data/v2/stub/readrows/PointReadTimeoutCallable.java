@@ -20,6 +20,7 @@ import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.bigtable.v2.ReadRowsRequest;
+import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 
 /**
@@ -45,9 +46,9 @@ public class PointReadTimeoutCallable<RespT>
   @Override
   public void call(ReadRowsRequest request, ResponseObserver<RespT> observer, ApiCallContext ctx) {
     if (isPointRead(request)) {
-      Duration streamWaitTimeout = ctx.getStreamWaitTimeout();
-      if (ctx.getTimeout() == null && streamWaitTimeout != null) {
-        ctx = ctx.withTimeout(streamWaitTimeout);
+      Duration effectiveTimeout = getEffectivePointReadTimeout(ctx);
+      if (effectiveTimeout != null) {
+        ctx = ctx.withTimeout(effectiveTimeout);
       }
     }
     inner.call(request, observer, ctx);
@@ -61,5 +62,25 @@ public class PointReadTimeoutCallable<RespT>
       return false;
     }
     return request.getRows().getRowKeysCount() == 1;
+  }
+
+  /**
+   * Extracts the effective timeout for a point read.
+   *
+   * <p>The effective time is the minimum of a streamWaitTimeout and a user set attempt timeout.
+   */
+  @Nullable
+  private Duration getEffectivePointReadTimeout(ApiCallContext ctx) {
+    Duration streamWaitTimeout = ctx.getStreamWaitTimeout();
+    Duration attemptTimeout = ctx.getTimeout();
+
+    if (streamWaitTimeout == null) {
+      return attemptTimeout;
+    }
+
+    if (attemptTimeout == null) {
+      return streamWaitTimeout;
+    }
+    return (attemptTimeout.compareTo(streamWaitTimeout) <= 0) ? attemptTimeout : streamWaitTimeout;
   }
 }

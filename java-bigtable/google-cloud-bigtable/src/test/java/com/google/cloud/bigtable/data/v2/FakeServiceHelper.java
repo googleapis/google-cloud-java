@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2;
 
-import com.google.common.collect.ImmutableList;
 import io.grpc.BindableService;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
@@ -23,7 +22,6 @@ import io.grpc.ServerInterceptor;
 import io.grpc.ServerTransportFilter;
 import java.io.IOException;
 import java.net.ServerSocket;
-import java.util.List;
 
 /** Utility class to setup a fake grpc server on a random port. */
 public class FakeServiceHelper {
@@ -31,27 +29,26 @@ public class FakeServiceHelper {
   private final Server server;
 
   public FakeServiceHelper(BindableService... services) throws IOException {
-    this(ImmutableList.<ServerInterceptor>of(), null, ImmutableList.copyOf(services));
+    this(null, services);
   }
 
   public FakeServiceHelper(ServerInterceptor interceptor, BindableService... services)
       throws IOException {
-    this(ImmutableList.of(interceptor), null, ImmutableList.copyOf(services));
+    this(interceptor, null, services);
   }
 
   public FakeServiceHelper(
-      List<ServerInterceptor> interceptors,
+      ServerInterceptor interceptor,
       ServerTransportFilter transportFilter,
-      List<BindableService> services)
+      BindableService... services)
       throws IOException {
     try (ServerSocket ss = new ServerSocket(0)) {
       port = ss.getLocalPort();
     }
     ServerBuilder builder = ServerBuilder.forPort(port);
-    for (ServerInterceptor interceptor : interceptors) {
+    if (interceptor != null) {
       builder = builder.intercept(interceptor);
     }
-
     if (transportFilter != null) {
       builder = builder.addTransportFilter(transportFilter);
     }

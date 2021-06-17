@@ -106,7 +106,7 @@ public class PointReadTimeoutCallableTest {
   }
 
   @Test
-  public void doesntClobber() {
+  public void usesMinimum1() {
     Duration attemptTimeout = Duration.ofMillis(100);
     Duration streamTimeout = Duration.ofMillis(200);
     PointReadTimeoutCallable<Object> callable = new PointReadTimeoutCallable<>(inner);
@@ -119,6 +119,24 @@ public class PointReadTimeoutCallableTest {
       callable.call(req, responseObserver, ctx);
 
       assertThat(ctxCaptor.getValue().getTimeout()).isEqualTo(attemptTimeout);
+    }
+  }
+
+  @Test
+  public void usesMinimum2() {
+    Duration attemptTimeout = Duration.ofMillis(200);
+    Duration streamTimeout = Duration.ofMillis(100);
+    PointReadTimeoutCallable<Object> callable = new PointReadTimeoutCallable<>(inner);
+
+    for (ReadRowsRequest req : createPointReadRequests()) {
+      GrpcCallContext ctx =
+          GrpcCallContext.createDefault()
+              .withTimeout(attemptTimeout)
+              .withStreamWaitTimeout(streamTimeout);
+
+      callable.call(req, responseObserver, ctx);
+
+      assertThat(ctxCaptor.getValue().getTimeout()).isEqualTo(streamTimeout);
     }
   }
 
