@@ -12,7 +12,7 @@ First, Create a json file defining API configuration, with ChannelPoolConfig and
 {
   "channelPool": {
     "maxSize": 3,
-    "maxConcurrentStreamsLowWatermark": 2
+    "maxConcurrentStreamsLowWatermark": 0
   },
   "method": [
     {
