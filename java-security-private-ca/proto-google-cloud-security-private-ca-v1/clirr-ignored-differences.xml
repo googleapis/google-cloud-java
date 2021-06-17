@@ -16,30 +16,4 @@
     <className>com/google/cloud/security/privateca/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
-  <difference>
-    <differenceType>7006</differenceType>
-    <className>com/google/cloud/security/privateca/v1/CaPool*</className>
-    <method>* getEllipticCurve*(*)</method>
-    <to>com.google.cloud.security.privateca.v1.CaPool$IssuancePolicy$AllowedKeyType$EcKeyType</to>
-  </difference>
-  <difference>
-    <differenceType>7005</differenceType>
-    <className>com/google/cloud/security/privateca/v1/CaPool$IssuancePolicy$AllowedKeyType$Builder</className>
-    <method>* setEllipticCurve(*)</method>
-    <to>* setEllipticCurve(*)</to>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/security/privateca/v1/CaPool*</className>
-    <method>* getEllipticCurve*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/security/privateca/v1/CaPool*</className>
-    <method>* setEllipticCurve*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/cloud/security/privateca/v1/CaPool$IssuancePolicy$AllowedKeyType$NamedCurve</className>
-  </difference>
 </differences>
