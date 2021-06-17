@@ -75,7 +75,6 @@ import com.google.cloud.bigtable.data.v2.stub.mutaterows.BulkMutateRowsUserFacin
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsRetryingCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.FilterMarkerRowsCallable;
-import com.google.cloud.bigtable.data.v2.stub.readrows.PointReadTimeoutCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsConvertExceptionCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsResumptionStrategy;
@@ -337,7 +336,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private <ReqT, RowT> ServerStreamingCallable<ReadRowsRequest, RowT> createReadRowsBaseCallable(
       ServerStreamingCallSettings<ReqT, Row> readRowsSettings, RowAdapter<RowT> rowAdapter) {
 
-    final ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> base =
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> base =
         GrpcRawCallableFactory.createServerStreamingCallable(
             GrpcCallSettings.<ReadRowsRequest, ReadRowsResponse>newBuilder()
                 .setMethodDescriptor(BigtableGrpc.getReadRowsMethod())
@@ -353,15 +352,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
                 .build(),
             readRowsSettings.getRetryableCodes());
 
-    // Promote streamWaitTimeout to deadline for point reads
-    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> withPointTimeouts =
-        new PointReadTimeoutCallable<>(base);
-
     // Sometimes ReadRows connections are disconnected via an RST frame. This error is transient and
     // should be treated similar to UNAVAILABLE. However, this exception has an INTERNAL error code
     // which by default is not retryable. Convert the exception so it can be retried in the client.
     ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> convertException =
-        new ReadRowsConvertExceptionCallable<>(withPointTimeouts);
+        new ReadRowsConvertExceptionCallable<>(base);
 
     ServerStreamingCallable<ReadRowsRequest, RowT> merging =
         new RowMergingCallable<>(convertException, rowAdapter);
