@@ -459,7 +459,7 @@ public class SettingsName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(settingsName.pathTemplate, ORGANIZATION),
           "toBuilder is only supported when SettingsName has the pattern of organizations/{organization}/settings");
-      organization = settingsName.organization;
+      this.organization = settingsName.organization;
     }
 
     public SettingsName build() {

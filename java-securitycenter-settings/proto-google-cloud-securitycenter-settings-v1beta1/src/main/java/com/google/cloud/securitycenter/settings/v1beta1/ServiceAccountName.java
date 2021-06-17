@@ -158,7 +158,7 @@ public class ServiceAccountName implements ResourceName {
     }
 
     private Builder(ServiceAccountName serviceAccountName) {
-      organization = serviceAccountName.organization;
+      this.organization = serviceAccountName.organization;
     }
 
     public ServiceAccountName build() {
