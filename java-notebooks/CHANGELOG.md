@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-notebooks/compare/v0.2.6...v0.3.0) (2021-06-17)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#182](https://www.github.com/googleapis/java-notebooks/issues/182)) ([131e3d4](https://www.github.com/googleapis/java-notebooks/commit/131e3d48ba6018050476d17ddd7b7e4cff96f9ac))
+* **generator:** update protoc to v3.15.3 ([#141](https://www.github.com/googleapis/java-notebooks/issues/141)) ([538b004](https://www.github.com/googleapis/java-notebooks/commit/538b004d7081e063204a97ed8a23651c13ffda77))
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#162](https://www.github.com/googleapis/java-notebooks/issues/162)) ([6af24c1](https://www.github.com/googleapis/java-notebooks/commit/6af24c188ccbb01770266a097608a36936639564))
+* typo ([#160](https://www.github.com/googleapis/java-notebooks/issues/160)) ([4b54f42](https://www.github.com/googleapis/java-notebooks/commit/4b54f4278c7eb30116f19f795e4105262449a3d5))
+* Update dependencies.sh to not break on mac ([#192](https://www.github.com/googleapis/java-notebooks/issues/192)) ([54c3021](https://www.github.com/googleapis/java-notebooks/commit/54c3021955d2308d37a2a16701524b7ec7de6f71))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#147](https://www.github.com/googleapis/java-notebooks/issues/147)) ([2019dba](https://www.github.com/googleapis/java-notebooks/commit/2019dba8875d50d462f996ed0060ea132fd74d23))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#156](https://www.github.com/googleapis/java-notebooks/issues/156)) ([733a3d7](https://www.github.com/googleapis/java-notebooks/commit/733a3d7931c16ee4d9ec4b2d3387718cb2c04254))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#163](https://www.github.com/googleapis/java-notebooks/issues/163)) ([f612c02](https://www.github.com/googleapis/java-notebooks/commit/f612c0232b83829e4fa049c773c55684b696431e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#166](https://www.github.com/googleapis/java-notebooks/issues/166)) ([fce329e](https://www.github.com/googleapis/java-notebooks/commit/fce329ec34a16e18fb74483bf1653628959d8b54))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#178](https://www.github.com/googleapis/java-notebooks/issues/178)) ([9b9e71e](https://www.github.com/googleapis/java-notebooks/commit/9b9e71e35a23b1cd4c38591f29c46ad882ac4266))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#181](https://www.github.com/googleapis/java-notebooks/issues/181)) ([5183626](https://www.github.com/googleapis/java-notebooks/commit/51836261f904a3f450a8a1cc64960542563db592))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#188](https://www.github.com/googleapis/java-notebooks/issues/188)) ([4c955ab](https://www.github.com/googleapis/java-notebooks/commit/4c955ab48f8ebc843997318d587b496523562b87))
+
 ### [0.2.6](https://www.github.com/googleapis/java-notebooks/compare/v0.2.5...v0.2.6) (2021-02-25)
 
 
