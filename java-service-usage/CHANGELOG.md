@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-service-usage/compare/v0.2.1...v1.0.0) (2021-06-17)
+
+
+### Features
+
+* promote to 1.0.0 ([#42](https://www.github.com/googleapis/java-service-usage/issues/42)) ([50946ea](https://www.github.com/googleapis/java-service-usage/commit/50946ea457477b1dd6c1274c871ed4933a221d86))
+
 ### [0.2.1](https://www.github.com/googleapis/java-service-usage/compare/v0.2.0...v0.2.1) (2021-06-09)
 
 
