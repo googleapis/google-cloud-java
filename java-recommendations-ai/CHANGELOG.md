@@ -1,5 +1,34 @@
 # Changelog
 
+## [0.6.0](https://www.github.com/googleapis/java-recommendations-ai/compare/v0.5.0...v0.6.0) (2021-06-17)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#324](https://www.github.com/googleapis/java-recommendations-ai/issues/324)) ([82736cf](https://www.github.com/googleapis/java-recommendations-ai/commit/82736cf072e9f9a10f8817b10c56b62bae37e924))
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#304](https://www.github.com/googleapis/java-recommendations-ai/issues/304)) ([c4ed45e](https://www.github.com/googleapis/java-recommendations-ai/commit/c4ed45eaf498010240ef4a443c7ffb1a40d2a421))
+* typo ([#302](https://www.github.com/googleapis/java-recommendations-ai/issues/302)) ([0589c30](https://www.github.com/googleapis/java-recommendations-ai/commit/0589c30f4f4e47b4445e500dd0a9fa051983856d))
+* Update dependencies.sh to not break on mac ([#336](https://www.github.com/googleapis/java-recommendations-ai/issues/336)) ([e6510f1](https://www.github.com/googleapis/java-recommendations-ai/commit/e6510f1f4146c9ddd48079caeff830ea6ea1ee6b))
+
+
+### Documentation
+
+* place paths in code spans ([#292](https://www.github.com/googleapis/java-recommendations-ai/issues/292)) ([e017df2](https://www.github.com/googleapis/java-recommendations-ai/commit/e017df2d122f6009afdebde6d57e9bf0fb31bdec))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#298](https://www.github.com/googleapis/java-recommendations-ai/issues/298)) ([90e3077](https://www.github.com/googleapis/java-recommendations-ai/commit/90e3077ad6f64d4bebe24975354ed95dbea7ffa6))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#306](https://www.github.com/googleapis/java-recommendations-ai/issues/306)) ([b2b203c](https://www.github.com/googleapis/java-recommendations-ai/commit/b2b203ca353320ececaad4870b50df27be3f82f8))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#309](https://www.github.com/googleapis/java-recommendations-ai/issues/309)) ([fbcd817](https://www.github.com/googleapis/java-recommendations-ai/commit/fbcd81702f1c76056517dfcae036b03c2d8e55f5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#319](https://www.github.com/googleapis/java-recommendations-ai/issues/319)) ([feb405a](https://www.github.com/googleapis/java-recommendations-ai/commit/feb405ac0f30cf031d75309860635d60b4de8d31))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#323](https://www.github.com/googleapis/java-recommendations-ai/issues/323)) ([60a9712](https://www.github.com/googleapis/java-recommendations-ai/commit/60a9712796e66063136c7038f121a6a7c7eb46a7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#331](https://www.github.com/googleapis/java-recommendations-ai/issues/331)) ([6430789](https://www.github.com/googleapis/java-recommendations-ai/commit/6430789a4337995ad8f6b02be85ac1fc4c58d1c9))
+
 ## [0.5.0](https://www.github.com/googleapis/java-recommendations-ai/compare/v0.4.1...v0.5.0) (2021-03-11)
 
 
