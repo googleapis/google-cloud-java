@@ -1,5 +1,40 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-analytics-admin/compare/v0.3.2...v0.4.0) (2021-06-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove `CreateIosAppDataStream`, `CreateAndroidAppDataStream` methods from the API (#203)
+
+### Features
+
+* add CreateCustomDimension, GetCustomDimension, UpdateCustomDimension, ListCustomDimensions, ArchiveCustomDimension methods to the API ([#221](https://www.github.com/googleapis/java-analytics-admin/issues/221)) ([16ff4a6](https://www.github.com/googleapis/java-analytics-admin/commit/16ff4a6f4291e1668b710807722cbd3901d51f02))
+
+
+### Bug Fixes
+
+* add `https://www.googleapis.com/auth/analytics.edit` OAuth2 scope to the list of acceptable scopes for all read only methods ([#179](https://www.github.com/googleapis/java-analytics-admin/issues/179)) ([e8d6269](https://www.github.com/googleapis/java-analytics-admin/commit/e8d626908a020d4c1ea6ff0ff34afd5d65ae967a))
+* release scripts from issuing overlapping phases ([#197](https://www.github.com/googleapis/java-analytics-admin/issues/197)) ([30b1195](https://www.github.com/googleapis/java-analytics-admin/commit/30b1195db5389a7fb940b4decf13baf68fcd1005))
+* remove `CreateIosAppDataStream`, `CreateAndroidAppDataStream` methods from the API ([#203](https://www.github.com/googleapis/java-analytics-admin/issues/203)) ([ca467ec](https://www.github.com/googleapis/java-analytics-admin/commit/ca467ec5bbcaf3dccf4c791426ec612c903392e2))
+* typo ([#196](https://www.github.com/googleapis/java-analytics-admin/issues/196)) ([3001dfc](https://www.github.com/googleapis/java-analytics-admin/commit/3001dfc339cfa7f23497481f95e0314bdf8d7189))
+
+
+### Documentation
+
+* update the documentation of the `update_mask` field used by Update() methods ([e8d6269](https://www.github.com/googleapis/java-analytics-admin/commit/e8d626908a020d4c1ea6ff0ff34afd5d65ae967a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#186](https://www.github.com/googleapis/java-analytics-admin/issues/186)) ([1a2d614](https://www.github.com/googleapis/java-analytics-admin/commit/1a2d614c80c0c5849f7aa71f3cae20165c3ed4aa))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#194](https://www.github.com/googleapis/java-analytics-admin/issues/194)) ([b429a0b](https://www.github.com/googleapis/java-analytics-admin/commit/b429a0ba4fea5f974e24f3d8e06a03addcbedc0e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#198](https://www.github.com/googleapis/java-analytics-admin/issues/198)) ([640a1c2](https://www.github.com/googleapis/java-analytics-admin/commit/640a1c2398dd49d8acaa3826ff857baf715ffd43))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#201](https://www.github.com/googleapis/java-analytics-admin/issues/201)) ([c148921](https://www.github.com/googleapis/java-analytics-admin/commit/c1489212a633e8ec6e9fa8838c3f3549ab14b4a4))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#210](https://www.github.com/googleapis/java-analytics-admin/issues/210)) ([4801dd7](https://www.github.com/googleapis/java-analytics-admin/commit/4801dd7212132eb184f2d851549ab99e671150dd))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#214](https://www.github.com/googleapis/java-analytics-admin/issues/214)) ([c8b4d76](https://www.github.com/googleapis/java-analytics-admin/commit/c8b4d76f3d3eff834637a135c7ccff7863073b33))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#222](https://www.github.com/googleapis/java-analytics-admin/issues/222)) ([8bc7f9e](https://www.github.com/googleapis/java-analytics-admin/commit/8bc7f9eb4178a0f4a33b2180123d24b635f3f466))
+
 ### [0.3.2](https://www.github.com/googleapis/java-analytics-admin/compare/v0.3.1...v0.3.2) (2021-02-25)
 
 
