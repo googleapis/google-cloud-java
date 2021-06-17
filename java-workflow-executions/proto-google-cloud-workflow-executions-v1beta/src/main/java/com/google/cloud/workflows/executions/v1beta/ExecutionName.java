@@ -248,10 +248,10 @@ public class ExecutionName implements ResourceName {
     }
 
     private Builder(ExecutionName executionName) {
-      project = executionName.project;
-      location = executionName.location;
-      workflow = executionName.workflow;
-      execution = executionName.execution;
+      this.project = executionName.project;
+      this.location = executionName.location;
+      this.workflow = executionName.workflow;
+      this.execution = executionName.execution;
     }
 
     public ExecutionName build() {
