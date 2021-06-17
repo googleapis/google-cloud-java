@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-notebooks.git",
-        "sha": "f9d3af7003042d426d2f81a938829eae89840a17"
+        "sha": "86e7c5e0a7de27e3e86df0cb3b754be3146d1e92"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "0a071b3460344886297a304253bf924aa68ddb7e"
+        "sha": "c72e5beaba53532dc561094b2d8483e4da06921d"
       }
     }
   ]
