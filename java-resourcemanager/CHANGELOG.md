@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.119.7](https://www.github.com/googleapis/java-resourcemanager/compare/v0.119.6...v0.119.7) (2021-06-17)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-cloudresourcemanager to v1-rev20210613-1.31.0 ([#522](https://www.github.com/googleapis/java-resourcemanager/issues/522)) ([8b6f3ce](https://www.github.com/googleapis/java-resourcemanager/commit/8b6f3ce799497d6a27d90649365763174c33a7af))
+
 ### [0.119.6](https://www.github.com/googleapis/java-resourcemanager/compare/v0.119.5...v0.119.6) (2021-06-04)
 
 
