@@ -4,7 +4,7 @@
     "product_documentation": "https://cloud.google.com/certificate-authority-service/docs",
     "api_description": "simplifies the deployment and management of private CAs without managing infrastructure.",
     "client_documentation": "https://googleapis.dev/java/google-cloud-security-private-ca/latest/index.html",
-    "release_level": "beta",
+    "release_level": "ga",
     "transport": "grpc",
     "language": "java",
     "repo": "googleapis/java-security-private-ca",
