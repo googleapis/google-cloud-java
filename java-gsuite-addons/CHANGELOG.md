@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-gsuite-addons/compare/v0.1.1...v0.2.0) (2021-06-17)
+
+
+### Features
+
+* update project name in proto-google-apps-script-type-protos ([#41](https://www.github.com/googleapis/java-gsuite-addons/issues/41)) ([f000be9](https://www.github.com/googleapis/java-gsuite-addons/commit/f000be9185c28c41ed4fd8e0f523e36cae4a4268))
+
 ### [0.1.1](https://www.github.com/googleapis/java-gsuite-addons/compare/v0.1.0...v0.1.1) (2021-06-15)
 
 
