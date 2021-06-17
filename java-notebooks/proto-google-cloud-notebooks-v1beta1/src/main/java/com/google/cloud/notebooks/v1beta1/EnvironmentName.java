@@ -181,8 +181,8 @@ public class EnvironmentName implements ResourceName {
     }
 
     private Builder(EnvironmentName environmentName) {
-      project = environmentName.project;
-      environment = environmentName.environment;
+      this.project = environmentName.project;
+      this.environment = environmentName.environment;
     }
 
     public EnvironmentName build() {
