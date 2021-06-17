@@ -10,6 +10,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-apps-script-type-protos</artifactId>
+  <name>proto-google-apps-script-type-protos</name>
   <version>0.1.2-SNAPSHOT</version><!-- {x-version-update:proto-google-apps-script-type-protos:current} -->
 
   <dependencies>
