@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-security-private-ca/compare/v0.4.0...v1.0.0) (2021-06-17)
+
+
+### Features
+
+* promote to 1.0.0 ([#194](https://www.github.com/googleapis/java-security-private-ca/issues/194)) ([22b8c31](https://www.github.com/googleapis/java-security-private-ca/commit/22b8c31285c85066b43cd8fe288a5de0d2a83f96))
+
+
+### Bug Fixes
+
+* Fixed casing of the Ruby namespace ([#192](https://www.github.com/googleapis/java-security-private-ca/issues/192)) ([82a4598](https://www.github.com/googleapis/java-security-private-ca/commit/82a4598280510bdca81571b25919a651ad8c2889))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#187](https://www.github.com/googleapis/java-security-private-ca/issues/187)) ([280ecb8](https://www.github.com/googleapis/java-security-private-ca/commit/280ecb8e77a5da124dcdb860e67f4bdf5c1224f3))
+
 ## [0.4.0](https://www.github.com/googleapis/java-security-private-ca/compare/v0.3.0...v0.4.0) (2021-05-26)
 
 
