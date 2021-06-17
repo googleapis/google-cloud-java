@@ -296,11 +296,12 @@ public class PredictionApiKeyRegistrationName implements ResourceName {
     }
 
     private Builder(PredictionApiKeyRegistrationName predictionApiKeyRegistrationName) {
-      project = predictionApiKeyRegistrationName.project;
-      location = predictionApiKeyRegistrationName.location;
-      catalog = predictionApiKeyRegistrationName.catalog;
-      eventStore = predictionApiKeyRegistrationName.eventStore;
-      predictionApiKeyRegistration = predictionApiKeyRegistrationName.predictionApiKeyRegistration;
+      this.project = predictionApiKeyRegistrationName.project;
+      this.location = predictionApiKeyRegistrationName.location;
+      this.catalog = predictionApiKeyRegistrationName.catalog;
+      this.eventStore = predictionApiKeyRegistrationName.eventStore;
+      this.predictionApiKeyRegistration =
+          predictionApiKeyRegistrationName.predictionApiKeyRegistration;
     }
 
     public PredictionApiKeyRegistrationName build() {

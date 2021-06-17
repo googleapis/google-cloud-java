@@ -248,10 +248,10 @@ public class EventStoreName implements ResourceName {
     }
 
     private Builder(EventStoreName eventStoreName) {
-      project = eventStoreName.project;
-      location = eventStoreName.location;
-      catalog = eventStoreName.catalog;
-      eventStore = eventStoreName.eventStore;
+      this.project = eventStoreName.project;
+      this.location = eventStoreName.location;
+      this.catalog = eventStoreName.catalog;
+      this.eventStore = eventStoreName.eventStore;
     }
 
     public EventStoreName build() {

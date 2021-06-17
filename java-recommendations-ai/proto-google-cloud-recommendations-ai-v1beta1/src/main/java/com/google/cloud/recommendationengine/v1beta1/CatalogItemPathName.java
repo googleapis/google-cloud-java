@@ -256,10 +256,10 @@ public class CatalogItemPathName implements ResourceName {
     }
 
     private Builder(CatalogItemPathName catalogItemPathName) {
-      project = catalogItemPathName.project;
-      location = catalogItemPathName.location;
-      catalog = catalogItemPathName.catalog;
-      catalogItemPath = catalogItemPathName.catalogItemPath;
+      this.project = catalogItemPathName.project;
+      this.location = catalogItemPathName.location;
+      this.catalog = catalogItemPathName.catalog;
+      this.catalogItemPath = catalogItemPathName.catalogItemPath;
     }
 
     public CatalogItemPathName build() {

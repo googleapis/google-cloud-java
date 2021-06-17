@@ -284,11 +284,11 @@ public class PlacementName implements ResourceName {
     }
 
     private Builder(PlacementName placementName) {
-      project = placementName.project;
-      location = placementName.location;
-      catalog = placementName.catalog;
-      eventStore = placementName.eventStore;
-      placement = placementName.placement;
+      this.project = placementName.project;
+      this.location = placementName.location;
+      this.catalog = placementName.catalog;
+      this.eventStore = placementName.eventStore;
+      this.placement = placementName.placement;
     }
 
     public PlacementName build() {
