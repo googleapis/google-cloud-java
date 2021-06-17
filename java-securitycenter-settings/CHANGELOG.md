@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-securitycenter-settings/compare/v0.3.16...v0.4.0) (2021-06-17)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#308](https://www.github.com/googleapis/java-securitycenter-settings/issues/308)) ([a4da326](https://www.github.com/googleapis/java-securitycenter-settings/commit/a4da326adb1ba52564b860387cf3fdc73ca94fd3))
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#290](https://www.github.com/googleapis/java-securitycenter-settings/issues/290)) ([77a7072](https://www.github.com/googleapis/java-securitycenter-settings/commit/77a707225432b19f4706ab90af1b6cc4c78ca388))
+* typo ([#287](https://www.github.com/googleapis/java-securitycenter-settings/issues/287)) ([eabab89](https://www.github.com/googleapis/java-securitycenter-settings/commit/eabab89cc605ecfe4ee686ebf88cb78bdff989be))
+* Update dependencies.sh to not break on mac ([#320](https://www.github.com/googleapis/java-securitycenter-settings/issues/320)) ([ec3ac3c](https://www.github.com/googleapis/java-securitycenter-settings/commit/ec3ac3cd9c7024ad8d14259094595f487913726b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#292](https://www.github.com/googleapis/java-securitycenter-settings/issues/292)) ([1adf841](https://www.github.com/googleapis/java-securitycenter-settings/commit/1adf8419104b4c7d3efd23e282b6446293f6a6cb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#295](https://www.github.com/googleapis/java-securitycenter-settings/issues/295)) ([dd4e424](https://www.github.com/googleapis/java-securitycenter-settings/commit/dd4e4249e975bd4f61668a26907b8e2c6af307eb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#303](https://www.github.com/googleapis/java-securitycenter-settings/issues/303)) ([7247733](https://www.github.com/googleapis/java-securitycenter-settings/commit/72477339479cec47a66e13fc530a81c924276b07))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#307](https://www.github.com/googleapis/java-securitycenter-settings/issues/307)) ([a3143cb](https://www.github.com/googleapis/java-securitycenter-settings/commit/a3143cb79b3ea3e90a37fee30b5df543df285f47))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#315](https://www.github.com/googleapis/java-securitycenter-settings/issues/315)) ([6fad235](https://www.github.com/googleapis/java-securitycenter-settings/commit/6fad235a72cc341aec196d4ddcd54aa188b5fecf))
+
 ### [0.3.16](https://www.github.com/googleapis/java-securitycenter-settings/compare/v0.3.15...v0.3.16) (2021-04-09)
 
 
