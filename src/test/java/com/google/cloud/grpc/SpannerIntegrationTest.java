@@ -360,19 +360,23 @@ public final class SpannerIntegrationTest {
   public void testCreateAndGetSessionBlocking() throws Exception {
     SpannerBlockingStub stub = getSpannerBlockingStub();
     CreateSessionRequest req = CreateSessionRequest.newBuilder().setDatabase(DATABASE_PATH).build();
-    for (int i = 0; i < MAX_CHANNEL * 2; i++) {
+    // The first MAX_CHANNEL requests (without affinity) should be distributed 1 per channel.
+    List<Session> sessions = new ArrayList<>();
+    for (int i = 0; i < MAX_CHANNEL; i++) {
       Session session = stub.createSession(req);
       assertThat(session).isNotEqualTo(null);
-      checkChannelRefs(1, 0, 1);
+      sessions.add(session);
 
       Session responseGet =
           stub.getSession(GetSessionRequest.newBuilder().setName(session.getName()).build());
       assertEquals(responseGet.getName(), session.getName());
-      checkChannelRefs(1, 0, 1);
-
-      deleteSession(stub, session);
-      checkChannelRefs(1, 0, 0);
     }
+    checkChannelRefs(MAX_CHANNEL, 0, 1);
+
+    for (Session session : sessions) {
+      deleteSession(stub, session);
+    }
+    checkChannelRefs(MAX_CHANNEL, 0, 0);
   }
 
   @Test
@@ -384,17 +388,19 @@ public final class SpannerIntegrationTest {
             .setDatabase(DATABASE_PATH)
             .setSessionCount(sessionCount)
             .build();
-    // All the sessions created will share one ManagedChannel.
-    for (int i = 0; i < MAX_CHANNEL * 2; i++) {
+    List<Session> sessions = new ArrayList<>();
+    // The first MAX_CHANNEL requests (without affinity) should be distributed 1 per channel.
+    for (int j = 0; j < MAX_CHANNEL; j++) {
       BatchCreateSessionsResponse resp = stub.batchCreateSessions(req);
       assertThat(resp.getSessionCount()).isEqualTo(sessionCount);
-      checkChannelRefs(1, 0, sessionCount);
-
-      for (int j = 0; j < sessionCount; j++) {
-        deleteSession(stub, resp.getSession(j));
-        checkChannelRefs(1, 0, sessionCount - 1 - j);
-      }
+      sessions.addAll(resp.getSessionList());
     }
+    checkChannelRefs(MAX_CHANNEL, 0, sessionCount);
+
+    for (Session session : sessions) {
+      deleteSession(stub, session);
+    }
+    checkChannelRefs(MAX_CHANNEL, 0, 0);
   }
 
   @Test
