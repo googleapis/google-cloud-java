@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.121.3](https://www.github.com/googleapis/java-errorreporting/compare/v0.121.2...v0.121.3) (2021-06-17)
+
+
+### Bug Fixes
+
+* Update dependencies.sh to not break on mac ([#565](https://www.github.com/googleapis/java-errorreporting/issues/565)) ([5bf8a95](https://www.github.com/googleapis/java-errorreporting/commit/5bf8a958f242eb470ead4f6312d08d57863f753f))
+
 ### [0.121.2](https://www.github.com/googleapis/java-errorreporting/compare/v0.121.1...v0.121.2) (2021-06-15)
 
 
