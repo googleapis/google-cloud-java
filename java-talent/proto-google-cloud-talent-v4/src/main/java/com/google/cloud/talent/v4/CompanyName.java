@@ -211,9 +211,9 @@ public class CompanyName implements ResourceName {
     }
 
     private Builder(CompanyName companyName) {
-      project = companyName.project;
-      tenant = companyName.tenant;
-      company = companyName.company;
+      this.project = companyName.project;
+      this.tenant = companyName.tenant;
+      this.company = companyName.company;
     }
 
     public CompanyName build() {

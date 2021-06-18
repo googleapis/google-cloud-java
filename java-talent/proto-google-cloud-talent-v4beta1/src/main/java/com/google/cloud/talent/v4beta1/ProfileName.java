@@ -211,9 +211,9 @@ public class ProfileName implements ResourceName {
     }
 
     private Builder(ProfileName profileName) {
-      project = profileName.project;
-      tenant = profileName.tenant;
-      profile = profileName.profile;
+      this.project = profileName.project;
+      this.tenant = profileName.tenant;
+      this.profile = profileName.profile;
     }
 
     public ProfileName build() {

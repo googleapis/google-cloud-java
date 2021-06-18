@@ -180,8 +180,8 @@ public class TenantName implements ResourceName {
     }
 
     private Builder(TenantName tenantName) {
-      project = tenantName.project;
-      tenant = tenantName.tenant;
+      this.project = tenantName.project;
+      this.tenant = tenantName.tenant;
     }
 
     public TenantName build() {

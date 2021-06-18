@@ -247,10 +247,10 @@ public class ApplicationName implements ResourceName {
     }
 
     private Builder(ApplicationName applicationName) {
-      project = applicationName.project;
-      tenant = applicationName.tenant;
-      profile = applicationName.profile;
-      application = applicationName.application;
+      this.project = applicationName.project;
+      this.tenant = applicationName.tenant;
+      this.profile = applicationName.profile;
+      this.application = applicationName.application;
     }
 
     public ApplicationName build() {
