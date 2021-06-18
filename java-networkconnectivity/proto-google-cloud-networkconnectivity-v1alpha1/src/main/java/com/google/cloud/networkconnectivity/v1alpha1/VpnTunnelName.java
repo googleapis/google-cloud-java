@@ -211,9 +211,9 @@ public class VpnTunnelName implements ResourceName {
     }
 
     private Builder(VpnTunnelName vpnTunnelName) {
-      project = vpnTunnelName.project;
-      region = vpnTunnelName.region;
-      resourceId = vpnTunnelName.resourceId;
+      this.project = vpnTunnelName.project;
+      this.region = vpnTunnelName.region;
+      this.resourceId = vpnTunnelName.resourceId;
     }
 
     public VpnTunnelName build() {

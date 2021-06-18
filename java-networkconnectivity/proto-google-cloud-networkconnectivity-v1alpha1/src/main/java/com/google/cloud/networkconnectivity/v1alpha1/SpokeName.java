@@ -211,9 +211,9 @@ public class SpokeName implements ResourceName {
     }
 
     private Builder(SpokeName spokeName) {
-      project = spokeName.project;
-      location = spokeName.location;
-      spoke = spokeName.spoke;
+      this.project = spokeName.project;
+      this.location = spokeName.location;
+      this.spoke = spokeName.spoke;
     }
 
     public SpokeName build() {

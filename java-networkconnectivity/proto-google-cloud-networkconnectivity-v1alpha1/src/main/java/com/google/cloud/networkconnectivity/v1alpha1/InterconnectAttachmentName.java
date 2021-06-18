@@ -212,9 +212,9 @@ public class InterconnectAttachmentName implements ResourceName {
     }
 
     private Builder(InterconnectAttachmentName interconnectAttachmentName) {
-      project = interconnectAttachmentName.project;
-      region = interconnectAttachmentName.region;
-      resourceId = interconnectAttachmentName.resourceId;
+      this.project = interconnectAttachmentName.project;
+      this.region = interconnectAttachmentName.region;
+      this.resourceId = interconnectAttachmentName.resourceId;
     }
 
     public InterconnectAttachmentName build() {

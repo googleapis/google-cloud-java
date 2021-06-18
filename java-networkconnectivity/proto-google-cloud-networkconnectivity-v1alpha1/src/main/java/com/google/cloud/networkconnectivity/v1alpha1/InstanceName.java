@@ -205,9 +205,9 @@ public class InstanceName implements ResourceName {
     }
 
     private Builder(InstanceName instanceName) {
-      project = instanceName.project;
-      zone = instanceName.zone;
-      instance = instanceName.instance;
+      this.project = instanceName.project;
+      this.zone = instanceName.zone;
+      this.instance = instanceName.instance;
     }
 
     public InstanceName build() {

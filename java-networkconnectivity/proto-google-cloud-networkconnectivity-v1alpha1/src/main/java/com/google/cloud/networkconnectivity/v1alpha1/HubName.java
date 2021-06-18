@@ -180,8 +180,8 @@ public class HubName implements ResourceName {
     }
 
     private Builder(HubName hubName) {
-      project = hubName.project;
-      hub = hubName.hub;
+      this.project = hubName.project;
+      this.hub = hubName.hub;
     }
 
     public HubName build() {
