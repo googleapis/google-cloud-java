@@ -181,8 +181,8 @@ public class DashboardName implements ResourceName {
     }
 
     private Builder(DashboardName dashboardName) {
-      project = dashboardName.project;
-      dashboard = dashboardName.dashboard;
+      this.project = dashboardName.project;
+      this.dashboard = dashboardName.dashboard;
     }
 
     public DashboardName build() {
