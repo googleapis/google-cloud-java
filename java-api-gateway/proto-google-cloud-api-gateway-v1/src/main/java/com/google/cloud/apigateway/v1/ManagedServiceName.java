@@ -158,7 +158,7 @@ public class ManagedServiceName implements ResourceName {
     }
 
     private Builder(ManagedServiceName managedServiceName) {
-      service = managedServiceName.service;
+      this.service = managedServiceName.service;
     }
 
     public ManagedServiceName build() {

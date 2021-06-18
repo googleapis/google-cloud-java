@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-api-gateway.git",
-        "sha": "ea16645bd0290bee5265f84086ef72a3db0dac50"
+        "sha": "180cef6e9b8b7609ade89f67c0193c4fb424b482"
       }
     },
     {
       "git": {
         "name": "googleapis-gen",
         "remote": "https://github.com/googleapis/googleapis-gen.git",
-        "sha": "9a27cb4181a8823727458705f4343f0dccdb40d6",
-        "internalRef": "378718217"
+        "sha": "478f36572d7bcf1dc66038d0e76b9b3fa2abae63",
+        "internalRef": "379784268"
       }
     },
     {

@@ -211,9 +211,9 @@ public class GatewayName implements ResourceName {
     }
 
     private Builder(GatewayName gatewayName) {
-      project = gatewayName.project;
-      location = gatewayName.location;
-      gateway = gatewayName.gateway;
+      this.project = gatewayName.project;
+      this.location = gatewayName.location;
+      this.gateway = gatewayName.gateway;
     }
 
     public GatewayName build() {

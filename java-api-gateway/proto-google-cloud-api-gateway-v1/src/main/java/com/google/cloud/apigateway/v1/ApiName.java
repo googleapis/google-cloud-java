@@ -180,8 +180,8 @@ public class ApiName implements ResourceName {
     }
 
     private Builder(ApiName apiName) {
-      project = apiName.project;
-      api = apiName.api;
+      this.project = apiName.project;
+      this.api = apiName.api;
     }
 
     public ApiName build() {

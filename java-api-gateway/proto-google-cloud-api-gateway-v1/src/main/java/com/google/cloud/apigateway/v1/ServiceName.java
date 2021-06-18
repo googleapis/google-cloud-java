@@ -180,8 +180,8 @@ public class ServiceName implements ResourceName {
     }
 
     private Builder(ServiceName serviceName) {
-      service = serviceName.service;
-      config = serviceName.config;
+      this.service = serviceName.service;
+      this.config = serviceName.config;
     }
 
     public ServiceName build() {

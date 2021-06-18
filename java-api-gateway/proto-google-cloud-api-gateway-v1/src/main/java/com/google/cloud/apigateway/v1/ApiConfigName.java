@@ -206,9 +206,9 @@ public class ApiConfigName implements ResourceName {
     }
 
     private Builder(ApiConfigName apiConfigName) {
-      project = apiConfigName.project;
-      api = apiConfigName.api;
-      apiConfig = apiConfigName.apiConfig;
+      this.project = apiConfigName.project;
+      this.api = apiConfigName.api;
+      this.apiConfig = apiConfigName.apiConfig;
     }
 
     public ApiConfigName build() {
