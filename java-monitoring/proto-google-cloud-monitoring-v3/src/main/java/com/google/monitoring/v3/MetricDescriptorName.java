@@ -324,8 +324,8 @@ public class MetricDescriptorName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(metricDescriptorName.pathTemplate, PROJECT_METRIC_DESCRIPTOR),
           "toBuilder is only supported when MetricDescriptorName has the pattern of projects/{project}/metricDescriptors/{metric_descriptor=**}");
-      project = metricDescriptorName.project;
-      metricDescriptor = metricDescriptorName.metricDescriptor;
+      this.project = metricDescriptorName.project;
+      this.metricDescriptor = metricDescriptorName.metricDescriptor;
     }
 
     public MetricDescriptorName build() {

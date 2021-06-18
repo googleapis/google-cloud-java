@@ -298,8 +298,8 @@ public class ServiceName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(serviceName.pathTemplate, PROJECT_SERVICE),
           "toBuilder is only supported when ServiceName has the pattern of projects/{project}/services/{service}");
-      project = serviceName.project;
-      service = serviceName.service;
+      this.project = serviceName.project;
+      this.service = serviceName.service;
     }
 
     public ServiceName build() {

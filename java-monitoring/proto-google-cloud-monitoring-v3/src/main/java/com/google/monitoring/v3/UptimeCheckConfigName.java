@@ -325,8 +325,8 @@ public class UptimeCheckConfigName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(uptimeCheckConfigName.pathTemplate, PROJECT_UPTIME_CHECK_CONFIG),
           "toBuilder is only supported when UptimeCheckConfigName has the pattern of projects/{project}/uptimeCheckConfigs/{uptime_check_config}");
-      project = uptimeCheckConfigName.project;
-      uptimeCheckConfig = uptimeCheckConfigName.uptimeCheckConfig;
+      this.project = uptimeCheckConfigName.project;
+      this.uptimeCheckConfig = uptimeCheckConfigName.uptimeCheckConfig;
     }
 
     public UptimeCheckConfigName build() {
