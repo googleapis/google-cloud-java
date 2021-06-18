@@ -347,8 +347,8 @@ public class InspectTemplateName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(inspectTemplateName.pathTemplate, ORGANIZATION_INSPECT_TEMPLATE),
           "toBuilder is only supported when InspectTemplateName has the pattern of organizations/{organization}/inspectTemplates/{inspect_template}");
-      organization = inspectTemplateName.organization;
-      inspectTemplate = inspectTemplateName.inspectTemplate;
+      this.organization = inspectTemplateName.organization;
+      this.inspectTemplate = inspectTemplateName.inspectTemplate;
     }
 
     public InspectTemplateName build() {

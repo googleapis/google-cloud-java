@@ -346,8 +346,8 @@ public class StoredInfoTypeName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(storedInfoTypeName.pathTemplate, ORGANIZATION_STORED_INFO_TYPE),
           "toBuilder is only supported when StoredInfoTypeName has the pattern of organizations/{organization}/storedInfoTypes/{stored_info_type}");
-      organization = storedInfoTypeName.organization;
-      storedInfoType = storedInfoTypeName.storedInfoType;
+      this.organization = storedInfoTypeName.organization;
+      this.storedInfoType = storedInfoTypeName.storedInfoType;
     }
 
     public StoredInfoTypeName build() {

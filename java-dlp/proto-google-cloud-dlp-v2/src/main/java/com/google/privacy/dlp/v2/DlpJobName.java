@@ -261,8 +261,8 @@ public class DlpJobName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(dlpJobName.pathTemplate, PROJECT_DLP_JOB),
           "toBuilder is only supported when DlpJobName has the pattern of projects/{project}/dlpJobs/{dlp_job}");
-      project = dlpJobName.project;
-      dlpJob = dlpJobName.dlpJob;
+      this.project = dlpJobName.project;
+      this.dlpJob = dlpJobName.dlpJob;
     }
 
     public DlpJobName build() {
