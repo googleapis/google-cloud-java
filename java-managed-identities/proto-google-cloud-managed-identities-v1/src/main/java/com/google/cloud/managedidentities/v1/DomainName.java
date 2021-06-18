@@ -211,9 +211,9 @@ public class DomainName implements ResourceName {
     }
 
     private Builder(DomainName domainName) {
-      project = domainName.project;
-      location = domainName.location;
-      domain = domainName.domain;
+      this.project = domainName.project;
+      this.location = domainName.location;
+      this.domain = domainName.domain;
     }
 
     public DomainName build() {
