@@ -184,8 +184,8 @@ public class BillingAccountLocationName implements ResourceName {
     }
 
     private Builder(BillingAccountLocationName billingAccountLocationName) {
-      billingAccount = billingAccountLocationName.billingAccount;
-      location = billingAccountLocationName.location;
+      this.billingAccount = billingAccountLocationName.billingAccount;
+      this.location = billingAccountLocationName.location;
     }
 
     public BillingAccountLocationName build() {

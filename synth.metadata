@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-logging.git",
-        "sha": "8916fd626f102215bb865854619818cafd9ccd6e"
+        "sha": "5877a068ae466b0e61d240674263ddb772b43cb2"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "08c4eeb531c01ad031134dca94b18e3f7dd35902",
-        "internalRef": "378718217"
+        "sha": "551681f25e36b11829e87e580281350461f4f3f5",
+        "internalRef": "379784268"
       }
     },
     {

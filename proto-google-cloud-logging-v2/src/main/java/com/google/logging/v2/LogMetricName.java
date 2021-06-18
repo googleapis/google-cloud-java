@@ -180,8 +180,8 @@ public class LogMetricName implements ResourceName {
     }
 
     private Builder(LogMetricName logMetricName) {
-      project = logMetricName.project;
-      metric = logMetricName.metric;
+      this.project = logMetricName.project;
+      this.metric = logMetricName.metric;
     }
 
     public LogMetricName build() {

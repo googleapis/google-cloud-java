@@ -354,8 +354,8 @@ public class LogExclusionName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(logExclusionName.pathTemplate, PROJECT_EXCLUSION),
           "toBuilder is only supported when LogExclusionName has the pattern of projects/{project}/exclusions/{exclusion}");
-      project = logExclusionName.project;
-      exclusion = logExclusionName.exclusion;
+      this.project = logExclusionName.project;
+      this.exclusion = logExclusionName.exclusion;
     }
 
     public LogExclusionName build() {

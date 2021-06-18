@@ -158,7 +158,7 @@ public class FolderName implements ResourceName {
     }
 
     private Builder(FolderName folderName) {
-      folder = folderName.folder;
+      this.folder = folderName.folder;
     }
 
     public FolderName build() {

@@ -181,8 +181,8 @@ public class FolderLocationName implements ResourceName {
     }
 
     private Builder(FolderLocationName folderLocationName) {
-      folder = folderLocationName.folder;
-      location = folderLocationName.location;
+      this.folder = folderLocationName.folder;
+      this.location = folderLocationName.location;
     }
 
     public FolderLocationName build() {
