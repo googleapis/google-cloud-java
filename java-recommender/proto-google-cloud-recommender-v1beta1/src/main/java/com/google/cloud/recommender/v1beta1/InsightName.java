@@ -467,10 +467,10 @@ public class InsightName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(insightName.pathTemplate, PROJECT_LOCATION_INSIGHT_TYPE_INSIGHT),
           "toBuilder is only supported when InsightName has the pattern of projects/{project}/locations/{location}/insightTypes/{insight_type}/insights/{insight}");
-      project = insightName.project;
-      location = insightName.location;
-      insightType = insightName.insightType;
-      insight = insightName.insight;
+      this.project = insightName.project;
+      this.location = insightName.location;
+      this.insightType = insightName.insightType;
+      this.insight = insightName.insight;
     }
 
     public InsightName build() {

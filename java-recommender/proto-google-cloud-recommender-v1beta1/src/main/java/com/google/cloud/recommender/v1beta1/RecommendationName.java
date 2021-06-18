@@ -484,10 +484,10 @@ public class RecommendationName implements ResourceName {
           Objects.equals(
               recommendationName.pathTemplate, PROJECT_LOCATION_RECOMMENDER_RECOMMENDATION),
           "toBuilder is only supported when RecommendationName has the pattern of projects/{project}/locations/{location}/recommenders/{recommender}/recommendations/{recommendation}");
-      project = recommendationName.project;
-      location = recommendationName.location;
-      recommender = recommendationName.recommender;
-      recommendation = recommendationName.recommendation;
+      this.project = recommendationName.project;
+      this.location = recommendationName.location;
+      this.recommender = recommendationName.recommender;
+      this.recommendation = recommendationName.recommendation;
     }
 
     public RecommendationName build() {
