@@ -211,9 +211,9 @@ public class ProductSetName implements ResourceName {
     }
 
     private Builder(ProductSetName productSetName) {
-      project = productSetName.project;
-      location = productSetName.location;
-      productSet = productSetName.productSet;
+      this.project = productSetName.project;
+      this.location = productSetName.location;
+      this.productSet = productSetName.productSet;
     }
 
     public ProductSetName build() {

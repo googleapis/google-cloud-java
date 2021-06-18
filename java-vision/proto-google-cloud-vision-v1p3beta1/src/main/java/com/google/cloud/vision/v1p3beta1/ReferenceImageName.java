@@ -256,10 +256,10 @@ public class ReferenceImageName implements ResourceName {
     }
 
     private Builder(ReferenceImageName referenceImageName) {
-      project = referenceImageName.project;
-      location = referenceImageName.location;
-      product = referenceImageName.product;
-      referenceImage = referenceImageName.referenceImage;
+      this.project = referenceImageName.project;
+      this.location = referenceImageName.location;
+      this.product = referenceImageName.product;
+      this.referenceImage = referenceImageName.referenceImage;
     }
 
     public ReferenceImageName build() {

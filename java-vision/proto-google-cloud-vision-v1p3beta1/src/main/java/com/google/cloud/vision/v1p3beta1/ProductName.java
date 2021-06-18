@@ -211,9 +211,9 @@ public class ProductName implements ResourceName {
     }
 
     private Builder(ProductName productName) {
-      project = productName.project;
-      location = productName.location;
-      product = productName.product;
+      this.project = productName.project;
+      this.location = productName.location;
+      this.product = productName.product;
     }
 
     public ProductName build() {
