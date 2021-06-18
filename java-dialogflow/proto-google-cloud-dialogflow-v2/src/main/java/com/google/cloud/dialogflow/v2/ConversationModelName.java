@@ -219,9 +219,9 @@ public class ConversationModelName implements ResourceName {
     }
 
     private Builder(ConversationModelName conversationModelName) {
-      project = conversationModelName.project;
-      location = conversationModelName.location;
-      conversationModel = conversationModelName.conversationModel;
+      this.project = conversationModelName.project;
+      this.location = conversationModelName.location;
+      this.conversationModel = conversationModelName.conversationModel;
     }
 
     public ConversationModelName build() {

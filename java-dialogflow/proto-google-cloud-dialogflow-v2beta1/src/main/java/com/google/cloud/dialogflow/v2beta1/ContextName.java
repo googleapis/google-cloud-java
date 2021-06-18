@@ -453,9 +453,9 @@ public class ContextName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(contextName.pathTemplate, PROJECT_SESSION_CONTEXT),
           "toBuilder is only supported when ContextName has the pattern of projects/{project}/agent/sessions/{session}/contexts/{context}");
-      project = contextName.project;
-      session = contextName.session;
-      context = contextName.context;
+      this.project = contextName.project;
+      this.session = contextName.session;
+      this.context = contextName.context;
     }
 
     public ContextName build() {

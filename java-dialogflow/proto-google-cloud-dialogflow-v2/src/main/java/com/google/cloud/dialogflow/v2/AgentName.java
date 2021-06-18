@@ -223,7 +223,7 @@ public class AgentName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(agentName.pathTemplate, PROJECT),
           "toBuilder is only supported when AgentName has the pattern of projects/{project}/agent");
-      project = agentName.project;
+      this.project = agentName.project;
     }
 
     public AgentName build() {

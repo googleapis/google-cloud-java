@@ -261,8 +261,8 @@ public class VersionName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(versionName.pathTemplate, PROJECT_VERSION),
           "toBuilder is only supported when VersionName has the pattern of projects/{project}/agent/versions/{version}");
-      project = versionName.project;
-      version = versionName.version;
+      this.project = versionName.project;
+      this.version = versionName.version;
     }
 
     public VersionName build() {

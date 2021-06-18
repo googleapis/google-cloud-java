@@ -261,8 +261,8 @@ public class KnowledgeBaseName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(knowledgeBaseName.pathTemplate, PROJECT_KNOWLEDGE_BASE),
           "toBuilder is only supported when KnowledgeBaseName has the pattern of projects/{project}/knowledgeBases/{knowledge_base}");
-      project = knowledgeBaseName.project;
-      knowledgeBase = knowledgeBaseName.knowledgeBase;
+      this.project = knowledgeBaseName.project;
+      this.knowledgeBase = knowledgeBaseName.knowledgeBase;
     }
 
     public KnowledgeBaseName build() {

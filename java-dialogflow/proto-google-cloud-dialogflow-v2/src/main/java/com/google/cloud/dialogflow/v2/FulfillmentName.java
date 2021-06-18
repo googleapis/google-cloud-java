@@ -224,7 +224,7 @@ public class FulfillmentName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(fulfillmentName.pathTemplate, PROJECT),
           "toBuilder is only supported when FulfillmentName has the pattern of projects/{project}/agent/fulfillment");
-      project = fulfillmentName.project;
+      this.project = fulfillmentName.project;
     }
 
     public FulfillmentName build() {

@@ -261,8 +261,8 @@ public class EnvironmentName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(environmentName.pathTemplate, PROJECT_ENVIRONMENT),
           "toBuilder is only supported when EnvironmentName has the pattern of projects/{project}/agent/environments/{environment}");
-      project = environmentName.project;
-      environment = environmentName.environment;
+      this.project = environmentName.project;
+      this.environment = environmentName.environment;
     }
 
     public EnvironmentName build() {
