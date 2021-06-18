@@ -181,8 +181,8 @@ public class NetworkName implements ResourceName {
     }
 
     private Builder(NetworkName networkName) {
-      project = networkName.project;
-      network = networkName.network;
+      this.project = networkName.project;
+      this.network = networkName.network;
     }
 
     public NetworkName build() {

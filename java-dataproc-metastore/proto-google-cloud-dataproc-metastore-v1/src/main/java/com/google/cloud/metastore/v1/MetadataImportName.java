@@ -256,10 +256,10 @@ public class MetadataImportName implements ResourceName {
     }
 
     private Builder(MetadataImportName metadataImportName) {
-      project = metadataImportName.project;
-      location = metadataImportName.location;
-      service = metadataImportName.service;
-      metadataImport = metadataImportName.metadataImport;
+      this.project = metadataImportName.project;
+      this.location = metadataImportName.location;
+      this.service = metadataImportName.service;
+      this.metadataImport = metadataImportName.metadataImport;
     }
 
     public MetadataImportName build() {

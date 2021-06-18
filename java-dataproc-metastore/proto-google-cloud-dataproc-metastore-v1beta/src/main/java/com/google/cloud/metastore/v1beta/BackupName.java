@@ -244,10 +244,10 @@ public class BackupName implements ResourceName {
     }
 
     private Builder(BackupName backupName) {
-      project = backupName.project;
-      location = backupName.location;
-      service = backupName.service;
-      backup = backupName.backup;
+      this.project = backupName.project;
+      this.location = backupName.location;
+      this.service = backupName.service;
+      this.backup = backupName.backup;
     }
 
     public BackupName build() {

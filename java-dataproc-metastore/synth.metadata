@@ -4,31 +4,31 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dataproc-metastore.git",
-        "sha": "ad594a1a6e4261a114107090b3e15a4d0c655a65"
+        "sha": "a9f5b9cb794f603a921f66aeeecf7e277d2fd5d8"
       }
     },
     {
       "git": {
         "name": "googleapis-gen",
         "remote": "https://github.com/googleapis/googleapis-gen.git",
-        "sha": "9a27cb4181a8823727458705f4343f0dccdb40d6",
-        "internalRef": "378718217"
+        "sha": "478f36572d7bcf1dc66038d0e76b9b3fa2abae63",
+        "internalRef": "379784268"
       }
     },
     {
       "git": {
         "name": "googleapis-gen",
         "remote": "https://github.com/googleapis/googleapis-gen.git",
-        "sha": "9a27cb4181a8823727458705f4343f0dccdb40d6",
-        "internalRef": "378718217"
+        "sha": "478f36572d7bcf1dc66038d0e76b9b3fa2abae63",
+        "internalRef": "379784268"
       }
     },
     {
       "git": {
         "name": "googleapis-gen",
         "remote": "https://github.com/googleapis/googleapis-gen.git",
-        "sha": "9a27cb4181a8823727458705f4343f0dccdb40d6",
-        "internalRef": "378718217"
+        "sha": "478f36572d7bcf1dc66038d0e76b9b3fa2abae63",
+        "internalRef": "379784268"
       }
     },
     {
