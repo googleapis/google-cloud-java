@@ -284,11 +284,11 @@ public class TagName implements ResourceName {
     }
 
     private Builder(TagName tagName) {
-      project = tagName.project;
-      location = tagName.location;
-      entryGroup = tagName.entryGroup;
-      entry = tagName.entry;
-      tag = tagName.tag;
+      this.project = tagName.project;
+      this.location = tagName.location;
+      this.entryGroup = tagName.entryGroup;
+      this.entry = tagName.entry;
+      this.tag = tagName.tag;
     }
 
     public TagName build() {

@@ -295,11 +295,11 @@ public class TagTemplateFieldEnumValueName implements ResourceName {
     }
 
     private Builder(TagTemplateFieldEnumValueName tagTemplateFieldEnumValueName) {
-      project = tagTemplateFieldEnumValueName.project;
-      location = tagTemplateFieldEnumValueName.location;
-      tagTemplate = tagTemplateFieldEnumValueName.tagTemplate;
-      tagTemplateFieldId = tagTemplateFieldEnumValueName.tagTemplateFieldId;
-      enumValueDisplayName = tagTemplateFieldEnumValueName.enumValueDisplayName;
+      this.project = tagTemplateFieldEnumValueName.project;
+      this.location = tagTemplateFieldEnumValueName.location;
+      this.tagTemplate = tagTemplateFieldEnumValueName.tagTemplate;
+      this.tagTemplateFieldId = tagTemplateFieldEnumValueName.tagTemplateFieldId;
+      this.enumValueDisplayName = tagTemplateFieldEnumValueName.enumValueDisplayName;
     }
 
     public TagTemplateFieldEnumValueName build() {

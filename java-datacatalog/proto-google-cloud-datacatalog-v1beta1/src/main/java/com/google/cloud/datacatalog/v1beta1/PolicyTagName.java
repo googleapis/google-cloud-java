@@ -248,10 +248,10 @@ public class PolicyTagName implements ResourceName {
     }
 
     private Builder(PolicyTagName policyTagName) {
-      project = policyTagName.project;
-      location = policyTagName.location;
-      taxonomy = policyTagName.taxonomy;
-      policyTag = policyTagName.policyTag;
+      this.project = policyTagName.project;
+      this.location = policyTagName.location;
+      this.taxonomy = policyTagName.taxonomy;
+      this.policyTag = policyTagName.policyTag;
     }
 
     public PolicyTagName build() {

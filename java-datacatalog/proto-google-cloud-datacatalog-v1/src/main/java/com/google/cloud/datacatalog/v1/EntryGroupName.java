@@ -211,9 +211,9 @@ public class EntryGroupName implements ResourceName {
     }
 
     private Builder(EntryGroupName entryGroupName) {
-      project = entryGroupName.project;
-      location = entryGroupName.location;
-      entryGroup = entryGroupName.entryGroup;
+      this.project = entryGroupName.project;
+      this.location = entryGroupName.location;
+      this.entryGroup = entryGroupName.entryGroup;
     }
 
     public EntryGroupName build() {

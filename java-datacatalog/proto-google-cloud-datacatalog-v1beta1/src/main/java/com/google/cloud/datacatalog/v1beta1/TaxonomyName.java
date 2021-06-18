@@ -211,9 +211,9 @@ public class TaxonomyName implements ResourceName {
     }
 
     private Builder(TaxonomyName taxonomyName) {
-      project = taxonomyName.project;
-      location = taxonomyName.location;
-      taxonomy = taxonomyName.taxonomy;
+      this.project = taxonomyName.project;
+      this.location = taxonomyName.location;
+      this.taxonomy = taxonomyName.taxonomy;
     }
 
     public TaxonomyName build() {

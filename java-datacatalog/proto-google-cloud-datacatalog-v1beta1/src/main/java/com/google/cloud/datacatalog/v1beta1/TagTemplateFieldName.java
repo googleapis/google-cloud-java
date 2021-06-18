@@ -247,10 +247,10 @@ public class TagTemplateFieldName implements ResourceName {
     }
 
     private Builder(TagTemplateFieldName tagTemplateFieldName) {
-      project = tagTemplateFieldName.project;
-      location = tagTemplateFieldName.location;
-      tagTemplate = tagTemplateFieldName.tagTemplate;
-      field = tagTemplateFieldName.field;
+      this.project = tagTemplateFieldName.project;
+      this.location = tagTemplateFieldName.location;
+      this.tagTemplate = tagTemplateFieldName.tagTemplate;
+      this.field = tagTemplateFieldName.field;
     }
 
     public TagTemplateFieldName build() {

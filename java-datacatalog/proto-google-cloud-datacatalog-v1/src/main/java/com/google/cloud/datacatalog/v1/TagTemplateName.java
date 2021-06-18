@@ -215,9 +215,9 @@ public class TagTemplateName implements ResourceName {
     }
 
     private Builder(TagTemplateName tagTemplateName) {
-      project = tagTemplateName.project;
-      location = tagTemplateName.location;
-      tagTemplate = tagTemplateName.tagTemplate;
+      this.project = tagTemplateName.project;
+      this.location = tagTemplateName.location;
+      this.tagTemplate = tagTemplateName.tagTemplate;
     }
 
     public TagTemplateName build() {
