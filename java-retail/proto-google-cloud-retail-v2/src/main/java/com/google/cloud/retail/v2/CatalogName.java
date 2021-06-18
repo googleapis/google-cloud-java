@@ -211,9 +211,9 @@ public class CatalogName implements ResourceName {
     }
 
     private Builder(CatalogName catalogName) {
-      project = catalogName.project;
-      location = catalogName.location;
-      catalog = catalogName.catalog;
+      this.project = catalogName.project;
+      this.location = catalogName.location;
+      this.catalog = catalogName.catalog;
     }
 
     public CatalogName build() {

@@ -244,10 +244,10 @@ public class BranchName implements ResourceName {
     }
 
     private Builder(BranchName branchName) {
-      project = branchName.project;
-      location = branchName.location;
-      catalog = branchName.catalog;
-      branch = branchName.branch;
+      this.project = branchName.project;
+      this.location = branchName.location;
+      this.catalog = branchName.catalog;
+      this.branch = branchName.branch;
     }
 
     public BranchName build() {

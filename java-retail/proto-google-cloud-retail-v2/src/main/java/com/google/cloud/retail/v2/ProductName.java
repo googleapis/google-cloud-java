@@ -284,11 +284,11 @@ public class ProductName implements ResourceName {
     }
 
     private Builder(ProductName productName) {
-      project = productName.project;
-      location = productName.location;
-      catalog = productName.catalog;
-      branch = productName.branch;
-      product = productName.product;
+      this.project = productName.project;
+      this.location = productName.location;
+      this.catalog = productName.catalog;
+      this.branch = productName.branch;
+      this.product = productName.product;
     }
 
     public ProductName build() {
