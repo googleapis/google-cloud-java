@@ -211,9 +211,9 @@ public class PhraseSetName implements ResourceName {
     }
 
     private Builder(PhraseSetName phraseSetName) {
-      project = phraseSetName.project;
-      location = phraseSetName.location;
-      phraseSet = phraseSetName.phraseSet;
+      this.project = phraseSetName.project;
+      this.location = phraseSetName.location;
+      this.phraseSet = phraseSetName.phraseSet;
     }
 
     public PhraseSetName build() {

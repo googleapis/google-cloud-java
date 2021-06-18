@@ -215,9 +215,9 @@ public class CustomClassName implements ResourceName {
     }
 
     private Builder(CustomClassName customClassName) {
-      project = customClassName.project;
-      location = customClassName.location;
-      customClass = customClassName.customClass;
+      this.project = customClassName.project;
+      this.location = customClassName.location;
+      this.customClass = customClassName.customClass;
     }
 
     public CustomClassName build() {
