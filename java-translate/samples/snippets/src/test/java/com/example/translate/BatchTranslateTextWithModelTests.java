@@ -42,13 +42,14 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class BatchTranslateTextWithModelTests {
+
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String INPUT_URI =
       "gs://cloud-samples-data/translation/custom_model_text.txt";
   private static final String MODEL_ID = "TRL3645318651705294848";
-  private static final String PREFIX = "BATCH_TRANSLATION_MODEL_GLOS_OUTPUT/";
-  private static final String OUTPUT_URI =
-      String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
+  private static final String PREFIX =
+      String.format("translation-%s/%s", UUID.randomUUID(), "BATCH_TRANSLATION_MODEL_GLOS_OUTPUT/");
+  private static final String OUTPUT_URI = String.format("gs://%s/%s", PROJECT_ID, PREFIX);
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -98,6 +99,9 @@ public class BatchTranslateTextWithModelTests {
     out = new PrintStream(bout);
     originalPrintStream = System.out;
     System.setOut(out);
+
+    // clear up bucket before the use to prevent concurrency issue.
+    cleanUpBucket();
   }
 
   @After
