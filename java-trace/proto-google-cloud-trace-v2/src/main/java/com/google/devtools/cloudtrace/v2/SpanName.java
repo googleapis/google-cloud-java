@@ -204,9 +204,9 @@ public class SpanName implements ResourceName {
     }
 
     private Builder(SpanName spanName) {
-      project = spanName.project;
-      trace = spanName.trace;
-      span = spanName.span;
+      this.project = spanName.project;
+      this.trace = spanName.trace;
+      this.span = spanName.span;
     }
 
     public SpanName build() {
