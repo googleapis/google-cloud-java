@@ -181,8 +181,8 @@ public class ScanConfigName implements ResourceName {
     }
 
     private Builder(ScanConfigName scanConfigName) {
-      project = scanConfigName.project;
-      scanConfig = scanConfigName.scanConfig;
+      this.project = scanConfigName.project;
+      this.scanConfig = scanConfigName.scanConfig;
     }
 
     public ScanConfigName build() {

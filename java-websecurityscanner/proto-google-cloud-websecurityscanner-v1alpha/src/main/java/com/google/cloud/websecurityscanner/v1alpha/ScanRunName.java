@@ -211,9 +211,9 @@ public class ScanRunName implements ResourceName {
     }
 
     private Builder(ScanRunName scanRunName) {
-      project = scanRunName.project;
-      scanConfig = scanRunName.scanConfig;
-      scanRun = scanRunName.scanRun;
+      this.project = scanRunName.project;
+      this.scanConfig = scanRunName.scanConfig;
+      this.scanRun = scanRunName.scanRun;
     }
 
     public ScanRunName build() {

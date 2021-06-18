@@ -247,10 +247,10 @@ public class FindingName implements ResourceName {
     }
 
     private Builder(FindingName findingName) {
-      project = findingName.project;
-      scanConfig = findingName.scanConfig;
-      scanRun = findingName.scanRun;
-      finding = findingName.finding;
+      this.project = findingName.project;
+      this.scanConfig = findingName.scanConfig;
+      this.scanRun = findingName.scanRun;
+      this.finding = findingName.finding;
     }
 
     public FindingName build() {
