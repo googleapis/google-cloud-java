@@ -244,10 +244,10 @@ public class TaskName implements ResourceName {
     }
 
     private Builder(TaskName taskName) {
-      project = taskName.project;
-      location = taskName.location;
-      queue = taskName.queue;
-      task = taskName.task;
+      this.project = taskName.project;
+      this.location = taskName.location;
+      this.queue = taskName.queue;
+      this.task = taskName.task;
     }
 
     public TaskName build() {

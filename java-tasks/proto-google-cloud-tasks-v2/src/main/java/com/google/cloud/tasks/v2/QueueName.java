@@ -211,9 +211,9 @@ public class QueueName implements ResourceName {
     }
 
     private Builder(QueueName queueName) {
-      project = queueName.project;
-      location = queueName.location;
-      queue = queueName.queue;
+      this.project = queueName.project;
+      this.location = queueName.location;
+      this.queue = queueName.queue;
     }
 
     public QueueName build() {
