@@ -156,7 +156,7 @@ public class UserName implements ResourceName {
     }
 
     private Builder(UserName userName) {
-      user = userName.user;
+      this.user = userName.user;
     }
 
     public UserName build() {

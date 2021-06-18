@@ -180,8 +180,8 @@ public class PosixAccountName implements ResourceName {
     }
 
     private Builder(PosixAccountName posixAccountName) {
-      user = posixAccountName.user;
-      project = posixAccountName.project;
+      this.user = posixAccountName.user;
+      this.project = posixAccountName.project;
     }
 
     public PosixAccountName build() {

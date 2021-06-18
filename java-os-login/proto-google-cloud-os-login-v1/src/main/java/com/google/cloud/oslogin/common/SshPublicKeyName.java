@@ -181,8 +181,8 @@ public class SshPublicKeyName implements ResourceName {
     }
 
     private Builder(SshPublicKeyName sshPublicKeyName) {
-      user = sshPublicKeyName.user;
-      fingerprint = sshPublicKeyName.fingerprint;
+      this.user = sshPublicKeyName.user;
+      this.fingerprint = sshPublicKeyName.fingerprint;
     }
 
     public SshPublicKeyName build() {
