@@ -180,8 +180,8 @@ public class SecretName implements ResourceName {
     }
 
     private Builder(SecretName secretName) {
-      project = secretName.project;
-      secret = secretName.secret;
+      this.project = secretName.project;
+      this.secret = secretName.secret;
     }
 
     public SecretName build() {

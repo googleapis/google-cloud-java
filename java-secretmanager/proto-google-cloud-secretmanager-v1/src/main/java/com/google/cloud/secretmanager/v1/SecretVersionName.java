@@ -215,9 +215,9 @@ public class SecretVersionName implements ResourceName {
     }
 
     private Builder(SecretVersionName secretVersionName) {
-      project = secretVersionName.project;
-      secret = secretVersionName.secret;
-      secretVersion = secretVersionName.secretVersion;
+      this.project = secretVersionName.project;
+      this.secret = secretVersionName.secret;
+      this.secretVersion = secretVersionName.secretVersion;
     }
 
     public SecretVersionName build() {
