@@ -180,8 +180,8 @@ public class KeyName implements ResourceName {
     }
 
     private Builder(KeyName keyName) {
-      project = keyName.project;
-      key = keyName.key;
+      this.project = keyName.project;
+      this.key = keyName.key;
     }
 
     public KeyName build() {

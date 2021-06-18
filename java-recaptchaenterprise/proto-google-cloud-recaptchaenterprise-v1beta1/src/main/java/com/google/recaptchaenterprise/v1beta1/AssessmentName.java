@@ -181,8 +181,8 @@ public class AssessmentName implements ResourceName {
     }
 
     private Builder(AssessmentName assessmentName) {
-      project = assessmentName.project;
-      assessment = assessmentName.assessment;
+      this.project = assessmentName.project;
+      this.assessment = assessmentName.assessment;
     }
 
     public AssessmentName build() {
