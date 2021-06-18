@@ -295,8 +295,8 @@ public class PolicyName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(policyName.pathTemplate, PROJECT_POLICY),
           "toBuilder is only supported when PolicyName has the pattern of projects/{project}/policies/{policy}");
-      project = policyName.project;
-      policy = policyName.policy;
+      this.project = policyName.project;
+      this.policy = policyName.policy;
     }
 
     public PolicyName build() {

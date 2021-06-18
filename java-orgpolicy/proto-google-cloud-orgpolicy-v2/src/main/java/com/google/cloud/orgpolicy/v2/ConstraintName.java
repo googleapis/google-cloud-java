@@ -304,8 +304,8 @@ public class ConstraintName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(constraintName.pathTemplate, PROJECT_CONSTRAINT),
           "toBuilder is only supported when ConstraintName has the pattern of projects/{project}/constraints/{constraint}");
-      project = constraintName.project;
-      constraint = constraintName.constraint;
+      this.project = constraintName.project;
+      this.constraint = constraintName.constraint;
     }
 
     public ConstraintName build() {
