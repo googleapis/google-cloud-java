@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-video-transcoder.git",
-        "sha": "dfe722f8987d2ec43b6006d63890060f526e0cdc"
+        "sha": "cea9a0aa491b484da06b67ad95588740988a7814"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "08c4eeb531c01ad031134dca94b18e3f7dd35902",
-        "internalRef": "378718217"
+        "sha": "551681f25e36b11829e87e580281350461f4f3f5",
+        "internalRef": "379784268"
       }
     },
     {

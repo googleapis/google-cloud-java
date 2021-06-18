@@ -204,9 +204,9 @@ public class JobName implements ResourceName {
     }
 
     private Builder(JobName jobName) {
-      project = jobName.project;
-      location = jobName.location;
-      job = jobName.job;
+      this.project = jobName.project;
+      this.location = jobName.location;
+      this.job = jobName.job;
     }
 
     public JobName build() {

@@ -215,9 +215,9 @@ public class JobTemplateName implements ResourceName {
     }
 
     private Builder(JobTemplateName jobTemplateName) {
-      project = jobTemplateName.project;
-      location = jobTemplateName.location;
-      jobTemplate = jobTemplateName.jobTemplate;
+      this.project = jobTemplateName.project;
+      this.location = jobTemplateName.location;
+      this.jobTemplate = jobTemplateName.jobTemplate;
     }
 
     public JobTemplateName build() {
