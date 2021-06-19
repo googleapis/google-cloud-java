@@ -215,9 +215,9 @@ public class ReservationName implements ResourceName {
     }
 
     private Builder(ReservationName reservationName) {
-      project = reservationName.project;
-      location = reservationName.location;
-      reservation = reservationName.reservation;
+      this.project = reservationName.project;
+      this.location = reservationName.location;
+      this.reservation = reservationName.reservation;
     }
 
     public ReservationName build() {

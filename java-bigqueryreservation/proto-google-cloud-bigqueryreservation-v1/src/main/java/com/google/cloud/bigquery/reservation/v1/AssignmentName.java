@@ -256,10 +256,10 @@ public class AssignmentName implements ResourceName {
     }
 
     private Builder(AssignmentName assignmentName) {
-      project = assignmentName.project;
-      location = assignmentName.location;
-      reservation = assignmentName.reservation;
-      assignment = assignmentName.assignment;
+      this.project = assignmentName.project;
+      this.location = assignmentName.location;
+      this.reservation = assignmentName.reservation;
+      this.assignment = assignmentName.assignment;
     }
 
     public AssignmentName build() {

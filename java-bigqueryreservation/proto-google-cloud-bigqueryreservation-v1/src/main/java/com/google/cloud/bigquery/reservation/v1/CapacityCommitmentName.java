@@ -219,9 +219,9 @@ public class CapacityCommitmentName implements ResourceName {
     }
 
     private Builder(CapacityCommitmentName capacityCommitmentName) {
-      project = capacityCommitmentName.project;
-      location = capacityCommitmentName.location;
-      capacityCommitment = capacityCommitmentName.capacityCommitment;
+      this.project = capacityCommitmentName.project;
+      this.location = capacityCommitmentName.location;
+      this.capacityCommitment = capacityCommitmentName.capacityCommitment;
     }
 
     public CapacityCommitmentName build() {
