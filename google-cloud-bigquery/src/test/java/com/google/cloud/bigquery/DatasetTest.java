@@ -77,6 +77,12 @@ public class DatasetTest {
       TableInfo.newBuilder(TableId.of("dataset", "table2"), VIEW_DEFINITION).build();
   private static final TableInfo TABLE_INFO3 =
       TableInfo.newBuilder(TableId.of("dataset", "table3"), EXTERNAL_TABLE_DEFINITION).build();
+  private static final String NEW_PROJECT_ID = "projectId2";
+  private static final TableId TABLE_ID1 = TableId.of(NEW_PROJECT_ID, "dataset", "table3");
+  private static final TableInfo TABLE_INFO4 =
+      TableInfo.newBuilder(
+              TableId.of(NEW_PROJECT_ID, "dataset", "table3"), EXTERNAL_TABLE_DEFINITION)
+          .build();
 
   @Rule public MockitoRule rule;
 
@@ -253,6 +259,16 @@ public class DatasetTest {
     assertNotNull(table);
     assertEquals(expectedTable, table);
     verify(bigquery).getTable(TABLE_INFO1.getTableId());
+  }
+
+  @Test
+  public void testGetTableWithNewProjectId() {
+    Table expectedTable = new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO4));
+    when(bigquery.getTable(TABLE_ID1, null)).thenReturn(expectedTable);
+    Table table = bigquery.getTable(TABLE_ID1, null);
+    assertNotNull(table);
+    assertEquals(table.getTableId().getProject(), NEW_PROJECT_ID);
+    verify(bigquery).getTable(TABLE_ID1, null);
   }
 
   @Test

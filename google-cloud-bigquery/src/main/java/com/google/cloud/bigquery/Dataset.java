@@ -23,6 +23,7 @@ import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetOption;
 import com.google.cloud.bigquery.BigQuery.TableListOption;
 import com.google.cloud.bigquery.BigQuery.TableOption;
+import com.google.common.base.Strings;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
@@ -275,7 +276,13 @@ public class Dataset extends DatasetInfo {
    * @throws BigQueryException upon failure
    */
   public Table get(String tableId, TableOption... options) {
-    return bigquery.getTable(TableId.of(getDatasetId().getDataset(), tableId), options);
+    // Adding the projectId used of getting the DataSet as a parameter for the issue:
+    // https://github.com/googleapis/java-bigquery/issues/1369
+    TableId tabId =
+        Strings.isNullOrEmpty(getDatasetId().getProject())
+            ? TableId.of(getDatasetId().getDataset(), tableId)
+            : TableId.of(getDatasetId().getProject(), getDatasetId().getDataset(), tableId);
+    return bigquery.getTable(tabId, options);
   }
 
   /**
