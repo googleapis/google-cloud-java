@@ -211,9 +211,9 @@ public class StreamName implements ResourceName {
     }
 
     private Builder(StreamName streamName) {
-      project = streamName.project;
-      location = streamName.location;
-      stream = streamName.stream;
+      this.project = streamName.project;
+      this.location = streamName.location;
+      this.stream = streamName.stream;
     }
 
     public StreamName build() {

@@ -244,10 +244,10 @@ public class WriteStreamName implements ResourceName {
     }
 
     private Builder(WriteStreamName writeStreamName) {
-      project = writeStreamName.project;
-      dataset = writeStreamName.dataset;
-      table = writeStreamName.table;
-      stream = writeStreamName.stream;
+      this.project = writeStreamName.project;
+      this.dataset = writeStreamName.dataset;
+      this.table = writeStreamName.table;
+      this.stream = writeStreamName.stream;
     }
 
     public WriteStreamName build() {

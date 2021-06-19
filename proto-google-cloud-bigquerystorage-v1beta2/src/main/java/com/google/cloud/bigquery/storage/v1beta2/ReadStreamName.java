@@ -244,10 +244,10 @@ public class ReadStreamName implements ResourceName {
     }
 
     private Builder(ReadStreamName readStreamName) {
-      project = readStreamName.project;
-      location = readStreamName.location;
-      session = readStreamName.session;
-      stream = readStreamName.stream;
+      this.project = readStreamName.project;
+      this.location = readStreamName.location;
+      this.session = readStreamName.session;
+      this.stream = readStreamName.stream;
     }
 
     public ReadStreamName build() {

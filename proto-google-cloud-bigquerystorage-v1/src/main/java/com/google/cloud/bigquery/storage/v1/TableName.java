@@ -205,9 +205,9 @@ public class TableName implements ResourceName {
     }
 
     private Builder(TableName tableName) {
-      project = tableName.project;
-      dataset = tableName.dataset;
-      table = tableName.table;
+      this.project = tableName.project;
+      this.dataset = tableName.dataset;
+      this.table = tableName.table;
     }
 
     public TableName build() {

@@ -211,9 +211,9 @@ public class ReadSessionName implements ResourceName {
     }
 
     private Builder(ReadSessionName readSessionName) {
-      project = readSessionName.project;
-      location = readSessionName.location;
-      session = readSessionName.session;
+      this.project = readSessionName.project;
+      this.location = readSessionName.location;
+      this.session = readSessionName.session;
     }
 
     public ReadSessionName build() {
