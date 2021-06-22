@@ -37,7 +37,7 @@ public class ConfigureConnectionPool {
     settingsBuilder.stubSettings()
         .setTransportChannelProvider(
             EnhancedBigtableStubSettings.defaultGrpcTransportProviderBuilder()
-                .setPoolSize(250)
+                .setPoolSize(10)
                 .build());
 
     BigtableDataSettings settings = settingsBuilder.build();
