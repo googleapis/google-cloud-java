@@ -182,8 +182,8 @@ public class ServiceAccountName implements ResourceName {
     }
 
     private Builder(ServiceAccountName serviceAccountName) {
-      project = serviceAccountName.project;
-      serviceAccount = serviceAccountName.serviceAccount;
+      this.project = serviceAccountName.project;
+      this.serviceAccount = serviceAccountName.serviceAccount;
     }
 
     public ServiceAccountName build() {

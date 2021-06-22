@@ -211,9 +211,9 @@ public class TriggerName implements ResourceName {
     }
 
     private Builder(TriggerName triggerName) {
-      project = triggerName.project;
-      location = triggerName.location;
-      trigger = triggerName.trigger;
+      this.project = triggerName.project;
+      this.location = triggerName.location;
+      this.trigger = triggerName.trigger;
     }
 
     public TriggerName build() {
