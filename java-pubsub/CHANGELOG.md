@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.113.4](https://www.github.com/googleapis/java-pubsub/compare/v1.113.3...v1.113.4) (2021-06-22)
+
+
+### Bug Fixes
+
+* allow retries for subscriber unary rpcs ([#721](https://www.github.com/googleapis/java-pubsub/issues/721)) ([3f0a6d2](https://www.github.com/googleapis/java-pubsub/commit/3f0a6d2474dcbac604991c45298c7b89fefa27a7))
+* Update dependencies.sh to not break on mac ([#718](https://www.github.com/googleapis/java-pubsub/issues/718)) ([0ebad0a](https://www.github.com/googleapis/java-pubsub/commit/0ebad0a2c92f00126d9c00aec1af3c73333c3a31))
+
 ### [1.113.3](https://www.github.com/googleapis/java-pubsub/compare/v1.113.2...v1.113.3) (2021-06-09)
 
 
