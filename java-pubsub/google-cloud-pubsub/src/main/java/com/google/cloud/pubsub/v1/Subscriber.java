@@ -18,7 +18,6 @@ package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.AbstractApiService;
 import com.google.api.core.ApiClock;
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiService;
 import com.google.api.core.BetaApi;
 import com.google.api.core.CurrentMillisClock;
@@ -35,7 +34,6 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
-import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.pubsub.v1.stub.GrpcSubscriberStub;
 import com.google.cloud.pubsub.v1.stub.SubscriberStub;
@@ -97,7 +95,6 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
       20 * 1024 * 1024; // 20MB API maximum message size.
   @InternalApi static final int MAX_ACK_DEADLINE_SECONDS = 600;
   @InternalApi static final int MIN_ACK_DEADLINE_SECONDS = 10;
-  private static final Duration UNARY_TIMEOUT = Duration.ofSeconds(60);
   private static final Duration ACK_EXPIRATION_PADDING = Duration.ofSeconds(5);
 
   private static final Logger logger = Logger.getLogger(Subscriber.class.getName());
@@ -167,14 +164,6 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
               .setTransportChannelProvider(channelProvider)
               .setHeaderProvider(builder.headerProvider)
               .setEndpoint(builder.endpoint)
-              .applyToAllUnaryMethods(
-                  new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
-                    @Override
-                    public Void apply(UnaryCallSettings.Builder<?, ?> settingsBuilder) {
-                      settingsBuilder.setSimpleTimeoutNoRetries(UNARY_TIMEOUT);
-                      return null;
-                    }
-                  })
               .build();
       // TODO(pongad): what about internal header??
     } catch (Exception e) {
