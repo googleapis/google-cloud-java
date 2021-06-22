@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-scheduler.git",
-        "sha": "47e171e89d283e594f9e7ffd4407ebe50fe87f66"
+        "sha": "c1c2ab69c877b1e5291acd3ac0009bedbb8e3aa3"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8eae0234a16b26c2ff616d305dbd9786c8b10a47"
+        "sha": "1c0c698705e668ccb3d68556ae7260f16ce63a6e"
       }
     }
   ],
@@ -109,6 +109,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "SECURITY.md",
     "codecov.yaml",
     "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1/CloudSchedulerClient.java",
     "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1/CloudSchedulerSettings.java",
