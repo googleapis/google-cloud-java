@@ -118,8 +118,8 @@
     <module>google-cloud-debugger-client</module>
     <module>grpc-google-cloud-debugger-client-v2</module>
     <module>proto-google-cloud-debugger-client-v2</module>
-    <module>google-cloud-debugger-client-bom</module>
     <module>proto-google-devtools-source-protos</module>
+    <module>google-cloud-debugger-client-bom</module>
   </modules>
 
   <reporting>
@@ -154,7 +154,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.2.0</version>
+        <version>3.3.0</version>
         <reportSets>
           <reportSet>
             <id>html</id>
