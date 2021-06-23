@@ -57,6 +57,7 @@
 
     <grpc.version>1.38.1</grpc.version>
     <gax.version>1.65.1</gax.version>
+    <grpc-gcp.version>1.0.0</grpc-gcp.version>
     <guava.version>30.1.1-android</guava.version>
     <protobuf.version>3.17.3</protobuf.version>
     <google.api-common.version>1.10.4</google.api-common.version>
@@ -92,6 +93,11 @@
         <version>${gax.version}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>grpc-gcp</artifactId>
+        <version>${grpc-gcp.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>
