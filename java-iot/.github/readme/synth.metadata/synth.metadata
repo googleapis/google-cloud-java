@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-iot.git",
-        "sha": "42233d1f6a70328750ac2e7b78d50363f9dbef54"
+        "sha": "16d482420387074ec46f7808919be2e013d3179c"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "740366bbb9a7e0f4b77fc75dc26be1d3a376c3e0"
+        "sha": "9763f20e4b7bb1091082462b2f7970e965d0d414"
       }
     }
   ]
