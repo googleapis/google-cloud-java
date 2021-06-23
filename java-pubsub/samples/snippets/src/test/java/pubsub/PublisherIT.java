@@ -97,6 +97,11 @@ public class PublisherIT {
     assertThat(bout.toString()).contains("Published 100 messages with batch settings.");
 
     bout.reset();
+    // Test publish with flow control settings.
+    PublishWithFlowControlExample.publishWithFlowControlExample(projectId, topicId);
+    assertThat(bout.toString()).contains("Published 1000 messages with flow control settings.");
+
+    bout.reset();
     // Test publish with concurrency control.
     PublishWithConcurrencyControlExample.publishWithConcurrencyControlExample(projectId, topicId);
     assertThat(bout.toString()).contains("Published 100 messages with concurrency control.");
