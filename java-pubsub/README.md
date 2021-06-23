@@ -47,18 +47,18 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:20.6.0')
+implementation platform('com.google.cloud:libraries-bom:20.7.0')
 
 compile 'com.google.cloud:google-cloud-pubsub'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-pubsub:1.113.3'
+compile 'com.google.cloud:google-cloud-pubsub:1.113.4'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.113.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.113.4"
 ```
 
 ## Authentication
@@ -256,6 +256,7 @@ has instructions for running the samples.
 | Publish With Concurrency Control Example | [source code](https://github.com/googleapis/java-pubsub/blob/master/samples/snippets/src/main/java/pubsub/PublishWithConcurrencyControlExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-pubsub&page=editor&open_in_editor=samples/snippets/src/main/java/pubsub/PublishWithConcurrencyControlExample.java) |
 | Publish With Custom Attributes Example | [source code](https://github.com/googleapis/java-pubsub/blob/master/samples/snippets/src/main/java/pubsub/PublishWithCustomAttributesExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-pubsub&page=editor&open_in_editor=samples/snippets/src/main/java/pubsub/PublishWithCustomAttributesExample.java) |
 | Publish With Error Handler Example | [source code](https://github.com/googleapis/java-pubsub/blob/master/samples/snippets/src/main/java/pubsub/PublishWithErrorHandlerExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-pubsub&page=editor&open_in_editor=samples/snippets/src/main/java/pubsub/PublishWithErrorHandlerExample.java) |
+| Publish With Flow Control Example | [source code](https://github.com/googleapis/java-pubsub/blob/master/samples/snippets/src/main/java/pubsub/PublishWithFlowControlExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-pubsub&page=editor&open_in_editor=samples/snippets/src/main/java/pubsub/PublishWithFlowControlExample.java) |
 | Publish With Ordering Keys | [source code](https://github.com/googleapis/java-pubsub/blob/master/samples/snippets/src/main/java/pubsub/PublishWithOrderingKeys.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-pubsub&page=editor&open_in_editor=samples/snippets/src/main/java/pubsub/PublishWithOrderingKeys.java) |
 | Publish With Retry Settings Example | [source code](https://github.com/googleapis/java-pubsub/blob/master/samples/snippets/src/main/java/pubsub/PublishWithRetrySettingsExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-pubsub&page=editor&open_in_editor=samples/snippets/src/main/java/pubsub/PublishWithRetrySettingsExample.java) |
 | Publisher Example | [source code](https://github.com/googleapis/java-pubsub/blob/master/samples/snippets/src/main/java/pubsub/PublisherExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-pubsub&page=editor&open_in_editor=samples/snippets/src/main/java/pubsub/PublisherExample.java) |
