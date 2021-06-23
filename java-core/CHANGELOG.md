@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.95.3](https://www.github.com/googleapis/java-core/compare/v1.95.2...v1.95.3) (2021-06-23)
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.10.4 ([#475](https://www.github.com/googleapis/java-core/issues/475)) ([5c8223d](https://www.github.com/googleapis/java-core/commit/5c8223df9d4e30b6f2fadd4985c3bcfc5b0ff4ec))
+* update dependency io.grpc:grpc-bom to v1.38.1 ([#476](https://www.github.com/googleapis/java-core/issues/476)) ([b6a7923](https://www.github.com/googleapis/java-core/commit/b6a7923e255f0146e126bad2296e12e9d591c04d))
+
 ### [1.95.2](https://www.github.com/googleapis/java-core/compare/v1.95.1...v1.95.2) (2021-06-09)
 
 
