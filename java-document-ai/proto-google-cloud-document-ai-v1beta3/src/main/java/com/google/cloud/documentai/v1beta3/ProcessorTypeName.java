@@ -215,9 +215,9 @@ public class ProcessorTypeName implements ResourceName {
     }
 
     private Builder(ProcessorTypeName processorTypeName) {
-      project = processorTypeName.project;
-      location = processorTypeName.location;
-      processorType = processorTypeName.processorType;
+      this.project = processorTypeName.project;
+      this.location = processorTypeName.location;
+      this.processorType = processorTypeName.processorType;
     }
 
     public ProcessorTypeName build() {

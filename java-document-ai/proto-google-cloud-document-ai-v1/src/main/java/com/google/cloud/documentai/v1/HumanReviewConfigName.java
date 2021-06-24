@@ -213,9 +213,9 @@ public class HumanReviewConfigName implements ResourceName {
     }
 
     private Builder(HumanReviewConfigName humanReviewConfigName) {
-      project = humanReviewConfigName.project;
-      location = humanReviewConfigName.location;
-      processor = humanReviewConfigName.processor;
+      this.project = humanReviewConfigName.project;
+      this.location = humanReviewConfigName.location;
+      this.processor = humanReviewConfigName.processor;
     }
 
     public HumanReviewConfigName build() {

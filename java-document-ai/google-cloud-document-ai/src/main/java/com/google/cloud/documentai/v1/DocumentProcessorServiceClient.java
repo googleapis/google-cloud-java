@@ -469,6 +469,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *       ReviewDocumentRequest.newBuilder()
    *           .setHumanReviewConfig(
    *               HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setEnableSchemaValidation(true)
    *           .build();
    *   ReviewDocumentResponse response =
    *       documentProcessorServiceClient.reviewDocumentAsync(request).get();
@@ -497,6 +498,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *       ReviewDocumentRequest.newBuilder()
    *           .setHumanReviewConfig(
    *               HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setEnableSchemaValidation(true)
    *           .build();
    *   OperationFuture<ReviewDocumentResponse, ReviewDocumentOperationMetadata> future =
    *       documentProcessorServiceClient.reviewDocumentOperationCallable().futureCall(request);
@@ -525,6 +527,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *       ReviewDocumentRequest.newBuilder()
    *           .setHumanReviewConfig(
    *               HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setEnableSchemaValidation(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       documentProcessorServiceClient.reviewDocumentCallable().futureCall(request);

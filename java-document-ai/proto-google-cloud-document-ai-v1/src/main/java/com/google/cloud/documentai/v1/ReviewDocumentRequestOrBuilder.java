@@ -89,5 +89,43 @@ public interface ReviewDocumentRequestOrBuilder
    */
   com.google.protobuf.ByteString getHumanReviewConfigBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Whether the validation should be performed on the ad-hoc review request.
+   * </pre>
+   *
+   * <code>bool enable_schema_validation = 3;</code>
+   *
+   * @return The enableSchemaValidation.
+   */
+  boolean getEnableSchemaValidation();
+
+  /**
+   *
+   *
+   * <pre>
+   * The priority of the human review task.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.ReviewDocumentRequest.Priority priority = 5;</code>
+   *
+   * @return The enum numeric value on the wire for priority.
+   */
+  int getPriorityValue();
+  /**
+   *
+   *
+   * <pre>
+   * The priority of the human review task.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.ReviewDocumentRequest.Priority priority = 5;</code>
+   *
+   * @return The priority.
+   */
+  com.google.cloud.documentai.v1.ReviewDocumentRequest.Priority getPriority();
+
   public com.google.cloud.documentai.v1.ReviewDocumentRequest.SourceCase getSourceCase();
 }

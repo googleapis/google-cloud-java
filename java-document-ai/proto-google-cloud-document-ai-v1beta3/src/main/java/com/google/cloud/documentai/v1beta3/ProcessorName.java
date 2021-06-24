@@ -211,9 +211,9 @@ public class ProcessorName implements ResourceName {
     }
 
     private Builder(ProcessorName processorName) {
-      project = processorName.project;
-      location = processorName.location;
-      processor = processorName.processor;
+      this.project = processorName.project;
+      this.location = processorName.location;
+      this.processor = processorName.processor;
     }
 
     public ProcessorName build() {
