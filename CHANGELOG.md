@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.22.4](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.22.3...v1.22.4) (2021-06-24)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1139](https://www.github.com/googleapis/java-bigquerystorage/issues/1139)) ([fef0aca](https://www.github.com/googleapis/java-bigquerystorage/commit/fef0acac23548ab521fcd98cde19ca1d022fad2b))
+* Add google-api-services-bigquery to google-cloud-bigquerystorage-bom ([#1142](https://www.github.com/googleapis/java-bigquerystorage/issues/1142)) ([4e97130](https://www.github.com/googleapis/java-bigquerystorage/commit/4e97130dd1f703d0f710f27fceb577cef1b06b93))
+* Update dependencies.sh to not break on mac ([#1134](https://www.github.com/googleapis/java-bigquerystorage/issues/1134)) ([85f8c9a](https://www.github.com/googleapis/java-bigquerystorage/commit/85f8c9af7928325fa3c32ec3896b8e3f87279901))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.133.1 ([#1136](https://www.github.com/googleapis/java-bigquerystorage/issues/1136)) ([7248e45](https://www.github.com/googleapis/java-bigquerystorage/commit/7248e459b7c9cdeac573f4bd03cb618d138a7618))
+
 ### [1.22.3](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.22.2...v1.22.3) (2021-06-11)
 
 
