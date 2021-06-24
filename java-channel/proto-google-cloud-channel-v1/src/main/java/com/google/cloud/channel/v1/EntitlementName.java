@@ -215,9 +215,9 @@ public class EntitlementName implements ResourceName {
     }
 
     private Builder(EntitlementName entitlementName) {
-      account = entitlementName.account;
-      customer = entitlementName.customer;
-      entitlement = entitlementName.entitlement;
+      this.account = entitlementName.account;
+      this.customer = entitlementName.customer;
+      this.entitlement = entitlementName.entitlement;
     }
 
     public EntitlementName build() {

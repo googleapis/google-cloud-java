@@ -158,7 +158,7 @@ public class ProductName implements ResourceName {
     }
 
     private Builder(ProductName productName) {
-      product = productName.product;
+      this.product = productName.product;
     }
 
     public ProductName build() {

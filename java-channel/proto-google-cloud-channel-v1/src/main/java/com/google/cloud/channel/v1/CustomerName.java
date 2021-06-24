@@ -181,8 +181,8 @@ public class CustomerName implements ResourceName {
     }
 
     private Builder(CustomerName customerName) {
-      account = customerName.account;
-      customer = customerName.customer;
+      this.account = customerName.account;
+      this.customer = customerName.customer;
     }
 
     public CustomerName build() {

@@ -180,8 +180,8 @@ public class OfferName implements ResourceName {
     }
 
     private Builder(OfferName offerName) {
-      account = offerName.account;
-      offer = offerName.offer;
+      this.account = offerName.account;
+      this.offer = offerName.offer;
     }
 
     public OfferName build() {
