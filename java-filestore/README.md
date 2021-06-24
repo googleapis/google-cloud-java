@@ -1,6 +1,6 @@
-# Network Security API Client for Java
+# Cloud Filestore API Client for Java
 
-Java idiomatic client for [Network Security API][product-docs].
+Java idiomatic client for [Cloud Filestore API][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -19,19 +19,19 @@ If you are using Maven, add this to your pom.xml file:
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-network-security</artifactId>
+  <artifactId>google-cloud-filestore</artifactId>
   <version>0.0.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-network-security:0.0.0'
+compile 'com.google.cloud:google-cloud-filestore:0.0.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-network-security" % "0.0.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-filestore" % "0.0.0"
 ```
 
 ## Authentication
@@ -42,24 +42,25 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Network Security API [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Network Security API.
+You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Filestore API [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Cloud Filestore API.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 ### Installation and setup
 
-You'll need to obtain the `google-cloud-network-security` library.  See the [Quickstart](#quickstart) section
-to add `google-cloud-network-security` as a dependency in your code.
+You'll need to obtain the `google-cloud-filestore` library.  See the [Quickstart](#quickstart) section
+to add `google-cloud-filestore` as a dependency in your code.
 
-## About Network Security API
+## About Cloud Filestore API
 
 
-[Network Security API][product-docs] n/a.
+[Cloud Filestore API][product-docs] instances are fully managed NFS file servers on Google Cloud for use with applications running on Compute Engine virtual machines (VMs) instances or Google Kubernetes Engine clusters.
 
-See the [Network Security API client library docs][javadocs] to learn how to
-use this Network Security API Client Library.
+
+See the [Cloud Filestore API client library docs][javadocs] to learn how to
+use this Cloud Filestore API Client Library.
 
 ## Troubleshooting
 
@@ -67,7 +68,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Network Security API uses gRPC for the transport layer.
+Cloud Filestore API uses gRPC for the transport layer.
 
 ## Java Versions
 
@@ -109,30 +110,30 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 Java is a registered trademark of Oracle and/or its affiliates.
 
-[product-docs]: https://cloud.google.com/network-security/docs/
-[javadocs]: https://googleapis.dev/java/google-cloud-network-security/latest/index.html
-[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-network-security/java7.svg
-[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-network-security/java7.html
-[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-network-security/java8.svg
-[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-network-security/java8.html
-[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-network-security/java8-osx.svg
-[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-network-security/java8-osx.html
-[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-network-security/java8-win.svg
-[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-network-security/java8-win.html
-[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-network-security/java11.svg
-[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-network-security/java11.html
+[product-docs]: https://cloud.google.com/filestore/docs/
+[javadocs]: https://googleapis.dev/java/google-cloud-filestore/latest/index.html
+[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-filestore/java7.svg
+[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-filestore/java7.html
+[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-filestore/java8.svg
+[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-filestore/java8.html
+[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-filestore/java8-osx.svg
+[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-filestore/java8-osx.html
+[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-filestore/java8-win.svg
+[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-filestore/java8-win.html
+[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-filestore/java11.svg
+[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-filestore/java11.html
 [stability-image]: https://img.shields.io/badge/stability-beta-yellow
-[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-network-security.svg
-[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-network-security&core=gav
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-filestore.svg
+[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-filestore&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-sdk]: https://cloud.google.com/sdk/
 [troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting
-[contributing]: https://github.com/googleapis/java-network-security/blob/master/CONTRIBUTING.md
-[code-of-conduct]: https://github.com/googleapis/java-network-security/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[license]: https://github.com/googleapis/java-network-security/blob/master/LICENSE
+[contributing]: https://github.com/googleapis/java-filestore/blob/master/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/java-filestore/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[license]: https://github.com/googleapis/java-filestore/blob/master/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
-[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=network-security.googleapis.com
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=filestore.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
