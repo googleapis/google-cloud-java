@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-networkconnectivity/compare/v0.2.3...v0.3.0) (2021-06-23)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#77](https://www.github.com/googleapis/java-networkconnectivity/issues/77)) ([98d49e8](https://www.github.com/googleapis/java-networkconnectivity/commit/98d49e8fc830b05bf94d7ed8273c1bb6ed9b4e18))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#90](https://www.github.com/googleapis/java-networkconnectivity/issues/90)) ([4997e61](https://www.github.com/googleapis/java-networkconnectivity/commit/4997e61a226abe023c28fa11977f9f1afd769308))
+* release scripts from issuing overlapping phases ([#60](https://www.github.com/googleapis/java-networkconnectivity/issues/60)) ([0a66a85](https://www.github.com/googleapis/java-networkconnectivity/commit/0a66a85f0f5e2a8d2ee8b5fa248fecd97ba64230))
+* typo ([#57](https://www.github.com/googleapis/java-networkconnectivity/issues/57)) ([567e004](https://www.github.com/googleapis/java-networkconnectivity/commit/567e004b1ee8497c14e66963d2691e8044401ca7))
+* Update dependencies.sh to not break on mac ([#87](https://www.github.com/googleapis/java-networkconnectivity/issues/87)) ([346dd9e](https://www.github.com/googleapis/java-networkconnectivity/commit/346dd9e848edaf1a9aa415782da2c4afc4bcd65d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#61](https://www.github.com/googleapis/java-networkconnectivity/issues/61)) ([6095644](https://www.github.com/googleapis/java-networkconnectivity/commit/60956446e32721f336de0adc1e42eb8efd3dd130))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#65](https://www.github.com/googleapis/java-networkconnectivity/issues/65)) ([e6a577f](https://www.github.com/googleapis/java-networkconnectivity/commit/e6a577f4acd3e013b2800621b13744ab87528986))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#73](https://www.github.com/googleapis/java-networkconnectivity/issues/73)) ([095d041](https://www.github.com/googleapis/java-networkconnectivity/commit/095d0418558cbbce9818e49401e8a55a61b64674))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#76](https://www.github.com/googleapis/java-networkconnectivity/issues/76)) ([04bfa5a](https://www.github.com/googleapis/java-networkconnectivity/commit/04bfa5a28107174bb5f0fe6101a757103420320a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#83](https://www.github.com/googleapis/java-networkconnectivity/issues/83)) ([2e4fa3c](https://www.github.com/googleapis/java-networkconnectivity/commit/2e4fa3c2034e787a0b91c32b9e61e0447752d7ee))
+
 ### [0.2.3](https://www.github.com/googleapis/java-networkconnectivity/compare/v0.2.2...v0.2.3) (2021-04-09)
 
 
