@@ -30,7 +30,8 @@ public class UpdateTableExpiration {
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";
     // Update table expiration to one day.
-    Long newExpiration = TimeUnit.MILLISECONDS.convert(1, TimeUnit.DAYS);
+    Long newExpiration =
+        TimeUnit.MILLISECONDS.convert(1, TimeUnit.DAYS) + System.currentTimeMillis();
     updateTableExpiration(datasetName, tableName, newExpiration);
   }
 
