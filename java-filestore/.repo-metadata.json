@@ -1,0 +1,16 @@
+{
+  "name": "filestore",
+  "name_pretty": "Cloud Filestore API",
+  "product_documentation": "https://cloud.google.com/filestore/docs",
+  "api_description": "instances are fully managed NFS file servers on Google Cloud for use with applications running on Compute Engine virtual machines (VMs) instances or Google Kubernetes Engine clusters.",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-filestore/latest/index.html",
+  "release_level": "beta",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-filestore",
+  "repo_short": "java-filestore",
+  "distribution_name": "com.google.cloud:google-cloud-filestore",
+  "api_id": "filestore.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
