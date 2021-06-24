@@ -3,13 +3,13 @@
 <differences>
   <!-- TODO: REMOVE AFTER RELEASE -->
   <difference>
-    <differenceType>7013</differenceType>
-    <className>com/google/cloud/bigquery/ExternalTableDefinition</className>
-    <method>com.google.common.collect.ImmutableList getDecimalTargetTypes()</method>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/bigquery/BigQuery</className>
+    <method>boolean delete(com.google.cloud.bigquery.JobId)</method>
   </difference>
   <difference>
-    <differenceType>7013</differenceType>
-    <className>com/google/cloud/bigquery/ExternalTableDefinition$Builder</className>
-    <method> com.google.cloud.bigquery.ExternalTableDefinition$Builder setDecimalTargetTypes(java.util.List)</method>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/bigquery/spi/v2/BigQueryRpc</className>
+    <method>boolean deleteJob(java.lang.String, java.lang.String, java.lang.String)</method>
   </difference>
 </differences>

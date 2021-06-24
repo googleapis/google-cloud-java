@@ -271,6 +271,14 @@ public interface BigQueryRpc extends ServiceRpc {
   boolean cancel(String projectId, String jobId, String location);
 
   /**
+   * Sends a job delete request.
+   *
+   * @return {@code true} if delete was successful, {@code false} if the job was not found
+   * @throws BigQueryException upon failure
+   */
+  boolean deleteJob(String projectId, String jobName, String location);
+
+  /**
    * Returns results of the query associated with the provided job.
    *
    * @throws BigQueryException upon failure

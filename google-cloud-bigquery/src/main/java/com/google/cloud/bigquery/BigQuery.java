@@ -983,6 +983,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
   boolean delete(RoutineId routineId);
 
   /**
+   * Deletes the requested job.
+   *
+   * @return {@code true} if job was deleted, {@code false} if it was not found
+   * @throws BigQueryException upon failure
+   */
+  boolean delete(JobId jobId);
+
+  /**
    * Updates dataset information.
    *
    * <p>Example of updating a dataset by changing its description.

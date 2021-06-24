@@ -608,6 +608,21 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
+  public boolean deleteJob(String projectId, String jobName, String location) {
+    try {
+      bigquery
+          .jobs()
+          .delete(projectId, jobName)
+          .setLocation(location)
+          .setPrettyPrint(false)
+          .execute();
+      return true;
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
   public GetQueryResultsResponse getQueryResults(
       String projectId, String jobId, String location, Map<Option, ?> options) {
     try {
