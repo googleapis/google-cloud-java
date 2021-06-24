@@ -180,8 +180,8 @@ public class RowName implements ResourceName {
     }
 
     private Builder(RowName rowName) {
-      table = rowName.table;
-      row = rowName.row;
+      this.table = rowName.table;
+      this.row = rowName.row;
     }
 
     public RowName build() {

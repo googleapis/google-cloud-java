@@ -157,7 +157,7 @@ public class TableName implements ResourceName {
     }
 
     private Builder(TableName tableName) {
-      table = tableName.table;
+      this.table = tableName.table;
     }
 
     public TableName build() {

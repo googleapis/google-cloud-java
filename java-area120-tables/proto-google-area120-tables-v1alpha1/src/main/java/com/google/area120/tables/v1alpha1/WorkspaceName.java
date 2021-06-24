@@ -158,7 +158,7 @@ public class WorkspaceName implements ResourceName {
     }
 
     private Builder(WorkspaceName workspaceName) {
-      workspace = workspaceName.workspace;
+      this.workspace = workspaceName.workspace;
     }
 
     public WorkspaceName build() {
