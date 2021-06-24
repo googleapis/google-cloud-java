@@ -3,4 +3,6 @@
 
 google-cloud-container:1.4.0:1.4.1-SNAPSHOT
 grpc-google-cloud-container-v1:1.4.0:1.4.1-SNAPSHOT
+grpc-google-cloud-container-v1beta1:1.4.0:1.4.1-SNAPSHOT
 proto-google-cloud-container-v1:1.4.0:1.4.1-SNAPSHOT
+proto-google-cloud-container-v1beta1:1.4.0:1.4.1-SNAPSHOT
