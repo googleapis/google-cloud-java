@@ -29,6 +29,7 @@ import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class CreateBatchPredictionJobTextClassificationSampleTest {
@@ -89,6 +90,7 @@ public class CreateBatchPredictionJobTextClassificationSampleTest {
   }
 
   @Test
+  @Ignore("https://github.com/googleapis/java-aiplatform/issues/420")
   public void testCreateBatchPredictionJobTextClassificationSample() throws IOException {
     // Act
     String batchPredictionDisplayName =

@@ -29,6 +29,7 @@ import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -86,6 +87,7 @@ public class CreateTrainingPipelineTextSentimentAnalysisSampleTest {
   }
 
   @Test
+  @Ignore("https://github.com/googleapis/java-aiplatform/issues/420")
   public void testCreateTrainingPipelineTextSentimentAnalysisSample() throws IOException {
     String tempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26);
     // Act

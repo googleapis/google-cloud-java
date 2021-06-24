@@ -29,6 +29,7 @@ import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class CreateTrainingPipelineTabularRegressionSampleTest {
@@ -85,6 +86,7 @@ public class CreateTrainingPipelineTabularRegressionSampleTest {
   }
 
   @Test
+  @Ignore("https://github.com/googleapis/java-aiplatform/issues/420")
   public void createTrainingPipelineTabularRegression() throws IOException {
     // Act
     String modelDisplayName =

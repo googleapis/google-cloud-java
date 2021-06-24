@@ -28,6 +28,7 @@ import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -76,6 +77,7 @@ public class CreateDatasetVideoSampleTest {
   }
 
   @Test
+  @Ignore("https://github.com/googleapis/java-aiplatform/issues/420")
   public void testCreateDatasetVideoSample()
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     // Act

@@ -29,6 +29,7 @@ import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class CreateTrainingPipelineVideoClassificationSampleTest {
@@ -84,6 +85,7 @@ public class CreateTrainingPipelineVideoClassificationSampleTest {
   }
 
   @Test
+  @Ignore("https://github.com/googleapis/java-aiplatform/issues/420")
   public void testCreateTrainingPipelineVideoClassificationSample() throws IOException {
     // Act
     String trainingPipelineDisplayName =
