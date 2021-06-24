@@ -158,7 +158,7 @@ public class TagKeyName implements ResourceName {
     }
 
     private Builder(TagKeyName tagKeyName) {
-      tagKey = tagKeyName.tagKey;
+      this.tagKey = tagKeyName.tagKey;
     }
 
     public TagKeyName build() {

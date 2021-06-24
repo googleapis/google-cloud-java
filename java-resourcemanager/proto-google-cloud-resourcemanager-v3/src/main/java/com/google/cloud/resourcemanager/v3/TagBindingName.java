@@ -158,7 +158,7 @@ public class TagBindingName implements ResourceName {
     }
 
     private Builder(TagBindingName tagBindingName) {
-      tagBinding = tagBindingName.tagBinding;
+      this.tagBinding = tagBindingName.tagBinding;
     }
 
     public TagBindingName build() {

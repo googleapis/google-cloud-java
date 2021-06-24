@@ -158,7 +158,7 @@ public class TagValueName implements ResourceName {
     }
 
     private Builder(TagValueName tagValueName) {
-      tagValue = tagValueName.tagValue;
+      this.tagValue = tagValueName.tagValue;
     }
 
     public TagValueName build() {
