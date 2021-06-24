@@ -174,7 +174,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a namespace, and returns the new Namespace.
+   * Creates a namespace, and returns the new namespace.
    *
    * <p>Sample code:
    *
@@ -212,7 +212,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a namespace, and returns the new Namespace.
+   * Creates a namespace, and returns the new namespace.
    *
    * <p>Sample code:
    *
@@ -249,7 +249,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a namespace, and returns the new Namespace.
+   * Creates a namespace, and returns the new namespace.
    *
    * <p>Sample code:
    *
@@ -274,7 +274,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a namespace, and returns the new Namespace.
+   * Creates a namespace, and returns the new namespace.
    *
    * <p>Sample code:
    *
@@ -312,7 +312,7 @@ public class RegistrationServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the project and location whose namespaces we'd
+   * @param parent Required. The resource name of the project and location whose namespaces you'd
    *     like to list.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -339,7 +339,7 @@ public class RegistrationServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the project and location whose namespaces we'd
+   * @param parent Required. The resource name of the project and location whose namespaces you'd
    *     like to list.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -699,7 +699,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a service, and returns the new Service.
+   * Creates a service, and returns the new service.
    *
    * <p>Sample code:
    *
@@ -734,7 +734,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a service, and returns the new Service.
+   * Creates a service, and returns the new service.
    *
    * <p>Sample code:
    *
@@ -769,7 +769,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a service, and returns the new Service.
+   * Creates a service, and returns the new service.
    *
    * <p>Sample code:
    *
@@ -794,7 +794,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a service, and returns the new Service.
+   * Creates a service, and returns the new service.
    *
    * <p>Sample code:
    *
@@ -832,7 +832,7 @@ public class RegistrationServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the namespace whose services we'd like to list.
+   * @param parent Required. The resource name of the namespace whose services you'd like to list.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServicesPagedResponse listServices(NamespaceName parent) {
@@ -858,7 +858,7 @@ public class RegistrationServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the namespace whose services we'd like to list.
+   * @param parent Required. The resource name of the namespace whose services you'd like to list.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServicesPagedResponse listServices(String parent) {
@@ -1219,7 +1219,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a endpoint, and returns the new Endpoint.
+   * Creates an endpoint, and returns the new endpoint.
    *
    * <p>Sample code:
    *
@@ -1254,7 +1254,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a endpoint, and returns the new Endpoint.
+   * Creates an endpoint, and returns the new endpoint.
    *
    * <p>Sample code:
    *
@@ -1290,7 +1290,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a endpoint, and returns the new Endpoint.
+   * Creates an endpoint, and returns the new endpoint.
    *
    * <p>Sample code:
    *
@@ -1316,7 +1316,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a endpoint, and returns the new Endpoint.
+   * Creates an endpoint, and returns the new endpoint.
    *
    * <p>Sample code:
    *
@@ -1355,7 +1355,7 @@ public class RegistrationServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the service whose endpoints we'd like to list.
+   * @param parent Required. The resource name of the service whose endpoints you'd like to list.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEndpointsPagedResponse listEndpoints(ServiceName parent) {
@@ -1382,7 +1382,7 @@ public class RegistrationServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the service whose endpoints we'd like to list.
+   * @param parent Required. The resource name of the service whose endpoints you'd like to list.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEndpointsPagedResponse listEndpoints(String parent) {
@@ -1490,7 +1490,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a endpoint.
+   * Gets an endpoint.
    *
    * <p>Sample code:
    *
@@ -1513,7 +1513,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a endpoint.
+   * Gets an endpoint.
    *
    * <p>Sample code:
    *
@@ -1536,7 +1536,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a endpoint.
+   * Gets an endpoint.
    *
    * <p>Sample code:
    *
@@ -1562,7 +1562,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a endpoint.
+   * Gets an endpoint.
    *
    * <p>Sample code:
    *
@@ -1588,7 +1588,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a endpoint.
+   * Updates an endpoint.
    *
    * <p>Sample code:
    *
@@ -1612,7 +1612,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a endpoint.
+   * Updates an endpoint.
    *
    * <p>Sample code:
    *
@@ -1636,7 +1636,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a endpoint.
+   * Updates an endpoint.
    *
    * <p>Sample code:
    *
@@ -1660,7 +1660,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a endpoint.
+   * Deletes an endpoint.
    *
    * <p>Sample code:
    *
@@ -1683,7 +1683,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a endpoint.
+   * Deletes an endpoint.
    *
    * <p>Sample code:
    *
@@ -1706,7 +1706,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a endpoint.
+   * Deletes an endpoint.
    *
    * <p>Sample code:
    *
@@ -1732,7 +1732,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a endpoint.
+   * Deletes an endpoint.
    *
    * <p>Sample code:
    *
@@ -1766,7 +1766,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+   *           .setResource(
+   *               ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = registrationServiceClient.getIamPolicy(request);
@@ -1790,7 +1791,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+   *           .setResource(
+   *               ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
@@ -1814,7 +1816,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+   *           .setResource(
+   *               ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   Policy response = registrationServiceClient.setIamPolicy(request);
@@ -1838,7 +1841,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+   *           .setResource(
+   *               ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
@@ -1862,7 +1866,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+   *           .setResource(
+   *               ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = registrationServiceClient.testIamPermissions(request);
@@ -1886,7 +1891,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+   *           .setResource(
+   *               ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

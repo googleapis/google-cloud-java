@@ -93,6 +93,36 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
               labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
               break;
             }
+          case 34:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 42:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (updateTime_ != null) {
+                subBuilder = updateTime_.toBuilder();
+              }
+              updateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateTime_);
+                updateTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -145,7 +175,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The resource name for the namespace in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -169,7 +199,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The resource name for the namespace in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -218,8 +248,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Resource labels associated with this Namespace.
-   * No more than 64 user labels can be associated with a given resource.  Label
+   * Optional. Resource labels associated with this namespace.
+   * No more than 64 user labels can be associated with a given resource. Label
    * keys and values can be no longer than 63 characters.
    * </pre>
    *
@@ -242,8 +272,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Resource labels associated with this Namespace.
-   * No more than 64 user labels can be associated with a given resource.  Label
+   * Optional. Resource labels associated with this namespace.
+   * No more than 64 user labels can be associated with a given resource. Label
    * keys and values can be no longer than 63 characters.
    * </pre>
    *
@@ -257,8 +287,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Resource labels associated with this Namespace.
-   * No more than 64 user labels can be associated with a given resource.  Label
+   * Optional. Resource labels associated with this namespace.
+   * No more than 64 user labels can be associated with a given resource. Label
    * keys and values can be no longer than 63 characters.
    * </pre>
    *
@@ -276,8 +306,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Resource labels associated with this Namespace.
-   * No more than 64 user labels can be associated with a given resource.  Label
+   * Optional. Resource labels associated with this namespace.
+   * No more than 64 user labels can be associated with a given resource. Label
    * keys and values can be no longer than 63 characters.
    * </pre>
    *
@@ -293,6 +323,104 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
+  }
+
+  public static final int CREATE_TIME_FIELD_NUMBER = 4;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the namespace was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return createTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the namespace was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the namespace was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return getCreateTime();
+  }
+
+  public static final int UPDATE_TIME_FIELD_NUMBER = 5;
+  private com.google.protobuf.Timestamp updateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the namespace was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return updateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the namespace was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the namespace was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return getUpdateTime();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -314,6 +442,12 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 2);
+    if (createTime_ != null) {
+      output.writeMessage(4, getCreateTime());
+    }
+    if (updateTime_ != null) {
+      output.writeMessage(5, getUpdateTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -336,6 +470,12 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, labels__);
     }
+    if (createTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCreateTime());
+    }
+    if (updateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getUpdateTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -354,6 +494,14 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
 
     if (!getName().equals(other.getName())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -370,6 +518,14 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -541,6 +697,18 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
 
       internalGetMutableLabels().clear();
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -572,6 +740,16 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       result.name_ = name_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      if (createTimeBuilder_ == null) {
+        result.createTime_ = createTime_;
+      } else {
+        result.createTime_ = createTimeBuilder_.build();
+      }
+      if (updateTimeBuilder_ == null) {
+        result.updateTime_ = updateTime_;
+      } else {
+        result.updateTime_ = updateTimeBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -627,6 +805,12 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -665,7 +849,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The resource name for the namespace in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -688,7 +872,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The resource name for the namespace in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -711,7 +895,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The resource name for the namespace in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -733,7 +917,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The resource name for the namespace in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -751,7 +935,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The resource name for the namespace in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -799,8 +983,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource labels associated with this Namespace.
-     * No more than 64 user labels can be associated with a given resource.  Label
+     * Optional. Resource labels associated with this namespace.
+     * No more than 64 user labels can be associated with a given resource. Label
      * keys and values can be no longer than 63 characters.
      * </pre>
      *
@@ -823,8 +1007,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource labels associated with this Namespace.
-     * No more than 64 user labels can be associated with a given resource.  Label
+     * Optional. Resource labels associated with this namespace.
+     * No more than 64 user labels can be associated with a given resource. Label
      * keys and values can be no longer than 63 characters.
      * </pre>
      *
@@ -838,8 +1022,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource labels associated with this Namespace.
-     * No more than 64 user labels can be associated with a given resource.  Label
+     * Optional. Resource labels associated with this namespace.
+     * No more than 64 user labels can be associated with a given resource. Label
      * keys and values can be no longer than 63 characters.
      * </pre>
      *
@@ -858,8 +1042,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource labels associated with this Namespace.
-     * No more than 64 user labels can be associated with a given resource.  Label
+     * Optional. Resource labels associated with this namespace.
+     * No more than 64 user labels can be associated with a given resource. Label
      * keys and values can be no longer than 63 characters.
      * </pre>
      *
@@ -885,8 +1069,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource labels associated with this Namespace.
-     * No more than 64 user labels can be associated with a given resource.  Label
+     * Optional. Resource labels associated with this namespace.
+     * No more than 64 user labels can be associated with a given resource. Label
      * keys and values can be no longer than 63 characters.
      * </pre>
      *
@@ -908,8 +1092,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource labels associated with this Namespace.
-     * No more than 64 user labels can be associated with a given resource.  Label
+     * Optional. Resource labels associated with this namespace.
+     * No more than 64 user labels can be associated with a given resource. Label
      * keys and values can be no longer than 63 characters.
      * </pre>
      *
@@ -929,8 +1113,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource labels associated with this Namespace.
-     * No more than 64 user labels can be associated with a given resource.  Label
+     * Optional. Resource labels associated with this namespace.
+     * No more than 64 user labels can be associated with a given resource. Label
      * keys and values can be no longer than 63 characters.
      * </pre>
      *
@@ -939,6 +1123,408 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the namespace was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return createTimeBuilder_ != null || createTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the namespace was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the namespace was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the namespace was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the namespace was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (createTime_ != null) {
+          createTime_ =
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        } else {
+          createTime_ = value;
+        }
+        onChanged();
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the namespace was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateTime() {
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+        onChanged();
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the namespace was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the namespace was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the namespace was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the namespace was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return updateTimeBuilder_ != null || updateTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the namespace was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the namespace was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the namespace was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the namespace was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (updateTime_ != null) {
+          updateTime_ =
+              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        } else {
+          updateTime_ = value;
+        }
+        onChanged();
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the namespace was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+        onChanged();
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the namespace was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+
+      onChanged();
+      return getUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the namespace was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the namespace was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
     }
 
     @java.lang.Override

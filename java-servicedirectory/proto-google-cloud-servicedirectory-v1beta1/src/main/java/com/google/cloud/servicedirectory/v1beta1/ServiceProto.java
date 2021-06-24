@@ -49,24 +49,27 @@ public final class ServiceProto {
           + "tory.v1beta1\032\037google/api/field_behavior."
           + "proto\032\031google/api/resource.proto\0324google"
           + "/cloud/servicedirectory/v1beta1/endpoint"
-          + ".proto\032\034google/api/annotations.proto\"\354\002\n"
-          + "\007Service\022\021\n\004name\030\001 \001(\tB\003\340A\005\022S\n\010metadata\030"
-          + "\002 \003(\0132<.google.cloud.servicedirectory.v1"
-          + "beta1.Service.MetadataEntryB\003\340A\001\022G\n\tendp"
-          + "oints\030\003 \003(\0132/.google.cloud.servicedirect"
-          + "ory.v1beta1.EndpointB\003\340A\003\032/\n\rMetadataEnt"
-          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\177\352A|\n"
-          + "\'servicedirectory.googleapis.com/Service"
-          + "\022Qprojects/{project}/locations/{location"
-          + "}/namespaces/{namespace}/services/{servi"
-          + "ce}B\220\002\n)com.google.cloud.servicedirector"
-          + "y.v1beta1B\014ServiceProtoP\001ZUgoogle.golang"
-          + ".org/genproto/googleapis/cloud/servicedi"
-          + "rectory/v1beta1;servicedirectory\370\001\001\252\002%Go"
-          + "ogle.Cloud.ServiceDirectory.V1Beta1\312\002%Go"
-          + "ogle\\Cloud\\ServiceDirectory\\V1beta1\352\002(Go"
-          + "ogle::Cloud::ServiceDirectory::V1beta1b\006"
-          + "proto3"
+          + ".proto\032\037google/protobuf/timestamp.proto\032"
+          + "\034google/api/annotations.proto\"\330\003\n\007Servic"
+          + "e\022\021\n\004name\030\001 \001(\tB\003\340A\005\022S\n\010metadata\030\002 \003(\0132<"
+          + ".google.cloud.servicedirectory.v1beta1.S"
+          + "ervice.MetadataEntryB\003\340A\001\022G\n\tendpoints\030\003"
+          + " \003(\0132/.google.cloud.servicedirectory.v1b"
+          + "eta1.EndpointB\003\340A\003\0224\n\013create_time\030\006 \001(\0132"
+          + "\032.google.protobuf.TimestampB\003\340A\003\0224\n\013upda"
+          + "te_time\030\007 \001(\0132\032.google.protobuf.Timestam"
+          + "pB\003\340A\003\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
+          + "value\030\002 \001(\t:\0028\001:\177\352A|\n\'servicedirectory.g"
+          + "oogleapis.com/Service\022Qprojects/{project"
+          + "}/locations/{location}/namespaces/{names"
+          + "pace}/services/{service}B\220\002\n)com.google."
+          + "cloud.servicedirectory.v1beta1B\014ServiceP"
+          + "rotoP\001ZUgoogle.golang.org/genproto/googl"
+          + "eapis/cloud/servicedirectory/v1beta1;ser"
+          + "vicedirectory\370\001\001\252\002%Google.Cloud.ServiceD"
+          + "irectory.V1Beta1\312\002%Google\\Cloud\\ServiceD"
+          + "irectory\\V1beta1\352\002(Google::Cloud::Servic"
+          + "eDirectory::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -75,6 +78,7 @@ public final class ServiceProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.servicedirectory.v1beta1.EndpointProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_servicedirectory_v1beta1_Service_descriptor =
@@ -83,7 +87,7 @@ public final class ServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_servicedirectory_v1beta1_Service_descriptor,
             new java.lang.String[] {
-              "Name", "Metadata", "Endpoints",
+              "Name", "Metadata", "Endpoints", "CreateTime", "UpdateTime",
             });
     internal_static_google_cloud_servicedirectory_v1beta1_Service_MetadataEntry_descriptor =
         internal_static_google_cloud_servicedirectory_v1beta1_Service_descriptor
@@ -104,6 +108,7 @@ public final class ServiceProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.servicedirectory.v1beta1.EndpointProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
   }
 

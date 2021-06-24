@@ -47,22 +47,26 @@ public final class NamespaceProto {
       "\n5google/cloud/servicedirectory/v1beta1/"
           + "namespace.proto\022%google.cloud.servicedir"
           + "ectory.v1beta1\032\037google/api/field_behavio"
-          + "r.proto\032\031google/api/resource.proto\032\034goog"
-          + "le/api/annotations.proto\"\220\002\n\tNamespace\022\021"
-          + "\n\004name\030\001 \001(\tB\003\340A\005\022Q\n\006labels\030\002 \003(\0132<.goog"
-          + "le.cloud.servicedirectory.v1beta1.Namesp"
-          + "ace.LabelsEntryB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003k"
-          + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:n\352Ak\n)servic"
-          + "edirectory.googleapis.com/Namespace\022>pro"
-          + "jects/{project}/locations/{location}/nam"
-          + "espaces/{namespace}B\222\002\n)com.google.cloud"
-          + ".servicedirectory.v1beta1B\016NamespaceProt"
-          + "oP\001ZUgoogle.golang.org/genproto/googleap"
-          + "is/cloud/servicedirectory/v1beta1;servic"
-          + "edirectory\370\001\001\252\002%Google.Cloud.ServiceDire"
-          + "ctory.V1Beta1\312\002%Google\\Cloud\\ServiceDire"
-          + "ctory\\V1beta1\352\002(Google::Cloud::ServiceDi"
-          + "rectory::V1beta1b\006proto3"
+          + "r.proto\032\031google/api/resource.proto\032\037goog"
+          + "le/protobuf/timestamp.proto\032\034google/api/"
+          + "annotations.proto\"\374\002\n\tNamespace\022\021\n\004name\030"
+          + "\001 \001(\tB\003\340A\005\022Q\n\006labels\030\002 \003(\0132<.google.clou"
+          + "d.servicedirectory.v1beta1.Namespace.Lab"
+          + "elsEntryB\003\340A\001\0224\n\013create_time\030\004 \001(\0132\032.goo"
+          + "gle.protobuf.TimestampB\003\340A\003\0224\n\013update_ti"
+          + "me\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A"
+          + "\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
+          + " \001(\t:\0028\001:n\352Ak\n)servicedirectory.googleap"
+          + "is.com/Namespace\022>projects/{project}/loc"
+          + "ations/{location}/namespaces/{namespace}"
+          + "B\222\002\n)com.google.cloud.servicedirectory.v"
+          + "1beta1B\016NamespaceProtoP\001ZUgoogle.golang."
+          + "org/genproto/googleapis/cloud/servicedir"
+          + "ectory/v1beta1;servicedirectory\370\001\001\252\002%Goo"
+          + "gle.Cloud.ServiceDirectory.V1Beta1\312\002%Goo"
+          + "gle\\Cloud\\ServiceDirectory\\V1beta1\352\002(Goo"
+          + "gle::Cloud::ServiceDirectory::V1beta1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -70,6 +74,7 @@ public final class NamespaceProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_servicedirectory_v1beta1_Namespace_descriptor =
@@ -78,7 +83,7 @@ public final class NamespaceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_servicedirectory_v1beta1_Namespace_descriptor,
             new java.lang.String[] {
-              "Name", "Labels",
+              "Name", "Labels", "CreateTime", "UpdateTime",
             });
     internal_static_google_cloud_servicedirectory_v1beta1_Namespace_LabelsEntry_descriptor =
         internal_static_google_cloud_servicedirectory_v1beta1_Namespace_descriptor
@@ -98,6 +103,7 @@ public final class NamespaceProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
   }
 

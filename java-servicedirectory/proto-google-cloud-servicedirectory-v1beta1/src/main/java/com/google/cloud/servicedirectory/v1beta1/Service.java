@@ -110,6 +110,36 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                       extensionRegistry));
               break;
             }
+          case 50:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 58:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (updateTime_ != null) {
+                subBuilder = updateTime_.toBuilder();
+              }
+              updateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateTime_);
+                updateTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -165,7 +195,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The resource name for the service in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -189,7 +219,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The resource name for the service in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -239,9 +269,26 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Metadata for the service. This data can be consumed by service
-   * clients.  The entire metadata dictionary may contain up to 2000 characters,
-   * spread across all key-value pairs. Metadata that goes beyond any these
-   * limits will be rejected.
+   * clients.
+   * Restrictions:
+   * *   The entire metadata dictionary may contain up to 2000 characters,
+   *     spread accoss all key-value pairs. Metadata that goes beyond this
+   *     limit are rejected
+   * *   Valid metadata keys have two segments: an optional prefix and name,
+   *     separated by a slash (/). The name segment is required and must be 63
+   *     characters or less, beginning and ending with an alphanumeric character
+   *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+   *     alphanumerics between. The prefix is optional. If specified, the prefix
+   *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+   *     not longer than 253 characters in total, followed by a slash (/).
+   *     Metadata that fails to meet these requirements are rejected
+   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+   *     for system metadata managed by Service Directory. If the user tries
+   *     to write to these keyspaces, those entries are silently ignored by
+   *     the system
+   * Note: This field is equivalent to the `annotations` field in the v1 API.
+   * They have the same syntax and read/write to the same location in Service
+   * Directory.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -264,9 +311,26 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Metadata for the service. This data can be consumed by service
-   * clients.  The entire metadata dictionary may contain up to 2000 characters,
-   * spread across all key-value pairs. Metadata that goes beyond any these
-   * limits will be rejected.
+   * clients.
+   * Restrictions:
+   * *   The entire metadata dictionary may contain up to 2000 characters,
+   *     spread accoss all key-value pairs. Metadata that goes beyond this
+   *     limit are rejected
+   * *   Valid metadata keys have two segments: an optional prefix and name,
+   *     separated by a slash (/). The name segment is required and must be 63
+   *     characters or less, beginning and ending with an alphanumeric character
+   *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+   *     alphanumerics between. The prefix is optional. If specified, the prefix
+   *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+   *     not longer than 253 characters in total, followed by a slash (/).
+   *     Metadata that fails to meet these requirements are rejected
+   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+   *     for system metadata managed by Service Directory. If the user tries
+   *     to write to these keyspaces, those entries are silently ignored by
+   *     the system
+   * Note: This field is equivalent to the `annotations` field in the v1 API.
+   * They have the same syntax and read/write to the same location in Service
+   * Directory.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -280,9 +344,26 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Metadata for the service. This data can be consumed by service
-   * clients.  The entire metadata dictionary may contain up to 2000 characters,
-   * spread across all key-value pairs. Metadata that goes beyond any these
-   * limits will be rejected.
+   * clients.
+   * Restrictions:
+   * *   The entire metadata dictionary may contain up to 2000 characters,
+   *     spread accoss all key-value pairs. Metadata that goes beyond this
+   *     limit are rejected
+   * *   Valid metadata keys have two segments: an optional prefix and name,
+   *     separated by a slash (/). The name segment is required and must be 63
+   *     characters or less, beginning and ending with an alphanumeric character
+   *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+   *     alphanumerics between. The prefix is optional. If specified, the prefix
+   *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+   *     not longer than 253 characters in total, followed by a slash (/).
+   *     Metadata that fails to meet these requirements are rejected
+   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+   *     for system metadata managed by Service Directory. If the user tries
+   *     to write to these keyspaces, those entries are silently ignored by
+   *     the system
+   * Note: This field is equivalent to the `annotations` field in the v1 API.
+   * They have the same syntax and read/write to the same location in Service
+   * Directory.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -301,9 +382,26 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Metadata for the service. This data can be consumed by service
-   * clients.  The entire metadata dictionary may contain up to 2000 characters,
-   * spread across all key-value pairs. Metadata that goes beyond any these
-   * limits will be rejected.
+   * clients.
+   * Restrictions:
+   * *   The entire metadata dictionary may contain up to 2000 characters,
+   *     spread accoss all key-value pairs. Metadata that goes beyond this
+   *     limit are rejected
+   * *   Valid metadata keys have two segments: an optional prefix and name,
+   *     separated by a slash (/). The name segment is required and must be 63
+   *     characters or less, beginning and ending with an alphanumeric character
+   *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+   *     alphanumerics between. The prefix is optional. If specified, the prefix
+   *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+   *     not longer than 253 characters in total, followed by a slash (/).
+   *     Metadata that fails to meet these requirements are rejected
+   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+   *     for system metadata managed by Service Directory. If the user tries
+   *     to write to these keyspaces, those entries are silently ignored by
+   *     the system
+   * Note: This field is equivalent to the `annotations` field in the v1 API.
+   * They have the same syntax and read/write to the same location in Service
+   * Directory.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -326,8 +424,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-   * Control plane clients should use RegistrationService.ListEndpoints.
+   * Output only. Endpoints associated with this service. Returned on
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+   * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
    * </pre>
    *
    * <code>
@@ -342,8 +441,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-   * Control plane clients should use RegistrationService.ListEndpoints.
+   * Output only. Endpoints associated with this service. Returned on
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+   * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
    * </pre>
    *
    * <code>
@@ -359,8 +459,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-   * Control plane clients should use RegistrationService.ListEndpoints.
+   * Output only. Endpoints associated with this service. Returned on
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+   * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
    * </pre>
    *
    * <code>
@@ -375,8 +476,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-   * Control plane clients should use RegistrationService.ListEndpoints.
+   * Output only. Endpoints associated with this service. Returned on
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+   * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
    * </pre>
    *
    * <code>
@@ -391,8 +493,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-   * Control plane clients should use RegistrationService.ListEndpoints.
+   * Output only. Endpoints associated with this service. Returned on
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+   * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
    * </pre>
    *
    * <code>
@@ -403,6 +506,110 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.servicedirectory.v1beta1.EndpointOrBuilder getEndpointsOrBuilder(
       int index) {
     return endpoints_.get(index);
+  }
+
+  public static final int CREATE_TIME_FIELD_NUMBER = 6;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the service was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return createTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the service was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the service was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return getCreateTime();
+  }
+
+  public static final int UPDATE_TIME_FIELD_NUMBER = 7;
+  private com.google.protobuf.Timestamp updateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the service was last updated. Note: endpoints being
+   * created/deleted/updated within the service are not considered service
+   * updates for the purpose of this timestamp.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return updateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the service was last updated. Note: endpoints being
+   * created/deleted/updated within the service are not considered service
+   * updates for the purpose of this timestamp.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the service was last updated. Note: endpoints being
+   * created/deleted/updated within the service are not considered service
+   * updates for the purpose of this timestamp.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return getUpdateTime();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -426,6 +633,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 2);
     for (int i = 0; i < endpoints_.size(); i++) {
       output.writeMessage(3, endpoints_.get(i));
+    }
+    if (createTime_ != null) {
+      output.writeMessage(6, getCreateTime());
+    }
+    if (updateTime_ != null) {
+      output.writeMessage(7, getUpdateTime());
     }
     unknownFields.writeTo(output);
   }
@@ -452,6 +665,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < endpoints_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, endpoints_.get(i));
     }
+    if (createTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getCreateTime());
+    }
+    if (updateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getUpdateTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -471,6 +690,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!internalGetMetadata().equals(other.internalGetMetadata())) return false;
     if (!getEndpointsList().equals(other.getEndpointsList())) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -491,6 +718,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (getEndpointsCount() > 0) {
       hash = (37 * hash) + ENDPOINTS_FIELD_NUMBER;
       hash = (53 * hash) + getEndpointsList().hashCode();
+    }
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -671,6 +906,18 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       } else {
         endpointsBuilder_.clear();
       }
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -710,6 +957,16 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         result.endpoints_ = endpoints_;
       } else {
         result.endpoints_ = endpointsBuilder_.build();
+      }
+      if (createTimeBuilder_ == null) {
+        result.createTime_ = createTime_;
+      } else {
+        result.createTime_ = createTimeBuilder_.build();
+      }
+      if (updateTimeBuilder_ == null) {
+        result.updateTime_ = updateTime_;
+      } else {
+        result.updateTime_ = updateTimeBuilder_.build();
       }
       onBuilt();
       return result;
@@ -793,6 +1050,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -831,7 +1094,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The resource name for the service in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -854,7 +1117,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The resource name for the service in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -877,7 +1140,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The resource name for the service in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -899,7 +1162,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The resource name for the service in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -917,7 +1180,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The resource name for the service in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -967,9 +1230,26 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Metadata for the service. This data can be consumed by service
-     * clients.  The entire metadata dictionary may contain up to 2000 characters,
-     * spread across all key-value pairs. Metadata that goes beyond any these
-     * limits will be rejected.
+     * clients.
+     * Restrictions:
+     * *   The entire metadata dictionary may contain up to 2000 characters,
+     *     spread accoss all key-value pairs. Metadata that goes beyond this
+     *     limit are rejected
+     * *   Valid metadata keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/).
+     *     Metadata that fails to meet these requirements are rejected
+     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+     *     for system metadata managed by Service Directory. If the user tries
+     *     to write to these keyspaces, those entries are silently ignored by
+     *     the system
+     * Note: This field is equivalent to the `annotations` field in the v1 API.
+     * They have the same syntax and read/write to the same location in Service
+     * Directory.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -993,9 +1273,26 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Metadata for the service. This data can be consumed by service
-     * clients.  The entire metadata dictionary may contain up to 2000 characters,
-     * spread across all key-value pairs. Metadata that goes beyond any these
-     * limits will be rejected.
+     * clients.
+     * Restrictions:
+     * *   The entire metadata dictionary may contain up to 2000 characters,
+     *     spread accoss all key-value pairs. Metadata that goes beyond this
+     *     limit are rejected
+     * *   Valid metadata keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/).
+     *     Metadata that fails to meet these requirements are rejected
+     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+     *     for system metadata managed by Service Directory. If the user tries
+     *     to write to these keyspaces, those entries are silently ignored by
+     *     the system
+     * Note: This field is equivalent to the `annotations` field in the v1 API.
+     * They have the same syntax and read/write to the same location in Service
+     * Directory.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1010,9 +1307,26 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Metadata for the service. This data can be consumed by service
-     * clients.  The entire metadata dictionary may contain up to 2000 characters,
-     * spread across all key-value pairs. Metadata that goes beyond any these
-     * limits will be rejected.
+     * clients.
+     * Restrictions:
+     * *   The entire metadata dictionary may contain up to 2000 characters,
+     *     spread accoss all key-value pairs. Metadata that goes beyond this
+     *     limit are rejected
+     * *   Valid metadata keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/).
+     *     Metadata that fails to meet these requirements are rejected
+     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+     *     for system metadata managed by Service Directory. If the user tries
+     *     to write to these keyspaces, those entries are silently ignored by
+     *     the system
+     * Note: This field is equivalent to the `annotations` field in the v1 API.
+     * They have the same syntax and read/write to the same location in Service
+     * Directory.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1032,9 +1346,26 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Metadata for the service. This data can be consumed by service
-     * clients.  The entire metadata dictionary may contain up to 2000 characters,
-     * spread across all key-value pairs. Metadata that goes beyond any these
-     * limits will be rejected.
+     * clients.
+     * Restrictions:
+     * *   The entire metadata dictionary may contain up to 2000 characters,
+     *     spread accoss all key-value pairs. Metadata that goes beyond this
+     *     limit are rejected
+     * *   Valid metadata keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/).
+     *     Metadata that fails to meet these requirements are rejected
+     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+     *     for system metadata managed by Service Directory. If the user tries
+     *     to write to these keyspaces, those entries are silently ignored by
+     *     the system
+     * Note: This field is equivalent to the `annotations` field in the v1 API.
+     * They have the same syntax and read/write to the same location in Service
+     * Directory.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1061,9 +1392,26 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Metadata for the service. This data can be consumed by service
-     * clients.  The entire metadata dictionary may contain up to 2000 characters,
-     * spread across all key-value pairs. Metadata that goes beyond any these
-     * limits will be rejected.
+     * clients.
+     * Restrictions:
+     * *   The entire metadata dictionary may contain up to 2000 characters,
+     *     spread accoss all key-value pairs. Metadata that goes beyond this
+     *     limit are rejected
+     * *   Valid metadata keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/).
+     *     Metadata that fails to meet these requirements are rejected
+     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+     *     for system metadata managed by Service Directory. If the user tries
+     *     to write to these keyspaces, those entries are silently ignored by
+     *     the system
+     * Note: This field is equivalent to the `annotations` field in the v1 API.
+     * They have the same syntax and read/write to the same location in Service
+     * Directory.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1086,9 +1434,26 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Metadata for the service. This data can be consumed by service
-     * clients.  The entire metadata dictionary may contain up to 2000 characters,
-     * spread across all key-value pairs. Metadata that goes beyond any these
-     * limits will be rejected.
+     * clients.
+     * Restrictions:
+     * *   The entire metadata dictionary may contain up to 2000 characters,
+     *     spread accoss all key-value pairs. Metadata that goes beyond this
+     *     limit are rejected
+     * *   Valid metadata keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/).
+     *     Metadata that fails to meet these requirements are rejected
+     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+     *     for system metadata managed by Service Directory. If the user tries
+     *     to write to these keyspaces, those entries are silently ignored by
+     *     the system
+     * Note: This field is equivalent to the `annotations` field in the v1 API.
+     * They have the same syntax and read/write to the same location in Service
+     * Directory.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1109,9 +1474,26 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Metadata for the service. This data can be consumed by service
-     * clients.  The entire metadata dictionary may contain up to 2000 characters,
-     * spread across all key-value pairs. Metadata that goes beyond any these
-     * limits will be rejected.
+     * clients.
+     * Restrictions:
+     * *   The entire metadata dictionary may contain up to 2000 characters,
+     *     spread accoss all key-value pairs. Metadata that goes beyond this
+     *     limit are rejected
+     * *   Valid metadata keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/).
+     *     Metadata that fails to meet these requirements are rejected
+     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+     *     for system metadata managed by Service Directory. If the user tries
+     *     to write to these keyspaces, those entries are silently ignored by
+     *     the system
+     * Note: This field is equivalent to the `annotations` field in the v1 API.
+     * They have the same syntax and read/write to the same location in Service
+     * Directory.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1143,8 +1525,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-     * Control plane clients should use RegistrationService.ListEndpoints.
+     * Output only. Endpoints associated with this service. Returned on
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
      * <code>
@@ -1162,8 +1545,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-     * Control plane clients should use RegistrationService.ListEndpoints.
+     * Output only. Endpoints associated with this service. Returned on
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
      * <code>
@@ -1181,8 +1565,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-     * Control plane clients should use RegistrationService.ListEndpoints.
+     * Output only. Endpoints associated with this service. Returned on
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
      * <code>
@@ -1200,8 +1585,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-     * Control plane clients should use RegistrationService.ListEndpoints.
+     * Output only. Endpoints associated with this service. Returned on
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
      * <code>
@@ -1226,8 +1612,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-     * Control plane clients should use RegistrationService.ListEndpoints.
+     * Output only. Endpoints associated with this service. Returned on
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
      * <code>
@@ -1249,8 +1636,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-     * Control plane clients should use RegistrationService.ListEndpoints.
+     * Output only. Endpoints associated with this service. Returned on
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
      * <code>
@@ -1274,8 +1662,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-     * Control plane clients should use RegistrationService.ListEndpoints.
+     * Output only. Endpoints associated with this service. Returned on
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
      * <code>
@@ -1300,8 +1689,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-     * Control plane clients should use RegistrationService.ListEndpoints.
+     * Output only. Endpoints associated with this service. Returned on
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
      * <code>
@@ -1323,8 +1713,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-     * Control plane clients should use RegistrationService.ListEndpoints.
+     * Output only. Endpoints associated with this service. Returned on
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
      * <code>
@@ -1346,8 +1737,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-     * Control plane clients should use RegistrationService.ListEndpoints.
+     * Output only. Endpoints associated with this service. Returned on
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
      * <code>
@@ -1369,8 +1761,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-     * Control plane clients should use RegistrationService.ListEndpoints.
+     * Output only. Endpoints associated with this service. Returned on
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
      * <code>
@@ -1391,8 +1784,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-     * Control plane clients should use RegistrationService.ListEndpoints.
+     * Output only. Endpoints associated with this service. Returned on
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
      * <code>
@@ -1413,8 +1807,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-     * Control plane clients should use RegistrationService.ListEndpoints.
+     * Output only. Endpoints associated with this service. Returned on
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
      * <code>
@@ -1429,8 +1824,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-     * Control plane clients should use RegistrationService.ListEndpoints.
+     * Output only. Endpoints associated with this service. Returned on
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
      * <code>
@@ -1449,8 +1845,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-     * Control plane clients should use RegistrationService.ListEndpoints.
+     * Output only. Endpoints associated with this service. Returned on
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
      * <code>
@@ -1469,8 +1866,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-     * Control plane clients should use RegistrationService.ListEndpoints.
+     * Output only. Endpoints associated with this service. Returned on
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
      * <code>
@@ -1485,8 +1883,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-     * Control plane clients should use RegistrationService.ListEndpoints.
+     * Output only. Endpoints associated with this service. Returned on
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
      * <code>
@@ -1503,8 +1902,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-     * Control plane clients should use RegistrationService.ListEndpoints.
+     * Output only. Endpoints associated with this service. Returned on
+     * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+     * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
      * </pre>
      *
      * <code>
@@ -1531,6 +1931,426 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         endpoints_ = null;
       }
       return endpointsBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the service was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return createTimeBuilder_ != null || createTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the service was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the service was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the service was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the service was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (createTime_ != null) {
+          createTime_ =
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        } else {
+          createTime_ = value;
+        }
+        onChanged();
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the service was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateTime() {
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+        onChanged();
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the service was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the service was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the service was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the service was last updated. Note: endpoints being
+     * created/deleted/updated within the service are not considered service
+     * updates for the purpose of this timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return updateTimeBuilder_ != null || updateTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the service was last updated. Note: endpoints being
+     * created/deleted/updated within the service are not considered service
+     * updates for the purpose of this timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the service was last updated. Note: endpoints being
+     * created/deleted/updated within the service are not considered service
+     * updates for the purpose of this timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the service was last updated. Note: endpoints being
+     * created/deleted/updated within the service are not considered service
+     * updates for the purpose of this timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the service was last updated. Note: endpoints being
+     * created/deleted/updated within the service are not considered service
+     * updates for the purpose of this timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (updateTime_ != null) {
+          updateTime_ =
+              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        } else {
+          updateTime_ = value;
+        }
+        onChanged();
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the service was last updated. Note: endpoints being
+     * created/deleted/updated within the service are not considered service
+     * updates for the purpose of this timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+        onChanged();
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the service was last updated. Note: endpoints being
+     * created/deleted/updated within the service are not considered service
+     * updates for the purpose of this timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+
+      onChanged();
+      return getUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the service was last updated. Note: endpoints being
+     * created/deleted/updated within the service are not considered service
+     * updates for the purpose of this timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the service was last updated. Note: endpoints being
+     * created/deleted/updated within the service are not considered service
+     * updates for the purpose of this timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
     }
 
     @java.lang.Override

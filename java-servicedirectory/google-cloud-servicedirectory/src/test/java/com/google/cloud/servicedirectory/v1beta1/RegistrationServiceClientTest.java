@@ -39,6 +39,7 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -98,6 +99,8 @@ public class RegistrationServiceClientTest {
         Namespace.newBuilder()
             .setName(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
             .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockRegistrationService.addResponse(expectedResponse);
 
@@ -143,6 +146,8 @@ public class RegistrationServiceClientTest {
         Namespace.newBuilder()
             .setName(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
             .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockRegistrationService.addResponse(expectedResponse);
 
@@ -276,6 +281,8 @@ public class RegistrationServiceClientTest {
         Namespace.newBuilder()
             .setName(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
             .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockRegistrationService.addResponse(expectedResponse);
 
@@ -315,6 +322,8 @@ public class RegistrationServiceClientTest {
         Namespace.newBuilder()
             .setName(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
             .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockRegistrationService.addResponse(expectedResponse);
 
@@ -354,6 +363,8 @@ public class RegistrationServiceClientTest {
         Namespace.newBuilder()
             .setName(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
             .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockRegistrationService.addResponse(expectedResponse);
 
@@ -466,6 +477,8 @@ public class RegistrationServiceClientTest {
                 ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
             .putAllMetadata(new HashMap<String, String>())
             .addAllEndpoints(new ArrayList<Endpoint>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockRegistrationService.addResponse(expectedResponse);
 
@@ -513,6 +526,8 @@ public class RegistrationServiceClientTest {
                 ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
             .putAllMetadata(new HashMap<String, String>())
             .addAllEndpoints(new ArrayList<Endpoint>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockRegistrationService.addResponse(expectedResponse);
 
@@ -648,6 +663,8 @@ public class RegistrationServiceClientTest {
                 ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
             .putAllMetadata(new HashMap<String, String>())
             .addAllEndpoints(new ArrayList<Endpoint>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockRegistrationService.addResponse(expectedResponse);
 
@@ -689,6 +706,8 @@ public class RegistrationServiceClientTest {
                 ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
             .putAllMetadata(new HashMap<String, String>())
             .addAllEndpoints(new ArrayList<Endpoint>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockRegistrationService.addResponse(expectedResponse);
 
@@ -730,6 +749,8 @@ public class RegistrationServiceClientTest {
                 ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
             .putAllMetadata(new HashMap<String, String>())
             .addAllEndpoints(new ArrayList<Endpoint>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockRegistrationService.addResponse(expectedResponse);
 
@@ -844,6 +865,9 @@ public class RegistrationServiceClientTest {
             .setAddress("address-1147692044")
             .setPort(3446913)
             .putAllMetadata(new HashMap<String, String>())
+            .setNetwork(NetworkName.of("[PROJECT]", "[NETWORK]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockRegistrationService.addResponse(expectedResponse);
 
@@ -893,6 +917,9 @@ public class RegistrationServiceClientTest {
             .setAddress("address-1147692044")
             .setPort(3446913)
             .putAllMetadata(new HashMap<String, String>())
+            .setNetwork(NetworkName.of("[PROJECT]", "[NETWORK]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockRegistrationService.addResponse(expectedResponse);
 
@@ -1030,6 +1057,9 @@ public class RegistrationServiceClientTest {
             .setAddress("address-1147692044")
             .setPort(3446913)
             .putAllMetadata(new HashMap<String, String>())
+            .setNetwork(NetworkName.of("[PROJECT]", "[NETWORK]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockRegistrationService.addResponse(expectedResponse);
 
@@ -1075,6 +1105,9 @@ public class RegistrationServiceClientTest {
             .setAddress("address-1147692044")
             .setPort(3446913)
             .putAllMetadata(new HashMap<String, String>())
+            .setNetwork(NetworkName.of("[PROJECT]", "[NETWORK]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockRegistrationService.addResponse(expectedResponse);
 
@@ -1118,6 +1151,9 @@ public class RegistrationServiceClientTest {
             .setAddress("address-1147692044")
             .setPort(3446913)
             .putAllMetadata(new HashMap<String, String>())
+            .setNetwork(NetworkName.of("[PROJECT]", "[NETWORK]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockRegistrationService.addResponse(expectedResponse);
 
@@ -1236,7 +1272,8 @@ public class RegistrationServiceClientTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+            .setResource(
+                ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -1263,7 +1300,8 @@ public class RegistrationServiceClientTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+              .setResource(
+                  ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
@@ -1285,7 +1323,8 @@ public class RegistrationServiceClientTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+            .setResource(
+                ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
             .setPolicy(Policy.newBuilder().build())
             .build();
 
@@ -1312,7 +1351,8 @@ public class RegistrationServiceClientTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+              .setResource(
+                  ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
               .setPolicy(Policy.newBuilder().build())
               .build();
       client.setIamPolicy(request);
@@ -1330,7 +1370,8 @@ public class RegistrationServiceClientTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+            .setResource(
+                ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -1357,7 +1398,8 @@ public class RegistrationServiceClientTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+              .setResource(
+                  ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);

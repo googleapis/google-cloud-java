@@ -934,7 +934,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a namespace, and returns the new Namespace.
+     * Creates a namespace, and returns the new namespace.
      * </pre>
      */
     public void createNamespace(
@@ -1010,7 +1010,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a service, and returns the new Service.
+     * Creates a service, and returns the new service.
      * </pre>
      */
     public void createService(
@@ -1084,7 +1084,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a endpoint, and returns the new Endpoint.
+     * Creates an endpoint, and returns the new endpoint.
      * </pre>
      */
     public void createEndpoint(
@@ -1114,7 +1114,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Gets a endpoint.
+     * Gets an endpoint.
      * </pre>
      */
     public void getEndpoint(
@@ -1129,7 +1129,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Updates a endpoint.
+     * Updates an endpoint.
      * </pre>
      */
     public void updateEndpoint(
@@ -1144,7 +1144,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a endpoint.
+     * Deletes an endpoint.
      * </pre>
      */
     public void deleteEndpoint(
@@ -1359,7 +1359,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a namespace, and returns the new Namespace.
+     * Creates a namespace, and returns the new namespace.
      * </pre>
      */
     public void createNamespace(
@@ -1445,7 +1445,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a service, and returns the new Service.
+     * Creates a service, and returns the new service.
      * </pre>
      */
     public void createService(
@@ -1528,7 +1528,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a endpoint, and returns the new Endpoint.
+     * Creates an endpoint, and returns the new endpoint.
      * </pre>
      */
     public void createEndpoint(
@@ -1562,7 +1562,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Gets a endpoint.
+     * Gets an endpoint.
      * </pre>
      */
     public void getEndpoint(
@@ -1579,7 +1579,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Updates a endpoint.
+     * Updates an endpoint.
      * </pre>
      */
     public void updateEndpoint(
@@ -1596,7 +1596,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a endpoint.
+     * Deletes an endpoint.
      * </pre>
      */
     public void deleteEndpoint(
@@ -1693,7 +1693,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a namespace, and returns the new Namespace.
+     * Creates a namespace, and returns the new namespace.
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1beta1.Namespace createNamespace(
@@ -1759,7 +1759,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a service, and returns the new Service.
+     * Creates a service, and returns the new service.
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1beta1.Service createService(
@@ -1825,7 +1825,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a endpoint, and returns the new Endpoint.
+     * Creates an endpoint, and returns the new endpoint.
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1beta1.Endpoint createEndpoint(
@@ -1851,7 +1851,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Gets a endpoint.
+     * Gets an endpoint.
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1beta1.Endpoint getEndpoint(
@@ -1864,7 +1864,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Updates a endpoint.
+     * Updates an endpoint.
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1beta1.Endpoint updateEndpoint(
@@ -1877,7 +1877,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a endpoint.
+     * Deletes an endpoint.
      * </pre>
      */
     public com.google.protobuf.Empty deleteEndpoint(
@@ -1959,7 +1959,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a namespace, and returns the new Namespace.
+     * Creates a namespace, and returns the new namespace.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2029,7 +2029,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a service, and returns the new Service.
+     * Creates a service, and returns the new service.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2099,7 +2099,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a endpoint, and returns the new Endpoint.
+     * Creates an endpoint, and returns the new endpoint.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2127,7 +2127,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Gets a endpoint.
+     * Gets an endpoint.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2141,7 +2141,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Updates a endpoint.
+     * Updates an endpoint.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2155,7 +2155,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a endpoint.
+     * Deletes an endpoint.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
