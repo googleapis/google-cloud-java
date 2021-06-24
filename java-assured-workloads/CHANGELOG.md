@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-assured-workloads/compare/v0.3.2...v0.4.0) (2021-06-23)
+
+
+### Features
+
+* Add 'resource_settings' field to provide custom properties (ids) for the provisioned projects ([#196](https://www.github.com/googleapis/java-assured-workloads/issues/196)) ([74290c4](https://www.github.com/googleapis/java-assured-workloads/commit/74290c48c4e3f45cdab2722f9b84fc5fecdc4d72))
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#226](https://www.github.com/googleapis/java-assured-workloads/issues/226)) ([aa47373](https://www.github.com/googleapis/java-assured-workloads/commit/aa47373d1384e876ec8f5affe0ebe511e75b612c))
+* add HIPAA and HITRUST compliance regimes ([#199](https://www.github.com/googleapis/java-assured-workloads/issues/199)) ([ade2142](https://www.github.com/googleapis/java-assured-workloads/commit/ade2142a127abe6af89d177b99e5737102048672))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-assured-workloads/issues/1130)) ([#241](https://www.github.com/googleapis/java-assured-workloads/issues/241)) ([accfe9b](https://www.github.com/googleapis/java-assured-workloads/commit/accfe9b9b3185d73e44a02f61a5f4c7d5159f964))
+* release scripts from issuing overlapping phases ([#210](https://www.github.com/googleapis/java-assured-workloads/issues/210)) ([5259316](https://www.github.com/googleapis/java-assured-workloads/commit/5259316954f32c6aece20bee0d66bceb1c854338))
+* typo ([#208](https://www.github.com/googleapis/java-assured-workloads/issues/208)) ([717be88](https://www.github.com/googleapis/java-assured-workloads/commit/717be889a31625d283afce85cfa40dc04e2b6442))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#205](https://www.github.com/googleapis/java-assured-workloads/issues/205)) ([dacb240](https://www.github.com/googleapis/java-assured-workloads/commit/dacb240d3740f52c3b58847091a7d3dd1ebf1af7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#211](https://www.github.com/googleapis/java-assured-workloads/issues/211)) ([04a854e](https://www.github.com/googleapis/java-assured-workloads/commit/04a854e599adb02b64f553ebdf59af29d79530db))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#214](https://www.github.com/googleapis/java-assured-workloads/issues/214)) ([a1b6697](https://www.github.com/googleapis/java-assured-workloads/commit/a1b6697a51347eabecf9e6f0e2f9eecf75ec2774))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#222](https://www.github.com/googleapis/java-assured-workloads/issues/222)) ([1bf4802](https://www.github.com/googleapis/java-assured-workloads/commit/1bf48020447b3404e0a02b561416f17f799f534f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#225](https://www.github.com/googleapis/java-assured-workloads/issues/225)) ([812753c](https://www.github.com/googleapis/java-assured-workloads/commit/812753c0e6ef01c199c48d0d40de1e939b3dacfb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#231](https://www.github.com/googleapis/java-assured-workloads/issues/231)) ([f7bc33c](https://www.github.com/googleapis/java-assured-workloads/commit/f7bc33c3c422600baead459892abea9c356ec7f9))
+
 ### [0.3.2](https://www.github.com/googleapis/java-assured-workloads/compare/v0.3.1...v0.3.2) (2021-03-17)
 
 
