@@ -1,7 +1,7 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-debugger-client:0.0.0:0.0.1-SNAPSHOT
-grpc-google-cloud-debugger-client-v2:0.0.0:0.0.1-SNAPSHOT
-proto-google-cloud-debugger-client-v2:0.0.0:0.0.1-SNAPSHOT
-proto-google-devtools-source-protos:0.0.0:0.0.1-SNAPSHOT
+google-cloud-debugger-client:0.1.0:0.1.0
+grpc-google-cloud-debugger-client-v2:0.1.0:0.1.0
+proto-google-cloud-debugger-client-v2:0.1.0:0.1.0
+proto-google-devtools-source-protos:0.1.0:0.1.0
