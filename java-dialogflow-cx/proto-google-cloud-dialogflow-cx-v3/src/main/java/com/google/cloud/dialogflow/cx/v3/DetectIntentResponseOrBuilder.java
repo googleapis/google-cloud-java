@@ -141,4 +141,46 @@ public interface DetectIntentResponseOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3.OutputAudioConfig output_audio_config = 5;</code>
    */
   com.google.cloud.dialogflow.cx.v3.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Response type.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType response_type = 6;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for responseType.
+   */
+  int getResponseTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Response type.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType response_type = 6;
+   * </code>
+   *
+   * @return The responseType.
+   */
+  com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType getResponseType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the partial response can be cancelled when a later
+   * response arrives. e.g. if the agent specified some music as partial
+   * response, it can be cancelled.
+   * </pre>
+   *
+   * <code>bool allow_cancellation = 7;</code>
+   *
+   * @return The allowCancellation.
+   */
+  boolean getAllowCancellation();
 }

@@ -83,14 +83,16 @@ public interface AgentOrBuilder
    *
    *
    * <pre>
-   * Immutable. The default language of the agent as a language tag.
+   * Required. Immutable. The default language of the agent as a language tag.
    * See [Language
    * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
    * for a list of the currently supported language codes.
    * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
    * </pre>
    *
-   * <code>string default_language_code = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * string default_language_code = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The defaultLanguageCode.
    */
@@ -99,14 +101,16 @@ public interface AgentOrBuilder
    *
    *
    * <pre>
-   * Immutable. The default language of the agent as a language tag.
+   * Required. Immutable. The default language of the agent as a language tag.
    * See [Language
    * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
    * for a list of the currently supported language codes.
    * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
    * </pre>
    *
-   * <code>string default_language_code = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * string default_language_code = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for defaultLanguageCode.
    */

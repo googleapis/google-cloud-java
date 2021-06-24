@@ -186,4 +186,20 @@ public interface StreamingDetectIntentRequestOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3.OutputAudioConfig output_audio_config = 4;</code>
    */
   com.google.cloud.dialogflow.cx.v3.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable partial detect intent response. If this flag is not enabled,
+   * response stream still contains only one final `DetectIntentResponse` even
+   * if some `Fulfillment`s in the agent have been configured to return partial
+   * responses.
+   * </pre>
+   *
+   * <code>bool enable_partial_response = 5;</code>
+   *
+   * @return The enablePartialResponse.
+   */
+  boolean getEnablePartialResponse();
 }

@@ -108,6 +108,27 @@ public interface FulfillmentOrBuilder
    *
    *
    * <pre>
+   * Whether Dialogflow should return currently queued fulfillment response
+   * messages in streaming APIs. If a webhook is specified, it happens before
+   * Dialogflow invokes webhook.
+   * Warning:
+   * 1) This flag only affects streaming API. Responses are still queued
+   * and returned once in non-streaming API.
+   * 2) The flag can be enabled in any fulfillment but only the first 3 partial
+   * responses will be returned. You may only want to apply it to fulfillments
+   * that have slow webhooks.
+   * </pre>
+   *
+   * <code>bool return_partial_responses = 8;</code>
+   *
+   * @return The returnPartialResponses.
+   */
+  boolean getReturnPartialResponses();
+
+  /**
+   *
+   *
+   * <pre>
    * The tag used by the webhook to identify which fulfillment is being called.
    * This field is required if `webhook` is specified.
    * </pre>

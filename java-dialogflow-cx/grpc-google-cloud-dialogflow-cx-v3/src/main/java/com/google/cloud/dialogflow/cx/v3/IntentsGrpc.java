@@ -339,6 +339,9 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Creates an intent in the specified agent.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void createIntent(
@@ -353,6 +356,9 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Updates the specified intent.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void updateIntent(
@@ -367,6 +373,9 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Deletes the specified intent.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void deleteIntent(
@@ -467,6 +476,9 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Creates an intent in the specified agent.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void createIntent(
@@ -483,6 +495,9 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Updates the specified intent.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void updateIntent(
@@ -499,6 +514,9 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Deletes the specified intent.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void deleteIntent(
@@ -560,6 +578,9 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Creates an intent in the specified agent.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Intent createIntent(
@@ -573,6 +594,9 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Updates the specified intent.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Intent updateIntent(
@@ -586,6 +610,9 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Deletes the specified intent.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.protobuf.Empty deleteIntent(
@@ -646,6 +673,9 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Creates an intent in the specified agent.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -660,6 +690,9 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Updates the specified intent.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -674,6 +707,9 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Deletes the specified intent.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

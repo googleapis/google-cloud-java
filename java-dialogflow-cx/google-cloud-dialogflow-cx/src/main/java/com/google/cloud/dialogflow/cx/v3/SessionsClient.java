@@ -240,6 +240,7 @@ public class SessionsClient implements BackgroundResource {
    *           .setQueryParams(QueryParameters.newBuilder().build())
    *           .setQueryInput(QueryInput.newBuilder().build())
    *           .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+   *           .setEnablePartialResponse(true)
    *           .build();
    *   bidiStream.send(request);
    *   for (StreamingDetectIntentResponse response : bidiStream) {

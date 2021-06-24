@@ -529,6 +529,9 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Creates a flow in the specified agent.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void createFlow(
@@ -582,6 +585,9 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Updates the specified flow.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void updateFlow(
@@ -596,6 +602,9 @@ public final class FlowsGrpc {
      * <pre>
      * Trains the specified flow. Note that only the flow in 'draft' environment
      * is trained.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void trainFlow(
@@ -642,6 +651,9 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Imports the specified flow to the specified agent from a binary file.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void importFlow(
@@ -757,6 +769,9 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Creates a flow in the specified agent.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void createFlow(
@@ -814,6 +829,9 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Updates the specified flow.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void updateFlow(
@@ -829,6 +847,9 @@ public final class FlowsGrpc {
      * <pre>
      * Trains the specified flow. Note that only the flow in 'draft' environment
      * is trained.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void trainFlow(
@@ -880,6 +901,9 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Imports the specified flow to the specified agent from a binary file.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void importFlow(
@@ -929,6 +953,9 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Creates a flow in the specified agent.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Flow createFlow(
@@ -981,6 +1008,9 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Updates the specified flow.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Flow updateFlow(
@@ -995,6 +1025,9 @@ public final class FlowsGrpc {
      * <pre>
      * Trains the specified flow. Note that only the flow in 'draft' environment
      * is trained.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.longrunning.Operation trainFlow(
@@ -1037,6 +1070,9 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Imports the specified flow to the specified agent from a binary file.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.longrunning.Operation importFlow(
@@ -1084,6 +1120,9 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Creates a flow in the specified agent.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1139,6 +1178,9 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Updates the specified flow.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1154,6 +1196,9 @@ public final class FlowsGrpc {
      * <pre>
      * Trains the specified flow. Note that only the flow in 'draft' environment
      * is trained.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1199,6 +1244,9 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Imports the specified flow to the specified agent from a binary file.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

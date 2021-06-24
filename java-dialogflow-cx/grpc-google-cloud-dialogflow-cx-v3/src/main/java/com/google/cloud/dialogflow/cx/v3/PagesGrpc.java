@@ -335,6 +335,9 @@ public final class PagesGrpc {
      *
      * <pre>
      * Creates a page in the specified flow.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void createPage(
@@ -348,6 +351,9 @@ public final class PagesGrpc {
      *
      * <pre>
      * Updates the specified page.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void updatePage(
@@ -361,6 +367,9 @@ public final class PagesGrpc {
      *
      * <pre>
      * Deletes the specified page.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void deletePage(
@@ -458,6 +467,9 @@ public final class PagesGrpc {
      *
      * <pre>
      * Creates a page in the specified flow.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void createPage(
@@ -472,6 +484,9 @@ public final class PagesGrpc {
      *
      * <pre>
      * Updates the specified page.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void updatePage(
@@ -486,6 +501,9 @@ public final class PagesGrpc {
      *
      * <pre>
      * Deletes the specified page.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void deletePage(
@@ -545,6 +563,9 @@ public final class PagesGrpc {
      *
      * <pre>
      * Creates a page in the specified flow.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Page createPage(
@@ -558,6 +579,9 @@ public final class PagesGrpc {
      *
      * <pre>
      * Updates the specified page.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Page updatePage(
@@ -571,6 +595,9 @@ public final class PagesGrpc {
      *
      * <pre>
      * Deletes the specified page.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.protobuf.Empty deletePage(
@@ -631,6 +658,9 @@ public final class PagesGrpc {
      *
      * <pre>
      * Creates a page in the specified flow.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -645,6 +675,9 @@ public final class PagesGrpc {
      *
      * <pre>
      * Updates the specified page.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -659,6 +692,9 @@ public final class PagesGrpc {
      *
      * <pre>
      * Deletes the specified page.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deletePage(

@@ -389,6 +389,9 @@ public class PagesClient implements BackgroundResource {
   /**
    * Creates a page in the specified flow.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -417,6 +420,9 @@ public class PagesClient implements BackgroundResource {
   /**
    * Creates a page in the specified flow.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -442,6 +448,9 @@ public class PagesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a page in the specified flow.
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *
@@ -469,6 +478,9 @@ public class PagesClient implements BackgroundResource {
   /**
    * Creates a page in the specified flow.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -493,6 +505,9 @@ public class PagesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified page.
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *
@@ -519,6 +534,9 @@ public class PagesClient implements BackgroundResource {
   /**
    * Updates the specified page.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -544,6 +562,9 @@ public class PagesClient implements BackgroundResource {
   /**
    * Updates the specified page.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -567,6 +588,9 @@ public class PagesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified page.
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *
@@ -592,6 +616,9 @@ public class PagesClient implements BackgroundResource {
   /**
    * Deletes the specified page.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -615,6 +642,9 @@ public class PagesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified page.
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *
@@ -640,6 +670,9 @@ public class PagesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified page.
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *
