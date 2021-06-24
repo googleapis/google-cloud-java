@@ -1,0 +1,16 @@
+{
+  "name": "resource-settings",
+  "name_pretty": "Resource Settings API",
+  "product_documentation": "https://cloud.google.com/resource-manager/docs/reference/resource-settings/rest",
+  "api_description": "allows users to control and modify the behavior of their GCP resources (e.g., VM, firewall, Project, etc.) across the Cloud Resource Hierarchy.",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-resource-settings/latest/index.html",
+  "release_level": "beta",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-resource-settings",
+  "repo_short": "java-resource-settings",
+  "distribution_name": "com.google.cloud:google-cloud-resource-settings",
+  "api_id": "resource-settings.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
