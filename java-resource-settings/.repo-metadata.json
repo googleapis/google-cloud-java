@@ -10,7 +10,7 @@
   "repo": "googleapis/java-resource-settings",
   "repo_short": "java-resource-settings",
   "distribution_name": "com.google.cloud:google-cloud-resource-settings",
-  "api_id": "resource-settings.googleapis.com",
+  "api_id": "resourcesettings.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
