@@ -248,10 +248,10 @@ public class FlowValidationResultName implements ResourceName {
     }
 
     private Builder(FlowValidationResultName flowValidationResultName) {
-      project = flowValidationResultName.project;
-      location = flowValidationResultName.location;
-      agent = flowValidationResultName.agent;
-      flow = flowValidationResultName.flow;
+      this.project = flowValidationResultName.project;
+      this.location = flowValidationResultName.location;
+      this.agent = flowValidationResultName.agent;
+      this.flow = flowValidationResultName.flow;
     }
 
     public FlowValidationResultName build() {

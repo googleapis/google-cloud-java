@@ -284,11 +284,11 @@ public class TestCaseResultName implements ResourceName {
     }
 
     private Builder(TestCaseResultName testCaseResultName) {
-      project = testCaseResultName.project;
-      location = testCaseResultName.location;
-      agent = testCaseResultName.agent;
-      testCase = testCaseResultName.testCase;
-      result = testCaseResultName.result;
+      this.project = testCaseResultName.project;
+      this.location = testCaseResultName.location;
+      this.agent = testCaseResultName.agent;
+      this.testCase = testCaseResultName.testCase;
+      this.result = testCaseResultName.result;
     }
 
     public TestCaseResultName build() {

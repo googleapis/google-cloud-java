@@ -168,6 +168,9 @@ public class FlowsClient implements BackgroundResource {
   /**
    * Creates a flow in the specified agent.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -196,6 +199,9 @@ public class FlowsClient implements BackgroundResource {
   /**
    * Creates a flow in the specified agent.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -221,6 +227,9 @@ public class FlowsClient implements BackgroundResource {
   /**
    * Creates a flow in the specified agent.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -245,6 +254,9 @@ public class FlowsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a flow in the specified agent.
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *
@@ -592,6 +604,9 @@ public class FlowsClient implements BackgroundResource {
   /**
    * Updates the specified flow.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -616,6 +631,9 @@ public class FlowsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified flow.
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *
@@ -642,6 +660,9 @@ public class FlowsClient implements BackgroundResource {
   /**
    * Updates the specified flow.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -666,6 +687,9 @@ public class FlowsClient implements BackgroundResource {
   /**
    * Trains the specified flow. Note that only the flow in 'draft' environment is trained.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -689,6 +713,9 @@ public class FlowsClient implements BackgroundResource {
   /**
    * Trains the specified flow. Note that only the flow in 'draft' environment is trained.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -710,6 +737,9 @@ public class FlowsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Trains the specified flow. Note that only the flow in 'draft' environment is trained.
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *
@@ -734,6 +764,9 @@ public class FlowsClient implements BackgroundResource {
   /**
    * Trains the specified flow. Note that only the flow in 'draft' environment is trained.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -756,6 +789,9 @@ public class FlowsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Trains the specified flow. Note that only the flow in 'draft' environment is trained.
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *
@@ -939,6 +975,9 @@ public class FlowsClient implements BackgroundResource {
   /**
    * Imports the specified flow to the specified agent from a binary file.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -963,6 +1002,9 @@ public class FlowsClient implements BackgroundResource {
   /**
    * Imports the specified flow to the specified agent from a binary file.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -986,6 +1028,9 @@ public class FlowsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Imports the specified flow to the specified agent from a binary file.
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *

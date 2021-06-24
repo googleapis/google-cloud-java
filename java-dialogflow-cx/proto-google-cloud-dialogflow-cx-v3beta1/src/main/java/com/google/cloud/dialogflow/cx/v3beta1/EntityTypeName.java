@@ -247,10 +247,10 @@ public class EntityTypeName implements ResourceName {
     }
 
     private Builder(EntityTypeName entityTypeName) {
-      project = entityTypeName.project;
-      location = entityTypeName.location;
-      agent = entityTypeName.agent;
-      entityType = entityTypeName.entityType;
+      this.project = entityTypeName.project;
+      this.location = entityTypeName.location;
+      this.agent = entityTypeName.agent;
+      this.entityType = entityTypeName.entityType;
     }
 
     public EntityTypeName build() {

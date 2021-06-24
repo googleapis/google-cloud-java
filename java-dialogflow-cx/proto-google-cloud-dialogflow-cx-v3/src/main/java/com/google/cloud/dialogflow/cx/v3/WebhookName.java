@@ -244,10 +244,10 @@ public class WebhookName implements ResourceName {
     }
 
     private Builder(WebhookName webhookName) {
-      project = webhookName.project;
-      location = webhookName.location;
-      agent = webhookName.agent;
-      webhook = webhookName.webhook;
+      this.project = webhookName.project;
+      this.location = webhookName.location;
+      this.agent = webhookName.agent;
+      this.webhook = webhookName.webhook;
     }
 
     public WebhookName build() {

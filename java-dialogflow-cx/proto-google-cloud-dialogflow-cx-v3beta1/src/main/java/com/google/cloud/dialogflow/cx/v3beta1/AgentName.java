@@ -211,9 +211,9 @@ public class AgentName implements ResourceName {
     }
 
     private Builder(AgentName agentName) {
-      project = agentName.project;
-      location = agentName.location;
-      agent = agentName.agent;
+      this.project = agentName.project;
+      this.location = agentName.location;
+      this.agent = agentName.agent;
     }
 
     public AgentName build() {

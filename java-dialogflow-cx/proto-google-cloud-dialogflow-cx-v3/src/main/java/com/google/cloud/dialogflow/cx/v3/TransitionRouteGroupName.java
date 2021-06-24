@@ -284,11 +284,11 @@ public class TransitionRouteGroupName implements ResourceName {
     }
 
     private Builder(TransitionRouteGroupName transitionRouteGroupName) {
-      project = transitionRouteGroupName.project;
-      location = transitionRouteGroupName.location;
-      agent = transitionRouteGroupName.agent;
-      flow = transitionRouteGroupName.flow;
-      transitionRouteGroup = transitionRouteGroupName.transitionRouteGroup;
+      this.project = transitionRouteGroupName.project;
+      this.location = transitionRouteGroupName.location;
+      this.agent = transitionRouteGroupName.agent;
+      this.flow = transitionRouteGroupName.flow;
+      this.transitionRouteGroup = transitionRouteGroupName.transitionRouteGroup;
     }
 
     public TransitionRouteGroupName build() {

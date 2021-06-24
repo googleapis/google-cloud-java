@@ -212,9 +212,9 @@ public class AgentValidationResultName implements ResourceName {
     }
 
     private Builder(AgentValidationResultName agentValidationResultName) {
-      project = agentValidationResultName.project;
-      location = agentValidationResultName.location;
-      agent = agentValidationResultName.agent;
+      this.project = agentValidationResultName.project;
+      this.location = agentValidationResultName.location;
+      this.agent = agentValidationResultName.agent;
     }
 
     public AgentValidationResultName build() {

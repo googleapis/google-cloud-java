@@ -275,11 +275,11 @@ public class VersionName implements ResourceName {
     }
 
     private Builder(VersionName versionName) {
-      project = versionName.project;
-      location = versionName.location;
-      agent = versionName.agent;
-      flow = versionName.flow;
-      version = versionName.version;
+      this.project = versionName.project;
+      this.location = versionName.location;
+      this.agent = versionName.agent;
+      this.flow = versionName.flow;
+      this.version = versionName.version;
     }
 
     public VersionName build() {

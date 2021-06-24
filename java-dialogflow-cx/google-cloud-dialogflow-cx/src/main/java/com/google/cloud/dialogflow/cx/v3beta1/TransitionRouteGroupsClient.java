@@ -472,6 +472,9 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    * Creates an [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup] in
    * the specified flow.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -505,6 +508,9 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
   /**
    * Creates an [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup] in
    * the specified flow.
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *
@@ -543,6 +549,9 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    * Creates an [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup] in
    * the specified flow.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -579,6 +588,9 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    * Creates an [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup] in
    * the specified flow.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -614,6 +626,9 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    * Updates the specified
    * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -645,6 +660,9 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    * Updates the specified
    * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -674,6 +692,9 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    * Updates the specified
    * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -701,6 +722,9 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
   /**
    * Deletes the specified
    * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *
@@ -733,6 +757,9 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    * Deletes the specified
    * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -762,6 +789,9 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
   /**
    * Deletes the specified
    * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *
@@ -795,6 +825,9 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
   /**
    * Deletes the specified
    * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *

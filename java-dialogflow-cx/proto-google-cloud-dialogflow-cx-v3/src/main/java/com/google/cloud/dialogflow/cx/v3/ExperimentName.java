@@ -284,11 +284,11 @@ public class ExperimentName implements ResourceName {
     }
 
     private Builder(ExperimentName experimentName) {
-      project = experimentName.project;
-      location = experimentName.location;
-      agent = experimentName.agent;
-      environment = experimentName.environment;
-      experiment = experimentName.experiment;
+      this.project = experimentName.project;
+      this.location = experimentName.location;
+      this.agent = experimentName.agent;
+      this.environment = experimentName.environment;
+      this.experiment = experimentName.experiment;
     }
 
     public ExperimentName build() {

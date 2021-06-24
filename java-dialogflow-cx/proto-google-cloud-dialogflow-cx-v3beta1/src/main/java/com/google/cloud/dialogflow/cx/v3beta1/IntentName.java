@@ -244,10 +244,10 @@ public class IntentName implements ResourceName {
     }
 
     private Builder(IntentName intentName) {
-      project = intentName.project;
-      location = intentName.location;
-      agent = intentName.agent;
-      intent = intentName.intent;
+      this.project = intentName.project;
+      this.location = intentName.location;
+      this.agent = intentName.agent;
+      this.intent = intentName.intent;
     }
 
     public IntentName build() {

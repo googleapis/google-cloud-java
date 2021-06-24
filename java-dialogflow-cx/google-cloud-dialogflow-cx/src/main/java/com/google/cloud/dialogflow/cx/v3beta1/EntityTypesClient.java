@@ -514,6 +514,9 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates the specified entity type.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -541,6 +544,9 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates the specified entity type.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -565,6 +571,9 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified entity type.
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *
@@ -591,6 +600,9 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes the specified entity type.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -616,6 +628,9 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes the specified entity type.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -639,6 +654,9 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified entity type.
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *
@@ -665,6 +683,9 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified entity type.
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *

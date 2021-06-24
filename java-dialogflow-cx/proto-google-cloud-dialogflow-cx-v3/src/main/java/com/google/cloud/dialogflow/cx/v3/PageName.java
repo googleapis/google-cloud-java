@@ -274,11 +274,11 @@ public class PageName implements ResourceName {
     }
 
     private Builder(PageName pageName) {
-      project = pageName.project;
-      location = pageName.location;
-      agent = pageName.agent;
-      flow = pageName.flow;
-      page = pageName.page;
+      this.project = pageName.project;
+      this.location = pageName.location;
+      this.agent = pageName.agent;
+      this.flow = pageName.flow;
+      this.page = pageName.page;
     }
 
     public PageName build() {

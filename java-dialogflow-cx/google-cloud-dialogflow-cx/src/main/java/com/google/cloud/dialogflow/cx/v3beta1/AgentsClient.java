@@ -392,6 +392,9 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Creates an agent in the specified location.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -420,6 +423,9 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Creates an agent in the specified location.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -445,6 +451,9 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Creates an agent in the specified location.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -469,6 +478,9 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Creates an agent in the specified location.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -491,6 +503,9 @@ public class AgentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified agent.
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *
@@ -517,6 +532,9 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Updates the specified agent.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -540,6 +558,9 @@ public class AgentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified agent.
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *
@@ -739,6 +760,9 @@ public class AgentsClient implements BackgroundResource {
    * <p>Replaces the current agent with a new one. Note that all existing resources in agent (e.g.
    * intents, entity types, flows) will be removed.
    *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -764,6 +788,9 @@ public class AgentsClient implements BackgroundResource {
    *
    * <p>Replaces the current agent with a new one. Note that all existing resources in agent (e.g.
    * intents, entity types, flows) will be removed.
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *
@@ -791,6 +818,9 @@ public class AgentsClient implements BackgroundResource {
    *
    * <p>Replaces the current agent with a new one. Note that all existing resources in agent (e.g.
    * intents, entity types, flows) will be removed.
+   *
+   * <p>Note: You should always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
    * <p>Sample code:
    *

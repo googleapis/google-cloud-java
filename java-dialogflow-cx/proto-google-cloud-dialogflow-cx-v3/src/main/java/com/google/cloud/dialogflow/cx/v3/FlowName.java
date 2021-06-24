@@ -244,10 +244,10 @@ public class FlowName implements ResourceName {
     }
 
     private Builder(FlowName flowName) {
-      project = flowName.project;
-      location = flowName.location;
-      agent = flowName.agent;
-      flow = flowName.flow;
+      this.project = flowName.project;
+      this.location = flowName.location;
+      this.agent = flowName.agent;
+      this.flow = flowName.flow;
     }
 
     public FlowName build() {

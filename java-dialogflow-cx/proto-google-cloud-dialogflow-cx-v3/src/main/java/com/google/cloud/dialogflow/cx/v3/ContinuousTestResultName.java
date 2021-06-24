@@ -292,11 +292,11 @@ public class ContinuousTestResultName implements ResourceName {
     }
 
     private Builder(ContinuousTestResultName continuousTestResultName) {
-      project = continuousTestResultName.project;
-      location = continuousTestResultName.location;
-      agent = continuousTestResultName.agent;
-      environment = continuousTestResultName.environment;
-      continuousTestResult = continuousTestResultName.continuousTestResult;
+      this.project = continuousTestResultName.project;
+      this.location = continuousTestResultName.location;
+      this.agent = continuousTestResultName.agent;
+      this.environment = continuousTestResultName.environment;
+      this.continuousTestResult = continuousTestResultName.continuousTestResult;
     }
 
     public ContinuousTestResultName build() {

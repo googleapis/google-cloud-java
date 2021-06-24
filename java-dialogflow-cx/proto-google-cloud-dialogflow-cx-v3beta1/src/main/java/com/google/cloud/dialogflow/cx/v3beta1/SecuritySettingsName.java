@@ -215,9 +215,9 @@ public class SecuritySettingsName implements ResourceName {
     }
 
     private Builder(SecuritySettingsName securitySettingsName) {
-      project = securitySettingsName.project;
-      location = securitySettingsName.location;
-      securitySettings = securitySettingsName.securitySettings;
+      this.project = securitySettingsName.project;
+      this.location = securitySettingsName.location;
+      this.securitySettings = securitySettingsName.securitySettings;
     }
 
     public SecuritySettingsName build() {
