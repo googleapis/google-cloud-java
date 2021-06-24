@@ -65,6 +65,7 @@
     <google.core.version>1.95.3</google.core.version>
     <google.auth.version>0.26.0</google.auth.version>
     <google.http-client.version>1.39.2</google.http-client.version>
+    <google.oauth-client.version>1.31.5</google.oauth-client.version>
     <google.api-client.version>1.32.1</google.api-client.version>
     <gson.version>2.8.7</gson.version>
     <threeten.version>1.5.1</threeten.version>
@@ -76,6 +77,8 @@
     <errorprone.version>2.7.1</errorprone.version>
     <jackson.version>2.12.3</jackson.version>
     <codec.version>1.15</codec.version>
+    <httpcomponents.httpcore.version>4.4.14</httpcomponents.httpcore.version>
+    <httpcomponents.httpclient.version>4.5.13</httpcomponents.httpclient.version>
   </properties>
 
   <dependencyManagement>
@@ -114,6 +117,19 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      
+      
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpcore</artifactId>
+        <version>${httpcomponents.httpcore.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <version>${httpcomponents.httpclient.version}</version>
+      </dependency>
+
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>api-common</artifactId>
@@ -152,6 +168,13 @@
         <groupId>com.google.http-client</groupId>
         <artifactId>google-http-client-bom</artifactId>
         <version>${google.http-client.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.oauth-client</groupId>
+        <artifactId>google-oauth-client-bom</artifactId>
+        <version>${google.oauth-client.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
