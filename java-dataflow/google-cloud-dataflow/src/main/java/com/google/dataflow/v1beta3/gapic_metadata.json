@@ -1,0 +1,117 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.dataflow.v1beta3",
+  "libraryPackage": "com.google.dataflow.v1beta3",
+  "services": {
+    "JobsV1Beta3": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "JobsV1Beta3Client",
+          "rpcs": {
+            "AggregatedListJobs": {
+              "methods": ["aggregatedListJobs", "aggregatedListJobsPagedCallable", "aggregatedListJobsCallable"]
+            },
+            "CheckActiveJobs": {
+              "methods": ["checkActiveJobs", "checkActiveJobsCallable"]
+            },
+            "CreateJob": {
+              "methods": ["createJob", "createJobCallable"]
+            },
+            "GetJob": {
+              "methods": ["getJob", "getJobCallable"]
+            },
+            "ListJobs": {
+              "methods": ["listJobs", "listJobsPagedCallable", "listJobsCallable"]
+            },
+            "SnapshotJob": {
+              "methods": ["snapshotJob", "snapshotJobCallable"]
+            },
+            "UpdateJob": {
+              "methods": ["updateJob", "updateJobCallable"]
+            }
+          }
+        }
+      }
+    },
+    "MessagesV1Beta3": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MessagesV1Beta3Client",
+          "rpcs": {
+            "ListJobMessages": {
+              "methods": ["listJobMessages", "listJobMessagesPagedCallable", "listJobMessagesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "MetricsV1Beta3": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MetricsV1Beta3Client",
+          "rpcs": {
+            "GetJobExecutionDetails": {
+              "methods": ["getJobExecutionDetails", "getJobExecutionDetailsPagedCallable", "getJobExecutionDetailsCallable"]
+            },
+            "GetJobMetrics": {
+              "methods": ["getJobMetrics", "getJobMetricsCallable"]
+            },
+            "GetStageExecutionDetails": {
+              "methods": ["getStageExecutionDetails", "getStageExecutionDetailsPagedCallable", "getStageExecutionDetailsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SnapshotsV1Beta3": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SnapshotsV1Beta3Client",
+          "rpcs": {
+            "DeleteSnapshot": {
+              "methods": ["deleteSnapshot", "deleteSnapshotCallable"]
+            },
+            "GetSnapshot": {
+              "methods": ["getSnapshot", "getSnapshotCallable"]
+            },
+            "ListSnapshots": {
+              "methods": ["listSnapshots", "listSnapshotsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "TemplatesService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TemplatesServiceClient",
+          "rpcs": {
+            "CreateJobFromTemplate": {
+              "methods": ["createJobFromTemplate", "createJobFromTemplateCallable"]
+            },
+            "GetTemplate": {
+              "methods": ["getTemplate", "getTemplateCallable"]
+            },
+            "LaunchTemplate": {
+              "methods": ["launchTemplate", "launchTemplateCallable"]
+            }
+          }
+        }
+      }
+    },
+    "FlexTemplatesService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FlexTemplatesServiceClient",
+          "rpcs": {
+            "LaunchFlexTemplate": {
+              "methods": ["launchFlexTemplate", "launchFlexTemplateCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
