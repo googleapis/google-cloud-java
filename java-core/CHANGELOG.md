@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.95.4](https://www.github.com/googleapis/java-core/compare/v1.95.3...v1.95.4) (2021-06-25)
+
+
+### Dependencies
+
+* update dependency com.google.api-client:google-api-client-bom to v1.32.1 ([#479](https://www.github.com/googleapis/java-core/issues/479)) ([5f9f732](https://www.github.com/googleapis/java-core/commit/5f9f73212c8073c3b590206f69a2446c8bce2c75))
+
 ### [1.95.3](https://www.github.com/googleapis/java-core/compare/v1.95.2...v1.95.3) (2021-06-23)
 
 
