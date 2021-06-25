@@ -10,7 +10,7 @@
   "repo": "googleapis/java-service-control",
   "repo_short": "java-service-control",
   "distribution_name": "com.google.cloud:google-cloud-service-control",
-  "api_id": "service-control.googleapis.com",
+  "api_id": "servicecontrol.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
