@@ -90,6 +90,7 @@ import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLDataType;
 import com.google.cloud.bigquery.StandardSQLField;
 import com.google.cloud.bigquery.StandardSQLTableType;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableDataWriteChannel;
@@ -701,6 +702,50 @@ public class ITBigQueryTest {
     } finally {
       bigquery.delete(tableId);
     }
+  }
+
+  @Test
+  public void testCreateTableWithConstraints() {
+    String tableName = "test_create_table_with_constraints";
+    TableId tableId = TableId.of(DATASET, tableName);
+    Field stringFieldWithConstraint =
+        Field.newBuilder("stringFieldWithConstraint", StandardSQLTypeName.STRING)
+            .setMode(Field.Mode.NULLABLE)
+            .setDescription("field has a constraint")
+            .setMaxLength(10L)
+            .build();
+    Field byteFieldWithConstraint =
+        Field.newBuilder("byteFieldWithConstraint", StandardSQLTypeName.BYTES)
+            .setMode(Field.Mode.NULLABLE)
+            .setDescription("field has a constraint")
+            .setMaxLength(150L)
+            .build();
+    Field numericFieldWithConstraint =
+        Field.newBuilder("numericFieldWithConstraint", StandardSQLTypeName.NUMERIC)
+            .setMode(Field.Mode.NULLABLE)
+            .setDescription("field has a constraint")
+            .setPrecision(20L)
+            .build();
+    Field bigNumericFieldWithConstraint =
+        Field.newBuilder("bigNumericFieldWithConstraint", StandardSQLTypeName.BIGNUMERIC)
+            .setMode(Field.Mode.NULLABLE)
+            .setDescription("field has a constraint")
+            .setPrecision(30L)
+            .setScale(5L)
+            .build();
+    Schema schema =
+        Schema.of(
+            stringFieldWithConstraint,
+            byteFieldWithConstraint,
+            numericFieldWithConstraint,
+            bigNumericFieldWithConstraint);
+    StandardTableDefinition tableDefinition =
+        StandardTableDefinition.newBuilder().setSchema(schema).build();
+    Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
+    assertNotNull(createdTable);
+    Table remoteTable = bigquery.getTable(DATASET, tableName);
+    assertEquals(schema, remoteTable.<StandardTableDefinition>getDefinition().getSchema());
+    bigquery.delete(tableId);
   }
 
   @Test

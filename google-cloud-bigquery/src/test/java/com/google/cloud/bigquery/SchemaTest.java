@@ -32,6 +32,9 @@ public class SchemaTest {
       Field.newBuilder("StringField", LegacySQLTypeName.STRING)
           .setMode(Field.Mode.NULLABLE)
           .setDescription("FieldDescription1")
+          .setPrecision(20L)
+          .setScale(20L)
+          .setMaxLength(10L)
           .build();
   private static final Field FIELD_SCHEMA2 =
       Field.newBuilder("IntegerField", LegacySQLTypeName.INTEGER)
