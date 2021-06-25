@@ -102,7 +102,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-cloudresourcemanager</artifactId>
-      <version>v1-rev20210613-1.31.0</version>
+      <version>v1-rev20210613-1.31.5</version>
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
