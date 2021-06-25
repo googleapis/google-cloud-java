@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.24.5](https://www.github.com/googleapis/java-scheduler/compare/v1.24.4...v1.24.5) (2021-06-25)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.113.4 ([#490](https://www.github.com/googleapis/java-scheduler/issues/490)) ([4342fd2](https://www.github.com/googleapis/java-scheduler/commit/4342fd2b525802195f7ada6a5406a7773d8d0e9e))
+
 ### [1.24.4](https://www.github.com/googleapis/java-scheduler/compare/v1.24.3...v1.24.4) (2021-06-15)
 
 
