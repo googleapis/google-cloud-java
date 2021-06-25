@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-networkconnectivity.git",
-        "sha": "60956446e32721f336de0adc1e42eb8efd3dd130"
+        "sha": "15090cdacf44848cedffd63b6e08e10b464cf917"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "ff6b759fcb58f216f62b48d5be0bb85fafbc3bb2"
+        "sha": "26558bae8976a985d73c2d98c31d8612273f907d"
       }
     }
   ]
