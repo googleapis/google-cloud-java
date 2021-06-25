@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.134.0](https://www.github.com/googleapis/java-bigquery/compare/v1.133.1...v1.134.0) (2021-06-25)
+
+
+### Features
+
+* add support for jobs.delete ([#1387](https://www.github.com/googleapis/java-bigquery/issues/1387)) ([95f1a6c](https://www.github.com/googleapis/java-bigquery/commit/95f1a6c2e3281d61d38660749cf31fa504ddf8e0))
+* add support for parameterized type ([#1390](https://www.github.com/googleapis/java-bigquery/issues/1390)) ([b1fb57c](https://www.github.com/googleapis/java-bigquery/commit/b1fb57c0b43f4bdc9e32b821b32e95bb1ca8df3b)), closes [#1309](https://www.github.com/googleapis/java-bigquery/issues/1309)
+
+
+### Bug Fixes
+
+* bug fix for get method of Bigquery Dataset ([#1379](https://www.github.com/googleapis/java-bigquery/issues/1379)) ([f034a99](https://www.github.com/googleapis/java-bigquery/commit/f034a99806613fc6abb5587c56362fe38d60bebc))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20210529-1.31.5 ([#1380](https://www.github.com/googleapis/java-bigquery/issues/1380)) ([4a6906a](https://www.github.com/googleapis/java-bigquery/commit/4a6906aa1e3ac139973823bdf142e5c280f6ab68))
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20210611-1.31.5 ([#1383](https://www.github.com/googleapis/java-bigquery/issues/1383)) ([b09f951](https://www.github.com/googleapis/java-bigquery/commit/b09f951d9debe783c5f67c3e9479fb640722a8bd))
+* update dependency com.google.cloud:google-cloud-bigtable to v1.27.0 ([#1384](https://www.github.com/googleapis/java-bigquery/issues/1384)) ([6c4d886](https://www.github.com/googleapis/java-bigquery/commit/6c4d886a3875eaed5d7c10b82f6c064c1995b6ca))
+
+
+### Documentation
+
+* **sample:** update UpdateTableExpiration sample ([#1389](https://www.github.com/googleapis/java-bigquery/issues/1389)) ([ac854c4](https://www.github.com/googleapis/java-bigquery/commit/ac854c42fa4339f688c03d121e25df6030eabd3f)), closes [#1371](https://www.github.com/googleapis/java-bigquery/issues/1371)
+
 ### [1.133.1](https://www.github.com/googleapis/java-bigquery/compare/v1.133.0...v1.133.1) (2021-06-16)
 
 
