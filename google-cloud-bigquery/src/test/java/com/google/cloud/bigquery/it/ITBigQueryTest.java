@@ -87,6 +87,7 @@ import com.google.cloud.bigquery.RoutineArgument;
 import com.google.cloud.bigquery.RoutineId;
 import com.google.cloud.bigquery.RoutineInfo;
 import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.SnapshotTableDefinition;
 import com.google.cloud.bigquery.StandardSQLDataType;
 import com.google.cloud.bigquery.StandardSQLField;
 import com.google.cloud.bigquery.StandardSQLTableType;
@@ -2653,6 +2654,89 @@ public class ITBigQueryTest {
     assertEquals(TABLE_SCHEMA, remoteTable.getDefinition().getSchema());
     assertTrue(createdTable.delete());
     assertTrue(remoteTable.delete());
+  }
+
+  @Test
+  public void testSnapshotTableCopyJob() throws InterruptedException {
+    String sourceTableName = "test_copy_job_base_table";
+    String ddlTableName = TABLE_ID_DDL.getTable();
+    // this creates a snapshot table at specified snapshotTime
+    String snapshotTableName = String.format("test_snapshot_table");
+    // Create source table with some data in it
+    String ddlQuery =
+        String.format(
+            "CREATE OR REPLACE TABLE %s ("
+                + "TimestampField TIMESTAMP OPTIONS(description='TimestampDescription'), "
+                + "StringField STRING OPTIONS(description='StringDescription'), "
+                + "BooleanField BOOLEAN OPTIONS(description='BooleanDescription') "
+                + ") AS SELECT * FROM %s",
+            sourceTableName, ddlTableName);
+    QueryJobConfiguration ddlConfig =
+        QueryJobConfiguration.newBuilder(ddlQuery).setDefaultDataset(DatasetId.of(DATASET)).build();
+    TableId sourceTableId = TableId.of(DATASET, sourceTableName);
+    TableResult result = bigquery.query(ddlConfig);
+    assertEquals(DDL_TABLE_SCHEMA, result.getSchema());
+    Table remoteTable = bigquery.getTable(DATASET, sourceTableName);
+    assertNotNull(remoteTable);
+    // StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
+    // TableInfo tableInfo = TableInfo.of(sourceTableId, tableDefinition);
+    // Table createdTable = bigquery.create(tableInfo);
+
+    // Create snapshot table using source table as the base table
+    TableId snapshotTableId = TableId.of(DATASET, snapshotTableName);
+    CopyJobConfiguration snapshotConfiguration =
+        CopyJobConfiguration.newBuilder(snapshotTableId, sourceTableId)
+            .setOperationType("SNAPSHOT")
+            .build();
+    Job createdJob = bigquery.create(JobInfo.of(snapshotConfiguration));
+    CopyJobConfiguration createdConfiguration = createdJob.getConfiguration();
+    assertNotNull(createdConfiguration.getSourceTables());
+    assertNotNull(createdConfiguration.getOperationType());
+    assertNotNull(createdConfiguration.getDestinationTable());
+    Job completedJob = createdJob.waitFor();
+    assertNull(completedJob.getStatus().getError());
+    Table snapshotTable = bigquery.getTable(DATASET, snapshotTableName);
+    assertNotNull(snapshotTable);
+    assertEquals(snapshotTableId.getDataset(), snapshotTable.getTableId().getDataset());
+    assertEquals(snapshotTableName, snapshotTable.getTableId().getTable());
+    assertTrue(snapshotTable.getDefinition() instanceof SnapshotTableDefinition);
+    assertEquals(DDL_TABLE_SCHEMA, snapshotTable.getDefinition().getSchema());
+    assertNotNull(((SnapshotTableDefinition) snapshotTable.getDefinition()).getSnapshotTime());
+    assertEquals(
+        sourceTableName,
+        ((SnapshotTableDefinition) snapshotTable.getDefinition()).getBaseTableId().getTable());
+
+    // Restore base table to a new table
+    String restoredTableName = "test_restore_table";
+    TableId restoredTableId = TableId.of(DATASET, restoredTableName);
+    CopyJobConfiguration restoreConfiguration =
+        CopyJobConfiguration.newBuilder(restoredTableId, snapshotTableId)
+            .setOperationType("RESTORE")
+            .build();
+    Job createdRestoreJob = bigquery.create(JobInfo.of(restoreConfiguration));
+    CopyJobConfiguration createdRestoreConfiguration = createdRestoreJob.getConfiguration();
+    assertEquals(
+        restoreConfiguration.getSourceTables().get(0).getTable(),
+        createdRestoreConfiguration.getSourceTables().get(0).getTable());
+    assertEquals(
+        restoreConfiguration.getOperationType(), createdRestoreConfiguration.getOperationType());
+    assertEquals(
+        restoreConfiguration.getDestinationTable().getTable(),
+        createdRestoreConfiguration.getDestinationTable().getTable());
+    Job completedRestoreJob = createdRestoreJob.waitFor();
+    assertNull(completedRestoreJob.getStatus().getError());
+    Table restoredTable = bigquery.getTable(DATASET, restoredTableName);
+    assertNotNull(restoredTable);
+    assertEquals(restoredTableId.getDataset(), restoredTable.getTableId().getDataset());
+    assertEquals(restoredTableName, restoredTable.getTableId().getTable());
+    assertEquals(DDL_TABLE_SCHEMA, restoredTable.getDefinition().getSchema());
+    assertEquals(snapshotTable.getNumBytes(), restoredTable.getNumBytes());
+    assertEquals(snapshotTable.getNumRows(), restoredTable.getNumRows());
+
+    // Clean up
+    assertTrue(remoteTable.delete());
+    assertTrue(restoredTable.delete());
+    assertTrue(snapshotTable.delete());
   }
 
   @Test

@@ -113,7 +113,8 @@ public class CopyJobConfigurationTest {
     assertNull(COPY_JOB_CONFIGURATION.toPb().getExtract());
     assertNull(COPY_JOB_CONFIGURATION.toPb().getLoad());
     assertNull(COPY_JOB_CONFIGURATION.toPb().getQuery());
-    assertNull(COPY_JOB_CONFIGURATION.toPb().getCopy().getSourceTables());
+    assertNull(COPY_JOB_CONFIGURATION.toPb().getCopy().getSourceTable());
+    assertNotNull(COPY_JOB_CONFIGURATION.toPb().getCopy().getSourceTables());
     assertNull(COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.toPb().getCopy().getSourceTable());
     assertNotNull(COPY_JOB_CONFIGURATION.getLabels());
     assertNotNull(COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.getLabels());

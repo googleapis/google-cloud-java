@@ -38,6 +38,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
 
   private final List<TableId> sourceTables;
   private final TableId destinationTable;
+  private final String operationType;
   private final JobInfo.CreateDisposition createDisposition;
   private final JobInfo.WriteDisposition writeDisposition;
   private final EncryptionConfiguration destinationEncryptionConfiguration;
@@ -49,6 +50,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
 
     private List<TableId> sourceTables;
     private TableId destinationTable;
+    private String operationType;
     private JobInfo.CreateDisposition createDisposition;
     private JobInfo.WriteDisposition writeDisposition;
     private EncryptionConfiguration destinationEncryptionConfiguration;
@@ -63,6 +65,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
       this();
       this.sourceTables = jobConfiguration.sourceTables;
       this.destinationTable = jobConfiguration.destinationTable;
+      this.operationType = jobConfiguration.operationType;
       this.createDisposition = jobConfiguration.createDisposition;
       this.writeDisposition = jobConfiguration.writeDisposition;
       this.destinationEncryptionConfiguration = jobConfiguration.destinationEncryptionConfiguration;
@@ -74,6 +77,9 @@ public final class CopyJobConfiguration extends JobConfiguration {
       this();
       JobConfigurationTableCopy copyConfigurationPb = configurationPb.getCopy();
       this.destinationTable = TableId.fromPb(copyConfigurationPb.getDestinationTable());
+      if (copyConfigurationPb.getOperationType() != null) {
+        this.operationType = copyConfigurationPb.getOperationType();
+      }
       if (copyConfigurationPb.getSourceTables() != null) {
         this.sourceTables =
             Lists.transform(copyConfigurationPb.getSourceTables(), TableId.FROM_PB_FUNCTION);
@@ -111,6 +117,15 @@ public final class CopyJobConfiguration extends JobConfiguration {
     /** Sets the destination table of the copy job. */
     public Builder setDestinationTable(TableId destinationTable) {
       this.destinationTable = destinationTable;
+      return this;
+    }
+
+    /**
+     * Sets the supported operation types (COPY, SNAPSHOT or RESTORE) in table copy job. More info:
+     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#operationtype
+     */
+    public Builder setOperationType(String operationType) {
+      this.operationType = operationType;
       return this;
     }
 
@@ -178,6 +193,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
     super(builder);
     this.sourceTables = checkNotNull(builder.sourceTables);
     this.destinationTable = checkNotNull(builder.destinationTable);
+    this.operationType = builder.operationType;
     this.createDisposition = builder.createDisposition;
     this.writeDisposition = builder.writeDisposition;
     this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
@@ -193,6 +209,11 @@ public final class CopyJobConfiguration extends JobConfiguration {
   /** Returns the destination table to load the data into. */
   public TableId getDestinationTable() {
     return destinationTable;
+  }
+
+  /** Returns the table copy job type */
+  public String getOperationType() {
+    return operationType;
   }
 
   public EncryptionConfiguration getDestinationEncryptionConfiguration() {
@@ -241,6 +262,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
     return super.toStringHelper()
         .add("sourceTables", sourceTables)
         .add("destinationTable", destinationTable)
+        .add("operationType", operationType)
         .add("destinationEncryptionConfiguration", destinationEncryptionConfiguration)
         .add("createDisposition", createDisposition)
         .add("writeDisposition", writeDisposition)
@@ -260,6 +282,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
         baseHashCode(),
         sourceTables,
         destinationTable,
+        operationType,
         createDisposition,
         writeDisposition,
         labels,
@@ -293,10 +316,11 @@ public final class CopyJobConfiguration extends JobConfiguration {
     com.google.api.services.bigquery.model.JobConfiguration jobConfiguration =
         new com.google.api.services.bigquery.model.JobConfiguration();
     configurationPb.setDestinationTable(destinationTable.toPb());
-    if (sourceTables.size() == 1) {
-      configurationPb.setSourceTable(sourceTables.get(0).toPb());
-    } else {
+    if (sourceTables != null) {
       configurationPb.setSourceTables(Lists.transform(sourceTables, TableId.TO_PB_FUNCTION));
+    }
+    if (operationType != null) {
+      configurationPb.setOperationType(operationType);
     }
     if (createDisposition != null) {
       configurationPb.setCreateDisposition(createDisposition.toString());
