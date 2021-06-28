@@ -27,6 +27,7 @@ import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 import org.junit.After;
@@ -46,8 +47,9 @@ public class BatchTranslateTextWithModelTests {
   private static final String INPUT_URI =
       "gs://cloud-samples-data/translation/custom_model_text.txt";
   private static final String MODEL_ID = "TRL3645318651705294848";
-  private static final String PREFIX = "BATCH_TRANSLATION_WITH_MODEL_OUTPUT/";
-  private static final String OUTPUT_URI = String.format("gs://%s/%s", PROJECT_ID, PREFIX);
+  private static final String PREFIX = "BATCH_TRANSLATION_WITH_MODEL_OUTPUT_";
+  private static final String OUTPUT_URI =
+      String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
 
   private ByteArrayOutputStream bout;
   private PrintStream out;

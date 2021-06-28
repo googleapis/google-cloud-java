@@ -27,6 +27,7 @@ import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 import org.junit.After;
@@ -46,8 +47,9 @@ public class BatchTranslateTextWithGlossaryTests {
   private static final String INPUT_URI =
       "gs://cloud-samples-data/translation/text_with_glossary.txt";
   private static final String GLOSSARY_ID = "DO_NOT_DELETE_TEST_GLOSSARY";
-  private static final String PREFIX = "BATCH_TRANSLATION_GLOSSARY_OUTPUT/";
-  private static final String OUTPUT_URI = String.format("gs://%s/%s", PROJECT_ID, PREFIX);
+  private static final String PREFIX = "BATCH_TRANSLATION_GLOSSARY_OUTPUT_";
+  private static final String OUTPUT_URI =
+      String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
