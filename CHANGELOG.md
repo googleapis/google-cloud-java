@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.135.0](https://www.github.com/googleapis/java-bigquery/compare/v1.134.1...v1.135.0) (2021-06-28)
+
+
+### Features
+
+* add support for table snapshot ([#1320](https://www.github.com/googleapis/java-bigquery/issues/1320)) ([d783292](https://www.github.com/googleapis/java-bigquery/commit/d783292f4bd2d971235d8afa6318976856529cb5))
+
 ### [1.134.1](https://www.github.com/googleapis/java-bigquery/compare/v1.134.0...v1.134.1) (2021-06-28)
 
 
