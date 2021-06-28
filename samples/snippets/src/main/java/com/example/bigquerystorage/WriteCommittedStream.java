@@ -74,7 +74,7 @@ public class WriteCommittedStream {
 
           // To detect duplicate records, pass the index as the record offset.
           // To disable deduplication, omit the offset or use WriteStream.Type.DEFAULT.
-          ApiFuture<AppendRowsResponse> future = writer.append(jsonArr, i);
+          ApiFuture<AppendRowsResponse> future = writer.append(jsonArr, /*offset=*/ i);
           AppendRowsResponse response = future.get();
         }
       }
