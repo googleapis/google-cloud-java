@@ -43,12 +43,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.LongSummaryStatistics;
 import java.util.Map;
 import java.util.OptionalInt;
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -78,8 +76,7 @@ public class GcpManagedChannel extends ManagedChannel {
   final Map<String, AffinityConfig> methodToAffinity = new HashMap<String, AffinityConfig>();
 
   @VisibleForTesting
-  @GuardedBy("bindLock")
-  final Map<String, ChannelRef> affinityKeyToChannelRef = new HashMap<String, ChannelRef>();
+  final Map<String, ChannelRef> affinityKeyToChannelRef = new ConcurrentHashMap<>();
 
   // Map from a broken channel id to the remapped affinity keys (key => ready channel id).
   private final Map<Integer, Map<String, Integer>> fallbackMap = new ConcurrentHashMap<>();
@@ -89,8 +86,6 @@ public class GcpManagedChannel extends ManagedChannel {
   final List<ChannelRef> channelRefs = new ArrayList<ChannelRef>();
 
   private final Map<Integer, ChannelRef> channelRefById = new HashMap<>();
-
-  private final Object bindLock = new Object();
 
   // Metrics configuration.
   private MetricRegistry metricRegistry;
@@ -982,44 +977,20 @@ public class GcpManagedChannel extends ManagedChannel {
    * channel.
    */
   protected void bind(ChannelRef channelRef, List<String> affinityKeys) {
-    synchronized (bindLock) {
-      if (affinityKeys != null && channelRef != null) {
-        for (String affinityKey : affinityKeys) {
-          affinityKeyToChannelRef.putIfAbsent(affinityKey, channelRef);
-        }
-        channelRef.affinityCountIncr(affinityKeys.size());
+    for (String affinityKey : affinityKeys) {
+      while (affinityKeyToChannelRef.putIfAbsent(affinityKey, channelRef) != null) {
+        unbind(Collections.singletonList(affinityKey));
       }
+      channelRef.affinityCountIncr();
     }
   }
 
-  /**
-   * Unbind channel with affinity key. If one ChannelRef has zero affinity key bound with it, delete
-   * all the <affinityKey, channel> maps.
-   */
+  /** Unbind channel with affinity key. */
   protected void unbind(List<String> affinityKeys) {
-    synchronized (bindLock) {
-      if (affinityKeys != null) {
-        for (String affinityKey : affinityKeys) {
-          if (!affinityKey.equals("") && affinityKeyToChannelRef.containsKey(affinityKey)) {
-            ChannelRef removedChannelRef = affinityKeyToChannelRef.get(affinityKey);
-            if (removedChannelRef.getAffinityCount() > 0) {
-              removedChannelRef.affinityCountDecr();
-            }
-
-            // Current channel has no affinity key bound with it.
-            if (removedChannelRef.getAffinityCount() == 0) {
-              Set<String> removedKeys = new HashSet<String>();
-              for (String key : affinityKeyToChannelRef.keySet()) {
-                if (affinityKeyToChannelRef.get(key) == removedChannelRef) {
-                  removedKeys.add(key);
-                }
-              }
-              for (String key : removedKeys) {
-                affinityKeyToChannelRef.remove(key);
-              }
-            }
-          }
-        }
+    for (String affinityKey : affinityKeys) {
+      ChannelRef channelRef = affinityKeyToChannelRef.remove(affinityKey);
+      if (channelRef != null) {
+        channelRef.affinityCountDecr();
       }
     }
   }
@@ -1136,7 +1107,7 @@ public class GcpManagedChannel extends ManagedChannel {
 
     private final ManagedChannel delegate;
     private final int channelId;
-    private int affinityCount;
+    private final AtomicInteger affinityCount;
     // activeStreamsCount are mutated from the GcpClientCall concurrently using the
     // `activeStreamsCountIncr()` and `activeStreamsCountDecr()` methods.
     private final AtomicInteger activeStreamsCount;
@@ -1153,7 +1124,7 @@ public class GcpManagedChannel extends ManagedChannel {
         ManagedChannel channel, int channelId, int affinityCount, int activeStreamsCount) {
       this.delegate = channel;
       this.channelId = channelId;
-      this.affinityCount = affinityCount;
+      this.affinityCount = new AtomicInteger(affinityCount);
       this.activeStreamsCount = new AtomicInteger(activeStreamsCount);
       new ChannelStateMonitor(channel, channelId);
     }
@@ -1166,13 +1137,13 @@ public class GcpManagedChannel extends ManagedChannel {
       return channelId;
     }
 
-    protected void affinityCountIncr(int amount) {
-      affinityCount += amount;
-      totalAffinityCount.addAndGet(amount);
+    protected void affinityCountIncr() {
+      affinityCount.incrementAndGet();
+      totalAffinityCount.incrementAndGet();
     }
 
     protected void affinityCountDecr() {
-      affinityCount--;
+      affinityCount.decrementAndGet();
       totalAffinityCount.decrementAndGet();
     }
 
@@ -1214,7 +1185,7 @@ public class GcpManagedChannel extends ManagedChannel {
     }
 
     protected int getAffinityCount() {
-      return affinityCount;
+      return affinityCount.get();
     }
 
     protected int getActiveStreamsCount() {

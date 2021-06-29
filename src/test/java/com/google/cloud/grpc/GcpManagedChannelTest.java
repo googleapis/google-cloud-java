@@ -178,19 +178,35 @@ public final class GcpManagedChannelTest {
     gcpChannel.channelRefs.add(cf2);
     gcpChannel.bind(cf1, Arrays.asList("key1"));
     gcpChannel.bind(cf2, Arrays.asList("key2"));
+    gcpChannel.bind(cf2, Arrays.asList("key3"));
+    // Binding the same key to the same channel should not increase affinity count.
     gcpChannel.bind(cf1, Arrays.asList("key1"));
+    assertEquals(1, gcpChannel.channelRefs.get(0).getAffinityCount());
+    assertEquals(2, gcpChannel.channelRefs.get(1).getAffinityCount());
+    assertEquals(3, gcpChannel.affinityKeyToChannelRef.size());
+    // Binding the same key to a different channel should alter affinity counts accordingly.
+    gcpChannel.bind(cf1, Arrays.asList("key3"));
     assertEquals(2, gcpChannel.channelRefs.get(0).getAffinityCount());
     assertEquals(1, gcpChannel.channelRefs.get(1).getAffinityCount());
-    assertEquals(2, gcpChannel.affinityKeyToChannelRef.size());
+    assertEquals(3, gcpChannel.affinityKeyToChannelRef.size());
 
     // Unbind the affinity key.
     gcpChannel.unbind(Arrays.asList("key1"));
+    assertEquals(1, gcpChannel.channelRefs.get(0).getAffinityCount());
+    assertEquals(1, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(2, gcpChannel.affinityKeyToChannelRef.size());
     gcpChannel.unbind(Arrays.asList("key1"));
+    assertEquals(1, gcpChannel.channelRefs.get(0).getAffinityCount());
+    assertEquals(1, gcpChannel.channelRefs.get(1).getAffinityCount());
+    assertEquals(2, gcpChannel.affinityKeyToChannelRef.size());
     gcpChannel.unbind(Arrays.asList("key2"));
-    assertEquals(0, gcpChannel.affinityKeyToChannelRef.size());
+    assertEquals(1, gcpChannel.channelRefs.get(0).getAffinityCount());
+    assertEquals(0, gcpChannel.channelRefs.get(1).getAffinityCount());
+    assertEquals(1, gcpChannel.affinityKeyToChannelRef.size());
+    gcpChannel.unbind(Arrays.asList("key3"));
     assertEquals(0, gcpChannel.channelRefs.get(0).getAffinityCount());
     assertEquals(0, gcpChannel.channelRefs.get(1).getAffinityCount());
+    assertEquals(0, gcpChannel.affinityKeyToChannelRef.size());
   }
 
   @Test
