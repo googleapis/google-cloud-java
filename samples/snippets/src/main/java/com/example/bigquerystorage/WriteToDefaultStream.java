@@ -52,7 +52,7 @@ public class WriteToDefaultStream {
 
     // Use the JSON stream writer to send records in JSON format.
     // For more information about JsonStreamWriter, see:
-    // https://googleapis.dev/java/google-cloud-bigquerystorage/latest/com/google/cloud/bigquery/storage/v1beta2/JstreamWriter.html
+    // https://googleapis.dev/java/google-cloud-bigquerystorage/latest/com/google/cloud/bigquery/storage/v1beta2/JsonStreamWriter.html
     try (JsonStreamWriter writer =
         JsonStreamWriter.newBuilder(parentTable.toString(), schema).build()) {
       // Append 10 JSON objects to the stream.

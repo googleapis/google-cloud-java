@@ -183,9 +183,8 @@ public class JsonStreamWriter implements AutoCloseable {
    * StreamWriter by default.
    *
    * @param streamOrTableName name of the stream that must follow
-   *     "projects/[^/]+/datasets/[^/]+/tables/[^/]+/streams/[^/]+" or if it is default stream
-   *     (createDefaultStream is true on builder), then the name here should be a table name
-   *     ""projects/[^/]+/datasets/[^/]+/tables/[^/]+"
+   *     "projects/[^/]+/datasets/[^/]+/tables/[^/]+/streams/[^/]+" or table name
+   *     "projects/[^/]+/datasets/[^/]+/tables/[^/]+"
    * @param tableSchema The schema of the table when the stream was created, which is passed back
    *     through {@code WriteStream}
    * @return Builder
@@ -260,7 +259,7 @@ public class JsonStreamWriter implements AutoCloseable {
      *
      * @param streamOrTableName name of the stream that must follow
      *     "projects/[^/]+/datasets/[^/]+/tables/[^/]+/streams/[^/]+" or
-     *     "projects/[^/]+/datasets/[^/]+/tables/[^/]+/_default"
+     *     "projects/[^/]+/datasets/[^/]+/tables/[^/]+"
      * @param tableSchema schema used to convert Json to proto messages.
      * @param client
      */
