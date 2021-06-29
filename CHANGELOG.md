@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.135.1](https://www.github.com/googleapis/java-bigquery/compare/v1.135.0...v1.135.1) (2021-06-29)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v1.117.0 ([#1403](https://www.github.com/googleapis/java-bigquery/issues/1403)) ([0cfcab0](https://www.github.com/googleapis/java-bigquery/commit/0cfcab02e7d80317b19062937677dbe07d3b3bd5))
+
 ## [1.135.0](https://www.github.com/googleapis/java-bigquery/compare/v1.134.1...v1.135.0) (2021-06-28)
 
 
