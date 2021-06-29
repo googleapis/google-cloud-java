@@ -17,10 +17,10 @@
 package com.google.cloud.translate.automl;
 
 // Imports the Google Cloud client library
-import com.google.cloud.automl.v1beta1.AutoMlClient;
-import com.google.cloud.automl.v1beta1.DatasetName;
-import com.google.cloud.automl.v1beta1.GcsSource;
-import com.google.cloud.automl.v1beta1.InputConfig;
+import com.google.cloud.automl.v1.AutoMlClient;
+import com.google.cloud.automl.v1.DatasetName;
+import com.google.cloud.automl.v1.GcsSource;
+import com.google.cloud.automl.v1.InputConfig;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.io.PrintStream;
