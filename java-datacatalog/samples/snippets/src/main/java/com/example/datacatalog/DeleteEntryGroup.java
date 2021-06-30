@@ -16,47 +16,34 @@
 
 package com.example.datacatalog;
 
-// [START data_catalog_create_entry_group]
-import com.google.cloud.datacatalog.v1.CreateEntryGroupRequest;
+// [START data_catalog_delete_entry_group]
 import com.google.cloud.datacatalog.v1.DataCatalogClient;
-import com.google.cloud.datacatalog.v1.EntryGroup;
-import com.google.cloud.datacatalog.v1.LocationName;
+import com.google.cloud.datacatalog.v1.DeleteEntryGroupRequest;
+import com.google.cloud.datacatalog.v1.EntryGroupName;
 import java.io.IOException;
 
-// Sample to create an entry group
-public class CreateEntryGroup {
+// Sample to delete a entry group
+public class DeleteEntryGroup {
 
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "MY_PROJECT_ID";
-    String location = "us-central1";
+    String location = "MY_LOCATION";
     String entryGroupId = "MY_ENTRY_GROUP_ID";
-    createEntryGroup(projectId, location, entryGroupId);
+    EntryGroupName entryGroupName = EntryGroupName.of(projectId, location, entryGroupId);
+    deleteEntryGroup(entryGroupName);
   }
 
-  // Create Entry Group.
-  public static void createEntryGroup(String projectId, String location, String entryGroupId)
-      throws IOException {
+  public static void deleteEntryGroup(EntryGroupName entryGroupName) throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
-    try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-      EntryGroup entryGroup =
-          EntryGroup.newBuilder()
-              .setDisplayName("MY Entry Group")
-              .setDescription("This Entry Group consists of ....")
-              .build();
-
-      CreateEntryGroupRequest entryGroupRequest =
-          CreateEntryGroupRequest.newBuilder()
-              .setParent(LocationName.of(projectId, location).toString())
-              .setEntryGroupId(entryGroupId)
-              .setEntryGroup(entryGroup)
-              .build();
-
-      dataCatalogClient.createEntryGroup(entryGroupRequest);
-      System.out.println("Entry Group created successfully");
+    try (DataCatalogClient client = DataCatalogClient.create()) {
+      DeleteEntryGroupRequest request =
+          DeleteEntryGroupRequest.newBuilder().setName(entryGroupName.toString()).build();
+      client.deleteEntryGroup(request);
+      System.out.println("Entry group deleted successfully");
     }
   }
 }
-// [END data_catalog_create_entry_group]
+// [END data_catalog_delete_entry_group]
