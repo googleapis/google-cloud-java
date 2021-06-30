@@ -52,12 +52,12 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
-  <version>1.134.0</version>
+  <version>1.135.1</version>
 </dependency>
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>1.116.0</version>
+  <version>1.117.0</version>
 </dependency>
 
 ```
