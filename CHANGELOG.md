@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.22.6](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.22.5...v1.22.6) (2021-06-30)
+
+
+### Documentation
+
+* **sample:** add IT for WriteToDefaultStream ([#1158](https://www.github.com/googleapis/java-bigquerystorage/issues/1158)) ([3280d7a](https://www.github.com/googleapis/java-bigquerystorage/commit/3280d7a0495a25f2509c9d4719439253e0fbaa5d)), closes [#1156](https://www.github.com/googleapis/java-bigquerystorage/issues/1156)
+* user-provided streamOrTableName for default write streams ([#1155](https://www.github.com/googleapis/java-bigquerystorage/issues/1155)) ([fc4a5c0](https://www.github.com/googleapis/java-bigquerystorage/commit/fc4a5c061f51d83e41109ebf04f4202276410e30))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.135.1 ([#1154](https://www.github.com/googleapis/java-bigquerystorage/issues/1154)) ([99f8ebb](https://www.github.com/googleapis/java-bigquerystorage/commit/99f8ebb2fde1fd86315a03dea5719e7a7744d081))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#1159](https://www.github.com/googleapis/java-bigquerystorage/issues/1159)) ([7e1b206](https://www.github.com/googleapis/java-bigquerystorage/commit/7e1b2062f8cb13c05270d86c9ff6863934e7478d))
+
 ### [1.22.5](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.22.4...v1.22.5) (2021-06-28)
 
 
