@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.27.1](https://www.github.com/googleapis/java-bigtable/compare/v1.27.0...v1.27.1) (2021-06-30)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#884](https://www.github.com/googleapis/java-bigtable/issues/884)) ([8b971a2](https://www.github.com/googleapis/java-bigtable/commit/8b971a2510685be336b0dd19fc048905b56906e3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#889](https://www.github.com/googleapis/java-bigtable/issues/889)) ([8b6754f](https://www.github.com/googleapis/java-bigtable/commit/8b6754fb1fbdca43a327e3f253be076eb0c2cd2f))
+
 ## [1.27.0](https://www.github.com/googleapis/java-bigtable/compare/v1.26.1...v1.27.0) (2021-06-22)
 
 
