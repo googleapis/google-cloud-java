@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.4](https://www.github.com/googleapis/java-bigqueryconnection/compare/v1.1.3...v1.1.4) (2021-06-24)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-bigqueryconnection/issues/1130)) ([#450](https://www.github.com/googleapis/java-bigqueryconnection/issues/450)) ([c25b23e](https://www.github.com/googleapis/java-bigqueryconnection/commit/c25b23ef07a03cdb63fed6656f7a11592764cf6b))
+
 ### [1.1.3](https://www.github.com/googleapis/java-bigqueryconnection/compare/v1.1.2...v1.1.3) (2021-06-09)
 
 
