@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.2.2](https://www.github.com/googleapis/java-bigqueryreservation/compare/v1.2.1...v1.2.2) (2021-06-30)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#425](https://www.github.com/googleapis/java-bigqueryreservation/issues/425)) ([593ab3c](https://www.github.com/googleapis/java-bigqueryreservation/commit/593ab3cd1d6ba234a69ccbde246f257de67880a2))
+* Update dependencies.sh to not break on mac ([#421](https://www.github.com/googleapis/java-bigqueryreservation/issues/421)) ([04571a4](https://www.github.com/googleapis/java-bigqueryreservation/commit/04571a44cb882a570a2b28ae81aa97541e6eeab2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#427](https://www.github.com/googleapis/java-bigqueryreservation/issues/427)) ([b98b37d](https://www.github.com/googleapis/java-bigqueryreservation/commit/b98b37dde1d735006c38216d0c234b81b96eff81))
+
 ### [1.2.1](https://www.github.com/googleapis/java-bigqueryreservation/compare/v1.2.0...v1.2.1) (2021-06-04)
 
 
