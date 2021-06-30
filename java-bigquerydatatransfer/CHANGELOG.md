@@ -1,5 +1,23 @@
 # Changelog
 
+### [1.3.7](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.3.6...v1.3.7) (2021-06-30)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#902](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/902)) ([2ee897a](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/2ee897a54ae2f19cbfbb67b6749c2d06b362ae0c))
+* Update dependencies.sh to not break on mac ([#897](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/897)) ([9d74a7f](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/9d74a7f017688b684884d2a9f43115d8a0410ab0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.133.1 ([#899](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/899)) ([90af9f4](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/90af9f4d80b7a90d9c6aebb0386461ede5679ac3))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.134.0 ([#906](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/906)) ([7e51e0d](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/7e51e0d54e71c0dbc0325a34fc4027db1bce0599))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.135.0 ([#907](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/907)) ([87360d2](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/87360d2373e73ee46a4390c9c7d4747c51014889))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.135.1 ([#908](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/908)) ([27b2a9c](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/27b2a9cc025aa2fe25976f44b623b6dbbff98908))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.113.4 ([#903](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/903)) ([34b47a8](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/34b47a8b6928039171ba4bfb2c201629ac2b859b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#909](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/909)) ([6838ed0](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/6838ed071039cd3ce1440757b6582ae70c43382c))
+
 ### [1.3.6](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.3.5...v1.3.6) (2021-06-10)
 
 
