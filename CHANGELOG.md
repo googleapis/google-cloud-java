@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.107.1](https://www.github.com/googleapis/java-datastore/compare/v1.107.0...v1.107.1) (2021-06-30)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#461](https://www.github.com/googleapis/java-datastore/issues/461)) ([147a3e5](https://www.github.com/googleapis/java-datastore/commit/147a3e5a80b2597258c4b78ae54d4be5d45b4df1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#465](https://www.github.com/googleapis/java-datastore/issues/465)) ([9a83695](https://www.github.com/googleapis/java-datastore/commit/9a83695cd5913096dc3d810c385d62c579bd7ace))
+
 ## [1.107.0](https://www.github.com/googleapis/java-datastore/compare/v1.106.5...v1.107.0) (2021-06-16)
 
 
