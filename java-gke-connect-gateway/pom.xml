@@ -93,7 +93,7 @@
             <ignoredUnusedDeclaredDependencies>
               <ignoredUnusedDeclaredDependency>org.objenesis:objenesis</ignoredUnusedDeclaredDependency>
               <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
-              <ignoredUnusedDeclaredDependency>proto-google-cloud-gke-connect-gateway-v1beta1</ignoredUnusedDeclaredDependency>
+              <ignoredUnusedDeclaredDependency>com.google.api.grpc:proto-google-cloud-gke-connect-gateway-v1beta1</ignoredUnusedDeclaredDependency>
             </ignoredUnusedDeclaredDependencies>
           </configuration>
         </plugin>
