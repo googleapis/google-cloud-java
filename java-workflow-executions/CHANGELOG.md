@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-workflow-executions/compare/v1.0.0...v1.0.1) (2021-07-01)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#140](https://www.github.com/googleapis/java-workflow-executions/issues/140)) ([f6f3090](https://www.github.com/googleapis/java-workflow-executions/commit/f6f3090bc892a40deed6eb49e68de8535c574503))
+
 ## [1.0.0](https://www.github.com/googleapis/java-workflow-executions/compare/v0.2.1...v1.0.0) (2021-06-17)
 
 
