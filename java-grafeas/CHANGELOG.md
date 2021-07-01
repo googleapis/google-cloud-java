@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.2.3](https://www.github.com/googleapis/java-grafeas/compare/v1.2.2...v1.2.3) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#331](https://www.github.com/googleapis/java-grafeas/issues/331)) ([ec2c158](https://www.github.com/googleapis/java-grafeas/commit/ec2c158091b94863528662c335a0a10fac1c99db))
+* Update dependencies.sh to not break on mac ([#327](https://www.github.com/googleapis/java-grafeas/issues/327)) ([1135609](https://www.github.com/googleapis/java-grafeas/commit/1135609987044590b564a7fac0f45317f6127af0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#333](https://www.github.com/googleapis/java-grafeas/issues/333)) ([bc609ac](https://www.github.com/googleapis/java-grafeas/commit/bc609ac9101a25fcc5162f99139e52abb8497d0b))
+* update dependency com.puppycrawl.tools:checkstyle to v8.44 ([#332](https://www.github.com/googleapis/java-grafeas/issues/332)) ([6406793](https://www.github.com/googleapis/java-grafeas/commit/640679381bf5d29375c568d2c82cfe85508514d4))
+
 ### [1.2.2](https://www.github.com/googleapis/java-grafeas/compare/v1.2.1...v1.2.2) (2021-06-09)
 
 
