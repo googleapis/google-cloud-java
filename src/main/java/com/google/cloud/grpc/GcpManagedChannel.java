@@ -81,8 +81,6 @@ public class GcpManagedChannel extends ManagedChannel {
 
   @VisibleForTesting final List<ChannelRef> channelRefs = new CopyOnWriteArrayList<>();
 
-  private final Map<Integer, ChannelRef> channelRefById = new HashMap<>();
-
   // Metrics configuration.
   private MetricRegistry metricRegistry;
   private final List<LabelKey> labelKeys = new ArrayList<>();
@@ -779,7 +777,7 @@ public class GcpManagedChannel extends ManagedChannel {
     if (channelId != null && !fallbackMap.containsKey(channelId)) {
       // Fallback channel is ready.
       fallbacksSucceeded.incrementAndGet();
-      return channelRefById.get(channelId);
+      return channelRefs.get(channelId);
     }
     // No temp mapping for this key or fallback channel is also broken.
     ChannelRef channelRef = pickLeastBusyChannel();
@@ -793,7 +791,7 @@ public class GcpManagedChannel extends ManagedChannel {
     fallbacksFailed.incrementAndGet();
     if (channelId != null) {
       // Stick with previous mapping if fallback has failed.
-      return channelRefById.get(channelId);
+      return channelRefs.get(channelId);
     }
     return mappedChannel;
   }
@@ -804,7 +802,6 @@ public class GcpManagedChannel extends ManagedChannel {
     final int size = channelRefs.size();
     ChannelRef channelRef = new ChannelRef(delegateChannelBuilder.build(), size);
     channelRefs.add(channelRef);
-    channelRefById.put(size, channelRef);
     return channelRef;
   }
 
