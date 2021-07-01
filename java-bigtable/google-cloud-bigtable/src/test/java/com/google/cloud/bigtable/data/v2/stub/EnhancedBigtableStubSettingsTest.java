@@ -716,6 +716,7 @@ public class EnhancedBigtableStubSettingsTest {
     "isRefreshingChannel",
     "primedTableIds",
     "headerTracer",
+    "jwtAudienceMapping",
     "readRowsSettings",
     "readRowSettings",
     "sampleRowKeysSettings",

@@ -17,15 +17,21 @@ package com.google.cloud.bigtable.data.v2.stub;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.client.json.webtoken.JsonWebSignature;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.batching.BatcherImpl;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
+import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.auth.oauth2.ServiceAccountJwtAccessCredentials;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsResponse;
@@ -42,6 +48,7 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Queues;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.BytesValue;
@@ -49,7 +56,10 @@ import com.google.protobuf.StringValue;
 import io.grpc.BindableService;
 import io.grpc.Context;
 import io.grpc.Deadline;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
+import io.grpc.Metadata.Key;
 import io.grpc.ServerCall;
 import io.grpc.ServerCall.Listener;
 import io.grpc.ServerCallHandler;
@@ -63,6 +73,9 @@ import io.opencensus.trace.export.SpanData;
 import io.opencensus.trace.export.SpanExporter.Handler;
 import io.opencensus.trace.samplers.Samplers;
 import java.io.IOException;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.security.NoSuchAlgorithmException;
 import java.util.Collection;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -120,6 +133,98 @@ public class EnhancedBigtableStubTest {
   public void tearDown() {
     enhancedBigtableStub.close();
     serviceHelper.shutdown();
+  }
+
+  @Test
+  public void testJwtAudience()
+      throws InterruptedException, IOException, NoSuchAlgorithmException, ExecutionException {
+    // close default stub - need to create custom one
+    enhancedBigtableStub.close();
+
+    // Create fake jwt creds
+    KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
+    KeyPair keyPair = keyGen.genKeyPair();
+
+    ServiceAccountJwtAccessCredentials jwtCreds =
+        ServiceAccountJwtAccessCredentials.newBuilder()
+            .setClientId("fake-id")
+            .setClientEmail("fake@example.com")
+            .setPrivateKey(keyPair.getPrivate())
+            .setPrivateKeyId("fake-private-key")
+            .build();
+
+    // Create a stub with overridden audience
+    String expectedAudience = "http://localaudience";
+    EnhancedBigtableStubSettings settings =
+        defaultSettings
+            .toBuilder()
+            .setJwtAudienceMapping(ImmutableMap.of("localhost", expectedAudience))
+            .setCredentialsProvider(FixedCredentialsProvider.create(jwtCreds))
+            .build();
+    enhancedBigtableStub = EnhancedBigtableStub.create(settings);
+
+    // Send rpc and grab the credentials sent
+    enhancedBigtableStub.readRowCallable().futureCall(Query.create("fake-table")).get();
+    Metadata metadata = metadataInterceptor.headers.take();
+
+    String authValue = metadata.get(Key.of("Authorization", Metadata.ASCII_STRING_MARSHALLER));
+    String expectedPrefix = "Bearer ";
+    assertThat(authValue).startsWith(expectedPrefix);
+    String jwtStr = authValue.substring(expectedPrefix.length());
+    JsonWebSignature parsed = JsonWebSignature.parse(GsonFactory.getDefaultInstance(), jwtStr);
+    assertThat(parsed.getPayload().getAudience()).isEqualTo(expectedAudience);
+  }
+
+  @Test
+  public void testBatchJwtAudience()
+      throws InterruptedException, IOException, NoSuchAlgorithmException, ExecutionException {
+    // close default stub - need to create custom one
+    enhancedBigtableStub.close();
+
+    // Create fake jwt creds
+    KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
+    KeyPair keyPair = keyGen.genKeyPair();
+
+    ServiceAccountJwtAccessCredentials jwtCreds =
+        ServiceAccountJwtAccessCredentials.newBuilder()
+            .setClientId("fake-id")
+            .setClientEmail("fake@example.com")
+            .setPrivateKey(keyPair.getPrivate())
+            .setPrivateKeyId("fake-private-key")
+            .build();
+
+    // Create a fixed channel that will ignore the default endpoint and connect to the emulator
+    ManagedChannel emulatorChannel =
+        ManagedChannelBuilder.forAddress("localhost", serviceHelper.getPort())
+            .usePlaintext()
+            .build();
+
+    Metadata metadata;
+    try {
+      EnhancedBigtableStubSettings settings =
+          EnhancedBigtableStubSettings.newBuilder()
+              .setProjectId("fake-project")
+              .setInstanceId("fake-instance")
+              .setEndpoint("batch-bigtable.googleapis.com:443")
+              .setCredentialsProvider(FixedCredentialsProvider.create(jwtCreds))
+              .setTransportChannelProvider(
+                  FixedTransportChannelProvider.create(
+                      GrpcTransportChannel.create(emulatorChannel)))
+              .build();
+      enhancedBigtableStub = EnhancedBigtableStub.create(settings);
+      // Send rpc and grab the credentials sent
+      enhancedBigtableStub.readRowCallable().futureCall(Query.create("fake-table")).get();
+      metadata = metadataInterceptor.headers.take();
+    } finally {
+      emulatorChannel.shutdown();
+    }
+
+    String authValue = metadata.get(Key.of("Authorization", Metadata.ASCII_STRING_MARSHALLER));
+    String expectedPrefix = "Bearer ";
+    assertThat(authValue).startsWith(expectedPrefix);
+    String jwtStr = authValue.substring(expectedPrefix.length());
+    JsonWebSignature parsed = JsonWebSignature.parse(GsonFactory.getDefaultInstance(), jwtStr);
+    assertThat(parsed.getPayload().getAudience()).isEqualTo("https://bigtable.googleapis.com/");
   }
 
   @Test

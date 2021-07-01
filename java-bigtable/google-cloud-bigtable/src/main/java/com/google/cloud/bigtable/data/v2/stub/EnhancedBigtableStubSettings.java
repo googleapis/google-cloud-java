@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.stub;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.BatchingCallSettings;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
@@ -151,12 +152,20 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
+  /**
+   * In most cases, jwt audience == service name. However in some cases, this is not the case. The
+   * following mapping is used to patch the audience in a JWT token.
+   */
+  private static final Map<String, String> DEFAULT_JWT_AUDIENCE_MAPPING =
+      ImmutableMap.of("batch-bigtable.googleapis.com", "https://bigtable.googleapis.com/");
+
   private final String projectId;
   private final String instanceId;
   private final String appProfileId;
   private final boolean isRefreshingChannel;
   private ImmutableList<String> primedTableIds;
   private HeaderTracer headerTracer;
+  private final Map<String, String> jwtAudienceMapping;
 
   private final ServerStreamingCallSettings<Query, Row> readRowsSettings;
   private final UnaryCallSettings<Query, Row> readRowSettings;
@@ -191,6 +200,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     isRefreshingChannel = builder.isRefreshingChannel;
     primedTableIds = builder.primedTableIds;
     headerTracer = builder.headerTracer;
+    jwtAudienceMapping = builder.jwtAudienceMapping;
 
     // Per method settings.
     readRowsSettings = builder.readRowsSettings.build();
@@ -238,6 +248,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   /** Gets the tracer for capturing metrics in the header. */
   HeaderTracer getHeaderTracer() {
     return headerTracer;
+  }
+
+  @InternalApi("Used for internal testing")
+  public Map<String, String> getJwtAudienceMapping() {
+    return jwtAudienceMapping;
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -498,6 +513,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private boolean isRefreshingChannel;
     private ImmutableList<String> primedTableIds;
     private HeaderTracer headerTracer;
+    private Map<String, String> jwtAudienceMapping;
 
     private final ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings;
     private final UnaryCallSettings.Builder<Query, Row> readRowSettings;
@@ -522,6 +538,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       this.isRefreshingChannel = false;
       primedTableIds = ImmutableList.of();
       headerTracer = HeaderTracer.newBuilder().build();
+      jwtAudienceMapping = DEFAULT_JWT_AUDIENCE_MAPPING;
       setCredentialsProvider(defaultCredentialsProviderBuilder().build());
 
       // Defaults provider
@@ -629,6 +646,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       isRefreshingChannel = settings.isRefreshingChannel;
       primedTableIds = settings.primedTableIds;
       headerTracer = settings.headerTracer;
+      jwtAudienceMapping = settings.jwtAudienceMapping;
 
       // Per method settings.
       readRowsSettings = settings.readRowsSettings.toBuilder();
@@ -762,6 +780,17 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       return headerTracer;
     }
 
+    @InternalApi("Used for internal testing")
+    public Builder setJwtAudienceMapping(Map<String, String> jwtAudienceMapping) {
+      this.jwtAudienceMapping = Preconditions.checkNotNull(jwtAudienceMapping);
+      return this;
+    }
+
+    @InternalApi("Used for internal testing")
+    public Map<String, String> getJwtAudienceMapping() {
+      return jwtAudienceMapping;
+    }
+
     /** Returns the builder for the settings used for calls to readRows. */
     public ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings() {
       return readRowsSettings;
@@ -842,6 +871,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
         .add("isRefreshingChannel", isRefreshingChannel)
         .add("primedTableIds", primedTableIds)
         .add("headerTracer", headerTracer)
+        .add("jwtAudienceMapping", jwtAudienceMapping)
         .add("readRowsSettings", readRowsSettings)
         .add("readRowSettings", readRowSettings)
         .add("sampleRowKeysSettings", sampleRowKeysSettings)

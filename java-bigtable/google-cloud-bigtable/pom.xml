@@ -32,6 +32,10 @@
     <bigtable.cfe-admin-endpoint/>
     <bigtable.directpath-data-endpoint/>
     <bigtable.directpath-admin-endpoint/>
+
+    <!-- This is used by bigtable-prod-batch-it profile to ensure that tests work on the batch endpoint.
+     Also, this property will be augmented by `internal-bigtable-prod-batch-it-prop-helper` profile -->
+    <bigtable.cfe-data-batch-endpoint>batch-bigtable.googleapis.com:443</bigtable.cfe-data-batch-endpoint>
   </properties>
 
   <dependencyManagement>
@@ -113,6 +117,14 @@
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client-gson</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.protobuf</groupId>
@@ -315,6 +327,55 @@
                   </includes>
                   <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-prod-it.xml</summaryFile>
                   <reportsDirectory>${project.build.directory}/failsafe-reports/prod-it</reportsDirectory>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <!-- internal profile to provide a sensible default for bigtable.cfe-data-batch-endpoint based on
+    bigtable.cfe-data-endpoint -->
+    <profile>
+      <id>internal-bigtable-prod-batch-it-prop-helper</id>
+      <activation>
+        <property>
+          <name>bigtable.cfe-data-endpoint</name>
+        </property>
+      </activation>
+      <properties>
+        <bigtable.cfe-data-batch-endpoint>batch-${bigtable.cfe-data-endpoint}</bigtable.cfe-data-batch-endpoint>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>bigtable-prod-batch-it</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>prod-batch-it</id>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+                <configuration>
+                  <skip>false</skip>
+
+                  <systemPropertyVariables>
+                    <bigtable.env>cloud</bigtable.env>
+                    <bigtable.data-endpoint>${bigtable.cfe-data-batch-endpoint}</bigtable.data-endpoint>
+                    <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/prod-batch-it</bigtable.grpc-log-dir>
+                  </systemPropertyVariables>
+                  <includes>
+                    <include>com.google.cloud.bigtable.data.v2.it.*IT</include>
+                  </includes>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-prod-batch-it.xml</summaryFile>
+                  <reportsDirectory>${project.build.directory}/failsafe-reports/prod-batch-it</reportsDirectory>
                 </configuration>
               </execution>
             </executions>

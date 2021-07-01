@@ -21,6 +21,7 @@ import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.batching.BatcherImpl;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
@@ -42,6 +43,7 @@ import com.google.api.gax.tracing.SpanName;
 import com.google.api.gax.tracing.TracedServerStreamingCallable;
 import com.google.api.gax.tracing.TracedUnaryCallable;
 import com.google.auth.Credentials;
+import com.google.auth.oauth2.ServiceAccountJwtAccessCredentials;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.CheckAndMutateRowResponse;
@@ -56,6 +58,7 @@ import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.cloud.bigtable.Version;
+import com.google.cloud.bigtable.data.v2.internal.JwtCredentialsWithAudience;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
@@ -94,6 +97,8 @@ import io.opencensus.tags.TagValue;
 import io.opencensus.tags.Tagger;
 import io.opencensus.tags.Tags;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -145,6 +150,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     // TODO: this implementation is on the cusp of unwieldy, if we end up adding more features
     // consider splitting it up by feature.
+
+    // workaround JWT audience issues
+    patchCredentials(builder);
 
     // Inject channel priming
     if (settings.isRefreshingChannel()) {
@@ -216,6 +224,41 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .setStatsAttributes(attributes)
             .build());
     return builder.build();
+  }
+
+  private static void patchCredentials(EnhancedBigtableStubSettings.Builder settings)
+      throws IOException {
+    int i = settings.getEndpoint().lastIndexOf(":");
+    String host = settings.getEndpoint().substring(0, i);
+    String audience = settings.getJwtAudienceMapping().get(host);
+
+    if (audience == null) {
+      return;
+    }
+    URI audienceUri = null;
+    try {
+      audienceUri = new URI(audience);
+    } catch (URISyntaxException e) {
+      throw new IllegalStateException("invalid JWT audience override", e);
+    }
+
+    CredentialsProvider credentialsProvider = settings.getCredentialsProvider();
+    if (credentialsProvider == null) {
+      return;
+    }
+
+    Credentials credentials = credentialsProvider.getCredentials();
+    if (credentials == null) {
+      return;
+    }
+
+    if (!(credentials instanceof ServiceAccountJwtAccessCredentials)) {
+      return;
+    }
+
+    ServiceAccountJwtAccessCredentials jwtCreds = (ServiceAccountJwtAccessCredentials) credentials;
+    JwtCredentialsWithAudience patchedCreds = new JwtCredentialsWithAudience(jwtCreds, audienceUri);
+    settings.setCredentialsProvider(FixedCredentialsProvider.create(patchedCreds));
   }
 
   public EnhancedBigtableStub(EnhancedBigtableStubSettings settings, ClientContext clientContext) {
