@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.6.2](https://www.github.com/googleapis/java-cloudbuild/compare/v2.6.1...v2.6.2) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-cloudbuild/issues/1130)) ([#516](https://www.github.com/googleapis/java-cloudbuild/issues/516)) ([68759da](https://www.github.com/googleapis/java-cloudbuild/commit/68759da8cced165e6f0a883eeeb918f6752dce25))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#522](https://www.github.com/googleapis/java-cloudbuild/issues/522)) ([73d6288](https://www.github.com/googleapis/java-cloudbuild/commit/73d6288de0b148eb3cf8db88fb889e14928502a9))
+
 ### [2.6.1](https://www.github.com/googleapis/java-cloudbuild/compare/v2.6.0...v2.6.1) (2021-06-04)
 
 
