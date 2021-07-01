@@ -45,6 +45,7 @@ import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -136,7 +137,7 @@ public final class GcpManagedChannelTest {
   }
 
   @Test
-  public void testGetChannelRefPickUpSmallest() throws Exception {
+  public void testGetChannelRefPickUpSmallest() {
     // All channels have max number of streams
     resetGcpChannel();
     for (int i = 0; i < 5; i++) {
@@ -155,6 +156,162 @@ public final class GcpManagedChannelTest {
     }
     assertEquals(10, gcpChannel.channelRefs.size());
     assertEquals(6, gcpChannel.getChannelRef(null).getAffinityCount());
+  }
+
+  private void assertFallbacksMetric(
+      FakeMetricRegistry fakeRegistry, long successes, long failures) {
+    MetricsRecord record = fakeRegistry.pollRecord();
+    List<PointWithFunction> metric =
+        record.getMetrics().get(GcpMetricsConstants.METRIC_NUM_FALLBACKS);
+    assertThat(metric.size()).isEqualTo(2);
+    assertThat(metric.get(0).value()).isEqualTo(successes);
+    assertThat(metric.get(0).values().get(0))
+        .isEqualTo(LabelValue.create(GcpMetricsConstants.RESULT_SUCCESS));
+    assertThat(metric.get(1).value()).isEqualTo(failures);
+    assertThat(metric.get(1).values().get(0))
+        .isEqualTo(LabelValue.create(GcpMetricsConstants.RESULT_ERROR));
+  }
+
+  @Test
+  public void testGetChannelRefWithFallback() {
+    final FakeMetricRegistry fakeRegistry = new FakeMetricRegistry();
+
+    final int maxSize = 3;
+    final int lowWatermark = 2;
+
+    // Creating a pool with fallback, max size and low watermark above.
+    final GcpManagedChannel pool =
+        (GcpManagedChannel)
+            GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                .withApiConfig(
+                    ApiConfig.newBuilder()
+                        .setChannelPool(
+                            ChannelPoolConfig.newBuilder()
+                                .setMaxSize(maxSize)
+                                .setMaxConcurrentStreamsLowWatermark(lowWatermark)
+                                .build())
+                        .build())
+                .withOptions(
+                    GcpManagedChannelOptions.newBuilder()
+                        .withResiliencyOptions(
+                            GcpResiliencyOptions.newBuilder().setNotReadyFallback(true).build())
+                        .withMetricsOptions(
+                            GcpMetricsOptions.newBuilder().withMetricRegistry(fakeRegistry).build())
+                        .build())
+                .build();
+
+    // Creates the first channel with 0 id.
+    assertEquals(0, pool.getNumberOfChannels());
+    ChannelRef chRef = pool.getChannelRef(null);
+    assertEquals(0, chRef.getId());
+    assertEquals(1, pool.getNumberOfChannels());
+
+    // The 0 channel is ready by default, so the subsequent request for a channel should return
+    // the 0 channel again if its active streams (currently 0) are less than the low watermark.
+    chRef = pool.getChannelRef(null);
+    assertEquals(0, chRef.getId());
+    assertEquals(1, pool.getNumberOfChannels());
+
+    // Let's simulate the non-ready state for the 0 channel.
+    pool.processChannelStateChange(0, ConnectivityState.CONNECTING);
+    // Now request for a channel should return a newly created channel because our current channel
+    // is not ready and we haven't reached the pool's max size.
+    chRef = pool.getChannelRef(null);
+    assertEquals(1, chRef.getId());
+    assertEquals(2, pool.getNumberOfChannels());
+
+    // Adding one active stream to channel 1.
+    pool.channelRefs.get(1).activeStreamsCountIncr();
+    // Having 0 active streams on channel 0 and 1 active streams on channel one with the default
+    // settings would return channel 0 for the next channel request. But having fallback enabled and
+    // channel 0 not ready it should return channel 1 instead.
+    chRef = pool.getChannelRef(null);
+    assertEquals(1, chRef.getId());
+    assertEquals(2, pool.getNumberOfChannels());
+
+    // Now let's have channel 0 still as not ready but bring channel 1 streams to low watermark.
+    for (int i = 0; i < lowWatermark - 1; i++) {
+      pool.channelRefs.get(1).activeStreamsCountIncr();
+    }
+    // Having one non-ready channel and another channel reached the low watermark should create a
+    // new channel for the next channel request if we haven't reached max size.
+    chRef = pool.getChannelRef(null);
+    assertEquals(2, chRef.getId());
+    assertEquals(3, pool.getNumberOfChannels());
+
+    // Now we reached max pool size. Let's bring channel 2 to the low watermark and channel 1 to the
+    // low watermark + 1 streams.
+    for (int i = 0; i < lowWatermark; i++) {
+      pool.channelRefs.get(2).activeStreamsCountIncr();
+    }
+    pool.channelRefs.get(1).activeStreamsCountIncr();
+    // As we reached max size and cannot create new channels and having ready channels with low
+    // watermark and low watermark + 1 streams, the best channel for the next channel request with
+    // the fallback enabled is the channel 2 with low watermark streams because it's the least busy
+    // ready channel.
+    assertEquals(lowWatermark + 1, pool.channelRefs.get(1).getActiveStreamsCount());
+    assertEquals(lowWatermark, pool.channelRefs.get(2).getActiveStreamsCount());
+    chRef = pool.getChannelRef(null);
+    assertEquals(2, chRef.getId());
+    assertEquals(3, pool.getNumberOfChannels());
+
+    // Let's bring channel 1 to max streams and mark channel 2 as not ready.
+    for (int i = 0; i < MAX_STREAM - lowWatermark; i++) {
+      pool.channelRefs.get(2).activeStreamsCountIncr();
+    }
+    pool.processChannelStateChange(1, ConnectivityState.CONNECTING);
+    assertEquals(MAX_STREAM, pool.channelRefs.get(2).getActiveStreamsCount());
+
+    // Now we have two non-ready channels and one overloaded.
+    // Even when fallback enabled there is no good candidate at this time, the next channel request
+    // should return a channel with lowest streams count regardless of its readiness state.
+    // In our case it is channel 0.
+    chRef = pool.getChannelRef(null);
+    assertEquals(0, chRef.getId());
+    assertEquals(3, pool.getNumberOfChannels());
+
+    // So far the fallback logic sometimes provided different channels than a pool with disabled
+    // fallback would provide. But for metrics we consider a fallback only if we have an affinity
+    // key that was mapped to some channel and after that channel went to a non-ready state we
+    // temporarily used another channel as a fallback.
+    // Because of that, metric values for successful and failed fallbacks should be still zero.
+    assertFallbacksMetric(fakeRegistry, 0, 0);
+
+    // Let's have an affinity key and bind it to channel 0.
+    final String key = "ABC";
+    pool.bind(pool.channelRefs.get(0), Collections.singletonList(key));
+
+    // Channel 0 is not ready currently and the fallback enabled should look for a fallback but we
+    // still don't have a good channel because channel 1 is not ready and channel 2 is overloaded.
+    // The getChannelRef should return the original channel 0 and report a failed fallback.
+    chRef = pool.getChannelRef(key);
+    assertEquals(0, chRef.getId());
+    assertFallbacksMetric(fakeRegistry, 0, 1);
+
+    // Let's return channel 1 to a ready state.
+    pool.processChannelStateChange(1, ConnectivityState.READY);
+    // Now we have a fallback candidate.
+    // The getChannelRef should return the channel 1 and report a successful fallback.
+    chRef = pool.getChannelRef(key);
+    assertEquals(1, chRef.getId());
+    assertFallbacksMetric(fakeRegistry, 1, 1);
+
+    // Let's bring channel 1 back to connecting state.
+    pool.processChannelStateChange(1, ConnectivityState.CONNECTING);
+    // Now we don't have a good fallback candidate again. But this time we already used channel 1
+    // as a fallback and we should stick to it instead of returning the original channel.
+    // The getChannelRef should return the channel 1 and report a failed fallback.
+    chRef = pool.getChannelRef(key);
+    assertEquals(1, chRef.getId());
+    assertFallbacksMetric(fakeRegistry, 1, 2);
+
+    // Finally, we bring both channel 1 and channel 0 to the ready state and we should get the
+    // original channel 0 for the key without any fallbacks happening.
+    pool.processChannelStateChange(1, ConnectivityState.READY);
+    pool.processChannelStateChange(0, ConnectivityState.READY);
+    chRef = pool.getChannelRef(key);
+    assertEquals(0, chRef.getId());
+    assertFallbacksMetric(fakeRegistry, 1, 2);
   }
 
   @Test

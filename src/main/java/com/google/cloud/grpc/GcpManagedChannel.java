@@ -41,20 +41,18 @@ import io.opencensus.metrics.MetricOptions;
 import io.opencensus.metrics.MetricRegistry;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.LongSummaryStatistics;
 import java.util.Map;
-import java.util.OptionalInt;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
-import javax.annotation.concurrent.GuardedBy;
 
 /** A channel management factory that implements grpc.Channel APIs. */
 public class GcpManagedChannel extends ManagedChannel {
@@ -63,7 +61,7 @@ public class GcpManagedChannel extends ManagedChannel {
   private static final int DEFAULT_MAX_CHANNEL = 10;
   private static final int DEFAULT_MAX_STREAM = 100;
 
-  private final ManagedChannelBuilder delegateChannelBuilder;
+  private final ManagedChannelBuilder<?> delegateChannelBuilder;
   private final GcpManagedChannelOptions options;
   private final boolean fallbackEnabled;
   private final boolean unresponsiveDetectionEnabled;
@@ -81,9 +79,7 @@ public class GcpManagedChannel extends ManagedChannel {
   // Map from a broken channel id to the remapped affinity keys (key => ready channel id).
   private final Map<Integer, Map<String, Integer>> fallbackMap = new ConcurrentHashMap<>();
 
-  @VisibleForTesting
-  @GuardedBy("this")
-  final List<ChannelRef> channelRefs = new ArrayList<ChannelRef>();
+  @VisibleForTesting final List<ChannelRef> channelRefs = new CopyOnWriteArrayList<>();
 
   private final Map<Integer, ChannelRef> channelRefById = new HashMap<>();
 
@@ -147,7 +143,7 @@ public class GcpManagedChannel extends ManagedChannel {
    * @param options the options for GcpManagedChannel.
    */
   public GcpManagedChannel(
-      ManagedChannelBuilder delegateChannelBuilder,
+      ManagedChannelBuilder<?> delegateChannelBuilder,
       ApiConfig apiConfig,
       int poolSize,
       GcpManagedChannelOptions options) {
@@ -451,7 +447,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private long reportMaxChannels() {
-    return channelRefs.size();
+    return getNumberOfChannels();
   }
 
   private long reportMaxAllowedChannels() {
@@ -721,7 +717,7 @@ public class GcpManagedChannel extends ManagedChannel {
     }
   }
 
-  private void processChannelStateChange(int channelId, ConnectivityState state) {
+  void processChannelStateChange(int channelId, ConnectivityState state) {
     if (!fallbackEnabled) {
       return;
     }
@@ -747,21 +743,11 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   public int getMinActiveStreams() {
-    final OptionalInt minStreams =
-        channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).min();
-    if (minStreams.isPresent()) {
-      return minStreams.getAsInt();
-    }
-    return 0;
+    return channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).min().orElse(0);
   }
 
   public int getMaxActiveStreams() {
-    final OptionalInt maxStreams =
-        channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).max();
-    if (maxStreams.isPresent()) {
-      return maxStreams.getAsInt();
-    }
-    return 0;
+    return channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).max().orElse(0);
   }
 
   /**
@@ -776,29 +762,50 @@ public class GcpManagedChannel extends ManagedChannel {
    */
   protected ChannelRef getChannelRef(@Nullable String key) {
     if (key == null || key.equals("")) {
-      return pickLeastBusyChannel(false);
+      return pickLeastBusyChannel();
     }
-    ChannelRef channelRef = affinityKeyToChannelRef.get(key);
-    if (channelRef == null || !fallbackEnabled) {
-      return channelRef;
+    ChannelRef mappedChannel = affinityKeyToChannelRef.get(key);
+    if (mappedChannel == null || !fallbackEnabled) {
+      return mappedChannel;
     }
     // Look up if the channelRef is not ready.
-    Map<String, Integer> tempMap = fallbackMap.get(channelRef.getId());
+    Map<String, Integer> tempMap = fallbackMap.get(mappedChannel.getId());
     if (tempMap == null) {
       // Channel is ready.
-      return channelRef;
+      return mappedChannel;
     }
     // Channel is not ready. Look up if the affinity key mapped to another channel.
     Integer channelId = tempMap.get(key);
-    if (channelId == null || fallbackMap.containsKey(channelId)) {
-      // No temp mapping for this key or fallback channelId is also broken.
-      channelRef = pickLeastBusyChannel(true);
+    if (channelId != null && !fallbackMap.containsKey(channelId)) {
+      // Fallback channel is ready.
+      fallbacksSucceeded.incrementAndGet();
+      return channelRefById.get(channelId);
+    }
+    // No temp mapping for this key or fallback channel is also broken.
+    ChannelRef channelRef = pickLeastBusyChannel();
+    if (!fallbackMap.containsKey(channelRef.getId())
+        && channelRef.getActiveStreamsCount() < DEFAULT_MAX_STREAM) {
+      // Got a ready and not an overloaded channel.
+      fallbacksSucceeded.incrementAndGet();
       tempMap.put(key, channelRef.getId());
       return channelRef;
     }
-    // Fallback channelId is ready.
-    fallbacksSucceeded.incrementAndGet();
-    return channelRefById.get(channelId);
+    fallbacksFailed.incrementAndGet();
+    if (channelId != null) {
+      // Stick with previous mapping if fallback has failed.
+      return channelRefById.get(channelId);
+    }
+    return mappedChannel;
+  }
+
+  // Create a new channel and add it to channelRefs synchronously to make sure its id matches its
+  // channelRef's index.
+  private synchronized ChannelRef createNewChannel() {
+    final int size = channelRefs.size();
+    ChannelRef channelRef = new ChannelRef(delegateChannelBuilder.build(), size);
+    channelRefs.add(channelRef);
+    channelRefById.put(size, channelRef);
+    return channelRef;
   }
 
   /**
@@ -807,49 +814,52 @@ public class GcpManagedChannel extends ManagedChannel {
    * channel in the READY state and having fewer than maximum allowed number of active streams will
    * be provided if available.
    */
-  private synchronized ChannelRef pickLeastBusyChannel(boolean forFallback) {
-    int size = channelRefs.size();
-    channelRefs.sort(Comparator.comparingInt(ChannelRef::getActiveStreamsCount));
+  private ChannelRef pickLeastBusyChannel() {
+    if (channelRefs.size() == 0) {
+      return createNewChannel();
+    }
 
-    // Create a new channel if the max size has not been reached.
-    if (size == 0
-        || (size < maxSize
-            && channelRefs.get(0).getActiveStreamsCount() >= maxConcurrentStreamsLowWatermark)) {
-      ChannelRef channelRef = new ChannelRef(delegateChannelBuilder.build(), size);
-      channelRefs.add(channelRef);
-      channelRefById.put(size, channelRef);
-      return channelRef;
+    // Pick the least busy channel and the least busy ready and not overloaded channel (this could
+    // be the same channel or different or no channel).
+    ChannelRef channelCandidate = channelRefs.get(0);
+    int minStreams = channelCandidate.getActiveStreamsCount();
+    ChannelRef readyCandidate = null;
+    int readyMinStreams = Integer.MAX_VALUE;
+
+    for (ChannelRef channelRef : channelRefs) {
+      int cnt = channelRef.getActiveStreamsCount();
+      if (cnt < minStreams) {
+        minStreams = cnt;
+        channelCandidate = channelRef;
+      }
+      if (cnt < readyMinStreams
+          && !fallbackMap.containsKey(channelRef.getId())
+          && channelRef.getActiveStreamsCount() < DEFAULT_MAX_STREAM) {
+        readyMinStreams = cnt;
+        readyCandidate = channelRef;
+      }
     }
 
     if (!fallbackEnabled) {
-      return channelRefs.get(0);
+      if (channelRefs.size() < maxSize && minStreams >= maxConcurrentStreamsLowWatermark) {
+        return createNewChannel();
+      }
+      return channelCandidate;
     }
 
-    // Pick the least busy ready channel.
-    for (ChannelRef channelRef : channelRefs) {
-      // Do not fallback to overloaded channels.
-      if (channelRef.getActiveStreamsCount() >= DEFAULT_MAX_STREAM) {
-        break;
-      }
-      // Skip not ready channels.
-      if (fallbackMap.containsKey(channelRef.getId())) {
-        continue;
-      }
-      if (forFallback) {
-        fallbacksSucceeded.incrementAndGet();
-      }
-      return channelRef;
+    if (channelRefs.size() < maxSize && readyMinStreams >= maxConcurrentStreamsLowWatermark) {
+      return createNewChannel();
     }
-    // Return the least busy non-ready or overloaded channel if all channels are not ready or
-    // overloaded.
-    if (forFallback) {
-      fallbacksFailed.incrementAndGet();
+
+    if (readyCandidate != null) {
+      return readyCandidate;
     }
-    return channelRefs.get(0);
+
+    return channelCandidate;
   }
 
   @Override
-  public synchronized String authority() {
+  public String authority() {
     if (channelRefs.size() > 0) {
       return channelRefs.get(0).getChannel().authority();
     }
@@ -878,7 +888,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   @Override
-  public synchronized ManagedChannel shutdownNow() {
+  public ManagedChannel shutdownNow() {
     for (ChannelRef channelRef : channelRefs) {
       if (!channelRef.getChannel().isTerminated()) {
         channelRef.getChannel().shutdownNow();
@@ -888,7 +898,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   @Override
-  public synchronized ManagedChannel shutdown() {
+  public ManagedChannel shutdown() {
     for (ChannelRef channelRef : channelRefs) {
       channelRef.getChannel().shutdown();
     }
@@ -896,8 +906,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   @Override
-  public synchronized boolean awaitTermination(long timeout, TimeUnit unit)
-      throws InterruptedException {
+  public boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException {
     long endTimeNanos = System.nanoTime() + unit.toNanos(timeout);
     for (ChannelRef channelRef : channelRefs) {
       if (channelRef.getChannel().isTerminated()) {
@@ -913,7 +922,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   @Override
-  public synchronized boolean isShutdown() {
+  public boolean isShutdown() {
     for (ChannelRef channelRef : channelRefs) {
       if (!channelRef.getChannel().isShutdown()) {
         return false;
@@ -923,7 +932,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   @Override
-  public synchronized boolean isTerminated() {
+  public boolean isTerminated() {
     for (ChannelRef channelRef : channelRefs) {
       if (!channelRef.getChannel().isTerminated()) {
         return false;
@@ -934,7 +943,7 @@ public class GcpManagedChannel extends ManagedChannel {
 
   /** Get the current connectivity state of the channel pool. */
   @Override
-  public synchronized ConnectivityState getState(boolean requestConnection) {
+  public ConnectivityState getState(boolean requestConnection) {
     int ready = 0;
     int idle = 0;
     int connecting = 0;
