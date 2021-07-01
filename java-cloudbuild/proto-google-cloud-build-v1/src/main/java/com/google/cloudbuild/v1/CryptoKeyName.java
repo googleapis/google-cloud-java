@@ -244,10 +244,10 @@ public class CryptoKeyName implements ResourceName {
     }
 
     private Builder(CryptoKeyName cryptoKeyName) {
-      project = cryptoKeyName.project;
-      location = cryptoKeyName.location;
-      keyring = cryptoKeyName.keyring;
-      key = cryptoKeyName.key;
+      this.project = cryptoKeyName.project;
+      this.location = cryptoKeyName.location;
+      this.keyring = cryptoKeyName.keyring;
+      this.key = cryptoKeyName.key;
     }
 
     public CryptoKeyName build() {

@@ -181,8 +181,8 @@ public class BuildTriggerName implements ResourceName {
     }
 
     private Builder(BuildTriggerName buildTriggerName) {
-      project = buildTriggerName.project;
-      trigger = buildTriggerName.trigger;
+      this.project = buildTriggerName.project;
+      this.trigger = buildTriggerName.trigger;
     }
 
     public BuildTriggerName build() {

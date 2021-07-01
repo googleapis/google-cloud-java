@@ -261,8 +261,8 @@ public class BuildName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(buildName.pathTemplate, PROJECT_BUILD),
           "toBuilder is only supported when BuildName has the pattern of projects/{project}/builds/{build}");
-      project = buildName.project;
-      build = buildName.build;
+      this.project = buildName.project;
+      this.build = buildName.build;
     }
 
     public BuildName build() {

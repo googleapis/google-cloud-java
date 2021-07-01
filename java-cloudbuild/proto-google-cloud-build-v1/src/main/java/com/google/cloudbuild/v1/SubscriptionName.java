@@ -181,8 +181,8 @@ public class SubscriptionName implements ResourceName {
     }
 
     private Builder(SubscriptionName subscriptionName) {
-      project = subscriptionName.project;
-      subscription = subscriptionName.subscription;
+      this.project = subscriptionName.project;
+      this.subscription = subscriptionName.subscription;
     }
 
     public SubscriptionName build() {
