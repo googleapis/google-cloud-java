@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.3.1](https://www.github.com/googleapis/java-networkconnectivity/compare/v0.3.0...v0.3.1) (2021-07-01)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#94](https://www.github.com/googleapis/java-networkconnectivity/issues/94)) ([daa9ee9](https://www.github.com/googleapis/java-networkconnectivity/commit/daa9ee9040d2a161ec5e156955015d2e0358bd44))
+
 ## [0.3.0](https://www.github.com/googleapis/java-networkconnectivity/compare/v0.2.3...v0.3.0) (2021-06-23)
 
 
