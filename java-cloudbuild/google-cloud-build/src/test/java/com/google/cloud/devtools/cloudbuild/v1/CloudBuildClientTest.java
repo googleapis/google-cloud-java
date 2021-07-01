@@ -66,6 +66,7 @@ import com.google.cloudbuild.v1.SourceProvenance;
 import com.google.cloudbuild.v1.TimeSpan;
 import com.google.cloudbuild.v1.UpdateBuildTriggerRequest;
 import com.google.cloudbuild.v1.UpdateWorkerPoolRequest;
+import com.google.cloudbuild.v1.WebhookConfig;
 import com.google.cloudbuild.v1.WorkerConfig;
 import com.google.cloudbuild.v1.WorkerPool;
 import com.google.common.collect.Lists;
@@ -158,6 +159,7 @@ public class CloudBuildClientTest {
             .putAllTiming(new HashMap<String, TimeSpan>())
             .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
             .setAvailableSecrets(Secrets.newBuilder().build())
+            .addAllWarnings(new ArrayList<Build.Warning>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -231,6 +233,7 @@ public class CloudBuildClientTest {
             .putAllTiming(new HashMap<String, TimeSpan>())
             .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
             .setAvailableSecrets(Secrets.newBuilder().build())
+            .addAllWarnings(new ArrayList<Build.Warning>())
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
@@ -343,6 +346,7 @@ public class CloudBuildClientTest {
             .putAllTiming(new HashMap<String, TimeSpan>())
             .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
             .setAvailableSecrets(Secrets.newBuilder().build())
+            .addAllWarnings(new ArrayList<Build.Warning>())
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
@@ -408,6 +412,7 @@ public class CloudBuildClientTest {
             .putAllTiming(new HashMap<String, TimeSpan>())
             .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
             .setAvailableSecrets(Secrets.newBuilder().build())
+            .addAllWarnings(new ArrayList<Build.Warning>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -456,13 +461,15 @@ public class CloudBuildClientTest {
   public void createBuildTriggerTest() throws Exception {
     BuildTrigger expectedResponse =
         BuildTrigger.newBuilder()
+            .setResourceName("resourceName-384566343")
             .setId("id3355")
             .setDescription("description-1724546052")
-            .setName(BuildTriggerName.of("[PROJECT]", "[TRIGGER]").toString())
+            .setName(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
             .addAllTags(new ArrayList<String>())
             .setTriggerTemplate(RepoSource.newBuilder().build())
             .setGithub(GitHubEventsConfig.newBuilder().build())
             .setPubsubConfig(PubsubConfig.newBuilder().build())
+            .setWebhookConfig(WebhookConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setDisabled(true)
             .putAllSubstitutions(new HashMap<String, String>())
@@ -509,13 +516,15 @@ public class CloudBuildClientTest {
   public void getBuildTriggerTest() throws Exception {
     BuildTrigger expectedResponse =
         BuildTrigger.newBuilder()
+            .setResourceName("resourceName-384566343")
             .setId("id3355")
             .setDescription("description-1724546052")
-            .setName(BuildTriggerName.of("[PROJECT]", "[TRIGGER]").toString())
+            .setName(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
             .addAllTags(new ArrayList<String>())
             .setTriggerTemplate(RepoSource.newBuilder().build())
             .setGithub(GitHubEventsConfig.newBuilder().build())
             .setPubsubConfig(PubsubConfig.newBuilder().build())
+            .setWebhookConfig(WebhookConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setDisabled(true)
             .putAllSubstitutions(new HashMap<String, String>())
@@ -643,13 +652,15 @@ public class CloudBuildClientTest {
   public void updateBuildTriggerTest() throws Exception {
     BuildTrigger expectedResponse =
         BuildTrigger.newBuilder()
+            .setResourceName("resourceName-384566343")
             .setId("id3355")
             .setDescription("description-1724546052")
-            .setName(BuildTriggerName.of("[PROJECT]", "[TRIGGER]").toString())
+            .setName(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
             .addAllTags(new ArrayList<String>())
             .setTriggerTemplate(RepoSource.newBuilder().build())
             .setGithub(GitHubEventsConfig.newBuilder().build())
             .setPubsubConfig(PubsubConfig.newBuilder().build())
+            .setWebhookConfig(WebhookConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setDisabled(true)
             .putAllSubstitutions(new HashMap<String, String>())
@@ -724,6 +735,7 @@ public class CloudBuildClientTest {
             .putAllTiming(new HashMap<String, TimeSpan>())
             .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
             .setAvailableSecrets(Secrets.newBuilder().build())
+            .addAllWarnings(new ArrayList<Build.Warning>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -779,6 +791,7 @@ public class CloudBuildClientTest {
 
     ReceiveTriggerWebhookRequest request =
         ReceiveTriggerWebhookRequest.newBuilder()
+            .setName("name3373707")
             .setBody(HttpBody.newBuilder().build())
             .setProjectId("projectId-894832108")
             .setTrigger("trigger-1059891784")
@@ -793,6 +806,7 @@ public class CloudBuildClientTest {
     ReceiveTriggerWebhookRequest actualRequest =
         ((ReceiveTriggerWebhookRequest) actualRequests.get(0));
 
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(request.getBody(), actualRequest.getBody());
     Assert.assertEquals(request.getProjectId(), actualRequest.getProjectId());
     Assert.assertEquals(request.getTrigger(), actualRequest.getTrigger());
@@ -811,6 +825,7 @@ public class CloudBuildClientTest {
     try {
       ReceiveTriggerWebhookRequest request =
           ReceiveTriggerWebhookRequest.newBuilder()
+              .setName("name3373707")
               .setBody(HttpBody.newBuilder().build())
               .setProjectId("projectId-894832108")
               .setTrigger("trigger-1059891784")

@@ -240,7 +240,7 @@ public interface BuildOptionsOrBuilder
    * <pre>
    * Option to specify a `WorkerPool` for the build.
    * Format: projects/{project}/locations/{location}/workerPools/{workerPool}
-   * This field is experimental.
+   * This field is in beta and is available only to restricted users.
    * </pre>
    *
    * <code>string worker_pool = 7;</code>
@@ -254,7 +254,7 @@ public interface BuildOptionsOrBuilder
    * <pre>
    * Option to specify a `WorkerPool` for the build.
    * Format: projects/{project}/locations/{location}/workerPools/{workerPool}
-   * This field is experimental.
+   * This field is in beta and is available only to restricted users.
    * </pre>
    *
    * <code>string worker_pool = 7;</code>

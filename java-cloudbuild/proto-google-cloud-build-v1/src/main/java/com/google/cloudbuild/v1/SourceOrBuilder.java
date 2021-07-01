@@ -101,7 +101,8 @@ public interface SourceOrBuilder
    *
    * <pre>
    * If provided, get the source from this manifest in Google Cloud Storage.
-   * This feature is in Preview.
+   * This feature is in Preview; see description
+   * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.StorageSourceManifest storage_source_manifest = 8;</code>
@@ -114,7 +115,8 @@ public interface SourceOrBuilder
    *
    * <pre>
    * If provided, get the source from this manifest in Google Cloud Storage.
-   * This feature is in Preview.
+   * This feature is in Preview; see description
+   * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.StorageSourceManifest storage_source_manifest = 8;</code>
@@ -127,7 +129,8 @@ public interface SourceOrBuilder
    *
    * <pre>
    * If provided, get the source from this manifest in Google Cloud Storage.
-   * This feature is in Preview.
+   * This feature is in Preview; see description
+   * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.StorageSourceManifest storage_source_manifest = 8;</code>

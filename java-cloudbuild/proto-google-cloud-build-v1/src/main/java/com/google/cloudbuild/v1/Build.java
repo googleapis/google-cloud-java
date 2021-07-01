@@ -65,6 +65,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     secrets_ = java.util.Collections.emptyList();
     serviceAccount_ = "";
+    warnings_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -400,6 +401,17 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 394:
+            {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                warnings_ = new java.util.ArrayList<com.google.cloudbuild.v1.Build.Warning>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              warnings_.add(
+                  input.readMessage(
+                      com.google.cloudbuild.v1.Build.Warning.parser(), extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -425,6 +437,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       }
       if (((mutable_bitField0_ & 0x00000010) != 0)) {
         secrets_ = java.util.Collections.unmodifiableList(secrets_);
+      }
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+        warnings_ = java.util.Collections.unmodifiableList(warnings_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -745,6 +760,1013 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.devtools.cloudbuild.v1.Build.Status)
+  }
+
+  public interface WarningOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.devtools.cloudbuild.v1.Build.Warning)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Explanation of the warning generated.
+     * </pre>
+     *
+     * <code>string text = 1;</code>
+     *
+     * @return The text.
+     */
+    java.lang.String getText();
+    /**
+     *
+     *
+     * <pre>
+     * Explanation of the warning generated.
+     * </pre>
+     *
+     * <code>string text = 1;</code>
+     *
+     * @return The bytes for text.
+     */
+    com.google.protobuf.ByteString getTextBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The priority for this warning.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.Build.Warning.Priority priority = 2;</code>
+     *
+     * @return The enum numeric value on the wire for priority.
+     */
+    int getPriorityValue();
+    /**
+     *
+     *
+     * <pre>
+     * The priority for this warning.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.Build.Warning.Priority priority = 2;</code>
+     *
+     * @return The priority.
+     */
+    com.google.cloudbuild.v1.Build.Warning.Priority getPriority();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A non-fatal problem encountered during the execution of the build.
+   * </pre>
+   *
+   * Protobuf type {@code google.devtools.cloudbuild.v1.Build.Warning}
+   */
+  public static final class Warning extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.Build.Warning)
+      WarningOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Warning.newBuilder() to construct.
+    private Warning(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Warning() {
+      text_ = "";
+      priority_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Warning();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private Warning(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                text_ = s;
+                break;
+              }
+            case 16:
+              {
+                int rawValue = input.readEnum();
+
+                priority_ = rawValue;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloudbuild.v1.Cloudbuild
+          .internal_static_google_devtools_cloudbuild_v1_Build_Warning_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloudbuild.v1.Cloudbuild
+          .internal_static_google_devtools_cloudbuild_v1_Build_Warning_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloudbuild.v1.Build.Warning.class,
+              com.google.cloudbuild.v1.Build.Warning.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The relative importance of this warning.
+     * </pre>
+     *
+     * Protobuf enum {@code google.devtools.cloudbuild.v1.Build.Warning.Priority}
+     */
+    public enum Priority implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Should not be used.
+       * </pre>
+       *
+       * <code>PRIORITY_UNSPECIFIED = 0;</code>
+       */
+      PRIORITY_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * e.g. deprecation warnings and alternative feature highlights.
+       * </pre>
+       *
+       * <code>INFO = 1;</code>
+       */
+      INFO(1),
+      /**
+       *
+       *
+       * <pre>
+       * e.g. automated detection of possible issues with the build.
+       * </pre>
+       *
+       * <code>WARNING = 2;</code>
+       */
+      WARNING(2),
+      /**
+       *
+       *
+       * <pre>
+       * e.g. alerts that a feature used in the build is pending removal
+       * </pre>
+       *
+       * <code>ALERT = 3;</code>
+       */
+      ALERT(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Should not be used.
+       * </pre>
+       *
+       * <code>PRIORITY_UNSPECIFIED = 0;</code>
+       */
+      public static final int PRIORITY_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * e.g. deprecation warnings and alternative feature highlights.
+       * </pre>
+       *
+       * <code>INFO = 1;</code>
+       */
+      public static final int INFO_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * e.g. automated detection of possible issues with the build.
+       * </pre>
+       *
+       * <code>WARNING = 2;</code>
+       */
+      public static final int WARNING_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * e.g. alerts that a feature used in the build is pending removal
+       * </pre>
+       *
+       * <code>ALERT = 3;</code>
+       */
+      public static final int ALERT_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Priority valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Priority forNumber(int value) {
+        switch (value) {
+          case 0:
+            return PRIORITY_UNSPECIFIED;
+          case 1:
+            return INFO;
+          case 2:
+            return WARNING;
+          case 3:
+            return ALERT;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Priority> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Priority> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Priority>() {
+            public Priority findValueByNumber(int number) {
+              return Priority.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloudbuild.v1.Build.Warning.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Priority[] VALUES = values();
+
+      public static Priority valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Priority(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.devtools.cloudbuild.v1.Build.Warning.Priority)
+    }
+
+    public static final int TEXT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object text_;
+    /**
+     *
+     *
+     * <pre>
+     * Explanation of the warning generated.
+     * </pre>
+     *
+     * <code>string text = 1;</code>
+     *
+     * @return The text.
+     */
+    @java.lang.Override
+    public java.lang.String getText() {
+      java.lang.Object ref = text_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        text_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation of the warning generated.
+     * </pre>
+     *
+     * <code>string text = 1;</code>
+     *
+     * @return The bytes for text.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTextBytes() {
+      java.lang.Object ref = text_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        text_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PRIORITY_FIELD_NUMBER = 2;
+    private int priority_;
+    /**
+     *
+     *
+     * <pre>
+     * The priority for this warning.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.Build.Warning.Priority priority = 2;</code>
+     *
+     * @return The enum numeric value on the wire for priority.
+     */
+    @java.lang.Override
+    public int getPriorityValue() {
+      return priority_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The priority for this warning.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.Build.Warning.Priority priority = 2;</code>
+     *
+     * @return The priority.
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v1.Build.Warning.Priority getPriority() {
+      @SuppressWarnings("deprecation")
+      com.google.cloudbuild.v1.Build.Warning.Priority result =
+          com.google.cloudbuild.v1.Build.Warning.Priority.valueOf(priority_);
+      return result == null ? com.google.cloudbuild.v1.Build.Warning.Priority.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!getTextBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, text_);
+      }
+      if (priority_
+          != com.google.cloudbuild.v1.Build.Warning.Priority.PRIORITY_UNSPECIFIED.getNumber()) {
+        output.writeEnum(2, priority_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getTextBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, text_);
+      }
+      if (priority_
+          != com.google.cloudbuild.v1.Build.Warning.Priority.PRIORITY_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, priority_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloudbuild.v1.Build.Warning)) {
+        return super.equals(obj);
+      }
+      com.google.cloudbuild.v1.Build.Warning other = (com.google.cloudbuild.v1.Build.Warning) obj;
+
+      if (!getText().equals(other.getText())) return false;
+      if (priority_ != other.priority_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getText().hashCode();
+      hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+      hash = (53 * hash) + priority_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloudbuild.v1.Build.Warning parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloudbuild.v1.Build.Warning parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.Build.Warning parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloudbuild.v1.Build.Warning parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.Build.Warning parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloudbuild.v1.Build.Warning parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.Build.Warning parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloudbuild.v1.Build.Warning parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.Build.Warning parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloudbuild.v1.Build.Warning parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.Build.Warning parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloudbuild.v1.Build.Warning parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloudbuild.v1.Build.Warning prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A non-fatal problem encountered during the execution of the build.
+     * </pre>
+     *
+     * Protobuf type {@code google.devtools.cloudbuild.v1.Build.Warning}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.devtools.cloudbuild.v1.Build.Warning)
+        com.google.cloudbuild.v1.Build.WarningOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloudbuild.v1.Cloudbuild
+            .internal_static_google_devtools_cloudbuild_v1_Build_Warning_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloudbuild.v1.Cloudbuild
+            .internal_static_google_devtools_cloudbuild_v1_Build_Warning_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloudbuild.v1.Build.Warning.class,
+                com.google.cloudbuild.v1.Build.Warning.Builder.class);
+      }
+
+      // Construct using com.google.cloudbuild.v1.Build.Warning.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        text_ = "";
+
+        priority_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloudbuild.v1.Cloudbuild
+            .internal_static_google_devtools_cloudbuild_v1_Build_Warning_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloudbuild.v1.Build.Warning getDefaultInstanceForType() {
+        return com.google.cloudbuild.v1.Build.Warning.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloudbuild.v1.Build.Warning build() {
+        com.google.cloudbuild.v1.Build.Warning result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloudbuild.v1.Build.Warning buildPartial() {
+        com.google.cloudbuild.v1.Build.Warning result =
+            new com.google.cloudbuild.v1.Build.Warning(this);
+        result.text_ = text_;
+        result.priority_ = priority_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloudbuild.v1.Build.Warning) {
+          return mergeFrom((com.google.cloudbuild.v1.Build.Warning) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloudbuild.v1.Build.Warning other) {
+        if (other == com.google.cloudbuild.v1.Build.Warning.getDefaultInstance()) return this;
+        if (!other.getText().isEmpty()) {
+          text_ = other.text_;
+          onChanged();
+        }
+        if (other.priority_ != 0) {
+          setPriorityValue(other.getPriorityValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloudbuild.v1.Build.Warning parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.cloudbuild.v1.Build.Warning) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object text_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Explanation of the warning generated.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       *
+       * @return The text.
+       */
+      public java.lang.String getText() {
+        java.lang.Object ref = text_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          text_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explanation of the warning generated.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       *
+       * @return The bytes for text.
+       */
+      public com.google.protobuf.ByteString getTextBytes() {
+        java.lang.Object ref = text_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          text_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explanation of the warning generated.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       *
+       * @param value The text to set.
+       * @return This builder for chaining.
+       */
+      public Builder setText(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        text_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explanation of the warning generated.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearText() {
+
+        text_ = getDefaultInstance().getText();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explanation of the warning generated.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       *
+       * @param value The bytes for text to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTextBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        text_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int priority_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The priority for this warning.
+       * </pre>
+       *
+       * <code>.google.devtools.cloudbuild.v1.Build.Warning.Priority priority = 2;</code>
+       *
+       * @return The enum numeric value on the wire for priority.
+       */
+      @java.lang.Override
+      public int getPriorityValue() {
+        return priority_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The priority for this warning.
+       * </pre>
+       *
+       * <code>.google.devtools.cloudbuild.v1.Build.Warning.Priority priority = 2;</code>
+       *
+       * @param value The enum numeric value on the wire for priority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPriorityValue(int value) {
+
+        priority_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The priority for this warning.
+       * </pre>
+       *
+       * <code>.google.devtools.cloudbuild.v1.Build.Warning.Priority priority = 2;</code>
+       *
+       * @return The priority.
+       */
+      @java.lang.Override
+      public com.google.cloudbuild.v1.Build.Warning.Priority getPriority() {
+        @SuppressWarnings("deprecation")
+        com.google.cloudbuild.v1.Build.Warning.Priority result =
+            com.google.cloudbuild.v1.Build.Warning.Priority.valueOf(priority_);
+        return result == null
+            ? com.google.cloudbuild.v1.Build.Warning.Priority.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The priority for this warning.
+       * </pre>
+       *
+       * <code>.google.devtools.cloudbuild.v1.Build.Warning.Priority priority = 2;</code>
+       *
+       * @param value The priority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPriority(com.google.cloudbuild.v1.Build.Warning.Priority value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        priority_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The priority for this warning.
+       * </pre>
+       *
+       * <code>.google.devtools.cloudbuild.v1.Build.Warning.Priority priority = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPriority() {
+
+        priority_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.devtools.cloudbuild.v1.Build.Warning)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.devtools.cloudbuild.v1.Build.Warning)
+    private static final com.google.cloudbuild.v1.Build.Warning DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloudbuild.v1.Build.Warning();
+    }
+
+    public static com.google.cloudbuild.v1.Build.Warning getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Warning> PARSER =
+        new com.google.protobuf.AbstractParser<Warning>() {
+          @java.lang.Override
+          public Warning parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Warning(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<Warning> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Warning> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloudbuild.v1.Build.Warning getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 45;
@@ -2207,7 +3229,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * IAM service account whose credentials will be used at build runtime.
    * Must be of the format `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
    * ACCOUNT can be email address or uniqueId of the service account.
-   * This field is in beta.
    * </pre>
    *
    * <code>string service_account = 42 [(.google.api.resource_reference) = { ... }</code>
@@ -2233,7 +3254,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * IAM service account whose credentials will be used at build runtime.
    * Must be of the format `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
    * ACCOUNT can be email address or uniqueId of the service account.
-   * This field is in beta.
    * </pre>
    *
    * <code>string service_account = 42 [(.google.api.resource_reference) = { ... }</code>
@@ -2299,6 +3319,90 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloudbuild.v1.SecretsOrBuilder getAvailableSecretsOrBuilder() {
     return getAvailableSecrets();
+  }
+
+  public static final int WARNINGS_FIELD_NUMBER = 49;
+  private java.util.List<com.google.cloudbuild.v1.Build.Warning> warnings_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Non-fatal problems encountered during the execution of the
+   * build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloudbuild.v1.Build.Warning> getWarningsList() {
+    return warnings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Non-fatal problems encountered during the execution of the
+   * build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloudbuild.v1.Build.WarningOrBuilder>
+      getWarningsOrBuilderList() {
+    return warnings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Non-fatal problems encountered during the execution of the
+   * build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getWarningsCount() {
+    return warnings_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Non-fatal problems encountered during the execution of the
+   * build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.Build.Warning getWarnings(int index) {
+    return warnings_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Non-fatal problems encountered during the execution of the
+   * build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.Build.WarningOrBuilder getWarningsOrBuilder(int index) {
+    return warnings_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2390,6 +3494,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     }
     if (availableSecrets_ != null) {
       output.writeMessage(47, getAvailableSecrets());
+    }
+    for (int i = 0; i < warnings_.size(); i++) {
+      output.writeMessage(49, warnings_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -2502,6 +3609,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     if (availableSecrets_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(47, getAvailableSecrets());
     }
+    for (int i = 0; i < warnings_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(49, warnings_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2576,6 +3686,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     if (hasAvailableSecrets()) {
       if (!getAvailableSecrets().equals(other.getAvailableSecrets())) return false;
     }
+    if (!getWarningsList().equals(other.getWarningsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2672,6 +3783,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     if (hasAvailableSecrets()) {
       hash = (37 * hash) + AVAILABLE_SECRETS_FIELD_NUMBER;
       hash = (53 * hash) + getAvailableSecrets().hashCode();
+    }
+    if (getWarningsCount() > 0) {
+      hash = (37 * hash) + WARNINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getWarningsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2851,6 +3966,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getStepsFieldBuilder();
         getSecretsFieldBuilder();
+        getWarningsFieldBuilder();
       }
     }
 
@@ -2958,6 +4074,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       } else {
         availableSecrets_ = null;
         availableSecretsBuilder_ = null;
+      }
+      if (warningsBuilder_ == null) {
+        warnings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      } else {
+        warningsBuilder_.clear();
       }
       return this;
     }
@@ -3081,6 +4203,15 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         result.availableSecrets_ = availableSecrets_;
       } else {
         result.availableSecrets_ = availableSecretsBuilder_.build();
+      }
+      if (warningsBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          warnings_ = java.util.Collections.unmodifiableList(warnings_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.warnings_ = warnings_;
+      } else {
+        result.warnings_ = warningsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -3274,6 +4405,33 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasAvailableSecrets()) {
         mergeAvailableSecrets(other.getAvailableSecrets());
+      }
+      if (warningsBuilder_ == null) {
+        if (!other.warnings_.isEmpty()) {
+          if (warnings_.isEmpty()) {
+            warnings_ = other.warnings_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureWarningsIsMutable();
+            warnings_.addAll(other.warnings_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.warnings_.isEmpty()) {
+          if (warningsBuilder_.isEmpty()) {
+            warningsBuilder_.dispose();
+            warningsBuilder_ = null;
+            warnings_ = other.warnings_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            warningsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getWarningsFieldBuilder()
+                    : null;
+          } else {
+            warningsBuilder_.addAllMessages(other.warnings_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -7707,7 +8865,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * IAM service account whose credentials will be used at build runtime.
      * Must be of the format `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * ACCOUNT can be email address or uniqueId of the service account.
-     * This field is in beta.
      * </pre>
      *
      * <code>string service_account = 42 [(.google.api.resource_reference) = { ... }</code>
@@ -7732,7 +8889,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * IAM service account whose credentials will be used at build runtime.
      * Must be of the format `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * ACCOUNT can be email address or uniqueId of the service account.
-     * This field is in beta.
      * </pre>
      *
      * <code>string service_account = 42 [(.google.api.resource_reference) = { ... }</code>
@@ -7757,7 +8913,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * IAM service account whose credentials will be used at build runtime.
      * Must be of the format `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * ACCOUNT can be email address or uniqueId of the service account.
-     * This field is in beta.
      * </pre>
      *
      * <code>string service_account = 42 [(.google.api.resource_reference) = { ... }</code>
@@ -7781,7 +8936,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * IAM service account whose credentials will be used at build runtime.
      * Must be of the format `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * ACCOUNT can be email address or uniqueId of the service account.
-     * This field is in beta.
      * </pre>
      *
      * <code>string service_account = 42 [(.google.api.resource_reference) = { ... }</code>
@@ -7801,7 +8955,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * IAM service account whose credentials will be used at build runtime.
      * Must be of the format `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      * ACCOUNT can be email address or uniqueId of the service account.
-     * This field is in beta.
      * </pre>
      *
      * <code>string service_account = 42 [(.google.api.resource_reference) = { ... }</code>
@@ -8003,6 +9156,408 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         availableSecrets_ = null;
       }
       return availableSecretsBuilder_;
+    }
+
+    private java.util.List<com.google.cloudbuild.v1.Build.Warning> warnings_ =
+        java.util.Collections.emptyList();
+
+    private void ensureWarningsIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        warnings_ = new java.util.ArrayList<com.google.cloudbuild.v1.Build.Warning>(warnings_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloudbuild.v1.Build.Warning,
+            com.google.cloudbuild.v1.Build.Warning.Builder,
+            com.google.cloudbuild.v1.Build.WarningOrBuilder>
+        warningsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-fatal problems encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloudbuild.v1.Build.Warning> getWarningsList() {
+      if (warningsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(warnings_);
+      } else {
+        return warningsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-fatal problems encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getWarningsCount() {
+      if (warningsBuilder_ == null) {
+        return warnings_.size();
+      } else {
+        return warningsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-fatal problems encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.Build.Warning getWarnings(int index) {
+      if (warningsBuilder_ == null) {
+        return warnings_.get(index);
+      } else {
+        return warningsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-fatal problems encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setWarnings(int index, com.google.cloudbuild.v1.Build.Warning value) {
+      if (warningsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWarningsIsMutable();
+        warnings_.set(index, value);
+        onChanged();
+      } else {
+        warningsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-fatal problems encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setWarnings(
+        int index, com.google.cloudbuild.v1.Build.Warning.Builder builderForValue) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        warnings_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        warningsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-fatal problems encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addWarnings(com.google.cloudbuild.v1.Build.Warning value) {
+      if (warningsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWarningsIsMutable();
+        warnings_.add(value);
+        onChanged();
+      } else {
+        warningsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-fatal problems encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addWarnings(int index, com.google.cloudbuild.v1.Build.Warning value) {
+      if (warningsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWarningsIsMutable();
+        warnings_.add(index, value);
+        onChanged();
+      } else {
+        warningsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-fatal problems encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addWarnings(com.google.cloudbuild.v1.Build.Warning.Builder builderForValue) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        warnings_.add(builderForValue.build());
+        onChanged();
+      } else {
+        warningsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-fatal problems encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addWarnings(
+        int index, com.google.cloudbuild.v1.Build.Warning.Builder builderForValue) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        warnings_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        warningsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-fatal problems encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllWarnings(
+        java.lang.Iterable<? extends com.google.cloudbuild.v1.Build.Warning> values) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, warnings_);
+        onChanged();
+      } else {
+        warningsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-fatal problems encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearWarnings() {
+      if (warningsBuilder_ == null) {
+        warnings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        warningsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-fatal problems encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeWarnings(int index) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        warnings_.remove(index);
+        onChanged();
+      } else {
+        warningsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-fatal problems encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.Build.Warning.Builder getWarningsBuilder(int index) {
+      return getWarningsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-fatal problems encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.Build.WarningOrBuilder getWarningsOrBuilder(int index) {
+      if (warningsBuilder_ == null) {
+        return warnings_.get(index);
+      } else {
+        return warningsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-fatal problems encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloudbuild.v1.Build.WarningOrBuilder>
+        getWarningsOrBuilderList() {
+      if (warningsBuilder_ != null) {
+        return warningsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(warnings_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-fatal problems encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.Build.Warning.Builder addWarningsBuilder() {
+      return getWarningsFieldBuilder()
+          .addBuilder(com.google.cloudbuild.v1.Build.Warning.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-fatal problems encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.Build.Warning.Builder addWarningsBuilder(int index) {
+      return getWarningsFieldBuilder()
+          .addBuilder(index, com.google.cloudbuild.v1.Build.Warning.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-fatal problems encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloudbuild.v1.Build.Warning.Builder> getWarningsBuilderList() {
+      return getWarningsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloudbuild.v1.Build.Warning,
+            com.google.cloudbuild.v1.Build.Warning.Builder,
+            com.google.cloudbuild.v1.Build.WarningOrBuilder>
+        getWarningsFieldBuilder() {
+      if (warningsBuilder_ == null) {
+        warningsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloudbuild.v1.Build.Warning,
+                com.google.cloudbuild.v1.Build.Warning.Builder,
+                com.google.cloudbuild.v1.Build.WarningOrBuilder>(
+                warnings_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+        warnings_ = null;
+      }
+      return warningsBuilder_;
     }
 
     @java.lang.Override

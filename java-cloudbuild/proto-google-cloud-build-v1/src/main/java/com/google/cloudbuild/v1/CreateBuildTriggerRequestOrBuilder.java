@@ -27,6 +27,33 @@ public interface CreateBuildTriggerRequestOrBuilder
    *
    *
    * <pre>
+   * The parent resource where this trigger will be created.
+   * Format: `projects/{project}/locations/{location}`
+   * </pre>
+   *
+   * <code>string parent = 3 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The parent.
+   */
+  java.lang.String getParent();
+  /**
+   *
+   *
+   * <pre>
+   * The parent resource where this trigger will be created.
+   * Format: `projects/{project}/locations/{location}`
+   * </pre>
+   *
+   * <code>string parent = 3 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for parent.
+   */
+  com.google.protobuf.ByteString getParentBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. ID of the project for which to configure automatic builds.
    * </pre>
    *

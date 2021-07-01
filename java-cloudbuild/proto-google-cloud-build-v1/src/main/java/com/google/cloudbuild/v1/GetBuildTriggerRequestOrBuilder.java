@@ -27,6 +27,33 @@ public interface GetBuildTriggerRequestOrBuilder
    *
    *
    * <pre>
+   * The name of the `Trigger` to retrieve.
+   * Format: `projects/{project}/locations/{location}/triggers/{trigger}`
+   * </pre>
+   *
+   * <code>string name = 3 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the `Trigger` to retrieve.
+   * Format: `projects/{project}/locations/{location}/triggers/{trigger}`
+   * </pre>
+   *
+   * <code>string name = 3 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. ID of the project that owns the trigger.
    * </pre>
    *

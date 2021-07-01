@@ -38,6 +38,7 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
   }
 
   private GetBuildTriggerRequest() {
+    name_ = "";
     projectId_ = "";
     triggerId_ = "";
   }
@@ -85,6 +86,13 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
               triggerId_ = s;
               break;
             }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -117,6 +125,57 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
         .ensureFieldAccessorsInitialized(
             com.google.cloudbuild.v1.GetBuildTriggerRequest.class,
             com.google.cloudbuild.v1.GetBuildTriggerRequest.Builder.class);
+  }
+
+  public static final int NAME_FIELD_NUMBER = 3;
+  private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * The name of the `Trigger` to retrieve.
+   * Format: `projects/{project}/locations/{location}/triggers/{trigger}`
+   * </pre>
+   *
+   * <code>string name = 3 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name of the `Trigger` to retrieve.
+   * Format: `projects/{project}/locations/{location}/triggers/{trigger}`
+   * </pre>
+   *
+   * <code>string name = 3 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
@@ -237,6 +296,9 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
     if (!getTriggerIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, triggerId_);
     }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -251,6 +313,9 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
     }
     if (!getTriggerIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, triggerId_);
+    }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -268,6 +333,7 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
     com.google.cloudbuild.v1.GetBuildTriggerRequest other =
         (com.google.cloudbuild.v1.GetBuildTriggerRequest) obj;
 
+    if (!getName().equals(other.getName())) return false;
     if (!getProjectId().equals(other.getProjectId())) return false;
     if (!getTriggerId().equals(other.getTriggerId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -281,6 +347,8 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId().hashCode();
     hash = (37 * hash) + TRIGGER_ID_FIELD_NUMBER;
@@ -430,6 +498,8 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      name_ = "";
+
       projectId_ = "";
 
       triggerId_ = "";
@@ -461,6 +531,7 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
     public com.google.cloudbuild.v1.GetBuildTriggerRequest buildPartial() {
       com.google.cloudbuild.v1.GetBuildTriggerRequest result =
           new com.google.cloudbuild.v1.GetBuildTriggerRequest(this);
+      result.name_ = name_;
       result.projectId_ = projectId_;
       result.triggerId_ = triggerId_;
       onBuilt();
@@ -513,6 +584,10 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
     public Builder mergeFrom(com.google.cloudbuild.v1.GetBuildTriggerRequest other) {
       if (other == com.google.cloudbuild.v1.GetBuildTriggerRequest.getDefaultInstance())
         return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
         onChanged();
@@ -547,6 +622,117 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the `Trigger` to retrieve.
+     * Format: `projects/{project}/locations/{location}/triggers/{trigger}`
+     * </pre>
+     *
+     * <code>string name = 3 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the `Trigger` to retrieve.
+     * Format: `projects/{project}/locations/{location}/triggers/{trigger}`
+     * </pre>
+     *
+     * <code>string name = 3 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the `Trigger` to retrieve.
+     * Format: `projects/{project}/locations/{location}/triggers/{trigger}`
+     * </pre>
+     *
+     * <code>string name = 3 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the `Trigger` to retrieve.
+     * Format: `projects/{project}/locations/{location}/triggers/{trigger}`
+     * </pre>
+     *
+     * <code>string name = 3 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the `Trigger` to retrieve.
+     * Format: `projects/{project}/locations/{location}/triggers/{trigger}`
+     * </pre>
+     *
+     * <code>string name = 3 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      name_ = value;
+      onChanged();
       return this;
     }
 

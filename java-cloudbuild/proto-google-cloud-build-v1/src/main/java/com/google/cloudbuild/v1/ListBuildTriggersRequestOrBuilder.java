@@ -27,6 +27,33 @@ public interface ListBuildTriggersRequestOrBuilder
    *
    *
    * <pre>
+   * The parent of the collection of `Triggers`.
+   * Format: `projects/{project}/locations/{location}`
+   * </pre>
+   *
+   * <code>string parent = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The parent.
+   */
+  java.lang.String getParent();
+  /**
+   *
+   *
+   * <pre>
+   * The parent of the collection of `Triggers`.
+   * Format: `projects/{project}/locations/{location}`
+   * </pre>
+   *
+   * <code>string parent = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for parent.
+   */
+  com.google.protobuf.ByteString getParentBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. ID of the project for which to list BuildTriggers.
    * </pre>
    *

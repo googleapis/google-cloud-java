@@ -851,6 +851,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateBuildTriggerRequest request =
    *       CreateBuildTriggerRequest.newBuilder()
+   *           .setParent(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setTrigger(BuildTrigger.newBuilder().build())
    *           .build();
@@ -877,6 +878,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateBuildTriggerRequest request =
    *       CreateBuildTriggerRequest.newBuilder()
+   *           .setParent(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setTrigger(BuildTrigger.newBuilder().build())
    *           .build();
@@ -929,6 +931,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   GetBuildTriggerRequest request =
    *       GetBuildTriggerRequest.newBuilder()
+   *           .setName(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setTriggerId("triggerId-648752909")
    *           .build();
@@ -955,6 +958,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   GetBuildTriggerRequest request =
    *       GetBuildTriggerRequest.newBuilder()
+   *           .setName(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setTriggerId("triggerId-648752909")
    *           .build();
@@ -1007,6 +1011,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildTriggersRequest request =
    *       ListBuildTriggersRequest.newBuilder()
+   *           .setParent(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1036,6 +1041,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildTriggersRequest request =
    *       ListBuildTriggersRequest.newBuilder()
+   *           .setParent(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1066,6 +1072,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildTriggersRequest request =
    *       ListBuildTriggersRequest.newBuilder()
+   *           .setParent(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1132,6 +1139,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   DeleteBuildTriggerRequest request =
    *       DeleteBuildTriggerRequest.newBuilder()
+   *           .setName(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setTriggerId("triggerId-648752909")
    *           .build();
@@ -1158,6 +1166,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   DeleteBuildTriggerRequest request =
    *       DeleteBuildTriggerRequest.newBuilder()
+   *           .setName(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setTriggerId("triggerId-648752909")
    *           .build();
@@ -1299,6 +1308,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   RunBuildTriggerRequest request =
    *       RunBuildTriggerRequest.newBuilder()
+   *           .setName(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setTriggerId("triggerId-648752909")
    *           .setSource(RepoSource.newBuilder().build())
@@ -1325,6 +1335,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   RunBuildTriggerRequest request =
    *       RunBuildTriggerRequest.newBuilder()
+   *           .setName(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setTriggerId("triggerId-648752909")
    *           .setSource(RepoSource.newBuilder().build())
@@ -1351,6 +1362,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   RunBuildTriggerRequest request =
    *       RunBuildTriggerRequest.newBuilder()
+   *           .setName(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setTriggerId("triggerId-648752909")
    *           .setSource(RepoSource.newBuilder().build())
@@ -1376,6 +1388,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ReceiveTriggerWebhookRequest request =
    *       ReceiveTriggerWebhookRequest.newBuilder()
+   *           .setName("name3373707")
    *           .setBody(HttpBody.newBuilder().build())
    *           .setProjectId("projectId-894832108")
    *           .setTrigger("trigger-1059891784")
@@ -1404,6 +1417,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ReceiveTriggerWebhookRequest request =
    *       ReceiveTriggerWebhookRequest.newBuilder()
+   *           .setName("name3373707")
    *           .setBody(HttpBody.newBuilder().build())
    *           .setProjectId("projectId-894832108")
    *           .setTrigger("trigger-1059891784")

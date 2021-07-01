@@ -388,6 +388,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   @Override
                   public Map<String, String> extract(CreateBuildTriggerRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
                     params.put("project_id", String.valueOf(request.getProjectId()));
                     return params.build();
                   }
@@ -401,6 +402,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   @Override
                   public Map<String, String> extract(GetBuildTriggerRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
                     params.put("project_id", String.valueOf(request.getProjectId()));
                     params.put("trigger_id", String.valueOf(request.getTriggerId()));
                     return params.build();
@@ -416,6 +418,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                       @Override
                       public Map<String, String> extract(ListBuildTriggersRequest request) {
                         ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
                         params.put("project_id", String.valueOf(request.getProjectId()));
                         return params.build();
                       }
@@ -429,6 +432,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   @Override
                   public Map<String, String> extract(DeleteBuildTriggerRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
                     params.put("project_id", String.valueOf(request.getProjectId()));
                     params.put("trigger_id", String.valueOf(request.getTriggerId()));
                     return params.build();
@@ -444,6 +448,9 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   public Map<String, String> extract(UpdateBuildTriggerRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("project_id", String.valueOf(request.getProjectId()));
+                    params.put(
+                        "trigger.resource_name",
+                        String.valueOf(request.getTrigger().getResourceName()));
                     params.put("trigger_id", String.valueOf(request.getTriggerId()));
                     return params.build();
                   }
@@ -457,6 +464,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   @Override
                   public Map<String, String> extract(RunBuildTriggerRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
                     params.put("project_id", String.valueOf(request.getProjectId()));
                     params.put("trigger_id", String.valueOf(request.getTriggerId()));
                     return params.build();
@@ -473,6 +481,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                       @Override
                       public Map<String, String> extract(ReceiveTriggerWebhookRequest request) {
                         ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
                         params.put("project_id", String.valueOf(request.getProjectId()));
                         params.put("trigger", String.valueOf(request.getTrigger()));
                         return params.build();

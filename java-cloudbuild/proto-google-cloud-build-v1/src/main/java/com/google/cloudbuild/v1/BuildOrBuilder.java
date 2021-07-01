@@ -1044,7 +1044,6 @@ public interface BuildOrBuilder
    * IAM service account whose credentials will be used at build runtime.
    * Must be of the format `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
    * ACCOUNT can be email address or uniqueId of the service account.
-   * This field is in beta.
    * </pre>
    *
    * <code>string service_account = 42 [(.google.api.resource_reference) = { ... }</code>
@@ -1059,7 +1058,6 @@ public interface BuildOrBuilder
    * IAM service account whose credentials will be used at build runtime.
    * Must be of the format `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
    * ACCOUNT can be email address or uniqueId of the service account.
-   * This field is in beta.
    * </pre>
    *
    * <code>string service_account = 42 [(.google.api.resource_reference) = { ... }</code>
@@ -1102,4 +1100,71 @@ public interface BuildOrBuilder
    * <code>.google.devtools.cloudbuild.v1.Secrets available_secrets = 47;</code>
    */
   com.google.cloudbuild.v1.SecretsOrBuilder getAvailableSecretsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Non-fatal problems encountered during the execution of the
+   * build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloudbuild.v1.Build.Warning> getWarningsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Non-fatal problems encountered during the execution of the
+   * build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloudbuild.v1.Build.Warning getWarnings(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Non-fatal problems encountered during the execution of the
+   * build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getWarningsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Non-fatal problems encountered during the execution of the
+   * build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloudbuild.v1.Build.WarningOrBuilder>
+      getWarningsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Non-fatal problems encountered during the execution of the
+   * build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Build.Warning warnings = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloudbuild.v1.Build.WarningOrBuilder getWarningsOrBuilder(int index);
 }
