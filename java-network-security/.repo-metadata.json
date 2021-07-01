@@ -10,7 +10,7 @@
   "repo": "googleapis/java-network-security",
   "repo_short": "java-network-security",
   "distribution_name": "com.google.cloud:google-cloud-network-security",
-  "api_id": "network-security.googleapis.com",
+  "api_id": "networksecurity.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
