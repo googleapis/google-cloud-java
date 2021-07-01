@@ -16,8 +16,10 @@
 
 package com.google.cloud.grpc;
 
+import static com.google.cloud.grpc.GcpManagedChannel.getKeysFromMessage;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import com.google.cloud.grpc.GcpManagedChannel.ChannelRef;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
@@ -43,6 +45,7 @@ import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import java.io.File;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -69,7 +72,7 @@ public final class GcpManagedChannelTest {
   private static final int MAX_STREAM = 100;
 
   private GcpManagedChannel gcpChannel;
-  private ManagedChannelBuilder builder;
+  private ManagedChannelBuilder<?> builder;
 
   /** Close and delete all the channelRefs inside a gcpchannel. */
   private void resetGcpChannel() {
@@ -84,15 +87,16 @@ public final class GcpManagedChannelTest {
   }
 
   @After
-  public void shutdown() throws Exception {
+  public void shutdown() {
     gcpChannel.shutdownNow();
   }
 
   @Test
-  public void testLoadApiConfigFile() throws Exception {
+  public void testLoadApiConfigFile() {
     resetGcpChannel();
-    File configFile =
-        new File(GcpManagedChannelTest.class.getClassLoader().getResource(API_FILE).getFile());
+    final URL resource = GcpManagedChannelTest.class.getClassLoader().getResource(API_FILE);
+    assertNotNull(resource);
+    File configFile = new File(resource.getFile());
     gcpChannel =
         (GcpManagedChannel)
             GcpManagedChannelBuilder.forDelegateBuilder(builder)
@@ -111,6 +115,7 @@ public final class GcpManagedChannelTest {
         GcpManagedChannelTest.class.getClassLoader().getResourceAsStream(API_FILE);
     StringBuilder sb = new StringBuilder();
 
+    assertNotNull(inputStream);
     for (int ch; (ch = inputStream.read()) != -1; ) {
       sb.append((char) ch);
     }
@@ -126,7 +131,7 @@ public final class GcpManagedChannelTest {
   }
 
   @Test
-  public void testGetChannelRefInitialization() throws Exception {
+  public void testGetChannelRefInitialization() {
     // Should not have a managedchannel by default.
     assertEquals(0, gcpChannel.channelRefs.size());
     // But once requested it's there.
@@ -161,7 +166,7 @@ public final class GcpManagedChannelTest {
   private void assertFallbacksMetric(
       FakeMetricRegistry fakeRegistry, long successes, long failures) {
     MetricsRecord record = fakeRegistry.pollRecord();
-    List<PointWithFunction> metric =
+    List<PointWithFunction<?>> metric =
         record.getMetrics().get(GcpMetricsConstants.METRIC_NUM_FALLBACKS);
     assertThat(metric.size()).isEqualTo(2);
     assertThat(metric.get(0).value()).isEqualTo(successes);
@@ -315,7 +320,7 @@ public final class GcpManagedChannelTest {
   }
 
   @Test
-  public void testGetChannelRefMaxSize() throws Exception {
+  public void testGetChannelRefMaxSize() {
     resetGcpChannel();
     for (int i = 0; i < MAX_CHANNEL; i++) {
       ManagedChannel channel = builder.build();
@@ -327,47 +332,47 @@ public final class GcpManagedChannelTest {
   }
 
   @Test
-  public void testBindUnbindKey() throws Exception {
+  public void testBindUnbindKey() {
     // Initialize the channel and bind the key, check the affinity count.
     ChannelRef cf1 = gcpChannel.new ChannelRef(builder.build(), 1, 0, 5);
     ChannelRef cf2 = gcpChannel.new ChannelRef(builder.build(), 1, 0, 4);
     gcpChannel.channelRefs.add(cf1);
     gcpChannel.channelRefs.add(cf2);
-    gcpChannel.bind(cf1, Arrays.asList("key1"));
-    gcpChannel.bind(cf2, Arrays.asList("key2"));
-    gcpChannel.bind(cf2, Arrays.asList("key3"));
+    gcpChannel.bind(cf1, Collections.singletonList("key1"));
+    gcpChannel.bind(cf2, Collections.singletonList("key2"));
+    gcpChannel.bind(cf2, Collections.singletonList("key3"));
     // Binding the same key to the same channel should not increase affinity count.
-    gcpChannel.bind(cf1, Arrays.asList("key1"));
+    gcpChannel.bind(cf1, Collections.singletonList("key1"));
     assertEquals(1, gcpChannel.channelRefs.get(0).getAffinityCount());
     assertEquals(2, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(3, gcpChannel.affinityKeyToChannelRef.size());
     // Binding the same key to a different channel should alter affinity counts accordingly.
-    gcpChannel.bind(cf1, Arrays.asList("key3"));
+    gcpChannel.bind(cf1, Collections.singletonList("key3"));
     assertEquals(2, gcpChannel.channelRefs.get(0).getAffinityCount());
     assertEquals(1, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(3, gcpChannel.affinityKeyToChannelRef.size());
 
     // Unbind the affinity key.
-    gcpChannel.unbind(Arrays.asList("key1"));
+    gcpChannel.unbind(Collections.singletonList("key1"));
     assertEquals(1, gcpChannel.channelRefs.get(0).getAffinityCount());
     assertEquals(1, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(2, gcpChannel.affinityKeyToChannelRef.size());
-    gcpChannel.unbind(Arrays.asList("key1"));
+    gcpChannel.unbind(Collections.singletonList("key1"));
     assertEquals(1, gcpChannel.channelRefs.get(0).getAffinityCount());
     assertEquals(1, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(2, gcpChannel.affinityKeyToChannelRef.size());
-    gcpChannel.unbind(Arrays.asList("key2"));
+    gcpChannel.unbind(Collections.singletonList("key2"));
     assertEquals(1, gcpChannel.channelRefs.get(0).getAffinityCount());
     assertEquals(0, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(1, gcpChannel.affinityKeyToChannelRef.size());
-    gcpChannel.unbind(Arrays.asList("key3"));
+    gcpChannel.unbind(Collections.singletonList("key3"));
     assertEquals(0, gcpChannel.channelRefs.get(0).getAffinityCount());
     assertEquals(0, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(0, gcpChannel.affinityKeyToChannelRef.size());
   }
 
   @Test
-  public void testGetKeysFromRequest() throws Exception {
+  public void testGetKeysFromRequest() {
     String expected = "thisisaname";
     TransactionSelector selector = TransactionSelector.getDefaultInstance();
     PartitionReadRequest req =
@@ -377,16 +382,17 @@ public final class GcpManagedChannelTest {
             .setTransaction(selector)
             .addColumns("users")
             .build();
-    List<String> result = gcpChannel.getKeysFromMessage(req, "session");
+    List<String> result = getKeysFromMessage(req, "session");
     assertEquals(expected, result.get(0));
-    result = gcpChannel.getKeysFromMessage(req, "fakesession");
+    result = getKeysFromMessage(req, "fakesession");
     assertEquals(0, result.size());
   }
 
   @Test
-  public void testParseGoodJsonFile() throws Exception {
-    File configFile =
-        new File(GcpManagedChannelTest.class.getClassLoader().getResource(API_FILE).getFile());
+  public void testParseGoodJsonFile() {
+    final URL resource = GcpManagedChannelTest.class.getClassLoader().getResource(API_FILE);
+    assertNotNull(resource);
+    File configFile = new File(resource.getFile());
     ApiConfig apiconfig =
         GcpManagedChannelBuilder.forDelegateBuilder(builder)
             .withApiConfigJsonFile(configFile)
@@ -424,9 +430,10 @@ public final class GcpManagedChannelTest {
 
   @Test
   public void testParseEmptyMethodJsonFile() {
-    File configFile =
-        new File(
-            GcpManagedChannelTest.class.getClassLoader().getResource(EMPTY_METHOD_FILE).getFile());
+    final URL resource =
+        GcpManagedChannelTest.class.getClassLoader().getResource(EMPTY_METHOD_FILE);
+    assertNotNull(resource);
+    File configFile = new File(resource.getFile());
     ApiConfig apiconfig =
         GcpManagedChannelBuilder.forDelegateBuilder(builder)
             .withApiConfigJsonFile(configFile)
@@ -444,9 +451,10 @@ public final class GcpManagedChannelTest {
 
   @Test
   public void testParseEmptyChannelJsonFile() {
-    File configFile =
-        new File(
-            GcpManagedChannelTest.class.getClassLoader().getResource(EMPTY_CHANNEL_FILE).getFile());
+    final URL resource =
+        GcpManagedChannelTest.class.getClassLoader().getResource(EMPTY_CHANNEL_FILE);
+    assertNotNull(resource);
+    File configFile = new File(resource.getFile());
     ApiConfig apiconfig =
         GcpManagedChannelBuilder.forDelegateBuilder(builder)
             .withApiConfigJsonFile(configFile)
@@ -502,12 +510,10 @@ public final class GcpManagedChannelTest {
                         .build())
                 .build();
 
-    List<LabelKey> expectedLabelKeys = new ArrayList<>();
-    expectedLabelKeys.addAll(labelKeys);
+    List<LabelKey> expectedLabelKeys = new ArrayList<>(labelKeys);
     expectedLabelKeys.add(
         LabelKey.create(GcpMetricsConstants.POOL_INDEX_LABEL, GcpMetricsConstants.POOL_INDEX_DESC));
-    List<LabelValue> expectedLabelValues = new ArrayList<>();
-    expectedLabelValues.addAll(labelValues);
+    List<LabelValue> expectedLabelValues = new ArrayList<>(labelValues);
     int currentIndex = GcpManagedChannel.channelPoolIndex.get();
     expectedLabelValues.add(LabelValue.create(String.format("pool-%d", currentIndex)));
 
@@ -524,35 +530,35 @@ public final class GcpManagedChannelTest {
       MetricsRecord record = fakeRegistry.pollRecord();
       assertThat(record.getMetrics().size()).isEqualTo(25);
 
-      List<PointWithFunction> numChannels =
+      List<PointWithFunction<?>> numChannels =
           record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MAX_CHANNELS);
       assertThat(numChannels.size()).isEqualTo(1);
       assertThat(numChannels.get(0).value()).isEqualTo(5L);
       assertThat(numChannels.get(0).keys()).isEqualTo(expectedLabelKeys);
       assertThat(numChannels.get(0).values()).isEqualTo(expectedLabelValues);
 
-      List<PointWithFunction> maxAllowedChannels =
+      List<PointWithFunction<?>> maxAllowedChannels =
           record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MAX_ALLOWED_CHANNELS);
       assertThat(maxAllowedChannels.size()).isEqualTo(1);
       assertThat(maxAllowedChannels.get(0).value()).isEqualTo(MAX_CHANNEL);
       assertThat(maxAllowedChannels.get(0).keys()).isEqualTo(expectedLabelKeys);
       assertThat(maxAllowedChannels.get(0).values()).isEqualTo(expectedLabelValues);
 
-      List<PointWithFunction> minActiveStreams =
+      List<PointWithFunction<?>> minActiveStreams =
           record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MIN_ACTIVE_STREAMS);
       assertThat(minActiveStreams.size()).isEqualTo(1);
       assertThat(minActiveStreams.get(0).value()).isEqualTo(0L);
       assertThat(minActiveStreams.get(0).keys()).isEqualTo(expectedLabelKeys);
       assertThat(minActiveStreams.get(0).values()).isEqualTo(expectedLabelValues);
 
-      List<PointWithFunction> maxActiveStreams =
+      List<PointWithFunction<?>> maxActiveStreams =
           record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MAX_ACTIVE_STREAMS);
       assertThat(maxActiveStreams.size()).isEqualTo(1);
       assertThat(maxActiveStreams.get(0).value()).isEqualTo(7L);
       assertThat(maxActiveStreams.get(0).keys()).isEqualTo(expectedLabelKeys);
       assertThat(maxActiveStreams.get(0).values()).isEqualTo(expectedLabelValues);
 
-      List<PointWithFunction> totalActiveStreams =
+      List<PointWithFunction<?>> totalActiveStreams =
           record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MAX_TOTAL_ACTIVE_STREAMS);
       assertThat(totalActiveStreams.size()).isEqualTo(1);
       assertThat(totalActiveStreams.get(0).value())
@@ -600,7 +606,7 @@ public final class GcpManagedChannelTest {
     assertEquals(1, idleCounter.get());
 
     MetricsRecord record = fakeRegistry.pollRecord();
-    List<PointWithFunction> metric =
+    List<PointWithFunction<?>> metric =
         record.getMetrics().get(GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS);
     assertThat(metric.size()).isEqualTo(1);
     assertThat(metric.get(0).value()).isEqualTo(1L);
@@ -660,8 +666,8 @@ public final class GcpManagedChannelTest {
     assertEquals(2, idleCounter.get());
   }
 
-  class FakeIdleCountingManagedChannel extends ManagedChannel {
-    private AtomicInteger idleCounter;
+  static class FakeIdleCountingManagedChannel extends ManagedChannel {
+    private final AtomicInteger idleCounter;
 
     FakeIdleCountingManagedChannel(AtomicInteger idleCounter) {
       this.idleCounter = idleCounter;
@@ -701,7 +707,7 @@ public final class GcpManagedChannelTest {
     }
 
     @Override
-    public boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException {
+    public boolean awaitTermination(long timeout, TimeUnit unit) {
       return false;
     }
 

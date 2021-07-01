@@ -30,7 +30,6 @@ import java.util.ArrayDeque;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 
@@ -43,9 +42,6 @@ import javax.annotation.concurrent.GuardedBy;
  * affinity key with the channel.
  */
 public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
-
-  private static final Logger logger = Logger.getLogger(GcpClientCall.class.getName());
-
   private final MethodDescriptor<ReqT, RespT> methodDescriptor;
   private final CallOptions callOptions;
   private final GcpManagedChannel delegateChannel;

@@ -16,6 +16,8 @@
 
 package com.google.cloud.grpc;
 
+import static java.util.concurrent.TimeUnit.NANOSECONDS;
+
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpResiliencyOptions;
 import com.google.cloud.grpc.proto.AffinityConfig;
@@ -51,7 +53,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
 /** A channel management factory that implements grpc.Channel APIs. */
@@ -70,8 +71,7 @@ public class GcpManagedChannel extends ManagedChannel {
   private int maxSize = DEFAULT_MAX_CHANNEL;
   private int maxConcurrentStreamsLowWatermark = DEFAULT_MAX_STREAM;
 
-  @VisibleForTesting
-  final Map<String, AffinityConfig> methodToAffinity = new HashMap<String, AffinityConfig>();
+  @VisibleForTesting final Map<String, AffinityConfig> methodToAffinity = new HashMap<>();
 
   @VisibleForTesting
   final Map<String, ChannelRef> affinityKeyToChannelRef = new ConcurrentHashMap<>();
@@ -559,7 +559,7 @@ public class GcpManagedChannel extends ManagedChannel {
       return;
     }
     final LongSummaryStatistics stats =
-        channelRefs.stream().collect(Collectors.summarizingLong(ChannelRef::getAndResetOkCalls));
+        channelRefs.stream().mapToLong(ChannelRef::getAndResetOkCalls).summaryStatistics();
     minOkCalls = stats.getMin();
     maxOkCalls = stats.getMax();
   }
@@ -587,7 +587,7 @@ public class GcpManagedChannel extends ManagedChannel {
       return;
     }
     final LongSummaryStatistics stats =
-        channelRefs.stream().collect(Collectors.summarizingLong(ChannelRef::getAndResetErrCalls));
+        channelRefs.stream().mapToLong(ChannelRef::getAndResetErrCalls).summaryStatistics();
     minErrCalls = stats.getMin();
     maxErrCalls = stats.getMax();
   }
@@ -759,7 +759,7 @@ public class GcpManagedChannel extends ManagedChannel {
    *     Otherwise pick the one with the smallest number of streams.
    */
   protected ChannelRef getChannelRef(@Nullable String key) {
-    if (key == null || key.equals("")) {
+    if (key == null || key.isEmpty()) {
       return pickLeastBusyChannel();
     }
     ChannelRef mappedChannel = affinityKeyToChannelRef.get(key);
@@ -812,7 +812,7 @@ public class GcpManagedChannel extends ManagedChannel {
    * be provided if available.
    */
   private ChannelRef pickLeastBusyChannel() {
-    if (channelRefs.size() == 0) {
+    if (channelRefs.isEmpty()) {
       return createNewChannel();
     }
 
@@ -857,7 +857,7 @@ public class GcpManagedChannel extends ManagedChannel {
 
   @Override
   public String authority() {
-    if (channelRefs.size() > 0) {
+    if (!channelRefs.isEmpty()) {
       return channelRefs.get(0).getChannel().authority();
     }
     final ManagedChannel channel = delegateChannelBuilder.build();
@@ -878,10 +878,10 @@ public class GcpManagedChannel extends ManagedChannel {
       MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions) {
     AffinityConfig affinity = methodToAffinity.get(methodDescriptor.getFullMethodName());
     if (affinity == null) {
-      return new GcpClientCall.SimpleGcpClientCall<ReqT, RespT>(
+      return new GcpClientCall.SimpleGcpClientCall<>(
           getChannelRef(null), methodDescriptor, callOptions);
     }
-    return new GcpClientCall<ReqT, RespT>(this, methodDescriptor, callOptions, affinity);
+    return new GcpClientCall<>(this, methodDescriptor, callOptions, affinity);
   }
 
   @Override
@@ -913,7 +913,7 @@ public class GcpManagedChannel extends ManagedChannel {
       if (awaitTimeNanos <= 0) {
         break;
       }
-      channelRef.getChannel().awaitTermination(awaitTimeNanos, TimeUnit.NANOSECONDS);
+      channelRef.getChannel().awaitTermination(awaitTimeNanos, NANOSECONDS);
     }
     return isTerminated();
   }
@@ -948,16 +948,22 @@ public class GcpManagedChannel extends ManagedChannel {
     int shutdown = 0;
     for (ChannelRef channelRef : channelRefs) {
       ConnectivityState cur = channelRef.getChannel().getState(requestConnection);
-      if (cur.equals(ConnectivityState.READY)) {
-        ready++;
-      } else if (cur.equals(ConnectivityState.SHUTDOWN)) {
-        shutdown++;
-      } else if (cur.equals(ConnectivityState.TRANSIENT_FAILURE)) {
-        transientFailure++;
-      } else if (cur.equals(ConnectivityState.CONNECTING)) {
-        connecting++;
-      } else if (cur.equals(ConnectivityState.IDLE)) {
-        idle++;
+      switch (cur) {
+        case READY:
+          ready++;
+          break;
+        case SHUTDOWN:
+          shutdown++;
+          break;
+        case TRANSIENT_FAILURE:
+          transientFailure++;
+          break;
+        case CONNECTING:
+          connecting++;
+          break;
+        case IDLE:
+          idle++;
+          break;
       }
     }
 
@@ -1062,11 +1068,10 @@ public class GcpManagedChannel extends ManagedChannel {
         } else if (currentLength != -1 && entry.getValue() instanceof List) {
           // Repeated nested MessageOrBuilder.
           List<?> list = (List<?>) entry.getValue();
-          if (list.size() > 0 && list.get(0) instanceof MessageOrBuilder) {
-            for (int i = 0; i < list.size(); i++) {
+          if (!list.isEmpty() && list.get(0) instanceof MessageOrBuilder) {
+            for (Object item : list) {
               keys.addAll(
-                  getKeysFromMessage(
-                      (MessageOrBuilder) list.get(i), name.substring(currentLength + 1)));
+                  getKeysFromMessage((MessageOrBuilder) item, name.substring(currentLength + 1)));
             }
           }
         }
@@ -1081,6 +1086,7 @@ public class GcpManagedChannel extends ManagedChannel {
    * @param message the <reqT> or <respT> prototype message.
    * @param isReq indicates if the message is a request message.
    */
+  @Nullable
   protected <ReqT, RespT> List<String> checkKeys(
       Object message, boolean isReq, MethodDescriptor<ReqT, RespT> methodDescriptor) {
     if (!(message instanceof MessageOrBuilder)) {

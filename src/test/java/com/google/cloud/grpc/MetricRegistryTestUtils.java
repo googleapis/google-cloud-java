@@ -64,13 +64,13 @@ class MetricRegistryTestUtils {
   }
 
   static class MetricsRecord {
-    private final Map<String, List<PointWithFunction>> metrics;
+    private final Map<String, List<PointWithFunction<?>>> metrics;
 
     private MetricsRecord() {
       this.metrics = Maps.newHashMap();
     }
 
-    Map<String, List<PointWithFunction>> getMetrics() {
+    Map<String, List<PointWithFunction<?>>> getMetrics() {
       return metrics;
     }
   }
