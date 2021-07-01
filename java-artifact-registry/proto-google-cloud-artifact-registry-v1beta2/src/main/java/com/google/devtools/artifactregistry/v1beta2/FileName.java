@@ -244,10 +244,10 @@ public class FileName implements ResourceName {
     }
 
     private Builder(FileName fileName) {
-      project = fileName.project;
-      location = fileName.location;
-      repo = fileName.repo;
-      file = fileName.file;
+      this.project = fileName.project;
+      this.location = fileName.location;
+      this.repo = fileName.repo;
+      this.file = fileName.file;
     }
 
     public FileName build() {

@@ -211,9 +211,9 @@ public class RepositoryName implements ResourceName {
     }
 
     private Builder(RepositoryName repositoryName) {
-      project = repositoryName.project;
-      location = repositoryName.location;
-      repository = repositoryName.repository;
+      this.project = repositoryName.project;
+      this.location = repositoryName.location;
+      this.repository = repositoryName.repository;
     }
 
     public RepositoryName build() {
