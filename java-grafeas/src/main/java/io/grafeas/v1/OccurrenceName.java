@@ -181,8 +181,8 @@ public class OccurrenceName implements ResourceName {
     }
 
     private Builder(OccurrenceName occurrenceName) {
-      project = occurrenceName.project;
-      occurrence = occurrenceName.occurrence;
+      this.project = occurrenceName.project;
+      this.occurrence = occurrenceName.occurrence;
     }
 
     public OccurrenceName build() {

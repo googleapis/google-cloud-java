@@ -180,8 +180,8 @@ public class NoteName implements ResourceName {
     }
 
     private Builder(NoteName noteName) {
-      project = noteName.project;
-      note = noteName.note;
+      this.project = noteName.project;
+      this.note = noteName.note;
     }
 
     public NoteName build() {
