@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.27.2](https://www.github.com/googleapis/java-bigtable/compare/v1.27.1...v1.27.2) (2021-07-01)
+
+
+### Bug Fixes
+
+* jwt authentication on batch-bigtable.googleapis.com ([#892](https://www.github.com/googleapis/java-bigtable/issues/892)) ([d2ca9c6](https://www.github.com/googleapis/java-bigtable/commit/d2ca9c62f3fcb9c79c97ef8a73bad3a0e7555afc))
+
 ### [1.27.1](https://www.github.com/googleapis/java-bigtable/compare/v1.27.0...v1.27.1) (2021-06-30)
 
 
