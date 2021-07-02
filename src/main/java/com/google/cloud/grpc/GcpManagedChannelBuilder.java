@@ -32,13 +32,13 @@ public class GcpManagedChannelBuilder extends ForwardingChannelBuilder<GcpManage
 
   private static final Logger logger = Logger.getLogger(GcpManagedChannelBuilder.class.getName());
 
-  private final ManagedChannelBuilder delegate;
+  private final ManagedChannelBuilder<?> delegate;
   private int poolSize = 0;
   private GcpManagedChannelOptions options;
 
   @VisibleForTesting ApiConfig apiConfig;
 
-  private GcpManagedChannelBuilder(ManagedChannelBuilder delegate) {
+  private GcpManagedChannelBuilder(ManagedChannelBuilder<?> delegate) {
     this.delegate = delegate;
     this.options = new GcpManagedChannelOptions();
   }
@@ -56,7 +56,7 @@ public class GcpManagedChannelBuilder extends ForwardingChannelBuilder<GcpManage
     return apiConfig.build();
   }
 
-  public static final GcpManagedChannelBuilder forDelegateBuilder(ManagedChannelBuilder delegate) {
+  public static GcpManagedChannelBuilder forDelegateBuilder(ManagedChannelBuilder<?> delegate) {
     return new GcpManagedChannelBuilder(delegate);
   }
 
