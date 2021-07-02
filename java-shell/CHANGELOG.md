@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-shell/compare/v0.1.1...v1.0.0) (2021-07-01)
+
+
+### Features
+
+* promote to 1.0.0 ([#29](https://www.github.com/googleapis/java-shell/issues/29)) ([cb7e34d](https://www.github.com/googleapis/java-shell/commit/cb7e34df8f09c54dde2e36e6edd02c3179bb0020))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-shell/issues/1130)) ([#26](https://www.github.com/googleapis/java-shell/issues/26)) ([82b74ef](https://www.github.com/googleapis/java-shell/commit/82b74efd4c1f2040c161244e842f7a3b16ca3153))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#28](https://www.github.com/googleapis/java-shell/issues/28)) ([1651ff8](https://www.github.com/googleapis/java-shell/commit/1651ff83ffec3bb020372fc07a9bd6674e2fcab5))
+
 ### [0.1.1](https://www.github.com/googleapis/java-shell/compare/v0.1.0...v0.1.1) (2021-06-04)
 
 
