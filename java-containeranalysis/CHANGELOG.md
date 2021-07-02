@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.3.5](https://www.github.com/googleapis/java-containeranalysis/compare/v1.3.4...v1.3.5) (2021-07-02)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#611](https://www.github.com/googleapis/java-containeranalysis/issues/611)) ([a256e57](https://www.github.com/googleapis/java-containeranalysis/commit/a256e5714d05ba992c96b3b83023c1fa5187379b))
+* Update dependencies.sh to not break on mac ([#607](https://www.github.com/googleapis/java-containeranalysis/issues/607)) ([217f1db](https://www.github.com/googleapis/java-containeranalysis/commit/217f1dbfa5a89ce54521f0320c4941730206552d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#614](https://www.github.com/googleapis/java-containeranalysis/issues/614)) ([8b99477](https://www.github.com/googleapis/java-containeranalysis/commit/8b99477dd5e094eb5d1afccd2f56f600764f18eb))
+* update dependency io.grafeas:grafeas to v1.2.3 ([#615](https://www.github.com/googleapis/java-containeranalysis/issues/615)) ([64911e9](https://www.github.com/googleapis/java-containeranalysis/commit/64911e921a65a43e0b1ba8889cebd338d79b05ca))
+
 ### [1.3.4](https://www.github.com/googleapis/java-containeranalysis/compare/v1.3.3...v1.3.4) (2021-06-11)
 
 
