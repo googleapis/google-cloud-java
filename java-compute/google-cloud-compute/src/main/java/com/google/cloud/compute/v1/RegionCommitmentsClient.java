@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,29 +31,27 @@ import com.google.cloud.compute.v1.stub.RegionCommitmentsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The RegionCommitments API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String commitment = "";
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String commitment = "commitment1019005717";
  *   Commitment response = regionCommitmentsClient.get(project, region, commitment);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the regionCommitmentsClient object to clean up resources
+ * <p>Note: close() needs to be called on the RegionCommitmentsClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -81,30 +80,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionCommitmentsSettings regionCommitmentsSettings =
  *     RegionCommitmentsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * RegionCommitmentsClient regionCommitmentsClient =
  *     RegionCommitmentsClient.create(regionCommitmentsSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionCommitmentsSettings regionCommitmentsSettings =
  *     RegionCommitmentsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionCommitmentsClient regionCommitmentsClient =
  *     RegionCommitmentsClient.create(regionCommitmentsSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RegionCommitmentsClient implements BackgroundResource {
   private final RegionCommitmentsSettings settings;
   private final RegionCommitmentsStub stub;
@@ -125,7 +121,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of RegionCommitmentsClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use RegionCommitmentsSettings}.
+   * is for advanced usage - prefer using create(RegionCommitmentsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionCommitmentsClient create(RegionCommitmentsStub stub) {
@@ -157,20 +153,21 @@ public class RegionCommitmentsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of commitments.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, CommitmentsScopedList&gt; element : regionCommitmentsClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, CommitmentsScopedList> element :
+   *       regionCommitmentsClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -181,23 +178,30 @@ public class RegionCommitmentsClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of commitments.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
-   *   String project = "";
-   *   AggregatedListRegionCommitmentsRequest request = AggregatedListRegionCommitmentsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, CommitmentsScopedList&gt; element : regionCommitmentsClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListRegionCommitmentsRequest request =
+   *       AggregatedListRegionCommitmentsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, CommitmentsScopedList> element :
+   *       regionCommitmentsClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -207,46 +211,60 @@ public class RegionCommitmentsClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of commitments.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
-   *   String project = "";
-   *   AggregatedListRegionCommitmentsRequest request = AggregatedListRegionCommitmentsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = regionCommitmentsClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, CommitmentsScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListRegionCommitmentsRequest request =
+   *       AggregatedListRegionCommitmentsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, CommitmentsScopedList>> future =
+   *       regionCommitmentsClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, CommitmentsScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListRegionCommitmentsRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of commitments.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
-   *   String project = "";
-   *   AggregatedListRegionCommitmentsRequest request = AggregatedListRegionCommitmentsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListRegionCommitmentsRequest request =
+   *       AggregatedListRegionCommitmentsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     CommitmentAggregatedList response = regionCommitmentsClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, CommitmentsScopedList&gt; element : response.getItemsMap()) {
+   *     CommitmentAggregatedList response =
+   *         regionCommitmentsClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, CommitmentsScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -257,28 +275,28 @@ public class RegionCommitmentsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListRegionCommitmentsRequest, CommitmentAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified commitment resource. Gets a list of available commitments by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String commitment = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String commitment = "commitment1019005717";
    *   Commitment response = regionCommitmentsClient.get(project, region, commitment);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -295,26 +313,24 @@ public class RegionCommitmentsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified commitment resource. Gets a list of available commitments by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
-   *   String commitment = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetRegionCommitmentRequest request = GetRegionCommitmentRequest.newBuilder()
-   *     .setCommitment(commitment)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   GetRegionCommitmentRequest request =
+   *       GetRegionCommitmentRequest.newBuilder()
+   *           .setCommitment("commitment1019005717")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
    *   Commitment response = regionCommitmentsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -323,47 +339,45 @@ public class RegionCommitmentsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified commitment resource. Gets a list of available commitments by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
-   *   String commitment = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetRegionCommitmentRequest request = GetRegionCommitmentRequest.newBuilder()
-   *     .setCommitment(commitment)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Commitment&gt; future = regionCommitmentsClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetRegionCommitmentRequest request =
+   *       GetRegionCommitmentRequest.newBuilder()
+   *           .setCommitment("commitment1019005717")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<Commitment> future = regionCommitmentsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   Commitment response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetRegionCommitmentRequest, Commitment> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a commitment in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   Commitment commitmentResource = Commitment.newBuilder().build();
    *   Operation response = regionCommitmentsClient.insert(project, region, commitmentResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -380,25 +394,24 @@ public class RegionCommitmentsClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a commitment in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
-   *   Commitment commitmentResource = Commitment.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertRegionCommitmentRequest request = InsertRegionCommitmentRequest.newBuilder()
-   *     .setCommitmentResource(commitmentResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   InsertRegionCommitmentRequest request =
+   *       InsertRegionCommitmentRequest.newBuilder()
+   *           .setCommitmentResource(Commitment.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionCommitmentsClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -407,47 +420,46 @@ public class RegionCommitmentsClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a commitment in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
-   *   Commitment commitmentResource = Commitment.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertRegionCommitmentRequest request = InsertRegionCommitmentRequest.newBuilder()
-   *     .setCommitmentResource(commitmentResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionCommitmentsClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertRegionCommitmentRequest request =
+   *       InsertRegionCommitmentRequest.newBuilder()
+   *           .setCommitmentResource(Commitment.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = regionCommitmentsClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertRegionCommitmentRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of commitments contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   for (Commitment element : regionCommitmentsClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -459,25 +471,29 @@ public class RegionCommitmentsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of commitments contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionCommitmentsRequest request = ListRegionCommitmentsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListRegionCommitmentsRequest request =
+   *       ListRegionCommitmentsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (Commitment element : regionCommitmentsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -486,49 +502,58 @@ public class RegionCommitmentsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of commitments contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionCommitmentsRequest request = ListRegionCommitmentsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = regionCommitmentsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListRegionCommitmentsRequest request =
+   *       ListRegionCommitmentsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Commitment> future =
+   *       regionCommitmentsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Commitment element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionCommitmentsRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of commitments contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionCommitmentsRequest request = ListRegionCommitmentsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListRegionCommitmentsRequest request =
+   *       ListRegionCommitmentsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     CommitmentList response = regionCommitmentsClient.listCallable().call(request);
-   *     for (Commitment element : response.getItemsList()) {
+   *     for (Commitment element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -539,7 +564,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionCommitmentsRequest, CommitmentList> listCallable() {
     return stub.listCallable();
@@ -579,7 +604,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListRegionCommitmentsRequest,
           CommitmentAggregatedList,
-          Entry<String, CommitmentsScopedList>,
+          Map.Entry<String, CommitmentsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -587,7 +612,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
         PageContext<
                 AggregatedListRegionCommitmentsRequest,
                 CommitmentAggregatedList,
-                Entry<String, CommitmentsScopedList>>
+                Map.Entry<String, CommitmentsScopedList>>
             context,
         ApiFuture<CommitmentAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -612,14 +637,14 @@ public class RegionCommitmentsClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListRegionCommitmentsRequest,
           CommitmentAggregatedList,
-          Entry<String, CommitmentsScopedList>,
+          Map.Entry<String, CommitmentsScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListRegionCommitmentsRequest,
                 CommitmentAggregatedList,
-                Entry<String, CommitmentsScopedList>>
+                Map.Entry<String, CommitmentsScopedList>>
             context,
         CommitmentAggregatedList response) {
       super(context, response);
@@ -634,7 +659,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
         PageContext<
                 AggregatedListRegionCommitmentsRequest,
                 CommitmentAggregatedList,
-                Entry<String, CommitmentsScopedList>>
+                Map.Entry<String, CommitmentsScopedList>>
             context,
         CommitmentAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -645,7 +670,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
         PageContext<
                 AggregatedListRegionCommitmentsRequest,
                 CommitmentAggregatedList,
-                Entry<String, CommitmentsScopedList>>
+                Map.Entry<String, CommitmentsScopedList>>
             context,
         ApiFuture<CommitmentAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -656,7 +681,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListRegionCommitmentsRequest,
           CommitmentAggregatedList,
-          Entry<String, CommitmentsScopedList>,
+          Map.Entry<String, CommitmentsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

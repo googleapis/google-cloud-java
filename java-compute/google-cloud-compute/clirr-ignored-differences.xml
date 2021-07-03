@@ -27,4 +27,18 @@
     <className>com/google/cloud/compute/**</className>
     <method>boolean has*(*)</method>
   </difference>
+  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
+  <!-- Originally caused by https://github.com/googleapis/java-compute/pull/476-->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/compute/**</className>
+    <method>int getDefaultServicePort()</method>
+  </difference>
+  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
+  <!-- Originally caused by https://github.com/googleapis/java-compute/pull/476-->
+  <difference>
+    <differenceType>6010</differenceType>
+    <className>com/google/cloud/compute/**</className>
+    <field>*MethodDescriptor</field>
+  </difference>
 </differences>

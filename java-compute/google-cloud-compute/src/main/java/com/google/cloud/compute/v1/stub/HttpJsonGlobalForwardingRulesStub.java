@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.GlobalForwardingRulesClient.ListPagedResponse;
@@ -42,27 +43,26 @@ import com.google.cloud.compute.v1.PatchGlobalForwardingRuleRequest;
 import com.google.cloud.compute.v1.SetLabelsGlobalForwardingRuleRequest;
 import com.google.cloud.compute.v1.SetTargetGlobalForwardingRuleRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the GlobalForwardingRules service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteGlobalForwardingRuleRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteGlobalForwardingRuleRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteGlobalForwardingRuleRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules.Delete")
+              .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteGlobalForwardingRuleRequest>newBuilder()
@@ -76,9 +76,9 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteGlobalForwardingRuleRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "forwardingRule", request.getForwardingRule());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -102,7 +102,7 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                           new FieldsExtractor<DeleteGlobalForwardingRuleRequest, String>() {
                             @Override
                             public String extract(DeleteGlobalForwardingRuleRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -112,11 +112,10 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetGlobalForwardingRuleRequest, ForwardingRule>
+  private static final ApiMethodDescriptor<GetGlobalForwardingRuleRequest, ForwardingRule>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetGlobalForwardingRuleRequest, ForwardingRule>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules.Get")
+              .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetGlobalForwardingRuleRequest>newBuilder()
@@ -130,9 +129,9 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetGlobalForwardingRuleRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "forwardingRule", request.getForwardingRule());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -145,7 +144,6 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetGlobalForwardingRuleRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -153,7 +151,7 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                           new FieldsExtractor<GetGlobalForwardingRuleRequest, String>() {
                             @Override
                             public String extract(GetGlobalForwardingRuleRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -163,11 +161,10 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertGlobalForwardingRuleRequest, Operation>
+  private static final ApiMethodDescriptor<InsertGlobalForwardingRuleRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertGlobalForwardingRuleRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules.Insert")
+              .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertGlobalForwardingRuleRequest>newBuilder()
@@ -218,11 +215,10 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListGlobalForwardingRulesRequest, ForwardingRuleList>
+  private static final ApiMethodDescriptor<ListGlobalForwardingRulesRequest, ForwardingRuleList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListGlobalForwardingRulesRequest, ForwardingRuleList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules.List")
+              .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListGlobalForwardingRulesRequest>newBuilder()
@@ -276,7 +272,7 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                           new FieldsExtractor<ListGlobalForwardingRulesRequest, String>() {
                             @Override
                             public String extract(ListGlobalForwardingRulesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -286,11 +282,10 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchGlobalForwardingRuleRequest, Operation>
+  private static final ApiMethodDescriptor<PatchGlobalForwardingRuleRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchGlobalForwardingRuleRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules.Patch")
+              .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules/Patch")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchGlobalForwardingRuleRequest>newBuilder()
@@ -304,9 +299,9 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<PatchGlobalForwardingRuleRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "forwardingRule", request.getForwardingRule());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -343,11 +338,10 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetLabelsGlobalForwardingRuleRequest, Operation>
+  private static final ApiMethodDescriptor<SetLabelsGlobalForwardingRuleRequest, Operation>
       setLabelsMethodDescriptor =
           ApiMethodDescriptor.<SetLabelsGlobalForwardingRuleRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules.SetLabels")
+              .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules/SetLabels")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetLabelsGlobalForwardingRuleRequest>newBuilder()
@@ -375,7 +369,6 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetLabelsGlobalForwardingRuleRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -396,11 +389,10 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetTargetGlobalForwardingRuleRequest, Operation>
+  private static final ApiMethodDescriptor<SetTargetGlobalForwardingRuleRequest, Operation>
       setTargetMethodDescriptor =
           ApiMethodDescriptor.<SetTargetGlobalForwardingRuleRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules.SetTarget")
+              .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules/SetTarget")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetTargetGlobalForwardingRuleRequest>newBuilder()
@@ -414,9 +406,9 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SetTargetGlobalForwardingRuleRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "forwardingRule", request.getForwardingRule());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -453,8 +445,6 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteGlobalForwardingRuleRequest, Operation> deleteCallable;
   private final UnaryCallable<GetGlobalForwardingRuleRequest, ForwardingRule> getCallable;
   private final UnaryCallable<InsertGlobalForwardingRuleRequest, Operation> insertCallable;
@@ -465,6 +455,7 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
   private final UnaryCallable<SetLabelsGlobalForwardingRuleRequest, Operation> setLabelsCallable;
   private final UnaryCallable<SetTargetGlobalForwardingRuleRequest, Operation> setTargetCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonGlobalForwardingRulesStub create(
@@ -563,37 +554,59 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
         callableFactory.createUnaryCallable(
             setTargetTransportSettings, settings.setTargetSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(setLabelsMethodDescriptor);
+    methodDescriptors.add(setTargetMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteGlobalForwardingRuleRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetGlobalForwardingRuleRequest, ForwardingRule> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertGlobalForwardingRuleRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListGlobalForwardingRulesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListGlobalForwardingRulesRequest, ForwardingRuleList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListGlobalForwardingRulesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchGlobalForwardingRuleRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<SetLabelsGlobalForwardingRuleRequest, Operation> setLabelsCallable() {
     return setLabelsCallable;
   }
 
+  @Override
   public UnaryCallable<SetTargetGlobalForwardingRuleRequest, Operation> setTargetCallable() {
     return setTargetCallable;
   }

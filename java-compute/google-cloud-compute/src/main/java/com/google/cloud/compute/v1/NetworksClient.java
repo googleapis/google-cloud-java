@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,25 +34,25 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The Networks API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (NetworksClient networksClient = NetworksClient.create()) {
- *   String project = "";
- *   String network = "";
- *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
- *   Operation response = networksClient.addPeering(project, network, networksAddPeeringRequestResource);
+ *   String project = "project-309310695";
+ *   String network = "network1843485230";
+ *   NetworksAddPeeringRequest networksAddPeeringRequestResource =
+ *       NetworksAddPeeringRequest.newBuilder().build();
+ *   Operation response =
+ *       networksClient.addPeering(project, network, networksAddPeeringRequestResource);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the networksClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the NetworksClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -79,30 +80,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * NetworksSettings networksSettings =
  *     NetworksSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * NetworksClient networksClient =
- *     NetworksClient.create(networksSettings);
- * </code>
- * </pre>
+ * NetworksClient networksClient = NetworksClient.create(networksSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * NetworksSettings networksSettings =
  *     NetworksSettings.newBuilder().setEndpoint(myEndpoint).build();
- * NetworksClient networksClient =
- *     NetworksClient.create(networksSettings);
- * </code>
- * </pre>
+ * NetworksClient networksClient = NetworksClient.create(networksSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class NetworksClient implements BackgroundResource {
   private final NetworksSettings settings;
   private final NetworksStub stub;
@@ -122,7 +118,7 @@ public class NetworksClient implements BackgroundResource {
 
   /**
    * Constructs an instance of NetworksClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use NetworksSettings}.
+   * advanced usage - prefer using create(NetworksSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final NetworksClient create(NetworksStub stub) {
@@ -153,20 +149,22 @@ public class NetworksClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds a peering to the specified network.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String project = "";
-   *   String network = "";
-   *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
-   *   Operation response = networksClient.addPeering(project, network, networksAddPeeringRequestResource);
+   *   String project = "project-309310695";
+   *   String network = "network1843485230";
+   *   NetworksAddPeeringRequest networksAddPeeringRequestResource =
+   *       NetworksAddPeeringRequest.newBuilder().build();
+   *   Operation response =
+   *       networksClient.addPeering(project, network, networksAddPeeringRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param network Name of the network resource to add peering to.
@@ -184,25 +182,24 @@ public class NetworksClient implements BackgroundResource {
     return addPeering(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds a peering to the specified network.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
-   *   String project = "";
-   *   AddPeeringNetworkRequest request = AddPeeringNetworkRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setNetworksAddPeeringRequestResource(networksAddPeeringRequestResource)
-   *     .setProject(project)
-   *     .build();
+   *   AddPeeringNetworkRequest request =
+   *       AddPeeringNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setNetworksAddPeeringRequestResource(NetworksAddPeeringRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = networksClient.addPeering(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -211,45 +208,44 @@ public class NetworksClient implements BackgroundResource {
     return addPeeringCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds a peering to the specified network.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
-   *   String project = "";
-   *   AddPeeringNetworkRequest request = AddPeeringNetworkRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setNetworksAddPeeringRequestResource(networksAddPeeringRequestResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = networksClient.addPeeringCallable().futureCall(request);
-   *   // Do something
+   *   AddPeeringNetworkRequest request =
+   *       AddPeeringNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setNetworksAddPeeringRequestResource(NetworksAddPeeringRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = networksClient.addPeeringCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AddPeeringNetworkRequest, Operation> addPeeringCallable() {
     return stub.addPeeringCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified network.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String project = "";
-   *   String network = "";
+   *   String project = "project-309310695";
+   *   String network = "network1843485230";
    *   Operation response = networksClient.delete(project, network);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param network Name of the network to delete.
@@ -261,23 +257,23 @@ public class NetworksClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified network.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   String project = "";
-   *   DeleteNetworkRequest request = DeleteNetworkRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setProject(project)
-   *     .build();
+   *   DeleteNetworkRequest request =
+   *       DeleteNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = networksClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -286,43 +282,43 @@ public class NetworksClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified network.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   String project = "";
-   *   DeleteNetworkRequest request = DeleteNetworkRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = networksClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteNetworkRequest request =
+   *       DeleteNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = networksClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteNetworkRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified network. Gets a list of available networks by making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String project = "";
-   *   String network = "";
+   *   String project = "project-309310695";
+   *   String network = "network1843485230";
    *   Network response = networksClient.get(project, network);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param network Name of the network to return.
@@ -334,23 +330,22 @@ public class NetworksClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified network. Gets a list of available networks by making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   String project = "";
-   *   GetNetworkRequest request = GetNetworkRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setProject(project)
-   *     .build();
+   *   GetNetworkRequest request =
+   *       GetNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setProject("project-309310695")
+   *           .build();
    *   Network response = networksClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -359,43 +354,43 @@ public class NetworksClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified network. Gets a list of available networks by making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   String project = "";
-   *   GetNetworkRequest request = GetNetworkRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Network&gt; future = networksClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetNetworkRequest request =
+   *       GetNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<Network> future = networksClient.getCallable().futureCall(request);
+   *   // Do something.
    *   Network response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetNetworkRequest, Network> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the effective firewalls on a given network.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String project = "";
-   *   String network = "";
-   *   NetworksGetEffectiveFirewallsResponse response = networksClient.getEffectiveFirewalls(project, network);
+   *   String project = "project-309310695";
+   *   String network = "network1843485230";
+   *   NetworksGetEffectiveFirewallsResponse response =
+   *       networksClient.getEffectiveFirewalls(project, network);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param network Name of the network for this request.
@@ -411,23 +406,23 @@ public class NetworksClient implements BackgroundResource {
     return getEffectiveFirewalls(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the effective firewalls on a given network.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   String project = "";
-   *   GetEffectiveFirewallsNetworkRequest request = GetEffectiveFirewallsNetworkRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setProject(project)
-   *     .build();
-   *   NetworksGetEffectiveFirewallsResponse response = networksClient.getEffectiveFirewalls(request);
+   *   GetEffectiveFirewallsNetworkRequest request =
+   *       GetEffectiveFirewallsNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   NetworksGetEffectiveFirewallsResponse response =
+   *       networksClient.getEffectiveFirewalls(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -437,25 +432,25 @@ public class NetworksClient implements BackgroundResource {
     return getEffectiveFirewallsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the effective firewalls on a given network.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   String project = "";
-   *   GetEffectiveFirewallsNetworkRequest request = GetEffectiveFirewallsNetworkRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;NetworksGetEffectiveFirewallsResponse&gt; future = networksClient.getEffectiveFirewallsCallable().futureCall(request);
-   *   // Do something
+   *   GetEffectiveFirewallsNetworkRequest request =
+   *       GetEffectiveFirewallsNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<NetworksGetEffectiveFirewallsResponse> future =
+   *       networksClient.getEffectiveFirewallsCallable().futureCall(request);
+   *   // Do something.
    *   NetworksGetEffectiveFirewallsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
@@ -463,19 +458,19 @@ public class NetworksClient implements BackgroundResource {
     return stub.getEffectiveFirewallsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a network in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   Network networkResource = Network.newBuilder().build();
    *   Operation response = networksClient.insert(project, networkResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param networkResource The body resource for this request
@@ -490,23 +485,23 @@ public class NetworksClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a network in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   Network networkResource = Network.newBuilder().build();
-   *   String project = "";
-   *   InsertNetworkRequest request = InsertNetworkRequest.newBuilder()
-   *     .setNetworkResource(networkResource)
-   *     .setProject(project)
-   *     .build();
+   *   InsertNetworkRequest request =
+   *       InsertNetworkRequest.newBuilder()
+   *           .setNetworkResource(Network.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = networksClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -515,44 +510,44 @@ public class NetworksClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a network in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   Network networkResource = Network.newBuilder().build();
-   *   String project = "";
-   *   InsertNetworkRequest request = InsertNetworkRequest.newBuilder()
-   *     .setNetworkResource(networkResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = networksClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertNetworkRequest request =
+   *       InsertNetworkRequest.newBuilder()
+   *           .setNetworkResource(Network.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = networksClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertNetworkRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of networks available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (Network element : networksClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -562,23 +557,28 @@ public class NetworksClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of networks available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String project = "";
-   *   ListNetworksRequest request = ListNetworksRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListNetworksRequest request =
+   *       ListNetworksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (Network element : networksClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -587,45 +587,55 @@ public class NetworksClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of networks available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String project = "";
-   *   ListNetworksRequest request = ListNetworksRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = networksClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListNetworksRequest request =
+   *       ListNetworksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Network> future = networksClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Network element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListNetworksRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of networks available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String project = "";
-   *   ListNetworksRequest request = ListNetworksRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListNetworksRequest request =
+   *       ListNetworksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     NetworkList response = networksClient.listCallable().call(request);
-   *     for (Network element : response.getItemsList()) {
+   *     for (Network element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -636,27 +646,28 @@ public class NetworksClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListNetworksRequest, NetworkList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the peering routes exchanged over peering connection.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String project = "";
-   *   String network = "";
-   *   for (ExchangedPeeringRoute element : networksClient.listPeeringRoutes(project, network).iterateAll()) {
+   *   String project = "project-309310695";
+   *   String network = "network1843485230";
+   *   for (ExchangedPeeringRoute element :
+   *       networksClient.listPeeringRoutes(project, network).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param network Name of the network for this request.
@@ -671,25 +682,31 @@ public class NetworksClient implements BackgroundResource {
     return listPeeringRoutes(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the peering routes exchanged over peering connection.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   String project = "";
-   *   ListPeeringRoutesNetworksRequest request = ListPeeringRoutesNetworksRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setProject(project)
-   *     .build();
+   *   ListPeeringRoutesNetworksRequest request =
+   *       ListPeeringRoutesNetworksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setNetwork("network1843485230")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setPeeringName("peeringName-1170120213")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (ExchangedPeeringRoute element : networksClient.listPeeringRoutes(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -699,50 +716,64 @@ public class NetworksClient implements BackgroundResource {
     return listPeeringRoutesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the peering routes exchanged over peering connection.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   String project = "";
-   *   ListPeeringRoutesNetworksRequest request = ListPeeringRoutesNetworksRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPeeringRoutesPagedResponse&gt; future = networksClient.listPeeringRoutesPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListPeeringRoutesNetworksRequest request =
+   *       ListPeeringRoutesNetworksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setNetwork("network1843485230")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setPeeringName("peeringName-1170120213")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<ExchangedPeeringRoute> future =
+   *       networksClient.listPeeringRoutesPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (ExchangedPeeringRoute element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListPeeringRoutesNetworksRequest, ListPeeringRoutesPagedResponse>
       listPeeringRoutesPagedCallable() {
     return stub.listPeeringRoutesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the peering routes exchanged over peering connection.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   String project = "";
-   *   ListPeeringRoutesNetworksRequest request = ListPeeringRoutesNetworksRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setProject(project)
-   *     .build();
+   *   ListPeeringRoutesNetworksRequest request =
+   *       ListPeeringRoutesNetworksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setNetwork("network1843485230")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setPeeringName("peeringName-1170120213")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     ExchangedPeeringRoutesList response = networksClient.listPeeringRoutesCallable().call(request);
-   *     for (ExchangedPeeringRoute element : response.getItemsList()) {
+   *     ExchangedPeeringRoutesList response =
+   *         networksClient.listPeeringRoutesCallable().call(request);
+   *     for (ExchangedPeeringRoute element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -753,28 +784,28 @@ public class NetworksClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListPeeringRoutesNetworksRequest, ExchangedPeeringRoutesList>
       listPeeringRoutesCallable() {
     return stub.listPeeringRoutesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified network with the data included in the request. Only the following fields
    * can be modified: routingConfig.routingMode.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String project = "";
-   *   String network = "";
+   *   String project = "project-309310695";
+   *   String network = "network1843485230";
    *   Network networkResource = Network.newBuilder().build();
    *   Operation response = networksClient.patch(project, network, networkResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param network Name of the network to update.
@@ -791,26 +822,25 @@ public class NetworksClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified network with the data included in the request. Only the following fields
    * can be modified: routingConfig.routingMode.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   Network networkResource = Network.newBuilder().build();
-   *   String project = "";
-   *   PatchNetworkRequest request = PatchNetworkRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setNetworkResource(networkResource)
-   *     .setProject(project)
-   *     .build();
+   *   PatchNetworkRequest request =
+   *       PatchNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setNetworkResource(Network.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = networksClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -819,47 +849,48 @@ public class NetworksClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified network with the data included in the request. Only the following fields
    * can be modified: routingConfig.routingMode.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   Network networkResource = Network.newBuilder().build();
-   *   String project = "";
-   *   PatchNetworkRequest request = PatchNetworkRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setNetworkResource(networkResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = networksClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchNetworkRequest request =
+   *       PatchNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setNetworkResource(Network.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = networksClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchNetworkRequest, Operation> patchCallable() {
     return stub.patchCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes a peering from the specified network.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String project = "";
-   *   String network = "";
-   *   NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
-   *   Operation response = networksClient.removePeering(project, network, networksRemovePeeringRequestResource);
+   *   String project = "project-309310695";
+   *   String network = "network1843485230";
+   *   NetworksRemovePeeringRequest networksRemovePeeringRequestResource =
+   *       NetworksRemovePeeringRequest.newBuilder().build();
+   *   Operation response =
+   *       networksClient.removePeering(project, network, networksRemovePeeringRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param network Name of the network resource to remove peering from.
@@ -879,25 +910,25 @@ public class NetworksClient implements BackgroundResource {
     return removePeering(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes a peering from the specified network.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
-   *   String project = "";
-   *   RemovePeeringNetworkRequest request = RemovePeeringNetworkRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setNetworksRemovePeeringRequestResource(networksRemovePeeringRequestResource)
-   *     .setProject(project)
-   *     .build();
+   *   RemovePeeringNetworkRequest request =
+   *       RemovePeeringNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setNetworksRemovePeeringRequestResource(
+   *               NetworksRemovePeeringRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = networksClient.removePeering(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -906,45 +937,45 @@ public class NetworksClient implements BackgroundResource {
     return removePeeringCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes a peering from the specified network.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
-   *   String project = "";
-   *   RemovePeeringNetworkRequest request = RemovePeeringNetworkRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setNetworksRemovePeeringRequestResource(networksRemovePeeringRequestResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = networksClient.removePeeringCallable().futureCall(request);
-   *   // Do something
+   *   RemovePeeringNetworkRequest request =
+   *       RemovePeeringNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setNetworksRemovePeeringRequestResource(
+   *               NetworksRemovePeeringRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = networksClient.removePeeringCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<RemovePeeringNetworkRequest, Operation> removePeeringCallable() {
     return stub.removePeeringCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Switches the network mode from auto subnet mode to custom subnet mode.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String project = "";
-   *   String network = "";
+   *   String project = "project-309310695";
+   *   String network = "network1843485230";
    *   Operation response = networksClient.switchToCustomMode(project, network);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param network Name of the network to be updated.
@@ -959,23 +990,23 @@ public class NetworksClient implements BackgroundResource {
     return switchToCustomMode(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Switches the network mode from auto subnet mode to custom subnet mode.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   String project = "";
-   *   SwitchToCustomModeNetworkRequest request = SwitchToCustomModeNetworkRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setProject(project)
-   *     .build();
+   *   SwitchToCustomModeNetworkRequest request =
+   *       SwitchToCustomModeNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = networksClient.switchToCustomMode(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -984,32 +1015,32 @@ public class NetworksClient implements BackgroundResource {
     return switchToCustomModeCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Switches the network mode from auto subnet mode to custom subnet mode.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   String project = "";
-   *   SwitchToCustomModeNetworkRequest request = SwitchToCustomModeNetworkRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = networksClient.switchToCustomModeCallable().futureCall(request);
-   *   // Do something
+   *   SwitchToCustomModeNetworkRequest request =
+   *       SwitchToCustomModeNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = networksClient.switchToCustomModeCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SwitchToCustomModeNetworkRequest, Operation>
       switchToCustomModeCallable() {
     return stub.switchToCustomModeCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified network peering with the data included in the request Only the following
    * fields can be modified: NetworkPeering.export_custom_routes, and
@@ -1017,14 +1048,16 @@ public class NetworksClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String project = "";
-   *   String network = "";
-   *   NetworksUpdatePeeringRequest networksUpdatePeeringRequestResource = NetworksUpdatePeeringRequest.newBuilder().build();
-   *   Operation response = networksClient.updatePeering(project, network, networksUpdatePeeringRequestResource);
+   *   String project = "project-309310695";
+   *   String network = "network1843485230";
+   *   NetworksUpdatePeeringRequest networksUpdatePeeringRequestResource =
+   *       NetworksUpdatePeeringRequest.newBuilder().build();
+   *   Operation response =
+   *       networksClient.updatePeering(project, network, networksUpdatePeeringRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param network Name of the network resource which the updated peering is belonging to.
@@ -1044,7 +1077,7 @@ public class NetworksClient implements BackgroundResource {
     return updatePeering(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified network peering with the data included in the request Only the following
    * fields can be modified: NetworkPeering.export_custom_routes, and
@@ -1052,19 +1085,19 @@ public class NetworksClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   NetworksUpdatePeeringRequest networksUpdatePeeringRequestResource = NetworksUpdatePeeringRequest.newBuilder().build();
-   *   String project = "";
-   *   UpdatePeeringNetworkRequest request = UpdatePeeringNetworkRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setNetworksUpdatePeeringRequestResource(networksUpdatePeeringRequestResource)
-   *     .setProject(project)
-   *     .build();
+   *   UpdatePeeringNetworkRequest request =
+   *       UpdatePeeringNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setNetworksUpdatePeeringRequestResource(
+   *               NetworksUpdatePeeringRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = networksClient.updatePeering(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1073,7 +1106,7 @@ public class NetworksClient implements BackgroundResource {
     return updatePeeringCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified network peering with the data included in the request Only the following
    * fields can be modified: NetworkPeering.export_custom_routes, and
@@ -1081,21 +1114,21 @@ public class NetworksClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NetworksClient networksClient = NetworksClient.create()) {
-   *   String network = "";
-   *   NetworksUpdatePeeringRequest networksUpdatePeeringRequestResource = NetworksUpdatePeeringRequest.newBuilder().build();
-   *   String project = "";
-   *   UpdatePeeringNetworkRequest request = UpdatePeeringNetworkRequest.newBuilder()
-   *     .setNetwork(network)
-   *     .setNetworksUpdatePeeringRequestResource(networksUpdatePeeringRequestResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = networksClient.updatePeeringCallable().futureCall(request);
-   *   // Do something
+   *   UpdatePeeringNetworkRequest request =
+   *       UpdatePeeringNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setNetworksUpdatePeeringRequestResource(
+   *               NetworksUpdatePeeringRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = networksClient.updatePeeringCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdatePeeringNetworkRequest, Operation> updatePeeringCallable() {
     return stub.updatePeeringCallable();

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,25 +34,23 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The ZoneOperations API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
- *   String project = "";
- *   String zone = "";
- *   String operation = "";
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String operation = "operation1662702951";
  *   DeleteZoneOperationResponse response = zoneOperationsClient.delete(project, zone, operation);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the zoneOperationsClient object to clean up resources such
+ * <p>Note: close() needs to be called on the ZoneOperationsClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -79,30 +78,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ZoneOperationsSettings zoneOperationsSettings =
  *     ZoneOperationsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * ZoneOperationsClient zoneOperationsClient =
- *     ZoneOperationsClient.create(zoneOperationsSettings);
- * </code>
- * </pre>
+ * ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create(zoneOperationsSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ZoneOperationsSettings zoneOperationsSettings =
  *     ZoneOperationsSettings.newBuilder().setEndpoint(myEndpoint).build();
- * ZoneOperationsClient zoneOperationsClient =
- *     ZoneOperationsClient.create(zoneOperationsSettings);
- * </code>
- * </pre>
+ * ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create(zoneOperationsSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class ZoneOperationsClient implements BackgroundResource {
   private final ZoneOperationsSettings settings;
   private final ZoneOperationsStub stub;
@@ -123,7 +117,7 @@ public class ZoneOperationsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ZoneOperationsClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use ZoneOperationsSettings}.
+   * for advanced usage - prefer using create(ZoneOperationsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ZoneOperationsClient create(ZoneOperationsStub stub) {
@@ -155,20 +149,20 @@ public class ZoneOperationsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified zone-specific Operations resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String operation = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String operation = "operation1662702951";
    *   DeleteZoneOperationResponse response = zoneOperationsClient.delete(project, zone, operation);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone for this request.
@@ -185,25 +179,23 @@ public class ZoneOperationsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified zone-specific Operations resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
-   *   String operation = "";
-   *   String project = "";
-   *   String zone = "";
-   *   DeleteZoneOperationRequest request = DeleteZoneOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   DeleteZoneOperationRequest request =
+   *       DeleteZoneOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
    *   DeleteZoneOperationResponse response = zoneOperationsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -212,47 +204,46 @@ public class ZoneOperationsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified zone-specific Operations resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
-   *   String operation = "";
-   *   String project = "";
-   *   String zone = "";
-   *   DeleteZoneOperationRequest request = DeleteZoneOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;DeleteZoneOperationResponse&gt; future = zoneOperationsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteZoneOperationRequest request =
+   *       DeleteZoneOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<DeleteZoneOperationResponse> future =
+   *       zoneOperationsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   DeleteZoneOperationResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteZoneOperationRequest, DeleteZoneOperationResponse>
       deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified zone-specific Operations resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String operation = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String operation = "operation1662702951";
    *   Operation response = zoneOperationsClient.get(project, zone, operation);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone for this request.
@@ -269,25 +260,23 @@ public class ZoneOperationsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified zone-specific Operations resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
-   *   String operation = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetZoneOperationRequest request = GetZoneOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   GetZoneOperationRequest request =
+   *       GetZoneOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = zoneOperationsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -296,47 +285,45 @@ public class ZoneOperationsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified zone-specific Operations resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
-   *   String operation = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetZoneOperationRequest request = GetZoneOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = zoneOperationsClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetZoneOperationRequest request =
+   *       GetZoneOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = zoneOperationsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetZoneOperationRequest, Operation> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Operation resources contained within the specified zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
    *   for (Operation element : zoneOperationsClient.list(project, zone).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone for request.
@@ -348,25 +335,29 @@ public class ZoneOperationsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Operation resources contained within the specified zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListZoneOperationsRequest request = ListZoneOperationsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListZoneOperationsRequest request =
+   *       ListZoneOperationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   for (Operation element : zoneOperationsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -375,49 +366,57 @@ public class ZoneOperationsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Operation resources contained within the specified zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListZoneOperationsRequest request = ListZoneOperationsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = zoneOperationsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListZoneOperationsRequest request =
+   *       ListZoneOperationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = zoneOperationsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Operation element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListZoneOperationsRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Operation resources contained within the specified zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListZoneOperationsRequest request = ListZoneOperationsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListZoneOperationsRequest request =
+   *       ListZoneOperationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   while (true) {
    *     OperationList response = zoneOperationsClient.listCallable().call(request);
-   *     for (Operation element : response.getItemsList()) {
+   *     for (Operation element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -428,13 +427,13 @@ public class ZoneOperationsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListZoneOperationsRequest, OperationList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Waits for the specified Operation resource to return as `DONE` or for the request to approach
    * the 2 minute deadline, and retrieves the specified Operation resource. This method differs from
@@ -449,14 +448,14 @@ public class ZoneOperationsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String operation = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String operation = "operation1662702951";
    *   Operation response = zoneOperationsClient.wait(project, zone, operation);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone for this request.
@@ -473,7 +472,7 @@ public class ZoneOperationsClient implements BackgroundResource {
     return wait(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Waits for the specified Operation resource to return as `DONE` or for the request to approach
    * the 2 minute deadline, and retrieves the specified Operation resource. This method differs from
@@ -488,19 +487,17 @@ public class ZoneOperationsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
-   *   String operation = "";
-   *   String project = "";
-   *   String zone = "";
-   *   WaitZoneOperationRequest request = WaitZoneOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   WaitZoneOperationRequest request =
+   *       WaitZoneOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = zoneOperationsClient.wait(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -509,7 +506,7 @@ public class ZoneOperationsClient implements BackgroundResource {
     return waitCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Waits for the specified Operation resource to return as `DONE` or for the request to approach
    * the 2 minute deadline, and retrieves the specified Operation resource. This method differs from
@@ -524,21 +521,19 @@ public class ZoneOperationsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
-   *   String operation = "";
-   *   String project = "";
-   *   String zone = "";
-   *   WaitZoneOperationRequest request = WaitZoneOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = zoneOperationsClient.waitCallable().futureCall(request);
-   *   // Do something
+   *   WaitZoneOperationRequest request =
+   *       WaitZoneOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = zoneOperationsClient.waitCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<WaitZoneOperationRequest, Operation> waitCallable() {
     return stub.waitCallable();

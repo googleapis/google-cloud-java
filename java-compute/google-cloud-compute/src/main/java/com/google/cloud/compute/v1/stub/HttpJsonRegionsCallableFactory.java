@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
@@ -29,18 +29,17 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import javax.annotation.Generated;
-import javax.annotation.Nullable;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST callable factory implementation for Google Compute Engine API.
+ * REST callable factory implementation for the Regions service API.
  *
  * <p>This class is for advanced usage.
  */
-@Generated("by gapic-generator")
-@BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+@Generated("by gapic-generator-java")
 public class HttpJsonRegionsCallableFactory
     implements HttpJsonStubCallableFactory<ApiMessage, BackgroundResource> {
+
   @Override
   public <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createUnaryCallable(
       HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
@@ -50,35 +49,32 @@ public class HttpJsonRegionsCallableFactory
         httpJsonCallSettings, callSettings, clientContext);
   }
 
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  @Override
-  @Nullable
-  public <RequestT, ResponseT, MetadataT>
-      OperationCallable<RequestT, ResponseT, MetadataT> createOperationCallable(
-          HttpJsonCallSettings<RequestT, ApiMessage> httpJsonCallSettings,
-          OperationCallSettings<RequestT, ResponseT, MetadataT> operationCallSettings,
-          ClientContext clientContext,
-          BackgroundResource operationsStub) {
-    return null;
-  }
-
   @Override
   public <RequestT, ResponseT, PagedListResponseT>
       UnaryCallable<RequestT, PagedListResponseT> createPagedCallable(
           HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
-          PagedCallSettings<RequestT, ResponseT, PagedListResponseT> pagedCallSettings,
+          PagedCallSettings<RequestT, ResponseT, PagedListResponseT> callSettings,
           ClientContext clientContext) {
     return HttpJsonCallableFactory.createPagedCallable(
-        httpJsonCallSettings, pagedCallSettings, clientContext);
+        httpJsonCallSettings, callSettings, clientContext);
   }
 
   @Override
   public <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createBatchingCallable(
       HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
-      BatchingCallSettings<RequestT, ResponseT> batchingCallSettings,
+      BatchingCallSettings<RequestT, ResponseT> callSettings,
       ClientContext clientContext) {
     return HttpJsonCallableFactory.createBatchingCallable(
-        httpJsonCallSettings, batchingCallSettings, clientContext);
+        httpJsonCallSettings, callSettings, clientContext);
+  }
+
+  @Override
+  public <RequestT, ResponseT, MetadataT>
+      OperationCallable<RequestT, ResponseT, MetadataT> createOperationCallable(
+          HttpJsonCallSettings<RequestT, ApiMessage> httpJsonCallSettings,
+          OperationCallSettings<RequestT, ResponseT, MetadataT> callSettings,
+          ClientContext clientContext,
+          BackgroundResource operationsStub) {
+    return null;
   }
 }

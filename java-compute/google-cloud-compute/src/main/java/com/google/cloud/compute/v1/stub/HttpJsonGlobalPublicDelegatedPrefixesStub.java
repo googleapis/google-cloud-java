@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.GlobalPublicDelegatedPrefixesClient.ListPagedResponse;
@@ -40,27 +41,26 @@ import com.google.cloud.compute.v1.PatchGlobalPublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.PublicDelegatedPrefix;
 import com.google.cloud.compute.v1.PublicDelegatedPrefixList;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the GlobalPublicDelegatedPrefixes service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDelegatedPrefixesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteGlobalPublicDelegatedPrefixeRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteGlobalPublicDelegatedPrefixeRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteGlobalPublicDelegatedPrefixeRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalPublicDelegatedPrefixes.Delete")
+              .setFullMethodName("google.cloud.compute.v1.GlobalPublicDelegatedPrefixes/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -105,7 +105,7 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                             @Override
                             public String extract(
                                 DeleteGlobalPublicDelegatedPrefixeRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -115,13 +115,12 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           GetGlobalPublicDelegatedPrefixeRequest, PublicDelegatedPrefix>
       getMethodDescriptor =
           ApiMethodDescriptor
               .<GetGlobalPublicDelegatedPrefixeRequest, PublicDelegatedPrefix>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalPublicDelegatedPrefixes.Get")
+              .setFullMethodName("google.cloud.compute.v1.GlobalPublicDelegatedPrefixes/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetGlobalPublicDelegatedPrefixeRequest>newBuilder()
@@ -152,7 +151,6 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetGlobalPublicDelegatedPrefixeRequest>
                                   serializer = ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -160,7 +158,7 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                           new FieldsExtractor<GetGlobalPublicDelegatedPrefixeRequest, String>() {
                             @Override
                             public String extract(GetGlobalPublicDelegatedPrefixeRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -170,11 +168,10 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertGlobalPublicDelegatedPrefixeRequest, Operation>
+  private static final ApiMethodDescriptor<InsertGlobalPublicDelegatedPrefixeRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertGlobalPublicDelegatedPrefixeRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalPublicDelegatedPrefixes.Insert")
+              .setFullMethodName("google.cloud.compute.v1.GlobalPublicDelegatedPrefixes/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -228,13 +225,12 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListGlobalPublicDelegatedPrefixesRequest, PublicDelegatedPrefixList>
       listMethodDescriptor =
           ApiMethodDescriptor
               .<ListGlobalPublicDelegatedPrefixesRequest, PublicDelegatedPrefixList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalPublicDelegatedPrefixes.List")
+              .setFullMethodName("google.cloud.compute.v1.GlobalPublicDelegatedPrefixes/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -291,7 +287,7 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                             @Override
                             public String extract(
                                 ListGlobalPublicDelegatedPrefixesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -301,11 +297,10 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchGlobalPublicDelegatedPrefixeRequest, Operation>
+  private static final ApiMethodDescriptor<PatchGlobalPublicDelegatedPrefixeRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchGlobalPublicDelegatedPrefixeRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalPublicDelegatedPrefixes.Patch")
+              .setFullMethodName("google.cloud.compute.v1.GlobalPublicDelegatedPrefixes/Patch")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -363,8 +358,6 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteGlobalPublicDelegatedPrefixeRequest, Operation> deleteCallable;
   private final UnaryCallable<GetGlobalPublicDelegatedPrefixeRequest, PublicDelegatedPrefix>
       getCallable;
@@ -375,6 +368,7 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
       listPagedCallable;
   private final UnaryCallable<PatchGlobalPublicDelegatedPrefixeRequest, Operation> patchCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonGlobalPublicDelegatedPrefixesStub create(
@@ -466,32 +460,50 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteGlobalPublicDelegatedPrefixeRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetGlobalPublicDelegatedPrefixeRequest, PublicDelegatedPrefix>
       getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertGlobalPublicDelegatedPrefixeRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListGlobalPublicDelegatedPrefixesRequest, ListPagedResponse>
-      listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListGlobalPublicDelegatedPrefixesRequest, PublicDelegatedPrefixList>
       listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListGlobalPublicDelegatedPrefixesRequest, ListPagedResponse>
+      listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchGlobalPublicDelegatedPrefixeRequest, Operation> patchCallable() {
     return patchCallable;
   }

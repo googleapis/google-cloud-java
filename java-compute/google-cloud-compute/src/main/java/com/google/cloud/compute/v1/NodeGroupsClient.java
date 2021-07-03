@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,30 +31,30 @@ import com.google.cloud.compute.v1.stub.NodeGroupsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The NodeGroups API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
- *   String project = "";
- *   String zone = "";
- *   String nodeGroup = "";
- *   NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource = NodeGroupsAddNodesRequest.newBuilder().build();
- *   Operation response = nodeGroupsClient.addNodes(project, zone, nodeGroup, nodeGroupsAddNodesRequestResource);
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String nodeGroup = "nodeGroup443599261";
+ *   NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource =
+ *       NodeGroupsAddNodesRequest.newBuilder().build();
+ *   Operation response =
+ *       nodeGroupsClient.addNodes(project, zone, nodeGroup, nodeGroupsAddNodesRequestResource);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the nodeGroupsClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the NodeGroupsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -81,30 +82,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * NodeGroupsSettings nodeGroupsSettings =
  *     NodeGroupsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * NodeGroupsClient nodeGroupsClient =
- *     NodeGroupsClient.create(nodeGroupsSettings);
- * </code>
- * </pre>
+ * NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create(nodeGroupsSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * NodeGroupsSettings nodeGroupsSettings =
  *     NodeGroupsSettings.newBuilder().setEndpoint(myEndpoint).build();
- * NodeGroupsClient nodeGroupsClient =
- *     NodeGroupsClient.create(nodeGroupsSettings);
- * </code>
- * </pre>
+ * NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create(nodeGroupsSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class NodeGroupsClient implements BackgroundResource {
   private final NodeGroupsSettings settings;
   private final NodeGroupsStub stub;
@@ -124,7 +120,7 @@ public class NodeGroupsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of NodeGroupsClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use NodeGroupsSettings}.
+   * advanced usage - prefer using create(NodeGroupsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final NodeGroupsClient create(NodeGroupsStub stub) {
@@ -155,21 +151,23 @@ public class NodeGroupsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds specified number of nodes to the node group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String nodeGroup = "";
-   *   NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource = NodeGroupsAddNodesRequest.newBuilder().build();
-   *   Operation response = nodeGroupsClient.addNodes(project, zone, nodeGroup, nodeGroupsAddNodesRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String nodeGroup = "nodeGroup443599261";
+   *   NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource =
+   *       NodeGroupsAddNodesRequest.newBuilder().build();
+   *   Operation response =
+   *       nodeGroupsClient.addNodes(project, zone, nodeGroup, nodeGroupsAddNodesRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -192,27 +190,25 @@ public class NodeGroupsClient implements BackgroundResource {
     return addNodes(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds specified number of nodes to the node group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String nodeGroup = "";
-   *   NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource = NodeGroupsAddNodesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   AddNodesNodeGroupRequest request = AddNodesNodeGroupRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup)
-   *     .setNodeGroupsAddNodesRequestResource(nodeGroupsAddNodesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   AddNodesNodeGroupRequest request =
+   *       AddNodesNodeGroupRequest.newBuilder()
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setNodeGroupsAddNodesRequestResource(NodeGroupsAddNodesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = nodeGroupsClient.addNodes(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -221,49 +217,48 @@ public class NodeGroupsClient implements BackgroundResource {
     return addNodesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds specified number of nodes to the node group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String nodeGroup = "";
-   *   NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource = NodeGroupsAddNodesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   AddNodesNodeGroupRequest request = AddNodesNodeGroupRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup)
-   *     .setNodeGroupsAddNodesRequestResource(nodeGroupsAddNodesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = nodeGroupsClient.addNodesCallable().futureCall(request);
-   *   // Do something
+   *   AddNodesNodeGroupRequest request =
+   *       AddNodesNodeGroupRequest.newBuilder()
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setNodeGroupsAddNodesRequestResource(NodeGroupsAddNodesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = nodeGroupsClient.addNodesCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AddNodesNodeGroupRequest, Operation> addNodesCallable() {
     return stub.addNodesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of node groups. Note: use nodeGroups.listNodes for more details
    * about each group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, NodeGroupsScopedList&gt; element : nodeGroupsClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, NodeGroupsScopedList> element :
+   *       nodeGroupsClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -274,24 +269,31 @@ public class NodeGroupsClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of node groups. Note: use nodeGroups.listNodes for more details
    * about each group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   AggregatedListNodeGroupsRequest request = AggregatedListNodeGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, NodeGroupsScopedList&gt; element : nodeGroupsClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListNodeGroupsRequest request =
+   *       AggregatedListNodeGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, NodeGroupsScopedList> element :
+   *       nodeGroupsClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -300,48 +302,61 @@ public class NodeGroupsClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of node groups. Note: use nodeGroups.listNodes for more details
    * about each group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   AggregatedListNodeGroupsRequest request = AggregatedListNodeGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = nodeGroupsClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, NodeGroupsScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListNodeGroupsRequest request =
+   *       AggregatedListNodeGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, NodeGroupsScopedList>> future =
+   *       nodeGroupsClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, NodeGroupsScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListNodeGroupsRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of node groups. Note: use nodeGroups.listNodes for more details
    * about each group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   AggregatedListNodeGroupsRequest request = AggregatedListNodeGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListNodeGroupsRequest request =
+   *       AggregatedListNodeGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     NodeGroupAggregatedList response = nodeGroupsClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, NodeGroupsScopedList&gt; element : response.getItemsMap()) {
+   *     for (Map.Entry<String, NodeGroupsScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -352,27 +367,27 @@ public class NodeGroupsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListNodeGroupsRequest, NodeGroupAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified NodeGroup resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String nodeGroup = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String nodeGroup = "nodeGroup443599261";
    *   Operation response = nodeGroupsClient.delete(project, zone, nodeGroup);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -389,25 +404,24 @@ public class NodeGroupsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified NodeGroup resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String nodeGroup = "";
-   *   String project = "";
-   *   String zone = "";
-   *   DeleteNodeGroupRequest request = DeleteNodeGroupRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   DeleteNodeGroupRequest request =
+   *       DeleteNodeGroupRequest.newBuilder()
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = nodeGroupsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -416,47 +430,49 @@ public class NodeGroupsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified NodeGroup resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String nodeGroup = "";
-   *   String project = "";
-   *   String zone = "";
-   *   DeleteNodeGroupRequest request = DeleteNodeGroupRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = nodeGroupsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteNodeGroupRequest request =
+   *       DeleteNodeGroupRequest.newBuilder()
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = nodeGroupsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteNodeGroupRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes specified nodes from the node group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String nodeGroup = "";
-   *   NodeGroupsDeleteNodesRequest nodeGroupsDeleteNodesRequestResource = NodeGroupsDeleteNodesRequest.newBuilder().build();
-   *   Operation response = nodeGroupsClient.deleteNodes(project, zone, nodeGroup, nodeGroupsDeleteNodesRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String nodeGroup = "nodeGroup443599261";
+   *   NodeGroupsDeleteNodesRequest nodeGroupsDeleteNodesRequestResource =
+   *       NodeGroupsDeleteNodesRequest.newBuilder().build();
+   *   Operation response =
+   *       nodeGroupsClient.deleteNodes(
+   *           project, zone, nodeGroup, nodeGroupsDeleteNodesRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -479,27 +495,26 @@ public class NodeGroupsClient implements BackgroundResource {
     return deleteNodes(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes specified nodes from the node group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String nodeGroup = "";
-   *   NodeGroupsDeleteNodesRequest nodeGroupsDeleteNodesRequestResource = NodeGroupsDeleteNodesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   DeleteNodesNodeGroupRequest request = DeleteNodesNodeGroupRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup)
-   *     .setNodeGroupsDeleteNodesRequestResource(nodeGroupsDeleteNodesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   DeleteNodesNodeGroupRequest request =
+   *       DeleteNodesNodeGroupRequest.newBuilder()
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setNodeGroupsDeleteNodesRequestResource(
+   *               NodeGroupsDeleteNodesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = nodeGroupsClient.deleteNodes(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -508,49 +523,48 @@ public class NodeGroupsClient implements BackgroundResource {
     return deleteNodesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes specified nodes from the node group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String nodeGroup = "";
-   *   NodeGroupsDeleteNodesRequest nodeGroupsDeleteNodesRequestResource = NodeGroupsDeleteNodesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   DeleteNodesNodeGroupRequest request = DeleteNodesNodeGroupRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup)
-   *     .setNodeGroupsDeleteNodesRequestResource(nodeGroupsDeleteNodesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = nodeGroupsClient.deleteNodesCallable().futureCall(request);
-   *   // Do something
+   *   DeleteNodesNodeGroupRequest request =
+   *       DeleteNodesNodeGroupRequest.newBuilder()
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setNodeGroupsDeleteNodesRequestResource(
+   *               NodeGroupsDeleteNodesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = nodeGroupsClient.deleteNodesCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteNodesNodeGroupRequest, Operation> deleteNodesCallable() {
     return stub.deleteNodesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified NodeGroup. Get a list of available NodeGroups by making a list() request.
    * Note: the "nodes" field should not be used. Use nodeGroups.listNodes instead.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String nodeGroup = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String nodeGroup = "nodeGroup443599261";
    *   NodeGroup response = nodeGroupsClient.get(project, zone, nodeGroup);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -567,26 +581,24 @@ public class NodeGroupsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified NodeGroup. Get a list of available NodeGroups by making a list() request.
    * Note: the "nodes" field should not be used. Use nodeGroups.listNodes instead.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String nodeGroup = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetNodeGroupRequest request = GetNodeGroupRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   GetNodeGroupRequest request =
+   *       GetNodeGroupRequest.newBuilder()
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
    *   NodeGroup response = nodeGroupsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -595,48 +607,46 @@ public class NodeGroupsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified NodeGroup. Get a list of available NodeGroups by making a list() request.
    * Note: the "nodes" field should not be used. Use nodeGroups.listNodes instead.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String nodeGroup = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetNodeGroupRequest request = GetNodeGroupRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;NodeGroup&gt; future = nodeGroupsClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetNodeGroupRequest request =
+   *       GetNodeGroupRequest.newBuilder()
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<NodeGroup> future = nodeGroupsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   NodeGroup response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetNodeGroupRequest, NodeGroup> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String resource = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String resource = "resource-341064690";
    *   Policy response = nodeGroupsClient.getIamPolicy(project, zone, resource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -653,26 +663,25 @@ public class NodeGroupsClient implements BackgroundResource {
     return getIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   GetIamPolicyNodeGroupRequest request = GetIamPolicyNodeGroupRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .build();
+   *   GetIamPolicyNodeGroupRequest request =
+   *       GetIamPolicyNodeGroupRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Policy response = nodeGroupsClient.getIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -681,48 +690,48 @@ public class NodeGroupsClient implements BackgroundResource {
     return getIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   GetIamPolicyNodeGroupRequest request = GetIamPolicyNodeGroupRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = nodeGroupsClient.getIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   GetIamPolicyNodeGroupRequest request =
+   *       GetIamPolicyNodeGroupRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Policy> future = nodeGroupsClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyNodeGroupRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a NodeGroup resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   int initialNodeCount = 0;
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   int initialNodeCount = 1682564205;
    *   NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
-   *   Operation response = nodeGroupsClient.insert(project, zone, initialNodeCount, nodeGroupResource);
+   *   Operation response =
+   *       nodeGroupsClient.insert(project, zone, initialNodeCount, nodeGroupResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -742,27 +751,25 @@ public class NodeGroupsClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a NodeGroup resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   int initialNodeCount = 0;
-   *   NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   InsertNodeGroupRequest request = InsertNodeGroupRequest.newBuilder()
-   *     .setInitialNodeCount(initialNodeCount)
-   *     .setNodeGroupResource(nodeGroupResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   InsertNodeGroupRequest request =
+   *       InsertNodeGroupRequest.newBuilder()
+   *           .setInitialNodeCount(1682564205)
+   *           .setNodeGroupResource(NodeGroup.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = nodeGroupsClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -771,50 +778,48 @@ public class NodeGroupsClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a NodeGroup resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   int initialNodeCount = 0;
-   *   NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   InsertNodeGroupRequest request = InsertNodeGroupRequest.newBuilder()
-   *     .setInitialNodeCount(initialNodeCount)
-   *     .setNodeGroupResource(nodeGroupResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = nodeGroupsClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertNodeGroupRequest request =
+   *       InsertNodeGroupRequest.newBuilder()
+   *           .setInitialNodeCount(1682564205)
+   *           .setNodeGroupResource(NodeGroup.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = nodeGroupsClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertNodeGroupRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of node groups available to the specified project. Note: use
    * nodeGroups.listNodes for more details about each group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
    *   for (NodeGroup element : nodeGroupsClient.list(project, zone).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -826,26 +831,30 @@ public class NodeGroupsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of node groups available to the specified project. Note: use
    * nodeGroups.listNodes for more details about each group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListNodeGroupsRequest request = ListNodeGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListNodeGroupsRequest request =
+   *       ListNodeGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   for (NodeGroup element : nodeGroupsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -854,51 +863,59 @@ public class NodeGroupsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of node groups available to the specified project. Note: use
    * nodeGroups.listNodes for more details about each group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListNodeGroupsRequest request = ListNodeGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = nodeGroupsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListNodeGroupsRequest request =
+   *       ListNodeGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<NodeGroup> future = nodeGroupsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (NodeGroup element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListNodeGroupsRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of node groups available to the specified project. Note: use
    * nodeGroups.listNodes for more details about each group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListNodeGroupsRequest request = ListNodeGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListNodeGroupsRequest request =
+   *       ListNodeGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   while (true) {
    *     NodeGroupList response = nodeGroupsClient.listCallable().call(request);
-   *     for (NodeGroup element : response.getItemsList()) {
+   *     for (NodeGroup element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -909,28 +926,29 @@ public class NodeGroupsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListNodeGroupsRequest, NodeGroupList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists nodes in the node group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String nodeGroup = "";
-   *   for (NodeGroupNode element : nodeGroupsClient.listNodes(project, zone, nodeGroup).iterateAll()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String nodeGroup = "nodeGroup443599261";
+   *   for (NodeGroupNode element :
+   *       nodeGroupsClient.listNodes(project, zone, nodeGroup).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -947,27 +965,30 @@ public class NodeGroupsClient implements BackgroundResource {
     return listNodes(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists nodes in the node group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String nodeGroup = "";
-   *   String project = "";
-   *   String zone = "";
-   *   ListNodesNodeGroupsRequest request = ListNodesNodeGroupsRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListNodesNodeGroupsRequest request =
+   *       ListNodesNodeGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   for (NodeGroupNode element : nodeGroupsClient.listNodes(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -976,54 +997,61 @@ public class NodeGroupsClient implements BackgroundResource {
     return listNodesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists nodes in the node group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String nodeGroup = "";
-   *   String project = "";
-   *   String zone = "";
-   *   ListNodesNodeGroupsRequest request = ListNodesNodeGroupsRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;ListNodesPagedResponse&gt; future = nodeGroupsClient.listNodesPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListNodesNodeGroupsRequest request =
+   *       ListNodesNodeGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<NodeGroupNode> future =
+   *       nodeGroupsClient.listNodesPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (NodeGroupNode element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListNodesNodeGroupsRequest, ListNodesPagedResponse>
       listNodesPagedCallable() {
     return stub.listNodesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists nodes in the node group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String nodeGroup = "";
-   *   String project = "";
-   *   String zone = "";
-   *   ListNodesNodeGroupsRequest request = ListNodesNodeGroupsRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListNodesNodeGroupsRequest request =
+   *       ListNodesNodeGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   while (true) {
    *     NodeGroupsListNodes response = nodeGroupsClient.listNodesCallable().call(request);
-   *     for (NodeGroupNode element : response.getItemsList()) {
+   *     for (NodeGroupNode element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1034,27 +1062,27 @@ public class NodeGroupsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListNodesNodeGroupsRequest, NodeGroupsListNodes> listNodesCallable() {
     return stub.listNodesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified node group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String nodeGroup = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String nodeGroup = "nodeGroup443599261";
    *   NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
    *   Operation response = nodeGroupsClient.patch(project, zone, nodeGroup, nodeGroupResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1074,27 +1102,25 @@ public class NodeGroupsClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified node group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String nodeGroup = "";
-   *   NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   PatchNodeGroupRequest request = PatchNodeGroupRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup)
-   *     .setNodeGroupResource(nodeGroupResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   PatchNodeGroupRequest request =
+   *       PatchNodeGroupRequest.newBuilder()
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setNodeGroupResource(NodeGroup.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = nodeGroupsClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1103,49 +1129,48 @@ public class NodeGroupsClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified node group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String nodeGroup = "";
-   *   NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   PatchNodeGroupRequest request = PatchNodeGroupRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup)
-   *     .setNodeGroupResource(nodeGroupResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = nodeGroupsClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchNodeGroupRequest request =
+   *       PatchNodeGroupRequest.newBuilder()
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setNodeGroupResource(NodeGroup.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = nodeGroupsClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchNodeGroupRequest, Operation> patchCallable() {
     return stub.patchCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String resource = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String resource = "resource-341064690";
    *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
-   *   Policy response = nodeGroupsClient.setIamPolicy(project, zone, resource, zoneSetPolicyRequestResource);
+   *   Policy response =
+   *       nodeGroupsClient.setIamPolicy(project, zone, resource, zoneSetPolicyRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1168,27 +1193,24 @@ public class NodeGroupsClient implements BackgroundResource {
     return setIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
-   *   SetIamPolicyNodeGroupRequest request = SetIamPolicyNodeGroupRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
-   *     .build();
+   *   SetIamPolicyNodeGroupRequest request =
+   *       SetIamPolicyNodeGroupRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .setZoneSetPolicyRequestResource(ZoneSetPolicyRequest.newBuilder().build())
+   *           .build();
    *   Policy response = nodeGroupsClient.setIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1197,49 +1219,49 @@ public class NodeGroupsClient implements BackgroundResource {
     return setIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
-   *   SetIamPolicyNodeGroupRequest request = SetIamPolicyNodeGroupRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = nodeGroupsClient.setIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   SetIamPolicyNodeGroupRequest request =
+   *       SetIamPolicyNodeGroupRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .setZoneSetPolicyRequestResource(ZoneSetPolicyRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = nodeGroupsClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyNodeGroupRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the node template of the node group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String nodeGroup = "";
-   *   NodeGroupsSetNodeTemplateRequest nodeGroupsSetNodeTemplateRequestResource = NodeGroupsSetNodeTemplateRequest.newBuilder().build();
-   *   Operation response = nodeGroupsClient.setNodeTemplate(project, zone, nodeGroup, nodeGroupsSetNodeTemplateRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String nodeGroup = "nodeGroup443599261";
+   *   NodeGroupsSetNodeTemplateRequest nodeGroupsSetNodeTemplateRequestResource =
+   *       NodeGroupsSetNodeTemplateRequest.newBuilder().build();
+   *   Operation response =
+   *       nodeGroupsClient.setNodeTemplate(
+   *           project, zone, nodeGroup, nodeGroupsSetNodeTemplateRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1262,27 +1284,26 @@ public class NodeGroupsClient implements BackgroundResource {
     return setNodeTemplate(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the node template of the node group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String nodeGroup = "";
-   *   NodeGroupsSetNodeTemplateRequest nodeGroupsSetNodeTemplateRequestResource = NodeGroupsSetNodeTemplateRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   SetNodeTemplateNodeGroupRequest request = SetNodeTemplateNodeGroupRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup)
-   *     .setNodeGroupsSetNodeTemplateRequestResource(nodeGroupsSetNodeTemplateRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   SetNodeTemplateNodeGroupRequest request =
+   *       SetNodeTemplateNodeGroupRequest.newBuilder()
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setNodeGroupsSetNodeTemplateRequestResource(
+   *               NodeGroupsSetNodeTemplateRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = nodeGroupsClient.setNodeTemplate(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1291,49 +1312,51 @@ public class NodeGroupsClient implements BackgroundResource {
     return setNodeTemplateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the node template of the node group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String nodeGroup = "";
-   *   NodeGroupsSetNodeTemplateRequest nodeGroupsSetNodeTemplateRequestResource = NodeGroupsSetNodeTemplateRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   SetNodeTemplateNodeGroupRequest request = SetNodeTemplateNodeGroupRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup)
-   *     .setNodeGroupsSetNodeTemplateRequestResource(nodeGroupsSetNodeTemplateRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = nodeGroupsClient.setNodeTemplateCallable().futureCall(request);
-   *   // Do something
+   *   SetNodeTemplateNodeGroupRequest request =
+   *       SetNodeTemplateNodeGroupRequest.newBuilder()
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setNodeGroupsSetNodeTemplateRequestResource(
+   *               NodeGroupsSetNodeTemplateRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = nodeGroupsClient.setNodeTemplateCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetNodeTemplateNodeGroupRequest, Operation> setNodeTemplateCallable() {
     return stub.setNodeTemplateCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestPermissionsResponse response = nodeGroupsClient.testIamPermissions(project, zone, resource, testPermissionsRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       nodeGroupsClient.testIamPermissions(
+   *           project, zone, resource, testPermissionsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1356,27 +1379,24 @@ public class NodeGroupsClient implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   String zone = "";
-   *   TestIamPermissionsNodeGroupRequest request = TestIamPermissionsNodeGroupRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .setZone(zone)
-   *     .build();
+   *   TestIamPermissionsNodeGroupRequest request =
+   *       TestIamPermissionsNodeGroupRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
    *   TestPermissionsResponse response = nodeGroupsClient.testIamPermissions(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1386,29 +1406,27 @@ public class NodeGroupsClient implements BackgroundResource {
     return testIamPermissionsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   String zone = "";
-   *   TestIamPermissionsNodeGroupRequest request = TestIamPermissionsNodeGroupRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;TestPermissionsResponse&gt; future = nodeGroupsClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
+   *   TestIamPermissionsNodeGroupRequest request =
+   *       TestIamPermissionsNodeGroupRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       nodeGroupsClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
    *   TestPermissionsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
@@ -1449,7 +1467,7 @@ public class NodeGroupsClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListNodeGroupsRequest,
           NodeGroupAggregatedList,
-          Entry<String, NodeGroupsScopedList>,
+          Map.Entry<String, NodeGroupsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -1457,7 +1475,7 @@ public class NodeGroupsClient implements BackgroundResource {
         PageContext<
                 AggregatedListNodeGroupsRequest,
                 NodeGroupAggregatedList,
-                Entry<String, NodeGroupsScopedList>>
+                Map.Entry<String, NodeGroupsScopedList>>
             context,
         ApiFuture<NodeGroupAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -1482,14 +1500,14 @@ public class NodeGroupsClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListNodeGroupsRequest,
           NodeGroupAggregatedList,
-          Entry<String, NodeGroupsScopedList>,
+          Map.Entry<String, NodeGroupsScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListNodeGroupsRequest,
                 NodeGroupAggregatedList,
-                Entry<String, NodeGroupsScopedList>>
+                Map.Entry<String, NodeGroupsScopedList>>
             context,
         NodeGroupAggregatedList response) {
       super(context, response);
@@ -1504,7 +1522,7 @@ public class NodeGroupsClient implements BackgroundResource {
         PageContext<
                 AggregatedListNodeGroupsRequest,
                 NodeGroupAggregatedList,
-                Entry<String, NodeGroupsScopedList>>
+                Map.Entry<String, NodeGroupsScopedList>>
             context,
         NodeGroupAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -1515,7 +1533,7 @@ public class NodeGroupsClient implements BackgroundResource {
         PageContext<
                 AggregatedListNodeGroupsRequest,
                 NodeGroupAggregatedList,
-                Entry<String, NodeGroupsScopedList>>
+                Map.Entry<String, NodeGroupsScopedList>>
             context,
         ApiFuture<NodeGroupAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1526,7 +1544,7 @@ public class NodeGroupsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListNodeGroupsRequest,
           NodeGroupAggregatedList,
-          Entry<String, NodeGroupsScopedList>,
+          Map.Entry<String, NodeGroupsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

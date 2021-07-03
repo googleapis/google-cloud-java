@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.HealthChecksClient.AggregatedListPagedResponse;
@@ -44,29 +45,28 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchHealthCheckRequest;
 import com.google.cloud.compute.v1.UpdateHealthCheckRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the HealthChecks service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonHealthChecksStub extends HealthChecksStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListHealthChecksRequest, HealthChecksAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListHealthChecksRequest, HealthChecksAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.HealthChecks.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.HealthChecks/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListHealthChecksRequest>newBuilder()
@@ -124,7 +124,7 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                           new FieldsExtractor<AggregatedListHealthChecksRequest, String>() {
                             @Override
                             public String extract(AggregatedListHealthChecksRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -134,11 +134,10 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteHealthCheckRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteHealthCheckRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteHealthCheckRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.HealthChecks.Delete")
+              .setFullMethodName("google.cloud.compute.v1.HealthChecks/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteHealthCheckRequest>newBuilder()
@@ -150,9 +149,9 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteHealthCheckRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "healthCheck", request.getHealthCheck());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -176,7 +175,7 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                           new FieldsExtractor<DeleteHealthCheckRequest, String>() {
                             @Override
                             public String extract(DeleteHealthCheckRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -186,10 +185,9 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetHealthCheckRequest, HealthCheck> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetHealthCheckRequest, HealthCheck> getMethodDescriptor =
       ApiMethodDescriptor.<GetHealthCheckRequest, HealthCheck>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.HealthChecks.Get")
+          .setFullMethodName("google.cloud.compute.v1.HealthChecks/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetHealthCheckRequest>newBuilder()
@@ -201,8 +199,8 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<GetHealthCheckRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "healthCheck", request.getHealthCheck());
+                          serializer.putPathParam(fields, "project", request.getProject());
                           return fields;
                         }
                       })
@@ -213,7 +211,6 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetHealthCheckRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -221,7 +218,7 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                       new FieldsExtractor<GetHealthCheckRequest, String>() {
                         @Override
                         public String extract(GetHealthCheckRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -231,11 +228,10 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertHealthCheckRequest, Operation>
+  private static final ApiMethodDescriptor<InsertHealthCheckRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertHealthCheckRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.HealthChecks.Insert")
+              .setFullMethodName("google.cloud.compute.v1.HealthChecks/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertHealthCheckRequest>newBuilder()
@@ -282,11 +278,10 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListHealthChecksRequest, HealthCheckList>
+  private static final ApiMethodDescriptor<ListHealthChecksRequest, HealthCheckList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListHealthChecksRequest, HealthCheckList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.HealthChecks.List")
+              .setFullMethodName("google.cloud.compute.v1.HealthChecks/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListHealthChecksRequest>newBuilder()
@@ -338,7 +333,7 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                           new FieldsExtractor<ListHealthChecksRequest, String>() {
                             @Override
                             public String extract(ListHealthChecksRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -348,11 +343,10 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchHealthCheckRequest, Operation>
+  private static final ApiMethodDescriptor<PatchHealthCheckRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchHealthCheckRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.HealthChecks.Patch")
+              .setFullMethodName("google.cloud.compute.v1.HealthChecks/Patch")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchHealthCheckRequest>newBuilder()
@@ -364,9 +358,9 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<PatchHealthCheckRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "healthCheck", request.getHealthCheck());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -401,11 +395,10 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<UpdateHealthCheckRequest, Operation>
+  private static final ApiMethodDescriptor<UpdateHealthCheckRequest, Operation>
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateHealthCheckRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.HealthChecks.Update")
+              .setFullMethodName("google.cloud.compute.v1.HealthChecks/Update")
               .setHttpMethod(HttpMethods.PUT)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateHealthCheckRequest>newBuilder()
@@ -417,9 +410,9 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<UpdateHealthCheckRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "healthCheck", request.getHealthCheck());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -454,8 +447,6 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<AggregatedListHealthChecksRequest, HealthChecksAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListHealthChecksRequest, AggregatedListPagedResponse>
@@ -468,6 +459,7 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
   private final UnaryCallable<PatchHealthCheckRequest, Operation> patchCallable;
   private final UnaryCallable<UpdateHealthCheckRequest, Operation> updateCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonHealthChecksStub create(HealthChecksStubSettings settings)
@@ -568,43 +560,66 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListHealthChecksRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(updateMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListHealthChecksRequest, HealthChecksAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListHealthChecksRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteHealthCheckRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetHealthCheckRequest, HealthCheck> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertHealthCheckRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListHealthChecksRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListHealthChecksRequest, HealthCheckList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListHealthChecksRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchHealthCheckRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateHealthCheckRequest, Operation> updateCallable() {
     return updateCallable;
   }

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
@@ -24,25 +25,25 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The RegionInstances API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (RegionInstancesClient regionInstancesClient = RegionInstancesClient.create()) {
- *   String project = "";
- *   String region = "";
- *   BulkInsertInstanceResource bulkInsertInstanceResourceResource = BulkInsertInstanceResource.newBuilder().build();
- *   Operation response = regionInstancesClient.bulkInsert(project, region, bulkInsertInstanceResourceResource);
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   BulkInsertInstanceResource bulkInsertInstanceResourceResource =
+ *       BulkInsertInstanceResource.newBuilder().build();
+ *   Operation response =
+ *       regionInstancesClient.bulkInsert(project, region, bulkInsertInstanceResourceResource);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the regionInstancesClient object to clean up resources
+ * <p>Note: close() needs to be called on the RegionInstancesClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -71,30 +72,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionInstancesSettings regionInstancesSettings =
  *     RegionInstancesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * RegionInstancesClient regionInstancesClient =
  *     RegionInstancesClient.create(regionInstancesSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionInstancesSettings regionInstancesSettings =
  *     RegionInstancesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionInstancesClient regionInstancesClient =
  *     RegionInstancesClient.create(regionInstancesSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RegionInstancesClient implements BackgroundResource {
   private final RegionInstancesSettings settings;
   private final RegionInstancesStub stub;
@@ -115,7 +113,7 @@ public class RegionInstancesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of RegionInstancesClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use RegionInstancesSettings}.
+   * for advanced usage - prefer using create(RegionInstancesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionInstancesClient create(RegionInstancesStub stub) {
@@ -147,21 +145,23 @@ public class RegionInstancesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates multiple instances in a given region. Count specifies the number of instances to
    * create.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionInstancesClient regionInstancesClient = RegionInstancesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   BulkInsertInstanceResource bulkInsertInstanceResourceResource = BulkInsertInstanceResource.newBuilder().build();
-   *   Operation response = regionInstancesClient.bulkInsert(project, region, bulkInsertInstanceResourceResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   BulkInsertInstanceResource bulkInsertInstanceResourceResource =
+   *       BulkInsertInstanceResource.newBuilder().build();
+   *   Operation response =
+   *       regionInstancesClient.bulkInsert(project, region, bulkInsertInstanceResourceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -181,26 +181,26 @@ public class RegionInstancesClient implements BackgroundResource {
     return bulkInsert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates multiple instances in a given region. Count specifies the number of instances to
    * create.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionInstancesClient regionInstancesClient = RegionInstancesClient.create()) {
-   *   BulkInsertInstanceResource bulkInsertInstanceResourceResource = BulkInsertInstanceResource.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   BulkInsertRegionInstanceRequest request = BulkInsertRegionInstanceRequest.newBuilder()
-   *     .setBulkInsertInstanceResourceResource(bulkInsertInstanceResourceResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   BulkInsertRegionInstanceRequest request =
+   *       BulkInsertRegionInstanceRequest.newBuilder()
+   *           .setBulkInsertInstanceResourceResource(
+   *               BulkInsertInstanceResource.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionInstancesClient.bulkInsert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -209,28 +209,28 @@ public class RegionInstancesClient implements BackgroundResource {
     return bulkInsertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates multiple instances in a given region. Count specifies the number of instances to
    * create.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionInstancesClient regionInstancesClient = RegionInstancesClient.create()) {
-   *   BulkInsertInstanceResource bulkInsertInstanceResourceResource = BulkInsertInstanceResource.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   BulkInsertRegionInstanceRequest request = BulkInsertRegionInstanceRequest.newBuilder()
-   *     .setBulkInsertInstanceResourceResource(bulkInsertInstanceResourceResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionInstancesClient.bulkInsertCallable().futureCall(request);
-   *   // Do something
+   *   BulkInsertRegionInstanceRequest request =
+   *       BulkInsertRegionInstanceRequest.newBuilder()
+   *           .setBulkInsertInstanceResourceResource(
+   *               BulkInsertInstanceResource.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = regionInstancesClient.bulkInsertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<BulkInsertRegionInstanceRequest, Operation> bulkInsertCallable() {
     return stub.bulkInsertCallable();

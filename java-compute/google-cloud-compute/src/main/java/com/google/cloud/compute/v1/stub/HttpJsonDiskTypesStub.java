@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.DiskTypesClient.AggregatedListPagedResponse;
@@ -39,27 +40,26 @@ import com.google.cloud.compute.v1.DiskTypeList;
 import com.google.cloud.compute.v1.GetDiskTypeRequest;
 import com.google.cloud.compute.v1.ListDiskTypesRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the DiskTypes service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonDiskTypesStub extends DiskTypesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<AggregatedListDiskTypesRequest, DiskTypeAggregatedList>
+  private static final ApiMethodDescriptor<AggregatedListDiskTypesRequest, DiskTypeAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor.<AggregatedListDiskTypesRequest, DiskTypeAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.DiskTypes.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.DiskTypes/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListDiskTypesRequest>newBuilder()
@@ -117,7 +117,7 @@ public class HttpJsonDiskTypesStub extends DiskTypesStub {
                           new FieldsExtractor<AggregatedListDiskTypesRequest, String>() {
                             @Override
                             public String extract(AggregatedListDiskTypesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -127,10 +127,9 @@ public class HttpJsonDiskTypesStub extends DiskTypesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetDiskTypeRequest, DiskType> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetDiskTypeRequest, DiskType> getMethodDescriptor =
       ApiMethodDescriptor.<GetDiskTypeRequest, DiskType>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.DiskTypes.Get")
+          .setFullMethodName("google.cloud.compute.v1.DiskTypes/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetDiskTypeRequest>newBuilder()
@@ -142,9 +141,9 @@ public class HttpJsonDiskTypesStub extends DiskTypesStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<GetDiskTypeRequest> serializer =
                               ProtoRestSerializer.create();
+                          serializer.putPathParam(fields, "diskType", request.getDiskType());
                           serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "zone", request.getZone());
-                          serializer.putPathParam(fields, "diskType", request.getDiskType());
                           return fields;
                         }
                       })
@@ -155,7 +154,6 @@ public class HttpJsonDiskTypesStub extends DiskTypesStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetDiskTypeRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -163,7 +161,7 @@ public class HttpJsonDiskTypesStub extends DiskTypesStub {
                       new FieldsExtractor<GetDiskTypeRequest, String>() {
                         @Override
                         public String extract(GetDiskTypeRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -173,67 +171,69 @@ public class HttpJsonDiskTypesStub extends DiskTypesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListDiskTypesRequest, DiskTypeList> listMethodDescriptor =
-      ApiMethodDescriptor.<ListDiskTypesRequest, DiskTypeList>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.DiskTypes.List")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ProtoMessageRequestFormatter.<ListDiskTypesRequest>newBuilder()
-                  .setPath(
-                      "/compute/v1/projects/{project}/zones/{zone}/diskTypes",
-                      new FieldsExtractor<ListDiskTypesRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(ListDiskTypesRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<ListDiskTypesRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
-                          return fields;
-                        }
-                      })
-                  .setQueryParamsExtractor(
-                      new FieldsExtractor<ListDiskTypesRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(ListDiskTypesRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<ListDiskTypesRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasFilter()) {
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
-                          }
-                          if (request.hasMaxResults()) {
-                            serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
-                          }
-                          if (request.hasOrderBy()) {
-                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                          }
-                          if (request.hasPageToken()) {
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                          }
-                          if (request.hasReturnPartialSuccess()) {
-                            serializer.putQueryParam(
-                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
-                          }
-                          return fields;
-                        }
-                      })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<ListDiskTypesRequest, String>() {
-                        @Override
-                        public String extract(ListDiskTypesRequest request) {
-                          return "";
-                        }
-                      })
-                  .build())
-          .setResponseParser(
-              ProtoMessageResponseParser.<DiskTypeList>newBuilder()
-                  .setDefaultInstance(DiskTypeList.getDefaultInstance())
-                  .build())
-          .build();
-
-  private final BackgroundResource backgroundResources;
+  private static final ApiMethodDescriptor<ListDiskTypesRequest, DiskTypeList>
+      listMethodDescriptor =
+          ApiMethodDescriptor.<ListDiskTypesRequest, DiskTypeList>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.DiskTypes/List")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDiskTypesRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/diskTypes",
+                          new FieldsExtractor<ListDiskTypesRequest, Map<String, String>>() {
+                            @Override
+                            public Map<String, String> extract(ListDiskTypesRequest request) {
+                              Map<String, String> fields = new HashMap<>();
+                              ProtoRestSerializer<ListDiskTypesRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
+                              return fields;
+                            }
+                          })
+                      .setQueryParamsExtractor(
+                          new FieldsExtractor<ListDiskTypesRequest, Map<String, List<String>>>() {
+                            @Override
+                            public Map<String, List<String>> extract(ListDiskTypesRequest request) {
+                              Map<String, List<String>> fields = new HashMap<>();
+                              ProtoRestSerializer<ListDiskTypesRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
+                              return fields;
+                            }
+                          })
+                      .setRequestBodyExtractor(
+                          new FieldsExtractor<ListDiskTypesRequest, String>() {
+                            @Override
+                            public String extract(ListDiskTypesRequest request) {
+                              return null;
+                            }
+                          })
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DiskTypeList>newBuilder()
+                      .setDefaultInstance(DiskTypeList.getDefaultInstance())
+                      .build())
+              .build();
 
   private final UnaryCallable<AggregatedListDiskTypesRequest, DiskTypeAggregatedList>
       aggregatedListCallable;
@@ -243,6 +243,7 @@ public class HttpJsonDiskTypesStub extends DiskTypesStub {
   private final UnaryCallable<ListDiskTypesRequest, DiskTypeList> listCallable;
   private final UnaryCallable<ListDiskTypesRequest, ListPagedResponse> listPagedCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonDiskTypesStub create(DiskTypesStubSettings settings)
@@ -313,29 +314,44 @@ public class HttpJsonDiskTypesStub extends DiskTypesStub {
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListDiskTypesRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListDiskTypesRequest, DiskTypeAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListDiskTypesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<GetDiskTypeRequest, DiskType> getCallable() {
     return getCallable;
   }
 
-  public UnaryCallable<ListDiskTypesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListDiskTypesRequest, DiskTypeList> listCallable() {
     return listCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDiskTypesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
   }
 
   @Override

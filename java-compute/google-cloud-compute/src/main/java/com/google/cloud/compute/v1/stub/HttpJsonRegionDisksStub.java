@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionDisksClient.ListPagedResponse;
@@ -49,27 +50,26 @@ import com.google.cloud.compute.v1.SetLabelsRegionDiskRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsRegionDiskRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the RegionDisks service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionDisksStub extends RegionDisksStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<AddResourcePoliciesRegionDiskRequest, Operation>
+  private static final ApiMethodDescriptor<AddResourcePoliciesRegionDiskRequest, Operation>
       addResourcePoliciesMethodDescriptor =
           ApiMethodDescriptor.<AddResourcePoliciesRegionDiskRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionDisks.AddResourcePolicies")
+              .setFullMethodName("google.cloud.compute.v1.RegionDisks/AddResourcePolicies")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddResourcePoliciesRegionDiskRequest>newBuilder()
@@ -83,9 +83,9 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<AddResourcePoliciesRegionDiskRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "disk", request.getDisk());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "disk", request.getDisk());
                               return fields;
                             }
                           })
@@ -122,11 +122,10 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<CreateSnapshotRegionDiskRequest, Operation>
+  private static final ApiMethodDescriptor<CreateSnapshotRegionDiskRequest, Operation>
       createSnapshotMethodDescriptor =
           ApiMethodDescriptor.<CreateSnapshotRegionDiskRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionDisks.CreateSnapshot")
+              .setFullMethodName("google.cloud.compute.v1.RegionDisks/CreateSnapshot")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<CreateSnapshotRegionDiskRequest>newBuilder()
@@ -140,9 +139,9 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<CreateSnapshotRegionDiskRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "disk", request.getDisk());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "disk", request.getDisk());
                               return fields;
                             }
                           })
@@ -177,11 +176,10 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteRegionDiskRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteRegionDiskRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionDiskRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionDisks.Delete")
+              .setFullMethodName("google.cloud.compute.v1.RegionDisks/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionDiskRequest>newBuilder()
@@ -193,9 +191,9 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteRegionDiskRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "disk", request.getDisk());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "disk", request.getDisk());
                               return fields;
                             }
                           })
@@ -219,7 +217,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                           new FieldsExtractor<DeleteRegionDiskRequest, String>() {
                             @Override
                             public String extract(DeleteRegionDiskRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -229,10 +227,9 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetRegionDiskRequest, Disk> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetRegionDiskRequest, Disk> getMethodDescriptor =
       ApiMethodDescriptor.<GetRegionDiskRequest, Disk>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.RegionDisks.Get")
+          .setFullMethodName("google.cloud.compute.v1.RegionDisks/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetRegionDiskRequest>newBuilder()
@@ -244,9 +241,9 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<GetRegionDiskRequest> serializer =
                               ProtoRestSerializer.create();
+                          serializer.putPathParam(fields, "disk", request.getDisk());
                           serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "region", request.getRegion());
-                          serializer.putPathParam(fields, "disk", request.getDisk());
                           return fields;
                         }
                       })
@@ -257,7 +254,6 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetRegionDiskRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -265,7 +261,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                       new FieldsExtractor<GetRegionDiskRequest, String>() {
                         @Override
                         public String extract(GetRegionDiskRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -275,11 +271,10 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetIamPolicyRegionDiskRequest, Policy>
+  private static final ApiMethodDescriptor<GetIamPolicyRegionDiskRequest, Policy>
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyRegionDiskRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionDisks.GetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.RegionDisks/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyRegionDiskRequest>newBuilder()
@@ -321,7 +316,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                           new FieldsExtractor<GetIamPolicyRegionDiskRequest, String>() {
                             @Override
                             public String extract(GetIamPolicyRegionDiskRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -331,11 +326,10 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertRegionDiskRequest, Operation>
+  private static final ApiMethodDescriptor<InsertRegionDiskRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertRegionDiskRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionDisks.Insert")
+              .setFullMethodName("google.cloud.compute.v1.RegionDisks/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionDiskRequest>newBuilder()
@@ -387,10 +381,9 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListRegionDisksRequest, DiskList> listMethodDescriptor =
+  private static final ApiMethodDescriptor<ListRegionDisksRequest, DiskList> listMethodDescriptor =
       ApiMethodDescriptor.<ListRegionDisksRequest, DiskList>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.RegionDisks.List")
+          .setFullMethodName("google.cloud.compute.v1.RegionDisks/List")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListRegionDisksRequest>newBuilder()
@@ -437,7 +430,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                       new FieldsExtractor<ListRegionDisksRequest, String>() {
                         @Override
                         public String extract(ListRegionDisksRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -447,11 +440,10 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<RemoveResourcePoliciesRegionDiskRequest, Operation>
+  private static final ApiMethodDescriptor<RemoveResourcePoliciesRegionDiskRequest, Operation>
       removeResourcePoliciesMethodDescriptor =
           ApiMethodDescriptor.<RemoveResourcePoliciesRegionDiskRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionDisks.RemoveResourcePolicies")
+              .setFullMethodName("google.cloud.compute.v1.RegionDisks/RemoveResourcePolicies")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveResourcePoliciesRegionDiskRequest>newBuilder()
@@ -465,9 +457,9 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<RemoveResourcePoliciesRegionDiskRequest>
                                   serializer = ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "disk", request.getDisk());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "disk", request.getDisk());
                               return fields;
                             }
                           })
@@ -506,11 +498,10 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ResizeRegionDiskRequest, Operation>
+  private static final ApiMethodDescriptor<ResizeRegionDiskRequest, Operation>
       resizeMethodDescriptor =
           ApiMethodDescriptor.<ResizeRegionDiskRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionDisks.Resize")
+              .setFullMethodName("google.cloud.compute.v1.RegionDisks/Resize")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ResizeRegionDiskRequest>newBuilder()
@@ -522,9 +513,9 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<ResizeRegionDiskRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "disk", request.getDisk());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "disk", request.getDisk());
                               return fields;
                             }
                           })
@@ -561,11 +552,10 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetIamPolicyRegionDiskRequest, Policy>
+  private static final ApiMethodDescriptor<SetIamPolicyRegionDiskRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyRegionDiskRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionDisks.SetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.RegionDisks/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyRegionDiskRequest>newBuilder()
@@ -594,7 +584,6 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetIamPolicyRegionDiskRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -615,11 +604,10 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetLabelsRegionDiskRequest, Operation>
+  private static final ApiMethodDescriptor<SetLabelsRegionDiskRequest, Operation>
       setLabelsMethodDescriptor =
           ApiMethodDescriptor.<SetLabelsRegionDiskRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionDisks.SetLabels")
+              .setFullMethodName("google.cloud.compute.v1.RegionDisks/SetLabels")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetLabelsRegionDiskRequest>newBuilder()
@@ -670,13 +658,12 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           ApiMethodDescriptor
               .<TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionDisks.TestIamPermissions")
+              .setFullMethodName("google.cloud.compute.v1.RegionDisks/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsRegionDiskRequest>newBuilder()
@@ -705,7 +692,6 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<TestIamPermissionsRegionDiskRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -726,8 +712,6 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<AddResourcePoliciesRegionDiskRequest, Operation>
       addResourcePoliciesCallable;
   private final UnaryCallable<CreateSnapshotRegionDiskRequest, Operation> createSnapshotCallable;
@@ -745,6 +729,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
   private final UnaryCallable<TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionDisksStub create(RegionDisksStubSettings settings)
@@ -885,59 +870,91 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(addResourcePoliciesMethodDescriptor);
+    methodDescriptors.add(createSnapshotMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(removeResourcePoliciesMethodDescriptor);
+    methodDescriptors.add(resizeMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(setLabelsMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<AddResourcePoliciesRegionDiskRequest, Operation>
       addResourcePoliciesCallable() {
     return addResourcePoliciesCallable;
   }
 
+  @Override
   public UnaryCallable<CreateSnapshotRegionDiskRequest, Operation> createSnapshotCallable() {
     return createSnapshotCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteRegionDiskRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetRegionDiskRequest, Disk> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRegionDiskRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<InsertRegionDiskRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListRegionDisksRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListRegionDisksRequest, DiskList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListRegionDisksRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<RemoveResourcePoliciesRegionDiskRequest, Operation>
       removeResourcePoliciesCallable() {
     return removeResourcePoliciesCallable;
   }
 
+  @Override
   public UnaryCallable<ResizeRegionDiskRequest, Operation> resizeCallable() {
     return resizeCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRegionDiskRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetLabelsRegionDiskRequest, Operation> setLabelsCallable() {
     return setLabelsCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

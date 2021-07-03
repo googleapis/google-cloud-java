@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,29 +31,27 @@ import com.google.cloud.compute.v1.stub.RoutersStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The Routers API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (RoutersClient routersClient = RoutersClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String router = "";
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String router = "router-925132983";
  *   Operation response = routersClient.delete(project, region, router);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the routersClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the RoutersClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -80,30 +79,24 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RoutersSettings routersSettings =
  *     RoutersSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * RoutersClient routersClient =
- *     RoutersClient.create(routersSettings);
- * </code>
- * </pre>
+ * RoutersClient routersClient = RoutersClient.create(routersSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
- * RoutersSettings routersSettings =
- *     RoutersSettings.newBuilder().setEndpoint(myEndpoint).build();
- * RoutersClient routersClient =
- *     RoutersClient.create(routersSettings);
- * </code>
- * </pre>
+ * <pre>{@code
+ * RoutersSettings routersSettings = RoutersSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * RoutersClient routersClient = RoutersClient.create(routersSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RoutersClient implements BackgroundResource {
   private final RoutersSettings settings;
   private final RoutersStub stub;
@@ -123,7 +116,7 @@ public class RoutersClient implements BackgroundResource {
 
   /**
    * Constructs an instance of RoutersClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use RoutersSettings}.
+   * advanced usage - prefer using create(RoutersSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RoutersClient create(RoutersStub stub) {
@@ -154,20 +147,21 @@ public class RoutersClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of routers.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, RoutersScopedList&gt; element : routersClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, RoutersScopedList> element :
+   *       routersClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -178,23 +172,30 @@ public class RoutersClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of routers.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   AggregatedListRoutersRequest request = AggregatedListRoutersRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, RoutersScopedList&gt; element : routersClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListRoutersRequest request =
+   *       AggregatedListRoutersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, RoutersScopedList> element :
+   *       routersClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -203,46 +204,59 @@ public class RoutersClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of routers.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   AggregatedListRoutersRequest request = AggregatedListRoutersRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = routersClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, RoutersScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListRoutersRequest request =
+   *       AggregatedListRoutersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, RoutersScopedList>> future =
+   *       routersClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, RoutersScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListRoutersRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of routers.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   AggregatedListRoutersRequest request = AggregatedListRoutersRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListRoutersRequest request =
+   *       AggregatedListRoutersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     RouterAggregatedList response = routersClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, RoutersScopedList&gt; element : response.getItemsMap()) {
+   *     for (Map.Entry<String, RoutersScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -253,27 +267,27 @@ public class RoutersClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListRoutersRequest, RouterAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Router resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
    *   Operation response = routersClient.delete(project, region, router);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -290,25 +304,24 @@ public class RoutersClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Router resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
-   *   DeleteRouterRequest request = DeleteRouterRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRouter(router)
-   *     .build();
+   *   DeleteRouterRequest request =
+   *       DeleteRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .build();
    *   Operation response = routersClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -317,47 +330,46 @@ public class RoutersClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Router resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
-   *   DeleteRouterRequest request = DeleteRouterRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRouter(router)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = routersClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteRouterRequest request =
+   *       DeleteRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   ApiFuture<Operation> future = routersClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteRouterRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified Router resource. Gets a list of available routers by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
    *   Router response = routersClient.get(project, region, router);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -374,26 +386,24 @@ public class RoutersClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified Router resource. Gets a list of available routers by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
-   *   GetRouterRequest request = GetRouterRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRouter(router)
-   *     .build();
+   *   GetRouterRequest request =
+   *       GetRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRouter("router-925132983")
+   *           .build();
    *   Router response = routersClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -402,49 +412,48 @@ public class RoutersClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified Router resource. Gets a list of available routers by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
-   *   GetRouterRequest request = GetRouterRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRouter(router)
-   *     .build();
-   *   ApiFuture&lt;Router&gt; future = routersClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetRouterRequest request =
+   *       GetRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   ApiFuture<Router> future = routersClient.getCallable().futureCall(request);
+   *   // Do something.
    *   Router response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetRouterRequest, Router> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves runtime Nat mapping information of VM endpoints.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
-   *   for (VmEndpointNatMappings element : routersClient.getNatMappingInfo(project, region, router).iterateAll()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
+   *   for (VmEndpointNatMappings element :
+   *       routersClient.getNatMappingInfo(project, region, router).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -462,27 +471,30 @@ public class RoutersClient implements BackgroundResource {
     return getNatMappingInfo(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves runtime Nat mapping information of VM endpoints.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
-   *   GetNatMappingInfoRoutersRequest request = GetNatMappingInfoRoutersRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRouter(router)
-   *     .build();
+   *   GetNatMappingInfoRoutersRequest request =
+   *       GetNatMappingInfoRoutersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .setRouter("router-925132983")
+   *           .build();
    *   for (VmEndpointNatMappings element : routersClient.getNatMappingInfo(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -492,54 +504,62 @@ public class RoutersClient implements BackgroundResource {
     return getNatMappingInfoPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves runtime Nat mapping information of VM endpoints.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
-   *   GetNatMappingInfoRoutersRequest request = GetNatMappingInfoRoutersRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRouter(router)
-   *     .build();
-   *   ApiFuture&lt;GetNatMappingInfoPagedResponse&gt; future = routersClient.getNatMappingInfoPagedCallable().futureCall(request);
-   *   // Do something
+   *   GetNatMappingInfoRoutersRequest request =
+   *       GetNatMappingInfoRoutersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   ApiFuture<VmEndpointNatMappings> future =
+   *       routersClient.getNatMappingInfoPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (VmEndpointNatMappings element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetNatMappingInfoRoutersRequest, GetNatMappingInfoPagedResponse>
       getNatMappingInfoPagedCallable() {
     return stub.getNatMappingInfoPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves runtime Nat mapping information of VM endpoints.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
-   *   GetNatMappingInfoRoutersRequest request = GetNatMappingInfoRoutersRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRouter(router)
-   *     .build();
+   *   GetNatMappingInfoRoutersRequest request =
+   *       GetNatMappingInfoRoutersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .setRouter("router-925132983")
+   *           .build();
    *   while (true) {
-   *     VmEndpointNatMappingsList response = routersClient.getNatMappingInfoCallable().call(request);
-   *     for (VmEndpointNatMappings element : response.getResultList()) {
+   *     VmEndpointNatMappingsList response =
+   *         routersClient.getNatMappingInfoCallable().call(request);
+   *     for (VmEndpointNatMappings element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -550,27 +570,27 @@ public class RoutersClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList>
       getNatMappingInfoCallable() {
     return stub.getNatMappingInfoCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves runtime information of the specified router.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
    *   RouterStatusResponse response = routersClient.getRouterStatus(project, region, router);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -587,25 +607,23 @@ public class RoutersClient implements BackgroundResource {
     return getRouterStatus(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves runtime information of the specified router.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
-   *   GetRouterStatusRouterRequest request = GetRouterStatusRouterRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRouter(router)
-   *     .build();
+   *   GetRouterStatusRouterRequest request =
+   *       GetRouterStatusRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRouter("router-925132983")
+   *           .build();
    *   RouterStatusResponse response = routersClient.getRouterStatus(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -614,48 +632,47 @@ public class RoutersClient implements BackgroundResource {
     return getRouterStatusCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves runtime information of the specified router.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
-   *   GetRouterStatusRouterRequest request = GetRouterStatusRouterRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRouter(router)
-   *     .build();
-   *   ApiFuture&lt;RouterStatusResponse&gt; future = routersClient.getRouterStatusCallable().futureCall(request);
-   *   // Do something
+   *   GetRouterStatusRouterRequest request =
+   *       GetRouterStatusRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   ApiFuture<RouterStatusResponse> future =
+   *       routersClient.getRouterStatusCallable().futureCall(request);
+   *   // Do something.
    *   RouterStatusResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetRouterStatusRouterRequest, RouterStatusResponse>
       getRouterStatusCallable() {
     return stub.getRouterStatusCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Router resource in the specified project and region using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   Router routerResource = Router.newBuilder().build();
    *   Operation response = routersClient.insert(project, region, routerResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -672,26 +689,25 @@ public class RoutersClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Router resource in the specified project and region using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   Router routerResource = Router.newBuilder().build();
-   *   InsertRouterRequest request = InsertRouterRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRouterResource(routerResource)
-   *     .build();
+   *   InsertRouterRequest request =
+   *       InsertRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouterResource(Router.newBuilder().build())
+   *           .build();
    *   Operation response = routersClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -700,48 +716,47 @@ public class RoutersClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Router resource in the specified project and region using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   Router routerResource = Router.newBuilder().build();
-   *   InsertRouterRequest request = InsertRouterRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRouterResource(routerResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = routersClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertRouterRequest request =
+   *       InsertRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouterResource(Router.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = routersClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertRouterRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Router resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   for (Router element : routersClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -753,25 +768,29 @@ public class RoutersClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Router resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRoutersRequest request = ListRoutersRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListRoutersRequest request =
+   *       ListRoutersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (Router element : routersClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -780,49 +799,57 @@ public class RoutersClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Router resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRoutersRequest request = ListRoutersRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = routersClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListRoutersRequest request =
+   *       ListRoutersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Router> future = routersClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Router element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRoutersRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Router resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRoutersRequest request = ListRoutersRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListRoutersRequest request =
+   *       ListRoutersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     RouterList response = routersClient.listCallable().call(request);
-   *     for (Router element : response.getItemsList()) {
+   *     for (Router element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -833,28 +860,28 @@ public class RoutersClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRoutersRequest, RouterList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified Router resource with the data included in the request. This method
    * supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
    *   Router routerResource = Router.newBuilder().build();
    *   Operation response = routersClient.patch(project, region, router, routerResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -874,28 +901,26 @@ public class RoutersClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified Router resource with the data included in the request. This method
    * supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
-   *   Router routerResource = Router.newBuilder().build();
-   *   PatchRouterRequest request = PatchRouterRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRouter(router)
-   *     .setRouterResource(routerResource)
-   *     .build();
+   *   PatchRouterRequest request =
+   *       PatchRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .setRouterResource(Router.newBuilder().build())
+   *           .build();
    *   Operation response = routersClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -904,51 +929,50 @@ public class RoutersClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified Router resource with the data included in the request. This method
    * supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
-   *   Router routerResource = Router.newBuilder().build();
-   *   PatchRouterRequest request = PatchRouterRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRouter(router)
-   *     .setRouterResource(routerResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = routersClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchRouterRequest request =
+   *       PatchRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .setRouterResource(Router.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = routersClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchRouterRequest, Operation> patchCallable() {
     return stub.patchCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Preview fields auto-generated during router create and update operations. Calling this method
    * does NOT create or update the router.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
    *   Router routerResource = Router.newBuilder().build();
-   *   RoutersPreviewResponse response = routersClient.preview(project, region, router, routerResource);
+   *   RoutersPreviewResponse response =
+   *       routersClient.preview(project, region, router, routerResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -968,28 +992,25 @@ public class RoutersClient implements BackgroundResource {
     return preview(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Preview fields auto-generated during router create and update operations. Calling this method
    * does NOT create or update the router.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
-   *   Router routerResource = Router.newBuilder().build();
-   *   PreviewRouterRequest request = PreviewRouterRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRouter(router)
-   *     .setRouterResource(routerResource)
-   *     .build();
+   *   PreviewRouterRequest request =
+   *       PreviewRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRouter("router-925132983")
+   *           .setRouterResource(Router.newBuilder().build())
+   *           .build();
    *   RoutersPreviewResponse response = routersClient.preview(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -998,36 +1019,34 @@ public class RoutersClient implements BackgroundResource {
     return previewCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Preview fields auto-generated during router create and update operations. Calling this method
    * does NOT create or update the router.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
-   *   Router routerResource = Router.newBuilder().build();
-   *   PreviewRouterRequest request = PreviewRouterRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRouter(router)
-   *     .setRouterResource(routerResource)
-   *     .build();
-   *   ApiFuture&lt;RoutersPreviewResponse&gt; future = routersClient.previewCallable().futureCall(request);
-   *   // Do something
+   *   PreviewRouterRequest request =
+   *       PreviewRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRouter("router-925132983")
+   *           .setRouterResource(Router.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RoutersPreviewResponse> future =
+   *       routersClient.previewCallable().futureCall(request);
+   *   // Do something.
    *   RoutersPreviewResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PreviewRouterRequest, RoutersPreviewResponse> previewCallable() {
     return stub.previewCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified Router resource with the data included in the request. This method
    * conforms to PUT semantics, which requests that the state of the target resource be created or
@@ -1035,15 +1054,15 @@ public class RoutersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
    *   Router routerResource = Router.newBuilder().build();
    *   Operation response = routersClient.update(project, region, router, routerResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -1063,7 +1082,7 @@ public class RoutersClient implements BackgroundResource {
     return update(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified Router resource with the data included in the request. This method
    * conforms to PUT semantics, which requests that the state of the target resource be created or
@@ -1071,21 +1090,19 @@ public class RoutersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
-   *   Router routerResource = Router.newBuilder().build();
-   *   UpdateRouterRequest request = UpdateRouterRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRouter(router)
-   *     .setRouterResource(routerResource)
-   *     .build();
+   *   UpdateRouterRequest request =
+   *       UpdateRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .setRouterResource(Router.newBuilder().build())
+   *           .build();
    *   Operation response = routersClient.update(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1094,7 +1111,7 @@ public class RoutersClient implements BackgroundResource {
     return updateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified Router resource with the data included in the request. This method
    * conforms to PUT semantics, which requests that the state of the target resource be created or
@@ -1102,23 +1119,21 @@ public class RoutersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutersClient routersClient = RoutersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String router = "";
-   *   Router routerResource = Router.newBuilder().build();
-   *   UpdateRouterRequest request = UpdateRouterRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRouter(router)
-   *     .setRouterResource(routerResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = routersClient.updateCallable().futureCall(request);
-   *   // Do something
+   *   UpdateRouterRequest request =
+   *       UpdateRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .setRouterResource(Router.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = routersClient.updateCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdateRouterRequest, Operation> updateCallable() {
     return stub.updateCallable();
@@ -1158,7 +1173,7 @@ public class RoutersClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListRoutersRequest,
           RouterAggregatedList,
-          Entry<String, RoutersScopedList>,
+          Map.Entry<String, RoutersScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -1166,7 +1181,7 @@ public class RoutersClient implements BackgroundResource {
         PageContext<
                 AggregatedListRoutersRequest,
                 RouterAggregatedList,
-                Entry<String, RoutersScopedList>>
+                Map.Entry<String, RoutersScopedList>>
             context,
         ApiFuture<RouterAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -1191,14 +1206,14 @@ public class RoutersClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListRoutersRequest,
           RouterAggregatedList,
-          Entry<String, RoutersScopedList>,
+          Map.Entry<String, RoutersScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListRoutersRequest,
                 RouterAggregatedList,
-                Entry<String, RoutersScopedList>>
+                Map.Entry<String, RoutersScopedList>>
             context,
         RouterAggregatedList response) {
       super(context, response);
@@ -1213,7 +1228,7 @@ public class RoutersClient implements BackgroundResource {
         PageContext<
                 AggregatedListRoutersRequest,
                 RouterAggregatedList,
-                Entry<String, RoutersScopedList>>
+                Map.Entry<String, RoutersScopedList>>
             context,
         RouterAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -1224,7 +1239,7 @@ public class RoutersClient implements BackgroundResource {
         PageContext<
                 AggregatedListRoutersRequest,
                 RouterAggregatedList,
-                Entry<String, RoutersScopedList>>
+                Map.Entry<String, RoutersScopedList>>
             context,
         ApiFuture<RouterAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1235,7 +1250,7 @@ public class RoutersClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListRoutersRequest,
           RouterAggregatedList,
-          Entry<String, RoutersScopedList>,
+          Map.Entry<String, RoutersScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,73 +13,46 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.ProjectsClient.GetXpnResourcesPagedResponse;
 import static com.google.cloud.compute.v1.ProjectsClient.ListXpnHostsPagedResponse;
-import static com.google.cloud.compute.v1.stub.HttpJsonProjectsStub.disableXpnHostMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonProjectsStub.disableXpnResourceMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonProjectsStub.enableXpnHostMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonProjectsStub.enableXpnResourceMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonProjectsStub.getMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonProjectsStub.getXpnHostMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonProjectsStub.getXpnResourcesMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonProjectsStub.listXpnHostsMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonProjectsStub.moveDiskMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonProjectsStub.moveInstanceMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonProjectsStub.setCommonInstanceMetadataMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonProjectsStub.setDefaultNetworkTierMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonProjectsStub.setUsageExportBucketMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.testing.MockHttpService;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
-import com.google.api.gax.rpc.StatusCode.Code;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import com.google.cloud.compute.v1.stub.ProjectsStubSettings;
-import com.google.common.collect.ImmutableList;
+import com.google.cloud.compute.v1.stub.HttpJsonProjectsStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class ProjectsClientTest {
-  private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
-      ImmutableList.copyOf(
-          Lists.<ApiMethodDescriptor>newArrayList(
-              disableXpnHostMethodDescriptor,
-              disableXpnResourceMethodDescriptor,
-              enableXpnHostMethodDescriptor,
-              enableXpnResourceMethodDescriptor,
-              getMethodDescriptor,
-              getXpnHostMethodDescriptor,
-              getXpnResourcesMethodDescriptor,
-              listXpnHostsMethodDescriptor,
-              moveDiskMethodDescriptor,
-              moveInstanceMethodDescriptor,
-              setCommonInstanceMetadataMethodDescriptor,
-              setDefaultNetworkTierMethodDescriptor,
-              setUsageExportBucketMethodDescriptor));
-  private static final MockHttpService mockService =
-      new MockHttpService(METHOD_DESCRIPTORS, ProjectsStubSettings.getDefaultEndpoint());
-
+  private static MockHttpService mockService;
   private static ProjectsClient client;
-  private static ProjectsSettings clientSettings;
 
   @BeforeClass
-  public static void setUp() throws IOException {
-    clientSettings =
+  public static void startStaticServer() throws IOException {
+    mockService =
+        new MockHttpService(
+            HttpJsonProjectsStub.getMethodDescriptors(), ProjectsSettings.getDefaultEndpoint());
+    ProjectsSettings settings =
         ProjectsSettings.newBuilder()
             .setTransportChannelProvider(
                 ProjectsSettings.defaultHttpJsonTransportProviderBuilder()
@@ -87,66 +60,49 @@ public class ProjectsClientTest {
                     .build())
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
-    client = ProjectsClient.create(clientSettings);
-  }
-
-  @After
-  public void cleanUp() {
-    mockService.reset();
+    client = ProjectsClient.create(settings);
   }
 
   @AfterClass
-  public static void tearDown() throws Exception {
+  public static void stopServer() {
     client.close();
   }
 
+  @Before
+  public void setUp() {}
+
+  @After
+  public void tearDown() throws Exception {
+    mockService.reset();
+  }
+
   @Test
-  @SuppressWarnings("all")
-  public void disableXpnHostTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void disableXpnHostTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -171,70 +127,48 @@ public class ProjectsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void disableXpnHostExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-
       client.disableXpnHost(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void disableXpnResourceTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void disableXpnResourceTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -262,72 +196,50 @@ public class ProjectsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void disableXpnResourceExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
       ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource =
           ProjectsDisableXpnResourceRequest.newBuilder().build();
-
       client.disableXpnResource(project, projectsDisableXpnResourceRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void enableXpnHostTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void enableXpnHostTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -352,70 +264,48 @@ public class ProjectsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void enableXpnHostExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-
       client.enableXpnHost(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void enableXpnResourceTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void enableXpnResourceTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -443,44 +333,38 @@ public class ProjectsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void enableXpnResourceExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
       ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource =
           ProjectsEnableXpnResourceRequest.newBuilder().build();
-
       client.enableXpnResource(project, projectsEnableXpnResourceRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getTest() {
-    String creationTimestamp = "creationTimestamp567396278";
-    String defaultServiceAccount = "defaultServiceAccount-1848771419";
-    String description = "description-1724546052";
-    String id = "id3355";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String selfLink = "selfLink-1691268851";
+  public void getTest() throws Exception {
     Project expectedResponse =
         Project.newBuilder()
-            .setCreationTimestamp(creationTimestamp)
-            .setDefaultServiceAccount(defaultServiceAccount)
-            .setDescription(description)
-            .setId(id)
-            .setKind(kind)
-            .setName(name)
-            .setSelfLink(selfLink)
+            .setCommonInstanceMetadata(Metadata.newBuilder().build())
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDefaultServiceAccount("defaultServiceAccount2129949273")
+            .setDescription("description-1724546052")
+            .addAllEnabledFeatures(new ArrayList<String>())
+            .setId("id3355")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .addAllQuotas(new ArrayList<Quota>())
+            .setSelfLink("selfLink1191800166")
+            .setUsageExportLocation(UsageExportLocation.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -505,42 +389,36 @@ public class ProjectsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-
       client.get(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getXpnHostTest() {
-    String creationTimestamp = "creationTimestamp567396278";
-    String defaultServiceAccount = "defaultServiceAccount-1848771419";
-    String description = "description-1724546052";
-    String id = "id3355";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String selfLink = "selfLink-1691268851";
+  public void getXpnHostTest() throws Exception {
     Project expectedResponse =
         Project.newBuilder()
-            .setCreationTimestamp(creationTimestamp)
-            .setDefaultServiceAccount(defaultServiceAccount)
-            .setDescription(description)
-            .setId(id)
-            .setKind(kind)
-            .setName(name)
-            .setSelfLink(selfLink)
+            .setCommonInstanceMetadata(Metadata.newBuilder().build())
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDefaultServiceAccount("defaultServiceAccount2129949273")
+            .setDescription("description-1724546052")
+            .addAllEnabledFeatures(new ArrayList<String>())
+            .setId("id3355")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .addAllQuotas(new ArrayList<Quota>())
+            .setSelfLink("selfLink1191800166")
+            .setUsageExportLocation(UsageExportLocation.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -565,35 +443,28 @@ public class ProjectsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getXpnHostExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-
       client.getXpnHost(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getXpnResourcesTest() {
-    String kind = "kind3292052";
-    String nextPageToken = "";
-    XpnResourceId resourcesElement = XpnResourceId.newBuilder().build();
-    List<XpnResourceId> resources2 = Arrays.asList(resourcesElement);
+  public void getXpnResourcesTest() throws Exception {
+    XpnResourceId responsesElement = XpnResourceId.newBuilder().build();
     ProjectsGetXpnResources expectedResponse =
         ProjectsGetXpnResources.newBuilder()
-            .setKind(kind)
-            .setNextPageToken(nextPageToken)
-            .addAllResources(resources2)
+            .setNextPageToken("")
+            .addAllResources(Arrays.asList(responsesElement))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -602,6 +473,7 @@ public class ProjectsClientTest {
     GetXpnResourcesPagedResponse pagedListResponse = client.getXpnResources(project);
 
     List<XpnResourceId> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getResourcesList().get(0), resources.get(0));
 
@@ -621,39 +493,28 @@ public class ProjectsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getXpnResourcesExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-
       client.getXpnResources(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listXpnHostsTest() {
-    String id = "id3355";
-    String kind = "kind3292052";
-    String nextPageToken = "";
-    String selfLink = "selfLink-1691268851";
-    Project itemsElement = Project.newBuilder().build();
-    List<Project> items = Arrays.asList(itemsElement);
+  public void listXpnHostsTest() throws Exception {
+    Project responsesElement = Project.newBuilder().build();
     XpnHostList expectedResponse =
         XpnHostList.newBuilder()
-            .setId(id)
-            .setKind(kind)
-            .setNextPageToken(nextPageToken)
-            .setSelfLink(selfLink)
-            .addAllItems(items)
+            .setNextPageToken("")
+            .addAllItems(Arrays.asList(responsesElement))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -665,6 +526,7 @@ public class ProjectsClientTest {
         client.listXpnHosts(project, projectsListXpnHostsRequestResource);
 
     List<Project> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
 
@@ -684,72 +546,50 @@ public class ProjectsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listXpnHostsExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
       ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource =
           ProjectsListXpnHostsRequest.newBuilder().build();
-
       client.listXpnHosts(project, projectsListXpnHostsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void moveDiskTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void moveDiskTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -775,71 +615,49 @@ public class ProjectsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void moveDiskExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
       DiskMoveRequest diskMoveRequestResource = DiskMoveRequest.newBuilder().build();
-
       client.moveDisk(project, diskMoveRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void moveInstanceTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void moveInstanceTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -865,71 +683,49 @@ public class ProjectsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void moveInstanceExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
       InstanceMoveRequest instanceMoveRequestResource = InstanceMoveRequest.newBuilder().build();
-
       client.moveInstance(project, instanceMoveRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setCommonInstanceMetadataTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void setCommonInstanceMetadataTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -955,71 +751,49 @@ public class ProjectsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setCommonInstanceMetadataExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
       Metadata metadataResource = Metadata.newBuilder().build();
-
       client.setCommonInstanceMetadata(project, metadataResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setDefaultNetworkTierTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void setDefaultNetworkTierTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1047,72 +821,50 @@ public class ProjectsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setDefaultNetworkTierExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
       ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource =
           ProjectsSetDefaultNetworkTierRequest.newBuilder().build();
-
       client.setDefaultNetworkTier(project, projectsSetDefaultNetworkTierRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setUsageExportBucketTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void setUsageExportBucketTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1138,21 +890,19 @@ public class ProjectsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setUsageExportBucketExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
       UsageExportLocation usageExportLocationResource = UsageExportLocation.newBuilder().build();
-
       client.setUsageExportBucket(project, usageExportLocationResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 }

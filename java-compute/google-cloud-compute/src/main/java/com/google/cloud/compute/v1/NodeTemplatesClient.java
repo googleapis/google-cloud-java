@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,29 +31,27 @@ import com.google.cloud.compute.v1.stub.NodeTemplatesStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The NodeTemplates API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String nodeTemplate = "";
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String nodeTemplate = "nodeTemplate2118368412";
  *   Operation response = nodeTemplatesClient.delete(project, region, nodeTemplate);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the nodeTemplatesClient object to clean up resources such
+ * <p>Note: close() needs to be called on the NodeTemplatesClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -80,30 +79,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * NodeTemplatesSettings nodeTemplatesSettings =
  *     NodeTemplatesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * NodeTemplatesClient nodeTemplatesClient =
- *     NodeTemplatesClient.create(nodeTemplatesSettings);
- * </code>
- * </pre>
+ * NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create(nodeTemplatesSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * NodeTemplatesSettings nodeTemplatesSettings =
  *     NodeTemplatesSettings.newBuilder().setEndpoint(myEndpoint).build();
- * NodeTemplatesClient nodeTemplatesClient =
- *     NodeTemplatesClient.create(nodeTemplatesSettings);
- * </code>
- * </pre>
+ * NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create(nodeTemplatesSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class NodeTemplatesClient implements BackgroundResource {
   private final NodeTemplatesSettings settings;
   private final NodeTemplatesStub stub;
@@ -124,7 +118,7 @@ public class NodeTemplatesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of NodeTemplatesClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use NodeTemplatesSettings}.
+   * for advanced usage - prefer using create(NodeTemplatesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final NodeTemplatesClient create(NodeTemplatesStub stub) {
@@ -156,20 +150,21 @@ public class NodeTemplatesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of node templates.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, NodeTemplatesScopedList&gt; element : nodeTemplatesClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, NodeTemplatesScopedList> element :
+   *       nodeTemplatesClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -180,23 +175,30 @@ public class NodeTemplatesClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of node templates.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   AggregatedListNodeTemplatesRequest request = AggregatedListNodeTemplatesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, NodeTemplatesScopedList&gt; element : nodeTemplatesClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListNodeTemplatesRequest request =
+   *       AggregatedListNodeTemplatesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, NodeTemplatesScopedList> element :
+   *       nodeTemplatesClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -206,46 +208,60 @@ public class NodeTemplatesClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of node templates.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   AggregatedListNodeTemplatesRequest request = AggregatedListNodeTemplatesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = nodeTemplatesClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, NodeTemplatesScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListNodeTemplatesRequest request =
+   *       AggregatedListNodeTemplatesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, NodeTemplatesScopedList>> future =
+   *       nodeTemplatesClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, NodeTemplatesScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListNodeTemplatesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of node templates.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   AggregatedListNodeTemplatesRequest request = AggregatedListNodeTemplatesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListNodeTemplatesRequest request =
+   *       AggregatedListNodeTemplatesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     NodeTemplateAggregatedList response = nodeTemplatesClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, NodeTemplatesScopedList&gt; element : response.getItemsMap()) {
+   *     NodeTemplateAggregatedList response =
+   *         nodeTemplatesClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, NodeTemplatesScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -256,27 +272,27 @@ public class NodeTemplatesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListNodeTemplatesRequest, NodeTemplateAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified NodeTemplate resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String nodeTemplate = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String nodeTemplate = "nodeTemplate2118368412";
    *   Operation response = nodeTemplatesClient.delete(project, region, nodeTemplate);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -293,25 +309,24 @@ public class NodeTemplatesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified NodeTemplate resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String nodeTemplate = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeleteNodeTemplateRequest request = DeleteNodeTemplateRequest.newBuilder()
-   *     .setNodeTemplate(nodeTemplate)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   DeleteNodeTemplateRequest request =
+   *       DeleteNodeTemplateRequest.newBuilder()
+   *           .setNodeTemplate("nodeTemplate2118368412")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = nodeTemplatesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -320,47 +335,46 @@ public class NodeTemplatesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified NodeTemplate resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String nodeTemplate = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeleteNodeTemplateRequest request = DeleteNodeTemplateRequest.newBuilder()
-   *     .setNodeTemplate(nodeTemplate)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = nodeTemplatesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteNodeTemplateRequest request =
+   *       DeleteNodeTemplateRequest.newBuilder()
+   *           .setNodeTemplate("nodeTemplate2118368412")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = nodeTemplatesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteNodeTemplateRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified node template. Gets a list of available node templates by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String nodeTemplate = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String nodeTemplate = "nodeTemplate2118368412";
    *   NodeTemplate response = nodeTemplatesClient.get(project, region, nodeTemplate);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -377,26 +391,24 @@ public class NodeTemplatesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified node template. Gets a list of available node templates by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String nodeTemplate = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetNodeTemplateRequest request = GetNodeTemplateRequest.newBuilder()
-   *     .setNodeTemplate(nodeTemplate)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   GetNodeTemplateRequest request =
+   *       GetNodeTemplateRequest.newBuilder()
+   *           .setNodeTemplate("nodeTemplate2118368412")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
    *   NodeTemplate response = nodeTemplatesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -405,48 +417,46 @@ public class NodeTemplatesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified node template. Gets a list of available node templates by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String nodeTemplate = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetNodeTemplateRequest request = GetNodeTemplateRequest.newBuilder()
-   *     .setNodeTemplate(nodeTemplate)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;NodeTemplate&gt; future = nodeTemplatesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetNodeTemplateRequest request =
+   *       GetNodeTemplateRequest.newBuilder()
+   *           .setNodeTemplate("nodeTemplate2118368412")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<NodeTemplate> future = nodeTemplatesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   NodeTemplate response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetNodeTemplateRequest, NodeTemplate> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
    *   Policy response = nodeTemplatesClient.getIamPolicy(project, region, resource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -463,26 +473,25 @@ public class NodeTemplatesClient implements BackgroundResource {
     return getIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   GetIamPolicyNodeTemplateRequest request = GetIamPolicyNodeTemplateRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResource(resource)
-   *     .build();
+   *   GetIamPolicyNodeTemplateRequest request =
+   *       GetIamPolicyNodeTemplateRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .build();
    *   Policy response = nodeTemplatesClient.getIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -491,48 +500,47 @@ public class NodeTemplatesClient implements BackgroundResource {
     return getIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   GetIamPolicyNodeTemplateRequest request = GetIamPolicyNodeTemplateRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResource(resource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = nodeTemplatesClient.getIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   GetIamPolicyNodeTemplateRequest request =
+   *       GetIamPolicyNodeTemplateRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future = nodeTemplatesClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyNodeTemplateRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a NodeTemplate resource in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   NodeTemplate nodeTemplateResource = NodeTemplate.newBuilder().build();
    *   Operation response = nodeTemplatesClient.insert(project, region, nodeTemplateResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -549,26 +557,25 @@ public class NodeTemplatesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a NodeTemplate resource in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   NodeTemplate nodeTemplateResource = NodeTemplate.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertNodeTemplateRequest request = InsertNodeTemplateRequest.newBuilder()
-   *     .setNodeTemplateResource(nodeTemplateResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   InsertNodeTemplateRequest request =
+   *       InsertNodeTemplateRequest.newBuilder()
+   *           .setNodeTemplateResource(NodeTemplate.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = nodeTemplatesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -577,48 +584,47 @@ public class NodeTemplatesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a NodeTemplate resource in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   NodeTemplate nodeTemplateResource = NodeTemplate.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertNodeTemplateRequest request = InsertNodeTemplateRequest.newBuilder()
-   *     .setNodeTemplateResource(nodeTemplateResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = nodeTemplatesClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertNodeTemplateRequest request =
+   *       InsertNodeTemplateRequest.newBuilder()
+   *           .setNodeTemplateResource(NodeTemplate.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = nodeTemplatesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertNodeTemplateRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of node templates available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   for (NodeTemplate element : nodeTemplatesClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -630,25 +636,29 @@ public class NodeTemplatesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of node templates available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListNodeTemplatesRequest request = ListNodeTemplatesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListNodeTemplatesRequest request =
+   *       ListNodeTemplatesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (NodeTemplate element : nodeTemplatesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -657,49 +667,57 @@ public class NodeTemplatesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of node templates available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListNodeTemplatesRequest request = ListNodeTemplatesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = nodeTemplatesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListNodeTemplatesRequest request =
+   *       ListNodeTemplatesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<NodeTemplate> future = nodeTemplatesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (NodeTemplate element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListNodeTemplatesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of node templates available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListNodeTemplatesRequest request = ListNodeTemplatesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListNodeTemplatesRequest request =
+   *       ListNodeTemplatesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     NodeTemplateList response = nodeTemplatesClient.listCallable().call(request);
-   *     for (NodeTemplate element : response.getItemsList()) {
+   *     for (NodeTemplate element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -710,27 +728,30 @@ public class NodeTemplatesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListNodeTemplatesRequest, NodeTemplateList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
-   *   Policy response = nodeTemplatesClient.setIamPolicy(project, region, resource, regionSetPolicyRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource =
+   *       RegionSetPolicyRequest.newBuilder().build();
+   *   Policy response =
+   *       nodeTemplatesClient.setIamPolicy(
+   *           project, region, resource, regionSetPolicyRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -753,27 +774,24 @@ public class NodeTemplatesClient implements BackgroundResource {
     return setIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
-   *   String resource = "";
-   *   SetIamPolicyNodeTemplateRequest request = SetIamPolicyNodeTemplateRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
-   *     .setResource(resource)
-   *     .build();
+   *   SetIamPolicyNodeTemplateRequest request =
+   *       SetIamPolicyNodeTemplateRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetPolicyRequestResource(RegionSetPolicyRequest.newBuilder().build())
+   *           .setResource("resource-341064690")
+   *           .build();
    *   Policy response = nodeTemplatesClient.setIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -782,49 +800,49 @@ public class NodeTemplatesClient implements BackgroundResource {
     return setIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
-   *   String resource = "";
-   *   SetIamPolicyNodeTemplateRequest request = SetIamPolicyNodeTemplateRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
-   *     .setResource(resource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = nodeTemplatesClient.setIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   SetIamPolicyNodeTemplateRequest request =
+   *       SetIamPolicyNodeTemplateRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetPolicyRequestResource(RegionSetPolicyRequest.newBuilder().build())
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future = nodeTemplatesClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyNodeTemplateRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestPermissionsResponse response = nodeTemplatesClient.testIamPermissions(project, region, resource, testPermissionsRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       nodeTemplatesClient.testIamPermissions(
+   *           project, region, resource, testPermissionsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -847,27 +865,24 @@ public class NodeTemplatesClient implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsNodeTemplateRequest request = TestIamPermissionsNodeTemplateRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
+   *   TestIamPermissionsNodeTemplateRequest request =
+   *       TestIamPermissionsNodeTemplateRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
    *   TestPermissionsResponse response = nodeTemplatesClient.testIamPermissions(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -877,29 +892,27 @@ public class NodeTemplatesClient implements BackgroundResource {
     return testIamPermissionsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsNodeTemplateRequest request = TestIamPermissionsNodeTemplateRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
-   *   ApiFuture&lt;TestPermissionsResponse&gt; future = nodeTemplatesClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
+   *   TestIamPermissionsNodeTemplateRequest request =
+   *       TestIamPermissionsNodeTemplateRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       nodeTemplatesClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
    *   TestPermissionsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsNodeTemplateRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
@@ -940,7 +953,7 @@ public class NodeTemplatesClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListNodeTemplatesRequest,
           NodeTemplateAggregatedList,
-          Entry<String, NodeTemplatesScopedList>,
+          Map.Entry<String, NodeTemplatesScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -948,7 +961,7 @@ public class NodeTemplatesClient implements BackgroundResource {
         PageContext<
                 AggregatedListNodeTemplatesRequest,
                 NodeTemplateAggregatedList,
-                Entry<String, NodeTemplatesScopedList>>
+                Map.Entry<String, NodeTemplatesScopedList>>
             context,
         ApiFuture<NodeTemplateAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -973,14 +986,14 @@ public class NodeTemplatesClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListNodeTemplatesRequest,
           NodeTemplateAggregatedList,
-          Entry<String, NodeTemplatesScopedList>,
+          Map.Entry<String, NodeTemplatesScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListNodeTemplatesRequest,
                 NodeTemplateAggregatedList,
-                Entry<String, NodeTemplatesScopedList>>
+                Map.Entry<String, NodeTemplatesScopedList>>
             context,
         NodeTemplateAggregatedList response) {
       super(context, response);
@@ -995,7 +1008,7 @@ public class NodeTemplatesClient implements BackgroundResource {
         PageContext<
                 AggregatedListNodeTemplatesRequest,
                 NodeTemplateAggregatedList,
-                Entry<String, NodeTemplatesScopedList>>
+                Map.Entry<String, NodeTemplatesScopedList>>
             context,
         NodeTemplateAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -1006,7 +1019,7 @@ public class NodeTemplatesClient implements BackgroundResource {
         PageContext<
                 AggregatedListNodeTemplatesRequest,
                 NodeTemplateAggregatedList,
-                Entry<String, NodeTemplatesScopedList>>
+                Map.Entry<String, NodeTemplatesScopedList>>
             context,
         ApiFuture<NodeTemplateAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1017,7 +1030,7 @@ public class NodeTemplatesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListNodeTemplatesRequest,
           NodeTemplateAggregatedList,
-          Entry<String, NodeTemplatesScopedList>,
+          Map.Entry<String, NodeTemplatesScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

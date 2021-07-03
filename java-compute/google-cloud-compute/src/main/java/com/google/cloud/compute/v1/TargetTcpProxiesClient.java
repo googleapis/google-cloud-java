@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,24 +34,22 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The TargetTcpProxies API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
- *   String project = "";
- *   String targetTcpProxy = "";
+ *   String project = "project-309310695";
+ *   String targetTcpProxy = "targetTcpProxy-337144898";
  *   Operation response = targetTcpProxiesClient.delete(project, targetTcpProxy);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the targetTcpProxiesClient object to clean up resources
+ * <p>Note: close() needs to be called on the TargetTcpProxiesClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -79,30 +78,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TargetTcpProxiesSettings targetTcpProxiesSettings =
  *     TargetTcpProxiesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * TargetTcpProxiesClient targetTcpProxiesClient =
  *     TargetTcpProxiesClient.create(targetTcpProxiesSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TargetTcpProxiesSettings targetTcpProxiesSettings =
  *     TargetTcpProxiesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TargetTcpProxiesClient targetTcpProxiesClient =
  *     TargetTcpProxiesClient.create(targetTcpProxiesSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class TargetTcpProxiesClient implements BackgroundResource {
   private final TargetTcpProxiesSettings settings;
   private final TargetTcpProxiesStub stub;
@@ -123,7 +119,7 @@ public class TargetTcpProxiesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of TargetTcpProxiesClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use TargetTcpProxiesSettings}.
+   * is for advanced usage - prefer using create(TargetTcpProxiesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TargetTcpProxiesClient create(TargetTcpProxiesStub stub) {
@@ -155,19 +151,19 @@ public class TargetTcpProxiesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified TargetTcpProxy resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetTcpProxy = "";
+   *   String project = "project-309310695";
+   *   String targetTcpProxy = "targetTcpProxy-337144898";
    *   Operation response = targetTcpProxiesClient.delete(project, targetTcpProxy);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetTcpProxy Name of the TargetTcpProxy resource to delete.
@@ -182,23 +178,23 @@ public class TargetTcpProxiesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified TargetTcpProxy resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetTcpProxy = "";
-   *   DeleteTargetTcpProxyRequest request = DeleteTargetTcpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetTcpProxy(targetTcpProxy)
-   *     .build();
+   *   DeleteTargetTcpProxyRequest request =
+   *       DeleteTargetTcpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetTcpProxy("targetTcpProxy-337144898")
+   *           .build();
    *   Operation response = targetTcpProxiesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -207,44 +203,44 @@ public class TargetTcpProxiesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified TargetTcpProxy resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetTcpProxy = "";
-   *   DeleteTargetTcpProxyRequest request = DeleteTargetTcpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetTcpProxy(targetTcpProxy)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetTcpProxiesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteTargetTcpProxyRequest request =
+   *       DeleteTargetTcpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetTcpProxy("targetTcpProxy-337144898")
+   *           .build();
+   *   ApiFuture<Operation> future = targetTcpProxiesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteTargetTcpProxyRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified TargetTcpProxy resource. Gets a list of available target TCP proxies by
    * making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetTcpProxy = "";
+   *   String project = "project-309310695";
+   *   String targetTcpProxy = "targetTcpProxy-337144898";
    *   TargetTcpProxy response = targetTcpProxiesClient.get(project, targetTcpProxy);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetTcpProxy Name of the TargetTcpProxy resource to return.
@@ -259,24 +255,23 @@ public class TargetTcpProxiesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified TargetTcpProxy resource. Gets a list of available target TCP proxies by
    * making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetTcpProxy = "";
-   *   GetTargetTcpProxyRequest request = GetTargetTcpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetTcpProxy(targetTcpProxy)
-   *     .build();
+   *   GetTargetTcpProxyRequest request =
+   *       GetTargetTcpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setTargetTcpProxy("targetTcpProxy-337144898")
+   *           .build();
    *   TargetTcpProxy response = targetTcpProxiesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -285,45 +280,44 @@ public class TargetTcpProxiesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified TargetTcpProxy resource. Gets a list of available target TCP proxies by
    * making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetTcpProxy = "";
-   *   GetTargetTcpProxyRequest request = GetTargetTcpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetTcpProxy(targetTcpProxy)
-   *     .build();
-   *   ApiFuture&lt;TargetTcpProxy&gt; future = targetTcpProxiesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetTargetTcpProxyRequest request =
+   *       GetTargetTcpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setTargetTcpProxy("targetTcpProxy-337144898")
+   *           .build();
+   *   ApiFuture<TargetTcpProxy> future = targetTcpProxiesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   TargetTcpProxy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetTargetTcpProxyRequest, TargetTcpProxy> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TargetTcpProxy resource in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   TargetTcpProxy targetTcpProxyResource = TargetTcpProxy.newBuilder().build();
    *   Operation response = targetTcpProxiesClient.insert(project, targetTcpProxyResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetTcpProxyResource The body resource for this request
@@ -338,24 +332,24 @@ public class TargetTcpProxiesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TargetTcpProxy resource in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
-   *   TargetTcpProxy targetTcpProxyResource = TargetTcpProxy.newBuilder().build();
-   *   InsertTargetTcpProxyRequest request = InsertTargetTcpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetTcpProxyResource(targetTcpProxyResource)
-   *     .build();
+   *   InsertTargetTcpProxyRequest request =
+   *       InsertTargetTcpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetTcpProxyResource(TargetTcpProxy.newBuilder().build())
+   *           .build();
    *   Operation response = targetTcpProxiesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -364,45 +358,45 @@ public class TargetTcpProxiesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TargetTcpProxy resource in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
-   *   TargetTcpProxy targetTcpProxyResource = TargetTcpProxy.newBuilder().build();
-   *   InsertTargetTcpProxyRequest request = InsertTargetTcpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetTcpProxyResource(targetTcpProxyResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetTcpProxiesClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertTargetTcpProxyRequest request =
+   *       InsertTargetTcpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetTcpProxyResource(TargetTcpProxy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = targetTcpProxiesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertTargetTcpProxyRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of TargetTcpProxy resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (TargetTcpProxy element : targetTcpProxiesClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -413,23 +407,28 @@ public class TargetTcpProxiesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of TargetTcpProxy resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
-   *   ListTargetTcpProxiesRequest request = ListTargetTcpProxiesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListTargetTcpProxiesRequest request =
+   *       ListTargetTcpProxiesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (TargetTcpProxy element : targetTcpProxiesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -438,45 +437,56 @@ public class TargetTcpProxiesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of TargetTcpProxy resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
-   *   ListTargetTcpProxiesRequest request = ListTargetTcpProxiesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = targetTcpProxiesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListTargetTcpProxiesRequest request =
+   *       ListTargetTcpProxiesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<TargetTcpProxy> future =
+   *       targetTcpProxiesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (TargetTcpProxy element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListTargetTcpProxiesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of TargetTcpProxy resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
-   *   ListTargetTcpProxiesRequest request = ListTargetTcpProxiesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListTargetTcpProxiesRequest request =
+   *       ListTargetTcpProxiesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     TargetTcpProxyList response = targetTcpProxiesClient.listCallable().call(request);
-   *     for (TargetTcpProxy element : response.getItemsList()) {
+   *     for (TargetTcpProxy element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -487,26 +497,29 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListTargetTcpProxiesRequest, TargetTcpProxyList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the BackendService for TargetTcpProxy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetTcpProxy = "";
-   *   TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource = TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
-   *   Operation response = targetTcpProxiesClient.setBackendService(project, targetTcpProxy, targetTcpProxiesSetBackendServiceRequestResource);
+   *   String project = "project-309310695";
+   *   String targetTcpProxy = "targetTcpProxy-337144898";
+   *   TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource =
+   *       TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
+   *   Operation response =
+   *       targetTcpProxiesClient.setBackendService(
+   *           project, targetTcpProxy, targetTcpProxiesSetBackendServiceRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetTcpProxy Name of the TargetTcpProxy resource whose BackendService resource is to
@@ -528,25 +541,25 @@ public class TargetTcpProxiesClient implements BackgroundResource {
     return setBackendService(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the BackendService for TargetTcpProxy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
-   *   TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource = TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
-   *   String targetTcpProxy = "";
-   *   SetBackendServiceTargetTcpProxyRequest request = SetBackendServiceTargetTcpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetTcpProxiesSetBackendServiceRequestResource(targetTcpProxiesSetBackendServiceRequestResource)
-   *     .setTargetTcpProxy(targetTcpProxy)
-   *     .build();
+   *   SetBackendServiceTargetTcpProxyRequest request =
+   *       SetBackendServiceTargetTcpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetTcpProxiesSetBackendServiceRequestResource(
+   *               TargetTcpProxiesSetBackendServiceRequest.newBuilder().build())
+   *           .setTargetTcpProxy("targetTcpProxy-337144898")
+   *           .build();
    *   Operation response = targetTcpProxiesClient.setBackendService(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -555,47 +568,51 @@ public class TargetTcpProxiesClient implements BackgroundResource {
     return setBackendServiceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the BackendService for TargetTcpProxy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
-   *   TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource = TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
-   *   String targetTcpProxy = "";
-   *   SetBackendServiceTargetTcpProxyRequest request = SetBackendServiceTargetTcpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetTcpProxiesSetBackendServiceRequestResource(targetTcpProxiesSetBackendServiceRequestResource)
-   *     .setTargetTcpProxy(targetTcpProxy)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetTcpProxiesClient.setBackendServiceCallable().futureCall(request);
-   *   // Do something
+   *   SetBackendServiceTargetTcpProxyRequest request =
+   *       SetBackendServiceTargetTcpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetTcpProxiesSetBackendServiceRequestResource(
+   *               TargetTcpProxiesSetBackendServiceRequest.newBuilder().build())
+   *           .setTargetTcpProxy("targetTcpProxy-337144898")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       targetTcpProxiesClient.setBackendServiceCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetBackendServiceTargetTcpProxyRequest, Operation>
       setBackendServiceCallable() {
     return stub.setBackendServiceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the ProxyHeaderType for TargetTcpProxy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetTcpProxy = "";
-   *   TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource = TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
-   *   Operation response = targetTcpProxiesClient.setProxyHeader(project, targetTcpProxy, targetTcpProxiesSetProxyHeaderRequestResource);
+   *   String project = "project-309310695";
+   *   String targetTcpProxy = "targetTcpProxy-337144898";
+   *   TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource =
+   *       TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
+   *   Operation response =
+   *       targetTcpProxiesClient.setProxyHeader(
+   *           project, targetTcpProxy, targetTcpProxiesSetProxyHeaderRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetTcpProxy Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
@@ -616,25 +633,25 @@ public class TargetTcpProxiesClient implements BackgroundResource {
     return setProxyHeader(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the ProxyHeaderType for TargetTcpProxy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
-   *   TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource = TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
-   *   String targetTcpProxy = "";
-   *   SetProxyHeaderTargetTcpProxyRequest request = SetProxyHeaderTargetTcpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetTcpProxiesSetProxyHeaderRequestResource(targetTcpProxiesSetProxyHeaderRequestResource)
-   *     .setTargetTcpProxy(targetTcpProxy)
-   *     .build();
+   *   SetProxyHeaderTargetTcpProxyRequest request =
+   *       SetProxyHeaderTargetTcpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetTcpProxiesSetProxyHeaderRequestResource(
+   *               TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build())
+   *           .setTargetTcpProxy("targetTcpProxy-337144898")
+   *           .build();
    *   Operation response = targetTcpProxiesClient.setProxyHeader(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -643,27 +660,28 @@ public class TargetTcpProxiesClient implements BackgroundResource {
     return setProxyHeaderCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the ProxyHeaderType for TargetTcpProxy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
-   *   String project = "";
-   *   TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource = TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
-   *   String targetTcpProxy = "";
-   *   SetProxyHeaderTargetTcpProxyRequest request = SetProxyHeaderTargetTcpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetTcpProxiesSetProxyHeaderRequestResource(targetTcpProxiesSetProxyHeaderRequestResource)
-   *     .setTargetTcpProxy(targetTcpProxy)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetTcpProxiesClient.setProxyHeaderCallable().futureCall(request);
-   *   // Do something
+   *   SetProxyHeaderTargetTcpProxyRequest request =
+   *       SetProxyHeaderTargetTcpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetTcpProxiesSetProxyHeaderRequestResource(
+   *               TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build())
+   *           .setTargetTcpProxy("targetTcpProxy-337144898")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       targetTcpProxiesClient.setProxyHeaderCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetProxyHeaderTargetTcpProxyRequest, Operation>
       setProxyHeaderCallable() {

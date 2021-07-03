@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.NetworksClient.ListPagedResponse;
@@ -49,27 +50,26 @@ import com.google.cloud.compute.v1.RemovePeeringNetworkRequest;
 import com.google.cloud.compute.v1.SwitchToCustomModeNetworkRequest;
 import com.google.cloud.compute.v1.UpdatePeeringNetworkRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the Networks service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonNetworksStub extends NetworksStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<AddPeeringNetworkRequest, Operation>
+  private static final ApiMethodDescriptor<AddPeeringNetworkRequest, Operation>
       addPeeringMethodDescriptor =
           ApiMethodDescriptor.<AddPeeringNetworkRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Networks.AddPeering")
+              .setFullMethodName("google.cloud.compute.v1.Networks/AddPeering")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddPeeringNetworkRequest>newBuilder()
@@ -81,8 +81,8 @@ public class HttpJsonNetworksStub extends NetworksStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<AddPeeringNetworkRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "network", request.getNetwork());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -119,10 +119,9 @@ public class HttpJsonNetworksStub extends NetworksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteNetworkRequest, Operation> deleteMethodDescriptor =
+  private static final ApiMethodDescriptor<DeleteNetworkRequest, Operation> deleteMethodDescriptor =
       ApiMethodDescriptor.<DeleteNetworkRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Networks.Delete")
+          .setFullMethodName("google.cloud.compute.v1.Networks/Delete")
           .setHttpMethod(HttpMethods.DELETE)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<DeleteNetworkRequest>newBuilder()
@@ -134,8 +133,8 @@ public class HttpJsonNetworksStub extends NetworksStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<DeleteNetworkRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "network", request.getNetwork());
+                          serializer.putPathParam(fields, "project", request.getProject());
                           return fields;
                         }
                       })
@@ -156,7 +155,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
                       new FieldsExtractor<DeleteNetworkRequest, String>() {
                         @Override
                         public String extract(DeleteNetworkRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -166,10 +165,9 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetNetworkRequest, Network> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetNetworkRequest, Network> getMethodDescriptor =
       ApiMethodDescriptor.<GetNetworkRequest, Network>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Networks.Get")
+          .setFullMethodName("google.cloud.compute.v1.Networks/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetNetworkRequest>newBuilder()
@@ -181,8 +179,8 @@ public class HttpJsonNetworksStub extends NetworksStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<GetNetworkRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "network", request.getNetwork());
+                          serializer.putPathParam(fields, "project", request.getProject());
                           return fields;
                         }
                       })
@@ -193,7 +191,6 @@ public class HttpJsonNetworksStub extends NetworksStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetNetworkRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -201,7 +198,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
                       new FieldsExtractor<GetNetworkRequest, String>() {
                         @Override
                         public String extract(GetNetworkRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -211,14 +208,13 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
       getEffectiveFirewallsMethodDescriptor =
           ApiMethodDescriptor
               .<GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
                   newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Networks.GetEffectiveFirewalls")
+              .setFullMethodName("google.cloud.compute.v1.Networks/GetEffectiveFirewalls")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetEffectiveFirewallsNetworkRequest>newBuilder()
@@ -232,8 +228,8 @@ public class HttpJsonNetworksStub extends NetworksStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetEffectiveFirewallsNetworkRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "network", request.getNetwork());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -246,7 +242,6 @@ public class HttpJsonNetworksStub extends NetworksStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetEffectiveFirewallsNetworkRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -254,7 +249,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
                           new FieldsExtractor<GetEffectiveFirewallsNetworkRequest, String>() {
                             @Override
                             public String extract(GetEffectiveFirewallsNetworkRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -265,10 +260,9 @@ public class HttpJsonNetworksStub extends NetworksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertNetworkRequest, Operation> insertMethodDescriptor =
+  private static final ApiMethodDescriptor<InsertNetworkRequest, Operation> insertMethodDescriptor =
       ApiMethodDescriptor.<InsertNetworkRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Networks.Insert")
+          .setFullMethodName("google.cloud.compute.v1.Networks/Insert")
           .setHttpMethod(HttpMethods.POST)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<InsertNetworkRequest>newBuilder()
@@ -312,10 +306,9 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListNetworksRequest, NetworkList> listMethodDescriptor =
+  private static final ApiMethodDescriptor<ListNetworksRequest, NetworkList> listMethodDescriptor =
       ApiMethodDescriptor.<ListNetworksRequest, NetworkList>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Networks.List")
+          .setFullMethodName("google.cloud.compute.v1.Networks/List")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListNetworksRequest>newBuilder()
@@ -361,7 +354,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
                       new FieldsExtractor<ListNetworksRequest, String>() {
                         @Override
                         public String extract(ListNetworksRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -371,13 +364,12 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListPeeringRoutesNetworksRequest, ExchangedPeeringRoutesList>
       listPeeringRoutesMethodDescriptor =
           ApiMethodDescriptor
               .<ListPeeringRoutesNetworksRequest, ExchangedPeeringRoutesList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Networks.ListPeeringRoutes")
+              .setFullMethodName("google.cloud.compute.v1.Networks/ListPeeringRoutes")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListPeeringRoutesNetworksRequest>newBuilder()
@@ -391,8 +383,8 @@ public class HttpJsonNetworksStub extends NetworksStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<ListPeeringRoutesNetworksRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "network", request.getNetwork());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -443,7 +435,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
                           new FieldsExtractor<ListPeeringRoutesNetworksRequest, String>() {
                             @Override
                             public String extract(ListPeeringRoutesNetworksRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -453,10 +445,9 @@ public class HttpJsonNetworksStub extends NetworksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchNetworkRequest, Operation> patchMethodDescriptor =
+  private static final ApiMethodDescriptor<PatchNetworkRequest, Operation> patchMethodDescriptor =
       ApiMethodDescriptor.<PatchNetworkRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Networks.Patch")
+          .setFullMethodName("google.cloud.compute.v1.Networks/Patch")
           .setHttpMethod(HttpMethods.PATCH)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<PatchNetworkRequest>newBuilder()
@@ -468,8 +459,8 @@ public class HttpJsonNetworksStub extends NetworksStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<PatchNetworkRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "network", request.getNetwork());
+                          serializer.putPathParam(fields, "project", request.getProject());
                           return fields;
                         }
                       })
@@ -501,11 +492,10 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<RemovePeeringNetworkRequest, Operation>
+  private static final ApiMethodDescriptor<RemovePeeringNetworkRequest, Operation>
       removePeeringMethodDescriptor =
           ApiMethodDescriptor.<RemovePeeringNetworkRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Networks.RemovePeering")
+              .setFullMethodName("google.cloud.compute.v1.Networks/RemovePeering")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemovePeeringNetworkRequest>newBuilder()
@@ -518,8 +508,8 @@ public class HttpJsonNetworksStub extends NetworksStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<RemovePeeringNetworkRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "network", request.getNetwork());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -556,11 +546,10 @@ public class HttpJsonNetworksStub extends NetworksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SwitchToCustomModeNetworkRequest, Operation>
+  private static final ApiMethodDescriptor<SwitchToCustomModeNetworkRequest, Operation>
       switchToCustomModeMethodDescriptor =
           ApiMethodDescriptor.<SwitchToCustomModeNetworkRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Networks.SwitchToCustomMode")
+              .setFullMethodName("google.cloud.compute.v1.Networks/SwitchToCustomMode")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SwitchToCustomModeNetworkRequest>newBuilder()
@@ -574,8 +563,8 @@ public class HttpJsonNetworksStub extends NetworksStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SwitchToCustomModeNetworkRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "network", request.getNetwork());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -599,7 +588,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
                           new FieldsExtractor<SwitchToCustomModeNetworkRequest, String>() {
                             @Override
                             public String extract(SwitchToCustomModeNetworkRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -609,11 +598,10 @@ public class HttpJsonNetworksStub extends NetworksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<UpdatePeeringNetworkRequest, Operation>
+  private static final ApiMethodDescriptor<UpdatePeeringNetworkRequest, Operation>
       updatePeeringMethodDescriptor =
           ApiMethodDescriptor.<UpdatePeeringNetworkRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Networks.UpdatePeering")
+              .setFullMethodName("google.cloud.compute.v1.Networks/UpdatePeering")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdatePeeringNetworkRequest>newBuilder()
@@ -626,8 +614,8 @@ public class HttpJsonNetworksStub extends NetworksStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<UpdatePeeringNetworkRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "network", request.getNetwork());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -664,8 +652,6 @@ public class HttpJsonNetworksStub extends NetworksStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<AddPeeringNetworkRequest, Operation> addPeeringCallable;
   private final UnaryCallable<DeleteNetworkRequest, Operation> deleteCallable;
   private final UnaryCallable<GetNetworkRequest, Network> getCallable;
@@ -685,6 +671,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
       switchToCustomModeCallable;
   private final UnaryCallable<UpdatePeeringNetworkRequest, Operation> updatePeeringCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonNetworksStub create(NetworksStubSettings settings)
@@ -823,60 +810,91 @@ public class HttpJsonNetworksStub extends NetworksStub {
         callableFactory.createUnaryCallable(
             updatePeeringTransportSettings, settings.updatePeeringSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(addPeeringMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getEffectiveFirewallsMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(listPeeringRoutesMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(removePeeringMethodDescriptor);
+    methodDescriptors.add(switchToCustomModeMethodDescriptor);
+    methodDescriptors.add(updatePeeringMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<AddPeeringNetworkRequest, Operation> addPeeringCallable() {
     return addPeeringCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteNetworkRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetNetworkRequest, Network> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
       getEffectiveFirewallsCallable() {
     return getEffectiveFirewallsCallable;
   }
 
+  @Override
   public UnaryCallable<InsertNetworkRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListNetworksRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListNetworksRequest, NetworkList> listCallable() {
     return listCallable;
   }
 
-  public UnaryCallable<ListPeeringRoutesNetworksRequest, ListPeeringRoutesPagedResponse>
-      listPeeringRoutesPagedCallable() {
-    return listPeeringRoutesPagedCallable;
+  @Override
+  public UnaryCallable<ListNetworksRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListPeeringRoutesNetworksRequest, ExchangedPeeringRoutesList>
       listPeeringRoutesCallable() {
     return listPeeringRoutesCallable;
   }
 
+  @Override
+  public UnaryCallable<ListPeeringRoutesNetworksRequest, ListPeeringRoutesPagedResponse>
+      listPeeringRoutesPagedCallable() {
+    return listPeeringRoutesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchNetworkRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<RemovePeeringNetworkRequest, Operation> removePeeringCallable() {
     return removePeeringCallable;
   }
 
+  @Override
   public UnaryCallable<SwitchToCustomModeNetworkRequest, Operation> switchToCustomModeCallable() {
     return switchToCustomModeCallable;
   }
 
+  @Override
   public UnaryCallable<UpdatePeeringNetworkRequest, Operation> updatePeeringCallable() {
     return updatePeeringCallable;
   }

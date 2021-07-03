@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,25 +34,24 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The BackendBuckets API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
- *   String project = "";
- *   String backendBucket = "";
+ *   String project = "project-309310695";
+ *   String backendBucket = "backendBucket713751966";
  *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
- *   Operation response = backendBucketsClient.addSignedUrlKey(project, backendBucket, signedUrlKeyResource);
+ *   Operation response =
+ *       backendBucketsClient.addSignedUrlKey(project, backendBucket, signedUrlKeyResource);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the backendBucketsClient object to clean up resources such
+ * <p>Note: close() needs to be called on the BackendBucketsClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -79,30 +79,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * BackendBucketsSettings backendBucketsSettings =
  *     BackendBucketsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * BackendBucketsClient backendBucketsClient =
- *     BackendBucketsClient.create(backendBucketsSettings);
- * </code>
- * </pre>
+ * BackendBucketsClient backendBucketsClient = BackendBucketsClient.create(backendBucketsSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * BackendBucketsSettings backendBucketsSettings =
  *     BackendBucketsSettings.newBuilder().setEndpoint(myEndpoint).build();
- * BackendBucketsClient backendBucketsClient =
- *     BackendBucketsClient.create(backendBucketsSettings);
- * </code>
- * </pre>
+ * BackendBucketsClient backendBucketsClient = BackendBucketsClient.create(backendBucketsSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class BackendBucketsClient implements BackgroundResource {
   private final BackendBucketsSettings settings;
   private final BackendBucketsStub stub;
@@ -123,7 +118,7 @@ public class BackendBucketsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of BackendBucketsClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use BackendBucketsSettings}.
+   * for advanced usage - prefer using create(BackendBucketsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final BackendBucketsClient create(BackendBucketsStub stub) {
@@ -155,20 +150,21 @@ public class BackendBucketsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds a key for validating requests with signed URLs for this backend bucket.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String project = "";
-   *   String backendBucket = "";
+   *   String project = "project-309310695";
+   *   String backendBucket = "backendBucket713751966";
    *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
-   *   Operation response = backendBucketsClient.addSignedUrlKey(project, backendBucket, signedUrlKeyResource);
+   *   Operation response =
+   *       backendBucketsClient.addSignedUrlKey(project, backendBucket, signedUrlKeyResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param backendBucket Name of the BackendBucket resource to which the Signed URL Key should be
@@ -187,25 +183,24 @@ public class BackendBucketsClient implements BackgroundResource {
     return addSignedUrlKey(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds a key for validating requests with signed URLs for this backend bucket.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String backendBucket = "";
-   *   String project = "";
-   *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
-   *   AddSignedUrlKeyBackendBucketRequest request = AddSignedUrlKeyBackendBucketRequest.newBuilder()
-   *     .setBackendBucket(backendBucket)
-   *     .setProject(project)
-   *     .setSignedUrlKeyResource(signedUrlKeyResource)
-   *     .build();
+   *   AddSignedUrlKeyBackendBucketRequest request =
+   *       AddSignedUrlKeyBackendBucketRequest.newBuilder()
+   *           .setBackendBucket("backendBucket713751966")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSignedUrlKeyResource(SignedUrlKey.newBuilder().build())
+   *           .build();
    *   Operation response = backendBucketsClient.addSignedUrlKey(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -214,46 +209,46 @@ public class BackendBucketsClient implements BackgroundResource {
     return addSignedUrlKeyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds a key for validating requests with signed URLs for this backend bucket.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String backendBucket = "";
-   *   String project = "";
-   *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
-   *   AddSignedUrlKeyBackendBucketRequest request = AddSignedUrlKeyBackendBucketRequest.newBuilder()
-   *     .setBackendBucket(backendBucket)
-   *     .setProject(project)
-   *     .setSignedUrlKeyResource(signedUrlKeyResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = backendBucketsClient.addSignedUrlKeyCallable().futureCall(request);
-   *   // Do something
+   *   AddSignedUrlKeyBackendBucketRequest request =
+   *       AddSignedUrlKeyBackendBucketRequest.newBuilder()
+   *           .setBackendBucket("backendBucket713751966")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSignedUrlKeyResource(SignedUrlKey.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backendBucketsClient.addSignedUrlKeyCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AddSignedUrlKeyBackendBucketRequest, Operation>
       addSignedUrlKeyCallable() {
     return stub.addSignedUrlKeyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified BackendBucket resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String project = "";
-   *   String backendBucket = "";
+   *   String project = "project-309310695";
+   *   String backendBucket = "backendBucket713751966";
    *   Operation response = backendBucketsClient.delete(project, backendBucket);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param backendBucket Name of the BackendBucket resource to delete.
@@ -268,23 +263,23 @@ public class BackendBucketsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified BackendBucket resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String backendBucket = "";
-   *   String project = "";
-   *   DeleteBackendBucketRequest request = DeleteBackendBucketRequest.newBuilder()
-   *     .setBackendBucket(backendBucket)
-   *     .setProject(project)
-   *     .build();
+   *   DeleteBackendBucketRequest request =
+   *       DeleteBackendBucketRequest.newBuilder()
+   *           .setBackendBucket("backendBucket713751966")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = backendBucketsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -293,44 +288,44 @@ public class BackendBucketsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified BackendBucket resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String backendBucket = "";
-   *   String project = "";
-   *   DeleteBackendBucketRequest request = DeleteBackendBucketRequest.newBuilder()
-   *     .setBackendBucket(backendBucket)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = backendBucketsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteBackendBucketRequest request =
+   *       DeleteBackendBucketRequest.newBuilder()
+   *           .setBackendBucket("backendBucket713751966")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = backendBucketsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteBackendBucketRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a key for validating requests with signed URLs for this backend bucket.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String project = "";
-   *   String backendBucket = "";
-   *   String keyName = "";
+   *   String project = "project-309310695";
+   *   String backendBucket = "backendBucket713751966";
+   *   String keyName = "keyName-815643254";
    *   Operation response = backendBucketsClient.deleteSignedUrlKey(project, backendBucket, keyName);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param backendBucket Name of the BackendBucket resource to which the Signed URL Key should be
@@ -348,25 +343,24 @@ public class BackendBucketsClient implements BackgroundResource {
     return deleteSignedUrlKey(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a key for validating requests with signed URLs for this backend bucket.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String backendBucket = "";
-   *   String keyName = "";
-   *   String project = "";
-   *   DeleteSignedUrlKeyBackendBucketRequest request = DeleteSignedUrlKeyBackendBucketRequest.newBuilder()
-   *     .setBackendBucket(backendBucket)
-   *     .setKeyName(keyName)
-   *     .setProject(project)
-   *     .build();
+   *   DeleteSignedUrlKeyBackendBucketRequest request =
+   *       DeleteSignedUrlKeyBackendBucketRequest.newBuilder()
+   *           .setBackendBucket("backendBucket713751966")
+   *           .setKeyName("keyName-815643254")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = backendBucketsClient.deleteSignedUrlKey(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -375,47 +369,47 @@ public class BackendBucketsClient implements BackgroundResource {
     return deleteSignedUrlKeyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a key for validating requests with signed URLs for this backend bucket.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String backendBucket = "";
-   *   String keyName = "";
-   *   String project = "";
-   *   DeleteSignedUrlKeyBackendBucketRequest request = DeleteSignedUrlKeyBackendBucketRequest.newBuilder()
-   *     .setBackendBucket(backendBucket)
-   *     .setKeyName(keyName)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = backendBucketsClient.deleteSignedUrlKeyCallable().futureCall(request);
-   *   // Do something
+   *   DeleteSignedUrlKeyBackendBucketRequest request =
+   *       DeleteSignedUrlKeyBackendBucketRequest.newBuilder()
+   *           .setBackendBucket("backendBucket713751966")
+   *           .setKeyName("keyName-815643254")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backendBucketsClient.deleteSignedUrlKeyCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteSignedUrlKeyBackendBucketRequest, Operation>
       deleteSignedUrlKeyCallable() {
     return stub.deleteSignedUrlKeyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified BackendBucket resource. Gets a list of available backend buckets by
    * making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String project = "";
-   *   String backendBucket = "";
+   *   String project = "project-309310695";
+   *   String backendBucket = "backendBucket713751966";
    *   BackendBucket response = backendBucketsClient.get(project, backendBucket);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param backendBucket Name of the BackendBucket resource to return.
@@ -430,24 +424,23 @@ public class BackendBucketsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified BackendBucket resource. Gets a list of available backend buckets by
    * making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String backendBucket = "";
-   *   String project = "";
-   *   GetBackendBucketRequest request = GetBackendBucketRequest.newBuilder()
-   *     .setBackendBucket(backendBucket)
-   *     .setProject(project)
-   *     .build();
+   *   GetBackendBucketRequest request =
+   *       GetBackendBucketRequest.newBuilder()
+   *           .setBackendBucket("backendBucket713751966")
+   *           .setProject("project-309310695")
+   *           .build();
    *   BackendBucket response = backendBucketsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -456,45 +449,44 @@ public class BackendBucketsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified BackendBucket resource. Gets a list of available backend buckets by
    * making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String backendBucket = "";
-   *   String project = "";
-   *   GetBackendBucketRequest request = GetBackendBucketRequest.newBuilder()
-   *     .setBackendBucket(backendBucket)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;BackendBucket&gt; future = backendBucketsClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetBackendBucketRequest request =
+   *       GetBackendBucketRequest.newBuilder()
+   *           .setBackendBucket("backendBucket713751966")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<BackendBucket> future = backendBucketsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   BackendBucket response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetBackendBucketRequest, BackendBucket> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a BackendBucket resource in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   Operation response = backendBucketsClient.insert(project, backendBucketResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param backendBucketResource The body resource for this request
@@ -509,24 +501,24 @@ public class BackendBucketsClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a BackendBucket resource in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-   *   String project = "";
-   *   InsertBackendBucketRequest request = InsertBackendBucketRequest.newBuilder()
-   *     .setBackendBucketResource(backendBucketResource)
-   *     .setProject(project)
-   *     .build();
+   *   InsertBackendBucketRequest request =
+   *       InsertBackendBucketRequest.newBuilder()
+   *           .setBackendBucketResource(BackendBucket.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = backendBucketsClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -535,45 +527,45 @@ public class BackendBucketsClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a BackendBucket resource in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-   *   String project = "";
-   *   InsertBackendBucketRequest request = InsertBackendBucketRequest.newBuilder()
-   *     .setBackendBucketResource(backendBucketResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = backendBucketsClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertBackendBucketRequest request =
+   *       InsertBackendBucketRequest.newBuilder()
+   *           .setBackendBucketResource(BackendBucket.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = backendBucketsClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertBackendBucketRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of BackendBucket resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (BackendBucket element : backendBucketsClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -584,23 +576,28 @@ public class BackendBucketsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of BackendBucket resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String project = "";
-   *   ListBackendBucketsRequest request = ListBackendBucketsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListBackendBucketsRequest request =
+   *       ListBackendBucketsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (BackendBucket element : backendBucketsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -609,45 +606,56 @@ public class BackendBucketsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of BackendBucket resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String project = "";
-   *   ListBackendBucketsRequest request = ListBackendBucketsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = backendBucketsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListBackendBucketsRequest request =
+   *       ListBackendBucketsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<BackendBucket> future =
+   *       backendBucketsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (BackendBucket element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListBackendBucketsRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of BackendBucket resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String project = "";
-   *   ListBackendBucketsRequest request = ListBackendBucketsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListBackendBucketsRequest request =
+   *       ListBackendBucketsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     BackendBucketList response = backendBucketsClient.listCallable().call(request);
-   *     for (BackendBucket element : response.getItemsList()) {
+   *     for (BackendBucket element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -658,27 +666,28 @@ public class BackendBucketsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListBackendBucketsRequest, BackendBucketList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified BackendBucket resource with the data included in the request. This method
    * supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String project = "";
-   *   String backendBucket = "";
+   *   String project = "project-309310695";
+   *   String backendBucket = "backendBucket713751966";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-   *   Operation response = backendBucketsClient.patch(project, backendBucket, backendBucketResource);
+   *   Operation response =
+   *       backendBucketsClient.patch(project, backendBucket, backendBucketResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param backendBucket Name of the BackendBucket resource to patch.
@@ -696,26 +705,25 @@ public class BackendBucketsClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified BackendBucket resource with the data included in the request. This method
    * supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String backendBucket = "";
-   *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-   *   String project = "";
-   *   PatchBackendBucketRequest request = PatchBackendBucketRequest.newBuilder()
-   *     .setBackendBucket(backendBucket)
-   *     .setBackendBucketResource(backendBucketResource)
-   *     .setProject(project)
-   *     .build();
+   *   PatchBackendBucketRequest request =
+   *       PatchBackendBucketRequest.newBuilder()
+   *           .setBackendBucket("backendBucket713751966")
+   *           .setBackendBucketResource(BackendBucket.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = backendBucketsClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -724,47 +732,47 @@ public class BackendBucketsClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified BackendBucket resource with the data included in the request. This method
    * supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String backendBucket = "";
-   *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-   *   String project = "";
-   *   PatchBackendBucketRequest request = PatchBackendBucketRequest.newBuilder()
-   *     .setBackendBucket(backendBucket)
-   *     .setBackendBucketResource(backendBucketResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = backendBucketsClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchBackendBucketRequest request =
+   *       PatchBackendBucketRequest.newBuilder()
+   *           .setBackendBucket("backendBucket713751966")
+   *           .setBackendBucketResource(BackendBucket.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = backendBucketsClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchBackendBucketRequest, Operation> patchCallable() {
     return stub.patchCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified BackendBucket resource with the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String project = "";
-   *   String backendBucket = "";
+   *   String project = "project-309310695";
+   *   String backendBucket = "backendBucket713751966";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-   *   Operation response = backendBucketsClient.update(project, backendBucket, backendBucketResource);
+   *   Operation response =
+   *       backendBucketsClient.update(project, backendBucket, backendBucketResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param backendBucket Name of the BackendBucket resource to update.
@@ -782,25 +790,24 @@ public class BackendBucketsClient implements BackgroundResource {
     return update(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified BackendBucket resource with the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String backendBucket = "";
-   *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-   *   String project = "";
-   *   UpdateBackendBucketRequest request = UpdateBackendBucketRequest.newBuilder()
-   *     .setBackendBucket(backendBucket)
-   *     .setBackendBucketResource(backendBucketResource)
-   *     .setProject(project)
-   *     .build();
+   *   UpdateBackendBucketRequest request =
+   *       UpdateBackendBucketRequest.newBuilder()
+   *           .setBackendBucket("backendBucket713751966")
+   *           .setBackendBucketResource(BackendBucket.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = backendBucketsClient.update(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -809,27 +816,26 @@ public class BackendBucketsClient implements BackgroundResource {
     return updateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified BackendBucket resource with the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
-   *   String backendBucket = "";
-   *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-   *   String project = "";
-   *   UpdateBackendBucketRequest request = UpdateBackendBucketRequest.newBuilder()
-   *     .setBackendBucket(backendBucket)
-   *     .setBackendBucketResource(backendBucketResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = backendBucketsClient.updateCallable().futureCall(request);
-   *   // Do something
+   *   UpdateBackendBucketRequest request =
+   *       UpdateBackendBucketRequest.newBuilder()
+   *           .setBackendBucket("backendBucket713751966")
+   *           .setBackendBucketResource(BackendBucket.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = backendBucketsClient.updateCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdateBackendBucketRequest, Operation> updateCallable() {
     return stub.updateCallable();

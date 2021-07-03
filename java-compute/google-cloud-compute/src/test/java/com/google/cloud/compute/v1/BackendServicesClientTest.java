@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,72 +13,50 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.BackendServicesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.BackendServicesClient.ListPagedResponse;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServicesStub.addSignedUrlKeyMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServicesStub.aggregatedListMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServicesStub.deleteMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServicesStub.deleteSignedUrlKeyMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServicesStub.getHealthMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServicesStub.getMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServicesStub.insertMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServicesStub.listMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServicesStub.patchMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServicesStub.setSecurityPolicyMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServicesStub.updateMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.testing.MockHttpService;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
-import com.google.api.gax.rpc.StatusCode.Code;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import com.google.cloud.compute.v1.stub.BackendServicesStubSettings;
-import com.google.common.collect.ImmutableList;
+import com.google.cloud.compute.v1.stub.HttpJsonBackendServicesStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class BackendServicesClientTest {
-  private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
-      ImmutableList.copyOf(
-          Lists.<ApiMethodDescriptor>newArrayList(
-              addSignedUrlKeyMethodDescriptor,
-              aggregatedListMethodDescriptor,
-              deleteMethodDescriptor,
-              deleteSignedUrlKeyMethodDescriptor,
-              getMethodDescriptor,
-              getHealthMethodDescriptor,
-              insertMethodDescriptor,
-              listMethodDescriptor,
-              patchMethodDescriptor,
-              setSecurityPolicyMethodDescriptor,
-              updateMethodDescriptor));
-  private static final MockHttpService mockService =
-      new MockHttpService(METHOD_DESCRIPTORS, BackendServicesStubSettings.getDefaultEndpoint());
-
+  private static MockHttpService mockService;
   private static BackendServicesClient client;
-  private static BackendServicesSettings clientSettings;
 
   @BeforeClass
-  public static void setUp() throws IOException {
-    clientSettings =
+  public static void startStaticServer() throws IOException {
+    mockService =
+        new MockHttpService(
+            HttpJsonBackendServicesStub.getMethodDescriptors(),
+            BackendServicesSettings.getDefaultEndpoint());
+    BackendServicesSettings settings =
         BackendServicesSettings.newBuilder()
             .setTransportChannelProvider(
                 BackendServicesSettings.defaultHttpJsonTransportProviderBuilder()
@@ -86,71 +64,54 @@ public class BackendServicesClientTest {
                     .build())
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
-    client = BackendServicesClient.create(clientSettings);
-  }
-
-  @After
-  public void cleanUp() {
-    mockService.reset();
+    client = BackendServicesClient.create(settings);
   }
 
   @AfterClass
-  public static void tearDown() throws Exception {
+  public static void stopServer() {
     client.close();
   }
 
+  @Before
+  public void setUp() {}
+
+  @After
+  public void tearDown() throws Exception {
+    mockService.reset();
+  }
+
   @Test
-  @SuppressWarnings("all")
-  public void addSignedUrlKeyTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void addSignedUrlKeyTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
     String project = "project-309310695";
-    String backendService = "backendService306946058";
+    String backendService = "backendService-1884714623";
     SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
 
     Operation actualResponse =
@@ -173,42 +134,30 @@ public class BackendServicesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void addSignedUrlKeyExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-      String backendService = "backendService306946058";
+      String backendService = "backendService-1884714623";
       SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
-
       client.addSignedUrlKey(project, backendService, signedUrlKeyResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void aggregatedListTest() {
-    String id = "id3355";
-    String kind = "kind3292052";
-    String nextPageToken = "";
-    String selfLink = "selfLink-1691268851";
-    BackendServicesScopedList itemsItem = BackendServicesScopedList.newBuilder().build();
-    Map<String, BackendServicesScopedList> items = new HashMap<>();
-    items.put("items", itemsItem);
+  public void aggregatedListTest() throws Exception {
+    BackendServicesScopedList responsesElement = BackendServicesScopedList.newBuilder().build();
     BackendServiceAggregatedList expectedResponse =
         BackendServiceAggregatedList.newBuilder()
-            .setId(id)
-            .setKind(kind)
-            .setNextPageToken(nextPageToken)
-            .setSelfLink(selfLink)
-            .putAllItems(items)
+            .setNextPageToken("")
+            .putAllItems(Collections.singletonMap("items", responsesElement))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -216,8 +165,9 @@ public class BackendServicesClientTest {
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
-    List<Entry<String, BackendServicesScopedList>> resources =
+    List<Map.Entry<String, BackendServicesScopedList>> resources =
         Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(
         expectedResponse.getItemsMap().entrySet().iterator().next(), resources.get(0));
@@ -238,75 +188,53 @@ public class BackendServicesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void aggregatedListExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void deleteTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
     String project = "project-309310695";
-    String backendService = "backendService306946058";
+    String backendService = "backendService-1884714623";
 
     Operation actualResponse = client.delete(project, backendService);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -327,77 +255,55 @@ public class BackendServicesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-      String backendService = "backendService306946058";
-
+      String backendService = "backendService-1884714623";
       client.delete(project, backendService);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteSignedUrlKeyTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void deleteSignedUrlKeyTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
     String project = "project-309310695";
-    String backendService = "backendService306946058";
-    String keyName = "keyName500938859";
+    String backendService = "backendService-1884714623";
+    String keyName = "keyName-815643254";
 
     Operation actualResponse = client.deleteSignedUrlKey(project, backendService, keyName);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -418,65 +324,61 @@ public class BackendServicesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteSignedUrlKeyExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-      String backendService = "backendService306946058";
-      String keyName = "keyName500938859";
-
+      String backendService = "backendService-1884714623";
+      String keyName = "keyName-815643254";
       client.deleteSignedUrlKey(project, backendService, keyName);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getTest() {
-    int affinityCookieTtlSec = 1777486694;
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    boolean enableCDN = false;
-    String fingerprint = "fingerprint-1375934236";
-    String id = "id3355";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String network = "network1843485230";
-    int port = 3446913;
-    String portName = "portName1115276169";
-    String region = "region-934795532";
-    String securityPolicy = "securityPolicy1781695249";
-    String selfLink = "selfLink-1691268851";
-    int timeoutSec = 2067488653;
+  public void getTest() throws Exception {
     BackendService expectedResponse =
         BackendService.newBuilder()
-            .setAffinityCookieTtlSec(affinityCookieTtlSec)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEnableCDN(enableCDN)
-            .setFingerprint(fingerprint)
-            .setId(id)
-            .setKind(kind)
-            .setName(name)
-            .setNetwork(network)
-            .setPort(port)
-            .setPortName(portName)
-            .setRegion(region)
-            .setSecurityPolicy(securityPolicy)
-            .setSelfLink(selfLink)
-            .setTimeoutSec(timeoutSec)
+            .setAffinityCookieTtlSec(-1777486694)
+            .addAllBackends(new ArrayList<Backend>())
+            .setCdnPolicy(BackendServiceCdnPolicy.newBuilder().build())
+            .setCircuitBreakers(CircuitBreakers.newBuilder().build())
+            .setConnectionDraining(ConnectionDraining.newBuilder().build())
+            .setConsistentHash(ConsistentHashLoadBalancerSettings.newBuilder().build())
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .addAllCustomRequestHeaders(new ArrayList<String>())
+            .addAllCustomResponseHeaders(new ArrayList<String>())
+            .setDescription("description-1724546052")
+            .setEnableCDN(true)
+            .setFailoverPolicy(BackendServiceFailoverPolicy.newBuilder().build())
+            .setFingerprint("fingerprint-1375934236")
+            .addAllHealthChecks(new ArrayList<String>())
+            .setIap(BackendServiceIAP.newBuilder().build())
+            .setId("id3355")
+            .setKind("kind3292052")
+            .setLogConfig(BackendServiceLogConfig.newBuilder().build())
+            .setMaxStreamDuration(Duration.newBuilder().build())
+            .setName("name3373707")
+            .setNetwork("network1843485230")
+            .setOutlierDetection(OutlierDetection.newBuilder().build())
+            .setPort(3446913)
+            .setPortName("portName728194732")
+            .setRegion("region-934795532")
+            .setSecurityPolicy("securityPolicy-788621166")
+            .setSecuritySettings(SecuritySettings.newBuilder().build())
+            .setSelfLink("selfLink1191800166")
+            .setTimeoutSec(-2067488653)
             .build();
     mockService.addResponse(expectedResponse);
 
     String project = "project-309310695";
-    String backendService = "backendService306946058";
+    String backendService = "backendService-1884714623";
 
     BackendService actualResponse = client.get(project, backendService);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -497,34 +399,34 @@ public class BackendServicesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-      String backendService = "backendService306946058";
-
+      String backendService = "backendService-1884714623";
       client.get(project, backendService);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getHealthTest() {
-    String kind = "kind3292052";
+  public void getHealthTest() throws Exception {
     BackendServiceGroupHealth expectedResponse =
-        BackendServiceGroupHealth.newBuilder().setKind(kind).build();
+        BackendServiceGroupHealth.newBuilder()
+            .putAllAnnotations(new HashMap<String, String>())
+            .addAllHealthStatus(new ArrayList<HealthStatus>())
+            .setKind("kind3292052")
+            .build();
     mockService.addResponse(expectedResponse);
 
     String project = "project-309310695";
-    String backendService = "backendService306946058";
+    String backendService = "backendService-1884714623";
     ResourceGroupReference resourceGroupReferenceResource =
         ResourceGroupReference.newBuilder().build();
 
@@ -548,73 +450,51 @@ public class BackendServicesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getHealthExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-      String backendService = "backendService306946058";
+      String backendService = "backendService-1884714623";
       ResourceGroupReference resourceGroupReferenceResource =
           ResourceGroupReference.newBuilder().build();
-
       client.getHealth(project, backendService, resourceGroupReferenceResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void insertTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void insertTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -640,40 +520,29 @@ public class BackendServicesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void insertExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
       BackendService backendServiceResource = BackendService.newBuilder().build();
-
       client.insert(project, backendServiceResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listTest() {
-    String id = "id3355";
-    String kind = "kind3292052";
-    String nextPageToken = "";
-    String selfLink = "selfLink-1691268851";
-    BackendService itemsElement = BackendService.newBuilder().build();
-    List<BackendService> items = Arrays.asList(itemsElement);
+  public void listTest() throws Exception {
+    BackendService responsesElement = BackendService.newBuilder().build();
     BackendServiceList expectedResponse =
         BackendServiceList.newBuilder()
-            .setId(id)
-            .setKind(kind)
-            .setNextPageToken(nextPageToken)
-            .setSelfLink(selfLink)
-            .addAllItems(items)
+            .setNextPageToken("")
+            .addAllItems(Arrays.asList(responsesElement))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -682,6 +551,7 @@ public class BackendServicesClientTest {
     ListPagedResponse pagedListResponse = client.list(project);
 
     List<BackendService> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
 
@@ -701,75 +571,53 @@ public class BackendServicesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void patchTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void patchTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
     String project = "project-309310695";
-    String backendService = "backendService306946058";
+    String backendService = "backendService-1884714623";
     BackendService backendServiceResource = BackendService.newBuilder().build();
 
     Operation actualResponse = client.patch(project, backendService, backendServiceResource);
@@ -791,77 +639,55 @@ public class BackendServicesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void patchExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-      String backendService = "backendService306946058";
+      String backendService = "backendService-1884714623";
       BackendService backendServiceResource = BackendService.newBuilder().build();
-
       client.patch(project, backendService, backendServiceResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setSecurityPolicyTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void setSecurityPolicyTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
     String project = "project-309310695";
-    String backendService = "backendService306946058";
+    String backendService = "backendService-1884714623";
     SecurityPolicyReference securityPolicyReferenceResource =
         SecurityPolicyReference.newBuilder().build();
 
@@ -885,78 +711,56 @@ public class BackendServicesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setSecurityPolicyExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-      String backendService = "backendService306946058";
+      String backendService = "backendService-1884714623";
       SecurityPolicyReference securityPolicyReferenceResource =
           SecurityPolicyReference.newBuilder().build();
-
       client.setSecurityPolicy(project, backendService, securityPolicyReferenceResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void updateTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
     String project = "project-309310695";
-    String backendService = "backendService306946058";
+    String backendService = "backendService-1884714623";
     BackendService backendServiceResource = BackendService.newBuilder().build();
 
     Operation actualResponse = client.update(project, backendService, backendServiceResource);
@@ -978,22 +782,20 @@ public class BackendServicesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-      String backendService = "backendService306946058";
+      String backendService = "backendService-1884714623";
       BackendService backendServiceResource = BackendService.newBuilder().build();
-
       client.update(project, backendService, backendServiceResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 }

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,47 +13,42 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
-import static com.google.cloud.compute.v1.stub.HttpJsonLicenseCodesStub.getMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonLicenseCodesStub.testIamPermissionsMethodDescriptor;
-
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.testing.MockHttpService;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
-import com.google.api.gax.rpc.StatusCode.Code;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import com.google.cloud.compute.v1.stub.LicenseCodesStubSettings;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
+import com.google.cloud.compute.v1.stub.HttpJsonLicenseCodesStub;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class LicenseCodesClientTest {
-  private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
-      ImmutableList.copyOf(
-          Lists.<ApiMethodDescriptor>newArrayList(
-              getMethodDescriptor, testIamPermissionsMethodDescriptor));
-  private static final MockHttpService mockService =
-      new MockHttpService(METHOD_DESCRIPTORS, LicenseCodesStubSettings.getDefaultEndpoint());
-
+  private static MockHttpService mockService;
   private static LicenseCodesClient client;
-  private static LicenseCodesSettings clientSettings;
 
   @BeforeClass
-  public static void setUp() throws IOException {
-    clientSettings =
+  public static void startStaticServer() throws IOException {
+    mockService =
+        new MockHttpService(
+            HttpJsonLicenseCodesStub.getMethodDescriptors(),
+            LicenseCodesSettings.getDefaultEndpoint());
+    LicenseCodesSettings settings =
         LicenseCodesSettings.newBuilder()
             .setTransportChannelProvider(
                 LicenseCodesSettings.defaultHttpJsonTransportProviderBuilder()
@@ -61,43 +56,39 @@ public class LicenseCodesClientTest {
                     .build())
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
-    client = LicenseCodesClient.create(clientSettings);
-  }
-
-  @After
-  public void cleanUp() {
-    mockService.reset();
+    client = LicenseCodesClient.create(settings);
   }
 
   @AfterClass
-  public static void tearDown() throws Exception {
+  public static void stopServer() {
     client.close();
   }
 
+  @Before
+  public void setUp() {}
+
+  @After
+  public void tearDown() throws Exception {
+    mockService.reset();
+  }
+
   @Test
-  @SuppressWarnings("all")
-  public void getTest() {
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String id = "id3355";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String selfLink = "selfLink-1691268851";
-    boolean transferable = false;
+  public void getTest() throws Exception {
     LicenseCode expectedResponse =
         LicenseCode.newBuilder()
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setId(id)
-            .setKind(kind)
-            .setName(name)
-            .setSelfLink(selfLink)
-            .setTransferable(transferable)
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setId("id3355")
+            .setKind("kind3292052")
+            .addAllLicenseAlias(new ArrayList<LicenseCodeLicenseAlias>())
+            .setName("name3373707")
+            .setSelfLink("selfLink1191800166")
+            .setTransferable(true)
             .build();
     mockService.addResponse(expectedResponse);
 
     String project = "project-309310695";
-    String licenseCode = "licenseCode1612079915";
+    String licenseCode = "licenseCode-641557042";
 
     LicenseCode actualResponse = client.get(project, licenseCode);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -118,28 +109,26 @@ public class LicenseCodesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-      String licenseCode = "licenseCode1612079915";
-
+      String licenseCode = "licenseCode-641557042";
       client.get(project, licenseCode);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void testIamPermissionsTest() {
-    TestPermissionsResponse expectedResponse = TestPermissionsResponse.newBuilder().build();
+  public void testIamPermissionsTest() throws Exception {
+    TestPermissionsResponse expectedResponse =
+        TestPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockService.addResponse(expectedResponse);
 
     String project = "project-309310695";
@@ -167,11 +156,10 @@ public class LicenseCodesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void testIamPermissionsExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -179,11 +167,10 @@ public class LicenseCodesClientTest {
       String resource = "resource-341064690";
       TestPermissionsRequest testPermissionsRequestResource =
           TestPermissionsRequest.newBuilder().build();
-
       client.testIamPermissions(project, resource, testPermissionsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 }

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,29 +31,27 @@ import com.google.cloud.compute.v1.stub.VpnTunnelsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The VpnTunnels API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String vpnTunnel = "";
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String vpnTunnel = "vpnTunnel452443772";
  *   Operation response = vpnTunnelsClient.delete(project, region, vpnTunnel);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the vpnTunnelsClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the VpnTunnelsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -80,30 +79,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * VpnTunnelsSettings vpnTunnelsSettings =
  *     VpnTunnelsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * VpnTunnelsClient vpnTunnelsClient =
- *     VpnTunnelsClient.create(vpnTunnelsSettings);
- * </code>
- * </pre>
+ * VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create(vpnTunnelsSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * VpnTunnelsSettings vpnTunnelsSettings =
  *     VpnTunnelsSettings.newBuilder().setEndpoint(myEndpoint).build();
- * VpnTunnelsClient vpnTunnelsClient =
- *     VpnTunnelsClient.create(vpnTunnelsSettings);
- * </code>
- * </pre>
+ * VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create(vpnTunnelsSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class VpnTunnelsClient implements BackgroundResource {
   private final VpnTunnelsSettings settings;
   private final VpnTunnelsStub stub;
@@ -123,7 +117,7 @@ public class VpnTunnelsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of VpnTunnelsClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use VpnTunnelsSettings}.
+   * advanced usage - prefer using create(VpnTunnelsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final VpnTunnelsClient create(VpnTunnelsStub stub) {
@@ -154,20 +148,21 @@ public class VpnTunnelsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of VPN tunnels.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, VpnTunnelsScopedList&gt; element : vpnTunnelsClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, VpnTunnelsScopedList> element :
+   *       vpnTunnelsClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -178,23 +173,30 @@ public class VpnTunnelsClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of VPN tunnels.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
-   *   String project = "";
-   *   AggregatedListVpnTunnelsRequest request = AggregatedListVpnTunnelsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, VpnTunnelsScopedList&gt; element : vpnTunnelsClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListVpnTunnelsRequest request =
+   *       AggregatedListVpnTunnelsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, VpnTunnelsScopedList> element :
+   *       vpnTunnelsClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -203,46 +205,59 @@ public class VpnTunnelsClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of VPN tunnels.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
-   *   String project = "";
-   *   AggregatedListVpnTunnelsRequest request = AggregatedListVpnTunnelsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = vpnTunnelsClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, VpnTunnelsScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListVpnTunnelsRequest request =
+   *       AggregatedListVpnTunnelsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, VpnTunnelsScopedList>> future =
+   *       vpnTunnelsClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, VpnTunnelsScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListVpnTunnelsRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of VPN tunnels.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
-   *   String project = "";
-   *   AggregatedListVpnTunnelsRequest request = AggregatedListVpnTunnelsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListVpnTunnelsRequest request =
+   *       AggregatedListVpnTunnelsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     VpnTunnelAggregatedList response = vpnTunnelsClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, VpnTunnelsScopedList&gt; element : response.getItemsMap()) {
+   *     for (Map.Entry<String, VpnTunnelsScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -253,27 +268,27 @@ public class VpnTunnelsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListVpnTunnelsRequest, VpnTunnelAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified VpnTunnel resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String vpnTunnel = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String vpnTunnel = "vpnTunnel452443772";
    *   Operation response = vpnTunnelsClient.delete(project, region, vpnTunnel);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -290,25 +305,24 @@ public class VpnTunnelsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified VpnTunnel resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String vpnTunnel = "";
-   *   DeleteVpnTunnelRequest request = DeleteVpnTunnelRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setVpnTunnel(vpnTunnel)
-   *     .build();
+   *   DeleteVpnTunnelRequest request =
+   *       DeleteVpnTunnelRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setVpnTunnel("vpnTunnel452443772")
+   *           .build();
    *   Operation response = vpnTunnelsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -317,47 +331,46 @@ public class VpnTunnelsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified VpnTunnel resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String vpnTunnel = "";
-   *   DeleteVpnTunnelRequest request = DeleteVpnTunnelRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setVpnTunnel(vpnTunnel)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = vpnTunnelsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteVpnTunnelRequest request =
+   *       DeleteVpnTunnelRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setVpnTunnel("vpnTunnel452443772")
+   *           .build();
+   *   ApiFuture<Operation> future = vpnTunnelsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteVpnTunnelRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified VpnTunnel resource. Gets a list of available VPN tunnels by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String vpnTunnel = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String vpnTunnel = "vpnTunnel452443772";
    *   VpnTunnel response = vpnTunnelsClient.get(project, region, vpnTunnel);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -374,26 +387,24 @@ public class VpnTunnelsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified VpnTunnel resource. Gets a list of available VPN tunnels by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String vpnTunnel = "";
-   *   GetVpnTunnelRequest request = GetVpnTunnelRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setVpnTunnel(vpnTunnel)
-   *     .build();
+   *   GetVpnTunnelRequest request =
+   *       GetVpnTunnelRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setVpnTunnel("vpnTunnel452443772")
+   *           .build();
    *   VpnTunnel response = vpnTunnelsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -402,48 +413,46 @@ public class VpnTunnelsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified VpnTunnel resource. Gets a list of available VPN tunnels by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String vpnTunnel = "";
-   *   GetVpnTunnelRequest request = GetVpnTunnelRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setVpnTunnel(vpnTunnel)
-   *     .build();
-   *   ApiFuture&lt;VpnTunnel&gt; future = vpnTunnelsClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetVpnTunnelRequest request =
+   *       GetVpnTunnelRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setVpnTunnel("vpnTunnel452443772")
+   *           .build();
+   *   ApiFuture<VpnTunnel> future = vpnTunnelsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   VpnTunnel response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetVpnTunnelRequest, VpnTunnel> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a VpnTunnel resource in the specified project and region using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   VpnTunnel vpnTunnelResource = VpnTunnel.newBuilder().build();
    *   Operation response = vpnTunnelsClient.insert(project, region, vpnTunnelResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -460,26 +469,25 @@ public class VpnTunnelsClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a VpnTunnel resource in the specified project and region using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   VpnTunnel vpnTunnelResource = VpnTunnel.newBuilder().build();
-   *   InsertVpnTunnelRequest request = InsertVpnTunnelRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setVpnTunnelResource(vpnTunnelResource)
-   *     .build();
+   *   InsertVpnTunnelRequest request =
+   *       InsertVpnTunnelRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setVpnTunnelResource(VpnTunnel.newBuilder().build())
+   *           .build();
    *   Operation response = vpnTunnelsClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -488,48 +496,47 @@ public class VpnTunnelsClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a VpnTunnel resource in the specified project and region using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   VpnTunnel vpnTunnelResource = VpnTunnel.newBuilder().build();
-   *   InsertVpnTunnelRequest request = InsertVpnTunnelRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setVpnTunnelResource(vpnTunnelResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = vpnTunnelsClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertVpnTunnelRequest request =
+   *       InsertVpnTunnelRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setVpnTunnelResource(VpnTunnel.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = vpnTunnelsClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertVpnTunnelRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of VpnTunnel resources contained in the specified project and region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   for (VpnTunnel element : vpnTunnelsClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -541,25 +548,29 @@ public class VpnTunnelsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of VpnTunnel resources contained in the specified project and region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListVpnTunnelsRequest request = ListVpnTunnelsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListVpnTunnelsRequest request =
+   *       ListVpnTunnelsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (VpnTunnel element : vpnTunnelsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -568,49 +579,57 @@ public class VpnTunnelsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of VpnTunnel resources contained in the specified project and region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListVpnTunnelsRequest request = ListVpnTunnelsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = vpnTunnelsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListVpnTunnelsRequest request =
+   *       ListVpnTunnelsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<VpnTunnel> future = vpnTunnelsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (VpnTunnel element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListVpnTunnelsRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of VpnTunnel resources contained in the specified project and region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListVpnTunnelsRequest request = ListVpnTunnelsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListVpnTunnelsRequest request =
+   *       ListVpnTunnelsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     VpnTunnelList response = vpnTunnelsClient.listCallable().call(request);
-   *     for (VpnTunnel element : response.getItemsList()) {
+   *     for (VpnTunnel element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -621,7 +640,7 @@ public class VpnTunnelsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListVpnTunnelsRequest, VpnTunnelList> listCallable() {
     return stub.listCallable();
@@ -661,7 +680,7 @@ public class VpnTunnelsClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListVpnTunnelsRequest,
           VpnTunnelAggregatedList,
-          Entry<String, VpnTunnelsScopedList>,
+          Map.Entry<String, VpnTunnelsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -669,7 +688,7 @@ public class VpnTunnelsClient implements BackgroundResource {
         PageContext<
                 AggregatedListVpnTunnelsRequest,
                 VpnTunnelAggregatedList,
-                Entry<String, VpnTunnelsScopedList>>
+                Map.Entry<String, VpnTunnelsScopedList>>
             context,
         ApiFuture<VpnTunnelAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -694,14 +713,14 @@ public class VpnTunnelsClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListVpnTunnelsRequest,
           VpnTunnelAggregatedList,
-          Entry<String, VpnTunnelsScopedList>,
+          Map.Entry<String, VpnTunnelsScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListVpnTunnelsRequest,
                 VpnTunnelAggregatedList,
-                Entry<String, VpnTunnelsScopedList>>
+                Map.Entry<String, VpnTunnelsScopedList>>
             context,
         VpnTunnelAggregatedList response) {
       super(context, response);
@@ -716,7 +735,7 @@ public class VpnTunnelsClient implements BackgroundResource {
         PageContext<
                 AggregatedListVpnTunnelsRequest,
                 VpnTunnelAggregatedList,
-                Entry<String, VpnTunnelsScopedList>>
+                Map.Entry<String, VpnTunnelsScopedList>>
             context,
         VpnTunnelAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -727,7 +746,7 @@ public class VpnTunnelsClient implements BackgroundResource {
         PageContext<
                 AggregatedListVpnTunnelsRequest,
                 VpnTunnelAggregatedList,
-                Entry<String, VpnTunnelsScopedList>>
+                Map.Entry<String, VpnTunnelsScopedList>>
             context,
         ApiFuture<VpnTunnelAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -738,7 +757,7 @@ public class VpnTunnelsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListVpnTunnelsRequest,
           VpnTunnelAggregatedList,
-          Entry<String, VpnTunnelsScopedList>,
+          Map.Entry<String, VpnTunnelsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

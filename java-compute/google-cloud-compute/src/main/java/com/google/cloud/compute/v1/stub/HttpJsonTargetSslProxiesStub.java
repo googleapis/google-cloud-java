@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.TargetSslProxiesClient.ListPagedResponse;
@@ -43,27 +44,26 @@ import com.google.cloud.compute.v1.SetSslPolicyTargetSslProxyRequest;
 import com.google.cloud.compute.v1.TargetSslProxy;
 import com.google.cloud.compute.v1.TargetSslProxyList;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the TargetSslProxies service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteTargetSslProxyRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteTargetSslProxyRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteTargetSslProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetSslProxies.Delete")
+              .setFullMethodName("google.cloud.compute.v1.TargetSslProxies/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteTargetSslProxyRequest>newBuilder()
@@ -102,7 +102,7 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                           new FieldsExtractor<DeleteTargetSslProxyRequest, String>() {
                             @Override
                             public String extract(DeleteTargetSslProxyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -112,11 +112,10 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetTargetSslProxyRequest, TargetSslProxy>
+  private static final ApiMethodDescriptor<GetTargetSslProxyRequest, TargetSslProxy>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetTargetSslProxyRequest, TargetSslProxy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetSslProxies.Get")
+              .setFullMethodName("google.cloud.compute.v1.TargetSslProxies/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetTargetSslProxyRequest>newBuilder()
@@ -143,7 +142,6 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetTargetSslProxyRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -151,7 +149,7 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                           new FieldsExtractor<GetTargetSslProxyRequest, String>() {
                             @Override
                             public String extract(GetTargetSslProxyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -161,11 +159,10 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertTargetSslProxyRequest, Operation>
+  private static final ApiMethodDescriptor<InsertTargetSslProxyRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertTargetSslProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetSslProxies.Insert")
+              .setFullMethodName("google.cloud.compute.v1.TargetSslProxies/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertTargetSslProxyRequest>newBuilder()
@@ -215,11 +212,10 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListTargetSslProxiesRequest, TargetSslProxyList>
+  private static final ApiMethodDescriptor<ListTargetSslProxiesRequest, TargetSslProxyList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListTargetSslProxiesRequest, TargetSslProxyList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetSslProxies.List")
+              .setFullMethodName("google.cloud.compute.v1.TargetSslProxies/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListTargetSslProxiesRequest>newBuilder()
@@ -272,7 +268,7 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                           new FieldsExtractor<ListTargetSslProxiesRequest, String>() {
                             @Override
                             public String extract(ListTargetSslProxiesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -282,11 +278,10 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetBackendServiceTargetSslProxyRequest, Operation>
+  private static final ApiMethodDescriptor<SetBackendServiceTargetSslProxyRequest, Operation>
       setBackendServiceMethodDescriptor =
           ApiMethodDescriptor.<SetBackendServiceTargetSslProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetSslProxies.SetBackendService")
+              .setFullMethodName("google.cloud.compute.v1.TargetSslProxies/SetBackendService")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetBackendServiceTargetSslProxyRequest>newBuilder()
@@ -340,11 +335,10 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetProxyHeaderTargetSslProxyRequest, Operation>
+  private static final ApiMethodDescriptor<SetProxyHeaderTargetSslProxyRequest, Operation>
       setProxyHeaderMethodDescriptor =
           ApiMethodDescriptor.<SetProxyHeaderTargetSslProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetSslProxies.SetProxyHeader")
+              .setFullMethodName("google.cloud.compute.v1.TargetSslProxies/SetProxyHeader")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetProxyHeaderTargetSslProxyRequest>newBuilder()
@@ -397,11 +391,10 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetSslCertificatesTargetSslProxyRequest, Operation>
+  private static final ApiMethodDescriptor<SetSslCertificatesTargetSslProxyRequest, Operation>
       setSslCertificatesMethodDescriptor =
           ApiMethodDescriptor.<SetSslCertificatesTargetSslProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetSslProxies.SetSslCertificates")
+              .setFullMethodName("google.cloud.compute.v1.TargetSslProxies/SetSslCertificates")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetSslCertificatesTargetSslProxyRequest>newBuilder()
@@ -456,11 +449,10 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetSslPolicyTargetSslProxyRequest, Operation>
+  private static final ApiMethodDescriptor<SetSslPolicyTargetSslProxyRequest, Operation>
       setSslPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetSslPolicyTargetSslProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetSslProxies.SetSslPolicy")
+              .setFullMethodName("google.cloud.compute.v1.TargetSslProxies/SetSslPolicy")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetSslPolicyTargetSslProxyRequest>newBuilder()
@@ -513,8 +505,6 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteTargetSslProxyRequest, Operation> deleteCallable;
   private final UnaryCallable<GetTargetSslProxyRequest, TargetSslProxy> getCallable;
   private final UnaryCallable<InsertTargetSslProxyRequest, Operation> insertCallable;
@@ -528,6 +518,7 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
       setSslCertificatesCallable;
   private final UnaryCallable<SetSslPolicyTargetSslProxyRequest, Operation> setSslPolicyCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonTargetSslProxiesStub create(TargetSslProxiesStubSettings settings)
@@ -638,43 +629,67 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
         callableFactory.createUnaryCallable(
             setSslPolicyTransportSettings, settings.setSslPolicySettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(setBackendServiceMethodDescriptor);
+    methodDescriptors.add(setProxyHeaderMethodDescriptor);
+    methodDescriptors.add(setSslCertificatesMethodDescriptor);
+    methodDescriptors.add(setSslPolicyMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteTargetSslProxyRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetTargetSslProxyRequest, TargetSslProxy> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertTargetSslProxyRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListTargetSslProxiesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListTargetSslProxiesRequest, TargetSslProxyList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListTargetSslProxiesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<SetBackendServiceTargetSslProxyRequest, Operation>
       setBackendServiceCallable() {
     return setBackendServiceCallable;
   }
 
+  @Override
   public UnaryCallable<SetProxyHeaderTargetSslProxyRequest, Operation> setProxyHeaderCallable() {
     return setProxyHeaderCallable;
   }
 
+  @Override
   public UnaryCallable<SetSslCertificatesTargetSslProxyRequest, Operation>
       setSslCertificatesCallable() {
     return setSslCertificatesCallable;
   }
 
+  @Override
   public UnaryCallable<SetSslPolicyTargetSslProxyRequest, Operation> setSslPolicyCallable() {
     return setSslPolicyCallable;
   }

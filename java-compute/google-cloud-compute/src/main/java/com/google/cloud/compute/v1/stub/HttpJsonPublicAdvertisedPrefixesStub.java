@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.PublicAdvertisedPrefixesClient.ListPagedResponse;
@@ -40,27 +41,26 @@ import com.google.cloud.compute.v1.PatchPublicAdvertisedPrefixeRequest;
 import com.google.cloud.compute.v1.PublicAdvertisedPrefix;
 import com.google.cloud.compute.v1.PublicAdvertisedPrefixList;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the PublicAdvertisedPrefixes service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefixesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeletePublicAdvertisedPrefixeRequest, Operation>
+  private static final ApiMethodDescriptor<DeletePublicAdvertisedPrefixeRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeletePublicAdvertisedPrefixeRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.PublicAdvertisedPrefixes.Delete")
+              .setFullMethodName("google.cloud.compute.v1.PublicAdvertisedPrefixes/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeletePublicAdvertisedPrefixeRequest>newBuilder()
@@ -102,7 +102,7 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                           new FieldsExtractor<DeletePublicAdvertisedPrefixeRequest, String>() {
                             @Override
                             public String extract(DeletePublicAdvertisedPrefixeRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -112,12 +112,12 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetPublicAdvertisedPrefixeRequest, PublicAdvertisedPrefix>
+  private static final ApiMethodDescriptor<
+          GetPublicAdvertisedPrefixeRequest, PublicAdvertisedPrefix>
       getMethodDescriptor =
           ApiMethodDescriptor
               .<GetPublicAdvertisedPrefixeRequest, PublicAdvertisedPrefix>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.PublicAdvertisedPrefixes.Get")
+              .setFullMethodName("google.cloud.compute.v1.PublicAdvertisedPrefixes/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetPublicAdvertisedPrefixeRequest>newBuilder()
@@ -148,7 +148,6 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetPublicAdvertisedPrefixeRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -156,7 +155,7 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                           new FieldsExtractor<GetPublicAdvertisedPrefixeRequest, String>() {
                             @Override
                             public String extract(GetPublicAdvertisedPrefixeRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -166,11 +165,10 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertPublicAdvertisedPrefixeRequest, Operation>
+  private static final ApiMethodDescriptor<InsertPublicAdvertisedPrefixeRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertPublicAdvertisedPrefixeRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.PublicAdvertisedPrefixes.Insert")
+              .setFullMethodName("google.cloud.compute.v1.PublicAdvertisedPrefixes/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertPublicAdvertisedPrefixeRequest>newBuilder()
@@ -221,13 +219,12 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListPublicAdvertisedPrefixesRequest, PublicAdvertisedPrefixList>
       listMethodDescriptor =
           ApiMethodDescriptor
               .<ListPublicAdvertisedPrefixesRequest, PublicAdvertisedPrefixList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.PublicAdvertisedPrefixes.List")
+              .setFullMethodName("google.cloud.compute.v1.PublicAdvertisedPrefixes/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListPublicAdvertisedPrefixesRequest>newBuilder()
@@ -281,7 +278,7 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                           new FieldsExtractor<ListPublicAdvertisedPrefixesRequest, String>() {
                             @Override
                             public String extract(ListPublicAdvertisedPrefixesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -291,11 +288,10 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchPublicAdvertisedPrefixeRequest, Operation>
+  private static final ApiMethodDescriptor<PatchPublicAdvertisedPrefixeRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchPublicAdvertisedPrefixeRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.PublicAdvertisedPrefixes.Patch")
+              .setFullMethodName("google.cloud.compute.v1.PublicAdvertisedPrefixes/Patch")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchPublicAdvertisedPrefixeRequest>newBuilder()
@@ -350,8 +346,6 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeletePublicAdvertisedPrefixeRequest, Operation> deleteCallable;
   private final UnaryCallable<GetPublicAdvertisedPrefixeRequest, PublicAdvertisedPrefix>
       getCallable;
@@ -362,6 +356,7 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
       listPagedCallable;
   private final UnaryCallable<PatchPublicAdvertisedPrefixeRequest, Operation> patchCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonPublicAdvertisedPrefixesStub create(
@@ -448,30 +443,48 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeletePublicAdvertisedPrefixeRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetPublicAdvertisedPrefixeRequest, PublicAdvertisedPrefix> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertPublicAdvertisedPrefixeRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListPublicAdvertisedPrefixesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListPublicAdvertisedPrefixesRequest, PublicAdvertisedPrefixList>
       listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListPublicAdvertisedPrefixesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchPublicAdvertisedPrefixeRequest, Operation> patchCallable() {
     return patchCallable;
   }

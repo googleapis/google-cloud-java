@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.InterconnectAttachmentsClient.AggregatedListPagedResponse;
@@ -34,7 +35,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link InterconnectAttachmentsClient}.
  *
@@ -51,24 +52,26 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of delete to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * InterconnectAttachmentsSettings.Builder interconnectAttachmentsSettingsBuilder =
  *     InterconnectAttachmentsSettings.newBuilder();
  * interconnectAttachmentsSettingsBuilder
  *     .deleteSettings()
  *     .setRetrySettings(
- *         interconnectAttachmentsSettingsBuilder.deleteSettings().getRetrySettings().toBuilder()
+ *         interconnectAttachmentsSettingsBuilder
+ *             .deleteSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * InterconnectAttachmentsSettings interconnectAttachmentsSettings = interconnectAttachmentsSettingsBuilder.build();
- * </code>
- * </pre>
+ * InterconnectAttachmentsSettings interconnectAttachmentsSettings =
+ *     interconnectAttachmentsSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class InterconnectAttachmentsSettings
     extends ClientSettings<InterconnectAttachmentsSettings> {
+
   /** Returns the object with the settings used for calls to aggregatedList. */
   public PagedCallSettings<
           AggregatedListInterconnectAttachmentsRequest,
@@ -119,10 +122,6 @@ public class InterconnectAttachmentsSettings
   public static String getDefaultEndpoint() {
     return InterconnectAttachmentsStubSettings.getDefaultEndpoint();
   }
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return InterconnectAttachmentsStubSettings.getDefaultServicePort();
-  }
 
   /** Returns the default service scopes. */
   public static List<String> getDefaultServiceScopes() {
@@ -171,16 +170,13 @@ public class InterconnectAttachmentsSettings
   /** Builder for InterconnectAttachmentsSettings. */
   public static class Builder
       extends ClientSettings.Builder<InterconnectAttachmentsSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(InterconnectAttachmentsStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(InterconnectAttachmentsStubSettings.newBuilder());
     }
 
     protected Builder(InterconnectAttachmentsSettings settings) {
@@ -191,11 +187,15 @@ public class InterconnectAttachmentsSettings
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(InterconnectAttachmentsStubSettings.newBuilder());
+    }
+
     public InterconnectAttachmentsStubSettings.Builder getStubSettingsBuilder() {
       return ((InterconnectAttachmentsStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

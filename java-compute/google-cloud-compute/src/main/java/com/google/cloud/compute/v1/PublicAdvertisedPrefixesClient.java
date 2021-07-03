@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,24 +34,23 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The PublicAdvertisedPrefixes API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient = PublicAdvertisedPrefixesClient.create()) {
- *   String project = "";
- *   String publicAdvertisedPrefix = "";
+ * <pre>{@code
+ * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+ *     PublicAdvertisedPrefixesClient.create()) {
+ *   String project = "project-309310695";
+ *   String publicAdvertisedPrefix = "publicAdvertisedPrefix1506440856";
  *   Operation response = publicAdvertisedPrefixesClient.delete(project, publicAdvertisedPrefix);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the publicAdvertisedPrefixesClient object to clean up
+ * <p>Note: close() needs to be called on the PublicAdvertisedPrefixesClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -79,30 +79,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PublicAdvertisedPrefixesSettings publicAdvertisedPrefixesSettings =
  *     PublicAdvertisedPrefixesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
  *     PublicAdvertisedPrefixesClient.create(publicAdvertisedPrefixesSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PublicAdvertisedPrefixesSettings publicAdvertisedPrefixesSettings =
  *     PublicAdvertisedPrefixesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
  *     PublicAdvertisedPrefixesClient.create(publicAdvertisedPrefixesSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class PublicAdvertisedPrefixesClient implements BackgroundResource {
   private final PublicAdvertisedPrefixesSettings settings;
   private final PublicAdvertisedPrefixesStub stub;
@@ -124,7 +121,7 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of PublicAdvertisedPrefixesClient, using the given stub for making
-   * calls. This is for advanced usage - prefer to use PublicAdvertisedPrefixesSettings}.
+   * calls. This is for advanced usage - prefer using create(PublicAdvertisedPrefixesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final PublicAdvertisedPrefixesClient create(PublicAdvertisedPrefixesStub stub) {
@@ -157,19 +154,20 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified PublicAdvertisedPrefix
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient = PublicAdvertisedPrefixesClient.create()) {
-   *   String project = "";
-   *   String publicAdvertisedPrefix = "";
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   String project = "project-309310695";
+   *   String publicAdvertisedPrefix = "publicAdvertisedPrefix1506440856";
    *   Operation response = publicAdvertisedPrefixesClient.delete(project, publicAdvertisedPrefix);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param publicAdvertisedPrefix Name of the PublicAdvertisedPrefix resource to delete.
@@ -184,23 +182,24 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified PublicAdvertisedPrefix
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient = PublicAdvertisedPrefixesClient.create()) {
-   *   String project = "";
-   *   String publicAdvertisedPrefix = "";
-   *   DeletePublicAdvertisedPrefixeRequest request = DeletePublicAdvertisedPrefixeRequest.newBuilder()
-   *     .setProject(project)
-   *     .setPublicAdvertisedPrefix(publicAdvertisedPrefix)
-   *     .build();
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   DeletePublicAdvertisedPrefixeRequest request =
+   *       DeletePublicAdvertisedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicAdvertisedPrefix("publicAdvertisedPrefix1506440856")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = publicAdvertisedPrefixesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -209,43 +208,47 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified PublicAdvertisedPrefix
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient = PublicAdvertisedPrefixesClient.create()) {
-   *   String project = "";
-   *   String publicAdvertisedPrefix = "";
-   *   DeletePublicAdvertisedPrefixeRequest request = DeletePublicAdvertisedPrefixeRequest.newBuilder()
-   *     .setProject(project)
-   *     .setPublicAdvertisedPrefix(publicAdvertisedPrefix)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = publicAdvertisedPrefixesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   DeletePublicAdvertisedPrefixeRequest request =
+   *       DeletePublicAdvertisedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicAdvertisedPrefix("publicAdvertisedPrefix1506440856")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       publicAdvertisedPrefixesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeletePublicAdvertisedPrefixeRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified PublicAdvertisedPrefix resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient = PublicAdvertisedPrefixesClient.create()) {
-   *   String project = "";
-   *   String publicAdvertisedPrefix = "";
-   *   PublicAdvertisedPrefix response = publicAdvertisedPrefixesClient.get(project, publicAdvertisedPrefix);
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   String project = "project-309310695";
+   *   String publicAdvertisedPrefix = "publicAdvertisedPrefix1506440856";
+   *   PublicAdvertisedPrefix response =
+   *       publicAdvertisedPrefixesClient.get(project, publicAdvertisedPrefix);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param publicAdvertisedPrefix Name of the PublicAdvertisedPrefix resource to return.
@@ -260,23 +263,23 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified PublicAdvertisedPrefix resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient = PublicAdvertisedPrefixesClient.create()) {
-   *   String project = "";
-   *   String publicAdvertisedPrefix = "";
-   *   GetPublicAdvertisedPrefixeRequest request = GetPublicAdvertisedPrefixeRequest.newBuilder()
-   *     .setProject(project)
-   *     .setPublicAdvertisedPrefix(publicAdvertisedPrefix)
-   *     .build();
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   GetPublicAdvertisedPrefixeRequest request =
+   *       GetPublicAdvertisedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicAdvertisedPrefix("publicAdvertisedPrefix1506440856")
+   *           .build();
    *   PublicAdvertisedPrefix response = publicAdvertisedPrefixesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -285,45 +288,49 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified PublicAdvertisedPrefix resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient = PublicAdvertisedPrefixesClient.create()) {
-   *   String project = "";
-   *   String publicAdvertisedPrefix = "";
-   *   GetPublicAdvertisedPrefixeRequest request = GetPublicAdvertisedPrefixeRequest.newBuilder()
-   *     .setProject(project)
-   *     .setPublicAdvertisedPrefix(publicAdvertisedPrefix)
-   *     .build();
-   *   ApiFuture&lt;PublicAdvertisedPrefix&gt; future = publicAdvertisedPrefixesClient.getCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   GetPublicAdvertisedPrefixeRequest request =
+   *       GetPublicAdvertisedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicAdvertisedPrefix("publicAdvertisedPrefix1506440856")
+   *           .build();
+   *   ApiFuture<PublicAdvertisedPrefix> future =
+   *       publicAdvertisedPrefixesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   PublicAdvertisedPrefix response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetPublicAdvertisedPrefixeRequest, PublicAdvertisedPrefix>
       getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a PublicAdvertisedPrefix in the specified project using the parameters that are
    * included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient = PublicAdvertisedPrefixesClient.create()) {
-   *   String project = "";
-   *   PublicAdvertisedPrefix publicAdvertisedPrefixResource = PublicAdvertisedPrefix.newBuilder().build();
-   *   Operation response = publicAdvertisedPrefixesClient.insert(project, publicAdvertisedPrefixResource);
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   String project = "project-309310695";
+   *   PublicAdvertisedPrefix publicAdvertisedPrefixResource =
+   *       PublicAdvertisedPrefix.newBuilder().build();
+   *   Operation response =
+   *       publicAdvertisedPrefixesClient.insert(project, publicAdvertisedPrefixResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param publicAdvertisedPrefixResource The body resource for this request
@@ -339,24 +346,25 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a PublicAdvertisedPrefix in the specified project using the parameters that are
    * included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient = PublicAdvertisedPrefixesClient.create()) {
-   *   String project = "";
-   *   PublicAdvertisedPrefix publicAdvertisedPrefixResource = PublicAdvertisedPrefix.newBuilder().build();
-   *   InsertPublicAdvertisedPrefixeRequest request = InsertPublicAdvertisedPrefixeRequest.newBuilder()
-   *     .setProject(project)
-   *     .setPublicAdvertisedPrefixResource(publicAdvertisedPrefixResource)
-   *     .build();
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   InsertPublicAdvertisedPrefixeRequest request =
+   *       InsertPublicAdvertisedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicAdvertisedPrefixResource(PublicAdvertisedPrefix.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = publicAdvertisedPrefixesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -365,45 +373,49 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a PublicAdvertisedPrefix in the specified project using the parameters that are
    * included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient = PublicAdvertisedPrefixesClient.create()) {
-   *   String project = "";
-   *   PublicAdvertisedPrefix publicAdvertisedPrefixResource = PublicAdvertisedPrefix.newBuilder().build();
-   *   InsertPublicAdvertisedPrefixeRequest request = InsertPublicAdvertisedPrefixeRequest.newBuilder()
-   *     .setProject(project)
-   *     .setPublicAdvertisedPrefixResource(publicAdvertisedPrefixResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = publicAdvertisedPrefixesClient.insertCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   InsertPublicAdvertisedPrefixeRequest request =
+   *       InsertPublicAdvertisedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicAdvertisedPrefixResource(PublicAdvertisedPrefix.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       publicAdvertisedPrefixesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertPublicAdvertisedPrefixeRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the PublicAdvertisedPrefixes for a project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient = PublicAdvertisedPrefixesClient.create()) {
-   *   String project = "";
-   *   for (PublicAdvertisedPrefix element : publicAdvertisedPrefixesClient.list(project).iterateAll()) {
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   String project = "project-309310695";
+   *   for (PublicAdvertisedPrefix element :
+   *       publicAdvertisedPrefixesClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -414,23 +426,30 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the PublicAdvertisedPrefixes for a project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient = PublicAdvertisedPrefixesClient.create()) {
-   *   String project = "";
-   *   ListPublicAdvertisedPrefixesRequest request = ListPublicAdvertisedPrefixesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (PublicAdvertisedPrefix element : publicAdvertisedPrefixesClient.list(request).iterateAll()) {
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   ListPublicAdvertisedPrefixesRequest request =
+   *       ListPublicAdvertisedPrefixesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (PublicAdvertisedPrefix element :
+   *       publicAdvertisedPrefixesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -439,46 +458,60 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the PublicAdvertisedPrefixes for a project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient = PublicAdvertisedPrefixesClient.create()) {
-   *   String project = "";
-   *   ListPublicAdvertisedPrefixesRequest request = ListPublicAdvertisedPrefixesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = publicAdvertisedPrefixesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   ListPublicAdvertisedPrefixesRequest request =
+   *       ListPublicAdvertisedPrefixesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<PublicAdvertisedPrefix> future =
+   *       publicAdvertisedPrefixesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (PublicAdvertisedPrefix element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListPublicAdvertisedPrefixesRequest, ListPagedResponse>
       listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the PublicAdvertisedPrefixes for a project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient = PublicAdvertisedPrefixesClient.create()) {
-   *   String project = "";
-   *   ListPublicAdvertisedPrefixesRequest request = ListPublicAdvertisedPrefixesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   ListPublicAdvertisedPrefixesRequest request =
+   *       ListPublicAdvertisedPrefixesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     PublicAdvertisedPrefixList response = publicAdvertisedPrefixesClient.listCallable().call(request);
-   *     for (PublicAdvertisedPrefix element : response.getItemsList()) {
+   *     PublicAdvertisedPrefixList response =
+   *         publicAdvertisedPrefixesClient.listCallable().call(request);
+   *     for (PublicAdvertisedPrefix element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -489,28 +522,32 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListPublicAdvertisedPrefixesRequest, PublicAdvertisedPrefixList>
       listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified Router resource with the data included in the request. This method
    * supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient = PublicAdvertisedPrefixesClient.create()) {
-   *   String project = "";
-   *   String publicAdvertisedPrefix = "";
-   *   PublicAdvertisedPrefix publicAdvertisedPrefixResource = PublicAdvertisedPrefix.newBuilder().build();
-   *   Operation response = publicAdvertisedPrefixesClient.patch(project, publicAdvertisedPrefix, publicAdvertisedPrefixResource);
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   String project = "project-309310695";
+   *   String publicAdvertisedPrefix = "publicAdvertisedPrefix1506440856";
+   *   PublicAdvertisedPrefix publicAdvertisedPrefixResource =
+   *       PublicAdvertisedPrefix.newBuilder().build();
+   *   Operation response =
+   *       publicAdvertisedPrefixesClient.patch(
+   *           project, publicAdvertisedPrefix, publicAdvertisedPrefixResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param publicAdvertisedPrefix Name of the PublicAdvertisedPrefix resource to patch.
@@ -530,26 +567,26 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified Router resource with the data included in the request. This method
    * supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient = PublicAdvertisedPrefixesClient.create()) {
-   *   String project = "";
-   *   String publicAdvertisedPrefix = "";
-   *   PublicAdvertisedPrefix publicAdvertisedPrefixResource = PublicAdvertisedPrefix.newBuilder().build();
-   *   PatchPublicAdvertisedPrefixeRequest request = PatchPublicAdvertisedPrefixeRequest.newBuilder()
-   *     .setProject(project)
-   *     .setPublicAdvertisedPrefix(publicAdvertisedPrefix)
-   *     .setPublicAdvertisedPrefixResource(publicAdvertisedPrefixResource)
-   *     .build();
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   PatchPublicAdvertisedPrefixeRequest request =
+   *       PatchPublicAdvertisedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicAdvertisedPrefix("publicAdvertisedPrefix1506440856")
+   *           .setPublicAdvertisedPrefixResource(PublicAdvertisedPrefix.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = publicAdvertisedPrefixesClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -558,28 +595,29 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified Router resource with the data included in the request. This method
    * supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient = PublicAdvertisedPrefixesClient.create()) {
-   *   String project = "";
-   *   String publicAdvertisedPrefix = "";
-   *   PublicAdvertisedPrefix publicAdvertisedPrefixResource = PublicAdvertisedPrefix.newBuilder().build();
-   *   PatchPublicAdvertisedPrefixeRequest request = PatchPublicAdvertisedPrefixeRequest.newBuilder()
-   *     .setProject(project)
-   *     .setPublicAdvertisedPrefix(publicAdvertisedPrefix)
-   *     .setPublicAdvertisedPrefixResource(publicAdvertisedPrefixResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = publicAdvertisedPrefixesClient.patchCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   PatchPublicAdvertisedPrefixeRequest request =
+   *       PatchPublicAdvertisedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicAdvertisedPrefix("publicAdvertisedPrefix1506440856")
+   *           .setPublicAdvertisedPrefixResource(PublicAdvertisedPrefix.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       publicAdvertisedPrefixesClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchPublicAdvertisedPrefixeRequest, Operation> patchCallable() {
     return stub.patchCallable();

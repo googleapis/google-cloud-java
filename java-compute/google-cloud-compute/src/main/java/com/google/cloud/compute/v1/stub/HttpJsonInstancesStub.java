@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.InstancesClient.AggregatedListPagedResponse;
@@ -88,27 +89,26 @@ import com.google.cloud.compute.v1.UpdateInstanceRequest;
 import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceRequest;
 import com.google.cloud.compute.v1.UpdateShieldedInstanceConfigInstanceRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the Instances service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonInstancesStub extends InstancesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<AddAccessConfigInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<AddAccessConfigInstanceRequest, Operation>
       addAccessConfigMethodDescriptor =
           ApiMethodDescriptor.<AddAccessConfigInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.AddAccessConfig")
+              .setFullMethodName("google.cloud.compute.v1.Instances/AddAccessConfig")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddAccessConfigInstanceRequest>newBuilder()
@@ -122,9 +122,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<AddAccessConfigInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -162,11 +162,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<AddResourcePoliciesInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<AddResourcePoliciesInstanceRequest, Operation>
       addResourcePoliciesMethodDescriptor =
           ApiMethodDescriptor.<AddResourcePoliciesInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.AddResourcePolicies")
+              .setFullMethodName("google.cloud.compute.v1.Instances/AddResourcePolicies")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddResourcePoliciesInstanceRequest>newBuilder()
@@ -180,9 +179,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<AddResourcePoliciesInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -219,11 +218,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<AggregatedListInstancesRequest, InstanceAggregatedList>
+  private static final ApiMethodDescriptor<AggregatedListInstancesRequest, InstanceAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor.<AggregatedListInstancesRequest, InstanceAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.Instances/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListInstancesRequest>newBuilder()
@@ -281,7 +279,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           new FieldsExtractor<AggregatedListInstancesRequest, String>() {
                             @Override
                             public String extract(AggregatedListInstancesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -291,11 +289,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<AttachDiskInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<AttachDiskInstanceRequest, Operation>
       attachDiskMethodDescriptor =
           ApiMethodDescriptor.<AttachDiskInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.AttachDisk")
+              .setFullMethodName("google.cloud.compute.v1.Instances/AttachDisk")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AttachDiskInstanceRequest>newBuilder()
@@ -307,9 +304,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<AttachDiskInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -349,11 +346,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<BulkInsertInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<BulkInsertInstanceRequest, Operation>
       bulkInsertMethodDescriptor =
           ApiMethodDescriptor.<BulkInsertInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.BulkInsert")
+              .setFullMethodName("google.cloud.compute.v1.Instances/BulkInsert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<BulkInsertInstanceRequest>newBuilder()
@@ -403,59 +399,60 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteInstanceRequest, Operation> deleteMethodDescriptor =
-      ApiMethodDescriptor.<DeleteInstanceRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Instances.Delete")
-          .setHttpMethod(HttpMethods.DELETE)
-          .setRequestFormatter(
-              ProtoMessageRequestFormatter.<DeleteInstanceRequest>newBuilder()
-                  .setPath(
-                      "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}",
-                      new FieldsExtractor<DeleteInstanceRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(DeleteInstanceRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<DeleteInstanceRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
-                          serializer.putPathParam(fields, "instance", request.getInstance());
-                          return fields;
-                        }
-                      })
-                  .setQueryParamsExtractor(
-                      new FieldsExtractor<DeleteInstanceRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(DeleteInstanceRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<DeleteInstanceRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
-                        }
-                      })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<DeleteInstanceRequest, String>() {
-                        @Override
-                        public String extract(DeleteInstanceRequest request) {
-                          return "";
-                        }
-                      })
-                  .build())
-          .setResponseParser(
-              ProtoMessageResponseParser.<Operation>newBuilder()
-                  .setDefaultInstance(Operation.getDefaultInstance())
-                  .build())
-          .build();
+  private static final ApiMethodDescriptor<DeleteInstanceRequest, Operation>
+      deleteMethodDescriptor =
+          ApiMethodDescriptor.<DeleteInstanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Instances/Delete")
+              .setHttpMethod(HttpMethods.DELETE)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteInstanceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}",
+                          new FieldsExtractor<DeleteInstanceRequest, Map<String, String>>() {
+                            @Override
+                            public Map<String, String> extract(DeleteInstanceRequest request) {
+                              Map<String, String> fields = new HashMap<>();
+                              ProtoRestSerializer<DeleteInstanceRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
+                              return fields;
+                            }
+                          })
+                      .setQueryParamsExtractor(
+                          new FieldsExtractor<DeleteInstanceRequest, Map<String, List<String>>>() {
+                            @Override
+                            public Map<String, List<String>> extract(
+                                DeleteInstanceRequest request) {
+                              Map<String, List<String>> fields = new HashMap<>();
+                              ProtoRestSerializer<DeleteInstanceRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
+                              return fields;
+                            }
+                          })
+                      .setRequestBodyExtractor(
+                          new FieldsExtractor<DeleteInstanceRequest, String>() {
+                            @Override
+                            public String extract(DeleteInstanceRequest request) {
+                              return null;
+                            }
+                          })
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteAccessConfigInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteAccessConfigInstanceRequest, Operation>
       deleteAccessConfigMethodDescriptor =
           ApiMethodDescriptor.<DeleteAccessConfigInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.DeleteAccessConfig")
+              .setFullMethodName("google.cloud.compute.v1.Instances/DeleteAccessConfig")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteAccessConfigInstanceRequest>newBuilder()
@@ -469,9 +466,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteAccessConfigInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -499,7 +496,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           new FieldsExtractor<DeleteAccessConfigInstanceRequest, String>() {
                             @Override
                             public String extract(DeleteAccessConfigInstanceRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -509,11 +506,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DetachDiskInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<DetachDiskInstanceRequest, Operation>
       detachDiskMethodDescriptor =
           ApiMethodDescriptor.<DetachDiskInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.DetachDisk")
+              .setFullMethodName("google.cloud.compute.v1.Instances/DetachDisk")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DetachDiskInstanceRequest>newBuilder()
@@ -525,9 +521,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DetachDiskInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -553,7 +549,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           new FieldsExtractor<DetachDiskInstanceRequest, String>() {
                             @Override
                             public String extract(DetachDiskInstanceRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -563,10 +559,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetInstanceRequest, Instance> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetInstanceRequest, Instance> getMethodDescriptor =
       ApiMethodDescriptor.<GetInstanceRequest, Instance>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Instances.Get")
+          .setFullMethodName("google.cloud.compute.v1.Instances/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetInstanceRequest>newBuilder()
@@ -578,9 +573,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<GetInstanceRequest> serializer =
                               ProtoRestSerializer.create();
+                          serializer.putPathParam(fields, "instance", request.getInstance());
                           serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "zone", request.getZone());
-                          serializer.putPathParam(fields, "instance", request.getInstance());
                           return fields;
                         }
                       })
@@ -591,7 +586,6 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetInstanceRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -599,7 +593,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       new FieldsExtractor<GetInstanceRequest, String>() {
                         @Override
                         public String extract(GetInstanceRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -609,14 +603,13 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
       getEffectiveFirewallsMethodDescriptor =
           ApiMethodDescriptor
               .<GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
                   newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.GetEffectiveFirewalls")
+              .setFullMethodName("google.cloud.compute.v1.Instances/GetEffectiveFirewalls")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetEffectiveFirewallsInstanceRequest>newBuilder()
@@ -630,9 +623,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetEffectiveFirewallsInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -654,7 +647,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           new FieldsExtractor<GetEffectiveFirewallsInstanceRequest, String>() {
                             @Override
                             public String extract(GetEffectiveFirewallsInstanceRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -665,11 +658,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetGuestAttributesInstanceRequest, GuestAttributes>
+  private static final ApiMethodDescriptor<GetGuestAttributesInstanceRequest, GuestAttributes>
       getGuestAttributesMethodDescriptor =
           ApiMethodDescriptor.<GetGuestAttributesInstanceRequest, GuestAttributes>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.GetGuestAttributes")
+              .setFullMethodName("google.cloud.compute.v1.Instances/GetGuestAttributes")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetGuestAttributesInstanceRequest>newBuilder()
@@ -683,9 +675,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetGuestAttributesInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -713,7 +705,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           new FieldsExtractor<GetGuestAttributesInstanceRequest, String>() {
                             @Override
                             public String extract(GetGuestAttributesInstanceRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -723,11 +715,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetIamPolicyInstanceRequest, Policy>
+  private static final ApiMethodDescriptor<GetIamPolicyInstanceRequest, Policy>
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyInstanceRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.GetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.Instances/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyInstanceRequest>newBuilder()
@@ -741,8 +732,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               ProtoRestSerializer<GetIamPolicyInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
                               serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(fields, "resource", request.getResource());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -768,7 +759,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           new FieldsExtractor<GetIamPolicyInstanceRequest, String>() {
                             @Override
                             public String extract(GetIamPolicyInstanceRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -778,11 +769,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetScreenshotInstanceRequest, Screenshot>
+  private static final ApiMethodDescriptor<GetScreenshotInstanceRequest, Screenshot>
       getScreenshotMethodDescriptor =
           ApiMethodDescriptor.<GetScreenshotInstanceRequest, Screenshot>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.GetScreenshot")
+              .setFullMethodName("google.cloud.compute.v1.Instances/GetScreenshot")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetScreenshotInstanceRequest>newBuilder()
@@ -795,9 +785,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetScreenshotInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -810,7 +800,6 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetScreenshotInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -818,7 +807,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           new FieldsExtractor<GetScreenshotInstanceRequest, String>() {
                             @Override
                             public String extract(GetScreenshotInstanceRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -828,11 +817,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetSerialPortOutputInstanceRequest, SerialPortOutput>
+  private static final ApiMethodDescriptor<GetSerialPortOutputInstanceRequest, SerialPortOutput>
       getSerialPortOutputMethodDescriptor =
           ApiMethodDescriptor.<GetSerialPortOutputInstanceRequest, SerialPortOutput>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.GetSerialPortOutput")
+              .setFullMethodName("google.cloud.compute.v1.Instances/GetSerialPortOutput")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetSerialPortOutputInstanceRequest>newBuilder()
@@ -846,9 +834,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetSerialPortOutputInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -874,7 +862,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           new FieldsExtractor<GetSerialPortOutputInstanceRequest, String>() {
                             @Override
                             public String extract(GetSerialPortOutputInstanceRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -884,13 +872,12 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           GetShieldedInstanceIdentityInstanceRequest, ShieldedInstanceIdentity>
       getShieldedInstanceIdentityMethodDescriptor =
           ApiMethodDescriptor
               .<GetShieldedInstanceIdentityInstanceRequest, ShieldedInstanceIdentity>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.GetShieldedInstanceIdentity")
+              .setFullMethodName("google.cloud.compute.v1.Instances/GetShieldedInstanceIdentity")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -905,9 +892,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetShieldedInstanceIdentityInstanceRequest>
                                   serializer = ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -921,7 +908,6 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetShieldedInstanceIdentityInstanceRequest>
                                   serializer = ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -931,7 +917,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                             @Override
                             public String extract(
                                 GetShieldedInstanceIdentityInstanceRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -941,125 +927,130 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertInstanceRequest, Operation> insertMethodDescriptor =
-      ApiMethodDescriptor.<InsertInstanceRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Instances.Insert")
-          .setHttpMethod(HttpMethods.POST)
-          .setRequestFormatter(
-              ProtoMessageRequestFormatter.<InsertInstanceRequest>newBuilder()
-                  .setPath(
-                      "/compute/v1/projects/{project}/zones/{zone}/instances",
-                      new FieldsExtractor<InsertInstanceRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(InsertInstanceRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<InsertInstanceRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
-                          return fields;
-                        }
-                      })
-                  .setQueryParamsExtractor(
-                      new FieldsExtractor<InsertInstanceRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(InsertInstanceRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<InsertInstanceRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          if (request.hasSourceInstanceTemplate()) {
-                            serializer.putQueryParam(
-                                fields,
-                                "sourceInstanceTemplate",
-                                request.getSourceInstanceTemplate());
-                          }
-                          return fields;
-                        }
-                      })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<InsertInstanceRequest, String>() {
-                        @Override
-                        public String extract(InsertInstanceRequest request) {
-                          return ProtoRestSerializer.create()
-                              .toBody("instanceResource", request.getInstanceResource());
-                        }
-                      })
-                  .build())
-          .setResponseParser(
-              ProtoMessageResponseParser.<Operation>newBuilder()
-                  .setDefaultInstance(Operation.getDefaultInstance())
-                  .build())
-          .build();
+  private static final ApiMethodDescriptor<InsertInstanceRequest, Operation>
+      insertMethodDescriptor =
+          ApiMethodDescriptor.<InsertInstanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Instances/Insert")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<InsertInstanceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/instances",
+                          new FieldsExtractor<InsertInstanceRequest, Map<String, String>>() {
+                            @Override
+                            public Map<String, String> extract(InsertInstanceRequest request) {
+                              Map<String, String> fields = new HashMap<>();
+                              ProtoRestSerializer<InsertInstanceRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
+                              return fields;
+                            }
+                          })
+                      .setQueryParamsExtractor(
+                          new FieldsExtractor<InsertInstanceRequest, Map<String, List<String>>>() {
+                            @Override
+                            public Map<String, List<String>> extract(
+                                InsertInstanceRequest request) {
+                              Map<String, List<String>> fields = new HashMap<>();
+                              ProtoRestSerializer<InsertInstanceRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
+                              if (request.hasSourceInstanceTemplate()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "sourceInstanceTemplate",
+                                    request.getSourceInstanceTemplate());
+                              }
+                              return fields;
+                            }
+                          })
+                      .setRequestBodyExtractor(
+                          new FieldsExtractor<InsertInstanceRequest, String>() {
+                            @Override
+                            public String extract(InsertInstanceRequest request) {
+                              return ProtoRestSerializer.create()
+                                  .toBody("instanceResource", request.getInstanceResource());
+                            }
+                          })
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListInstancesRequest, InstanceList> listMethodDescriptor =
-      ApiMethodDescriptor.<ListInstancesRequest, InstanceList>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Instances.List")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ProtoMessageRequestFormatter.<ListInstancesRequest>newBuilder()
-                  .setPath(
-                      "/compute/v1/projects/{project}/zones/{zone}/instances",
-                      new FieldsExtractor<ListInstancesRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(ListInstancesRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<ListInstancesRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
-                          return fields;
-                        }
-                      })
-                  .setQueryParamsExtractor(
-                      new FieldsExtractor<ListInstancesRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(ListInstancesRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<ListInstancesRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasFilter()) {
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
-                          }
-                          if (request.hasMaxResults()) {
-                            serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
-                          }
-                          if (request.hasOrderBy()) {
-                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                          }
-                          if (request.hasPageToken()) {
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                          }
-                          if (request.hasReturnPartialSuccess()) {
-                            serializer.putQueryParam(
-                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
-                          }
-                          return fields;
-                        }
-                      })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<ListInstancesRequest, String>() {
-                        @Override
-                        public String extract(ListInstancesRequest request) {
-                          return "";
-                        }
-                      })
-                  .build())
-          .setResponseParser(
-              ProtoMessageResponseParser.<InstanceList>newBuilder()
-                  .setDefaultInstance(InstanceList.getDefaultInstance())
-                  .build())
-          .build();
+  private static final ApiMethodDescriptor<ListInstancesRequest, InstanceList>
+      listMethodDescriptor =
+          ApiMethodDescriptor.<ListInstancesRequest, InstanceList>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Instances/List")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListInstancesRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/instances",
+                          new FieldsExtractor<ListInstancesRequest, Map<String, String>>() {
+                            @Override
+                            public Map<String, String> extract(ListInstancesRequest request) {
+                              Map<String, String> fields = new HashMap<>();
+                              ProtoRestSerializer<ListInstancesRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
+                              return fields;
+                            }
+                          })
+                      .setQueryParamsExtractor(
+                          new FieldsExtractor<ListInstancesRequest, Map<String, List<String>>>() {
+                            @Override
+                            public Map<String, List<String>> extract(ListInstancesRequest request) {
+                              Map<String, List<String>> fields = new HashMap<>();
+                              ProtoRestSerializer<ListInstancesRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
+                              return fields;
+                            }
+                          })
+                      .setRequestBodyExtractor(
+                          new FieldsExtractor<ListInstancesRequest, String>() {
+                            @Override
+                            public String extract(ListInstancesRequest request) {
+                              return null;
+                            }
+                          })
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<InstanceList>newBuilder()
+                      .setDefaultInstance(InstanceList.getDefaultInstance())
+                      .build())
+              .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListReferrersInstancesRequest, InstanceListReferrers>
+  private static final ApiMethodDescriptor<ListReferrersInstancesRequest, InstanceListReferrers>
       listReferrersMethodDescriptor =
           ApiMethodDescriptor.<ListReferrersInstancesRequest, InstanceListReferrers>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.ListReferrers")
+              .setFullMethodName("google.cloud.compute.v1.Instances/ListReferrers")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListReferrersInstancesRequest>newBuilder()
@@ -1073,9 +1064,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<ListReferrersInstancesRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -1115,7 +1106,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           new FieldsExtractor<ListReferrersInstancesRequest, String>() {
                             @Override
                             public String extract(ListReferrersInstancesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -1125,11 +1116,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<RemoveResourcePoliciesInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesMethodDescriptor =
           ApiMethodDescriptor.<RemoveResourcePoliciesInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.RemoveResourcePolicies")
+              .setFullMethodName("google.cloud.compute.v1.Instances/RemoveResourcePolicies")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveResourcePoliciesInstanceRequest>newBuilder()
@@ -1143,9 +1133,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<RemoveResourcePoliciesInstanceRequest>
                                   serializer = ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -1182,10 +1172,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ResetInstanceRequest, Operation> resetMethodDescriptor =
+  private static final ApiMethodDescriptor<ResetInstanceRequest, Operation> resetMethodDescriptor =
       ApiMethodDescriptor.<ResetInstanceRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Instances.Reset")
+          .setFullMethodName("google.cloud.compute.v1.Instances/Reset")
           .setHttpMethod(HttpMethods.POST)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ResetInstanceRequest>newBuilder()
@@ -1197,9 +1186,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<ResetInstanceRequest> serializer =
                               ProtoRestSerializer.create();
+                          serializer.putPathParam(fields, "instance", request.getInstance());
                           serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "zone", request.getZone());
-                          serializer.putPathParam(fields, "instance", request.getInstance());
                           return fields;
                         }
                       })
@@ -1220,7 +1209,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       new FieldsExtractor<ResetInstanceRequest, String>() {
                         @Override
                         public String extract(ResetInstanceRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -1230,11 +1219,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetDeletionProtectionInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<SetDeletionProtectionInstanceRequest, Operation>
       setDeletionProtectionMethodDescriptor =
           ApiMethodDescriptor.<SetDeletionProtectionInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.SetDeletionProtection")
+              .setFullMethodName("google.cloud.compute.v1.Instances/SetDeletionProtection")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetDeletionProtectionInstanceRequest>newBuilder()
@@ -1249,8 +1237,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               ProtoRestSerializer<SetDeletionProtectionInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
                               serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(fields, "resource", request.getResource());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -1278,7 +1266,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           new FieldsExtractor<SetDeletionProtectionInstanceRequest, String>() {
                             @Override
                             public String extract(SetDeletionProtectionInstanceRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -1288,11 +1276,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetDiskAutoDeleteInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<SetDiskAutoDeleteInstanceRequest, Operation>
       setDiskAutoDeleteMethodDescriptor =
           ApiMethodDescriptor.<SetDiskAutoDeleteInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.SetDiskAutoDelete")
+              .setFullMethodName("google.cloud.compute.v1.Instances/SetDiskAutoDelete")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetDiskAutoDeleteInstanceRequest>newBuilder()
@@ -1306,9 +1293,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SetDiskAutoDeleteInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -1336,7 +1323,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           new FieldsExtractor<SetDiskAutoDeleteInstanceRequest, String>() {
                             @Override
                             public String extract(SetDiskAutoDeleteInstanceRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -1346,11 +1333,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetIamPolicyInstanceRequest, Policy>
+  private static final ApiMethodDescriptor<SetIamPolicyInstanceRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyInstanceRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.SetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.Instances/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyInstanceRequest>newBuilder()
@@ -1364,8 +1350,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               ProtoRestSerializer<SetIamPolicyInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
                               serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(fields, "resource", request.getResource());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -1378,7 +1364,6 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetIamPolicyInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -1399,11 +1384,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetLabelsInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<SetLabelsInstanceRequest, Operation>
       setLabelsMethodDescriptor =
           ApiMethodDescriptor.<SetLabelsInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.SetLabels")
+              .setFullMethodName("google.cloud.compute.v1.Instances/SetLabels")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetLabelsInstanceRequest>newBuilder()
@@ -1415,9 +1399,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SetLabelsInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -1454,11 +1438,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetMachineResourcesInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<SetMachineResourcesInstanceRequest, Operation>
       setMachineResourcesMethodDescriptor =
           ApiMethodDescriptor.<SetMachineResourcesInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.SetMachineResources")
+              .setFullMethodName("google.cloud.compute.v1.Instances/SetMachineResources")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetMachineResourcesInstanceRequest>newBuilder()
@@ -1472,9 +1455,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SetMachineResourcesInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -1511,11 +1494,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetMachineTypeInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<SetMachineTypeInstanceRequest, Operation>
       setMachineTypeMethodDescriptor =
           ApiMethodDescriptor.<SetMachineTypeInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.SetMachineType")
+              .setFullMethodName("google.cloud.compute.v1.Instances/SetMachineType")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetMachineTypeInstanceRequest>newBuilder()
@@ -1529,9 +1511,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SetMachineTypeInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -1568,11 +1550,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetMetadataInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<SetMetadataInstanceRequest, Operation>
       setMetadataMethodDescriptor =
           ApiMethodDescriptor.<SetMetadataInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.SetMetadata")
+              .setFullMethodName("google.cloud.compute.v1.Instances/SetMetadata")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetMetadataInstanceRequest>newBuilder()
@@ -1584,9 +1565,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SetMetadataInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -1621,11 +1602,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetMinCpuPlatformInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<SetMinCpuPlatformInstanceRequest, Operation>
       setMinCpuPlatformMethodDescriptor =
           ApiMethodDescriptor.<SetMinCpuPlatformInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.SetMinCpuPlatform")
+              .setFullMethodName("google.cloud.compute.v1.Instances/SetMinCpuPlatform")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetMinCpuPlatformInstanceRequest>newBuilder()
@@ -1639,9 +1619,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SetMinCpuPlatformInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -1678,11 +1658,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetSchedulingInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<SetSchedulingInstanceRequest, Operation>
       setSchedulingMethodDescriptor =
           ApiMethodDescriptor.<SetSchedulingInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.SetScheduling")
+              .setFullMethodName("google.cloud.compute.v1.Instances/SetScheduling")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetSchedulingInstanceRequest>newBuilder()
@@ -1695,9 +1674,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SetSchedulingInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -1732,11 +1711,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetServiceAccountInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<SetServiceAccountInstanceRequest, Operation>
       setServiceAccountMethodDescriptor =
           ApiMethodDescriptor.<SetServiceAccountInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.SetServiceAccount")
+              .setFullMethodName("google.cloud.compute.v1.Instances/SetServiceAccount")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetServiceAccountInstanceRequest>newBuilder()
@@ -1750,9 +1728,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SetServiceAccountInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -1789,14 +1767,13 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation>
       setShieldedInstanceIntegrityPolicyMethodDescriptor =
           ApiMethodDescriptor
               .<SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.Instances.SetShieldedInstanceIntegrityPolicy")
+                  "google.cloud.compute.v1.Instances/SetShieldedInstanceIntegrityPolicy")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -1812,9 +1789,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SetShieldedInstanceIntegrityPolicyInstanceRequest>
                                   serializer = ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -1854,11 +1831,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetTagsInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<SetTagsInstanceRequest, Operation>
       setTagsMethodDescriptor =
           ApiMethodDescriptor.<SetTagsInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.SetTags")
+              .setFullMethodName("google.cloud.compute.v1.Instances/SetTags")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetTagsInstanceRequest>newBuilder()
@@ -1870,9 +1846,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SetTagsInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -1906,11 +1882,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SimulateMaintenanceEventInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<SimulateMaintenanceEventInstanceRequest, Operation>
       simulateMaintenanceEventMethodDescriptor =
           ApiMethodDescriptor.<SimulateMaintenanceEventInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.SimulateMaintenanceEvent")
+              .setFullMethodName("google.cloud.compute.v1.Instances/SimulateMaintenanceEvent")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SimulateMaintenanceEventInstanceRequest>newBuilder()
@@ -1924,9 +1899,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SimulateMaintenanceEventInstanceRequest>
                                   serializer = ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -1940,7 +1915,6 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SimulateMaintenanceEventInstanceRequest>
                                   serializer = ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -1948,7 +1922,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           new FieldsExtractor<SimulateMaintenanceEventInstanceRequest, String>() {
                             @Override
                             public String extract(SimulateMaintenanceEventInstanceRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -1958,10 +1932,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<StartInstanceRequest, Operation> startMethodDescriptor =
+  private static final ApiMethodDescriptor<StartInstanceRequest, Operation> startMethodDescriptor =
       ApiMethodDescriptor.<StartInstanceRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Instances.Start")
+          .setFullMethodName("google.cloud.compute.v1.Instances/Start")
           .setHttpMethod(HttpMethods.POST)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<StartInstanceRequest>newBuilder()
@@ -1973,9 +1946,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<StartInstanceRequest> serializer =
                               ProtoRestSerializer.create();
+                          serializer.putPathParam(fields, "instance", request.getInstance());
                           serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "zone", request.getZone());
-                          serializer.putPathParam(fields, "instance", request.getInstance());
                           return fields;
                         }
                       })
@@ -1996,7 +1969,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       new FieldsExtractor<StartInstanceRequest, String>() {
                         @Override
                         public String extract(StartInstanceRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -2006,11 +1979,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<StartWithEncryptionKeyInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<StartWithEncryptionKeyInstanceRequest, Operation>
       startWithEncryptionKeyMethodDescriptor =
           ApiMethodDescriptor.<StartWithEncryptionKeyInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.StartWithEncryptionKey")
+              .setFullMethodName("google.cloud.compute.v1.Instances/StartWithEncryptionKey")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<StartWithEncryptionKeyInstanceRequest>newBuilder()
@@ -2024,9 +1996,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<StartWithEncryptionKeyInstanceRequest>
                                   serializer = ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -2063,10 +2035,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<StopInstanceRequest, Operation> stopMethodDescriptor =
+  private static final ApiMethodDescriptor<StopInstanceRequest, Operation> stopMethodDescriptor =
       ApiMethodDescriptor.<StopInstanceRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Instances.Stop")
+          .setFullMethodName("google.cloud.compute.v1.Instances/Stop")
           .setHttpMethod(HttpMethods.POST)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<StopInstanceRequest>newBuilder()
@@ -2078,9 +2049,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<StopInstanceRequest> serializer =
                               ProtoRestSerializer.create();
+                          serializer.putPathParam(fields, "instance", request.getInstance());
                           serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "zone", request.getZone());
-                          serializer.putPathParam(fields, "instance", request.getInstance());
                           return fields;
                         }
                       })
@@ -2101,7 +2072,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       new FieldsExtractor<StopInstanceRequest, String>() {
                         @Override
                         public String extract(StopInstanceRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -2111,13 +2082,12 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           TestIamPermissionsInstanceRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           ApiMethodDescriptor
               .<TestIamPermissionsInstanceRequest, TestPermissionsResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.TestIamPermissions")
+              .setFullMethodName("google.cloud.compute.v1.Instances/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsInstanceRequest>newBuilder()
@@ -2132,8 +2102,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               ProtoRestSerializer<TestIamPermissionsInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
                               serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(fields, "resource", request.getResource());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -2146,7 +2116,6 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<TestIamPermissionsInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -2167,70 +2136,71 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<UpdateInstanceRequest, Operation> updateMethodDescriptor =
-      ApiMethodDescriptor.<UpdateInstanceRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Instances.Update")
-          .setHttpMethod(HttpMethods.PUT)
-          .setRequestFormatter(
-              ProtoMessageRequestFormatter.<UpdateInstanceRequest>newBuilder()
-                  .setPath(
-                      "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}",
-                      new FieldsExtractor<UpdateInstanceRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(UpdateInstanceRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<UpdateInstanceRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
-                          serializer.putPathParam(fields, "instance", request.getInstance());
-                          return fields;
-                        }
-                      })
-                  .setQueryParamsExtractor(
-                      new FieldsExtractor<UpdateInstanceRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(UpdateInstanceRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<UpdateInstanceRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasMinimalAction()) {
-                            serializer.putQueryParam(
-                                fields, "minimalAction", request.getMinimalAction());
-                          }
-                          if (request.hasMostDisruptiveAllowedAction()) {
-                            serializer.putQueryParam(
-                                fields,
-                                "mostDisruptiveAllowedAction",
-                                request.getMostDisruptiveAllowedAction());
-                          }
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
-                        }
-                      })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<UpdateInstanceRequest, String>() {
-                        @Override
-                        public String extract(UpdateInstanceRequest request) {
-                          return ProtoRestSerializer.create()
-                              .toBody("instanceResource", request.getInstanceResource());
-                        }
-                      })
-                  .build())
-          .setResponseParser(
-              ProtoMessageResponseParser.<Operation>newBuilder()
-                  .setDefaultInstance(Operation.getDefaultInstance())
-                  .build())
-          .build();
+  private static final ApiMethodDescriptor<UpdateInstanceRequest, Operation>
+      updateMethodDescriptor =
+          ApiMethodDescriptor.<UpdateInstanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Instances/Update")
+              .setHttpMethod(HttpMethods.PUT)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateInstanceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}",
+                          new FieldsExtractor<UpdateInstanceRequest, Map<String, String>>() {
+                            @Override
+                            public Map<String, String> extract(UpdateInstanceRequest request) {
+                              Map<String, String> fields = new HashMap<>();
+                              ProtoRestSerializer<UpdateInstanceRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
+                              return fields;
+                            }
+                          })
+                      .setQueryParamsExtractor(
+                          new FieldsExtractor<UpdateInstanceRequest, Map<String, List<String>>>() {
+                            @Override
+                            public Map<String, List<String>> extract(
+                                UpdateInstanceRequest request) {
+                              Map<String, List<String>> fields = new HashMap<>();
+                              ProtoRestSerializer<UpdateInstanceRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              if (request.hasMinimalAction()) {
+                                serializer.putQueryParam(
+                                    fields, "minimalAction", request.getMinimalAction());
+                              }
+                              if (request.hasMostDisruptiveAllowedAction()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "mostDisruptiveAllowedAction",
+                                    request.getMostDisruptiveAllowedAction());
+                              }
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
+                              return fields;
+                            }
+                          })
+                      .setRequestBodyExtractor(
+                          new FieldsExtractor<UpdateInstanceRequest, String>() {
+                            @Override
+                            public String extract(UpdateInstanceRequest request) {
+                              return ProtoRestSerializer.create()
+                                  .toBody("instanceResource", request.getInstanceResource());
+                            }
+                          })
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<UpdateAccessConfigInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<UpdateAccessConfigInstanceRequest, Operation>
       updateAccessConfigMethodDescriptor =
           ApiMethodDescriptor.<UpdateAccessConfigInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.UpdateAccessConfig")
+              .setFullMethodName("google.cloud.compute.v1.Instances/UpdateAccessConfig")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateAccessConfigInstanceRequest>newBuilder()
@@ -2244,9 +2214,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<UpdateAccessConfigInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -2284,11 +2254,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<UpdateDisplayDeviceInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<UpdateDisplayDeviceInstanceRequest, Operation>
       updateDisplayDeviceMethodDescriptor =
           ApiMethodDescriptor.<UpdateDisplayDeviceInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.UpdateDisplayDevice")
+              .setFullMethodName("google.cloud.compute.v1.Instances/UpdateDisplayDevice")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateDisplayDeviceInstanceRequest>newBuilder()
@@ -2302,9 +2271,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<UpdateDisplayDeviceInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -2340,11 +2309,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<UpdateNetworkInterfaceInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<UpdateNetworkInterfaceInstanceRequest, Operation>
       updateNetworkInterfaceMethodDescriptor =
           ApiMethodDescriptor.<UpdateNetworkInterfaceInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.UpdateNetworkInterface")
+              .setFullMethodName("google.cloud.compute.v1.Instances/UpdateNetworkInterface")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateNetworkInterfaceInstanceRequest>newBuilder()
@@ -2358,9 +2326,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<UpdateNetworkInterfaceInstanceRequest>
                                   serializer = ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -2399,11 +2367,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<UpdateShieldedInstanceConfigInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<UpdateShieldedInstanceConfigInstanceRequest, Operation>
       updateShieldedInstanceConfigMethodDescriptor =
           ApiMethodDescriptor.<UpdateShieldedInstanceConfigInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Instances.UpdateShieldedInstanceConfig")
+              .setFullMethodName("google.cloud.compute.v1.Instances/UpdateShieldedInstanceConfig")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -2418,9 +2385,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<UpdateShieldedInstanceConfigInstanceRequest>
                                   serializer = ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "instance", request.getInstance());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "instance", request.getInstance());
                               return fields;
                             }
                           })
@@ -2459,8 +2426,6 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .setDefaultInstance(Operation.getDefaultInstance())
                       .build())
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AddAccessConfigInstanceRequest, Operation> addAccessConfigCallable;
   private final UnaryCallable<AddResourcePoliciesInstanceRequest, Operation>
@@ -2533,6 +2498,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
   private final UnaryCallable<UpdateShieldedInstanceConfigInstanceRequest, Operation>
       updateShieldedInstanceConfigCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonInstancesStub create(InstancesStubSettings settings)
@@ -2948,203 +2914,297 @@ public class HttpJsonInstancesStub extends InstancesStub {
             settings.updateShieldedInstanceConfigSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(addAccessConfigMethodDescriptor);
+    methodDescriptors.add(addResourcePoliciesMethodDescriptor);
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(attachDiskMethodDescriptor);
+    methodDescriptors.add(bulkInsertMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(deleteAccessConfigMethodDescriptor);
+    methodDescriptors.add(detachDiskMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getEffectiveFirewallsMethodDescriptor);
+    methodDescriptors.add(getGuestAttributesMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(getScreenshotMethodDescriptor);
+    methodDescriptors.add(getSerialPortOutputMethodDescriptor);
+    methodDescriptors.add(getShieldedInstanceIdentityMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(listReferrersMethodDescriptor);
+    methodDescriptors.add(removeResourcePoliciesMethodDescriptor);
+    methodDescriptors.add(resetMethodDescriptor);
+    methodDescriptors.add(setDeletionProtectionMethodDescriptor);
+    methodDescriptors.add(setDiskAutoDeleteMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(setLabelsMethodDescriptor);
+    methodDescriptors.add(setMachineResourcesMethodDescriptor);
+    methodDescriptors.add(setMachineTypeMethodDescriptor);
+    methodDescriptors.add(setMetadataMethodDescriptor);
+    methodDescriptors.add(setMinCpuPlatformMethodDescriptor);
+    methodDescriptors.add(setSchedulingMethodDescriptor);
+    methodDescriptors.add(setServiceAccountMethodDescriptor);
+    methodDescriptors.add(setShieldedInstanceIntegrityPolicyMethodDescriptor);
+    methodDescriptors.add(setTagsMethodDescriptor);
+    methodDescriptors.add(simulateMaintenanceEventMethodDescriptor);
+    methodDescriptors.add(startMethodDescriptor);
+    methodDescriptors.add(startWithEncryptionKeyMethodDescriptor);
+    methodDescriptors.add(stopMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    methodDescriptors.add(updateMethodDescriptor);
+    methodDescriptors.add(updateAccessConfigMethodDescriptor);
+    methodDescriptors.add(updateDisplayDeviceMethodDescriptor);
+    methodDescriptors.add(updateNetworkInterfaceMethodDescriptor);
+    methodDescriptors.add(updateShieldedInstanceConfigMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<AddAccessConfigInstanceRequest, Operation> addAccessConfigCallable() {
     return addAccessConfigCallable;
   }
 
+  @Override
   public UnaryCallable<AddResourcePoliciesInstanceRequest, Operation>
       addResourcePoliciesCallable() {
     return addResourcePoliciesCallable;
   }
 
-  public UnaryCallable<AggregatedListInstancesRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<AggregatedListInstancesRequest, InstanceAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListInstancesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<AttachDiskInstanceRequest, Operation> attachDiskCallable() {
     return attachDiskCallable;
   }
 
+  @Override
   public UnaryCallable<BulkInsertInstanceRequest, Operation> bulkInsertCallable() {
     return bulkInsertCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteInstanceRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteAccessConfigInstanceRequest, Operation> deleteAccessConfigCallable() {
     return deleteAccessConfigCallable;
   }
 
+  @Override
   public UnaryCallable<DetachDiskInstanceRequest, Operation> detachDiskCallable() {
     return detachDiskCallable;
   }
 
+  @Override
   public UnaryCallable<GetInstanceRequest, Instance> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
       getEffectiveFirewallsCallable() {
     return getEffectiveFirewallsCallable;
   }
 
+  @Override
   public UnaryCallable<GetGuestAttributesInstanceRequest, GuestAttributes>
       getGuestAttributesCallable() {
     return getGuestAttributesCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyInstanceRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<GetScreenshotInstanceRequest, Screenshot> getScreenshotCallable() {
     return getScreenshotCallable;
   }
 
+  @Override
   public UnaryCallable<GetSerialPortOutputInstanceRequest, SerialPortOutput>
       getSerialPortOutputCallable() {
     return getSerialPortOutputCallable;
   }
 
+  @Override
   public UnaryCallable<GetShieldedInstanceIdentityInstanceRequest, ShieldedInstanceIdentity>
       getShieldedInstanceIdentityCallable() {
     return getShieldedInstanceIdentityCallable;
   }
 
+  @Override
   public UnaryCallable<InsertInstanceRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListInstancesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListInstancesRequest, InstanceList> listCallable() {
     return listCallable;
   }
 
-  public UnaryCallable<ListReferrersInstancesRequest, ListReferrersPagedResponse>
-      listReferrersPagedCallable() {
-    return listReferrersPagedCallable;
+  @Override
+  public UnaryCallable<ListInstancesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListReferrersInstancesRequest, InstanceListReferrers>
       listReferrersCallable() {
     return listReferrersCallable;
   }
 
+  @Override
+  public UnaryCallable<ListReferrersInstancesRequest, ListReferrersPagedResponse>
+      listReferrersPagedCallable() {
+    return listReferrersPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesCallable() {
     return removeResourcePoliciesCallable;
   }
 
+  @Override
   public UnaryCallable<ResetInstanceRequest, Operation> resetCallable() {
     return resetCallable;
   }
 
+  @Override
   public UnaryCallable<SetDeletionProtectionInstanceRequest, Operation>
       setDeletionProtectionCallable() {
     return setDeletionProtectionCallable;
   }
 
+  @Override
   public UnaryCallable<SetDiskAutoDeleteInstanceRequest, Operation> setDiskAutoDeleteCallable() {
     return setDiskAutoDeleteCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyInstanceRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetLabelsInstanceRequest, Operation> setLabelsCallable() {
     return setLabelsCallable;
   }
 
+  @Override
   public UnaryCallable<SetMachineResourcesInstanceRequest, Operation>
       setMachineResourcesCallable() {
     return setMachineResourcesCallable;
   }
 
+  @Override
   public UnaryCallable<SetMachineTypeInstanceRequest, Operation> setMachineTypeCallable() {
     return setMachineTypeCallable;
   }
 
+  @Override
   public UnaryCallable<SetMetadataInstanceRequest, Operation> setMetadataCallable() {
     return setMetadataCallable;
   }
 
+  @Override
   public UnaryCallable<SetMinCpuPlatformInstanceRequest, Operation> setMinCpuPlatformCallable() {
     return setMinCpuPlatformCallable;
   }
 
+  @Override
   public UnaryCallable<SetSchedulingInstanceRequest, Operation> setSchedulingCallable() {
     return setSchedulingCallable;
   }
 
+  @Override
   public UnaryCallable<SetServiceAccountInstanceRequest, Operation> setServiceAccountCallable() {
     return setServiceAccountCallable;
   }
 
+  @Override
   public UnaryCallable<SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation>
       setShieldedInstanceIntegrityPolicyCallable() {
     return setShieldedInstanceIntegrityPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetTagsInstanceRequest, Operation> setTagsCallable() {
     return setTagsCallable;
   }
 
+  @Override
   public UnaryCallable<SimulateMaintenanceEventInstanceRequest, Operation>
       simulateMaintenanceEventCallable() {
     return simulateMaintenanceEventCallable;
   }
 
+  @Override
   public UnaryCallable<StartInstanceRequest, Operation> startCallable() {
     return startCallable;
   }
 
+  @Override
   public UnaryCallable<StartWithEncryptionKeyInstanceRequest, Operation>
       startWithEncryptionKeyCallable() {
     return startWithEncryptionKeyCallable;
   }
 
+  @Override
   public UnaryCallable<StopInstanceRequest, Operation> stopCallable() {
     return stopCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsInstanceRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateInstanceRequest, Operation> updateCallable() {
     return updateCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateAccessConfigInstanceRequest, Operation> updateAccessConfigCallable() {
     return updateAccessConfigCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateDisplayDeviceInstanceRequest, Operation>
       updateDisplayDeviceCallable() {
     return updateDisplayDeviceCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateNetworkInterfaceInstanceRequest, Operation>
       updateNetworkInterfaceCallable() {
     return updateNetworkInterfaceCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateShieldedInstanceConfigInstanceRequest, Operation>
       updateShieldedInstanceConfigCallable() {
     return updateShieldedInstanceConfigCallable;

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.AcceleratorTypesClient.AggregatedListPagedResponse;
@@ -39,29 +40,28 @@ import com.google.cloud.compute.v1.AggregatedListAcceleratorTypesRequest;
 import com.google.cloud.compute.v1.GetAcceleratorTypeRequest;
 import com.google.cloud.compute.v1.ListAcceleratorTypesRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the AcceleratorTypes service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListAcceleratorTypesRequest, AcceleratorTypeAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListAcceleratorTypesRequest, AcceleratorTypeAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.AcceleratorTypes.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.AcceleratorTypes/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListAcceleratorTypesRequest>newBuilder()
@@ -119,7 +119,7 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
                           new FieldsExtractor<AggregatedListAcceleratorTypesRequest, String>() {
                             @Override
                             public String extract(AggregatedListAcceleratorTypesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -129,11 +129,10 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetAcceleratorTypeRequest, AcceleratorType>
+  private static final ApiMethodDescriptor<GetAcceleratorTypeRequest, AcceleratorType>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetAcceleratorTypeRequest, AcceleratorType>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.AcceleratorTypes.Get")
+              .setFullMethodName("google.cloud.compute.v1.AcceleratorTypes/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetAcceleratorTypeRequest>newBuilder()
@@ -145,10 +144,10 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetAcceleratorTypeRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields, "acceleratorType", request.getAcceleratorType());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -161,7 +160,6 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetAcceleratorTypeRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -169,7 +167,7 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
                           new FieldsExtractor<GetAcceleratorTypeRequest, String>() {
                             @Override
                             public String extract(GetAcceleratorTypeRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -179,11 +177,10 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListAcceleratorTypesRequest, AcceleratorTypeList>
+  private static final ApiMethodDescriptor<ListAcceleratorTypesRequest, AcceleratorTypeList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListAcceleratorTypesRequest, AcceleratorTypeList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.AcceleratorTypes.List")
+              .setFullMethodName("google.cloud.compute.v1.AcceleratorTypes/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListAcceleratorTypesRequest>newBuilder()
@@ -237,7 +234,7 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
                           new FieldsExtractor<ListAcceleratorTypesRequest, String>() {
                             @Override
                             public String extract(ListAcceleratorTypesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -247,8 +244,6 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<AggregatedListAcceleratorTypesRequest, AcceleratorTypeAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListAcceleratorTypesRequest, AggregatedListPagedResponse>
@@ -257,6 +252,7 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
   private final UnaryCallable<ListAcceleratorTypesRequest, AcceleratorTypeList> listCallable;
   private final UnaryCallable<ListAcceleratorTypesRequest, ListPagedResponse> listPagedCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonAcceleratorTypesStub create(AcceleratorTypesStubSettings settings)
@@ -329,29 +325,44 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListAcceleratorTypesRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListAcceleratorTypesRequest, AcceleratorTypeAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListAcceleratorTypesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<GetAcceleratorTypeRequest, AcceleratorType> getCallable() {
     return getCallable;
   }
 
-  public UnaryCallable<ListAcceleratorTypesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListAcceleratorTypesRequest, AcceleratorTypeList> listCallable() {
     return listCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAcceleratorTypesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
   }
 
   @Override

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.FirewallsClient.ListPagedResponse;
@@ -33,7 +34,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link FirewallsClient}.
  *
@@ -50,23 +51,23 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of delete to 30 seconds:
  *
- * <pre>
- * <code>
- * FirewallsSettings.Builder firewallsSettingsBuilder =
- *     FirewallsSettings.newBuilder();
+ * <pre>{@code
+ * FirewallsSettings.Builder firewallsSettingsBuilder = FirewallsSettings.newBuilder();
  * firewallsSettingsBuilder
  *     .deleteSettings()
  *     .setRetrySettings(
- *         firewallsSettingsBuilder.deleteSettings().getRetrySettings().toBuilder()
+ *         firewallsSettingsBuilder
+ *             .deleteSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * FirewallsSettings firewallsSettings = firewallsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class FirewallsSettings extends ClientSettings<FirewallsSettings> {
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteFirewallRequest, Operation> deleteSettings() {
     return ((FirewallsStubSettings) getStubSettings()).deleteSettings();
@@ -109,10 +110,6 @@ public class FirewallsSettings extends ClientSettings<FirewallsSettings> {
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
     return FirewallsStubSettings.getDefaultEndpoint();
-  }
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return FirewallsStubSettings.getDefaultServicePort();
   }
 
   /** Returns the default service scopes. */
@@ -161,16 +158,13 @@ public class FirewallsSettings extends ClientSettings<FirewallsSettings> {
 
   /** Builder for FirewallsSettings. */
   public static class Builder extends ClientSettings.Builder<FirewallsSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(FirewallsStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(FirewallsStubSettings.newBuilder());
     }
 
     protected Builder(FirewallsSettings settings) {
@@ -181,11 +175,15 @@ public class FirewallsSettings extends ClientSettings<FirewallsSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(FirewallsStubSettings.newBuilder());
+    }
+
     public FirewallsStubSettings.Builder getStubSettingsBuilder() {
       return ((FirewallsStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

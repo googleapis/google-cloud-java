@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,26 +34,32 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The RegionInstanceGroupManagers API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String instanceGroupManager = "";
- *   RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource = RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
- *   Operation response = regionInstanceGroupManagersClient.abandonInstances(project, region, instanceGroupManager, regionInstanceGroupManagersAbandonInstancesRequestResource);
+ * <pre>{@code
+ * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+ *     RegionInstanceGroupManagersClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String instanceGroupManager = "instanceGroupManager-388242077";
+ *   RegionInstanceGroupManagersAbandonInstancesRequest
+ *       regionInstanceGroupManagersAbandonInstancesRequestResource =
+ *           RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
+ *   Operation response =
+ *       regionInstanceGroupManagersClient.abandonInstances(
+ *           project,
+ *           region,
+ *           instanceGroupManager,
+ *           regionInstanceGroupManagersAbandonInstancesRequestResource);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the regionInstanceGroupManagersClient object to clean up
+ * <p>Note: close() needs to be called on the RegionInstanceGroupManagersClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -81,30 +88,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionInstanceGroupManagersSettings regionInstanceGroupManagersSettings =
  *     RegionInstanceGroupManagersSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
  *     RegionInstanceGroupManagersClient.create(regionInstanceGroupManagersSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionInstanceGroupManagersSettings regionInstanceGroupManagersSettings =
  *     RegionInstanceGroupManagersSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
  *     RegionInstanceGroupManagersClient.create(regionInstanceGroupManagersSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RegionInstanceGroupManagersClient implements BackgroundResource {
   private final RegionInstanceGroupManagersSettings settings;
   private final RegionInstanceGroupManagersStub stub;
@@ -126,7 +130,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   /**
    * Constructs an instance of RegionInstanceGroupManagersClient, using the given stub for making
-   * calls. This is for advanced usage - prefer to use RegionInstanceGroupManagersSettings}.
+   * calls. This is for advanced usage - prefer using create(RegionInstanceGroupManagersSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionInstanceGroupManagersClient create(
@@ -160,7 +164,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Flags the specified instances to be immediately removed from the managed instance group.
    * Abandoning an instance does not delete the instance, but it does remove the instance from any
@@ -178,15 +182,23 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroupManager = "";
-   *   RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource = RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagersClient.abandonInstances(project, region, instanceGroupManager, regionInstanceGroupManagersAbandonInstancesRequestResource);
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   RegionInstanceGroupManagersAbandonInstancesRequest
+   *       regionInstanceGroupManagersAbandonInstancesRequestResource =
+   *           RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
+   *   Operation response =
+   *       regionInstanceGroupManagersClient.abandonInstances(
+   *           project,
+   *           region,
+   *           instanceGroupManager,
+   *           regionInstanceGroupManagersAbandonInstancesRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -212,7 +224,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return abandonInstances(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Flags the specified instances to be immediately removed from the managed instance group.
    * Abandoning an instance does not delete the instance, but it does remove the instance from any
@@ -230,21 +242,21 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource = RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
-   *   AbandonInstancesRegionInstanceGroupManagerRequest request = AbandonInstancesRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagersAbandonInstancesRequestResource(regionInstanceGroupManagersAbandonInstancesRequestResource)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   AbandonInstancesRegionInstanceGroupManagerRequest request =
+   *       AbandonInstancesRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagersAbandonInstancesRequestResource(
+   *               RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionInstanceGroupManagersClient.abandonInstances(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -254,7 +266,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return abandonInstancesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Flags the specified instances to be immediately removed from the managed instance group.
    * Abandoning an instance does not delete the instance, but it does remove the instance from any
@@ -272,44 +284,53 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource = RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
-   *   AbandonInstancesRegionInstanceGroupManagerRequest request = AbandonInstancesRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagersAbandonInstancesRequestResource(regionInstanceGroupManagersAbandonInstancesRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.abandonInstancesCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   AbandonInstancesRegionInstanceGroupManagerRequest request =
+   *       AbandonInstancesRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagersAbandonInstancesRequestResource(
+   *               RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionInstanceGroupManagersClient.abandonInstancesCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AbandonInstancesRegionInstanceGroupManagerRequest, Operation>
       abandonInstancesCallable() {
     return stub.abandonInstancesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Apply updates to selected instances the managed instance group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroupManager = "";
-   *   RegionInstanceGroupManagersApplyUpdatesRequest regionInstanceGroupManagersApplyUpdatesRequestResource = RegionInstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagersClient.applyUpdatesToInstances(project, region, instanceGroupManager, regionInstanceGroupManagersApplyUpdatesRequestResource);
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   RegionInstanceGroupManagersApplyUpdatesRequest
+   *       regionInstanceGroupManagersApplyUpdatesRequestResource =
+   *           RegionInstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
+   *   Operation response =
+   *       regionInstanceGroupManagersClient.applyUpdatesToInstances(
+   *           project,
+   *           region,
+   *           instanceGroupManager,
+   *           regionInstanceGroupManagersApplyUpdatesRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request, should conform to RFC1035.
@@ -335,27 +356,26 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return applyUpdatesToInstances(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Apply updates to selected instances the managed instance group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagersApplyUpdatesRequest regionInstanceGroupManagersApplyUpdatesRequestResource = RegionInstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
-   *   ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest request = ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagersApplyUpdatesRequestResource(regionInstanceGroupManagersApplyUpdatesRequestResource)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest request =
+   *       ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagersApplyUpdatesRequestResource(
+   *               RegionInstanceGroupManagersApplyUpdatesRequest.newBuilder().build())
+   *           .build();
    *   Operation response = regionInstanceGroupManagersClient.applyUpdatesToInstances(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -365,36 +385,36 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return applyUpdatesToInstancesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Apply updates to selected instances the managed instance group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagersApplyUpdatesRequest regionInstanceGroupManagersApplyUpdatesRequestResource = RegionInstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
-   *   ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest request = ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagersApplyUpdatesRequestResource(regionInstanceGroupManagersApplyUpdatesRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.applyUpdatesToInstancesCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest request =
+   *       ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagersApplyUpdatesRequestResource(
+   *               RegionInstanceGroupManagersApplyUpdatesRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionInstanceGroupManagersClient.applyUpdatesToInstancesCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, Operation>
       applyUpdatesToInstancesCallable() {
     return stub.applyUpdatesToInstancesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates instances with per-instance configs in this regional managed instance group. Instances
    * are created using the current instance template. The create instances operation is marked DONE
@@ -404,15 +424,23 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroupManager = "";
-   *   RegionInstanceGroupManagersCreateInstancesRequest regionInstanceGroupManagersCreateInstancesRequestResource = RegionInstanceGroupManagersCreateInstancesRequest.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagersClient.createInstances(project, region, instanceGroupManager, regionInstanceGroupManagersCreateInstancesRequestResource);
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   RegionInstanceGroupManagersCreateInstancesRequest
+   *       regionInstanceGroupManagersCreateInstancesRequestResource =
+   *           RegionInstanceGroupManagersCreateInstancesRequest.newBuilder().build();
+   *   Operation response =
+   *       regionInstanceGroupManagersClient.createInstances(
+   *           project,
+   *           region,
+   *           instanceGroupManager,
+   *           regionInstanceGroupManagersCreateInstancesRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region where the managed instance group is located. It should
@@ -440,7 +468,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return createInstances(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates instances with per-instance configs in this regional managed instance group. Instances
    * are created using the current instance template. The create instances operation is marked DONE
@@ -450,21 +478,21 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagersCreateInstancesRequest regionInstanceGroupManagersCreateInstancesRequestResource = RegionInstanceGroupManagersCreateInstancesRequest.newBuilder().build();
-   *   CreateInstancesRegionInstanceGroupManagerRequest request = CreateInstancesRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagersCreateInstancesRequestResource(regionInstanceGroupManagersCreateInstancesRequestResource)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   CreateInstancesRegionInstanceGroupManagerRequest request =
+   *       CreateInstancesRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagersCreateInstancesRequestResource(
+   *               RegionInstanceGroupManagersCreateInstancesRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionInstanceGroupManagersClient.createInstances(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -473,7 +501,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return createInstancesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates instances with per-instance configs in this regional managed instance group. Instances
    * are created using the current instance template. The create instances operation is marked DONE
@@ -483,43 +511,46 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagersCreateInstancesRequest regionInstanceGroupManagersCreateInstancesRequestResource = RegionInstanceGroupManagersCreateInstancesRequest.newBuilder().build();
-   *   CreateInstancesRegionInstanceGroupManagerRequest request = CreateInstancesRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagersCreateInstancesRequestResource(regionInstanceGroupManagersCreateInstancesRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.createInstancesCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   CreateInstancesRegionInstanceGroupManagerRequest request =
+   *       CreateInstancesRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagersCreateInstancesRequestResource(
+   *               RegionInstanceGroupManagersCreateInstancesRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionInstanceGroupManagersClient.createInstancesCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<CreateInstancesRegionInstanceGroupManagerRequest, Operation>
       createInstancesCallable() {
     return stub.createInstancesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified managed instance group and all of the instances in that group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroupManager = "";
-   *   Operation response = regionInstanceGroupManagersClient.delete(project, region, instanceGroupManager);
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   Operation response =
+   *       regionInstanceGroupManagersClient.delete(project, region, instanceGroupManager);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -536,25 +567,25 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified managed instance group and all of the instances in that group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeleteRegionInstanceGroupManagerRequest request = DeleteRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   DeleteRegionInstanceGroupManagerRequest request =
+   *       DeleteRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionInstanceGroupManagersClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -563,33 +594,34 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified managed instance group and all of the instances in that group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeleteRegionInstanceGroupManagerRequest request = DeleteRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.deleteCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   DeleteRegionInstanceGroupManagerRequest request =
+   *       DeleteRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionInstanceGroupManagersClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteRegionInstanceGroupManagerRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Flags the specified instances in the managed instance group to be immediately deleted. The
    * instances are also removed from any target pools of which they were a member. This method
@@ -606,15 +638,23 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroupManager = "";
-   *   RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource = RegionInstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagersClient.deleteInstances(project, region, instanceGroupManager, regionInstanceGroupManagersDeleteInstancesRequestResource);
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   RegionInstanceGroupManagersDeleteInstancesRequest
+   *       regionInstanceGroupManagersDeleteInstancesRequestResource =
+   *           RegionInstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
+   *   Operation response =
+   *       regionInstanceGroupManagersClient.deleteInstances(
+   *           project,
+   *           region,
+   *           instanceGroupManager,
+   *           regionInstanceGroupManagersDeleteInstancesRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -640,7 +680,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return deleteInstances(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Flags the specified instances in the managed instance group to be immediately deleted. The
    * instances are also removed from any target pools of which they were a member. This method
@@ -657,21 +697,21 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource = RegionInstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
-   *   DeleteInstancesRegionInstanceGroupManagerRequest request = DeleteInstancesRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagersDeleteInstancesRequestResource(regionInstanceGroupManagersDeleteInstancesRequestResource)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   DeleteInstancesRegionInstanceGroupManagerRequest request =
+   *       DeleteInstancesRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagersDeleteInstancesRequestResource(
+   *               RegionInstanceGroupManagersDeleteInstancesRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionInstanceGroupManagersClient.deleteInstances(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -680,7 +720,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return deleteInstancesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Flags the specified instances in the managed instance group to be immediately deleted. The
    * instances are also removed from any target pools of which they were a member. This method
@@ -697,44 +737,53 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource = RegionInstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
-   *   DeleteInstancesRegionInstanceGroupManagerRequest request = DeleteInstancesRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagersDeleteInstancesRequestResource(regionInstanceGroupManagersDeleteInstancesRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.deleteInstancesCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   DeleteInstancesRegionInstanceGroupManagerRequest request =
+   *       DeleteInstancesRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagersDeleteInstancesRequestResource(
+   *               RegionInstanceGroupManagersDeleteInstancesRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionInstanceGroupManagersClient.deleteInstancesCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteInstancesRegionInstanceGroupManagerRequest, Operation>
       deleteInstancesCallable() {
     return stub.deleteInstancesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes selected per-instance configs for the managed instance group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroupManager = "";
-   *   RegionInstanceGroupManagerDeleteInstanceConfigReq regionInstanceGroupManagerDeleteInstanceConfigReqResource = RegionInstanceGroupManagerDeleteInstanceConfigReq.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagersClient.deletePerInstanceConfigs(project, region, instanceGroupManager, regionInstanceGroupManagerDeleteInstanceConfigReqResource);
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   RegionInstanceGroupManagerDeleteInstanceConfigReq
+   *       regionInstanceGroupManagerDeleteInstanceConfigReqResource =
+   *           RegionInstanceGroupManagerDeleteInstanceConfigReq.newBuilder().build();
+   *   Operation response =
+   *       regionInstanceGroupManagersClient.deletePerInstanceConfigs(
+   *           project,
+   *           region,
+   *           instanceGroupManager,
+   *           regionInstanceGroupManagerDeleteInstanceConfigReqResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request, should conform to RFC1035.
@@ -761,27 +810,26 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return deletePerInstanceConfigs(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes selected per-instance configs for the managed instance group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagerDeleteInstanceConfigReq regionInstanceGroupManagerDeleteInstanceConfigReqResource = RegionInstanceGroupManagerDeleteInstanceConfigReq.newBuilder().build();
-   *   DeletePerInstanceConfigsRegionInstanceGroupManagerRequest request = DeletePerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagerDeleteInstanceConfigReqResource(regionInstanceGroupManagerDeleteInstanceConfigReqResource)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   DeletePerInstanceConfigsRegionInstanceGroupManagerRequest request =
+   *       DeletePerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagerDeleteInstanceConfigReqResource(
+   *               RegionInstanceGroupManagerDeleteInstanceConfigReq.newBuilder().build())
+   *           .build();
    *   Operation response = regionInstanceGroupManagersClient.deletePerInstanceConfigs(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -791,49 +839,51 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return deletePerInstanceConfigsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes selected per-instance configs for the managed instance group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagerDeleteInstanceConfigReq regionInstanceGroupManagerDeleteInstanceConfigReqResource = RegionInstanceGroupManagerDeleteInstanceConfigReq.newBuilder().build();
-   *   DeletePerInstanceConfigsRegionInstanceGroupManagerRequest request = DeletePerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagerDeleteInstanceConfigReqResource(regionInstanceGroupManagerDeleteInstanceConfigReqResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.deletePerInstanceConfigsCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   DeletePerInstanceConfigsRegionInstanceGroupManagerRequest request =
+   *       DeletePerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagerDeleteInstanceConfigReqResource(
+   *               RegionInstanceGroupManagerDeleteInstanceConfigReq.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionInstanceGroupManagersClient.deletePerInstanceConfigsCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
       deletePerInstanceConfigsCallable() {
     return stub.deletePerInstanceConfigsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns all of the details about the specified managed instance group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroupManager = "";
-   *   InstanceGroupManager response = regionInstanceGroupManagersClient.get(project, region, instanceGroupManager);
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   InstanceGroupManager response =
+   *       regionInstanceGroupManagersClient.get(project, region, instanceGroupManager);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -851,25 +901,24 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns all of the details about the specified managed instance group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetRegionInstanceGroupManagerRequest request = GetRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   GetRegionInstanceGroupManagerRequest request =
+   *       GetRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
    *   InstanceGroupManager response = regionInstanceGroupManagersClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -878,34 +927,34 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns all of the details about the specified managed instance group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetRegionInstanceGroupManagerRequest request = GetRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;InstanceGroupManager&gt; future = regionInstanceGroupManagersClient.getCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   GetRegionInstanceGroupManagerRequest request =
+   *       GetRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<InstanceGroupManager> future =
+   *       regionInstanceGroupManagersClient.getCallable().futureCall(request);
+   *   // Do something.
    *   InstanceGroupManager response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetRegionInstanceGroupManagerRequest, InstanceGroupManager>
       getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a managed instance group using the information that you specify in the request. After
    * the group is created, instances in the group are created using the specified instance template.
@@ -917,14 +966,16 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagersClient.insert(project, region, instanceGroupManagerResource);
+   *   Operation response =
+   *       regionInstanceGroupManagersClient.insert(project, region, instanceGroupManagerResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -942,7 +993,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a managed instance group using the information that you specify in the request. After
    * the group is created, instances in the group are created using the specified instance template.
@@ -954,19 +1005,19 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertRegionInstanceGroupManagerRequest request = InsertRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   InsertRegionInstanceGroupManagerRequest request =
+   *       InsertRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManagerResource(InstanceGroupManager.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionInstanceGroupManagersClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -975,7 +1026,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a managed instance group using the information that you specify in the request. After
    * the group is created, instances in the group are created using the specified instance template.
@@ -987,41 +1038,44 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertRegionInstanceGroupManagerRequest request = InsertRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.insertCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   InsertRegionInstanceGroupManagerRequest request =
+   *       InsertRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManagerResource(InstanceGroupManager.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionInstanceGroupManagersClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertRegionInstanceGroupManagerRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of managed instance groups that are contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   for (InstanceGroupManager element : regionInstanceGroupManagersClient.list(project, region).iterateAll()) {
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   for (InstanceGroupManager element :
+   *       regionInstanceGroupManagersClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -1036,25 +1090,31 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of managed instance groups that are contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionInstanceGroupManagersRequest request = ListRegionInstanceGroupManagersRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   for (InstanceGroupManager element : regionInstanceGroupManagersClient.list(request).iterateAll()) {
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   ListRegionInstanceGroupManagersRequest request =
+   *       ListRegionInstanceGroupManagersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (InstanceGroupManager element :
+   *       regionInstanceGroupManagersClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1063,50 +1123,62 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of managed instance groups that are contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionInstanceGroupManagersRequest request = ListRegionInstanceGroupManagersRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = regionInstanceGroupManagersClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   ListRegionInstanceGroupManagersRequest request =
+   *       ListRegionInstanceGroupManagersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<InstanceGroupManager> future =
+   *       regionInstanceGroupManagersClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (InstanceGroupManager element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionInstanceGroupManagersRequest, ListPagedResponse>
       listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of managed instance groups that are contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionInstanceGroupManagersRequest request = ListRegionInstanceGroupManagersRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   ListRegionInstanceGroupManagersRequest request =
+   *       ListRegionInstanceGroupManagersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     RegionInstanceGroupManagerList response = regionInstanceGroupManagersClient.listCallable().call(request);
-   *     for (InstanceGroupManager element : response.getItemsList()) {
+   *     RegionInstanceGroupManagerList response =
+   *         regionInstanceGroupManagersClient.listCallable().call(request);
+   *     for (InstanceGroupManager element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1117,30 +1189,34 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionInstanceGroupManagersRequest, RegionInstanceGroupManagerList>
       listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all errors thrown by actions on instances for a given regional managed instance group.
    * The filter and orderBy query parameters are not supported.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroupManager = "";
-   *   for (InstanceManagedByIgmError element : regionInstanceGroupManagersClient.listErrors(project, region, instanceGroupManager).iterateAll()) {
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   for (InstanceManagedByIgmError element :
+   *       regionInstanceGroupManagersClient
+   *           .listErrors(project, region, instanceGroupManager)
+   *           .iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request. This should conform to RFC1035.
@@ -1160,28 +1236,33 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return listErrors(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all errors thrown by actions on instances for a given regional managed instance group.
    * The filter and orderBy query parameters are not supported.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   ListErrorsRegionInstanceGroupManagersRequest request = ListErrorsRegionInstanceGroupManagersRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   for (InstanceManagedByIgmError element : regionInstanceGroupManagersClient.listErrors(request).iterateAll()) {
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   ListErrorsRegionInstanceGroupManagersRequest request =
+   *       ListErrorsRegionInstanceGroupManagersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (InstanceManagedByIgmError element :
+   *       regionInstanceGroupManagersClient.listErrors(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1191,56 +1272,66 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return listErrorsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all errors thrown by actions on instances for a given regional managed instance group.
    * The filter and orderBy query parameters are not supported.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   ListErrorsRegionInstanceGroupManagersRequest request = ListErrorsRegionInstanceGroupManagersRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListErrorsPagedResponse&gt; future = regionInstanceGroupManagersClient.listErrorsPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   ListErrorsRegionInstanceGroupManagersRequest request =
+   *       ListErrorsRegionInstanceGroupManagersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<InstanceManagedByIgmError> future =
+   *       regionInstanceGroupManagersClient.listErrorsPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (InstanceManagedByIgmError element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListErrorsRegionInstanceGroupManagersRequest, ListErrorsPagedResponse>
       listErrorsPagedCallable() {
     return stub.listErrorsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all errors thrown by actions on instances for a given regional managed instance group.
    * The filter and orderBy query parameters are not supported.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   ListErrorsRegionInstanceGroupManagersRequest request = ListErrorsRegionInstanceGroupManagersRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   ListErrorsRegionInstanceGroupManagersRequest request =
+   *       ListErrorsRegionInstanceGroupManagersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     RegionInstanceGroupManagersListErrorsResponse response = regionInstanceGroupManagersClient.listErrorsCallable().call(request);
-   *     for (InstanceManagedByIgmError element : response.getItemsList()) {
+   *     RegionInstanceGroupManagersListErrorsResponse response =
+   *         regionInstanceGroupManagersClient.listErrorsCallable().call(request);
+   *     for (InstanceManagedByIgmError element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1251,7 +1342,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           ListErrorsRegionInstanceGroupManagersRequest,
@@ -1260,7 +1351,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return stub.listErrorsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the instances in the managed instance group and instances that are scheduled to be
    * created. The list includes any current actions that the group has scheduled for its instances.
@@ -1268,16 +1359,20 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroupManager = "";
-   *   for (ManagedInstance element : regionInstanceGroupManagersClient.listManagedInstances(project, region, instanceGroupManager).iterateAll()) {
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   for (ManagedInstance element :
+   *       regionInstanceGroupManagersClient
+   *           .listManagedInstances(project, region, instanceGroupManager)
+   *           .iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -1295,7 +1390,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return listManagedInstances(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the instances in the managed instance group and instances that are scheduled to be
    * created. The list includes any current actions that the group has scheduled for its instances.
@@ -1303,21 +1398,26 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   ListManagedInstancesRegionInstanceGroupManagersRequest request = ListManagedInstancesRegionInstanceGroupManagersRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   for (ManagedInstance element : regionInstanceGroupManagersClient.listManagedInstances(request).iterateAll()) {
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   ListManagedInstancesRegionInstanceGroupManagersRequest request =
+   *       ListManagedInstancesRegionInstanceGroupManagersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (ManagedInstance element :
+   *       regionInstanceGroupManagersClient.listManagedInstances(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1327,7 +1427,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return listManagedInstancesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the instances in the managed instance group and instances that are scheduled to be
    * created. The list includes any current actions that the group has scheduled for its instances.
@@ -1335,23 +1435,28 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   ListManagedInstancesRegionInstanceGroupManagersRequest request = ListManagedInstancesRegionInstanceGroupManagersRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListManagedInstancesPagedResponse&gt; future = regionInstanceGroupManagersClient.listManagedInstancesPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   ListManagedInstancesRegionInstanceGroupManagersRequest request =
+   *       ListManagedInstancesRegionInstanceGroupManagersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<ManagedInstance> future =
+   *       regionInstanceGroupManagersClient.listManagedInstancesPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (ManagedInstance element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           ListManagedInstancesRegionInstanceGroupManagersRequest, ListManagedInstancesPagedResponse>
@@ -1359,7 +1464,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return stub.listManagedInstancesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the instances in the managed instance group and instances that are scheduled to be
    * created. The list includes any current actions that the group has scheduled for its instances.
@@ -1367,19 +1472,24 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   ListManagedInstancesRegionInstanceGroupManagersRequest request = ListManagedInstancesRegionInstanceGroupManagersRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   ListManagedInstancesRegionInstanceGroupManagersRequest request =
+   *       ListManagedInstancesRegionInstanceGroupManagersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     RegionInstanceGroupManagersListInstancesResponse response = regionInstanceGroupManagersClient.listManagedInstancesCallable().call(request);
-   *     for (ManagedInstance element : response.getManagedInstancesList()) {
+   *     RegionInstanceGroupManagersListInstancesResponse response =
+   *         regionInstanceGroupManagersClient.listManagedInstancesCallable().call(request);
+   *     for (ManagedInstance element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1390,7 +1500,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           ListManagedInstancesRegionInstanceGroupManagersRequest,
@@ -1399,23 +1509,27 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return stub.listManagedInstancesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all of the per-instance configs defined for the managed instance group. The orderBy query
    * parameter is not supported.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroupManager = "";
-   *   for (PerInstanceConfig element : regionInstanceGroupManagersClient.listPerInstanceConfigs(project, region, instanceGroupManager).iterateAll()) {
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   for (PerInstanceConfig element :
+   *       regionInstanceGroupManagersClient
+   *           .listPerInstanceConfigs(project, region, instanceGroupManager)
+   *           .iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request, should conform to RFC1035.
@@ -1434,28 +1548,33 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return listPerInstanceConfigs(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all of the per-instance configs defined for the managed instance group. The orderBy query
    * parameter is not supported.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   ListPerInstanceConfigsRegionInstanceGroupManagersRequest request = ListPerInstanceConfigsRegionInstanceGroupManagersRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   for (PerInstanceConfig element : regionInstanceGroupManagersClient.listPerInstanceConfigs(request).iterateAll()) {
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   ListPerInstanceConfigsRegionInstanceGroupManagersRequest request =
+   *       ListPerInstanceConfigsRegionInstanceGroupManagersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (PerInstanceConfig element :
+   *       regionInstanceGroupManagersClient.listPerInstanceConfigs(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1465,30 +1584,37 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return listPerInstanceConfigsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all of the per-instance configs defined for the managed instance group. The orderBy query
    * parameter is not supported.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   ListPerInstanceConfigsRegionInstanceGroupManagersRequest request = ListPerInstanceConfigsRegionInstanceGroupManagersRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPerInstanceConfigsPagedResponse&gt; future = regionInstanceGroupManagersClient.listPerInstanceConfigsPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   ListPerInstanceConfigsRegionInstanceGroupManagersRequest request =
+   *       ListPerInstanceConfigsRegionInstanceGroupManagersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<PerInstanceConfig> future =
+   *       regionInstanceGroupManagersClient
+   *           .listPerInstanceConfigsPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
    *   for (PerInstanceConfig element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           ListPerInstanceConfigsRegionInstanceGroupManagersRequest,
@@ -1497,26 +1623,31 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return stub.listPerInstanceConfigsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all of the per-instance configs defined for the managed instance group. The orderBy query
    * parameter is not supported.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   ListPerInstanceConfigsRegionInstanceGroupManagersRequest request = ListPerInstanceConfigsRegionInstanceGroupManagersRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   ListPerInstanceConfigsRegionInstanceGroupManagersRequest request =
+   *       ListPerInstanceConfigsRegionInstanceGroupManagersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     RegionInstanceGroupManagersListInstanceConfigsResp response = regionInstanceGroupManagersClient.listPerInstanceConfigsCallable().call(request);
-   *     for (PerInstanceConfig element : response.getItemsList()) {
+   *     RegionInstanceGroupManagersListInstanceConfigsResp response =
+   *         regionInstanceGroupManagersClient.listPerInstanceConfigsCallable().call(request);
+   *     for (PerInstanceConfig element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1527,7 +1658,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           ListPerInstanceConfigsRegionInstanceGroupManagersRequest,
@@ -1536,7 +1667,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return stub.listPerInstanceConfigsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a managed instance group using the information that you specify in the request. This
    * operation is marked as DONE when the group is patched even if the instances in the group are
@@ -1546,15 +1677,18 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroupManager = "";
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagersClient.patch(project, region, instanceGroupManager, instanceGroupManagerResource);
+   *   Operation response =
+   *       regionInstanceGroupManagersClient.patch(
+   *           project, region, instanceGroupManager, instanceGroupManagerResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -1577,7 +1711,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a managed instance group using the information that you specify in the request. This
    * operation is marked as DONE when the group is patched even if the instances in the group are
@@ -1587,21 +1721,20 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   PatchRegionInstanceGroupManagerRequest request = PatchRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   PatchRegionInstanceGroupManagerRequest request =
+   *       PatchRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagerResource(InstanceGroupManager.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionInstanceGroupManagersClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1610,7 +1743,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a managed instance group using the information that you specify in the request. This
    * operation is marked as DONE when the group is patched even if the instances in the group are
@@ -1620,44 +1753,52 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   PatchRegionInstanceGroupManagerRequest request = PatchRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.patchCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   PatchRegionInstanceGroupManagerRequest request =
+   *       PatchRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagerResource(InstanceGroupManager.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionInstanceGroupManagersClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchRegionInstanceGroupManagerRequest, Operation> patchCallable() {
     return stub.patchCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Inserts or patches per-instance configs for the managed instance group. perInstanceConfig.name
    * serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroupManager = "";
-   *   RegionInstanceGroupManagerPatchInstanceConfigReq regionInstanceGroupManagerPatchInstanceConfigReqResource = RegionInstanceGroupManagerPatchInstanceConfigReq.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagersClient.patchPerInstanceConfigs(project, region, instanceGroupManager, regionInstanceGroupManagerPatchInstanceConfigReqResource);
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   RegionInstanceGroupManagerPatchInstanceConfigReq
+   *       regionInstanceGroupManagerPatchInstanceConfigReqResource =
+   *           RegionInstanceGroupManagerPatchInstanceConfigReq.newBuilder().build();
+   *   Operation response =
+   *       regionInstanceGroupManagersClient.patchPerInstanceConfigs(
+   *           project,
+   *           region,
+   *           instanceGroupManager,
+   *           regionInstanceGroupManagerPatchInstanceConfigReqResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request, should conform to RFC1035.
@@ -1684,28 +1825,28 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return patchPerInstanceConfigs(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Inserts or patches per-instance configs for the managed instance group. perInstanceConfig.name
    * serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagerPatchInstanceConfigReq regionInstanceGroupManagerPatchInstanceConfigReqResource = RegionInstanceGroupManagerPatchInstanceConfigReq.newBuilder().build();
-   *   PatchPerInstanceConfigsRegionInstanceGroupManagerRequest request = PatchPerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagerPatchInstanceConfigReqResource(regionInstanceGroupManagerPatchInstanceConfigReqResource)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   PatchPerInstanceConfigsRegionInstanceGroupManagerRequest request =
+   *       PatchPerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagerPatchInstanceConfigReqResource(
+   *               RegionInstanceGroupManagerPatchInstanceConfigReq.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionInstanceGroupManagersClient.patchPerInstanceConfigs(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1715,37 +1856,38 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return patchPerInstanceConfigsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Inserts or patches per-instance configs for the managed instance group. perInstanceConfig.name
    * serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagerPatchInstanceConfigReq regionInstanceGroupManagerPatchInstanceConfigReqResource = RegionInstanceGroupManagerPatchInstanceConfigReq.newBuilder().build();
-   *   PatchPerInstanceConfigsRegionInstanceGroupManagerRequest request = PatchPerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagerPatchInstanceConfigReqResource(regionInstanceGroupManagerPatchInstanceConfigReqResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.patchPerInstanceConfigsCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   PatchPerInstanceConfigsRegionInstanceGroupManagerRequest request =
+   *       PatchPerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagerPatchInstanceConfigReqResource(
+   *               RegionInstanceGroupManagerPatchInstanceConfigReq.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionInstanceGroupManagersClient.patchPerInstanceConfigsCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
       patchPerInstanceConfigsCallable() {
     return stub.patchPerInstanceConfigsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Flags the specified VM instances in the managed instance group to be immediately recreated.
    * Each instance is recreated using the group's current configuration. This operation is marked as
@@ -1761,15 +1903,23 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroupManager = "";
-   *   RegionInstanceGroupManagersRecreateRequest regionInstanceGroupManagersRecreateRequestResource = RegionInstanceGroupManagersRecreateRequest.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagersClient.recreateInstances(project, region, instanceGroupManager, regionInstanceGroupManagersRecreateRequestResource);
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   RegionInstanceGroupManagersRecreateRequest
+   *       regionInstanceGroupManagersRecreateRequestResource =
+   *           RegionInstanceGroupManagersRecreateRequest.newBuilder().build();
+   *   Operation response =
+   *       regionInstanceGroupManagersClient.recreateInstances(
+   *           project,
+   *           region,
+   *           instanceGroupManager,
+   *           regionInstanceGroupManagersRecreateRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -1794,7 +1944,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return recreateInstances(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Flags the specified VM instances in the managed instance group to be immediately recreated.
    * Each instance is recreated using the group's current configuration. This operation is marked as
@@ -1810,21 +1960,21 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagersRecreateRequest regionInstanceGroupManagersRecreateRequestResource = RegionInstanceGroupManagersRecreateRequest.newBuilder().build();
-   *   RecreateInstancesRegionInstanceGroupManagerRequest request = RecreateInstancesRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagersRecreateRequestResource(regionInstanceGroupManagersRecreateRequestResource)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   RecreateInstancesRegionInstanceGroupManagerRequest request =
+   *       RecreateInstancesRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagersRecreateRequestResource(
+   *               RegionInstanceGroupManagersRecreateRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionInstanceGroupManagersClient.recreateInstances(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1834,7 +1984,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return recreateInstancesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Flags the specified VM instances in the managed instance group to be immediately recreated.
    * Each instance is recreated using the group's current configuration. This operation is marked as
@@ -1850,30 +2000,31 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagersRecreateRequest regionInstanceGroupManagersRecreateRequestResource = RegionInstanceGroupManagersRecreateRequest.newBuilder().build();
-   *   RecreateInstancesRegionInstanceGroupManagerRequest request = RecreateInstancesRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagersRecreateRequestResource(regionInstanceGroupManagersRecreateRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.recreateInstancesCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   RecreateInstancesRegionInstanceGroupManagerRequest request =
+   *       RecreateInstancesRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagersRecreateRequestResource(
+   *               RegionInstanceGroupManagersRecreateRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionInstanceGroupManagersClient.recreateInstancesCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<RecreateInstancesRegionInstanceGroupManagerRequest, Operation>
       recreateInstancesCallable() {
     return stub.recreateInstancesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the intended size of the managed instance group. If you increase the size, the group
    * creates new instances using the current instance template. If you decrease the size, the group
@@ -1889,15 +2040,17 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroupManager = "";
-   *   int size = 0;
-   *   Operation response = regionInstanceGroupManagersClient.resize(project, region, instanceGroupManager, size);
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   int size = 3530753;
+   *   Operation response =
+   *       regionInstanceGroupManagersClient.resize(project, region, instanceGroupManager, size);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -1917,7 +2070,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return resize(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the intended size of the managed instance group. If you increase the size, the group
    * creates new instances using the current instance template. If you decrease the size, the group
@@ -1933,21 +2086,20 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   int size = 0;
-   *   ResizeRegionInstanceGroupManagerRequest request = ResizeRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSize(size)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   ResizeRegionInstanceGroupManagerRequest request =
+   *       ResizeRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSize(3530753)
+   *           .build();
    *   Operation response = regionInstanceGroupManagersClient.resize(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1956,7 +2108,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return resizeCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the intended size of the managed instance group. If you increase the size, the group
    * creates new instances using the current instance template. If you decrease the size, the group
@@ -1972,44 +2124,52 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   int size = 0;
-   *   ResizeRegionInstanceGroupManagerRequest request = ResizeRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSize(size)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.resizeCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   ResizeRegionInstanceGroupManagerRequest request =
+   *       ResizeRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSize(3530753)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionInstanceGroupManagersClient.resizeCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ResizeRegionInstanceGroupManagerRequest, Operation> resizeCallable() {
     return stub.resizeCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the instance template to use when creating new instances or recreating instances in this
    * group. Existing instances are not affected.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroupManager = "";
-   *   RegionInstanceGroupManagersSetTemplateRequest regionInstanceGroupManagersSetTemplateRequestResource = RegionInstanceGroupManagersSetTemplateRequest.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagersClient.setInstanceTemplate(project, region, instanceGroupManager, regionInstanceGroupManagersSetTemplateRequestResource);
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   RegionInstanceGroupManagersSetTemplateRequest
+   *       regionInstanceGroupManagersSetTemplateRequestResource =
+   *           RegionInstanceGroupManagersSetTemplateRequest.newBuilder().build();
+   *   Operation response =
+   *       regionInstanceGroupManagersClient.setInstanceTemplate(
+   *           project,
+   *           region,
+   *           instanceGroupManager,
+   *           regionInstanceGroupManagersSetTemplateRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -2034,28 +2194,28 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return setInstanceTemplate(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the instance template to use when creating new instances or recreating instances in this
    * group. Existing instances are not affected.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagersSetTemplateRequest regionInstanceGroupManagersSetTemplateRequestResource = RegionInstanceGroupManagersSetTemplateRequest.newBuilder().build();
-   *   SetInstanceTemplateRegionInstanceGroupManagerRequest request = SetInstanceTemplateRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagersSetTemplateRequestResource(regionInstanceGroupManagersSetTemplateRequestResource)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   SetInstanceTemplateRegionInstanceGroupManagerRequest request =
+   *       SetInstanceTemplateRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagersSetTemplateRequestResource(
+   *               RegionInstanceGroupManagersSetTemplateRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionInstanceGroupManagersClient.setInstanceTemplate(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2065,52 +2225,61 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return setInstanceTemplateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the instance template to use when creating new instances or recreating instances in this
    * group. Existing instances are not affected.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagersSetTemplateRequest regionInstanceGroupManagersSetTemplateRequestResource = RegionInstanceGroupManagersSetTemplateRequest.newBuilder().build();
-   *   SetInstanceTemplateRegionInstanceGroupManagerRequest request = SetInstanceTemplateRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagersSetTemplateRequestResource(regionInstanceGroupManagersSetTemplateRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.setInstanceTemplateCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   SetInstanceTemplateRegionInstanceGroupManagerRequest request =
+   *       SetInstanceTemplateRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagersSetTemplateRequestResource(
+   *               RegionInstanceGroupManagersSetTemplateRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionInstanceGroupManagersClient.setInstanceTemplateCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation>
       setInstanceTemplateCallable() {
     return stub.setInstanceTemplateCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Modifies the target pools to which all new instances in this group are assigned. Existing
    * instances in the group are not affected.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroupManager = "";
-   *   RegionInstanceGroupManagersSetTargetPoolsRequest regionInstanceGroupManagersSetTargetPoolsRequestResource = RegionInstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagersClient.setTargetPools(project, region, instanceGroupManager, regionInstanceGroupManagersSetTargetPoolsRequestResource);
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   RegionInstanceGroupManagersSetTargetPoolsRequest
+   *       regionInstanceGroupManagersSetTargetPoolsRequestResource =
+   *           RegionInstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
+   *   Operation response =
+   *       regionInstanceGroupManagersClient.setTargetPools(
+   *           project,
+   *           region,
+   *           instanceGroupManager,
+   *           regionInstanceGroupManagersSetTargetPoolsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -2136,28 +2305,28 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return setTargetPools(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Modifies the target pools to which all new instances in this group are assigned. Existing
    * instances in the group are not affected.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagersSetTargetPoolsRequest regionInstanceGroupManagersSetTargetPoolsRequestResource = RegionInstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
-   *   SetTargetPoolsRegionInstanceGroupManagerRequest request = SetTargetPoolsRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagersSetTargetPoolsRequestResource(regionInstanceGroupManagersSetTargetPoolsRequestResource)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   SetTargetPoolsRegionInstanceGroupManagerRequest request =
+   *       SetTargetPoolsRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagersSetTargetPoolsRequestResource(
+   *               RegionInstanceGroupManagersSetTargetPoolsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionInstanceGroupManagersClient.setTargetPools(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2166,52 +2335,61 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return setTargetPoolsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Modifies the target pools to which all new instances in this group are assigned. Existing
    * instances in the group are not affected.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagersSetTargetPoolsRequest regionInstanceGroupManagersSetTargetPoolsRequestResource = RegionInstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
-   *   SetTargetPoolsRegionInstanceGroupManagerRequest request = SetTargetPoolsRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagersSetTargetPoolsRequestResource(regionInstanceGroupManagersSetTargetPoolsRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.setTargetPoolsCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   SetTargetPoolsRegionInstanceGroupManagerRequest request =
+   *       SetTargetPoolsRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagersSetTargetPoolsRequestResource(
+   *               RegionInstanceGroupManagersSetTargetPoolsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionInstanceGroupManagersClient.setTargetPoolsCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetTargetPoolsRegionInstanceGroupManagerRequest, Operation>
       setTargetPoolsCallable() {
     return stub.setTargetPoolsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Inserts or updates per-instance configs for the managed instance group. perInstanceConfig.name
    * serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroupManager = "";
-   *   RegionInstanceGroupManagerUpdateInstanceConfigReq regionInstanceGroupManagerUpdateInstanceConfigReqResource = RegionInstanceGroupManagerUpdateInstanceConfigReq.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagersClient.updatePerInstanceConfigs(project, region, instanceGroupManager, regionInstanceGroupManagerUpdateInstanceConfigReqResource);
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   RegionInstanceGroupManagerUpdateInstanceConfigReq
+   *       regionInstanceGroupManagerUpdateInstanceConfigReqResource =
+   *           RegionInstanceGroupManagerUpdateInstanceConfigReq.newBuilder().build();
+   *   Operation response =
+   *       regionInstanceGroupManagersClient.updatePerInstanceConfigs(
+   *           project,
+   *           region,
+   *           instanceGroupManager,
+   *           regionInstanceGroupManagerUpdateInstanceConfigReqResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request, should conform to RFC1035.
@@ -2238,28 +2416,28 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return updatePerInstanceConfigs(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Inserts or updates per-instance configs for the managed instance group. perInstanceConfig.name
    * serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagerUpdateInstanceConfigReq regionInstanceGroupManagerUpdateInstanceConfigReqResource = RegionInstanceGroupManagerUpdateInstanceConfigReq.newBuilder().build();
-   *   UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest request = UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagerUpdateInstanceConfigReqResource(regionInstanceGroupManagerUpdateInstanceConfigReqResource)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest request =
+   *       UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagerUpdateInstanceConfigReqResource(
+   *               RegionInstanceGroupManagerUpdateInstanceConfigReq.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionInstanceGroupManagersClient.updatePerInstanceConfigs(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2269,30 +2447,31 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return updatePerInstanceConfigsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Inserts or updates per-instance configs for the managed instance group. perInstanceConfig.name
    * serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
-   *   String instanceGroupManager = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupManagerUpdateInstanceConfigReq regionInstanceGroupManagerUpdateInstanceConfigReqResource = RegionInstanceGroupManagerUpdateInstanceConfigReq.newBuilder().build();
-   *   UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest request = UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupManagerUpdateInstanceConfigReqResource(regionInstanceGroupManagerUpdateInstanceConfigReqResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.updatePerInstanceConfigsCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
+   *     RegionInstanceGroupManagersClient.create()) {
+   *   UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest request =
+   *       UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupManagerUpdateInstanceConfigReqResource(
+   *               RegionInstanceGroupManagerUpdateInstanceConfigReq.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionInstanceGroupManagersClient.updatePerInstanceConfigsCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
       updatePerInstanceConfigsCallable() {

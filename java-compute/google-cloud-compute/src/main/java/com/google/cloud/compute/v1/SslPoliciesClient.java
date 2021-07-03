@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,24 +34,22 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The SslPolicies API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
- *   String project = "";
- *   String sslPolicy = "";
+ *   String project = "project-309310695";
+ *   String sslPolicy = "sslPolicy618174046";
  *   Operation response = sslPoliciesClient.delete(project, sslPolicy);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the sslPoliciesClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the SslPoliciesClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -78,30 +77,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SslPoliciesSettings sslPoliciesSettings =
  *     SslPoliciesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * SslPoliciesClient sslPoliciesClient =
- *     SslPoliciesClient.create(sslPoliciesSettings);
- * </code>
- * </pre>
+ * SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create(sslPoliciesSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SslPoliciesSettings sslPoliciesSettings =
  *     SslPoliciesSettings.newBuilder().setEndpoint(myEndpoint).build();
- * SslPoliciesClient sslPoliciesClient =
- *     SslPoliciesClient.create(sslPoliciesSettings);
- * </code>
- * </pre>
+ * SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create(sslPoliciesSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class SslPoliciesClient implements BackgroundResource {
   private final SslPoliciesSettings settings;
   private final SslPoliciesStub stub;
@@ -121,7 +115,7 @@ public class SslPoliciesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of SslPoliciesClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use SslPoliciesSettings}.
+   * advanced usage - prefer using create(SslPoliciesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SslPoliciesClient create(SslPoliciesStub stub) {
@@ -153,20 +147,20 @@ public class SslPoliciesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified SSL policy. The SSL policy resource can be deleted only if it is not in
    * use by any TargetHttpsProxy or TargetSslProxy resources.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
-   *   String sslPolicy = "";
+   *   String project = "project-309310695";
+   *   String sslPolicy = "sslPolicy618174046";
    *   Operation response = sslPoliciesClient.delete(project, sslPolicy);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param sslPolicy Name of the SSL policy to delete. The name must be 1-63 characters long, and
@@ -179,24 +173,24 @@ public class SslPoliciesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified SSL policy. The SSL policy resource can be deleted only if it is not in
    * use by any TargetHttpsProxy or TargetSslProxy resources.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
-   *   String sslPolicy = "";
-   *   DeleteSslPolicyRequest request = DeleteSslPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSslPolicy(sslPolicy)
-   *     .build();
+   *   DeleteSslPolicyRequest request =
+   *       DeleteSslPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSslPolicy("sslPolicy618174046")
+   *           .build();
    *   Operation response = sslPoliciesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -205,44 +199,44 @@ public class SslPoliciesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified SSL policy. The SSL policy resource can be deleted only if it is not in
    * use by any TargetHttpsProxy or TargetSslProxy resources.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
-   *   String sslPolicy = "";
-   *   DeleteSslPolicyRequest request = DeleteSslPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSslPolicy(sslPolicy)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = sslPoliciesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteSslPolicyRequest request =
+   *       DeleteSslPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSslPolicy("sslPolicy618174046")
+   *           .build();
+   *   ApiFuture<Operation> future = sslPoliciesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteSslPolicyRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all of the ordered rules present in a single specified policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
-   *   String sslPolicy = "";
+   *   String project = "project-309310695";
+   *   String sslPolicy = "sslPolicy618174046";
    *   SslPolicy response = sslPoliciesClient.get(project, sslPolicy);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param sslPolicy Name of the SSL policy to update. The name must be 1-63 characters long, and
@@ -255,23 +249,22 @@ public class SslPoliciesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all of the ordered rules present in a single specified policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
-   *   String sslPolicy = "";
-   *   GetSslPolicyRequest request = GetSslPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSslPolicy(sslPolicy)
-   *     .build();
+   *   GetSslPolicyRequest request =
+   *       GetSslPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setSslPolicy("sslPolicy618174046")
+   *           .build();
    *   SslPolicy response = sslPoliciesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -280,44 +273,43 @@ public class SslPoliciesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all of the ordered rules present in a single specified policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
-   *   String sslPolicy = "";
-   *   GetSslPolicyRequest request = GetSslPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSslPolicy(sslPolicy)
-   *     .build();
-   *   ApiFuture&lt;SslPolicy&gt; future = sslPoliciesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetSslPolicyRequest request =
+   *       GetSslPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setSslPolicy("sslPolicy618174046")
+   *           .build();
+   *   ApiFuture<SslPolicy> future = sslPoliciesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   SslPolicy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetSslPolicyRequest, SslPolicy> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified SSL policy resource. Gets a list of available SSL policies by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
    *   Operation response = sslPoliciesClient.insert(project, sslPolicyResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param sslPolicyResource The body resource for this request
@@ -332,24 +324,24 @@ public class SslPoliciesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified SSL policy resource. Gets a list of available SSL policies by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
-   *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
-   *   InsertSslPolicyRequest request = InsertSslPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSslPolicyResource(sslPolicyResource)
-   *     .build();
+   *   InsertSslPolicyRequest request =
+   *       InsertSslPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSslPolicyResource(SslPolicy.newBuilder().build())
+   *           .build();
    *   Operation response = sslPoliciesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -358,45 +350,45 @@ public class SslPoliciesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified SSL policy resource. Gets a list of available SSL policies by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
-   *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
-   *   InsertSslPolicyRequest request = InsertSslPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSslPolicyResource(sslPolicyResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = sslPoliciesClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertSslPolicyRequest request =
+   *       InsertSslPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSslPolicyResource(SslPolicy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = sslPoliciesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertSslPolicyRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all the SSL policies that have been configured for the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (SslPolicy element : sslPoliciesClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -407,23 +399,28 @@ public class SslPoliciesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all the SSL policies that have been configured for the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
-   *   ListSslPoliciesRequest request = ListSslPoliciesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListSslPoliciesRequest request =
+   *       ListSslPoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (SslPolicy element : sslPoliciesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -432,45 +429,55 @@ public class SslPoliciesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all the SSL policies that have been configured for the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
-   *   ListSslPoliciesRequest request = ListSslPoliciesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = sslPoliciesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListSslPoliciesRequest request =
+   *       ListSslPoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<SslPolicy> future = sslPoliciesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (SslPolicy element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListSslPoliciesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all the SSL policies that have been configured for the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
-   *   ListSslPoliciesRequest request = ListSslPoliciesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListSslPoliciesRequest request =
+   *       ListSslPoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     SslPoliciesList response = sslPoliciesClient.listCallable().call(request);
-   *     for (SslPolicy element : response.getItemsList()) {
+   *     for (SslPolicy element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -481,24 +488,25 @@ public class SslPoliciesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListSslPoliciesRequest, SslPoliciesList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all features that can be specified in the SSL policy when using custom profile.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
-   *   SslPoliciesListAvailableFeaturesResponse response = sslPoliciesClient.listAvailableFeatures(project);
+   *   String project = "project-309310695";
+   *   SslPoliciesListAvailableFeaturesResponse response =
+   *       sslPoliciesClient.listAvailableFeatures(project);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -509,21 +517,27 @@ public class SslPoliciesClient implements BackgroundResource {
     return listAvailableFeatures(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all features that can be specified in the SSL policy when using custom profile.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
-   *   ListAvailableFeaturesSslPoliciesRequest request = ListAvailableFeaturesSslPoliciesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   SslPoliciesListAvailableFeaturesResponse response = sslPoliciesClient.listAvailableFeatures(request);
+   *   ListAvailableFeaturesSslPoliciesRequest request =
+   *       ListAvailableFeaturesSslPoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   SslPoliciesListAvailableFeaturesResponse response =
+   *       sslPoliciesClient.listAvailableFeatures(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -533,23 +547,29 @@ public class SslPoliciesClient implements BackgroundResource {
     return listAvailableFeaturesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all features that can be specified in the SSL policy when using custom profile.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
-   *   ListAvailableFeaturesSslPoliciesRequest request = ListAvailableFeaturesSslPoliciesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;SslPoliciesListAvailableFeaturesResponse&gt; future = sslPoliciesClient.listAvailableFeaturesCallable().futureCall(request);
-   *   // Do something
+   *   ListAvailableFeaturesSslPoliciesRequest request =
+   *       ListAvailableFeaturesSslPoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<SslPoliciesListAvailableFeaturesResponse> future =
+   *       sslPoliciesClient.listAvailableFeaturesCallable().futureCall(request);
+   *   // Do something.
    *   SslPoliciesListAvailableFeaturesResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           ListAvailableFeaturesSslPoliciesRequest, SslPoliciesListAvailableFeaturesResponse>
@@ -557,20 +577,20 @@ public class SslPoliciesClient implements BackgroundResource {
     return stub.listAvailableFeaturesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified SSL policy with the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
-   *   String sslPolicy = "";
+   *   String project = "project-309310695";
+   *   String sslPolicy = "sslPolicy618174046";
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
    *   Operation response = sslPoliciesClient.patch(project, sslPolicy, sslPolicyResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param sslPolicy Name of the SSL policy to update. The name must be 1-63 characters long, and
@@ -588,25 +608,24 @@ public class SslPoliciesClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified SSL policy with the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
-   *   String sslPolicy = "";
-   *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
-   *   PatchSslPolicyRequest request = PatchSslPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSslPolicy(sslPolicy)
-   *     .setSslPolicyResource(sslPolicyResource)
-   *     .build();
+   *   PatchSslPolicyRequest request =
+   *       PatchSslPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSslPolicy("sslPolicy618174046")
+   *           .setSslPolicyResource(SslPolicy.newBuilder().build())
+   *           .build();
    *   Operation response = sslPoliciesClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -615,27 +634,26 @@ public class SslPoliciesClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified SSL policy with the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
-   *   String project = "";
-   *   String sslPolicy = "";
-   *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
-   *   PatchSslPolicyRequest request = PatchSslPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSslPolicy(sslPolicy)
-   *     .setSslPolicyResource(sslPolicyResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = sslPoliciesClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchSslPolicyRequest request =
+   *       PatchSslPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSslPolicy("sslPolicy618174046")
+   *           .setSslPolicyResource(SslPolicy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = sslPoliciesClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchSslPolicyRequest, Operation> patchCallable() {
     return stub.patchCallable();

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.AutoscalersClient.AggregatedListPagedResponse;
@@ -44,29 +45,28 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchAutoscalerRequest;
 import com.google.cloud.compute.v1.UpdateAutoscalerRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the Autoscalers service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonAutoscalersStub extends AutoscalersStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListAutoscalersRequest, AutoscalerAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListAutoscalersRequest, AutoscalerAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Autoscalers.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.Autoscalers/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListAutoscalersRequest>newBuilder()
@@ -124,7 +124,7 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                           new FieldsExtractor<AggregatedListAutoscalersRequest, String>() {
                             @Override
                             public String extract(AggregatedListAutoscalersRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -134,11 +134,10 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteAutoscalerRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteAutoscalerRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteAutoscalerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Autoscalers.Delete")
+              .setFullMethodName("google.cloud.compute.v1.Autoscalers/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteAutoscalerRequest>newBuilder()
@@ -150,10 +149,10 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteAutoscalerRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields, "autoscaler", request.getAutoscaler());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -177,7 +176,7 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                           new FieldsExtractor<DeleteAutoscalerRequest, String>() {
                             @Override
                             public String extract(DeleteAutoscalerRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -187,10 +186,9 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetAutoscalerRequest, Autoscaler> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetAutoscalerRequest, Autoscaler> getMethodDescriptor =
       ApiMethodDescriptor.<GetAutoscalerRequest, Autoscaler>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Autoscalers.Get")
+          .setFullMethodName("google.cloud.compute.v1.Autoscalers/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetAutoscalerRequest>newBuilder()
@@ -202,9 +200,9 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<GetAutoscalerRequest> serializer =
                               ProtoRestSerializer.create();
+                          serializer.putPathParam(fields, "autoscaler", request.getAutoscaler());
                           serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "zone", request.getZone());
-                          serializer.putPathParam(fields, "autoscaler", request.getAutoscaler());
                           return fields;
                         }
                       })
@@ -215,7 +213,6 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetAutoscalerRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -223,7 +220,7 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                       new FieldsExtractor<GetAutoscalerRequest, String>() {
                         @Override
                         public String extract(GetAutoscalerRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -233,11 +230,10 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertAutoscalerRequest, Operation>
+  private static final ApiMethodDescriptor<InsertAutoscalerRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertAutoscalerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Autoscalers.Insert")
+              .setFullMethodName("google.cloud.compute.v1.Autoscalers/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertAutoscalerRequest>newBuilder()
@@ -285,11 +281,10 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListAutoscalersRequest, AutoscalerList>
+  private static final ApiMethodDescriptor<ListAutoscalersRequest, AutoscalerList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListAutoscalersRequest, AutoscalerList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Autoscalers.List")
+              .setFullMethodName("google.cloud.compute.v1.Autoscalers/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListAutoscalersRequest>newBuilder()
@@ -341,7 +336,7 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                           new FieldsExtractor<ListAutoscalersRequest, String>() {
                             @Override
                             public String extract(ListAutoscalersRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -351,62 +346,64 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchAutoscalerRequest, Operation> patchMethodDescriptor =
-      ApiMethodDescriptor.<PatchAutoscalerRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Autoscalers.Patch")
-          .setHttpMethod(HttpMethods.PATCH)
-          .setRequestFormatter(
-              ProtoMessageRequestFormatter.<PatchAutoscalerRequest>newBuilder()
-                  .setPath(
-                      "/compute/v1/projects/{project}/zones/{zone}/autoscalers",
-                      new FieldsExtractor<PatchAutoscalerRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(PatchAutoscalerRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<PatchAutoscalerRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
-                          return fields;
-                        }
-                      })
-                  .setQueryParamsExtractor(
-                      new FieldsExtractor<PatchAutoscalerRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(PatchAutoscalerRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<PatchAutoscalerRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasAutoscaler()) {
-                            serializer.putQueryParam(fields, "autoscaler", request.getAutoscaler());
-                          }
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
-                        }
-                      })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<PatchAutoscalerRequest, String>() {
-                        @Override
-                        public String extract(PatchAutoscalerRequest request) {
-                          return ProtoRestSerializer.create()
-                              .toBody("autoscalerResource", request.getAutoscalerResource());
-                        }
-                      })
-                  .build())
-          .setResponseParser(
-              ProtoMessageResponseParser.<Operation>newBuilder()
-                  .setDefaultInstance(Operation.getDefaultInstance())
-                  .build())
-          .build();
+  private static final ApiMethodDescriptor<PatchAutoscalerRequest, Operation>
+      patchMethodDescriptor =
+          ApiMethodDescriptor.<PatchAutoscalerRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Autoscalers/Patch")
+              .setHttpMethod(HttpMethods.PATCH)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PatchAutoscalerRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/autoscalers",
+                          new FieldsExtractor<PatchAutoscalerRequest, Map<String, String>>() {
+                            @Override
+                            public Map<String, String> extract(PatchAutoscalerRequest request) {
+                              Map<String, String> fields = new HashMap<>();
+                              ProtoRestSerializer<PatchAutoscalerRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
+                              return fields;
+                            }
+                          })
+                      .setQueryParamsExtractor(
+                          new FieldsExtractor<PatchAutoscalerRequest, Map<String, List<String>>>() {
+                            @Override
+                            public Map<String, List<String>> extract(
+                                PatchAutoscalerRequest request) {
+                              Map<String, List<String>> fields = new HashMap<>();
+                              ProtoRestSerializer<PatchAutoscalerRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              if (request.hasAutoscaler()) {
+                                serializer.putQueryParam(
+                                    fields, "autoscaler", request.getAutoscaler());
+                              }
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
+                              return fields;
+                            }
+                          })
+                      .setRequestBodyExtractor(
+                          new FieldsExtractor<PatchAutoscalerRequest, String>() {
+                            @Override
+                            public String extract(PatchAutoscalerRequest request) {
+                              return ProtoRestSerializer.create()
+                                  .toBody("autoscalerResource", request.getAutoscalerResource());
+                            }
+                          })
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<UpdateAutoscalerRequest, Operation>
+  private static final ApiMethodDescriptor<UpdateAutoscalerRequest, Operation>
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateAutoscalerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Autoscalers.Update")
+              .setFullMethodName("google.cloud.compute.v1.Autoscalers/Update")
               .setHttpMethod(HttpMethods.PUT)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateAutoscalerRequest>newBuilder()
@@ -458,8 +455,6 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<AggregatedListAutoscalersRequest, AutoscalerAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListAutoscalersRequest, AggregatedListPagedResponse>
@@ -472,6 +467,7 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
   private final UnaryCallable<PatchAutoscalerRequest, Operation> patchCallable;
   private final UnaryCallable<UpdateAutoscalerRequest, Operation> updateCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonAutoscalersStub create(AutoscalersStubSettings settings)
@@ -571,43 +567,66 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListAutoscalersRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(updateMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListAutoscalersRequest, AutoscalerAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListAutoscalersRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteAutoscalerRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetAutoscalerRequest, Autoscaler> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertAutoscalerRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListAutoscalersRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListAutoscalersRequest, AutoscalerList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListAutoscalersRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchAutoscalerRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateAutoscalerRequest, Operation> updateCallable() {
     return updateCallable;
   }

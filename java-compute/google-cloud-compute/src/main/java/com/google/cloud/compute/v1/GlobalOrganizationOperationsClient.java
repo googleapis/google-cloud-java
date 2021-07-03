@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,23 +34,23 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The GlobalOrganizationOperations API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient = GlobalOrganizationOperationsClient.create()) {
- *   String operation = "";
- *   DeleteGlobalOrganizationOperationResponse response = globalOrganizationOperationsClient.delete(operation);
+ * <pre>{@code
+ * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
+ *     GlobalOrganizationOperationsClient.create()) {
+ *   String operation = "operation1662702951";
+ *   DeleteGlobalOrganizationOperationResponse response =
+ *       globalOrganizationOperationsClient.delete(operation);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the globalOrganizationOperationsClient object to clean up
+ * <p>Note: close() needs to be called on the GlobalOrganizationOperationsClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -78,30 +79,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * GlobalOrganizationOperationsSettings globalOrganizationOperationsSettings =
  *     GlobalOrganizationOperationsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
  *     GlobalOrganizationOperationsClient.create(globalOrganizationOperationsSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * GlobalOrganizationOperationsSettings globalOrganizationOperationsSettings =
  *     GlobalOrganizationOperationsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
  *     GlobalOrganizationOperationsClient.create(globalOrganizationOperationsSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class GlobalOrganizationOperationsClient implements BackgroundResource {
   private final GlobalOrganizationOperationsSettings settings;
   private final GlobalOrganizationOperationsStub stub;
@@ -123,7 +121,7 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of GlobalOrganizationOperationsClient, using the given stub for making
-   * calls. This is for advanced usage - prefer to use GlobalOrganizationOperationsSettings}.
+   * calls. This is for advanced usage - prefer using create(GlobalOrganizationOperationsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GlobalOrganizationOperationsClient create(
@@ -158,18 +156,20 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Operations resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient = GlobalOrganizationOperationsClient.create()) {
-   *   String operation = "";
-   *   DeleteGlobalOrganizationOperationResponse response = globalOrganizationOperationsClient.delete(operation);
+   * <pre>{@code
+   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
+   *     GlobalOrganizationOperationsClient.create()) {
+   *   String operation = "operation1662702951";
+   *   DeleteGlobalOrganizationOperationResponse response =
+   *       globalOrganizationOperationsClient.delete(operation);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param operation Name of the Operations resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -180,21 +180,24 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Operations resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient = GlobalOrganizationOperationsClient.create()) {
-   *   String operation = "";
-   *   DeleteGlobalOrganizationOperationRequest request = DeleteGlobalOrganizationOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .build();
-   *   DeleteGlobalOrganizationOperationResponse response = globalOrganizationOperationsClient.delete(request);
+   * <pre>{@code
+   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
+   *     GlobalOrganizationOperationsClient.create()) {
+   *   DeleteGlobalOrganizationOperationRequest request =
+   *       DeleteGlobalOrganizationOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setParentId("parentId1175162725")
+   *           .build();
+   *   DeleteGlobalOrganizationOperationResponse response =
+   *       globalOrganizationOperationsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -204,23 +207,26 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Operations resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient = GlobalOrganizationOperationsClient.create()) {
-   *   String operation = "";
-   *   DeleteGlobalOrganizationOperationRequest request = DeleteGlobalOrganizationOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .build();
-   *   ApiFuture&lt;DeleteGlobalOrganizationOperationResponse&gt; future = globalOrganizationOperationsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
+   *     GlobalOrganizationOperationsClient.create()) {
+   *   DeleteGlobalOrganizationOperationRequest request =
+   *       DeleteGlobalOrganizationOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setParentId("parentId1175162725")
+   *           .build();
+   *   ApiFuture<DeleteGlobalOrganizationOperationResponse> future =
+   *       globalOrganizationOperationsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   DeleteGlobalOrganizationOperationResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           DeleteGlobalOrganizationOperationRequest, DeleteGlobalOrganizationOperationResponse>
@@ -228,19 +234,20 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified Operations resource. Gets a list of operations by making a `list()`
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient = GlobalOrganizationOperationsClient.create()) {
-   *   String operation = "";
+   * <pre>{@code
+   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
+   *     GlobalOrganizationOperationsClient.create()) {
+   *   String operation = "operation1662702951";
    *   Operation response = globalOrganizationOperationsClient.get(operation);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param operation Name of the Operations resource to return.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -251,22 +258,24 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified Operations resource. Gets a list of operations by making a `list()`
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient = GlobalOrganizationOperationsClient.create()) {
-   *   String operation = "";
-   *   GetGlobalOrganizationOperationRequest request = GetGlobalOrganizationOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .build();
+   * <pre>{@code
+   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
+   *     GlobalOrganizationOperationsClient.create()) {
+   *   GetGlobalOrganizationOperationRequest request =
+   *       GetGlobalOrganizationOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setParentId("parentId1175162725")
+   *           .build();
    *   Operation response = globalOrganizationOperationsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -275,44 +284,48 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified Operations resource. Gets a list of operations by making a `list()`
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient = GlobalOrganizationOperationsClient.create()) {
-   *   String operation = "";
-   *   GetGlobalOrganizationOperationRequest request = GetGlobalOrganizationOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = globalOrganizationOperationsClient.getCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
+   *     GlobalOrganizationOperationsClient.create()) {
+   *   GetGlobalOrganizationOperationRequest request =
+   *       GetGlobalOrganizationOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setParentId("parentId1175162725")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       globalOrganizationOperationsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetGlobalOrganizationOperationRequest, Operation> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Operation resources contained within the specified organization.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient = GlobalOrganizationOperationsClient.create()) {
-   *
+   * <pre>{@code
+   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
+   *     GlobalOrganizationOperationsClient.create()) {
    *   for (Operation element : globalOrganizationOperationsClient.list().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
+   * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPagedResponse list() {
@@ -321,20 +334,29 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Operation resources contained within the specified organization.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient = GlobalOrganizationOperationsClient.create()) {
-   *   ListGlobalOrganizationOperationsRequest request = ListGlobalOrganizationOperationsRequest.newBuilder().build();
+   * <pre>{@code
+   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
+   *     GlobalOrganizationOperationsClient.create()) {
+   *   ListGlobalOrganizationOperationsRequest request =
+   *       ListGlobalOrganizationOperationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setParentId("parentId1175162725")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (Operation element : globalOrganizationOperationsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -343,40 +365,59 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Operation resources contained within the specified organization.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient = GlobalOrganizationOperationsClient.create()) {
-   *   ListGlobalOrganizationOperationsRequest request = ListGlobalOrganizationOperationsRequest.newBuilder().build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = globalOrganizationOperationsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
+   *     GlobalOrganizationOperationsClient.create()) {
+   *   ListGlobalOrganizationOperationsRequest request =
+   *       ListGlobalOrganizationOperationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setParentId("parentId1175162725")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       globalOrganizationOperationsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Operation element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListGlobalOrganizationOperationsRequest, ListPagedResponse>
       listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Operation resources contained within the specified organization.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient = GlobalOrganizationOperationsClient.create()) {
-   *   ListGlobalOrganizationOperationsRequest request = ListGlobalOrganizationOperationsRequest.newBuilder().build();
+   * <pre>{@code
+   * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
+   *     GlobalOrganizationOperationsClient.create()) {
+   *   ListGlobalOrganizationOperationsRequest request =
+   *       ListGlobalOrganizationOperationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setParentId("parentId1175162725")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     OperationList response = globalOrganizationOperationsClient.listCallable().call(request);
-   *     for (Operation element : response.getItemsList()) {
+   *     for (Operation element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -387,7 +428,7 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListGlobalOrganizationOperationsRequest, OperationList>
       listCallable() {

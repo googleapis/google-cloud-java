@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.InstanceGroupManagersClient.AggregatedListPagedResponse;
@@ -63,27 +64,26 @@ import com.google.cloud.compute.v1.SetInstanceTemplateInstanceGroupManagerReques
 import com.google.cloud.compute.v1.SetTargetPoolsInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.UpdatePerInstanceConfigsInstanceGroupManagerRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the InstanceGroupManagers service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<AbandonInstancesInstanceGroupManagerRequest, Operation>
+  private static final ApiMethodDescriptor<AbandonInstancesInstanceGroupManagerRequest, Operation>
       abandonInstancesMethodDescriptor =
           ApiMethodDescriptor.<AbandonInstancesInstanceGroupManagerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers.AbandonInstances")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/AbandonInstances")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -98,12 +98,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<AbandonInstancesInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -144,14 +144,13 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListInstanceGroupManagersRequest, InstanceGroupManagerAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListInstanceGroupManagersRequest, InstanceGroupManagerAggregatedList>
                   newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -213,7 +212,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                             @Override
                             public String extract(
                                 AggregatedListInstanceGroupManagersRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -223,14 +222,13 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ApplyUpdatesToInstancesInstanceGroupManagerRequest, Operation>
       applyUpdatesToInstancesMethodDescriptor =
           ApiMethodDescriptor
               .<ApplyUpdatesToInstancesInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.InstanceGroupManagers.ApplyUpdatesToInstances")
+                  "google.cloud.compute.v1.InstanceGroupManagers/ApplyUpdatesToInstances")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -247,12 +245,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               ProtoRestSerializer<
                                       ApplyUpdatesToInstancesInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -267,7 +265,6 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               ProtoRestSerializer<
                                       ApplyUpdatesToInstancesInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -291,11 +288,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<CreateInstancesInstanceGroupManagerRequest, Operation>
+  private static final ApiMethodDescriptor<CreateInstancesInstanceGroupManagerRequest, Operation>
       createInstancesMethodDescriptor =
           ApiMethodDescriptor.<CreateInstancesInstanceGroupManagerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers.CreateInstances")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/CreateInstances")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -310,12 +306,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<CreateInstancesInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -356,11 +352,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteInstanceGroupManagerRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteInstanceGroupManagerRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteInstanceGroupManagerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers.Delete")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteInstanceGroupManagerRequest>newBuilder()
@@ -374,12 +369,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteInstanceGroupManagerRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -403,7 +398,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                           new FieldsExtractor<DeleteInstanceGroupManagerRequest, String>() {
                             @Override
                             public String extract(DeleteInstanceGroupManagerRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -413,11 +408,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteInstancesInstanceGroupManagerRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteInstancesInstanceGroupManagerRequest, Operation>
       deleteInstancesMethodDescriptor =
           ApiMethodDescriptor.<DeleteInstancesInstanceGroupManagerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers.DeleteInstances")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/DeleteInstances")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -432,12 +426,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteInstancesInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -478,14 +472,13 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           DeletePerInstanceConfigsInstanceGroupManagerRequest, Operation>
       deletePerInstanceConfigsMethodDescriptor =
           ApiMethodDescriptor
               .<DeletePerInstanceConfigsInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.InstanceGroupManagers.DeletePerInstanceConfigs")
+                  "google.cloud.compute.v1.InstanceGroupManagers/DeletePerInstanceConfigs")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -502,12 +495,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               ProtoRestSerializer<
                                       DeletePerInstanceConfigsInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -522,7 +515,6 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               ProtoRestSerializer<
                                       DeletePerInstanceConfigsInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -546,11 +538,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetInstanceGroupManagerRequest, InstanceGroupManager>
+  private static final ApiMethodDescriptor<GetInstanceGroupManagerRequest, InstanceGroupManager>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetInstanceGroupManagerRequest, InstanceGroupManager>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers.Get")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetInstanceGroupManagerRequest>newBuilder()
@@ -564,12 +555,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetInstanceGroupManagerRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -582,7 +573,6 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetInstanceGroupManagerRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -590,7 +580,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                           new FieldsExtractor<GetInstanceGroupManagerRequest, String>() {
                             @Override
                             public String extract(GetInstanceGroupManagerRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -600,11 +590,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertInstanceGroupManagerRequest, Operation>
+  private static final ApiMethodDescriptor<InsertInstanceGroupManagerRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertInstanceGroupManagerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers.Insert")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertInstanceGroupManagerRequest>newBuilder()
@@ -656,13 +645,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListInstanceGroupManagersRequest, InstanceGroupManagerList>
       listMethodDescriptor =
           ApiMethodDescriptor
               .<ListInstanceGroupManagersRequest, InstanceGroupManagerList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers.List")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListInstanceGroupManagersRequest>newBuilder()
@@ -717,7 +705,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                           new FieldsExtractor<ListInstanceGroupManagersRequest, String>() {
                             @Override
                             public String extract(ListInstanceGroupManagersRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -727,14 +715,13 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListErrorsInstanceGroupManagersRequest, InstanceGroupManagersListErrorsResponse>
       listErrorsMethodDescriptor =
           ApiMethodDescriptor
               .<ListErrorsInstanceGroupManagersRequest, InstanceGroupManagersListErrorsResponse>
                   newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers.ListErrors")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/ListErrors")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListErrorsInstanceGroupManagersRequest>newBuilder()
@@ -748,12 +735,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<ListErrorsInstanceGroupManagersRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -793,7 +780,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                           new FieldsExtractor<ListErrorsInstanceGroupManagersRequest, String>() {
                             @Override
                             public String extract(ListErrorsInstanceGroupManagersRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -804,8 +791,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListManagedInstancesInstanceGroupManagersRequest,
           InstanceGroupManagersListManagedInstancesResponse>
       listManagedInstancesMethodDescriptor =
@@ -814,7 +800,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                   InstanceGroupManagersListManagedInstancesResponse>
                   newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.InstanceGroupManagers.ListManagedInstances")
+                  "google.cloud.compute.v1.InstanceGroupManagers/ListManagedInstances")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -830,12 +816,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<ListManagedInstancesInstanceGroupManagersRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -878,7 +864,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                             @Override
                             public String extract(
                                 ListManagedInstancesInstanceGroupManagersRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -890,8 +876,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListPerInstanceConfigsInstanceGroupManagersRequest,
           InstanceGroupManagersListPerInstanceConfigsResp>
       listPerInstanceConfigsMethodDescriptor =
@@ -900,7 +885,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                   InstanceGroupManagersListPerInstanceConfigsResp>
                   newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.InstanceGroupManagers.ListPerInstanceConfigs")
+                  "google.cloud.compute.v1.InstanceGroupManagers/ListPerInstanceConfigs")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -917,12 +902,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               ProtoRestSerializer<
                                       ListPerInstanceConfigsInstanceGroupManagersRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -966,7 +951,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                             @Override
                             public String extract(
                                 ListPerInstanceConfigsInstanceGroupManagersRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -978,11 +963,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchInstanceGroupManagerRequest, Operation>
+  private static final ApiMethodDescriptor<PatchInstanceGroupManagerRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchInstanceGroupManagerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers.Patch")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/Patch")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchInstanceGroupManagerRequest>newBuilder()
@@ -996,12 +980,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<PatchInstanceGroupManagerRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -1038,14 +1022,13 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           PatchPerInstanceConfigsInstanceGroupManagerRequest, Operation>
       patchPerInstanceConfigsMethodDescriptor =
           ApiMethodDescriptor
               .<PatchPerInstanceConfigsInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.InstanceGroupManagers.PatchPerInstanceConfigs")
+                  "google.cloud.compute.v1.InstanceGroupManagers/PatchPerInstanceConfigs")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -1062,12 +1045,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               ProtoRestSerializer<
                                       PatchPerInstanceConfigsInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -1109,11 +1092,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<RecreateInstancesInstanceGroupManagerRequest, Operation>
+  private static final ApiMethodDescriptor<RecreateInstancesInstanceGroupManagerRequest, Operation>
       recreateInstancesMethodDescriptor =
           ApiMethodDescriptor.<RecreateInstancesInstanceGroupManagerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers.RecreateInstances")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/RecreateInstances")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -1128,12 +1110,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<RecreateInstancesInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -1174,11 +1156,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ResizeInstanceGroupManagerRequest, Operation>
+  private static final ApiMethodDescriptor<ResizeInstanceGroupManagerRequest, Operation>
       resizeMethodDescriptor =
           ApiMethodDescriptor.<ResizeInstanceGroupManagerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers.Resize")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/Resize")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ResizeInstanceGroupManagerRequest>newBuilder()
@@ -1192,12 +1173,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<ResizeInstanceGroupManagerRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -1222,7 +1203,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                           new FieldsExtractor<ResizeInstanceGroupManagerRequest, String>() {
                             @Override
                             public String extract(ResizeInstanceGroupManagerRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -1232,13 +1213,13 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetInstanceTemplateInstanceGroupManagerRequest, Operation>
+  private static final ApiMethodDescriptor<
+          SetInstanceTemplateInstanceGroupManagerRequest, Operation>
       setInstanceTemplateMethodDescriptor =
           ApiMethodDescriptor
               .<SetInstanceTemplateInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.InstanceGroupManagers.SetInstanceTemplate")
+                  "google.cloud.compute.v1.InstanceGroupManagers/SetInstanceTemplate")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -1254,12 +1235,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SetInstanceTemplateInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -1300,11 +1281,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetTargetPoolsInstanceGroupManagerRequest, Operation>
+  private static final ApiMethodDescriptor<SetTargetPoolsInstanceGroupManagerRequest, Operation>
       setTargetPoolsMethodDescriptor =
           ApiMethodDescriptor.<SetTargetPoolsInstanceGroupManagerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers.SetTargetPools")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/SetTargetPools")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -1319,12 +1299,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SetTargetPoolsInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -1364,14 +1344,13 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation>
       updatePerInstanceConfigsMethodDescriptor =
           ApiMethodDescriptor
               .<UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.InstanceGroupManagers.UpdatePerInstanceConfigs")
+                  "google.cloud.compute.v1.InstanceGroupManagers/UpdatePerInstanceConfigs")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -1388,12 +1367,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               ProtoRestSerializer<
                                       UpdatePerInstanceConfigsInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -1434,8 +1413,6 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .setDefaultInstance(Operation.getDefaultInstance())
                       .build())
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AbandonInstancesInstanceGroupManagerRequest, Operation>
       abandonInstancesCallable;
@@ -1492,6 +1469,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
   private final UnaryCallable<UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation>
       updatePerInstanceConfigsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonInstanceGroupManagersStub create(
@@ -1750,82 +1728,118 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
             settings.updatePerInstanceConfigsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(abandonInstancesMethodDescriptor);
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(applyUpdatesToInstancesMethodDescriptor);
+    methodDescriptors.add(createInstancesMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(deleteInstancesMethodDescriptor);
+    methodDescriptors.add(deletePerInstanceConfigsMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(listErrorsMethodDescriptor);
+    methodDescriptors.add(listManagedInstancesMethodDescriptor);
+    methodDescriptors.add(listPerInstanceConfigsMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(patchPerInstanceConfigsMethodDescriptor);
+    methodDescriptors.add(recreateInstancesMethodDescriptor);
+    methodDescriptors.add(resizeMethodDescriptor);
+    methodDescriptors.add(setInstanceTemplateMethodDescriptor);
+    methodDescriptors.add(setTargetPoolsMethodDescriptor);
+    methodDescriptors.add(updatePerInstanceConfigsMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<AbandonInstancesInstanceGroupManagerRequest, Operation>
       abandonInstancesCallable() {
     return abandonInstancesCallable;
   }
 
-  public UnaryCallable<AggregatedListInstanceGroupManagersRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<
           AggregatedListInstanceGroupManagersRequest, InstanceGroupManagerAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListInstanceGroupManagersRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<ApplyUpdatesToInstancesInstanceGroupManagerRequest, Operation>
       applyUpdatesToInstancesCallable() {
     return applyUpdatesToInstancesCallable;
   }
 
+  @Override
   public UnaryCallable<CreateInstancesInstanceGroupManagerRequest, Operation>
       createInstancesCallable() {
     return createInstancesCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteInstanceGroupManagerRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteInstancesInstanceGroupManagerRequest, Operation>
       deleteInstancesCallable() {
     return deleteInstancesCallable;
   }
 
+  @Override
   public UnaryCallable<DeletePerInstanceConfigsInstanceGroupManagerRequest, Operation>
       deletePerInstanceConfigsCallable() {
     return deletePerInstanceConfigsCallable;
   }
 
+  @Override
   public UnaryCallable<GetInstanceGroupManagerRequest, InstanceGroupManager> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertInstanceGroupManagerRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListInstanceGroupManagersRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListInstanceGroupManagersRequest, InstanceGroupManagerList> listCallable() {
     return listCallable;
   }
 
-  public UnaryCallable<ListErrorsInstanceGroupManagersRequest, ListErrorsPagedResponse>
-      listErrorsPagedCallable() {
-    return listErrorsPagedCallable;
+  @Override
+  public UnaryCallable<ListInstanceGroupManagersRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListErrorsInstanceGroupManagersRequest, InstanceGroupManagersListErrorsResponse>
       listErrorsCallable() {
     return listErrorsCallable;
   }
 
-  public UnaryCallable<
-          ListManagedInstancesInstanceGroupManagersRequest, ListManagedInstancesPagedResponse>
-      listManagedInstancesPagedCallable() {
-    return listManagedInstancesPagedCallable;
+  @Override
+  public UnaryCallable<ListErrorsInstanceGroupManagersRequest, ListErrorsPagedResponse>
+      listErrorsPagedCallable() {
+    return listErrorsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListManagedInstancesInstanceGroupManagersRequest,
           InstanceGroupManagersListManagedInstancesResponse>
@@ -1833,12 +1847,14 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
     return listManagedInstancesCallable;
   }
 
+  @Override
   public UnaryCallable<
-          ListPerInstanceConfigsInstanceGroupManagersRequest, ListPerInstanceConfigsPagedResponse>
-      listPerInstanceConfigsPagedCallable() {
-    return listPerInstanceConfigsPagedCallable;
+          ListManagedInstancesInstanceGroupManagersRequest, ListManagedInstancesPagedResponse>
+      listManagedInstancesPagedCallable() {
+    return listManagedInstancesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListPerInstanceConfigsInstanceGroupManagersRequest,
           InstanceGroupManagersListPerInstanceConfigsResp>
@@ -1846,34 +1862,48 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
     return listPerInstanceConfigsCallable;
   }
 
+  @Override
+  public UnaryCallable<
+          ListPerInstanceConfigsInstanceGroupManagersRequest, ListPerInstanceConfigsPagedResponse>
+      listPerInstanceConfigsPagedCallable() {
+    return listPerInstanceConfigsPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchInstanceGroupManagerRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<PatchPerInstanceConfigsInstanceGroupManagerRequest, Operation>
       patchPerInstanceConfigsCallable() {
     return patchPerInstanceConfigsCallable;
   }
 
+  @Override
   public UnaryCallable<RecreateInstancesInstanceGroupManagerRequest, Operation>
       recreateInstancesCallable() {
     return recreateInstancesCallable;
   }
 
+  @Override
   public UnaryCallable<ResizeInstanceGroupManagerRequest, Operation> resizeCallable() {
     return resizeCallable;
   }
 
+  @Override
   public UnaryCallable<SetInstanceTemplateInstanceGroupManagerRequest, Operation>
       setInstanceTemplateCallable() {
     return setInstanceTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<SetTargetPoolsInstanceGroupManagerRequest, Operation>
       setTargetPoolsCallable() {
     return setTargetPoolsCallable;
   }
 
+  @Override
   public UnaryCallable<UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation>
       updatePerInstanceConfigsCallable() {
     return updatePerInstanceConfigsCallable;

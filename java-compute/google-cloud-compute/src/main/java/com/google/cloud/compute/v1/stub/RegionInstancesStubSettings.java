@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import com.google.api.core.ApiFunction;
@@ -41,7 +42,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link RegionInstancesStub}.
  *
@@ -58,29 +59,28 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of bulkInsert to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionInstancesStubSettings.Builder regionInstancesSettingsBuilder =
  *     RegionInstancesStubSettings.newBuilder();
  * regionInstancesSettingsBuilder
  *     .bulkInsertSettings()
  *     .setRetrySettings(
- *         regionInstancesSettingsBuilder.bulkInsertSettings().getRetrySettings().toBuilder()
+ *         regionInstancesSettingsBuilder
+ *             .bulkInsertSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionInstancesStubSettings regionInstancesSettings = regionInstancesSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RegionInstancesStubSettings extends StubSettings<RegionInstancesStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/compute")
-          .add("https://www.googleapis.com/auth/compute.readonly")
+          .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
   private final UnaryCallSettings<BulkInsertRegionInstanceRequest, Operation> bulkInsertSettings;
@@ -96,10 +96,10 @@ public class RegionInstancesStubSettings extends StubSettings<RegionInstancesStu
         .getTransportName()
         .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
       return HttpJsonRegionInstancesStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -109,12 +109,12 @@ public class RegionInstancesStubSettings extends StubSettings<RegionInstancesStu
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "compute.googleapis.com";
+    return "compute.googleapis.com:443";
   }
 
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return 443;
+  /** Returns the default mTLS service endpoint. */
+  public static String getDefaultMtlsEndpoint() {
+    return "compute.mtls.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -171,10 +171,8 @@ public class RegionInstancesStubSettings extends StubSettings<RegionInstancesStu
   /** Builder for RegionInstancesStubSettings. */
   public static class Builder extends StubSettings.Builder<RegionInstancesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<BulkInsertRegionInstanceRequest, Operation>
         bulkInsertSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -182,11 +180,7 @@ public class RegionInstancesStubSettings extends StubSettings<RegionInstancesStu
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -197,20 +191,17 @@ public class RegionInstancesStubSettings extends StubSettings<RegionInstancesStu
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
@@ -220,27 +211,7 @@ public class RegionInstancesStubSettings extends StubSettings<RegionInstancesStu
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(bulkInsertSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .bulkInsertSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      return builder;
     }
 
     protected Builder(RegionInstancesStubSettings settings) {
@@ -252,7 +223,29 @@ public class RegionInstancesStubSettings extends StubSettings<RegionInstancesStu
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(bulkInsertSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .bulkInsertSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

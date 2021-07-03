@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.ZonesClient.ListPagedResponse;
@@ -52,7 +53,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ZonesStub}.
  *
@@ -69,33 +70,80 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of get to 30 seconds:
  *
- * <pre>
- * <code>
- * ZonesStubSettings.Builder zonesSettingsBuilder =
- *     ZonesStubSettings.newBuilder();
+ * <pre>{@code
+ * ZonesStubSettings.Builder zonesSettingsBuilder = ZonesStubSettings.newBuilder();
  * zonesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         zonesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         zonesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ZonesStubSettings zonesSettings = zonesSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class ZonesStubSettings extends StubSettings<ZonesStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/cloud-platform")
-          .add("https://www.googleapis.com/auth/compute")
           .add("https://www.googleapis.com/auth/compute.readonly")
+          .add("https://www.googleapis.com/auth/compute")
+          .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
   private final UnaryCallSettings<GetZoneRequest, Zone> getSettings;
   private final PagedCallSettings<ListZonesRequest, ZoneList, ListPagedResponse> listSettings;
+
+  private static final PagedListDescriptor<ListZonesRequest, ZoneList, Zone> LIST_PAGE_STR_DESC =
+      new PagedListDescriptor<ListZonesRequest, ZoneList, Zone>() {
+        @Override
+        public String emptyToken() {
+          return "";
+        }
+
+        @Override
+        public ListZonesRequest injectToken(ListZonesRequest payload, String token) {
+          return ListZonesRequest.newBuilder(payload).setPageToken(token).build();
+        }
+
+        @Override
+        public ListZonesRequest injectPageSize(ListZonesRequest payload, int pageSize) {
+          return ListZonesRequest.newBuilder(payload).setMaxResults(pageSize).build();
+        }
+
+        @Override
+        public Integer extractPageSize(ListZonesRequest payload) {
+          return payload.getMaxResults();
+        }
+
+        @Override
+        public String extractNextToken(ZoneList payload) {
+          return payload.getNextPageToken();
+        }
+
+        @Override
+        public Iterable<Zone> extractResources(ZoneList payload) {
+          return payload.getItemsList() == null ? ImmutableList.<Zone>of() : payload.getItemsList();
+        }
+      };
+
+  private static final PagedListResponseFactory<ListZonesRequest, ZoneList, ListPagedResponse>
+      LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<ListZonesRequest, ZoneList, ListPagedResponse>() {
+            @Override
+            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListZonesRequest, ZoneList> callable,
+                ListZonesRequest request,
+                ApiCallContext context,
+                ApiFuture<ZoneList> futureResponse) {
+              PageContext<ListZonesRequest, ZoneList, Zone> pageContext =
+                  PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
+              return ListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetZoneRequest, Zone> getSettings() {
@@ -113,10 +161,10 @@ public class ZonesStubSettings extends StubSettings<ZonesStubSettings> {
         .getTransportName()
         .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
       return HttpJsonZonesStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -126,12 +174,12 @@ public class ZonesStubSettings extends StubSettings<ZonesStubSettings> {
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "compute.googleapis.com";
+    return "compute.googleapis.com:443";
   }
 
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return 443;
+  /** Returns the default mTLS service endpoint. */
+  public static String getDefaultMtlsEndpoint() {
+    return "compute.mtls.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -185,62 +233,12 @@ public class ZonesStubSettings extends StubSettings<ZonesStubSettings> {
     listSettings = settingsBuilder.listSettings().build();
   }
 
-  private static final PagedListDescriptor<ListZonesRequest, ZoneList, Zone> LIST_PAGE_STR_DESC =
-      new PagedListDescriptor<ListZonesRequest, ZoneList, Zone>() {
-        @Override
-        public String emptyToken() {
-          return "";
-        }
-
-        @Override
-        public ListZonesRequest injectToken(ListZonesRequest payload, String token) {
-          return ListZonesRequest.newBuilder(payload).setPageToken(token).build();
-        }
-
-        @Override
-        public ListZonesRequest injectPageSize(ListZonesRequest payload, int pageSize) {
-          return ListZonesRequest.newBuilder(payload).setMaxResults(pageSize).build();
-        }
-
-        @Override
-        public Integer extractPageSize(ListZonesRequest payload) {
-          return payload.getMaxResults();
-        }
-
-        @Override
-        public String extractNextToken(ZoneList payload) {
-          return payload.getNextPageToken();
-        }
-
-        @Override
-        public Iterable<Zone> extractResources(ZoneList payload) {
-          return payload.getItemsList() != null ? payload.getItemsList() : ImmutableList.<Zone>of();
-        }
-      };
-
-  private static final PagedListResponseFactory<ListZonesRequest, ZoneList, ListPagedResponse>
-      LIST_PAGE_STR_FACT =
-          new PagedListResponseFactory<ListZonesRequest, ZoneList, ListPagedResponse>() {
-            @Override
-            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListZonesRequest, ZoneList> callable,
-                ListZonesRequest request,
-                ApiCallContext context,
-                ApiFuture<ZoneList> futureResponse) {
-              PageContext<ListZonesRequest, ZoneList, Zone> pageContext =
-                  PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
-              return ListPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for ZonesStubSettings. */
   public static class Builder extends StubSettings.Builder<ZonesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<GetZoneRequest, Zone> getSettings;
     private final PagedCallSettings.Builder<ListZonesRequest, ZoneList, ListPagedResponse>
         listSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -248,11 +246,10 @@ public class ZonesStubSettings extends StubSettings<ZonesStubSettings> {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -266,54 +263,28 @@ public class ZonesStubSettings extends StubSettings<ZonesStubSettings> {
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(getSettings, listSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .getSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      return builder;
     }
 
     protected Builder(ZonesStubSettings settings) {
@@ -326,7 +297,34 @@ public class ZonesStubSettings extends StubSettings<ZonesStubSettings> {
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(getSettings, listSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .getSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

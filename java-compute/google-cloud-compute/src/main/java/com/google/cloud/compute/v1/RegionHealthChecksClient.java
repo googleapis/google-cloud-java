@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,25 +34,23 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The RegionHealthChecks API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String healthCheck = "";
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String healthCheck = "healthCheck-1938093044";
  *   Operation response = regionHealthChecksClient.delete(project, region, healthCheck);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the regionHealthChecksClient object to clean up resources
+ * <p>Note: close() needs to be called on the RegionHealthChecksClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -80,30 +79,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionHealthChecksSettings regionHealthChecksSettings =
  *     RegionHealthChecksSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * RegionHealthChecksClient regionHealthChecksClient =
  *     RegionHealthChecksClient.create(regionHealthChecksSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionHealthChecksSettings regionHealthChecksSettings =
  *     RegionHealthChecksSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionHealthChecksClient regionHealthChecksClient =
  *     RegionHealthChecksClient.create(regionHealthChecksSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RegionHealthChecksClient implements BackgroundResource {
   private final RegionHealthChecksSettings settings;
   private final RegionHealthChecksStub stub;
@@ -124,7 +120,7 @@ public class RegionHealthChecksClient implements BackgroundResource {
 
   /**
    * Constructs an instance of RegionHealthChecksClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use RegionHealthChecksSettings}.
+   * is for advanced usage - prefer using create(RegionHealthChecksSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionHealthChecksClient create(RegionHealthChecksStub stub) {
@@ -156,20 +152,20 @@ public class RegionHealthChecksClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified HealthCheck resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String healthCheck = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String healthCheck = "healthCheck-1938093044";
    *   Operation response = regionHealthChecksClient.delete(project, region, healthCheck);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -186,25 +182,24 @@ public class RegionHealthChecksClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified HealthCheck resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   String healthCheck = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeleteRegionHealthCheckRequest request = DeleteRegionHealthCheckRequest.newBuilder()
-   *     .setHealthCheck(healthCheck)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   DeleteRegionHealthCheckRequest request =
+   *       DeleteRegionHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionHealthChecksClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -213,47 +208,46 @@ public class RegionHealthChecksClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified HealthCheck resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   String healthCheck = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeleteRegionHealthCheckRequest request = DeleteRegionHealthCheckRequest.newBuilder()
-   *     .setHealthCheck(healthCheck)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionHealthChecksClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteRegionHealthCheckRequest request =
+   *       DeleteRegionHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = regionHealthChecksClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteRegionHealthCheckRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified HealthCheck resource. Gets a list of available health checks by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String healthCheck = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String healthCheck = "healthCheck-1938093044";
    *   HealthCheck response = regionHealthChecksClient.get(project, region, healthCheck);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -270,26 +264,24 @@ public class RegionHealthChecksClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified HealthCheck resource. Gets a list of available health checks by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   String healthCheck = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetRegionHealthCheckRequest request = GetRegionHealthCheckRequest.newBuilder()
-   *     .setHealthCheck(healthCheck)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   GetRegionHealthCheckRequest request =
+   *       GetRegionHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
    *   HealthCheck response = regionHealthChecksClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -298,47 +290,45 @@ public class RegionHealthChecksClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified HealthCheck resource. Gets a list of available health checks by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   String healthCheck = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetRegionHealthCheckRequest request = GetRegionHealthCheckRequest.newBuilder()
-   *     .setHealthCheck(healthCheck)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;HealthCheck&gt; future = regionHealthChecksClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetRegionHealthCheckRequest request =
+   *       GetRegionHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<HealthCheck> future = regionHealthChecksClient.getCallable().futureCall(request);
+   *   // Do something.
    *   HealthCheck response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetRegionHealthCheckRequest, HealthCheck> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a HealthCheck resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   Operation response = regionHealthChecksClient.insert(project, region, healthCheckResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -355,25 +345,24 @@ public class RegionHealthChecksClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a HealthCheck resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertRegionHealthCheckRequest request = InsertRegionHealthCheckRequest.newBuilder()
-   *     .setHealthCheckResource(healthCheckResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   InsertRegionHealthCheckRequest request =
+   *       InsertRegionHealthCheckRequest.newBuilder()
+   *           .setHealthCheckResource(HealthCheck.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionHealthChecksClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -382,47 +371,46 @@ public class RegionHealthChecksClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a HealthCheck resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertRegionHealthCheckRequest request = InsertRegionHealthCheckRequest.newBuilder()
-   *     .setHealthCheckResource(healthCheckResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionHealthChecksClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertRegionHealthCheckRequest request =
+   *       InsertRegionHealthCheckRequest.newBuilder()
+   *           .setHealthCheckResource(HealthCheck.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = regionHealthChecksClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertRegionHealthCheckRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of HealthCheck resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   for (HealthCheck element : regionHealthChecksClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -434,25 +422,29 @@ public class RegionHealthChecksClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of HealthCheck resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionHealthChecksRequest request = ListRegionHealthChecksRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListRegionHealthChecksRequest request =
+   *       ListRegionHealthChecksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (HealthCheck element : regionHealthChecksClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -461,49 +453,58 @@ public class RegionHealthChecksClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of HealthCheck resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionHealthChecksRequest request = ListRegionHealthChecksRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = regionHealthChecksClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListRegionHealthChecksRequest request =
+   *       ListRegionHealthChecksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<HealthCheck> future =
+   *       regionHealthChecksClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (HealthCheck element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionHealthChecksRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of HealthCheck resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionHealthChecksRequest request = ListRegionHealthChecksRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListRegionHealthChecksRequest request =
+   *       ListRegionHealthChecksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     HealthCheckList response = regionHealthChecksClient.listCallable().call(request);
-   *     for (HealthCheck element : response.getItemsList()) {
+   *     for (HealthCheck element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -514,28 +515,29 @@ public class RegionHealthChecksClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionHealthChecksRequest, HealthCheckList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a HealthCheck resource in the specified project using the data included in the request.
    * This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String healthCheck = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String healthCheck = "healthCheck-1938093044";
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   Operation response = regionHealthChecksClient.patch(project, region, healthCheck, healthCheckResource);
+   *   Operation response =
+   *       regionHealthChecksClient.patch(project, region, healthCheck, healthCheckResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -555,28 +557,26 @@ public class RegionHealthChecksClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a HealthCheck resource in the specified project using the data included in the request.
    * This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   String healthCheck = "";
-   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   PatchRegionHealthCheckRequest request = PatchRegionHealthCheckRequest.newBuilder()
-   *     .setHealthCheck(healthCheck)
-   *     .setHealthCheckResource(healthCheckResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   PatchRegionHealthCheckRequest request =
+   *       PatchRegionHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setHealthCheckResource(HealthCheck.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionHealthChecksClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -585,50 +585,49 @@ public class RegionHealthChecksClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a HealthCheck resource in the specified project using the data included in the request.
    * This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   String healthCheck = "";
-   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   PatchRegionHealthCheckRequest request = PatchRegionHealthCheckRequest.newBuilder()
-   *     .setHealthCheck(healthCheck)
-   *     .setHealthCheckResource(healthCheckResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionHealthChecksClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchRegionHealthCheckRequest request =
+   *       PatchRegionHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setHealthCheckResource(HealthCheck.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = regionHealthChecksClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchRegionHealthCheckRequest, Operation> patchCallable() {
     return stub.patchCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a HealthCheck resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String healthCheck = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String healthCheck = "healthCheck-1938093044";
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   Operation response = regionHealthChecksClient.update(project, region, healthCheck, healthCheckResource);
+   *   Operation response =
+   *       regionHealthChecksClient.update(project, region, healthCheck, healthCheckResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -648,27 +647,25 @@ public class RegionHealthChecksClient implements BackgroundResource {
     return update(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a HealthCheck resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   String healthCheck = "";
-   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   UpdateRegionHealthCheckRequest request = UpdateRegionHealthCheckRequest.newBuilder()
-   *     .setHealthCheck(healthCheck)
-   *     .setHealthCheckResource(healthCheckResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   UpdateRegionHealthCheckRequest request =
+   *       UpdateRegionHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setHealthCheckResource(HealthCheck.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionHealthChecksClient.update(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -677,29 +674,27 @@ public class RegionHealthChecksClient implements BackgroundResource {
     return updateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a HealthCheck resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
-   *   String healthCheck = "";
-   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   UpdateRegionHealthCheckRequest request = UpdateRegionHealthCheckRequest.newBuilder()
-   *     .setHealthCheck(healthCheck)
-   *     .setHealthCheckResource(healthCheckResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionHealthChecksClient.updateCallable().futureCall(request);
-   *   // Do something
+   *   UpdateRegionHealthCheckRequest request =
+   *       UpdateRegionHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setHealthCheckResource(HealthCheck.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = regionHealthChecksClient.updateCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdateRegionHealthCheckRequest, Operation> updateCallable() {
     return stub.updateCallable();

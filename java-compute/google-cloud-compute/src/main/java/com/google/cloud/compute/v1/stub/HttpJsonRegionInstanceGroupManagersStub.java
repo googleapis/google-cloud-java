@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagersClient.ListErrorsPagedResponse;
@@ -60,30 +61,29 @@ import com.google.cloud.compute.v1.SetInstanceTemplateRegionInstanceGroupManager
 import com.google.cloud.compute.v1.SetTargetPoolsRegionInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the RegionInstanceGroupManagers service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroupManagersStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AbandonInstancesRegionInstanceGroupManagerRequest, Operation>
       abandonInstancesMethodDescriptor =
           ApiMethodDescriptor
               .<AbandonInstancesRegionInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.RegionInstanceGroupManagers.AbandonInstances")
+                  "google.cloud.compute.v1.RegionInstanceGroupManagers/AbandonInstances")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -99,12 +99,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<AbandonInstancesRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -145,14 +145,13 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, Operation>
       applyUpdatesToInstancesMethodDescriptor =
           ApiMethodDescriptor
               .<ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.RegionInstanceGroupManagers.ApplyUpdatesToInstances")
+                  "google.cloud.compute.v1.RegionInstanceGroupManagers/ApplyUpdatesToInstances")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -169,12 +168,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               ProtoRestSerializer<
                                       ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -189,7 +188,6 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               ProtoRestSerializer<
                                       ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -213,14 +211,13 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           CreateInstancesRegionInstanceGroupManagerRequest, Operation>
       createInstancesMethodDescriptor =
           ApiMethodDescriptor
               .<CreateInstancesRegionInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.RegionInstanceGroupManagers.CreateInstances")
+                  "google.cloud.compute.v1.RegionInstanceGroupManagers/CreateInstances")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -236,12 +233,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<CreateInstancesRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -282,11 +279,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteRegionInstanceGroupManagerRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteRegionInstanceGroupManagerRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionInstanceGroupManagerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers.Delete")
+              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionInstanceGroupManagerRequest>newBuilder()
@@ -300,12 +296,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -330,7 +326,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                           new FieldsExtractor<DeleteRegionInstanceGroupManagerRequest, String>() {
                             @Override
                             public String extract(DeleteRegionInstanceGroupManagerRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -340,14 +336,13 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           DeleteInstancesRegionInstanceGroupManagerRequest, Operation>
       deleteInstancesMethodDescriptor =
           ApiMethodDescriptor
               .<DeleteInstancesRegionInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.RegionInstanceGroupManagers.DeleteInstances")
+                  "google.cloud.compute.v1.RegionInstanceGroupManagers/DeleteInstances")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -363,12 +358,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteInstancesRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -409,14 +404,13 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
       deletePerInstanceConfigsMethodDescriptor =
           ApiMethodDescriptor
               .<DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.RegionInstanceGroupManagers.DeletePerInstanceConfigs")
+                  "google.cloud.compute.v1.RegionInstanceGroupManagers/DeletePerInstanceConfigs")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -433,12 +427,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               ProtoRestSerializer<
                                       DeletePerInstanceConfigsRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -453,7 +447,6 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               ProtoRestSerializer<
                                       DeletePerInstanceConfigsRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -477,13 +470,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           GetRegionInstanceGroupManagerRequest, InstanceGroupManager>
       getMethodDescriptor =
           ApiMethodDescriptor
               .<GetRegionInstanceGroupManagerRequest, InstanceGroupManager>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers.Get")
+              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionInstanceGroupManagerRequest>newBuilder()
@@ -497,12 +489,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetRegionInstanceGroupManagerRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -515,7 +507,6 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetRegionInstanceGroupManagerRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -523,7 +514,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                           new FieldsExtractor<GetRegionInstanceGroupManagerRequest, String>() {
                             @Override
                             public String extract(GetRegionInstanceGroupManagerRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -533,11 +524,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertRegionInstanceGroupManagerRequest, Operation>
+  private static final ApiMethodDescriptor<InsertRegionInstanceGroupManagerRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertRegionInstanceGroupManagerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers.Insert")
+              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionInstanceGroupManagerRequest>newBuilder()
@@ -590,13 +580,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListRegionInstanceGroupManagersRequest, RegionInstanceGroupManagerList>
       listMethodDescriptor =
           ApiMethodDescriptor
               .<ListRegionInstanceGroupManagersRequest, RegionInstanceGroupManagerList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers.List")
+              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionInstanceGroupManagersRequest>newBuilder()
@@ -651,7 +640,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                           new FieldsExtractor<ListRegionInstanceGroupManagersRequest, String>() {
                             @Override
                             public String extract(ListRegionInstanceGroupManagersRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -661,8 +650,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListErrorsRegionInstanceGroupManagersRequest,
           RegionInstanceGroupManagersListErrorsResponse>
       listErrorsMethodDescriptor =
@@ -670,7 +658,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
               .<ListErrorsRegionInstanceGroupManagersRequest,
                   RegionInstanceGroupManagersListErrorsResponse>
                   newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers.ListErrors")
+              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers/ListErrors")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -685,12 +673,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<ListErrorsRegionInstanceGroupManagersRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -733,7 +721,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                             @Override
                             public String extract(
                                 ListErrorsRegionInstanceGroupManagersRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -745,8 +733,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListManagedInstancesRegionInstanceGroupManagersRequest,
           RegionInstanceGroupManagersListInstancesResponse>
       listManagedInstancesMethodDescriptor =
@@ -755,7 +742,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                   RegionInstanceGroupManagersListInstancesResponse>
                   newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.RegionInstanceGroupManagers.ListManagedInstances")
+                  "google.cloud.compute.v1.RegionInstanceGroupManagers/ListManagedInstances")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -772,12 +759,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               ProtoRestSerializer<
                                       ListManagedInstancesRegionInstanceGroupManagersRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -821,7 +808,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                             @Override
                             public String extract(
                                 ListManagedInstancesRegionInstanceGroupManagersRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -833,8 +820,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListPerInstanceConfigsRegionInstanceGroupManagersRequest,
           RegionInstanceGroupManagersListInstanceConfigsResp>
       listPerInstanceConfigsMethodDescriptor =
@@ -843,7 +829,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                   RegionInstanceGroupManagersListInstanceConfigsResp>
                   newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.RegionInstanceGroupManagers.ListPerInstanceConfigs")
+                  "google.cloud.compute.v1.RegionInstanceGroupManagers/ListPerInstanceConfigs")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -860,12 +846,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               ProtoRestSerializer<
                                       ListPerInstanceConfigsRegionInstanceGroupManagersRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -909,7 +895,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                             @Override
                             public String extract(
                                 ListPerInstanceConfigsRegionInstanceGroupManagersRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -921,11 +907,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchRegionInstanceGroupManagerRequest, Operation>
+  private static final ApiMethodDescriptor<PatchRegionInstanceGroupManagerRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchRegionInstanceGroupManagerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers.Patch")
+              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers/Patch")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchRegionInstanceGroupManagerRequest>newBuilder()
@@ -939,12 +924,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<PatchRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -981,14 +966,13 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
       patchPerInstanceConfigsMethodDescriptor =
           ApiMethodDescriptor
               .<PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.RegionInstanceGroupManagers.PatchPerInstanceConfigs")
+                  "google.cloud.compute.v1.RegionInstanceGroupManagers/PatchPerInstanceConfigs")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -1005,12 +989,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               ProtoRestSerializer<
                                       PatchPerInstanceConfigsRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -1052,14 +1036,13 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           RecreateInstancesRegionInstanceGroupManagerRequest, Operation>
       recreateInstancesMethodDescriptor =
           ApiMethodDescriptor
               .<RecreateInstancesRegionInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.RegionInstanceGroupManagers.RecreateInstances")
+                  "google.cloud.compute.v1.RegionInstanceGroupManagers/RecreateInstances")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -1076,12 +1059,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               ProtoRestSerializer<
                                       RecreateInstancesRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -1123,11 +1106,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ResizeRegionInstanceGroupManagerRequest, Operation>
+  private static final ApiMethodDescriptor<ResizeRegionInstanceGroupManagerRequest, Operation>
       resizeMethodDescriptor =
           ApiMethodDescriptor.<ResizeRegionInstanceGroupManagerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers.Resize")
+              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers/Resize")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ResizeRegionInstanceGroupManagerRequest>newBuilder()
@@ -1141,12 +1123,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<ResizeRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -1172,7 +1154,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                           new FieldsExtractor<ResizeRegionInstanceGroupManagerRequest, String>() {
                             @Override
                             public String extract(ResizeRegionInstanceGroupManagerRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -1182,14 +1164,13 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation>
       setInstanceTemplateMethodDescriptor =
           ApiMethodDescriptor
               .<SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.RegionInstanceGroupManagers.SetInstanceTemplate")
+                  "google.cloud.compute.v1.RegionInstanceGroupManagers/SetInstanceTemplate")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -1206,12 +1187,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               ProtoRestSerializer<
                                       SetInstanceTemplateRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -1253,14 +1234,13 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           SetTargetPoolsRegionInstanceGroupManagerRequest, Operation>
       setTargetPoolsMethodDescriptor =
           ApiMethodDescriptor
               .<SetTargetPoolsRegionInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.RegionInstanceGroupManagers.SetTargetPools")
+                  "google.cloud.compute.v1.RegionInstanceGroupManagers/SetTargetPools")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -1276,12 +1256,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SetTargetPoolsRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -1322,14 +1302,13 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
       updatePerInstanceConfigsMethodDescriptor =
           ApiMethodDescriptor
               .<UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.RegionInstanceGroupManagers.UpdatePerInstanceConfigs")
+                  "google.cloud.compute.v1.RegionInstanceGroupManagers/UpdatePerInstanceConfigs")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -1346,12 +1325,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               ProtoRestSerializer<
                                       UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "instanceGroupManager",
                                   request.getInstanceGroupManager());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -1392,8 +1371,6 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .setDefaultInstance(Operation.getDefaultInstance())
                       .build())
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AbandonInstancesRegionInstanceGroupManagerRequest, Operation>
       abandonInstancesCallable;
@@ -1448,6 +1425,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
   private final UnaryCallable<UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
       updatePerInstanceConfigsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionInstanceGroupManagersStub create(
@@ -1705,61 +1683,93 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
             settings.updatePerInstanceConfigsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(abandonInstancesMethodDescriptor);
+    methodDescriptors.add(applyUpdatesToInstancesMethodDescriptor);
+    methodDescriptors.add(createInstancesMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(deleteInstancesMethodDescriptor);
+    methodDescriptors.add(deletePerInstanceConfigsMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(listErrorsMethodDescriptor);
+    methodDescriptors.add(listManagedInstancesMethodDescriptor);
+    methodDescriptors.add(listPerInstanceConfigsMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(patchPerInstanceConfigsMethodDescriptor);
+    methodDescriptors.add(recreateInstancesMethodDescriptor);
+    methodDescriptors.add(resizeMethodDescriptor);
+    methodDescriptors.add(setInstanceTemplateMethodDescriptor);
+    methodDescriptors.add(setTargetPoolsMethodDescriptor);
+    methodDescriptors.add(updatePerInstanceConfigsMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<AbandonInstancesRegionInstanceGroupManagerRequest, Operation>
       abandonInstancesCallable() {
     return abandonInstancesCallable;
   }
 
+  @Override
   public UnaryCallable<ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, Operation>
       applyUpdatesToInstancesCallable() {
     return applyUpdatesToInstancesCallable;
   }
 
+  @Override
   public UnaryCallable<CreateInstancesRegionInstanceGroupManagerRequest, Operation>
       createInstancesCallable() {
     return createInstancesCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteRegionInstanceGroupManagerRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteInstancesRegionInstanceGroupManagerRequest, Operation>
       deleteInstancesCallable() {
     return deleteInstancesCallable;
   }
 
+  @Override
   public UnaryCallable<DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
       deletePerInstanceConfigsCallable() {
     return deletePerInstanceConfigsCallable;
   }
 
+  @Override
   public UnaryCallable<GetRegionInstanceGroupManagerRequest, InstanceGroupManager> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertRegionInstanceGroupManagerRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListRegionInstanceGroupManagersRequest, ListPagedResponse>
-      listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListRegionInstanceGroupManagersRequest, RegionInstanceGroupManagerList>
       listCallable() {
     return listCallable;
   }
 
-  public UnaryCallable<ListErrorsRegionInstanceGroupManagersRequest, ListErrorsPagedResponse>
-      listErrorsPagedCallable() {
-    return listErrorsPagedCallable;
+  @Override
+  public UnaryCallable<ListRegionInstanceGroupManagersRequest, ListPagedResponse>
+      listPagedCallable() {
+    return listPagedCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListErrorsRegionInstanceGroupManagersRequest,
           RegionInstanceGroupManagersListErrorsResponse>
@@ -1767,12 +1777,13 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
     return listErrorsCallable;
   }
 
-  public UnaryCallable<
-          ListManagedInstancesRegionInstanceGroupManagersRequest, ListManagedInstancesPagedResponse>
-      listManagedInstancesPagedCallable() {
-    return listManagedInstancesPagedCallable;
+  @Override
+  public UnaryCallable<ListErrorsRegionInstanceGroupManagersRequest, ListErrorsPagedResponse>
+      listErrorsPagedCallable() {
+    return listErrorsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListManagedInstancesRegionInstanceGroupManagersRequest,
           RegionInstanceGroupManagersListInstancesResponse>
@@ -1780,13 +1791,14 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
     return listManagedInstancesCallable;
   }
 
+  @Override
   public UnaryCallable<
-          ListPerInstanceConfigsRegionInstanceGroupManagersRequest,
-          ListPerInstanceConfigsPagedResponse>
-      listPerInstanceConfigsPagedCallable() {
-    return listPerInstanceConfigsPagedCallable;
+          ListManagedInstancesRegionInstanceGroupManagersRequest, ListManagedInstancesPagedResponse>
+      listManagedInstancesPagedCallable() {
+    return listManagedInstancesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListPerInstanceConfigsRegionInstanceGroupManagersRequest,
           RegionInstanceGroupManagersListInstanceConfigsResp>
@@ -1794,34 +1806,49 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
     return listPerInstanceConfigsCallable;
   }
 
+  @Override
+  public UnaryCallable<
+          ListPerInstanceConfigsRegionInstanceGroupManagersRequest,
+          ListPerInstanceConfigsPagedResponse>
+      listPerInstanceConfigsPagedCallable() {
+    return listPerInstanceConfigsPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchRegionInstanceGroupManagerRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
       patchPerInstanceConfigsCallable() {
     return patchPerInstanceConfigsCallable;
   }
 
+  @Override
   public UnaryCallable<RecreateInstancesRegionInstanceGroupManagerRequest, Operation>
       recreateInstancesCallable() {
     return recreateInstancesCallable;
   }
 
+  @Override
   public UnaryCallable<ResizeRegionInstanceGroupManagerRequest, Operation> resizeCallable() {
     return resizeCallable;
   }
 
+  @Override
   public UnaryCallable<SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation>
       setInstanceTemplateCallable() {
     return setInstanceTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<SetTargetPoolsRegionInstanceGroupManagerRequest, Operation>
       setTargetPoolsCallable() {
     return setTargetPoolsCallable;
   }
 
+  @Override
   public UnaryCallable<UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
       updatePerInstanceConfigsCallable() {
     return updatePerInstanceConfigsCallable;

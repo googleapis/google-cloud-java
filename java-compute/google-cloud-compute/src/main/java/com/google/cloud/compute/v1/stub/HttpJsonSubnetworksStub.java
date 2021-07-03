@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.SubnetworksClient.AggregatedListPagedResponse;
@@ -53,29 +54,28 @@ import com.google.cloud.compute.v1.TestIamPermissionsSubnetworkRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UsableSubnetworksAggregatedList;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the Subnetworks service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonSubnetworksStub extends SubnetworksStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListSubnetworksRequest, SubnetworkAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListSubnetworksRequest, SubnetworkAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Subnetworks.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.Subnetworks/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListSubnetworksRequest>newBuilder()
@@ -133,7 +133,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                           new FieldsExtractor<AggregatedListSubnetworksRequest, String>() {
                             @Override
                             public String extract(AggregatedListSubnetworksRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -143,11 +143,10 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteSubnetworkRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteSubnetworkRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteSubnetworkRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Subnetworks.Delete")
+              .setFullMethodName("google.cloud.compute.v1.Subnetworks/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteSubnetworkRequest>newBuilder()
@@ -186,7 +185,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                           new FieldsExtractor<DeleteSubnetworkRequest, String>() {
                             @Override
                             public String extract(DeleteSubnetworkRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -196,11 +195,10 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ExpandIpCidrRangeSubnetworkRequest, Operation>
+  private static final ApiMethodDescriptor<ExpandIpCidrRangeSubnetworkRequest, Operation>
       expandIpCidrRangeMethodDescriptor =
           ApiMethodDescriptor.<ExpandIpCidrRangeSubnetworkRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Subnetworks.ExpandIpCidrRange")
+              .setFullMethodName("google.cloud.compute.v1.Subnetworks/ExpandIpCidrRange")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ExpandIpCidrRangeSubnetworkRequest>newBuilder()
@@ -254,10 +252,9 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetSubnetworkRequest, Subnetwork> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetSubnetworkRequest, Subnetwork> getMethodDescriptor =
       ApiMethodDescriptor.<GetSubnetworkRequest, Subnetwork>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Subnetworks.Get")
+          .setFullMethodName("google.cloud.compute.v1.Subnetworks/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetSubnetworkRequest>newBuilder()
@@ -282,7 +279,6 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetSubnetworkRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -290,7 +286,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                       new FieldsExtractor<GetSubnetworkRequest, String>() {
                         @Override
                         public String extract(GetSubnetworkRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -300,11 +296,10 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetIamPolicySubnetworkRequest, Policy>
+  private static final ApiMethodDescriptor<GetIamPolicySubnetworkRequest, Policy>
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicySubnetworkRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Subnetworks.GetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.Subnetworks/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicySubnetworkRequest>newBuilder()
@@ -346,7 +341,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                           new FieldsExtractor<GetIamPolicySubnetworkRequest, String>() {
                             @Override
                             public String extract(GetIamPolicySubnetworkRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -356,11 +351,10 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertSubnetworkRequest, Operation>
+  private static final ApiMethodDescriptor<InsertSubnetworkRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertSubnetworkRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Subnetworks.Insert")
+              .setFullMethodName("google.cloud.compute.v1.Subnetworks/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertSubnetworkRequest>newBuilder()
@@ -408,11 +402,10 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListSubnetworksRequest, SubnetworkList>
+  private static final ApiMethodDescriptor<ListSubnetworksRequest, SubnetworkList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListSubnetworksRequest, SubnetworkList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Subnetworks.List")
+              .setFullMethodName("google.cloud.compute.v1.Subnetworks/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListSubnetworksRequest>newBuilder()
@@ -464,7 +457,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                           new FieldsExtractor<ListSubnetworksRequest, String>() {
                             @Override
                             public String extract(ListSubnetworksRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -474,13 +467,12 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList>
       listUsableMethodDescriptor =
           ApiMethodDescriptor
               .<ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Subnetworks.ListUsable")
+              .setFullMethodName("google.cloud.compute.v1.Subnetworks/ListUsable")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListUsableSubnetworksRequest>newBuilder()
@@ -533,7 +525,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                           new FieldsExtractor<ListUsableSubnetworksRequest, String>() {
                             @Override
                             public String extract(ListUsableSubnetworksRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -543,64 +535,68 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchSubnetworkRequest, Operation> patchMethodDescriptor =
-      ApiMethodDescriptor.<PatchSubnetworkRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Subnetworks.Patch")
-          .setHttpMethod(HttpMethods.PATCH)
-          .setRequestFormatter(
-              ProtoMessageRequestFormatter.<PatchSubnetworkRequest>newBuilder()
-                  .setPath(
-                      "/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}",
-                      new FieldsExtractor<PatchSubnetworkRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(PatchSubnetworkRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<PatchSubnetworkRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "region", request.getRegion());
-                          serializer.putPathParam(fields, "subnetwork", request.getSubnetwork());
-                          return fields;
-                        }
-                      })
-                  .setQueryParamsExtractor(
-                      new FieldsExtractor<PatchSubnetworkRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(PatchSubnetworkRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<PatchSubnetworkRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasDrainTimeoutSeconds()) {
-                            serializer.putQueryParam(
-                                fields, "drainTimeoutSeconds", request.getDrainTimeoutSeconds());
-                          }
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
-                        }
-                      })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<PatchSubnetworkRequest, String>() {
-                        @Override
-                        public String extract(PatchSubnetworkRequest request) {
-                          return ProtoRestSerializer.create()
-                              .toBody("subnetworkResource", request.getSubnetworkResource());
-                        }
-                      })
-                  .build())
-          .setResponseParser(
-              ProtoMessageResponseParser.<Operation>newBuilder()
-                  .setDefaultInstance(Operation.getDefaultInstance())
-                  .build())
-          .build();
+  private static final ApiMethodDescriptor<PatchSubnetworkRequest, Operation>
+      patchMethodDescriptor =
+          ApiMethodDescriptor.<PatchSubnetworkRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Subnetworks/Patch")
+              .setHttpMethod(HttpMethods.PATCH)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PatchSubnetworkRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}",
+                          new FieldsExtractor<PatchSubnetworkRequest, Map<String, String>>() {
+                            @Override
+                            public Map<String, String> extract(PatchSubnetworkRequest request) {
+                              Map<String, String> fields = new HashMap<>();
+                              ProtoRestSerializer<PatchSubnetworkRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
+                              serializer.putPathParam(
+                                  fields, "subnetwork", request.getSubnetwork());
+                              return fields;
+                            }
+                          })
+                      .setQueryParamsExtractor(
+                          new FieldsExtractor<PatchSubnetworkRequest, Map<String, List<String>>>() {
+                            @Override
+                            public Map<String, List<String>> extract(
+                                PatchSubnetworkRequest request) {
+                              Map<String, List<String>> fields = new HashMap<>();
+                              ProtoRestSerializer<PatchSubnetworkRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              if (request.hasDrainTimeoutSeconds()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "drainTimeoutSeconds",
+                                    request.getDrainTimeoutSeconds());
+                              }
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
+                              return fields;
+                            }
+                          })
+                      .setRequestBodyExtractor(
+                          new FieldsExtractor<PatchSubnetworkRequest, String>() {
+                            @Override
+                            public String extract(PatchSubnetworkRequest request) {
+                              return ProtoRestSerializer.create()
+                                  .toBody("subnetworkResource", request.getSubnetworkResource());
+                            }
+                          })
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetIamPolicySubnetworkRequest, Policy>
+  private static final ApiMethodDescriptor<SetIamPolicySubnetworkRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicySubnetworkRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Subnetworks.SetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.Subnetworks/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicySubnetworkRequest>newBuilder()
@@ -629,7 +625,6 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetIamPolicySubnetworkRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -650,11 +645,10 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
+  private static final ApiMethodDescriptor<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
       setPrivateIpGoogleAccessMethodDescriptor =
           ApiMethodDescriptor.<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Subnetworks.SetPrivateIpGoogleAccess")
+              .setFullMethodName("google.cloud.compute.v1.Subnetworks/SetPrivateIpGoogleAccess")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -712,13 +706,12 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           ApiMethodDescriptor
               .<TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Subnetworks.TestIamPermissions")
+              .setFullMethodName("google.cloud.compute.v1.Subnetworks/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsSubnetworkRequest>newBuilder()
@@ -747,7 +740,6 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<TestIamPermissionsSubnetworkRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -767,8 +759,6 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                       .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
                       .build())
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AggregatedListSubnetworksRequest, SubnetworkAggregatedList>
       aggregatedListCallable;
@@ -793,6 +783,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
   private final UnaryCallable<TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonSubnetworksStub create(SubnetworksStubSettings settings)
@@ -942,70 +933,104 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListSubnetworksRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(expandIpCidrRangeMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(listUsableMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(setPrivateIpGoogleAccessMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListSubnetworksRequest, SubnetworkAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListSubnetworksRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteSubnetworkRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<ExpandIpCidrRangeSubnetworkRequest, Operation> expandIpCidrRangeCallable() {
     return expandIpCidrRangeCallable;
   }
 
+  @Override
   public UnaryCallable<GetSubnetworkRequest, Subnetwork> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicySubnetworkRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<InsertSubnetworkRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListSubnetworksRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListSubnetworksRequest, SubnetworkList> listCallable() {
     return listCallable;
   }
 
-  public UnaryCallable<ListUsableSubnetworksRequest, ListUsablePagedResponse>
-      listUsablePagedCallable() {
-    return listUsablePagedCallable;
+  @Override
+  public UnaryCallable<ListSubnetworksRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList>
       listUsableCallable() {
     return listUsableCallable;
   }
 
+  @Override
+  public UnaryCallable<ListUsableSubnetworksRequest, ListUsablePagedResponse>
+      listUsablePagedCallable() {
+    return listUsablePagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchSubnetworkRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicySubnetworkRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
       setPrivateIpGoogleAccessCallable() {
     return setPrivateIpGoogleAccessCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

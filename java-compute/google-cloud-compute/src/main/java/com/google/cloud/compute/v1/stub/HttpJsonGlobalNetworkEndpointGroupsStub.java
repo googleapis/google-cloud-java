@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.GlobalNetworkEndpointGroupsClient.ListNetworkEndpointsPagedResponse;
@@ -44,30 +45,29 @@ import com.google.cloud.compute.v1.NetworkEndpointGroupList;
 import com.google.cloud.compute.v1.NetworkEndpointGroupsListNetworkEndpoints;
 import com.google.cloud.compute.v1.Operation;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the GlobalNetworkEndpointGroups service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpointGroupsStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
       attachNetworkEndpointsMethodDescriptor =
           ApiMethodDescriptor
               .<AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.GlobalNetworkEndpointGroups.AttachNetworkEndpoints")
+                  "google.cloud.compute.v1.GlobalNetworkEndpointGroups/AttachNetworkEndpoints")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -84,11 +84,11 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                               ProtoRestSerializer<
                                       AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields,
                                   "networkEndpointGroup",
                                   request.getNetworkEndpointGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -130,11 +130,10 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteGlobalNetworkEndpointGroupRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteGlobalNetworkEndpointGroupRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteGlobalNetworkEndpointGroupRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalNetworkEndpointGroups.Delete")
+              .setFullMethodName("google.cloud.compute.v1.GlobalNetworkEndpointGroups/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteGlobalNetworkEndpointGroupRequest>newBuilder()
@@ -148,11 +147,11 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteGlobalNetworkEndpointGroupRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields,
                                   "networkEndpointGroup",
                                   request.getNetworkEndpointGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -177,7 +176,7 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                           new FieldsExtractor<DeleteGlobalNetworkEndpointGroupRequest, String>() {
                             @Override
                             public String extract(DeleteGlobalNetworkEndpointGroupRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -187,14 +186,13 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
       detachNetworkEndpointsMethodDescriptor =
           ApiMethodDescriptor
               .<DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.GlobalNetworkEndpointGroups.DetachNetworkEndpoints")
+                  "google.cloud.compute.v1.GlobalNetworkEndpointGroups/DetachNetworkEndpoints")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -211,11 +209,11 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                               ProtoRestSerializer<
                                       DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields,
                                   "networkEndpointGroup",
                                   request.getNetworkEndpointGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -257,13 +255,12 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           GetGlobalNetworkEndpointGroupRequest, NetworkEndpointGroup>
       getMethodDescriptor =
           ApiMethodDescriptor
               .<GetGlobalNetworkEndpointGroupRequest, NetworkEndpointGroup>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalNetworkEndpointGroups.Get")
+              .setFullMethodName("google.cloud.compute.v1.GlobalNetworkEndpointGroups/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetGlobalNetworkEndpointGroupRequest>newBuilder()
@@ -277,11 +274,11 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetGlobalNetworkEndpointGroupRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields,
                                   "networkEndpointGroup",
                                   request.getNetworkEndpointGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -294,7 +291,6 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetGlobalNetworkEndpointGroupRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -302,7 +298,7 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                           new FieldsExtractor<GetGlobalNetworkEndpointGroupRequest, String>() {
                             @Override
                             public String extract(GetGlobalNetworkEndpointGroupRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -312,11 +308,10 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertGlobalNetworkEndpointGroupRequest, Operation>
+  private static final ApiMethodDescriptor<InsertGlobalNetworkEndpointGroupRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertGlobalNetworkEndpointGroupRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalNetworkEndpointGroups.Insert")
+              .setFullMethodName("google.cloud.compute.v1.GlobalNetworkEndpointGroups/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertGlobalNetworkEndpointGroupRequest>newBuilder()
@@ -368,13 +363,12 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListGlobalNetworkEndpointGroupsRequest, NetworkEndpointGroupList>
       listMethodDescriptor =
           ApiMethodDescriptor
               .<ListGlobalNetworkEndpointGroupsRequest, NetworkEndpointGroupList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalNetworkEndpointGroups.List")
+              .setFullMethodName("google.cloud.compute.v1.GlobalNetworkEndpointGroups/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListGlobalNetworkEndpointGroupsRequest>newBuilder()
@@ -428,7 +422,7 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                           new FieldsExtractor<ListGlobalNetworkEndpointGroupsRequest, String>() {
                             @Override
                             public String extract(ListGlobalNetworkEndpointGroupsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -438,8 +432,7 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest,
           NetworkEndpointGroupsListNetworkEndpoints>
       listNetworkEndpointsMethodDescriptor =
@@ -448,7 +441,7 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                   NetworkEndpointGroupsListNetworkEndpoints>
                   newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.GlobalNetworkEndpointGroups.ListNetworkEndpoints")
+                  "google.cloud.compute.v1.GlobalNetworkEndpointGroups/ListNetworkEndpoints")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -465,11 +458,11 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                               ProtoRestSerializer<
                                       ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields,
                                   "networkEndpointGroup",
                                   request.getNetworkEndpointGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -513,7 +506,7 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                             @Override
                             public String extract(
                                 ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -523,8 +516,6 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                           NetworkEndpointGroupsListNetworkEndpoints.getDefaultInstance())
                       .build())
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
       attachNetworkEndpointsCallable;
@@ -546,6 +537,7 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
           ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest, ListNetworkEndpointsPagedResponse>
       listNetworkEndpointsPagedCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonGlobalNetworkEndpointGroupsStub create(
@@ -671,52 +663,75 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
             settings.listNetworkEndpointsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(attachNetworkEndpointsMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(detachNetworkEndpointsMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(listNetworkEndpointsMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
       attachNetworkEndpointsCallable() {
     return attachNetworkEndpointsCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteGlobalNetworkEndpointGroupRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
       detachNetworkEndpointsCallable() {
     return detachNetworkEndpointsCallable;
   }
 
+  @Override
   public UnaryCallable<GetGlobalNetworkEndpointGroupRequest, NetworkEndpointGroup> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertGlobalNetworkEndpointGroupRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListGlobalNetworkEndpointGroupsRequest, ListPagedResponse>
-      listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListGlobalNetworkEndpointGroupsRequest, NetworkEndpointGroupList>
       listCallable() {
     return listCallable;
   }
 
-  public UnaryCallable<
-          ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest, ListNetworkEndpointsPagedResponse>
-      listNetworkEndpointsPagedCallable() {
-    return listNetworkEndpointsPagedCallable;
+  @Override
+  public UnaryCallable<ListGlobalNetworkEndpointGroupsRequest, ListPagedResponse>
+      listPagedCallable() {
+    return listPagedCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest,
           NetworkEndpointGroupsListNetworkEndpoints>
       listNetworkEndpointsCallable() {
     return listNetworkEndpointsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest, ListNetworkEndpointsPagedResponse>
+      listNetworkEndpointsPagedCallable() {
+    return listNetworkEndpointsPagedCallable;
   }
 
   @Override

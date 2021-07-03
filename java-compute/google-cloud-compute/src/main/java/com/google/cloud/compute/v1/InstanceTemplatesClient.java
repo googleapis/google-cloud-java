@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,24 +34,22 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The InstanceTemplates API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
- *   String project = "";
- *   String instanceTemplate = "";
+ *   String project = "project-309310695";
+ *   String instanceTemplate = "instanceTemplate1009541167";
  *   Operation response = instanceTemplatesClient.delete(project, instanceTemplate);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the instanceTemplatesClient object to clean up resources
+ * <p>Note: close() needs to be called on the InstanceTemplatesClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -79,30 +78,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * InstanceTemplatesSettings instanceTemplatesSettings =
  *     InstanceTemplatesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * InstanceTemplatesClient instanceTemplatesClient =
  *     InstanceTemplatesClient.create(instanceTemplatesSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * InstanceTemplatesSettings instanceTemplatesSettings =
  *     InstanceTemplatesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * InstanceTemplatesClient instanceTemplatesClient =
  *     InstanceTemplatesClient.create(instanceTemplatesSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class InstanceTemplatesClient implements BackgroundResource {
   private final InstanceTemplatesSettings settings;
   private final InstanceTemplatesStub stub;
@@ -123,7 +119,7 @@ public class InstanceTemplatesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of InstanceTemplatesClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use InstanceTemplatesSettings}.
+   * is for advanced usage - prefer using create(InstanceTemplatesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final InstanceTemplatesClient create(InstanceTemplatesStub stub) {
@@ -155,7 +151,7 @@ public class InstanceTemplatesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified instance template. Deleting an instance template is permanent and cannot
    * be undone. It is not possible to delete templates that are already in use by a managed instance
@@ -163,13 +159,13 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   String project = "";
-   *   String instanceTemplate = "";
+   *   String project = "project-309310695";
+   *   String instanceTemplate = "instanceTemplate1009541167";
    *   Operation response = instanceTemplatesClient.delete(project, instanceTemplate);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param instanceTemplate The name of the instance template to delete.
@@ -184,7 +180,7 @@ public class InstanceTemplatesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified instance template. Deleting an instance template is permanent and cannot
    * be undone. It is not possible to delete templates that are already in use by a managed instance
@@ -192,17 +188,17 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   String instanceTemplate = "";
-   *   String project = "";
-   *   DeleteInstanceTemplateRequest request = DeleteInstanceTemplateRequest.newBuilder()
-   *     .setInstanceTemplate(instanceTemplate)
-   *     .setProject(project)
-   *     .build();
+   *   DeleteInstanceTemplateRequest request =
+   *       DeleteInstanceTemplateRequest.newBuilder()
+   *           .setInstanceTemplate("instanceTemplate1009541167")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = instanceTemplatesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -211,7 +207,7 @@ public class InstanceTemplatesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified instance template. Deleting an instance template is permanent and cannot
    * be undone. It is not possible to delete templates that are already in use by a managed instance
@@ -219,38 +215,38 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   String instanceTemplate = "";
-   *   String project = "";
-   *   DeleteInstanceTemplateRequest request = DeleteInstanceTemplateRequest.newBuilder()
-   *     .setInstanceTemplate(instanceTemplate)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instanceTemplatesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteInstanceTemplateRequest request =
+   *       DeleteInstanceTemplateRequest.newBuilder()
+   *           .setInstanceTemplate("instanceTemplate1009541167")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = instanceTemplatesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteInstanceTemplateRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified instance template. Gets a list of available instance templates by making
    * a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   String project = "";
-   *   String instanceTemplate = "";
+   *   String project = "project-309310695";
+   *   String instanceTemplate = "instanceTemplate1009541167";
    *   InstanceTemplate response = instanceTemplatesClient.get(project, instanceTemplate);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param instanceTemplate The name of the instance template.
@@ -265,24 +261,23 @@ public class InstanceTemplatesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified instance template. Gets a list of available instance templates by making
    * a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   String instanceTemplate = "";
-   *   String project = "";
-   *   GetInstanceTemplateRequest request = GetInstanceTemplateRequest.newBuilder()
-   *     .setInstanceTemplate(instanceTemplate)
-   *     .setProject(project)
-   *     .build();
+   *   GetInstanceTemplateRequest request =
+   *       GetInstanceTemplateRequest.newBuilder()
+   *           .setInstanceTemplate("instanceTemplate1009541167")
+   *           .setProject("project-309310695")
+   *           .build();
    *   InstanceTemplate response = instanceTemplatesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -291,45 +286,45 @@ public class InstanceTemplatesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified instance template. Gets a list of available instance templates by making
    * a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   String instanceTemplate = "";
-   *   String project = "";
-   *   GetInstanceTemplateRequest request = GetInstanceTemplateRequest.newBuilder()
-   *     .setInstanceTemplate(instanceTemplate)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;InstanceTemplate&gt; future = instanceTemplatesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetInstanceTemplateRequest request =
+   *       GetInstanceTemplateRequest.newBuilder()
+   *           .setInstanceTemplate("instanceTemplate1009541167")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<InstanceTemplate> future =
+   *       instanceTemplatesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   InstanceTemplate response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetInstanceTemplateRequest, InstanceTemplate> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
    *   Policy response = instanceTemplatesClient.getIamPolicy(project, resource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
@@ -344,24 +339,24 @@ public class InstanceTemplatesClient implements BackgroundResource {
     return getIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   GetIamPolicyInstanceTemplateRequest request = GetIamPolicyInstanceTemplateRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .build();
+   *   GetIamPolicyInstanceTemplateRequest request =
+   *       GetIamPolicyInstanceTemplateRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
    *   Policy response = instanceTemplatesClient.getIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -370,32 +365,32 @@ public class InstanceTemplatesClient implements BackgroundResource {
     return getIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   GetIamPolicyInstanceTemplateRequest request = GetIamPolicyInstanceTemplateRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = instanceTemplatesClient.getIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   GetIamPolicyInstanceTemplateRequest request =
+   *       GetIamPolicyInstanceTemplateRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future = instanceTemplatesClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyInstanceTemplateRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an instance template in the specified project using the data that is included in the
    * request. If you are creating a new template to update an existing instance group, your new
@@ -404,13 +399,13 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   InstanceTemplate instanceTemplateResource = InstanceTemplate.newBuilder().build();
    *   Operation response = instanceTemplatesClient.insert(project, instanceTemplateResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param instanceTemplateResource The body resource for this request
@@ -425,7 +420,7 @@ public class InstanceTemplatesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an instance template in the specified project using the data that is included in the
    * request. If you are creating a new template to update an existing instance group, your new
@@ -434,17 +429,17 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   InstanceTemplate instanceTemplateResource = InstanceTemplate.newBuilder().build();
-   *   String project = "";
-   *   InsertInstanceTemplateRequest request = InsertInstanceTemplateRequest.newBuilder()
-   *     .setInstanceTemplateResource(instanceTemplateResource)
-   *     .setProject(project)
-   *     .build();
+   *   InsertInstanceTemplateRequest request =
+   *       InsertInstanceTemplateRequest.newBuilder()
+   *           .setInstanceTemplateResource(InstanceTemplate.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = instanceTemplatesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -453,7 +448,7 @@ public class InstanceTemplatesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an instance template in the specified project using the data that is included in the
    * request. If you are creating a new template to update an existing instance group, your new
@@ -462,38 +457,38 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   InstanceTemplate instanceTemplateResource = InstanceTemplate.newBuilder().build();
-   *   String project = "";
-   *   InsertInstanceTemplateRequest request = InsertInstanceTemplateRequest.newBuilder()
-   *     .setInstanceTemplateResource(instanceTemplateResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instanceTemplatesClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertInstanceTemplateRequest request =
+   *       InsertInstanceTemplateRequest.newBuilder()
+   *           .setInstanceTemplateResource(InstanceTemplate.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = instanceTemplatesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertInstanceTemplateRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (InstanceTemplate element : instanceTemplatesClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -504,23 +499,28 @@ public class InstanceTemplatesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   String project = "";
-   *   ListInstanceTemplatesRequest request = ListInstanceTemplatesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListInstanceTemplatesRequest request =
+   *       ListInstanceTemplatesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (InstanceTemplate element : instanceTemplatesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -529,45 +529,56 @@ public class InstanceTemplatesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   String project = "";
-   *   ListInstanceTemplatesRequest request = ListInstanceTemplatesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = instanceTemplatesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListInstanceTemplatesRequest request =
+   *       ListInstanceTemplatesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<InstanceTemplate> future =
+   *       instanceTemplatesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (InstanceTemplate element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListInstanceTemplatesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   String project = "";
-   *   ListInstanceTemplatesRequest request = ListInstanceTemplatesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListInstanceTemplatesRequest request =
+   *       ListInstanceTemplatesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     InstanceTemplateList response = instanceTemplatesClient.listCallable().call(request);
-   *     for (InstanceTemplate element : response.getItemsList()) {
+   *     for (InstanceTemplate element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -578,26 +589,28 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListInstanceTemplatesRequest, InstanceTemplateList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
-   *   Policy response = instanceTemplatesClient.setIamPolicy(project, resource, globalSetPolicyRequestResource);
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource =
+   *       GlobalSetPolicyRequest.newBuilder().build();
+   *   Policy response =
+   *       instanceTemplatesClient.setIamPolicy(project, resource, globalSetPolicyRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
@@ -615,25 +628,23 @@ public class InstanceTemplatesClient implements BackgroundResource {
     return setIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
-   *   String project = "";
-   *   String resource = "";
-   *   SetIamPolicyInstanceTemplateRequest request = SetIamPolicyInstanceTemplateRequest.newBuilder()
-   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .build();
+   *   SetIamPolicyInstanceTemplateRequest request =
+   *       SetIamPolicyInstanceTemplateRequest.newBuilder()
+   *           .setGlobalSetPolicyRequestResource(GlobalSetPolicyRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
    *   Policy response = instanceTemplatesClient.setIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -642,46 +653,47 @@ public class InstanceTemplatesClient implements BackgroundResource {
     return setIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
-   *   String project = "";
-   *   String resource = "";
-   *   SetIamPolicyInstanceTemplateRequest request = SetIamPolicyInstanceTemplateRequest.newBuilder()
-   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = instanceTemplatesClient.setIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   SetIamPolicyInstanceTemplateRequest request =
+   *       SetIamPolicyInstanceTemplateRequest.newBuilder()
+   *           .setGlobalSetPolicyRequestResource(GlobalSetPolicyRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future = instanceTemplatesClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyInstanceTemplateRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestPermissionsResponse response = instanceTemplatesClient.testIamPermissions(project, resource, testPermissionsRequestResource);
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       instanceTemplatesClient.testIamPermissions(
+   *           project, resource, testPermissionsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
@@ -699,25 +711,23 @@ public class InstanceTemplatesClient implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsInstanceTemplateRequest request = TestIamPermissionsInstanceTemplateRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
+   *   TestIamPermissionsInstanceTemplateRequest request =
+   *       TestIamPermissionsInstanceTemplateRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
    *   TestPermissionsResponse response = instanceTemplatesClient.testIamPermissions(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -727,27 +737,26 @@ public class InstanceTemplatesClient implements BackgroundResource {
     return testIamPermissionsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsInstanceTemplateRequest request = TestIamPermissionsInstanceTemplateRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
-   *   ApiFuture&lt;TestPermissionsResponse&gt; future = instanceTemplatesClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
+   *   TestIamPermissionsInstanceTemplateRequest request =
+   *       TestIamPermissionsInstanceTemplateRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       instanceTemplatesClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
    *   TestPermissionsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsInstanceTemplateRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {

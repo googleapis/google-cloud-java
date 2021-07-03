@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,62 +13,48 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.GlobalNetworkEndpointGroupsClient.ListNetworkEndpointsPagedResponse;
 import static com.google.cloud.compute.v1.GlobalNetworkEndpointGroupsClient.ListPagedResponse;
-import static com.google.cloud.compute.v1.stub.HttpJsonGlobalNetworkEndpointGroupsStub.attachNetworkEndpointsMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonGlobalNetworkEndpointGroupsStub.deleteMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonGlobalNetworkEndpointGroupsStub.detachNetworkEndpointsMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonGlobalNetworkEndpointGroupsStub.getMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonGlobalNetworkEndpointGroupsStub.insertMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonGlobalNetworkEndpointGroupsStub.listMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonGlobalNetworkEndpointGroupsStub.listNetworkEndpointsMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.testing.MockHttpService;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
-import com.google.api.gax.rpc.StatusCode.Code;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import com.google.cloud.compute.v1.stub.GlobalNetworkEndpointGroupsStubSettings;
-import com.google.common.collect.ImmutableList;
+import com.google.cloud.compute.v1.stub.HttpJsonGlobalNetworkEndpointGroupsStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class GlobalNetworkEndpointGroupsClientTest {
-  private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
-      ImmutableList.copyOf(
-          Lists.<ApiMethodDescriptor>newArrayList(
-              attachNetworkEndpointsMethodDescriptor,
-              deleteMethodDescriptor,
-              detachNetworkEndpointsMethodDescriptor,
-              getMethodDescriptor,
-              insertMethodDescriptor,
-              listMethodDescriptor,
-              listNetworkEndpointsMethodDescriptor));
-  private static final MockHttpService mockService =
-      new MockHttpService(
-          METHOD_DESCRIPTORS, GlobalNetworkEndpointGroupsStubSettings.getDefaultEndpoint());
-
+  private static MockHttpService mockService;
   private static GlobalNetworkEndpointGroupsClient client;
-  private static GlobalNetworkEndpointGroupsSettings clientSettings;
 
   @BeforeClass
-  public static void setUp() throws IOException {
-    clientSettings =
+  public static void startStaticServer() throws IOException {
+    mockService =
+        new MockHttpService(
+            HttpJsonGlobalNetworkEndpointGroupsStub.getMethodDescriptors(),
+            GlobalNetworkEndpointGroupsSettings.getDefaultEndpoint());
+    GlobalNetworkEndpointGroupsSettings settings =
         GlobalNetworkEndpointGroupsSettings.newBuilder()
             .setTransportChannelProvider(
                 GlobalNetworkEndpointGroupsSettings.defaultHttpJsonTransportProviderBuilder()
@@ -76,71 +62,54 @@ public class GlobalNetworkEndpointGroupsClientTest {
                     .build())
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
-    client = GlobalNetworkEndpointGroupsClient.create(clientSettings);
-  }
-
-  @After
-  public void cleanUp() {
-    mockService.reset();
+    client = GlobalNetworkEndpointGroupsClient.create(settings);
   }
 
   @AfterClass
-  public static void tearDown() throws Exception {
+  public static void stopServer() {
     client.close();
   }
 
+  @Before
+  public void setUp() {}
+
+  @After
+  public void tearDown() throws Exception {
+    mockService.reset();
+  }
+
   @Test
-  @SuppressWarnings("all")
-  public void attachNetworkEndpointsTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void attachNetworkEndpointsTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
     String project = "project-309310695";
-    String networkEndpointGroup = "networkEndpointGroup-639834746";
+    String networkEndpointGroup = "networkEndpointGroup-2120389028";
     GlobalNetworkEndpointGroupsAttachEndpointsRequest
         globalNetworkEndpointGroupsAttachEndpointsRequestResource =
             GlobalNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
@@ -168,80 +137,58 @@ public class GlobalNetworkEndpointGroupsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void attachNetworkEndpointsExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-      String networkEndpointGroup = "networkEndpointGroup-639834746";
+      String networkEndpointGroup = "networkEndpointGroup-2120389028";
       GlobalNetworkEndpointGroupsAttachEndpointsRequest
           globalNetworkEndpointGroupsAttachEndpointsRequestResource =
               GlobalNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
-
       client.attachNetworkEndpoints(
           project, networkEndpointGroup, globalNetworkEndpointGroupsAttachEndpointsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void deleteTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
     String project = "project-309310695";
-    String networkEndpointGroup = "networkEndpointGroup-639834746";
+    String networkEndpointGroup = "networkEndpointGroup-2120389028";
 
     Operation actualResponse = client.delete(project, networkEndpointGroup);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -262,76 +209,54 @@ public class GlobalNetworkEndpointGroupsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-      String networkEndpointGroup = "networkEndpointGroup-639834746";
-
+      String networkEndpointGroup = "networkEndpointGroup-2120389028";
       client.delete(project, networkEndpointGroup);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void detachNetworkEndpointsTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void detachNetworkEndpointsTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
     String project = "project-309310695";
-    String networkEndpointGroup = "networkEndpointGroup-639834746";
+    String networkEndpointGroup = "networkEndpointGroup-2120389028";
     GlobalNetworkEndpointGroupsDetachEndpointsRequest
         globalNetworkEndpointGroupsDetachEndpointsRequestResource =
             GlobalNetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
@@ -359,62 +284,51 @@ public class GlobalNetworkEndpointGroupsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void detachNetworkEndpointsExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-      String networkEndpointGroup = "networkEndpointGroup-639834746";
+      String networkEndpointGroup = "networkEndpointGroup-2120389028";
       GlobalNetworkEndpointGroupsDetachEndpointsRequest
           globalNetworkEndpointGroupsDetachEndpointsRequestResource =
               GlobalNetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
-
       client.detachNetworkEndpoints(
           project, networkEndpointGroup, globalNetworkEndpointGroupsDetachEndpointsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getTest() {
-    String creationTimestamp = "creationTimestamp567396278";
-    int defaultPort = 650363969;
-    String description = "description-1724546052";
-    String id = "id3355";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String network = "network1843485230";
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    int size = 3530753;
-    String subnetwork = "subnetwork-1302785042";
-    String zone = "zone3744684";
+  public void getTest() throws Exception {
     NetworkEndpointGroup expectedResponse =
         NetworkEndpointGroup.newBuilder()
-            .setCreationTimestamp(creationTimestamp)
-            .setDefaultPort(defaultPort)
-            .setDescription(description)
-            .setId(id)
-            .setKind(kind)
-            .setName(name)
-            .setNetwork(network)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setSize(size)
-            .setSubnetwork(subnetwork)
-            .setZone(zone)
+            .putAllAnnotations(new HashMap<String, String>())
+            .setAppEngine(NetworkEndpointGroupAppEngine.newBuilder().build())
+            .setCloudFunction(NetworkEndpointGroupCloudFunction.newBuilder().build())
+            .setCloudRun(NetworkEndpointGroupCloudRun.newBuilder().build())
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDefaultPort(-650363969)
+            .setDescription("description-1724546052")
+            .setId("id3355")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setNetwork("network1843485230")
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSize(3530753)
+            .setSubnetwork("subnetwork-1302785042")
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
     String project = "project-309310695";
-    String networkEndpointGroup = "networkEndpointGroup-639834746";
+    String networkEndpointGroup = "networkEndpointGroup-2120389028";
 
     NetworkEndpointGroup actualResponse = client.get(project, networkEndpointGroup);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -435,71 +349,49 @@ public class GlobalNetworkEndpointGroupsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-      String networkEndpointGroup = "networkEndpointGroup-639834746";
-
+      String networkEndpointGroup = "networkEndpointGroup-2120389028";
       client.get(project, networkEndpointGroup);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void insertTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region = "region-934795532";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void insertTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -525,40 +417,29 @@ public class GlobalNetworkEndpointGroupsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void insertExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
       NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
-
       client.insert(project, networkEndpointGroupResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listTest() {
-    String id = "id3355";
-    String kind = "kind3292052";
-    String nextPageToken = "";
-    String selfLink = "selfLink-1691268851";
-    NetworkEndpointGroup itemsElement = NetworkEndpointGroup.newBuilder().build();
-    List<NetworkEndpointGroup> items = Arrays.asList(itemsElement);
+  public void listTest() throws Exception {
+    NetworkEndpointGroup responsesElement = NetworkEndpointGroup.newBuilder().build();
     NetworkEndpointGroupList expectedResponse =
         NetworkEndpointGroupList.newBuilder()
-            .setId(id)
-            .setKind(kind)
-            .setNextPageToken(nextPageToken)
-            .setSelfLink(selfLink)
-            .addAllItems(items)
+            .setNextPageToken("")
+            .addAllItems(Arrays.asList(responsesElement))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -567,6 +448,7 @@ public class GlobalNetworkEndpointGroupsClientTest {
     ListPagedResponse pagedListResponse = client.list(project);
 
     List<NetworkEndpointGroup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
 
@@ -586,49 +468,41 @@ public class GlobalNetworkEndpointGroupsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listNetworkEndpointsTest() {
-    String id = "id3355";
-    String kind = "kind3292052";
-    String nextPageToken = "";
-    NetworkEndpointWithHealthStatus itemsElement =
+  public void listNetworkEndpointsTest() throws Exception {
+    NetworkEndpointWithHealthStatus responsesElement =
         NetworkEndpointWithHealthStatus.newBuilder().build();
-    List<NetworkEndpointWithHealthStatus> items = Arrays.asList(itemsElement);
     NetworkEndpointGroupsListNetworkEndpoints expectedResponse =
         NetworkEndpointGroupsListNetworkEndpoints.newBuilder()
-            .setId(id)
-            .setKind(kind)
-            .setNextPageToken(nextPageToken)
-            .addAllItems(items)
+            .setNextPageToken("")
+            .addAllItems(Arrays.asList(responsesElement))
             .build();
     mockService.addResponse(expectedResponse);
 
     String project = "project-309310695";
-    String networkEndpointGroup = "networkEndpointGroup-639834746";
+    String networkEndpointGroup = "networkEndpointGroup-2120389028";
 
     ListNetworkEndpointsPagedResponse pagedListResponse =
         client.listNetworkEndpoints(project, networkEndpointGroup);
 
     List<NetworkEndpointWithHealthStatus> resources =
         Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
 
@@ -648,21 +522,19 @@ public class GlobalNetworkEndpointGroupsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listNetworkEndpointsExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-      String networkEndpointGroup = "networkEndpointGroup-639834746";
-
+      String networkEndpointGroup = "networkEndpointGroup-2120389028";
       client.listNetworkEndpoints(project, networkEndpointGroup);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 }

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,25 +34,24 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The RegionSslCertificates API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (RegionSslCertificatesClient regionSslCertificatesClient = RegionSslCertificatesClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String sslCertificate = "";
+ * <pre>{@code
+ * try (RegionSslCertificatesClient regionSslCertificatesClient =
+ *     RegionSslCertificatesClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String sslCertificate = "sslCertificate-1304941589";
  *   Operation response = regionSslCertificatesClient.delete(project, region, sslCertificate);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the regionSslCertificatesClient object to clean up
+ * <p>Note: close() needs to be called on the RegionSslCertificatesClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -80,30 +80,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionSslCertificatesSettings regionSslCertificatesSettings =
  *     RegionSslCertificatesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * RegionSslCertificatesClient regionSslCertificatesClient =
  *     RegionSslCertificatesClient.create(regionSslCertificatesSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionSslCertificatesSettings regionSslCertificatesSettings =
  *     RegionSslCertificatesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionSslCertificatesClient regionSslCertificatesClient =
  *     RegionSslCertificatesClient.create(regionSslCertificatesSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RegionSslCertificatesClient implements BackgroundResource {
   private final RegionSslCertificatesSettings settings;
   private final RegionSslCertificatesStub stub;
@@ -124,7 +121,7 @@ public class RegionSslCertificatesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of RegionSslCertificatesClient, using the given stub for making calls.
-   * This is for advanced usage - prefer to use RegionSslCertificatesSettings}.
+   * This is for advanced usage - prefer using create(RegionSslCertificatesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionSslCertificatesClient create(RegionSslCertificatesStub stub) {
@@ -156,20 +153,21 @@ public class RegionSslCertificatesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified SslCertificate resource in the region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionSslCertificatesClient regionSslCertificatesClient = RegionSslCertificatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String sslCertificate = "";
+   * <pre>{@code
+   * try (RegionSslCertificatesClient regionSslCertificatesClient =
+   *     RegionSslCertificatesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String sslCertificate = "sslCertificate-1304941589";
    *   Operation response = regionSslCertificatesClient.delete(project, region, sslCertificate);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -186,25 +184,25 @@ public class RegionSslCertificatesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified SslCertificate resource in the region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionSslCertificatesClient regionSslCertificatesClient = RegionSslCertificatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String sslCertificate = "";
-   *   DeleteRegionSslCertificateRequest request = DeleteRegionSslCertificateRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSslCertificate(sslCertificate)
-   *     .build();
+   * <pre>{@code
+   * try (RegionSslCertificatesClient regionSslCertificatesClient =
+   *     RegionSslCertificatesClient.create()) {
+   *   DeleteRegionSslCertificateRequest request =
+   *       DeleteRegionSslCertificateRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSslCertificate("sslCertificate-1304941589")
+   *           .build();
    *   Operation response = regionSslCertificatesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -213,47 +211,49 @@ public class RegionSslCertificatesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified SslCertificate resource in the region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionSslCertificatesClient regionSslCertificatesClient = RegionSslCertificatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String sslCertificate = "";
-   *   DeleteRegionSslCertificateRequest request = DeleteRegionSslCertificateRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSslCertificate(sslCertificate)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionSslCertificatesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionSslCertificatesClient regionSslCertificatesClient =
+   *     RegionSslCertificatesClient.create()) {
+   *   DeleteRegionSslCertificateRequest request =
+   *       DeleteRegionSslCertificateRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSslCertificate("sslCertificate-1304941589")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionSslCertificatesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteRegionSslCertificateRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified SslCertificate resource in the specified region. Get a list of available
    * SSL certificates by making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionSslCertificatesClient regionSslCertificatesClient = RegionSslCertificatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String sslCertificate = "";
+   * <pre>{@code
+   * try (RegionSslCertificatesClient regionSslCertificatesClient =
+   *     RegionSslCertificatesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String sslCertificate = "sslCertificate-1304941589";
    *   SslCertificate response = regionSslCertificatesClient.get(project, region, sslCertificate);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -270,26 +270,25 @@ public class RegionSslCertificatesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified SslCertificate resource in the specified region. Get a list of available
    * SSL certificates by making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionSslCertificatesClient regionSslCertificatesClient = RegionSslCertificatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String sslCertificate = "";
-   *   GetRegionSslCertificateRequest request = GetRegionSslCertificateRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSslCertificate(sslCertificate)
-   *     .build();
+   * <pre>{@code
+   * try (RegionSslCertificatesClient regionSslCertificatesClient =
+   *     RegionSslCertificatesClient.create()) {
+   *   GetRegionSslCertificateRequest request =
+   *       GetRegionSslCertificateRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setSslCertificate("sslCertificate-1304941589")
+   *           .build();
    *   SslCertificate response = regionSslCertificatesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -298,48 +297,50 @@ public class RegionSslCertificatesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified SslCertificate resource in the specified region. Get a list of available
    * SSL certificates by making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionSslCertificatesClient regionSslCertificatesClient = RegionSslCertificatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String sslCertificate = "";
-   *   GetRegionSslCertificateRequest request = GetRegionSslCertificateRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSslCertificate(sslCertificate)
-   *     .build();
-   *   ApiFuture&lt;SslCertificate&gt; future = regionSslCertificatesClient.getCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionSslCertificatesClient regionSslCertificatesClient =
+   *     RegionSslCertificatesClient.create()) {
+   *   GetRegionSslCertificateRequest request =
+   *       GetRegionSslCertificateRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setSslCertificate("sslCertificate-1304941589")
+   *           .build();
+   *   ApiFuture<SslCertificate> future =
+   *       regionSslCertificatesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   SslCertificate response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetRegionSslCertificateRequest, SslCertificate> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a SslCertificate resource in the specified project and region using the data included
    * in the request
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionSslCertificatesClient regionSslCertificatesClient = RegionSslCertificatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   * <pre>{@code
+   * try (RegionSslCertificatesClient regionSslCertificatesClient =
+   *     RegionSslCertificatesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
-   *   Operation response = regionSslCertificatesClient.insert(project, region, sslCertificateResource);
+   *   Operation response =
+   *       regionSslCertificatesClient.insert(project, region, sslCertificateResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -357,26 +358,26 @@ public class RegionSslCertificatesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a SslCertificate resource in the specified project and region using the data included
    * in the request
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionSslCertificatesClient regionSslCertificatesClient = RegionSslCertificatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
-   *   InsertRegionSslCertificateRequest request = InsertRegionSslCertificateRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSslCertificateResource(sslCertificateResource)
-   *     .build();
+   * <pre>{@code
+   * try (RegionSslCertificatesClient regionSslCertificatesClient =
+   *     RegionSslCertificatesClient.create()) {
+   *   InsertRegionSslCertificateRequest request =
+   *       InsertRegionSslCertificateRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSslCertificateResource(SslCertificate.newBuilder().build())
+   *           .build();
    *   Operation response = regionSslCertificatesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -385,49 +386,52 @@ public class RegionSslCertificatesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a SslCertificate resource in the specified project and region using the data included
    * in the request
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionSslCertificatesClient regionSslCertificatesClient = RegionSslCertificatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
-   *   InsertRegionSslCertificateRequest request = InsertRegionSslCertificateRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSslCertificateResource(sslCertificateResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionSslCertificatesClient.insertCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionSslCertificatesClient regionSslCertificatesClient =
+   *     RegionSslCertificatesClient.create()) {
+   *   InsertRegionSslCertificateRequest request =
+   *       InsertRegionSslCertificateRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSslCertificateResource(SslCertificate.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionSslCertificatesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertRegionSslCertificateRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of SslCertificate resources available to the specified project in the
    * specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionSslCertificatesClient regionSslCertificatesClient = RegionSslCertificatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   for (SslCertificate element : regionSslCertificatesClient.list(project, region).iterateAll()) {
+   * <pre>{@code
+   * try (RegionSslCertificatesClient regionSslCertificatesClient =
+   *     RegionSslCertificatesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   for (SslCertificate element :
+   *       regionSslCertificatesClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -439,26 +443,31 @@ public class RegionSslCertificatesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of SslCertificate resources available to the specified project in the
    * specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionSslCertificatesClient regionSslCertificatesClient = RegionSslCertificatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionSslCertificatesRequest request = ListRegionSslCertificatesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionSslCertificatesClient regionSslCertificatesClient =
+   *     RegionSslCertificatesClient.create()) {
+   *   ListRegionSslCertificatesRequest request =
+   *       ListRegionSslCertificatesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (SslCertificate element : regionSslCertificatesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -467,52 +476,63 @@ public class RegionSslCertificatesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of SslCertificate resources available to the specified project in the
    * specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionSslCertificatesClient regionSslCertificatesClient = RegionSslCertificatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionSslCertificatesRequest request = ListRegionSslCertificatesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = regionSslCertificatesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionSslCertificatesClient regionSslCertificatesClient =
+   *     RegionSslCertificatesClient.create()) {
+   *   ListRegionSslCertificatesRequest request =
+   *       ListRegionSslCertificatesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<SslCertificate> future =
+   *       regionSslCertificatesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (SslCertificate element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionSslCertificatesRequest, ListPagedResponse>
       listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of SslCertificate resources available to the specified project in the
    * specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionSslCertificatesClient regionSslCertificatesClient = RegionSslCertificatesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionSslCertificatesRequest request = ListRegionSslCertificatesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionSslCertificatesClient regionSslCertificatesClient =
+   *     RegionSslCertificatesClient.create()) {
+   *   ListRegionSslCertificatesRequest request =
+   *       ListRegionSslCertificatesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     SslCertificateList response = regionSslCertificatesClient.listCallable().call(request);
-   *     for (SslCertificate element : response.getItemsList()) {
+   *     for (SslCertificate element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -523,7 +543,7 @@ public class RegionSslCertificatesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionSslCertificatesRequest, SslCertificateList> listCallable() {
     return stub.listCallable();

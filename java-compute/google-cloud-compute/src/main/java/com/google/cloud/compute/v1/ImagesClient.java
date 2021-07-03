@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,24 +34,22 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The Images API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (ImagesClient imagesClient = ImagesClient.create()) {
- *   String project = "";
- *   String image = "";
+ *   String project = "project-309310695";
+ *   String image = "image100313435";
  *   Operation response = imagesClient.delete(project, image);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the imagesClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the ImagesClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -78,30 +77,24 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ImagesSettings imagesSettings =
  *     ImagesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * ImagesClient imagesClient =
- *     ImagesClient.create(imagesSettings);
- * </code>
- * </pre>
+ * ImagesClient imagesClient = ImagesClient.create(imagesSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
- * ImagesSettings imagesSettings =
- *     ImagesSettings.newBuilder().setEndpoint(myEndpoint).build();
- * ImagesClient imagesClient =
- *     ImagesClient.create(imagesSettings);
- * </code>
- * </pre>
+ * <pre>{@code
+ * ImagesSettings imagesSettings = ImagesSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * ImagesClient imagesClient = ImagesClient.create(imagesSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class ImagesClient implements BackgroundResource {
   private final ImagesSettings settings;
   private final ImagesStub stub;
@@ -121,7 +114,7 @@ public class ImagesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ImagesClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use ImagesSettings}.
+   * advanced usage - prefer using create(ImagesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ImagesClient create(ImagesStub stub) {
@@ -152,19 +145,19 @@ public class ImagesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified image.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String project = "";
-   *   String image = "";
+   *   String project = "project-309310695";
+   *   String image = "image100313435";
    *   Operation response = imagesClient.delete(project, image);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param image Name of the image resource to delete.
@@ -176,23 +169,23 @@ public class ImagesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified image.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String image = "";
-   *   String project = "";
-   *   DeleteImageRequest request = DeleteImageRequest.newBuilder()
-   *     .setImage(image)
-   *     .setProject(project)
-   *     .build();
+   *   DeleteImageRequest request =
+   *       DeleteImageRequest.newBuilder()
+   *           .setImage("image100313435")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = imagesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -201,31 +194,31 @@ public class ImagesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified image.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String image = "";
-   *   String project = "";
-   *   DeleteImageRequest request = DeleteImageRequest.newBuilder()
-   *     .setImage(image)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = imagesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteImageRequest request =
+   *       DeleteImageRequest.newBuilder()
+   *           .setImage("image100313435")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = imagesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteImageRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the deprecation status of an image.
    *
@@ -233,14 +226,14 @@ public class ImagesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String project = "";
-   *   String image = "";
+   *   String project = "project-309310695";
+   *   String image = "image100313435";
    *   DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
    *   Operation response = imagesClient.deprecate(project, image, deprecationStatusResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param image Image name.
@@ -258,7 +251,7 @@ public class ImagesClient implements BackgroundResource {
     return deprecate(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the deprecation status of an image.
    *
@@ -266,19 +259,18 @@ public class ImagesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
-   *   String image = "";
-   *   String project = "";
-   *   DeprecateImageRequest request = DeprecateImageRequest.newBuilder()
-   *     .setDeprecationStatusResource(deprecationStatusResource)
-   *     .setImage(image)
-   *     .setProject(project)
-   *     .build();
+   *   DeprecateImageRequest request =
+   *       DeprecateImageRequest.newBuilder()
+   *           .setDeprecationStatusResource(DeprecationStatus.newBuilder().build())
+   *           .setImage("image100313435")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = imagesClient.deprecate(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -287,7 +279,7 @@ public class ImagesClient implements BackgroundResource {
     return deprecateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the deprecation status of an image.
    *
@@ -295,39 +287,38 @@ public class ImagesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
-   *   String image = "";
-   *   String project = "";
-   *   DeprecateImageRequest request = DeprecateImageRequest.newBuilder()
-   *     .setDeprecationStatusResource(deprecationStatusResource)
-   *     .setImage(image)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = imagesClient.deprecateCallable().futureCall(request);
-   *   // Do something
+   *   DeprecateImageRequest request =
+   *       DeprecateImageRequest.newBuilder()
+   *           .setDeprecationStatusResource(DeprecationStatus.newBuilder().build())
+   *           .setImage("image100313435")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = imagesClient.deprecateCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeprecateImageRequest, Operation> deprecateCallable() {
     return stub.deprecateCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified image. Gets a list of available images by making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String project = "";
-   *   String image = "";
+   *   String project = "project-309310695";
+   *   String image = "image100313435";
    *   Image response = imagesClient.get(project, image);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param image Name of the image resource to return.
@@ -339,23 +330,22 @@ public class ImagesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified image. Gets a list of available images by making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String image = "";
-   *   String project = "";
-   *   GetImageRequest request = GetImageRequest.newBuilder()
-   *     .setImage(image)
-   *     .setProject(project)
-   *     .build();
+   *   GetImageRequest request =
+   *       GetImageRequest.newBuilder()
+   *           .setImage("image100313435")
+   *           .setProject("project-309310695")
+   *           .build();
    *   Image response = imagesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -364,43 +354,42 @@ public class ImagesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified image. Gets a list of available images by making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String image = "";
-   *   String project = "";
-   *   GetImageRequest request = GetImageRequest.newBuilder()
-   *     .setImage(image)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Image&gt; future = imagesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetImageRequest request =
+   *       GetImageRequest.newBuilder()
+   *           .setImage("image100313435")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<Image> future = imagesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   Image response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetImageRequest, Image> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the latest image that is part of an image family and is not deprecated.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String project = "";
-   *   String family = "";
+   *   String project = "project-309310695";
+   *   String family = "family-1281860764";
    *   Image response = imagesClient.getFromFamily(project, family);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param family Name of the image family to search for.
@@ -412,23 +401,22 @@ public class ImagesClient implements BackgroundResource {
     return getFromFamily(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the latest image that is part of an image family and is not deprecated.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String family = "";
-   *   String project = "";
-   *   GetFromFamilyImageRequest request = GetFromFamilyImageRequest.newBuilder()
-   *     .setFamily(family)
-   *     .setProject(project)
-   *     .build();
+   *   GetFromFamilyImageRequest request =
+   *       GetFromFamilyImageRequest.newBuilder()
+   *           .setFamily("family-1281860764")
+   *           .setProject("project-309310695")
+   *           .build();
    *   Image response = imagesClient.getFromFamily(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -437,44 +425,43 @@ public class ImagesClient implements BackgroundResource {
     return getFromFamilyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the latest image that is part of an image family and is not deprecated.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String family = "";
-   *   String project = "";
-   *   GetFromFamilyImageRequest request = GetFromFamilyImageRequest.newBuilder()
-   *     .setFamily(family)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Image&gt; future = imagesClient.getFromFamilyCallable().futureCall(request);
-   *   // Do something
+   *   GetFromFamilyImageRequest request =
+   *       GetFromFamilyImageRequest.newBuilder()
+   *           .setFamily("family-1281860764")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<Image> future = imagesClient.getFromFamilyCallable().futureCall(request);
+   *   // Do something.
    *   Image response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetFromFamilyImageRequest, Image> getFromFamilyCallable() {
     return stub.getFromFamilyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
    *   Policy response = imagesClient.getIamPolicy(project, resource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
@@ -486,24 +473,24 @@ public class ImagesClient implements BackgroundResource {
     return getIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   GetIamPolicyImageRequest request = GetIamPolicyImageRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .build();
+   *   GetIamPolicyImageRequest request =
+   *       GetIamPolicyImageRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
    *   Policy response = imagesClient.getIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -512,44 +499,44 @@ public class ImagesClient implements BackgroundResource {
     return getIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   GetIamPolicyImageRequest request = GetIamPolicyImageRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = imagesClient.getIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   GetIamPolicyImageRequest request =
+   *       GetIamPolicyImageRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future = imagesClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyImageRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an image in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   Image imageResource = Image.newBuilder().build();
    *   Operation response = imagesClient.insert(project, imageResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param imageResource The body resource for this request
@@ -561,23 +548,24 @@ public class ImagesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an image in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   Image imageResource = Image.newBuilder().build();
-   *   String project = "";
-   *   InsertImageRequest request = InsertImageRequest.newBuilder()
-   *     .setImageResource(imageResource)
-   *     .setProject(project)
-   *     .build();
+   *   InsertImageRequest request =
+   *       InsertImageRequest.newBuilder()
+   *           .setForceCreate(true)
+   *           .setImageResource(Image.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = imagesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -586,31 +574,32 @@ public class ImagesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an image in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   Image imageResource = Image.newBuilder().build();
-   *   String project = "";
-   *   InsertImageRequest request = InsertImageRequest.newBuilder()
-   *     .setImageResource(imageResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = imagesClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertImageRequest request =
+   *       InsertImageRequest.newBuilder()
+   *           .setForceCreate(true)
+   *           .setImageResource(Image.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = imagesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertImageRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of custom images available to the specified project. Custom images are
    * images you create that belong to your project. This method does not get any images that belong
@@ -620,14 +609,14 @@ public class ImagesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (Image element : imagesClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -637,7 +626,7 @@ public class ImagesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of custom images available to the specified project. Custom images are
    * images you create that belong to your project. This method does not get any images that belong
@@ -647,17 +636,22 @@ public class ImagesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String project = "";
-   *   ListImagesRequest request = ListImagesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListImagesRequest request =
+   *       ListImagesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (Image element : imagesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -666,7 +660,7 @@ public class ImagesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of custom images available to the specified project. Custom images are
    * images you create that belong to your project. This method does not get any images that belong
@@ -676,25 +670,30 @@ public class ImagesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String project = "";
-   *   ListImagesRequest request = ListImagesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = imagesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListImagesRequest request =
+   *       ListImagesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Image> future = imagesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Image element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListImagesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of custom images available to the specified project. Custom images are
    * images you create that belong to your project. This method does not get any images that belong
@@ -704,15 +703,20 @@ public class ImagesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String project = "";
-   *   ListImagesRequest request = ListImagesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListImagesRequest request =
+   *       ListImagesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     ImageList response = imagesClient.listCallable().call(request);
-   *     for (Image element : response.getItemsList()) {
+   *     for (Image element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -723,27 +727,27 @@ public class ImagesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListImagesRequest, ImageList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified image with the data included in the request. Only the following fields
    * can be modified: family, description, deprecation status.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String project = "";
-   *   String image = "";
+   *   String project = "project-309310695";
+   *   String image = "image100313435";
    *   Image imageResource = Image.newBuilder().build();
    *   Operation response = imagesClient.patch(project, image, imageResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param image Name of the image resource to patch.
@@ -760,26 +764,25 @@ public class ImagesClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified image with the data included in the request. Only the following fields
    * can be modified: family, description, deprecation status.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String image = "";
-   *   Image imageResource = Image.newBuilder().build();
-   *   String project = "";
-   *   PatchImageRequest request = PatchImageRequest.newBuilder()
-   *     .setImage(image)
-   *     .setImageResource(imageResource)
-   *     .setProject(project)
-   *     .build();
+   *   PatchImageRequest request =
+   *       PatchImageRequest.newBuilder()
+   *           .setImage("image100313435")
+   *           .setImageResource(Image.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = imagesClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -788,47 +791,48 @@ public class ImagesClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified image with the data included in the request. Only the following fields
    * can be modified: family, description, deprecation status.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String image = "";
-   *   Image imageResource = Image.newBuilder().build();
-   *   String project = "";
-   *   PatchImageRequest request = PatchImageRequest.newBuilder()
-   *     .setImage(image)
-   *     .setImageResource(imageResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = imagesClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchImageRequest request =
+   *       PatchImageRequest.newBuilder()
+   *           .setImage("image100313435")
+   *           .setImageResource(Image.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = imagesClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchImageRequest, Operation> patchCallable() {
     return stub.patchCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
-   *   Policy response = imagesClient.setIamPolicy(project, resource, globalSetPolicyRequestResource);
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource =
+   *       GlobalSetPolicyRequest.newBuilder().build();
+   *   Policy response =
+   *       imagesClient.setIamPolicy(project, resource, globalSetPolicyRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
@@ -846,25 +850,23 @@ public class ImagesClient implements BackgroundResource {
     return setIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
-   *   String project = "";
-   *   String resource = "";
-   *   SetIamPolicyImageRequest request = SetIamPolicyImageRequest.newBuilder()
-   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .build();
+   *   SetIamPolicyImageRequest request =
+   *       SetIamPolicyImageRequest.newBuilder()
+   *           .setGlobalSetPolicyRequestResource(GlobalSetPolicyRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
    *   Policy response = imagesClient.setIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -873,47 +875,47 @@ public class ImagesClient implements BackgroundResource {
     return setIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
-   *   String project = "";
-   *   String resource = "";
-   *   SetIamPolicyImageRequest request = SetIamPolicyImageRequest.newBuilder()
-   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = imagesClient.setIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   SetIamPolicyImageRequest request =
+   *       SetIamPolicyImageRequest.newBuilder()
+   *           .setGlobalSetPolicyRequestResource(GlobalSetPolicyRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future = imagesClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyImageRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the labels on an image. To learn more about labels, read the Labeling Resources
    * documentation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
-   *   Operation response = imagesClient.setLabels(project, resource, globalSetLabelsRequestResource);
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
+   *   GlobalSetLabelsRequest globalSetLabelsRequestResource =
+   *       GlobalSetLabelsRequest.newBuilder().build();
+   *   Operation response =
+   *       imagesClient.setLabels(project, resource, globalSetLabelsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
@@ -931,26 +933,24 @@ public class ImagesClient implements BackgroundResource {
     return setLabels(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the labels on an image. To learn more about labels, read the Labeling Resources
    * documentation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
-   *   String project = "";
-   *   String resource = "";
-   *   SetLabelsImageRequest request = SetLabelsImageRequest.newBuilder()
-   *     .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .build();
+   *   SetLabelsImageRequest request =
+   *       SetLabelsImageRequest.newBuilder()
+   *           .setGlobalSetLabelsRequestResource(GlobalSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
    *   Operation response = imagesClient.setLabels(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -959,47 +959,47 @@ public class ImagesClient implements BackgroundResource {
     return setLabelsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the labels on an image. To learn more about labels, read the Labeling Resources
    * documentation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
-   *   String project = "";
-   *   String resource = "";
-   *   SetLabelsImageRequest request = SetLabelsImageRequest.newBuilder()
-   *     .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = imagesClient.setLabelsCallable().futureCall(request);
-   *   // Do something
+   *   SetLabelsImageRequest request =
+   *       SetLabelsImageRequest.newBuilder()
+   *           .setGlobalSetLabelsRequestResource(GlobalSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Operation> future = imagesClient.setLabelsCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetLabelsImageRequest, Operation> setLabelsCallable() {
     return stub.setLabelsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestPermissionsResponse response = imagesClient.testIamPermissions(project, resource, testPermissionsRequestResource);
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       imagesClient.testIamPermissions(project, resource, testPermissionsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
@@ -1017,25 +1017,23 @@ public class ImagesClient implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsImageRequest request = TestIamPermissionsImageRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
+   *   TestIamPermissionsImageRequest request =
+   *       TestIamPermissionsImageRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
    *   TestPermissionsResponse response = imagesClient.testIamPermissions(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1044,27 +1042,26 @@ public class ImagesClient implements BackgroundResource {
     return testIamPermissionsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ImagesClient imagesClient = ImagesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsImageRequest request = TestIamPermissionsImageRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
-   *   ApiFuture&lt;TestPermissionsResponse&gt; future = imagesClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
+   *   TestIamPermissionsImageRequest request =
+   *       TestIamPermissionsImageRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       imagesClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
    *   TestPermissionsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsImageRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {

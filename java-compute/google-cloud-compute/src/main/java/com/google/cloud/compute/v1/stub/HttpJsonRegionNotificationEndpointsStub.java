@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionNotificationEndpointsClient.ListPagedResponse;
@@ -39,27 +40,26 @@ import com.google.cloud.compute.v1.NotificationEndpoint;
 import com.google.cloud.compute.v1.NotificationEndpointList;
 import com.google.cloud.compute.v1.Operation;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the RegionNotificationEndpoints service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationEndpointsStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteRegionNotificationEndpointRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteRegionNotificationEndpointRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionNotificationEndpointRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionNotificationEndpoints.Delete")
+              .setFullMethodName("google.cloud.compute.v1.RegionNotificationEndpoints/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionNotificationEndpointRequest>newBuilder()
@@ -73,12 +73,12 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteRegionNotificationEndpointRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "notificationEndpoint",
                                   request.getNotificationEndpoint());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -103,7 +103,7 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                           new FieldsExtractor<DeleteRegionNotificationEndpointRequest, String>() {
                             @Override
                             public String extract(DeleteRegionNotificationEndpointRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -113,13 +113,12 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           GetRegionNotificationEndpointRequest, NotificationEndpoint>
       getMethodDescriptor =
           ApiMethodDescriptor
               .<GetRegionNotificationEndpointRequest, NotificationEndpoint>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionNotificationEndpoints.Get")
+              .setFullMethodName("google.cloud.compute.v1.RegionNotificationEndpoints/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionNotificationEndpointRequest>newBuilder()
@@ -133,12 +132,12 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetRegionNotificationEndpointRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields,
                                   "notificationEndpoint",
                                   request.getNotificationEndpoint());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -151,7 +150,6 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetRegionNotificationEndpointRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -159,7 +157,7 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                           new FieldsExtractor<GetRegionNotificationEndpointRequest, String>() {
                             @Override
                             public String extract(GetRegionNotificationEndpointRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -169,11 +167,10 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertRegionNotificationEndpointRequest, Operation>
+  private static final ApiMethodDescriptor<InsertRegionNotificationEndpointRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertRegionNotificationEndpointRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionNotificationEndpoints.Insert")
+              .setFullMethodName("google.cloud.compute.v1.RegionNotificationEndpoints/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionNotificationEndpointRequest>newBuilder()
@@ -226,13 +223,12 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListRegionNotificationEndpointsRequest, NotificationEndpointList>
       listMethodDescriptor =
           ApiMethodDescriptor
               .<ListRegionNotificationEndpointsRequest, NotificationEndpointList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionNotificationEndpoints.List")
+              .setFullMethodName("google.cloud.compute.v1.RegionNotificationEndpoints/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionNotificationEndpointsRequest>newBuilder()
@@ -287,7 +283,7 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                           new FieldsExtractor<ListRegionNotificationEndpointsRequest, String>() {
                             @Override
                             public String extract(ListRegionNotificationEndpointsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -296,8 +292,6 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                       .setDefaultInstance(NotificationEndpointList.getDefaultInstance())
                       .build())
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<DeleteRegionNotificationEndpointRequest, Operation> deleteCallable;
   private final UnaryCallable<GetRegionNotificationEndpointRequest, NotificationEndpoint>
@@ -308,6 +302,7 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
   private final UnaryCallable<ListRegionNotificationEndpointsRequest, ListPagedResponse>
       listPagedCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionNotificationEndpointsStub create(
@@ -391,29 +386,45 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteRegionNotificationEndpointRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetRegionNotificationEndpointRequest, NotificationEndpoint> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertRegionNotificationEndpointRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListRegionNotificationEndpointsRequest, ListPagedResponse>
-      listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListRegionNotificationEndpointsRequest, NotificationEndpointList>
       listCallable() {
     return listCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRegionNotificationEndpointsRequest, ListPagedResponse>
+      listPagedCallable() {
+    return listPagedCallable;
   }
 
   @Override

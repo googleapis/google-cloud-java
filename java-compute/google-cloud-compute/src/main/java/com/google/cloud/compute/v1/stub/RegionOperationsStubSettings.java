@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionOperationsClient.ListPagedResponse;
@@ -55,7 +56,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link RegionOperationsStub}.
  *
@@ -72,29 +73,28 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of delete to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionOperationsStubSettings.Builder regionOperationsSettingsBuilder =
  *     RegionOperationsStubSettings.newBuilder();
  * regionOperationsSettingsBuilder
  *     .deleteSettings()
  *     .setRetrySettings(
- *         regionOperationsSettingsBuilder.deleteSettings().getRetrySettings().toBuilder()
+ *         regionOperationsSettingsBuilder
+ *             .deleteSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionOperationsStubSettings regionOperationsSettings = regionOperationsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RegionOperationsStubSettings extends StubSettings<RegionOperationsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/compute")
-          .add("https://www.googleapis.com/auth/compute.readonly")
+          .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
   private final UnaryCallSettings<DeleteRegionOperationRequest, DeleteRegionOperationResponse>
@@ -103,6 +103,63 @@ public class RegionOperationsStubSettings extends StubSettings<RegionOperationsS
   private final PagedCallSettings<ListRegionOperationsRequest, OperationList, ListPagedResponse>
       listSettings;
   private final UnaryCallSettings<WaitRegionOperationRequest, Operation> waitSettings;
+
+  private static final PagedListDescriptor<ListRegionOperationsRequest, OperationList, Operation>
+      LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<ListRegionOperationsRequest, OperationList, Operation>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRegionOperationsRequest injectToken(
+                ListRegionOperationsRequest payload, String token) {
+              return ListRegionOperationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListRegionOperationsRequest injectPageSize(
+                ListRegionOperationsRequest payload, int pageSize) {
+              return ListRegionOperationsRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRegionOperationsRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(OperationList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Operation> extractResources(OperationList payload) {
+              return payload.getItemsList() == null
+                  ? ImmutableList.<Operation>of()
+                  : payload.getItemsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListRegionOperationsRequest, OperationList, ListPagedResponse>
+      LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRegionOperationsRequest, OperationList, ListPagedResponse>() {
+            @Override
+            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListRegionOperationsRequest, OperationList> callable,
+                ListRegionOperationsRequest request,
+                ApiCallContext context,
+                ApiFuture<OperationList> futureResponse) {
+              PageContext<ListRegionOperationsRequest, OperationList, Operation> pageContext =
+                  PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
+              return ListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteRegionOperationRequest, DeleteRegionOperationResponse>
@@ -132,10 +189,10 @@ public class RegionOperationsStubSettings extends StubSettings<RegionOperationsS
         .getTransportName()
         .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
       return HttpJsonRegionOperationsStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -145,12 +202,12 @@ public class RegionOperationsStubSettings extends StubSettings<RegionOperationsS
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "compute.googleapis.com";
+    return "compute.googleapis.com:443";
   }
 
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return 443;
+  /** Returns the default mTLS service endpoint. */
+  public static String getDefaultMtlsEndpoint() {
+    return "compute.mtls.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -207,67 +264,9 @@ public class RegionOperationsStubSettings extends StubSettings<RegionOperationsS
     waitSettings = settingsBuilder.waitSettings().build();
   }
 
-  private static final PagedListDescriptor<ListRegionOperationsRequest, OperationList, Operation>
-      LIST_PAGE_STR_DESC =
-          new PagedListDescriptor<ListRegionOperationsRequest, OperationList, Operation>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListRegionOperationsRequest injectToken(
-                ListRegionOperationsRequest payload, String token) {
-              return ListRegionOperationsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListRegionOperationsRequest injectPageSize(
-                ListRegionOperationsRequest payload, int pageSize) {
-              return ListRegionOperationsRequest.newBuilder(payload)
-                  .setMaxResults(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListRegionOperationsRequest payload) {
-              return payload.getMaxResults();
-            }
-
-            @Override
-            public String extractNextToken(OperationList payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Operation> extractResources(OperationList payload) {
-              return payload.getItemsList() != null
-                  ? payload.getItemsList()
-                  : ImmutableList.<Operation>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListRegionOperationsRequest, OperationList, ListPagedResponse>
-      LIST_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListRegionOperationsRequest, OperationList, ListPagedResponse>() {
-            @Override
-            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListRegionOperationsRequest, OperationList> callable,
-                ListRegionOperationsRequest request,
-                ApiCallContext context,
-                ApiFuture<OperationList> futureResponse) {
-              PageContext<ListRegionOperationsRequest, OperationList, Operation> pageContext =
-                  PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
-              return ListPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for RegionOperationsStubSettings. */
   public static class Builder extends StubSettings.Builder<RegionOperationsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<
             DeleteRegionOperationRequest, DeleteRegionOperationResponse>
         deleteSettings;
@@ -276,7 +275,6 @@ public class RegionOperationsStubSettings extends StubSettings<RegionOperationsS
             ListRegionOperationsRequest, OperationList, ListPagedResponse>
         listSettings;
     private final UnaryCallSettings.Builder<WaitRegionOperationRequest, Operation> waitSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -284,11 +282,12 @@ public class RegionOperationsStubSettings extends StubSettings<RegionOperationsS
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -299,72 +298,42 @@ public class RegionOperationsStubSettings extends StubSettings<RegionOperationsS
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
-
       waitSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deleteSettings, getSettings, listSettings, waitSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .deleteSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .waitSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      return builder;
     }
 
     protected Builder(RegionOperationsStubSettings settings) {
@@ -380,7 +349,44 @@ public class RegionOperationsStubSettings extends StubSettings<RegionOperationsS
               deleteSettings, getSettings, listSettings, waitSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .deleteSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .waitSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

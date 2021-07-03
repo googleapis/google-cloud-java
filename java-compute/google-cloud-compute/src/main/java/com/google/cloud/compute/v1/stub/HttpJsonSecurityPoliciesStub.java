@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.SecurityPoliciesClient.ListPagedResponse;
@@ -47,27 +48,26 @@ import com.google.cloud.compute.v1.SecurityPolicy;
 import com.google.cloud.compute.v1.SecurityPolicyList;
 import com.google.cloud.compute.v1.SecurityPolicyRule;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the SecurityPolicies service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<AddRuleSecurityPolicyRequest, Operation>
+  private static final ApiMethodDescriptor<AddRuleSecurityPolicyRequest, Operation>
       addRuleMethodDescriptor =
           ApiMethodDescriptor.<AddRuleSecurityPolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies.AddRule")
+              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/AddRule")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddRuleSecurityPolicyRequest>newBuilder()
@@ -95,7 +95,6 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<AddRuleSecurityPolicyRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -116,11 +115,10 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteSecurityPolicyRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteSecurityPolicyRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteSecurityPolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies.Delete")
+              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteSecurityPolicyRequest>newBuilder()
@@ -159,7 +157,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                           new FieldsExtractor<DeleteSecurityPolicyRequest, String>() {
                             @Override
                             public String extract(DeleteSecurityPolicyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -169,11 +167,10 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetSecurityPolicyRequest, SecurityPolicy>
+  private static final ApiMethodDescriptor<GetSecurityPolicyRequest, SecurityPolicy>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetSecurityPolicyRequest, SecurityPolicy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies.Get")
+              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetSecurityPolicyRequest>newBuilder()
@@ -200,7 +197,6 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetSecurityPolicyRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -208,7 +204,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                           new FieldsExtractor<GetSecurityPolicyRequest, String>() {
                             @Override
                             public String extract(GetSecurityPolicyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -218,11 +214,10 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetRuleSecurityPolicyRequest, SecurityPolicyRule>
+  private static final ApiMethodDescriptor<GetRuleSecurityPolicyRequest, SecurityPolicyRule>
       getRuleMethodDescriptor =
           ApiMethodDescriptor.<GetRuleSecurityPolicyRequest, SecurityPolicyRule>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies.GetRule")
+              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/GetRule")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRuleSecurityPolicyRequest>newBuilder()
@@ -260,7 +255,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                           new FieldsExtractor<GetRuleSecurityPolicyRequest, String>() {
                             @Override
                             public String extract(GetRuleSecurityPolicyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -270,11 +265,10 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertSecurityPolicyRequest, Operation>
+  private static final ApiMethodDescriptor<InsertSecurityPolicyRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertSecurityPolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies.Insert")
+              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertSecurityPolicyRequest>newBuilder()
@@ -324,11 +318,10 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListSecurityPoliciesRequest, SecurityPolicyList>
+  private static final ApiMethodDescriptor<ListSecurityPoliciesRequest, SecurityPolicyList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListSecurityPoliciesRequest, SecurityPolicyList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies.List")
+              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListSecurityPoliciesRequest>newBuilder()
@@ -381,7 +374,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                           new FieldsExtractor<ListSecurityPoliciesRequest, String>() {
                             @Override
                             public String extract(ListSecurityPoliciesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -391,8 +384,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListPreconfiguredExpressionSetsSecurityPoliciesRequest,
           SecurityPoliciesListPreconfiguredExpressionSetsResponse>
       listPreconfiguredExpressionSetsMethodDescriptor =
@@ -401,7 +393,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                   SecurityPoliciesListPreconfiguredExpressionSetsResponse>
                   newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.SecurityPolicies.ListPreconfiguredExpressionSets")
+                  "google.cloud.compute.v1.SecurityPolicies/ListPreconfiguredExpressionSets")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -462,7 +454,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                             @Override
                             public String extract(
                                 ListPreconfiguredExpressionSetsSecurityPoliciesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -475,11 +467,10 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchSecurityPolicyRequest, Operation>
+  private static final ApiMethodDescriptor<PatchSecurityPolicyRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchSecurityPolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies.Patch")
+              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/Patch")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchSecurityPolicyRequest>newBuilder()
@@ -530,11 +521,10 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchRuleSecurityPolicyRequest, Operation>
+  private static final ApiMethodDescriptor<PatchRuleSecurityPolicyRequest, Operation>
       patchRuleMethodDescriptor =
           ApiMethodDescriptor.<PatchRuleSecurityPolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies.PatchRule")
+              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/PatchRule")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchRuleSecurityPolicyRequest>newBuilder()
@@ -586,11 +576,10 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<RemoveRuleSecurityPolicyRequest, Operation>
+  private static final ApiMethodDescriptor<RemoveRuleSecurityPolicyRequest, Operation>
       removeRuleMethodDescriptor =
           ApiMethodDescriptor.<RemoveRuleSecurityPolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies.RemoveRule")
+              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/RemoveRule")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveRuleSecurityPolicyRequest>newBuilder()
@@ -629,7 +618,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                           new FieldsExtractor<RemoveRuleSecurityPolicyRequest, String>() {
                             @Override
                             public String extract(RemoveRuleSecurityPolicyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -638,8 +627,6 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                       .setDefaultInstance(Operation.getDefaultInstance())
                       .build())
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AddRuleSecurityPolicyRequest, Operation> addRuleCallable;
   private final UnaryCallable<DeleteSecurityPolicyRequest, Operation> deleteCallable;
@@ -656,6 +643,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
   private final UnaryCallable<PatchRuleSecurityPolicyRequest, Operation> patchRuleCallable;
   private final UnaryCallable<RemoveRuleSecurityPolicyRequest, Operation> removeRuleCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonSecurityPoliciesStub create(SecurityPoliciesStubSettings settings)
@@ -781,37 +769,62 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
         callableFactory.createUnaryCallable(
             removeRuleTransportSettings, settings.removeRuleSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(addRuleMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getRuleMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(listPreconfiguredExpressionSetsMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(patchRuleMethodDescriptor);
+    methodDescriptors.add(removeRuleMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<AddRuleSecurityPolicyRequest, Operation> addRuleCallable() {
     return addRuleCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteSecurityPolicyRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetSecurityPolicyRequest, SecurityPolicy> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetRuleSecurityPolicyRequest, SecurityPolicyRule> getRuleCallable() {
     return getRuleCallable;
   }
 
+  @Override
   public UnaryCallable<InsertSecurityPolicyRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListSecurityPoliciesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListSecurityPoliciesRequest, SecurityPolicyList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListSecurityPoliciesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<
           ListPreconfiguredExpressionSetsSecurityPoliciesRequest,
           SecurityPoliciesListPreconfiguredExpressionSetsResponse>
@@ -819,14 +832,17 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
     return listPreconfiguredExpressionSetsCallable;
   }
 
+  @Override
   public UnaryCallable<PatchSecurityPolicyRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<PatchRuleSecurityPolicyRequest, Operation> patchRuleCallable() {
     return patchRuleCallable;
   }
 
+  @Override
   public UnaryCallable<RemoveRuleSecurityPolicyRequest, Operation> removeRuleCallable() {
     return removeRuleCallable;
   }

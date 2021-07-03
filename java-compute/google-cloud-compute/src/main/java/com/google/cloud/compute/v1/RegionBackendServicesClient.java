@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,25 +34,24 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The RegionBackendServices API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String backendService = "";
+ * <pre>{@code
+ * try (RegionBackendServicesClient regionBackendServicesClient =
+ *     RegionBackendServicesClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String backendService = "backendService-1884714623";
  *   Operation response = regionBackendServicesClient.delete(project, region, backendService);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the regionBackendServicesClient object to clean up
+ * <p>Note: close() needs to be called on the RegionBackendServicesClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -80,30 +80,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionBackendServicesSettings regionBackendServicesSettings =
  *     RegionBackendServicesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * RegionBackendServicesClient regionBackendServicesClient =
  *     RegionBackendServicesClient.create(regionBackendServicesSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionBackendServicesSettings regionBackendServicesSettings =
  *     RegionBackendServicesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionBackendServicesClient regionBackendServicesClient =
  *     RegionBackendServicesClient.create(regionBackendServicesSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RegionBackendServicesClient implements BackgroundResource {
   private final RegionBackendServicesSettings settings;
   private final RegionBackendServicesStub stub;
@@ -124,7 +121,7 @@ public class RegionBackendServicesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of RegionBackendServicesClient, using the given stub for making calls.
-   * This is for advanced usage - prefer to use RegionBackendServicesSettings}.
+   * This is for advanced usage - prefer using create(RegionBackendServicesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionBackendServicesClient create(RegionBackendServicesStub stub) {
@@ -156,20 +153,21 @@ public class RegionBackendServicesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified regional BackendService resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String backendService = "";
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String backendService = "backendService-1884714623";
    *   Operation response = regionBackendServicesClient.delete(project, region, backendService);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -186,25 +184,25 @@ public class RegionBackendServicesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified regional BackendService resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String backendService = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeleteRegionBackendServiceRequest request = DeleteRegionBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   DeleteRegionBackendServiceRequest request =
+   *       DeleteRegionBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionBackendServicesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -213,46 +211,48 @@ public class RegionBackendServicesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified regional BackendService resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String backendService = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeleteRegionBackendServiceRequest request = DeleteRegionBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionBackendServicesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   DeleteRegionBackendServiceRequest request =
+   *       DeleteRegionBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionBackendServicesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteRegionBackendServiceRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified regional BackendService resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String backendService = "";
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String backendService = "backendService-1884714623";
    *   BackendService response = regionBackendServicesClient.get(project, region, backendService);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -269,25 +269,24 @@ public class RegionBackendServicesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified regional BackendService resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String backendService = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetRegionBackendServiceRequest request = GetRegionBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   GetRegionBackendServiceRequest request =
+   *       GetRegionBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
    *   BackendService response = regionBackendServicesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -296,47 +295,51 @@ public class RegionBackendServicesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified regional BackendService resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String backendService = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetRegionBackendServiceRequest request = GetRegionBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;BackendService&gt; future = regionBackendServicesClient.getCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   GetRegionBackendServiceRequest request =
+   *       GetRegionBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<BackendService> future =
+   *       regionBackendServicesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   BackendService response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetRegionBackendServiceRequest, BackendService> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the most recent health check results for this regional BackendService.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String backendService = "";
-   *   ResourceGroupReference resourceGroupReferenceResource = ResourceGroupReference.newBuilder().build();
-   *   BackendServiceGroupHealth response = regionBackendServicesClient.getHealth(project, region, backendService, resourceGroupReferenceResource);
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String backendService = "backendService-1884714623";
+   *   ResourceGroupReference resourceGroupReferenceResource =
+   *       ResourceGroupReference.newBuilder().build();
+   *   BackendServiceGroupHealth response =
+   *       regionBackendServicesClient.getHealth(
+   *           project, region, backendService, resourceGroupReferenceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project
    * @param region Name of the region scoping this request.
@@ -359,27 +362,25 @@ public class RegionBackendServicesClient implements BackgroundResource {
     return getHealth(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the most recent health check results for this regional BackendService.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String backendService = "";
-   *   String project = "";
-   *   String region = "";
-   *   ResourceGroupReference resourceGroupReferenceResource = ResourceGroupReference.newBuilder().build();
-   *   GetHealthRegionBackendServiceRequest request = GetHealthRegionBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResourceGroupReferenceResource(resourceGroupReferenceResource)
-   *     .build();
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   GetHealthRegionBackendServiceRequest request =
+   *       GetHealthRegionBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResourceGroupReferenceResource(ResourceGroupReference.newBuilder().build())
+   *           .build();
    *   BackendServiceGroupHealth response = regionBackendServicesClient.getHealth(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -388,50 +389,51 @@ public class RegionBackendServicesClient implements BackgroundResource {
     return getHealthCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the most recent health check results for this regional BackendService.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String backendService = "";
-   *   String project = "";
-   *   String region = "";
-   *   ResourceGroupReference resourceGroupReferenceResource = ResourceGroupReference.newBuilder().build();
-   *   GetHealthRegionBackendServiceRequest request = GetHealthRegionBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResourceGroupReferenceResource(resourceGroupReferenceResource)
-   *     .build();
-   *   ApiFuture&lt;BackendServiceGroupHealth&gt; future = regionBackendServicesClient.getHealthCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   GetHealthRegionBackendServiceRequest request =
+   *       GetHealthRegionBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResourceGroupReferenceResource(ResourceGroupReference.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BackendServiceGroupHealth> future =
+   *       regionBackendServicesClient.getHealthCallable().futureCall(request);
+   *   // Do something.
    *   BackendServiceGroupHealth response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetHealthRegionBackendServiceRequest, BackendServiceGroupHealth>
       getHealthCallable() {
     return stub.getHealthCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
    * the request. For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = regionBackendServicesClient.insert(project, region, backendServiceResource);
+   *   Operation response =
+   *       regionBackendServicesClient.insert(project, region, backendServiceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -449,26 +451,26 @@ public class RegionBackendServicesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
    * the request. For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertRegionBackendServiceRequest request = InsertRegionBackendServiceRequest.newBuilder()
-   *     .setBackendServiceResource(backendServiceResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   InsertRegionBackendServiceRequest request =
+   *       InsertRegionBackendServiceRequest.newBuilder()
+   *           .setBackendServiceResource(BackendService.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionBackendServicesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -477,49 +479,52 @@ public class RegionBackendServicesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
    * the request. For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertRegionBackendServiceRequest request = InsertRegionBackendServiceRequest.newBuilder()
-   *     .setBackendServiceResource(backendServiceResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionBackendServicesClient.insertCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   InsertRegionBackendServiceRequest request =
+   *       InsertRegionBackendServiceRequest.newBuilder()
+   *           .setBackendServiceResource(BackendService.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionBackendServicesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertRegionBackendServiceRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of regional BackendService resources available to the specified project in
    * the given region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   for (BackendService element : regionBackendServicesClient.list(project, region).iterateAll()) {
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   for (BackendService element :
+   *       regionBackendServicesClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -531,26 +536,31 @@ public class RegionBackendServicesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of regional BackendService resources available to the specified project in
    * the given region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionBackendServicesRequest request = ListRegionBackendServicesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   ListRegionBackendServicesRequest request =
+   *       ListRegionBackendServicesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (BackendService element : regionBackendServicesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -559,52 +569,63 @@ public class RegionBackendServicesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of regional BackendService resources available to the specified project in
    * the given region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionBackendServicesRequest request = ListRegionBackendServicesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = regionBackendServicesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   ListRegionBackendServicesRequest request =
+   *       ListRegionBackendServicesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<BackendService> future =
+   *       regionBackendServicesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (BackendService element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionBackendServicesRequest, ListPagedResponse>
       listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of regional BackendService resources available to the specified project in
    * the given region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionBackendServicesRequest request = ListRegionBackendServicesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   ListRegionBackendServicesRequest request =
+   *       ListRegionBackendServicesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     BackendServiceList response = regionBackendServicesClient.listCallable().call(request);
-   *     for (BackendService element : response.getItemsList()) {
+   *     for (BackendService element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -615,13 +636,13 @@ public class RegionBackendServicesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionBackendServicesRequest, BackendServiceList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
    * For more information, see Understanding backend services This method supports PATCH semantics
@@ -629,15 +650,18 @@ public class RegionBackendServicesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String backendService = "";
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String backendService = "backendService-1884714623";
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = regionBackendServicesClient.patch(project, region, backendService, backendServiceResource);
+   *   Operation response =
+   *       regionBackendServicesClient.patch(
+   *           project, region, backendService, backendServiceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -657,7 +681,7 @@ public class RegionBackendServicesClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
    * For more information, see Understanding backend services This method supports PATCH semantics
@@ -665,21 +689,20 @@ public class RegionBackendServicesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String backendService = "";
-   *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   PatchRegionBackendServiceRequest request = PatchRegionBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setBackendServiceResource(backendServiceResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   PatchRegionBackendServiceRequest request =
+   *       PatchRegionBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setBackendServiceResource(BackendService.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionBackendServicesClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -688,7 +711,7 @@ public class RegionBackendServicesClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
    * For more information, see Understanding backend services This method supports PATCH semantics
@@ -696,44 +719,46 @@ public class RegionBackendServicesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String backendService = "";
-   *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   PatchRegionBackendServiceRequest request = PatchRegionBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setBackendServiceResource(backendServiceResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionBackendServicesClient.patchCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   PatchRegionBackendServiceRequest request =
+   *       PatchRegionBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setBackendServiceResource(BackendService.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = regionBackendServicesClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchRegionBackendServiceRequest, Operation> patchCallable() {
     return stub.patchCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
    * For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String backendService = "";
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String backendService = "backendService-1884714623";
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = regionBackendServicesClient.update(project, region, backendService, backendServiceResource);
+   *   Operation response =
+   *       regionBackendServicesClient.update(
+   *           project, region, backendService, backendServiceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -753,28 +778,27 @@ public class RegionBackendServicesClient implements BackgroundResource {
     return update(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
    * For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String backendService = "";
-   *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   UpdateRegionBackendServiceRequest request = UpdateRegionBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setBackendServiceResource(backendServiceResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   UpdateRegionBackendServiceRequest request =
+   *       UpdateRegionBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setBackendServiceResource(BackendService.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionBackendServicesClient.update(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -783,30 +807,30 @@ public class RegionBackendServicesClient implements BackgroundResource {
     return updateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
    * For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionBackendServicesClient regionBackendServicesClient = RegionBackendServicesClient.create()) {
-   *   String backendService = "";
-   *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   UpdateRegionBackendServiceRequest request = UpdateRegionBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setBackendServiceResource(backendServiceResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionBackendServicesClient.updateCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   UpdateRegionBackendServiceRequest request =
+   *       UpdateRegionBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setBackendServiceResource(BackendService.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionBackendServicesClient.updateCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdateRegionBackendServiceRequest, Operation> updateCallable() {
     return stub.updateCallable();

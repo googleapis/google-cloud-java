@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.TargetGrpcProxiesClient.ListPagedResponse;
@@ -40,27 +41,26 @@ import com.google.cloud.compute.v1.PatchTargetGrpcProxyRequest;
 import com.google.cloud.compute.v1.TargetGrpcProxy;
 import com.google.cloud.compute.v1.TargetGrpcProxyList;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the TargetGrpcProxies service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteTargetGrpcProxyRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteTargetGrpcProxyRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteTargetGrpcProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetGrpcProxies.Delete")
+              .setFullMethodName("google.cloud.compute.v1.TargetGrpcProxies/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteTargetGrpcProxyRequest>newBuilder()
@@ -99,7 +99,7 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                           new FieldsExtractor<DeleteTargetGrpcProxyRequest, String>() {
                             @Override
                             public String extract(DeleteTargetGrpcProxyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -109,11 +109,10 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetTargetGrpcProxyRequest, TargetGrpcProxy>
+  private static final ApiMethodDescriptor<GetTargetGrpcProxyRequest, TargetGrpcProxy>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetTargetGrpcProxyRequest, TargetGrpcProxy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetGrpcProxies.Get")
+              .setFullMethodName("google.cloud.compute.v1.TargetGrpcProxies/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetTargetGrpcProxyRequest>newBuilder()
@@ -140,7 +139,6 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetTargetGrpcProxyRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -148,7 +146,7 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                           new FieldsExtractor<GetTargetGrpcProxyRequest, String>() {
                             @Override
                             public String extract(GetTargetGrpcProxyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -158,11 +156,10 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertTargetGrpcProxyRequest, Operation>
+  private static final ApiMethodDescriptor<InsertTargetGrpcProxyRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertTargetGrpcProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetGrpcProxies.Insert")
+              .setFullMethodName("google.cloud.compute.v1.TargetGrpcProxies/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertTargetGrpcProxyRequest>newBuilder()
@@ -212,11 +209,10 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListTargetGrpcProxiesRequest, TargetGrpcProxyList>
+  private static final ApiMethodDescriptor<ListTargetGrpcProxiesRequest, TargetGrpcProxyList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListTargetGrpcProxiesRequest, TargetGrpcProxyList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetGrpcProxies.List")
+              .setFullMethodName("google.cloud.compute.v1.TargetGrpcProxies/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListTargetGrpcProxiesRequest>newBuilder()
@@ -269,7 +265,7 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                           new FieldsExtractor<ListTargetGrpcProxiesRequest, String>() {
                             @Override
                             public String extract(ListTargetGrpcProxiesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -279,11 +275,10 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchTargetGrpcProxyRequest, Operation>
+  private static final ApiMethodDescriptor<PatchTargetGrpcProxyRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchTargetGrpcProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetGrpcProxies.Patch")
+              .setFullMethodName("google.cloud.compute.v1.TargetGrpcProxies/Patch")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchTargetGrpcProxyRequest>newBuilder()
@@ -335,8 +330,6 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteTargetGrpcProxyRequest, Operation> deleteCallable;
   private final UnaryCallable<GetTargetGrpcProxyRequest, TargetGrpcProxy> getCallable;
   private final UnaryCallable<InsertTargetGrpcProxyRequest, Operation> insertCallable;
@@ -344,6 +337,7 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
   private final UnaryCallable<ListTargetGrpcProxiesRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<PatchTargetGrpcProxyRequest, Operation> patchCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonTargetGrpcProxiesStub create(TargetGrpcProxiesStubSettings settings)
@@ -425,29 +419,47 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteTargetGrpcProxyRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetTargetGrpcProxyRequest, TargetGrpcProxy> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertTargetGrpcProxyRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListTargetGrpcProxiesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListTargetGrpcProxiesRequest, TargetGrpcProxyList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListTargetGrpcProxiesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchTargetGrpcProxyRequest, Operation> patchCallable() {
     return patchCallable;
   }

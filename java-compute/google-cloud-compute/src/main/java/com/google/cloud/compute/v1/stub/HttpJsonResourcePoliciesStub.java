@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.ResourcePoliciesClient.AggregatedListPagedResponse;
@@ -47,29 +48,28 @@ import com.google.cloud.compute.v1.SetIamPolicyResourcePolicyRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsResourcePolicyRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the ResourcePolicies service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListResourcePoliciesRequest, ResourcePolicyAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListResourcePoliciesRequest, ResourcePolicyAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.ResourcePolicies.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListResourcePoliciesRequest>newBuilder()
@@ -127,7 +127,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                           new FieldsExtractor<AggregatedListResourcePoliciesRequest, String>() {
                             @Override
                             public String extract(AggregatedListResourcePoliciesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -137,11 +137,10 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteResourcePolicyRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteResourcePolicyRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteResourcePolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.ResourcePolicies.Delete")
+              .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteResourcePolicyRequest>newBuilder()
@@ -181,7 +180,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                           new FieldsExtractor<DeleteResourcePolicyRequest, String>() {
                             @Override
                             public String extract(DeleteResourcePolicyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -191,11 +190,10 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetResourcePolicyRequest, ResourcePolicy>
+  private static final ApiMethodDescriptor<GetResourcePolicyRequest, ResourcePolicy>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetResourcePolicyRequest, ResourcePolicy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.ResourcePolicies.Get")
+              .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetResourcePolicyRequest>newBuilder()
@@ -223,7 +221,6 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetResourcePolicyRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -231,7 +228,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                           new FieldsExtractor<GetResourcePolicyRequest, String>() {
                             @Override
                             public String extract(GetResourcePolicyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -241,11 +238,10 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetIamPolicyResourcePolicyRequest, Policy>
+  private static final ApiMethodDescriptor<GetIamPolicyResourcePolicyRequest, Policy>
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyResourcePolicyRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.ResourcePolicies.GetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyResourcePolicyRequest>newBuilder()
@@ -287,7 +283,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                           new FieldsExtractor<GetIamPolicyResourcePolicyRequest, String>() {
                             @Override
                             public String extract(GetIamPolicyResourcePolicyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -297,11 +293,10 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertResourcePolicyRequest, Operation>
+  private static final ApiMethodDescriptor<InsertResourcePolicyRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertResourcePolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.ResourcePolicies.Insert")
+              .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertResourcePolicyRequest>newBuilder()
@@ -352,11 +347,10 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListResourcePoliciesRequest, ResourcePolicyList>
+  private static final ApiMethodDescriptor<ListResourcePoliciesRequest, ResourcePolicyList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListResourcePoliciesRequest, ResourcePolicyList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.ResourcePolicies.List")
+              .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListResourcePoliciesRequest>newBuilder()
@@ -410,7 +404,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                           new FieldsExtractor<ListResourcePoliciesRequest, String>() {
                             @Override
                             public String extract(ListResourcePoliciesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -420,11 +414,10 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetIamPolicyResourcePolicyRequest, Policy>
+  private static final ApiMethodDescriptor<SetIamPolicyResourcePolicyRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyResourcePolicyRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.ResourcePolicies.SetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyResourcePolicyRequest>newBuilder()
@@ -453,7 +446,6 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetIamPolicyResourcePolicyRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -474,13 +466,12 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           TestIamPermissionsResourcePolicyRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           ApiMethodDescriptor
               .<TestIamPermissionsResourcePolicyRequest, TestPermissionsResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.ResourcePolicies.TestIamPermissions")
+              .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsResourcePolicyRequest>newBuilder()
@@ -510,7 +501,6 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<TestIamPermissionsResourcePolicyRequest>
                                   serializer = ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -531,8 +521,6 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<AggregatedListResourcePoliciesRequest, ResourcePolicyAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListResourcePoliciesRequest, AggregatedListPagedResponse>
@@ -547,6 +535,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
   private final UnaryCallable<TestIamPermissionsResourcePolicyRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonResourcePoliciesStub create(ResourcePoliciesStubSettings settings)
@@ -658,47 +647,72 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListResourcePoliciesRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListResourcePoliciesRequest, ResourcePolicyAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListResourcePoliciesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteResourcePolicyRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetResourcePolicyRequest, ResourcePolicy> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyResourcePolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<InsertResourcePolicyRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListResourcePoliciesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListResourcePoliciesRequest, ResourcePolicyList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListResourcePoliciesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<SetIamPolicyResourcePolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsResourcePolicyRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,26 +34,27 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The RegionDisks API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String disk = "";
- *   RegionDisksAddResourcePoliciesRequest regionDisksAddResourcePoliciesRequestResource = RegionDisksAddResourcePoliciesRequest.newBuilder().build();
- *   Operation response = regionDisksClient.addResourcePolicies(project, region, disk, regionDisksAddResourcePoliciesRequestResource);
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String disk = "disk3083677";
+ *   RegionDisksAddResourcePoliciesRequest regionDisksAddResourcePoliciesRequestResource =
+ *       RegionDisksAddResourcePoliciesRequest.newBuilder().build();
+ *   Operation response =
+ *       regionDisksClient.addResourcePolicies(
+ *           project, region, disk, regionDisksAddResourcePoliciesRequestResource);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the regionDisksClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the RegionDisksClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -80,30 +82,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionDisksSettings regionDisksSettings =
  *     RegionDisksSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * RegionDisksClient regionDisksClient =
- *     RegionDisksClient.create(regionDisksSettings);
- * </code>
- * </pre>
+ * RegionDisksClient regionDisksClient = RegionDisksClient.create(regionDisksSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionDisksSettings regionDisksSettings =
  *     RegionDisksSettings.newBuilder().setEndpoint(myEndpoint).build();
- * RegionDisksClient regionDisksClient =
- *     RegionDisksClient.create(regionDisksSettings);
- * </code>
- * </pre>
+ * RegionDisksClient regionDisksClient = RegionDisksClient.create(regionDisksSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RegionDisksClient implements BackgroundResource {
   private final RegionDisksSettings settings;
   private final RegionDisksStub stub;
@@ -123,7 +120,7 @@ public class RegionDisksClient implements BackgroundResource {
 
   /**
    * Constructs an instance of RegionDisksClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use RegionDisksSettings}.
+   * advanced usage - prefer using create(RegionDisksSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionDisksClient create(RegionDisksStub stub) {
@@ -155,22 +152,25 @@ public class RegionDisksClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds existing resource policies to a regional disk. You can only add one policy which will be
    * applied to this disk for scheduling snapshot creation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String disk = "";
-   *   RegionDisksAddResourcePoliciesRequest regionDisksAddResourcePoliciesRequestResource = RegionDisksAddResourcePoliciesRequest.newBuilder().build();
-   *   Operation response = regionDisksClient.addResourcePolicies(project, region, disk, regionDisksAddResourcePoliciesRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String disk = "disk3083677";
+   *   RegionDisksAddResourcePoliciesRequest regionDisksAddResourcePoliciesRequestResource =
+   *       RegionDisksAddResourcePoliciesRequest.newBuilder().build();
+   *   Operation response =
+   *       regionDisksClient.addResourcePolicies(
+   *           project, region, disk, regionDisksAddResourcePoliciesRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -194,28 +194,27 @@ public class RegionDisksClient implements BackgroundResource {
     return addResourcePolicies(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds existing resource policies to a regional disk. You can only add one policy which will be
    * applied to this disk for scheduling snapshot creation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String disk = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionDisksAddResourcePoliciesRequest regionDisksAddResourcePoliciesRequestResource = RegionDisksAddResourcePoliciesRequest.newBuilder().build();
-   *   AddResourcePoliciesRegionDiskRequest request = AddResourcePoliciesRegionDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionDisksAddResourcePoliciesRequestResource(regionDisksAddResourcePoliciesRequestResource)
-   *     .build();
+   *   AddResourcePoliciesRegionDiskRequest request =
+   *       AddResourcePoliciesRegionDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionDisksAddResourcePoliciesRequestResource(
+   *               RegionDisksAddResourcePoliciesRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionDisksClient.addResourcePolicies(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -224,51 +223,52 @@ public class RegionDisksClient implements BackgroundResource {
     return addResourcePoliciesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds existing resource policies to a regional disk. You can only add one policy which will be
    * applied to this disk for scheduling snapshot creation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String disk = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionDisksAddResourcePoliciesRequest regionDisksAddResourcePoliciesRequestResource = RegionDisksAddResourcePoliciesRequest.newBuilder().build();
-   *   AddResourcePoliciesRegionDiskRequest request = AddResourcePoliciesRegionDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionDisksAddResourcePoliciesRequestResource(regionDisksAddResourcePoliciesRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionDisksClient.addResourcePoliciesCallable().futureCall(request);
-   *   // Do something
+   *   AddResourcePoliciesRegionDiskRequest request =
+   *       AddResourcePoliciesRegionDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionDisksAddResourcePoliciesRequestResource(
+   *               RegionDisksAddResourcePoliciesRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionDisksClient.addResourcePoliciesCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AddResourcePoliciesRegionDiskRequest, Operation>
       addResourcePoliciesCallable() {
     return stub.addResourcePoliciesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a snapshot of this regional disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String disk = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String disk = "disk3083677";
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
-   *   Operation response = regionDisksClient.createSnapshot(project, region, disk, snapshotResource);
+   *   Operation response =
+   *       regionDisksClient.createSnapshot(project, region, disk, snapshotResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -288,27 +288,25 @@ public class RegionDisksClient implements BackgroundResource {
     return createSnapshot(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a snapshot of this regional disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String disk = "";
-   *   String project = "";
-   *   String region = "";
-   *   Snapshot snapshotResource = Snapshot.newBuilder().build();
-   *   CreateSnapshotRegionDiskRequest request = CreateSnapshotRegionDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSnapshotResource(snapshotResource)
-   *     .build();
+   *   CreateSnapshotRegionDiskRequest request =
+   *       CreateSnapshotRegionDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSnapshotResource(Snapshot.newBuilder().build())
+   *           .build();
    *   Operation response = regionDisksClient.createSnapshot(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -317,35 +315,33 @@ public class RegionDisksClient implements BackgroundResource {
     return createSnapshotCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a snapshot of this regional disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String disk = "";
-   *   String project = "";
-   *   String region = "";
-   *   Snapshot snapshotResource = Snapshot.newBuilder().build();
-   *   CreateSnapshotRegionDiskRequest request = CreateSnapshotRegionDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSnapshotResource(snapshotResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionDisksClient.createSnapshotCallable().futureCall(request);
-   *   // Do something
+   *   CreateSnapshotRegionDiskRequest request =
+   *       CreateSnapshotRegionDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSnapshotResource(Snapshot.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = regionDisksClient.createSnapshotCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<CreateSnapshotRegionDiskRequest, Operation> createSnapshotCallable() {
     return stub.createSnapshotCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
@@ -353,14 +349,14 @@ public class RegionDisksClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String disk = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String disk = "disk3083677";
    *   Operation response = regionDisksClient.delete(project, region, disk);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -377,7 +373,7 @@ public class RegionDisksClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
@@ -385,19 +381,18 @@ public class RegionDisksClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String disk = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeleteRegionDiskRequest request = DeleteRegionDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   DeleteRegionDiskRequest request =
+   *       DeleteRegionDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionDisksClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -406,7 +401,7 @@ public class RegionDisksClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
@@ -414,40 +409,39 @@ public class RegionDisksClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String disk = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeleteRegionDiskRequest request = DeleteRegionDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionDisksClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteRegionDiskRequest request =
+   *       DeleteRegionDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = regionDisksClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteRegionDiskRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a specified regional persistent disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String disk = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String disk = "disk3083677";
    *   Disk response = regionDisksClient.get(project, region, disk);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -464,25 +458,23 @@ public class RegionDisksClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a specified regional persistent disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String disk = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetRegionDiskRequest request = GetRegionDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   GetRegionDiskRequest request =
+   *       GetRegionDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
    *   Disk response = regionDisksClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -491,47 +483,45 @@ public class RegionDisksClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a specified regional persistent disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String disk = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetRegionDiskRequest request = GetRegionDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Disk&gt; future = regionDisksClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetRegionDiskRequest request =
+   *       GetRegionDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<Disk> future = regionDisksClient.getCallable().futureCall(request);
+   *   // Do something.
    *   Disk response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetRegionDiskRequest, Disk> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
    *   Policy response = regionDisksClient.getIamPolicy(project, region, resource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -548,26 +538,25 @@ public class RegionDisksClient implements BackgroundResource {
     return getIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   GetIamPolicyRegionDiskRequest request = GetIamPolicyRegionDiskRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResource(resource)
-   *     .build();
+   *   GetIamPolicyRegionDiskRequest request =
+   *       GetIamPolicyRegionDiskRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .build();
    *   Policy response = regionDisksClient.getIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -576,48 +565,47 @@ public class RegionDisksClient implements BackgroundResource {
     return getIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   GetIamPolicyRegionDiskRequest request = GetIamPolicyRegionDiskRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResource(resource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = regionDisksClient.getIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   GetIamPolicyRegionDiskRequest request =
+   *       GetIamPolicyRegionDiskRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future = regionDisksClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyRegionDiskRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a persistent regional disk in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   Disk diskResource = Disk.newBuilder().build();
    *   Operation response = regionDisksClient.insert(project, region, diskResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -634,26 +622,26 @@ public class RegionDisksClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a persistent regional disk in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   Disk diskResource = Disk.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertRegionDiskRequest request = InsertRegionDiskRequest.newBuilder()
-   *     .setDiskResource(diskResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   InsertRegionDiskRequest request =
+   *       InsertRegionDiskRequest.newBuilder()
+   *           .setDiskResource(Disk.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSourceImage("sourceImage-105174528")
+   *           .build();
    *   Operation response = regionDisksClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -662,48 +650,48 @@ public class RegionDisksClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a persistent regional disk in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   Disk diskResource = Disk.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertRegionDiskRequest request = InsertRegionDiskRequest.newBuilder()
-   *     .setDiskResource(diskResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionDisksClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertRegionDiskRequest request =
+   *       InsertRegionDiskRequest.newBuilder()
+   *           .setDiskResource(Disk.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSourceImage("sourceImage-105174528")
+   *           .build();
+   *   ApiFuture<Operation> future = regionDisksClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertRegionDiskRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of persistent disks contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   for (Disk element : regionDisksClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -715,25 +703,29 @@ public class RegionDisksClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of persistent disks contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionDisksRequest request = ListRegionDisksRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListRegionDisksRequest request =
+   *       ListRegionDisksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (Disk element : regionDisksClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -742,49 +734,57 @@ public class RegionDisksClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of persistent disks contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionDisksRequest request = ListRegionDisksRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = regionDisksClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListRegionDisksRequest request =
+   *       ListRegionDisksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Disk> future = regionDisksClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Disk element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionDisksRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of persistent disks contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionDisksRequest request = ListRegionDisksRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListRegionDisksRequest request =
+   *       ListRegionDisksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     DiskList response = regionDisksClient.listCallable().call(request);
-   *     for (Disk element : response.getItemsList()) {
+   *     for (Disk element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -795,27 +795,30 @@ public class RegionDisksClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionDisksRequest, DiskList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes resource policies from a regional disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String disk = "";
-   *   RegionDisksRemoveResourcePoliciesRequest regionDisksRemoveResourcePoliciesRequestResource = RegionDisksRemoveResourcePoliciesRequest.newBuilder().build();
-   *   Operation response = regionDisksClient.removeResourcePolicies(project, region, disk, regionDisksRemoveResourcePoliciesRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String disk = "disk3083677";
+   *   RegionDisksRemoveResourcePoliciesRequest regionDisksRemoveResourcePoliciesRequestResource =
+   *       RegionDisksRemoveResourcePoliciesRequest.newBuilder().build();
+   *   Operation response =
+   *       regionDisksClient.removeResourcePolicies(
+   *           project, region, disk, regionDisksRemoveResourcePoliciesRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -839,27 +842,26 @@ public class RegionDisksClient implements BackgroundResource {
     return removeResourcePolicies(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes resource policies from a regional disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String disk = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionDisksRemoveResourcePoliciesRequest regionDisksRemoveResourcePoliciesRequestResource = RegionDisksRemoveResourcePoliciesRequest.newBuilder().build();
-   *   RemoveResourcePoliciesRegionDiskRequest request = RemoveResourcePoliciesRegionDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionDisksRemoveResourcePoliciesRequestResource(regionDisksRemoveResourcePoliciesRequestResource)
-   *     .build();
+   *   RemoveResourcePoliciesRegionDiskRequest request =
+   *       RemoveResourcePoliciesRegionDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionDisksRemoveResourcePoliciesRequestResource(
+   *               RegionDisksRemoveResourcePoliciesRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionDisksClient.removeResourcePolicies(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -868,50 +870,52 @@ public class RegionDisksClient implements BackgroundResource {
     return removeResourcePoliciesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes resource policies from a regional disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String disk = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionDisksRemoveResourcePoliciesRequest regionDisksRemoveResourcePoliciesRequestResource = RegionDisksRemoveResourcePoliciesRequest.newBuilder().build();
-   *   RemoveResourcePoliciesRegionDiskRequest request = RemoveResourcePoliciesRegionDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionDisksRemoveResourcePoliciesRequestResource(regionDisksRemoveResourcePoliciesRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionDisksClient.removeResourcePoliciesCallable().futureCall(request);
-   *   // Do something
+   *   RemoveResourcePoliciesRegionDiskRequest request =
+   *       RemoveResourcePoliciesRegionDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionDisksRemoveResourcePoliciesRequestResource(
+   *               RegionDisksRemoveResourcePoliciesRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionDisksClient.removeResourcePoliciesCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<RemoveResourcePoliciesRegionDiskRequest, Operation>
       removeResourcePoliciesCallable() {
     return stub.removeResourcePoliciesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Resizes the specified regional persistent disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String disk = "";
-   *   RegionDisksResizeRequest regionDisksResizeRequestResource = RegionDisksResizeRequest.newBuilder().build();
-   *   Operation response = regionDisksClient.resize(project, region, disk, regionDisksResizeRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String disk = "disk3083677";
+   *   RegionDisksResizeRequest regionDisksResizeRequestResource =
+   *       RegionDisksResizeRequest.newBuilder().build();
+   *   Operation response =
+   *       regionDisksClient.resize(project, region, disk, regionDisksResizeRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project The project ID for this request.
    * @param region Name of the region for this request.
@@ -934,27 +938,25 @@ public class RegionDisksClient implements BackgroundResource {
     return resize(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Resizes the specified regional persistent disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String disk = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionDisksResizeRequest regionDisksResizeRequestResource = RegionDisksResizeRequest.newBuilder().build();
-   *   ResizeRegionDiskRequest request = ResizeRegionDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionDisksResizeRequestResource(regionDisksResizeRequestResource)
-   *     .build();
+   *   ResizeRegionDiskRequest request =
+   *       ResizeRegionDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionDisksResizeRequestResource(RegionDisksResizeRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionDisksClient.resize(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -963,49 +965,49 @@ public class RegionDisksClient implements BackgroundResource {
     return resizeCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Resizes the specified regional persistent disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String disk = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionDisksResizeRequest regionDisksResizeRequestResource = RegionDisksResizeRequest.newBuilder().build();
-   *   ResizeRegionDiskRequest request = ResizeRegionDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionDisksResizeRequestResource(regionDisksResizeRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionDisksClient.resizeCallable().futureCall(request);
-   *   // Do something
+   *   ResizeRegionDiskRequest request =
+   *       ResizeRegionDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionDisksResizeRequestResource(RegionDisksResizeRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = regionDisksClient.resizeCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ResizeRegionDiskRequest, Operation> resizeCallable() {
     return stub.resizeCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
-   *   Policy response = regionDisksClient.setIamPolicy(project, region, resource, regionSetPolicyRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource =
+   *       RegionSetPolicyRequest.newBuilder().build();
+   *   Policy response =
+   *       regionDisksClient.setIamPolicy(project, region, resource, regionSetPolicyRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -1028,27 +1030,24 @@ public class RegionDisksClient implements BackgroundResource {
     return setIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
-   *   String resource = "";
-   *   SetIamPolicyRegionDiskRequest request = SetIamPolicyRegionDiskRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
-   *     .setResource(resource)
-   *     .build();
+   *   SetIamPolicyRegionDiskRequest request =
+   *       SetIamPolicyRegionDiskRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetPolicyRequestResource(RegionSetPolicyRequest.newBuilder().build())
+   *           .setResource("resource-341064690")
+   *           .build();
    *   Policy response = regionDisksClient.setIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1057,49 +1056,48 @@ public class RegionDisksClient implements BackgroundResource {
     return setIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
-   *   String resource = "";
-   *   SetIamPolicyRegionDiskRequest request = SetIamPolicyRegionDiskRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
-   *     .setResource(resource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = regionDisksClient.setIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   SetIamPolicyRegionDiskRequest request =
+   *       SetIamPolicyRegionDiskRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetPolicyRequestResource(RegionSetPolicyRequest.newBuilder().build())
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future = regionDisksClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyRegionDiskRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the labels on the target regional disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   RegionSetLabelsRequest regionSetLabelsRequestResource = RegionSetLabelsRequest.newBuilder().build();
-   *   Operation response = regionDisksClient.setLabels(project, region, resource, regionSetLabelsRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   RegionSetLabelsRequest regionSetLabelsRequestResource =
+   *       RegionSetLabelsRequest.newBuilder().build();
+   *   Operation response =
+   *       regionDisksClient.setLabels(project, region, resource, regionSetLabelsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The region for this request.
@@ -1122,27 +1120,25 @@ public class RegionDisksClient implements BackgroundResource {
     return setLabels(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the labels on the target regional disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   RegionSetLabelsRequest regionSetLabelsRequestResource = RegionSetLabelsRequest.newBuilder().build();
-   *   String resource = "";
-   *   SetLabelsRegionDiskRequest request = SetLabelsRegionDiskRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
-   *     .setResource(resource)
-   *     .build();
+   *   SetLabelsRegionDiskRequest request =
+   *       SetLabelsRegionDiskRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetLabelsRequestResource(RegionSetLabelsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .build();
    *   Operation response = regionDisksClient.setLabels(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1151,49 +1147,50 @@ public class RegionDisksClient implements BackgroundResource {
     return setLabelsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the labels on the target regional disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   RegionSetLabelsRequest regionSetLabelsRequestResource = RegionSetLabelsRequest.newBuilder().build();
-   *   String resource = "";
-   *   SetLabelsRegionDiskRequest request = SetLabelsRegionDiskRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
-   *     .setResource(resource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionDisksClient.setLabelsCallable().futureCall(request);
-   *   // Do something
+   *   SetLabelsRegionDiskRequest request =
+   *       SetLabelsRegionDiskRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetLabelsRequestResource(RegionSetLabelsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Operation> future = regionDisksClient.setLabelsCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetLabelsRegionDiskRequest, Operation> setLabelsCallable() {
     return stub.setLabelsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestPermissionsResponse response = regionDisksClient.testIamPermissions(project, region, resource, testPermissionsRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       regionDisksClient.testIamPermissions(
+   *           project, region, resource, testPermissionsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -1216,27 +1213,24 @@ public class RegionDisksClient implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsRegionDiskRequest request = TestIamPermissionsRegionDiskRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
+   *   TestIamPermissionsRegionDiskRequest request =
+   *       TestIamPermissionsRegionDiskRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
    *   TestPermissionsResponse response = regionDisksClient.testIamPermissions(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1246,29 +1240,27 @@ public class RegionDisksClient implements BackgroundResource {
     return testIamPermissionsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsRegionDiskRequest request = TestIamPermissionsRegionDiskRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
-   *   ApiFuture&lt;TestPermissionsResponse&gt; future = regionDisksClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
+   *   TestIamPermissionsRegionDiskRequest request =
+   *       TestIamPermissionsRegionDiskRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       regionDisksClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
    *   TestPermissionsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {

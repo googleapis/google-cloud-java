@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,31 +31,31 @@ import com.google.cloud.compute.v1.stub.InstancesStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The Instances API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (InstancesClient instancesClient = InstancesClient.create()) {
- *   String project = "";
- *   String zone = "";
- *   String instance = "";
- *   String networkInterface = "";
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String instance = "instance555127957";
+ *   String networkInterface = "networkInterface-341981525";
  *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
- *   Operation response = instancesClient.addAccessConfig(project, zone, instance, networkInterface, accessConfigResource);
+ *   Operation response =
+ *       instancesClient.addAccessConfig(
+ *           project, zone, instance, networkInterface, accessConfigResource);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the instancesClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the InstancesClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -82,30 +83,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * InstancesSettings instancesSettings =
  *     InstancesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * InstancesClient instancesClient =
- *     InstancesClient.create(instancesSettings);
- * </code>
- * </pre>
+ * InstancesClient instancesClient = InstancesClient.create(instancesSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * InstancesSettings instancesSettings =
  *     InstancesSettings.newBuilder().setEndpoint(myEndpoint).build();
- * InstancesClient instancesClient =
- *     InstancesClient.create(instancesSettings);
- * </code>
- * </pre>
+ * InstancesClient instancesClient = InstancesClient.create(instancesSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class InstancesClient implements BackgroundResource {
   private final InstancesSettings settings;
   private final InstancesStub stub;
@@ -125,7 +121,7 @@ public class InstancesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of InstancesClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use InstancesSettings}.
+   * advanced usage - prefer using create(InstancesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final InstancesClient create(InstancesStub stub) {
@@ -156,22 +152,24 @@ public class InstancesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds an access config to an instance's network interface.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   String networkInterface = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   String networkInterface = "networkInterface-341981525";
    *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
-   *   Operation response = instancesClient.addAccessConfig(project, zone, instance, networkInterface, accessConfigResource);
+   *   Operation response =
+   *       instancesClient.addAccessConfig(
+   *           project, zone, instance, networkInterface, accessConfigResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -197,29 +195,26 @@ public class InstancesClient implements BackgroundResource {
     return addAccessConfig(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds an access config to an instance's network interface.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
-   *   String instance = "";
-   *   String networkInterface = "";
-   *   String project = "";
-   *   String zone = "";
-   *   AddAccessConfigInstanceRequest request = AddAccessConfigInstanceRequest.newBuilder()
-   *     .setAccessConfigResource(accessConfigResource)
-   *     .setInstance(instance)
-   *     .setNetworkInterface(networkInterface)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   AddAccessConfigInstanceRequest request =
+   *       AddAccessConfigInstanceRequest.newBuilder()
+   *           .setAccessConfigResource(AccessConfig.newBuilder().build())
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterface("networkInterface-341981525")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.addAccessConfig(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -228,52 +223,52 @@ public class InstancesClient implements BackgroundResource {
     return addAccessConfigCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds an access config to an instance's network interface.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
-   *   String instance = "";
-   *   String networkInterface = "";
-   *   String project = "";
-   *   String zone = "";
-   *   AddAccessConfigInstanceRequest request = AddAccessConfigInstanceRequest.newBuilder()
-   *     .setAccessConfigResource(accessConfigResource)
-   *     .setInstance(instance)
-   *     .setNetworkInterface(networkInterface)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.addAccessConfigCallable().futureCall(request);
-   *   // Do something
+   *   AddAccessConfigInstanceRequest request =
+   *       AddAccessConfigInstanceRequest.newBuilder()
+   *           .setAccessConfigResource(AccessConfig.newBuilder().build())
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterface("networkInterface-341981525")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.addAccessConfigCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AddAccessConfigInstanceRequest, Operation> addAccessConfigCallable() {
     return stub.addAccessConfigCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds existing resource policies to an instance. You can only add one policy right now which
    * will be applied to this instance for scheduling live migrations.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   InstancesAddResourcePoliciesRequest instancesAddResourcePoliciesRequestResource = InstancesAddResourcePoliciesRequest.newBuilder().build();
-   *   Operation response = instancesClient.addResourcePolicies(project, zone, instance, instancesAddResourcePoliciesRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   InstancesAddResourcePoliciesRequest instancesAddResourcePoliciesRequestResource =
+   *       InstancesAddResourcePoliciesRequest.newBuilder().build();
+   *   Operation response =
+   *       instancesClient.addResourcePolicies(
+   *           project, zone, instance, instancesAddResourcePoliciesRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -297,28 +292,27 @@ public class InstancesClient implements BackgroundResource {
     return addResourcePolicies(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds existing resource policies to an instance. You can only add one policy right now which
    * will be applied to this instance for scheduling live migrations.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   InstancesAddResourcePoliciesRequest instancesAddResourcePoliciesRequestResource = InstancesAddResourcePoliciesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   AddResourcePoliciesInstanceRequest request = AddResourcePoliciesInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setInstancesAddResourcePoliciesRequestResource(instancesAddResourcePoliciesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   AddResourcePoliciesInstanceRequest request =
+   *       AddResourcePoliciesInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesAddResourcePoliciesRequestResource(
+   *               InstancesAddResourcePoliciesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.addResourcePolicies(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -327,50 +321,51 @@ public class InstancesClient implements BackgroundResource {
     return addResourcePoliciesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds existing resource policies to an instance. You can only add one policy right now which
    * will be applied to this instance for scheduling live migrations.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   InstancesAddResourcePoliciesRequest instancesAddResourcePoliciesRequestResource = InstancesAddResourcePoliciesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   AddResourcePoliciesInstanceRequest request = AddResourcePoliciesInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setInstancesAddResourcePoliciesRequestResource(instancesAddResourcePoliciesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.addResourcePoliciesCallable().futureCall(request);
-   *   // Do something
+   *   AddResourcePoliciesInstanceRequest request =
+   *       AddResourcePoliciesInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesAddResourcePoliciesRequestResource(
+   *               InstancesAddResourcePoliciesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instancesClient.addResourcePoliciesCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AddResourcePoliciesInstanceRequest, Operation>
       addResourcePoliciesCallable() {
     return stub.addResourcePoliciesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves aggregated list of all of the instances in your project across all regions and zones.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, InstancesScopedList&gt; element : instancesClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, InstancesScopedList> element :
+   *       instancesClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -381,23 +376,30 @@ public class InstancesClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves aggregated list of all of the instances in your project across all regions and zones.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   AggregatedListInstancesRequest request = AggregatedListInstancesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, InstancesScopedList&gt; element : instancesClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListInstancesRequest request =
+   *       AggregatedListInstancesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, InstancesScopedList> element :
+   *       instancesClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -406,46 +408,59 @@ public class InstancesClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves aggregated list of all of the instances in your project across all regions and zones.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   AggregatedListInstancesRequest request = AggregatedListInstancesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = instancesClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, InstancesScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListInstancesRequest request =
+   *       AggregatedListInstancesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, InstancesScopedList>> future =
+   *       instancesClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, InstancesScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListInstancesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves aggregated list of all of the instances in your project across all regions and zones.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   AggregatedListInstancesRequest request = AggregatedListInstancesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListInstancesRequest request =
+   *       AggregatedListInstancesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     InstanceAggregatedList response = instancesClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, InstancesScopedList&gt; element : response.getItemsMap()) {
+   *     for (Map.Entry<String, InstancesScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -456,14 +471,14 @@ public class InstancesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListInstancesRequest, InstanceAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Attaches an existing Disk resource to an instance. You must first create the disk before you
    * can attach it. It is not possible to create and attach a disk at the same time. For more
@@ -471,15 +486,16 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
    *   AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
-   *   Operation response = instancesClient.attachDisk(project, zone, instance, attachedDiskResource);
+   *   Operation response =
+   *       instancesClient.attachDisk(project, zone, instance, attachedDiskResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -499,7 +515,7 @@ public class InstancesClient implements BackgroundResource {
     return attachDisk(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Attaches an existing Disk resource to an instance. You must first create the disk before you
    * can attach it. It is not possible to create and attach a disk at the same time. For more
@@ -507,21 +523,20 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   AttachDiskInstanceRequest request = AttachDiskInstanceRequest.newBuilder()
-   *     .setAttachedDiskResource(attachedDiskResource)
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   AttachDiskInstanceRequest request =
+   *       AttachDiskInstanceRequest.newBuilder()
+   *           .setAttachedDiskResource(AttachedDisk.newBuilder().build())
+   *           .setForceAttach(true)
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.attachDisk(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -530,7 +545,7 @@ public class InstancesClient implements BackgroundResource {
     return attachDiskCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Attaches an existing Disk resource to an instance. You must first create the disk before you
    * can attach it. It is not possible to create and attach a disk at the same time. For more
@@ -538,42 +553,43 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   AttachDiskInstanceRequest request = AttachDiskInstanceRequest.newBuilder()
-   *     .setAttachedDiskResource(attachedDiskResource)
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.attachDiskCallable().futureCall(request);
-   *   // Do something
+   *   AttachDiskInstanceRequest request =
+   *       AttachDiskInstanceRequest.newBuilder()
+   *           .setAttachedDiskResource(AttachedDisk.newBuilder().build())
+   *           .setForceAttach(true)
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.attachDiskCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AttachDiskInstanceRequest, Operation> attachDiskCallable() {
     return stub.attachDiskCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates multiple instances. Count specifies the number of instances to create.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   BulkInsertInstanceResource bulkInsertInstanceResourceResource = BulkInsertInstanceResource.newBuilder().build();
-   *   Operation response = instancesClient.bulkInsert(project, zone, bulkInsertInstanceResourceResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   BulkInsertInstanceResource bulkInsertInstanceResourceResource =
+   *       BulkInsertInstanceResource.newBuilder().build();
+   *   Operation response =
+   *       instancesClient.bulkInsert(project, zone, bulkInsertInstanceResourceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -591,25 +607,25 @@ public class InstancesClient implements BackgroundResource {
     return bulkInsert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates multiple instances. Count specifies the number of instances to create.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   BulkInsertInstanceResource bulkInsertInstanceResourceResource = BulkInsertInstanceResource.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   BulkInsertInstanceRequest request = BulkInsertInstanceRequest.newBuilder()
-   *     .setBulkInsertInstanceResourceResource(bulkInsertInstanceResourceResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   BulkInsertInstanceRequest request =
+   *       BulkInsertInstanceRequest.newBuilder()
+   *           .setBulkInsertInstanceResourceResource(
+   *               BulkInsertInstanceResource.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.bulkInsert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -618,46 +634,46 @@ public class InstancesClient implements BackgroundResource {
     return bulkInsertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates multiple instances. Count specifies the number of instances to create.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   BulkInsertInstanceResource bulkInsertInstanceResourceResource = BulkInsertInstanceResource.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   BulkInsertInstanceRequest request = BulkInsertInstanceRequest.newBuilder()
-   *     .setBulkInsertInstanceResourceResource(bulkInsertInstanceResourceResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.bulkInsertCallable().futureCall(request);
-   *   // Do something
+   *   BulkInsertInstanceRequest request =
+   *       BulkInsertInstanceRequest.newBuilder()
+   *           .setBulkInsertInstanceResourceResource(
+   *               BulkInsertInstanceResource.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.bulkInsertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<BulkInsertInstanceRequest, Operation> bulkInsertCallable() {
     return stub.bulkInsertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Instance resource. For more information, see Deleting an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
    *   Operation response = instancesClient.delete(project, zone, instance);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -674,25 +690,24 @@ public class InstancesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Instance resource. For more information, see Deleting an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   DeleteInstanceRequest request =
+   *       DeleteInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -701,48 +716,49 @@ public class InstancesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Instance resource. For more information, see Deleting an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteInstanceRequest request =
+   *       DeleteInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteInstanceRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an access config from an instance's network interface.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   String accessConfig = "";
-   *   String networkInterface = "";
-   *   Operation response = instancesClient.deleteAccessConfig(project, zone, instance, accessConfig, networkInterface);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   String accessConfig = "accessConfig1549765062";
+   *   String networkInterface = "networkInterface-341981525";
+   *   Operation response =
+   *       instancesClient.deleteAccessConfig(
+   *           project, zone, instance, accessConfig, networkInterface);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -764,29 +780,26 @@ public class InstancesClient implements BackgroundResource {
     return deleteAccessConfig(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an access config from an instance's network interface.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String accessConfig = "";
-   *   String instance = "";
-   *   String networkInterface = "";
-   *   String project = "";
-   *   String zone = "";
-   *   DeleteAccessConfigInstanceRequest request = DeleteAccessConfigInstanceRequest.newBuilder()
-   *     .setAccessConfig(accessConfig)
-   *     .setInstance(instance)
-   *     .setNetworkInterface(networkInterface)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   DeleteAccessConfigInstanceRequest request =
+   *       DeleteAccessConfigInstanceRequest.newBuilder()
+   *           .setAccessConfig("accessConfig1549765062")
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterface("networkInterface-341981525")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.deleteAccessConfig(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -795,52 +808,50 @@ public class InstancesClient implements BackgroundResource {
     return deleteAccessConfigCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an access config from an instance's network interface.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String accessConfig = "";
-   *   String instance = "";
-   *   String networkInterface = "";
-   *   String project = "";
-   *   String zone = "";
-   *   DeleteAccessConfigInstanceRequest request = DeleteAccessConfigInstanceRequest.newBuilder()
-   *     .setAccessConfig(accessConfig)
-   *     .setInstance(instance)
-   *     .setNetworkInterface(networkInterface)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.deleteAccessConfigCallable().futureCall(request);
-   *   // Do something
+   *   DeleteAccessConfigInstanceRequest request =
+   *       DeleteAccessConfigInstanceRequest.newBuilder()
+   *           .setAccessConfig("accessConfig1549765062")
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterface("networkInterface-341981525")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instancesClient.deleteAccessConfigCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteAccessConfigInstanceRequest, Operation>
       deleteAccessConfigCallable() {
     return stub.deleteAccessConfigCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Detaches a disk from an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   String deviceName = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   String deviceName = "deviceName780988929";
    *   Operation response = instancesClient.detachDisk(project, zone, instance, deviceName);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -861,27 +872,25 @@ public class InstancesClient implements BackgroundResource {
     return detachDisk(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Detaches a disk from an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String deviceName = "";
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   DetachDiskInstanceRequest request = DetachDiskInstanceRequest.newBuilder()
-   *     .setDeviceName(deviceName)
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   DetachDiskInstanceRequest request =
+   *       DetachDiskInstanceRequest.newBuilder()
+   *           .setDeviceName("deviceName780988929")
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.detachDisk(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -890,49 +899,47 @@ public class InstancesClient implements BackgroundResource {
     return detachDiskCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Detaches a disk from an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String deviceName = "";
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   DetachDiskInstanceRequest request = DetachDiskInstanceRequest.newBuilder()
-   *     .setDeviceName(deviceName)
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.detachDiskCallable().futureCall(request);
-   *   // Do something
+   *   DetachDiskInstanceRequest request =
+   *       DetachDiskInstanceRequest.newBuilder()
+   *           .setDeviceName("deviceName780988929")
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.detachDiskCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DetachDiskInstanceRequest, Operation> detachDiskCallable() {
     return stub.detachDiskCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified Instance resource. Gets a list of available instances by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
    *   Instance response = instancesClient.get(project, zone, instance);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -949,26 +956,24 @@ public class InstancesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified Instance resource. Gets a list of available instances by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetInstanceRequest request = GetInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   GetInstanceRequest request =
+   *       GetInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Instance response = instancesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -977,48 +982,47 @@ public class InstancesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified Instance resource. Gets a list of available instances by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetInstanceRequest request = GetInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Instance&gt; future = instancesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetInstanceRequest request =
+   *       GetInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Instance> future = instancesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   Instance response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetInstanceRequest, Instance> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns effective firewalls applied to an interface of the instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   String networkInterface = "";
-   *   InstancesGetEffectiveFirewallsResponse response = instancesClient.getEffectiveFirewalls(project, zone, instance, networkInterface);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   String networkInterface = "networkInterface-341981525";
+   *   InstancesGetEffectiveFirewallsResponse response =
+   *       instancesClient.getEffectiveFirewalls(project, zone, instance, networkInterface);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1038,27 +1042,25 @@ public class InstancesClient implements BackgroundResource {
     return getEffectiveFirewalls(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns effective firewalls applied to an interface of the instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String networkInterface = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetEffectiveFirewallsInstanceRequest request = GetEffectiveFirewallsInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setNetworkInterface(networkInterface)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   InstancesGetEffectiveFirewallsResponse response = instancesClient.getEffectiveFirewalls(request);
+   *   GetEffectiveFirewallsInstanceRequest request =
+   *       GetEffectiveFirewallsInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterface("networkInterface-341981525")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   InstancesGetEffectiveFirewallsResponse response =
+   *       instancesClient.getEffectiveFirewalls(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1068,29 +1070,27 @@ public class InstancesClient implements BackgroundResource {
     return getEffectiveFirewallsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns effective firewalls applied to an interface of the instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String networkInterface = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetEffectiveFirewallsInstanceRequest request = GetEffectiveFirewallsInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setNetworkInterface(networkInterface)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;InstancesGetEffectiveFirewallsResponse&gt; future = instancesClient.getEffectiveFirewallsCallable().futureCall(request);
-   *   // Do something
+   *   GetEffectiveFirewallsInstanceRequest request =
+   *       GetEffectiveFirewallsInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterface("networkInterface-341981525")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<InstancesGetEffectiveFirewallsResponse> future =
+   *       instancesClient.getEffectiveFirewallsCallable().futureCall(request);
+   *   // Do something.
    *   InstancesGetEffectiveFirewallsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
@@ -1098,20 +1098,20 @@ public class InstancesClient implements BackgroundResource {
     return stub.getEffectiveFirewallsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified guest attributes entry.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
    *   GuestAttributes response = instancesClient.getGuestAttributes(project, zone, instance);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1128,25 +1128,25 @@ public class InstancesClient implements BackgroundResource {
     return getGuestAttributes(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified guest attributes entry.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetGuestAttributesInstanceRequest request = GetGuestAttributesInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   GetGuestAttributesInstanceRequest request =
+   *       GetGuestAttributesInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setQueryPath("queryPath-1807004403")
+   *           .setVariableKey("variableKey-1951698365")
+   *           .setZone("zone3744684")
+   *           .build();
    *   GuestAttributes response = instancesClient.getGuestAttributes(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1155,48 +1155,49 @@ public class InstancesClient implements BackgroundResource {
     return getGuestAttributesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified guest attributes entry.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetGuestAttributesInstanceRequest request = GetGuestAttributesInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;GuestAttributes&gt; future = instancesClient.getGuestAttributesCallable().futureCall(request);
-   *   // Do something
+   *   GetGuestAttributesInstanceRequest request =
+   *       GetGuestAttributesInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setQueryPath("queryPath-1807004403")
+   *           .setVariableKey("variableKey-1951698365")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<GuestAttributes> future =
+   *       instancesClient.getGuestAttributesCallable().futureCall(request);
+   *   // Do something.
    *   GuestAttributes response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetGuestAttributesInstanceRequest, GuestAttributes>
       getGuestAttributesCallable() {
     return stub.getGuestAttributesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String resource = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String resource = "resource-341064690";
    *   Policy response = instancesClient.getIamPolicy(project, zone, resource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1213,26 +1214,25 @@ public class InstancesClient implements BackgroundResource {
     return getIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   GetIamPolicyInstanceRequest request = GetIamPolicyInstanceRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .build();
+   *   GetIamPolicyInstanceRequest request =
+   *       GetIamPolicyInstanceRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Policy response = instancesClient.getIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1241,47 +1241,46 @@ public class InstancesClient implements BackgroundResource {
     return getIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   GetIamPolicyInstanceRequest request = GetIamPolicyInstanceRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = instancesClient.getIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   GetIamPolicyInstanceRequest request =
+   *       GetIamPolicyInstanceRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Policy> future = instancesClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyInstanceRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the screenshot from the specified instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
    *   Screenshot response = instancesClient.getScreenshot(project, zone, instance);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1298,25 +1297,23 @@ public class InstancesClient implements BackgroundResource {
     return getScreenshot(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the screenshot from the specified instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetScreenshotInstanceRequest request = GetScreenshotInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   GetScreenshotInstanceRequest request =
+   *       GetScreenshotInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Screenshot response = instancesClient.getScreenshot(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1325,46 +1322,44 @@ public class InstancesClient implements BackgroundResource {
     return getScreenshotCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the screenshot from the specified instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetScreenshotInstanceRequest request = GetScreenshotInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Screenshot&gt; future = instancesClient.getScreenshotCallable().futureCall(request);
-   *   // Do something
+   *   GetScreenshotInstanceRequest request =
+   *       GetScreenshotInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Screenshot> future = instancesClient.getScreenshotCallable().futureCall(request);
+   *   // Do something.
    *   Screenshot response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetScreenshotInstanceRequest, Screenshot> getScreenshotCallable() {
     return stub.getScreenshotCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the last 1 MB of serial port output from the specified instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
    *   SerialPortOutput response = instancesClient.getSerialPortOutput(project, zone, instance);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1381,25 +1376,25 @@ public class InstancesClient implements BackgroundResource {
     return getSerialPortOutput(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the last 1 MB of serial port output from the specified instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetSerialPortOutputInstanceRequest request = GetSerialPortOutputInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   GetSerialPortOutputInstanceRequest request =
+   *       GetSerialPortOutputInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setPort(3446913)
+   *           .setProject("project-309310695")
+   *           .setStart("start109757538")
+   *           .setZone("zone3744684")
+   *           .build();
    *   SerialPortOutput response = instancesClient.getSerialPortOutput(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1408,47 +1403,49 @@ public class InstancesClient implements BackgroundResource {
     return getSerialPortOutputCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the last 1 MB of serial port output from the specified instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetSerialPortOutputInstanceRequest request = GetSerialPortOutputInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;SerialPortOutput&gt; future = instancesClient.getSerialPortOutputCallable().futureCall(request);
-   *   // Do something
+   *   GetSerialPortOutputInstanceRequest request =
+   *       GetSerialPortOutputInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setPort(3446913)
+   *           .setProject("project-309310695")
+   *           .setStart("start109757538")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<SerialPortOutput> future =
+   *       instancesClient.getSerialPortOutputCallable().futureCall(request);
+   *   // Do something.
    *   SerialPortOutput response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetSerialPortOutputInstanceRequest, SerialPortOutput>
       getSerialPortOutputCallable() {
     return stub.getSerialPortOutputCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the Shielded Instance Identity of an instance
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   ShieldedInstanceIdentity response = instancesClient.getShieldedInstanceIdentity(project, zone, instance);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   ShieldedInstanceIdentity response =
+   *       instancesClient.getShieldedInstanceIdentity(project, zone, instance);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1466,25 +1463,23 @@ public class InstancesClient implements BackgroundResource {
     return getShieldedInstanceIdentity(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the Shielded Instance Identity of an instance
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetShieldedInstanceIdentityInstanceRequest request = GetShieldedInstanceIdentityInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   GetShieldedInstanceIdentityInstanceRequest request =
+   *       GetShieldedInstanceIdentityInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
    *   ShieldedInstanceIdentity response = instancesClient.getShieldedInstanceIdentity(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1494,47 +1489,46 @@ public class InstancesClient implements BackgroundResource {
     return getShieldedInstanceIdentityCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the Shielded Instance Identity of an instance
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetShieldedInstanceIdentityInstanceRequest request = GetShieldedInstanceIdentityInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;ShieldedInstanceIdentity&gt; future = instancesClient.getShieldedInstanceIdentityCallable().futureCall(request);
-   *   // Do something
+   *   GetShieldedInstanceIdentityInstanceRequest request =
+   *       GetShieldedInstanceIdentityInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<ShieldedInstanceIdentity> future =
+   *       instancesClient.getShieldedInstanceIdentityCallable().futureCall(request);
+   *   // Do something.
    *   ShieldedInstanceIdentity response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetShieldedInstanceIdentityInstanceRequest, ShieldedInstanceIdentity>
       getShieldedInstanceIdentityCallable() {
     return stub.getShieldedInstanceIdentityCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an instance resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
    *   Instance instanceResource = Instance.newBuilder().build();
    *   Operation response = instancesClient.insert(project, zone, instanceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1551,25 +1545,25 @@ public class InstancesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an instance resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   Instance instanceResource = Instance.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   InsertInstanceRequest request = InsertInstanceRequest.newBuilder()
-   *     .setInstanceResource(instanceResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   InsertInstanceRequest request =
+   *       InsertInstanceRequest.newBuilder()
+   *           .setInstanceResource(Instance.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSourceInstanceTemplate("sourceInstanceTemplate949712490")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1578,47 +1572,47 @@ public class InstancesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an instance resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   Instance instanceResource = Instance.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   InsertInstanceRequest request = InsertInstanceRequest.newBuilder()
-   *     .setInstanceResource(instanceResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertInstanceRequest request =
+   *       InsertInstanceRequest.newBuilder()
+   *           .setInstanceResource(Instance.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSourceInstanceTemplate("sourceInstanceTemplate949712490")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertInstanceRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of instances contained within the specified zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
    *   for (Instance element : instancesClient.list(project, zone).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1630,25 +1624,29 @@ public class InstancesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of instances contained within the specified zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListInstancesRequest request =
+   *       ListInstancesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   for (Instance element : instancesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1657,49 +1655,57 @@ public class InstancesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of instances contained within the specified zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = instancesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListInstancesRequest request =
+   *       ListInstancesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Instance> future = instancesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Instance element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListInstancesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of instances contained within the specified zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListInstancesRequest request =
+   *       ListInstancesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   while (true) {
    *     InstanceList response = instancesClient.listCallable().call(request);
-   *     for (Instance element : response.getItemsList()) {
+   *     for (Instance element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1710,13 +1716,13 @@ public class InstancesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListInstancesRequest, InstanceList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of resources that refer to the VM instance specified in the request. For
    * example, if the VM instance is part of a managed or unmanaged instance group, the referrers
@@ -1724,16 +1730,17 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   for (Reference element : instancesClient.listReferrers(project, zone, instance).iterateAll()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   for (Reference element :
+   *       instancesClient.listReferrers(project, zone, instance).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1752,7 +1759,7 @@ public class InstancesClient implements BackgroundResource {
     return listReferrers(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of resources that refer to the VM instance specified in the request. For
    * example, if the VM instance is part of a managed or unmanaged instance group, the referrers
@@ -1760,21 +1767,24 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   ListReferrersInstancesRequest request = ListReferrersInstancesRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListReferrersInstancesRequest request =
+   *       ListReferrersInstancesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setInstance("instance555127957")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   for (Reference element : instancesClient.listReferrers(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1783,7 +1793,7 @@ public class InstancesClient implements BackgroundResource {
     return listReferrersPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of resources that refer to the VM instance specified in the request. For
    * example, if the VM instance is part of a managed or unmanaged instance group, the referrers
@@ -1791,30 +1801,34 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   ListReferrersInstancesRequest request = ListReferrersInstancesRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;ListReferrersPagedResponse&gt; future = instancesClient.listReferrersPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListReferrersInstancesRequest request =
+   *       ListReferrersInstancesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setInstance("instance555127957")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Reference> future =
+   *       instancesClient.listReferrersPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Reference element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListReferrersInstancesRequest, ListReferrersPagedResponse>
       listReferrersPagedCallable() {
     return stub.listReferrersPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of resources that refer to the VM instance specified in the request. For
    * example, if the VM instance is part of a managed or unmanaged instance group, the referrers
@@ -1822,19 +1836,22 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   ListReferrersInstancesRequest request = ListReferrersInstancesRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListReferrersInstancesRequest request =
+   *       ListReferrersInstancesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setInstance("instance555127957")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   while (true) {
    *     InstanceListReferrers response = instancesClient.listReferrersCallable().call(request);
-   *     for (Reference element : response.getItemsList()) {
+   *     for (Reference element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1845,28 +1862,31 @@ public class InstancesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListReferrersInstancesRequest, InstanceListReferrers>
       listReferrersCallable() {
     return stub.listReferrersCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes resource policies from an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   InstancesRemoveResourcePoliciesRequest instancesRemoveResourcePoliciesRequestResource = InstancesRemoveResourcePoliciesRequest.newBuilder().build();
-   *   Operation response = instancesClient.removeResourcePolicies(project, zone, instance, instancesRemoveResourcePoliciesRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   InstancesRemoveResourcePoliciesRequest instancesRemoveResourcePoliciesRequestResource =
+   *       InstancesRemoveResourcePoliciesRequest.newBuilder().build();
+   *   Operation response =
+   *       instancesClient.removeResourcePolicies(
+   *           project, zone, instance, instancesRemoveResourcePoliciesRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1890,27 +1910,26 @@ public class InstancesClient implements BackgroundResource {
     return removeResourcePolicies(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes resource policies from an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   InstancesRemoveResourcePoliciesRequest instancesRemoveResourcePoliciesRequestResource = InstancesRemoveResourcePoliciesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   RemoveResourcePoliciesInstanceRequest request = RemoveResourcePoliciesInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setInstancesRemoveResourcePoliciesRequestResource(instancesRemoveResourcePoliciesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   RemoveResourcePoliciesInstanceRequest request =
+   *       RemoveResourcePoliciesInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesRemoveResourcePoliciesRequestResource(
+   *               InstancesRemoveResourcePoliciesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.removeResourcePolicies(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1919,50 +1938,50 @@ public class InstancesClient implements BackgroundResource {
     return removeResourcePoliciesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes resource policies from an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   InstancesRemoveResourcePoliciesRequest instancesRemoveResourcePoliciesRequestResource = InstancesRemoveResourcePoliciesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   RemoveResourcePoliciesInstanceRequest request = RemoveResourcePoliciesInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setInstancesRemoveResourcePoliciesRequestResource(instancesRemoveResourcePoliciesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.removeResourcePoliciesCallable().futureCall(request);
-   *   // Do something
+   *   RemoveResourcePoliciesInstanceRequest request =
+   *       RemoveResourcePoliciesInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesRemoveResourcePoliciesRequestResource(
+   *               InstancesRemoveResourcePoliciesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instancesClient.removeResourcePoliciesCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesCallable() {
     return stub.removeResourcePoliciesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown.
    * For more information, see Resetting an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
    *   Operation response = instancesClient.reset(project, zone, instance);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1979,26 +1998,25 @@ public class InstancesClient implements BackgroundResource {
     return reset(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown.
    * For more information, see Resetting an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   ResetInstanceRequest request = ResetInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ResetInstanceRequest request =
+   *       ResetInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.reset(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2007,47 +2025,46 @@ public class InstancesClient implements BackgroundResource {
     return resetCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown.
    * For more information, see Resetting an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   ResetInstanceRequest request = ResetInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.resetCallable().futureCall(request);
-   *   // Do something
+   *   ResetInstanceRequest request =
+   *       ResetInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.resetCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ResetInstanceRequest, Operation> resetCallable() {
     return stub.resetCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets deletion protection on the instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String resource = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String resource = "resource-341064690";
    *   Operation response = instancesClient.setDeletionProtection(project, zone, resource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -2064,25 +2081,25 @@ public class InstancesClient implements BackgroundResource {
     return setDeletionProtection(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets deletion protection on the instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   SetDeletionProtectionInstanceRequest request = SetDeletionProtectionInstanceRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .build();
+   *   SetDeletionProtectionInstanceRequest request =
+   *       SetDeletionProtectionInstanceRequest.newBuilder()
+   *           .setDeletionProtection(true)
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.setDeletionProtection(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2091,49 +2108,51 @@ public class InstancesClient implements BackgroundResource {
     return setDeletionProtectionCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets deletion protection on the instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   SetDeletionProtectionInstanceRequest request = SetDeletionProtectionInstanceRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.setDeletionProtectionCallable().futureCall(request);
-   *   // Do something
+   *   SetDeletionProtectionInstanceRequest request =
+   *       SetDeletionProtectionInstanceRequest.newBuilder()
+   *           .setDeletionProtection(true)
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instancesClient.setDeletionProtectionCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetDeletionProtectionInstanceRequest, Operation>
       setDeletionProtectionCallable() {
     return stub.setDeletionProtectionCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the auto-delete flag for a disk attached to an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   boolean autoDelete = false;
-   *   String deviceName = "";
-   *   Operation response = instancesClient.setDiskAutoDelete(project, zone, instance, autoDelete, deviceName);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   boolean autoDelete = true;
+   *   String deviceName = "deviceName780988929";
+   *   Operation response =
+   *       instancesClient.setDiskAutoDelete(project, zone, instance, autoDelete, deviceName);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -2156,29 +2175,26 @@ public class InstancesClient implements BackgroundResource {
     return setDiskAutoDelete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the auto-delete flag for a disk attached to an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   boolean autoDelete = false;
-   *   String deviceName = "";
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   SetDiskAutoDeleteInstanceRequest request = SetDiskAutoDeleteInstanceRequest.newBuilder()
-   *     .setAutoDelete(autoDelete)
-   *     .setDeviceName(deviceName)
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   SetDiskAutoDeleteInstanceRequest request =
+   *       SetDiskAutoDeleteInstanceRequest.newBuilder()
+   *           .setAutoDelete(true)
+   *           .setDeviceName("deviceName780988929")
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.setDiskAutoDelete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2187,52 +2203,50 @@ public class InstancesClient implements BackgroundResource {
     return setDiskAutoDeleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the auto-delete flag for a disk attached to an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   boolean autoDelete = false;
-   *   String deviceName = "";
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   SetDiskAutoDeleteInstanceRequest request = SetDiskAutoDeleteInstanceRequest.newBuilder()
-   *     .setAutoDelete(autoDelete)
-   *     .setDeviceName(deviceName)
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.setDiskAutoDeleteCallable().futureCall(request);
-   *   // Do something
+   *   SetDiskAutoDeleteInstanceRequest request =
+   *       SetDiskAutoDeleteInstanceRequest.newBuilder()
+   *           .setAutoDelete(true)
+   *           .setDeviceName("deviceName780988929")
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.setDiskAutoDeleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetDiskAutoDeleteInstanceRequest, Operation>
       setDiskAutoDeleteCallable() {
     return stub.setDiskAutoDeleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String resource = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String resource = "resource-341064690";
    *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
-   *   Policy response = instancesClient.setIamPolicy(project, zone, resource, zoneSetPolicyRequestResource);
+   *   Policy response =
+   *       instancesClient.setIamPolicy(project, zone, resource, zoneSetPolicyRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -2255,27 +2269,24 @@ public class InstancesClient implements BackgroundResource {
     return setIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
-   *   SetIamPolicyInstanceRequest request = SetIamPolicyInstanceRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
-   *     .build();
+   *   SetIamPolicyInstanceRequest request =
+   *       SetIamPolicyInstanceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .setZoneSetPolicyRequestResource(ZoneSetPolicyRequest.newBuilder().build())
+   *           .build();
    *   Policy response = instancesClient.setIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2284,50 +2295,49 @@ public class InstancesClient implements BackgroundResource {
     return setIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
-   *   SetIamPolicyInstanceRequest request = SetIamPolicyInstanceRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = instancesClient.setIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   SetIamPolicyInstanceRequest request =
+   *       SetIamPolicyInstanceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .setZoneSetPolicyRequestResource(ZoneSetPolicyRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = instancesClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyInstanceRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets labels on an instance. To learn more about labels, read the Labeling Resources
    * documentation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   InstancesSetLabelsRequest instancesSetLabelsRequestResource = InstancesSetLabelsRequest.newBuilder().build();
-   *   Operation response = instancesClient.setLabels(project, zone, instance, instancesSetLabelsRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   InstancesSetLabelsRequest instancesSetLabelsRequestResource =
+   *       InstancesSetLabelsRequest.newBuilder().build();
+   *   Operation response =
+   *       instancesClient.setLabels(project, zone, instance, instancesSetLabelsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -2350,28 +2360,26 @@ public class InstancesClient implements BackgroundResource {
     return setLabels(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets labels on an instance. To learn more about labels, read the Labeling Resources
    * documentation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   InstancesSetLabelsRequest instancesSetLabelsRequestResource = InstancesSetLabelsRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   SetLabelsInstanceRequest request = SetLabelsInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setInstancesSetLabelsRequestResource(instancesSetLabelsRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   SetLabelsInstanceRequest request =
+   *       SetLabelsInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesSetLabelsRequestResource(InstancesSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.setLabels(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2380,51 +2388,52 @@ public class InstancesClient implements BackgroundResource {
     return setLabelsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets labels on an instance. To learn more about labels, read the Labeling Resources
    * documentation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   InstancesSetLabelsRequest instancesSetLabelsRequestResource = InstancesSetLabelsRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   SetLabelsInstanceRequest request = SetLabelsInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setInstancesSetLabelsRequestResource(instancesSetLabelsRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.setLabelsCallable().futureCall(request);
-   *   // Do something
+   *   SetLabelsInstanceRequest request =
+   *       SetLabelsInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesSetLabelsRequestResource(InstancesSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.setLabelsCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetLabelsInstanceRequest, Operation> setLabelsCallable() {
     return stub.setLabelsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the number and/or type of accelerator for a stopped instance to the values specified in
    * the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource = InstancesSetMachineResourcesRequest.newBuilder().build();
-   *   Operation response = instancesClient.setMachineResources(project, zone, instance, instancesSetMachineResourcesRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource =
+   *       InstancesSetMachineResourcesRequest.newBuilder().build();
+   *   Operation response =
+   *       instancesClient.setMachineResources(
+   *           project, zone, instance, instancesSetMachineResourcesRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -2448,28 +2457,27 @@ public class InstancesClient implements BackgroundResource {
     return setMachineResources(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the number and/or type of accelerator for a stopped instance to the values specified in
    * the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource = InstancesSetMachineResourcesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   SetMachineResourcesInstanceRequest request = SetMachineResourcesInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setInstancesSetMachineResourcesRequestResource(instancesSetMachineResourcesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   SetMachineResourcesInstanceRequest request =
+   *       SetMachineResourcesInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesSetMachineResourcesRequestResource(
+   *               InstancesSetMachineResourcesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.setMachineResources(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2478,51 +2486,54 @@ public class InstancesClient implements BackgroundResource {
     return setMachineResourcesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the number and/or type of accelerator for a stopped instance to the values specified in
    * the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource = InstancesSetMachineResourcesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   SetMachineResourcesInstanceRequest request = SetMachineResourcesInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setInstancesSetMachineResourcesRequestResource(instancesSetMachineResourcesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.setMachineResourcesCallable().futureCall(request);
-   *   // Do something
+   *   SetMachineResourcesInstanceRequest request =
+   *       SetMachineResourcesInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesSetMachineResourcesRequestResource(
+   *               InstancesSetMachineResourcesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instancesClient.setMachineResourcesCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetMachineResourcesInstanceRequest, Operation>
       setMachineResourcesCallable() {
     return stub.setMachineResourcesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the machine type for a stopped instance to the machine type specified in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource = InstancesSetMachineTypeRequest.newBuilder().build();
-   *   Operation response = instancesClient.setMachineType(project, zone, instance, instancesSetMachineTypeRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource =
+   *       InstancesSetMachineTypeRequest.newBuilder().build();
+   *   Operation response =
+   *       instancesClient.setMachineType(
+   *           project, zone, instance, instancesSetMachineTypeRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -2545,27 +2556,26 @@ public class InstancesClient implements BackgroundResource {
     return setMachineType(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the machine type for a stopped instance to the machine type specified in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource = InstancesSetMachineTypeRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   SetMachineTypeInstanceRequest request = SetMachineTypeInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setInstancesSetMachineTypeRequestResource(instancesSetMachineTypeRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   SetMachineTypeInstanceRequest request =
+   *       SetMachineTypeInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesSetMachineTypeRequestResource(
+   *               InstancesSetMachineTypeRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.setMachineType(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2574,49 +2584,48 @@ public class InstancesClient implements BackgroundResource {
     return setMachineTypeCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the machine type for a stopped instance to the machine type specified in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource = InstancesSetMachineTypeRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   SetMachineTypeInstanceRequest request = SetMachineTypeInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setInstancesSetMachineTypeRequestResource(instancesSetMachineTypeRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.setMachineTypeCallable().futureCall(request);
-   *   // Do something
+   *   SetMachineTypeInstanceRequest request =
+   *       SetMachineTypeInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesSetMachineTypeRequestResource(
+   *               InstancesSetMachineTypeRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.setMachineTypeCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetMachineTypeInstanceRequest, Operation> setMachineTypeCallable() {
     return stub.setMachineTypeCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets metadata for the specified instance to the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
    *   Metadata metadataResource = Metadata.newBuilder().build();
    *   Operation response = instancesClient.setMetadata(project, zone, instance, metadataResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -2636,27 +2645,25 @@ public class InstancesClient implements BackgroundResource {
     return setMetadata(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets metadata for the specified instance to the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   Metadata metadataResource = Metadata.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   SetMetadataInstanceRequest request = SetMetadataInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setMetadataResource(metadataResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   SetMetadataInstanceRequest request =
+   *       SetMetadataInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setMetadataResource(Metadata.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.setMetadata(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2665,50 +2672,51 @@ public class InstancesClient implements BackgroundResource {
     return setMetadataCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets metadata for the specified instance to the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   Metadata metadataResource = Metadata.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   SetMetadataInstanceRequest request = SetMetadataInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setMetadataResource(metadataResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.setMetadataCallable().futureCall(request);
-   *   // Do something
+   *   SetMetadataInstanceRequest request =
+   *       SetMetadataInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setMetadataResource(Metadata.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.setMetadataCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetMetadataInstanceRequest, Operation> setMetadataCallable() {
     return stub.setMetadataCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the minimum CPU platform that this instance should use. This method can only be called
    * on a stopped instance. For more information, read Specifying a Minimum CPU Platform.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource = InstancesSetMinCpuPlatformRequest.newBuilder().build();
-   *   Operation response = instancesClient.setMinCpuPlatform(project, zone, instance, instancesSetMinCpuPlatformRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource =
+   *       InstancesSetMinCpuPlatformRequest.newBuilder().build();
+   *   Operation response =
+   *       instancesClient.setMinCpuPlatform(
+   *           project, zone, instance, instancesSetMinCpuPlatformRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -2731,28 +2739,27 @@ public class InstancesClient implements BackgroundResource {
     return setMinCpuPlatform(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the minimum CPU platform that this instance should use. This method can only be called
    * on a stopped instance. For more information, read Specifying a Minimum CPU Platform.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource = InstancesSetMinCpuPlatformRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   SetMinCpuPlatformInstanceRequest request = SetMinCpuPlatformInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setInstancesSetMinCpuPlatformRequestResource(instancesSetMinCpuPlatformRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   SetMinCpuPlatformInstanceRequest request =
+   *       SetMinCpuPlatformInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesSetMinCpuPlatformRequestResource(
+   *               InstancesSetMinCpuPlatformRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.setMinCpuPlatform(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2761,37 +2768,36 @@ public class InstancesClient implements BackgroundResource {
     return setMinCpuPlatformCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the minimum CPU platform that this instance should use. This method can only be called
    * on a stopped instance. For more information, read Specifying a Minimum CPU Platform.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource = InstancesSetMinCpuPlatformRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   SetMinCpuPlatformInstanceRequest request = SetMinCpuPlatformInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setInstancesSetMinCpuPlatformRequestResource(instancesSetMinCpuPlatformRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.setMinCpuPlatformCallable().futureCall(request);
-   *   // Do something
+   *   SetMinCpuPlatformInstanceRequest request =
+   *       SetMinCpuPlatformInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesSetMinCpuPlatformRequestResource(
+   *               InstancesSetMinCpuPlatformRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.setMinCpuPlatformCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetMinCpuPlatformInstanceRequest, Operation>
       setMinCpuPlatformCallable() {
     return stub.setMinCpuPlatformCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets an instance's scheduling options. You can only call this method on a stopped instance,
    * that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more
@@ -2799,15 +2805,16 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
    *   Scheduling schedulingResource = Scheduling.newBuilder().build();
-   *   Operation response = instancesClient.setScheduling(project, zone, instance, schedulingResource);
+   *   Operation response =
+   *       instancesClient.setScheduling(project, zone, instance, schedulingResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -2827,7 +2834,7 @@ public class InstancesClient implements BackgroundResource {
     return setScheduling(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets an instance's scheduling options. You can only call this method on a stopped instance,
    * that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more
@@ -2835,21 +2842,19 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   Scheduling schedulingResource = Scheduling.newBuilder().build();
-   *   String zone = "";
-   *   SetSchedulingInstanceRequest request = SetSchedulingInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setSchedulingResource(schedulingResource)
-   *     .setZone(zone)
-   *     .build();
+   *   SetSchedulingInstanceRequest request =
+   *       SetSchedulingInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSchedulingResource(Scheduling.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.setScheduling(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2858,7 +2863,7 @@ public class InstancesClient implements BackgroundResource {
     return setSchedulingCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets an instance's scheduling options. You can only call this method on a stopped instance,
    * that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more
@@ -2866,44 +2871,45 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   Scheduling schedulingResource = Scheduling.newBuilder().build();
-   *   String zone = "";
-   *   SetSchedulingInstanceRequest request = SetSchedulingInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setSchedulingResource(schedulingResource)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.setSchedulingCallable().futureCall(request);
-   *   // Do something
+   *   SetSchedulingInstanceRequest request =
+   *       SetSchedulingInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSchedulingResource(Scheduling.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.setSchedulingCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetSchedulingInstanceRequest, Operation> setSchedulingCallable() {
     return stub.setSchedulingCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the service account on the instance. For more information, read Changing the service
    * account and access scopes for an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource = InstancesSetServiceAccountRequest.newBuilder().build();
-   *   Operation response = instancesClient.setServiceAccount(project, zone, instance, instancesSetServiceAccountRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource =
+   *       InstancesSetServiceAccountRequest.newBuilder().build();
+   *   Operation response =
+   *       instancesClient.setServiceAccount(
+   *           project, zone, instance, instancesSetServiceAccountRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -2926,28 +2932,27 @@ public class InstancesClient implements BackgroundResource {
     return setServiceAccount(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the service account on the instance. For more information, read Changing the service
    * account and access scopes for an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource = InstancesSetServiceAccountRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   SetServiceAccountInstanceRequest request = SetServiceAccountInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setInstancesSetServiceAccountRequestResource(instancesSetServiceAccountRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   SetServiceAccountInstanceRequest request =
+   *       SetServiceAccountInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesSetServiceAccountRequestResource(
+   *               InstancesSetServiceAccountRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.setServiceAccount(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2956,37 +2961,36 @@ public class InstancesClient implements BackgroundResource {
     return setServiceAccountCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the service account on the instance. For more information, read Changing the service
    * account and access scopes for an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource = InstancesSetServiceAccountRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   SetServiceAccountInstanceRequest request = SetServiceAccountInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setInstancesSetServiceAccountRequestResource(instancesSetServiceAccountRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.setServiceAccountCallable().futureCall(request);
-   *   // Do something
+   *   SetServiceAccountInstanceRequest request =
+   *       SetServiceAccountInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesSetServiceAccountRequestResource(
+   *               InstancesSetServiceAccountRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.setServiceAccountCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetServiceAccountInstanceRequest, Operation>
       setServiceAccountCallable() {
     return stub.setServiceAccountCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the Shielded Instance integrity policy for an instance. You can only use this method on a
    * running instance. This method supports PATCH semantics and uses the JSON merge patch format and
@@ -2994,15 +2998,18 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicyResource = ShieldedInstanceIntegrityPolicy.newBuilder().build();
-   *   Operation response = instancesClient.setShieldedInstanceIntegrityPolicy(project, zone, instance, shieldedInstanceIntegrityPolicyResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicyResource =
+   *       ShieldedInstanceIntegrityPolicy.newBuilder().build();
+   *   Operation response =
+   *       instancesClient.setShieldedInstanceIntegrityPolicy(
+   *           project, zone, instance, shieldedInstanceIntegrityPolicyResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -3025,7 +3032,7 @@ public class InstancesClient implements BackgroundResource {
     return setShieldedInstanceIntegrityPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the Shielded Instance integrity policy for an instance. You can only use this method on a
    * running instance. This method supports PATCH semantics and uses the JSON merge patch format and
@@ -3033,21 +3040,20 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicyResource = ShieldedInstanceIntegrityPolicy.newBuilder().build();
-   *   String zone = "";
-   *   SetShieldedInstanceIntegrityPolicyInstanceRequest request = SetShieldedInstanceIntegrityPolicyInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setShieldedInstanceIntegrityPolicyResource(shieldedInstanceIntegrityPolicyResource)
-   *     .setZone(zone)
-   *     .build();
+   *   SetShieldedInstanceIntegrityPolicyInstanceRequest request =
+   *       SetShieldedInstanceIntegrityPolicyInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setShieldedInstanceIntegrityPolicyResource(
+   *               ShieldedInstanceIntegrityPolicy.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.setShieldedInstanceIntegrityPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3057,7 +3063,7 @@ public class InstancesClient implements BackgroundResource {
     return setShieldedInstanceIntegrityPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the Shielded Instance integrity policy for an instance. You can only use this method on a
    * running instance. This method supports PATCH semantics and uses the JSON merge patch format and
@@ -3065,44 +3071,44 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicyResource = ShieldedInstanceIntegrityPolicy.newBuilder().build();
-   *   String zone = "";
-   *   SetShieldedInstanceIntegrityPolicyInstanceRequest request = SetShieldedInstanceIntegrityPolicyInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setShieldedInstanceIntegrityPolicyResource(shieldedInstanceIntegrityPolicyResource)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.setShieldedInstanceIntegrityPolicyCallable().futureCall(request);
-   *   // Do something
+   *   SetShieldedInstanceIntegrityPolicyInstanceRequest request =
+   *       SetShieldedInstanceIntegrityPolicyInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setShieldedInstanceIntegrityPolicyResource(
+   *               ShieldedInstanceIntegrityPolicy.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instancesClient.setShieldedInstanceIntegrityPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation>
       setShieldedInstanceIntegrityPolicyCallable() {
     return stub.setShieldedInstanceIntegrityPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets network tags for the specified instance to the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
    *   Tags tagsResource = Tags.newBuilder().build();
    *   Operation response = instancesClient.setTags(project, zone, instance, tagsResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -3121,27 +3127,25 @@ public class InstancesClient implements BackgroundResource {
     return setTags(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets network tags for the specified instance to the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   Tags tagsResource = Tags.newBuilder().build();
-   *   String zone = "";
-   *   SetTagsInstanceRequest request = SetTagsInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setTagsResource(tagsResource)
-   *     .setZone(zone)
-   *     .build();
+   *   SetTagsInstanceRequest request =
+   *       SetTagsInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTagsResource(Tags.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.setTags(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3150,48 +3154,46 @@ public class InstancesClient implements BackgroundResource {
     return setTagsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets network tags for the specified instance to the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   Tags tagsResource = Tags.newBuilder().build();
-   *   String zone = "";
-   *   SetTagsInstanceRequest request = SetTagsInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setTagsResource(tagsResource)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.setTagsCallable().futureCall(request);
-   *   // Do something
+   *   SetTagsInstanceRequest request =
+   *       SetTagsInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTagsResource(Tags.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.setTagsCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetTagsInstanceRequest, Operation> setTagsCallable() {
     return stub.setTagsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Simulates a maintenance event on the instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
    *   Operation response = instancesClient.simulateMaintenanceEvent(project, zone, instance);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -3208,25 +3210,23 @@ public class InstancesClient implements BackgroundResource {
     return simulateMaintenanceEvent(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Simulates a maintenance event on the instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   SimulateMaintenanceEventInstanceRequest request = SimulateMaintenanceEventInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   SimulateMaintenanceEventInstanceRequest request =
+   *       SimulateMaintenanceEventInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.simulateMaintenanceEvent(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3235,48 +3235,47 @@ public class InstancesClient implements BackgroundResource {
     return simulateMaintenanceEventCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Simulates a maintenance event on the instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   SimulateMaintenanceEventInstanceRequest request = SimulateMaintenanceEventInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.simulateMaintenanceEventCallable().futureCall(request);
-   *   // Do something
+   *   SimulateMaintenanceEventInstanceRequest request =
+   *       SimulateMaintenanceEventInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instancesClient.simulateMaintenanceEventCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SimulateMaintenanceEventInstanceRequest, Operation>
       simulateMaintenanceEventCallable() {
     return stub.simulateMaintenanceEventCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts an instance that was stopped using the instances().stop method. For more information,
    * see Restart an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
    *   Operation response = instancesClient.start(project, zone, instance);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -3293,26 +3292,25 @@ public class InstancesClient implements BackgroundResource {
     return start(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts an instance that was stopped using the instances().stop method. For more information,
    * see Restart an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   StartInstanceRequest request = StartInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   StartInstanceRequest request =
+   *       StartInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.start(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3321,49 +3319,51 @@ public class InstancesClient implements BackgroundResource {
     return startCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts an instance that was stopped using the instances().stop method. For more information,
    * see Restart an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   StartInstanceRequest request = StartInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.startCallable().futureCall(request);
-   *   // Do something
+   *   StartInstanceRequest request =
+   *       StartInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.startCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<StartInstanceRequest, Operation> startCallable() {
     return stub.startCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts an instance that was stopped using the instances().stop method. For more information,
    * see Restart an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource = InstancesStartWithEncryptionKeyRequest.newBuilder().build();
-   *   Operation response = instancesClient.startWithEncryptionKey(project, zone, instance, instancesStartWithEncryptionKeyRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource =
+   *       InstancesStartWithEncryptionKeyRequest.newBuilder().build();
+   *   Operation response =
+   *       instancesClient.startWithEncryptionKey(
+   *           project, zone, instance, instancesStartWithEncryptionKeyRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -3387,28 +3387,27 @@ public class InstancesClient implements BackgroundResource {
     return startWithEncryptionKey(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts an instance that was stopped using the instances().stop method. For more information,
    * see Restart an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource = InstancesStartWithEncryptionKeyRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   StartWithEncryptionKeyInstanceRequest request = StartWithEncryptionKeyInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setInstancesStartWithEncryptionKeyRequestResource(instancesStartWithEncryptionKeyRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   StartWithEncryptionKeyInstanceRequest request =
+   *       StartWithEncryptionKeyInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesStartWithEncryptionKeyRequestResource(
+   *               InstancesStartWithEncryptionKeyRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.startWithEncryptionKey(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3417,37 +3416,37 @@ public class InstancesClient implements BackgroundResource {
     return startWithEncryptionKeyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts an instance that was stopped using the instances().stop method. For more information,
    * see Restart an instance.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource = InstancesStartWithEncryptionKeyRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   StartWithEncryptionKeyInstanceRequest request = StartWithEncryptionKeyInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setInstancesStartWithEncryptionKeyRequestResource(instancesStartWithEncryptionKeyRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.startWithEncryptionKeyCallable().futureCall(request);
-   *   // Do something
+   *   StartWithEncryptionKeyInstanceRequest request =
+   *       StartWithEncryptionKeyInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesStartWithEncryptionKeyRequestResource(
+   *               InstancesStartWithEncryptionKeyRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instancesClient.startWithEncryptionKeyCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<StartWithEncryptionKeyInstanceRequest, Operation>
       startWithEncryptionKeyCallable() {
     return stub.startWithEncryptionKeyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a
    * later time. Stopped instances do not incur VM usage charges while they are stopped. However,
@@ -3456,14 +3455,14 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
    *   Operation response = instancesClient.stop(project, zone, instance);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -3480,7 +3479,7 @@ public class InstancesClient implements BackgroundResource {
     return stop(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a
    * later time. Stopped instances do not incur VM usage charges while they are stopped. However,
@@ -3489,19 +3488,18 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   StopInstanceRequest request = StopInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   StopInstanceRequest request =
+   *       StopInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.stop(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3510,7 +3508,7 @@ public class InstancesClient implements BackgroundResource {
     return stopCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a
    * later time. Stopped instances do not incur VM usage charges while they are stopped. However,
@@ -3519,41 +3517,43 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   StopInstanceRequest request = StopInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.stopCallable().futureCall(request);
-   *   // Do something
+   *   StopInstanceRequest request =
+   *       StopInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.stopCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<StopInstanceRequest, Operation> stopCallable() {
     return stub.stopCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestPermissionsResponse response = instancesClient.testIamPermissions(project, zone, resource, testPermissionsRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       instancesClient.testIamPermissions(
+   *           project, zone, resource, testPermissionsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -3576,27 +3576,24 @@ public class InstancesClient implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   String zone = "";
-   *   TestIamPermissionsInstanceRequest request = TestIamPermissionsInstanceRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .setZone(zone)
-   *     .build();
+   *   TestIamPermissionsInstanceRequest request =
+   *       TestIamPermissionsInstanceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
    *   TestPermissionsResponse response = instancesClient.testIamPermissions(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3606,36 +3603,34 @@ public class InstancesClient implements BackgroundResource {
     return testIamPermissionsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   String zone = "";
-   *   TestIamPermissionsInstanceRequest request = TestIamPermissionsInstanceRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;TestPermissionsResponse&gt; future = instancesClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
+   *   TestIamPermissionsInstanceRequest request =
+   *       TestIamPermissionsInstanceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       instancesClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
    *   TestPermissionsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsInstanceRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an instance only if the necessary resources are available. This method can update only
    * a specific set of instance properties. See Updating a running instance for a list of updatable
@@ -3643,15 +3638,15 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
    *   Instance instanceResource = Instance.newBuilder().build();
    *   Operation response = instancesClient.update(project, zone, instance, instanceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -3671,7 +3666,7 @@ public class InstancesClient implements BackgroundResource {
     return update(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an instance only if the necessary resources are available. This method can update only
    * a specific set of instance properties. See Updating a running instance for a list of updatable
@@ -3679,21 +3674,21 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   Instance instanceResource = Instance.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   UpdateInstanceRequest request = UpdateInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setInstanceResource(instanceResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   UpdateInstanceRequest request =
+   *       UpdateInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstanceResource(Instance.newBuilder().build())
+   *           .setMinimalAction("minimalAction624261943")
+   *           .setMostDisruptiveAllowedAction("mostDisruptiveAllowedAction-1597376488")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.update(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3702,7 +3697,7 @@ public class InstancesClient implements BackgroundResource {
     return updateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an instance only if the necessary resources are available. This method can update only
    * a specific set of instance properties. See Updating a running instance for a list of updatable
@@ -3710,29 +3705,29 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   Instance instanceResource = Instance.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   UpdateInstanceRequest request = UpdateInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setInstanceResource(instanceResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.updateCallable().futureCall(request);
-   *   // Do something
+   *   UpdateInstanceRequest request =
+   *       UpdateInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstanceResource(Instance.newBuilder().build())
+   *           .setMinimalAction("minimalAction624261943")
+   *           .setMostDisruptiveAllowedAction("mostDisruptiveAllowedAction-1597376488")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.updateCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdateInstanceRequest, Operation> updateCallable() {
     return stub.updateCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified access config from an instance's network interface with the data included
    * in the request. This method supports PATCH semantics and uses the JSON merge patch format and
@@ -3740,16 +3735,18 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   String networkInterface = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   String networkInterface = "networkInterface-341981525";
    *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
-   *   Operation response = instancesClient.updateAccessConfig(project, zone, instance, networkInterface, accessConfigResource);
+   *   Operation response =
+   *       instancesClient.updateAccessConfig(
+   *           project, zone, instance, networkInterface, accessConfigResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -3775,7 +3772,7 @@ public class InstancesClient implements BackgroundResource {
     return updateAccessConfig(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified access config from an instance's network interface with the data included
    * in the request. This method supports PATCH semantics and uses the JSON merge patch format and
@@ -3783,23 +3780,20 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
-   *   String instance = "";
-   *   String networkInterface = "";
-   *   String project = "";
-   *   String zone = "";
-   *   UpdateAccessConfigInstanceRequest request = UpdateAccessConfigInstanceRequest.newBuilder()
-   *     .setAccessConfigResource(accessConfigResource)
-   *     .setInstance(instance)
-   *     .setNetworkInterface(networkInterface)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   UpdateAccessConfigInstanceRequest request =
+   *       UpdateAccessConfigInstanceRequest.newBuilder()
+   *           .setAccessConfigResource(AccessConfig.newBuilder().build())
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterface("networkInterface-341981525")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.updateAccessConfig(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3808,7 +3802,7 @@ public class InstancesClient implements BackgroundResource {
     return updateAccessConfigCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified access config from an instance's network interface with the data included
    * in the request. This method supports PATCH semantics and uses the JSON merge patch format and
@@ -3816,32 +3810,30 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
-   *   String instance = "";
-   *   String networkInterface = "";
-   *   String project = "";
-   *   String zone = "";
-   *   UpdateAccessConfigInstanceRequest request = UpdateAccessConfigInstanceRequest.newBuilder()
-   *     .setAccessConfigResource(accessConfigResource)
-   *     .setInstance(instance)
-   *     .setNetworkInterface(networkInterface)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.updateAccessConfigCallable().futureCall(request);
-   *   // Do something
+   *   UpdateAccessConfigInstanceRequest request =
+   *       UpdateAccessConfigInstanceRequest.newBuilder()
+   *           .setAccessConfigResource(AccessConfig.newBuilder().build())
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterface("networkInterface-341981525")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instancesClient.updateAccessConfigCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdateAccessConfigInstanceRequest, Operation>
       updateAccessConfigCallable() {
     return stub.updateAccessConfigCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the Display config for a VM instance. You can only use this method on a stopped VM
    * instance. This method supports PATCH semantics and uses the JSON merge patch format and
@@ -3849,15 +3841,16 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
    *   DisplayDevice displayDeviceResource = DisplayDevice.newBuilder().build();
-   *   Operation response = instancesClient.updateDisplayDevice(project, zone, instance, displayDeviceResource);
+   *   Operation response =
+   *       instancesClient.updateDisplayDevice(project, zone, instance, displayDeviceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -3877,7 +3870,7 @@ public class InstancesClient implements BackgroundResource {
     return updateDisplayDevice(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the Display config for a VM instance. You can only use this method on a stopped VM
    * instance. This method supports PATCH semantics and uses the JSON merge patch format and
@@ -3885,21 +3878,19 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   DisplayDevice displayDeviceResource = DisplayDevice.newBuilder().build();
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   UpdateDisplayDeviceInstanceRequest request = UpdateDisplayDeviceInstanceRequest.newBuilder()
-   *     .setDisplayDeviceResource(displayDeviceResource)
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   UpdateDisplayDeviceInstanceRequest request =
+   *       UpdateDisplayDeviceInstanceRequest.newBuilder()
+   *           .setDisplayDeviceResource(DisplayDevice.newBuilder().build())
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.updateDisplayDevice(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3908,7 +3899,7 @@ public class InstancesClient implements BackgroundResource {
     return updateDisplayDeviceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the Display config for a VM instance. You can only use this method on a stopped VM
    * instance. This method supports PATCH semantics and uses the JSON merge patch format and
@@ -3916,30 +3907,29 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   DisplayDevice displayDeviceResource = DisplayDevice.newBuilder().build();
-   *   String instance = "";
-   *   String project = "";
-   *   String zone = "";
-   *   UpdateDisplayDeviceInstanceRequest request = UpdateDisplayDeviceInstanceRequest.newBuilder()
-   *     .setDisplayDeviceResource(displayDeviceResource)
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.updateDisplayDeviceCallable().futureCall(request);
-   *   // Do something
+   *   UpdateDisplayDeviceInstanceRequest request =
+   *       UpdateDisplayDeviceInstanceRequest.newBuilder()
+   *           .setDisplayDeviceResource(DisplayDevice.newBuilder().build())
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instancesClient.updateDisplayDeviceCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdateDisplayDeviceInstanceRequest, Operation>
       updateDisplayDeviceCallable() {
     return stub.updateDisplayDeviceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an instance's network interface. This method can only update an interface's alias IP
    * range and attached network. See Modifying alias IP ranges for an existing instance for
@@ -3948,16 +3938,18 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   String networkInterface = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   String networkInterface = "networkInterface-341981525";
    *   NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
-   *   Operation response = instancesClient.updateNetworkInterface(project, zone, instance, networkInterface, networkInterfaceResource);
+   *   Operation response =
+   *       instancesClient.updateNetworkInterface(
+   *           project, zone, instance, networkInterface, networkInterfaceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -3983,7 +3975,7 @@ public class InstancesClient implements BackgroundResource {
     return updateNetworkInterface(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an instance's network interface. This method can only update an interface's alias IP
    * range and attached network. See Modifying alias IP ranges for an existing instance for
@@ -3992,23 +3984,20 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String networkInterface = "";
-   *   NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   UpdateNetworkInterfaceInstanceRequest request = UpdateNetworkInterfaceInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setNetworkInterface(networkInterface)
-   *     .setNetworkInterfaceResource(networkInterfaceResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   UpdateNetworkInterfaceInstanceRequest request =
+   *       UpdateNetworkInterfaceInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterface("networkInterface-341981525")
+   *           .setNetworkInterfaceResource(NetworkInterface.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.updateNetworkInterface(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -4017,7 +4006,7 @@ public class InstancesClient implements BackgroundResource {
     return updateNetworkInterfaceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an instance's network interface. This method can only update an interface's alias IP
    * range and attached network. See Modifying alias IP ranges for an existing instance for
@@ -4026,32 +4015,30 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String networkInterface = "";
-   *   NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   UpdateNetworkInterfaceInstanceRequest request = UpdateNetworkInterfaceInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setNetworkInterface(networkInterface)
-   *     .setNetworkInterfaceResource(networkInterfaceResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.updateNetworkInterfaceCallable().futureCall(request);
-   *   // Do something
+   *   UpdateNetworkInterfaceInstanceRequest request =
+   *       UpdateNetworkInterfaceInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterface("networkInterface-341981525")
+   *           .setNetworkInterfaceResource(NetworkInterface.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instancesClient.updateNetworkInterfaceCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdateNetworkInterfaceInstanceRequest, Operation>
       updateNetworkInterfaceCallable() {
     return stub.updateNetworkInterfaceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the Shielded Instance config for an instance. You can only use this method on a stopped
    * instance. This method supports PATCH semantics and uses the JSON merge patch format and
@@ -4059,15 +4046,18 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instance = "";
-   *   ShieldedInstanceConfig shieldedInstanceConfigResource = ShieldedInstanceConfig.newBuilder().build();
-   *   Operation response = instancesClient.updateShieldedInstanceConfig(project, zone, instance, shieldedInstanceConfigResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   ShieldedInstanceConfig shieldedInstanceConfigResource =
+   *       ShieldedInstanceConfig.newBuilder().build();
+   *   Operation response =
+   *       instancesClient.updateShieldedInstanceConfig(
+   *           project, zone, instance, shieldedInstanceConfigResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -4090,7 +4080,7 @@ public class InstancesClient implements BackgroundResource {
     return updateShieldedInstanceConfig(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the Shielded Instance config for an instance. You can only use this method on a stopped
    * instance. This method supports PATCH semantics and uses the JSON merge patch format and
@@ -4098,21 +4088,19 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   ShieldedInstanceConfig shieldedInstanceConfigResource = ShieldedInstanceConfig.newBuilder().build();
-   *   String zone = "";
-   *   UpdateShieldedInstanceConfigInstanceRequest request = UpdateShieldedInstanceConfigInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setShieldedInstanceConfigResource(shieldedInstanceConfigResource)
-   *     .setZone(zone)
-   *     .build();
+   *   UpdateShieldedInstanceConfigInstanceRequest request =
+   *       UpdateShieldedInstanceConfigInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setShieldedInstanceConfigResource(ShieldedInstanceConfig.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instancesClient.updateShieldedInstanceConfig(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -4122,7 +4110,7 @@ public class InstancesClient implements BackgroundResource {
     return updateShieldedInstanceConfigCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the Shielded Instance config for an instance. You can only use this method on a stopped
    * instance. This method supports PATCH semantics and uses the JSON merge patch format and
@@ -4130,23 +4118,22 @@ public class InstancesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
-   *   String instance = "";
-   *   String project = "";
-   *   ShieldedInstanceConfig shieldedInstanceConfigResource = ShieldedInstanceConfig.newBuilder().build();
-   *   String zone = "";
-   *   UpdateShieldedInstanceConfigInstanceRequest request = UpdateShieldedInstanceConfigInstanceRequest.newBuilder()
-   *     .setInstance(instance)
-   *     .setProject(project)
-   *     .setShieldedInstanceConfigResource(shieldedInstanceConfigResource)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instancesClient.updateShieldedInstanceConfigCallable().futureCall(request);
-   *   // Do something
+   *   UpdateShieldedInstanceConfigInstanceRequest request =
+   *       UpdateShieldedInstanceConfigInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setShieldedInstanceConfigResource(ShieldedInstanceConfig.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instancesClient.updateShieldedInstanceConfigCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdateShieldedInstanceConfigInstanceRequest, Operation>
       updateShieldedInstanceConfigCallable() {
@@ -4187,7 +4174,7 @@ public class InstancesClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListInstancesRequest,
           InstanceAggregatedList,
-          Entry<String, InstancesScopedList>,
+          Map.Entry<String, InstancesScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -4195,7 +4182,7 @@ public class InstancesClient implements BackgroundResource {
         PageContext<
                 AggregatedListInstancesRequest,
                 InstanceAggregatedList,
-                Entry<String, InstancesScopedList>>
+                Map.Entry<String, InstancesScopedList>>
             context,
         ApiFuture<InstanceAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -4220,14 +4207,14 @@ public class InstancesClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListInstancesRequest,
           InstanceAggregatedList,
-          Entry<String, InstancesScopedList>,
+          Map.Entry<String, InstancesScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListInstancesRequest,
                 InstanceAggregatedList,
-                Entry<String, InstancesScopedList>>
+                Map.Entry<String, InstancesScopedList>>
             context,
         InstanceAggregatedList response) {
       super(context, response);
@@ -4242,7 +4229,7 @@ public class InstancesClient implements BackgroundResource {
         PageContext<
                 AggregatedListInstancesRequest,
                 InstanceAggregatedList,
-                Entry<String, InstancesScopedList>>
+                Map.Entry<String, InstancesScopedList>>
             context,
         InstanceAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -4253,7 +4240,7 @@ public class InstancesClient implements BackgroundResource {
         PageContext<
                 AggregatedListInstancesRequest,
                 InstanceAggregatedList,
-                Entry<String, InstancesScopedList>>
+                Map.Entry<String, InstancesScopedList>>
             context,
         ApiFuture<InstanceAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -4264,7 +4251,7 @@ public class InstancesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListInstancesRequest,
           InstanceAggregatedList,
-          Entry<String, InstancesScopedList>,
+          Map.Entry<String, InstancesScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.GlobalOperationsClient.AggregatedListPagedResponse;
@@ -42,29 +43,28 @@ import com.google.cloud.compute.v1.OperationAggregatedList;
 import com.google.cloud.compute.v1.OperationList;
 import com.google.cloud.compute.v1.WaitGlobalOperationRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the GlobalOperations service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListGlobalOperationsRequest, OperationAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListGlobalOperationsRequest, OperationAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalOperations.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.GlobalOperations/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListGlobalOperationsRequest>newBuilder()
@@ -122,7 +122,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                           new FieldsExtractor<AggregatedListGlobalOperationsRequest, String>() {
                             @Override
                             public String extract(AggregatedListGlobalOperationsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -132,13 +132,12 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           DeleteGlobalOperationRequest, DeleteGlobalOperationResponse>
       deleteMethodDescriptor =
           ApiMethodDescriptor
               .<DeleteGlobalOperationRequest, DeleteGlobalOperationResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalOperations.Delete")
+              .setFullMethodName("google.cloud.compute.v1.GlobalOperations/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteGlobalOperationRequest>newBuilder()
@@ -151,8 +150,8 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteGlobalOperationRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "operation", request.getOperation());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -165,7 +164,6 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteGlobalOperationRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -173,7 +171,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                           new FieldsExtractor<DeleteGlobalOperationRequest, String>() {
                             @Override
                             public String extract(DeleteGlobalOperationRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -183,11 +181,10 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetGlobalOperationRequest, Operation>
+  private static final ApiMethodDescriptor<GetGlobalOperationRequest, Operation>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetGlobalOperationRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalOperations.Get")
+              .setFullMethodName("google.cloud.compute.v1.GlobalOperations/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetGlobalOperationRequest>newBuilder()
@@ -199,8 +196,8 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetGlobalOperationRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "operation", request.getOperation());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -213,7 +210,6 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetGlobalOperationRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -221,7 +217,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                           new FieldsExtractor<GetGlobalOperationRequest, String>() {
                             @Override
                             public String extract(GetGlobalOperationRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -231,11 +227,10 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListGlobalOperationsRequest, OperationList>
+  private static final ApiMethodDescriptor<ListGlobalOperationsRequest, OperationList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListGlobalOperationsRequest, OperationList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalOperations.List")
+              .setFullMethodName("google.cloud.compute.v1.GlobalOperations/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListGlobalOperationsRequest>newBuilder()
@@ -288,7 +283,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                           new FieldsExtractor<ListGlobalOperationsRequest, String>() {
                             @Override
                             public String extract(ListGlobalOperationsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -298,11 +293,10 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<WaitGlobalOperationRequest, Operation>
+  private static final ApiMethodDescriptor<WaitGlobalOperationRequest, Operation>
       waitMethodDescriptor =
           ApiMethodDescriptor.<WaitGlobalOperationRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.GlobalOperations.Wait")
+              .setFullMethodName("google.cloud.compute.v1.GlobalOperations/Wait")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<WaitGlobalOperationRequest>newBuilder()
@@ -314,8 +308,8 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<WaitGlobalOperationRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "operation", request.getOperation());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -328,7 +322,6 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<WaitGlobalOperationRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -336,7 +329,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                           new FieldsExtractor<WaitGlobalOperationRequest, String>() {
                             @Override
                             public String extract(WaitGlobalOperationRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -345,8 +338,6 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                       .setDefaultInstance(Operation.getDefaultInstance())
                       .build())
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AggregatedListGlobalOperationsRequest, OperationAggregatedList>
       aggregatedListCallable;
@@ -359,6 +350,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
   private final UnaryCallable<ListGlobalOperationsRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<WaitGlobalOperationRequest, Operation> waitCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonGlobalOperationsStub create(GlobalOperationsStubSettings settings)
@@ -447,36 +439,55 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
         callableFactory.createUnaryCallable(
             waitTransportSettings, settings.waitSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListGlobalOperationsRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(waitMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListGlobalOperationsRequest, OperationAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListGlobalOperationsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteGlobalOperationRequest, DeleteGlobalOperationResponse>
       deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetGlobalOperationRequest, Operation> getCallable() {
     return getCallable;
   }
 
-  public UnaryCallable<ListGlobalOperationsRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListGlobalOperationsRequest, OperationList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListGlobalOperationsRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<WaitGlobalOperationRequest, Operation> waitCallable() {
     return waitCallable;
   }

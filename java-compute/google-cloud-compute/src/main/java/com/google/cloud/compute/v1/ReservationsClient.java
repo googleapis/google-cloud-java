@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,29 +31,27 @@ import com.google.cloud.compute.v1.stub.ReservationsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The Reservations API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
- *   String project = "";
- *   String zone = "";
- *   String reservation = "";
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String reservation = "reservation-1563081780";
  *   Operation response = reservationsClient.delete(project, zone, reservation);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the reservationsClient object to clean up resources such
+ * <p>Note: close() needs to be called on the ReservationsClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -80,30 +79,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ReservationsSettings reservationsSettings =
  *     ReservationsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * ReservationsClient reservationsClient =
- *     ReservationsClient.create(reservationsSettings);
- * </code>
- * </pre>
+ * ReservationsClient reservationsClient = ReservationsClient.create(reservationsSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ReservationsSettings reservationsSettings =
  *     ReservationsSettings.newBuilder().setEndpoint(myEndpoint).build();
- * ReservationsClient reservationsClient =
- *     ReservationsClient.create(reservationsSettings);
- * </code>
- * </pre>
+ * ReservationsClient reservationsClient = ReservationsClient.create(reservationsSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class ReservationsClient implements BackgroundResource {
   private final ReservationsSettings settings;
   private final ReservationsStub stub;
@@ -123,7 +117,7 @@ public class ReservationsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ReservationsClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use ReservationsSettings}.
+   * for advanced usage - prefer using create(ReservationsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ReservationsClient create(ReservationsStub stub) {
@@ -155,20 +149,21 @@ public class ReservationsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of reservations.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, ReservationsScopedList&gt; element : reservationsClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, ReservationsScopedList> element :
+   *       reservationsClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -179,23 +174,30 @@ public class ReservationsClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of reservations.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   AggregatedListReservationsRequest request = AggregatedListReservationsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, ReservationsScopedList&gt; element : reservationsClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListReservationsRequest request =
+   *       AggregatedListReservationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, ReservationsScopedList> element :
+   *       reservationsClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -205,46 +207,60 @@ public class ReservationsClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of reservations.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   AggregatedListReservationsRequest request = AggregatedListReservationsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = reservationsClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, ReservationsScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListReservationsRequest request =
+   *       AggregatedListReservationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, ReservationsScopedList>> future =
+   *       reservationsClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, ReservationsScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListReservationsRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of reservations.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   AggregatedListReservationsRequest request = AggregatedListReservationsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListReservationsRequest request =
+   *       AggregatedListReservationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     ReservationAggregatedList response = reservationsClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, ReservationsScopedList&gt; element : response.getItemsMap()) {
+   *     ReservationAggregatedList response =
+   *         reservationsClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, ReservationsScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -255,27 +271,27 @@ public class ReservationsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListReservationsRequest, ReservationAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified reservation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String reservation = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String reservation = "reservation-1563081780";
    *   Operation response = reservationsClient.delete(project, zone, reservation);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone for this request.
@@ -292,25 +308,24 @@ public class ReservationsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified reservation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String reservation = "";
-   *   String zone = "";
-   *   DeleteReservationRequest request = DeleteReservationRequest.newBuilder()
-   *     .setProject(project)
-   *     .setReservation(reservation)
-   *     .setZone(zone)
-   *     .build();
+   *   DeleteReservationRequest request =
+   *       DeleteReservationRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservation("reservation-1563081780")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = reservationsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -319,46 +334,45 @@ public class ReservationsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified reservation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String reservation = "";
-   *   String zone = "";
-   *   DeleteReservationRequest request = DeleteReservationRequest.newBuilder()
-   *     .setProject(project)
-   *     .setReservation(reservation)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = reservationsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteReservationRequest request =
+   *       DeleteReservationRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservation("reservation-1563081780")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = reservationsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteReservationRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves information about the specified reservation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String reservation = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String reservation = "reservation-1563081780";
    *   Reservation response = reservationsClient.get(project, zone, reservation);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone for this request.
@@ -375,25 +389,23 @@ public class ReservationsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves information about the specified reservation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String reservation = "";
-   *   String zone = "";
-   *   GetReservationRequest request = GetReservationRequest.newBuilder()
-   *     .setProject(project)
-   *     .setReservation(reservation)
-   *     .setZone(zone)
-   *     .build();
+   *   GetReservationRequest request =
+   *       GetReservationRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setReservation("reservation-1563081780")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Reservation response = reservationsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -402,47 +414,45 @@ public class ReservationsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves information about the specified reservation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String reservation = "";
-   *   String zone = "";
-   *   GetReservationRequest request = GetReservationRequest.newBuilder()
-   *     .setProject(project)
-   *     .setReservation(reservation)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Reservation&gt; future = reservationsClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetReservationRequest request =
+   *       GetReservationRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setReservation("reservation-1563081780")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Reservation> future = reservationsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   Reservation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetReservationRequest, Reservation> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String resource = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String resource = "resource-341064690";
    *   Policy response = reservationsClient.getIamPolicy(project, zone, resource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -459,26 +469,25 @@ public class ReservationsClient implements BackgroundResource {
     return getIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   GetIamPolicyReservationRequest request = GetIamPolicyReservationRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .build();
+   *   GetIamPolicyReservationRequest request =
+   *       GetIamPolicyReservationRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Policy response = reservationsClient.getIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -487,47 +496,46 @@ public class ReservationsClient implements BackgroundResource {
     return getIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   GetIamPolicyReservationRequest request = GetIamPolicyReservationRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = reservationsClient.getIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   GetIamPolicyReservationRequest request =
+   *       GetIamPolicyReservationRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Policy> future = reservationsClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyReservationRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new reservation. For more information, read Reserving zonal resources.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
    *   Reservation reservationResource = Reservation.newBuilder().build();
    *   Operation response = reservationsClient.insert(project, zone, reservationResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone for this request.
@@ -544,25 +552,24 @@ public class ReservationsClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new reservation. For more information, read Reserving zonal resources.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   Reservation reservationResource = Reservation.newBuilder().build();
-   *   String zone = "";
-   *   InsertReservationRequest request = InsertReservationRequest.newBuilder()
-   *     .setProject(project)
-   *     .setReservationResource(reservationResource)
-   *     .setZone(zone)
-   *     .build();
+   *   InsertReservationRequest request =
+   *       InsertReservationRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservationResource(Reservation.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = reservationsClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -571,48 +578,47 @@ public class ReservationsClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new reservation. For more information, read Reserving zonal resources.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   Reservation reservationResource = Reservation.newBuilder().build();
-   *   String zone = "";
-   *   InsertReservationRequest request = InsertReservationRequest.newBuilder()
-   *     .setProject(project)
-   *     .setReservationResource(reservationResource)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = reservationsClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertReservationRequest request =
+   *       InsertReservationRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservationResource(Reservation.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = reservationsClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertReservationRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * A list of all the reservations that have been configured for the specified project in specified
    * zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
    *   for (Reservation element : reservationsClient.list(project, zone).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone for this request.
@@ -624,26 +630,30 @@ public class ReservationsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * A list of all the reservations that have been configured for the specified project in specified
    * zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListReservationsRequest request = ListReservationsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListReservationsRequest request =
+   *       ListReservationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   for (Reservation element : reservationsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -652,51 +662,59 @@ public class ReservationsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * A list of all the reservations that have been configured for the specified project in specified
    * zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListReservationsRequest request = ListReservationsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = reservationsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListReservationsRequest request =
+   *       ListReservationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Reservation> future = reservationsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Reservation element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListReservationsRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * A list of all the reservations that have been configured for the specified project in specified
    * zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListReservationsRequest request = ListReservationsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListReservationsRequest request =
+   *       ListReservationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   while (true) {
    *     ReservationList response = reservationsClient.listCallable().call(request);
-   *     for (Reservation element : response.getItemsList()) {
+   *     for (Reservation element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -707,28 +725,30 @@ public class ReservationsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListReservationsRequest, ReservationList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Resizes the reservation (applicable to standalone reservations only). For more information,
    * read Modifying reservations.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String reservation = "";
-   *   ReservationsResizeRequest reservationsResizeRequestResource = ReservationsResizeRequest.newBuilder().build();
-   *   Operation response = reservationsClient.resize(project, zone, reservation, reservationsResizeRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String reservation = "reservation-1563081780";
+   *   ReservationsResizeRequest reservationsResizeRequestResource =
+   *       ReservationsResizeRequest.newBuilder().build();
+   *   Operation response =
+   *       reservationsClient.resize(project, zone, reservation, reservationsResizeRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone for this request.
@@ -751,28 +771,26 @@ public class ReservationsClient implements BackgroundResource {
     return resize(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Resizes the reservation (applicable to standalone reservations only). For more information,
    * read Modifying reservations.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String reservation = "";
-   *   ReservationsResizeRequest reservationsResizeRequestResource = ReservationsResizeRequest.newBuilder().build();
-   *   String zone = "";
-   *   ResizeReservationRequest request = ResizeReservationRequest.newBuilder()
-   *     .setProject(project)
-   *     .setReservation(reservation)
-   *     .setReservationsResizeRequestResource(reservationsResizeRequestResource)
-   *     .setZone(zone)
-   *     .build();
+   *   ResizeReservationRequest request =
+   *       ResizeReservationRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservation("reservation-1563081780")
+   *           .setReservationsResizeRequestResource(ReservationsResizeRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = reservationsClient.resize(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -781,50 +799,49 @@ public class ReservationsClient implements BackgroundResource {
     return resizeCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Resizes the reservation (applicable to standalone reservations only). For more information,
    * read Modifying reservations.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String reservation = "";
-   *   ReservationsResizeRequest reservationsResizeRequestResource = ReservationsResizeRequest.newBuilder().build();
-   *   String zone = "";
-   *   ResizeReservationRequest request = ResizeReservationRequest.newBuilder()
-   *     .setProject(project)
-   *     .setReservation(reservation)
-   *     .setReservationsResizeRequestResource(reservationsResizeRequestResource)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = reservationsClient.resizeCallable().futureCall(request);
-   *   // Do something
+   *   ResizeReservationRequest request =
+   *       ResizeReservationRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservation("reservation-1563081780")
+   *           .setReservationsResizeRequestResource(ReservationsResizeRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = reservationsClient.resizeCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ResizeReservationRequest, Operation> resizeCallable() {
     return stub.resizeCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String resource = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String resource = "resource-341064690";
    *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
-   *   Policy response = reservationsClient.setIamPolicy(project, zone, resource, zoneSetPolicyRequestResource);
+   *   Policy response =
+   *       reservationsClient.setIamPolicy(project, zone, resource, zoneSetPolicyRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -847,27 +864,24 @@ public class ReservationsClient implements BackgroundResource {
     return setIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
-   *   SetIamPolicyReservationRequest request = SetIamPolicyReservationRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
-   *     .build();
+   *   SetIamPolicyReservationRequest request =
+   *       SetIamPolicyReservationRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .setZoneSetPolicyRequestResource(ZoneSetPolicyRequest.newBuilder().build())
+   *           .build();
    *   Policy response = reservationsClient.setIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -876,49 +890,49 @@ public class ReservationsClient implements BackgroundResource {
     return setIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
-   *   SetIamPolicyReservationRequest request = SetIamPolicyReservationRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = reservationsClient.setIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   SetIamPolicyReservationRequest request =
+   *       SetIamPolicyReservationRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .setZoneSetPolicyRequestResource(ZoneSetPolicyRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = reservationsClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyReservationRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestPermissionsResponse response = reservationsClient.testIamPermissions(project, zone, resource, testPermissionsRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       reservationsClient.testIamPermissions(
+   *           project, zone, resource, testPermissionsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -941,27 +955,24 @@ public class ReservationsClient implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   String zone = "";
-   *   TestIamPermissionsReservationRequest request = TestIamPermissionsReservationRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .setZone(zone)
-   *     .build();
+   *   TestIamPermissionsReservationRequest request =
+   *       TestIamPermissionsReservationRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
    *   TestPermissionsResponse response = reservationsClient.testIamPermissions(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -971,29 +982,27 @@ public class ReservationsClient implements BackgroundResource {
     return testIamPermissionsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   String zone = "";
-   *   TestIamPermissionsReservationRequest request = TestIamPermissionsReservationRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;TestPermissionsResponse&gt; future = reservationsClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
+   *   TestIamPermissionsReservationRequest request =
+   *       TestIamPermissionsReservationRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       reservationsClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
    *   TestPermissionsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsReservationRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
@@ -1034,7 +1043,7 @@ public class ReservationsClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListReservationsRequest,
           ReservationAggregatedList,
-          Entry<String, ReservationsScopedList>,
+          Map.Entry<String, ReservationsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -1042,7 +1051,7 @@ public class ReservationsClient implements BackgroundResource {
         PageContext<
                 AggregatedListReservationsRequest,
                 ReservationAggregatedList,
-                Entry<String, ReservationsScopedList>>
+                Map.Entry<String, ReservationsScopedList>>
             context,
         ApiFuture<ReservationAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -1067,14 +1076,14 @@ public class ReservationsClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListReservationsRequest,
           ReservationAggregatedList,
-          Entry<String, ReservationsScopedList>,
+          Map.Entry<String, ReservationsScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListReservationsRequest,
                 ReservationAggregatedList,
-                Entry<String, ReservationsScopedList>>
+                Map.Entry<String, ReservationsScopedList>>
             context,
         ReservationAggregatedList response) {
       super(context, response);
@@ -1089,7 +1098,7 @@ public class ReservationsClient implements BackgroundResource {
         PageContext<
                 AggregatedListReservationsRequest,
                 ReservationAggregatedList,
-                Entry<String, ReservationsScopedList>>
+                Map.Entry<String, ReservationsScopedList>>
             context,
         ReservationAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -1100,7 +1109,7 @@ public class ReservationsClient implements BackgroundResource {
         PageContext<
                 AggregatedListReservationsRequest,
                 ReservationAggregatedList,
-                Entry<String, ReservationsScopedList>>
+                Map.Entry<String, ReservationsScopedList>>
             context,
         ApiFuture<ReservationAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1111,7 +1120,7 @@ public class ReservationsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListReservationsRequest,
           ReservationAggregatedList,
-          Entry<String, ReservationsScopedList>,
+          Map.Entry<String, ReservationsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.ImagesClient.ListPagedResponse;
@@ -48,26 +49,25 @@ import com.google.cloud.compute.v1.SetLabelsImageRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsImageRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the Images service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonImagesStub extends ImagesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteImageRequest, Operation> deleteMethodDescriptor =
+  private static final ApiMethodDescriptor<DeleteImageRequest, Operation> deleteMethodDescriptor =
       ApiMethodDescriptor.<DeleteImageRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Images.Delete")
+          .setFullMethodName("google.cloud.compute.v1.Images/Delete")
           .setHttpMethod(HttpMethods.DELETE)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<DeleteImageRequest>newBuilder()
@@ -79,8 +79,8 @@ public class HttpJsonImagesStub extends ImagesStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<DeleteImageRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "image", request.getImage());
+                          serializer.putPathParam(fields, "project", request.getProject());
                           return fields;
                         }
                       })
@@ -101,7 +101,7 @@ public class HttpJsonImagesStub extends ImagesStub {
                       new FieldsExtractor<DeleteImageRequest, String>() {
                         @Override
                         public String extract(DeleteImageRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -111,11 +111,10 @@ public class HttpJsonImagesStub extends ImagesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeprecateImageRequest, Operation>
+  private static final ApiMethodDescriptor<DeprecateImageRequest, Operation>
       deprecateMethodDescriptor =
           ApiMethodDescriptor.<DeprecateImageRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Images.Deprecate")
+              .setFullMethodName("google.cloud.compute.v1.Images/Deprecate")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeprecateImageRequest>newBuilder()
@@ -127,8 +126,8 @@ public class HttpJsonImagesStub extends ImagesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeprecateImageRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "image", request.getImage());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -164,10 +163,9 @@ public class HttpJsonImagesStub extends ImagesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetImageRequest, Image> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetImageRequest, Image> getMethodDescriptor =
       ApiMethodDescriptor.<GetImageRequest, Image>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Images.Get")
+          .setFullMethodName("google.cloud.compute.v1.Images/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetImageRequest>newBuilder()
@@ -179,8 +177,8 @@ public class HttpJsonImagesStub extends ImagesStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<GetImageRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "image", request.getImage());
+                          serializer.putPathParam(fields, "project", request.getProject());
                           return fields;
                         }
                       })
@@ -191,7 +189,6 @@ public class HttpJsonImagesStub extends ImagesStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetImageRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -199,7 +196,7 @@ public class HttpJsonImagesStub extends ImagesStub {
                       new FieldsExtractor<GetImageRequest, String>() {
                         @Override
                         public String extract(GetImageRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -209,11 +206,10 @@ public class HttpJsonImagesStub extends ImagesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetFromFamilyImageRequest, Image>
+  private static final ApiMethodDescriptor<GetFromFamilyImageRequest, Image>
       getFromFamilyMethodDescriptor =
           ApiMethodDescriptor.<GetFromFamilyImageRequest, Image>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Images.GetFromFamily")
+              .setFullMethodName("google.cloud.compute.v1.Images/GetFromFamily")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetFromFamilyImageRequest>newBuilder()
@@ -225,8 +221,8 @@ public class HttpJsonImagesStub extends ImagesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetFromFamilyImageRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "family", request.getFamily());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -239,7 +235,6 @@ public class HttpJsonImagesStub extends ImagesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetFromFamilyImageRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -247,7 +242,7 @@ public class HttpJsonImagesStub extends ImagesStub {
                           new FieldsExtractor<GetFromFamilyImageRequest, String>() {
                             @Override
                             public String extract(GetFromFamilyImageRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -257,11 +252,10 @@ public class HttpJsonImagesStub extends ImagesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetIamPolicyImageRequest, Policy>
+  private static final ApiMethodDescriptor<GetIamPolicyImageRequest, Policy>
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyImageRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Images.GetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.Images/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyImageRequest>newBuilder()
@@ -300,7 +294,7 @@ public class HttpJsonImagesStub extends ImagesStub {
                           new FieldsExtractor<GetIamPolicyImageRequest, String>() {
                             @Override
                             public String extract(GetIamPolicyImageRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -310,10 +304,9 @@ public class HttpJsonImagesStub extends ImagesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertImageRequest, Operation> insertMethodDescriptor =
+  private static final ApiMethodDescriptor<InsertImageRequest, Operation> insertMethodDescriptor =
       ApiMethodDescriptor.<InsertImageRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Images.Insert")
+          .setFullMethodName("google.cloud.compute.v1.Images/Insert")
           .setHttpMethod(HttpMethods.POST)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<InsertImageRequest>newBuilder()
@@ -361,10 +354,9 @@ public class HttpJsonImagesStub extends ImagesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListImagesRequest, ImageList> listMethodDescriptor =
+  private static final ApiMethodDescriptor<ListImagesRequest, ImageList> listMethodDescriptor =
       ApiMethodDescriptor.<ListImagesRequest, ImageList>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Images.List")
+          .setFullMethodName("google.cloud.compute.v1.Images/List")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListImagesRequest>newBuilder()
@@ -410,7 +402,7 @@ public class HttpJsonImagesStub extends ImagesStub {
                       new FieldsExtractor<ListImagesRequest, String>() {
                         @Override
                         public String extract(ListImagesRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -420,10 +412,9 @@ public class HttpJsonImagesStub extends ImagesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchImageRequest, Operation> patchMethodDescriptor =
+  private static final ApiMethodDescriptor<PatchImageRequest, Operation> patchMethodDescriptor =
       ApiMethodDescriptor.<PatchImageRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Images.Patch")
+          .setFullMethodName("google.cloud.compute.v1.Images/Patch")
           .setHttpMethod(HttpMethods.PATCH)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<PatchImageRequest>newBuilder()
@@ -435,8 +426,8 @@ public class HttpJsonImagesStub extends ImagesStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<PatchImageRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "image", request.getImage());
+                          serializer.putPathParam(fields, "project", request.getProject());
                           return fields;
                         }
                       })
@@ -468,11 +459,10 @@ public class HttpJsonImagesStub extends ImagesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetIamPolicyImageRequest, Policy>
+  private static final ApiMethodDescriptor<SetIamPolicyImageRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyImageRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Images.SetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.Images/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyImageRequest>newBuilder()
@@ -498,7 +488,6 @@ public class HttpJsonImagesStub extends ImagesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetIamPolicyImageRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -519,11 +508,10 @@ public class HttpJsonImagesStub extends ImagesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetLabelsImageRequest, Operation>
+  private static final ApiMethodDescriptor<SetLabelsImageRequest, Operation>
       setLabelsMethodDescriptor =
           ApiMethodDescriptor.<SetLabelsImageRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Images.SetLabels")
+              .setFullMethodName("google.cloud.compute.v1.Images/SetLabels")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetLabelsImageRequest>newBuilder()
@@ -548,7 +536,6 @@ public class HttpJsonImagesStub extends ImagesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetLabelsImageRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -569,11 +556,10 @@ public class HttpJsonImagesStub extends ImagesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<TestIamPermissionsImageRequest, TestPermissionsResponse>
+  private static final ApiMethodDescriptor<TestIamPermissionsImageRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           ApiMethodDescriptor.<TestIamPermissionsImageRequest, TestPermissionsResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Images.TestIamPermissions")
+              .setFullMethodName("google.cloud.compute.v1.Images/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsImageRequest>newBuilder()
@@ -601,7 +587,6 @@ public class HttpJsonImagesStub extends ImagesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<TestIamPermissionsImageRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -622,8 +607,6 @@ public class HttpJsonImagesStub extends ImagesStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteImageRequest, Operation> deleteCallable;
   private final UnaryCallable<DeprecateImageRequest, Operation> deprecateCallable;
   private final UnaryCallable<GetImageRequest, Image> getCallable;
@@ -638,6 +621,7 @@ public class HttpJsonImagesStub extends ImagesStub {
   private final UnaryCallable<TestIamPermissionsImageRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonImagesStub create(ImagesStubSettings settings) throws IOException {
@@ -762,53 +746,83 @@ public class HttpJsonImagesStub extends ImagesStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(deprecateMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getFromFamilyMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(setLabelsMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteImageRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<DeprecateImageRequest, Operation> deprecateCallable() {
     return deprecateCallable;
   }
 
+  @Override
   public UnaryCallable<GetImageRequest, Image> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetFromFamilyImageRequest, Image> getFromFamilyCallable() {
     return getFromFamilyCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyImageRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<InsertImageRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListImagesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListImagesRequest, ImageList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListImagesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchImageRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyImageRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetLabelsImageRequest, Operation> setLabelsCallable() {
     return setLabelsCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsImageRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

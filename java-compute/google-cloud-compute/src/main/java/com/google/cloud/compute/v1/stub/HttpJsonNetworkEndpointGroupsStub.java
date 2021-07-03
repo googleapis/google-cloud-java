@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.NetworkEndpointGroupsClient.AggregatedListPagedResponse;
@@ -49,30 +50,29 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.TestIamPermissionsNetworkEndpointGroupRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the NetworkEndpointGroups service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListNetworkEndpointGroupsRequest, NetworkEndpointGroupAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListNetworkEndpointGroupsRequest, NetworkEndpointGroupAggregatedList>
                   newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NetworkEndpointGroups.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.NetworkEndpointGroups/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -134,7 +134,7 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                             @Override
                             public String extract(
                                 AggregatedListNetworkEndpointGroupsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -144,14 +144,13 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AttachNetworkEndpointsNetworkEndpointGroupRequest, Operation>
       attachNetworkEndpointsMethodDescriptor =
           ApiMethodDescriptor
               .<AttachNetworkEndpointsNetworkEndpointGroupRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.NetworkEndpointGroups.AttachNetworkEndpoints")
+                  "google.cloud.compute.v1.NetworkEndpointGroups/AttachNetworkEndpoints")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -167,12 +166,12 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<AttachNetworkEndpointsNetworkEndpointGroupRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "networkEndpointGroup",
                                   request.getNetworkEndpointGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -213,11 +212,10 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteNetworkEndpointGroupRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteNetworkEndpointGroupRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteNetworkEndpointGroupRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NetworkEndpointGroups.Delete")
+              .setFullMethodName("google.cloud.compute.v1.NetworkEndpointGroups/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteNetworkEndpointGroupRequest>newBuilder()
@@ -231,12 +229,12 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteNetworkEndpointGroupRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "networkEndpointGroup",
                                   request.getNetworkEndpointGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -260,7 +258,7 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                           new FieldsExtractor<DeleteNetworkEndpointGroupRequest, String>() {
                             @Override
                             public String extract(DeleteNetworkEndpointGroupRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -270,14 +268,13 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           DetachNetworkEndpointsNetworkEndpointGroupRequest, Operation>
       detachNetworkEndpointsMethodDescriptor =
           ApiMethodDescriptor
               .<DetachNetworkEndpointsNetworkEndpointGroupRequest, Operation>newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.NetworkEndpointGroups.DetachNetworkEndpoints")
+                  "google.cloud.compute.v1.NetworkEndpointGroups/DetachNetworkEndpoints")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -293,12 +290,12 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DetachNetworkEndpointsNetworkEndpointGroupRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "networkEndpointGroup",
                                   request.getNetworkEndpointGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -339,11 +336,10 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetNetworkEndpointGroupRequest, NetworkEndpointGroup>
+  private static final ApiMethodDescriptor<GetNetworkEndpointGroupRequest, NetworkEndpointGroup>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetNetworkEndpointGroupRequest, NetworkEndpointGroup>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NetworkEndpointGroups.Get")
+              .setFullMethodName("google.cloud.compute.v1.NetworkEndpointGroups/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetNetworkEndpointGroupRequest>newBuilder()
@@ -357,12 +353,12 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetNetworkEndpointGroupRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "networkEndpointGroup",
                                   request.getNetworkEndpointGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -375,7 +371,6 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetNetworkEndpointGroupRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -383,7 +378,7 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                           new FieldsExtractor<GetNetworkEndpointGroupRequest, String>() {
                             @Override
                             public String extract(GetNetworkEndpointGroupRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -393,11 +388,10 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertNetworkEndpointGroupRequest, Operation>
+  private static final ApiMethodDescriptor<InsertNetworkEndpointGroupRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertNetworkEndpointGroupRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NetworkEndpointGroups.Insert")
+              .setFullMethodName("google.cloud.compute.v1.NetworkEndpointGroups/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertNetworkEndpointGroupRequest>newBuilder()
@@ -449,13 +443,12 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListNetworkEndpointGroupsRequest, NetworkEndpointGroupList>
       listMethodDescriptor =
           ApiMethodDescriptor
               .<ListNetworkEndpointGroupsRequest, NetworkEndpointGroupList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NetworkEndpointGroups.List")
+              .setFullMethodName("google.cloud.compute.v1.NetworkEndpointGroups/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListNetworkEndpointGroupsRequest>newBuilder()
@@ -510,7 +503,7 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                           new FieldsExtractor<ListNetworkEndpointGroupsRequest, String>() {
                             @Override
                             public String extract(ListNetworkEndpointGroupsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -520,8 +513,7 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListNetworkEndpointsNetworkEndpointGroupsRequest,
           NetworkEndpointGroupsListNetworkEndpoints>
       listNetworkEndpointsMethodDescriptor =
@@ -530,7 +522,7 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                   NetworkEndpointGroupsListNetworkEndpoints>
                   newBuilder()
               .setFullMethodName(
-                  "google.cloud.compute.v1.NetworkEndpointGroups.ListNetworkEndpoints")
+                  "google.cloud.compute.v1.NetworkEndpointGroups/ListNetworkEndpoints")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -546,12 +538,12 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<ListNetworkEndpointsNetworkEndpointGroupsRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields,
                                   "networkEndpointGroup",
                                   request.getNetworkEndpointGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -609,13 +601,12 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           TestIamPermissionsNetworkEndpointGroupRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           ApiMethodDescriptor
               .<TestIamPermissionsNetworkEndpointGroupRequest, TestPermissionsResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NetworkEndpointGroups.TestIamPermissions")
+              .setFullMethodName("google.cloud.compute.v1.NetworkEndpointGroups/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -632,8 +623,8 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                               ProtoRestSerializer<TestIamPermissionsNetworkEndpointGroupRequest>
                                   serializer = ProtoRestSerializer.create();
                               serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(fields, "resource", request.getResource());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -647,7 +638,6 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<TestIamPermissionsNetworkEndpointGroupRequest>
                                   serializer = ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -669,8 +659,6 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
                       .build())
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<
           AggregatedListNetworkEndpointGroupsRequest, NetworkEndpointGroupAggregatedList>
@@ -700,6 +688,7 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
           TestIamPermissionsNetworkEndpointGroupRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonNetworkEndpointGroupsStub create(
@@ -845,56 +834,76 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListNetworkEndpointGroupsRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(attachNetworkEndpointsMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(detachNetworkEndpointsMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(listNetworkEndpointsMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<
           AggregatedListNetworkEndpointGroupsRequest, NetworkEndpointGroupAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListNetworkEndpointGroupsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<AttachNetworkEndpointsNetworkEndpointGroupRequest, Operation>
       attachNetworkEndpointsCallable() {
     return attachNetworkEndpointsCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteNetworkEndpointGroupRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<DetachNetworkEndpointsNetworkEndpointGroupRequest, Operation>
       detachNetworkEndpointsCallable() {
     return detachNetworkEndpointsCallable;
   }
 
+  @Override
   public UnaryCallable<GetNetworkEndpointGroupRequest, NetworkEndpointGroup> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertNetworkEndpointGroupRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListNetworkEndpointGroupsRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListNetworkEndpointGroupsRequest, NetworkEndpointGroupList> listCallable() {
     return listCallable;
   }
 
-  public UnaryCallable<
-          ListNetworkEndpointsNetworkEndpointGroupsRequest, ListNetworkEndpointsPagedResponse>
-      listNetworkEndpointsPagedCallable() {
-    return listNetworkEndpointsPagedCallable;
+  @Override
+  public UnaryCallable<ListNetworkEndpointGroupsRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListNetworkEndpointsNetworkEndpointGroupsRequest,
           NetworkEndpointGroupsListNetworkEndpoints>
@@ -902,6 +911,14 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
     return listNetworkEndpointsCallable;
   }
 
+  @Override
+  public UnaryCallable<
+          ListNetworkEndpointsNetworkEndpointGroupsRequest, ListNetworkEndpointsPagedResponse>
+      listNetworkEndpointsPagedCallable() {
+    return listNetworkEndpointsPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<TestIamPermissionsNetworkEndpointGroupRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

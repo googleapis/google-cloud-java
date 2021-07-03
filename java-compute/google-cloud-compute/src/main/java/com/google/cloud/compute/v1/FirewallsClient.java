@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,24 +34,22 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The Firewalls API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
- *   String project = "";
- *   String firewall = "";
+ *   String project = "project-309310695";
+ *   String firewall = "firewall-562725632";
  *   Operation response = firewallsClient.delete(project, firewall);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the firewallsClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the FirewallsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -78,30 +77,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * FirewallsSettings firewallsSettings =
  *     FirewallsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * FirewallsClient firewallsClient =
- *     FirewallsClient.create(firewallsSettings);
- * </code>
- * </pre>
+ * FirewallsClient firewallsClient = FirewallsClient.create(firewallsSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * FirewallsSettings firewallsSettings =
  *     FirewallsSettings.newBuilder().setEndpoint(myEndpoint).build();
- * FirewallsClient firewallsClient =
- *     FirewallsClient.create(firewallsSettings);
- * </code>
- * </pre>
+ * FirewallsClient firewallsClient = FirewallsClient.create(firewallsSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class FirewallsClient implements BackgroundResource {
   private final FirewallsSettings settings;
   private final FirewallsStub stub;
@@ -121,7 +115,7 @@ public class FirewallsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of FirewallsClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use FirewallsSettings}.
+   * advanced usage - prefer using create(FirewallsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final FirewallsClient create(FirewallsStub stub) {
@@ -152,19 +146,19 @@ public class FirewallsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified firewall.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   String project = "";
-   *   String firewall = "";
+   *   String project = "project-309310695";
+   *   String firewall = "firewall-562725632";
    *   Operation response = firewallsClient.delete(project, firewall);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param firewall Name of the firewall rule to delete.
@@ -176,23 +170,23 @@ public class FirewallsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified firewall.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   String firewall = "";
-   *   String project = "";
-   *   DeleteFirewallRequest request = DeleteFirewallRequest.newBuilder()
-   *     .setFirewall(firewall)
-   *     .setProject(project)
-   *     .build();
+   *   DeleteFirewallRequest request =
+   *       DeleteFirewallRequest.newBuilder()
+   *           .setFirewall("firewall-562725632")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = firewallsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -201,43 +195,43 @@ public class FirewallsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified firewall.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   String firewall = "";
-   *   String project = "";
-   *   DeleteFirewallRequest request = DeleteFirewallRequest.newBuilder()
-   *     .setFirewall(firewall)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = firewallsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteFirewallRequest request =
+   *       DeleteFirewallRequest.newBuilder()
+   *           .setFirewall("firewall-562725632")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = firewallsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteFirewallRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified firewall.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   String project = "";
-   *   String firewall = "";
+   *   String project = "project-309310695";
+   *   String firewall = "firewall-562725632";
    *   Firewall response = firewallsClient.get(project, firewall);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param firewall Name of the firewall rule to return.
@@ -249,23 +243,22 @@ public class FirewallsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified firewall.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   String firewall = "";
-   *   String project = "";
-   *   GetFirewallRequest request = GetFirewallRequest.newBuilder()
-   *     .setFirewall(firewall)
-   *     .setProject(project)
-   *     .build();
+   *   GetFirewallRequest request =
+   *       GetFirewallRequest.newBuilder()
+   *           .setFirewall("firewall-562725632")
+   *           .setProject("project-309310695")
+   *           .build();
    *   Firewall response = firewallsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -274,43 +267,42 @@ public class FirewallsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified firewall.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   String firewall = "";
-   *   String project = "";
-   *   GetFirewallRequest request = GetFirewallRequest.newBuilder()
-   *     .setFirewall(firewall)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Firewall&gt; future = firewallsClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetFirewallRequest request =
+   *       GetFirewallRequest.newBuilder()
+   *           .setFirewall("firewall-562725632")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<Firewall> future = firewallsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   Firewall response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetFirewallRequest, Firewall> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a firewall rule in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   Operation response = firewallsClient.insert(project, firewallResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param firewallResource The body resource for this request
@@ -325,23 +317,23 @@ public class FirewallsClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a firewall rule in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   Firewall firewallResource = Firewall.newBuilder().build();
-   *   String project = "";
-   *   InsertFirewallRequest request = InsertFirewallRequest.newBuilder()
-   *     .setFirewallResource(firewallResource)
-   *     .setProject(project)
-   *     .build();
+   *   InsertFirewallRequest request =
+   *       InsertFirewallRequest.newBuilder()
+   *           .setFirewallResource(Firewall.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = firewallsClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -350,44 +342,44 @@ public class FirewallsClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a firewall rule in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   Firewall firewallResource = Firewall.newBuilder().build();
-   *   String project = "";
-   *   InsertFirewallRequest request = InsertFirewallRequest.newBuilder()
-   *     .setFirewallResource(firewallResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = firewallsClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertFirewallRequest request =
+   *       InsertFirewallRequest.newBuilder()
+   *           .setFirewallResource(Firewall.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = firewallsClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertFirewallRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of firewall rules available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (Firewall element : firewallsClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -397,23 +389,28 @@ public class FirewallsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of firewall rules available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   String project = "";
-   *   ListFirewallsRequest request = ListFirewallsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListFirewallsRequest request =
+   *       ListFirewallsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (Firewall element : firewallsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -422,45 +419,55 @@ public class FirewallsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of firewall rules available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   String project = "";
-   *   ListFirewallsRequest request = ListFirewallsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = firewallsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListFirewallsRequest request =
+   *       ListFirewallsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Firewall> future = firewallsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Firewall element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListFirewallsRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of firewall rules available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   String project = "";
-   *   ListFirewallsRequest request = ListFirewallsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListFirewallsRequest request =
+   *       ListFirewallsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     FirewallList response = firewallsClient.listCallable().call(request);
-   *     for (Firewall element : response.getItemsList()) {
+   *     for (Firewall element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -471,27 +478,27 @@ public class FirewallsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListFirewallsRequest, FirewallList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified firewall rule with the data included in the request. This method supports
    * PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   String project = "";
-   *   String firewall = "";
+   *   String project = "project-309310695";
+   *   String firewall = "firewall-562725632";
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   Operation response = firewallsClient.patch(project, firewall, firewallResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param firewall Name of the firewall rule to patch.
@@ -508,26 +515,25 @@ public class FirewallsClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified firewall rule with the data included in the request. This method supports
    * PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   String firewall = "";
-   *   Firewall firewallResource = Firewall.newBuilder().build();
-   *   String project = "";
-   *   PatchFirewallRequest request = PatchFirewallRequest.newBuilder()
-   *     .setFirewall(firewall)
-   *     .setFirewallResource(firewallResource)
-   *     .setProject(project)
-   *     .build();
+   *   PatchFirewallRequest request =
+   *       PatchFirewallRequest.newBuilder()
+   *           .setFirewall("firewall-562725632")
+   *           .setFirewallResource(Firewall.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = firewallsClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -536,34 +542,33 @@ public class FirewallsClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified firewall rule with the data included in the request. This method supports
    * PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   String firewall = "";
-   *   Firewall firewallResource = Firewall.newBuilder().build();
-   *   String project = "";
-   *   PatchFirewallRequest request = PatchFirewallRequest.newBuilder()
-   *     .setFirewall(firewall)
-   *     .setFirewallResource(firewallResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = firewallsClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchFirewallRequest request =
+   *       PatchFirewallRequest.newBuilder()
+   *           .setFirewall("firewall-562725632")
+   *           .setFirewallResource(Firewall.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = firewallsClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchFirewallRequest, Operation> patchCallable() {
     return stub.patchCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified firewall rule with the data included in the request. Note that all fields
    * will be updated if using PUT, even fields that are not specified. To update individual fields,
@@ -571,14 +576,14 @@ public class FirewallsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   String project = "";
-   *   String firewall = "";
+   *   String project = "project-309310695";
+   *   String firewall = "firewall-562725632";
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   Operation response = firewallsClient.update(project, firewall, firewallResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param firewall Name of the firewall rule to update.
@@ -595,7 +600,7 @@ public class FirewallsClient implements BackgroundResource {
     return update(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified firewall rule with the data included in the request. Note that all fields
    * will be updated if using PUT, even fields that are not specified. To update individual fields,
@@ -603,19 +608,18 @@ public class FirewallsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   String firewall = "";
-   *   Firewall firewallResource = Firewall.newBuilder().build();
-   *   String project = "";
-   *   UpdateFirewallRequest request = UpdateFirewallRequest.newBuilder()
-   *     .setFirewall(firewall)
-   *     .setFirewallResource(firewallResource)
-   *     .setProject(project)
-   *     .build();
+   *   UpdateFirewallRequest request =
+   *       UpdateFirewallRequest.newBuilder()
+   *           .setFirewall("firewall-562725632")
+   *           .setFirewallResource(Firewall.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = firewallsClient.update(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -624,7 +628,7 @@ public class FirewallsClient implements BackgroundResource {
     return updateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified firewall rule with the data included in the request. Note that all fields
    * will be updated if using PUT, even fields that are not specified. To update individual fields,
@@ -632,21 +636,20 @@ public class FirewallsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
-   *   String firewall = "";
-   *   Firewall firewallResource = Firewall.newBuilder().build();
-   *   String project = "";
-   *   UpdateFirewallRequest request = UpdateFirewallRequest.newBuilder()
-   *     .setFirewall(firewall)
-   *     .setFirewallResource(firewallResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = firewallsClient.updateCallable().futureCall(request);
-   *   // Do something
+   *   UpdateFirewallRequest request =
+   *       UpdateFirewallRequest.newBuilder()
+   *           .setFirewall("firewall-562725632")
+   *           .setFirewallResource(Firewall.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = firewallsClient.updateCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdateFirewallRequest, Operation> updateCallable() {
     return stub.updateCallable();

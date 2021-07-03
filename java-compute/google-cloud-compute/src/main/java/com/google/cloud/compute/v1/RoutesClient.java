@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,24 +34,22 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The Routes API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (RoutesClient routesClient = RoutesClient.create()) {
- *   String project = "";
- *   String route = "";
+ *   String project = "project-309310695";
+ *   String route = "route108704329";
  *   Operation response = routesClient.delete(project, route);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the routesClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the RoutesClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -78,30 +77,24 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RoutesSettings routesSettings =
  *     RoutesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * RoutesClient routesClient =
- *     RoutesClient.create(routesSettings);
- * </code>
- * </pre>
+ * RoutesClient routesClient = RoutesClient.create(routesSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
- * RoutesSettings routesSettings =
- *     RoutesSettings.newBuilder().setEndpoint(myEndpoint).build();
- * RoutesClient routesClient =
- *     RoutesClient.create(routesSettings);
- * </code>
- * </pre>
+ * <pre>{@code
+ * RoutesSettings routesSettings = RoutesSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * RoutesClient routesClient = RoutesClient.create(routesSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RoutesClient implements BackgroundResource {
   private final RoutesSettings settings;
   private final RoutesStub stub;
@@ -121,7 +114,7 @@ public class RoutesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of RoutesClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use RoutesSettings}.
+   * advanced usage - prefer using create(RoutesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RoutesClient create(RoutesStub stub) {
@@ -152,19 +145,19 @@ public class RoutesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Route resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutesClient routesClient = RoutesClient.create()) {
-   *   String project = "";
-   *   String route = "";
+   *   String project = "project-309310695";
+   *   String route = "route108704329";
    *   Operation response = routesClient.delete(project, route);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param route Name of the Route resource to delete.
@@ -176,23 +169,23 @@ public class RoutesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Route resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutesClient routesClient = RoutesClient.create()) {
-   *   String project = "";
-   *   String route = "";
-   *   DeleteRouteRequest request = DeleteRouteRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRoute(route)
-   *     .build();
+   *   DeleteRouteRequest request =
+   *       DeleteRouteRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setRoute("route108704329")
+   *           .build();
    *   Operation response = routesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -201,44 +194,44 @@ public class RoutesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Route resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutesClient routesClient = RoutesClient.create()) {
-   *   String project = "";
-   *   String route = "";
-   *   DeleteRouteRequest request = DeleteRouteRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRoute(route)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = routesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteRouteRequest request =
+   *       DeleteRouteRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setRoute("route108704329")
+   *           .build();
+   *   ApiFuture<Operation> future = routesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteRouteRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified Route resource. Gets a list of available routes by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutesClient routesClient = RoutesClient.create()) {
-   *   String project = "";
-   *   String route = "";
+   *   String project = "project-309310695";
+   *   String route = "route108704329";
    *   Route response = routesClient.get(project, route);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param route Name of the Route resource to return.
@@ -250,24 +243,23 @@ public class RoutesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified Route resource. Gets a list of available routes by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutesClient routesClient = RoutesClient.create()) {
-   *   String project = "";
-   *   String route = "";
-   *   GetRouteRequest request = GetRouteRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRoute(route)
-   *     .build();
+   *   GetRouteRequest request =
+   *       GetRouteRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRoute("route108704329")
+   *           .build();
    *   Route response = routesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -276,44 +268,43 @@ public class RoutesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified Route resource. Gets a list of available routes by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutesClient routesClient = RoutesClient.create()) {
-   *   String project = "";
-   *   String route = "";
-   *   GetRouteRequest request = GetRouteRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRoute(route)
-   *     .build();
-   *   ApiFuture&lt;Route&gt; future = routesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetRouteRequest request =
+   *       GetRouteRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRoute("route108704329")
+   *           .build();
+   *   ApiFuture<Route> future = routesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   Route response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetRouteRequest, Route> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Route resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutesClient routesClient = RoutesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   Route routeResource = Route.newBuilder().build();
    *   Operation response = routesClient.insert(project, routeResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param routeResource The body resource for this request
@@ -325,23 +316,23 @@ public class RoutesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Route resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutesClient routesClient = RoutesClient.create()) {
-   *   String project = "";
-   *   Route routeResource = Route.newBuilder().build();
-   *   InsertRouteRequest request = InsertRouteRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRouteResource(routeResource)
-   *     .build();
+   *   InsertRouteRequest request =
+   *       InsertRouteRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setRouteResource(Route.newBuilder().build())
+   *           .build();
    *   Operation response = routesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -350,44 +341,44 @@ public class RoutesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Route resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutesClient routesClient = RoutesClient.create()) {
-   *   String project = "";
-   *   Route routeResource = Route.newBuilder().build();
-   *   InsertRouteRequest request = InsertRouteRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRouteResource(routeResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = routesClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertRouteRequest request =
+   *       InsertRouteRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setRouteResource(Route.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = routesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertRouteRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of Route resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutesClient routesClient = RoutesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (Route element : routesClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -397,23 +388,28 @@ public class RoutesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of Route resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutesClient routesClient = RoutesClient.create()) {
-   *   String project = "";
-   *   ListRoutesRequest request = ListRoutesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListRoutesRequest request =
+   *       ListRoutesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (Route element : routesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -422,45 +418,55 @@ public class RoutesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of Route resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutesClient routesClient = RoutesClient.create()) {
-   *   String project = "";
-   *   ListRoutesRequest request = ListRoutesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = routesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListRoutesRequest request =
+   *       ListRoutesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Route> future = routesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Route element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRoutesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of Route resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoutesClient routesClient = RoutesClient.create()) {
-   *   String project = "";
-   *   ListRoutesRequest request = ListRoutesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListRoutesRequest request =
+   *       ListRoutesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     RouteList response = routesClient.listCallable().call(request);
-   *     for (Route element : response.getItemsList()) {
+   *     for (Route element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -471,7 +477,7 @@ public class RoutesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRoutesRequest, RouteList> listCallable() {
     return stub.listCallable();

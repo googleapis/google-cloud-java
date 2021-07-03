@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.DiskTypesClient.AggregatedListPagedResponse;
@@ -52,12 +53,13 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link DiskTypesStub}.
  *
@@ -74,29 +76,28 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of get to 30 seconds:
  *
- * <pre>
- * <code>
- * DiskTypesStubSettings.Builder diskTypesSettingsBuilder =
- *     DiskTypesStubSettings.newBuilder();
+ * <pre>{@code
+ * DiskTypesStubSettings.Builder diskTypesSettingsBuilder = DiskTypesStubSettings.newBuilder();
  * diskTypesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         diskTypesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         diskTypesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DiskTypesStubSettings diskTypesSettings = diskTypesSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class DiskTypesStubSettings extends StubSettings<DiskTypesStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/cloud-platform")
-          .add("https://www.googleapis.com/auth/compute")
           .add("https://www.googleapis.com/auth/compute.readonly")
+          .add("https://www.googleapis.com/auth/compute")
+          .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
   private final PagedCallSettings<
@@ -105,6 +106,128 @@ public class DiskTypesStubSettings extends StubSettings<DiskTypesStubSettings> {
   private final UnaryCallSettings<GetDiskTypeRequest, DiskType> getSettings;
   private final PagedCallSettings<ListDiskTypesRequest, DiskTypeList, ListPagedResponse>
       listSettings;
+
+  private static final PagedListDescriptor<
+          AggregatedListDiskTypesRequest,
+          DiskTypeAggregatedList,
+          Map.Entry<String, DiskTypesScopedList>>
+      AGGREGATED_LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListDiskTypesRequest,
+              DiskTypeAggregatedList,
+              Map.Entry<String, DiskTypesScopedList>>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListDiskTypesRequest injectToken(
+                AggregatedListDiskTypesRequest payload, String token) {
+              return AggregatedListDiskTypesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public AggregatedListDiskTypesRequest injectPageSize(
+                AggregatedListDiskTypesRequest payload, int pageSize) {
+              return AggregatedListDiskTypesRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregatedListDiskTypesRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(DiskTypeAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Map.Entry<String, DiskTypesScopedList>> extractResources(
+                DiskTypeAggregatedList payload) {
+              return payload.getItemsMap() == null
+                  ? Collections.<Map.Entry<String, DiskTypesScopedList>>emptySet()
+                  : payload.getItemsMap().entrySet();
+            }
+          };
+
+  private static final PagedListDescriptor<ListDiskTypesRequest, DiskTypeList, DiskType>
+      LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<ListDiskTypesRequest, DiskTypeList, DiskType>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDiskTypesRequest injectToken(ListDiskTypesRequest payload, String token) {
+              return ListDiskTypesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDiskTypesRequest injectPageSize(ListDiskTypesRequest payload, int pageSize) {
+              return ListDiskTypesRequest.newBuilder(payload).setMaxResults(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDiskTypesRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(DiskTypeList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DiskType> extractResources(DiskTypeList payload) {
+              return payload.getItemsList() == null
+                  ? ImmutableList.<DiskType>of()
+                  : payload.getItemsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          AggregatedListDiskTypesRequest, DiskTypeAggregatedList, AggregatedListPagedResponse>
+      AGGREGATED_LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListDiskTypesRequest,
+              DiskTypeAggregatedList,
+              AggregatedListPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<AggregatedListDiskTypesRequest, DiskTypeAggregatedList> callable,
+                AggregatedListDiskTypesRequest request,
+                ApiCallContext context,
+                ApiFuture<DiskTypeAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListDiskTypesRequest,
+                      DiskTypeAggregatedList,
+                      Map.Entry<String, DiskTypesScopedList>>
+                  pageContext =
+                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
+              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDiskTypesRequest, DiskTypeList, ListPagedResponse>
+      LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<ListDiskTypesRequest, DiskTypeList, ListPagedResponse>() {
+            @Override
+            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDiskTypesRequest, DiskTypeList> callable,
+                ListDiskTypesRequest request,
+                ApiCallContext context,
+                ApiFuture<DiskTypeList> futureResponse) {
+              PageContext<ListDiskTypesRequest, DiskTypeList, DiskType> pageContext =
+                  PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
+              return ListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to aggregatedList. */
   public PagedCallSettings<
@@ -129,10 +252,10 @@ public class DiskTypesStubSettings extends StubSettings<DiskTypesStubSettings> {
         .getTransportName()
         .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
       return HttpJsonDiskTypesStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -142,12 +265,12 @@ public class DiskTypesStubSettings extends StubSettings<DiskTypesStubSettings> {
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "compute.googleapis.com";
+    return "compute.googleapis.com:443";
   }
 
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return 443;
+  /** Returns the default mTLS service endpoint. */
+  public static String getDefaultMtlsEndpoint() {
+    return "compute.mtls.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -202,139 +325,15 @@ public class DiskTypesStubSettings extends StubSettings<DiskTypesStubSettings> {
     listSettings = settingsBuilder.listSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          AggregatedListDiskTypesRequest,
-          DiskTypeAggregatedList,
-          Entry<String, DiskTypesScopedList>>
-      AGGREGATED_LIST_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              AggregatedListDiskTypesRequest,
-              DiskTypeAggregatedList,
-              Entry<String, DiskTypesScopedList>>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public AggregatedListDiskTypesRequest injectToken(
-                AggregatedListDiskTypesRequest payload, String token) {
-              return AggregatedListDiskTypesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public AggregatedListDiskTypesRequest injectPageSize(
-                AggregatedListDiskTypesRequest payload, int pageSize) {
-              return AggregatedListDiskTypesRequest.newBuilder(payload)
-                  .setMaxResults(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(AggregatedListDiskTypesRequest payload) {
-              return payload.getMaxResults();
-            }
-
-            @Override
-            public String extractNextToken(DiskTypeAggregatedList payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Entry<String, DiskTypesScopedList>> extractResources(
-                DiskTypeAggregatedList payload) {
-              return payload.getItemsMap() != null
-                  ? payload.getItemsMap().entrySet()
-                  : ImmutableList.<Entry<String, DiskTypesScopedList>>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListDiskTypesRequest, DiskTypeList, DiskType>
-      LIST_PAGE_STR_DESC =
-          new PagedListDescriptor<ListDiskTypesRequest, DiskTypeList, DiskType>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListDiskTypesRequest injectToken(ListDiskTypesRequest payload, String token) {
-              return ListDiskTypesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListDiskTypesRequest injectPageSize(ListDiskTypesRequest payload, int pageSize) {
-              return ListDiskTypesRequest.newBuilder(payload).setMaxResults(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListDiskTypesRequest payload) {
-              return payload.getMaxResults();
-            }
-
-            @Override
-            public String extractNextToken(DiskTypeList payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<DiskType> extractResources(DiskTypeList payload) {
-              return payload.getItemsList() != null
-                  ? payload.getItemsList()
-                  : ImmutableList.<DiskType>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          AggregatedListDiskTypesRequest, DiskTypeAggregatedList, AggregatedListPagedResponse>
-      AGGREGATED_LIST_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              AggregatedListDiskTypesRequest,
-              DiskTypeAggregatedList,
-              AggregatedListPagedResponse>() {
-            @Override
-            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
-                UnaryCallable<AggregatedListDiskTypesRequest, DiskTypeAggregatedList> callable,
-                AggregatedListDiskTypesRequest request,
-                ApiCallContext context,
-                ApiFuture<DiskTypeAggregatedList> futureResponse) {
-              PageContext<
-                      AggregatedListDiskTypesRequest,
-                      DiskTypeAggregatedList,
-                      Entry<String, DiskTypesScopedList>>
-                  pageContext =
-                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
-              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListDiskTypesRequest, DiskTypeList, ListPagedResponse>
-      LIST_PAGE_STR_FACT =
-          new PagedListResponseFactory<ListDiskTypesRequest, DiskTypeList, ListPagedResponse>() {
-            @Override
-            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListDiskTypesRequest, DiskTypeList> callable,
-                ListDiskTypesRequest request,
-                ApiCallContext context,
-                ApiFuture<DiskTypeList> futureResponse) {
-              PageContext<ListDiskTypesRequest, DiskTypeList, DiskType> pageContext =
-                  PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
-              return ListPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for DiskTypesStubSettings. */
   public static class Builder extends StubSettings.Builder<DiskTypesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             AggregatedListDiskTypesRequest, DiskTypeAggregatedList, AggregatedListPagedResponse>
         aggregatedListSettings;
     private final UnaryCallSettings.Builder<GetDiskTypeRequest, DiskType> getSettings;
     private final PagedCallSettings.Builder<ListDiskTypesRequest, DiskTypeList, ListPagedResponse>
         listSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -342,11 +341,10 @@ public class DiskTypesStubSettings extends StubSettings<DiskTypesStubSettings> {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -360,62 +358,30 @@ public class DiskTypesStubSettings extends StubSettings<DiskTypesStubSettings> {
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
-
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               aggregatedListSettings, getSettings, listSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .aggregatedListSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      return builder;
     }
 
     protected Builder(DiskTypesStubSettings settings) {
@@ -430,7 +396,39 @@ public class DiskTypesStubSettings extends StubSettings<DiskTypesStubSettings> {
               aggregatedListSettings, getSettings, listSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .aggregatedListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

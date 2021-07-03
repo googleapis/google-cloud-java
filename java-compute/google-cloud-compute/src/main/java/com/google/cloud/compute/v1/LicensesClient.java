@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,24 +34,22 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The Licenses API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (LicensesClient licensesClient = LicensesClient.create()) {
- *   String project = "";
- *   String license = "";
+ *   String project = "project-309310695";
+ *   String license = "license166757441";
  *   Operation response = licensesClient.delete(project, license);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the licensesClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the LicensesClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -78,30 +77,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * LicensesSettings licensesSettings =
  *     LicensesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * LicensesClient licensesClient =
- *     LicensesClient.create(licensesSettings);
- * </code>
- * </pre>
+ * LicensesClient licensesClient = LicensesClient.create(licensesSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * LicensesSettings licensesSettings =
  *     LicensesSettings.newBuilder().setEndpoint(myEndpoint).build();
- * LicensesClient licensesClient =
- *     LicensesClient.create(licensesSettings);
- * </code>
- * </pre>
+ * LicensesClient licensesClient = LicensesClient.create(licensesSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class LicensesClient implements BackgroundResource {
   private final LicensesSettings settings;
   private final LicensesStub stub;
@@ -121,7 +115,7 @@ public class LicensesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of LicensesClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use LicensesSettings}.
+   * advanced usage - prefer using create(LicensesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final LicensesClient create(LicensesStub stub) {
@@ -152,20 +146,20 @@ public class LicensesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified license. Caution This resource is intended for use only by third-party
    * partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   String project = "";
-   *   String license = "";
+   *   String project = "project-309310695";
+   *   String license = "license166757441";
    *   Operation response = licensesClient.delete(project, license);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param license Name of the license resource to delete.
@@ -177,24 +171,24 @@ public class LicensesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified license. Caution This resource is intended for use only by third-party
    * partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   String license = "";
-   *   String project = "";
-   *   DeleteLicenseRequest request = DeleteLicenseRequest.newBuilder()
-   *     .setLicense(license)
-   *     .setProject(project)
-   *     .build();
+   *   DeleteLicenseRequest request =
+   *       DeleteLicenseRequest.newBuilder()
+   *           .setLicense("license166757441")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = licensesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -203,45 +197,45 @@ public class LicensesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified license. Caution This resource is intended for use only by third-party
    * partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   String license = "";
-   *   String project = "";
-   *   DeleteLicenseRequest request = DeleteLicenseRequest.newBuilder()
-   *     .setLicense(license)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = licensesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteLicenseRequest request =
+   *       DeleteLicenseRequest.newBuilder()
+   *           .setLicense("license166757441")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = licensesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteLicenseRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified License resource. Caution This resource is intended for use only by
    * third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   String project = "";
-   *   String license = "";
+   *   String project = "project-309310695";
+   *   String license = "license166757441";
    *   License response = licensesClient.get(project, license);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param license Name of the License resource to return.
@@ -253,24 +247,23 @@ public class LicensesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified License resource. Caution This resource is intended for use only by
    * third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   String license = "";
-   *   String project = "";
-   *   GetLicenseRequest request = GetLicenseRequest.newBuilder()
-   *     .setLicense(license)
-   *     .setProject(project)
-   *     .build();
+   *   GetLicenseRequest request =
+   *       GetLicenseRequest.newBuilder()
+   *           .setLicense("license166757441")
+   *           .setProject("project-309310695")
+   *           .build();
    *   License response = licensesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -279,32 +272,31 @@ public class LicensesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified License resource. Caution This resource is intended for use only by
    * third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   String license = "";
-   *   String project = "";
-   *   GetLicenseRequest request = GetLicenseRequest.newBuilder()
-   *     .setLicense(license)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;License&gt; future = licensesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetLicenseRequest request =
+   *       GetLicenseRequest.newBuilder()
+   *           .setLicense("license166757441")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<License> future = licensesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   License response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetLicenseRequest, License> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists. Caution This resource is intended for use only by third-party partners who are creating
@@ -312,13 +304,13 @@ public class LicensesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
    *   Policy response = licensesClient.getIamPolicy(project, resource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
@@ -330,7 +322,7 @@ public class LicensesClient implements BackgroundResource {
     return getIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists. Caution This resource is intended for use only by third-party partners who are creating
@@ -338,17 +330,17 @@ public class LicensesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   GetIamPolicyLicenseRequest request = GetIamPolicyLicenseRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .build();
+   *   GetIamPolicyLicenseRequest request =
+   *       GetIamPolicyLicenseRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
    *   Policy response = licensesClient.getIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -357,7 +349,7 @@ public class LicensesClient implements BackgroundResource {
     return getIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists. Caution This resource is intended for use only by third-party partners who are creating
@@ -365,38 +357,38 @@ public class LicensesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   GetIamPolicyLicenseRequest request = GetIamPolicyLicenseRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = licensesClient.getIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   GetIamPolicyLicenseRequest request =
+   *       GetIamPolicyLicenseRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future = licensesClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyLicenseRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create a License resource in the specified project. Caution This resource is intended for use
    * only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   License licenseResource = License.newBuilder().build();
    *   Operation response = licensesClient.insert(project, licenseResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param licenseResource The body resource for this request
@@ -411,24 +403,24 @@ public class LicensesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create a License resource in the specified project. Caution This resource is intended for use
    * only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   License licenseResource = License.newBuilder().build();
-   *   String project = "";
-   *   InsertLicenseRequest request = InsertLicenseRequest.newBuilder()
-   *     .setLicenseResource(licenseResource)
-   *     .setProject(project)
-   *     .build();
+   *   InsertLicenseRequest request =
+   *       InsertLicenseRequest.newBuilder()
+   *           .setLicenseResource(License.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = licensesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -437,32 +429,32 @@ public class LicensesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create a License resource in the specified project. Caution This resource is intended for use
    * only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   License licenseResource = License.newBuilder().build();
-   *   String project = "";
-   *   InsertLicenseRequest request = InsertLicenseRequest.newBuilder()
-   *     .setLicenseResource(licenseResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = licensesClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertLicenseRequest request =
+   *       InsertLicenseRequest.newBuilder()
+   *           .setLicenseResource(License.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = licensesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertLicenseRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of licenses available in the specified project. This method does not get any
    * licenses that belong to other projects, including licenses attached to publicly-available
@@ -473,14 +465,14 @@ public class LicensesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (License element : licensesClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -490,7 +482,7 @@ public class LicensesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of licenses available in the specified project. This method does not get any
    * licenses that belong to other projects, including licenses attached to publicly-available
@@ -501,17 +493,22 @@ public class LicensesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   String project = "";
-   *   ListLicensesRequest request = ListLicensesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListLicensesRequest request =
+   *       ListLicensesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (License element : licensesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -520,7 +517,7 @@ public class LicensesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of licenses available in the specified project. This method does not get any
    * licenses that belong to other projects, including licenses attached to publicly-available
@@ -531,25 +528,30 @@ public class LicensesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   String project = "";
-   *   ListLicensesRequest request = ListLicensesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = licensesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListLicensesRequest request =
+   *       ListLicensesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<License> future = licensesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (License element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListLicensesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of licenses available in the specified project. This method does not get any
    * licenses that belong to other projects, including licenses attached to publicly-available
@@ -560,15 +562,20 @@ public class LicensesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   String project = "";
-   *   ListLicensesRequest request = ListLicensesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListLicensesRequest request =
+   *       ListLicensesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     LicensesListResponse response = licensesClient.listCallable().call(request);
-   *     for (License element : response.getItemsList()) {
+   *     for (License element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -579,13 +586,13 @@ public class LicensesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListLicensesRequest, LicensesListResponse> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy. Caution
    * This resource is intended for use only by third-party partners who are creating Cloud
@@ -593,14 +600,16 @@ public class LicensesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
-   *   Policy response = licensesClient.setIamPolicy(project, resource, globalSetPolicyRequestResource);
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource =
+   *       GlobalSetPolicyRequest.newBuilder().build();
+   *   Policy response =
+   *       licensesClient.setIamPolicy(project, resource, globalSetPolicyRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
@@ -618,7 +627,7 @@ public class LicensesClient implements BackgroundResource {
     return setIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy. Caution
    * This resource is intended for use only by third-party partners who are creating Cloud
@@ -626,19 +635,17 @@ public class LicensesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
-   *   String project = "";
-   *   String resource = "";
-   *   SetIamPolicyLicenseRequest request = SetIamPolicyLicenseRequest.newBuilder()
-   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .build();
+   *   SetIamPolicyLicenseRequest request =
+   *       SetIamPolicyLicenseRequest.newBuilder()
+   *           .setGlobalSetPolicyRequestResource(GlobalSetPolicyRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
    *   Policy response = licensesClient.setIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -647,7 +654,7 @@ public class LicensesClient implements BackgroundResource {
     return setIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy. Caution
    * This resource is intended for use only by third-party partners who are creating Cloud
@@ -655,41 +662,41 @@ public class LicensesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
-   *   String project = "";
-   *   String resource = "";
-   *   SetIamPolicyLicenseRequest request = SetIamPolicyLicenseRequest.newBuilder()
-   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = licensesClient.setIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   SetIamPolicyLicenseRequest request =
+   *       SetIamPolicyLicenseRequest.newBuilder()
+   *           .setGlobalSetPolicyRequestResource(GlobalSetPolicyRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future = licensesClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyLicenseRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource. Caution This resource is
    * intended for use only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestPermissionsResponse response = licensesClient.testIamPermissions(project, resource, testPermissionsRequestResource);
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       licensesClient.testIamPermissions(project, resource, testPermissionsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
@@ -707,26 +714,24 @@ public class LicensesClient implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource. Caution This resource is
    * intended for use only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsLicenseRequest request = TestIamPermissionsLicenseRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
+   *   TestIamPermissionsLicenseRequest request =
+   *       TestIamPermissionsLicenseRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
    *   TestPermissionsResponse response = licensesClient.testIamPermissions(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -736,28 +741,27 @@ public class LicensesClient implements BackgroundResource {
     return testIamPermissionsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource. Caution This resource is
    * intended for use only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicensesClient licensesClient = LicensesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsLicenseRequest request = TestIamPermissionsLicenseRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
-   *   ApiFuture&lt;TestPermissionsResponse&gt; future = licensesClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
+   *   TestIamPermissionsLicenseRequest request =
+   *       TestIamPermissionsLicenseRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       licensesClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
    *   TestPermissionsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsLicenseRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {

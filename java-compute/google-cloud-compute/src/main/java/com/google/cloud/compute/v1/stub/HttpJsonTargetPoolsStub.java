@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.TargetPoolsClient.AggregatedListPagedResponse;
@@ -49,27 +50,26 @@ import com.google.cloud.compute.v1.TargetPoolAggregatedList;
 import com.google.cloud.compute.v1.TargetPoolInstanceHealth;
 import com.google.cloud.compute.v1.TargetPoolList;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the TargetPools service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<AddHealthCheckTargetPoolRequest, Operation>
+  private static final ApiMethodDescriptor<AddHealthCheckTargetPoolRequest, Operation>
       addHealthCheckMethodDescriptor =
           ApiMethodDescriptor.<AddHealthCheckTargetPoolRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetPools.AddHealthCheck")
+              .setFullMethodName("google.cloud.compute.v1.TargetPools/AddHealthCheck")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddHealthCheckTargetPoolRequest>newBuilder()
@@ -123,11 +123,10 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<AddInstanceTargetPoolRequest, Operation>
+  private static final ApiMethodDescriptor<AddInstanceTargetPoolRequest, Operation>
       addInstanceMethodDescriptor =
           ApiMethodDescriptor.<AddInstanceTargetPoolRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetPools.AddInstance")
+              .setFullMethodName("google.cloud.compute.v1.TargetPools/AddInstance")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddInstanceTargetPoolRequest>newBuilder()
@@ -180,13 +179,12 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListTargetPoolsRequest, TargetPoolAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListTargetPoolsRequest, TargetPoolAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetPools.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.TargetPools/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListTargetPoolsRequest>newBuilder()
@@ -244,7 +242,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                           new FieldsExtractor<AggregatedListTargetPoolsRequest, String>() {
                             @Override
                             public String extract(AggregatedListTargetPoolsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -254,11 +252,10 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteTargetPoolRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteTargetPoolRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteTargetPoolRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetPools.Delete")
+              .setFullMethodName("google.cloud.compute.v1.TargetPools/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteTargetPoolRequest>newBuilder()
@@ -297,7 +294,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                           new FieldsExtractor<DeleteTargetPoolRequest, String>() {
                             @Override
                             public String extract(DeleteTargetPoolRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -307,10 +304,9 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetTargetPoolRequest, TargetPool> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetTargetPoolRequest, TargetPool> getMethodDescriptor =
       ApiMethodDescriptor.<GetTargetPoolRequest, TargetPool>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.TargetPools.Get")
+          .setFullMethodName("google.cloud.compute.v1.TargetPools/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetTargetPoolRequest>newBuilder()
@@ -335,7 +331,6 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetTargetPoolRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -343,7 +338,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       new FieldsExtractor<GetTargetPoolRequest, String>() {
                         @Override
                         public String extract(GetTargetPoolRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -353,11 +348,10 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetHealthTargetPoolRequest, TargetPoolInstanceHealth>
+  private static final ApiMethodDescriptor<GetHealthTargetPoolRequest, TargetPoolInstanceHealth>
       getHealthMethodDescriptor =
           ApiMethodDescriptor.<GetHealthTargetPoolRequest, TargetPoolInstanceHealth>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetPools.GetHealth")
+              .setFullMethodName("google.cloud.compute.v1.TargetPools/GetHealth")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetHealthTargetPoolRequest>newBuilder()
@@ -385,7 +379,6 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetHealthTargetPoolRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -406,11 +399,10 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertTargetPoolRequest, Operation>
+  private static final ApiMethodDescriptor<InsertTargetPoolRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertTargetPoolRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetPools.Insert")
+              .setFullMethodName("google.cloud.compute.v1.TargetPools/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertTargetPoolRequest>newBuilder()
@@ -458,11 +450,10 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListTargetPoolsRequest, TargetPoolList>
+  private static final ApiMethodDescriptor<ListTargetPoolsRequest, TargetPoolList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListTargetPoolsRequest, TargetPoolList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetPools.List")
+              .setFullMethodName("google.cloud.compute.v1.TargetPools/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListTargetPoolsRequest>newBuilder()
@@ -514,7 +505,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                           new FieldsExtractor<ListTargetPoolsRequest, String>() {
                             @Override
                             public String extract(ListTargetPoolsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -524,11 +515,10 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<RemoveHealthCheckTargetPoolRequest, Operation>
+  private static final ApiMethodDescriptor<RemoveHealthCheckTargetPoolRequest, Operation>
       removeHealthCheckMethodDescriptor =
           ApiMethodDescriptor.<RemoveHealthCheckTargetPoolRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetPools.RemoveHealthCheck")
+              .setFullMethodName("google.cloud.compute.v1.TargetPools/RemoveHealthCheck")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveHealthCheckTargetPoolRequest>newBuilder()
@@ -582,11 +572,10 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<RemoveInstanceTargetPoolRequest, Operation>
+  private static final ApiMethodDescriptor<RemoveInstanceTargetPoolRequest, Operation>
       removeInstanceMethodDescriptor =
           ApiMethodDescriptor.<RemoveInstanceTargetPoolRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetPools.RemoveInstance")
+              .setFullMethodName("google.cloud.compute.v1.TargetPools/RemoveInstance")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveInstanceTargetPoolRequest>newBuilder()
@@ -640,11 +629,10 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetBackupTargetPoolRequest, Operation>
+  private static final ApiMethodDescriptor<SetBackupTargetPoolRequest, Operation>
       setBackupMethodDescriptor =
           ApiMethodDescriptor.<SetBackupTargetPoolRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetPools.SetBackup")
+              .setFullMethodName("google.cloud.compute.v1.TargetPools/SetBackup")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetBackupTargetPoolRequest>newBuilder()
@@ -700,8 +688,6 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<AddHealthCheckTargetPoolRequest, Operation> addHealthCheckCallable;
   private final UnaryCallable<AddInstanceTargetPoolRequest, Operation> addInstanceCallable;
   private final UnaryCallable<AggregatedListTargetPoolsRequest, TargetPoolAggregatedList>
@@ -720,6 +706,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
   private final UnaryCallable<RemoveInstanceTargetPoolRequest, Operation> removeInstanceCallable;
   private final UnaryCallable<SetBackupTargetPoolRequest, Operation> setBackupCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonTargetPoolsStub create(TargetPoolsStubSettings settings)
@@ -853,59 +840,90 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
         callableFactory.createUnaryCallable(
             setBackupTransportSettings, settings.setBackupSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(addHealthCheckMethodDescriptor);
+    methodDescriptors.add(addInstanceMethodDescriptor);
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getHealthMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(removeHealthCheckMethodDescriptor);
+    methodDescriptors.add(removeInstanceMethodDescriptor);
+    methodDescriptors.add(setBackupMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<AddHealthCheckTargetPoolRequest, Operation> addHealthCheckCallable() {
     return addHealthCheckCallable;
   }
 
+  @Override
   public UnaryCallable<AddInstanceTargetPoolRequest, Operation> addInstanceCallable() {
     return addInstanceCallable;
   }
 
-  public UnaryCallable<AggregatedListTargetPoolsRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<AggregatedListTargetPoolsRequest, TargetPoolAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListTargetPoolsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteTargetPoolRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetTargetPoolRequest, TargetPool> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetHealthTargetPoolRequest, TargetPoolInstanceHealth> getHealthCallable() {
     return getHealthCallable;
   }
 
+  @Override
   public UnaryCallable<InsertTargetPoolRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListTargetPoolsRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListTargetPoolsRequest, TargetPoolList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListTargetPoolsRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<RemoveHealthCheckTargetPoolRequest, Operation> removeHealthCheckCallable() {
     return removeHealthCheckCallable;
   }
 
+  @Override
   public UnaryCallable<RemoveInstanceTargetPoolRequest, Operation> removeInstanceCallable() {
     return removeInstanceCallable;
   }
 
+  @Override
   public UnaryCallable<SetBackupTargetPoolRequest, Operation> setBackupCallable() {
     return setBackupCallable;
   }

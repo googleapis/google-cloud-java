@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,25 +34,24 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The SecurityPolicies API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
- *   String project = "";
- *   String securityPolicy = "";
+ *   String project = "project-309310695";
+ *   String securityPolicy = "securityPolicy-788621166";
  *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
- *   Operation response = securityPoliciesClient.addRule(project, securityPolicy, securityPolicyRuleResource);
+ *   Operation response =
+ *       securityPoliciesClient.addRule(project, securityPolicy, securityPolicyRuleResource);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the securityPoliciesClient object to clean up resources
+ * <p>Note: close() needs to be called on the SecurityPoliciesClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -80,30 +80,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SecurityPoliciesSettings securityPoliciesSettings =
  *     SecurityPoliciesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * SecurityPoliciesClient securityPoliciesClient =
  *     SecurityPoliciesClient.create(securityPoliciesSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SecurityPoliciesSettings securityPoliciesSettings =
  *     SecurityPoliciesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SecurityPoliciesClient securityPoliciesClient =
  *     SecurityPoliciesClient.create(securityPoliciesSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class SecurityPoliciesClient implements BackgroundResource {
   private final SecurityPoliciesSettings settings;
   private final SecurityPoliciesStub stub;
@@ -124,7 +121,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of SecurityPoliciesClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use SecurityPoliciesSettings}.
+   * is for advanced usage - prefer using create(SecurityPoliciesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SecurityPoliciesClient create(SecurityPoliciesStub stub) {
@@ -156,20 +153,21 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Inserts a rule into a security policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
+   *   String project = "project-309310695";
+   *   String securityPolicy = "securityPolicy-788621166";
    *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
-   *   Operation response = securityPoliciesClient.addRule(project, securityPolicy, securityPolicyRuleResource);
+   *   Operation response =
+   *       securityPoliciesClient.addRule(project, securityPolicy, securityPolicyRuleResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param securityPolicy Name of the security policy to update.
@@ -187,25 +185,23 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return addRule(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Inserts a rule into a security policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
-   *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
-   *   AddRuleSecurityPolicyRequest request = AddRuleSecurityPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSecurityPolicy(securityPolicy)
-   *     .setSecurityPolicyRuleResource(securityPolicyRuleResource)
-   *     .build();
+   *   AddRuleSecurityPolicyRequest request =
+   *       AddRuleSecurityPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .build();
    *   Operation response = securityPoliciesClient.addRule(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -214,45 +210,43 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return addRuleCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Inserts a rule into a security policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
-   *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
-   *   AddRuleSecurityPolicyRequest request = AddRuleSecurityPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSecurityPolicy(securityPolicy)
-   *     .setSecurityPolicyRuleResource(securityPolicyRuleResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = securityPoliciesClient.addRuleCallable().futureCall(request);
-   *   // Do something
+   *   AddRuleSecurityPolicyRequest request =
+   *       AddRuleSecurityPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = securityPoliciesClient.addRuleCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AddRuleSecurityPolicyRequest, Operation> addRuleCallable() {
     return stub.addRuleCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
+   *   String project = "project-309310695";
+   *   String securityPolicy = "securityPolicy-788621166";
    *   Operation response = securityPoliciesClient.delete(project, securityPolicy);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param securityPolicy Name of the security policy to delete.
@@ -267,23 +261,23 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
-   *   DeleteSecurityPolicyRequest request = DeleteSecurityPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSecurityPolicy(securityPolicy)
-   *     .build();
+   *   DeleteSecurityPolicyRequest request =
+   *       DeleteSecurityPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .build();
    *   Operation response = securityPoliciesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -292,43 +286,43 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
-   *   DeleteSecurityPolicyRequest request = DeleteSecurityPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSecurityPolicy(securityPolicy)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = securityPoliciesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteSecurityPolicyRequest request =
+   *       DeleteSecurityPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .build();
+   *   ApiFuture<Operation> future = securityPoliciesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteSecurityPolicyRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List all of the ordered rules present in a single specified policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
+   *   String project = "project-309310695";
+   *   String securityPolicy = "securityPolicy-788621166";
    *   SecurityPolicy response = securityPoliciesClient.get(project, securityPolicy);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param securityPolicy Name of the security policy to get.
@@ -343,23 +337,22 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List all of the ordered rules present in a single specified policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
-   *   GetSecurityPolicyRequest request = GetSecurityPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSecurityPolicy(securityPolicy)
-   *     .build();
+   *   GetSecurityPolicyRequest request =
+   *       GetSecurityPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .build();
    *   SecurityPolicy response = securityPoliciesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -368,43 +361,42 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List all of the ordered rules present in a single specified policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
-   *   GetSecurityPolicyRequest request = GetSecurityPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSecurityPolicy(securityPolicy)
-   *     .build();
-   *   ApiFuture&lt;SecurityPolicy&gt; future = securityPoliciesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetSecurityPolicyRequest request =
+   *       GetSecurityPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .build();
+   *   ApiFuture<SecurityPolicy> future = securityPoliciesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   SecurityPolicy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetSecurityPolicyRequest, SecurityPolicy> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a rule at the specified priority.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
+   *   String project = "project-309310695";
+   *   String securityPolicy = "securityPolicy-788621166";
    *   SecurityPolicyRule response = securityPoliciesClient.getRule(project, securityPolicy);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param securityPolicy Name of the security policy to which the queried rule belongs.
@@ -419,23 +411,23 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return getRule(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a rule at the specified priority.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
-   *   GetRuleSecurityPolicyRequest request = GetRuleSecurityPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSecurityPolicy(securityPolicy)
-   *     .build();
+   *   GetRuleSecurityPolicyRequest request =
+   *       GetRuleSecurityPolicyRequest.newBuilder()
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .build();
    *   SecurityPolicyRule response = securityPoliciesClient.getRule(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -444,43 +436,44 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return getRuleCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a rule at the specified priority.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
-   *   GetRuleSecurityPolicyRequest request = GetRuleSecurityPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSecurityPolicy(securityPolicy)
-   *     .build();
-   *   ApiFuture&lt;SecurityPolicyRule&gt; future = securityPoliciesClient.getRuleCallable().futureCall(request);
-   *   // Do something
+   *   GetRuleSecurityPolicyRequest request =
+   *       GetRuleSecurityPolicyRequest.newBuilder()
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .build();
+   *   ApiFuture<SecurityPolicyRule> future =
+   *       securityPoliciesClient.getRuleCallable().futureCall(request);
+   *   // Do something.
    *   SecurityPolicyRule response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetRuleSecurityPolicyRequest, SecurityPolicyRule> getRuleCallable() {
     return stub.getRuleCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new policy in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
    *   Operation response = securityPoliciesClient.insert(project, securityPolicyResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param securityPolicyResource The body resource for this request
@@ -495,23 +488,23 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new policy in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
-   *   InsertSecurityPolicyRequest request = InsertSecurityPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSecurityPolicyResource(securityPolicyResource)
-   *     .build();
+   *   InsertSecurityPolicyRequest request =
+   *       InsertSecurityPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSecurityPolicyResource(SecurityPolicy.newBuilder().build())
+   *           .build();
    *   Operation response = securityPoliciesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -520,44 +513,44 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new policy in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
-   *   InsertSecurityPolicyRequest request = InsertSecurityPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSecurityPolicyResource(securityPolicyResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = securityPoliciesClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertSecurityPolicyRequest request =
+   *       InsertSecurityPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSecurityPolicyResource(SecurityPolicy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = securityPoliciesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertSecurityPolicyRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List all the policies that have been configured for the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (SecurityPolicy element : securityPoliciesClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -568,23 +561,28 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List all the policies that have been configured for the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   ListSecurityPoliciesRequest request = ListSecurityPoliciesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListSecurityPoliciesRequest request =
+   *       ListSecurityPoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (SecurityPolicy element : securityPoliciesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -593,45 +591,56 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List all the policies that have been configured for the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   ListSecurityPoliciesRequest request = ListSecurityPoliciesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = securityPoliciesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListSecurityPoliciesRequest request =
+   *       ListSecurityPoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<SecurityPolicy> future =
+   *       securityPoliciesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (SecurityPolicy element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListSecurityPoliciesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List all the policies that have been configured for the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   ListSecurityPoliciesRequest request = ListSecurityPoliciesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListSecurityPoliciesRequest request =
+   *       ListSecurityPoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     SecurityPolicyList response = securityPoliciesClient.listCallable().call(request);
-   *     for (SecurityPolicy element : response.getItemsList()) {
+   *     for (SecurityPolicy element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -642,24 +651,25 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListSecurityPoliciesRequest, SecurityPolicyList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the current list of preconfigured Web Application Firewall (WAF) expressions.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   SecurityPoliciesListPreconfiguredExpressionSetsResponse response = securityPoliciesClient.listPreconfiguredExpressionSets(project);
+   *   String project = "project-309310695";
+   *   SecurityPoliciesListPreconfiguredExpressionSetsResponse response =
+   *       securityPoliciesClient.listPreconfiguredExpressionSets(project);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -673,21 +683,27 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return listPreconfiguredExpressionSets(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the current list of preconfigured Web Application Firewall (WAF) expressions.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   ListPreconfiguredExpressionSetsSecurityPoliciesRequest request = ListPreconfiguredExpressionSetsSecurityPoliciesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   SecurityPoliciesListPreconfiguredExpressionSetsResponse response = securityPoliciesClient.listPreconfiguredExpressionSets(request);
+   *   ListPreconfiguredExpressionSetsSecurityPoliciesRequest request =
+   *       ListPreconfiguredExpressionSetsSecurityPoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   SecurityPoliciesListPreconfiguredExpressionSetsResponse response =
+   *       securityPoliciesClient.listPreconfiguredExpressionSets(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -698,23 +714,29 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return listPreconfiguredExpressionSetsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the current list of preconfigured Web Application Firewall (WAF) expressions.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   ListPreconfiguredExpressionSetsSecurityPoliciesRequest request = ListPreconfiguredExpressionSetsSecurityPoliciesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;SecurityPoliciesListPreconfiguredExpressionSetsResponse&gt; future = securityPoliciesClient.listPreconfiguredExpressionSetsCallable().futureCall(request);
-   *   // Do something
+   *   ListPreconfiguredExpressionSetsSecurityPoliciesRequest request =
+   *       ListPreconfiguredExpressionSetsSecurityPoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<SecurityPoliciesListPreconfiguredExpressionSetsResponse> future =
+   *       securityPoliciesClient.listPreconfiguredExpressionSetsCallable().futureCall(request);
+   *   // Do something.
    *   SecurityPoliciesListPreconfiguredExpressionSetsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           ListPreconfiguredExpressionSetsSecurityPoliciesRequest,
@@ -723,7 +745,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return stub.listPreconfiguredExpressionSetsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified policy with the data included in the request. This cannot be used to be
    * update the rules in the policy. Please use the per rule methods like addRule, patchRule, and
@@ -731,14 +753,15 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
+   *   String project = "project-309310695";
+   *   String securityPolicy = "securityPolicy-788621166";
    *   SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
-   *   Operation response = securityPoliciesClient.patch(project, securityPolicy, securityPolicyResource);
+   *   Operation response =
+   *       securityPoliciesClient.patch(project, securityPolicy, securityPolicyResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param securityPolicy Name of the security policy to update.
@@ -756,7 +779,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified policy with the data included in the request. This cannot be used to be
    * update the rules in the policy. Please use the per rule methods like addRule, patchRule, and
@@ -764,19 +787,18 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
-   *   SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
-   *   PatchSecurityPolicyRequest request = PatchSecurityPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSecurityPolicy(securityPolicy)
-   *     .setSecurityPolicyResource(securityPolicyResource)
-   *     .build();
+   *   PatchSecurityPolicyRequest request =
+   *       PatchSecurityPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .setSecurityPolicyResource(SecurityPolicy.newBuilder().build())
+   *           .build();
    *   Operation response = securityPoliciesClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -785,7 +807,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified policy with the data included in the request. This cannot be used to be
    * update the rules in the policy. Please use the per rule methods like addRule, patchRule, and
@@ -793,40 +815,40 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
-   *   SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
-   *   PatchSecurityPolicyRequest request = PatchSecurityPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSecurityPolicy(securityPolicy)
-   *     .setSecurityPolicyResource(securityPolicyResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = securityPoliciesClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchSecurityPolicyRequest request =
+   *       PatchSecurityPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .setSecurityPolicyResource(SecurityPolicy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = securityPoliciesClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchSecurityPolicyRequest, Operation> patchCallable() {
     return stub.patchCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches a rule at the specified priority.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
+   *   String project = "project-309310695";
+   *   String securityPolicy = "securityPolicy-788621166";
    *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
-   *   Operation response = securityPoliciesClient.patchRule(project, securityPolicy, securityPolicyRuleResource);
+   *   Operation response =
+   *       securityPoliciesClient.patchRule(project, securityPolicy, securityPolicyRuleResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param securityPolicy Name of the security policy to update.
@@ -844,25 +866,24 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return patchRule(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches a rule at the specified priority.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
-   *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
-   *   PatchRuleSecurityPolicyRequest request = PatchRuleSecurityPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSecurityPolicy(securityPolicy)
-   *     .setSecurityPolicyRuleResource(securityPolicyRuleResource)
-   *     .build();
+   *   PatchRuleSecurityPolicyRequest request =
+   *       PatchRuleSecurityPolicyRequest.newBuilder()
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .build();
    *   Operation response = securityPoliciesClient.patchRule(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -871,45 +892,44 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return patchRuleCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches a rule at the specified priority.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
-   *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
-   *   PatchRuleSecurityPolicyRequest request = PatchRuleSecurityPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSecurityPolicy(securityPolicy)
-   *     .setSecurityPolicyRuleResource(securityPolicyRuleResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = securityPoliciesClient.patchRuleCallable().futureCall(request);
-   *   // Do something
+   *   PatchRuleSecurityPolicyRequest request =
+   *       PatchRuleSecurityPolicyRequest.newBuilder()
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = securityPoliciesClient.patchRuleCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchRuleSecurityPolicyRequest, Operation> patchRuleCallable() {
     return stub.patchRuleCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a rule at the specified priority.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
+   *   String project = "project-309310695";
+   *   String securityPolicy = "securityPolicy-788621166";
    *   Operation response = securityPoliciesClient.removeRule(project, securityPolicy);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param securityPolicy Name of the security policy to update.
@@ -924,23 +944,23 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return removeRule(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a rule at the specified priority.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
-   *   RemoveRuleSecurityPolicyRequest request = RemoveRuleSecurityPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSecurityPolicy(securityPolicy)
-   *     .build();
+   *   RemoveRuleSecurityPolicyRequest request =
+   *       RemoveRuleSecurityPolicyRequest.newBuilder()
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .build();
    *   Operation response = securityPoliciesClient.removeRule(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -949,25 +969,25 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return removeRuleCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a rule at the specified priority.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
-   *   String project = "";
-   *   String securityPolicy = "";
-   *   RemoveRuleSecurityPolicyRequest request = RemoveRuleSecurityPolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSecurityPolicy(securityPolicy)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = securityPoliciesClient.removeRuleCallable().futureCall(request);
-   *   // Do something
+   *   RemoveRuleSecurityPolicyRequest request =
+   *       RemoveRuleSecurityPolicyRequest.newBuilder()
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .build();
+   *   ApiFuture<Operation> future = securityPoliciesClient.removeRuleCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<RemoveRuleSecurityPolicyRequest, Operation> removeRuleCallable() {
     return stub.removeRuleCallable();

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,30 +31,36 @@ import com.google.cloud.compute.v1.stub.NetworkEndpointGroupsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The NetworkEndpointGroups API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
- *   String project = "";
- *   String zone = "";
- *   String networkEndpointGroup = "";
- *   NetworkEndpointGroupsAttachEndpointsRequest networkEndpointGroupsAttachEndpointsRequestResource = NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
- *   Operation response = networkEndpointGroupsClient.attachNetworkEndpoints(project, zone, networkEndpointGroup, networkEndpointGroupsAttachEndpointsRequestResource);
+ * <pre>{@code
+ * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+ *     NetworkEndpointGroupsClient.create()) {
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
+ *   NetworkEndpointGroupsAttachEndpointsRequest
+ *       networkEndpointGroupsAttachEndpointsRequestResource =
+ *           NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
+ *   Operation response =
+ *       networkEndpointGroupsClient.attachNetworkEndpoints(
+ *           project,
+ *           zone,
+ *           networkEndpointGroup,
+ *           networkEndpointGroupsAttachEndpointsRequestResource);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the networkEndpointGroupsClient object to clean up
+ * <p>Note: close() needs to be called on the NetworkEndpointGroupsClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -82,30 +89,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * NetworkEndpointGroupsSettings networkEndpointGroupsSettings =
  *     NetworkEndpointGroupsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * NetworkEndpointGroupsClient networkEndpointGroupsClient =
  *     NetworkEndpointGroupsClient.create(networkEndpointGroupsSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * NetworkEndpointGroupsSettings networkEndpointGroupsSettings =
  *     NetworkEndpointGroupsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * NetworkEndpointGroupsClient networkEndpointGroupsClient =
  *     NetworkEndpointGroupsClient.create(networkEndpointGroupsSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class NetworkEndpointGroupsClient implements BackgroundResource {
   private final NetworkEndpointGroupsSettings settings;
   private final NetworkEndpointGroupsStub stub;
@@ -126,7 +130,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of NetworkEndpointGroupsClient, using the given stub for making calls.
-   * This is for advanced usage - prefer to use NetworkEndpointGroupsSettings}.
+   * This is for advanced usage - prefer using create(NetworkEndpointGroupsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final NetworkEndpointGroupsClient create(NetworkEndpointGroupsStub stub) {
@@ -158,20 +162,22 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of network endpoint groups and sorts them by zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, NetworkEndpointGroupsScopedList&gt; element : networkEndpointGroupsClient.aggregatedList(project).iterateAll()) {
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, NetworkEndpointGroupsScopedList> element :
+   *       networkEndpointGroupsClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -182,23 +188,31 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of network endpoint groups and sorts them by zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   AggregatedListNetworkEndpointGroupsRequest request = AggregatedListNetworkEndpointGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, NetworkEndpointGroupsScopedList&gt; element : networkEndpointGroupsClient.aggregatedList(request).iterateAll()) {
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   AggregatedListNetworkEndpointGroupsRequest request =
+   *       AggregatedListNetworkEndpointGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, NetworkEndpointGroupsScopedList> element :
+   *       networkEndpointGroupsClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -208,25 +222,33 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of network endpoint groups and sorts them by zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   AggregatedListNetworkEndpointGroupsRequest request = AggregatedListNetworkEndpointGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = networkEndpointGroupsClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, NetworkEndpointGroupsScopedList&gt; element : future.get().iterateAll()) {
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   AggregatedListNetworkEndpointGroupsRequest request =
+   *       AggregatedListNetworkEndpointGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, NetworkEndpointGroupsScopedList>> future =
+   *       networkEndpointGroupsClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, NetworkEndpointGroupsScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           AggregatedListNetworkEndpointGroupsRequest, AggregatedListPagedResponse>
@@ -234,21 +256,30 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of network endpoint groups and sorts them by zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   AggregatedListNetworkEndpointGroupsRequest request = AggregatedListNetworkEndpointGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   AggregatedListNetworkEndpointGroupsRequest request =
+   *       AggregatedListNetworkEndpointGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     NetworkEndpointGroupAggregatedList response = networkEndpointGroupsClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, NetworkEndpointGroupsScopedList&gt; element : response.getItemsMap()) {
+   *     NetworkEndpointGroupAggregatedList response =
+   *         networkEndpointGroupsClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, NetworkEndpointGroupsScopedList> element :
+   *         response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -259,7 +290,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           AggregatedListNetworkEndpointGroupsRequest, NetworkEndpointGroupAggregatedList>
@@ -267,21 +298,29 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Attach a list of network endpoints to the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String networkEndpointGroup = "";
-   *   NetworkEndpointGroupsAttachEndpointsRequest networkEndpointGroupsAttachEndpointsRequestResource = NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
-   *   Operation response = networkEndpointGroupsClient.attachNetworkEndpoints(project, zone, networkEndpointGroup, networkEndpointGroupsAttachEndpointsRequestResource);
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
+   *   NetworkEndpointGroupsAttachEndpointsRequest
+   *       networkEndpointGroupsAttachEndpointsRequestResource =
+   *           NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
+   *   Operation response =
+   *       networkEndpointGroupsClient.attachNetworkEndpoints(
+   *           project,
+   *           zone,
+   *           networkEndpointGroup,
+   *           networkEndpointGroupsAttachEndpointsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone where the network endpoint group is located. It should comply
@@ -308,27 +347,27 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return attachNetworkEndpoints(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Attach a list of network endpoints to the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String networkEndpointGroup = "";
-   *   NetworkEndpointGroupsAttachEndpointsRequest networkEndpointGroupsAttachEndpointsRequestResource = NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   AttachNetworkEndpointsNetworkEndpointGroupRequest request = AttachNetworkEndpointsNetworkEndpointGroupRequest.newBuilder()
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setNetworkEndpointGroupsAttachEndpointsRequestResource(networkEndpointGroupsAttachEndpointsRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   AttachNetworkEndpointsNetworkEndpointGroupRequest request =
+   *       AttachNetworkEndpointsNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setNetworkEndpointGroupsAttachEndpointsRequestResource(
+   *               NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = networkEndpointGroupsClient.attachNetworkEndpoints(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -338,36 +377,37 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return attachNetworkEndpointsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Attach a list of network endpoints to the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String networkEndpointGroup = "";
-   *   NetworkEndpointGroupsAttachEndpointsRequest networkEndpointGroupsAttachEndpointsRequestResource = NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   AttachNetworkEndpointsNetworkEndpointGroupRequest request = AttachNetworkEndpointsNetworkEndpointGroupRequest.newBuilder()
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setNetworkEndpointGroupsAttachEndpointsRequestResource(networkEndpointGroupsAttachEndpointsRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = networkEndpointGroupsClient.attachNetworkEndpointsCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   AttachNetworkEndpointsNetworkEndpointGroupRequest request =
+   *       AttachNetworkEndpointsNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setNetworkEndpointGroupsAttachEndpointsRequestResource(
+   *               NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkEndpointGroupsClient.attachNetworkEndpointsCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AttachNetworkEndpointsNetworkEndpointGroupRequest, Operation>
       attachNetworkEndpointsCallable() {
     return stub.attachNetworkEndpointsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified network endpoint group. The network endpoints in the NEG and the VM
    * instances they belong to are not terminated when the NEG is deleted. Note that the NEG cannot
@@ -375,14 +415,15 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String networkEndpointGroup = "";
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
    *   Operation response = networkEndpointGroupsClient.delete(project, zone, networkEndpointGroup);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone where the network endpoint group is located. It should comply
@@ -401,7 +442,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified network endpoint group. The network endpoints in the NEG and the VM
    * instances they belong to are not terminated when the NEG is deleted. Note that the NEG cannot
@@ -409,19 +450,19 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String networkEndpointGroup = "";
-   *   String project = "";
-   *   String zone = "";
-   *   DeleteNetworkEndpointGroupRequest request = DeleteNetworkEndpointGroupRequest.newBuilder()
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   DeleteNetworkEndpointGroupRequest request =
+   *       DeleteNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = networkEndpointGroupsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -430,7 +471,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified network endpoint group. The network endpoints in the NEG and the VM
    * instances they belong to are not terminated when the NEG is deleted. Note that the NEG cannot
@@ -438,41 +479,50 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String networkEndpointGroup = "";
-   *   String project = "";
-   *   String zone = "";
-   *   DeleteNetworkEndpointGroupRequest request = DeleteNetworkEndpointGroupRequest.newBuilder()
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = networkEndpointGroupsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   DeleteNetworkEndpointGroupRequest request =
+   *       DeleteNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkEndpointGroupsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteNetworkEndpointGroupRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Detach a list of network endpoints from the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String networkEndpointGroup = "";
-   *   NetworkEndpointGroupsDetachEndpointsRequest networkEndpointGroupsDetachEndpointsRequestResource = NetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
-   *   Operation response = networkEndpointGroupsClient.detachNetworkEndpoints(project, zone, networkEndpointGroup, networkEndpointGroupsDetachEndpointsRequestResource);
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
+   *   NetworkEndpointGroupsDetachEndpointsRequest
+   *       networkEndpointGroupsDetachEndpointsRequestResource =
+   *           NetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
+   *   Operation response =
+   *       networkEndpointGroupsClient.detachNetworkEndpoints(
+   *           project,
+   *           zone,
+   *           networkEndpointGroup,
+   *           networkEndpointGroupsDetachEndpointsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone where the network endpoint group is located. It should comply
@@ -499,27 +549,27 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return detachNetworkEndpoints(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Detach a list of network endpoints from the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String networkEndpointGroup = "";
-   *   NetworkEndpointGroupsDetachEndpointsRequest networkEndpointGroupsDetachEndpointsRequestResource = NetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   DetachNetworkEndpointsNetworkEndpointGroupRequest request = DetachNetworkEndpointsNetworkEndpointGroupRequest.newBuilder()
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setNetworkEndpointGroupsDetachEndpointsRequestResource(networkEndpointGroupsDetachEndpointsRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   DetachNetworkEndpointsNetworkEndpointGroupRequest request =
+   *       DetachNetworkEndpointsNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setNetworkEndpointGroupsDetachEndpointsRequestResource(
+   *               NetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = networkEndpointGroupsClient.detachNetworkEndpoints(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -529,50 +579,53 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return detachNetworkEndpointsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Detach a list of network endpoints from the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String networkEndpointGroup = "";
-   *   NetworkEndpointGroupsDetachEndpointsRequest networkEndpointGroupsDetachEndpointsRequestResource = NetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   DetachNetworkEndpointsNetworkEndpointGroupRequest request = DetachNetworkEndpointsNetworkEndpointGroupRequest.newBuilder()
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setNetworkEndpointGroupsDetachEndpointsRequestResource(networkEndpointGroupsDetachEndpointsRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = networkEndpointGroupsClient.detachNetworkEndpointsCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   DetachNetworkEndpointsNetworkEndpointGroupRequest request =
+   *       DetachNetworkEndpointsNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setNetworkEndpointGroupsDetachEndpointsRequestResource(
+   *               NetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkEndpointGroupsClient.detachNetworkEndpointsCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DetachNetworkEndpointsNetworkEndpointGroupRequest, Operation>
       detachNetworkEndpointsCallable() {
     return stub.detachNetworkEndpointsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified network endpoint group. Gets a list of available network endpoint groups
    * by making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String networkEndpointGroup = "";
-   *   NetworkEndpointGroup response = networkEndpointGroupsClient.get(project, zone, networkEndpointGroup);
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
+   *   NetworkEndpointGroup response =
+   *       networkEndpointGroupsClient.get(project, zone, networkEndpointGroup);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone where the network endpoint group is located. It should comply
@@ -591,26 +644,25 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified network endpoint group. Gets a list of available network endpoint groups
    * by making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String networkEndpointGroup = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetNetworkEndpointGroupRequest request = GetNetworkEndpointGroupRequest.newBuilder()
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   GetNetworkEndpointGroupRequest request =
+   *       GetNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
    *   NetworkEndpointGroup response = networkEndpointGroupsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -619,48 +671,50 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified network endpoint group. Gets a list of available network endpoint groups
    * by making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String networkEndpointGroup = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetNetworkEndpointGroupRequest request = GetNetworkEndpointGroupRequest.newBuilder()
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;NetworkEndpointGroup&gt; future = networkEndpointGroupsClient.getCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   GetNetworkEndpointGroupRequest request =
+   *       GetNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<NetworkEndpointGroup> future =
+   *       networkEndpointGroupsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   NetworkEndpointGroup response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetNetworkEndpointGroupRequest, NetworkEndpointGroup> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a network endpoint group in the specified project using the parameters that are
    * included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
    *   NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
-   *   Operation response = networkEndpointGroupsClient.insert(project, zone, networkEndpointGroupResource);
+   *   Operation response =
+   *       networkEndpointGroupsClient.insert(project, zone, networkEndpointGroupResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone where you want to create the network endpoint group. It should
@@ -679,26 +733,26 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a network endpoint group in the specified project using the parameters that are
    * included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   InsertNetworkEndpointGroupRequest request = InsertNetworkEndpointGroupRequest.newBuilder()
-   *     .setNetworkEndpointGroupResource(networkEndpointGroupResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   InsertNetworkEndpointGroupRequest request =
+   *       InsertNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroupResource(NetworkEndpointGroup.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = networkEndpointGroupsClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -707,49 +761,52 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a network endpoint group in the specified project using the parameters that are
    * included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   InsertNetworkEndpointGroupRequest request = InsertNetworkEndpointGroupRequest.newBuilder()
-   *     .setNetworkEndpointGroupResource(networkEndpointGroupResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = networkEndpointGroupsClient.insertCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   InsertNetworkEndpointGroupRequest request =
+   *       InsertNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroupResource(NetworkEndpointGroup.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkEndpointGroupsClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertNetworkEndpointGroupRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of network endpoint groups that are located in the specified project and
    * zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   for (NetworkEndpointGroup element : networkEndpointGroupsClient.list(project, zone).iterateAll()) {
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   for (NetworkEndpointGroup element :
+   *       networkEndpointGroupsClient.list(project, zone).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone where the network endpoint group is located. It should comply
@@ -762,26 +819,31 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of network endpoint groups that are located in the specified project and
    * zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListNetworkEndpointGroupsRequest request = ListNetworkEndpointGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   ListNetworkEndpointGroupsRequest request =
+   *       ListNetworkEndpointGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   for (NetworkEndpointGroup element : networkEndpointGroupsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -790,52 +852,64 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of network endpoint groups that are located in the specified project and
    * zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListNetworkEndpointGroupsRequest request = ListNetworkEndpointGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = networkEndpointGroupsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   ListNetworkEndpointGroupsRequest request =
+   *       ListNetworkEndpointGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<NetworkEndpointGroup> future =
+   *       networkEndpointGroupsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (NetworkEndpointGroup element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListNetworkEndpointGroupsRequest, ListPagedResponse>
       listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of network endpoint groups that are located in the specified project and
    * zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListNetworkEndpointGroupsRequest request = ListNetworkEndpointGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   ListNetworkEndpointGroupsRequest request =
+   *       ListNetworkEndpointGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   while (true) {
-   *     NetworkEndpointGroupList response = networkEndpointGroupsClient.listCallable().call(request);
-   *     for (NetworkEndpointGroup element : response.getItemsList()) {
+   *     NetworkEndpointGroupList response =
+   *         networkEndpointGroupsClient.listCallable().call(request);
+   *     for (NetworkEndpointGroup element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -846,30 +920,39 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListNetworkEndpointGroupsRequest, NetworkEndpointGroupList>
       listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the network endpoints in the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String networkEndpointGroup = "";
-   *   NetworkEndpointGroupsListEndpointsRequest networkEndpointGroupsListEndpointsRequestResource = NetworkEndpointGroupsListEndpointsRequest.newBuilder().build();
-   *   for (NetworkEndpointWithHealthStatus element : networkEndpointGroupsClient.listNetworkEndpoints(project, zone, networkEndpointGroup, networkEndpointGroupsListEndpointsRequestResource).iterateAll()) {
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
+   *   NetworkEndpointGroupsListEndpointsRequest networkEndpointGroupsListEndpointsRequestResource =
+   *       NetworkEndpointGroupsListEndpointsRequest.newBuilder().build();
+   *   for (NetworkEndpointWithHealthStatus element :
+   *       networkEndpointGroupsClient
+   *           .listNetworkEndpoints(
+   *               project,
+   *               zone,
+   *               networkEndpointGroup,
+   *               networkEndpointGroupsListEndpointsRequestResource)
+   *           .iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone where the network endpoint group is located. It should comply
@@ -895,29 +978,34 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return listNetworkEndpoints(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the network endpoints in the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String networkEndpointGroup = "";
-   *   NetworkEndpointGroupsListEndpointsRequest networkEndpointGroupsListEndpointsRequestResource = NetworkEndpointGroupsListEndpointsRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   ListNetworkEndpointsNetworkEndpointGroupsRequest request = ListNetworkEndpointsNetworkEndpointGroupsRequest.newBuilder()
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setNetworkEndpointGroupsListEndpointsRequestResource(networkEndpointGroupsListEndpointsRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   for (NetworkEndpointWithHealthStatus element : networkEndpointGroupsClient.listNetworkEndpoints(request).iterateAll()) {
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   ListNetworkEndpointsNetworkEndpointGroupsRequest request =
+   *       ListNetworkEndpointsNetworkEndpointGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setNetworkEndpointGroupsListEndpointsRequestResource(
+   *               NetworkEndpointGroupsListEndpointsRequest.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
+   *   for (NetworkEndpointWithHealthStatus element :
+   *       networkEndpointGroupsClient.listNetworkEndpoints(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -927,31 +1015,36 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return listNetworkEndpointsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the network endpoints in the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String networkEndpointGroup = "";
-   *   NetworkEndpointGroupsListEndpointsRequest networkEndpointGroupsListEndpointsRequestResource = NetworkEndpointGroupsListEndpointsRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   ListNetworkEndpointsNetworkEndpointGroupsRequest request = ListNetworkEndpointsNetworkEndpointGroupsRequest.newBuilder()
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setNetworkEndpointGroupsListEndpointsRequestResource(networkEndpointGroupsListEndpointsRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;ListNetworkEndpointsPagedResponse&gt; future = networkEndpointGroupsClient.listNetworkEndpointsPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   ListNetworkEndpointsNetworkEndpointGroupsRequest request =
+   *       ListNetworkEndpointsNetworkEndpointGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setNetworkEndpointGroupsListEndpointsRequestResource(
+   *               NetworkEndpointGroupsListEndpointsRequest.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<NetworkEndpointWithHealthStatus> future =
+   *       networkEndpointGroupsClient.listNetworkEndpointsPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (NetworkEndpointWithHealthStatus element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           ListNetworkEndpointsNetworkEndpointGroupsRequest, ListNetworkEndpointsPagedResponse>
@@ -959,27 +1052,32 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return stub.listNetworkEndpointsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the network endpoints in the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String networkEndpointGroup = "";
-   *   NetworkEndpointGroupsListEndpointsRequest networkEndpointGroupsListEndpointsRequestResource = NetworkEndpointGroupsListEndpointsRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   ListNetworkEndpointsNetworkEndpointGroupsRequest request = ListNetworkEndpointsNetworkEndpointGroupsRequest.newBuilder()
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setNetworkEndpointGroupsListEndpointsRequestResource(networkEndpointGroupsListEndpointsRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   ListNetworkEndpointsNetworkEndpointGroupsRequest request =
+   *       ListNetworkEndpointsNetworkEndpointGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setNetworkEndpointGroupsListEndpointsRequestResource(
+   *               NetworkEndpointGroupsListEndpointsRequest.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   while (true) {
-   *     NetworkEndpointGroupsListNetworkEndpoints response = networkEndpointGroupsClient.listNetworkEndpointsCallable().call(request);
-   *     for (NetworkEndpointWithHealthStatus element : response.getItemsList()) {
+   *     NetworkEndpointGroupsListNetworkEndpoints response =
+   *         networkEndpointGroupsClient.listNetworkEndpointsCallable().call(request);
+   *     for (NetworkEndpointWithHealthStatus element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -990,7 +1088,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           ListNetworkEndpointsNetworkEndpointGroupsRequest,
@@ -999,21 +1097,25 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return stub.listNetworkEndpointsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestPermissionsResponse response = networkEndpointGroupsClient.testIamPermissions(project, zone, resource, testPermissionsRequestResource);
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       networkEndpointGroupsClient.testIamPermissions(
+   *           project, zone, resource, testPermissionsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1036,27 +1138,25 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   String zone = "";
-   *   TestIamPermissionsNetworkEndpointGroupRequest request = TestIamPermissionsNetworkEndpointGroupRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .setZone(zone)
-   *     .build();
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   TestIamPermissionsNetworkEndpointGroupRequest request =
+   *       TestIamPermissionsNetworkEndpointGroupRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
    *   TestPermissionsResponse response = networkEndpointGroupsClient.testIamPermissions(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1066,29 +1166,28 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return testIamPermissionsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   String zone = "";
-   *   TestIamPermissionsNetworkEndpointGroupRequest request = TestIamPermissionsNetworkEndpointGroupRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;TestPermissionsResponse&gt; future = networkEndpointGroupsClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   TestIamPermissionsNetworkEndpointGroupRequest request =
+   *       TestIamPermissionsNetworkEndpointGroupRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       networkEndpointGroupsClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
    *   TestPermissionsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsNetworkEndpointGroupRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
@@ -1129,7 +1228,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListNetworkEndpointGroupsRequest,
           NetworkEndpointGroupAggregatedList,
-          Entry<String, NetworkEndpointGroupsScopedList>,
+          Map.Entry<String, NetworkEndpointGroupsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -1137,7 +1236,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
         PageContext<
                 AggregatedListNetworkEndpointGroupsRequest,
                 NetworkEndpointGroupAggregatedList,
-                Entry<String, NetworkEndpointGroupsScopedList>>
+                Map.Entry<String, NetworkEndpointGroupsScopedList>>
             context,
         ApiFuture<NetworkEndpointGroupAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -1162,14 +1261,14 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListNetworkEndpointGroupsRequest,
           NetworkEndpointGroupAggregatedList,
-          Entry<String, NetworkEndpointGroupsScopedList>,
+          Map.Entry<String, NetworkEndpointGroupsScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListNetworkEndpointGroupsRequest,
                 NetworkEndpointGroupAggregatedList,
-                Entry<String, NetworkEndpointGroupsScopedList>>
+                Map.Entry<String, NetworkEndpointGroupsScopedList>>
             context,
         NetworkEndpointGroupAggregatedList response) {
       super(context, response);
@@ -1184,7 +1283,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
         PageContext<
                 AggregatedListNetworkEndpointGroupsRequest,
                 NetworkEndpointGroupAggregatedList,
-                Entry<String, NetworkEndpointGroupsScopedList>>
+                Map.Entry<String, NetworkEndpointGroupsScopedList>>
             context,
         NetworkEndpointGroupAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -1195,7 +1294,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
         PageContext<
                 AggregatedListNetworkEndpointGroupsRequest,
                 NetworkEndpointGroupAggregatedList,
-                Entry<String, NetworkEndpointGroupsScopedList>>
+                Map.Entry<String, NetworkEndpointGroupsScopedList>>
             context,
         ApiFuture<NetworkEndpointGroupAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1206,7 +1305,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListNetworkEndpointGroupsRequest,
           NetworkEndpointGroupAggregatedList,
-          Entry<String, NetworkEndpointGroupsScopedList>,
+          Map.Entry<String, NetworkEndpointGroupsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

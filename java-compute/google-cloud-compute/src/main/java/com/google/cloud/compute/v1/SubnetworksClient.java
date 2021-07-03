@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,29 +31,27 @@ import com.google.cloud.compute.v1.stub.SubnetworksStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The Subnetworks API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String subnetwork = "";
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String subnetwork = "subnetwork-1302785042";
  *   Operation response = subnetworksClient.delete(project, region, subnetwork);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the subnetworksClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the SubnetworksClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -80,30 +79,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SubnetworksSettings subnetworksSettings =
  *     SubnetworksSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * SubnetworksClient subnetworksClient =
- *     SubnetworksClient.create(subnetworksSettings);
- * </code>
- * </pre>
+ * SubnetworksClient subnetworksClient = SubnetworksClient.create(subnetworksSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SubnetworksSettings subnetworksSettings =
  *     SubnetworksSettings.newBuilder().setEndpoint(myEndpoint).build();
- * SubnetworksClient subnetworksClient =
- *     SubnetworksClient.create(subnetworksSettings);
- * </code>
- * </pre>
+ * SubnetworksClient subnetworksClient = SubnetworksClient.create(subnetworksSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class SubnetworksClient implements BackgroundResource {
   private final SubnetworksSettings settings;
   private final SubnetworksStub stub;
@@ -123,7 +117,7 @@ public class SubnetworksClient implements BackgroundResource {
 
   /**
    * Constructs an instance of SubnetworksClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use SubnetworksSettings}.
+   * advanced usage - prefer using create(SubnetworksSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SubnetworksClient create(SubnetworksStub stub) {
@@ -155,20 +149,21 @@ public class SubnetworksClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of subnetworks.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, SubnetworksScopedList&gt; element : subnetworksClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, SubnetworksScopedList> element :
+   *       subnetworksClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -179,23 +174,30 @@ public class SubnetworksClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of subnetworks.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   AggregatedListSubnetworksRequest request = AggregatedListSubnetworksRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, SubnetworksScopedList&gt; element : subnetworksClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListSubnetworksRequest request =
+   *       AggregatedListSubnetworksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, SubnetworksScopedList> element :
+   *       subnetworksClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -205,46 +207,60 @@ public class SubnetworksClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of subnetworks.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   AggregatedListSubnetworksRequest request = AggregatedListSubnetworksRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = subnetworksClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, SubnetworksScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListSubnetworksRequest request =
+   *       AggregatedListSubnetworksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, SubnetworksScopedList>> future =
+   *       subnetworksClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, SubnetworksScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListSubnetworksRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of subnetworks.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   AggregatedListSubnetworksRequest request = AggregatedListSubnetworksRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListSubnetworksRequest request =
+   *       AggregatedListSubnetworksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     SubnetworkAggregatedList response = subnetworksClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, SubnetworksScopedList&gt; element : response.getItemsMap()) {
+   *     SubnetworkAggregatedList response =
+   *         subnetworksClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, SubnetworksScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -255,27 +271,27 @@ public class SubnetworksClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListSubnetworksRequest, SubnetworkAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified subnetwork.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String subnetwork = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String subnetwork = "subnetwork-1302785042";
    *   Operation response = subnetworksClient.delete(project, region, subnetwork);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -292,25 +308,24 @@ public class SubnetworksClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified subnetwork.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String subnetwork = "";
-   *   DeleteSubnetworkRequest request = DeleteSubnetworkRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSubnetwork(subnetwork)
-   *     .build();
+   *   DeleteSubnetworkRequest request =
+   *       DeleteSubnetworkRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSubnetwork("subnetwork-1302785042")
+   *           .build();
    *   Operation response = subnetworksClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -319,47 +334,49 @@ public class SubnetworksClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified subnetwork.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String subnetwork = "";
-   *   DeleteSubnetworkRequest request = DeleteSubnetworkRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSubnetwork(subnetwork)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = subnetworksClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteSubnetworkRequest request =
+   *       DeleteSubnetworkRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSubnetwork("subnetwork-1302785042")
+   *           .build();
+   *   ApiFuture<Operation> future = subnetworksClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteSubnetworkRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Expands the IP CIDR range of the subnetwork to a specified value.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String subnetwork = "";
-   *   SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource = SubnetworksExpandIpCidrRangeRequest.newBuilder().build();
-   *   Operation response = subnetworksClient.expandIpCidrRange(project, region, subnetwork, subnetworksExpandIpCidrRangeRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String subnetwork = "subnetwork-1302785042";
+   *   SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource =
+   *       SubnetworksExpandIpCidrRangeRequest.newBuilder().build();
+   *   Operation response =
+   *       subnetworksClient.expandIpCidrRange(
+   *           project, region, subnetwork, subnetworksExpandIpCidrRangeRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -383,27 +400,26 @@ public class SubnetworksClient implements BackgroundResource {
     return expandIpCidrRange(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Expands the IP CIDR range of the subnetwork to a specified value.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String subnetwork = "";
-   *   SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource = SubnetworksExpandIpCidrRangeRequest.newBuilder().build();
-   *   ExpandIpCidrRangeSubnetworkRequest request = ExpandIpCidrRangeSubnetworkRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSubnetwork(subnetwork)
-   *     .setSubnetworksExpandIpCidrRangeRequestResource(subnetworksExpandIpCidrRangeRequestResource)
-   *     .build();
+   *   ExpandIpCidrRangeSubnetworkRequest request =
+   *       ExpandIpCidrRangeSubnetworkRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSubnetwork("subnetwork-1302785042")
+   *           .setSubnetworksExpandIpCidrRangeRequestResource(
+   *               SubnetworksExpandIpCidrRangeRequest.newBuilder().build())
+   *           .build();
    *   Operation response = subnetworksClient.expandIpCidrRange(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -412,49 +428,49 @@ public class SubnetworksClient implements BackgroundResource {
     return expandIpCidrRangeCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Expands the IP CIDR range of the subnetwork to a specified value.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String subnetwork = "";
-   *   SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource = SubnetworksExpandIpCidrRangeRequest.newBuilder().build();
-   *   ExpandIpCidrRangeSubnetworkRequest request = ExpandIpCidrRangeSubnetworkRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSubnetwork(subnetwork)
-   *     .setSubnetworksExpandIpCidrRangeRequestResource(subnetworksExpandIpCidrRangeRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = subnetworksClient.expandIpCidrRangeCallable().futureCall(request);
-   *   // Do something
+   *   ExpandIpCidrRangeSubnetworkRequest request =
+   *       ExpandIpCidrRangeSubnetworkRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSubnetwork("subnetwork-1302785042")
+   *           .setSubnetworksExpandIpCidrRangeRequestResource(
+   *               SubnetworksExpandIpCidrRangeRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       subnetworksClient.expandIpCidrRangeCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ExpandIpCidrRangeSubnetworkRequest, Operation>
       expandIpCidrRangeCallable() {
     return stub.expandIpCidrRangeCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified subnetwork. Gets a list of available subnetworks list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String subnetwork = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String subnetwork = "subnetwork-1302785042";
    *   Subnetwork response = subnetworksClient.get(project, region, subnetwork);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -471,25 +487,23 @@ public class SubnetworksClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified subnetwork. Gets a list of available subnetworks list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String subnetwork = "";
-   *   GetSubnetworkRequest request = GetSubnetworkRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSubnetwork(subnetwork)
-   *     .build();
+   *   GetSubnetworkRequest request =
+   *       GetSubnetworkRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setSubnetwork("subnetwork-1302785042")
+   *           .build();
    *   Subnetwork response = subnetworksClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -498,47 +512,45 @@ public class SubnetworksClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified subnetwork. Gets a list of available subnetworks list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String subnetwork = "";
-   *   GetSubnetworkRequest request = GetSubnetworkRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSubnetwork(subnetwork)
-   *     .build();
-   *   ApiFuture&lt;Subnetwork&gt; future = subnetworksClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetSubnetworkRequest request =
+   *       GetSubnetworkRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setSubnetwork("subnetwork-1302785042")
+   *           .build();
+   *   ApiFuture<Subnetwork> future = subnetworksClient.getCallable().futureCall(request);
+   *   // Do something.
    *   Subnetwork response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetSubnetworkRequest, Subnetwork> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
    *   Policy response = subnetworksClient.getIamPolicy(project, region, resource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -555,26 +567,25 @@ public class SubnetworksClient implements BackgroundResource {
     return getIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   GetIamPolicySubnetworkRequest request = GetIamPolicySubnetworkRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResource(resource)
-   *     .build();
+   *   GetIamPolicySubnetworkRequest request =
+   *       GetIamPolicySubnetworkRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .build();
    *   Policy response = subnetworksClient.getIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -583,47 +594,46 @@ public class SubnetworksClient implements BackgroundResource {
     return getIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   GetIamPolicySubnetworkRequest request = GetIamPolicySubnetworkRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResource(resource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = subnetworksClient.getIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   GetIamPolicySubnetworkRequest request =
+   *       GetIamPolicySubnetworkRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future = subnetworksClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicySubnetworkRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a subnetwork in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
    *   Operation response = subnetworksClient.insert(project, region, subnetworkResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -640,25 +650,24 @@ public class SubnetworksClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a subnetwork in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
-   *   InsertSubnetworkRequest request = InsertSubnetworkRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSubnetworkResource(subnetworkResource)
-   *     .build();
+   *   InsertSubnetworkRequest request =
+   *       InsertSubnetworkRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSubnetworkResource(Subnetwork.newBuilder().build())
+   *           .build();
    *   Operation response = subnetworksClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -667,47 +676,46 @@ public class SubnetworksClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a subnetwork in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
-   *   InsertSubnetworkRequest request = InsertSubnetworkRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSubnetworkResource(subnetworkResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = subnetworksClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertSubnetworkRequest request =
+   *       InsertSubnetworkRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSubnetworkResource(Subnetwork.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = subnetworksClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertSubnetworkRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of subnetworks available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   for (Subnetwork element : subnetworksClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -719,25 +727,29 @@ public class SubnetworksClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of subnetworks available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListSubnetworksRequest request = ListSubnetworksRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListSubnetworksRequest request =
+   *       ListSubnetworksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (Subnetwork element : subnetworksClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -746,49 +758,57 @@ public class SubnetworksClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of subnetworks available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListSubnetworksRequest request = ListSubnetworksRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = subnetworksClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListSubnetworksRequest request =
+   *       ListSubnetworksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Subnetwork> future = subnetworksClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Subnetwork element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListSubnetworksRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of subnetworks available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListSubnetworksRequest request = ListSubnetworksRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListSubnetworksRequest request =
+   *       ListSubnetworksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     SubnetworkList response = subnetworksClient.listCallable().call(request);
-   *     for (Subnetwork element : response.getItemsList()) {
+   *     for (Subnetwork element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -799,26 +819,26 @@ public class SubnetworksClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListSubnetworksRequest, SubnetworkList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of all usable subnetworks in the project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (UsableSubnetwork element : subnetworksClient.listUsable(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -829,23 +849,28 @@ public class SubnetworksClient implements BackgroundResource {
     return listUsable(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of all usable subnetworks in the project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   ListUsableSubnetworksRequest request = ListUsableSubnetworksRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListUsableSubnetworksRequest request =
+   *       ListUsableSubnetworksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (UsableSubnetwork element : subnetworksClient.listUsable(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -854,46 +879,58 @@ public class SubnetworksClient implements BackgroundResource {
     return listUsablePagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of all usable subnetworks in the project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   ListUsableSubnetworksRequest request = ListUsableSubnetworksRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListUsablePagedResponse&gt; future = subnetworksClient.listUsablePagedCallable().futureCall(request);
-   *   // Do something
+   *   ListUsableSubnetworksRequest request =
+   *       ListUsableSubnetworksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<UsableSubnetwork> future =
+   *       subnetworksClient.listUsablePagedCallable().futureCall(request);
+   *   // Do something.
    *   for (UsableSubnetwork element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListUsableSubnetworksRequest, ListUsablePagedResponse>
       listUsablePagedCallable() {
     return stub.listUsablePagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of all usable subnetworks in the project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   ListUsableSubnetworksRequest request = ListUsableSubnetworksRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListUsableSubnetworksRequest request =
+   *       ListUsableSubnetworksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     UsableSubnetworksAggregatedList response = subnetworksClient.listUsableCallable().call(request);
-   *     for (UsableSubnetwork element : response.getItemsList()) {
+   *     UsableSubnetworksAggregatedList response =
+   *         subnetworksClient.listUsableCallable().call(request);
+   *     for (UsableSubnetwork element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -904,14 +941,14 @@ public class SubnetworksClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList>
       listUsableCallable() {
     return stub.listUsableCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified subnetwork with the data included in the request. Only certain fields can
    * be updated with a patch request as indicated in the field descriptions. You must specify the
@@ -919,15 +956,15 @@ public class SubnetworksClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String subnetwork = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String subnetwork = "subnetwork-1302785042";
    *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
    *   Operation response = subnetworksClient.patch(project, region, subnetwork, subnetworkResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -947,7 +984,7 @@ public class SubnetworksClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified subnetwork with the data included in the request. Only certain fields can
    * be updated with a patch request as indicated in the field descriptions. You must specify the
@@ -955,21 +992,20 @@ public class SubnetworksClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String subnetwork = "";
-   *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
-   *   PatchSubnetworkRequest request = PatchSubnetworkRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSubnetwork(subnetwork)
-   *     .setSubnetworkResource(subnetworkResource)
-   *     .build();
+   *   PatchSubnetworkRequest request =
+   *       PatchSubnetworkRequest.newBuilder()
+   *           .setDrainTimeoutSeconds(1431448922)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSubnetwork("subnetwork-1302785042")
+   *           .setSubnetworkResource(Subnetwork.newBuilder().build())
+   *           .build();
    *   Operation response = subnetworksClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -978,7 +1014,7 @@ public class SubnetworksClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified subnetwork with the data included in the request. Only certain fields can
    * be updated with a patch request as indicated in the field descriptions. You must specify the
@@ -986,43 +1022,44 @@ public class SubnetworksClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String subnetwork = "";
-   *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
-   *   PatchSubnetworkRequest request = PatchSubnetworkRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSubnetwork(subnetwork)
-   *     .setSubnetworkResource(subnetworkResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = subnetworksClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchSubnetworkRequest request =
+   *       PatchSubnetworkRequest.newBuilder()
+   *           .setDrainTimeoutSeconds(1431448922)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSubnetwork("subnetwork-1302785042")
+   *           .setSubnetworkResource(Subnetwork.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = subnetworksClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchSubnetworkRequest, Operation> patchCallable() {
     return stub.patchCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
-   *   Policy response = subnetworksClient.setIamPolicy(project, region, resource, regionSetPolicyRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource =
+   *       RegionSetPolicyRequest.newBuilder().build();
+   *   Policy response =
+   *       subnetworksClient.setIamPolicy(project, region, resource, regionSetPolicyRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -1045,27 +1082,24 @@ public class SubnetworksClient implements BackgroundResource {
     return setIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
-   *   String resource = "";
-   *   SetIamPolicySubnetworkRequest request = SetIamPolicySubnetworkRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
-   *     .setResource(resource)
-   *     .build();
+   *   SetIamPolicySubnetworkRequest request =
+   *       SetIamPolicySubnetworkRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetPolicyRequestResource(RegionSetPolicyRequest.newBuilder().build())
+   *           .setResource("resource-341064690")
+   *           .build();
    *   Policy response = subnetworksClient.setIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1074,50 +1108,51 @@ public class SubnetworksClient implements BackgroundResource {
     return setIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
-   *   String resource = "";
-   *   SetIamPolicySubnetworkRequest request = SetIamPolicySubnetworkRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
-   *     .setResource(resource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = subnetworksClient.setIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   SetIamPolicySubnetworkRequest request =
+   *       SetIamPolicySubnetworkRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetPolicyRequestResource(RegionSetPolicyRequest.newBuilder().build())
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future = subnetworksClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicySubnetworkRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Set whether VMs in this subnet can access Google services without assigning external IP
    * addresses through Private Google Access.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String subnetwork = "";
-   *   SubnetworksSetPrivateIpGoogleAccessRequest subnetworksSetPrivateIpGoogleAccessRequestResource = SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder().build();
-   *   Operation response = subnetworksClient.setPrivateIpGoogleAccess(project, region, subnetwork, subnetworksSetPrivateIpGoogleAccessRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String subnetwork = "subnetwork-1302785042";
+   *   SubnetworksSetPrivateIpGoogleAccessRequest
+   *       subnetworksSetPrivateIpGoogleAccessRequestResource =
+   *           SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder().build();
+   *   Operation response =
+   *       subnetworksClient.setPrivateIpGoogleAccess(
+   *           project, region, subnetwork, subnetworksSetPrivateIpGoogleAccessRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -1142,28 +1177,27 @@ public class SubnetworksClient implements BackgroundResource {
     return setPrivateIpGoogleAccess(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Set whether VMs in this subnet can access Google services without assigning external IP
    * addresses through Private Google Access.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String subnetwork = "";
-   *   SubnetworksSetPrivateIpGoogleAccessRequest subnetworksSetPrivateIpGoogleAccessRequestResource = SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder().build();
-   *   SetPrivateIpGoogleAccessSubnetworkRequest request = SetPrivateIpGoogleAccessSubnetworkRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSubnetwork(subnetwork)
-   *     .setSubnetworksSetPrivateIpGoogleAccessRequestResource(subnetworksSetPrivateIpGoogleAccessRequestResource)
-   *     .build();
+   *   SetPrivateIpGoogleAccessSubnetworkRequest request =
+   *       SetPrivateIpGoogleAccessSubnetworkRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSubnetwork("subnetwork-1302785042")
+   *           .setSubnetworksSetPrivateIpGoogleAccessRequestResource(
+   *               SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder().build())
+   *           .build();
    *   Operation response = subnetworksClient.setPrivateIpGoogleAccess(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1173,51 +1207,54 @@ public class SubnetworksClient implements BackgroundResource {
     return setPrivateIpGoogleAccessCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Set whether VMs in this subnet can access Google services without assigning external IP
    * addresses through Private Google Access.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String subnetwork = "";
-   *   SubnetworksSetPrivateIpGoogleAccessRequest subnetworksSetPrivateIpGoogleAccessRequestResource = SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder().build();
-   *   SetPrivateIpGoogleAccessSubnetworkRequest request = SetPrivateIpGoogleAccessSubnetworkRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setSubnetwork(subnetwork)
-   *     .setSubnetworksSetPrivateIpGoogleAccessRequestResource(subnetworksSetPrivateIpGoogleAccessRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = subnetworksClient.setPrivateIpGoogleAccessCallable().futureCall(request);
-   *   // Do something
+   *   SetPrivateIpGoogleAccessSubnetworkRequest request =
+   *       SetPrivateIpGoogleAccessSubnetworkRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSubnetwork("subnetwork-1302785042")
+   *           .setSubnetworksSetPrivateIpGoogleAccessRequestResource(
+   *               SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       subnetworksClient.setPrivateIpGoogleAccessCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
       setPrivateIpGoogleAccessCallable() {
     return stub.setPrivateIpGoogleAccessCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestPermissionsResponse response = subnetworksClient.testIamPermissions(project, region, resource, testPermissionsRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       subnetworksClient.testIamPermissions(
+   *           project, region, resource, testPermissionsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -1240,27 +1277,24 @@ public class SubnetworksClient implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsSubnetworkRequest request = TestIamPermissionsSubnetworkRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
+   *   TestIamPermissionsSubnetworkRequest request =
+   *       TestIamPermissionsSubnetworkRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
    *   TestPermissionsResponse response = subnetworksClient.testIamPermissions(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1270,29 +1304,27 @@ public class SubnetworksClient implements BackgroundResource {
     return testIamPermissionsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsSubnetworkRequest request = TestIamPermissionsSubnetworkRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
-   *   ApiFuture&lt;TestPermissionsResponse&gt; future = subnetworksClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
+   *   TestIamPermissionsSubnetworkRequest request =
+   *       TestIamPermissionsSubnetworkRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       subnetworksClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
    *   TestPermissionsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
@@ -1333,7 +1365,7 @@ public class SubnetworksClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListSubnetworksRequest,
           SubnetworkAggregatedList,
-          Entry<String, SubnetworksScopedList>,
+          Map.Entry<String, SubnetworksScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -1341,7 +1373,7 @@ public class SubnetworksClient implements BackgroundResource {
         PageContext<
                 AggregatedListSubnetworksRequest,
                 SubnetworkAggregatedList,
-                Entry<String, SubnetworksScopedList>>
+                Map.Entry<String, SubnetworksScopedList>>
             context,
         ApiFuture<SubnetworkAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -1366,14 +1398,14 @@ public class SubnetworksClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListSubnetworksRequest,
           SubnetworkAggregatedList,
-          Entry<String, SubnetworksScopedList>,
+          Map.Entry<String, SubnetworksScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListSubnetworksRequest,
                 SubnetworkAggregatedList,
-                Entry<String, SubnetworksScopedList>>
+                Map.Entry<String, SubnetworksScopedList>>
             context,
         SubnetworkAggregatedList response) {
       super(context, response);
@@ -1388,7 +1420,7 @@ public class SubnetworksClient implements BackgroundResource {
         PageContext<
                 AggregatedListSubnetworksRequest,
                 SubnetworkAggregatedList,
-                Entry<String, SubnetworksScopedList>>
+                Map.Entry<String, SubnetworksScopedList>>
             context,
         SubnetworkAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -1399,7 +1431,7 @@ public class SubnetworksClient implements BackgroundResource {
         PageContext<
                 AggregatedListSubnetworksRequest,
                 SubnetworkAggregatedList,
-                Entry<String, SubnetworksScopedList>>
+                Map.Entry<String, SubnetworksScopedList>>
             context,
         ApiFuture<SubnetworkAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1410,7 +1442,7 @@ public class SubnetworksClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListSubnetworksRequest,
           SubnetworkAggregatedList,
-          Entry<String, SubnetworksScopedList>,
+          Map.Entry<String, SubnetworksScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

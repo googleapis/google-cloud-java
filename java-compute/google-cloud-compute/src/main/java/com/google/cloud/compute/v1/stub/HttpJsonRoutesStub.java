@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RoutesClient.ListPagedResponse;
@@ -39,26 +40,25 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Route;
 import com.google.cloud.compute.v1.RouteList;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the Routes service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRoutesStub extends RoutesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteRouteRequest, Operation> deleteMethodDescriptor =
+  private static final ApiMethodDescriptor<DeleteRouteRequest, Operation> deleteMethodDescriptor =
       ApiMethodDescriptor.<DeleteRouteRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Routes.Delete")
+          .setFullMethodName("google.cloud.compute.v1.Routes/Delete")
           .setHttpMethod(HttpMethods.DELETE)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<DeleteRouteRequest>newBuilder()
@@ -92,7 +92,7 @@ public class HttpJsonRoutesStub extends RoutesStub {
                       new FieldsExtractor<DeleteRouteRequest, String>() {
                         @Override
                         public String extract(DeleteRouteRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -102,10 +102,9 @@ public class HttpJsonRoutesStub extends RoutesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetRouteRequest, Route> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetRouteRequest, Route> getMethodDescriptor =
       ApiMethodDescriptor.<GetRouteRequest, Route>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Routes.Get")
+          .setFullMethodName("google.cloud.compute.v1.Routes/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetRouteRequest>newBuilder()
@@ -129,7 +128,6 @@ public class HttpJsonRoutesStub extends RoutesStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetRouteRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -137,7 +135,7 @@ public class HttpJsonRoutesStub extends RoutesStub {
                       new FieldsExtractor<GetRouteRequest, String>() {
                         @Override
                         public String extract(GetRouteRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -147,10 +145,9 @@ public class HttpJsonRoutesStub extends RoutesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertRouteRequest, Operation> insertMethodDescriptor =
+  private static final ApiMethodDescriptor<InsertRouteRequest, Operation> insertMethodDescriptor =
       ApiMethodDescriptor.<InsertRouteRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Routes.Insert")
+          .setFullMethodName("google.cloud.compute.v1.Routes/Insert")
           .setHttpMethod(HttpMethods.POST)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<InsertRouteRequest>newBuilder()
@@ -194,10 +191,9 @@ public class HttpJsonRoutesStub extends RoutesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListRoutesRequest, RouteList> listMethodDescriptor =
+  private static final ApiMethodDescriptor<ListRoutesRequest, RouteList> listMethodDescriptor =
       ApiMethodDescriptor.<ListRoutesRequest, RouteList>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Routes.List")
+          .setFullMethodName("google.cloud.compute.v1.Routes/List")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListRoutesRequest>newBuilder()
@@ -243,7 +239,7 @@ public class HttpJsonRoutesStub extends RoutesStub {
                       new FieldsExtractor<ListRoutesRequest, String>() {
                         @Override
                         public String extract(ListRoutesRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -253,14 +249,13 @@ public class HttpJsonRoutesStub extends RoutesStub {
                   .build())
           .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteRouteRequest, Operation> deleteCallable;
   private final UnaryCallable<GetRouteRequest, Route> getCallable;
   private final UnaryCallable<InsertRouteRequest, Operation> insertCallable;
   private final UnaryCallable<ListRoutesRequest, RouteList> listCallable;
   private final UnaryCallable<ListRoutesRequest, ListPagedResponse> listPagedCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRoutesStub create(RoutesStubSettings settings) throws IOException {
@@ -332,27 +327,43 @@ public class HttpJsonRoutesStub extends RoutesStub {
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteRouteRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetRouteRequest, Route> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertRouteRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListRoutesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListRoutesRequest, RouteList> listCallable() {
     return listCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRoutesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
   }
 
   @Override

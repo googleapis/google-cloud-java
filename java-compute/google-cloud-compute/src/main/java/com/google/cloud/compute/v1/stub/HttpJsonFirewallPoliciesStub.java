@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.FirewallPoliciesClient.ListPagedResponse;
@@ -58,27 +59,26 @@ import com.google.cloud.compute.v1.SetIamPolicyFirewallPolicyRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsFirewallPolicyRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the FirewallPolicies service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<AddAssociationFirewallPolicyRequest, Operation>
+  private static final ApiMethodDescriptor<AddAssociationFirewallPolicyRequest, Operation>
       addAssociationMethodDescriptor =
           ApiMethodDescriptor.<AddAssociationFirewallPolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies.AddAssociation")
+              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/AddAssociation")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddAssociationFirewallPolicyRequest>newBuilder()
@@ -136,11 +136,10 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<AddRuleFirewallPolicyRequest, Operation>
+  private static final ApiMethodDescriptor<AddRuleFirewallPolicyRequest, Operation>
       addRuleMethodDescriptor =
           ApiMethodDescriptor.<AddRuleFirewallPolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies.AddRule")
+              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/AddRule")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddRuleFirewallPolicyRequest>newBuilder()
@@ -191,11 +190,10 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<CloneRulesFirewallPolicyRequest, Operation>
+  private static final ApiMethodDescriptor<CloneRulesFirewallPolicyRequest, Operation>
       cloneRulesMethodDescriptor =
           ApiMethodDescriptor.<CloneRulesFirewallPolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies.CloneRules")
+              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/CloneRules")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<CloneRulesFirewallPolicyRequest>newBuilder()
@@ -240,7 +238,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                           new FieldsExtractor<CloneRulesFirewallPolicyRequest, String>() {
                             @Override
                             public String extract(CloneRulesFirewallPolicyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -250,11 +248,10 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteFirewallPolicyRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteFirewallPolicyRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteFirewallPolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies.Delete")
+              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteFirewallPolicyRequest>newBuilder()
@@ -292,7 +289,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                           new FieldsExtractor<DeleteFirewallPolicyRequest, String>() {
                             @Override
                             public String extract(DeleteFirewallPolicyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -302,11 +299,10 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetFirewallPolicyRequest, FirewallPolicy>
+  private static final ApiMethodDescriptor<GetFirewallPolicyRequest, FirewallPolicy>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetFirewallPolicyRequest, FirewallPolicy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies.Get")
+              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetFirewallPolicyRequest>newBuilder()
@@ -332,7 +328,6 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetFirewallPolicyRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -340,7 +335,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                           new FieldsExtractor<GetFirewallPolicyRequest, String>() {
                             @Override
                             public String extract(GetFirewallPolicyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -350,13 +345,12 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           GetAssociationFirewallPolicyRequest, FirewallPolicyAssociation>
       getAssociationMethodDescriptor =
           ApiMethodDescriptor
               .<GetAssociationFirewallPolicyRequest, FirewallPolicyAssociation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies.GetAssociation")
+              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/GetAssociation")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetAssociationFirewallPolicyRequest>newBuilder()
@@ -394,7 +388,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                           new FieldsExtractor<GetAssociationFirewallPolicyRequest, String>() {
                             @Override
                             public String extract(GetAssociationFirewallPolicyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -404,11 +398,10 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetIamPolicyFirewallPolicyRequest, Policy>
+  private static final ApiMethodDescriptor<GetIamPolicyFirewallPolicyRequest, Policy>
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyFirewallPolicyRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies.GetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyFirewallPolicyRequest>newBuilder()
@@ -448,7 +441,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                           new FieldsExtractor<GetIamPolicyFirewallPolicyRequest, String>() {
                             @Override
                             public String extract(GetIamPolicyFirewallPolicyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -458,11 +451,10 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetRuleFirewallPolicyRequest, FirewallPolicyRule>
+  private static final ApiMethodDescriptor<GetRuleFirewallPolicyRequest, FirewallPolicyRule>
       getRuleMethodDescriptor =
           ApiMethodDescriptor.<GetRuleFirewallPolicyRequest, FirewallPolicyRule>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies.GetRule")
+              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/GetRule")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRuleFirewallPolicyRequest>newBuilder()
@@ -499,7 +491,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                           new FieldsExtractor<GetRuleFirewallPolicyRequest, String>() {
                             @Override
                             public String extract(GetRuleFirewallPolicyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -509,11 +501,10 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertFirewallPolicyRequest, Operation>
+  private static final ApiMethodDescriptor<InsertFirewallPolicyRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertFirewallPolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies.Insert")
+              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertFirewallPolicyRequest>newBuilder()
@@ -526,7 +517,6 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<InsertFirewallPolicyRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -566,11 +556,10 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListFirewallPoliciesRequest, FirewallPolicyList>
+  private static final ApiMethodDescriptor<ListFirewallPoliciesRequest, FirewallPolicyList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListFirewallPoliciesRequest, FirewallPolicyList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies.List")
+              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListFirewallPoliciesRequest>newBuilder()
@@ -583,7 +572,6 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<ListFirewallPoliciesRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -626,7 +614,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                           new FieldsExtractor<ListFirewallPoliciesRequest, String>() {
                             @Override
                             public String extract(ListFirewallPoliciesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -636,14 +624,13 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListAssociationsFirewallPolicyRequest, FirewallPoliciesListAssociationsResponse>
       listAssociationsMethodDescriptor =
           ApiMethodDescriptor
               .<ListAssociationsFirewallPolicyRequest, FirewallPoliciesListAssociationsResponse>
                   newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies.ListAssociations")
+              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/ListAssociations")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListAssociationsFirewallPolicyRequest>newBuilder()
@@ -657,7 +644,6 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<ListAssociationsFirewallPolicyRequest>
                                   serializer = ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -681,7 +667,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                           new FieldsExtractor<ListAssociationsFirewallPolicyRequest, String>() {
                             @Override
                             public String extract(ListAssociationsFirewallPolicyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -692,11 +678,10 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<MoveFirewallPolicyRequest, Operation>
+  private static final ApiMethodDescriptor<MoveFirewallPolicyRequest, Operation>
       moveMethodDescriptor =
           ApiMethodDescriptor.<MoveFirewallPolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies.Move")
+              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/Move")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<MoveFirewallPolicyRequest>newBuilder()
@@ -736,7 +721,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                           new FieldsExtractor<MoveFirewallPolicyRequest, String>() {
                             @Override
                             public String extract(MoveFirewallPolicyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -746,11 +731,10 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchFirewallPolicyRequest, Operation>
+  private static final ApiMethodDescriptor<PatchFirewallPolicyRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchFirewallPolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies.Patch")
+              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/Patch")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchFirewallPolicyRequest>newBuilder()
@@ -800,11 +784,10 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchRuleFirewallPolicyRequest, Operation>
+  private static final ApiMethodDescriptor<PatchRuleFirewallPolicyRequest, Operation>
       patchRuleMethodDescriptor =
           ApiMethodDescriptor.<PatchRuleFirewallPolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies.PatchRule")
+              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/PatchRule")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchRuleFirewallPolicyRequest>newBuilder()
@@ -859,11 +842,10 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<RemoveAssociationFirewallPolicyRequest, Operation>
+  private static final ApiMethodDescriptor<RemoveAssociationFirewallPolicyRequest, Operation>
       removeAssociationMethodDescriptor =
           ApiMethodDescriptor.<RemoveAssociationFirewallPolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies.RemoveAssociation")
+              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/RemoveAssociation")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveAssociationFirewallPolicyRequest>newBuilder()
@@ -905,7 +887,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                           new FieldsExtractor<RemoveAssociationFirewallPolicyRequest, String>() {
                             @Override
                             public String extract(RemoveAssociationFirewallPolicyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -915,11 +897,10 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<RemoveRuleFirewallPolicyRequest, Operation>
+  private static final ApiMethodDescriptor<RemoveRuleFirewallPolicyRequest, Operation>
       removeRuleMethodDescriptor =
           ApiMethodDescriptor.<RemoveRuleFirewallPolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies.RemoveRule")
+              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/RemoveRule")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveRuleFirewallPolicyRequest>newBuilder()
@@ -961,7 +942,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                           new FieldsExtractor<RemoveRuleFirewallPolicyRequest, String>() {
                             @Override
                             public String extract(RemoveRuleFirewallPolicyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -971,11 +952,10 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetIamPolicyFirewallPolicyRequest, Policy>
+  private static final ApiMethodDescriptor<SetIamPolicyFirewallPolicyRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyFirewallPolicyRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies.SetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyFirewallPolicyRequest>newBuilder()
@@ -1002,7 +982,6 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetIamPolicyFirewallPolicyRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -1023,13 +1002,12 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           TestIamPermissionsFirewallPolicyRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           ApiMethodDescriptor
               .<TestIamPermissionsFirewallPolicyRequest, TestPermissionsResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies.TestIamPermissions")
+              .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsFirewallPolicyRequest>newBuilder()
@@ -1057,7 +1035,6 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<TestIamPermissionsFirewallPolicyRequest>
                                   serializer = ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -1077,8 +1054,6 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                       .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
                       .build())
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AddAssociationFirewallPolicyRequest, Operation>
       addAssociationCallable;
@@ -1106,6 +1081,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
   private final UnaryCallable<TestIamPermissionsFirewallPolicyRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonFirewallPoliciesStub create(FirewallPoliciesStubSettings settings)
@@ -1293,85 +1269,129 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(addAssociationMethodDescriptor);
+    methodDescriptors.add(addRuleMethodDescriptor);
+    methodDescriptors.add(cloneRulesMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getAssociationMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(getRuleMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(listAssociationsMethodDescriptor);
+    methodDescriptors.add(moveMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(patchRuleMethodDescriptor);
+    methodDescriptors.add(removeAssociationMethodDescriptor);
+    methodDescriptors.add(removeRuleMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<AddAssociationFirewallPolicyRequest, Operation> addAssociationCallable() {
     return addAssociationCallable;
   }
 
+  @Override
   public UnaryCallable<AddRuleFirewallPolicyRequest, Operation> addRuleCallable() {
     return addRuleCallable;
   }
 
+  @Override
   public UnaryCallable<CloneRulesFirewallPolicyRequest, Operation> cloneRulesCallable() {
     return cloneRulesCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteFirewallPolicyRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetFirewallPolicyRequest, FirewallPolicy> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetAssociationFirewallPolicyRequest, FirewallPolicyAssociation>
       getAssociationCallable() {
     return getAssociationCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyFirewallPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<GetRuleFirewallPolicyRequest, FirewallPolicyRule> getRuleCallable() {
     return getRuleCallable;
   }
 
+  @Override
   public UnaryCallable<InsertFirewallPolicyRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListFirewallPoliciesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListFirewallPoliciesRequest, FirewallPolicyList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListFirewallPoliciesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<
           ListAssociationsFirewallPolicyRequest, FirewallPoliciesListAssociationsResponse>
       listAssociationsCallable() {
     return listAssociationsCallable;
   }
 
+  @Override
   public UnaryCallable<MoveFirewallPolicyRequest, Operation> moveCallable() {
     return moveCallable;
   }
 
+  @Override
   public UnaryCallable<PatchFirewallPolicyRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<PatchRuleFirewallPolicyRequest, Operation> patchRuleCallable() {
     return patchRuleCallable;
   }
 
+  @Override
   public UnaryCallable<RemoveAssociationFirewallPolicyRequest, Operation>
       removeAssociationCallable() {
     return removeAssociationCallable;
   }
 
+  @Override
   public UnaryCallable<RemoveRuleFirewallPolicyRequest, Operation> removeRuleCallable() {
     return removeRuleCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyFirewallPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsFirewallPolicyRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

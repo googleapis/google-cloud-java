@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,24 +34,22 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The TargetSslProxies API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
- *   String project = "";
- *   String targetSslProxy = "";
+ *   String project = "project-309310695";
+ *   String targetSslProxy = "targetSslProxy-879314829";
  *   Operation response = targetSslProxiesClient.delete(project, targetSslProxy);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the targetSslProxiesClient object to clean up resources
+ * <p>Note: close() needs to be called on the TargetSslProxiesClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -79,30 +78,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TargetSslProxiesSettings targetSslProxiesSettings =
  *     TargetSslProxiesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * TargetSslProxiesClient targetSslProxiesClient =
  *     TargetSslProxiesClient.create(targetSslProxiesSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TargetSslProxiesSettings targetSslProxiesSettings =
  *     TargetSslProxiesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TargetSslProxiesClient targetSslProxiesClient =
  *     TargetSslProxiesClient.create(targetSslProxiesSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class TargetSslProxiesClient implements BackgroundResource {
   private final TargetSslProxiesSettings settings;
   private final TargetSslProxiesStub stub;
@@ -123,7 +119,7 @@ public class TargetSslProxiesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of TargetSslProxiesClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use TargetSslProxiesSettings}.
+   * is for advanced usage - prefer using create(TargetSslProxiesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TargetSslProxiesClient create(TargetSslProxiesStub stub) {
@@ -155,19 +151,19 @@ public class TargetSslProxiesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified TargetSslProxy resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   String targetSslProxy = "";
+   *   String project = "project-309310695";
+   *   String targetSslProxy = "targetSslProxy-879314829";
    *   Operation response = targetSslProxiesClient.delete(project, targetSslProxy);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetSslProxy Name of the TargetSslProxy resource to delete.
@@ -182,23 +178,23 @@ public class TargetSslProxiesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified TargetSslProxy resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   String targetSslProxy = "";
-   *   DeleteTargetSslProxyRequest request = DeleteTargetSslProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetSslProxy(targetSslProxy)
-   *     .build();
+   *   DeleteTargetSslProxyRequest request =
+   *       DeleteTargetSslProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetSslProxy("targetSslProxy-879314829")
+   *           .build();
    *   Operation response = targetSslProxiesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -207,44 +203,44 @@ public class TargetSslProxiesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified TargetSslProxy resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   String targetSslProxy = "";
-   *   DeleteTargetSslProxyRequest request = DeleteTargetSslProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetSslProxy(targetSslProxy)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetSslProxiesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteTargetSslProxyRequest request =
+   *       DeleteTargetSslProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetSslProxy("targetSslProxy-879314829")
+   *           .build();
+   *   ApiFuture<Operation> future = targetSslProxiesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteTargetSslProxyRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified TargetSslProxy resource. Gets a list of available target SSL proxies by
    * making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   String targetSslProxy = "";
+   *   String project = "project-309310695";
+   *   String targetSslProxy = "targetSslProxy-879314829";
    *   TargetSslProxy response = targetSslProxiesClient.get(project, targetSslProxy);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetSslProxy Name of the TargetSslProxy resource to return.
@@ -259,24 +255,23 @@ public class TargetSslProxiesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified TargetSslProxy resource. Gets a list of available target SSL proxies by
    * making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   String targetSslProxy = "";
-   *   GetTargetSslProxyRequest request = GetTargetSslProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetSslProxy(targetSslProxy)
-   *     .build();
+   *   GetTargetSslProxyRequest request =
+   *       GetTargetSslProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setTargetSslProxy("targetSslProxy-879314829")
+   *           .build();
    *   TargetSslProxy response = targetSslProxiesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -285,45 +280,44 @@ public class TargetSslProxiesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified TargetSslProxy resource. Gets a list of available target SSL proxies by
    * making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   String targetSslProxy = "";
-   *   GetTargetSslProxyRequest request = GetTargetSslProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetSslProxy(targetSslProxy)
-   *     .build();
-   *   ApiFuture&lt;TargetSslProxy&gt; future = targetSslProxiesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetTargetSslProxyRequest request =
+   *       GetTargetSslProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setTargetSslProxy("targetSslProxy-879314829")
+   *           .build();
+   *   ApiFuture<TargetSslProxy> future = targetSslProxiesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   TargetSslProxy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetTargetSslProxyRequest, TargetSslProxy> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TargetSslProxy resource in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   TargetSslProxy targetSslProxyResource = TargetSslProxy.newBuilder().build();
    *   Operation response = targetSslProxiesClient.insert(project, targetSslProxyResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetSslProxyResource The body resource for this request
@@ -338,24 +332,24 @@ public class TargetSslProxiesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TargetSslProxy resource in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   TargetSslProxy targetSslProxyResource = TargetSslProxy.newBuilder().build();
-   *   InsertTargetSslProxyRequest request = InsertTargetSslProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetSslProxyResource(targetSslProxyResource)
-   *     .build();
+   *   InsertTargetSslProxyRequest request =
+   *       InsertTargetSslProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetSslProxyResource(TargetSslProxy.newBuilder().build())
+   *           .build();
    *   Operation response = targetSslProxiesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -364,45 +358,45 @@ public class TargetSslProxiesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TargetSslProxy resource in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   TargetSslProxy targetSslProxyResource = TargetSslProxy.newBuilder().build();
-   *   InsertTargetSslProxyRequest request = InsertTargetSslProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetSslProxyResource(targetSslProxyResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetSslProxiesClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertTargetSslProxyRequest request =
+   *       InsertTargetSslProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetSslProxyResource(TargetSslProxy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = targetSslProxiesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertTargetSslProxyRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of TargetSslProxy resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (TargetSslProxy element : targetSslProxiesClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -413,23 +407,28 @@ public class TargetSslProxiesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of TargetSslProxy resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   ListTargetSslProxiesRequest request = ListTargetSslProxiesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListTargetSslProxiesRequest request =
+   *       ListTargetSslProxiesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (TargetSslProxy element : targetSslProxiesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -438,45 +437,56 @@ public class TargetSslProxiesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of TargetSslProxy resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   ListTargetSslProxiesRequest request = ListTargetSslProxiesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = targetSslProxiesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListTargetSslProxiesRequest request =
+   *       ListTargetSslProxiesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<TargetSslProxy> future =
+   *       targetSslProxiesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (TargetSslProxy element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListTargetSslProxiesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of TargetSslProxy resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   ListTargetSslProxiesRequest request = ListTargetSslProxiesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListTargetSslProxiesRequest request =
+   *       ListTargetSslProxiesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     TargetSslProxyList response = targetSslProxiesClient.listCallable().call(request);
-   *     for (TargetSslProxy element : response.getItemsList()) {
+   *     for (TargetSslProxy element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -487,26 +497,29 @@ public class TargetSslProxiesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListTargetSslProxiesRequest, TargetSslProxyList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the BackendService for TargetSslProxy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   String targetSslProxy = "";
-   *   TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource = TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
-   *   Operation response = targetSslProxiesClient.setBackendService(project, targetSslProxy, targetSslProxiesSetBackendServiceRequestResource);
+   *   String project = "project-309310695";
+   *   String targetSslProxy = "targetSslProxy-879314829";
+   *   TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource =
+   *       TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
+   *   Operation response =
+   *       targetSslProxiesClient.setBackendService(
+   *           project, targetSslProxy, targetSslProxiesSetBackendServiceRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetSslProxy Name of the TargetSslProxy resource whose BackendService resource is to
@@ -528,25 +541,25 @@ public class TargetSslProxiesClient implements BackgroundResource {
     return setBackendService(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the BackendService for TargetSslProxy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource = TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
-   *   String targetSslProxy = "";
-   *   SetBackendServiceTargetSslProxyRequest request = SetBackendServiceTargetSslProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetSslProxiesSetBackendServiceRequestResource(targetSslProxiesSetBackendServiceRequestResource)
-   *     .setTargetSslProxy(targetSslProxy)
-   *     .build();
+   *   SetBackendServiceTargetSslProxyRequest request =
+   *       SetBackendServiceTargetSslProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetSslProxiesSetBackendServiceRequestResource(
+   *               TargetSslProxiesSetBackendServiceRequest.newBuilder().build())
+   *           .setTargetSslProxy("targetSslProxy-879314829")
+   *           .build();
    *   Operation response = targetSslProxiesClient.setBackendService(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -555,47 +568,51 @@ public class TargetSslProxiesClient implements BackgroundResource {
     return setBackendServiceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the BackendService for TargetSslProxy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource = TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
-   *   String targetSslProxy = "";
-   *   SetBackendServiceTargetSslProxyRequest request = SetBackendServiceTargetSslProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetSslProxiesSetBackendServiceRequestResource(targetSslProxiesSetBackendServiceRequestResource)
-   *     .setTargetSslProxy(targetSslProxy)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetSslProxiesClient.setBackendServiceCallable().futureCall(request);
-   *   // Do something
+   *   SetBackendServiceTargetSslProxyRequest request =
+   *       SetBackendServiceTargetSslProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetSslProxiesSetBackendServiceRequestResource(
+   *               TargetSslProxiesSetBackendServiceRequest.newBuilder().build())
+   *           .setTargetSslProxy("targetSslProxy-879314829")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       targetSslProxiesClient.setBackendServiceCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetBackendServiceTargetSslProxyRequest, Operation>
       setBackendServiceCallable() {
     return stub.setBackendServiceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the ProxyHeaderType for TargetSslProxy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   String targetSslProxy = "";
-   *   TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource = TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
-   *   Operation response = targetSslProxiesClient.setProxyHeader(project, targetSslProxy, targetSslProxiesSetProxyHeaderRequestResource);
+   *   String project = "project-309310695";
+   *   String targetSslProxy = "targetSslProxy-879314829";
+   *   TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource =
+   *       TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
+   *   Operation response =
+   *       targetSslProxiesClient.setProxyHeader(
+   *           project, targetSslProxy, targetSslProxiesSetProxyHeaderRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetSslProxy Name of the TargetSslProxy resource whose ProxyHeader is to be set.
@@ -616,25 +633,25 @@ public class TargetSslProxiesClient implements BackgroundResource {
     return setProxyHeader(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the ProxyHeaderType for TargetSslProxy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource = TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
-   *   String targetSslProxy = "";
-   *   SetProxyHeaderTargetSslProxyRequest request = SetProxyHeaderTargetSslProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetSslProxiesSetProxyHeaderRequestResource(targetSslProxiesSetProxyHeaderRequestResource)
-   *     .setTargetSslProxy(targetSslProxy)
-   *     .build();
+   *   SetProxyHeaderTargetSslProxyRequest request =
+   *       SetProxyHeaderTargetSslProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetSslProxiesSetProxyHeaderRequestResource(
+   *               TargetSslProxiesSetProxyHeaderRequest.newBuilder().build())
+   *           .setTargetSslProxy("targetSslProxy-879314829")
+   *           .build();
    *   Operation response = targetSslProxiesClient.setProxyHeader(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -643,47 +660,51 @@ public class TargetSslProxiesClient implements BackgroundResource {
     return setProxyHeaderCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the ProxyHeaderType for TargetSslProxy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource = TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
-   *   String targetSslProxy = "";
-   *   SetProxyHeaderTargetSslProxyRequest request = SetProxyHeaderTargetSslProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetSslProxiesSetProxyHeaderRequestResource(targetSslProxiesSetProxyHeaderRequestResource)
-   *     .setTargetSslProxy(targetSslProxy)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetSslProxiesClient.setProxyHeaderCallable().futureCall(request);
-   *   // Do something
+   *   SetProxyHeaderTargetSslProxyRequest request =
+   *       SetProxyHeaderTargetSslProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetSslProxiesSetProxyHeaderRequestResource(
+   *               TargetSslProxiesSetProxyHeaderRequest.newBuilder().build())
+   *           .setTargetSslProxy("targetSslProxy-879314829")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       targetSslProxiesClient.setProxyHeaderCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetProxyHeaderTargetSslProxyRequest, Operation>
       setProxyHeaderCallable() {
     return stub.setProxyHeaderCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes SslCertificates for TargetSslProxy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   String targetSslProxy = "";
-   *   TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource = TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
-   *   Operation response = targetSslProxiesClient.setSslCertificates(project, targetSslProxy, targetSslProxiesSetSslCertificatesRequestResource);
+   *   String project = "project-309310695";
+   *   String targetSslProxy = "targetSslProxy-879314829";
+   *   TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource =
+   *       TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
+   *   Operation response =
+   *       targetSslProxiesClient.setSslCertificates(
+   *           project, targetSslProxy, targetSslProxiesSetSslCertificatesRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetSslProxy Name of the TargetSslProxy resource whose SslCertificate resource is to
@@ -705,25 +726,25 @@ public class TargetSslProxiesClient implements BackgroundResource {
     return setSslCertificates(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes SslCertificates for TargetSslProxy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource = TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
-   *   String targetSslProxy = "";
-   *   SetSslCertificatesTargetSslProxyRequest request = SetSslCertificatesTargetSslProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetSslProxiesSetSslCertificatesRequestResource(targetSslProxiesSetSslCertificatesRequestResource)
-   *     .setTargetSslProxy(targetSslProxy)
-   *     .build();
+   *   SetSslCertificatesTargetSslProxyRequest request =
+   *       SetSslCertificatesTargetSslProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetSslProxiesSetSslCertificatesRequestResource(
+   *               TargetSslProxiesSetSslCertificatesRequest.newBuilder().build())
+   *           .setTargetSslProxy("targetSslProxy-879314829")
+   *           .build();
    *   Operation response = targetSslProxiesClient.setSslCertificates(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -732,34 +753,35 @@ public class TargetSslProxiesClient implements BackgroundResource {
     return setSslCertificatesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes SslCertificates for TargetSslProxy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource = TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
-   *   String targetSslProxy = "";
-   *   SetSslCertificatesTargetSslProxyRequest request = SetSslCertificatesTargetSslProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetSslProxiesSetSslCertificatesRequestResource(targetSslProxiesSetSslCertificatesRequestResource)
-   *     .setTargetSslProxy(targetSslProxy)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetSslProxiesClient.setSslCertificatesCallable().futureCall(request);
-   *   // Do something
+   *   SetSslCertificatesTargetSslProxyRequest request =
+   *       SetSslCertificatesTargetSslProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetSslProxiesSetSslCertificatesRequestResource(
+   *               TargetSslProxiesSetSslCertificatesRequest.newBuilder().build())
+   *           .setTargetSslProxy("targetSslProxy-879314829")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       targetSslProxiesClient.setSslCertificatesCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetSslCertificatesTargetSslProxyRequest, Operation>
       setSslCertificatesCallable() {
     return stub.setSslCertificatesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for
    * SSL features. This affects connections between clients and the SSL proxy load balancer. They do
@@ -767,14 +789,15 @@ public class TargetSslProxiesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   String targetSslProxy = "";
+   *   String project = "project-309310695";
+   *   String targetSslProxy = "targetSslProxy-879314829";
    *   SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
-   *   Operation response = targetSslProxiesClient.setSslPolicy(project, targetSslProxy, sslPolicyReferenceResource);
+   *   Operation response =
+   *       targetSslProxiesClient.setSslPolicy(project, targetSslProxy, sslPolicyReferenceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetSslProxy Name of the TargetSslProxy resource whose SSL policy is to be set. The
@@ -793,7 +816,7 @@ public class TargetSslProxiesClient implements BackgroundResource {
     return setSslPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for
    * SSL features. This affects connections between clients and the SSL proxy load balancer. They do
@@ -801,19 +824,18 @@ public class TargetSslProxiesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
-   *   String targetSslProxy = "";
-   *   SetSslPolicyTargetSslProxyRequest request = SetSslPolicyTargetSslProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSslPolicyReferenceResource(sslPolicyReferenceResource)
-   *     .setTargetSslProxy(targetSslProxy)
-   *     .build();
+   *   SetSslPolicyTargetSslProxyRequest request =
+   *       SetSslPolicyTargetSslProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSslPolicyReferenceResource(SslPolicyReference.newBuilder().build())
+   *           .setTargetSslProxy("targetSslProxy-879314829")
+   *           .build();
    *   Operation response = targetSslProxiesClient.setSslPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -822,7 +844,7 @@ public class TargetSslProxiesClient implements BackgroundResource {
     return setSslPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for
    * SSL features. This affects connections between clients and the SSL proxy load balancer. They do
@@ -830,21 +852,21 @@ public class TargetSslProxiesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
-   *   String project = "";
-   *   SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
-   *   String targetSslProxy = "";
-   *   SetSslPolicyTargetSslProxyRequest request = SetSslPolicyTargetSslProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setSslPolicyReferenceResource(sslPolicyReferenceResource)
-   *     .setTargetSslProxy(targetSslProxy)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetSslProxiesClient.setSslPolicyCallable().futureCall(request);
-   *   // Do something
+   *   SetSslPolicyTargetSslProxyRequest request =
+   *       SetSslPolicyTargetSslProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSslPolicyReferenceResource(SslPolicyReference.newBuilder().build())
+   *           .setTargetSslProxy("targetSslProxy-879314829")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       targetSslProxiesClient.setSslPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetSslPolicyTargetSslProxyRequest, Operation> setSslPolicyCallable() {
     return stub.setSslPolicyCallable();

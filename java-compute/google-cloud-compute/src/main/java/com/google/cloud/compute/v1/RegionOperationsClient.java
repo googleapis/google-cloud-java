@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,25 +34,24 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The RegionOperations API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String operation = "";
- *   DeleteRegionOperationResponse response = regionOperationsClient.delete(project, region, operation);
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String operation = "operation1662702951";
+ *   DeleteRegionOperationResponse response =
+ *       regionOperationsClient.delete(project, region, operation);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the regionOperationsClient object to clean up resources
+ * <p>Note: close() needs to be called on the RegionOperationsClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -80,30 +80,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionOperationsSettings regionOperationsSettings =
  *     RegionOperationsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * RegionOperationsClient regionOperationsClient =
  *     RegionOperationsClient.create(regionOperationsSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionOperationsSettings regionOperationsSettings =
  *     RegionOperationsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionOperationsClient regionOperationsClient =
  *     RegionOperationsClient.create(regionOperationsSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RegionOperationsClient implements BackgroundResource {
   private final RegionOperationsSettings settings;
   private final RegionOperationsStub stub;
@@ -124,7 +121,7 @@ public class RegionOperationsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of RegionOperationsClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use RegionOperationsSettings}.
+   * is for advanced usage - prefer using create(RegionOperationsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionOperationsClient create(RegionOperationsStub stub) {
@@ -156,20 +153,21 @@ public class RegionOperationsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified region-specific Operations resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String operation = "";
-   *   DeleteRegionOperationResponse response = regionOperationsClient.delete(project, region, operation);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String operation = "operation1662702951";
+   *   DeleteRegionOperationResponse response =
+   *       regionOperationsClient.delete(project, region, operation);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -187,25 +185,23 @@ public class RegionOperationsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified region-specific Operations resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
-   *   String operation = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeleteRegionOperationRequest request = DeleteRegionOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   DeleteRegionOperationRequest request =
+   *       DeleteRegionOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
    *   DeleteRegionOperationResponse response = regionOperationsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -214,47 +210,46 @@ public class RegionOperationsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified region-specific Operations resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
-   *   String operation = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeleteRegionOperationRequest request = DeleteRegionOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;DeleteRegionOperationResponse&gt; future = regionOperationsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteRegionOperationRequest request =
+   *       DeleteRegionOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<DeleteRegionOperationResponse> future =
+   *       regionOperationsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   DeleteRegionOperationResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteRegionOperationRequest, DeleteRegionOperationResponse>
       deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified region-specific Operations resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String operation = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String operation = "operation1662702951";
    *   Operation response = regionOperationsClient.get(project, region, operation);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -271,25 +266,23 @@ public class RegionOperationsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified region-specific Operations resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
-   *   String operation = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetRegionOperationRequest request = GetRegionOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   GetRegionOperationRequest request =
+   *       GetRegionOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
    *   Operation response = regionOperationsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -298,47 +291,45 @@ public class RegionOperationsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified region-specific Operations resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
-   *   String operation = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetRegionOperationRequest request = GetRegionOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionOperationsClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetRegionOperationRequest request =
+   *       GetRegionOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<Operation> future = regionOperationsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetRegionOperationRequest, Operation> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Operation resources contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   for (Operation element : regionOperationsClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -350,25 +341,29 @@ public class RegionOperationsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Operation resources contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionOperationsRequest request = ListRegionOperationsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListRegionOperationsRequest request =
+   *       ListRegionOperationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (Operation element : regionOperationsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -377,49 +372,57 @@ public class RegionOperationsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Operation resources contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionOperationsRequest request = ListRegionOperationsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = regionOperationsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListRegionOperationsRequest request =
+   *       ListRegionOperationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Operation> future = regionOperationsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Operation element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionOperationsRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Operation resources contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionOperationsRequest request = ListRegionOperationsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListRegionOperationsRequest request =
+   *       ListRegionOperationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     OperationList response = regionOperationsClient.listCallable().call(request);
-   *     for (Operation element : response.getItemsList()) {
+   *     for (Operation element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -430,13 +433,13 @@ public class RegionOperationsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionOperationsRequest, OperationList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Waits for the specified Operation resource to return as `DONE` or for the request to approach
    * the 2 minute deadline, and retrieves the specified Operation resource. This method differs from
@@ -451,14 +454,14 @@ public class RegionOperationsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String operation = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String operation = "operation1662702951";
    *   Operation response = regionOperationsClient.wait(project, region, operation);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -475,7 +478,7 @@ public class RegionOperationsClient implements BackgroundResource {
     return wait(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Waits for the specified Operation resource to return as `DONE` or for the request to approach
    * the 2 minute deadline, and retrieves the specified Operation resource. This method differs from
@@ -490,19 +493,17 @@ public class RegionOperationsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
-   *   String operation = "";
-   *   String project = "";
-   *   String region = "";
-   *   WaitRegionOperationRequest request = WaitRegionOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   WaitRegionOperationRequest request =
+   *       WaitRegionOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
    *   Operation response = regionOperationsClient.wait(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -511,7 +512,7 @@ public class RegionOperationsClient implements BackgroundResource {
     return waitCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Waits for the specified Operation resource to return as `DONE` or for the request to approach
    * the 2 minute deadline, and retrieves the specified Operation resource. This method differs from
@@ -526,21 +527,19 @@ public class RegionOperationsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
-   *   String operation = "";
-   *   String project = "";
-   *   String region = "";
-   *   WaitRegionOperationRequest request = WaitRegionOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionOperationsClient.waitCallable().futureCall(request);
-   *   // Do something
+   *   WaitRegionOperationRequest request =
+   *       WaitRegionOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<Operation> future = regionOperationsClient.waitCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<WaitRegionOperationRequest, Operation> waitCallable() {
     return stub.waitCallable();

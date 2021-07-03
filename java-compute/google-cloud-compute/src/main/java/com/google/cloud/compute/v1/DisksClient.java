@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,30 +31,31 @@ import com.google.cloud.compute.v1.stub.DisksStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The Disks API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (DisksClient disksClient = DisksClient.create()) {
- *   String project = "";
- *   String zone = "";
- *   String disk = "";
- *   DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource = DisksAddResourcePoliciesRequest.newBuilder().build();
- *   Operation response = disksClient.addResourcePolicies(project, zone, disk, disksAddResourcePoliciesRequestResource);
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String disk = "disk3083677";
+ *   DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource =
+ *       DisksAddResourcePoliciesRequest.newBuilder().build();
+ *   Operation response =
+ *       disksClient.addResourcePolicies(
+ *           project, zone, disk, disksAddResourcePoliciesRequestResource);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the disksClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the DisksClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -81,30 +83,24 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * DisksSettings disksSettings =
  *     DisksSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * DisksClient disksClient =
- *     DisksClient.create(disksSettings);
- * </code>
- * </pre>
+ * DisksClient disksClient = DisksClient.create(disksSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
- * DisksSettings disksSettings =
- *     DisksSettings.newBuilder().setEndpoint(myEndpoint).build();
- * DisksClient disksClient =
- *     DisksClient.create(disksSettings);
- * </code>
- * </pre>
+ * <pre>{@code
+ * DisksSettings disksSettings = DisksSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * DisksClient disksClient = DisksClient.create(disksSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class DisksClient implements BackgroundResource {
   private final DisksSettings settings;
   private final DisksStub stub;
@@ -124,7 +120,7 @@ public class DisksClient implements BackgroundResource {
 
   /**
    * Constructs an instance of DisksClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use DisksSettings}.
+   * advanced usage - prefer using create(DisksSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DisksClient create(DisksStub stub) {
@@ -155,22 +151,25 @@ public class DisksClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds existing resource policies to a disk. You can only add one policy which will be applied to
    * this disk for scheduling snapshot creation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String disk = "";
-   *   DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource = DisksAddResourcePoliciesRequest.newBuilder().build();
-   *   Operation response = disksClient.addResourcePolicies(project, zone, disk, disksAddResourcePoliciesRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String disk = "disk3083677";
+   *   DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource =
+   *       DisksAddResourcePoliciesRequest.newBuilder().build();
+   *   Operation response =
+   *       disksClient.addResourcePolicies(
+   *           project, zone, disk, disksAddResourcePoliciesRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -193,28 +192,27 @@ public class DisksClient implements BackgroundResource {
     return addResourcePolicies(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds existing resource policies to a disk. You can only add one policy which will be applied to
    * this disk for scheduling snapshot creation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String disk = "";
-   *   DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource = DisksAddResourcePoliciesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   AddResourcePoliciesDiskRequest request = AddResourcePoliciesDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setDisksAddResourcePoliciesRequestResource(disksAddResourcePoliciesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   AddResourcePoliciesDiskRequest request =
+   *       AddResourcePoliciesDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setDisksAddResourcePoliciesRequestResource(
+   *               DisksAddResourcePoliciesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = disksClient.addResourcePolicies(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -223,50 +221,50 @@ public class DisksClient implements BackgroundResource {
     return addResourcePoliciesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds existing resource policies to a disk. You can only add one policy which will be applied to
    * this disk for scheduling snapshot creation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String disk = "";
-   *   DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource = DisksAddResourcePoliciesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   AddResourcePoliciesDiskRequest request = AddResourcePoliciesDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setDisksAddResourcePoliciesRequestResource(disksAddResourcePoliciesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = disksClient.addResourcePoliciesCallable().futureCall(request);
-   *   // Do something
+   *   AddResourcePoliciesDiskRequest request =
+   *       AddResourcePoliciesDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setDisksAddResourcePoliciesRequestResource(
+   *               DisksAddResourcePoliciesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = disksClient.addResourcePoliciesCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AddResourcePoliciesDiskRequest, Operation>
       addResourcePoliciesCallable() {
     return stub.addResourcePoliciesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of persistent disks.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, DisksScopedList&gt; element : disksClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, DisksScopedList> element :
+   *       disksClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -277,23 +275,30 @@ public class DisksClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of persistent disks.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   AggregatedListDisksRequest request = AggregatedListDisksRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, DisksScopedList&gt; element : disksClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListDisksRequest request =
+   *       AggregatedListDisksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, DisksScopedList> element :
+   *       disksClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -302,46 +307,59 @@ public class DisksClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of persistent disks.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   AggregatedListDisksRequest request = AggregatedListDisksRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = disksClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, DisksScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListDisksRequest request =
+   *       AggregatedListDisksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, DisksScopedList>> future =
+   *       disksClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, DisksScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListDisksRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of persistent disks.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   AggregatedListDisksRequest request = AggregatedListDisksRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListDisksRequest request =
+   *       AggregatedListDisksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     DiskAggregatedList response = disksClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, DisksScopedList&gt; element : response.getItemsMap()) {
+   *     for (Map.Entry<String, DisksScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -352,28 +370,28 @@ public class DisksClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListDisksRequest, DiskAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a snapshot of a specified persistent disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String disk = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String disk = "disk3083677";
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
    *   Operation response = disksClient.createSnapshot(project, zone, disk, snapshotResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -393,27 +411,26 @@ public class DisksClient implements BackgroundResource {
     return createSnapshot(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a snapshot of a specified persistent disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String disk = "";
-   *   String project = "";
-   *   Snapshot snapshotResource = Snapshot.newBuilder().build();
-   *   String zone = "";
-   *   CreateSnapshotDiskRequest request = CreateSnapshotDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setProject(project)
-   *     .setSnapshotResource(snapshotResource)
-   *     .setZone(zone)
-   *     .build();
+   *   CreateSnapshotDiskRequest request =
+   *       CreateSnapshotDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setGuestFlush(true)
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSnapshotResource(Snapshot.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = disksClient.createSnapshot(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -422,35 +439,34 @@ public class DisksClient implements BackgroundResource {
     return createSnapshotCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a snapshot of a specified persistent disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String disk = "";
-   *   String project = "";
-   *   Snapshot snapshotResource = Snapshot.newBuilder().build();
-   *   String zone = "";
-   *   CreateSnapshotDiskRequest request = CreateSnapshotDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setProject(project)
-   *     .setSnapshotResource(snapshotResource)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = disksClient.createSnapshotCallable().futureCall(request);
-   *   // Do something
+   *   CreateSnapshotDiskRequest request =
+   *       CreateSnapshotDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setGuestFlush(true)
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSnapshotResource(Snapshot.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = disksClient.createSnapshotCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<CreateSnapshotDiskRequest, Operation> createSnapshotCallable() {
     return stub.createSnapshotCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified persistent disk. Deleting a disk removes its data permanently and is
    * irreversible. However, deleting a disk does not delete any snapshots previously made from the
@@ -458,14 +474,14 @@ public class DisksClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String disk = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String disk = "disk3083677";
    *   Operation response = disksClient.delete(project, zone, disk);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -478,7 +494,7 @@ public class DisksClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified persistent disk. Deleting a disk removes its data permanently and is
    * irreversible. However, deleting a disk does not delete any snapshots previously made from the
@@ -486,19 +502,18 @@ public class DisksClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String disk = "";
-   *   String project = "";
-   *   String zone = "";
-   *   DeleteDiskRequest request = DeleteDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   DeleteDiskRequest request =
+   *       DeleteDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = disksClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -507,7 +522,7 @@ public class DisksClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified persistent disk. Deleting a disk removes its data permanently and is
    * irreversible. However, deleting a disk does not delete any snapshots previously made from the
@@ -515,41 +530,40 @@ public class DisksClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String disk = "";
-   *   String project = "";
-   *   String zone = "";
-   *   DeleteDiskRequest request = DeleteDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = disksClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteDiskRequest request =
+   *       DeleteDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = disksClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteDiskRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a specified persistent disk. Gets a list of available persistent disks by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String disk = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String disk = "disk3083677";
    *   Disk response = disksClient.get(project, zone, disk);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -562,26 +576,24 @@ public class DisksClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a specified persistent disk. Gets a list of available persistent disks by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String disk = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetDiskRequest request = GetDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   GetDiskRequest request =
+   *       GetDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Disk response = disksClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -590,48 +602,46 @@ public class DisksClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a specified persistent disk. Gets a list of available persistent disks by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String disk = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetDiskRequest request = GetDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Disk&gt; future = disksClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetDiskRequest request =
+   *       GetDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Disk> future = disksClient.getCallable().futureCall(request);
+   *   // Do something.
    *   Disk response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetDiskRequest, Disk> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String resource = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String resource = "resource-341064690";
    *   Policy response = disksClient.getIamPolicy(project, zone, resource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -648,26 +658,25 @@ public class DisksClient implements BackgroundResource {
     return getIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   GetIamPolicyDiskRequest request = GetIamPolicyDiskRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .build();
+   *   GetIamPolicyDiskRequest request =
+   *       GetIamPolicyDiskRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Policy response = disksClient.getIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -676,34 +685,33 @@ public class DisksClient implements BackgroundResource {
     return getIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   GetIamPolicyDiskRequest request = GetIamPolicyDiskRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = disksClient.getIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   GetIamPolicyDiskRequest request =
+   *       GetIamPolicyDiskRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Policy> future = disksClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyDiskRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a persistent disk in the specified project using the data in the request. You can
    * create a disk from a source (sourceImage, sourceSnapshot, or sourceDisk) or create an empty 500
@@ -712,14 +720,14 @@ public class DisksClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String zone = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
    *   Disk diskResource = Disk.newBuilder().build();
    *   Operation response = disksClient.insert(project, zone, diskResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -736,7 +744,7 @@ public class DisksClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a persistent disk in the specified project using the data in the request. You can
    * create a disk from a source (sourceImage, sourceSnapshot, or sourceDisk) or create an empty 500
@@ -745,19 +753,19 @@ public class DisksClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   Disk diskResource = Disk.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   InsertDiskRequest request = InsertDiskRequest.newBuilder()
-   *     .setDiskResource(diskResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   InsertDiskRequest request =
+   *       InsertDiskRequest.newBuilder()
+   *           .setDiskResource(Disk.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSourceImage("sourceImage-105174528")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = disksClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -766,7 +774,7 @@ public class DisksClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a persistent disk in the specified project using the data in the request. You can
    * create a disk from a source (sourceImage, sourceSnapshot, or sourceDisk) or create an empty 500
@@ -775,41 +783,41 @@ public class DisksClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   Disk diskResource = Disk.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   InsertDiskRequest request = InsertDiskRequest.newBuilder()
-   *     .setDiskResource(diskResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = disksClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertDiskRequest request =
+   *       InsertDiskRequest.newBuilder()
+   *           .setDiskResource(Disk.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSourceImage("sourceImage-105174528")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = disksClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertDiskRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of persistent disks contained within the specified zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String zone = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
    *   for (Disk element : disksClient.list(project, zone).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -821,25 +829,29 @@ public class DisksClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of persistent disks contained within the specified zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListDisksRequest request = ListDisksRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListDisksRequest request =
+   *       ListDisksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   for (Disk element : disksClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -848,49 +860,57 @@ public class DisksClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of persistent disks contained within the specified zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListDisksRequest request = ListDisksRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = disksClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListDisksRequest request =
+   *       ListDisksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Disk> future = disksClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Disk element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListDisksRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of persistent disks contained within the specified zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListDisksRequest request = ListDisksRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListDisksRequest request =
+   *       ListDisksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   while (true) {
    *     DiskList response = disksClient.listCallable().call(request);
-   *     for (Disk element : response.getItemsList()) {
+   *     for (Disk element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -901,27 +921,30 @@ public class DisksClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListDisksRequest, DiskList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes resource policies from a disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String disk = "";
-   *   DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource = DisksRemoveResourcePoliciesRequest.newBuilder().build();
-   *   Operation response = disksClient.removeResourcePolicies(project, zone, disk, disksRemoveResourcePoliciesRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String disk = "disk3083677";
+   *   DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource =
+   *       DisksRemoveResourcePoliciesRequest.newBuilder().build();
+   *   Operation response =
+   *       disksClient.removeResourcePolicies(
+   *           project, zone, disk, disksRemoveResourcePoliciesRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -945,27 +968,26 @@ public class DisksClient implements BackgroundResource {
     return removeResourcePolicies(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes resource policies from a disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String disk = "";
-   *   DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource = DisksRemoveResourcePoliciesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   RemoveResourcePoliciesDiskRequest request = RemoveResourcePoliciesDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setDisksRemoveResourcePoliciesRequestResource(disksRemoveResourcePoliciesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   RemoveResourcePoliciesDiskRequest request =
+   *       RemoveResourcePoliciesDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setDisksRemoveResourcePoliciesRequestResource(
+   *               DisksRemoveResourcePoliciesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = disksClient.removeResourcePolicies(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -974,50 +996,50 @@ public class DisksClient implements BackgroundResource {
     return removeResourcePoliciesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes resource policies from a disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String disk = "";
-   *   DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource = DisksRemoveResourcePoliciesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   RemoveResourcePoliciesDiskRequest request = RemoveResourcePoliciesDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setDisksRemoveResourcePoliciesRequestResource(disksRemoveResourcePoliciesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = disksClient.removeResourcePoliciesCallable().futureCall(request);
-   *   // Do something
+   *   RemoveResourcePoliciesDiskRequest request =
+   *       RemoveResourcePoliciesDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setDisksRemoveResourcePoliciesRequestResource(
+   *               DisksRemoveResourcePoliciesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       disksClient.removeResourcePoliciesCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<RemoveResourcePoliciesDiskRequest, Operation>
       removeResourcePoliciesCallable() {
     return stub.removeResourcePoliciesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Resizes the specified persistent disk. You can only increase the size of the disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String disk = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String disk = "disk3083677";
    *   DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
    *   Operation response = disksClient.resize(project, zone, disk, disksResizeRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1037,27 +1059,25 @@ public class DisksClient implements BackgroundResource {
     return resize(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Resizes the specified persistent disk. You can only increase the size of the disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String disk = "";
-   *   DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   ResizeDiskRequest request = ResizeDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setDisksResizeRequestResource(disksResizeRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ResizeDiskRequest request =
+   *       ResizeDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setDisksResizeRequestResource(DisksResizeRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = disksClient.resize(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1066,49 +1086,48 @@ public class DisksClient implements BackgroundResource {
     return resizeCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Resizes the specified persistent disk. You can only increase the size of the disk.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String disk = "";
-   *   DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   ResizeDiskRequest request = ResizeDiskRequest.newBuilder()
-   *     .setDisk(disk)
-   *     .setDisksResizeRequestResource(disksResizeRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = disksClient.resizeCallable().futureCall(request);
-   *   // Do something
+   *   ResizeDiskRequest request =
+   *       ResizeDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setDisksResizeRequestResource(DisksResizeRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = disksClient.resizeCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ResizeDiskRequest, Operation> resizeCallable() {
     return stub.resizeCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String resource = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String resource = "resource-341064690";
    *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
-   *   Policy response = disksClient.setIamPolicy(project, zone, resource, zoneSetPolicyRequestResource);
+   *   Policy response =
+   *       disksClient.setIamPolicy(project, zone, resource, zoneSetPolicyRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1131,27 +1150,24 @@ public class DisksClient implements BackgroundResource {
     return setIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
-   *   SetIamPolicyDiskRequest request = SetIamPolicyDiskRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
-   *     .build();
+   *   SetIamPolicyDiskRequest request =
+   *       SetIamPolicyDiskRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .setZoneSetPolicyRequestResource(ZoneSetPolicyRequest.newBuilder().build())
+   *           .build();
    *   Policy response = disksClient.setIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1160,50 +1176,48 @@ public class DisksClient implements BackgroundResource {
     return setIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
-   *   SetIamPolicyDiskRequest request = SetIamPolicyDiskRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = disksClient.setIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   SetIamPolicyDiskRequest request =
+   *       SetIamPolicyDiskRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .setZoneSetPolicyRequestResource(ZoneSetPolicyRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = disksClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyDiskRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the labels on a disk. To learn more about labels, read the Labeling Resources
    * documentation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String resource = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String resource = "resource-341064690";
    *   ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
-   *   Operation response = disksClient.setLabels(project, zone, resource, zoneSetLabelsRequestResource);
+   *   Operation response =
+   *       disksClient.setLabels(project, zone, resource, zoneSetLabelsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1226,28 +1240,26 @@ public class DisksClient implements BackgroundResource {
     return setLabels(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the labels on a disk. To learn more about labels, read the Labeling Resources
    * documentation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
-   *   SetLabelsDiskRequest request = SetLabelsDiskRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .setZoneSetLabelsRequestResource(zoneSetLabelsRequestResource)
-   *     .build();
+   *   SetLabelsDiskRequest request =
+   *       SetLabelsDiskRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .setZoneSetLabelsRequestResource(ZoneSetLabelsRequest.newBuilder().build())
+   *           .build();
    *   Operation response = disksClient.setLabels(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1256,50 +1268,50 @@ public class DisksClient implements BackgroundResource {
     return setLabelsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the labels on a disk. To learn more about labels, read the Labeling Resources
    * documentation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   String zone = "";
-   *   ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
-   *   SetLabelsDiskRequest request = SetLabelsDiskRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setZone(zone)
-   *     .setZoneSetLabelsRequestResource(zoneSetLabelsRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = disksClient.setLabelsCallable().futureCall(request);
-   *   // Do something
+   *   SetLabelsDiskRequest request =
+   *       SetLabelsDiskRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .setZoneSetLabelsRequestResource(ZoneSetLabelsRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = disksClient.setLabelsCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetLabelsDiskRequest, Operation> setLabelsCallable() {
     return stub.setLabelsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestPermissionsResponse response = disksClient.testIamPermissions(project, zone, resource, testPermissionsRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       disksClient.testIamPermissions(project, zone, resource, testPermissionsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -1322,27 +1334,24 @@ public class DisksClient implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   String zone = "";
-   *   TestIamPermissionsDiskRequest request = TestIamPermissionsDiskRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .setZone(zone)
-   *     .build();
+   *   TestIamPermissionsDiskRequest request =
+   *       TestIamPermissionsDiskRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
    *   TestPermissionsResponse response = disksClient.testIamPermissions(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1351,29 +1360,27 @@ public class DisksClient implements BackgroundResource {
     return testIamPermissionsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (DisksClient disksClient = DisksClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   String zone = "";
-   *   TestIamPermissionsDiskRequest request = TestIamPermissionsDiskRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;TestPermissionsResponse&gt; future = disksClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
+   *   TestIamPermissionsDiskRequest request =
+   *       TestIamPermissionsDiskRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       disksClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
    *   TestPermissionsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsDiskRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
@@ -1414,12 +1421,13 @@ public class DisksClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListDisksRequest,
           DiskAggregatedList,
-          Entry<String, DisksScopedList>,
+          Map.Entry<String, DisksScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListPagedResponse> createAsync(
-        PageContext<AggregatedListDisksRequest, DiskAggregatedList, Entry<String, DisksScopedList>>
+        PageContext<
+                AggregatedListDisksRequest, DiskAggregatedList, Map.Entry<String, DisksScopedList>>
             context,
         ApiFuture<DiskAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -1444,11 +1452,12 @@ public class DisksClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListDisksRequest,
           DiskAggregatedList,
-          Entry<String, DisksScopedList>,
+          Map.Entry<String, DisksScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<AggregatedListDisksRequest, DiskAggregatedList, Entry<String, DisksScopedList>>
+        PageContext<
+                AggregatedListDisksRequest, DiskAggregatedList, Map.Entry<String, DisksScopedList>>
             context,
         DiskAggregatedList response) {
       super(context, response);
@@ -1460,7 +1469,8 @@ public class DisksClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<AggregatedListDisksRequest, DiskAggregatedList, Entry<String, DisksScopedList>>
+        PageContext<
+                AggregatedListDisksRequest, DiskAggregatedList, Map.Entry<String, DisksScopedList>>
             context,
         DiskAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -1468,7 +1478,8 @@ public class DisksClient implements BackgroundResource {
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<AggregatedListDisksRequest, DiskAggregatedList, Entry<String, DisksScopedList>>
+        PageContext<
+                AggregatedListDisksRequest, DiskAggregatedList, Map.Entry<String, DisksScopedList>>
             context,
         ApiFuture<DiskAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1479,7 +1490,7 @@ public class DisksClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListDisksRequest,
           DiskAggregatedList,
-          Entry<String, DisksScopedList>,
+          Map.Entry<String, DisksScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,30 +31,31 @@ import com.google.cloud.compute.v1.stub.InstanceGroupsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The InstanceGroups API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
- *   String project = "";
- *   String zone = "";
- *   String instanceGroup = "";
- *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource = InstanceGroupsAddInstancesRequest.newBuilder().build();
- *   Operation response = instanceGroupsClient.addInstances(project, zone, instanceGroup, instanceGroupsAddInstancesRequestResource);
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String instanceGroup = "instanceGroup-1404696854";
+ *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource =
+ *       InstanceGroupsAddInstancesRequest.newBuilder().build();
+ *   Operation response =
+ *       instanceGroupsClient.addInstances(
+ *           project, zone, instanceGroup, instanceGroupsAddInstancesRequestResource);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the instanceGroupsClient object to clean up resources such
+ * <p>Note: close() needs to be called on the InstanceGroupsClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -81,30 +83,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * InstanceGroupsSettings instanceGroupsSettings =
  *     InstanceGroupsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * InstanceGroupsClient instanceGroupsClient =
- *     InstanceGroupsClient.create(instanceGroupsSettings);
- * </code>
- * </pre>
+ * InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create(instanceGroupsSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * InstanceGroupsSettings instanceGroupsSettings =
  *     InstanceGroupsSettings.newBuilder().setEndpoint(myEndpoint).build();
- * InstanceGroupsClient instanceGroupsClient =
- *     InstanceGroupsClient.create(instanceGroupsSettings);
- * </code>
- * </pre>
+ * InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create(instanceGroupsSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class InstanceGroupsClient implements BackgroundResource {
   private final InstanceGroupsSettings settings;
   private final InstanceGroupsStub stub;
@@ -125,7 +122,7 @@ public class InstanceGroupsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of InstanceGroupsClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use InstanceGroupsSettings}.
+   * for advanced usage - prefer using create(InstanceGroupsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final InstanceGroupsClient create(InstanceGroupsStub stub) {
@@ -157,22 +154,25 @@ public class InstanceGroupsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds a list of instances to the specified instance group. All of the instances in the instance
    * group must be in the same network/subnetwork. Read Adding instances for more information.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instanceGroup = "";
-   *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource = InstanceGroupsAddInstancesRequest.newBuilder().build();
-   *   Operation response = instanceGroupsClient.addInstances(project, zone, instanceGroup, instanceGroupsAddInstancesRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instanceGroup = "instanceGroup-1404696854";
+   *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource =
+   *       InstanceGroupsAddInstancesRequest.newBuilder().build();
+   *   Operation response =
+   *       instanceGroupsClient.addInstances(
+   *           project, zone, instanceGroup, instanceGroupsAddInstancesRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone where the instance group is located.
@@ -195,28 +195,27 @@ public class InstanceGroupsClient implements BackgroundResource {
     return addInstances(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds a list of instances to the specified instance group. All of the instances in the instance
    * group must be in the same network/subnetwork. Read Adding instances for more information.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource = InstanceGroupsAddInstancesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   AddInstancesInstanceGroupRequest request = AddInstancesInstanceGroupRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setInstanceGroupsAddInstancesRequestResource(instanceGroupsAddInstancesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   AddInstancesInstanceGroupRequest request =
+   *       AddInstancesInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setInstanceGroupsAddInstancesRequestResource(
+   *               InstanceGroupsAddInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instanceGroupsClient.addInstances(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -225,49 +224,49 @@ public class InstanceGroupsClient implements BackgroundResource {
     return addInstancesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds a list of instances to the specified instance group. All of the instances in the instance
    * group must be in the same network/subnetwork. Read Adding instances for more information.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource = InstanceGroupsAddInstancesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   AddInstancesInstanceGroupRequest request = AddInstancesInstanceGroupRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setInstanceGroupsAddInstancesRequestResource(instanceGroupsAddInstancesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instanceGroupsClient.addInstancesCallable().futureCall(request);
-   *   // Do something
+   *   AddInstancesInstanceGroupRequest request =
+   *       AddInstancesInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setInstanceGroupsAddInstancesRequestResource(
+   *               InstanceGroupsAddInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instanceGroupsClient.addInstancesCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AddInstancesInstanceGroupRequest, Operation> addInstancesCallable() {
     return stub.addInstancesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of instance groups and sorts them by zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, InstanceGroupsScopedList&gt; element : instanceGroupsClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, InstanceGroupsScopedList> element :
+   *       instanceGroupsClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -278,23 +277,30 @@ public class InstanceGroupsClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of instance groups and sorts them by zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String project = "";
-   *   AggregatedListInstanceGroupsRequest request = AggregatedListInstanceGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, InstanceGroupsScopedList&gt; element : instanceGroupsClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListInstanceGroupsRequest request =
+   *       AggregatedListInstanceGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, InstanceGroupsScopedList> element :
+   *       instanceGroupsClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -304,46 +310,60 @@ public class InstanceGroupsClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of instance groups and sorts them by zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String project = "";
-   *   AggregatedListInstanceGroupsRequest request = AggregatedListInstanceGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = instanceGroupsClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, InstanceGroupsScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListInstanceGroupsRequest request =
+   *       AggregatedListInstanceGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, InstanceGroupsScopedList>> future =
+   *       instanceGroupsClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, InstanceGroupsScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListInstanceGroupsRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of instance groups and sorts them by zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String project = "";
-   *   AggregatedListInstanceGroupsRequest request = AggregatedListInstanceGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListInstanceGroupsRequest request =
+   *       AggregatedListInstanceGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     InstanceGroupAggregatedList response = instanceGroupsClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, InstanceGroupsScopedList&gt; element : response.getItemsMap()) {
+   *     InstanceGroupAggregatedList response =
+   *         instanceGroupsClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, InstanceGroupsScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -354,14 +374,14 @@ public class InstanceGroupsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListInstanceGroupsRequest, InstanceGroupAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified instance group. The instances in the group are not deleted. Note that
    * instance group must not belong to a backend service. Read Deleting an instance group for more
@@ -369,14 +389,14 @@ public class InstanceGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instanceGroup = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instanceGroup = "instanceGroup-1404696854";
    *   Operation response = instanceGroupsClient.delete(project, zone, instanceGroup);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone where the instance group is located.
@@ -393,7 +413,7 @@ public class InstanceGroupsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified instance group. The instances in the group are not deleted. Note that
    * instance group must not belong to a backend service. Read Deleting an instance group for more
@@ -401,19 +421,18 @@ public class InstanceGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   String project = "";
-   *   String zone = "";
-   *   DeleteInstanceGroupRequest request = DeleteInstanceGroupRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   DeleteInstanceGroupRequest request =
+   *       DeleteInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instanceGroupsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -422,7 +441,7 @@ public class InstanceGroupsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified instance group. The instances in the group are not deleted. Note that
    * instance group must not belong to a backend service. Read Deleting an instance group for more
@@ -430,27 +449,26 @@ public class InstanceGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   String project = "";
-   *   String zone = "";
-   *   DeleteInstanceGroupRequest request = DeleteInstanceGroupRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instanceGroupsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteInstanceGroupRequest request =
+   *       DeleteInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instanceGroupsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteInstanceGroupRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified zonal instance group. Get a list of available zonal instance groups by
    * making a list() request.
@@ -460,14 +478,14 @@ public class InstanceGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instanceGroup = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instanceGroup = "instanceGroup-1404696854";
    *   InstanceGroup response = instanceGroupsClient.get(project, zone, instanceGroup);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone where the instance group is located.
@@ -484,7 +502,7 @@ public class InstanceGroupsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified zonal instance group. Get a list of available zonal instance groups by
    * making a list() request.
@@ -494,19 +512,17 @@ public class InstanceGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetInstanceGroupRequest request = GetInstanceGroupRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   GetInstanceGroupRequest request =
+   *       GetInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
    *   InstanceGroup response = instanceGroupsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -515,7 +531,7 @@ public class InstanceGroupsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified zonal instance group. Get a list of available zonal instance groups by
    * making a list() request.
@@ -525,41 +541,39 @@ public class InstanceGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetInstanceGroupRequest request = GetInstanceGroupRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;InstanceGroup&gt; future = instanceGroupsClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetInstanceGroupRequest request =
+   *       GetInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<InstanceGroup> future = instanceGroupsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   InstanceGroup response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetInstanceGroupRequest, InstanceGroup> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an instance group in the specified project using the parameters that are included in
    * the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
    *   InstanceGroup instanceGroupResource = InstanceGroup.newBuilder().build();
    *   Operation response = instanceGroupsClient.insert(project, zone, instanceGroupResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone where you want to create the instance group.
@@ -576,26 +590,25 @@ public class InstanceGroupsClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an instance group in the specified project using the parameters that are included in
    * the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   InstanceGroup instanceGroupResource = InstanceGroup.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   InsertInstanceGroupRequest request = InsertInstanceGroupRequest.newBuilder()
-   *     .setInstanceGroupResource(instanceGroupResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   InsertInstanceGroupRequest request =
+   *       InsertInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroupResource(InstanceGroup.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instanceGroupsClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -604,34 +617,33 @@ public class InstanceGroupsClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an instance group in the specified project using the parameters that are included in
    * the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   InstanceGroup instanceGroupResource = InstanceGroup.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   InsertInstanceGroupRequest request = InsertInstanceGroupRequest.newBuilder()
-   *     .setInstanceGroupResource(instanceGroupResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instanceGroupsClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertInstanceGroupRequest request =
+   *       InsertInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroupResource(InstanceGroup.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instanceGroupsClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertInstanceGroupRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of zonal instance group resources contained within the specified zone.
    *
@@ -640,15 +652,15 @@ public class InstanceGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
    *   for (InstanceGroup element : instanceGroupsClient.list(project, zone).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone where the instance group is located.
@@ -660,7 +672,7 @@ public class InstanceGroupsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of zonal instance group resources contained within the specified zone.
    *
@@ -669,19 +681,23 @@ public class InstanceGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListInstanceGroupsRequest request = ListInstanceGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListInstanceGroupsRequest request =
+   *       ListInstanceGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   for (InstanceGroup element : instanceGroupsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -690,7 +706,7 @@ public class InstanceGroupsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of zonal instance group resources contained within the specified zone.
    *
@@ -699,27 +715,32 @@ public class InstanceGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListInstanceGroupsRequest request = ListInstanceGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = instanceGroupsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListInstanceGroupsRequest request =
+   *       ListInstanceGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<InstanceGroup> future =
+   *       instanceGroupsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (InstanceGroup element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListInstanceGroupsRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of zonal instance group resources contained within the specified zone.
    *
@@ -728,17 +749,21 @@ public class InstanceGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListInstanceGroupsRequest request = ListInstanceGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListInstanceGroupsRequest request =
+   *       ListInstanceGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   while (true) {
    *     InstanceGroupList response = instanceGroupsClient.listCallable().call(request);
-   *     for (InstanceGroup element : response.getItemsList()) {
+   *     for (InstanceGroup element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -749,30 +774,35 @@ public class InstanceGroupsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListInstanceGroupsRequest, InstanceGroupList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the instances in the specified instance group. The orderBy query parameter is not
    * supported.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instanceGroup = "";
-   *   InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource = InstanceGroupsListInstancesRequest.newBuilder().build();
-   *   for (InstanceWithNamedPorts element : instanceGroupsClient.listInstances(project, zone, instanceGroup, instanceGroupsListInstancesRequestResource).iterateAll()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instanceGroup = "instanceGroup-1404696854";
+   *   InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource =
+   *       InstanceGroupsListInstancesRequest.newBuilder().build();
+   *   for (InstanceWithNamedPorts element :
+   *       instanceGroupsClient
+   *           .listInstances(
+   *               project, zone, instanceGroup, instanceGroupsListInstancesRequestResource)
+   *           .iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone where the instance group is located.
@@ -797,30 +827,34 @@ public class InstanceGroupsClient implements BackgroundResource {
     return listInstances(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the instances in the specified instance group. The orderBy query parameter is not
    * supported.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource = InstanceGroupsListInstancesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   ListInstancesInstanceGroupsRequest request = ListInstancesInstanceGroupsRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setInstanceGroupsListInstancesRequestResource(instanceGroupsListInstancesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   for (InstanceWithNamedPorts element : instanceGroupsClient.listInstances(request).iterateAll()) {
+   *   ListInstancesInstanceGroupsRequest request =
+   *       ListInstancesInstanceGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setInstanceGroupsListInstancesRequestResource(
+   *               InstanceGroupsListInstancesRequest.newBuilder().build())
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
+   *   for (InstanceWithNamedPorts element :
+   *       instanceGroupsClient.listInstances(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -830,60 +864,68 @@ public class InstanceGroupsClient implements BackgroundResource {
     return listInstancesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the instances in the specified instance group. The orderBy query parameter is not
    * supported.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource = InstanceGroupsListInstancesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   ListInstancesInstanceGroupsRequest request = ListInstancesInstanceGroupsRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setInstanceGroupsListInstancesRequestResource(instanceGroupsListInstancesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;ListInstancesPagedResponse&gt; future = instanceGroupsClient.listInstancesPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListInstancesInstanceGroupsRequest request =
+   *       ListInstancesInstanceGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setInstanceGroupsListInstancesRequestResource(
+   *               InstanceGroupsListInstancesRequest.newBuilder().build())
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<InstanceWithNamedPorts> future =
+   *       instanceGroupsClient.listInstancesPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (InstanceWithNamedPorts element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListInstancesInstanceGroupsRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable() {
     return stub.listInstancesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the instances in the specified instance group. The orderBy query parameter is not
    * supported.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource = InstanceGroupsListInstancesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   ListInstancesInstanceGroupsRequest request = ListInstancesInstanceGroupsRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setInstanceGroupsListInstancesRequestResource(instanceGroupsListInstancesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListInstancesInstanceGroupsRequest request =
+   *       ListInstancesInstanceGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setInstanceGroupsListInstancesRequestResource(
+   *               InstanceGroupsListInstancesRequest.newBuilder().build())
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   while (true) {
-   *     InstanceGroupsListInstances response = instanceGroupsClient.listInstancesCallable().call(request);
-   *     for (InstanceWithNamedPorts element : response.getItemsList()) {
+   *     InstanceGroupsListInstances response =
+   *         instanceGroupsClient.listInstancesCallable().call(request);
+   *     for (InstanceWithNamedPorts element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -894,14 +936,14 @@ public class InstanceGroupsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListInstancesInstanceGroupsRequest, InstanceGroupsListInstances>
       listInstancesCallable() {
     return stub.listInstancesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes one or more instances from the specified instance group, but does not delete those
    * instances.
@@ -912,15 +954,18 @@ public class InstanceGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instanceGroup = "";
-   *   InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource = InstanceGroupsRemoveInstancesRequest.newBuilder().build();
-   *   Operation response = instanceGroupsClient.removeInstances(project, zone, instanceGroup, instanceGroupsRemoveInstancesRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instanceGroup = "instanceGroup-1404696854";
+   *   InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource =
+   *       InstanceGroupsRemoveInstancesRequest.newBuilder().build();
+   *   Operation response =
+   *       instanceGroupsClient.removeInstances(
+   *           project, zone, instanceGroup, instanceGroupsRemoveInstancesRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone where the instance group is located.
@@ -945,7 +990,7 @@ public class InstanceGroupsClient implements BackgroundResource {
     return removeInstances(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes one or more instances from the specified instance group, but does not delete those
    * instances.
@@ -956,21 +1001,20 @@ public class InstanceGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource = InstanceGroupsRemoveInstancesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   RemoveInstancesInstanceGroupRequest request = RemoveInstancesInstanceGroupRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setInstanceGroupsRemoveInstancesRequestResource(instanceGroupsRemoveInstancesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   RemoveInstancesInstanceGroupRequest request =
+   *       RemoveInstancesInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setInstanceGroupsRemoveInstancesRequestResource(
+   *               InstanceGroupsRemoveInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instanceGroupsClient.removeInstances(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -979,7 +1023,7 @@ public class InstanceGroupsClient implements BackgroundResource {
     return removeInstancesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes one or more instances from the specified instance group, but does not delete those
    * instances.
@@ -990,44 +1034,47 @@ public class InstanceGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource = InstanceGroupsRemoveInstancesRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   RemoveInstancesInstanceGroupRequest request = RemoveInstancesInstanceGroupRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setInstanceGroupsRemoveInstancesRequestResource(instanceGroupsRemoveInstancesRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instanceGroupsClient.removeInstancesCallable().futureCall(request);
-   *   // Do something
+   *   RemoveInstancesInstanceGroupRequest request =
+   *       RemoveInstancesInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setInstanceGroupsRemoveInstancesRequestResource(
+   *               InstanceGroupsRemoveInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instanceGroupsClient.removeInstancesCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<RemoveInstancesInstanceGroupRequest, Operation>
       removeInstancesCallable() {
     return stub.removeInstancesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the named ports for the specified instance group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String instanceGroup = "";
-   *   InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource = InstanceGroupsSetNamedPortsRequest.newBuilder().build();
-   *   Operation response = instanceGroupsClient.setNamedPorts(project, zone, instanceGroup, instanceGroupsSetNamedPortsRequestResource);
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instanceGroup = "instanceGroup-1404696854";
+   *   InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource =
+   *       InstanceGroupsSetNamedPortsRequest.newBuilder().build();
+   *   Operation response =
+   *       instanceGroupsClient.setNamedPorts(
+   *           project, zone, instanceGroup, instanceGroupsSetNamedPortsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone where the instance group is located.
@@ -1051,27 +1098,26 @@ public class InstanceGroupsClient implements BackgroundResource {
     return setNamedPorts(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the named ports for the specified instance group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource = InstanceGroupsSetNamedPortsRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   SetNamedPortsInstanceGroupRequest request = SetNamedPortsInstanceGroupRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setInstanceGroupsSetNamedPortsRequestResource(instanceGroupsSetNamedPortsRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   SetNamedPortsInstanceGroupRequest request =
+   *       SetNamedPortsInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setInstanceGroupsSetNamedPortsRequestResource(
+   *               InstanceGroupsSetNamedPortsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = instanceGroupsClient.setNamedPorts(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1080,29 +1126,29 @@ public class InstanceGroupsClient implements BackgroundResource {
     return setNamedPortsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the named ports for the specified instance group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource = InstanceGroupsSetNamedPortsRequest.newBuilder().build();
-   *   String project = "";
-   *   String zone = "";
-   *   SetNamedPortsInstanceGroupRequest request = SetNamedPortsInstanceGroupRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setInstanceGroupsSetNamedPortsRequestResource(instanceGroupsSetNamedPortsRequestResource)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = instanceGroupsClient.setNamedPortsCallable().futureCall(request);
-   *   // Do something
+   *   SetNamedPortsInstanceGroupRequest request =
+   *       SetNamedPortsInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setInstanceGroupsSetNamedPortsRequestResource(
+   *               InstanceGroupsSetNamedPortsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instanceGroupsClient.setNamedPortsCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetNamedPortsInstanceGroupRequest, Operation> setNamedPortsCallable() {
     return stub.setNamedPortsCallable();
@@ -1142,7 +1188,7 @@ public class InstanceGroupsClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListInstanceGroupsRequest,
           InstanceGroupAggregatedList,
-          Entry<String, InstanceGroupsScopedList>,
+          Map.Entry<String, InstanceGroupsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -1150,7 +1196,7 @@ public class InstanceGroupsClient implements BackgroundResource {
         PageContext<
                 AggregatedListInstanceGroupsRequest,
                 InstanceGroupAggregatedList,
-                Entry<String, InstanceGroupsScopedList>>
+                Map.Entry<String, InstanceGroupsScopedList>>
             context,
         ApiFuture<InstanceGroupAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -1175,14 +1221,14 @@ public class InstanceGroupsClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListInstanceGroupsRequest,
           InstanceGroupAggregatedList,
-          Entry<String, InstanceGroupsScopedList>,
+          Map.Entry<String, InstanceGroupsScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListInstanceGroupsRequest,
                 InstanceGroupAggregatedList,
-                Entry<String, InstanceGroupsScopedList>>
+                Map.Entry<String, InstanceGroupsScopedList>>
             context,
         InstanceGroupAggregatedList response) {
       super(context, response);
@@ -1197,7 +1243,7 @@ public class InstanceGroupsClient implements BackgroundResource {
         PageContext<
                 AggregatedListInstanceGroupsRequest,
                 InstanceGroupAggregatedList,
-                Entry<String, InstanceGroupsScopedList>>
+                Map.Entry<String, InstanceGroupsScopedList>>
             context,
         InstanceGroupAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -1208,7 +1254,7 @@ public class InstanceGroupsClient implements BackgroundResource {
         PageContext<
                 AggregatedListInstanceGroupsRequest,
                 InstanceGroupAggregatedList,
-                Entry<String, InstanceGroupsScopedList>>
+                Map.Entry<String, InstanceGroupsScopedList>>
             context,
         ApiFuture<InstanceGroupAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1219,7 +1265,7 @@ public class InstanceGroupsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListInstanceGroupsRequest,
           InstanceGroupAggregatedList,
-          Entry<String, InstanceGroupsScopedList>,
+          Map.Entry<String, InstanceGroupsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

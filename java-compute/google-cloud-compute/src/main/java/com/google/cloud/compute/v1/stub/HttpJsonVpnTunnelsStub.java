@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.VpnTunnelsClient.AggregatedListPagedResponse;
@@ -42,27 +43,26 @@ import com.google.cloud.compute.v1.VpnTunnel;
 import com.google.cloud.compute.v1.VpnTunnelAggregatedList;
 import com.google.cloud.compute.v1.VpnTunnelList;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the VpnTunnels service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<AggregatedListVpnTunnelsRequest, VpnTunnelAggregatedList>
+  private static final ApiMethodDescriptor<AggregatedListVpnTunnelsRequest, VpnTunnelAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor.<AggregatedListVpnTunnelsRequest, VpnTunnelAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.VpnTunnels.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.VpnTunnels/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListVpnTunnelsRequest>newBuilder()
@@ -120,7 +120,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                           new FieldsExtractor<AggregatedListVpnTunnelsRequest, String>() {
                             @Override
                             public String extract(AggregatedListVpnTunnelsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -130,11 +130,10 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteVpnTunnelRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteVpnTunnelRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteVpnTunnelRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.VpnTunnels.Delete")
+              .setFullMethodName("google.cloud.compute.v1.VpnTunnels/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteVpnTunnelRequest>newBuilder()
@@ -171,7 +170,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                           new FieldsExtractor<DeleteVpnTunnelRequest, String>() {
                             @Override
                             public String extract(DeleteVpnTunnelRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -181,10 +180,9 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetVpnTunnelRequest, VpnTunnel> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetVpnTunnelRequest, VpnTunnel> getMethodDescriptor =
       ApiMethodDescriptor.<GetVpnTunnelRequest, VpnTunnel>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.VpnTunnels.Get")
+          .setFullMethodName("google.cloud.compute.v1.VpnTunnels/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetVpnTunnelRequest>newBuilder()
@@ -209,7 +207,6 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetVpnTunnelRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -217,7 +214,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                       new FieldsExtractor<GetVpnTunnelRequest, String>() {
                         @Override
                         public String extract(GetVpnTunnelRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -227,11 +224,10 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertVpnTunnelRequest, Operation>
+  private static final ApiMethodDescriptor<InsertVpnTunnelRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertVpnTunnelRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.VpnTunnels.Insert")
+              .setFullMethodName("google.cloud.compute.v1.VpnTunnels/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertVpnTunnelRequest>newBuilder()
@@ -278,11 +274,10 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListVpnTunnelsRequest, VpnTunnelList>
+  private static final ApiMethodDescriptor<ListVpnTunnelsRequest, VpnTunnelList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListVpnTunnelsRequest, VpnTunnelList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.VpnTunnels.List")
+              .setFullMethodName("google.cloud.compute.v1.VpnTunnels/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListVpnTunnelsRequest>newBuilder()
@@ -334,7 +329,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                           new FieldsExtractor<ListVpnTunnelsRequest, String>() {
                             @Override
                             public String extract(ListVpnTunnelsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -343,8 +338,6 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                       .setDefaultInstance(VpnTunnelList.getDefaultInstance())
                       .build())
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AggregatedListVpnTunnelsRequest, VpnTunnelAggregatedList>
       aggregatedListCallable;
@@ -356,6 +349,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
   private final UnaryCallable<ListVpnTunnelsRequest, VpnTunnelList> listCallable;
   private final UnaryCallable<ListVpnTunnelsRequest, ListPagedResponse> listPagedCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonVpnTunnelsStub create(VpnTunnelsStubSettings settings)
@@ -441,37 +435,56 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListVpnTunnelsRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListVpnTunnelsRequest, VpnTunnelAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListVpnTunnelsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteVpnTunnelRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetVpnTunnelRequest, VpnTunnel> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertVpnTunnelRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListVpnTunnelsRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListVpnTunnelsRequest, VpnTunnelList> listCallable() {
     return listCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListVpnTunnelsRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
   }
 
   @Override

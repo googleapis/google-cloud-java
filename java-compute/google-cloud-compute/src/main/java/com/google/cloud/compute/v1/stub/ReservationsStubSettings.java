@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.ReservationsClient.AggregatedListPagedResponse;
@@ -61,12 +62,13 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ReservationsStub}.
  *
@@ -83,29 +85,28 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of delete to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ReservationsStubSettings.Builder reservationsSettingsBuilder =
  *     ReservationsStubSettings.newBuilder();
  * reservationsSettingsBuilder
  *     .deleteSettings()
  *     .setRetrySettings(
- *         reservationsSettingsBuilder.deleteSettings().getRetrySettings().toBuilder()
+ *         reservationsSettingsBuilder
+ *             .deleteSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ReservationsStubSettings reservationsSettings = reservationsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class ReservationsStubSettings extends StubSettings<ReservationsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/compute")
-          .add("https://www.googleapis.com/auth/compute.readonly")
+          .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
   private final PagedCallSettings<
@@ -121,6 +122,134 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
   private final UnaryCallSettings<SetIamPolicyReservationRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsReservationRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
+
+  private static final PagedListDescriptor<
+          AggregatedListReservationsRequest,
+          ReservationAggregatedList,
+          Map.Entry<String, ReservationsScopedList>>
+      AGGREGATED_LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListReservationsRequest,
+              ReservationAggregatedList,
+              Map.Entry<String, ReservationsScopedList>>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListReservationsRequest injectToken(
+                AggregatedListReservationsRequest payload, String token) {
+              return AggregatedListReservationsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AggregatedListReservationsRequest injectPageSize(
+                AggregatedListReservationsRequest payload, int pageSize) {
+              return AggregatedListReservationsRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregatedListReservationsRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(ReservationAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Map.Entry<String, ReservationsScopedList>> extractResources(
+                ReservationAggregatedList payload) {
+              return payload.getItemsMap() == null
+                  ? Collections.<Map.Entry<String, ReservationsScopedList>>emptySet()
+                  : payload.getItemsMap().entrySet();
+            }
+          };
+
+  private static final PagedListDescriptor<ListReservationsRequest, ReservationList, Reservation>
+      LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<ListReservationsRequest, ReservationList, Reservation>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListReservationsRequest injectToken(
+                ListReservationsRequest payload, String token) {
+              return ListReservationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListReservationsRequest injectPageSize(
+                ListReservationsRequest payload, int pageSize) {
+              return ListReservationsRequest.newBuilder(payload).setMaxResults(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListReservationsRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(ReservationList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Reservation> extractResources(ReservationList payload) {
+              return payload.getItemsList() == null
+                  ? ImmutableList.<Reservation>of()
+                  : payload.getItemsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          AggregatedListReservationsRequest, ReservationAggregatedList, AggregatedListPagedResponse>
+      AGGREGATED_LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListReservationsRequest,
+              ReservationAggregatedList,
+              AggregatedListPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<AggregatedListReservationsRequest, ReservationAggregatedList>
+                    callable,
+                AggregatedListReservationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ReservationAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListReservationsRequest,
+                      ReservationAggregatedList,
+                      Map.Entry<String, ReservationsScopedList>>
+                  pageContext =
+                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
+              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListReservationsRequest, ReservationList, ListPagedResponse>
+      LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListReservationsRequest, ReservationList, ListPagedResponse>() {
+            @Override
+            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListReservationsRequest, ReservationList> callable,
+                ListReservationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ReservationList> futureResponse) {
+              PageContext<ListReservationsRequest, ReservationList, Reservation> pageContext =
+                  PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
+              return ListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to aggregatedList. */
   public PagedCallSettings<
@@ -177,10 +306,10 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
         .getTransportName()
         .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
       return HttpJsonReservationsStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -190,12 +319,12 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "compute.googleapis.com";
+    return "compute.googleapis.com:443";
   }
 
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return 443;
+  /** Returns the default mTLS service endpoint. */
+  public static String getDefaultMtlsEndpoint() {
+    return "compute.mtls.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -257,138 +386,9 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          AggregatedListReservationsRequest,
-          ReservationAggregatedList,
-          Entry<String, ReservationsScopedList>>
-      AGGREGATED_LIST_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              AggregatedListReservationsRequest,
-              ReservationAggregatedList,
-              Entry<String, ReservationsScopedList>>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public AggregatedListReservationsRequest injectToken(
-                AggregatedListReservationsRequest payload, String token) {
-              return AggregatedListReservationsRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public AggregatedListReservationsRequest injectPageSize(
-                AggregatedListReservationsRequest payload, int pageSize) {
-              return AggregatedListReservationsRequest.newBuilder(payload)
-                  .setMaxResults(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(AggregatedListReservationsRequest payload) {
-              return payload.getMaxResults();
-            }
-
-            @Override
-            public String extractNextToken(ReservationAggregatedList payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Entry<String, ReservationsScopedList>> extractResources(
-                ReservationAggregatedList payload) {
-              return payload.getItemsMap() != null
-                  ? payload.getItemsMap().entrySet()
-                  : ImmutableList.<Entry<String, ReservationsScopedList>>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListReservationsRequest, ReservationList, Reservation>
-      LIST_PAGE_STR_DESC =
-          new PagedListDescriptor<ListReservationsRequest, ReservationList, Reservation>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListReservationsRequest injectToken(
-                ListReservationsRequest payload, String token) {
-              return ListReservationsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListReservationsRequest injectPageSize(
-                ListReservationsRequest payload, int pageSize) {
-              return ListReservationsRequest.newBuilder(payload).setMaxResults(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListReservationsRequest payload) {
-              return payload.getMaxResults();
-            }
-
-            @Override
-            public String extractNextToken(ReservationList payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Reservation> extractResources(ReservationList payload) {
-              return payload.getItemsList() != null
-                  ? payload.getItemsList()
-                  : ImmutableList.<Reservation>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          AggregatedListReservationsRequest, ReservationAggregatedList, AggregatedListPagedResponse>
-      AGGREGATED_LIST_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              AggregatedListReservationsRequest,
-              ReservationAggregatedList,
-              AggregatedListPagedResponse>() {
-            @Override
-            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
-                UnaryCallable<AggregatedListReservationsRequest, ReservationAggregatedList>
-                    callable,
-                AggregatedListReservationsRequest request,
-                ApiCallContext context,
-                ApiFuture<ReservationAggregatedList> futureResponse) {
-              PageContext<
-                      AggregatedListReservationsRequest,
-                      ReservationAggregatedList,
-                      Entry<String, ReservationsScopedList>>
-                  pageContext =
-                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
-              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListReservationsRequest, ReservationList, ListPagedResponse>
-      LIST_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListReservationsRequest, ReservationList, ListPagedResponse>() {
-            @Override
-            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListReservationsRequest, ReservationList> callable,
-                ListReservationsRequest request,
-                ApiCallContext context,
-                ApiFuture<ReservationList> futureResponse) {
-              PageContext<ListReservationsRequest, ReservationList, Reservation> pageContext =
-                  PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
-              return ListPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for ReservationsStubSettings. */
   public static class Builder extends StubSettings.Builder<ReservationsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             AggregatedListReservationsRequest,
             ReservationAggregatedList,
@@ -408,7 +408,6 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
     private final UnaryCallSettings.Builder<
             TestIamPermissionsReservationRequest, TestPermissionsResponse>
         testIamPermissionsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -416,11 +415,12 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -434,38 +434,38 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_0_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
-
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
-
       resizeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -479,67 +479,7 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
               resizeSettings,
               setIamPolicySettings,
               testIamPermissionsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .aggregatedListSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .insertSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .resizeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      return builder;
     }
 
     protected Builder(ReservationsStubSettings settings) {
@@ -568,7 +508,69 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
               testIamPermissionsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .aggregatedListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .insertSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .resizeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

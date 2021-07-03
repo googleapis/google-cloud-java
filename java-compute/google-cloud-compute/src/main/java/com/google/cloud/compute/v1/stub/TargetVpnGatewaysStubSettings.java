@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.TargetVpnGatewaysClient.AggregatedListPagedResponse;
@@ -55,12 +56,13 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link TargetVpnGatewaysStub}.
  *
@@ -77,29 +79,29 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of delete to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TargetVpnGatewaysStubSettings.Builder targetVpnGatewaysSettingsBuilder =
  *     TargetVpnGatewaysStubSettings.newBuilder();
  * targetVpnGatewaysSettingsBuilder
  *     .deleteSettings()
  *     .setRetrySettings(
- *         targetVpnGatewaysSettingsBuilder.deleteSettings().getRetrySettings().toBuilder()
+ *         targetVpnGatewaysSettingsBuilder
+ *             .deleteSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * TargetVpnGatewaysStubSettings targetVpnGatewaysSettings = targetVpnGatewaysSettingsBuilder.build();
- * </code>
- * </pre>
+ * TargetVpnGatewaysStubSettings targetVpnGatewaysSettings =
+ *     targetVpnGatewaysSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class TargetVpnGatewaysStubSettings extends StubSettings<TargetVpnGatewaysStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/compute")
-          .add("https://www.googleapis.com/auth/compute.readonly")
+          .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
   private final PagedCallSettings<
@@ -113,6 +115,141 @@ public class TargetVpnGatewaysStubSettings extends StubSettings<TargetVpnGateway
   private final PagedCallSettings<
           ListTargetVpnGatewaysRequest, TargetVpnGatewayList, ListPagedResponse>
       listSettings;
+
+  private static final PagedListDescriptor<
+          AggregatedListTargetVpnGatewaysRequest,
+          TargetVpnGatewayAggregatedList,
+          Map.Entry<String, TargetVpnGatewaysScopedList>>
+      AGGREGATED_LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListTargetVpnGatewaysRequest,
+              TargetVpnGatewayAggregatedList,
+              Map.Entry<String, TargetVpnGatewaysScopedList>>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListTargetVpnGatewaysRequest injectToken(
+                AggregatedListTargetVpnGatewaysRequest payload, String token) {
+              return AggregatedListTargetVpnGatewaysRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AggregatedListTargetVpnGatewaysRequest injectPageSize(
+                AggregatedListTargetVpnGatewaysRequest payload, int pageSize) {
+              return AggregatedListTargetVpnGatewaysRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregatedListTargetVpnGatewaysRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(TargetVpnGatewayAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Map.Entry<String, TargetVpnGatewaysScopedList>> extractResources(
+                TargetVpnGatewayAggregatedList payload) {
+              return payload.getItemsMap() == null
+                  ? Collections.<Map.Entry<String, TargetVpnGatewaysScopedList>>emptySet()
+                  : payload.getItemsMap().entrySet();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListTargetVpnGatewaysRequest, TargetVpnGatewayList, TargetVpnGateway>
+      LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListTargetVpnGatewaysRequest, TargetVpnGatewayList, TargetVpnGateway>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTargetVpnGatewaysRequest injectToken(
+                ListTargetVpnGatewaysRequest payload, String token) {
+              return ListTargetVpnGatewaysRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTargetVpnGatewaysRequest injectPageSize(
+                ListTargetVpnGatewaysRequest payload, int pageSize) {
+              return ListTargetVpnGatewaysRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTargetVpnGatewaysRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(TargetVpnGatewayList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TargetVpnGateway> extractResources(TargetVpnGatewayList payload) {
+              return payload.getItemsList() == null
+                  ? ImmutableList.<TargetVpnGateway>of()
+                  : payload.getItemsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          AggregatedListTargetVpnGatewaysRequest,
+          TargetVpnGatewayAggregatedList,
+          AggregatedListPagedResponse>
+      AGGREGATED_LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListTargetVpnGatewaysRequest,
+              TargetVpnGatewayAggregatedList,
+              AggregatedListPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        AggregatedListTargetVpnGatewaysRequest, TargetVpnGatewayAggregatedList>
+                    callable,
+                AggregatedListTargetVpnGatewaysRequest request,
+                ApiCallContext context,
+                ApiFuture<TargetVpnGatewayAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListTargetVpnGatewaysRequest,
+                      TargetVpnGatewayAggregatedList,
+                      Map.Entry<String, TargetVpnGatewaysScopedList>>
+                  pageContext =
+                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
+              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTargetVpnGatewaysRequest, TargetVpnGatewayList, ListPagedResponse>
+      LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTargetVpnGatewaysRequest, TargetVpnGatewayList, ListPagedResponse>() {
+            @Override
+            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTargetVpnGatewaysRequest, TargetVpnGatewayList> callable,
+                ListTargetVpnGatewaysRequest request,
+                ApiCallContext context,
+                ApiFuture<TargetVpnGatewayList> futureResponse) {
+              PageContext<ListTargetVpnGatewaysRequest, TargetVpnGatewayList, TargetVpnGateway>
+                  pageContext = PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
+              return ListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to aggregatedList. */
   public PagedCallSettings<
@@ -150,10 +287,10 @@ public class TargetVpnGatewaysStubSettings extends StubSettings<TargetVpnGateway
         .getTransportName()
         .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
       return HttpJsonTargetVpnGatewaysStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -163,12 +300,12 @@ public class TargetVpnGatewaysStubSettings extends StubSettings<TargetVpnGateway
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "compute.googleapis.com";
+    return "compute.googleapis.com:443";
   }
 
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return 443;
+  /** Returns the default mTLS service endpoint. */
+  public static String getDefaultMtlsEndpoint() {
+    return "compute.mtls.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -226,145 +363,9 @@ public class TargetVpnGatewaysStubSettings extends StubSettings<TargetVpnGateway
     listSettings = settingsBuilder.listSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          AggregatedListTargetVpnGatewaysRequest,
-          TargetVpnGatewayAggregatedList,
-          Entry<String, TargetVpnGatewaysScopedList>>
-      AGGREGATED_LIST_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              AggregatedListTargetVpnGatewaysRequest,
-              TargetVpnGatewayAggregatedList,
-              Entry<String, TargetVpnGatewaysScopedList>>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public AggregatedListTargetVpnGatewaysRequest injectToken(
-                AggregatedListTargetVpnGatewaysRequest payload, String token) {
-              return AggregatedListTargetVpnGatewaysRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public AggregatedListTargetVpnGatewaysRequest injectPageSize(
-                AggregatedListTargetVpnGatewaysRequest payload, int pageSize) {
-              return AggregatedListTargetVpnGatewaysRequest.newBuilder(payload)
-                  .setMaxResults(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(AggregatedListTargetVpnGatewaysRequest payload) {
-              return payload.getMaxResults();
-            }
-
-            @Override
-            public String extractNextToken(TargetVpnGatewayAggregatedList payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Entry<String, TargetVpnGatewaysScopedList>> extractResources(
-                TargetVpnGatewayAggregatedList payload) {
-              return payload.getItemsMap() != null
-                  ? payload.getItemsMap().entrySet()
-                  : ImmutableList.<Entry<String, TargetVpnGatewaysScopedList>>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListTargetVpnGatewaysRequest, TargetVpnGatewayList, TargetVpnGateway>
-      LIST_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListTargetVpnGatewaysRequest, TargetVpnGatewayList, TargetVpnGateway>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTargetVpnGatewaysRequest injectToken(
-                ListTargetVpnGatewaysRequest payload, String token) {
-              return ListTargetVpnGatewaysRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListTargetVpnGatewaysRequest injectPageSize(
-                ListTargetVpnGatewaysRequest payload, int pageSize) {
-              return ListTargetVpnGatewaysRequest.newBuilder(payload)
-                  .setMaxResults(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListTargetVpnGatewaysRequest payload) {
-              return payload.getMaxResults();
-            }
-
-            @Override
-            public String extractNextToken(TargetVpnGatewayList payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<TargetVpnGateway> extractResources(TargetVpnGatewayList payload) {
-              return payload.getItemsList() != null
-                  ? payload.getItemsList()
-                  : ImmutableList.<TargetVpnGateway>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          AggregatedListTargetVpnGatewaysRequest,
-          TargetVpnGatewayAggregatedList,
-          AggregatedListPagedResponse>
-      AGGREGATED_LIST_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              AggregatedListTargetVpnGatewaysRequest,
-              TargetVpnGatewayAggregatedList,
-              AggregatedListPagedResponse>() {
-            @Override
-            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
-                UnaryCallable<
-                        AggregatedListTargetVpnGatewaysRequest, TargetVpnGatewayAggregatedList>
-                    callable,
-                AggregatedListTargetVpnGatewaysRequest request,
-                ApiCallContext context,
-                ApiFuture<TargetVpnGatewayAggregatedList> futureResponse) {
-              PageContext<
-                      AggregatedListTargetVpnGatewaysRequest,
-                      TargetVpnGatewayAggregatedList,
-                      Entry<String, TargetVpnGatewaysScopedList>>
-                  pageContext =
-                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
-              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTargetVpnGatewaysRequest, TargetVpnGatewayList, ListPagedResponse>
-      LIST_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListTargetVpnGatewaysRequest, TargetVpnGatewayList, ListPagedResponse>() {
-            @Override
-            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTargetVpnGatewaysRequest, TargetVpnGatewayList> callable,
-                ListTargetVpnGatewaysRequest request,
-                ApiCallContext context,
-                ApiFuture<TargetVpnGatewayList> futureResponse) {
-              PageContext<ListTargetVpnGatewaysRequest, TargetVpnGatewayList, TargetVpnGateway>
-                  pageContext = PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
-              return ListPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for TargetVpnGatewaysStubSettings. */
   public static class Builder extends StubSettings.Builder<TargetVpnGatewaysStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             AggregatedListTargetVpnGatewaysRequest,
             TargetVpnGatewayAggregatedList,
@@ -379,7 +380,6 @@ public class TargetVpnGatewaysStubSettings extends StubSettings<TargetVpnGateway
     private final PagedCallSettings.Builder<
             ListTargetVpnGatewaysRequest, TargetVpnGatewayList, ListPagedResponse>
         listSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -387,11 +387,12 @@ public class TargetVpnGatewaysStubSettings extends StubSettings<TargetVpnGateway
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -405,76 +406,40 @@ public class TargetVpnGatewaysStubSettings extends StubSettings<TargetVpnGateway
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_0_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
-
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               aggregatedListSettings, deleteSettings, getSettings, insertSettings, listSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .aggregatedListSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .insertSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      return builder;
     }
 
     protected Builder(TargetVpnGatewaysStubSettings settings) {
@@ -491,7 +456,49 @@ public class TargetVpnGatewaysStubSettings extends StubSettings<TargetVpnGateway
               aggregatedListSettings, deleteSettings, getSettings, insertSettings, listSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .aggregatedListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .insertSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,29 +31,27 @@ import com.google.cloud.compute.v1.stub.TargetInstancesStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The TargetInstances API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
- *   String project = "";
- *   String zone = "";
- *   String targetInstance = "";
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String targetInstance = "targetInstance-1036957370";
  *   Operation response = targetInstancesClient.delete(project, zone, targetInstance);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the targetInstancesClient object to clean up resources
+ * <p>Note: close() needs to be called on the TargetInstancesClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -81,30 +80,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TargetInstancesSettings targetInstancesSettings =
  *     TargetInstancesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * TargetInstancesClient targetInstancesClient =
  *     TargetInstancesClient.create(targetInstancesSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TargetInstancesSettings targetInstancesSettings =
  *     TargetInstancesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TargetInstancesClient targetInstancesClient =
  *     TargetInstancesClient.create(targetInstancesSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class TargetInstancesClient implements BackgroundResource {
   private final TargetInstancesSettings settings;
   private final TargetInstancesStub stub;
@@ -125,7 +121,7 @@ public class TargetInstancesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of TargetInstancesClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use TargetInstancesSettings}.
+   * for advanced usage - prefer using create(TargetInstancesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TargetInstancesClient create(TargetInstancesStub stub) {
@@ -157,20 +153,21 @@ public class TargetInstancesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of target instances.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, TargetInstancesScopedList&gt; element : targetInstancesClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, TargetInstancesScopedList> element :
+   *       targetInstancesClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -181,23 +178,30 @@ public class TargetInstancesClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of target instances.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
-   *   String project = "";
-   *   AggregatedListTargetInstancesRequest request = AggregatedListTargetInstancesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, TargetInstancesScopedList&gt; element : targetInstancesClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListTargetInstancesRequest request =
+   *       AggregatedListTargetInstancesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, TargetInstancesScopedList> element :
+   *       targetInstancesClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -207,46 +211,60 @@ public class TargetInstancesClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of target instances.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
-   *   String project = "";
-   *   AggregatedListTargetInstancesRequest request = AggregatedListTargetInstancesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = targetInstancesClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, TargetInstancesScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListTargetInstancesRequest request =
+   *       AggregatedListTargetInstancesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, TargetInstancesScopedList>> future =
+   *       targetInstancesClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, TargetInstancesScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListTargetInstancesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of target instances.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
-   *   String project = "";
-   *   AggregatedListTargetInstancesRequest request = AggregatedListTargetInstancesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListTargetInstancesRequest request =
+   *       AggregatedListTargetInstancesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     TargetInstanceAggregatedList response = targetInstancesClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, TargetInstancesScopedList&gt; element : response.getItemsMap()) {
+   *     TargetInstanceAggregatedList response =
+   *         targetInstancesClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, TargetInstancesScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -257,27 +275,27 @@ public class TargetInstancesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListTargetInstancesRequest, TargetInstanceAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified TargetInstance resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String targetInstance = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String targetInstance = "targetInstance-1036957370";
    *   Operation response = targetInstancesClient.delete(project, zone, targetInstance);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone scoping this request.
@@ -294,25 +312,24 @@ public class TargetInstancesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified TargetInstance resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
-   *   String project = "";
-   *   String targetInstance = "";
-   *   String zone = "";
-   *   DeleteTargetInstanceRequest request = DeleteTargetInstanceRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetInstance(targetInstance)
-   *     .setZone(zone)
-   *     .build();
+   *   DeleteTargetInstanceRequest request =
+   *       DeleteTargetInstanceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetInstance("targetInstance-1036957370")
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = targetInstancesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -321,47 +338,46 @@ public class TargetInstancesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified TargetInstance resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
-   *   String project = "";
-   *   String targetInstance = "";
-   *   String zone = "";
-   *   DeleteTargetInstanceRequest request = DeleteTargetInstanceRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetInstance(targetInstance)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetInstancesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteTargetInstanceRequest request =
+   *       DeleteTargetInstanceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetInstance("targetInstance-1036957370")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = targetInstancesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteTargetInstanceRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified TargetInstance resource. Gets a list of available target instances by
    * making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String targetInstance = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String targetInstance = "targetInstance-1036957370";
    *   TargetInstance response = targetInstancesClient.get(project, zone, targetInstance);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone scoping this request.
@@ -378,26 +394,24 @@ public class TargetInstancesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified TargetInstance resource. Gets a list of available target instances by
    * making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
-   *   String project = "";
-   *   String targetInstance = "";
-   *   String zone = "";
-   *   GetTargetInstanceRequest request = GetTargetInstanceRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetInstance(targetInstance)
-   *     .setZone(zone)
-   *     .build();
+   *   GetTargetInstanceRequest request =
+   *       GetTargetInstanceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setTargetInstance("targetInstance-1036957370")
+   *           .setZone("zone3744684")
+   *           .build();
    *   TargetInstance response = targetInstancesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -406,48 +420,46 @@ public class TargetInstancesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified TargetInstance resource. Gets a list of available target instances by
    * making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
-   *   String project = "";
-   *   String targetInstance = "";
-   *   String zone = "";
-   *   GetTargetInstanceRequest request = GetTargetInstanceRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetInstance(targetInstance)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;TargetInstance&gt; future = targetInstancesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetTargetInstanceRequest request =
+   *       GetTargetInstanceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setTargetInstance("targetInstance-1036957370")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<TargetInstance> future = targetInstancesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   TargetInstance response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetTargetInstanceRequest, TargetInstance> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TargetInstance resource in the specified project and zone using the data included in
    * the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
    *   TargetInstance targetInstanceResource = TargetInstance.newBuilder().build();
    *   Operation response = targetInstancesClient.insert(project, zone, targetInstanceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone scoping this request.
@@ -465,26 +477,25 @@ public class TargetInstancesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TargetInstance resource in the specified project and zone using the data included in
    * the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
-   *   String project = "";
-   *   TargetInstance targetInstanceResource = TargetInstance.newBuilder().build();
-   *   String zone = "";
-   *   InsertTargetInstanceRequest request = InsertTargetInstanceRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetInstanceResource(targetInstanceResource)
-   *     .setZone(zone)
-   *     .build();
+   *   InsertTargetInstanceRequest request =
+   *       InsertTargetInstanceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetInstanceResource(TargetInstance.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
    *   Operation response = targetInstancesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -493,48 +504,47 @@ public class TargetInstancesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TargetInstance resource in the specified project and zone using the data included in
    * the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
-   *   String project = "";
-   *   TargetInstance targetInstanceResource = TargetInstance.newBuilder().build();
-   *   String zone = "";
-   *   InsertTargetInstanceRequest request = InsertTargetInstanceRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetInstanceResource(targetInstanceResource)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetInstancesClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertTargetInstanceRequest request =
+   *       InsertTargetInstanceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetInstanceResource(TargetInstance.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = targetInstancesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertTargetInstanceRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of TargetInstance resources available to the specified project and zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
    *   for (TargetInstance element : targetInstancesClient.list(project, zone).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone scoping this request.
@@ -546,25 +556,29 @@ public class TargetInstancesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of TargetInstance resources available to the specified project and zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListTargetInstancesRequest request = ListTargetInstancesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListTargetInstancesRequest request =
+   *       ListTargetInstancesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   for (TargetInstance element : targetInstancesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -573,49 +587,58 @@ public class TargetInstancesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of TargetInstance resources available to the specified project and zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListTargetInstancesRequest request = ListTargetInstancesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = targetInstancesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListTargetInstancesRequest request =
+   *       ListTargetInstancesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<TargetInstance> future =
+   *       targetInstancesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (TargetInstance element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListTargetInstancesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of TargetInstance resources available to the specified project and zone.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListTargetInstancesRequest request = ListTargetInstancesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListTargetInstancesRequest request =
+   *       ListTargetInstancesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   while (true) {
    *     TargetInstanceList response = targetInstancesClient.listCallable().call(request);
-   *     for (TargetInstance element : response.getItemsList()) {
+   *     for (TargetInstance element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -626,7 +649,7 @@ public class TargetInstancesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListTargetInstancesRequest, TargetInstanceList> listCallable() {
     return stub.listCallable();
@@ -666,7 +689,7 @@ public class TargetInstancesClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListTargetInstancesRequest,
           TargetInstanceAggregatedList,
-          Entry<String, TargetInstancesScopedList>,
+          Map.Entry<String, TargetInstancesScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -674,7 +697,7 @@ public class TargetInstancesClient implements BackgroundResource {
         PageContext<
                 AggregatedListTargetInstancesRequest,
                 TargetInstanceAggregatedList,
-                Entry<String, TargetInstancesScopedList>>
+                Map.Entry<String, TargetInstancesScopedList>>
             context,
         ApiFuture<TargetInstanceAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -699,14 +722,14 @@ public class TargetInstancesClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListTargetInstancesRequest,
           TargetInstanceAggregatedList,
-          Entry<String, TargetInstancesScopedList>,
+          Map.Entry<String, TargetInstancesScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListTargetInstancesRequest,
                 TargetInstanceAggregatedList,
-                Entry<String, TargetInstancesScopedList>>
+                Map.Entry<String, TargetInstancesScopedList>>
             context,
         TargetInstanceAggregatedList response) {
       super(context, response);
@@ -721,7 +744,7 @@ public class TargetInstancesClient implements BackgroundResource {
         PageContext<
                 AggregatedListTargetInstancesRequest,
                 TargetInstanceAggregatedList,
-                Entry<String, TargetInstancesScopedList>>
+                Map.Entry<String, TargetInstancesScopedList>>
             context,
         TargetInstanceAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -732,7 +755,7 @@ public class TargetInstancesClient implements BackgroundResource {
         PageContext<
                 AggregatedListTargetInstancesRequest,
                 TargetInstanceAggregatedList,
-                Entry<String, TargetInstancesScopedList>>
+                Map.Entry<String, TargetInstancesScopedList>>
             context,
         ApiFuture<TargetInstanceAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -743,7 +766,7 @@ public class TargetInstancesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListTargetInstancesRequest,
           TargetInstanceAggregatedList,
-          Entry<String, TargetInstancesScopedList>,
+          Map.Entry<String, TargetInstancesScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

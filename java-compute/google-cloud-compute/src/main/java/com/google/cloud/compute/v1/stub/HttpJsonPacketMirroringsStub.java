@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.PacketMirroringsClient.AggregatedListPagedResponse;
@@ -45,29 +46,28 @@ import com.google.cloud.compute.v1.PatchPacketMirroringRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsPacketMirroringRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the PacketMirrorings service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListPacketMirroringsRequest, PacketMirroringAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListPacketMirroringsRequest, PacketMirroringAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.PacketMirrorings.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListPacketMirroringsRequest>newBuilder()
@@ -125,7 +125,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                           new FieldsExtractor<AggregatedListPacketMirroringsRequest, String>() {
                             @Override
                             public String extract(AggregatedListPacketMirroringsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -135,11 +135,10 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeletePacketMirroringRequest, Operation>
+  private static final ApiMethodDescriptor<DeletePacketMirroringRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeletePacketMirroringRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.PacketMirrorings.Delete")
+              .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeletePacketMirroringRequest>newBuilder()
@@ -152,10 +151,10 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeletePacketMirroringRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "packetMirroring", request.getPacketMirroring());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -179,7 +178,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                           new FieldsExtractor<DeletePacketMirroringRequest, String>() {
                             @Override
                             public String extract(DeletePacketMirroringRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -189,11 +188,10 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetPacketMirroringRequest, PacketMirroring>
+  private static final ApiMethodDescriptor<GetPacketMirroringRequest, PacketMirroring>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetPacketMirroringRequest, PacketMirroring>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.PacketMirrorings.Get")
+              .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetPacketMirroringRequest>newBuilder()
@@ -205,10 +203,10 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetPacketMirroringRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "packetMirroring", request.getPacketMirroring());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -221,7 +219,6 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetPacketMirroringRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -229,7 +226,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                           new FieldsExtractor<GetPacketMirroringRequest, String>() {
                             @Override
                             public String extract(GetPacketMirroringRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -239,11 +236,10 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertPacketMirroringRequest, Operation>
+  private static final ApiMethodDescriptor<InsertPacketMirroringRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertPacketMirroringRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.PacketMirrorings.Insert")
+              .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertPacketMirroringRequest>newBuilder()
@@ -294,11 +290,10 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListPacketMirroringsRequest, PacketMirroringList>
+  private static final ApiMethodDescriptor<ListPacketMirroringsRequest, PacketMirroringList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListPacketMirroringsRequest, PacketMirroringList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.PacketMirrorings.List")
+              .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListPacketMirroringsRequest>newBuilder()
@@ -352,7 +347,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                           new FieldsExtractor<ListPacketMirroringsRequest, String>() {
                             @Override
                             public String extract(ListPacketMirroringsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -362,11 +357,10 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchPacketMirroringRequest, Operation>
+  private static final ApiMethodDescriptor<PatchPacketMirroringRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchPacketMirroringRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.PacketMirrorings.Patch")
+              .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/Patch")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchPacketMirroringRequest>newBuilder()
@@ -379,10 +373,10 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<PatchPacketMirroringRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "packetMirroring", request.getPacketMirroring());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -419,13 +413,12 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           TestIamPermissionsPacketMirroringRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           ApiMethodDescriptor
               .<TestIamPermissionsPacketMirroringRequest, TestPermissionsResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.PacketMirrorings.TestIamPermissions")
+              .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -456,7 +449,6 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<TestIamPermissionsPacketMirroringRequest>
                                   serializer = ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -478,8 +470,6 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<AggregatedListPacketMirroringsRequest, PacketMirroringAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListPacketMirroringsRequest, AggregatedListPagedResponse>
@@ -493,6 +483,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
   private final UnaryCallable<TestIamPermissionsPacketMirroringRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonPacketMirroringsStub create(PacketMirroringsStubSettings settings)
@@ -597,43 +588,66 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListPacketMirroringsRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListPacketMirroringsRequest, PacketMirroringAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListPacketMirroringsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeletePacketMirroringRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetPacketMirroringRequest, PacketMirroring> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertPacketMirroringRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListPacketMirroringsRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListPacketMirroringsRequest, PacketMirroringList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListPacketMirroringsRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchPacketMirroringRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsPacketMirroringRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

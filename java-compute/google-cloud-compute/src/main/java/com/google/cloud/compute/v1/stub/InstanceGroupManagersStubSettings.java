@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.InstanceGroupManagersClient.AggregatedListPagedResponse;
@@ -79,12 +80,13 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link InstanceGroupManagersStub}.
  *
@@ -101,30 +103,30 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of abandonInstances to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * InstanceGroupManagersStubSettings.Builder instanceGroupManagersSettingsBuilder =
  *     InstanceGroupManagersStubSettings.newBuilder();
  * instanceGroupManagersSettingsBuilder
  *     .abandonInstancesSettings()
  *     .setRetrySettings(
- *         instanceGroupManagersSettingsBuilder.abandonInstancesSettings().getRetrySettings().toBuilder()
+ *         instanceGroupManagersSettingsBuilder
+ *             .abandonInstancesSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * InstanceGroupManagersStubSettings instanceGroupManagersSettings = instanceGroupManagersSettingsBuilder.build();
- * </code>
- * </pre>
+ * InstanceGroupManagersStubSettings instanceGroupManagersSettings =
+ *     instanceGroupManagersSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class InstanceGroupManagersStubSettings
     extends StubSettings<InstanceGroupManagersStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/compute")
-          .add("https://www.googleapis.com/auth/compute.readonly")
+          .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
   private final UnaryCallSettings<AbandonInstancesInstanceGroupManagerRequest, Operation>
@@ -175,6 +177,385 @@ public class InstanceGroupManagersStubSettings
       setTargetPoolsSettings;
   private final UnaryCallSettings<UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation>
       updatePerInstanceConfigsSettings;
+
+  private static final PagedListDescriptor<
+          AggregatedListInstanceGroupManagersRequest,
+          InstanceGroupManagerAggregatedList,
+          Map.Entry<String, InstanceGroupManagersScopedList>>
+      AGGREGATED_LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListInstanceGroupManagersRequest,
+              InstanceGroupManagerAggregatedList,
+              Map.Entry<String, InstanceGroupManagersScopedList>>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListInstanceGroupManagersRequest injectToken(
+                AggregatedListInstanceGroupManagersRequest payload, String token) {
+              return AggregatedListInstanceGroupManagersRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AggregatedListInstanceGroupManagersRequest injectPageSize(
+                AggregatedListInstanceGroupManagersRequest payload, int pageSize) {
+              return AggregatedListInstanceGroupManagersRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregatedListInstanceGroupManagersRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(InstanceGroupManagerAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Map.Entry<String, InstanceGroupManagersScopedList>> extractResources(
+                InstanceGroupManagerAggregatedList payload) {
+              return payload.getItemsMap() == null
+                  ? Collections.<Map.Entry<String, InstanceGroupManagersScopedList>>emptySet()
+                  : payload.getItemsMap().entrySet();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListInstanceGroupManagersRequest, InstanceGroupManagerList, InstanceGroupManager>
+      LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListInstanceGroupManagersRequest, InstanceGroupManagerList, InstanceGroupManager>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListInstanceGroupManagersRequest injectToken(
+                ListInstanceGroupManagersRequest payload, String token) {
+              return ListInstanceGroupManagersRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListInstanceGroupManagersRequest injectPageSize(
+                ListInstanceGroupManagersRequest payload, int pageSize) {
+              return ListInstanceGroupManagersRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListInstanceGroupManagersRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(InstanceGroupManagerList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<InstanceGroupManager> extractResources(
+                InstanceGroupManagerList payload) {
+              return payload.getItemsList() == null
+                  ? ImmutableList.<InstanceGroupManager>of()
+                  : payload.getItemsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListErrorsInstanceGroupManagersRequest,
+          InstanceGroupManagersListErrorsResponse,
+          InstanceManagedByIgmError>
+      LIST_ERRORS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListErrorsInstanceGroupManagersRequest,
+              InstanceGroupManagersListErrorsResponse,
+              InstanceManagedByIgmError>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListErrorsInstanceGroupManagersRequest injectToken(
+                ListErrorsInstanceGroupManagersRequest payload, String token) {
+              return ListErrorsInstanceGroupManagersRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListErrorsInstanceGroupManagersRequest injectPageSize(
+                ListErrorsInstanceGroupManagersRequest payload, int pageSize) {
+              return ListErrorsInstanceGroupManagersRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListErrorsInstanceGroupManagersRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(InstanceGroupManagersListErrorsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<InstanceManagedByIgmError> extractResources(
+                InstanceGroupManagersListErrorsResponse payload) {
+              return payload.getItemsList() == null
+                  ? ImmutableList.<InstanceManagedByIgmError>of()
+                  : payload.getItemsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListManagedInstancesInstanceGroupManagersRequest,
+          InstanceGroupManagersListManagedInstancesResponse,
+          ManagedInstance>
+      LIST_MANAGED_INSTANCES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListManagedInstancesInstanceGroupManagersRequest,
+              InstanceGroupManagersListManagedInstancesResponse,
+              ManagedInstance>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListManagedInstancesInstanceGroupManagersRequest injectToken(
+                ListManagedInstancesInstanceGroupManagersRequest payload, String token) {
+              return ListManagedInstancesInstanceGroupManagersRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListManagedInstancesInstanceGroupManagersRequest injectPageSize(
+                ListManagedInstancesInstanceGroupManagersRequest payload, int pageSize) {
+              return ListManagedInstancesInstanceGroupManagersRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(
+                ListManagedInstancesInstanceGroupManagersRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(
+                InstanceGroupManagersListManagedInstancesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ManagedInstance> extractResources(
+                InstanceGroupManagersListManagedInstancesResponse payload) {
+              return payload.getManagedInstancesList() == null
+                  ? ImmutableList.<ManagedInstance>of()
+                  : payload.getManagedInstancesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListPerInstanceConfigsInstanceGroupManagersRequest,
+          InstanceGroupManagersListPerInstanceConfigsResp,
+          PerInstanceConfig>
+      LIST_PER_INSTANCE_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListPerInstanceConfigsInstanceGroupManagersRequest,
+              InstanceGroupManagersListPerInstanceConfigsResp,
+              PerInstanceConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPerInstanceConfigsInstanceGroupManagersRequest injectToken(
+                ListPerInstanceConfigsInstanceGroupManagersRequest payload, String token) {
+              return ListPerInstanceConfigsInstanceGroupManagersRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListPerInstanceConfigsInstanceGroupManagersRequest injectPageSize(
+                ListPerInstanceConfigsInstanceGroupManagersRequest payload, int pageSize) {
+              return ListPerInstanceConfigsInstanceGroupManagersRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(
+                ListPerInstanceConfigsInstanceGroupManagersRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(
+                InstanceGroupManagersListPerInstanceConfigsResp payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<PerInstanceConfig> extractResources(
+                InstanceGroupManagersListPerInstanceConfigsResp payload) {
+              return payload.getItemsList() == null
+                  ? ImmutableList.<PerInstanceConfig>of()
+                  : payload.getItemsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          AggregatedListInstanceGroupManagersRequest,
+          InstanceGroupManagerAggregatedList,
+          AggregatedListPagedResponse>
+      AGGREGATED_LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListInstanceGroupManagersRequest,
+              InstanceGroupManagerAggregatedList,
+              AggregatedListPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        AggregatedListInstanceGroupManagersRequest,
+                        InstanceGroupManagerAggregatedList>
+                    callable,
+                AggregatedListInstanceGroupManagersRequest request,
+                ApiCallContext context,
+                ApiFuture<InstanceGroupManagerAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListInstanceGroupManagersRequest,
+                      InstanceGroupManagerAggregatedList,
+                      Map.Entry<String, InstanceGroupManagersScopedList>>
+                  pageContext =
+                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
+              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListInstanceGroupManagersRequest, InstanceGroupManagerList, ListPagedResponse>
+      LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListInstanceGroupManagersRequest, InstanceGroupManagerList, ListPagedResponse>() {
+            @Override
+            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListInstanceGroupManagersRequest, InstanceGroupManagerList> callable,
+                ListInstanceGroupManagersRequest request,
+                ApiCallContext context,
+                ApiFuture<InstanceGroupManagerList> futureResponse) {
+              PageContext<
+                      ListInstanceGroupManagersRequest,
+                      InstanceGroupManagerList,
+                      InstanceGroupManager>
+                  pageContext = PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
+              return ListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListErrorsInstanceGroupManagersRequest,
+          InstanceGroupManagersListErrorsResponse,
+          ListErrorsPagedResponse>
+      LIST_ERRORS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListErrorsInstanceGroupManagersRequest,
+              InstanceGroupManagersListErrorsResponse,
+              ListErrorsPagedResponse>() {
+            @Override
+            public ApiFuture<ListErrorsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListErrorsInstanceGroupManagersRequest,
+                        InstanceGroupManagersListErrorsResponse>
+                    callable,
+                ListErrorsInstanceGroupManagersRequest request,
+                ApiCallContext context,
+                ApiFuture<InstanceGroupManagersListErrorsResponse> futureResponse) {
+              PageContext<
+                      ListErrorsInstanceGroupManagersRequest,
+                      InstanceGroupManagersListErrorsResponse,
+                      InstanceManagedByIgmError>
+                  pageContext =
+                      PageContext.create(callable, LIST_ERRORS_PAGE_STR_DESC, request, context);
+              return ListErrorsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListManagedInstancesInstanceGroupManagersRequest,
+          InstanceGroupManagersListManagedInstancesResponse,
+          ListManagedInstancesPagedResponse>
+      LIST_MANAGED_INSTANCES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListManagedInstancesInstanceGroupManagersRequest,
+              InstanceGroupManagersListManagedInstancesResponse,
+              ListManagedInstancesPagedResponse>() {
+            @Override
+            public ApiFuture<ListManagedInstancesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListManagedInstancesInstanceGroupManagersRequest,
+                        InstanceGroupManagersListManagedInstancesResponse>
+                    callable,
+                ListManagedInstancesInstanceGroupManagersRequest request,
+                ApiCallContext context,
+                ApiFuture<InstanceGroupManagersListManagedInstancesResponse> futureResponse) {
+              PageContext<
+                      ListManagedInstancesInstanceGroupManagersRequest,
+                      InstanceGroupManagersListManagedInstancesResponse,
+                      ManagedInstance>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_MANAGED_INSTANCES_PAGE_STR_DESC, request, context);
+              return ListManagedInstancesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListPerInstanceConfigsInstanceGroupManagersRequest,
+          InstanceGroupManagersListPerInstanceConfigsResp,
+          ListPerInstanceConfigsPagedResponse>
+      LIST_PER_INSTANCE_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPerInstanceConfigsInstanceGroupManagersRequest,
+              InstanceGroupManagersListPerInstanceConfigsResp,
+              ListPerInstanceConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListPerInstanceConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListPerInstanceConfigsInstanceGroupManagersRequest,
+                        InstanceGroupManagersListPerInstanceConfigsResp>
+                    callable,
+                ListPerInstanceConfigsInstanceGroupManagersRequest request,
+                ApiCallContext context,
+                ApiFuture<InstanceGroupManagersListPerInstanceConfigsResp> futureResponse) {
+              PageContext<
+                      ListPerInstanceConfigsInstanceGroupManagersRequest,
+                      InstanceGroupManagersListPerInstanceConfigsResp,
+                      PerInstanceConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_PER_INSTANCE_CONFIGS_PAGE_STR_DESC, request, context);
+              return ListPerInstanceConfigsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to abandonInstances. */
   public UnaryCallSettings<AbandonInstancesInstanceGroupManagerRequest, Operation>
@@ -310,10 +691,10 @@ public class InstanceGroupManagersStubSettings
         .getTransportName()
         .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
       return HttpJsonInstanceGroupManagersStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -323,12 +704,12 @@ public class InstanceGroupManagersStubSettings
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "compute.googleapis.com";
+    return "compute.googleapis.com:443";
   }
 
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return 443;
+  /** Returns the default mTLS service endpoint. */
+  public static String getDefaultMtlsEndpoint() {
+    return "compute.mtls.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -401,390 +782,10 @@ public class InstanceGroupManagersStubSettings
     updatePerInstanceConfigsSettings = settingsBuilder.updatePerInstanceConfigsSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          AggregatedListInstanceGroupManagersRequest,
-          InstanceGroupManagerAggregatedList,
-          Entry<String, InstanceGroupManagersScopedList>>
-      AGGREGATED_LIST_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              AggregatedListInstanceGroupManagersRequest,
-              InstanceGroupManagerAggregatedList,
-              Entry<String, InstanceGroupManagersScopedList>>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public AggregatedListInstanceGroupManagersRequest injectToken(
-                AggregatedListInstanceGroupManagersRequest payload, String token) {
-              return AggregatedListInstanceGroupManagersRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public AggregatedListInstanceGroupManagersRequest injectPageSize(
-                AggregatedListInstanceGroupManagersRequest payload, int pageSize) {
-              return AggregatedListInstanceGroupManagersRequest.newBuilder(payload)
-                  .setMaxResults(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(AggregatedListInstanceGroupManagersRequest payload) {
-              return payload.getMaxResults();
-            }
-
-            @Override
-            public String extractNextToken(InstanceGroupManagerAggregatedList payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Entry<String, InstanceGroupManagersScopedList>> extractResources(
-                InstanceGroupManagerAggregatedList payload) {
-              return payload.getItemsMap() != null
-                  ? payload.getItemsMap().entrySet()
-                  : ImmutableList.<Entry<String, InstanceGroupManagersScopedList>>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListInstanceGroupManagersRequest, InstanceGroupManagerList, InstanceGroupManager>
-      LIST_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListInstanceGroupManagersRequest, InstanceGroupManagerList, InstanceGroupManager>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListInstanceGroupManagersRequest injectToken(
-                ListInstanceGroupManagersRequest payload, String token) {
-              return ListInstanceGroupManagersRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListInstanceGroupManagersRequest injectPageSize(
-                ListInstanceGroupManagersRequest payload, int pageSize) {
-              return ListInstanceGroupManagersRequest.newBuilder(payload)
-                  .setMaxResults(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListInstanceGroupManagersRequest payload) {
-              return payload.getMaxResults();
-            }
-
-            @Override
-            public String extractNextToken(InstanceGroupManagerList payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<InstanceGroupManager> extractResources(
-                InstanceGroupManagerList payload) {
-              return payload.getItemsList() != null
-                  ? payload.getItemsList()
-                  : ImmutableList.<InstanceGroupManager>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListErrorsInstanceGroupManagersRequest,
-          InstanceGroupManagersListErrorsResponse,
-          InstanceManagedByIgmError>
-      LIST_ERRORS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListErrorsInstanceGroupManagersRequest,
-              InstanceGroupManagersListErrorsResponse,
-              InstanceManagedByIgmError>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListErrorsInstanceGroupManagersRequest injectToken(
-                ListErrorsInstanceGroupManagersRequest payload, String token) {
-              return ListErrorsInstanceGroupManagersRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListErrorsInstanceGroupManagersRequest injectPageSize(
-                ListErrorsInstanceGroupManagersRequest payload, int pageSize) {
-              return ListErrorsInstanceGroupManagersRequest.newBuilder(payload)
-                  .setMaxResults(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListErrorsInstanceGroupManagersRequest payload) {
-              return payload.getMaxResults();
-            }
-
-            @Override
-            public String extractNextToken(InstanceGroupManagersListErrorsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<InstanceManagedByIgmError> extractResources(
-                InstanceGroupManagersListErrorsResponse payload) {
-              return payload.getItemsList() != null
-                  ? payload.getItemsList()
-                  : ImmutableList.<InstanceManagedByIgmError>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListManagedInstancesInstanceGroupManagersRequest,
-          InstanceGroupManagersListManagedInstancesResponse,
-          ManagedInstance>
-      LIST_MANAGED_INSTANCES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListManagedInstancesInstanceGroupManagersRequest,
-              InstanceGroupManagersListManagedInstancesResponse,
-              ManagedInstance>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListManagedInstancesInstanceGroupManagersRequest injectToken(
-                ListManagedInstancesInstanceGroupManagersRequest payload, String token) {
-              return ListManagedInstancesInstanceGroupManagersRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListManagedInstancesInstanceGroupManagersRequest injectPageSize(
-                ListManagedInstancesInstanceGroupManagersRequest payload, int pageSize) {
-              return ListManagedInstancesInstanceGroupManagersRequest.newBuilder(payload)
-                  .setMaxResults(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(
-                ListManagedInstancesInstanceGroupManagersRequest payload) {
-              return payload.getMaxResults();
-            }
-
-            @Override
-            public String extractNextToken(
-                InstanceGroupManagersListManagedInstancesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<ManagedInstance> extractResources(
-                InstanceGroupManagersListManagedInstancesResponse payload) {
-              return payload.getManagedInstancesList() != null
-                  ? payload.getManagedInstancesList()
-                  : ImmutableList.<ManagedInstance>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListPerInstanceConfigsInstanceGroupManagersRequest,
-          InstanceGroupManagersListPerInstanceConfigsResp,
-          PerInstanceConfig>
-      LIST_PER_INSTANCE_CONFIGS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListPerInstanceConfigsInstanceGroupManagersRequest,
-              InstanceGroupManagersListPerInstanceConfigsResp,
-              PerInstanceConfig>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListPerInstanceConfigsInstanceGroupManagersRequest injectToken(
-                ListPerInstanceConfigsInstanceGroupManagersRequest payload, String token) {
-              return ListPerInstanceConfigsInstanceGroupManagersRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListPerInstanceConfigsInstanceGroupManagersRequest injectPageSize(
-                ListPerInstanceConfigsInstanceGroupManagersRequest payload, int pageSize) {
-              return ListPerInstanceConfigsInstanceGroupManagersRequest.newBuilder(payload)
-                  .setMaxResults(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(
-                ListPerInstanceConfigsInstanceGroupManagersRequest payload) {
-              return payload.getMaxResults();
-            }
-
-            @Override
-            public String extractNextToken(
-                InstanceGroupManagersListPerInstanceConfigsResp payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<PerInstanceConfig> extractResources(
-                InstanceGroupManagersListPerInstanceConfigsResp payload) {
-              return payload.getItemsList() != null
-                  ? payload.getItemsList()
-                  : ImmutableList.<PerInstanceConfig>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          AggregatedListInstanceGroupManagersRequest,
-          InstanceGroupManagerAggregatedList,
-          AggregatedListPagedResponse>
-      AGGREGATED_LIST_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              AggregatedListInstanceGroupManagersRequest,
-              InstanceGroupManagerAggregatedList,
-              AggregatedListPagedResponse>() {
-            @Override
-            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
-                UnaryCallable<
-                        AggregatedListInstanceGroupManagersRequest,
-                        InstanceGroupManagerAggregatedList>
-                    callable,
-                AggregatedListInstanceGroupManagersRequest request,
-                ApiCallContext context,
-                ApiFuture<InstanceGroupManagerAggregatedList> futureResponse) {
-              PageContext<
-                      AggregatedListInstanceGroupManagersRequest,
-                      InstanceGroupManagerAggregatedList,
-                      Entry<String, InstanceGroupManagersScopedList>>
-                  pageContext =
-                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
-              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListInstanceGroupManagersRequest, InstanceGroupManagerList, ListPagedResponse>
-      LIST_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListInstanceGroupManagersRequest, InstanceGroupManagerList, ListPagedResponse>() {
-            @Override
-            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListInstanceGroupManagersRequest, InstanceGroupManagerList> callable,
-                ListInstanceGroupManagersRequest request,
-                ApiCallContext context,
-                ApiFuture<InstanceGroupManagerList> futureResponse) {
-              PageContext<
-                      ListInstanceGroupManagersRequest,
-                      InstanceGroupManagerList,
-                      InstanceGroupManager>
-                  pageContext = PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
-              return ListPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListErrorsInstanceGroupManagersRequest,
-          InstanceGroupManagersListErrorsResponse,
-          ListErrorsPagedResponse>
-      LIST_ERRORS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListErrorsInstanceGroupManagersRequest,
-              InstanceGroupManagersListErrorsResponse,
-              ListErrorsPagedResponse>() {
-            @Override
-            public ApiFuture<ListErrorsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<
-                        ListErrorsInstanceGroupManagersRequest,
-                        InstanceGroupManagersListErrorsResponse>
-                    callable,
-                ListErrorsInstanceGroupManagersRequest request,
-                ApiCallContext context,
-                ApiFuture<InstanceGroupManagersListErrorsResponse> futureResponse) {
-              PageContext<
-                      ListErrorsInstanceGroupManagersRequest,
-                      InstanceGroupManagersListErrorsResponse,
-                      InstanceManagedByIgmError>
-                  pageContext =
-                      PageContext.create(callable, LIST_ERRORS_PAGE_STR_DESC, request, context);
-              return ListErrorsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListManagedInstancesInstanceGroupManagersRequest,
-          InstanceGroupManagersListManagedInstancesResponse,
-          ListManagedInstancesPagedResponse>
-      LIST_MANAGED_INSTANCES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListManagedInstancesInstanceGroupManagersRequest,
-              InstanceGroupManagersListManagedInstancesResponse,
-              ListManagedInstancesPagedResponse>() {
-            @Override
-            public ApiFuture<ListManagedInstancesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<
-                        ListManagedInstancesInstanceGroupManagersRequest,
-                        InstanceGroupManagersListManagedInstancesResponse>
-                    callable,
-                ListManagedInstancesInstanceGroupManagersRequest request,
-                ApiCallContext context,
-                ApiFuture<InstanceGroupManagersListManagedInstancesResponse> futureResponse) {
-              PageContext<
-                      ListManagedInstancesInstanceGroupManagersRequest,
-                      InstanceGroupManagersListManagedInstancesResponse,
-                      ManagedInstance>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_MANAGED_INSTANCES_PAGE_STR_DESC, request, context);
-              return ListManagedInstancesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListPerInstanceConfigsInstanceGroupManagersRequest,
-          InstanceGroupManagersListPerInstanceConfigsResp,
-          ListPerInstanceConfigsPagedResponse>
-      LIST_PER_INSTANCE_CONFIGS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListPerInstanceConfigsInstanceGroupManagersRequest,
-              InstanceGroupManagersListPerInstanceConfigsResp,
-              ListPerInstanceConfigsPagedResponse>() {
-            @Override
-            public ApiFuture<ListPerInstanceConfigsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<
-                        ListPerInstanceConfigsInstanceGroupManagersRequest,
-                        InstanceGroupManagersListPerInstanceConfigsResp>
-                    callable,
-                ListPerInstanceConfigsInstanceGroupManagersRequest request,
-                ApiCallContext context,
-                ApiFuture<InstanceGroupManagersListPerInstanceConfigsResp> futureResponse) {
-              PageContext<
-                      ListPerInstanceConfigsInstanceGroupManagersRequest,
-                      InstanceGroupManagersListPerInstanceConfigsResp,
-                      PerInstanceConfig>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_PER_INSTANCE_CONFIGS_PAGE_STR_DESC, request, context);
-              return ListPerInstanceConfigsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for InstanceGroupManagersStubSettings. */
   public static class Builder
       extends StubSettings.Builder<InstanceGroupManagersStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<AbandonInstancesInstanceGroupManagerRequest, Operation>
         abandonInstancesSettings;
     private final PagedCallSettings.Builder<
@@ -843,7 +844,6 @@ public class InstanceGroupManagersStubSettings
     private final UnaryCallSettings.Builder<
             UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation>
         updatePerInstanceConfigsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -851,11 +851,12 @@ public class InstanceGroupManagersStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -866,65 +867,54 @@ public class InstanceGroupManagersStubSettings
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       abandonInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
-
       applyUpdatesToInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deletePerInstanceConfigsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
-
       listErrorsSettings = PagedCallSettings.newBuilder(LIST_ERRORS_PAGE_STR_FACT);
-
       listManagedInstancesSettings =
           PagedCallSettings.newBuilder(LIST_MANAGED_INSTANCES_PAGE_STR_FACT);
-
       listPerInstanceConfigsSettings =
           PagedCallSettings.newBuilder(LIST_PER_INSTANCE_CONFIGS_PAGE_STR_FACT);
-
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       patchPerInstanceConfigsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       recreateInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       resizeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setInstanceTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setTargetPoolsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updatePerInstanceConfigsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -949,122 +939,7 @@ public class InstanceGroupManagersStubSettings
               setInstanceTemplateSettings,
               setTargetPoolsSettings,
               updatePerInstanceConfigsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .abandonInstancesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .aggregatedListSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .applyUpdatesToInstancesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .createInstancesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteInstancesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deletePerInstanceConfigsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .insertSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listErrorsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listManagedInstancesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listPerInstanceConfigsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .patchSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .patchPerInstanceConfigsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .recreateInstancesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .resizeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .setInstanceTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .setTargetPoolsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .updatePerInstanceConfigsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      return builder;
     }
 
     protected Builder(InstanceGroupManagersStubSettings settings) {
@@ -1115,7 +990,124 @@ public class InstanceGroupManagersStubSettings
               updatePerInstanceConfigsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .abandonInstancesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .aggregatedListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .applyUpdatesToInstancesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createInstancesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteInstancesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deletePerInstanceConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .insertSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listErrorsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listManagedInstancesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listPerInstanceConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .patchPerInstanceConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .recreateInstancesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .resizeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setInstanceTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setTargetPoolsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updatePerInstanceConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

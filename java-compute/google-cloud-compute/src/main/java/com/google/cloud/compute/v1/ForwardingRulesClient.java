@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,29 +31,27 @@ import com.google.cloud.compute.v1.stub.ForwardingRulesStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The ForwardingRules API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String forwardingRule = "";
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String forwardingRule = "forwardingRule-1429104743";
  *   Operation response = forwardingRulesClient.delete(project, region, forwardingRule);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the forwardingRulesClient object to clean up resources
+ * <p>Note: close() needs to be called on the ForwardingRulesClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -81,30 +80,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ForwardingRulesSettings forwardingRulesSettings =
  *     ForwardingRulesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * ForwardingRulesClient forwardingRulesClient =
  *     ForwardingRulesClient.create(forwardingRulesSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ForwardingRulesSettings forwardingRulesSettings =
  *     ForwardingRulesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ForwardingRulesClient forwardingRulesClient =
  *     ForwardingRulesClient.create(forwardingRulesSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class ForwardingRulesClient implements BackgroundResource {
   private final ForwardingRulesSettings settings;
   private final ForwardingRulesStub stub;
@@ -125,7 +121,7 @@ public class ForwardingRulesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ForwardingRulesClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use ForwardingRulesSettings}.
+   * for advanced usage - prefer using create(ForwardingRulesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ForwardingRulesClient create(ForwardingRulesStub stub) {
@@ -157,20 +153,21 @@ public class ForwardingRulesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of forwarding rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, ForwardingRulesScopedList&gt; element : forwardingRulesClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, ForwardingRulesScopedList> element :
+   *       forwardingRulesClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -181,23 +178,30 @@ public class ForwardingRulesClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of forwarding rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String project = "";
-   *   AggregatedListForwardingRulesRequest request = AggregatedListForwardingRulesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, ForwardingRulesScopedList&gt; element : forwardingRulesClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListForwardingRulesRequest request =
+   *       AggregatedListForwardingRulesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, ForwardingRulesScopedList> element :
+   *       forwardingRulesClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -207,46 +211,60 @@ public class ForwardingRulesClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of forwarding rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String project = "";
-   *   AggregatedListForwardingRulesRequest request = AggregatedListForwardingRulesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = forwardingRulesClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, ForwardingRulesScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListForwardingRulesRequest request =
+   *       AggregatedListForwardingRulesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, ForwardingRulesScopedList>> future =
+   *       forwardingRulesClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, ForwardingRulesScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListForwardingRulesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of forwarding rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String project = "";
-   *   AggregatedListForwardingRulesRequest request = AggregatedListForwardingRulesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListForwardingRulesRequest request =
+   *       AggregatedListForwardingRulesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     ForwardingRuleAggregatedList response = forwardingRulesClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, ForwardingRulesScopedList&gt; element : response.getItemsMap()) {
+   *     ForwardingRuleAggregatedList response =
+   *         forwardingRulesClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, ForwardingRulesScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -257,27 +275,27 @@ public class ForwardingRulesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListForwardingRulesRequest, ForwardingRuleAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified ForwardingRule resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String forwardingRule = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String forwardingRule = "forwardingRule-1429104743";
    *   Operation response = forwardingRulesClient.delete(project, region, forwardingRule);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -294,25 +312,24 @@ public class ForwardingRulesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified ForwardingRule resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String forwardingRule = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeleteForwardingRuleRequest request = DeleteForwardingRuleRequest.newBuilder()
-   *     .setForwardingRule(forwardingRule)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   DeleteForwardingRuleRequest request =
+   *       DeleteForwardingRuleRequest.newBuilder()
+   *           .setForwardingRule("forwardingRule-1429104743")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = forwardingRulesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -321,46 +338,45 @@ public class ForwardingRulesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified ForwardingRule resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String forwardingRule = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeleteForwardingRuleRequest request = DeleteForwardingRuleRequest.newBuilder()
-   *     .setForwardingRule(forwardingRule)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = forwardingRulesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteForwardingRuleRequest request =
+   *       DeleteForwardingRuleRequest.newBuilder()
+   *           .setForwardingRule("forwardingRule-1429104743")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = forwardingRulesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteForwardingRuleRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified ForwardingRule resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String forwardingRule = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String forwardingRule = "forwardingRule-1429104743";
    *   ForwardingRule response = forwardingRulesClient.get(project, region, forwardingRule);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -377,25 +393,23 @@ public class ForwardingRulesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified ForwardingRule resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String forwardingRule = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetForwardingRuleRequest request = GetForwardingRuleRequest.newBuilder()
-   *     .setForwardingRule(forwardingRule)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   GetForwardingRuleRequest request =
+   *       GetForwardingRuleRequest.newBuilder()
+   *           .setForwardingRule("forwardingRule-1429104743")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
    *   ForwardingRule response = forwardingRulesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -404,47 +418,45 @@ public class ForwardingRulesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified ForwardingRule resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String forwardingRule = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetForwardingRuleRequest request = GetForwardingRuleRequest.newBuilder()
-   *     .setForwardingRule(forwardingRule)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ForwardingRule&gt; future = forwardingRulesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetForwardingRuleRequest request =
+   *       GetForwardingRuleRequest.newBuilder()
+   *           .setForwardingRule("forwardingRule-1429104743")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<ForwardingRule> future = forwardingRulesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   ForwardingRule response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetForwardingRuleRequest, ForwardingRule> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a ForwardingRule resource in the specified project and region using the data included
    * in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
    *   Operation response = forwardingRulesClient.insert(project, region, forwardingRuleResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -462,26 +474,25 @@ public class ForwardingRulesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a ForwardingRule resource in the specified project and region using the data included
    * in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertForwardingRuleRequest request = InsertForwardingRuleRequest.newBuilder()
-   *     .setForwardingRuleResource(forwardingRuleResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   InsertForwardingRuleRequest request =
+   *       InsertForwardingRuleRequest.newBuilder()
+   *           .setForwardingRuleResource(ForwardingRule.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = forwardingRulesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -490,48 +501,47 @@ public class ForwardingRulesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a ForwardingRule resource in the specified project and region using the data included
    * in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertForwardingRuleRequest request = InsertForwardingRuleRequest.newBuilder()
-   *     .setForwardingRuleResource(forwardingRuleResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = forwardingRulesClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertForwardingRuleRequest request =
+   *       InsertForwardingRuleRequest.newBuilder()
+   *           .setForwardingRuleResource(ForwardingRule.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = forwardingRulesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertForwardingRuleRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of ForwardingRule resources available to the specified project and region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   for (ForwardingRule element : forwardingRulesClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -543,25 +553,29 @@ public class ForwardingRulesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of ForwardingRule resources available to the specified project and region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListForwardingRulesRequest request = ListForwardingRulesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListForwardingRulesRequest request =
+   *       ListForwardingRulesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (ForwardingRule element : forwardingRulesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -570,49 +584,58 @@ public class ForwardingRulesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of ForwardingRule resources available to the specified project and region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListForwardingRulesRequest request = ListForwardingRulesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = forwardingRulesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListForwardingRulesRequest request =
+   *       ListForwardingRulesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<ForwardingRule> future =
+   *       forwardingRulesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (ForwardingRule element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListForwardingRulesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of ForwardingRule resources available to the specified project and region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListForwardingRulesRequest request = ListForwardingRulesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListForwardingRulesRequest request =
+   *       ListForwardingRulesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     ForwardingRuleList response = forwardingRulesClient.listCallable().call(request);
-   *     for (ForwardingRule element : response.getItemsList()) {
+   *     for (ForwardingRule element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -623,13 +646,13 @@ public class ForwardingRulesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListForwardingRulesRequest, ForwardingRuleList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified forwarding rule with the data included in the request. This method
    * supports PATCH semantics and uses the JSON merge patch format and processing rules. Currently,
@@ -637,15 +660,16 @@ public class ForwardingRulesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String forwardingRule = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String forwardingRule = "forwardingRule-1429104743";
    *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
-   *   Operation response = forwardingRulesClient.patch(project, region, forwardingRule, forwardingRuleResource);
+   *   Operation response =
+   *       forwardingRulesClient.patch(project, region, forwardingRule, forwardingRuleResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -665,7 +689,7 @@ public class ForwardingRulesClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified forwarding rule with the data included in the request. This method
    * supports PATCH semantics and uses the JSON merge patch format and processing rules. Currently,
@@ -673,21 +697,19 @@ public class ForwardingRulesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String forwardingRule = "";
-   *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   PatchForwardingRuleRequest request = PatchForwardingRuleRequest.newBuilder()
-   *     .setForwardingRule(forwardingRule)
-   *     .setForwardingRuleResource(forwardingRuleResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   PatchForwardingRuleRequest request =
+   *       PatchForwardingRuleRequest.newBuilder()
+   *           .setForwardingRule("forwardingRule-1429104743")
+   *           .setForwardingRuleResource(ForwardingRule.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = forwardingRulesClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -696,7 +718,7 @@ public class ForwardingRulesClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified forwarding rule with the data included in the request. This method
    * supports PATCH semantics and uses the JSON merge patch format and processing rules. Currently,
@@ -704,44 +726,45 @@ public class ForwardingRulesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String forwardingRule = "";
-   *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   PatchForwardingRuleRequest request = PatchForwardingRuleRequest.newBuilder()
-   *     .setForwardingRule(forwardingRule)
-   *     .setForwardingRuleResource(forwardingRuleResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = forwardingRulesClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchForwardingRuleRequest request =
+   *       PatchForwardingRuleRequest.newBuilder()
+   *           .setForwardingRule("forwardingRule-1429104743")
+   *           .setForwardingRuleResource(ForwardingRule.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = forwardingRulesClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchForwardingRuleRequest, Operation> patchCallable() {
     return stub.patchCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the labels on the specified resource. To learn more about labels, read the Labeling
    * Resources documentation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   RegionSetLabelsRequest regionSetLabelsRequestResource = RegionSetLabelsRequest.newBuilder().build();
-   *   Operation response = forwardingRulesClient.setLabels(project, region, resource, regionSetLabelsRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   RegionSetLabelsRequest regionSetLabelsRequestResource =
+   *       RegionSetLabelsRequest.newBuilder().build();
+   *   Operation response =
+   *       forwardingRulesClient.setLabels(
+   *           project, region, resource, regionSetLabelsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The region for this request.
@@ -764,28 +787,26 @@ public class ForwardingRulesClient implements BackgroundResource {
     return setLabels(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the labels on the specified resource. To learn more about labels, read the Labeling
    * Resources documentation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   RegionSetLabelsRequest regionSetLabelsRequestResource = RegionSetLabelsRequest.newBuilder().build();
-   *   String resource = "";
-   *   SetLabelsForwardingRuleRequest request = SetLabelsForwardingRuleRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
-   *     .setResource(resource)
-   *     .build();
+   *   SetLabelsForwardingRuleRequest request =
+   *       SetLabelsForwardingRuleRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetLabelsRequestResource(RegionSetLabelsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .build();
    *   Operation response = forwardingRulesClient.setLabels(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -794,51 +815,50 @@ public class ForwardingRulesClient implements BackgroundResource {
     return setLabelsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the labels on the specified resource. To learn more about labels, read the Labeling
    * Resources documentation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   RegionSetLabelsRequest regionSetLabelsRequestResource = RegionSetLabelsRequest.newBuilder().build();
-   *   String resource = "";
-   *   SetLabelsForwardingRuleRequest request = SetLabelsForwardingRuleRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
-   *     .setResource(resource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = forwardingRulesClient.setLabelsCallable().futureCall(request);
-   *   // Do something
+   *   SetLabelsForwardingRuleRequest request =
+   *       SetLabelsForwardingRuleRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetLabelsRequestResource(RegionSetLabelsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Operation> future = forwardingRulesClient.setLabelsCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetLabelsForwardingRuleRequest, Operation> setLabelsCallable() {
     return stub.setLabelsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes target URL for forwarding rule. The new target should be of the same type as the old
    * target.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String forwardingRule = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String forwardingRule = "forwardingRule-1429104743";
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
-   *   Operation response = forwardingRulesClient.setTarget(project, region, forwardingRule, targetReferenceResource);
+   *   Operation response =
+   *       forwardingRulesClient.setTarget(project, region, forwardingRule, targetReferenceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -861,28 +881,26 @@ public class ForwardingRulesClient implements BackgroundResource {
     return setTarget(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes target URL for forwarding rule. The new target should be of the same type as the old
    * target.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String forwardingRule = "";
-   *   String project = "";
-   *   String region = "";
-   *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
-   *   SetTargetForwardingRuleRequest request = SetTargetForwardingRuleRequest.newBuilder()
-   *     .setForwardingRule(forwardingRule)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetReferenceResource(targetReferenceResource)
-   *     .build();
+   *   SetTargetForwardingRuleRequest request =
+   *       SetTargetForwardingRuleRequest.newBuilder()
+   *           .setForwardingRule("forwardingRule-1429104743")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetReferenceResource(TargetReference.newBuilder().build())
+   *           .build();
    *   Operation response = forwardingRulesClient.setTarget(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -891,30 +909,28 @@ public class ForwardingRulesClient implements BackgroundResource {
     return setTargetCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes target URL for forwarding rule. The new target should be of the same type as the old
    * target.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
-   *   String forwardingRule = "";
-   *   String project = "";
-   *   String region = "";
-   *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
-   *   SetTargetForwardingRuleRequest request = SetTargetForwardingRuleRequest.newBuilder()
-   *     .setForwardingRule(forwardingRule)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetReferenceResource(targetReferenceResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = forwardingRulesClient.setTargetCallable().futureCall(request);
-   *   // Do something
+   *   SetTargetForwardingRuleRequest request =
+   *       SetTargetForwardingRuleRequest.newBuilder()
+   *           .setForwardingRule("forwardingRule-1429104743")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetReferenceResource(TargetReference.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = forwardingRulesClient.setTargetCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetTargetForwardingRuleRequest, Operation> setTargetCallable() {
     return stub.setTargetCallable();
@@ -954,7 +970,7 @@ public class ForwardingRulesClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListForwardingRulesRequest,
           ForwardingRuleAggregatedList,
-          Entry<String, ForwardingRulesScopedList>,
+          Map.Entry<String, ForwardingRulesScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -962,7 +978,7 @@ public class ForwardingRulesClient implements BackgroundResource {
         PageContext<
                 AggregatedListForwardingRulesRequest,
                 ForwardingRuleAggregatedList,
-                Entry<String, ForwardingRulesScopedList>>
+                Map.Entry<String, ForwardingRulesScopedList>>
             context,
         ApiFuture<ForwardingRuleAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -987,14 +1003,14 @@ public class ForwardingRulesClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListForwardingRulesRequest,
           ForwardingRuleAggregatedList,
-          Entry<String, ForwardingRulesScopedList>,
+          Map.Entry<String, ForwardingRulesScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListForwardingRulesRequest,
                 ForwardingRuleAggregatedList,
-                Entry<String, ForwardingRulesScopedList>>
+                Map.Entry<String, ForwardingRulesScopedList>>
             context,
         ForwardingRuleAggregatedList response) {
       super(context, response);
@@ -1009,7 +1025,7 @@ public class ForwardingRulesClient implements BackgroundResource {
         PageContext<
                 AggregatedListForwardingRulesRequest,
                 ForwardingRuleAggregatedList,
-                Entry<String, ForwardingRulesScopedList>>
+                Map.Entry<String, ForwardingRulesScopedList>>
             context,
         ForwardingRuleAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -1020,7 +1036,7 @@ public class ForwardingRulesClient implements BackgroundResource {
         PageContext<
                 AggregatedListForwardingRulesRequest,
                 ForwardingRuleAggregatedList,
-                Entry<String, ForwardingRulesScopedList>>
+                Map.Entry<String, ForwardingRulesScopedList>>
             context,
         ApiFuture<ForwardingRuleAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1031,7 +1047,7 @@ public class ForwardingRulesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListForwardingRulesRequest,
           ForwardingRuleAggregatedList,
-          Entry<String, ForwardingRulesScopedList>,
+          Map.Entry<String, ForwardingRulesScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

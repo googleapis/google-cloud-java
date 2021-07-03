@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import com.google.api.client.http.HttpMethods;
@@ -34,26 +35,25 @@ import com.google.cloud.compute.v1.LicenseCode;
 import com.google.cloud.compute.v1.TestIamPermissionsLicenseCodeRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the LicenseCodes service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<GetLicenseCodeRequest, LicenseCode> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetLicenseCodeRequest, LicenseCode> getMethodDescriptor =
       ApiMethodDescriptor.<GetLicenseCodeRequest, LicenseCode>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.LicenseCodes.Get")
+          .setFullMethodName("google.cloud.compute.v1.LicenseCodes/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetLicenseCodeRequest>newBuilder()
@@ -65,8 +65,8 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<GetLicenseCodeRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "licenseCode", request.getLicenseCode());
+                          serializer.putPathParam(fields, "project", request.getProject());
                           return fields;
                         }
                       })
@@ -77,7 +77,6 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetLicenseCodeRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -85,7 +84,7 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
                       new FieldsExtractor<GetLicenseCodeRequest, String>() {
                         @Override
                         public String extract(GetLicenseCodeRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -95,13 +94,12 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           TestIamPermissionsLicenseCodeRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           ApiMethodDescriptor
               .<TestIamPermissionsLicenseCodeRequest, TestPermissionsResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.LicenseCodes.TestIamPermissions")
+              .setFullMethodName("google.cloud.compute.v1.LicenseCodes/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsLicenseCodeRequest>newBuilder()
@@ -129,7 +127,6 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<TestIamPermissionsLicenseCodeRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -150,12 +147,11 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<GetLicenseCodeRequest, LicenseCode> getCallable;
   private final UnaryCallable<TestIamPermissionsLicenseCodeRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonLicenseCodesStub create(LicenseCodesStubSettings settings)
@@ -217,13 +213,24 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<GetLicenseCodeRequest, LicenseCode> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsLicenseCodeRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

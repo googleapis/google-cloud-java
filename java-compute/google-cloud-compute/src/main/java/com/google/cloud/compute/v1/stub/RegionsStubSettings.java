@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionsClient.ListPagedResponse;
@@ -52,7 +53,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link RegionsStub}.
  *
@@ -69,33 +70,83 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of get to 30 seconds:
  *
- * <pre>
- * <code>
- * RegionsStubSettings.Builder regionsSettingsBuilder =
- *     RegionsStubSettings.newBuilder();
+ * <pre>{@code
+ * RegionsStubSettings.Builder regionsSettingsBuilder = RegionsStubSettings.newBuilder();
  * regionsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionsStubSettings regionsSettings = regionsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RegionsStubSettings extends StubSettings<RegionsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/cloud-platform")
-          .add("https://www.googleapis.com/auth/compute")
           .add("https://www.googleapis.com/auth/compute.readonly")
+          .add("https://www.googleapis.com/auth/compute")
+          .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
   private final UnaryCallSettings<GetRegionRequest, Region> getSettings;
   private final PagedCallSettings<ListRegionsRequest, RegionList, ListPagedResponse> listSettings;
+
+  private static final PagedListDescriptor<ListRegionsRequest, RegionList, Region>
+      LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<ListRegionsRequest, RegionList, Region>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRegionsRequest injectToken(ListRegionsRequest payload, String token) {
+              return ListRegionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListRegionsRequest injectPageSize(ListRegionsRequest payload, int pageSize) {
+              return ListRegionsRequest.newBuilder(payload).setMaxResults(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRegionsRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(RegionList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Region> extractResources(RegionList payload) {
+              return payload.getItemsList() == null
+                  ? ImmutableList.<Region>of()
+                  : payload.getItemsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<ListRegionsRequest, RegionList, ListPagedResponse>
+      LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<ListRegionsRequest, RegionList, ListPagedResponse>() {
+            @Override
+            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListRegionsRequest, RegionList> callable,
+                ListRegionsRequest request,
+                ApiCallContext context,
+                ApiFuture<RegionList> futureResponse) {
+              PageContext<ListRegionsRequest, RegionList, Region> pageContext =
+                  PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
+              return ListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetRegionRequest, Region> getSettings() {
@@ -113,10 +164,10 @@ public class RegionsStubSettings extends StubSettings<RegionsStubSettings> {
         .getTransportName()
         .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
       return HttpJsonRegionsStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -126,12 +177,12 @@ public class RegionsStubSettings extends StubSettings<RegionsStubSettings> {
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "compute.googleapis.com";
+    return "compute.googleapis.com:443";
   }
 
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return 443;
+  /** Returns the default mTLS service endpoint. */
+  public static String getDefaultMtlsEndpoint() {
+    return "compute.mtls.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -185,65 +236,12 @@ public class RegionsStubSettings extends StubSettings<RegionsStubSettings> {
     listSettings = settingsBuilder.listSettings().build();
   }
 
-  private static final PagedListDescriptor<ListRegionsRequest, RegionList, Region>
-      LIST_PAGE_STR_DESC =
-          new PagedListDescriptor<ListRegionsRequest, RegionList, Region>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListRegionsRequest injectToken(ListRegionsRequest payload, String token) {
-              return ListRegionsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListRegionsRequest injectPageSize(ListRegionsRequest payload, int pageSize) {
-              return ListRegionsRequest.newBuilder(payload).setMaxResults(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListRegionsRequest payload) {
-              return payload.getMaxResults();
-            }
-
-            @Override
-            public String extractNextToken(RegionList payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Region> extractResources(RegionList payload) {
-              return payload.getItemsList() != null
-                  ? payload.getItemsList()
-                  : ImmutableList.<Region>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<ListRegionsRequest, RegionList, ListPagedResponse>
-      LIST_PAGE_STR_FACT =
-          new PagedListResponseFactory<ListRegionsRequest, RegionList, ListPagedResponse>() {
-            @Override
-            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListRegionsRequest, RegionList> callable,
-                ListRegionsRequest request,
-                ApiCallContext context,
-                ApiFuture<RegionList> futureResponse) {
-              PageContext<ListRegionsRequest, RegionList, Region> pageContext =
-                  PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
-              return ListPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for RegionsStubSettings. */
   public static class Builder extends StubSettings.Builder<RegionsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<GetRegionRequest, Region> getSettings;
     private final PagedCallSettings.Builder<ListRegionsRequest, RegionList, ListPagedResponse>
         listSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -251,11 +249,10 @@ public class RegionsStubSettings extends StubSettings<RegionsStubSettings> {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -269,54 +266,28 @@ public class RegionsStubSettings extends StubSettings<RegionsStubSettings> {
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(getSettings, listSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .getSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      return builder;
     }
 
     protected Builder(RegionsStubSettings settings) {
@@ -329,7 +300,34 @@ public class RegionsStubSettings extends StubSettings<RegionsStubSettings> {
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(getSettings, listSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .getSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

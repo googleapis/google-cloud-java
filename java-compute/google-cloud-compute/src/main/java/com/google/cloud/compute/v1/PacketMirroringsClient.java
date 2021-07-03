@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,29 +31,27 @@ import com.google.cloud.compute.v1.stub.PacketMirroringsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The PacketMirrorings API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String packetMirroring = "";
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String packetMirroring = "packetMirroring1405520923";
  *   Operation response = packetMirroringsClient.delete(project, region, packetMirroring);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the packetMirroringsClient object to clean up resources
+ * <p>Note: close() needs to be called on the PacketMirroringsClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -81,30 +80,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PacketMirroringsSettings packetMirroringsSettings =
  *     PacketMirroringsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * PacketMirroringsClient packetMirroringsClient =
  *     PacketMirroringsClient.create(packetMirroringsSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PacketMirroringsSettings packetMirroringsSettings =
  *     PacketMirroringsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * PacketMirroringsClient packetMirroringsClient =
  *     PacketMirroringsClient.create(packetMirroringsSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class PacketMirroringsClient implements BackgroundResource {
   private final PacketMirroringsSettings settings;
   private final PacketMirroringsStub stub;
@@ -125,7 +121,7 @@ public class PacketMirroringsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of PacketMirroringsClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use PacketMirroringsSettings}.
+   * is for advanced usage - prefer using create(PacketMirroringsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final PacketMirroringsClient create(PacketMirroringsStub stub) {
@@ -157,20 +153,21 @@ public class PacketMirroringsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of packetMirrorings.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, PacketMirroringsScopedList&gt; element : packetMirroringsClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, PacketMirroringsScopedList> element :
+   *       packetMirroringsClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -181,23 +178,30 @@ public class PacketMirroringsClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of packetMirrorings.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String project = "";
-   *   AggregatedListPacketMirroringsRequest request = AggregatedListPacketMirroringsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, PacketMirroringsScopedList&gt; element : packetMirroringsClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListPacketMirroringsRequest request =
+   *       AggregatedListPacketMirroringsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, PacketMirroringsScopedList> element :
+   *       packetMirroringsClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -207,46 +211,60 @@ public class PacketMirroringsClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of packetMirrorings.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String project = "";
-   *   AggregatedListPacketMirroringsRequest request = AggregatedListPacketMirroringsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = packetMirroringsClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, PacketMirroringsScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListPacketMirroringsRequest request =
+   *       AggregatedListPacketMirroringsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, PacketMirroringsScopedList>> future =
+   *       packetMirroringsClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, PacketMirroringsScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListPacketMirroringsRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of packetMirrorings.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String project = "";
-   *   AggregatedListPacketMirroringsRequest request = AggregatedListPacketMirroringsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListPacketMirroringsRequest request =
+   *       AggregatedListPacketMirroringsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     PacketMirroringAggregatedList response = packetMirroringsClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, PacketMirroringsScopedList&gt; element : response.getItemsMap()) {
+   *     PacketMirroringAggregatedList response =
+   *         packetMirroringsClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, PacketMirroringsScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -257,27 +275,27 @@ public class PacketMirroringsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListPacketMirroringsRequest, PacketMirroringAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified PacketMirroring resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String packetMirroring = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String packetMirroring = "packetMirroring1405520923";
    *   Operation response = packetMirroringsClient.delete(project, region, packetMirroring);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -294,25 +312,24 @@ public class PacketMirroringsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified PacketMirroring resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String packetMirroring = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeletePacketMirroringRequest request = DeletePacketMirroringRequest.newBuilder()
-   *     .setPacketMirroring(packetMirroring)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   DeletePacketMirroringRequest request =
+   *       DeletePacketMirroringRequest.newBuilder()
+   *           .setPacketMirroring("packetMirroring1405520923")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = packetMirroringsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -321,46 +338,45 @@ public class PacketMirroringsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified PacketMirroring resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String packetMirroring = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeletePacketMirroringRequest request = DeletePacketMirroringRequest.newBuilder()
-   *     .setPacketMirroring(packetMirroring)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = packetMirroringsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeletePacketMirroringRequest request =
+   *       DeletePacketMirroringRequest.newBuilder()
+   *           .setPacketMirroring("packetMirroring1405520923")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = packetMirroringsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeletePacketMirroringRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified PacketMirroring resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String packetMirroring = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String packetMirroring = "packetMirroring1405520923";
    *   PacketMirroring response = packetMirroringsClient.get(project, region, packetMirroring);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -377,25 +393,23 @@ public class PacketMirroringsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified PacketMirroring resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String packetMirroring = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetPacketMirroringRequest request = GetPacketMirroringRequest.newBuilder()
-   *     .setPacketMirroring(packetMirroring)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   GetPacketMirroringRequest request =
+   *       GetPacketMirroringRequest.newBuilder()
+   *           .setPacketMirroring("packetMirroring1405520923")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
    *   PacketMirroring response = packetMirroringsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -404,47 +418,45 @@ public class PacketMirroringsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified PacketMirroring resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String packetMirroring = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetPacketMirroringRequest request = GetPacketMirroringRequest.newBuilder()
-   *     .setPacketMirroring(packetMirroring)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;PacketMirroring&gt; future = packetMirroringsClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetPacketMirroringRequest request =
+   *       GetPacketMirroringRequest.newBuilder()
+   *           .setPacketMirroring("packetMirroring1405520923")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<PacketMirroring> future = packetMirroringsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   PacketMirroring response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetPacketMirroringRequest, PacketMirroring> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a PacketMirroring resource in the specified project and region using the data included
    * in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   PacketMirroring packetMirroringResource = PacketMirroring.newBuilder().build();
    *   Operation response = packetMirroringsClient.insert(project, region, packetMirroringResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -462,26 +474,25 @@ public class PacketMirroringsClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a PacketMirroring resource in the specified project and region using the data included
    * in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   PacketMirroring packetMirroringResource = PacketMirroring.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertPacketMirroringRequest request = InsertPacketMirroringRequest.newBuilder()
-   *     .setPacketMirroringResource(packetMirroringResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   InsertPacketMirroringRequest request =
+   *       InsertPacketMirroringRequest.newBuilder()
+   *           .setPacketMirroringResource(PacketMirroring.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = packetMirroringsClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -490,48 +501,47 @@ public class PacketMirroringsClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a PacketMirroring resource in the specified project and region using the data included
    * in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   PacketMirroring packetMirroringResource = PacketMirroring.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertPacketMirroringRequest request = InsertPacketMirroringRequest.newBuilder()
-   *     .setPacketMirroringResource(packetMirroringResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = packetMirroringsClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertPacketMirroringRequest request =
+   *       InsertPacketMirroringRequest.newBuilder()
+   *           .setPacketMirroringResource(PacketMirroring.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = packetMirroringsClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertPacketMirroringRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of PacketMirroring resources available to the specified project and region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   for (PacketMirroring element : packetMirroringsClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -543,25 +553,29 @@ public class PacketMirroringsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of PacketMirroring resources available to the specified project and region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListPacketMirroringsRequest request = ListPacketMirroringsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListPacketMirroringsRequest request =
+   *       ListPacketMirroringsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (PacketMirroring element : packetMirroringsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -570,49 +584,58 @@ public class PacketMirroringsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of PacketMirroring resources available to the specified project and region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListPacketMirroringsRequest request = ListPacketMirroringsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = packetMirroringsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListPacketMirroringsRequest request =
+   *       ListPacketMirroringsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<PacketMirroring> future =
+   *       packetMirroringsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (PacketMirroring element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListPacketMirroringsRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of PacketMirroring resources available to the specified project and region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListPacketMirroringsRequest request = ListPacketMirroringsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListPacketMirroringsRequest request =
+   *       ListPacketMirroringsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     PacketMirroringList response = packetMirroringsClient.listCallable().call(request);
-   *     for (PacketMirroring element : response.getItemsList()) {
+   *     for (PacketMirroring element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -623,28 +646,29 @@ public class PacketMirroringsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListPacketMirroringsRequest, PacketMirroringList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified PacketMirroring resource with the data included in the request. This
    * method supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String packetMirroring = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String packetMirroring = "packetMirroring1405520923";
    *   PacketMirroring packetMirroringResource = PacketMirroring.newBuilder().build();
-   *   Operation response = packetMirroringsClient.patch(project, region, packetMirroring, packetMirroringResource);
+   *   Operation response =
+   *       packetMirroringsClient.patch(project, region, packetMirroring, packetMirroringResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -667,28 +691,26 @@ public class PacketMirroringsClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified PacketMirroring resource with the data included in the request. This
    * method supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String packetMirroring = "";
-   *   PacketMirroring packetMirroringResource = PacketMirroring.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   PatchPacketMirroringRequest request = PatchPacketMirroringRequest.newBuilder()
-   *     .setPacketMirroring(packetMirroring)
-   *     .setPacketMirroringResource(packetMirroringResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   PatchPacketMirroringRequest request =
+   *       PatchPacketMirroringRequest.newBuilder()
+   *           .setPacketMirroring("packetMirroring1405520923")
+   *           .setPacketMirroringResource(PacketMirroring.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = packetMirroringsClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -697,50 +719,51 @@ public class PacketMirroringsClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified PacketMirroring resource with the data included in the request. This
    * method supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String packetMirroring = "";
-   *   PacketMirroring packetMirroringResource = PacketMirroring.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   PatchPacketMirroringRequest request = PatchPacketMirroringRequest.newBuilder()
-   *     .setPacketMirroring(packetMirroring)
-   *     .setPacketMirroringResource(packetMirroringResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = packetMirroringsClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchPacketMirroringRequest request =
+   *       PatchPacketMirroringRequest.newBuilder()
+   *           .setPacketMirroring("packetMirroring1405520923")
+   *           .setPacketMirroringResource(PacketMirroring.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = packetMirroringsClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchPacketMirroringRequest, Operation> patchCallable() {
     return stub.patchCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestPermissionsResponse response = packetMirroringsClient.testIamPermissions(project, region, resource, testPermissionsRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       packetMirroringsClient.testIamPermissions(
+   *           project, region, resource, testPermissionsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -763,27 +786,24 @@ public class PacketMirroringsClient implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsPacketMirroringRequest request = TestIamPermissionsPacketMirroringRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
+   *   TestIamPermissionsPacketMirroringRequest request =
+   *       TestIamPermissionsPacketMirroringRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
    *   TestPermissionsResponse response = packetMirroringsClient.testIamPermissions(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -793,29 +813,27 @@ public class PacketMirroringsClient implements BackgroundResource {
     return testIamPermissionsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsPacketMirroringRequest request = TestIamPermissionsPacketMirroringRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
-   *   ApiFuture&lt;TestPermissionsResponse&gt; future = packetMirroringsClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
+   *   TestIamPermissionsPacketMirroringRequest request =
+   *       TestIamPermissionsPacketMirroringRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       packetMirroringsClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
    *   TestPermissionsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsPacketMirroringRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
@@ -856,7 +874,7 @@ public class PacketMirroringsClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListPacketMirroringsRequest,
           PacketMirroringAggregatedList,
-          Entry<String, PacketMirroringsScopedList>,
+          Map.Entry<String, PacketMirroringsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -864,7 +882,7 @@ public class PacketMirroringsClient implements BackgroundResource {
         PageContext<
                 AggregatedListPacketMirroringsRequest,
                 PacketMirroringAggregatedList,
-                Entry<String, PacketMirroringsScopedList>>
+                Map.Entry<String, PacketMirroringsScopedList>>
             context,
         ApiFuture<PacketMirroringAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -889,14 +907,14 @@ public class PacketMirroringsClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListPacketMirroringsRequest,
           PacketMirroringAggregatedList,
-          Entry<String, PacketMirroringsScopedList>,
+          Map.Entry<String, PacketMirroringsScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListPacketMirroringsRequest,
                 PacketMirroringAggregatedList,
-                Entry<String, PacketMirroringsScopedList>>
+                Map.Entry<String, PacketMirroringsScopedList>>
             context,
         PacketMirroringAggregatedList response) {
       super(context, response);
@@ -911,7 +929,7 @@ public class PacketMirroringsClient implements BackgroundResource {
         PageContext<
                 AggregatedListPacketMirroringsRequest,
                 PacketMirroringAggregatedList,
-                Entry<String, PacketMirroringsScopedList>>
+                Map.Entry<String, PacketMirroringsScopedList>>
             context,
         PacketMirroringAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -922,7 +940,7 @@ public class PacketMirroringsClient implements BackgroundResource {
         PageContext<
                 AggregatedListPacketMirroringsRequest,
                 PacketMirroringAggregatedList,
-                Entry<String, PacketMirroringsScopedList>>
+                Map.Entry<String, PacketMirroringsScopedList>>
             context,
         ApiFuture<PacketMirroringAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -933,7 +951,7 @@ public class PacketMirroringsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListPacketMirroringsRequest,
           PacketMirroringAggregatedList,
-          Entry<String, PacketMirroringsScopedList>,
+          Map.Entry<String, PacketMirroringsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

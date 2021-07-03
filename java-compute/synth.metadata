@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-compute.git",
-        "sha": "b13c4137b54577689a89e011129a8d03cff536d6"
+        "sha": "2188de031778c826ba4ee7453f2cf8c39f5ac6ca"
       }
     },
     {
       "git": {
         "name": "googleapis-discovery",
         "remote": "https://github.com/googleapis/googleapis-discovery.git",
-        "sha": "347a81778216747a59c3cea6c9c771fb8a9bf041"
+        "sha": "abf4cec1ce9e02e4d7d650bf66137c347cdd0d44"
       }
     },
     {
@@ -258,6 +258,7 @@
     "google-cloud-compute/src/main/java/com/google/cloud/compute/v1/ZoneOperationsSettings.java",
     "google-cloud-compute/src/main/java/com/google/cloud/compute/v1/ZonesClient.java",
     "google-cloud-compute/src/main/java/com/google/cloud/compute/v1/ZonesSettings.java",
+    "google-cloud-compute/src/main/java/com/google/cloud/compute/v1/gapic_metadata.json",
     "google-cloud-compute/src/main/java/com/google/cloud/compute/v1/package-info.java",
     "google-cloud-compute/src/main/java/com/google/cloud/compute/v1/stub/AcceleratorTypesStub.java",
     "google-cloud-compute/src/main/java/com/google/cloud/compute/v1/stub/AcceleratorTypesStubSettings.java",

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.ReservationsClient.AggregatedListPagedResponse;
@@ -48,29 +49,28 @@ import com.google.cloud.compute.v1.SetIamPolicyReservationRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsReservationRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the Reservations service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonReservationsStub extends ReservationsStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListReservationsRequest, ReservationAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListReservationsRequest, ReservationAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Reservations.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.Reservations/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListReservationsRequest>newBuilder()
@@ -128,7 +128,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                           new FieldsExtractor<AggregatedListReservationsRequest, String>() {
                             @Override
                             public String extract(AggregatedListReservationsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -138,11 +138,10 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteReservationRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteReservationRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteReservationRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Reservations.Delete")
+              .setFullMethodName("google.cloud.compute.v1.Reservations/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteReservationRequest>newBuilder()
@@ -155,9 +154,9 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                               ProtoRestSerializer<DeleteReservationRequest> serializer =
                                   ProtoRestSerializer.create();
                               serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields, "reservation", request.getReservation());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -181,7 +180,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                           new FieldsExtractor<DeleteReservationRequest, String>() {
                             @Override
                             public String extract(DeleteReservationRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -191,10 +190,9 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetReservationRequest, Reservation> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetReservationRequest, Reservation> getMethodDescriptor =
       ApiMethodDescriptor.<GetReservationRequest, Reservation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Reservations.Get")
+          .setFullMethodName("google.cloud.compute.v1.Reservations/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetReservationRequest>newBuilder()
@@ -207,8 +205,8 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                           ProtoRestSerializer<GetReservationRequest> serializer =
                               ProtoRestSerializer.create();
                           serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
                           serializer.putPathParam(fields, "reservation", request.getReservation());
+                          serializer.putPathParam(fields, "zone", request.getZone());
                           return fields;
                         }
                       })
@@ -219,7 +217,6 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetReservationRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -227,7 +224,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                       new FieldsExtractor<GetReservationRequest, String>() {
                         @Override
                         public String extract(GetReservationRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -237,11 +234,10 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetIamPolicyReservationRequest, Policy>
+  private static final ApiMethodDescriptor<GetIamPolicyReservationRequest, Policy>
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyReservationRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Reservations.GetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.Reservations/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyReservationRequest>newBuilder()
@@ -256,8 +252,8 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                               ProtoRestSerializer<GetIamPolicyReservationRequest> serializer =
                                   ProtoRestSerializer.create();
                               serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(fields, "resource", request.getResource());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -283,7 +279,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                           new FieldsExtractor<GetIamPolicyReservationRequest, String>() {
                             @Override
                             public String extract(GetIamPolicyReservationRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -293,11 +289,10 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertReservationRequest, Operation>
+  private static final ApiMethodDescriptor<InsertReservationRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertReservationRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Reservations.Insert")
+              .setFullMethodName("google.cloud.compute.v1.Reservations/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertReservationRequest>newBuilder()
@@ -345,11 +340,10 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListReservationsRequest, ReservationList>
+  private static final ApiMethodDescriptor<ListReservationsRequest, ReservationList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListReservationsRequest, ReservationList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Reservations.List")
+              .setFullMethodName("google.cloud.compute.v1.Reservations/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListReservationsRequest>newBuilder()
@@ -402,7 +396,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                           new FieldsExtractor<ListReservationsRequest, String>() {
                             @Override
                             public String extract(ListReservationsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -412,11 +406,10 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ResizeReservationRequest, Operation>
+  private static final ApiMethodDescriptor<ResizeReservationRequest, Operation>
       resizeMethodDescriptor =
           ApiMethodDescriptor.<ResizeReservationRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Reservations.Resize")
+              .setFullMethodName("google.cloud.compute.v1.Reservations/Resize")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ResizeReservationRequest>newBuilder()
@@ -429,9 +422,9 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                               ProtoRestSerializer<ResizeReservationRequest> serializer =
                                   ProtoRestSerializer.create();
                               serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields, "reservation", request.getReservation());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -468,11 +461,10 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetIamPolicyReservationRequest, Policy>
+  private static final ApiMethodDescriptor<SetIamPolicyReservationRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyReservationRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Reservations.SetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.Reservations/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyReservationRequest>newBuilder()
@@ -487,8 +479,8 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                               ProtoRestSerializer<SetIamPolicyReservationRequest> serializer =
                                   ProtoRestSerializer.create();
                               serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(fields, "resource", request.getResource());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -501,7 +493,6 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetIamPolicyReservationRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -522,13 +513,12 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           TestIamPermissionsReservationRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           ApiMethodDescriptor
               .<TestIamPermissionsReservationRequest, TestPermissionsResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Reservations.TestIamPermissions")
+              .setFullMethodName("google.cloud.compute.v1.Reservations/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsReservationRequest>newBuilder()
@@ -543,8 +533,8 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                               ProtoRestSerializer<TestIamPermissionsReservationRequest> serializer =
                                   ProtoRestSerializer.create();
                               serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(fields, "resource", request.getResource());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -557,7 +547,6 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<TestIamPermissionsReservationRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -578,8 +567,6 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<AggregatedListReservationsRequest, ReservationAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListReservationsRequest, AggregatedListPagedResponse>
@@ -595,6 +582,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
   private final UnaryCallable<TestIamPermissionsReservationRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonReservationsStub create(ReservationsStubSettings settings)
@@ -713,51 +701,78 @@ public class HttpJsonReservationsStub extends ReservationsStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListReservationsRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(resizeMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListReservationsRequest, ReservationAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListReservationsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteReservationRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetReservationRequest, Reservation> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyReservationRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<InsertReservationRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListReservationsRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListReservationsRequest, ReservationList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListReservationsRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<ResizeReservationRequest, Operation> resizeCallable() {
     return resizeCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyReservationRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsReservationRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

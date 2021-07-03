@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.NodeTypesClient.AggregatedListPagedResponse;
@@ -39,27 +40,26 @@ import com.google.cloud.compute.v1.NodeType;
 import com.google.cloud.compute.v1.NodeTypeAggregatedList;
 import com.google.cloud.compute.v1.NodeTypeList;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the NodeTypes service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonNodeTypesStub extends NodeTypesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<AggregatedListNodeTypesRequest, NodeTypeAggregatedList>
+  private static final ApiMethodDescriptor<AggregatedListNodeTypesRequest, NodeTypeAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor.<AggregatedListNodeTypesRequest, NodeTypeAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeTypes.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.NodeTypes/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListNodeTypesRequest>newBuilder()
@@ -117,7 +117,7 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
                           new FieldsExtractor<AggregatedListNodeTypesRequest, String>() {
                             @Override
                             public String extract(AggregatedListNodeTypesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -127,10 +127,9 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetNodeTypeRequest, NodeType> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetNodeTypeRequest, NodeType> getMethodDescriptor =
       ApiMethodDescriptor.<GetNodeTypeRequest, NodeType>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.NodeTypes.Get")
+          .setFullMethodName("google.cloud.compute.v1.NodeTypes/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetNodeTypeRequest>newBuilder()
@@ -142,9 +141,9 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<GetNodeTypeRequest> serializer =
                               ProtoRestSerializer.create();
+                          serializer.putPathParam(fields, "nodeType", request.getNodeType());
                           serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "zone", request.getZone());
-                          serializer.putPathParam(fields, "nodeType", request.getNodeType());
                           return fields;
                         }
                       })
@@ -155,7 +154,6 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetNodeTypeRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -163,7 +161,7 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
                       new FieldsExtractor<GetNodeTypeRequest, String>() {
                         @Override
                         public String extract(GetNodeTypeRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -173,67 +171,69 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListNodeTypesRequest, NodeTypeList> listMethodDescriptor =
-      ApiMethodDescriptor.<ListNodeTypesRequest, NodeTypeList>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.NodeTypes.List")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ProtoMessageRequestFormatter.<ListNodeTypesRequest>newBuilder()
-                  .setPath(
-                      "/compute/v1/projects/{project}/zones/{zone}/nodeTypes",
-                      new FieldsExtractor<ListNodeTypesRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(ListNodeTypesRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<ListNodeTypesRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
-                          return fields;
-                        }
-                      })
-                  .setQueryParamsExtractor(
-                      new FieldsExtractor<ListNodeTypesRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(ListNodeTypesRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<ListNodeTypesRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasFilter()) {
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
-                          }
-                          if (request.hasMaxResults()) {
-                            serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
-                          }
-                          if (request.hasOrderBy()) {
-                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                          }
-                          if (request.hasPageToken()) {
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                          }
-                          if (request.hasReturnPartialSuccess()) {
-                            serializer.putQueryParam(
-                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
-                          }
-                          return fields;
-                        }
-                      })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<ListNodeTypesRequest, String>() {
-                        @Override
-                        public String extract(ListNodeTypesRequest request) {
-                          return "";
-                        }
-                      })
-                  .build())
-          .setResponseParser(
-              ProtoMessageResponseParser.<NodeTypeList>newBuilder()
-                  .setDefaultInstance(NodeTypeList.getDefaultInstance())
-                  .build())
-          .build();
-
-  private final BackgroundResource backgroundResources;
+  private static final ApiMethodDescriptor<ListNodeTypesRequest, NodeTypeList>
+      listMethodDescriptor =
+          ApiMethodDescriptor.<ListNodeTypesRequest, NodeTypeList>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.NodeTypes/List")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListNodeTypesRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/nodeTypes",
+                          new FieldsExtractor<ListNodeTypesRequest, Map<String, String>>() {
+                            @Override
+                            public Map<String, String> extract(ListNodeTypesRequest request) {
+                              Map<String, String> fields = new HashMap<>();
+                              ProtoRestSerializer<ListNodeTypesRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
+                              return fields;
+                            }
+                          })
+                      .setQueryParamsExtractor(
+                          new FieldsExtractor<ListNodeTypesRequest, Map<String, List<String>>>() {
+                            @Override
+                            public Map<String, List<String>> extract(ListNodeTypesRequest request) {
+                              Map<String, List<String>> fields = new HashMap<>();
+                              ProtoRestSerializer<ListNodeTypesRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
+                              return fields;
+                            }
+                          })
+                      .setRequestBodyExtractor(
+                          new FieldsExtractor<ListNodeTypesRequest, String>() {
+                            @Override
+                            public String extract(ListNodeTypesRequest request) {
+                              return null;
+                            }
+                          })
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<NodeTypeList>newBuilder()
+                      .setDefaultInstance(NodeTypeList.getDefaultInstance())
+                      .build())
+              .build();
 
   private final UnaryCallable<AggregatedListNodeTypesRequest, NodeTypeAggregatedList>
       aggregatedListCallable;
@@ -243,6 +243,7 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
   private final UnaryCallable<ListNodeTypesRequest, NodeTypeList> listCallable;
   private final UnaryCallable<ListNodeTypesRequest, ListPagedResponse> listPagedCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonNodeTypesStub create(NodeTypesStubSettings settings)
@@ -313,29 +314,44 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListNodeTypesRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListNodeTypesRequest, NodeTypeAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListNodeTypesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<GetNodeTypeRequest, NodeType> getCallable() {
     return getCallable;
   }
 
-  public UnaryCallable<ListNodeTypesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListNodeTypesRequest, NodeTypeList> listCallable() {
     return listCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNodeTypesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
   }
 
   @Override

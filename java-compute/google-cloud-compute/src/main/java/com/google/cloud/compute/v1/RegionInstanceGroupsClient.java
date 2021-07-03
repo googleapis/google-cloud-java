@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,25 +34,24 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The RegionInstanceGroups API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (RegionInstanceGroupsClient regionInstanceGroupsClient = RegionInstanceGroupsClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String instanceGroup = "";
+ * <pre>{@code
+ * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
+ *     RegionInstanceGroupsClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String instanceGroup = "instanceGroup-1404696854";
  *   InstanceGroup response = regionInstanceGroupsClient.get(project, region, instanceGroup);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the regionInstanceGroupsClient object to clean up
+ * <p>Note: close() needs to be called on the RegionInstanceGroupsClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -80,30 +80,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionInstanceGroupsSettings regionInstanceGroupsSettings =
  *     RegionInstanceGroupsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * RegionInstanceGroupsClient regionInstanceGroupsClient =
  *     RegionInstanceGroupsClient.create(regionInstanceGroupsSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionInstanceGroupsSettings regionInstanceGroupsSettings =
  *     RegionInstanceGroupsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionInstanceGroupsClient regionInstanceGroupsClient =
  *     RegionInstanceGroupsClient.create(regionInstanceGroupsSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RegionInstanceGroupsClient implements BackgroundResource {
   private final RegionInstanceGroupsSettings settings;
   private final RegionInstanceGroupsStub stub;
@@ -124,7 +121,7 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of RegionInstanceGroupsClient, using the given stub for making calls.
-   * This is for advanced usage - prefer to use RegionInstanceGroupsSettings}.
+   * This is for advanced usage - prefer using create(RegionInstanceGroupsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionInstanceGroupsClient create(RegionInstanceGroupsStub stub) {
@@ -156,20 +153,21 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified instance group resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupsClient regionInstanceGroupsClient = RegionInstanceGroupsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroup = "";
+   * <pre>{@code
+   * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
+   *     RegionInstanceGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroup = "instanceGroup-1404696854";
    *   InstanceGroup response = regionInstanceGroupsClient.get(project, region, instanceGroup);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -186,25 +184,24 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified instance group resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupsClient regionInstanceGroupsClient = RegionInstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetRegionInstanceGroupRequest request = GetRegionInstanceGroupRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
+   *     RegionInstanceGroupsClient.create()) {
+   *   GetRegionInstanceGroupRequest request =
+   *       GetRegionInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
    *   InstanceGroup response = regionInstanceGroupsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -213,47 +210,48 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified instance group resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupsClient regionInstanceGroupsClient = RegionInstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetRegionInstanceGroupRequest request = GetRegionInstanceGroupRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;InstanceGroup&gt; future = regionInstanceGroupsClient.getCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
+   *     RegionInstanceGroupsClient.create()) {
+   *   GetRegionInstanceGroupRequest request =
+   *       GetRegionInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<InstanceGroup> future =
+   *       regionInstanceGroupsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   InstanceGroup response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetRegionInstanceGroupRequest, InstanceGroup> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of instance group resources contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupsClient regionInstanceGroupsClient = RegionInstanceGroupsClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   * <pre>{@code
+   * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
+   *     RegionInstanceGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   for (InstanceGroup element : regionInstanceGroupsClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -265,25 +263,30 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of instance group resources contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupsClient regionInstanceGroupsClient = RegionInstanceGroupsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionInstanceGroupsRequest request = ListRegionInstanceGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
+   *     RegionInstanceGroupsClient.create()) {
+   *   ListRegionInstanceGroupsRequest request =
+   *       ListRegionInstanceGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (InstanceGroup element : regionInstanceGroupsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -292,50 +295,61 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of instance group resources contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupsClient regionInstanceGroupsClient = RegionInstanceGroupsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionInstanceGroupsRequest request = ListRegionInstanceGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = regionInstanceGroupsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
+   *     RegionInstanceGroupsClient.create()) {
+   *   ListRegionInstanceGroupsRequest request =
+   *       ListRegionInstanceGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<InstanceGroup> future =
+   *       regionInstanceGroupsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (InstanceGroup element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionInstanceGroupsRequest, ListPagedResponse>
       listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of instance group resources contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupsClient regionInstanceGroupsClient = RegionInstanceGroupsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionInstanceGroupsRequest request = ListRegionInstanceGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
+   *     RegionInstanceGroupsClient.create()) {
+   *   ListRegionInstanceGroupsRequest request =
+   *       ListRegionInstanceGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     RegionInstanceGroupList response = regionInstanceGroupsClient.listCallable().call(request);
-   *     for (InstanceGroup element : response.getItemsList()) {
+   *     for (InstanceGroup element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -346,14 +360,14 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionInstanceGroupsRequest, RegionInstanceGroupList>
       listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the instances in the specified instance group and displays information about the named
    * ports. Depending on the specified options, this method can list all instances or only the
@@ -361,17 +375,23 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupsClient regionInstanceGroupsClient = RegionInstanceGroupsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroup = "";
-   *   RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource = RegionInstanceGroupsListInstancesRequest.newBuilder().build();
-   *   for (InstanceWithNamedPorts element : regionInstanceGroupsClient.listInstances(project, region, instanceGroup, regionInstanceGroupsListInstancesRequestResource).iterateAll()) {
+   * <pre>{@code
+   * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
+   *     RegionInstanceGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroup = "instanceGroup-1404696854";
+   *   RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource =
+   *       RegionInstanceGroupsListInstancesRequest.newBuilder().build();
+   *   for (InstanceWithNamedPorts element :
+   *       regionInstanceGroupsClient
+   *           .listInstances(
+   *               project, region, instanceGroup, regionInstanceGroupsListInstancesRequestResource)
+   *           .iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -396,7 +416,7 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
     return listInstances(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the instances in the specified instance group and displays information about the named
    * ports. Depending on the specified options, this method can list all instances or only the
@@ -404,23 +424,28 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupsClient regionInstanceGroupsClient = RegionInstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource = RegionInstanceGroupsListInstancesRequest.newBuilder().build();
-   *   ListInstancesRegionInstanceGroupsRequest request = ListInstancesRegionInstanceGroupsRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupsListInstancesRequestResource(regionInstanceGroupsListInstancesRequestResource)
-   *     .build();
-   *   for (InstanceWithNamedPorts element : regionInstanceGroupsClient.listInstances(request).iterateAll()) {
+   * <pre>{@code
+   * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
+   *     RegionInstanceGroupsClient.create()) {
+   *   ListInstancesRegionInstanceGroupsRequest request =
+   *       ListInstancesRegionInstanceGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupsListInstancesRequestResource(
+   *               RegionInstanceGroupsListInstancesRequest.newBuilder().build())
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (InstanceWithNamedPorts element :
+   *       regionInstanceGroupsClient.listInstances(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -430,7 +455,7 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
     return listInstancesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the instances in the specified instance group and displays information about the named
    * ports. Depending on the specified options, this method can list all instances or only the
@@ -438,32 +463,37 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupsClient regionInstanceGroupsClient = RegionInstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource = RegionInstanceGroupsListInstancesRequest.newBuilder().build();
-   *   ListInstancesRegionInstanceGroupsRequest request = ListInstancesRegionInstanceGroupsRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupsListInstancesRequestResource(regionInstanceGroupsListInstancesRequestResource)
-   *     .build();
-   *   ApiFuture&lt;ListInstancesPagedResponse&gt; future = regionInstanceGroupsClient.listInstancesPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
+   *     RegionInstanceGroupsClient.create()) {
+   *   ListInstancesRegionInstanceGroupsRequest request =
+   *       ListInstancesRegionInstanceGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupsListInstancesRequestResource(
+   *               RegionInstanceGroupsListInstancesRequest.newBuilder().build())
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<InstanceWithNamedPorts> future =
+   *       regionInstanceGroupsClient.listInstancesPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (InstanceWithNamedPorts element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListInstancesRegionInstanceGroupsRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable() {
     return stub.listInstancesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the instances in the specified instance group and displays information about the named
    * ports. Depending on the specified options, this method can list all instances or only the
@@ -471,21 +501,26 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupsClient regionInstanceGroupsClient = RegionInstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource = RegionInstanceGroupsListInstancesRequest.newBuilder().build();
-   *   ListInstancesRegionInstanceGroupsRequest request = ListInstancesRegionInstanceGroupsRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupsListInstancesRequestResource(regionInstanceGroupsListInstancesRequestResource)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
+   *     RegionInstanceGroupsClient.create()) {
+   *   ListInstancesRegionInstanceGroupsRequest request =
+   *       ListInstancesRegionInstanceGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupsListInstancesRequestResource(
+   *               RegionInstanceGroupsListInstancesRequest.newBuilder().build())
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     RegionInstanceGroupsListInstances response = regionInstanceGroupsClient.listInstancesCallable().call(request);
-   *     for (InstanceWithNamedPorts element : response.getItemsList()) {
+   *     RegionInstanceGroupsListInstances response =
+   *         regionInstanceGroupsClient.listInstancesCallable().call(request);
+   *     for (InstanceWithNamedPorts element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -496,7 +531,7 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           ListInstancesRegionInstanceGroupsRequest, RegionInstanceGroupsListInstances>
@@ -504,21 +539,25 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
     return stub.listInstancesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the named ports for the specified regional instance group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupsClient regionInstanceGroupsClient = RegionInstanceGroupsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String instanceGroup = "";
-   *   RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource = RegionInstanceGroupsSetNamedPortsRequest.newBuilder().build();
-   *   Operation response = regionInstanceGroupsClient.setNamedPorts(project, region, instanceGroup, regionInstanceGroupsSetNamedPortsRequestResource);
+   * <pre>{@code
+   * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
+   *     RegionInstanceGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String instanceGroup = "instanceGroup-1404696854";
+   *   RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource =
+   *       RegionInstanceGroupsSetNamedPortsRequest.newBuilder().build();
+   *   Operation response =
+   *       regionInstanceGroupsClient.setNamedPorts(
+   *           project, region, instanceGroup, regionInstanceGroupsSetNamedPortsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -542,27 +581,27 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
     return setNamedPorts(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the named ports for the specified regional instance group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupsClient regionInstanceGroupsClient = RegionInstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource = RegionInstanceGroupsSetNamedPortsRequest.newBuilder().build();
-   *   SetNamedPortsRegionInstanceGroupRequest request = SetNamedPortsRegionInstanceGroupRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupsSetNamedPortsRequestResource(regionInstanceGroupsSetNamedPortsRequestResource)
-   *     .build();
+   * <pre>{@code
+   * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
+   *     RegionInstanceGroupsClient.create()) {
+   *   SetNamedPortsRegionInstanceGroupRequest request =
+   *       SetNamedPortsRegionInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupsSetNamedPortsRequestResource(
+   *               RegionInstanceGroupsSetNamedPortsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionInstanceGroupsClient.setNamedPorts(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -571,29 +610,30 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
     return setNamedPortsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the named ports for the specified regional instance group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionInstanceGroupsClient regionInstanceGroupsClient = RegionInstanceGroupsClient.create()) {
-   *   String instanceGroup = "";
-   *   String project = "";
-   *   String region = "";
-   *   RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource = RegionInstanceGroupsSetNamedPortsRequest.newBuilder().build();
-   *   SetNamedPortsRegionInstanceGroupRequest request = SetNamedPortsRegionInstanceGroupRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionInstanceGroupsSetNamedPortsRequestResource(regionInstanceGroupsSetNamedPortsRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupsClient.setNamedPortsCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
+   *     RegionInstanceGroupsClient.create()) {
+   *   SetNamedPortsRegionInstanceGroupRequest request =
+   *       SetNamedPortsRegionInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupsSetNamedPortsRequestResource(
+   *               RegionInstanceGroupsSetNamedPortsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionInstanceGroupsClient.setNamedPortsCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetNamedPortsRegionInstanceGroupRequest, Operation>
       setNamedPortsCallable() {

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,29 +31,27 @@ import com.google.cloud.compute.v1.stub.MachineTypesStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The MachineTypes API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
- *   String project = "";
- *   String zone = "";
- *   String machineType = "";
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String machineType = "machineType-218117087";
  *   MachineType response = machineTypesClient.get(project, zone, machineType);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the machineTypesClient object to clean up resources such
+ * <p>Note: close() needs to be called on the MachineTypesClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -80,30 +79,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * MachineTypesSettings machineTypesSettings =
  *     MachineTypesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * MachineTypesClient machineTypesClient =
- *     MachineTypesClient.create(machineTypesSettings);
- * </code>
- * </pre>
+ * MachineTypesClient machineTypesClient = MachineTypesClient.create(machineTypesSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * MachineTypesSettings machineTypesSettings =
  *     MachineTypesSettings.newBuilder().setEndpoint(myEndpoint).build();
- * MachineTypesClient machineTypesClient =
- *     MachineTypesClient.create(machineTypesSettings);
- * </code>
- * </pre>
+ * MachineTypesClient machineTypesClient = MachineTypesClient.create(machineTypesSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class MachineTypesClient implements BackgroundResource {
   private final MachineTypesSettings settings;
   private final MachineTypesStub stub;
@@ -123,7 +117,7 @@ public class MachineTypesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of MachineTypesClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use MachineTypesSettings}.
+   * for advanced usage - prefer using create(MachineTypesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final MachineTypesClient create(MachineTypesStub stub) {
@@ -155,20 +149,21 @@ public class MachineTypesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of machine types.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, MachineTypesScopedList&gt; element : machineTypesClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, MachineTypesScopedList> element :
+   *       machineTypesClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -179,23 +174,30 @@ public class MachineTypesClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of machine types.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
-   *   String project = "";
-   *   AggregatedListMachineTypesRequest request = AggregatedListMachineTypesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, MachineTypesScopedList&gt; element : machineTypesClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListMachineTypesRequest request =
+   *       AggregatedListMachineTypesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, MachineTypesScopedList> element :
+   *       machineTypesClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -205,46 +207,60 @@ public class MachineTypesClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of machine types.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
-   *   String project = "";
-   *   AggregatedListMachineTypesRequest request = AggregatedListMachineTypesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = machineTypesClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, MachineTypesScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListMachineTypesRequest request =
+   *       AggregatedListMachineTypesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, MachineTypesScopedList>> future =
+   *       machineTypesClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, MachineTypesScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListMachineTypesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of machine types.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
-   *   String project = "";
-   *   AggregatedListMachineTypesRequest request = AggregatedListMachineTypesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListMachineTypesRequest request =
+   *       AggregatedListMachineTypesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     MachineTypeAggregatedList response = machineTypesClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, MachineTypesScopedList&gt; element : response.getItemsMap()) {
+   *     MachineTypeAggregatedList response =
+   *         machineTypesClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, MachineTypesScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -255,28 +271,28 @@ public class MachineTypesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListMachineTypesRequest, MachineTypeAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified machine type. Gets a list of available machine types by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String machineType = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String machineType = "machineType-218117087";
    *   MachineType response = machineTypesClient.get(project, zone, machineType);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -293,26 +309,24 @@ public class MachineTypesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified machine type. Gets a list of available machine types by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
-   *   String machineType = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetMachineTypeRequest request = GetMachineTypeRequest.newBuilder()
-   *     .setMachineType(machineType)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   GetMachineTypeRequest request =
+   *       GetMachineTypeRequest.newBuilder()
+   *           .setMachineType("machineType-218117087")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
    *   MachineType response = machineTypesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -321,48 +335,46 @@ public class MachineTypesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified machine type. Gets a list of available machine types by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
-   *   String machineType = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetMachineTypeRequest request = GetMachineTypeRequest.newBuilder()
-   *     .setMachineType(machineType)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;MachineType&gt; future = machineTypesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetMachineTypeRequest request =
+   *       GetMachineTypeRequest.newBuilder()
+   *           .setMachineType("machineType-218117087")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<MachineType> future = machineTypesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   MachineType response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetMachineTypeRequest, MachineType> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of machine types available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
    *   for (MachineType element : machineTypesClient.list(project, zone).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -374,25 +386,29 @@ public class MachineTypesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of machine types available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListMachineTypesRequest request = ListMachineTypesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListMachineTypesRequest request =
+   *       ListMachineTypesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   for (MachineType element : machineTypesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -401,49 +417,57 @@ public class MachineTypesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of machine types available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListMachineTypesRequest request = ListMachineTypesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = machineTypesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListMachineTypesRequest request =
+   *       ListMachineTypesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<MachineType> future = machineTypesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (MachineType element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListMachineTypesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of machine types available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListMachineTypesRequest request = ListMachineTypesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListMachineTypesRequest request =
+   *       ListMachineTypesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   while (true) {
    *     MachineTypeList response = machineTypesClient.listCallable().call(request);
-   *     for (MachineType element : response.getItemsList()) {
+   *     for (MachineType element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -454,7 +478,7 @@ public class MachineTypesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListMachineTypesRequest, MachineTypeList> listCallable() {
     return stub.listCallable();
@@ -494,7 +518,7 @@ public class MachineTypesClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListMachineTypesRequest,
           MachineTypeAggregatedList,
-          Entry<String, MachineTypesScopedList>,
+          Map.Entry<String, MachineTypesScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -502,7 +526,7 @@ public class MachineTypesClient implements BackgroundResource {
         PageContext<
                 AggregatedListMachineTypesRequest,
                 MachineTypeAggregatedList,
-                Entry<String, MachineTypesScopedList>>
+                Map.Entry<String, MachineTypesScopedList>>
             context,
         ApiFuture<MachineTypeAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -527,14 +551,14 @@ public class MachineTypesClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListMachineTypesRequest,
           MachineTypeAggregatedList,
-          Entry<String, MachineTypesScopedList>,
+          Map.Entry<String, MachineTypesScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListMachineTypesRequest,
                 MachineTypeAggregatedList,
-                Entry<String, MachineTypesScopedList>>
+                Map.Entry<String, MachineTypesScopedList>>
             context,
         MachineTypeAggregatedList response) {
       super(context, response);
@@ -549,7 +573,7 @@ public class MachineTypesClient implements BackgroundResource {
         PageContext<
                 AggregatedListMachineTypesRequest,
                 MachineTypeAggregatedList,
-                Entry<String, MachineTypesScopedList>>
+                Map.Entry<String, MachineTypesScopedList>>
             context,
         MachineTypeAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -560,7 +584,7 @@ public class MachineTypesClient implements BackgroundResource {
         PageContext<
                 AggregatedListMachineTypesRequest,
                 MachineTypeAggregatedList,
-                Entry<String, MachineTypesScopedList>>
+                Map.Entry<String, MachineTypesScopedList>>
             context,
         ApiFuture<MachineTypeAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -571,7 +595,7 @@ public class MachineTypesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListMachineTypesRequest,
           MachineTypeAggregatedList,
-          Entry<String, MachineTypesScopedList>,
+          Map.Entry<String, MachineTypesScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

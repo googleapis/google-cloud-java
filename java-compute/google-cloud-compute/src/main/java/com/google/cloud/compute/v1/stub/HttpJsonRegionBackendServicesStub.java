@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionBackendServicesClient.ListPagedResponse;
@@ -43,27 +44,26 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.UpdateRegionBackendServiceRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the RegionBackendServices service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteRegionBackendServiceRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteRegionBackendServiceRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionBackendServiceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices.Delete")
+              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionBackendServiceRequest>newBuilder()
@@ -77,10 +77,10 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteRegionBackendServiceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "backendService", request.getBackendService());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -104,7 +104,7 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                           new FieldsExtractor<DeleteRegionBackendServiceRequest, String>() {
                             @Override
                             public String extract(DeleteRegionBackendServiceRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -114,11 +114,10 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetRegionBackendServiceRequest, BackendService>
+  private static final ApiMethodDescriptor<GetRegionBackendServiceRequest, BackendService>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetRegionBackendServiceRequest, BackendService>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices.Get")
+              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionBackendServiceRequest>newBuilder()
@@ -132,10 +131,10 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetRegionBackendServiceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "backendService", request.getBackendService());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -148,7 +147,6 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetRegionBackendServiceRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -156,7 +154,7 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                           new FieldsExtractor<GetRegionBackendServiceRequest, String>() {
                             @Override
                             public String extract(GetRegionBackendServiceRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -166,13 +164,12 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           GetHealthRegionBackendServiceRequest, BackendServiceGroupHealth>
       getHealthMethodDescriptor =
           ApiMethodDescriptor
               .<GetHealthRegionBackendServiceRequest, BackendServiceGroupHealth>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices.GetHealth")
+              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/GetHealth")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetHealthRegionBackendServiceRequest>newBuilder()
@@ -186,10 +183,10 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetHealthRegionBackendServiceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "backendService", request.getBackendService());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -202,7 +199,6 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetHealthRegionBackendServiceRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -223,11 +219,10 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertRegionBackendServiceRequest, Operation>
+  private static final ApiMethodDescriptor<InsertRegionBackendServiceRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertRegionBackendServiceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices.Insert")
+              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionBackendServiceRequest>newBuilder()
@@ -279,11 +274,10 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListRegionBackendServicesRequest, BackendServiceList>
+  private static final ApiMethodDescriptor<ListRegionBackendServicesRequest, BackendServiceList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListRegionBackendServicesRequest, BackendServiceList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices.List")
+              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionBackendServicesRequest>newBuilder()
@@ -338,7 +332,7 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                           new FieldsExtractor<ListRegionBackendServicesRequest, String>() {
                             @Override
                             public String extract(ListRegionBackendServicesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -348,11 +342,10 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchRegionBackendServiceRequest, Operation>
+  private static final ApiMethodDescriptor<PatchRegionBackendServiceRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchRegionBackendServiceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices.Patch")
+              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/Patch")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchRegionBackendServiceRequest>newBuilder()
@@ -366,10 +359,10 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<PatchRegionBackendServiceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "backendService", request.getBackendService());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -406,11 +399,10 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<UpdateRegionBackendServiceRequest, Operation>
+  private static final ApiMethodDescriptor<UpdateRegionBackendServiceRequest, Operation>
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateRegionBackendServiceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices.Update")
+              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/Update")
               .setHttpMethod(HttpMethods.PUT)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateRegionBackendServiceRequest>newBuilder()
@@ -424,10 +416,10 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<UpdateRegionBackendServiceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "backendService", request.getBackendService());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -464,8 +456,6 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteRegionBackendServiceRequest, Operation> deleteCallable;
   private final UnaryCallable<GetRegionBackendServiceRequest, BackendService> getCallable;
   private final UnaryCallable<GetHealthRegionBackendServiceRequest, BackendServiceGroupHealth>
@@ -477,6 +467,7 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
   private final UnaryCallable<PatchRegionBackendServiceRequest, Operation> patchCallable;
   private final UnaryCallable<UpdateRegionBackendServiceRequest, Operation> updateCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionBackendServicesStub create(
@@ -575,38 +566,60 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getHealthMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(updateMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteRegionBackendServiceRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetRegionBackendServiceRequest, BackendService> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetHealthRegionBackendServiceRequest, BackendServiceGroupHealth>
       getHealthCallable() {
     return getHealthCallable;
   }
 
+  @Override
   public UnaryCallable<InsertRegionBackendServiceRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListRegionBackendServicesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListRegionBackendServicesRequest, BackendServiceList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListRegionBackendServicesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchRegionBackendServiceRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateRegionBackendServiceRequest, Operation> updateCallable() {
     return updateCallable;
   }

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.UrlMapsClient.AggregatedListPagedResponse;
@@ -47,27 +48,26 @@ import com.google.cloud.compute.v1.UrlMapsAggregatedList;
 import com.google.cloud.compute.v1.UrlMapsValidateResponse;
 import com.google.cloud.compute.v1.ValidateUrlMapRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the UrlMaps service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonUrlMapsStub extends UrlMapsStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<AggregatedListUrlMapsRequest, UrlMapsAggregatedList>
+  private static final ApiMethodDescriptor<AggregatedListUrlMapsRequest, UrlMapsAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor.<AggregatedListUrlMapsRequest, UrlMapsAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.UrlMaps.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.UrlMaps/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListUrlMapsRequest>newBuilder()
@@ -124,7 +124,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                           new FieldsExtractor<AggregatedListUrlMapsRequest, String>() {
                             @Override
                             public String extract(AggregatedListUrlMapsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -134,10 +134,9 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteUrlMapRequest, Operation> deleteMethodDescriptor =
+  private static final ApiMethodDescriptor<DeleteUrlMapRequest, Operation> deleteMethodDescriptor =
       ApiMethodDescriptor.<DeleteUrlMapRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.UrlMaps.Delete")
+          .setFullMethodName("google.cloud.compute.v1.UrlMaps/Delete")
           .setHttpMethod(HttpMethods.DELETE)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<DeleteUrlMapRequest>newBuilder()
@@ -171,7 +170,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                       new FieldsExtractor<DeleteUrlMapRequest, String>() {
                         @Override
                         public String extract(DeleteUrlMapRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -181,10 +180,9 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetUrlMapRequest, UrlMap> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetUrlMapRequest, UrlMap> getMethodDescriptor =
       ApiMethodDescriptor.<GetUrlMapRequest, UrlMap>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.UrlMaps.Get")
+          .setFullMethodName("google.cloud.compute.v1.UrlMaps/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetUrlMapRequest>newBuilder()
@@ -208,7 +206,6 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetUrlMapRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -216,7 +213,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                       new FieldsExtractor<GetUrlMapRequest, String>() {
                         @Override
                         public String extract(GetUrlMapRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -226,10 +223,9 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertUrlMapRequest, Operation> insertMethodDescriptor =
+  private static final ApiMethodDescriptor<InsertUrlMapRequest, Operation> insertMethodDescriptor =
       ApiMethodDescriptor.<InsertUrlMapRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.UrlMaps.Insert")
+          .setFullMethodName("google.cloud.compute.v1.UrlMaps/Insert")
           .setHttpMethod(HttpMethods.POST)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<InsertUrlMapRequest>newBuilder()
@@ -273,11 +269,10 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InvalidateCacheUrlMapRequest, Operation>
+  private static final ApiMethodDescriptor<InvalidateCacheUrlMapRequest, Operation>
       invalidateCacheMethodDescriptor =
           ApiMethodDescriptor.<InvalidateCacheUrlMapRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.UrlMaps.InvalidateCache")
+              .setFullMethodName("google.cloud.compute.v1.UrlMaps/InvalidateCache")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InvalidateCacheUrlMapRequest>newBuilder()
@@ -328,10 +323,9 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListUrlMapsRequest, UrlMapList> listMethodDescriptor =
+  private static final ApiMethodDescriptor<ListUrlMapsRequest, UrlMapList> listMethodDescriptor =
       ApiMethodDescriptor.<ListUrlMapsRequest, UrlMapList>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.UrlMaps.List")
+          .setFullMethodName("google.cloud.compute.v1.UrlMaps/List")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListUrlMapsRequest>newBuilder()
@@ -377,7 +371,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                       new FieldsExtractor<ListUrlMapsRequest, String>() {
                         @Override
                         public String extract(ListUrlMapsRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -387,10 +381,9 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchUrlMapRequest, Operation> patchMethodDescriptor =
+  private static final ApiMethodDescriptor<PatchUrlMapRequest, Operation> patchMethodDescriptor =
       ApiMethodDescriptor.<PatchUrlMapRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.UrlMaps.Patch")
+          .setFullMethodName("google.cloud.compute.v1.UrlMaps/Patch")
           .setHttpMethod(HttpMethods.PATCH)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<PatchUrlMapRequest>newBuilder()
@@ -435,10 +428,9 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<UpdateUrlMapRequest, Operation> updateMethodDescriptor =
+  private static final ApiMethodDescriptor<UpdateUrlMapRequest, Operation> updateMethodDescriptor =
       ApiMethodDescriptor.<UpdateUrlMapRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.UrlMaps.Update")
+          .setFullMethodName("google.cloud.compute.v1.UrlMaps/Update")
           .setHttpMethod(HttpMethods.PUT)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<UpdateUrlMapRequest>newBuilder()
@@ -483,11 +475,10 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ValidateUrlMapRequest, UrlMapsValidateResponse>
+  private static final ApiMethodDescriptor<ValidateUrlMapRequest, UrlMapsValidateResponse>
       validateMethodDescriptor =
           ApiMethodDescriptor.<ValidateUrlMapRequest, UrlMapsValidateResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.UrlMaps.Validate")
+              .setFullMethodName("google.cloud.compute.v1.UrlMaps/Validate")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ValidateUrlMapRequest>newBuilder()
@@ -512,7 +503,6 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<ValidateUrlMapRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -533,8 +523,6 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<AggregatedListUrlMapsRequest, UrlMapsAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListUrlMapsRequest, AggregatedListPagedResponse>
@@ -549,6 +537,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
   private final UnaryCallable<UpdateUrlMapRequest, Operation> updateCallable;
   private final UnaryCallable<ValidateUrlMapRequest, UrlMapsValidateResponse> validateCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonUrlMapsStub create(UrlMapsStubSettings settings) throws IOException {
@@ -659,51 +648,78 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
         callableFactory.createUnaryCallable(
             validateTransportSettings, settings.validateSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListUrlMapsRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(invalidateCacheMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(updateMethodDescriptor);
+    methodDescriptors.add(validateMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListUrlMapsRequest, UrlMapsAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListUrlMapsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteUrlMapRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetUrlMapRequest, UrlMap> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertUrlMapRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
+  @Override
   public UnaryCallable<InvalidateCacheUrlMapRequest, Operation> invalidateCacheCallable() {
     return invalidateCacheCallable;
   }
 
-  public UnaryCallable<ListUrlMapsRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListUrlMapsRequest, UrlMapList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListUrlMapsRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchUrlMapRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateUrlMapRequest, Operation> updateCallable() {
     return updateCallable;
   }
 
+  @Override
   public UnaryCallable<ValidateUrlMapRequest, UrlMapsValidateResponse> validateCallable() {
     return validateCallable;
   }

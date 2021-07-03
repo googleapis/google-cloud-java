@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,29 +31,27 @@ import com.google.cloud.compute.v1.stub.NodeTypesStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The NodeTypes API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
- *   String project = "";
- *   String zone = "";
- *   String nodeType = "";
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String nodeType = "nodeType1123082332";
  *   NodeType response = nodeTypesClient.get(project, zone, nodeType);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the nodeTypesClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the NodeTypesClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -80,30 +79,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * NodeTypesSettings nodeTypesSettings =
  *     NodeTypesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * NodeTypesClient nodeTypesClient =
- *     NodeTypesClient.create(nodeTypesSettings);
- * </code>
- * </pre>
+ * NodeTypesClient nodeTypesClient = NodeTypesClient.create(nodeTypesSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * NodeTypesSettings nodeTypesSettings =
  *     NodeTypesSettings.newBuilder().setEndpoint(myEndpoint).build();
- * NodeTypesClient nodeTypesClient =
- *     NodeTypesClient.create(nodeTypesSettings);
- * </code>
- * </pre>
+ * NodeTypesClient nodeTypesClient = NodeTypesClient.create(nodeTypesSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class NodeTypesClient implements BackgroundResource {
   private final NodeTypesSettings settings;
   private final NodeTypesStub stub;
@@ -123,7 +117,7 @@ public class NodeTypesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of NodeTypesClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use NodeTypesSettings}.
+   * advanced usage - prefer using create(NodeTypesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final NodeTypesClient create(NodeTypesStub stub) {
@@ -154,20 +148,21 @@ public class NodeTypesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of node types.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, NodeTypesScopedList&gt; element : nodeTypesClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, NodeTypesScopedList> element :
+   *       nodeTypesClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -178,23 +173,30 @@ public class NodeTypesClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of node types.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
-   *   String project = "";
-   *   AggregatedListNodeTypesRequest request = AggregatedListNodeTypesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, NodeTypesScopedList&gt; element : nodeTypesClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListNodeTypesRequest request =
+   *       AggregatedListNodeTypesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, NodeTypesScopedList> element :
+   *       nodeTypesClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -203,46 +205,59 @@ public class NodeTypesClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of node types.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
-   *   String project = "";
-   *   AggregatedListNodeTypesRequest request = AggregatedListNodeTypesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = nodeTypesClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, NodeTypesScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListNodeTypesRequest request =
+   *       AggregatedListNodeTypesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, NodeTypesScopedList>> future =
+   *       nodeTypesClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, NodeTypesScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListNodeTypesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of node types.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
-   *   String project = "";
-   *   AggregatedListNodeTypesRequest request = AggregatedListNodeTypesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListNodeTypesRequest request =
+   *       AggregatedListNodeTypesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     NodeTypeAggregatedList response = nodeTypesClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, NodeTypesScopedList&gt; element : response.getItemsMap()) {
+   *     for (Map.Entry<String, NodeTypesScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -253,28 +268,28 @@ public class NodeTypesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListNodeTypesRequest, NodeTypeAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified node type. Gets a list of available node types by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   String nodeType = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String nodeType = "nodeType1123082332";
    *   NodeType response = nodeTypesClient.get(project, zone, nodeType);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -291,26 +306,24 @@ public class NodeTypesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified node type. Gets a list of available node types by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
-   *   String nodeType = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetNodeTypeRequest request = GetNodeTypeRequest.newBuilder()
-   *     .setNodeType(nodeType)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   GetNodeTypeRequest request =
+   *       GetNodeTypeRequest.newBuilder()
+   *           .setNodeType("nodeType1123082332")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
    *   NodeType response = nodeTypesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -319,48 +332,46 @@ public class NodeTypesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified node type. Gets a list of available node types by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
-   *   String nodeType = "";
-   *   String project = "";
-   *   String zone = "";
-   *   GetNodeTypeRequest request = GetNodeTypeRequest.newBuilder()
-   *     .setNodeType(nodeType)
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;NodeType&gt; future = nodeTypesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetNodeTypeRequest request =
+   *       GetNodeTypeRequest.newBuilder()
+   *           .setNodeType("nodeType1123082332")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<NodeType> future = nodeTypesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   NodeType response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetNodeTypeRequest, NodeType> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of node types available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
    *   for (NodeType element : nodeTypesClient.list(project, zone).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
@@ -372,25 +383,29 @@ public class NodeTypesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of node types available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListNodeTypesRequest request = ListNodeTypesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListNodeTypesRequest request =
+   *       ListNodeTypesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   for (NodeType element : nodeTypesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -399,49 +414,57 @@ public class NodeTypesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of node types available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListNodeTypesRequest request = ListNodeTypesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = nodeTypesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListNodeTypesRequest request =
+   *       ListNodeTypesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<NodeType> future = nodeTypesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (NodeType element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListNodeTypesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of node types available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
-   *   String project = "";
-   *   String zone = "";
-   *   ListNodeTypesRequest request = ListNodeTypesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setZone(zone)
-   *     .build();
+   *   ListNodeTypesRequest request =
+   *       ListNodeTypesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setZone("zone3744684")
+   *           .build();
    *   while (true) {
    *     NodeTypeList response = nodeTypesClient.listCallable().call(request);
-   *     for (NodeType element : response.getItemsList()) {
+   *     for (NodeType element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -452,7 +475,7 @@ public class NodeTypesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListNodeTypesRequest, NodeTypeList> listCallable() {
     return stub.listCallable();
@@ -492,7 +515,7 @@ public class NodeTypesClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListNodeTypesRequest,
           NodeTypeAggregatedList,
-          Entry<String, NodeTypesScopedList>,
+          Map.Entry<String, NodeTypesScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -500,7 +523,7 @@ public class NodeTypesClient implements BackgroundResource {
         PageContext<
                 AggregatedListNodeTypesRequest,
                 NodeTypeAggregatedList,
-                Entry<String, NodeTypesScopedList>>
+                Map.Entry<String, NodeTypesScopedList>>
             context,
         ApiFuture<NodeTypeAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -525,14 +548,14 @@ public class NodeTypesClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListNodeTypesRequest,
           NodeTypeAggregatedList,
-          Entry<String, NodeTypesScopedList>,
+          Map.Entry<String, NodeTypesScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListNodeTypesRequest,
                 NodeTypeAggregatedList,
-                Entry<String, NodeTypesScopedList>>
+                Map.Entry<String, NodeTypesScopedList>>
             context,
         NodeTypeAggregatedList response) {
       super(context, response);
@@ -547,7 +570,7 @@ public class NodeTypesClient implements BackgroundResource {
         PageContext<
                 AggregatedListNodeTypesRequest,
                 NodeTypeAggregatedList,
-                Entry<String, NodeTypesScopedList>>
+                Map.Entry<String, NodeTypesScopedList>>
             context,
         NodeTypeAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -558,7 +581,7 @@ public class NodeTypesClient implements BackgroundResource {
         PageContext<
                 AggregatedListNodeTypesRequest,
                 NodeTypeAggregatedList,
-                Entry<String, NodeTypesScopedList>>
+                Map.Entry<String, NodeTypesScopedList>>
             context,
         ApiFuture<NodeTypeAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -569,7 +592,7 @@ public class NodeTypesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListNodeTypesRequest,
           NodeTypeAggregatedList,
-          Entry<String, NodeTypesScopedList>,
+          Map.Entry<String, NodeTypesScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

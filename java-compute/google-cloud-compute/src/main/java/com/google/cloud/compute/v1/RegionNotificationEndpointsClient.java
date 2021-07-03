@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,25 +34,25 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The RegionNotificationEndpoints API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient = RegionNotificationEndpointsClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String notificationEndpoint = "";
- *   Operation response = regionNotificationEndpointsClient.delete(project, region, notificationEndpoint);
+ * <pre>{@code
+ * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+ *     RegionNotificationEndpointsClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String notificationEndpoint = "notificationEndpoint-354029664";
+ *   Operation response =
+ *       regionNotificationEndpointsClient.delete(project, region, notificationEndpoint);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the regionNotificationEndpointsClient object to clean up
+ * <p>Note: close() needs to be called on the RegionNotificationEndpointsClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -80,30 +81,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionNotificationEndpointsSettings regionNotificationEndpointsSettings =
  *     RegionNotificationEndpointsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * RegionNotificationEndpointsClient regionNotificationEndpointsClient =
  *     RegionNotificationEndpointsClient.create(regionNotificationEndpointsSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionNotificationEndpointsSettings regionNotificationEndpointsSettings =
  *     RegionNotificationEndpointsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionNotificationEndpointsClient regionNotificationEndpointsClient =
  *     RegionNotificationEndpointsClient.create(regionNotificationEndpointsSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RegionNotificationEndpointsClient implements BackgroundResource {
   private final RegionNotificationEndpointsSettings settings;
   private final RegionNotificationEndpointsStub stub;
@@ -125,7 +123,7 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of RegionNotificationEndpointsClient, using the given stub for making
-   * calls. This is for advanced usage - prefer to use RegionNotificationEndpointsSettings}.
+   * calls. This is for advanced usage - prefer using create(RegionNotificationEndpointsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionNotificationEndpointsClient create(
@@ -159,20 +157,22 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified NotificationEndpoint in the given region
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient = RegionNotificationEndpointsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String notificationEndpoint = "";
-   *   Operation response = regionNotificationEndpointsClient.delete(project, region, notificationEndpoint);
+   * <pre>{@code
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String notificationEndpoint = "notificationEndpoint-354029664";
+   *   Operation response =
+   *       regionNotificationEndpointsClient.delete(project, region, notificationEndpoint);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -189,25 +189,25 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified NotificationEndpoint in the given region
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient = RegionNotificationEndpointsClient.create()) {
-   *   String notificationEndpoint = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeleteRegionNotificationEndpointRequest request = DeleteRegionNotificationEndpointRequest.newBuilder()
-   *     .setNotificationEndpoint(notificationEndpoint)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   DeleteRegionNotificationEndpointRequest request =
+   *       DeleteRegionNotificationEndpointRequest.newBuilder()
+   *           .setNotificationEndpoint("notificationEndpoint-354029664")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionNotificationEndpointsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -216,46 +216,49 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified NotificationEndpoint in the given region
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient = RegionNotificationEndpointsClient.create()) {
-   *   String notificationEndpoint = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeleteRegionNotificationEndpointRequest request = DeleteRegionNotificationEndpointRequest.newBuilder()
-   *     .setNotificationEndpoint(notificationEndpoint)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionNotificationEndpointsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   DeleteRegionNotificationEndpointRequest request =
+   *       DeleteRegionNotificationEndpointRequest.newBuilder()
+   *           .setNotificationEndpoint("notificationEndpoint-354029664")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionNotificationEndpointsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteRegionNotificationEndpointRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified NotificationEndpoint resource in the given region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient = RegionNotificationEndpointsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String notificationEndpoint = "";
-   *   NotificationEndpoint response = regionNotificationEndpointsClient.get(project, region, notificationEndpoint);
+   * <pre>{@code
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String notificationEndpoint = "notificationEndpoint-354029664";
+   *   NotificationEndpoint response =
+   *       regionNotificationEndpointsClient.get(project, region, notificationEndpoint);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -273,25 +276,24 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified NotificationEndpoint resource in the given region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient = RegionNotificationEndpointsClient.create()) {
-   *   String notificationEndpoint = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetRegionNotificationEndpointRequest request = GetRegionNotificationEndpointRequest.newBuilder()
-   *     .setNotificationEndpoint(notificationEndpoint)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   GetRegionNotificationEndpointRequest request =
+   *       GetRegionNotificationEndpointRequest.newBuilder()
+   *           .setNotificationEndpoint("notificationEndpoint-354029664")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
    *   NotificationEndpoint response = regionNotificationEndpointsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -300,48 +302,50 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified NotificationEndpoint resource in the given region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient = RegionNotificationEndpointsClient.create()) {
-   *   String notificationEndpoint = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetRegionNotificationEndpointRequest request = GetRegionNotificationEndpointRequest.newBuilder()
-   *     .setNotificationEndpoint(notificationEndpoint)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;NotificationEndpoint&gt; future = regionNotificationEndpointsClient.getCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   GetRegionNotificationEndpointRequest request =
+   *       GetRegionNotificationEndpointRequest.newBuilder()
+   *           .setNotificationEndpoint("notificationEndpoint-354029664")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<NotificationEndpoint> future =
+   *       regionNotificationEndpointsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   NotificationEndpoint response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetRegionNotificationEndpointRequest, NotificationEndpoint>
       getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create a NotificationEndpoint in the specified project in the given region using the parameters
    * that are included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient = RegionNotificationEndpointsClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   * <pre>{@code
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   NotificationEndpoint notificationEndpointResource = NotificationEndpoint.newBuilder().build();
-   *   Operation response = regionNotificationEndpointsClient.insert(project, region, notificationEndpointResource);
+   *   Operation response =
+   *       regionNotificationEndpointsClient.insert(project, region, notificationEndpointResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -359,26 +363,26 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create a NotificationEndpoint in the specified project in the given region using the parameters
    * that are included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient = RegionNotificationEndpointsClient.create()) {
-   *   NotificationEndpoint notificationEndpointResource = NotificationEndpoint.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertRegionNotificationEndpointRequest request = InsertRegionNotificationEndpointRequest.newBuilder()
-   *     .setNotificationEndpointResource(notificationEndpointResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   InsertRegionNotificationEndpointRequest request =
+   *       InsertRegionNotificationEndpointRequest.newBuilder()
+   *           .setNotificationEndpointResource(NotificationEndpoint.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = regionNotificationEndpointsClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -387,48 +391,51 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create a NotificationEndpoint in the specified project in the given region using the parameters
    * that are included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient = RegionNotificationEndpointsClient.create()) {
-   *   NotificationEndpoint notificationEndpointResource = NotificationEndpoint.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertRegionNotificationEndpointRequest request = InsertRegionNotificationEndpointRequest.newBuilder()
-   *     .setNotificationEndpointResource(notificationEndpointResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionNotificationEndpointsClient.insertCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   InsertRegionNotificationEndpointRequest request =
+   *       InsertRegionNotificationEndpointRequest.newBuilder()
+   *           .setNotificationEndpointResource(NotificationEndpoint.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionNotificationEndpointsClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertRegionNotificationEndpointRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the NotificationEndpoints for a project in the given region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient = RegionNotificationEndpointsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   for (NotificationEndpoint element : regionNotificationEndpointsClient.list(project, region).iterateAll()) {
+   * <pre>{@code
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   for (NotificationEndpoint element :
+   *       regionNotificationEndpointsClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -443,25 +450,31 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the NotificationEndpoints for a project in the given region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient = RegionNotificationEndpointsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionNotificationEndpointsRequest request = ListRegionNotificationEndpointsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   for (NotificationEndpoint element : regionNotificationEndpointsClient.list(request).iterateAll()) {
+   * <pre>{@code
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   ListRegionNotificationEndpointsRequest request =
+   *       ListRegionNotificationEndpointsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (NotificationEndpoint element :
+   *       regionNotificationEndpointsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -470,50 +483,62 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the NotificationEndpoints for a project in the given region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient = RegionNotificationEndpointsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionNotificationEndpointsRequest request = ListRegionNotificationEndpointsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = regionNotificationEndpointsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   ListRegionNotificationEndpointsRequest request =
+   *       ListRegionNotificationEndpointsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<NotificationEndpoint> future =
+   *       regionNotificationEndpointsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (NotificationEndpoint element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionNotificationEndpointsRequest, ListPagedResponse>
       listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the NotificationEndpoints for a project in the given region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient = RegionNotificationEndpointsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionNotificationEndpointsRequest request = ListRegionNotificationEndpointsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   ListRegionNotificationEndpointsRequest request =
+   *       ListRegionNotificationEndpointsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     NotificationEndpointList response = regionNotificationEndpointsClient.listCallable().call(request);
-   *     for (NotificationEndpoint element : response.getItemsList()) {
+   *     NotificationEndpointList response =
+   *         regionNotificationEndpointsClient.listCallable().call(request);
+   *     for (NotificationEndpoint element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -524,7 +549,7 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionNotificationEndpointsRequest, NotificationEndpointList>
       listCallable() {

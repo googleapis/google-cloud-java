@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.LicensesClient.ListPagedResponse;
@@ -44,26 +45,25 @@ import com.google.cloud.compute.v1.SetIamPolicyLicenseRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsLicenseRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the Licenses service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonLicensesStub extends LicensesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteLicenseRequest, Operation> deleteMethodDescriptor =
+  private static final ApiMethodDescriptor<DeleteLicenseRequest, Operation> deleteMethodDescriptor =
       ApiMethodDescriptor.<DeleteLicenseRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Licenses.Delete")
+          .setFullMethodName("google.cloud.compute.v1.Licenses/Delete")
           .setHttpMethod(HttpMethods.DELETE)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<DeleteLicenseRequest>newBuilder()
@@ -75,8 +75,8 @@ public class HttpJsonLicensesStub extends LicensesStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<DeleteLicenseRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "license", request.getLicense());
+                          serializer.putPathParam(fields, "project", request.getProject());
                           return fields;
                         }
                       })
@@ -97,7 +97,7 @@ public class HttpJsonLicensesStub extends LicensesStub {
                       new FieldsExtractor<DeleteLicenseRequest, String>() {
                         @Override
                         public String extract(DeleteLicenseRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -107,10 +107,9 @@ public class HttpJsonLicensesStub extends LicensesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetLicenseRequest, License> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetLicenseRequest, License> getMethodDescriptor =
       ApiMethodDescriptor.<GetLicenseRequest, License>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Licenses.Get")
+          .setFullMethodName("google.cloud.compute.v1.Licenses/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetLicenseRequest>newBuilder()
@@ -122,8 +121,8 @@ public class HttpJsonLicensesStub extends LicensesStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<GetLicenseRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "license", request.getLicense());
+                          serializer.putPathParam(fields, "project", request.getProject());
                           return fields;
                         }
                       })
@@ -134,7 +133,6 @@ public class HttpJsonLicensesStub extends LicensesStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetLicenseRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -142,7 +140,7 @@ public class HttpJsonLicensesStub extends LicensesStub {
                       new FieldsExtractor<GetLicenseRequest, String>() {
                         @Override
                         public String extract(GetLicenseRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -152,11 +150,10 @@ public class HttpJsonLicensesStub extends LicensesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetIamPolicyLicenseRequest, Policy>
+  private static final ApiMethodDescriptor<GetIamPolicyLicenseRequest, Policy>
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyLicenseRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Licenses.GetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.Licenses/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyLicenseRequest>newBuilder()
@@ -195,7 +192,7 @@ public class HttpJsonLicensesStub extends LicensesStub {
                           new FieldsExtractor<GetIamPolicyLicenseRequest, String>() {
                             @Override
                             public String extract(GetIamPolicyLicenseRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -205,10 +202,9 @@ public class HttpJsonLicensesStub extends LicensesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertLicenseRequest, Operation> insertMethodDescriptor =
+  private static final ApiMethodDescriptor<InsertLicenseRequest, Operation> insertMethodDescriptor =
       ApiMethodDescriptor.<InsertLicenseRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Licenses.Insert")
+          .setFullMethodName("google.cloud.compute.v1.Licenses/Insert")
           .setHttpMethod(HttpMethods.POST)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<InsertLicenseRequest>newBuilder()
@@ -252,11 +248,10 @@ public class HttpJsonLicensesStub extends LicensesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListLicensesRequest, LicensesListResponse>
+  private static final ApiMethodDescriptor<ListLicensesRequest, LicensesListResponse>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListLicensesRequest, LicensesListResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Licenses.List")
+              .setFullMethodName("google.cloud.compute.v1.Licenses/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListLicensesRequest>newBuilder()
@@ -306,7 +301,7 @@ public class HttpJsonLicensesStub extends LicensesStub {
                           new FieldsExtractor<ListLicensesRequest, String>() {
                             @Override
                             public String extract(ListLicensesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -316,11 +311,10 @@ public class HttpJsonLicensesStub extends LicensesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetIamPolicyLicenseRequest, Policy>
+  private static final ApiMethodDescriptor<SetIamPolicyLicenseRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyLicenseRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Licenses.SetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.Licenses/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyLicenseRequest>newBuilder()
@@ -346,7 +340,6 @@ public class HttpJsonLicensesStub extends LicensesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetIamPolicyLicenseRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -367,12 +360,12 @@ public class HttpJsonLicensesStub extends LicensesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<TestIamPermissionsLicenseRequest, TestPermissionsResponse>
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsLicenseRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           ApiMethodDescriptor
               .<TestIamPermissionsLicenseRequest, TestPermissionsResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Licenses.TestIamPermissions")
+              .setFullMethodName("google.cloud.compute.v1.Licenses/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsLicenseRequest>newBuilder()
@@ -400,7 +393,6 @@ public class HttpJsonLicensesStub extends LicensesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<TestIamPermissionsLicenseRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -421,8 +413,6 @@ public class HttpJsonLicensesStub extends LicensesStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteLicenseRequest, Operation> deleteCallable;
   private final UnaryCallable<GetLicenseRequest, License> getCallable;
   private final UnaryCallable<GetIamPolicyLicenseRequest, Policy> getIamPolicyCallable;
@@ -433,6 +423,7 @@ public class HttpJsonLicensesStub extends LicensesStub {
   private final UnaryCallable<TestIamPermissionsLicenseRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonLicensesStub create(LicensesStubSettings settings)
@@ -530,37 +521,59 @@ public class HttpJsonLicensesStub extends LicensesStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteLicenseRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetLicenseRequest, License> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyLicenseRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<InsertLicenseRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListLicensesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListLicensesRequest, LicensesListResponse> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListLicensesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<SetIamPolicyLicenseRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsLicenseRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

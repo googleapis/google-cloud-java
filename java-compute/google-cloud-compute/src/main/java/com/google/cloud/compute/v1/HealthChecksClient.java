@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,28 +31,26 @@ import com.google.cloud.compute.v1.stub.HealthChecksStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The HealthChecks API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
- *   String project = "";
- *   String healthCheck = "";
+ *   String project = "project-309310695";
+ *   String healthCheck = "healthCheck-1938093044";
  *   Operation response = healthChecksClient.delete(project, healthCheck);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the healthChecksClient object to clean up resources such
+ * <p>Note: close() needs to be called on the HealthChecksClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -79,30 +78,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * HealthChecksSettings healthChecksSettings =
  *     HealthChecksSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * HealthChecksClient healthChecksClient =
- *     HealthChecksClient.create(healthChecksSettings);
- * </code>
- * </pre>
+ * HealthChecksClient healthChecksClient = HealthChecksClient.create(healthChecksSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * HealthChecksSettings healthChecksSettings =
  *     HealthChecksSettings.newBuilder().setEndpoint(myEndpoint).build();
- * HealthChecksClient healthChecksClient =
- *     HealthChecksClient.create(healthChecksSettings);
- * </code>
- * </pre>
+ * HealthChecksClient healthChecksClient = HealthChecksClient.create(healthChecksSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class HealthChecksClient implements BackgroundResource {
   private final HealthChecksSettings settings;
   private final HealthChecksStub stub;
@@ -122,7 +116,7 @@ public class HealthChecksClient implements BackgroundResource {
 
   /**
    * Constructs an instance of HealthChecksClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use HealthChecksSettings}.
+   * for advanced usage - prefer using create(HealthChecksSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final HealthChecksClient create(HealthChecksStub stub) {
@@ -154,21 +148,22 @@ public class HealthChecksClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all HealthCheck resources, regional and global, available to the
    * specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, HealthChecksScopedList&gt; element : healthChecksClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, HealthChecksScopedList> element :
+   *       healthChecksClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Name of the project scoping this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -179,24 +174,31 @@ public class HealthChecksClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all HealthCheck resources, regional and global, available to the
    * specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String project = "";
-   *   AggregatedListHealthChecksRequest request = AggregatedListHealthChecksRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, HealthChecksScopedList&gt; element : healthChecksClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListHealthChecksRequest request =
+   *       AggregatedListHealthChecksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, HealthChecksScopedList> element :
+   *       healthChecksClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -206,48 +208,62 @@ public class HealthChecksClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all HealthCheck resources, regional and global, available to the
    * specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String project = "";
-   *   AggregatedListHealthChecksRequest request = AggregatedListHealthChecksRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = healthChecksClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, HealthChecksScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListHealthChecksRequest request =
+   *       AggregatedListHealthChecksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, HealthChecksScopedList>> future =
+   *       healthChecksClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, HealthChecksScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListHealthChecksRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all HealthCheck resources, regional and global, available to the
    * specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String project = "";
-   *   AggregatedListHealthChecksRequest request = AggregatedListHealthChecksRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListHealthChecksRequest request =
+   *       AggregatedListHealthChecksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     HealthChecksAggregatedList response = healthChecksClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, HealthChecksScopedList&gt; element : response.getItemsMap()) {
+   *     HealthChecksAggregatedList response =
+   *         healthChecksClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, HealthChecksScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -258,26 +274,26 @@ public class HealthChecksClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListHealthChecksRequest, HealthChecksAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified HealthCheck resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String project = "";
-   *   String healthCheck = "";
+   *   String project = "project-309310695";
+   *   String healthCheck = "healthCheck-1938093044";
    *   Operation response = healthChecksClient.delete(project, healthCheck);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param healthCheck Name of the HealthCheck resource to delete.
@@ -292,23 +308,23 @@ public class HealthChecksClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified HealthCheck resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String healthCheck = "";
-   *   String project = "";
-   *   DeleteHealthCheckRequest request = DeleteHealthCheckRequest.newBuilder()
-   *     .setHealthCheck(healthCheck)
-   *     .setProject(project)
-   *     .build();
+   *   DeleteHealthCheckRequest request =
+   *       DeleteHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = healthChecksClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -317,44 +333,44 @@ public class HealthChecksClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified HealthCheck resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String healthCheck = "";
-   *   String project = "";
-   *   DeleteHealthCheckRequest request = DeleteHealthCheckRequest.newBuilder()
-   *     .setHealthCheck(healthCheck)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = healthChecksClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteHealthCheckRequest request =
+   *       DeleteHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = healthChecksClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteHealthCheckRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified HealthCheck resource. Gets a list of available health checks by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String project = "";
-   *   String healthCheck = "";
+   *   String project = "project-309310695";
+   *   String healthCheck = "healthCheck-1938093044";
    *   HealthCheck response = healthChecksClient.get(project, healthCheck);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param healthCheck Name of the HealthCheck resource to return.
@@ -366,24 +382,23 @@ public class HealthChecksClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified HealthCheck resource. Gets a list of available health checks by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String healthCheck = "";
-   *   String project = "";
-   *   GetHealthCheckRequest request = GetHealthCheckRequest.newBuilder()
-   *     .setHealthCheck(healthCheck)
-   *     .setProject(project)
-   *     .build();
+   *   GetHealthCheckRequest request =
+   *       GetHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setProject("project-309310695")
+   *           .build();
    *   HealthCheck response = healthChecksClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -392,44 +407,43 @@ public class HealthChecksClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified HealthCheck resource. Gets a list of available health checks by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String healthCheck = "";
-   *   String project = "";
-   *   GetHealthCheckRequest request = GetHealthCheckRequest.newBuilder()
-   *     .setHealthCheck(healthCheck)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;HealthCheck&gt; future = healthChecksClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetHealthCheckRequest request =
+   *       GetHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<HealthCheck> future = healthChecksClient.getCallable().futureCall(request);
+   *   // Do something.
    *   HealthCheck response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetHealthCheckRequest, HealthCheck> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a HealthCheck resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   Operation response = healthChecksClient.insert(project, healthCheckResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param healthCheckResource The body resource for this request
@@ -444,23 +458,23 @@ public class HealthChecksClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a HealthCheck resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   String project = "";
-   *   InsertHealthCheckRequest request = InsertHealthCheckRequest.newBuilder()
-   *     .setHealthCheckResource(healthCheckResource)
-   *     .setProject(project)
-   *     .build();
+   *   InsertHealthCheckRequest request =
+   *       InsertHealthCheckRequest.newBuilder()
+   *           .setHealthCheckResource(HealthCheck.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = healthChecksClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -469,44 +483,44 @@ public class HealthChecksClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a HealthCheck resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   String project = "";
-   *   InsertHealthCheckRequest request = InsertHealthCheckRequest.newBuilder()
-   *     .setHealthCheckResource(healthCheckResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = healthChecksClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertHealthCheckRequest request =
+   *       InsertHealthCheckRequest.newBuilder()
+   *           .setHealthCheckResource(HealthCheck.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = healthChecksClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertHealthCheckRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of HealthCheck resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (HealthCheck element : healthChecksClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -517,23 +531,28 @@ public class HealthChecksClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of HealthCheck resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String project = "";
-   *   ListHealthChecksRequest request = ListHealthChecksRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListHealthChecksRequest request =
+   *       ListHealthChecksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (HealthCheck element : healthChecksClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -542,45 +561,55 @@ public class HealthChecksClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of HealthCheck resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String project = "";
-   *   ListHealthChecksRequest request = ListHealthChecksRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = healthChecksClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListHealthChecksRequest request =
+   *       ListHealthChecksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<HealthCheck> future = healthChecksClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (HealthCheck element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListHealthChecksRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of HealthCheck resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String project = "";
-   *   ListHealthChecksRequest request = ListHealthChecksRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListHealthChecksRequest request =
+   *       ListHealthChecksRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     HealthCheckList response = healthChecksClient.listCallable().call(request);
-   *     for (HealthCheck element : response.getItemsList()) {
+   *     for (HealthCheck element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -591,27 +620,27 @@ public class HealthChecksClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListHealthChecksRequest, HealthCheckList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a HealthCheck resource in the specified project using the data included in the request.
    * This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String project = "";
-   *   String healthCheck = "";
+   *   String project = "project-309310695";
+   *   String healthCheck = "healthCheck-1938093044";
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   Operation response = healthChecksClient.patch(project, healthCheck, healthCheckResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param healthCheck Name of the HealthCheck resource to patch.
@@ -629,26 +658,25 @@ public class HealthChecksClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a HealthCheck resource in the specified project using the data included in the request.
    * This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String healthCheck = "";
-   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   String project = "";
-   *   PatchHealthCheckRequest request = PatchHealthCheckRequest.newBuilder()
-   *     .setHealthCheck(healthCheck)
-   *     .setHealthCheckResource(healthCheckResource)
-   *     .setProject(project)
-   *     .build();
+   *   PatchHealthCheckRequest request =
+   *       PatchHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setHealthCheckResource(HealthCheck.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = healthChecksClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -657,47 +685,46 @@ public class HealthChecksClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a HealthCheck resource in the specified project using the data included in the request.
    * This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String healthCheck = "";
-   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   String project = "";
-   *   PatchHealthCheckRequest request = PatchHealthCheckRequest.newBuilder()
-   *     .setHealthCheck(healthCheck)
-   *     .setHealthCheckResource(healthCheckResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = healthChecksClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchHealthCheckRequest request =
+   *       PatchHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setHealthCheckResource(HealthCheck.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = healthChecksClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchHealthCheckRequest, Operation> patchCallable() {
     return stub.patchCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a HealthCheck resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String project = "";
-   *   String healthCheck = "";
+   *   String project = "project-309310695";
+   *   String healthCheck = "healthCheck-1938093044";
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   Operation response = healthChecksClient.update(project, healthCheck, healthCheckResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param healthCheck Name of the HealthCheck resource to update.
@@ -715,25 +742,24 @@ public class HealthChecksClient implements BackgroundResource {
     return update(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a HealthCheck resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String healthCheck = "";
-   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   String project = "";
-   *   UpdateHealthCheckRequest request = UpdateHealthCheckRequest.newBuilder()
-   *     .setHealthCheck(healthCheck)
-   *     .setHealthCheckResource(healthCheckResource)
-   *     .setProject(project)
-   *     .build();
+   *   UpdateHealthCheckRequest request =
+   *       UpdateHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setHealthCheckResource(HealthCheck.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = healthChecksClient.update(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -742,27 +768,26 @@ public class HealthChecksClient implements BackgroundResource {
     return updateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a HealthCheck resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
-   *   String healthCheck = "";
-   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   String project = "";
-   *   UpdateHealthCheckRequest request = UpdateHealthCheckRequest.newBuilder()
-   *     .setHealthCheck(healthCheck)
-   *     .setHealthCheckResource(healthCheckResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = healthChecksClient.updateCallable().futureCall(request);
-   *   // Do something
+   *   UpdateHealthCheckRequest request =
+   *       UpdateHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setHealthCheckResource(HealthCheck.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = healthChecksClient.updateCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdateHealthCheckRequest, Operation> updateCallable() {
     return stub.updateCallable();
@@ -802,7 +827,7 @@ public class HealthChecksClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListHealthChecksRequest,
           HealthChecksAggregatedList,
-          Entry<String, HealthChecksScopedList>,
+          Map.Entry<String, HealthChecksScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -810,7 +835,7 @@ public class HealthChecksClient implements BackgroundResource {
         PageContext<
                 AggregatedListHealthChecksRequest,
                 HealthChecksAggregatedList,
-                Entry<String, HealthChecksScopedList>>
+                Map.Entry<String, HealthChecksScopedList>>
             context,
         ApiFuture<HealthChecksAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -835,14 +860,14 @@ public class HealthChecksClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListHealthChecksRequest,
           HealthChecksAggregatedList,
-          Entry<String, HealthChecksScopedList>,
+          Map.Entry<String, HealthChecksScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListHealthChecksRequest,
                 HealthChecksAggregatedList,
-                Entry<String, HealthChecksScopedList>>
+                Map.Entry<String, HealthChecksScopedList>>
             context,
         HealthChecksAggregatedList response) {
       super(context, response);
@@ -857,7 +882,7 @@ public class HealthChecksClient implements BackgroundResource {
         PageContext<
                 AggregatedListHealthChecksRequest,
                 HealthChecksAggregatedList,
-                Entry<String, HealthChecksScopedList>>
+                Map.Entry<String, HealthChecksScopedList>>
             context,
         HealthChecksAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -868,7 +893,7 @@ public class HealthChecksClient implements BackgroundResource {
         PageContext<
                 AggregatedListHealthChecksRequest,
                 HealthChecksAggregatedList,
-                Entry<String, HealthChecksScopedList>>
+                Map.Entry<String, HealthChecksScopedList>>
             context,
         ApiFuture<HealthChecksAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -879,7 +904,7 @@ public class HealthChecksClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListHealthChecksRequest,
           HealthChecksAggregatedList,
-          Entry<String, HealthChecksScopedList>,
+          Map.Entry<String, HealthChecksScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

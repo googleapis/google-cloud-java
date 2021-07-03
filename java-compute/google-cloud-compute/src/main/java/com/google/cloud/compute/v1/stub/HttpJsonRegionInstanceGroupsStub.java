@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionInstanceGroupsClient.ListInstancesPagedResponse;
@@ -41,27 +42,26 @@ import com.google.cloud.compute.v1.RegionInstanceGroupList;
 import com.google.cloud.compute.v1.RegionInstanceGroupsListInstances;
 import com.google.cloud.compute.v1.SetNamedPortsRegionInstanceGroupRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the RegionInstanceGroups service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<GetRegionInstanceGroupRequest, InstanceGroup>
+  private static final ApiMethodDescriptor<GetRegionInstanceGroupRequest, InstanceGroup>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetRegionInstanceGroupRequest, InstanceGroup>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroups.Get")
+              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroups/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionInstanceGroupRequest>newBuilder()
@@ -75,10 +75,10 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetRegionInstanceGroupRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "instanceGroup", request.getInstanceGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -91,7 +91,6 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetRegionInstanceGroupRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -99,7 +98,7 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
                           new FieldsExtractor<GetRegionInstanceGroupRequest, String>() {
                             @Override
                             public String extract(GetRegionInstanceGroupRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -109,11 +108,10 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListRegionInstanceGroupsRequest, RegionInstanceGroupList>
+  private static final ApiMethodDescriptor<ListRegionInstanceGroupsRequest, RegionInstanceGroupList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListRegionInstanceGroupsRequest, RegionInstanceGroupList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroups.List")
+              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroups/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionInstanceGroupsRequest>newBuilder()
@@ -168,7 +166,7 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
                           new FieldsExtractor<ListRegionInstanceGroupsRequest, String>() {
                             @Override
                             public String extract(ListRegionInstanceGroupsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -178,14 +176,13 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListInstancesRegionInstanceGroupsRequest, RegionInstanceGroupsListInstances>
       listInstancesMethodDescriptor =
           ApiMethodDescriptor
               .<ListInstancesRegionInstanceGroupsRequest, RegionInstanceGroupsListInstances>
                   newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroups.ListInstances")
+              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroups/ListInstances")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -200,10 +197,10 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<ListInstancesRegionInstanceGroupsRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "instanceGroup", request.getInstanceGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -259,11 +256,10 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetNamedPortsRegionInstanceGroupRequest, Operation>
+  private static final ApiMethodDescriptor<SetNamedPortsRegionInstanceGroupRequest, Operation>
       setNamedPortsMethodDescriptor =
           ApiMethodDescriptor.<SetNamedPortsRegionInstanceGroupRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroups.SetNamedPorts")
+              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroups/SetNamedPorts")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetNamedPortsRegionInstanceGroupRequest>newBuilder()
@@ -277,10 +273,10 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SetNamedPortsRegionInstanceGroupRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "instanceGroup", request.getInstanceGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -319,8 +315,6 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<GetRegionInstanceGroupRequest, InstanceGroup> getCallable;
   private final UnaryCallable<ListRegionInstanceGroupsRequest, RegionInstanceGroupList>
       listCallable;
@@ -333,6 +327,7 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
   private final UnaryCallable<SetNamedPortsRegionInstanceGroupRequest, Operation>
       setNamedPortsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionInstanceGroupsStub create(
@@ -417,31 +412,48 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
         callableFactory.createUnaryCallable(
             setNamedPortsTransportSettings, settings.setNamedPortsSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(listInstancesMethodDescriptor);
+    methodDescriptors.add(setNamedPortsMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<GetRegionInstanceGroupRequest, InstanceGroup> getCallable() {
     return getCallable;
   }
 
-  public UnaryCallable<ListRegionInstanceGroupsRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListRegionInstanceGroupsRequest, RegionInstanceGroupList> listCallable() {
     return listCallable;
   }
 
-  public UnaryCallable<ListInstancesRegionInstanceGroupsRequest, ListInstancesPagedResponse>
-      listInstancesPagedCallable() {
-    return listInstancesPagedCallable;
+  @Override
+  public UnaryCallable<ListRegionInstanceGroupsRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListInstancesRegionInstanceGroupsRequest, RegionInstanceGroupsListInstances>
       listInstancesCallable() {
     return listInstancesCallable;
   }
 
+  @Override
+  public UnaryCallable<ListInstancesRegionInstanceGroupsRequest, ListInstancesPagedResponse>
+      listInstancesPagedCallable() {
+    return listInstancesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<SetNamedPortsRegionInstanceGroupRequest, Operation> setNamedPortsCallable() {
     return setNamedPortsCallable;
   }

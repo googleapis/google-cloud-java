@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,63 +13,49 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.InterconnectAttachmentsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.InterconnectAttachmentsClient.ListPagedResponse;
-import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectAttachmentsStub.aggregatedListMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectAttachmentsStub.deleteMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectAttachmentsStub.getMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectAttachmentsStub.insertMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectAttachmentsStub.listMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectAttachmentsStub.patchMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.testing.MockHttpService;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
-import com.google.api.gax.rpc.StatusCode.Code;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import com.google.cloud.compute.v1.stub.InterconnectAttachmentsStubSettings;
-import com.google.common.collect.ImmutableList;
+import com.google.cloud.compute.v1.stub.HttpJsonInterconnectAttachmentsStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class InterconnectAttachmentsClientTest {
-  private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
-      ImmutableList.copyOf(
-          Lists.<ApiMethodDescriptor>newArrayList(
-              aggregatedListMethodDescriptor,
-              deleteMethodDescriptor,
-              getMethodDescriptor,
-              insertMethodDescriptor,
-              listMethodDescriptor,
-              patchMethodDescriptor));
-  private static final MockHttpService mockService =
-      new MockHttpService(
-          METHOD_DESCRIPTORS, InterconnectAttachmentsStubSettings.getDefaultEndpoint());
-
+  private static MockHttpService mockService;
   private static InterconnectAttachmentsClient client;
-  private static InterconnectAttachmentsSettings clientSettings;
 
   @BeforeClass
-  public static void setUp() throws IOException {
-    clientSettings =
+  public static void startStaticServer() throws IOException {
+    mockService =
+        new MockHttpService(
+            HttpJsonInterconnectAttachmentsStub.getMethodDescriptors(),
+            InterconnectAttachmentsSettings.getDefaultEndpoint());
+    InterconnectAttachmentsSettings settings =
         InterconnectAttachmentsSettings.newBuilder()
             .setTransportChannelProvider(
                 InterconnectAttachmentsSettings.defaultHttpJsonTransportProviderBuilder()
@@ -77,37 +63,30 @@ public class InterconnectAttachmentsClientTest {
                     .build())
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
-    client = InterconnectAttachmentsClient.create(clientSettings);
-  }
-
-  @After
-  public void cleanUp() {
-    mockService.reset();
+    client = InterconnectAttachmentsClient.create(settings);
   }
 
   @AfterClass
-  public static void tearDown() throws Exception {
+  public static void stopServer() {
     client.close();
   }
 
+  @Before
+  public void setUp() {}
+
+  @After
+  public void tearDown() throws Exception {
+    mockService.reset();
+  }
+
   @Test
-  @SuppressWarnings("all")
-  public void aggregatedListTest() {
-    String id = "id3355";
-    String kind = "kind3292052";
-    String nextPageToken = "";
-    String selfLink = "selfLink-1691268851";
-    InterconnectAttachmentsScopedList itemsItem =
+  public void aggregatedListTest() throws Exception {
+    InterconnectAttachmentsScopedList responsesElement =
         InterconnectAttachmentsScopedList.newBuilder().build();
-    Map<String, InterconnectAttachmentsScopedList> items = new HashMap<>();
-    items.put("items", itemsItem);
     InterconnectAttachmentAggregatedList expectedResponse =
         InterconnectAttachmentAggregatedList.newBuilder()
-            .setId(id)
-            .setKind(kind)
-            .setNextPageToken(nextPageToken)
-            .setSelfLink(selfLink)
-            .putAllItems(items)
+            .setNextPageToken("")
+            .putAllItems(Collections.singletonMap("items", responsesElement))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -115,8 +94,9 @@ public class InterconnectAttachmentsClientTest {
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
-    List<Entry<String, InterconnectAttachmentsScopedList>> resources =
+    List<Map.Entry<String, InterconnectAttachmentsScopedList>> resources =
         Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(
         expectedResponse.getItemsMap().entrySet().iterator().next(), resources.get(0));
@@ -137,76 +117,54 @@ public class InterconnectAttachmentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void aggregatedListExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
-
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region2 = "region2-690338393";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void deleteTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region2)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
     String project = "project-309310695";
     String region = "region-934795532";
-    String interconnectAttachment = "interconnectAttachment308135284";
+    String interconnectAttachment = "interconnectAttachment1869250641";
 
     Operation actualResponse = client.delete(project, region, interconnectAttachment);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -227,72 +185,55 @@ public class InterconnectAttachmentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
       String region = "region-934795532";
-      String interconnectAttachment = "interconnectAttachment308135284";
-
+      String interconnectAttachment = "interconnectAttachment1869250641";
       client.delete(project, region, interconnectAttachment);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getTest() {
-    boolean adminEnabled = false;
-    String cloudRouterIpAddress = "cloudRouterIpAddress1361134600";
-    String creationTimestamp = "creationTimestamp567396278";
-    String customerRouterIpAddress = "customerRouterIpAddress-741266063";
-    int dataplaneVersion = 1645532811;
-    String description = "description-1724546052";
-    String googleReferenceId = "googleReferenceId534944469";
-    String id = "id3355";
-    String interconnect = "interconnect-849140594";
-    String kind = "kind3292052";
-    int mtu = 108462;
-    String name = "name3373707";
-    String pairingKey = "pairingKey976566376";
-    String partnerAsn = "partnerAsn975037061";
-    String region2 = "region2-690338393";
-    String router = "router-925132983";
-    String selfLink = "selfLink-1691268851";
-    int vlanTag8021q = 1730540572;
+  public void getTest() throws Exception {
     InterconnectAttachment expectedResponse =
         InterconnectAttachment.newBuilder()
-            .setAdminEnabled(adminEnabled)
-            .setCloudRouterIpAddress(cloudRouterIpAddress)
-            .setCreationTimestamp(creationTimestamp)
-            .setCustomerRouterIpAddress(customerRouterIpAddress)
-            .setDataplaneVersion(dataplaneVersion)
-            .setDescription(description)
-            .setGoogleReferenceId(googleReferenceId)
-            .setId(id)
-            .setInterconnect(interconnect)
-            .setKind(kind)
-            .setMtu(mtu)
-            .setName(name)
-            .setPairingKey(pairingKey)
-            .setPartnerAsn(partnerAsn)
-            .setRegion(region2)
-            .setRouter(router)
-            .setSelfLink(selfLink)
-            .setVlanTag8021Q(vlanTag8021q)
+            .setAdminEnabled(true)
+            .addAllCandidateSubnets(new ArrayList<String>())
+            .setCloudRouterIpAddress("cloudRouterIpAddress586092687")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setCustomerRouterIpAddress("customerRouterIpAddress-2065119290")
+            .setDataplaneVersion(1645532811)
+            .setDescription("description-1724546052")
+            .setGoogleReferenceId("googleReferenceId600178125")
+            .setId("id3355")
+            .setInterconnect("interconnect-849140594")
+            .addAllIpsecInternalAddresses(new ArrayList<String>())
+            .setKind("kind3292052")
+            .setMtu(108462)
+            .setName("name3373707")
+            .setPairingKey("pairingKey-245611913")
+            .setPartnerAsn("partnerAsn169971860")
+            .setPartnerMetadata(InterconnectAttachmentPartnerMetadata.newBuilder().build())
+            .setPrivateInterconnectInfo(InterconnectAttachmentPrivateInfo.newBuilder().build())
+            .setRegion("region-934795532")
+            .setRouter("router-925132983")
+            .setSelfLink("selfLink1191800166")
+            .setVlanTag8021Q(1730540572)
             .build();
     mockService.addResponse(expectedResponse);
 
     String project = "project-309310695";
     String region = "region-934795532";
-    String interconnectAttachment = "interconnectAttachment308135284";
+    String interconnectAttachment = "interconnectAttachment1869250641";
 
     InterconnectAttachment actualResponse = client.get(project, region, interconnectAttachment);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -313,72 +254,50 @@ public class InterconnectAttachmentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
       String region = "region-934795532";
-      String interconnectAttachment = "interconnectAttachment308135284";
-
+      String interconnectAttachment = "interconnectAttachment1869250641";
       client.get(project, region, interconnectAttachment);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void insertTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region2 = "region2-690338393";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void insertTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region2)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -406,11 +325,10 @@ public class InterconnectAttachmentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void insertExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -418,30 +336,20 @@ public class InterconnectAttachmentsClientTest {
       String region = "region-934795532";
       InterconnectAttachment interconnectAttachmentResource =
           InterconnectAttachment.newBuilder().build();
-
       client.insert(project, region, interconnectAttachmentResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listTest() {
-    String id = "id3355";
-    String kind = "kind3292052";
-    String nextPageToken = "";
-    String selfLink = "selfLink-1691268851";
-    InterconnectAttachment itemsElement = InterconnectAttachment.newBuilder().build();
-    List<InterconnectAttachment> items = Arrays.asList(itemsElement);
+  public void listTest() throws Exception {
+    InterconnectAttachment responsesElement = InterconnectAttachment.newBuilder().build();
     InterconnectAttachmentList expectedResponse =
         InterconnectAttachmentList.newBuilder()
-            .setId(id)
-            .setKind(kind)
-            .setNextPageToken(nextPageToken)
-            .setSelfLink(selfLink)
-            .addAllItems(items)
+            .setNextPageToken("")
+            .addAllItems(Arrays.asList(responsesElement))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -451,6 +359,7 @@ public class InterconnectAttachmentsClientTest {
     ListPagedResponse pagedListResponse = client.list(project, region);
 
     List<InterconnectAttachment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
 
@@ -470,77 +379,55 @@ public class InterconnectAttachmentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
       String region = "region-934795532";
-
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void patchTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    int httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationGroupId = "operationGroupId40171187";
-    String operationType = "operationType-1432962286";
-    int progress = 1001078227;
-    String region2 = "region2-690338393";
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String statusMessage = "statusMessage-239442758";
-    String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
-    String zone = "zone3744684";
+  public void patchTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
-            .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationGroupId(operationGroupId)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region2)
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatusMessage(statusMessage)
-            .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
-            .setZone(zone)
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(1386087020)
+            .setId("id3355")
+            .setInsertTime("insertTime966165798")
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setStartTime("startTime-2129294769")
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId("targetId-441951604")
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
     String project = "project-309310695";
     String region = "region-934795532";
-    String interconnectAttachment = "interconnectAttachment308135284";
+    String interconnectAttachment = "interconnectAttachment1869250641";
     InterconnectAttachment interconnectAttachmentResource =
         InterconnectAttachment.newBuilder().build();
 
@@ -564,24 +451,22 @@ public class InterconnectAttachmentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void patchExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String project = "project-309310695";
       String region = "region-934795532";
-      String interconnectAttachment = "interconnectAttachment308135284";
+      String interconnectAttachment = "interconnectAttachment1869250641";
       InterconnectAttachment interconnectAttachmentResource =
           InterconnectAttachment.newBuilder().build();
-
       client.patch(project, region, interconnectAttachment, interconnectAttachmentResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 }

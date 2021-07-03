@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,29 +31,29 @@ import com.google.cloud.compute.v1.stub.InterconnectAttachmentsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The InterconnectAttachments API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String interconnectAttachment = "";
- *   Operation response = interconnectAttachmentsClient.delete(project, region, interconnectAttachment);
+ * <pre>{@code
+ * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+ *     InterconnectAttachmentsClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String interconnectAttachment = "interconnectAttachment1869250641";
+ *   Operation response =
+ *       interconnectAttachmentsClient.delete(project, region, interconnectAttachment);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the interconnectAttachmentsClient object to clean up
+ * <p>Note: close() needs to be called on the InterconnectAttachmentsClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -81,30 +82,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * InterconnectAttachmentsSettings interconnectAttachmentsSettings =
  *     InterconnectAttachmentsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * InterconnectAttachmentsClient interconnectAttachmentsClient =
  *     InterconnectAttachmentsClient.create(interconnectAttachmentsSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * InterconnectAttachmentsSettings interconnectAttachmentsSettings =
  *     InterconnectAttachmentsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * InterconnectAttachmentsClient interconnectAttachmentsClient =
  *     InterconnectAttachmentsClient.create(interconnectAttachmentsSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class InterconnectAttachmentsClient implements BackgroundResource {
   private final InterconnectAttachmentsSettings settings;
   private final InterconnectAttachmentsStub stub;
@@ -125,7 +123,7 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of InterconnectAttachmentsClient, using the given stub for making calls.
-   * This is for advanced usage - prefer to use InterconnectAttachmentsSettings}.
+   * This is for advanced usage - prefer using create(InterconnectAttachmentsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final InterconnectAttachmentsClient create(InterconnectAttachmentsStub stub) {
@@ -158,20 +156,22 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of interconnect attachments.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, InterconnectAttachmentsScopedList&gt; element : interconnectAttachmentsClient.aggregatedList(project).iterateAll()) {
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, InterconnectAttachmentsScopedList> element :
+   *       interconnectAttachmentsClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -182,23 +182,31 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of interconnect attachments.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   String project = "";
-   *   AggregatedListInterconnectAttachmentsRequest request = AggregatedListInterconnectAttachmentsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, InterconnectAttachmentsScopedList&gt; element : interconnectAttachmentsClient.aggregatedList(request).iterateAll()) {
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   AggregatedListInterconnectAttachmentsRequest request =
+   *       AggregatedListInterconnectAttachmentsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, InterconnectAttachmentsScopedList> element :
+   *       interconnectAttachmentsClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -208,25 +216,34 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of interconnect attachments.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   String project = "";
-   *   AggregatedListInterconnectAttachmentsRequest request = AggregatedListInterconnectAttachmentsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = interconnectAttachmentsClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, InterconnectAttachmentsScopedList&gt; element : future.get().iterateAll()) {
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   AggregatedListInterconnectAttachmentsRequest request =
+   *       AggregatedListInterconnectAttachmentsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, InterconnectAttachmentsScopedList>> future =
+   *       interconnectAttachmentsClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, InterconnectAttachmentsScopedList> element :
+   *       future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           AggregatedListInterconnectAttachmentsRequest, AggregatedListPagedResponse>
@@ -234,21 +251,30 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of interconnect attachments.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   String project = "";
-   *   AggregatedListInterconnectAttachmentsRequest request = AggregatedListInterconnectAttachmentsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   AggregatedListInterconnectAttachmentsRequest request =
+   *       AggregatedListInterconnectAttachmentsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     InterconnectAttachmentAggregatedList response = interconnectAttachmentsClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, InterconnectAttachmentsScopedList&gt; element : response.getItemsMap()) {
+   *     InterconnectAttachmentAggregatedList response =
+   *         interconnectAttachmentsClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, InterconnectAttachmentsScopedList> element :
+   *         response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -259,7 +285,7 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           AggregatedListInterconnectAttachmentsRequest, InterconnectAttachmentAggregatedList>
@@ -267,20 +293,22 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified interconnect attachment.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String interconnectAttachment = "";
-   *   Operation response = interconnectAttachmentsClient.delete(project, region, interconnectAttachment);
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String interconnectAttachment = "interconnectAttachment1869250641";
+   *   Operation response =
+   *       interconnectAttachmentsClient.delete(project, region, interconnectAttachment);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -297,25 +325,25 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified interconnect attachment.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   String interconnectAttachment = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeleteInterconnectAttachmentRequest request = DeleteInterconnectAttachmentRequest.newBuilder()
-   *     .setInterconnectAttachment(interconnectAttachment)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   DeleteInterconnectAttachmentRequest request =
+   *       DeleteInterconnectAttachmentRequest.newBuilder()
+   *           .setInterconnectAttachment("interconnectAttachment1869250641")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = interconnectAttachmentsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -324,46 +352,49 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified interconnect attachment.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   String interconnectAttachment = "";
-   *   String project = "";
-   *   String region = "";
-   *   DeleteInterconnectAttachmentRequest request = DeleteInterconnectAttachmentRequest.newBuilder()
-   *     .setInterconnectAttachment(interconnectAttachment)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = interconnectAttachmentsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   DeleteInterconnectAttachmentRequest request =
+   *       DeleteInterconnectAttachmentRequest.newBuilder()
+   *           .setInterconnectAttachment("interconnectAttachment1869250641")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       interconnectAttachmentsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteInterconnectAttachmentRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified interconnect attachment.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String interconnectAttachment = "";
-   *   InterconnectAttachment response = interconnectAttachmentsClient.get(project, region, interconnectAttachment);
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String interconnectAttachment = "interconnectAttachment1869250641";
+   *   InterconnectAttachment response =
+   *       interconnectAttachmentsClient.get(project, region, interconnectAttachment);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -381,25 +412,24 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified interconnect attachment.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   String interconnectAttachment = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetInterconnectAttachmentRequest request = GetInterconnectAttachmentRequest.newBuilder()
-   *     .setInterconnectAttachment(interconnectAttachment)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   GetInterconnectAttachmentRequest request =
+   *       GetInterconnectAttachmentRequest.newBuilder()
+   *           .setInterconnectAttachment("interconnectAttachment1869250641")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
    *   InterconnectAttachment response = interconnectAttachmentsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -408,48 +438,51 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified interconnect attachment.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   String interconnectAttachment = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetInterconnectAttachmentRequest request = GetInterconnectAttachmentRequest.newBuilder()
-   *     .setInterconnectAttachment(interconnectAttachment)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;InterconnectAttachment&gt; future = interconnectAttachmentsClient.getCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   GetInterconnectAttachmentRequest request =
+   *       GetInterconnectAttachmentRequest.newBuilder()
+   *           .setInterconnectAttachment("interconnectAttachment1869250641")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<InterconnectAttachment> future =
+   *       interconnectAttachmentsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   InterconnectAttachment response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetInterconnectAttachmentRequest, InterconnectAttachment>
       getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an InterconnectAttachment in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
-   *   Operation response = interconnectAttachmentsClient.insert(project, region, interconnectAttachmentResource);
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   InterconnectAttachment interconnectAttachmentResource =
+   *       InterconnectAttachment.newBuilder().build();
+   *   Operation response =
+   *       interconnectAttachmentsClient.insert(project, region, interconnectAttachmentResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -467,26 +500,27 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an InterconnectAttachment in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertInterconnectAttachmentRequest request = InsertInterconnectAttachmentRequest.newBuilder()
-   *     .setInterconnectAttachmentResource(interconnectAttachmentResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   InsertInterconnectAttachmentRequest request =
+   *       InsertInterconnectAttachmentRequest.newBuilder()
+   *           .setInterconnectAttachmentResource(InterconnectAttachment.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
    *   Operation response = interconnectAttachmentsClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -495,48 +529,52 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an InterconnectAttachment in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   InsertInterconnectAttachmentRequest request = InsertInterconnectAttachmentRequest.newBuilder()
-   *     .setInterconnectAttachmentResource(interconnectAttachmentResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = interconnectAttachmentsClient.insertCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   InsertInterconnectAttachmentRequest request =
+   *       InsertInterconnectAttachmentRequest.newBuilder()
+   *           .setInterconnectAttachmentResource(InterconnectAttachment.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       interconnectAttachmentsClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertInterconnectAttachmentRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of interconnect attachments contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   for (InterconnectAttachment element : interconnectAttachmentsClient.list(project, region).iterateAll()) {
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   for (InterconnectAttachment element :
+   *       interconnectAttachmentsClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -551,25 +589,31 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of interconnect attachments contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListInterconnectAttachmentsRequest request = ListInterconnectAttachmentsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   for (InterconnectAttachment element : interconnectAttachmentsClient.list(request).iterateAll()) {
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   ListInterconnectAttachmentsRequest request =
+   *       ListInterconnectAttachmentsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (InterconnectAttachment element :
+   *       interconnectAttachmentsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -578,50 +622,62 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of interconnect attachments contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListInterconnectAttachmentsRequest request = ListInterconnectAttachmentsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = interconnectAttachmentsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   ListInterconnectAttachmentsRequest request =
+   *       ListInterconnectAttachmentsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<InterconnectAttachment> future =
+   *       interconnectAttachmentsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (InterconnectAttachment element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListInterconnectAttachmentsRequest, ListPagedResponse>
       listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of interconnect attachments contained within the specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListInterconnectAttachmentsRequest request = ListInterconnectAttachmentsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   ListInterconnectAttachmentsRequest request =
+   *       ListInterconnectAttachmentsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     InterconnectAttachmentList response = interconnectAttachmentsClient.listCallable().call(request);
-   *     for (InterconnectAttachment element : response.getItemsList()) {
+   *     InterconnectAttachmentList response =
+   *         interconnectAttachmentsClient.listCallable().call(request);
+   *     for (InterconnectAttachment element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -632,29 +688,33 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListInterconnectAttachmentsRequest, InterconnectAttachmentList>
       listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified interconnect attachment with the data included in the request. This
    * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String interconnectAttachment = "";
-   *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
-   *   Operation response = interconnectAttachmentsClient.patch(project, region, interconnectAttachment, interconnectAttachmentResource);
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String interconnectAttachment = "interconnectAttachment1869250641";
+   *   InterconnectAttachment interconnectAttachmentResource =
+   *       InterconnectAttachment.newBuilder().build();
+   *   Operation response =
+   *       interconnectAttachmentsClient.patch(
+   *           project, region, interconnectAttachment, interconnectAttachmentResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -677,28 +737,27 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified interconnect attachment with the data included in the request. This
    * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   String interconnectAttachment = "";
-   *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   PatchInterconnectAttachmentRequest request = PatchInterconnectAttachmentRequest.newBuilder()
-   *     .setInterconnectAttachment(interconnectAttachment)
-   *     .setInterconnectAttachmentResource(interconnectAttachmentResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   PatchInterconnectAttachmentRequest request =
+   *       PatchInterconnectAttachmentRequest.newBuilder()
+   *           .setInterconnectAttachment("interconnectAttachment1869250641")
+   *           .setInterconnectAttachmentResource(InterconnectAttachment.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = interconnectAttachmentsClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -707,30 +766,30 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified interconnect attachment with the data included in the request. This
    * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
-   *   String interconnectAttachment = "";
-   *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   PatchInterconnectAttachmentRequest request = PatchInterconnectAttachmentRequest.newBuilder()
-   *     .setInterconnectAttachment(interconnectAttachment)
-   *     .setInterconnectAttachmentResource(interconnectAttachmentResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = interconnectAttachmentsClient.patchCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   PatchInterconnectAttachmentRequest request =
+   *       PatchInterconnectAttachmentRequest.newBuilder()
+   *           .setInterconnectAttachment("interconnectAttachment1869250641")
+   *           .setInterconnectAttachmentResource(InterconnectAttachment.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       interconnectAttachmentsClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchInterconnectAttachmentRequest, Operation> patchCallable() {
     return stub.patchCallable();
@@ -770,7 +829,7 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListInterconnectAttachmentsRequest,
           InterconnectAttachmentAggregatedList,
-          Entry<String, InterconnectAttachmentsScopedList>,
+          Map.Entry<String, InterconnectAttachmentsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -778,7 +837,7 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
         PageContext<
                 AggregatedListInterconnectAttachmentsRequest,
                 InterconnectAttachmentAggregatedList,
-                Entry<String, InterconnectAttachmentsScopedList>>
+                Map.Entry<String, InterconnectAttachmentsScopedList>>
             context,
         ApiFuture<InterconnectAttachmentAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -803,14 +862,14 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListInterconnectAttachmentsRequest,
           InterconnectAttachmentAggregatedList,
-          Entry<String, InterconnectAttachmentsScopedList>,
+          Map.Entry<String, InterconnectAttachmentsScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListInterconnectAttachmentsRequest,
                 InterconnectAttachmentAggregatedList,
-                Entry<String, InterconnectAttachmentsScopedList>>
+                Map.Entry<String, InterconnectAttachmentsScopedList>>
             context,
         InterconnectAttachmentAggregatedList response) {
       super(context, response);
@@ -825,7 +884,7 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
         PageContext<
                 AggregatedListInterconnectAttachmentsRequest,
                 InterconnectAttachmentAggregatedList,
-                Entry<String, InterconnectAttachmentsScopedList>>
+                Map.Entry<String, InterconnectAttachmentsScopedList>>
             context,
         InterconnectAttachmentAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -836,7 +895,7 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
         PageContext<
                 AggregatedListInterconnectAttachmentsRequest,
                 InterconnectAttachmentAggregatedList,
-                Entry<String, InterconnectAttachmentsScopedList>>
+                Map.Entry<String, InterconnectAttachmentsScopedList>>
             context,
         ApiFuture<InterconnectAttachmentAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -847,7 +906,7 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListInterconnectAttachmentsRequest,
           InterconnectAttachmentAggregatedList,
-          Entry<String, InterconnectAttachmentsScopedList>,
+          Map.Entry<String, InterconnectAttachmentsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

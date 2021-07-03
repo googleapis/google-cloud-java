@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,28 +31,26 @@ import com.google.cloud.compute.v1.stub.UrlMapsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The UrlMaps API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
- *   String project = "";
- *   String urlMap = "";
+ *   String project = "project-309310695";
+ *   String urlMap = "urlMap-836780691";
  *   Operation response = urlMapsClient.delete(project, urlMap);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the urlMapsClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the UrlMapsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -79,30 +78,24 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * UrlMapsSettings urlMapsSettings =
  *     UrlMapsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * UrlMapsClient urlMapsClient =
- *     UrlMapsClient.create(urlMapsSettings);
- * </code>
- * </pre>
+ * UrlMapsClient urlMapsClient = UrlMapsClient.create(urlMapsSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
- * UrlMapsSettings urlMapsSettings =
- *     UrlMapsSettings.newBuilder().setEndpoint(myEndpoint).build();
- * UrlMapsClient urlMapsClient =
- *     UrlMapsClient.create(urlMapsSettings);
- * </code>
- * </pre>
+ * <pre>{@code
+ * UrlMapsSettings urlMapsSettings = UrlMapsSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * UrlMapsClient urlMapsClient = UrlMapsClient.create(urlMapsSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class UrlMapsClient implements BackgroundResource {
   private final UrlMapsSettings settings;
   private final UrlMapsStub stub;
@@ -122,7 +115,7 @@ public class UrlMapsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of UrlMapsClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use UrlMapsSettings}.
+   * advanced usage - prefer using create(UrlMapsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final UrlMapsClient create(UrlMapsStub stub) {
@@ -153,21 +146,22 @@ public class UrlMapsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all UrlMap resources, regional and global, available to the specified
    * project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, UrlMapsScopedList&gt; element : urlMapsClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, UrlMapsScopedList> element :
+   *       urlMapsClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Name of the project scoping this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -178,24 +172,31 @@ public class UrlMapsClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all UrlMap resources, regional and global, available to the specified
    * project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   AggregatedListUrlMapsRequest request = AggregatedListUrlMapsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, UrlMapsScopedList&gt; element : urlMapsClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListUrlMapsRequest request =
+   *       AggregatedListUrlMapsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, UrlMapsScopedList> element :
+   *       urlMapsClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -204,48 +205,61 @@ public class UrlMapsClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all UrlMap resources, regional and global, available to the specified
    * project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   AggregatedListUrlMapsRequest request = AggregatedListUrlMapsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = urlMapsClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, UrlMapsScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListUrlMapsRequest request =
+   *       AggregatedListUrlMapsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, UrlMapsScopedList>> future =
+   *       urlMapsClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, UrlMapsScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListUrlMapsRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all UrlMap resources, regional and global, available to the specified
    * project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   AggregatedListUrlMapsRequest request = AggregatedListUrlMapsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListUrlMapsRequest request =
+   *       AggregatedListUrlMapsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     UrlMapsAggregatedList response = urlMapsClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, UrlMapsScopedList&gt; element : response.getItemsMap()) {
+   *     for (Map.Entry<String, UrlMapsScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -256,26 +270,26 @@ public class UrlMapsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListUrlMapsRequest, UrlMapsAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified UrlMap resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   String urlMap = "";
+   *   String project = "project-309310695";
+   *   String urlMap = "urlMap-836780691";
    *   Operation response = urlMapsClient.delete(project, urlMap);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param urlMap Name of the UrlMap resource to delete.
@@ -287,23 +301,23 @@ public class UrlMapsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified UrlMap resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   String urlMap = "";
-   *   DeleteUrlMapRequest request = DeleteUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setUrlMap(urlMap)
-   *     .build();
+   *   DeleteUrlMapRequest request =
+   *       DeleteUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMap("urlMap-836780691")
+   *           .build();
    *   Operation response = urlMapsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -312,44 +326,44 @@ public class UrlMapsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified UrlMap resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   String urlMap = "";
-   *   DeleteUrlMapRequest request = DeleteUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setUrlMap(urlMap)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = urlMapsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteUrlMapRequest request =
+   *       DeleteUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMap("urlMap-836780691")
+   *           .build();
+   *   ApiFuture<Operation> future = urlMapsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteUrlMapRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified UrlMap resource. Gets a list of available URL maps by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   String urlMap = "";
+   *   String project = "project-309310695";
+   *   String urlMap = "urlMap-836780691";
    *   UrlMap response = urlMapsClient.get(project, urlMap);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param urlMap Name of the UrlMap resource to return.
@@ -361,24 +375,23 @@ public class UrlMapsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified UrlMap resource. Gets a list of available URL maps by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   String urlMap = "";
-   *   GetUrlMapRequest request = GetUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setUrlMap(urlMap)
-   *     .build();
+   *   GetUrlMapRequest request =
+   *       GetUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setUrlMap("urlMap-836780691")
+   *           .build();
    *   UrlMap response = urlMapsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -387,44 +400,43 @@ public class UrlMapsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified UrlMap resource. Gets a list of available URL maps by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   String urlMap = "";
-   *   GetUrlMapRequest request = GetUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setUrlMap(urlMap)
-   *     .build();
-   *   ApiFuture&lt;UrlMap&gt; future = urlMapsClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetUrlMapRequest request =
+   *       GetUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setUrlMap("urlMap-836780691")
+   *           .build();
+   *   ApiFuture<UrlMap> future = urlMapsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   UrlMap response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetUrlMapRequest, UrlMap> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a UrlMap resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   Operation response = urlMapsClient.insert(project, urlMapResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param urlMapResource The body resource for this request
@@ -439,23 +451,23 @@ public class UrlMapsClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a UrlMap resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   InsertUrlMapRequest request = InsertUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setUrlMapResource(urlMapResource)
-   *     .build();
+   *   InsertUrlMapRequest request =
+   *       InsertUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMapResource(UrlMap.newBuilder().build())
+   *           .build();
    *   Operation response = urlMapsClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -464,31 +476,31 @@ public class UrlMapsClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a UrlMap resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   InsertUrlMapRequest request = InsertUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setUrlMapResource(urlMapResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = urlMapsClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertUrlMapRequest request =
+   *       InsertUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMapResource(UrlMap.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = urlMapsClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertUrlMapRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Initiates a cache invalidation operation, invalidating the specified path, scoped to the
    * specified UrlMap.
@@ -498,14 +510,16 @@ public class UrlMapsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   String urlMap = "";
-   *   CacheInvalidationRule cacheInvalidationRuleResource = CacheInvalidationRule.newBuilder().build();
-   *   Operation response = urlMapsClient.invalidateCache(project, urlMap, cacheInvalidationRuleResource);
+   *   String project = "project-309310695";
+   *   String urlMap = "urlMap-836780691";
+   *   CacheInvalidationRule cacheInvalidationRuleResource =
+   *       CacheInvalidationRule.newBuilder().build();
+   *   Operation response =
+   *       urlMapsClient.invalidateCache(project, urlMap, cacheInvalidationRuleResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param urlMap Name of the UrlMap scoping this request.
@@ -523,7 +537,7 @@ public class UrlMapsClient implements BackgroundResource {
     return invalidateCache(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Initiates a cache invalidation operation, invalidating the specified path, scoped to the
    * specified UrlMap.
@@ -533,19 +547,18 @@ public class UrlMapsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   CacheInvalidationRule cacheInvalidationRuleResource = CacheInvalidationRule.newBuilder().build();
-   *   String project = "";
-   *   String urlMap = "";
-   *   InvalidateCacheUrlMapRequest request = InvalidateCacheUrlMapRequest.newBuilder()
-   *     .setCacheInvalidationRuleResource(cacheInvalidationRuleResource)
-   *     .setProject(project)
-   *     .setUrlMap(urlMap)
-   *     .build();
+   *   InvalidateCacheUrlMapRequest request =
+   *       InvalidateCacheUrlMapRequest.newBuilder()
+   *           .setCacheInvalidationRuleResource(CacheInvalidationRule.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMap("urlMap-836780691")
+   *           .build();
    *   Operation response = urlMapsClient.invalidateCache(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -554,7 +567,7 @@ public class UrlMapsClient implements BackgroundResource {
     return invalidateCacheCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Initiates a cache invalidation operation, invalidating the specified path, scoped to the
    * specified UrlMap.
@@ -564,40 +577,39 @@ public class UrlMapsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   CacheInvalidationRule cacheInvalidationRuleResource = CacheInvalidationRule.newBuilder().build();
-   *   String project = "";
-   *   String urlMap = "";
-   *   InvalidateCacheUrlMapRequest request = InvalidateCacheUrlMapRequest.newBuilder()
-   *     .setCacheInvalidationRuleResource(cacheInvalidationRuleResource)
-   *     .setProject(project)
-   *     .setUrlMap(urlMap)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = urlMapsClient.invalidateCacheCallable().futureCall(request);
-   *   // Do something
+   *   InvalidateCacheUrlMapRequest request =
+   *       InvalidateCacheUrlMapRequest.newBuilder()
+   *           .setCacheInvalidationRuleResource(CacheInvalidationRule.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMap("urlMap-836780691")
+   *           .build();
+   *   ApiFuture<Operation> future = urlMapsClient.invalidateCacheCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InvalidateCacheUrlMapRequest, Operation> invalidateCacheCallable() {
     return stub.invalidateCacheCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of UrlMap resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (UrlMap element : urlMapsClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -607,23 +619,28 @@ public class UrlMapsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of UrlMap resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   ListUrlMapsRequest request = ListUrlMapsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListUrlMapsRequest request =
+   *       ListUrlMapsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (UrlMap element : urlMapsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -632,45 +649,55 @@ public class UrlMapsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of UrlMap resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   ListUrlMapsRequest request = ListUrlMapsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = urlMapsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListUrlMapsRequest request =
+   *       ListUrlMapsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<UrlMap> future = urlMapsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (UrlMap element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListUrlMapsRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of UrlMap resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   ListUrlMapsRequest request = ListUrlMapsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListUrlMapsRequest request =
+   *       ListUrlMapsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     UrlMapList response = urlMapsClient.listCallable().call(request);
-   *     for (UrlMap element : response.getItemsList()) {
+   *     for (UrlMap element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -681,27 +708,27 @@ public class UrlMapsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListUrlMapsRequest, UrlMapList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified UrlMap resource with the data included in the request. This method
    * supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   String urlMap = "";
+   *   String project = "project-309310695";
+   *   String urlMap = "urlMap-836780691";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   Operation response = urlMapsClient.patch(project, urlMap, urlMapResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param urlMap Name of the UrlMap resource to patch.
@@ -718,26 +745,25 @@ public class UrlMapsClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified UrlMap resource with the data included in the request. This method
    * supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   String urlMap = "";
-   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   PatchUrlMapRequest request = PatchUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setUrlMap(urlMap)
-   *     .setUrlMapResource(urlMapResource)
-   *     .build();
+   *   PatchUrlMapRequest request =
+   *       PatchUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMap("urlMap-836780691")
+   *           .setUrlMapResource(UrlMap.newBuilder().build())
+   *           .build();
    *   Operation response = urlMapsClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -746,47 +772,46 @@ public class UrlMapsClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified UrlMap resource with the data included in the request. This method
    * supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   String urlMap = "";
-   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   PatchUrlMapRequest request = PatchUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setUrlMap(urlMap)
-   *     .setUrlMapResource(urlMapResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = urlMapsClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchUrlMapRequest request =
+   *       PatchUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMap("urlMap-836780691")
+   *           .setUrlMapResource(UrlMap.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = urlMapsClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchUrlMapRequest, Operation> patchCallable() {
     return stub.patchCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified UrlMap resource with the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   String urlMap = "";
+   *   String project = "project-309310695";
+   *   String urlMap = "urlMap-836780691";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   Operation response = urlMapsClient.update(project, urlMap, urlMapResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param urlMap Name of the UrlMap resource to update.
@@ -803,25 +828,24 @@ public class UrlMapsClient implements BackgroundResource {
     return update(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified UrlMap resource with the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   String urlMap = "";
-   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   UpdateUrlMapRequest request = UpdateUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setUrlMap(urlMap)
-   *     .setUrlMapResource(urlMapResource)
-   *     .build();
+   *   UpdateUrlMapRequest request =
+   *       UpdateUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMap("urlMap-836780691")
+   *           .setUrlMapResource(UrlMap.newBuilder().build())
+   *           .build();
    *   Operation response = urlMapsClient.update(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -830,47 +854,48 @@ public class UrlMapsClient implements BackgroundResource {
     return updateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified UrlMap resource with the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   String urlMap = "";
-   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   UpdateUrlMapRequest request = UpdateUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setUrlMap(urlMap)
-   *     .setUrlMapResource(urlMapResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = urlMapsClient.updateCallable().futureCall(request);
-   *   // Do something
+   *   UpdateUrlMapRequest request =
+   *       UpdateUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMap("urlMap-836780691")
+   *           .setUrlMapResource(UrlMap.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = urlMapsClient.updateCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdateUrlMapRequest, Operation> updateCallable() {
     return stub.updateCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be
    * run. Calling this method does NOT create the UrlMap.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   String urlMap = "";
-   *   UrlMapsValidateRequest urlMapsValidateRequestResource = UrlMapsValidateRequest.newBuilder().build();
-   *   UrlMapsValidateResponse response = urlMapsClient.validate(project, urlMap, urlMapsValidateRequestResource);
+   *   String project = "project-309310695";
+   *   String urlMap = "urlMap-836780691";
+   *   UrlMapsValidateRequest urlMapsValidateRequestResource =
+   *       UrlMapsValidateRequest.newBuilder().build();
+   *   UrlMapsValidateResponse response =
+   *       urlMapsClient.validate(project, urlMap, urlMapsValidateRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param urlMap Name of the UrlMap resource to be validated as.
@@ -888,26 +913,24 @@ public class UrlMapsClient implements BackgroundResource {
     return validate(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be
    * run. Calling this method does NOT create the UrlMap.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   String urlMap = "";
-   *   UrlMapsValidateRequest urlMapsValidateRequestResource = UrlMapsValidateRequest.newBuilder().build();
-   *   ValidateUrlMapRequest request = ValidateUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setUrlMap(urlMap)
-   *     .setUrlMapsValidateRequestResource(urlMapsValidateRequestResource)
-   *     .build();
+   *   ValidateUrlMapRequest request =
+   *       ValidateUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setUrlMap("urlMap-836780691")
+   *           .setUrlMapsValidateRequestResource(UrlMapsValidateRequest.newBuilder().build())
+   *           .build();
    *   UrlMapsValidateResponse response = urlMapsClient.validate(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -916,28 +939,27 @@ public class UrlMapsClient implements BackgroundResource {
     return validateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be
    * run. Calling this method does NOT create the UrlMap.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
-   *   String project = "";
-   *   String urlMap = "";
-   *   UrlMapsValidateRequest urlMapsValidateRequestResource = UrlMapsValidateRequest.newBuilder().build();
-   *   ValidateUrlMapRequest request = ValidateUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setUrlMap(urlMap)
-   *     .setUrlMapsValidateRequestResource(urlMapsValidateRequestResource)
-   *     .build();
-   *   ApiFuture&lt;UrlMapsValidateResponse&gt; future = urlMapsClient.validateCallable().futureCall(request);
-   *   // Do something
+   *   ValidateUrlMapRequest request =
+   *       ValidateUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setUrlMap("urlMap-836780691")
+   *           .setUrlMapsValidateRequestResource(UrlMapsValidateRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<UrlMapsValidateResponse> future =
+   *       urlMapsClient.validateCallable().futureCall(request);
+   *   // Do something.
    *   UrlMapsValidateResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ValidateUrlMapRequest, UrlMapsValidateResponse> validateCallable() {
     return stub.validateCallable();
@@ -977,7 +999,7 @@ public class UrlMapsClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListUrlMapsRequest,
           UrlMapsAggregatedList,
-          Entry<String, UrlMapsScopedList>,
+          Map.Entry<String, UrlMapsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -985,7 +1007,7 @@ public class UrlMapsClient implements BackgroundResource {
         PageContext<
                 AggregatedListUrlMapsRequest,
                 UrlMapsAggregatedList,
-                Entry<String, UrlMapsScopedList>>
+                Map.Entry<String, UrlMapsScopedList>>
             context,
         ApiFuture<UrlMapsAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -1010,14 +1032,14 @@ public class UrlMapsClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListUrlMapsRequest,
           UrlMapsAggregatedList,
-          Entry<String, UrlMapsScopedList>,
+          Map.Entry<String, UrlMapsScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListUrlMapsRequest,
                 UrlMapsAggregatedList,
-                Entry<String, UrlMapsScopedList>>
+                Map.Entry<String, UrlMapsScopedList>>
             context,
         UrlMapsAggregatedList response) {
       super(context, response);
@@ -1032,7 +1054,7 @@ public class UrlMapsClient implements BackgroundResource {
         PageContext<
                 AggregatedListUrlMapsRequest,
                 UrlMapsAggregatedList,
-                Entry<String, UrlMapsScopedList>>
+                Map.Entry<String, UrlMapsScopedList>>
             context,
         UrlMapsAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -1043,7 +1065,7 @@ public class UrlMapsClient implements BackgroundResource {
         PageContext<
                 AggregatedListUrlMapsRequest,
                 UrlMapsAggregatedList,
-                Entry<String, UrlMapsScopedList>>
+                Map.Entry<String, UrlMapsScopedList>>
             context,
         ApiFuture<UrlMapsAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1054,7 +1076,7 @@ public class UrlMapsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListUrlMapsRequest,
           UrlMapsAggregatedList,
-          Entry<String, UrlMapsScopedList>,
+          Map.Entry<String, UrlMapsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

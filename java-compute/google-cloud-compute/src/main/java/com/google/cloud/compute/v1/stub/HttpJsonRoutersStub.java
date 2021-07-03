@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RoutersClient.AggregatedListPagedResponse;
@@ -51,27 +52,26 @@ import com.google.cloud.compute.v1.RoutersPreviewResponse;
 import com.google.cloud.compute.v1.UpdateRouterRequest;
 import com.google.cloud.compute.v1.VmEndpointNatMappingsList;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the Routers service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRoutersStub extends RoutersStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<AggregatedListRoutersRequest, RouterAggregatedList>
+  private static final ApiMethodDescriptor<AggregatedListRoutersRequest, RouterAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor.<AggregatedListRoutersRequest, RouterAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Routers.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.Routers/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListRoutersRequest>newBuilder()
@@ -128,7 +128,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
                           new FieldsExtractor<AggregatedListRoutersRequest, String>() {
                             @Override
                             public String extract(AggregatedListRoutersRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -138,10 +138,9 @@ public class HttpJsonRoutersStub extends RoutersStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteRouterRequest, Operation> deleteMethodDescriptor =
+  private static final ApiMethodDescriptor<DeleteRouterRequest, Operation> deleteMethodDescriptor =
       ApiMethodDescriptor.<DeleteRouterRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Routers.Delete")
+          .setFullMethodName("google.cloud.compute.v1.Routers/Delete")
           .setHttpMethod(HttpMethods.DELETE)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<DeleteRouterRequest>newBuilder()
@@ -176,7 +175,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
                       new FieldsExtractor<DeleteRouterRequest, String>() {
                         @Override
                         public String extract(DeleteRouterRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -186,10 +185,9 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetRouterRequest, Router> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetRouterRequest, Router> getMethodDescriptor =
       ApiMethodDescriptor.<GetRouterRequest, Router>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Routers.Get")
+          .setFullMethodName("google.cloud.compute.v1.Routers/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetRouterRequest>newBuilder()
@@ -214,7 +212,6 @@ public class HttpJsonRoutersStub extends RoutersStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetRouterRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -222,7 +219,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
                       new FieldsExtractor<GetRouterRequest, String>() {
                         @Override
                         public String extract(GetRouterRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -232,13 +229,12 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList>
       getNatMappingInfoMethodDescriptor =
           ApiMethodDescriptor
               .<GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Routers.GetNatMappingInfo")
+              .setFullMethodName("google.cloud.compute.v1.Routers/GetNatMappingInfo")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetNatMappingInfoRoutersRequest>newBuilder()
@@ -294,7 +290,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
                           new FieldsExtractor<GetNatMappingInfoRoutersRequest, String>() {
                             @Override
                             public String extract(GetNatMappingInfoRoutersRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -304,11 +300,10 @@ public class HttpJsonRoutersStub extends RoutersStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetRouterStatusRouterRequest, RouterStatusResponse>
+  private static final ApiMethodDescriptor<GetRouterStatusRouterRequest, RouterStatusResponse>
       getRouterStatusMethodDescriptor =
           ApiMethodDescriptor.<GetRouterStatusRouterRequest, RouterStatusResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Routers.GetRouterStatus")
+              .setFullMethodName("google.cloud.compute.v1.Routers/GetRouterStatus")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRouterStatusRouterRequest>newBuilder()
@@ -336,7 +331,6 @@ public class HttpJsonRoutersStub extends RoutersStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetRouterStatusRouterRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -344,7 +338,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
                           new FieldsExtractor<GetRouterStatusRouterRequest, String>() {
                             @Override
                             public String extract(GetRouterStatusRouterRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -354,10 +348,9 @@ public class HttpJsonRoutersStub extends RoutersStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertRouterRequest, Operation> insertMethodDescriptor =
+  private static final ApiMethodDescriptor<InsertRouterRequest, Operation> insertMethodDescriptor =
       ApiMethodDescriptor.<InsertRouterRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Routers.Insert")
+          .setFullMethodName("google.cloud.compute.v1.Routers/Insert")
           .setHttpMethod(HttpMethods.POST)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<InsertRouterRequest>newBuilder()
@@ -402,10 +395,9 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListRoutersRequest, RouterList> listMethodDescriptor =
+  private static final ApiMethodDescriptor<ListRoutersRequest, RouterList> listMethodDescriptor =
       ApiMethodDescriptor.<ListRoutersRequest, RouterList>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Routers.List")
+          .setFullMethodName("google.cloud.compute.v1.Routers/List")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListRoutersRequest>newBuilder()
@@ -452,7 +444,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
                       new FieldsExtractor<ListRoutersRequest, String>() {
                         @Override
                         public String extract(ListRoutersRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -462,10 +454,9 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchRouterRequest, Operation> patchMethodDescriptor =
+  private static final ApiMethodDescriptor<PatchRouterRequest, Operation> patchMethodDescriptor =
       ApiMethodDescriptor.<PatchRouterRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Routers.Patch")
+          .setFullMethodName("google.cloud.compute.v1.Routers/Patch")
           .setHttpMethod(HttpMethods.PATCH)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<PatchRouterRequest>newBuilder()
@@ -511,11 +502,10 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PreviewRouterRequest, RoutersPreviewResponse>
+  private static final ApiMethodDescriptor<PreviewRouterRequest, RoutersPreviewResponse>
       previewMethodDescriptor =
           ApiMethodDescriptor.<PreviewRouterRequest, RoutersPreviewResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Routers.Preview")
+              .setFullMethodName("google.cloud.compute.v1.Routers/Preview")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PreviewRouterRequest>newBuilder()
@@ -540,7 +530,6 @@ public class HttpJsonRoutersStub extends RoutersStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<PreviewRouterRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -559,10 +548,9 @@ public class HttpJsonRoutersStub extends RoutersStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<UpdateRouterRequest, Operation> updateMethodDescriptor =
+  private static final ApiMethodDescriptor<UpdateRouterRequest, Operation> updateMethodDescriptor =
       ApiMethodDescriptor.<UpdateRouterRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Routers.Update")
+          .setFullMethodName("google.cloud.compute.v1.Routers/Update")
           .setHttpMethod(HttpMethods.PUT)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<UpdateRouterRequest>newBuilder()
@@ -608,8 +596,6 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   .build())
           .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<AggregatedListRoutersRequest, RouterAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListRoutersRequest, AggregatedListPagedResponse>
@@ -629,6 +615,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
   private final UnaryCallable<PreviewRouterRequest, RoutersPreviewResponse> previewCallable;
   private final UnaryCallable<UpdateRouterRequest, Operation> updateCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRoutersStub create(RoutersStubSettings settings) throws IOException {
@@ -756,62 +743,92 @@ public class HttpJsonRoutersStub extends RoutersStub {
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListRoutersRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getNatMappingInfoMethodDescriptor);
+    methodDescriptors.add(getRouterStatusMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(previewMethodDescriptor);
+    methodDescriptors.add(updateMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListRoutersRequest, RouterAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListRoutersRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteRouterRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetRouterRequest, Router> getCallable() {
     return getCallable;
   }
 
-  public UnaryCallable<GetNatMappingInfoRoutersRequest, GetNatMappingInfoPagedResponse>
-      getNatMappingInfoPagedCallable() {
-    return getNatMappingInfoPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList>
       getNatMappingInfoCallable() {
     return getNatMappingInfoCallable;
   }
 
+  @Override
+  public UnaryCallable<GetNatMappingInfoRoutersRequest, GetNatMappingInfoPagedResponse>
+      getNatMappingInfoPagedCallable() {
+    return getNatMappingInfoPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<GetRouterStatusRouterRequest, RouterStatusResponse>
       getRouterStatusCallable() {
     return getRouterStatusCallable;
   }
 
+  @Override
   public UnaryCallable<InsertRouterRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListRoutersRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListRoutersRequest, RouterList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListRoutersRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchRouterRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<PreviewRouterRequest, RoutersPreviewResponse> previewCallable() {
     return previewCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateRouterRequest, Operation> updateCallable() {
     return updateCallable;
   }

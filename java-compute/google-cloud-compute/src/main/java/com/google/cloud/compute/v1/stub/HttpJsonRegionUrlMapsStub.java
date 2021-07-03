@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionUrlMapsClient.ListPagedResponse;
@@ -43,27 +44,26 @@ import com.google.cloud.compute.v1.UrlMapList;
 import com.google.cloud.compute.v1.UrlMapsValidateResponse;
 import com.google.cloud.compute.v1.ValidateRegionUrlMapRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the RegionUrlMaps service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteRegionUrlMapRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteRegionUrlMapRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionUrlMapRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps.Delete")
+              .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionUrlMapRequest>newBuilder()
@@ -101,7 +101,7 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                           new FieldsExtractor<DeleteRegionUrlMapRequest, String>() {
                             @Override
                             public String extract(DeleteRegionUrlMapRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -111,10 +111,9 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetRegionUrlMapRequest, UrlMap> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetRegionUrlMapRequest, UrlMap> getMethodDescriptor =
       ApiMethodDescriptor.<GetRegionUrlMapRequest, UrlMap>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps.Get")
+          .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetRegionUrlMapRequest>newBuilder()
@@ -139,7 +138,6 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetRegionUrlMapRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -147,7 +145,7 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                       new FieldsExtractor<GetRegionUrlMapRequest, String>() {
                         @Override
                         public String extract(GetRegionUrlMapRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -157,11 +155,10 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertRegionUrlMapRequest, Operation>
+  private static final ApiMethodDescriptor<InsertRegionUrlMapRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertRegionUrlMapRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps.Insert")
+              .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionUrlMapRequest>newBuilder()
@@ -209,11 +206,10 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListRegionUrlMapsRequest, UrlMapList>
+  private static final ApiMethodDescriptor<ListRegionUrlMapsRequest, UrlMapList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListRegionUrlMapsRequest, UrlMapList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps.List")
+              .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionUrlMapsRequest>newBuilder()
@@ -266,7 +262,7 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                           new FieldsExtractor<ListRegionUrlMapsRequest, String>() {
                             @Override
                             public String extract(ListRegionUrlMapsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -276,11 +272,10 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchRegionUrlMapRequest, Operation>
+  private static final ApiMethodDescriptor<PatchRegionUrlMapRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchRegionUrlMapRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps.Patch")
+              .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps/Patch")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchRegionUrlMapRequest>newBuilder()
@@ -329,11 +324,10 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<UpdateRegionUrlMapRequest, Operation>
+  private static final ApiMethodDescriptor<UpdateRegionUrlMapRequest, Operation>
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateRegionUrlMapRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps.Update")
+              .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps/Update")
               .setHttpMethod(HttpMethods.PUT)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateRegionUrlMapRequest>newBuilder()
@@ -382,11 +376,10 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ValidateRegionUrlMapRequest, UrlMapsValidateResponse>
+  private static final ApiMethodDescriptor<ValidateRegionUrlMapRequest, UrlMapsValidateResponse>
       validateMethodDescriptor =
           ApiMethodDescriptor.<ValidateRegionUrlMapRequest, UrlMapsValidateResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps.Validate")
+              .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps/Validate")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ValidateRegionUrlMapRequest>newBuilder()
@@ -414,7 +407,6 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<ValidateRegionUrlMapRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -435,8 +427,6 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteRegionUrlMapRequest, Operation> deleteCallable;
   private final UnaryCallable<GetRegionUrlMapRequest, UrlMap> getCallable;
   private final UnaryCallable<InsertRegionUrlMapRequest, Operation> insertCallable;
@@ -447,6 +437,7 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
   private final UnaryCallable<ValidateRegionUrlMapRequest, UrlMapsValidateResponse>
       validateCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionUrlMapsStub create(RegionUrlMapsStubSettings settings)
@@ -543,37 +534,59 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
         callableFactory.createUnaryCallable(
             validateTransportSettings, settings.validateSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(updateMethodDescriptor);
+    methodDescriptors.add(validateMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteRegionUrlMapRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetRegionUrlMapRequest, UrlMap> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertRegionUrlMapRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListRegionUrlMapsRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListRegionUrlMapsRequest, UrlMapList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListRegionUrlMapsRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchRegionUrlMapRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateRegionUrlMapRequest, Operation> updateCallable() {
     return updateCallable;
   }
 
+  @Override
   public UnaryCallable<ValidateRegionUrlMapRequest, UrlMapsValidateResponse> validateCallable() {
     return validateCallable;
   }

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.SecurityPoliciesClient.ListPagedResponse;
@@ -63,7 +64,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link SecurityPoliciesStub}.
  *
@@ -80,29 +81,28 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of addRule to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SecurityPoliciesStubSettings.Builder securityPoliciesSettingsBuilder =
  *     SecurityPoliciesStubSettings.newBuilder();
  * securityPoliciesSettingsBuilder
  *     .addRuleSettings()
  *     .setRetrySettings(
- *         securityPoliciesSettingsBuilder.addRuleSettings().getRetrySettings().toBuilder()
+ *         securityPoliciesSettingsBuilder
+ *             .addRuleSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SecurityPoliciesStubSettings securityPoliciesSettings = securityPoliciesSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/compute")
-          .add("https://www.googleapis.com/auth/compute.readonly")
+          .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
   private final UnaryCallSettings<AddRuleSecurityPolicyRequest, Operation> addRuleSettings;
@@ -120,6 +120,65 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
   private final UnaryCallSettings<PatchSecurityPolicyRequest, Operation> patchSettings;
   private final UnaryCallSettings<PatchRuleSecurityPolicyRequest, Operation> patchRuleSettings;
   private final UnaryCallSettings<RemoveRuleSecurityPolicyRequest, Operation> removeRuleSettings;
+
+  private static final PagedListDescriptor<
+          ListSecurityPoliciesRequest, SecurityPolicyList, SecurityPolicy>
+      LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListSecurityPoliciesRequest, SecurityPolicyList, SecurityPolicy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSecurityPoliciesRequest injectToken(
+                ListSecurityPoliciesRequest payload, String token) {
+              return ListSecurityPoliciesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSecurityPoliciesRequest injectPageSize(
+                ListSecurityPoliciesRequest payload, int pageSize) {
+              return ListSecurityPoliciesRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSecurityPoliciesRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(SecurityPolicyList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SecurityPolicy> extractResources(SecurityPolicyList payload) {
+              return payload.getItemsList() == null
+                  ? ImmutableList.<SecurityPolicy>of()
+                  : payload.getItemsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSecurityPoliciesRequest, SecurityPolicyList, ListPagedResponse>
+      LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSecurityPoliciesRequest, SecurityPolicyList, ListPagedResponse>() {
+            @Override
+            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSecurityPoliciesRequest, SecurityPolicyList> callable,
+                ListSecurityPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<SecurityPolicyList> futureResponse) {
+              PageContext<ListSecurityPoliciesRequest, SecurityPolicyList, SecurityPolicy>
+                  pageContext = PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
+              return ListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to addRule. */
   public UnaryCallSettings<AddRuleSecurityPolicyRequest, Operation> addRuleSettings() {
@@ -181,10 +240,10 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
         .getTransportName()
         .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
       return HttpJsonSecurityPoliciesStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -194,12 +253,12 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "compute.googleapis.com";
+    return "compute.googleapis.com:443";
   }
 
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return 443;
+  /** Returns the default mTLS service endpoint. */
+  public static String getDefaultMtlsEndpoint() {
+    return "compute.mtls.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -263,69 +322,9 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
     removeRuleSettings = settingsBuilder.removeRuleSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListSecurityPoliciesRequest, SecurityPolicyList, SecurityPolicy>
-      LIST_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListSecurityPoliciesRequest, SecurityPolicyList, SecurityPolicy>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListSecurityPoliciesRequest injectToken(
-                ListSecurityPoliciesRequest payload, String token) {
-              return ListSecurityPoliciesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListSecurityPoliciesRequest injectPageSize(
-                ListSecurityPoliciesRequest payload, int pageSize) {
-              return ListSecurityPoliciesRequest.newBuilder(payload)
-                  .setMaxResults(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListSecurityPoliciesRequest payload) {
-              return payload.getMaxResults();
-            }
-
-            @Override
-            public String extractNextToken(SecurityPolicyList payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<SecurityPolicy> extractResources(SecurityPolicyList payload) {
-              return payload.getItemsList() != null
-                  ? payload.getItemsList()
-                  : ImmutableList.<SecurityPolicy>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListSecurityPoliciesRequest, SecurityPolicyList, ListPagedResponse>
-      LIST_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListSecurityPoliciesRequest, SecurityPolicyList, ListPagedResponse>() {
-            @Override
-            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListSecurityPoliciesRequest, SecurityPolicyList> callable,
-                ListSecurityPoliciesRequest request,
-                ApiCallContext context,
-                ApiFuture<SecurityPolicyList> futureResponse) {
-              PageContext<ListSecurityPoliciesRequest, SecurityPolicyList, SecurityPolicy>
-                  pageContext = PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
-              return ListPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for SecurityPoliciesStubSettings. */
   public static class Builder extends StubSettings.Builder<SecurityPoliciesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<AddRuleSecurityPolicyRequest, Operation>
         addRuleSettings;
     private final UnaryCallSettings.Builder<DeleteSecurityPolicyRequest, Operation> deleteSettings;
@@ -345,7 +344,6 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
         patchRuleSettings;
     private final UnaryCallSettings.Builder<RemoveRuleSecurityPolicyRequest, Operation>
         removeRuleSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -353,11 +351,12 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -368,43 +367,42 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       addRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
-
       listPreconfiguredExpressionSetsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       patchRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       removeRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -419,72 +417,7 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
               patchSettings,
               patchRuleSettings,
               removeRuleSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .addRuleSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getRuleSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .insertSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listPreconfiguredExpressionSetsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .patchSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .patchRuleSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .removeRuleSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      return builder;
     }
 
     protected Builder(SecurityPoliciesStubSettings settings) {
@@ -516,7 +449,74 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
               removeRuleSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .addRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .insertSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listPreconfiguredExpressionSetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .patchRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .removeRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

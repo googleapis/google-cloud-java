@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.InstanceGroupsClient.AggregatedListPagedResponse;
@@ -48,27 +49,26 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.RemoveInstancesInstanceGroupRequest;
 import com.google.cloud.compute.v1.SetNamedPortsInstanceGroupRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the InstanceGroups service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<AddInstancesInstanceGroupRequest, Operation>
+  private static final ApiMethodDescriptor<AddInstancesInstanceGroupRequest, Operation>
       addInstancesMethodDescriptor =
           ApiMethodDescriptor.<AddInstancesInstanceGroupRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroups.AddInstances")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroups/AddInstances")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddInstancesInstanceGroupRequest>newBuilder()
@@ -82,10 +82,10 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<AddInstancesInstanceGroupRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields, "instanceGroup", request.getInstanceGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -122,13 +122,12 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListInstanceGroupsRequest, InstanceGroupAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListInstanceGroupsRequest, InstanceGroupAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroups.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroups/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListInstanceGroupsRequest>newBuilder()
@@ -186,7 +185,7 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                           new FieldsExtractor<AggregatedListInstanceGroupsRequest, String>() {
                             @Override
                             public String extract(AggregatedListInstanceGroupsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -196,11 +195,10 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteInstanceGroupRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteInstanceGroupRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteInstanceGroupRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroups.Delete")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroups/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteInstanceGroupRequest>newBuilder()
@@ -212,10 +210,10 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteInstanceGroupRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields, "instanceGroup", request.getInstanceGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -239,7 +237,7 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                           new FieldsExtractor<DeleteInstanceGroupRequest, String>() {
                             @Override
                             public String extract(DeleteInstanceGroupRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -249,11 +247,10 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetInstanceGroupRequest, InstanceGroup>
+  private static final ApiMethodDescriptor<GetInstanceGroupRequest, InstanceGroup>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetInstanceGroupRequest, InstanceGroup>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroups.Get")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroups/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetInstanceGroupRequest>newBuilder()
@@ -265,10 +262,10 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetInstanceGroupRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields, "instanceGroup", request.getInstanceGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -281,7 +278,6 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetInstanceGroupRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -289,7 +285,7 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                           new FieldsExtractor<GetInstanceGroupRequest, String>() {
                             @Override
                             public String extract(GetInstanceGroupRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -299,11 +295,10 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertInstanceGroupRequest, Operation>
+  private static final ApiMethodDescriptor<InsertInstanceGroupRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertInstanceGroupRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroups.Insert")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroups/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertInstanceGroupRequest>newBuilder()
@@ -352,11 +347,10 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListInstanceGroupsRequest, InstanceGroupList>
+  private static final ApiMethodDescriptor<ListInstanceGroupsRequest, InstanceGroupList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListInstanceGroupsRequest, InstanceGroupList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroups.List")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroups/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListInstanceGroupsRequest>newBuilder()
@@ -409,7 +403,7 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                           new FieldsExtractor<ListInstanceGroupsRequest, String>() {
                             @Override
                             public String extract(ListInstanceGroupsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -419,13 +413,12 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListInstancesInstanceGroupsRequest, InstanceGroupsListInstances>
       listInstancesMethodDescriptor =
           ApiMethodDescriptor
               .<ListInstancesInstanceGroupsRequest, InstanceGroupsListInstances>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroups.ListInstances")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroups/ListInstances")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListInstancesInstanceGroupsRequest>newBuilder()
@@ -439,10 +432,10 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<ListInstancesInstanceGroupsRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields, "instanceGroup", request.getInstanceGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -495,11 +488,10 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<RemoveInstancesInstanceGroupRequest, Operation>
+  private static final ApiMethodDescriptor<RemoveInstancesInstanceGroupRequest, Operation>
       removeInstancesMethodDescriptor =
           ApiMethodDescriptor.<RemoveInstancesInstanceGroupRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroups.RemoveInstances")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroups/RemoveInstances")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveInstancesInstanceGroupRequest>newBuilder()
@@ -513,10 +505,10 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<RemoveInstancesInstanceGroupRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields, "instanceGroup", request.getInstanceGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -553,11 +545,10 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetNamedPortsInstanceGroupRequest, Operation>
+  private static final ApiMethodDescriptor<SetNamedPortsInstanceGroupRequest, Operation>
       setNamedPortsMethodDescriptor =
           ApiMethodDescriptor.<SetNamedPortsInstanceGroupRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceGroups.SetNamedPorts")
+              .setFullMethodName("google.cloud.compute.v1.InstanceGroups/SetNamedPorts")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetNamedPortsInstanceGroupRequest>newBuilder()
@@ -571,10 +562,10 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SetNamedPortsInstanceGroupRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(
                                   fields, "instanceGroup", request.getInstanceGroup());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -611,8 +602,6 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<AddInstancesInstanceGroupRequest, Operation> addInstancesCallable;
   private final UnaryCallable<AggregatedListInstanceGroupsRequest, InstanceGroupAggregatedList>
       aggregatedListCallable;
@@ -631,6 +620,7 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
       removeInstancesCallable;
   private final UnaryCallable<SetNamedPortsInstanceGroupRequest, Operation> setNamedPortsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonInstanceGroupsStub create(InstanceGroupsStubSettings settings)
@@ -753,57 +743,85 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
         callableFactory.createUnaryCallable(
             setNamedPortsTransportSettings, settings.setNamedPortsSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(addInstancesMethodDescriptor);
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(listInstancesMethodDescriptor);
+    methodDescriptors.add(removeInstancesMethodDescriptor);
+    methodDescriptors.add(setNamedPortsMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<AddInstancesInstanceGroupRequest, Operation> addInstancesCallable() {
     return addInstancesCallable;
   }
 
-  public UnaryCallable<AggregatedListInstanceGroupsRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<AggregatedListInstanceGroupsRequest, InstanceGroupAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListInstanceGroupsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteInstanceGroupRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetInstanceGroupRequest, InstanceGroup> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertInstanceGroupRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListInstanceGroupsRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListInstanceGroupsRequest, InstanceGroupList> listCallable() {
     return listCallable;
   }
 
-  public UnaryCallable<ListInstancesInstanceGroupsRequest, ListInstancesPagedResponse>
-      listInstancesPagedCallable() {
-    return listInstancesPagedCallable;
+  @Override
+  public UnaryCallable<ListInstanceGroupsRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListInstancesInstanceGroupsRequest, InstanceGroupsListInstances>
       listInstancesCallable() {
     return listInstancesCallable;
   }
 
+  @Override
+  public UnaryCallable<ListInstancesInstanceGroupsRequest, ListInstancesPagedResponse>
+      listInstancesPagedCallable() {
+    return listInstancesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<RemoveInstancesInstanceGroupRequest, Operation> removeInstancesCallable() {
     return removeInstancesCallable;
   }
 
+  @Override
   public UnaryCallable<SetNamedPortsInstanceGroupRequest, Operation> setNamedPortsCallable() {
     return setNamedPortsCallable;
   }

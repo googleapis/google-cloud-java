@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.ResourcePoliciesClient.AggregatedListPagedResponse;
@@ -60,12 +61,13 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ResourcePoliciesStub}.
  *
@@ -82,29 +84,28 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of delete to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ResourcePoliciesStubSettings.Builder resourcePoliciesSettingsBuilder =
  *     ResourcePoliciesStubSettings.newBuilder();
  * resourcePoliciesSettingsBuilder
  *     .deleteSettings()
  *     .setRetrySettings(
- *         resourcePoliciesSettingsBuilder.deleteSettings().getRetrySettings().toBuilder()
+ *         resourcePoliciesSettingsBuilder
+ *             .deleteSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ResourcePoliciesStubSettings resourcePoliciesSettings = resourcePoliciesSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/compute")
-          .add("https://www.googleapis.com/auth/compute.readonly")
+          .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
   private final PagedCallSettings<
@@ -122,6 +123,140 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
   private final UnaryCallSettings<SetIamPolicyResourcePolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsResourcePolicyRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
+
+  private static final PagedListDescriptor<
+          AggregatedListResourcePoliciesRequest,
+          ResourcePolicyAggregatedList,
+          Map.Entry<String, ResourcePoliciesScopedList>>
+      AGGREGATED_LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListResourcePoliciesRequest,
+              ResourcePolicyAggregatedList,
+              Map.Entry<String, ResourcePoliciesScopedList>>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListResourcePoliciesRequest injectToken(
+                AggregatedListResourcePoliciesRequest payload, String token) {
+              return AggregatedListResourcePoliciesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AggregatedListResourcePoliciesRequest injectPageSize(
+                AggregatedListResourcePoliciesRequest payload, int pageSize) {
+              return AggregatedListResourcePoliciesRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregatedListResourcePoliciesRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(ResourcePolicyAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Map.Entry<String, ResourcePoliciesScopedList>> extractResources(
+                ResourcePolicyAggregatedList payload) {
+              return payload.getItemsMap() == null
+                  ? Collections.<Map.Entry<String, ResourcePoliciesScopedList>>emptySet()
+                  : payload.getItemsMap().entrySet();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListResourcePoliciesRequest, ResourcePolicyList, ResourcePolicy>
+      LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListResourcePoliciesRequest, ResourcePolicyList, ResourcePolicy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListResourcePoliciesRequest injectToken(
+                ListResourcePoliciesRequest payload, String token) {
+              return ListResourcePoliciesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListResourcePoliciesRequest injectPageSize(
+                ListResourcePoliciesRequest payload, int pageSize) {
+              return ListResourcePoliciesRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListResourcePoliciesRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(ResourcePolicyList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ResourcePolicy> extractResources(ResourcePolicyList payload) {
+              return payload.getItemsList() == null
+                  ? ImmutableList.<ResourcePolicy>of()
+                  : payload.getItemsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          AggregatedListResourcePoliciesRequest,
+          ResourcePolicyAggregatedList,
+          AggregatedListPagedResponse>
+      AGGREGATED_LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListResourcePoliciesRequest,
+              ResourcePolicyAggregatedList,
+              AggregatedListPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<AggregatedListResourcePoliciesRequest, ResourcePolicyAggregatedList>
+                    callable,
+                AggregatedListResourcePoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<ResourcePolicyAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListResourcePoliciesRequest,
+                      ResourcePolicyAggregatedList,
+                      Map.Entry<String, ResourcePoliciesScopedList>>
+                  pageContext =
+                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
+              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListResourcePoliciesRequest, ResourcePolicyList, ListPagedResponse>
+      LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListResourcePoliciesRequest, ResourcePolicyList, ListPagedResponse>() {
+            @Override
+            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListResourcePoliciesRequest, ResourcePolicyList> callable,
+                ListResourcePoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<ResourcePolicyList> futureResponse) {
+              PageContext<ListResourcePoliciesRequest, ResourcePolicyList, ResourcePolicy>
+                  pageContext = PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
+              return ListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to aggregatedList. */
   public PagedCallSettings<
@@ -175,10 +310,10 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
         .getTransportName()
         .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
       return HttpJsonResourcePoliciesStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -188,12 +323,12 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "compute.googleapis.com";
+    return "compute.googleapis.com:443";
   }
 
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return 443;
+  /** Returns the default mTLS service endpoint. */
+  public static String getDefaultMtlsEndpoint() {
+    return "compute.mtls.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -254,144 +389,9 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          AggregatedListResourcePoliciesRequest,
-          ResourcePolicyAggregatedList,
-          Entry<String, ResourcePoliciesScopedList>>
-      AGGREGATED_LIST_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              AggregatedListResourcePoliciesRequest,
-              ResourcePolicyAggregatedList,
-              Entry<String, ResourcePoliciesScopedList>>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public AggregatedListResourcePoliciesRequest injectToken(
-                AggregatedListResourcePoliciesRequest payload, String token) {
-              return AggregatedListResourcePoliciesRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public AggregatedListResourcePoliciesRequest injectPageSize(
-                AggregatedListResourcePoliciesRequest payload, int pageSize) {
-              return AggregatedListResourcePoliciesRequest.newBuilder(payload)
-                  .setMaxResults(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(AggregatedListResourcePoliciesRequest payload) {
-              return payload.getMaxResults();
-            }
-
-            @Override
-            public String extractNextToken(ResourcePolicyAggregatedList payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Entry<String, ResourcePoliciesScopedList>> extractResources(
-                ResourcePolicyAggregatedList payload) {
-              return payload.getItemsMap() != null
-                  ? payload.getItemsMap().entrySet()
-                  : ImmutableList.<Entry<String, ResourcePoliciesScopedList>>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListResourcePoliciesRequest, ResourcePolicyList, ResourcePolicy>
-      LIST_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListResourcePoliciesRequest, ResourcePolicyList, ResourcePolicy>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListResourcePoliciesRequest injectToken(
-                ListResourcePoliciesRequest payload, String token) {
-              return ListResourcePoliciesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListResourcePoliciesRequest injectPageSize(
-                ListResourcePoliciesRequest payload, int pageSize) {
-              return ListResourcePoliciesRequest.newBuilder(payload)
-                  .setMaxResults(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListResourcePoliciesRequest payload) {
-              return payload.getMaxResults();
-            }
-
-            @Override
-            public String extractNextToken(ResourcePolicyList payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<ResourcePolicy> extractResources(ResourcePolicyList payload) {
-              return payload.getItemsList() != null
-                  ? payload.getItemsList()
-                  : ImmutableList.<ResourcePolicy>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          AggregatedListResourcePoliciesRequest,
-          ResourcePolicyAggregatedList,
-          AggregatedListPagedResponse>
-      AGGREGATED_LIST_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              AggregatedListResourcePoliciesRequest,
-              ResourcePolicyAggregatedList,
-              AggregatedListPagedResponse>() {
-            @Override
-            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
-                UnaryCallable<AggregatedListResourcePoliciesRequest, ResourcePolicyAggregatedList>
-                    callable,
-                AggregatedListResourcePoliciesRequest request,
-                ApiCallContext context,
-                ApiFuture<ResourcePolicyAggregatedList> futureResponse) {
-              PageContext<
-                      AggregatedListResourcePoliciesRequest,
-                      ResourcePolicyAggregatedList,
-                      Entry<String, ResourcePoliciesScopedList>>
-                  pageContext =
-                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
-              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListResourcePoliciesRequest, ResourcePolicyList, ListPagedResponse>
-      LIST_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListResourcePoliciesRequest, ResourcePolicyList, ListPagedResponse>() {
-            @Override
-            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListResourcePoliciesRequest, ResourcePolicyList> callable,
-                ListResourcePoliciesRequest request,
-                ApiCallContext context,
-                ApiFuture<ResourcePolicyList> futureResponse) {
-              PageContext<ListResourcePoliciesRequest, ResourcePolicyList, ResourcePolicy>
-                  pageContext = PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
-              return ListPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for ResourcePoliciesStubSettings. */
   public static class Builder extends StubSettings.Builder<ResourcePoliciesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             AggregatedListResourcePoliciesRequest,
             ResourcePolicyAggregatedList,
@@ -410,7 +410,6 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
     private final UnaryCallSettings.Builder<
             TestIamPermissionsResourcePolicyRequest, TestPermissionsResponse>
         testIamPermissionsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -418,11 +417,12 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -436,36 +436,37 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_0_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
-
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
-
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -478,62 +479,7 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
               listSettings,
               setIamPolicySettings,
               testIamPermissionsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .aggregatedListSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .insertSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      return builder;
     }
 
     protected Builder(ResourcePoliciesStubSettings settings) {
@@ -560,7 +506,64 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
               testIamPermissionsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .aggregatedListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .insertSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.BackendServicesClient.AggregatedListPagedResponse;
@@ -49,27 +50,26 @@ import com.google.cloud.compute.v1.PatchBackendServiceRequest;
 import com.google.cloud.compute.v1.SetSecurityPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.UpdateBackendServiceRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the BackendServices service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonBackendServicesStub extends BackendServicesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<AddSignedUrlKeyBackendServiceRequest, Operation>
+  private static final ApiMethodDescriptor<AddSignedUrlKeyBackendServiceRequest, Operation>
       addSignedUrlKeyMethodDescriptor =
           ApiMethodDescriptor.<AddSignedUrlKeyBackendServiceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.BackendServices.AddSignedUrlKey")
+              .setFullMethodName("google.cloud.compute.v1.BackendServices/AddSignedUrlKey")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddSignedUrlKeyBackendServiceRequest>newBuilder()
@@ -83,9 +83,9 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<AddSignedUrlKeyBackendServiceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "backendService", request.getBackendService());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -121,13 +121,12 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListBackendServicesRequest, BackendServiceAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListBackendServicesRequest, BackendServiceAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.BackendServices.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.BackendServices/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListBackendServicesRequest>newBuilder()
@@ -185,7 +184,7 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                           new FieldsExtractor<AggregatedListBackendServicesRequest, String>() {
                             @Override
                             public String extract(AggregatedListBackendServicesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -195,11 +194,10 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteBackendServiceRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteBackendServiceRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteBackendServiceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.BackendServices.Delete")
+              .setFullMethodName("google.cloud.compute.v1.BackendServices/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteBackendServiceRequest>newBuilder()
@@ -212,9 +210,9 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteBackendServiceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "backendService", request.getBackendService());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -238,7 +236,7 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                           new FieldsExtractor<DeleteBackendServiceRequest, String>() {
                             @Override
                             public String extract(DeleteBackendServiceRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -248,11 +246,10 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteSignedUrlKeyBackendServiceRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteSignedUrlKeyBackendServiceRequest, Operation>
       deleteSignedUrlKeyMethodDescriptor =
           ApiMethodDescriptor.<DeleteSignedUrlKeyBackendServiceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.BackendServices.DeleteSignedUrlKey")
+              .setFullMethodName("google.cloud.compute.v1.BackendServices/DeleteSignedUrlKey")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteSignedUrlKeyBackendServiceRequest>newBuilder()
@@ -266,9 +263,9 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteSignedUrlKeyBackendServiceRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "backendService", request.getBackendService());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -294,7 +291,7 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                           new FieldsExtractor<DeleteSignedUrlKeyBackendServiceRequest, String>() {
                             @Override
                             public String extract(DeleteSignedUrlKeyBackendServiceRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -304,11 +301,10 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetBackendServiceRequest, BackendService>
+  private static final ApiMethodDescriptor<GetBackendServiceRequest, BackendService>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetBackendServiceRequest, BackendService>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.BackendServices.Get")
+              .setFullMethodName("google.cloud.compute.v1.BackendServices/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetBackendServiceRequest>newBuilder()
@@ -320,9 +316,9 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetBackendServiceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "backendService", request.getBackendService());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -335,7 +331,6 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetBackendServiceRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -343,7 +338,7 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                           new FieldsExtractor<GetBackendServiceRequest, String>() {
                             @Override
                             public String extract(GetBackendServiceRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -353,12 +348,12 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetHealthBackendServiceRequest, BackendServiceGroupHealth>
+  private static final ApiMethodDescriptor<
+          GetHealthBackendServiceRequest, BackendServiceGroupHealth>
       getHealthMethodDescriptor =
           ApiMethodDescriptor
               .<GetHealthBackendServiceRequest, BackendServiceGroupHealth>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.BackendServices.GetHealth")
+              .setFullMethodName("google.cloud.compute.v1.BackendServices/GetHealth")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetHealthBackendServiceRequest>newBuilder()
@@ -372,9 +367,9 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetHealthBackendServiceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "backendService", request.getBackendService());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -387,7 +382,6 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetHealthBackendServiceRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -408,11 +402,10 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertBackendServiceRequest, Operation>
+  private static final ApiMethodDescriptor<InsertBackendServiceRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertBackendServiceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.BackendServices.Insert")
+              .setFullMethodName("google.cloud.compute.v1.BackendServices/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertBackendServiceRequest>newBuilder()
@@ -462,11 +455,10 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListBackendServicesRequest, BackendServiceList>
+  private static final ApiMethodDescriptor<ListBackendServicesRequest, BackendServiceList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListBackendServicesRequest, BackendServiceList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.BackendServices.List")
+              .setFullMethodName("google.cloud.compute.v1.BackendServices/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListBackendServicesRequest>newBuilder()
@@ -518,7 +510,7 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                           new FieldsExtractor<ListBackendServicesRequest, String>() {
                             @Override
                             public String extract(ListBackendServicesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -528,11 +520,10 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchBackendServiceRequest, Operation>
+  private static final ApiMethodDescriptor<PatchBackendServiceRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchBackendServiceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.BackendServices.Patch")
+              .setFullMethodName("google.cloud.compute.v1.BackendServices/Patch")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchBackendServiceRequest>newBuilder()
@@ -544,9 +535,9 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<PatchBackendServiceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "backendService", request.getBackendService());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -583,11 +574,10 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetSecurityPolicyBackendServiceRequest, Operation>
+  private static final ApiMethodDescriptor<SetSecurityPolicyBackendServiceRequest, Operation>
       setSecurityPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetSecurityPolicyBackendServiceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.BackendServices.SetSecurityPolicy")
+              .setFullMethodName("google.cloud.compute.v1.BackendServices/SetSecurityPolicy")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetSecurityPolicyBackendServiceRequest>newBuilder()
@@ -601,9 +591,9 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SetSecurityPolicyBackendServiceRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "backendService", request.getBackendService());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -640,11 +630,10 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<UpdateBackendServiceRequest, Operation>
+  private static final ApiMethodDescriptor<UpdateBackendServiceRequest, Operation>
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateBackendServiceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.BackendServices.Update")
+              .setFullMethodName("google.cloud.compute.v1.BackendServices/Update")
               .setHttpMethod(HttpMethods.PUT)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateBackendServiceRequest>newBuilder()
@@ -657,9 +646,9 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<UpdateBackendServiceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "backendService", request.getBackendService());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -696,8 +685,6 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<AddSignedUrlKeyBackendServiceRequest, Operation>
       addSignedUrlKeyCallable;
   private final UnaryCallable<AggregatedListBackendServicesRequest, BackendServiceAggregatedList>
@@ -718,6 +705,7 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
       setSecurityPolicyCallable;
   private final UnaryCallable<UpdateBackendServiceRequest, Operation> updateCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonBackendServicesStub create(BackendServicesStubSettings settings)
@@ -855,62 +843,93 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(addSignedUrlKeyMethodDescriptor);
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(deleteSignedUrlKeyMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getHealthMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(setSecurityPolicyMethodDescriptor);
+    methodDescriptors.add(updateMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<AddSignedUrlKeyBackendServiceRequest, Operation> addSignedUrlKeyCallable() {
     return addSignedUrlKeyCallable;
   }
 
-  public UnaryCallable<AggregatedListBackendServicesRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<AggregatedListBackendServicesRequest, BackendServiceAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListBackendServicesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteBackendServiceRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteSignedUrlKeyBackendServiceRequest, Operation>
       deleteSignedUrlKeyCallable() {
     return deleteSignedUrlKeyCallable;
   }
 
+  @Override
   public UnaryCallable<GetBackendServiceRequest, BackendService> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetHealthBackendServiceRequest, BackendServiceGroupHealth>
       getHealthCallable() {
     return getHealthCallable;
   }
 
+  @Override
   public UnaryCallable<InsertBackendServiceRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListBackendServicesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListBackendServicesRequest, BackendServiceList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListBackendServicesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchBackendServiceRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<SetSecurityPolicyBackendServiceRequest, Operation>
       setSecurityPolicyCallable() {
     return setSecurityPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateBackendServiceRequest, Operation> updateCallable() {
     return updateCallable;
   }

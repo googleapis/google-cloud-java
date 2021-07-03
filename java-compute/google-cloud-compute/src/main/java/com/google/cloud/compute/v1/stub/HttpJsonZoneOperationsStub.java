@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.ZoneOperationsClient.ListPagedResponse;
@@ -39,27 +40,26 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationList;
 import com.google.cloud.compute.v1.WaitZoneOperationRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the ZoneOperations service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteZoneOperationRequest, DeleteZoneOperationResponse>
+  private static final ApiMethodDescriptor<DeleteZoneOperationRequest, DeleteZoneOperationResponse>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteZoneOperationRequest, DeleteZoneOperationResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.ZoneOperations.Delete")
+              .setFullMethodName("google.cloud.compute.v1.ZoneOperations/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteZoneOperationRequest>newBuilder()
@@ -71,9 +71,9 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteZoneOperationRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "operation", request.getOperation());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "operation", request.getOperation());
                               return fields;
                             }
                           })
@@ -86,7 +86,6 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteZoneOperationRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -94,7 +93,7 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
                           new FieldsExtractor<DeleteZoneOperationRequest, String>() {
                             @Override
                             public String extract(DeleteZoneOperationRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -104,10 +103,9 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetZoneOperationRequest, Operation> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetZoneOperationRequest, Operation> getMethodDescriptor =
       ApiMethodDescriptor.<GetZoneOperationRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.ZoneOperations.Get")
+          .setFullMethodName("google.cloud.compute.v1.ZoneOperations/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetZoneOperationRequest>newBuilder()
@@ -119,9 +117,9 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<GetZoneOperationRequest> serializer =
                               ProtoRestSerializer.create();
+                          serializer.putPathParam(fields, "operation", request.getOperation());
                           serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "zone", request.getZone());
-                          serializer.putPathParam(fields, "operation", request.getOperation());
                           return fields;
                         }
                       })
@@ -132,7 +130,6 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetZoneOperationRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -140,7 +137,7 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
                       new FieldsExtractor<GetZoneOperationRequest, String>() {
                         @Override
                         public String extract(GetZoneOperationRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -150,11 +147,10 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListZoneOperationsRequest, OperationList>
+  private static final ApiMethodDescriptor<ListZoneOperationsRequest, OperationList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListZoneOperationsRequest, OperationList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.ZoneOperations.List")
+              .setFullMethodName("google.cloud.compute.v1.ZoneOperations/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListZoneOperationsRequest>newBuilder()
@@ -207,7 +203,7 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
                           new FieldsExtractor<ListZoneOperationsRequest, String>() {
                             @Override
                             public String extract(ListZoneOperationsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -217,11 +213,10 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<WaitZoneOperationRequest, Operation>
+  private static final ApiMethodDescriptor<WaitZoneOperationRequest, Operation>
       waitMethodDescriptor =
           ApiMethodDescriptor.<WaitZoneOperationRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.ZoneOperations.Wait")
+              .setFullMethodName("google.cloud.compute.v1.ZoneOperations/Wait")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<WaitZoneOperationRequest>newBuilder()
@@ -233,9 +228,9 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<WaitZoneOperationRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "operation", request.getOperation());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "operation", request.getOperation());
                               return fields;
                             }
                           })
@@ -248,7 +243,6 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<WaitZoneOperationRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -256,7 +250,7 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
                           new FieldsExtractor<WaitZoneOperationRequest, String>() {
                             @Override
                             public String extract(WaitZoneOperationRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -266,8 +260,6 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteZoneOperationRequest, DeleteZoneOperationResponse>
       deleteCallable;
   private final UnaryCallable<GetZoneOperationRequest, Operation> getCallable;
@@ -275,6 +267,7 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
   private final UnaryCallable<ListZoneOperationsRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<WaitZoneOperationRequest, Operation> waitCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonZoneOperationsStub create(ZoneOperationsStubSettings settings)
@@ -351,25 +344,41 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
         callableFactory.createUnaryCallable(
             waitTransportSettings, settings.waitSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(waitMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteZoneOperationRequest, DeleteZoneOperationResponse> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetZoneOperationRequest, Operation> getCallable() {
     return getCallable;
   }
 
-  public UnaryCallable<ListZoneOperationsRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListZoneOperationsRequest, OperationList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListZoneOperationsRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<WaitZoneOperationRequest, Operation> waitCallable() {
     return waitCallable;
   }

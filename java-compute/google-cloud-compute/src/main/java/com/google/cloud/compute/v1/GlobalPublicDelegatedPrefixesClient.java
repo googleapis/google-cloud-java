@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,24 +34,24 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The GlobalPublicDelegatedPrefixes API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient = GlobalPublicDelegatedPrefixesClient.create()) {
- *   String project = "";
- *   String publicDelegatedPrefix = "";
- *   Operation response = globalPublicDelegatedPrefixesClient.delete(project, publicDelegatedPrefix);
+ * <pre>{@code
+ * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+ *     GlobalPublicDelegatedPrefixesClient.create()) {
+ *   String project = "project-309310695";
+ *   String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
+ *   Operation response =
+ *       globalPublicDelegatedPrefixesClient.delete(project, publicDelegatedPrefix);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the globalPublicDelegatedPrefixesClient object to clean up
+ * <p>Note: close() needs to be called on the GlobalPublicDelegatedPrefixesClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -79,30 +80,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * GlobalPublicDelegatedPrefixesSettings globalPublicDelegatedPrefixesSettings =
  *     GlobalPublicDelegatedPrefixesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
  *     GlobalPublicDelegatedPrefixesClient.create(globalPublicDelegatedPrefixesSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * GlobalPublicDelegatedPrefixesSettings globalPublicDelegatedPrefixesSettings =
  *     GlobalPublicDelegatedPrefixesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
  *     GlobalPublicDelegatedPrefixesClient.create(globalPublicDelegatedPrefixesSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
   private final GlobalPublicDelegatedPrefixesSettings settings;
   private final GlobalPublicDelegatedPrefixesStub stub;
@@ -124,7 +122,7 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of GlobalPublicDelegatedPrefixesClient, using the given stub for making
-   * calls. This is for advanced usage - prefer to use GlobalPublicDelegatedPrefixesSettings}.
+   * calls. This is for advanced usage - prefer using create(GlobalPublicDelegatedPrefixesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GlobalPublicDelegatedPrefixesClient create(
@@ -159,19 +157,21 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified global PublicDelegatedPrefix.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient = GlobalPublicDelegatedPrefixesClient.create()) {
-   *   String project = "";
-   *   String publicDelegatedPrefix = "";
-   *   Operation response = globalPublicDelegatedPrefixesClient.delete(project, publicDelegatedPrefix);
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   String project = "project-309310695";
+   *   String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
+   *   Operation response =
+   *       globalPublicDelegatedPrefixesClient.delete(project, publicDelegatedPrefix);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param publicDelegatedPrefix Name of the PublicDelegatedPrefix resource to delete.
@@ -186,23 +186,24 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified global PublicDelegatedPrefix.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient = GlobalPublicDelegatedPrefixesClient.create()) {
-   *   String project = "";
-   *   String publicDelegatedPrefix = "";
-   *   DeleteGlobalPublicDelegatedPrefixeRequest request = DeleteGlobalPublicDelegatedPrefixeRequest.newBuilder()
-   *     .setProject(project)
-   *     .setPublicDelegatedPrefix(publicDelegatedPrefix)
-   *     .build();
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   DeleteGlobalPublicDelegatedPrefixeRequest request =
+   *       DeleteGlobalPublicDelegatedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicDelegatedPrefix("publicDelegatedPrefix-663003832")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = globalPublicDelegatedPrefixesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -211,44 +212,48 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified global PublicDelegatedPrefix.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient = GlobalPublicDelegatedPrefixesClient.create()) {
-   *   String project = "";
-   *   String publicDelegatedPrefix = "";
-   *   DeleteGlobalPublicDelegatedPrefixeRequest request = DeleteGlobalPublicDelegatedPrefixeRequest.newBuilder()
-   *     .setProject(project)
-   *     .setPublicDelegatedPrefix(publicDelegatedPrefix)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = globalPublicDelegatedPrefixesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   DeleteGlobalPublicDelegatedPrefixeRequest request =
+   *       DeleteGlobalPublicDelegatedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicDelegatedPrefix("publicDelegatedPrefix-663003832")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       globalPublicDelegatedPrefixesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteGlobalPublicDelegatedPrefixeRequest, Operation>
       deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified global PublicDelegatedPrefix resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient = GlobalPublicDelegatedPrefixesClient.create()) {
-   *   String project = "";
-   *   String publicDelegatedPrefix = "";
-   *   PublicDelegatedPrefix response = globalPublicDelegatedPrefixesClient.get(project, publicDelegatedPrefix);
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   String project = "project-309310695";
+   *   String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
+   *   PublicDelegatedPrefix response =
+   *       globalPublicDelegatedPrefixesClient.get(project, publicDelegatedPrefix);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param publicDelegatedPrefix Name of the PublicDelegatedPrefix resource to return.
@@ -263,23 +268,23 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified global PublicDelegatedPrefix resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient = GlobalPublicDelegatedPrefixesClient.create()) {
-   *   String project = "";
-   *   String publicDelegatedPrefix = "";
-   *   GetGlobalPublicDelegatedPrefixeRequest request = GetGlobalPublicDelegatedPrefixeRequest.newBuilder()
-   *     .setProject(project)
-   *     .setPublicDelegatedPrefix(publicDelegatedPrefix)
-   *     .build();
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   GetGlobalPublicDelegatedPrefixeRequest request =
+   *       GetGlobalPublicDelegatedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicDelegatedPrefix("publicDelegatedPrefix-663003832")
+   *           .build();
    *   PublicDelegatedPrefix response = globalPublicDelegatedPrefixesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -288,45 +293,49 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified global PublicDelegatedPrefix resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient = GlobalPublicDelegatedPrefixesClient.create()) {
-   *   String project = "";
-   *   String publicDelegatedPrefix = "";
-   *   GetGlobalPublicDelegatedPrefixeRequest request = GetGlobalPublicDelegatedPrefixeRequest.newBuilder()
-   *     .setProject(project)
-   *     .setPublicDelegatedPrefix(publicDelegatedPrefix)
-   *     .build();
-   *   ApiFuture&lt;PublicDelegatedPrefix&gt; future = globalPublicDelegatedPrefixesClient.getCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   GetGlobalPublicDelegatedPrefixeRequest request =
+   *       GetGlobalPublicDelegatedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicDelegatedPrefix("publicDelegatedPrefix-663003832")
+   *           .build();
+   *   ApiFuture<PublicDelegatedPrefix> future =
+   *       globalPublicDelegatedPrefixesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   PublicDelegatedPrefix response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetGlobalPublicDelegatedPrefixeRequest, PublicDelegatedPrefix>
       getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a global PublicDelegatedPrefix in the specified project using the parameters that are
    * included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient = GlobalPublicDelegatedPrefixesClient.create()) {
-   *   String project = "";
-   *   PublicDelegatedPrefix publicDelegatedPrefixResource = PublicDelegatedPrefix.newBuilder().build();
-   *   Operation response = globalPublicDelegatedPrefixesClient.insert(project, publicDelegatedPrefixResource);
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   String project = "project-309310695";
+   *   PublicDelegatedPrefix publicDelegatedPrefixResource =
+   *       PublicDelegatedPrefix.newBuilder().build();
+   *   Operation response =
+   *       globalPublicDelegatedPrefixesClient.insert(project, publicDelegatedPrefixResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param publicDelegatedPrefixResource The body resource for this request
@@ -342,24 +351,25 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a global PublicDelegatedPrefix in the specified project using the parameters that are
    * included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient = GlobalPublicDelegatedPrefixesClient.create()) {
-   *   String project = "";
-   *   PublicDelegatedPrefix publicDelegatedPrefixResource = PublicDelegatedPrefix.newBuilder().build();
-   *   InsertGlobalPublicDelegatedPrefixeRequest request = InsertGlobalPublicDelegatedPrefixeRequest.newBuilder()
-   *     .setProject(project)
-   *     .setPublicDelegatedPrefixResource(publicDelegatedPrefixResource)
-   *     .build();
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   InsertGlobalPublicDelegatedPrefixeRequest request =
+   *       InsertGlobalPublicDelegatedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicDelegatedPrefixResource(PublicDelegatedPrefix.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = globalPublicDelegatedPrefixesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -368,46 +378,50 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a global PublicDelegatedPrefix in the specified project using the parameters that are
    * included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient = GlobalPublicDelegatedPrefixesClient.create()) {
-   *   String project = "";
-   *   PublicDelegatedPrefix publicDelegatedPrefixResource = PublicDelegatedPrefix.newBuilder().build();
-   *   InsertGlobalPublicDelegatedPrefixeRequest request = InsertGlobalPublicDelegatedPrefixeRequest.newBuilder()
-   *     .setProject(project)
-   *     .setPublicDelegatedPrefixResource(publicDelegatedPrefixResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = globalPublicDelegatedPrefixesClient.insertCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   InsertGlobalPublicDelegatedPrefixeRequest request =
+   *       InsertGlobalPublicDelegatedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicDelegatedPrefixResource(PublicDelegatedPrefix.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       globalPublicDelegatedPrefixesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertGlobalPublicDelegatedPrefixeRequest, Operation>
       insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the global PublicDelegatedPrefixes for a project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient = GlobalPublicDelegatedPrefixesClient.create()) {
-   *   String project = "";
-   *   for (PublicDelegatedPrefix element : globalPublicDelegatedPrefixesClient.list(project).iterateAll()) {
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   String project = "project-309310695";
+   *   for (PublicDelegatedPrefix element :
+   *       globalPublicDelegatedPrefixesClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -418,23 +432,30 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the global PublicDelegatedPrefixes for a project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient = GlobalPublicDelegatedPrefixesClient.create()) {
-   *   String project = "";
-   *   ListGlobalPublicDelegatedPrefixesRequest request = ListGlobalPublicDelegatedPrefixesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (PublicDelegatedPrefix element : globalPublicDelegatedPrefixesClient.list(request).iterateAll()) {
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   ListGlobalPublicDelegatedPrefixesRequest request =
+   *       ListGlobalPublicDelegatedPrefixesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (PublicDelegatedPrefix element :
+   *       globalPublicDelegatedPrefixesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -443,46 +464,60 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the global PublicDelegatedPrefixes for a project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient = GlobalPublicDelegatedPrefixesClient.create()) {
-   *   String project = "";
-   *   ListGlobalPublicDelegatedPrefixesRequest request = ListGlobalPublicDelegatedPrefixesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = globalPublicDelegatedPrefixesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   ListGlobalPublicDelegatedPrefixesRequest request =
+   *       ListGlobalPublicDelegatedPrefixesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<PublicDelegatedPrefix> future =
+   *       globalPublicDelegatedPrefixesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (PublicDelegatedPrefix element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListGlobalPublicDelegatedPrefixesRequest, ListPagedResponse>
       listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the global PublicDelegatedPrefixes for a project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient = GlobalPublicDelegatedPrefixesClient.create()) {
-   *   String project = "";
-   *   ListGlobalPublicDelegatedPrefixesRequest request = ListGlobalPublicDelegatedPrefixesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   ListGlobalPublicDelegatedPrefixesRequest request =
+   *       ListGlobalPublicDelegatedPrefixesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     PublicDelegatedPrefixList response = globalPublicDelegatedPrefixesClient.listCallable().call(request);
-   *     for (PublicDelegatedPrefix element : response.getItemsList()) {
+   *     PublicDelegatedPrefixList response =
+   *         globalPublicDelegatedPrefixesClient.listCallable().call(request);
+   *     for (PublicDelegatedPrefix element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -493,14 +528,14 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListGlobalPublicDelegatedPrefixesRequest, PublicDelegatedPrefixList>
       listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified global PublicDelegatedPrefix resource with the data included in the
    * request. This method supports PATCH semantics and uses JSON merge patch format and processing
@@ -508,14 +543,18 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient = GlobalPublicDelegatedPrefixesClient.create()) {
-   *   String project = "";
-   *   String publicDelegatedPrefix = "";
-   *   PublicDelegatedPrefix publicDelegatedPrefixResource = PublicDelegatedPrefix.newBuilder().build();
-   *   Operation response = globalPublicDelegatedPrefixesClient.patch(project, publicDelegatedPrefix, publicDelegatedPrefixResource);
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   String project = "project-309310695";
+   *   String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
+   *   PublicDelegatedPrefix publicDelegatedPrefixResource =
+   *       PublicDelegatedPrefix.newBuilder().build();
+   *   Operation response =
+   *       globalPublicDelegatedPrefixesClient.patch(
+   *           project, publicDelegatedPrefix, publicDelegatedPrefixResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param publicDelegatedPrefix Name of the PublicDelegatedPrefix resource to patch.
@@ -535,7 +574,7 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified global PublicDelegatedPrefix resource with the data included in the
    * request. This method supports PATCH semantics and uses JSON merge patch format and processing
@@ -543,19 +582,19 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient = GlobalPublicDelegatedPrefixesClient.create()) {
-   *   String project = "";
-   *   String publicDelegatedPrefix = "";
-   *   PublicDelegatedPrefix publicDelegatedPrefixResource = PublicDelegatedPrefix.newBuilder().build();
-   *   PatchGlobalPublicDelegatedPrefixeRequest request = PatchGlobalPublicDelegatedPrefixeRequest.newBuilder()
-   *     .setProject(project)
-   *     .setPublicDelegatedPrefix(publicDelegatedPrefix)
-   *     .setPublicDelegatedPrefixResource(publicDelegatedPrefixResource)
-   *     .build();
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   PatchGlobalPublicDelegatedPrefixeRequest request =
+   *       PatchGlobalPublicDelegatedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicDelegatedPrefix("publicDelegatedPrefix-663003832")
+   *           .setPublicDelegatedPrefixResource(PublicDelegatedPrefix.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = globalPublicDelegatedPrefixesClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -564,7 +603,7 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified global PublicDelegatedPrefix resource with the data included in the
    * request. This method supports PATCH semantics and uses JSON merge patch format and processing
@@ -572,21 +611,22 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient = GlobalPublicDelegatedPrefixesClient.create()) {
-   *   String project = "";
-   *   String publicDelegatedPrefix = "";
-   *   PublicDelegatedPrefix publicDelegatedPrefixResource = PublicDelegatedPrefix.newBuilder().build();
-   *   PatchGlobalPublicDelegatedPrefixeRequest request = PatchGlobalPublicDelegatedPrefixeRequest.newBuilder()
-   *     .setProject(project)
-   *     .setPublicDelegatedPrefix(publicDelegatedPrefix)
-   *     .setPublicDelegatedPrefixResource(publicDelegatedPrefixResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = globalPublicDelegatedPrefixesClient.patchCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   PatchGlobalPublicDelegatedPrefixeRequest request =
+   *       PatchGlobalPublicDelegatedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicDelegatedPrefix("publicDelegatedPrefix-663003832")
+   *           .setPublicDelegatedPrefixResource(PublicDelegatedPrefix.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       globalPublicDelegatedPrefixesClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchGlobalPublicDelegatedPrefixeRequest, Operation> patchCallable() {
     return stub.patchCallable();

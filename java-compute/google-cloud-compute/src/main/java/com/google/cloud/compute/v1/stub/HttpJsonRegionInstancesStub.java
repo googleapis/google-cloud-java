@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import com.google.api.client.http.HttpMethods;
@@ -32,27 +33,26 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.BulkInsertRegionInstanceRequest;
 import com.google.cloud.compute.v1.Operation;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the RegionInstances service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionInstancesStub extends RegionInstancesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<BulkInsertRegionInstanceRequest, Operation>
+  private static final ApiMethodDescriptor<BulkInsertRegionInstanceRequest, Operation>
       bulkInsertMethodDescriptor =
           ApiMethodDescriptor.<BulkInsertRegionInstanceRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionInstances.BulkInsert")
+              .setFullMethodName("google.cloud.compute.v1.RegionInstances/BulkInsert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<BulkInsertRegionInstanceRequest>newBuilder()
@@ -104,10 +104,9 @@ public class HttpJsonRegionInstancesStub extends RegionInstancesStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<BulkInsertRegionInstanceRequest, Operation> bulkInsertCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionInstancesStub create(RegionInstancesStubSettings settings)
@@ -158,9 +157,18 @@ public class HttpJsonRegionInstancesStub extends RegionInstancesStub {
         callableFactory.createUnaryCallable(
             bulkInsertTransportSettings, settings.bulkInsertSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(bulkInsertMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<BulkInsertRegionInstanceRequest, Operation> bulkInsertCallable() {
     return bulkInsertCallable;
   }

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,25 +34,30 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The GlobalNetworkEndpointGroups API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
- *   String project = "";
- *   String networkEndpointGroup = "";
- *   GlobalNetworkEndpointGroupsAttachEndpointsRequest globalNetworkEndpointGroupsAttachEndpointsRequestResource = GlobalNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
- *   Operation response = globalNetworkEndpointGroupsClient.attachNetworkEndpoints(project, networkEndpointGroup, globalNetworkEndpointGroupsAttachEndpointsRequestResource);
+ * <pre>{@code
+ * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+ *     GlobalNetworkEndpointGroupsClient.create()) {
+ *   String project = "project-309310695";
+ *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
+ *   GlobalNetworkEndpointGroupsAttachEndpointsRequest
+ *       globalNetworkEndpointGroupsAttachEndpointsRequestResource =
+ *           GlobalNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
+ *   Operation response =
+ *       globalNetworkEndpointGroupsClient.attachNetworkEndpoints(
+ *           project,
+ *           networkEndpointGroup,
+ *           globalNetworkEndpointGroupsAttachEndpointsRequestResource);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the globalNetworkEndpointGroupsClient object to clean up
+ * <p>Note: close() needs to be called on the GlobalNetworkEndpointGroupsClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -80,30 +86,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * GlobalNetworkEndpointGroupsSettings globalNetworkEndpointGroupsSettings =
  *     GlobalNetworkEndpointGroupsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
  *     GlobalNetworkEndpointGroupsClient.create(globalNetworkEndpointGroupsSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * GlobalNetworkEndpointGroupsSettings globalNetworkEndpointGroupsSettings =
  *     GlobalNetworkEndpointGroupsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
  *     GlobalNetworkEndpointGroupsClient.create(globalNetworkEndpointGroupsSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
   private final GlobalNetworkEndpointGroupsSettings settings;
   private final GlobalNetworkEndpointGroupsStub stub;
@@ -125,7 +128,7 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of GlobalNetworkEndpointGroupsClient, using the given stub for making
-   * calls. This is for advanced usage - prefer to use GlobalNetworkEndpointGroupsSettings}.
+   * calls. This is for advanced usage - prefer using create(GlobalNetworkEndpointGroupsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GlobalNetworkEndpointGroupsClient create(
@@ -159,20 +162,27 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Attach a network endpoint to the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   String networkEndpointGroup = "";
-   *   GlobalNetworkEndpointGroupsAttachEndpointsRequest globalNetworkEndpointGroupsAttachEndpointsRequestResource = GlobalNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
-   *   Operation response = globalNetworkEndpointGroupsClient.attachNetworkEndpoints(project, networkEndpointGroup, globalNetworkEndpointGroupsAttachEndpointsRequestResource);
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
+   *   GlobalNetworkEndpointGroupsAttachEndpointsRequest
+   *       globalNetworkEndpointGroupsAttachEndpointsRequestResource =
+   *           GlobalNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
+   *   Operation response =
+   *       globalNetworkEndpointGroupsClient.attachNetworkEndpoints(
+   *           project,
+   *           networkEndpointGroup,
+   *           globalNetworkEndpointGroupsAttachEndpointsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param networkEndpointGroup The name of the network endpoint group where you are attaching
@@ -196,25 +206,26 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
     return attachNetworkEndpoints(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Attach a network endpoint to the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   GlobalNetworkEndpointGroupsAttachEndpointsRequest globalNetworkEndpointGroupsAttachEndpointsRequestResource = GlobalNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
-   *   String networkEndpointGroup = "";
-   *   String project = "";
-   *   AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest request = AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest.newBuilder()
-   *     .setGlobalNetworkEndpointGroupsAttachEndpointsRequestResource(globalNetworkEndpointGroupsAttachEndpointsRequestResource)
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setProject(project)
-   *     .build();
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest request =
+   *       AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest.newBuilder()
+   *           .setGlobalNetworkEndpointGroupsAttachEndpointsRequestResource(
+   *               GlobalNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build())
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = globalNetworkEndpointGroupsClient.attachNetworkEndpoints(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -224,47 +235,50 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
     return attachNetworkEndpointsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Attach a network endpoint to the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   GlobalNetworkEndpointGroupsAttachEndpointsRequest globalNetworkEndpointGroupsAttachEndpointsRequestResource = GlobalNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
-   *   String networkEndpointGroup = "";
-   *   String project = "";
-   *   AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest request = AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest.newBuilder()
-   *     .setGlobalNetworkEndpointGroupsAttachEndpointsRequestResource(globalNetworkEndpointGroupsAttachEndpointsRequestResource)
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = globalNetworkEndpointGroupsClient.attachNetworkEndpointsCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest request =
+   *       AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest.newBuilder()
+   *           .setGlobalNetworkEndpointGroupsAttachEndpointsRequestResource(
+   *               GlobalNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build())
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       globalNetworkEndpointGroupsClient.attachNetworkEndpointsCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
       attachNetworkEndpointsCallable() {
     return stub.attachNetworkEndpointsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified network endpoint group.Note that the NEG cannot be deleted if there are
    * backend services referencing it.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   String networkEndpointGroup = "";
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
    *   Operation response = globalNetworkEndpointGroupsClient.delete(project, networkEndpointGroup);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param networkEndpointGroup The name of the network endpoint group to delete. It should comply
@@ -280,24 +294,25 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified network endpoint group.Note that the NEG cannot be deleted if there are
    * backend services referencing it.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   String networkEndpointGroup = "";
-   *   String project = "";
-   *   DeleteGlobalNetworkEndpointGroupRequest request = DeleteGlobalNetworkEndpointGroupRequest.newBuilder()
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setProject(project)
-   *     .build();
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   DeleteGlobalNetworkEndpointGroupRequest request =
+   *       DeleteGlobalNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = globalNetworkEndpointGroupsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -306,45 +321,54 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified network endpoint group.Note that the NEG cannot be deleted if there are
    * backend services referencing it.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   String networkEndpointGroup = "";
-   *   String project = "";
-   *   DeleteGlobalNetworkEndpointGroupRequest request = DeleteGlobalNetworkEndpointGroupRequest.newBuilder()
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = globalNetworkEndpointGroupsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   DeleteGlobalNetworkEndpointGroupRequest request =
+   *       DeleteGlobalNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       globalNetworkEndpointGroupsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteGlobalNetworkEndpointGroupRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Detach the network endpoint from the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   String networkEndpointGroup = "";
-   *   GlobalNetworkEndpointGroupsDetachEndpointsRequest globalNetworkEndpointGroupsDetachEndpointsRequestResource = GlobalNetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
-   *   Operation response = globalNetworkEndpointGroupsClient.detachNetworkEndpoints(project, networkEndpointGroup, globalNetworkEndpointGroupsDetachEndpointsRequestResource);
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
+   *   GlobalNetworkEndpointGroupsDetachEndpointsRequest
+   *       globalNetworkEndpointGroupsDetachEndpointsRequestResource =
+   *           GlobalNetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
+   *   Operation response =
+   *       globalNetworkEndpointGroupsClient.detachNetworkEndpoints(
+   *           project,
+   *           networkEndpointGroup,
+   *           globalNetworkEndpointGroupsDetachEndpointsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param networkEndpointGroup The name of the network endpoint group where you are removing
@@ -368,25 +392,26 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
     return detachNetworkEndpoints(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Detach the network endpoint from the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   GlobalNetworkEndpointGroupsDetachEndpointsRequest globalNetworkEndpointGroupsDetachEndpointsRequestResource = GlobalNetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
-   *   String networkEndpointGroup = "";
-   *   String project = "";
-   *   DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest request = DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest.newBuilder()
-   *     .setGlobalNetworkEndpointGroupsDetachEndpointsRequestResource(globalNetworkEndpointGroupsDetachEndpointsRequestResource)
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setProject(project)
-   *     .build();
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest request =
+   *       DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest.newBuilder()
+   *           .setGlobalNetworkEndpointGroupsDetachEndpointsRequestResource(
+   *               GlobalNetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build())
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = globalNetworkEndpointGroupsClient.detachNetworkEndpoints(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -396,47 +421,51 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
     return detachNetworkEndpointsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Detach the network endpoint from the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   GlobalNetworkEndpointGroupsDetachEndpointsRequest globalNetworkEndpointGroupsDetachEndpointsRequestResource = GlobalNetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
-   *   String networkEndpointGroup = "";
-   *   String project = "";
-   *   DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest request = DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest.newBuilder()
-   *     .setGlobalNetworkEndpointGroupsDetachEndpointsRequestResource(globalNetworkEndpointGroupsDetachEndpointsRequestResource)
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = globalNetworkEndpointGroupsClient.detachNetworkEndpointsCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest request =
+   *       DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest.newBuilder()
+   *           .setGlobalNetworkEndpointGroupsDetachEndpointsRequestResource(
+   *               GlobalNetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build())
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       globalNetworkEndpointGroupsClient.detachNetworkEndpointsCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
       detachNetworkEndpointsCallable() {
     return stub.detachNetworkEndpointsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified network endpoint group. Gets a list of available network endpoint groups
    * by making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   String networkEndpointGroup = "";
-   *   NetworkEndpointGroup response = globalNetworkEndpointGroupsClient.get(project, networkEndpointGroup);
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
+   *   NetworkEndpointGroup response =
+   *       globalNetworkEndpointGroupsClient.get(project, networkEndpointGroup);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param networkEndpointGroup The name of the network endpoint group. It should comply with
@@ -452,24 +481,24 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified network endpoint group. Gets a list of available network endpoint groups
    * by making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   String networkEndpointGroup = "";
-   *   String project = "";
-   *   GetGlobalNetworkEndpointGroupRequest request = GetGlobalNetworkEndpointGroupRequest.newBuilder()
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setProject(project)
-   *     .build();
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   GetGlobalNetworkEndpointGroupRequest request =
+   *       GetGlobalNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .build();
    *   NetworkEndpointGroup response = globalNetworkEndpointGroupsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -478,46 +507,49 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified network endpoint group. Gets a list of available network endpoint groups
    * by making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   String networkEndpointGroup = "";
-   *   String project = "";
-   *   GetGlobalNetworkEndpointGroupRequest request = GetGlobalNetworkEndpointGroupRequest.newBuilder()
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;NetworkEndpointGroup&gt; future = globalNetworkEndpointGroupsClient.getCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   GetGlobalNetworkEndpointGroupRequest request =
+   *       GetGlobalNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<NetworkEndpointGroup> future =
+   *       globalNetworkEndpointGroupsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   NetworkEndpointGroup response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetGlobalNetworkEndpointGroupRequest, NetworkEndpointGroup>
       getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a network endpoint group in the specified project using the parameters that are
    * included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   String project = "";
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
    *   NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
-   *   Operation response = globalNetworkEndpointGroupsClient.insert(project, networkEndpointGroupResource);
+   *   Operation response =
+   *       globalNetworkEndpointGroupsClient.insert(project, networkEndpointGroupResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param networkEndpointGroupResource The body resource for this request
@@ -532,24 +564,25 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a network endpoint group in the specified project using the parameters that are
    * included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
-   *   String project = "";
-   *   InsertGlobalNetworkEndpointGroupRequest request = InsertGlobalNetworkEndpointGroupRequest.newBuilder()
-   *     .setNetworkEndpointGroupResource(networkEndpointGroupResource)
-   *     .setProject(project)
-   *     .build();
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   InsertGlobalNetworkEndpointGroupRequest request =
+   *       InsertGlobalNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroupResource(NetworkEndpointGroup.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = globalNetworkEndpointGroupsClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -558,45 +591,49 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a network endpoint group in the specified project using the parameters that are
    * included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
-   *   String project = "";
-   *   InsertGlobalNetworkEndpointGroupRequest request = InsertGlobalNetworkEndpointGroupRequest.newBuilder()
-   *     .setNetworkEndpointGroupResource(networkEndpointGroupResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = globalNetworkEndpointGroupsClient.insertCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   InsertGlobalNetworkEndpointGroupRequest request =
+   *       InsertGlobalNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroupResource(NetworkEndpointGroup.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       globalNetworkEndpointGroupsClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertGlobalNetworkEndpointGroupRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of network endpoint groups that are located in the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   for (NetworkEndpointGroup element : globalNetworkEndpointGroupsClient.list(project).iterateAll()) {
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   for (NetworkEndpointGroup element :
+   *       globalNetworkEndpointGroupsClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -607,23 +644,30 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of network endpoint groups that are located in the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   ListGlobalNetworkEndpointGroupsRequest request = ListGlobalNetworkEndpointGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (NetworkEndpointGroup element : globalNetworkEndpointGroupsClient.list(request).iterateAll()) {
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   ListGlobalNetworkEndpointGroupsRequest request =
+   *       ListGlobalNetworkEndpointGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (NetworkEndpointGroup element :
+   *       globalNetworkEndpointGroupsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -632,46 +676,60 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of network endpoint groups that are located in the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   ListGlobalNetworkEndpointGroupsRequest request = ListGlobalNetworkEndpointGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = globalNetworkEndpointGroupsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   ListGlobalNetworkEndpointGroupsRequest request =
+   *       ListGlobalNetworkEndpointGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<NetworkEndpointGroup> future =
+   *       globalNetworkEndpointGroupsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (NetworkEndpointGroup element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListGlobalNetworkEndpointGroupsRequest, ListPagedResponse>
       listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of network endpoint groups that are located in the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   ListGlobalNetworkEndpointGroupsRequest request = ListGlobalNetworkEndpointGroupsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   ListGlobalNetworkEndpointGroupsRequest request =
+   *       ListGlobalNetworkEndpointGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     NetworkEndpointGroupList response = globalNetworkEndpointGroupsClient.listCallable().call(request);
-   *     for (NetworkEndpointGroup element : response.getItemsList()) {
+   *     NetworkEndpointGroupList response =
+   *         globalNetworkEndpointGroupsClient.listCallable().call(request);
+   *     for (NetworkEndpointGroup element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -682,28 +740,32 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListGlobalNetworkEndpointGroupsRequest, NetworkEndpointGroupList>
       listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the network endpoints in the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   String project = "";
-   *   String networkEndpointGroup = "";
-   *   for (NetworkEndpointWithHealthStatus element : globalNetworkEndpointGroupsClient.listNetworkEndpoints(project, networkEndpointGroup).iterateAll()) {
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
+   *   for (NetworkEndpointWithHealthStatus element :
+   *       globalNetworkEndpointGroupsClient
+   *           .listNetworkEndpoints(project, networkEndpointGroup)
+   *           .iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param networkEndpointGroup The name of the network endpoint group from which you want to
@@ -720,25 +782,31 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
     return listNetworkEndpoints(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the network endpoints in the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   String networkEndpointGroup = "";
-   *   String project = "";
-   *   ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest request = ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest.newBuilder()
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setProject(project)
-   *     .build();
-   *   for (NetworkEndpointWithHealthStatus element : globalNetworkEndpointGroupsClient.listNetworkEndpoints(request).iterateAll()) {
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest request =
+   *       ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (NetworkEndpointWithHealthStatus element :
+   *       globalNetworkEndpointGroupsClient.listNetworkEndpoints(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -748,27 +816,33 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
     return listNetworkEndpointsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the network endpoints in the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   String networkEndpointGroup = "";
-   *   String project = "";
-   *   ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest request = ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest.newBuilder()
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListNetworkEndpointsPagedResponse&gt; future = globalNetworkEndpointGroupsClient.listNetworkEndpointsPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest request =
+   *       ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<NetworkEndpointWithHealthStatus> future =
+   *       globalNetworkEndpointGroupsClient.listNetworkEndpointsPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (NetworkEndpointWithHealthStatus element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest, ListNetworkEndpointsPagedResponse>
@@ -776,23 +850,29 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
     return stub.listNetworkEndpointsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the network endpoints in the specified network endpoint group.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
-   *   String networkEndpointGroup = "";
-   *   String project = "";
-   *   ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest request = ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest.newBuilder()
-   *     .setNetworkEndpointGroup(networkEndpointGroup)
-   *     .setProject(project)
-   *     .build();
+   * <pre>{@code
+   * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient =
+   *     GlobalNetworkEndpointGroupsClient.create()) {
+   *   ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest request =
+   *       ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     NetworkEndpointGroupsListNetworkEndpoints response = globalNetworkEndpointGroupsClient.listNetworkEndpointsCallable().call(request);
-   *     for (NetworkEndpointWithHealthStatus element : response.getItemsList()) {
+   *     NetworkEndpointGroupsListNetworkEndpoints response =
+   *         globalNetworkEndpointGroupsClient.listNetworkEndpointsCallable().call(request);
+   *     for (NetworkEndpointWithHealthStatus element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -803,7 +883,7 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest,

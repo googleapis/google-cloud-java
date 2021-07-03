@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.TargetVpnGatewaysClient.AggregatedListPagedResponse;
@@ -42,29 +43,28 @@ import com.google.cloud.compute.v1.TargetVpnGateway;
 import com.google.cloud.compute.v1.TargetVpnGatewayAggregatedList;
 import com.google.cloud.compute.v1.TargetVpnGatewayList;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the TargetVpnGateways service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListTargetVpnGatewaysRequest, TargetVpnGatewayAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListTargetVpnGatewaysRequest, TargetVpnGatewayAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetVpnGateways.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.TargetVpnGateways/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListTargetVpnGatewaysRequest>newBuilder()
@@ -122,7 +122,7 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
                           new FieldsExtractor<AggregatedListTargetVpnGatewaysRequest, String>() {
                             @Override
                             public String extract(AggregatedListTargetVpnGatewaysRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -132,11 +132,10 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteTargetVpnGatewayRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteTargetVpnGatewayRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteTargetVpnGatewayRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetVpnGateways.Delete")
+              .setFullMethodName("google.cloud.compute.v1.TargetVpnGateways/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteTargetVpnGatewayRequest>newBuilder()
@@ -177,7 +176,7 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
                           new FieldsExtractor<DeleteTargetVpnGatewayRequest, String>() {
                             @Override
                             public String extract(DeleteTargetVpnGatewayRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -187,11 +186,10 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetTargetVpnGatewayRequest, TargetVpnGateway>
+  private static final ApiMethodDescriptor<GetTargetVpnGatewayRequest, TargetVpnGateway>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetTargetVpnGatewayRequest, TargetVpnGateway>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetVpnGateways.Get")
+              .setFullMethodName("google.cloud.compute.v1.TargetVpnGateways/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetTargetVpnGatewayRequest>newBuilder()
@@ -219,7 +217,6 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetTargetVpnGatewayRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -227,7 +224,7 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
                           new FieldsExtractor<GetTargetVpnGatewayRequest, String>() {
                             @Override
                             public String extract(GetTargetVpnGatewayRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -237,11 +234,10 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertTargetVpnGatewayRequest, Operation>
+  private static final ApiMethodDescriptor<InsertTargetVpnGatewayRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertTargetVpnGatewayRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetVpnGateways.Insert")
+              .setFullMethodName("google.cloud.compute.v1.TargetVpnGateways/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertTargetVpnGatewayRequest>newBuilder()
@@ -293,11 +289,10 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListTargetVpnGatewaysRequest, TargetVpnGatewayList>
+  private static final ApiMethodDescriptor<ListTargetVpnGatewaysRequest, TargetVpnGatewayList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListTargetVpnGatewaysRequest, TargetVpnGatewayList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetVpnGateways.List")
+              .setFullMethodName("google.cloud.compute.v1.TargetVpnGateways/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListTargetVpnGatewaysRequest>newBuilder()
@@ -351,7 +346,7 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
                           new FieldsExtractor<ListTargetVpnGatewaysRequest, String>() {
                             @Override
                             public String extract(ListTargetVpnGatewaysRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -360,8 +355,6 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
                       .setDefaultInstance(TargetVpnGatewayList.getDefaultInstance())
                       .build())
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<
           AggregatedListTargetVpnGatewaysRequest, TargetVpnGatewayAggregatedList>
@@ -374,6 +367,7 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
   private final UnaryCallable<ListTargetVpnGatewaysRequest, TargetVpnGatewayList> listCallable;
   private final UnaryCallable<ListTargetVpnGatewaysRequest, ListPagedResponse> listPagedCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonTargetVpnGatewaysStub create(TargetVpnGatewaysStubSettings settings)
@@ -461,37 +455,56 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListTargetVpnGatewaysRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListTargetVpnGatewaysRequest, TargetVpnGatewayAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListTargetVpnGatewaysRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteTargetVpnGatewayRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetTargetVpnGatewayRequest, TargetVpnGateway> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertTargetVpnGatewayRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListTargetVpnGatewaysRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListTargetVpnGatewaysRequest, TargetVpnGatewayList> listCallable() {
     return listCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTargetVpnGatewaysRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
   }
 
   @Override

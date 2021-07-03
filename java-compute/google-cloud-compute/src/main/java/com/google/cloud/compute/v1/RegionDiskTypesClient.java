@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,25 +34,23 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The RegionDiskTypes API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (RegionDiskTypesClient regionDiskTypesClient = RegionDiskTypesClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String diskType = "";
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String diskType = "diskType279771767";
  *   DiskType response = regionDiskTypesClient.get(project, region, diskType);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the regionDiskTypesClient object to clean up resources
+ * <p>Note: close() needs to be called on the RegionDiskTypesClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -80,30 +79,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionDiskTypesSettings regionDiskTypesSettings =
  *     RegionDiskTypesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * RegionDiskTypesClient regionDiskTypesClient =
  *     RegionDiskTypesClient.create(regionDiskTypesSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionDiskTypesSettings regionDiskTypesSettings =
  *     RegionDiskTypesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionDiskTypesClient regionDiskTypesClient =
  *     RegionDiskTypesClient.create(regionDiskTypesSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RegionDiskTypesClient implements BackgroundResource {
   private final RegionDiskTypesSettings settings;
   private final RegionDiskTypesStub stub;
@@ -124,7 +120,7 @@ public class RegionDiskTypesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of RegionDiskTypesClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use RegionDiskTypesSettings}.
+   * for advanced usage - prefer using create(RegionDiskTypesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionDiskTypesClient create(RegionDiskTypesStub stub) {
@@ -156,21 +152,21 @@ public class RegionDiskTypesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified regional disk type. Gets a list of available disk types by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDiskTypesClient regionDiskTypesClient = RegionDiskTypesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String diskType = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String diskType = "diskType279771767";
    *   DiskType response = regionDiskTypesClient.get(project, region, diskType);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -187,26 +183,24 @@ public class RegionDiskTypesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified regional disk type. Gets a list of available disk types by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDiskTypesClient regionDiskTypesClient = RegionDiskTypesClient.create()) {
-   *   String diskType = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetRegionDiskTypeRequest request = GetRegionDiskTypeRequest.newBuilder()
-   *     .setDiskType(diskType)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   GetRegionDiskTypeRequest request =
+   *       GetRegionDiskTypeRequest.newBuilder()
+   *           .setDiskType("diskType279771767")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
    *   DiskType response = regionDiskTypesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -215,48 +209,46 @@ public class RegionDiskTypesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified regional disk type. Gets a list of available disk types by making a
    * list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDiskTypesClient regionDiskTypesClient = RegionDiskTypesClient.create()) {
-   *   String diskType = "";
-   *   String project = "";
-   *   String region = "";
-   *   GetRegionDiskTypeRequest request = GetRegionDiskTypeRequest.newBuilder()
-   *     .setDiskType(diskType)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;DiskType&gt; future = regionDiskTypesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetRegionDiskTypeRequest request =
+   *       GetRegionDiskTypeRequest.newBuilder()
+   *           .setDiskType("diskType279771767")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<DiskType> future = regionDiskTypesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   DiskType response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetRegionDiskTypeRequest, DiskType> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of regional disk types available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDiskTypesClient regionDiskTypesClient = RegionDiskTypesClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   for (DiskType element : regionDiskTypesClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -268,25 +260,29 @@ public class RegionDiskTypesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of regional disk types available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDiskTypesClient regionDiskTypesClient = RegionDiskTypesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionDiskTypesRequest request = ListRegionDiskTypesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListRegionDiskTypesRequest request =
+   *       ListRegionDiskTypesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (DiskType element : regionDiskTypesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -295,49 +291,57 @@ public class RegionDiskTypesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of regional disk types available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDiskTypesClient regionDiskTypesClient = RegionDiskTypesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionDiskTypesRequest request = ListRegionDiskTypesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = regionDiskTypesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListRegionDiskTypesRequest request =
+   *       ListRegionDiskTypesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<DiskType> future = regionDiskTypesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (DiskType element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionDiskTypesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of regional disk types available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionDiskTypesClient regionDiskTypesClient = RegionDiskTypesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionDiskTypesRequest request = ListRegionDiskTypesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListRegionDiskTypesRequest request =
+   *       ListRegionDiskTypesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     RegionDiskTypeList response = regionDiskTypesClient.listCallable().call(request);
-   *     for (DiskType element : response.getItemsList()) {
+   *     for (DiskType element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -348,7 +352,7 @@ public class RegionDiskTypesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionDiskTypesRequest, RegionDiskTypeList> listCallable() {
     return stub.listCallable();

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,30 +31,31 @@ import com.google.cloud.compute.v1.stub.TargetPoolsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The TargetPools API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String targetPool = "";
- *   TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource = TargetPoolsAddHealthCheckRequest.newBuilder().build();
- *   Operation response = targetPoolsClient.addHealthCheck(project, region, targetPool, targetPoolsAddHealthCheckRequestResource);
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String targetPool = "targetPool486493517";
+ *   TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource =
+ *       TargetPoolsAddHealthCheckRequest.newBuilder().build();
+ *   Operation response =
+ *       targetPoolsClient.addHealthCheck(
+ *           project, region, targetPool, targetPoolsAddHealthCheckRequestResource);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the targetPoolsClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the TargetPoolsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -81,30 +83,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TargetPoolsSettings targetPoolsSettings =
  *     TargetPoolsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * TargetPoolsClient targetPoolsClient =
- *     TargetPoolsClient.create(targetPoolsSettings);
- * </code>
- * </pre>
+ * TargetPoolsClient targetPoolsClient = TargetPoolsClient.create(targetPoolsSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TargetPoolsSettings targetPoolsSettings =
  *     TargetPoolsSettings.newBuilder().setEndpoint(myEndpoint).build();
- * TargetPoolsClient targetPoolsClient =
- *     TargetPoolsClient.create(targetPoolsSettings);
- * </code>
- * </pre>
+ * TargetPoolsClient targetPoolsClient = TargetPoolsClient.create(targetPoolsSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class TargetPoolsClient implements BackgroundResource {
   private final TargetPoolsSettings settings;
   private final TargetPoolsStub stub;
@@ -124,7 +121,7 @@ public class TargetPoolsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of TargetPoolsClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use TargetPoolsSettings}.
+   * advanced usage - prefer using create(TargetPoolsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TargetPoolsClient create(TargetPoolsStub stub) {
@@ -156,21 +153,24 @@ public class TargetPoolsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds health check URLs to a target pool.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource = TargetPoolsAddHealthCheckRequest.newBuilder().build();
-   *   Operation response = targetPoolsClient.addHealthCheck(project, region, targetPool, targetPoolsAddHealthCheckRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String targetPool = "targetPool486493517";
+   *   TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource =
+   *       TargetPoolsAddHealthCheckRequest.newBuilder().build();
+   *   Operation response =
+   *       targetPoolsClient.addHealthCheck(
+   *           project, region, targetPool, targetPoolsAddHealthCheckRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -193,27 +193,26 @@ public class TargetPoolsClient implements BackgroundResource {
     return addHealthCheck(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds health check URLs to a target pool.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource = TargetPoolsAddHealthCheckRequest.newBuilder().build();
-   *   AddHealthCheckTargetPoolRequest request = AddHealthCheckTargetPoolRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetPool(targetPool)
-   *     .setTargetPoolsAddHealthCheckRequestResource(targetPoolsAddHealthCheckRequestResource)
-   *     .build();
+   *   AddHealthCheckTargetPoolRequest request =
+   *       AddHealthCheckTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPool("targetPool486493517")
+   *           .setTargetPoolsAddHealthCheckRequestResource(
+   *               TargetPoolsAddHealthCheckRequest.newBuilder().build())
+   *           .build();
    *   Operation response = targetPoolsClient.addHealthCheck(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -222,49 +221,51 @@ public class TargetPoolsClient implements BackgroundResource {
     return addHealthCheckCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds health check URLs to a target pool.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource = TargetPoolsAddHealthCheckRequest.newBuilder().build();
-   *   AddHealthCheckTargetPoolRequest request = AddHealthCheckTargetPoolRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetPool(targetPool)
-   *     .setTargetPoolsAddHealthCheckRequestResource(targetPoolsAddHealthCheckRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetPoolsClient.addHealthCheckCallable().futureCall(request);
-   *   // Do something
+   *   AddHealthCheckTargetPoolRequest request =
+   *       AddHealthCheckTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPool("targetPool486493517")
+   *           .setTargetPoolsAddHealthCheckRequestResource(
+   *               TargetPoolsAddHealthCheckRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = targetPoolsClient.addHealthCheckCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AddHealthCheckTargetPoolRequest, Operation> addHealthCheckCallable() {
     return stub.addHealthCheckCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds an instance to a target pool.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource = TargetPoolsAddInstanceRequest.newBuilder().build();
-   *   Operation response = targetPoolsClient.addInstance(project, region, targetPool, targetPoolsAddInstanceRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String targetPool = "targetPool486493517";
+   *   TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource =
+   *       TargetPoolsAddInstanceRequest.newBuilder().build();
+   *   Operation response =
+   *       targetPoolsClient.addInstance(
+   *           project, region, targetPool, targetPoolsAddInstanceRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -287,27 +288,26 @@ public class TargetPoolsClient implements BackgroundResource {
     return addInstance(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds an instance to a target pool.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource = TargetPoolsAddInstanceRequest.newBuilder().build();
-   *   AddInstanceTargetPoolRequest request = AddInstanceTargetPoolRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetPool(targetPool)
-   *     .setTargetPoolsAddInstanceRequestResource(targetPoolsAddInstanceRequestResource)
-   *     .build();
+   *   AddInstanceTargetPoolRequest request =
+   *       AddInstanceTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPool("targetPool486493517")
+   *           .setTargetPoolsAddInstanceRequestResource(
+   *               TargetPoolsAddInstanceRequest.newBuilder().build())
+   *           .build();
    *   Operation response = targetPoolsClient.addInstance(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -316,48 +316,48 @@ public class TargetPoolsClient implements BackgroundResource {
     return addInstanceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds an instance to a target pool.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource = TargetPoolsAddInstanceRequest.newBuilder().build();
-   *   AddInstanceTargetPoolRequest request = AddInstanceTargetPoolRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetPool(targetPool)
-   *     .setTargetPoolsAddInstanceRequestResource(targetPoolsAddInstanceRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetPoolsClient.addInstanceCallable().futureCall(request);
-   *   // Do something
+   *   AddInstanceTargetPoolRequest request =
+   *       AddInstanceTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPool("targetPool486493517")
+   *           .setTargetPoolsAddInstanceRequestResource(
+   *               TargetPoolsAddInstanceRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = targetPoolsClient.addInstanceCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AddInstanceTargetPoolRequest, Operation> addInstanceCallable() {
     return stub.addInstanceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of target pools.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, TargetPoolsScopedList&gt; element : targetPoolsClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, TargetPoolsScopedList> element :
+   *       targetPoolsClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -368,23 +368,30 @@ public class TargetPoolsClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of target pools.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   AggregatedListTargetPoolsRequest request = AggregatedListTargetPoolsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, TargetPoolsScopedList&gt; element : targetPoolsClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListTargetPoolsRequest request =
+   *       AggregatedListTargetPoolsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, TargetPoolsScopedList> element :
+   *       targetPoolsClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -394,46 +401,60 @@ public class TargetPoolsClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of target pools.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   AggregatedListTargetPoolsRequest request = AggregatedListTargetPoolsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = targetPoolsClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, TargetPoolsScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListTargetPoolsRequest request =
+   *       AggregatedListTargetPoolsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, TargetPoolsScopedList>> future =
+   *       targetPoolsClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, TargetPoolsScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListTargetPoolsRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of target pools.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   AggregatedListTargetPoolsRequest request = AggregatedListTargetPoolsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListTargetPoolsRequest request =
+   *       AggregatedListTargetPoolsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     TargetPoolAggregatedList response = targetPoolsClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, TargetPoolsScopedList&gt; element : response.getItemsMap()) {
+   *     TargetPoolAggregatedList response =
+   *         targetPoolsClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, TargetPoolsScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -444,27 +465,27 @@ public class TargetPoolsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListTargetPoolsRequest, TargetPoolAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified target pool.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String targetPool = "targetPool486493517";
    *   Operation response = targetPoolsClient.delete(project, region, targetPool);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -481,25 +502,24 @@ public class TargetPoolsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified target pool.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   DeleteTargetPoolRequest request = DeleteTargetPoolRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetPool(targetPool)
-   *     .build();
+   *   DeleteTargetPoolRequest request =
+   *       DeleteTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPool("targetPool486493517")
+   *           .build();
    *   Operation response = targetPoolsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -508,47 +528,46 @@ public class TargetPoolsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified target pool.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   DeleteTargetPoolRequest request = DeleteTargetPoolRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetPool(targetPool)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetPoolsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteTargetPoolRequest request =
+   *       DeleteTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPool("targetPool486493517")
+   *           .build();
+   *   ApiFuture<Operation> future = targetPoolsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteTargetPoolRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified target pool. Gets a list of available target pools by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String targetPool = "targetPool486493517";
    *   TargetPool response = targetPoolsClient.get(project, region, targetPool);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -565,26 +584,24 @@ public class TargetPoolsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified target pool. Gets a list of available target pools by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   GetTargetPoolRequest request = GetTargetPoolRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetPool(targetPool)
-   *     .build();
+   *   GetTargetPoolRequest request =
+   *       GetTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setTargetPool("targetPool486493517")
+   *           .build();
    *   TargetPool response = targetPoolsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -593,49 +610,48 @@ public class TargetPoolsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified target pool. Gets a list of available target pools by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   GetTargetPoolRequest request = GetTargetPoolRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetPool(targetPool)
-   *     .build();
-   *   ApiFuture&lt;TargetPool&gt; future = targetPoolsClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetTargetPoolRequest request =
+   *       GetTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setTargetPool("targetPool486493517")
+   *           .build();
+   *   ApiFuture<TargetPool> future = targetPoolsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   TargetPool response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetTargetPoolRequest, TargetPool> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the most recent health check results for each IP for the instance that is referenced by
    * the given target pool.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String targetPool = "targetPool486493517";
    *   InstanceReference instanceReferenceResource = InstanceReference.newBuilder().build();
-   *   TargetPoolInstanceHealth response = targetPoolsClient.getHealth(project, region, targetPool, instanceReferenceResource);
+   *   TargetPoolInstanceHealth response =
+   *       targetPoolsClient.getHealth(project, region, targetPool, instanceReferenceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -658,28 +674,25 @@ public class TargetPoolsClient implements BackgroundResource {
     return getHealth(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the most recent health check results for each IP for the instance that is referenced by
    * the given target pool.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   InstanceReference instanceReferenceResource = InstanceReference.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   GetHealthTargetPoolRequest request = GetHealthTargetPoolRequest.newBuilder()
-   *     .setInstanceReferenceResource(instanceReferenceResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetPool(targetPool)
-   *     .build();
+   *   GetHealthTargetPoolRequest request =
+   *       GetHealthTargetPoolRequest.newBuilder()
+   *           .setInstanceReferenceResource(InstanceReference.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setTargetPool("targetPool486493517")
+   *           .build();
    *   TargetPoolInstanceHealth response = targetPoolsClient.getHealth(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -688,51 +701,49 @@ public class TargetPoolsClient implements BackgroundResource {
     return getHealthCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the most recent health check results for each IP for the instance that is referenced by
    * the given target pool.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   InstanceReference instanceReferenceResource = InstanceReference.newBuilder().build();
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   GetHealthTargetPoolRequest request = GetHealthTargetPoolRequest.newBuilder()
-   *     .setInstanceReferenceResource(instanceReferenceResource)
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetPool(targetPool)
-   *     .build();
-   *   ApiFuture&lt;TargetPoolInstanceHealth&gt; future = targetPoolsClient.getHealthCallable().futureCall(request);
-   *   // Do something
+   *   GetHealthTargetPoolRequest request =
+   *       GetHealthTargetPoolRequest.newBuilder()
+   *           .setInstanceReferenceResource(InstanceReference.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setTargetPool("targetPool486493517")
+   *           .build();
+   *   ApiFuture<TargetPoolInstanceHealth> future =
+   *       targetPoolsClient.getHealthCallable().futureCall(request);
+   *   // Do something.
    *   TargetPoolInstanceHealth response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetHealthTargetPoolRequest, TargetPoolInstanceHealth>
       getHealthCallable() {
     return stub.getHealthCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a target pool in the specified project and region using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   TargetPool targetPoolResource = TargetPool.newBuilder().build();
    *   Operation response = targetPoolsClient.insert(project, region, targetPoolResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -749,26 +760,25 @@ public class TargetPoolsClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a target pool in the specified project and region using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   TargetPool targetPoolResource = TargetPool.newBuilder().build();
-   *   InsertTargetPoolRequest request = InsertTargetPoolRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetPoolResource(targetPoolResource)
-   *     .build();
+   *   InsertTargetPoolRequest request =
+   *       InsertTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPoolResource(TargetPool.newBuilder().build())
+   *           .build();
    *   Operation response = targetPoolsClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -777,48 +787,47 @@ public class TargetPoolsClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a target pool in the specified project and region using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   TargetPool targetPoolResource = TargetPool.newBuilder().build();
-   *   InsertTargetPoolRequest request = InsertTargetPoolRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetPoolResource(targetPoolResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetPoolsClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertTargetPoolRequest request =
+   *       InsertTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPoolResource(TargetPool.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = targetPoolsClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertTargetPoolRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of target pools available to the specified project and region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   for (TargetPool element : targetPoolsClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -830,25 +839,29 @@ public class TargetPoolsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of target pools available to the specified project and region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListTargetPoolsRequest request = ListTargetPoolsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListTargetPoolsRequest request =
+   *       ListTargetPoolsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (TargetPool element : targetPoolsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -857,49 +870,57 @@ public class TargetPoolsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of target pools available to the specified project and region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListTargetPoolsRequest request = ListTargetPoolsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = targetPoolsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListTargetPoolsRequest request =
+   *       ListTargetPoolsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<TargetPool> future = targetPoolsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (TargetPool element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListTargetPoolsRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of target pools available to the specified project and region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListTargetPoolsRequest request = ListTargetPoolsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListTargetPoolsRequest request =
+   *       ListTargetPoolsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     TargetPoolList response = targetPoolsClient.listCallable().call(request);
-   *     for (TargetPool element : response.getItemsList()) {
+   *     for (TargetPool element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -910,27 +931,30 @@ public class TargetPoolsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListTargetPoolsRequest, TargetPoolList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes health check URL from a target pool.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource = TargetPoolsRemoveHealthCheckRequest.newBuilder().build();
-   *   Operation response = targetPoolsClient.removeHealthCheck(project, region, targetPool, targetPoolsRemoveHealthCheckRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String targetPool = "targetPool486493517";
+   *   TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource =
+   *       TargetPoolsRemoveHealthCheckRequest.newBuilder().build();
+   *   Operation response =
+   *       targetPoolsClient.removeHealthCheck(
+   *           project, region, targetPool, targetPoolsRemoveHealthCheckRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -954,27 +978,26 @@ public class TargetPoolsClient implements BackgroundResource {
     return removeHealthCheck(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes health check URL from a target pool.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource = TargetPoolsRemoveHealthCheckRequest.newBuilder().build();
-   *   RemoveHealthCheckTargetPoolRequest request = RemoveHealthCheckTargetPoolRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetPool(targetPool)
-   *     .setTargetPoolsRemoveHealthCheckRequestResource(targetPoolsRemoveHealthCheckRequestResource)
-   *     .build();
+   *   RemoveHealthCheckTargetPoolRequest request =
+   *       RemoveHealthCheckTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPool("targetPool486493517")
+   *           .setTargetPoolsRemoveHealthCheckRequestResource(
+   *               TargetPoolsRemoveHealthCheckRequest.newBuilder().build())
+   *           .build();
    *   Operation response = targetPoolsClient.removeHealthCheck(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -983,50 +1006,53 @@ public class TargetPoolsClient implements BackgroundResource {
     return removeHealthCheckCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes health check URL from a target pool.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource = TargetPoolsRemoveHealthCheckRequest.newBuilder().build();
-   *   RemoveHealthCheckTargetPoolRequest request = RemoveHealthCheckTargetPoolRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetPool(targetPool)
-   *     .setTargetPoolsRemoveHealthCheckRequestResource(targetPoolsRemoveHealthCheckRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetPoolsClient.removeHealthCheckCallable().futureCall(request);
-   *   // Do something
+   *   RemoveHealthCheckTargetPoolRequest request =
+   *       RemoveHealthCheckTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPool("targetPool486493517")
+   *           .setTargetPoolsRemoveHealthCheckRequestResource(
+   *               TargetPoolsRemoveHealthCheckRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       targetPoolsClient.removeHealthCheckCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<RemoveHealthCheckTargetPoolRequest, Operation>
       removeHealthCheckCallable() {
     return stub.removeHealthCheckCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes instance URL from a target pool.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource = TargetPoolsRemoveInstanceRequest.newBuilder().build();
-   *   Operation response = targetPoolsClient.removeInstance(project, region, targetPool, targetPoolsRemoveInstanceRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String targetPool = "targetPool486493517";
+   *   TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource =
+   *       TargetPoolsRemoveInstanceRequest.newBuilder().build();
+   *   Operation response =
+   *       targetPoolsClient.removeInstance(
+   *           project, region, targetPool, targetPoolsRemoveInstanceRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -1049,27 +1075,26 @@ public class TargetPoolsClient implements BackgroundResource {
     return removeInstance(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes instance URL from a target pool.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource = TargetPoolsRemoveInstanceRequest.newBuilder().build();
-   *   RemoveInstanceTargetPoolRequest request = RemoveInstanceTargetPoolRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetPool(targetPool)
-   *     .setTargetPoolsRemoveInstanceRequestResource(targetPoolsRemoveInstanceRequestResource)
-   *     .build();
+   *   RemoveInstanceTargetPoolRequest request =
+   *       RemoveInstanceTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPool("targetPool486493517")
+   *           .setTargetPoolsRemoveInstanceRequestResource(
+   *               TargetPoolsRemoveInstanceRequest.newBuilder().build())
+   *           .build();
    *   Operation response = targetPoolsClient.removeInstance(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1078,49 +1103,49 @@ public class TargetPoolsClient implements BackgroundResource {
     return removeInstanceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes instance URL from a target pool.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource = TargetPoolsRemoveInstanceRequest.newBuilder().build();
-   *   RemoveInstanceTargetPoolRequest request = RemoveInstanceTargetPoolRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetPool(targetPool)
-   *     .setTargetPoolsRemoveInstanceRequestResource(targetPoolsRemoveInstanceRequestResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetPoolsClient.removeInstanceCallable().futureCall(request);
-   *   // Do something
+   *   RemoveInstanceTargetPoolRequest request =
+   *       RemoveInstanceTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPool("targetPool486493517")
+   *           .setTargetPoolsRemoveInstanceRequestResource(
+   *               TargetPoolsRemoveInstanceRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = targetPoolsClient.removeInstanceCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<RemoveInstanceTargetPoolRequest, Operation> removeInstanceCallable() {
     return stub.removeInstanceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes a backup target pool's configurations.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String targetPool = "targetPool486493517";
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
-   *   Operation response = targetPoolsClient.setBackup(project, region, targetPool, targetReferenceResource);
+   *   Operation response =
+   *       targetPoolsClient.setBackup(project, region, targetPool, targetReferenceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -1140,27 +1165,26 @@ public class TargetPoolsClient implements BackgroundResource {
     return setBackup(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes a backup target pool's configurations.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
-   *   SetBackupTargetPoolRequest request = SetBackupTargetPoolRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetPool(targetPool)
-   *     .setTargetReferenceResource(targetReferenceResource)
-   *     .build();
+   *   SetBackupTargetPoolRequest request =
+   *       SetBackupTargetPoolRequest.newBuilder()
+   *           .setFailoverRatio(-861074818)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPool("targetPool486493517")
+   *           .setTargetReferenceResource(TargetReference.newBuilder().build())
+   *           .build();
    *   Operation response = targetPoolsClient.setBackup(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1169,29 +1193,28 @@ public class TargetPoolsClient implements BackgroundResource {
     return setBackupCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes a backup target pool's configurations.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String targetPool = "";
-   *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
-   *   SetBackupTargetPoolRequest request = SetBackupTargetPoolRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setTargetPool(targetPool)
-   *     .setTargetReferenceResource(targetReferenceResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetPoolsClient.setBackupCallable().futureCall(request);
-   *   // Do something
+   *   SetBackupTargetPoolRequest request =
+   *       SetBackupTargetPoolRequest.newBuilder()
+   *           .setFailoverRatio(-861074818)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPool("targetPool486493517")
+   *           .setTargetReferenceResource(TargetReference.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = targetPoolsClient.setBackupCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetBackupTargetPoolRequest, Operation> setBackupCallable() {
     return stub.setBackupCallable();
@@ -1231,7 +1254,7 @@ public class TargetPoolsClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListTargetPoolsRequest,
           TargetPoolAggregatedList,
-          Entry<String, TargetPoolsScopedList>,
+          Map.Entry<String, TargetPoolsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -1239,7 +1262,7 @@ public class TargetPoolsClient implements BackgroundResource {
         PageContext<
                 AggregatedListTargetPoolsRequest,
                 TargetPoolAggregatedList,
-                Entry<String, TargetPoolsScopedList>>
+                Map.Entry<String, TargetPoolsScopedList>>
             context,
         ApiFuture<TargetPoolAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -1264,14 +1287,14 @@ public class TargetPoolsClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListTargetPoolsRequest,
           TargetPoolAggregatedList,
-          Entry<String, TargetPoolsScopedList>,
+          Map.Entry<String, TargetPoolsScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListTargetPoolsRequest,
                 TargetPoolAggregatedList,
-                Entry<String, TargetPoolsScopedList>>
+                Map.Entry<String, TargetPoolsScopedList>>
             context,
         TargetPoolAggregatedList response) {
       super(context, response);
@@ -1286,7 +1309,7 @@ public class TargetPoolsClient implements BackgroundResource {
         PageContext<
                 AggregatedListTargetPoolsRequest,
                 TargetPoolAggregatedList,
-                Entry<String, TargetPoolsScopedList>>
+                Map.Entry<String, TargetPoolsScopedList>>
             context,
         TargetPoolAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -1297,7 +1320,7 @@ public class TargetPoolsClient implements BackgroundResource {
         PageContext<
                 AggregatedListTargetPoolsRequest,
                 TargetPoolAggregatedList,
-                Entry<String, TargetPoolsScopedList>>
+                Map.Entry<String, TargetPoolsScopedList>>
             context,
         ApiFuture<TargetPoolAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1308,7 +1331,7 @@ public class TargetPoolsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListTargetPoolsRequest,
           TargetPoolAggregatedList,
-          Entry<String, TargetPoolsScopedList>,
+          Map.Entry<String, TargetPoolsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

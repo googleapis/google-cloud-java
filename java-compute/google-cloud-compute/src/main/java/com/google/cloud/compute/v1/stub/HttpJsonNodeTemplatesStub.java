@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.NodeTemplatesClient.AggregatedListPagedResponse;
@@ -47,29 +48,28 @@ import com.google.cloud.compute.v1.SetIamPolicyNodeTemplateRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsNodeTemplateRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the NodeTemplates service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListNodeTemplatesRequest, NodeTemplateAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListNodeTemplatesRequest, NodeTemplateAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeTemplates.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.NodeTemplates/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListNodeTemplatesRequest>newBuilder()
@@ -127,7 +127,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                           new FieldsExtractor<AggregatedListNodeTemplatesRequest, String>() {
                             @Override
                             public String extract(AggregatedListNodeTemplatesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -137,11 +137,10 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteNodeTemplateRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteNodeTemplateRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteNodeTemplateRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeTemplates.Delete")
+              .setFullMethodName("google.cloud.compute.v1.NodeTemplates/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteNodeTemplateRequest>newBuilder()
@@ -153,10 +152,10 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteNodeTemplateRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "nodeTemplate", request.getNodeTemplate());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -180,7 +179,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                           new FieldsExtractor<DeleteNodeTemplateRequest, String>() {
                             @Override
                             public String extract(DeleteNodeTemplateRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -190,11 +189,10 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetNodeTemplateRequest, NodeTemplate>
+  private static final ApiMethodDescriptor<GetNodeTemplateRequest, NodeTemplate>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetNodeTemplateRequest, NodeTemplate>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeTemplates.Get")
+              .setFullMethodName("google.cloud.compute.v1.NodeTemplates/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetNodeTemplateRequest>newBuilder()
@@ -206,10 +204,10 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetNodeTemplateRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "nodeTemplate", request.getNodeTemplate());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -221,7 +219,6 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetNodeTemplateRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -229,7 +226,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                           new FieldsExtractor<GetNodeTemplateRequest, String>() {
                             @Override
                             public String extract(GetNodeTemplateRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -239,11 +236,10 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetIamPolicyNodeTemplateRequest, Policy>
+  private static final ApiMethodDescriptor<GetIamPolicyNodeTemplateRequest, Policy>
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyNodeTemplateRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeTemplates.GetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.NodeTemplates/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyNodeTemplateRequest>newBuilder()
@@ -285,7 +281,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                           new FieldsExtractor<GetIamPolicyNodeTemplateRequest, String>() {
                             @Override
                             public String extract(GetIamPolicyNodeTemplateRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -295,11 +291,10 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertNodeTemplateRequest, Operation>
+  private static final ApiMethodDescriptor<InsertNodeTemplateRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertNodeTemplateRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeTemplates.Insert")
+              .setFullMethodName("google.cloud.compute.v1.NodeTemplates/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertNodeTemplateRequest>newBuilder()
@@ -348,11 +343,10 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListNodeTemplatesRequest, NodeTemplateList>
+  private static final ApiMethodDescriptor<ListNodeTemplatesRequest, NodeTemplateList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListNodeTemplatesRequest, NodeTemplateList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeTemplates.List")
+              .setFullMethodName("google.cloud.compute.v1.NodeTemplates/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListNodeTemplatesRequest>newBuilder()
@@ -405,7 +399,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                           new FieldsExtractor<ListNodeTemplatesRequest, String>() {
                             @Override
                             public String extract(ListNodeTemplatesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -415,11 +409,10 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetIamPolicyNodeTemplateRequest, Policy>
+  private static final ApiMethodDescriptor<SetIamPolicyNodeTemplateRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyNodeTemplateRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeTemplates.SetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.NodeTemplates/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyNodeTemplateRequest>newBuilder()
@@ -448,7 +441,6 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetIamPolicyNodeTemplateRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -469,13 +461,12 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           TestIamPermissionsNodeTemplateRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           ApiMethodDescriptor
               .<TestIamPermissionsNodeTemplateRequest, TestPermissionsResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeTemplates.TestIamPermissions")
+              .setFullMethodName("google.cloud.compute.v1.NodeTemplates/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsNodeTemplateRequest>newBuilder()
@@ -504,7 +495,6 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<TestIamPermissionsNodeTemplateRequest>
                                   serializer = ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -525,8 +515,6 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<AggregatedListNodeTemplatesRequest, NodeTemplateAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListNodeTemplatesRequest, AggregatedListPagedResponse>
@@ -541,6 +529,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
   private final UnaryCallable<TestIamPermissionsNodeTemplateRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonNodeTemplatesStub create(NodeTemplatesStubSettings settings)
@@ -652,47 +641,72 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListNodeTemplatesRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListNodeTemplatesRequest, NodeTemplateAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListNodeTemplatesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteNodeTemplateRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetNodeTemplateRequest, NodeTemplate> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyNodeTemplateRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<InsertNodeTemplateRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListNodeTemplatesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListNodeTemplatesRequest, NodeTemplateList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListNodeTemplatesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<SetIamPolicyNodeTemplateRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsNodeTemplateRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

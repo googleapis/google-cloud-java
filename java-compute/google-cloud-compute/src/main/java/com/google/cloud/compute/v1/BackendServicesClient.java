@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,29 +31,28 @@ import com.google.cloud.compute.v1.stub.BackendServicesStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The BackendServices API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
- *   String project = "";
- *   String backendService = "";
+ *   String project = "project-309310695";
+ *   String backendService = "backendService-1884714623";
  *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
- *   Operation response = backendServicesClient.addSignedUrlKey(project, backendService, signedUrlKeyResource);
+ *   Operation response =
+ *       backendServicesClient.addSignedUrlKey(project, backendService, signedUrlKeyResource);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the backendServicesClient object to clean up resources
+ * <p>Note: close() needs to be called on the BackendServicesClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -81,30 +81,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * BackendServicesSettings backendServicesSettings =
  *     BackendServicesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * BackendServicesClient backendServicesClient =
  *     BackendServicesClient.create(backendServicesSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * BackendServicesSettings backendServicesSettings =
  *     BackendServicesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * BackendServicesClient backendServicesClient =
  *     BackendServicesClient.create(backendServicesSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class BackendServicesClient implements BackgroundResource {
   private final BackendServicesSettings settings;
   private final BackendServicesStub stub;
@@ -125,7 +122,7 @@ public class BackendServicesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of BackendServicesClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use BackendServicesSettings}.
+   * for advanced usage - prefer using create(BackendServicesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final BackendServicesClient create(BackendServicesStub stub) {
@@ -157,20 +154,21 @@ public class BackendServicesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds a key for validating requests with signed URLs for this backend service.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String project = "";
-   *   String backendService = "";
+   *   String project = "project-309310695";
+   *   String backendService = "backendService-1884714623";
    *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
-   *   Operation response = backendServicesClient.addSignedUrlKey(project, backendService, signedUrlKeyResource);
+   *   Operation response =
+   *       backendServicesClient.addSignedUrlKey(project, backendService, signedUrlKeyResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param backendService Name of the BackendService resource to which the Signed URL Key should be
@@ -189,25 +187,24 @@ public class BackendServicesClient implements BackgroundResource {
     return addSignedUrlKey(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds a key for validating requests with signed URLs for this backend service.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String backendService = "";
-   *   String project = "";
-   *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
-   *   AddSignedUrlKeyBackendServiceRequest request = AddSignedUrlKeyBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setProject(project)
-   *     .setSignedUrlKeyResource(signedUrlKeyResource)
-   *     .build();
+   *   AddSignedUrlKeyBackendServiceRequest request =
+   *       AddSignedUrlKeyBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSignedUrlKeyResource(SignedUrlKey.newBuilder().build())
+   *           .build();
    *   Operation response = backendServicesClient.addSignedUrlKey(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -216,48 +213,49 @@ public class BackendServicesClient implements BackgroundResource {
     return addSignedUrlKeyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds a key for validating requests with signed URLs for this backend service.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String backendService = "";
-   *   String project = "";
-   *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
-   *   AddSignedUrlKeyBackendServiceRequest request = AddSignedUrlKeyBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setProject(project)
-   *     .setSignedUrlKeyResource(signedUrlKeyResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = backendServicesClient.addSignedUrlKeyCallable().futureCall(request);
-   *   // Do something
+   *   AddSignedUrlKeyBackendServiceRequest request =
+   *       AddSignedUrlKeyBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSignedUrlKeyResource(SignedUrlKey.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backendServicesClient.addSignedUrlKeyCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AddSignedUrlKeyBackendServiceRequest, Operation>
       addSignedUrlKeyCallable() {
     return stub.addSignedUrlKeyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all BackendService resources, regional and global, available to the
    * specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, BackendServicesScopedList&gt; element : backendServicesClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, BackendServicesScopedList> element :
+   *       backendServicesClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Name of the project scoping this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -268,24 +266,31 @@ public class BackendServicesClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all BackendService resources, regional and global, available to the
    * specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String project = "";
-   *   AggregatedListBackendServicesRequest request = AggregatedListBackendServicesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, BackendServicesScopedList&gt; element : backendServicesClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListBackendServicesRequest request =
+   *       AggregatedListBackendServicesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, BackendServicesScopedList> element :
+   *       backendServicesClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -295,48 +300,62 @@ public class BackendServicesClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all BackendService resources, regional and global, available to the
    * specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String project = "";
-   *   AggregatedListBackendServicesRequest request = AggregatedListBackendServicesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = backendServicesClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, BackendServicesScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListBackendServicesRequest request =
+   *       AggregatedListBackendServicesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, BackendServicesScopedList>> future =
+   *       backendServicesClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, BackendServicesScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListBackendServicesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all BackendService resources, regional and global, available to the
    * specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String project = "";
-   *   AggregatedListBackendServicesRequest request = AggregatedListBackendServicesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListBackendServicesRequest request =
+   *       AggregatedListBackendServicesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     BackendServiceAggregatedList response = backendServicesClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, BackendServicesScopedList&gt; element : response.getItemsMap()) {
+   *     BackendServiceAggregatedList response =
+   *         backendServicesClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, BackendServicesScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -347,26 +366,26 @@ public class BackendServicesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListBackendServicesRequest, BackendServiceAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified BackendService resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String project = "";
-   *   String backendService = "";
+   *   String project = "project-309310695";
+   *   String backendService = "backendService-1884714623";
    *   Operation response = backendServicesClient.delete(project, backendService);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param backendService Name of the BackendService resource to delete.
@@ -381,23 +400,23 @@ public class BackendServicesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified BackendService resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String backendService = "";
-   *   String project = "";
-   *   DeleteBackendServiceRequest request = DeleteBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setProject(project)
-   *     .build();
+   *   DeleteBackendServiceRequest request =
+   *       DeleteBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = backendServicesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -406,44 +425,45 @@ public class BackendServicesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified BackendService resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String backendService = "";
-   *   String project = "";
-   *   DeleteBackendServiceRequest request = DeleteBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = backendServicesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteBackendServiceRequest request =
+   *       DeleteBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = backendServicesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteBackendServiceRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a key for validating requests with signed URLs for this backend service.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String project = "";
-   *   String backendService = "";
-   *   String keyName = "";
-   *   Operation response = backendServicesClient.deleteSignedUrlKey(project, backendService, keyName);
+   *   String project = "project-309310695";
+   *   String backendService = "backendService-1884714623";
+   *   String keyName = "keyName-815643254";
+   *   Operation response =
+   *       backendServicesClient.deleteSignedUrlKey(project, backendService, keyName);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param backendService Name of the BackendService resource to which the Signed URL Key should be
@@ -461,25 +481,24 @@ public class BackendServicesClient implements BackgroundResource {
     return deleteSignedUrlKey(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a key for validating requests with signed URLs for this backend service.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String backendService = "";
-   *   String keyName = "";
-   *   String project = "";
-   *   DeleteSignedUrlKeyBackendServiceRequest request = DeleteSignedUrlKeyBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setKeyName(keyName)
-   *     .setProject(project)
-   *     .build();
+   *   DeleteSignedUrlKeyBackendServiceRequest request =
+   *       DeleteSignedUrlKeyBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setKeyName("keyName-815643254")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = backendServicesClient.deleteSignedUrlKey(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -488,46 +507,46 @@ public class BackendServicesClient implements BackgroundResource {
     return deleteSignedUrlKeyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a key for validating requests with signed URLs for this backend service.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String backendService = "";
-   *   String keyName = "";
-   *   String project = "";
-   *   DeleteSignedUrlKeyBackendServiceRequest request = DeleteSignedUrlKeyBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setKeyName(keyName)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = backendServicesClient.deleteSignedUrlKeyCallable().futureCall(request);
-   *   // Do something
+   *   DeleteSignedUrlKeyBackendServiceRequest request =
+   *       DeleteSignedUrlKeyBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setKeyName("keyName-815643254")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backendServicesClient.deleteSignedUrlKeyCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteSignedUrlKeyBackendServiceRequest, Operation>
       deleteSignedUrlKeyCallable() {
     return stub.deleteSignedUrlKeyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified BackendService resource. Gets a list of available backend services.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String project = "";
-   *   String backendService = "";
+   *   String project = "project-309310695";
+   *   String backendService = "backendService-1884714623";
    *   BackendService response = backendServicesClient.get(project, backendService);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param backendService Name of the BackendService resource to return.
@@ -542,23 +561,22 @@ public class BackendServicesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified BackendService resource. Gets a list of available backend services.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String backendService = "";
-   *   String project = "";
-   *   GetBackendServiceRequest request = GetBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setProject(project)
-   *     .build();
+   *   GetBackendServiceRequest request =
+   *       GetBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .build();
    *   BackendService response = backendServicesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -567,31 +585,30 @@ public class BackendServicesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified BackendService resource. Gets a list of available backend services.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String backendService = "";
-   *   String project = "";
-   *   GetBackendServiceRequest request = GetBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;BackendService&gt; future = backendServicesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetBackendServiceRequest request =
+   *       GetBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<BackendService> future = backendServicesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   BackendService response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetBackendServiceRequest, BackendService> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the most recent health check results for this BackendService.
    *
@@ -601,14 +618,16 @@ public class BackendServicesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String project = "";
-   *   String backendService = "";
-   *   ResourceGroupReference resourceGroupReferenceResource = ResourceGroupReference.newBuilder().build();
-   *   BackendServiceGroupHealth response = backendServicesClient.getHealth(project, backendService, resourceGroupReferenceResource);
+   *   String project = "project-309310695";
+   *   String backendService = "backendService-1884714623";
+   *   ResourceGroupReference resourceGroupReferenceResource =
+   *       ResourceGroupReference.newBuilder().build();
+   *   BackendServiceGroupHealth response =
+   *       backendServicesClient.getHealth(project, backendService, resourceGroupReferenceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project
    * @param backendService Name of the BackendService resource to which the queried instance
@@ -629,7 +648,7 @@ public class BackendServicesClient implements BackgroundResource {
     return getHealth(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the most recent health check results for this BackendService.
    *
@@ -639,19 +658,17 @@ public class BackendServicesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String backendService = "";
-   *   String project = "";
-   *   ResourceGroupReference resourceGroupReferenceResource = ResourceGroupReference.newBuilder().build();
-   *   GetHealthBackendServiceRequest request = GetHealthBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setProject(project)
-   *     .setResourceGroupReferenceResource(resourceGroupReferenceResource)
-   *     .build();
+   *   GetHealthBackendServiceRequest request =
+   *       GetHealthBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .setResourceGroupReferenceResource(ResourceGroupReference.newBuilder().build())
+   *           .build();
    *   BackendServiceGroupHealth response = backendServicesClient.getHealth(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -660,7 +677,7 @@ public class BackendServicesClient implements BackgroundResource {
     return getHealthCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the most recent health check results for this BackendService.
    *
@@ -670,41 +687,40 @@ public class BackendServicesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String backendService = "";
-   *   String project = "";
-   *   ResourceGroupReference resourceGroupReferenceResource = ResourceGroupReference.newBuilder().build();
-   *   GetHealthBackendServiceRequest request = GetHealthBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setProject(project)
-   *     .setResourceGroupReferenceResource(resourceGroupReferenceResource)
-   *     .build();
-   *   ApiFuture&lt;BackendServiceGroupHealth&gt; future = backendServicesClient.getHealthCallable().futureCall(request);
-   *   // Do something
+   *   GetHealthBackendServiceRequest request =
+   *       GetHealthBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .setResourceGroupReferenceResource(ResourceGroupReference.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BackendServiceGroupHealth> future =
+   *       backendServicesClient.getHealthCallable().futureCall(request);
+   *   // Do something.
    *   BackendServiceGroupHealth response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetHealthBackendServiceRequest, BackendServiceGroupHealth>
       getHealthCallable() {
     return stub.getHealthCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a BackendService resource in the specified project using the data included in the
    * request. For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   Operation response = backendServicesClient.insert(project, backendServiceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param backendServiceResource The body resource for this request
@@ -719,24 +735,24 @@ public class BackendServicesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a BackendService resource in the specified project using the data included in the
    * request. For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   String project = "";
-   *   InsertBackendServiceRequest request = InsertBackendServiceRequest.newBuilder()
-   *     .setBackendServiceResource(backendServiceResource)
-   *     .setProject(project)
-   *     .build();
+   *   InsertBackendServiceRequest request =
+   *       InsertBackendServiceRequest.newBuilder()
+   *           .setBackendServiceResource(BackendService.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = backendServicesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -745,45 +761,45 @@ public class BackendServicesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a BackendService resource in the specified project using the data included in the
    * request. For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   String project = "";
-   *   InsertBackendServiceRequest request = InsertBackendServiceRequest.newBuilder()
-   *     .setBackendServiceResource(backendServiceResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = backendServicesClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertBackendServiceRequest request =
+   *       InsertBackendServiceRequest.newBuilder()
+   *           .setBackendServiceResource(BackendService.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = backendServicesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertBackendServiceRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of BackendService resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (BackendService element : backendServicesClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -794,23 +810,28 @@ public class BackendServicesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of BackendService resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String project = "";
-   *   ListBackendServicesRequest request = ListBackendServicesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListBackendServicesRequest request =
+   *       ListBackendServicesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (BackendService element : backendServicesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -819,45 +840,56 @@ public class BackendServicesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of BackendService resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String project = "";
-   *   ListBackendServicesRequest request = ListBackendServicesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = backendServicesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListBackendServicesRequest request =
+   *       ListBackendServicesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<BackendService> future =
+   *       backendServicesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (BackendService element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListBackendServicesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of BackendService resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String project = "";
-   *   ListBackendServicesRequest request = ListBackendServicesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListBackendServicesRequest request =
+   *       ListBackendServicesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     BackendServiceList response = backendServicesClient.listCallable().call(request);
-   *     for (BackendService element : response.getItemsList()) {
+   *     for (BackendService element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -868,13 +900,13 @@ public class BackendServicesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListBackendServicesRequest, BackendServiceList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified BackendService resource with the data included in the request. For more
    * information, see Backend services overview. This method supports PATCH semantics and uses the
@@ -882,14 +914,15 @@ public class BackendServicesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String project = "";
-   *   String backendService = "";
+   *   String project = "project-309310695";
+   *   String backendService = "backendService-1884714623";
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = backendServicesClient.patch(project, backendService, backendServiceResource);
+   *   Operation response =
+   *       backendServicesClient.patch(project, backendService, backendServiceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param backendService Name of the BackendService resource to patch.
@@ -907,7 +940,7 @@ public class BackendServicesClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified BackendService resource with the data included in the request. For more
    * information, see Backend services overview. This method supports PATCH semantics and uses the
@@ -915,19 +948,18 @@ public class BackendServicesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String backendService = "";
-   *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   String project = "";
-   *   PatchBackendServiceRequest request = PatchBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setBackendServiceResource(backendServiceResource)
-   *     .setProject(project)
-   *     .build();
+   *   PatchBackendServiceRequest request =
+   *       PatchBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setBackendServiceResource(BackendService.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = backendServicesClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -936,7 +968,7 @@ public class BackendServicesClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified BackendService resource with the data included in the request. For more
    * information, see Backend services overview. This method supports PATCH semantics and uses the
@@ -944,41 +976,43 @@ public class BackendServicesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String backendService = "";
-   *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   String project = "";
-   *   PatchBackendServiceRequest request = PatchBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setBackendServiceResource(backendServiceResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = backendServicesClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchBackendServiceRequest request =
+   *       PatchBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setBackendServiceResource(BackendService.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = backendServicesClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchBackendServiceRequest, Operation> patchCallable() {
     return stub.patchCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the Google Cloud Armor security policy for the specified backend service. For more
    * information, see Google Cloud Armor Overview
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String project = "";
-   *   String backendService = "";
-   *   SecurityPolicyReference securityPolicyReferenceResource = SecurityPolicyReference.newBuilder().build();
-   *   Operation response = backendServicesClient.setSecurityPolicy(project, backendService, securityPolicyReferenceResource);
+   *   String project = "project-309310695";
+   *   String backendService = "backendService-1884714623";
+   *   SecurityPolicyReference securityPolicyReferenceResource =
+   *       SecurityPolicyReference.newBuilder().build();
+   *   Operation response =
+   *       backendServicesClient.setSecurityPolicy(
+   *           project, backendService, securityPolicyReferenceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param backendService Name of the BackendService resource to which the security policy should
@@ -999,26 +1033,25 @@ public class BackendServicesClient implements BackgroundResource {
     return setSecurityPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the Google Cloud Armor security policy for the specified backend service. For more
    * information, see Google Cloud Armor Overview
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String backendService = "";
-   *   String project = "";
-   *   SecurityPolicyReference securityPolicyReferenceResource = SecurityPolicyReference.newBuilder().build();
-   *   SetSecurityPolicyBackendServiceRequest request = SetSecurityPolicyBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setProject(project)
-   *     .setSecurityPolicyReferenceResource(securityPolicyReferenceResource)
-   *     .build();
+   *   SetSecurityPolicyBackendServiceRequest request =
+   *       SetSecurityPolicyBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSecurityPolicyReferenceResource(SecurityPolicyReference.newBuilder().build())
+   *           .build();
    *   Operation response = backendServicesClient.setSecurityPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1027,49 +1060,50 @@ public class BackendServicesClient implements BackgroundResource {
     return setSecurityPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the Google Cloud Armor security policy for the specified backend service. For more
    * information, see Google Cloud Armor Overview
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String backendService = "";
-   *   String project = "";
-   *   SecurityPolicyReference securityPolicyReferenceResource = SecurityPolicyReference.newBuilder().build();
-   *   SetSecurityPolicyBackendServiceRequest request = SetSecurityPolicyBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setProject(project)
-   *     .setSecurityPolicyReferenceResource(securityPolicyReferenceResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = backendServicesClient.setSecurityPolicyCallable().futureCall(request);
-   *   // Do something
+   *   SetSecurityPolicyBackendServiceRequest request =
+   *       SetSecurityPolicyBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSecurityPolicyReferenceResource(SecurityPolicyReference.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backendServicesClient.setSecurityPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetSecurityPolicyBackendServiceRequest, Operation>
       setSecurityPolicyCallable() {
     return stub.setSecurityPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified BackendService resource with the data included in the request. For more
    * information, see Backend services overview.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String project = "";
-   *   String backendService = "";
+   *   String project = "project-309310695";
+   *   String backendService = "backendService-1884714623";
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = backendServicesClient.update(project, backendService, backendServiceResource);
+   *   Operation response =
+   *       backendServicesClient.update(project, backendService, backendServiceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param backendService Name of the BackendService resource to update.
@@ -1087,26 +1121,25 @@ public class BackendServicesClient implements BackgroundResource {
     return update(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified BackendService resource with the data included in the request. For more
    * information, see Backend services overview.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String backendService = "";
-   *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   String project = "";
-   *   UpdateBackendServiceRequest request = UpdateBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setBackendServiceResource(backendServiceResource)
-   *     .setProject(project)
-   *     .build();
+   *   UpdateBackendServiceRequest request =
+   *       UpdateBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setBackendServiceResource(BackendService.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = backendServicesClient.update(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1115,28 +1148,27 @@ public class BackendServicesClient implements BackgroundResource {
     return updateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified BackendService resource with the data included in the request. For more
    * information, see Backend services overview.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
-   *   String backendService = "";
-   *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   String project = "";
-   *   UpdateBackendServiceRequest request = UpdateBackendServiceRequest.newBuilder()
-   *     .setBackendService(backendService)
-   *     .setBackendServiceResource(backendServiceResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = backendServicesClient.updateCallable().futureCall(request);
-   *   // Do something
+   *   UpdateBackendServiceRequest request =
+   *       UpdateBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setBackendServiceResource(BackendService.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = backendServicesClient.updateCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdateBackendServiceRequest, Operation> updateCallable() {
     return stub.updateCallable();
@@ -1176,7 +1208,7 @@ public class BackendServicesClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListBackendServicesRequest,
           BackendServiceAggregatedList,
-          Entry<String, BackendServicesScopedList>,
+          Map.Entry<String, BackendServicesScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -1184,7 +1216,7 @@ public class BackendServicesClient implements BackgroundResource {
         PageContext<
                 AggregatedListBackendServicesRequest,
                 BackendServiceAggregatedList,
-                Entry<String, BackendServicesScopedList>>
+                Map.Entry<String, BackendServicesScopedList>>
             context,
         ApiFuture<BackendServiceAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -1209,14 +1241,14 @@ public class BackendServicesClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListBackendServicesRequest,
           BackendServiceAggregatedList,
-          Entry<String, BackendServicesScopedList>,
+          Map.Entry<String, BackendServicesScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListBackendServicesRequest,
                 BackendServiceAggregatedList,
-                Entry<String, BackendServicesScopedList>>
+                Map.Entry<String, BackendServicesScopedList>>
             context,
         BackendServiceAggregatedList response) {
       super(context, response);
@@ -1231,7 +1263,7 @@ public class BackendServicesClient implements BackgroundResource {
         PageContext<
                 AggregatedListBackendServicesRequest,
                 BackendServiceAggregatedList,
-                Entry<String, BackendServicesScopedList>>
+                Map.Entry<String, BackendServicesScopedList>>
             context,
         BackendServiceAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -1242,7 +1274,7 @@ public class BackendServicesClient implements BackgroundResource {
         PageContext<
                 AggregatedListBackendServicesRequest,
                 BackendServiceAggregatedList,
-                Entry<String, BackendServicesScopedList>>
+                Map.Entry<String, BackendServicesScopedList>>
             context,
         ApiFuture<BackendServiceAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1253,7 +1285,7 @@ public class BackendServicesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListBackendServicesRequest,
           BackendServiceAggregatedList,
-          Entry<String, BackendServicesScopedList>,
+          Map.Entry<String, BackendServicesScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

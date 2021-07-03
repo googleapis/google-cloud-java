@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionOperationsClient.ListPagedResponse;
@@ -39,29 +40,28 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationList;
 import com.google.cloud.compute.v1.WaitRegionOperationRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the RegionOperations service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           DeleteRegionOperationRequest, DeleteRegionOperationResponse>
       deleteMethodDescriptor =
           ApiMethodDescriptor
               .<DeleteRegionOperationRequest, DeleteRegionOperationResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionOperations.Delete")
+              .setFullMethodName("google.cloud.compute.v1.RegionOperations/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionOperationRequest>newBuilder()
@@ -74,9 +74,9 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteRegionOperationRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "operation", request.getOperation());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "operation", request.getOperation());
                               return fields;
                             }
                           })
@@ -89,7 +89,6 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteRegionOperationRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -97,7 +96,7 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
                           new FieldsExtractor<DeleteRegionOperationRequest, String>() {
                             @Override
                             public String extract(DeleteRegionOperationRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -107,11 +106,10 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetRegionOperationRequest, Operation>
+  private static final ApiMethodDescriptor<GetRegionOperationRequest, Operation>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetRegionOperationRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionOperations.Get")
+              .setFullMethodName("google.cloud.compute.v1.RegionOperations/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionOperationRequest>newBuilder()
@@ -123,9 +121,9 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetRegionOperationRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "operation", request.getOperation());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "operation", request.getOperation());
                               return fields;
                             }
                           })
@@ -138,7 +136,6 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetRegionOperationRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -146,7 +143,7 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
                           new FieldsExtractor<GetRegionOperationRequest, String>() {
                             @Override
                             public String extract(GetRegionOperationRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -156,11 +153,10 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListRegionOperationsRequest, OperationList>
+  private static final ApiMethodDescriptor<ListRegionOperationsRequest, OperationList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListRegionOperationsRequest, OperationList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionOperations.List")
+              .setFullMethodName("google.cloud.compute.v1.RegionOperations/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionOperationsRequest>newBuilder()
@@ -214,7 +210,7 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
                           new FieldsExtractor<ListRegionOperationsRequest, String>() {
                             @Override
                             public String extract(ListRegionOperationsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -224,11 +220,10 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<WaitRegionOperationRequest, Operation>
+  private static final ApiMethodDescriptor<WaitRegionOperationRequest, Operation>
       waitMethodDescriptor =
           ApiMethodDescriptor.<WaitRegionOperationRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionOperations.Wait")
+              .setFullMethodName("google.cloud.compute.v1.RegionOperations/Wait")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<WaitRegionOperationRequest>newBuilder()
@@ -240,9 +235,9 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<WaitRegionOperationRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "operation", request.getOperation());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "operation", request.getOperation());
                               return fields;
                             }
                           })
@@ -255,7 +250,6 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<WaitRegionOperationRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -263,7 +257,7 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
                           new FieldsExtractor<WaitRegionOperationRequest, String>() {
                             @Override
                             public String extract(WaitRegionOperationRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -273,8 +267,6 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteRegionOperationRequest, DeleteRegionOperationResponse>
       deleteCallable;
   private final UnaryCallable<GetRegionOperationRequest, Operation> getCallable;
@@ -282,6 +274,7 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
   private final UnaryCallable<ListRegionOperationsRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<WaitRegionOperationRequest, Operation> waitCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionOperationsStub create(RegionOperationsStubSettings settings)
@@ -358,26 +351,42 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
         callableFactory.createUnaryCallable(
             waitTransportSettings, settings.waitSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(waitMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteRegionOperationRequest, DeleteRegionOperationResponse>
       deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetRegionOperationRequest, Operation> getCallable() {
     return getCallable;
   }
 
-  public UnaryCallable<ListRegionOperationsRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListRegionOperationsRequest, OperationList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListRegionOperationsRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<WaitRegionOperationRequest, Operation> waitCallable() {
     return waitCallable;
   }

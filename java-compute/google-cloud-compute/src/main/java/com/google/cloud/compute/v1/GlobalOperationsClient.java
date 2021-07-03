@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,28 +31,26 @@ import com.google.cloud.compute.v1.stub.GlobalOperationsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The GlobalOperations API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
- *   String project = "";
- *   String operation = "";
+ *   String project = "project-309310695";
+ *   String operation = "operation1662702951";
  *   DeleteGlobalOperationResponse response = globalOperationsClient.delete(project, operation);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the globalOperationsClient object to clean up resources
+ * <p>Note: close() needs to be called on the GlobalOperationsClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -80,30 +79,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * GlobalOperationsSettings globalOperationsSettings =
  *     GlobalOperationsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * GlobalOperationsClient globalOperationsClient =
  *     GlobalOperationsClient.create(globalOperationsSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * GlobalOperationsSettings globalOperationsSettings =
  *     GlobalOperationsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GlobalOperationsClient globalOperationsClient =
  *     GlobalOperationsClient.create(globalOperationsSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class GlobalOperationsClient implements BackgroundResource {
   private final GlobalOperationsSettings settings;
   private final GlobalOperationsStub stub;
@@ -124,7 +120,7 @@ public class GlobalOperationsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of GlobalOperationsClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use GlobalOperationsSettings}.
+   * is for advanced usage - prefer using create(GlobalOperationsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GlobalOperationsClient create(GlobalOperationsStub stub) {
@@ -156,20 +152,21 @@ public class GlobalOperationsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of all operations.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, OperationsScopedList&gt; element : globalOperationsClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, OperationsScopedList> element :
+   *       globalOperationsClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -180,23 +177,30 @@ public class GlobalOperationsClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of all operations.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
-   *   String project = "";
-   *   AggregatedListGlobalOperationsRequest request = AggregatedListGlobalOperationsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, OperationsScopedList&gt; element : globalOperationsClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListGlobalOperationsRequest request =
+   *       AggregatedListGlobalOperationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, OperationsScopedList> element :
+   *       globalOperationsClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -206,46 +210,60 @@ public class GlobalOperationsClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of all operations.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
-   *   String project = "";
-   *   AggregatedListGlobalOperationsRequest request = AggregatedListGlobalOperationsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = globalOperationsClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, OperationsScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListGlobalOperationsRequest request =
+   *       AggregatedListGlobalOperationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, OperationsScopedList>> future =
+   *       globalOperationsClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, OperationsScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListGlobalOperationsRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of all operations.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
-   *   String project = "";
-   *   AggregatedListGlobalOperationsRequest request = AggregatedListGlobalOperationsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListGlobalOperationsRequest request =
+   *       AggregatedListGlobalOperationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     OperationAggregatedList response = globalOperationsClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, OperationsScopedList&gt; element : response.getItemsMap()) {
+   *     OperationAggregatedList response =
+   *         globalOperationsClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, OperationsScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -256,26 +274,26 @@ public class GlobalOperationsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListGlobalOperationsRequest, OperationAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Operations resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
-   *   String project = "";
-   *   String operation = "";
+   *   String project = "project-309310695";
+   *   String operation = "operation1662702951";
    *   DeleteGlobalOperationResponse response = globalOperationsClient.delete(project, operation);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param operation Name of the Operations resource to delete.
@@ -290,23 +308,22 @@ public class GlobalOperationsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Operations resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
-   *   String operation = "";
-   *   String project = "";
-   *   DeleteGlobalOperationRequest request = DeleteGlobalOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .setProject(project)
-   *     .build();
+   *   DeleteGlobalOperationRequest request =
+   *       DeleteGlobalOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setProject("project-309310695")
+   *           .build();
    *   DeleteGlobalOperationResponse response = globalOperationsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -315,45 +332,45 @@ public class GlobalOperationsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified Operations resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
-   *   String operation = "";
-   *   String project = "";
-   *   DeleteGlobalOperationRequest request = DeleteGlobalOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;DeleteGlobalOperationResponse&gt; future = globalOperationsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteGlobalOperationRequest request =
+   *       DeleteGlobalOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<DeleteGlobalOperationResponse> future =
+   *       globalOperationsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   DeleteGlobalOperationResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteGlobalOperationRequest, DeleteGlobalOperationResponse>
       deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified Operations resource. Gets a list of operations by making a `list()`
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
-   *   String project = "";
-   *   String operation = "";
+   *   String project = "project-309310695";
+   *   String operation = "operation1662702951";
    *   Operation response = globalOperationsClient.get(project, operation);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param operation Name of the Operations resource to return.
@@ -365,24 +382,23 @@ public class GlobalOperationsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified Operations resource. Gets a list of operations by making a `list()`
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
-   *   String operation = "";
-   *   String project = "";
-   *   GetGlobalOperationRequest request = GetGlobalOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .setProject(project)
-   *     .build();
+   *   GetGlobalOperationRequest request =
+   *       GetGlobalOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setProject("project-309310695")
+   *           .build();
    *   Operation response = globalOperationsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -391,45 +407,44 @@ public class GlobalOperationsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified Operations resource. Gets a list of operations by making a `list()`
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
-   *   String operation = "";
-   *   String project = "";
-   *   GetGlobalOperationRequest request = GetGlobalOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = globalOperationsClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetGlobalOperationRequest request =
+   *       GetGlobalOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<Operation> future = globalOperationsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetGlobalOperationRequest, Operation> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Operation resources contained within the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (Operation element : globalOperationsClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -440,23 +455,28 @@ public class GlobalOperationsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Operation resources contained within the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
-   *   String project = "";
-   *   ListGlobalOperationsRequest request = ListGlobalOperationsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListGlobalOperationsRequest request =
+   *       ListGlobalOperationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (Operation element : globalOperationsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -465,45 +485,55 @@ public class GlobalOperationsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Operation resources contained within the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
-   *   String project = "";
-   *   ListGlobalOperationsRequest request = ListGlobalOperationsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = globalOperationsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListGlobalOperationsRequest request =
+   *       ListGlobalOperationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Operation> future = globalOperationsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Operation element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListGlobalOperationsRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of Operation resources contained within the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
-   *   String project = "";
-   *   ListGlobalOperationsRequest request = ListGlobalOperationsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListGlobalOperationsRequest request =
+   *       ListGlobalOperationsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     OperationList response = globalOperationsClient.listCallable().call(request);
-   *     for (Operation element : response.getItemsList()) {
+   *     for (Operation element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -514,13 +544,13 @@ public class GlobalOperationsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListGlobalOperationsRequest, OperationList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Waits for the specified Operation resource to return as `DONE` or for the request to approach
    * the 2 minute deadline, and retrieves the specified Operation resource. This method differs from
@@ -535,13 +565,13 @@ public class GlobalOperationsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
-   *   String project = "";
-   *   String operation = "";
+   *   String project = "project-309310695";
+   *   String operation = "operation1662702951";
    *   Operation response = globalOperationsClient.wait(project, operation);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param operation Name of the Operations resource to return.
@@ -553,7 +583,7 @@ public class GlobalOperationsClient implements BackgroundResource {
     return wait(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Waits for the specified Operation resource to return as `DONE` or for the request to approach
    * the 2 minute deadline, and retrieves the specified Operation resource. This method differs from
@@ -568,17 +598,16 @@ public class GlobalOperationsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
-   *   String operation = "";
-   *   String project = "";
-   *   WaitGlobalOperationRequest request = WaitGlobalOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .setProject(project)
-   *     .build();
+   *   WaitGlobalOperationRequest request =
+   *       WaitGlobalOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setProject("project-309310695")
+   *           .build();
    *   Operation response = globalOperationsClient.wait(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -587,7 +616,7 @@ public class GlobalOperationsClient implements BackgroundResource {
     return waitCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Waits for the specified Operation resource to return as `DONE` or for the request to approach
    * the 2 minute deadline, and retrieves the specified Operation resource. This method differs from
@@ -602,19 +631,18 @@ public class GlobalOperationsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
-   *   String operation = "";
-   *   String project = "";
-   *   WaitGlobalOperationRequest request = WaitGlobalOperationRequest.newBuilder()
-   *     .setOperation(operation)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = globalOperationsClient.waitCallable().futureCall(request);
-   *   // Do something
+   *   WaitGlobalOperationRequest request =
+   *       WaitGlobalOperationRequest.newBuilder()
+   *           .setOperation("operation1662702951")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<Operation> future = globalOperationsClient.waitCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<WaitGlobalOperationRequest, Operation> waitCallable() {
     return stub.waitCallable();
@@ -654,7 +682,7 @@ public class GlobalOperationsClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListGlobalOperationsRequest,
           OperationAggregatedList,
-          Entry<String, OperationsScopedList>,
+          Map.Entry<String, OperationsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -662,7 +690,7 @@ public class GlobalOperationsClient implements BackgroundResource {
         PageContext<
                 AggregatedListGlobalOperationsRequest,
                 OperationAggregatedList,
-                Entry<String, OperationsScopedList>>
+                Map.Entry<String, OperationsScopedList>>
             context,
         ApiFuture<OperationAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -687,14 +715,14 @@ public class GlobalOperationsClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListGlobalOperationsRequest,
           OperationAggregatedList,
-          Entry<String, OperationsScopedList>,
+          Map.Entry<String, OperationsScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListGlobalOperationsRequest,
                 OperationAggregatedList,
-                Entry<String, OperationsScopedList>>
+                Map.Entry<String, OperationsScopedList>>
             context,
         OperationAggregatedList response) {
       super(context, response);
@@ -709,7 +737,7 @@ public class GlobalOperationsClient implements BackgroundResource {
         PageContext<
                 AggregatedListGlobalOperationsRequest,
                 OperationAggregatedList,
-                Entry<String, OperationsScopedList>>
+                Map.Entry<String, OperationsScopedList>>
             context,
         OperationAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -720,7 +748,7 @@ public class GlobalOperationsClient implements BackgroundResource {
         PageContext<
                 AggregatedListGlobalOperationsRequest,
                 OperationAggregatedList,
-                Entry<String, OperationsScopedList>>
+                Map.Entry<String, OperationsScopedList>>
             context,
         ApiFuture<OperationAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -731,7 +759,7 @@ public class GlobalOperationsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListGlobalOperationsRequest,
           OperationAggregatedList,
-          Entry<String, OperationsScopedList>,
+          Map.Entry<String, OperationsScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

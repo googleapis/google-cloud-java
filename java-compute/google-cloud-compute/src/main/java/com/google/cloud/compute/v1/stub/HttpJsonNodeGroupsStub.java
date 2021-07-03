@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.NodeGroupsClient.AggregatedListPagedResponse;
@@ -54,27 +55,26 @@ import com.google.cloud.compute.v1.SetNodeTemplateNodeGroupRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsNodeGroupRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the NodeGroups service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<AddNodesNodeGroupRequest, Operation>
+  private static final ApiMethodDescriptor<AddNodesNodeGroupRequest, Operation>
       addNodesMethodDescriptor =
           ApiMethodDescriptor.<AddNodesNodeGroupRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeGroups.AddNodes")
+              .setFullMethodName("google.cloud.compute.v1.NodeGroups/AddNodes")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddNodesNodeGroupRequest>newBuilder()
@@ -86,9 +86,9 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<AddNodesNodeGroupRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "nodeGroup", request.getNodeGroup());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "nodeGroup", request.getNodeGroup());
                               return fields;
                             }
                           })
@@ -125,11 +125,10 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<AggregatedListNodeGroupsRequest, NodeGroupAggregatedList>
+  private static final ApiMethodDescriptor<AggregatedListNodeGroupsRequest, NodeGroupAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor.<AggregatedListNodeGroupsRequest, NodeGroupAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeGroups.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.NodeGroups/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListNodeGroupsRequest>newBuilder()
@@ -187,7 +186,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                           new FieldsExtractor<AggregatedListNodeGroupsRequest, String>() {
                             @Override
                             public String extract(AggregatedListNodeGroupsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -197,11 +196,10 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteNodeGroupRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteNodeGroupRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteNodeGroupRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeGroups.Delete")
+              .setFullMethodName("google.cloud.compute.v1.NodeGroups/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteNodeGroupRequest>newBuilder()
@@ -213,9 +211,9 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteNodeGroupRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "nodeGroup", request.getNodeGroup());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "nodeGroup", request.getNodeGroup());
                               return fields;
                             }
                           })
@@ -238,7 +236,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                           new FieldsExtractor<DeleteNodeGroupRequest, String>() {
                             @Override
                             public String extract(DeleteNodeGroupRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -248,11 +246,10 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteNodesNodeGroupRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteNodesNodeGroupRequest, Operation>
       deleteNodesMethodDescriptor =
           ApiMethodDescriptor.<DeleteNodesNodeGroupRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeGroups.DeleteNodes")
+              .setFullMethodName("google.cloud.compute.v1.NodeGroups/DeleteNodes")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteNodesNodeGroupRequest>newBuilder()
@@ -265,9 +262,9 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteNodesNodeGroupRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "nodeGroup", request.getNodeGroup());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "nodeGroup", request.getNodeGroup());
                               return fields;
                             }
                           })
@@ -304,10 +301,9 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetNodeGroupRequest, NodeGroup> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetNodeGroupRequest, NodeGroup> getMethodDescriptor =
       ApiMethodDescriptor.<GetNodeGroupRequest, NodeGroup>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.NodeGroups.Get")
+          .setFullMethodName("google.cloud.compute.v1.NodeGroups/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetNodeGroupRequest>newBuilder()
@@ -319,9 +315,9 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<GetNodeGroupRequest> serializer =
                               ProtoRestSerializer.create();
+                          serializer.putPathParam(fields, "nodeGroup", request.getNodeGroup());
                           serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "zone", request.getZone());
-                          serializer.putPathParam(fields, "nodeGroup", request.getNodeGroup());
                           return fields;
                         }
                       })
@@ -332,7 +328,6 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetNodeGroupRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -340,7 +335,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                       new FieldsExtractor<GetNodeGroupRequest, String>() {
                         @Override
                         public String extract(GetNodeGroupRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -350,11 +345,10 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetIamPolicyNodeGroupRequest, Policy>
+  private static final ApiMethodDescriptor<GetIamPolicyNodeGroupRequest, Policy>
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyNodeGroupRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeGroups.GetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.NodeGroups/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyNodeGroupRequest>newBuilder()
@@ -368,8 +362,8 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                               ProtoRestSerializer<GetIamPolicyNodeGroupRequest> serializer =
                                   ProtoRestSerializer.create();
                               serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(fields, "resource", request.getResource());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -395,7 +389,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                           new FieldsExtractor<GetIamPolicyNodeGroupRequest, String>() {
                             @Override
                             public String extract(GetIamPolicyNodeGroupRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -405,11 +399,10 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertNodeGroupRequest, Operation>
+  private static final ApiMethodDescriptor<InsertNodeGroupRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertNodeGroupRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeGroups.Insert")
+              .setFullMethodName("google.cloud.compute.v1.NodeGroups/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertNodeGroupRequest>newBuilder()
@@ -458,11 +451,10 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListNodeGroupsRequest, NodeGroupList>
+  private static final ApiMethodDescriptor<ListNodeGroupsRequest, NodeGroupList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListNodeGroupsRequest, NodeGroupList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeGroups.List")
+              .setFullMethodName("google.cloud.compute.v1.NodeGroups/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListNodeGroupsRequest>newBuilder()
@@ -514,7 +506,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                           new FieldsExtractor<ListNodeGroupsRequest, String>() {
                             @Override
                             public String extract(ListNodeGroupsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -524,11 +516,10 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListNodesNodeGroupsRequest, NodeGroupsListNodes>
+  private static final ApiMethodDescriptor<ListNodesNodeGroupsRequest, NodeGroupsListNodes>
       listNodesMethodDescriptor =
           ApiMethodDescriptor.<ListNodesNodeGroupsRequest, NodeGroupsListNodes>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeGroups.ListNodes")
+              .setFullMethodName("google.cloud.compute.v1.NodeGroups/ListNodes")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListNodesNodeGroupsRequest>newBuilder()
@@ -540,9 +531,9 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<ListNodesNodeGroupsRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "nodeGroup", request.getNodeGroup());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "nodeGroup", request.getNodeGroup());
                               return fields;
                             }
                           })
@@ -582,7 +573,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                           new FieldsExtractor<ListNodesNodeGroupsRequest, String>() {
                             @Override
                             public String extract(ListNodesNodeGroupsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -592,10 +583,9 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchNodeGroupRequest, Operation> patchMethodDescriptor =
+  private static final ApiMethodDescriptor<PatchNodeGroupRequest, Operation> patchMethodDescriptor =
       ApiMethodDescriptor.<PatchNodeGroupRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.NodeGroups.Patch")
+          .setFullMethodName("google.cloud.compute.v1.NodeGroups/Patch")
           .setHttpMethod(HttpMethods.PATCH)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<PatchNodeGroupRequest>newBuilder()
@@ -607,9 +597,9 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<PatchNodeGroupRequest> serializer =
                               ProtoRestSerializer.create();
+                          serializer.putPathParam(fields, "nodeGroup", request.getNodeGroup());
                           serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "zone", request.getZone());
-                          serializer.putPathParam(fields, "nodeGroup", request.getNodeGroup());
                           return fields;
                         }
                       })
@@ -641,11 +631,10 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetIamPolicyNodeGroupRequest, Policy>
+  private static final ApiMethodDescriptor<SetIamPolicyNodeGroupRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyNodeGroupRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeGroups.SetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.NodeGroups/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyNodeGroupRequest>newBuilder()
@@ -659,8 +648,8 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                               ProtoRestSerializer<SetIamPolicyNodeGroupRequest> serializer =
                                   ProtoRestSerializer.create();
                               serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(fields, "resource", request.getResource());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -673,7 +662,6 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetIamPolicyNodeGroupRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -694,11 +682,10 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetNodeTemplateNodeGroupRequest, Operation>
+  private static final ApiMethodDescriptor<SetNodeTemplateNodeGroupRequest, Operation>
       setNodeTemplateMethodDescriptor =
           ApiMethodDescriptor.<SetNodeTemplateNodeGroupRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeGroups.SetNodeTemplate")
+              .setFullMethodName("google.cloud.compute.v1.NodeGroups/SetNodeTemplate")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetNodeTemplateNodeGroupRequest>newBuilder()
@@ -712,9 +699,9 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<SetNodeTemplateNodeGroupRequest> serializer =
                                   ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "nodeGroup", request.getNodeGroup());
                               serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(fields, "zone", request.getZone());
-                              serializer.putPathParam(fields, "nodeGroup", request.getNodeGroup());
                               return fields;
                             }
                           })
@@ -751,13 +738,12 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           ApiMethodDescriptor
               .<TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.NodeGroups.TestIamPermissions")
+              .setFullMethodName("google.cloud.compute.v1.NodeGroups/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsNodeGroupRequest>newBuilder()
@@ -772,8 +758,8 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                               ProtoRestSerializer<TestIamPermissionsNodeGroupRequest> serializer =
                                   ProtoRestSerializer.create();
                               serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
                               serializer.putPathParam(fields, "resource", request.getResource());
+                              serializer.putPathParam(fields, "zone", request.getZone());
                               return fields;
                             }
                           })
@@ -786,7 +772,6 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<TestIamPermissionsNodeGroupRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -806,8 +791,6 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                       .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
                       .build())
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AddNodesNodeGroupRequest, Operation> addNodesCallable;
   private final UnaryCallable<AggregatedListNodeGroupsRequest, NodeGroupAggregatedList>
@@ -830,6 +813,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
   private final UnaryCallable<TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonNodeGroupsStub create(NodeGroupsStubSettings settings)
@@ -980,72 +964,108 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(addNodesMethodDescriptor);
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(deleteNodesMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(listNodesMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(setNodeTemplateMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<AddNodesNodeGroupRequest, Operation> addNodesCallable() {
     return addNodesCallable;
   }
 
-  public UnaryCallable<AggregatedListNodeGroupsRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<AggregatedListNodeGroupsRequest, NodeGroupAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListNodeGroupsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteNodeGroupRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteNodesNodeGroupRequest, Operation> deleteNodesCallable() {
     return deleteNodesCallable;
   }
 
+  @Override
   public UnaryCallable<GetNodeGroupRequest, NodeGroup> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyNodeGroupRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<InsertNodeGroupRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListNodeGroupsRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListNodeGroupsRequest, NodeGroupList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListNodeGroupsRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNodesNodeGroupsRequest, NodeGroupsListNodes> listNodesCallable() {
+    return listNodesCallable;
+  }
+
+  @Override
   public UnaryCallable<ListNodesNodeGroupsRequest, ListNodesPagedResponse>
       listNodesPagedCallable() {
     return listNodesPagedCallable;
   }
 
-  public UnaryCallable<ListNodesNodeGroupsRequest, NodeGroupsListNodes> listNodesCallable() {
-    return listNodesCallable;
-  }
-
+  @Override
   public UnaryCallable<PatchNodeGroupRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyNodeGroupRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetNodeTemplateNodeGroupRequest, Operation> setNodeTemplateCallable() {
     return setNodeTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.SslCertificatesClient.AggregatedListPagedResponse;
@@ -42,29 +43,28 @@ import com.google.cloud.compute.v1.SslCertificate;
 import com.google.cloud.compute.v1.SslCertificateAggregatedList;
 import com.google.cloud.compute.v1.SslCertificateList;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the SslCertificates service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListSslCertificatesRequest, SslCertificateAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListSslCertificatesRequest, SslCertificateAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.SslCertificates.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.SslCertificates/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListSslCertificatesRequest>newBuilder()
@@ -122,7 +122,7 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
                           new FieldsExtractor<AggregatedListSslCertificatesRequest, String>() {
                             @Override
                             public String extract(AggregatedListSslCertificatesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -132,11 +132,10 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteSslCertificateRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteSslCertificateRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteSslCertificateRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.SslCertificates.Delete")
+              .setFullMethodName("google.cloud.compute.v1.SslCertificates/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteSslCertificateRequest>newBuilder()
@@ -175,7 +174,7 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
                           new FieldsExtractor<DeleteSslCertificateRequest, String>() {
                             @Override
                             public String extract(DeleteSslCertificateRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -185,11 +184,10 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetSslCertificateRequest, SslCertificate>
+  private static final ApiMethodDescriptor<GetSslCertificateRequest, SslCertificate>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetSslCertificateRequest, SslCertificate>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.SslCertificates.Get")
+              .setFullMethodName("google.cloud.compute.v1.SslCertificates/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetSslCertificateRequest>newBuilder()
@@ -216,7 +214,6 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetSslCertificateRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -224,7 +221,7 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
                           new FieldsExtractor<GetSslCertificateRequest, String>() {
                             @Override
                             public String extract(GetSslCertificateRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -234,11 +231,10 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertSslCertificateRequest, Operation>
+  private static final ApiMethodDescriptor<InsertSslCertificateRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertSslCertificateRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.SslCertificates.Insert")
+              .setFullMethodName("google.cloud.compute.v1.SslCertificates/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertSslCertificateRequest>newBuilder()
@@ -288,11 +284,10 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListSslCertificatesRequest, SslCertificateList>
+  private static final ApiMethodDescriptor<ListSslCertificatesRequest, SslCertificateList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListSslCertificatesRequest, SslCertificateList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.SslCertificates.List")
+              .setFullMethodName("google.cloud.compute.v1.SslCertificates/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListSslCertificatesRequest>newBuilder()
@@ -344,7 +339,7 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
                           new FieldsExtractor<ListSslCertificatesRequest, String>() {
                             @Override
                             public String extract(ListSslCertificatesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -353,8 +348,6 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
                       .setDefaultInstance(SslCertificateList.getDefaultInstance())
                       .build())
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AggregatedListSslCertificatesRequest, SslCertificateAggregatedList>
       aggregatedListCallable;
@@ -366,6 +359,7 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
   private final UnaryCallable<ListSslCertificatesRequest, SslCertificateList> listCallable;
   private final UnaryCallable<ListSslCertificatesRequest, ListPagedResponse> listPagedCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonSslCertificatesStub create(SslCertificatesStubSettings settings)
@@ -452,37 +446,56 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListSslCertificatesRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListSslCertificatesRequest, SslCertificateAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListSslCertificatesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteSslCertificateRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetSslCertificateRequest, SslCertificate> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertSslCertificateRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListSslCertificatesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListSslCertificatesRequest, SslCertificateList> listCallable() {
     return listCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSslCertificatesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
   }
 
   @Override

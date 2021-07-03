@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.ProjectsClient.GetXpnResourcesPagedResponse;
@@ -50,27 +51,26 @@ import com.google.cloud.compute.v1.SetDefaultNetworkTierProjectRequest;
 import com.google.cloud.compute.v1.SetUsageExportBucketProjectRequest;
 import com.google.cloud.compute.v1.XpnHostList;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the Projects service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonProjectsStub extends ProjectsStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DisableXpnHostProjectRequest, Operation>
+  private static final ApiMethodDescriptor<DisableXpnHostProjectRequest, Operation>
       disableXpnHostMethodDescriptor =
           ApiMethodDescriptor.<DisableXpnHostProjectRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Projects.DisableXpnHost")
+              .setFullMethodName("google.cloud.compute.v1.Projects/DisableXpnHost")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DisableXpnHostProjectRequest>newBuilder()
@@ -107,7 +107,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                           new FieldsExtractor<DisableXpnHostProjectRequest, String>() {
                             @Override
                             public String extract(DisableXpnHostProjectRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -117,11 +117,10 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DisableXpnResourceProjectRequest, Operation>
+  private static final ApiMethodDescriptor<DisableXpnResourceProjectRequest, Operation>
       disableXpnResourceMethodDescriptor =
           ApiMethodDescriptor.<DisableXpnResourceProjectRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Projects.DisableXpnResource")
+              .setFullMethodName("google.cloud.compute.v1.Projects/DisableXpnResource")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DisableXpnResourceProjectRequest>newBuilder()
@@ -172,11 +171,10 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<EnableXpnHostProjectRequest, Operation>
+  private static final ApiMethodDescriptor<EnableXpnHostProjectRequest, Operation>
       enableXpnHostMethodDescriptor =
           ApiMethodDescriptor.<EnableXpnHostProjectRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Projects.EnableXpnHost")
+              .setFullMethodName("google.cloud.compute.v1.Projects/EnableXpnHost")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<EnableXpnHostProjectRequest>newBuilder()
@@ -213,7 +211,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                           new FieldsExtractor<EnableXpnHostProjectRequest, String>() {
                             @Override
                             public String extract(EnableXpnHostProjectRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -223,11 +221,10 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<EnableXpnResourceProjectRequest, Operation>
+  private static final ApiMethodDescriptor<EnableXpnResourceProjectRequest, Operation>
       enableXpnResourceMethodDescriptor =
           ApiMethodDescriptor.<EnableXpnResourceProjectRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Projects.EnableXpnResource")
+              .setFullMethodName("google.cloud.compute.v1.Projects/EnableXpnResource")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<EnableXpnResourceProjectRequest>newBuilder()
@@ -278,10 +275,9 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetProjectRequest, Project> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetProjectRequest, Project> getMethodDescriptor =
       ApiMethodDescriptor.<GetProjectRequest, Project>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Projects.Get")
+          .setFullMethodName("google.cloud.compute.v1.Projects/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetProjectRequest>newBuilder()
@@ -304,7 +300,6 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetProjectRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -312,7 +307,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                       new FieldsExtractor<GetProjectRequest, String>() {
                         @Override
                         public String extract(GetProjectRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -322,11 +317,10 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetXpnHostProjectRequest, Project>
+  private static final ApiMethodDescriptor<GetXpnHostProjectRequest, Project>
       getXpnHostMethodDescriptor =
           ApiMethodDescriptor.<GetXpnHostProjectRequest, Project>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Projects.GetXpnHost")
+              .setFullMethodName("google.cloud.compute.v1.Projects/GetXpnHost")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetXpnHostProjectRequest>newBuilder()
@@ -351,7 +345,6 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetXpnHostProjectRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -359,7 +352,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                           new FieldsExtractor<GetXpnHostProjectRequest, String>() {
                             @Override
                             public String extract(GetXpnHostProjectRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -369,11 +362,10 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetXpnResourcesProjectsRequest, ProjectsGetXpnResources>
+  private static final ApiMethodDescriptor<GetXpnResourcesProjectsRequest, ProjectsGetXpnResources>
       getXpnResourcesMethodDescriptor =
           ApiMethodDescriptor.<GetXpnResourcesProjectsRequest, ProjectsGetXpnResources>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Projects.GetXpnResources")
+              .setFullMethodName("google.cloud.compute.v1.Projects/GetXpnResources")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetXpnResourcesProjectsRequest>newBuilder()
@@ -427,7 +419,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                           new FieldsExtractor<GetXpnResourcesProjectsRequest, String>() {
                             @Override
                             public String extract(GetXpnResourcesProjectsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -437,11 +429,10 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListXpnHostsProjectsRequest, XpnHostList>
+  private static final ApiMethodDescriptor<ListXpnHostsProjectsRequest, XpnHostList>
       listXpnHostsMethodDescriptor =
           ApiMethodDescriptor.<ListXpnHostsProjectsRequest, XpnHostList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Projects.ListXpnHosts")
+              .setFullMethodName("google.cloud.compute.v1.Projects/ListXpnHosts")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListXpnHostsProjectsRequest>newBuilder()
@@ -507,11 +498,10 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<MoveDiskProjectRequest, Operation>
+  private static final ApiMethodDescriptor<MoveDiskProjectRequest, Operation>
       moveDiskMethodDescriptor =
           ApiMethodDescriptor.<MoveDiskProjectRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Projects.MoveDisk")
+              .setFullMethodName("google.cloud.compute.v1.Projects/MoveDisk")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<MoveDiskProjectRequest>newBuilder()
@@ -559,11 +549,10 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<MoveInstanceProjectRequest, Operation>
+  private static final ApiMethodDescriptor<MoveInstanceProjectRequest, Operation>
       moveInstanceMethodDescriptor =
           ApiMethodDescriptor.<MoveInstanceProjectRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Projects.MoveInstance")
+              .setFullMethodName("google.cloud.compute.v1.Projects/MoveInstance")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<MoveInstanceProjectRequest>newBuilder()
@@ -612,11 +601,10 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetCommonInstanceMetadataProjectRequest, Operation>
+  private static final ApiMethodDescriptor<SetCommonInstanceMetadataProjectRequest, Operation>
       setCommonInstanceMetadataMethodDescriptor =
           ApiMethodDescriptor.<SetCommonInstanceMetadataProjectRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Projects.SetCommonInstanceMetadata")
+              .setFullMethodName("google.cloud.compute.v1.Projects/SetCommonInstanceMetadata")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetCommonInstanceMetadataProjectRequest>newBuilder()
@@ -666,11 +654,10 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetDefaultNetworkTierProjectRequest, Operation>
+  private static final ApiMethodDescriptor<SetDefaultNetworkTierProjectRequest, Operation>
       setDefaultNetworkTierMethodDescriptor =
           ApiMethodDescriptor.<SetDefaultNetworkTierProjectRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Projects.SetDefaultNetworkTier")
+              .setFullMethodName("google.cloud.compute.v1.Projects/SetDefaultNetworkTier")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetDefaultNetworkTierProjectRequest>newBuilder()
@@ -721,11 +708,10 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetUsageExportBucketProjectRequest, Operation>
+  private static final ApiMethodDescriptor<SetUsageExportBucketProjectRequest, Operation>
       setUsageExportBucketMethodDescriptor =
           ApiMethodDescriptor.<SetUsageExportBucketProjectRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Projects.SetUsageExportBucket")
+              .setFullMethodName("google.cloud.compute.v1.Projects/SetUsageExportBucket")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetUsageExportBucketProjectRequest>newBuilder()
@@ -776,8 +762,6 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DisableXpnHostProjectRequest, Operation> disableXpnHostCallable;
   private final UnaryCallable<DisableXpnResourceProjectRequest, Operation>
       disableXpnResourceCallable;
@@ -801,6 +785,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
   private final UnaryCallable<SetUsageExportBucketProjectRequest, Operation>
       setUsageExportBucketCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonProjectsStub create(ProjectsStubSettings settings)
@@ -956,70 +941,105 @@ public class HttpJsonProjectsStub extends ProjectsStub {
             settings.setUsageExportBucketSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(disableXpnHostMethodDescriptor);
+    methodDescriptors.add(disableXpnResourceMethodDescriptor);
+    methodDescriptors.add(enableXpnHostMethodDescriptor);
+    methodDescriptors.add(enableXpnResourceMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getXpnHostMethodDescriptor);
+    methodDescriptors.add(getXpnResourcesMethodDescriptor);
+    methodDescriptors.add(listXpnHostsMethodDescriptor);
+    methodDescriptors.add(moveDiskMethodDescriptor);
+    methodDescriptors.add(moveInstanceMethodDescriptor);
+    methodDescriptors.add(setCommonInstanceMetadataMethodDescriptor);
+    methodDescriptors.add(setDefaultNetworkTierMethodDescriptor);
+    methodDescriptors.add(setUsageExportBucketMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DisableXpnHostProjectRequest, Operation> disableXpnHostCallable() {
     return disableXpnHostCallable;
   }
 
+  @Override
   public UnaryCallable<DisableXpnResourceProjectRequest, Operation> disableXpnResourceCallable() {
     return disableXpnResourceCallable;
   }
 
+  @Override
   public UnaryCallable<EnableXpnHostProjectRequest, Operation> enableXpnHostCallable() {
     return enableXpnHostCallable;
   }
 
+  @Override
   public UnaryCallable<EnableXpnResourceProjectRequest, Operation> enableXpnResourceCallable() {
     return enableXpnResourceCallable;
   }
 
+  @Override
   public UnaryCallable<GetProjectRequest, Project> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetXpnHostProjectRequest, Project> getXpnHostCallable() {
     return getXpnHostCallable;
   }
 
-  public UnaryCallable<GetXpnResourcesProjectsRequest, GetXpnResourcesPagedResponse>
-      getXpnResourcesPagedCallable() {
-    return getXpnResourcesPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<GetXpnResourcesProjectsRequest, ProjectsGetXpnResources>
       getXpnResourcesCallable() {
     return getXpnResourcesCallable;
   }
 
+  @Override
+  public UnaryCallable<GetXpnResourcesProjectsRequest, GetXpnResourcesPagedResponse>
+      getXpnResourcesPagedCallable() {
+    return getXpnResourcesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListXpnHostsProjectsRequest, XpnHostList> listXpnHostsCallable() {
+    return listXpnHostsCallable;
+  }
+
+  @Override
   public UnaryCallable<ListXpnHostsProjectsRequest, ListXpnHostsPagedResponse>
       listXpnHostsPagedCallable() {
     return listXpnHostsPagedCallable;
   }
 
-  public UnaryCallable<ListXpnHostsProjectsRequest, XpnHostList> listXpnHostsCallable() {
-    return listXpnHostsCallable;
-  }
-
+  @Override
   public UnaryCallable<MoveDiskProjectRequest, Operation> moveDiskCallable() {
     return moveDiskCallable;
   }
 
+  @Override
   public UnaryCallable<MoveInstanceProjectRequest, Operation> moveInstanceCallable() {
     return moveInstanceCallable;
   }
 
+  @Override
   public UnaryCallable<SetCommonInstanceMetadataProjectRequest, Operation>
       setCommonInstanceMetadataCallable() {
     return setCommonInstanceMetadataCallable;
   }
 
+  @Override
   public UnaryCallable<SetDefaultNetworkTierProjectRequest, Operation>
       setDefaultNetworkTierCallable() {
     return setDefaultNetworkTierCallable;
   }
 
+  @Override
   public UnaryCallable<SetUsageExportBucketProjectRequest, Operation>
       setUsageExportBucketCallable() {
     return setUsageExportBucketCallable;

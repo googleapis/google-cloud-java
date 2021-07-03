@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.SslPoliciesClient.ListPagedResponse;
@@ -42,27 +43,26 @@ import com.google.cloud.compute.v1.SslPoliciesList;
 import com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse;
 import com.google.cloud.compute.v1.SslPolicy;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the SslPolicies service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteSslPolicyRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteSslPolicyRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteSslPolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.SslPolicies.Delete")
+              .setFullMethodName("google.cloud.compute.v1.SslPolicies/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteSslPolicyRequest>newBuilder()
@@ -98,7 +98,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                           new FieldsExtractor<DeleteSslPolicyRequest, String>() {
                             @Override
                             public String extract(DeleteSslPolicyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -108,10 +108,9 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetSslPolicyRequest, SslPolicy> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetSslPolicyRequest, SslPolicy> getMethodDescriptor =
       ApiMethodDescriptor.<GetSslPolicyRequest, SslPolicy>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.SslPolicies.Get")
+          .setFullMethodName("google.cloud.compute.v1.SslPolicies/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetSslPolicyRequest>newBuilder()
@@ -135,7 +134,6 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetSslPolicyRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -143,7 +141,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                       new FieldsExtractor<GetSslPolicyRequest, String>() {
                         @Override
                         public String extract(GetSslPolicyRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -153,11 +151,10 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertSslPolicyRequest, Operation>
+  private static final ApiMethodDescriptor<InsertSslPolicyRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertSslPolicyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.SslPolicies.Insert")
+              .setFullMethodName("google.cloud.compute.v1.SslPolicies/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertSslPolicyRequest>newBuilder()
@@ -203,11 +200,10 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListSslPoliciesRequest, SslPoliciesList>
+  private static final ApiMethodDescriptor<ListSslPoliciesRequest, SslPoliciesList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListSslPoliciesRequest, SslPoliciesList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.SslPolicies.List")
+              .setFullMethodName("google.cloud.compute.v1.SslPolicies/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListSslPoliciesRequest>newBuilder()
@@ -258,7 +254,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                           new FieldsExtractor<ListSslPoliciesRequest, String>() {
                             @Override
                             public String extract(ListSslPoliciesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -268,14 +264,13 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           ListAvailableFeaturesSslPoliciesRequest, SslPoliciesListAvailableFeaturesResponse>
       listAvailableFeaturesMethodDescriptor =
           ApiMethodDescriptor
               .<ListAvailableFeaturesSslPoliciesRequest, SslPoliciesListAvailableFeaturesResponse>
                   newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.SslPolicies.ListAvailableFeatures")
+              .setFullMethodName("google.cloud.compute.v1.SslPolicies/ListAvailableFeatures")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListAvailableFeaturesSslPoliciesRequest>newBuilder()
@@ -330,7 +325,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                           new FieldsExtractor<ListAvailableFeaturesSslPoliciesRequest, String>() {
                             @Override
                             public String extract(ListAvailableFeaturesSslPoliciesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -341,10 +336,9 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchSslPolicyRequest, Operation> patchMethodDescriptor =
+  private static final ApiMethodDescriptor<PatchSslPolicyRequest, Operation> patchMethodDescriptor =
       ApiMethodDescriptor.<PatchSslPolicyRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.SslPolicies.Patch")
+          .setFullMethodName("google.cloud.compute.v1.SslPolicies/Patch")
           .setHttpMethod(HttpMethods.PATCH)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<PatchSslPolicyRequest>newBuilder()
@@ -389,8 +383,6 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                   .build())
           .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteSslPolicyRequest, Operation> deleteCallable;
   private final UnaryCallable<GetSslPolicyRequest, SslPolicy> getCallable;
   private final UnaryCallable<InsertSslPolicyRequest, Operation> insertCallable;
@@ -401,6 +393,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
       listAvailableFeaturesCallable;
   private final UnaryCallable<PatchSslPolicyRequest, Operation> patchCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonSslPoliciesStub create(SslPoliciesStubSettings settings)
@@ -494,35 +487,55 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(listAvailableFeaturesMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteSslPolicyRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetSslPolicyRequest, SslPolicy> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertSslPolicyRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListSslPoliciesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListSslPoliciesRequest, SslPoliciesList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListSslPoliciesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<
           ListAvailableFeaturesSslPoliciesRequest, SslPoliciesListAvailableFeaturesResponse>
       listAvailableFeaturesCallable() {
     return listAvailableFeaturesCallable;
   }
 
+  @Override
   public UnaryCallable<PatchSslPolicyRequest, Operation> patchCallable() {
     return patchCallable;
   }

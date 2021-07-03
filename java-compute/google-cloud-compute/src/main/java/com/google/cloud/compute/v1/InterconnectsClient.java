@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,24 +34,22 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The Interconnects API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
- *   String project = "";
- *   String interconnect = "";
+ *   String project = "project-309310695";
+ *   String interconnect = "interconnect-849140594";
  *   Operation response = interconnectsClient.delete(project, interconnect);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the interconnectsClient object to clean up resources such
+ * <p>Note: close() needs to be called on the InterconnectsClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -78,30 +77,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * InterconnectsSettings interconnectsSettings =
  *     InterconnectsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * InterconnectsClient interconnectsClient =
- *     InterconnectsClient.create(interconnectsSettings);
- * </code>
- * </pre>
+ * InterconnectsClient interconnectsClient = InterconnectsClient.create(interconnectsSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * InterconnectsSettings interconnectsSettings =
  *     InterconnectsSettings.newBuilder().setEndpoint(myEndpoint).build();
- * InterconnectsClient interconnectsClient =
- *     InterconnectsClient.create(interconnectsSettings);
- * </code>
- * </pre>
+ * InterconnectsClient interconnectsClient = InterconnectsClient.create(interconnectsSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class InterconnectsClient implements BackgroundResource {
   private final InterconnectsSettings settings;
   private final InterconnectsStub stub;
@@ -122,7 +116,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of InterconnectsClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use InterconnectsSettings}.
+   * for advanced usage - prefer using create(InterconnectsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final InterconnectsClient create(InterconnectsStub stub) {
@@ -154,19 +148,19 @@ public class InterconnectsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified interconnect.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   String project = "";
-   *   String interconnect = "";
+   *   String project = "project-309310695";
+   *   String interconnect = "interconnect-849140594";
    *   Operation response = interconnectsClient.delete(project, interconnect);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param interconnect Name of the interconnect to delete.
@@ -181,23 +175,23 @@ public class InterconnectsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified interconnect.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   String interconnect = "";
-   *   String project = "";
-   *   DeleteInterconnectRequest request = DeleteInterconnectRequest.newBuilder()
-   *     .setInterconnect(interconnect)
-   *     .setProject(project)
-   *     .build();
+   *   DeleteInterconnectRequest request =
+   *       DeleteInterconnectRequest.newBuilder()
+   *           .setInterconnect("interconnect-849140594")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = interconnectsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -206,44 +200,44 @@ public class InterconnectsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified interconnect.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   String interconnect = "";
-   *   String project = "";
-   *   DeleteInterconnectRequest request = DeleteInterconnectRequest.newBuilder()
-   *     .setInterconnect(interconnect)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = interconnectsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteInterconnectRequest request =
+   *       DeleteInterconnectRequest.newBuilder()
+   *           .setInterconnect("interconnect-849140594")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = interconnectsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteInterconnectRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified interconnect. Get a list of available interconnects by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   String project = "";
-   *   String interconnect = "";
+   *   String project = "project-309310695";
+   *   String interconnect = "interconnect-849140594";
    *   Interconnect response = interconnectsClient.get(project, interconnect);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param interconnect Name of the interconnect to return.
@@ -258,24 +252,23 @@ public class InterconnectsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified interconnect. Get a list of available interconnects by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   String interconnect = "";
-   *   String project = "";
-   *   GetInterconnectRequest request = GetInterconnectRequest.newBuilder()
-   *     .setInterconnect(interconnect)
-   *     .setProject(project)
-   *     .build();
+   *   GetInterconnectRequest request =
+   *       GetInterconnectRequest.newBuilder()
+   *           .setInterconnect("interconnect-849140594")
+   *           .setProject("project-309310695")
+   *           .build();
    *   Interconnect response = interconnectsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -284,44 +277,44 @@ public class InterconnectsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified interconnect. Get a list of available interconnects by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   String interconnect = "";
-   *   String project = "";
-   *   GetInterconnectRequest request = GetInterconnectRequest.newBuilder()
-   *     .setInterconnect(interconnect)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Interconnect&gt; future = interconnectsClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetInterconnectRequest request =
+   *       GetInterconnectRequest.newBuilder()
+   *           .setInterconnect("interconnect-849140594")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<Interconnect> future = interconnectsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   Interconnect response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetInterconnectRequest, Interconnect> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the interconnectDiagnostics for the specified interconnect.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   String project = "";
-   *   String interconnect = "";
-   *   InterconnectsGetDiagnosticsResponse response = interconnectsClient.getDiagnostics(project, interconnect);
+   *   String project = "project-309310695";
+   *   String interconnect = "interconnect-849140594";
+   *   InterconnectsGetDiagnosticsResponse response =
+   *       interconnectsClient.getDiagnostics(project, interconnect);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param interconnect Name of the interconnect resource to query.
@@ -337,23 +330,22 @@ public class InterconnectsClient implements BackgroundResource {
     return getDiagnostics(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the interconnectDiagnostics for the specified interconnect.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   String interconnect = "";
-   *   String project = "";
-   *   GetDiagnosticsInterconnectRequest request = GetDiagnosticsInterconnectRequest.newBuilder()
-   *     .setInterconnect(interconnect)
-   *     .setProject(project)
-   *     .build();
+   *   GetDiagnosticsInterconnectRequest request =
+   *       GetDiagnosticsInterconnectRequest.newBuilder()
+   *           .setInterconnect("interconnect-849140594")
+   *           .setProject("project-309310695")
+   *           .build();
    *   InterconnectsGetDiagnosticsResponse response = interconnectsClient.getDiagnostics(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -363,44 +355,44 @@ public class InterconnectsClient implements BackgroundResource {
     return getDiagnosticsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the interconnectDiagnostics for the specified interconnect.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   String interconnect = "";
-   *   String project = "";
-   *   GetDiagnosticsInterconnectRequest request = GetDiagnosticsInterconnectRequest.newBuilder()
-   *     .setInterconnect(interconnect)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;InterconnectsGetDiagnosticsResponse&gt; future = interconnectsClient.getDiagnosticsCallable().futureCall(request);
-   *   // Do something
+   *   GetDiagnosticsInterconnectRequest request =
+   *       GetDiagnosticsInterconnectRequest.newBuilder()
+   *           .setInterconnect("interconnect-849140594")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<InterconnectsGetDiagnosticsResponse> future =
+   *       interconnectsClient.getDiagnosticsCallable().futureCall(request);
+   *   // Do something.
    *   InterconnectsGetDiagnosticsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetDiagnosticsInterconnectRequest, InterconnectsGetDiagnosticsResponse>
       getDiagnosticsCallable() {
     return stub.getDiagnosticsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Interconnect in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
    *   Operation response = interconnectsClient.insert(project, interconnectResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param interconnectResource The body resource for this request
@@ -415,23 +407,23 @@ public class InterconnectsClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Interconnect in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   Interconnect interconnectResource = Interconnect.newBuilder().build();
-   *   String project = "";
-   *   InsertInterconnectRequest request = InsertInterconnectRequest.newBuilder()
-   *     .setInterconnectResource(interconnectResource)
-   *     .setProject(project)
-   *     .build();
+   *   InsertInterconnectRequest request =
+   *       InsertInterconnectRequest.newBuilder()
+   *           .setInterconnectResource(Interconnect.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = interconnectsClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -440,44 +432,44 @@ public class InterconnectsClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Interconnect in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   Interconnect interconnectResource = Interconnect.newBuilder().build();
-   *   String project = "";
-   *   InsertInterconnectRequest request = InsertInterconnectRequest.newBuilder()
-   *     .setInterconnectResource(interconnectResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = interconnectsClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertInterconnectRequest request =
+   *       InsertInterconnectRequest.newBuilder()
+   *           .setInterconnectResource(Interconnect.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = interconnectsClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertInterconnectRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of interconnect available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (Interconnect element : interconnectsClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -488,23 +480,28 @@ public class InterconnectsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of interconnect available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   String project = "";
-   *   ListInterconnectsRequest request = ListInterconnectsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListInterconnectsRequest request =
+   *       ListInterconnectsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (Interconnect element : interconnectsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -513,45 +510,55 @@ public class InterconnectsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of interconnect available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   String project = "";
-   *   ListInterconnectsRequest request = ListInterconnectsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = interconnectsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListInterconnectsRequest request =
+   *       ListInterconnectsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Interconnect> future = interconnectsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Interconnect element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListInterconnectsRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of interconnect available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   String project = "";
-   *   ListInterconnectsRequest request = ListInterconnectsRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListInterconnectsRequest request =
+   *       ListInterconnectsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     InterconnectList response = interconnectsClient.listCallable().call(request);
-   *     for (Interconnect element : response.getItemsList()) {
+   *     for (Interconnect element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -562,27 +569,27 @@ public class InterconnectsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListInterconnectsRequest, InterconnectList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified interconnect with the data included in the request. This method supports
    * PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   String project = "";
-   *   String interconnect = "";
+   *   String project = "project-309310695";
+   *   String interconnect = "interconnect-849140594";
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
    *   Operation response = interconnectsClient.patch(project, interconnect, interconnectResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param interconnect Name of the interconnect to update.
@@ -600,26 +607,25 @@ public class InterconnectsClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified interconnect with the data included in the request. This method supports
    * PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   String interconnect = "";
-   *   Interconnect interconnectResource = Interconnect.newBuilder().build();
-   *   String project = "";
-   *   PatchInterconnectRequest request = PatchInterconnectRequest.newBuilder()
-   *     .setInterconnect(interconnect)
-   *     .setInterconnectResource(interconnectResource)
-   *     .setProject(project)
-   *     .build();
+   *   PatchInterconnectRequest request =
+   *       PatchInterconnectRequest.newBuilder()
+   *           .setInterconnect("interconnect-849140594")
+   *           .setInterconnectResource(Interconnect.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = interconnectsClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -628,28 +634,27 @@ public class InterconnectsClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified interconnect with the data included in the request. This method supports
    * PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
-   *   String interconnect = "";
-   *   Interconnect interconnectResource = Interconnect.newBuilder().build();
-   *   String project = "";
-   *   PatchInterconnectRequest request = PatchInterconnectRequest.newBuilder()
-   *     .setInterconnect(interconnect)
-   *     .setInterconnectResource(interconnectResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = interconnectsClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchInterconnectRequest request =
+   *       PatchInterconnectRequest.newBuilder()
+   *           .setInterconnect("interconnect-849140594")
+   *           .setInterconnectResource(Interconnect.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = interconnectsClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchInterconnectRequest, Operation> patchCallable() {
     return stub.patchCallable();

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.MachineTypesClient.AggregatedListPagedResponse;
@@ -39,29 +40,28 @@ import com.google.cloud.compute.v1.MachineType;
 import com.google.cloud.compute.v1.MachineTypeAggregatedList;
 import com.google.cloud.compute.v1.MachineTypeList;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the MachineTypes service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonMachineTypesStub extends MachineTypesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListMachineTypesRequest, MachineTypeAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListMachineTypesRequest, MachineTypeAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.MachineTypes.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.MachineTypes/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListMachineTypesRequest>newBuilder()
@@ -119,7 +119,7 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
                           new FieldsExtractor<AggregatedListMachineTypesRequest, String>() {
                             @Override
                             public String extract(AggregatedListMachineTypesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -129,10 +129,9 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetMachineTypeRequest, MachineType> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetMachineTypeRequest, MachineType> getMethodDescriptor =
       ApiMethodDescriptor.<GetMachineTypeRequest, MachineType>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.MachineTypes.Get")
+          .setFullMethodName("google.cloud.compute.v1.MachineTypes/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetMachineTypeRequest>newBuilder()
@@ -144,9 +143,9 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
                           Map<String, String> fields = new HashMap<>();
                           ProtoRestSerializer<GetMachineTypeRequest> serializer =
                               ProtoRestSerializer.create();
+                          serializer.putPathParam(fields, "machineType", request.getMachineType());
                           serializer.putPathParam(fields, "project", request.getProject());
                           serializer.putPathParam(fields, "zone", request.getZone());
-                          serializer.putPathParam(fields, "machineType", request.getMachineType());
                           return fields;
                         }
                       })
@@ -157,7 +156,6 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetMachineTypeRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -165,7 +163,7 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
                       new FieldsExtractor<GetMachineTypeRequest, String>() {
                         @Override
                         public String extract(GetMachineTypeRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -175,11 +173,10 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListMachineTypesRequest, MachineTypeList>
+  private static final ApiMethodDescriptor<ListMachineTypesRequest, MachineTypeList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListMachineTypesRequest, MachineTypeList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.MachineTypes.List")
+              .setFullMethodName("google.cloud.compute.v1.MachineTypes/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListMachineTypesRequest>newBuilder()
@@ -232,7 +229,7 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
                           new FieldsExtractor<ListMachineTypesRequest, String>() {
                             @Override
                             public String extract(ListMachineTypesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -242,8 +239,6 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<AggregatedListMachineTypesRequest, MachineTypeAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListMachineTypesRequest, AggregatedListPagedResponse>
@@ -252,6 +247,7 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
   private final UnaryCallable<ListMachineTypesRequest, MachineTypeList> listCallable;
   private final UnaryCallable<ListMachineTypesRequest, ListPagedResponse> listPagedCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonMachineTypesStub create(MachineTypesStubSettings settings)
@@ -324,29 +320,44 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListMachineTypesRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListMachineTypesRequest, MachineTypeAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListMachineTypesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<GetMachineTypeRequest, MachineType> getCallable() {
     return getCallable;
   }
 
-  public UnaryCallable<ListMachineTypesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListMachineTypesRequest, MachineTypeList> listCallable() {
     return listCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMachineTypesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
   }
 
   @Override

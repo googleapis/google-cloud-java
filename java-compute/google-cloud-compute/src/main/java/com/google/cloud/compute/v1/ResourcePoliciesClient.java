@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,29 +31,27 @@ import com.google.cloud.compute.v1.stub.ResourcePoliciesStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The ResourcePolicies API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String resourcePolicy = "";
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String resourcePolicy = "resourcePolicy-130903328";
  *   Operation response = resourcePoliciesClient.delete(project, region, resourcePolicy);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the resourcePoliciesClient object to clean up resources
+ * <p>Note: close() needs to be called on the ResourcePoliciesClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -81,30 +80,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ResourcePoliciesSettings resourcePoliciesSettings =
  *     ResourcePoliciesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * ResourcePoliciesClient resourcePoliciesClient =
  *     ResourcePoliciesClient.create(resourcePoliciesSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ResourcePoliciesSettings resourcePoliciesSettings =
  *     ResourcePoliciesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ResourcePoliciesClient resourcePoliciesClient =
  *     ResourcePoliciesClient.create(resourcePoliciesSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class ResourcePoliciesClient implements BackgroundResource {
   private final ResourcePoliciesSettings settings;
   private final ResourcePoliciesStub stub;
@@ -125,7 +121,7 @@ public class ResourcePoliciesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ResourcePoliciesClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use ResourcePoliciesSettings}.
+   * is for advanced usage - prefer using create(ResourcePoliciesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ResourcePoliciesClient create(ResourcePoliciesStub stub) {
@@ -157,20 +153,21 @@ public class ResourcePoliciesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of resource policies.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, ResourcePoliciesScopedList&gt; element : resourcePoliciesClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, ResourcePoliciesScopedList> element :
+   *       resourcePoliciesClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -181,23 +178,30 @@ public class ResourcePoliciesClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of resource policies.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   AggregatedListResourcePoliciesRequest request = AggregatedListResourcePoliciesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, ResourcePoliciesScopedList&gt; element : resourcePoliciesClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListResourcePoliciesRequest request =
+   *       AggregatedListResourcePoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, ResourcePoliciesScopedList> element :
+   *       resourcePoliciesClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -207,46 +211,60 @@ public class ResourcePoliciesClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of resource policies.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   AggregatedListResourcePoliciesRequest request = AggregatedListResourcePoliciesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = resourcePoliciesClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, ResourcePoliciesScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListResourcePoliciesRequest request =
+   *       AggregatedListResourcePoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, ResourcePoliciesScopedList>> future =
+   *       resourcePoliciesClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, ResourcePoliciesScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListResourcePoliciesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of resource policies.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   AggregatedListResourcePoliciesRequest request = AggregatedListResourcePoliciesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListResourcePoliciesRequest request =
+   *       AggregatedListResourcePoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     ResourcePolicyAggregatedList response = resourcePoliciesClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, ResourcePoliciesScopedList&gt; element : response.getItemsMap()) {
+   *     ResourcePolicyAggregatedList response =
+   *         resourcePoliciesClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, ResourcePoliciesScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -257,27 +275,27 @@ public class ResourcePoliciesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListResourcePoliciesRequest, ResourcePolicyAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified resource policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resourcePolicy = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resourcePolicy = "resourcePolicy-130903328";
    *   Operation response = resourcePoliciesClient.delete(project, region, resourcePolicy);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -294,25 +312,24 @@ public class ResourcePoliciesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified resource policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resourcePolicy = "";
-   *   DeleteResourcePolicyRequest request = DeleteResourcePolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResourcePolicy(resourcePolicy)
-   *     .build();
+   *   DeleteResourcePolicyRequest request =
+   *       DeleteResourcePolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setResourcePolicy("resourcePolicy-130903328")
+   *           .build();
    *   Operation response = resourcePoliciesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -321,46 +338,45 @@ public class ResourcePoliciesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified resource policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resourcePolicy = "";
-   *   DeleteResourcePolicyRequest request = DeleteResourcePolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResourcePolicy(resourcePolicy)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = resourcePoliciesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteResourcePolicyRequest request =
+   *       DeleteResourcePolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setResourcePolicy("resourcePolicy-130903328")
+   *           .build();
+   *   ApiFuture<Operation> future = resourcePoliciesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteResourcePolicyRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves all information of the specified resource policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resourcePolicy = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resourcePolicy = "resourcePolicy-130903328";
    *   ResourcePolicy response = resourcePoliciesClient.get(project, region, resourcePolicy);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -377,25 +393,23 @@ public class ResourcePoliciesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves all information of the specified resource policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resourcePolicy = "";
-   *   GetResourcePolicyRequest request = GetResourcePolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResourcePolicy(resourcePolicy)
-   *     .build();
+   *   GetResourcePolicyRequest request =
+   *       GetResourcePolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResourcePolicy("resourcePolicy-130903328")
+   *           .build();
    *   ResourcePolicy response = resourcePoliciesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -404,47 +418,45 @@ public class ResourcePoliciesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves all information of the specified resource policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resourcePolicy = "";
-   *   GetResourcePolicyRequest request = GetResourcePolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResourcePolicy(resourcePolicy)
-   *     .build();
-   *   ApiFuture&lt;ResourcePolicy&gt; future = resourcePoliciesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetResourcePolicyRequest request =
+   *       GetResourcePolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResourcePolicy("resourcePolicy-130903328")
+   *           .build();
+   *   ApiFuture<ResourcePolicy> future = resourcePoliciesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   ResourcePolicy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetResourcePolicyRequest, ResourcePolicy> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
    *   Policy response = resourcePoliciesClient.getIamPolicy(project, region, resource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -461,26 +473,25 @@ public class ResourcePoliciesClient implements BackgroundResource {
     return getIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   GetIamPolicyResourcePolicyRequest request = GetIamPolicyResourcePolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResource(resource)
-   *     .build();
+   *   GetIamPolicyResourcePolicyRequest request =
+   *       GetIamPolicyResourcePolicyRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .build();
    *   Policy response = resourcePoliciesClient.getIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -489,47 +500,46 @@ public class ResourcePoliciesClient implements BackgroundResource {
     return getIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
    * exists.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   GetIamPolicyResourcePolicyRequest request = GetIamPolicyResourcePolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResource(resource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = resourcePoliciesClient.getIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   GetIamPolicyResourcePolicyRequest request =
+   *       GetIamPolicyResourcePolicyRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future = resourcePoliciesClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyResourcePolicyRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new resource policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   ResourcePolicy resourcePolicyResource = ResourcePolicy.newBuilder().build();
    *   Operation response = resourcePoliciesClient.insert(project, region, resourcePolicyResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -547,25 +557,24 @@ public class ResourcePoliciesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new resource policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ResourcePolicy resourcePolicyResource = ResourcePolicy.newBuilder().build();
-   *   InsertResourcePolicyRequest request = InsertResourcePolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResourcePolicyResource(resourcePolicyResource)
-   *     .build();
+   *   InsertResourcePolicyRequest request =
+   *       InsertResourcePolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setResourcePolicyResource(ResourcePolicy.newBuilder().build())
+   *           .build();
    *   Operation response = resourcePoliciesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -574,48 +583,47 @@ public class ResourcePoliciesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new resource policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ResourcePolicy resourcePolicyResource = ResourcePolicy.newBuilder().build();
-   *   InsertResourcePolicyRequest request = InsertResourcePolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResourcePolicyResource(resourcePolicyResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = resourcePoliciesClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertResourcePolicyRequest request =
+   *       InsertResourcePolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setResourcePolicyResource(ResourcePolicy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = resourcePoliciesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertResourcePolicyRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * A list all the resource policies that have been configured for the specified project in
    * specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   for (ResourcePolicy element : resourcePoliciesClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
@@ -627,26 +635,30 @@ public class ResourcePoliciesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * A list all the resource policies that have been configured for the specified project in
    * specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListResourcePoliciesRequest request = ListResourcePoliciesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListResourcePoliciesRequest request =
+   *       ListResourcePoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (ResourcePolicy element : resourcePoliciesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -655,51 +667,60 @@ public class ResourcePoliciesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * A list all the resource policies that have been configured for the specified project in
    * specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListResourcePoliciesRequest request = ListResourcePoliciesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = resourcePoliciesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListResourcePoliciesRequest request =
+   *       ListResourcePoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<ResourcePolicy> future =
+   *       resourcePoliciesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (ResourcePolicy element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListResourcePoliciesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * A list all the resource policies that have been configured for the specified project in
    * specified region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListResourcePoliciesRequest request = ListResourcePoliciesRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListResourcePoliciesRequest request =
+   *       ListResourcePoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     ResourcePolicyList response = resourcePoliciesClient.listCallable().call(request);
-   *     for (ResourcePolicy element : response.getItemsList()) {
+   *     for (ResourcePolicy element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -710,27 +731,30 @@ public class ResourcePoliciesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListResourcePoliciesRequest, ResourcePolicyList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
-   *   Policy response = resourcePoliciesClient.setIamPolicy(project, region, resource, regionSetPolicyRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource =
+   *       RegionSetPolicyRequest.newBuilder().build();
+   *   Policy response =
+   *       resourcePoliciesClient.setIamPolicy(
+   *           project, region, resource, regionSetPolicyRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -753,27 +777,24 @@ public class ResourcePoliciesClient implements BackgroundResource {
     return setIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
-   *   String resource = "";
-   *   SetIamPolicyResourcePolicyRequest request = SetIamPolicyResourcePolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
-   *     .setResource(resource)
-   *     .build();
+   *   SetIamPolicyResourcePolicyRequest request =
+   *       SetIamPolicyResourcePolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetPolicyRequestResource(RegionSetPolicyRequest.newBuilder().build())
+   *           .setResource("resource-341064690")
+   *           .build();
    *   Policy response = resourcePoliciesClient.setIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -782,49 +803,49 @@ public class ResourcePoliciesClient implements BackgroundResource {
     return setIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
-   *   String resource = "";
-   *   SetIamPolicyResourcePolicyRequest request = SetIamPolicyResourcePolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
-   *     .setResource(resource)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = resourcePoliciesClient.setIamPolicyCallable().futureCall(request);
-   *   // Do something
+   *   SetIamPolicyResourcePolicyRequest request =
+   *       SetIamPolicyResourcePolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetPolicyRequestResource(RegionSetPolicyRequest.newBuilder().build())
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future = resourcePoliciesClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyResourcePolicyRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestPermissionsResponse response = resourcePoliciesClient.testIamPermissions(project, region, resource, testPermissionsRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       resourcePoliciesClient.testIamPermissions(
+   *           project, region, resource, testPermissionsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
@@ -847,27 +868,24 @@ public class ResourcePoliciesClient implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsResourcePolicyRequest request = TestIamPermissionsResourcePolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
+   *   TestIamPermissionsResourcePolicyRequest request =
+   *       TestIamPermissionsResourcePolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
    *   TestPermissionsResponse response = resourcePoliciesClient.testIamPermissions(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -877,29 +895,27 @@ public class ResourcePoliciesClient implements BackgroundResource {
     return testIamPermissionsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsResourcePolicyRequest request = TestIamPermissionsResourcePolicyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
-   *   ApiFuture&lt;TestPermissionsResponse&gt; future = resourcePoliciesClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
+   *   TestIamPermissionsResourcePolicyRequest request =
+   *       TestIamPermissionsResourcePolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       resourcePoliciesClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
    *   TestPermissionsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsResourcePolicyRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
@@ -940,7 +956,7 @@ public class ResourcePoliciesClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListResourcePoliciesRequest,
           ResourcePolicyAggregatedList,
-          Entry<String, ResourcePoliciesScopedList>,
+          Map.Entry<String, ResourcePoliciesScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -948,7 +964,7 @@ public class ResourcePoliciesClient implements BackgroundResource {
         PageContext<
                 AggregatedListResourcePoliciesRequest,
                 ResourcePolicyAggregatedList,
-                Entry<String, ResourcePoliciesScopedList>>
+                Map.Entry<String, ResourcePoliciesScopedList>>
             context,
         ApiFuture<ResourcePolicyAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -973,14 +989,14 @@ public class ResourcePoliciesClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListResourcePoliciesRequest,
           ResourcePolicyAggregatedList,
-          Entry<String, ResourcePoliciesScopedList>,
+          Map.Entry<String, ResourcePoliciesScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListResourcePoliciesRequest,
                 ResourcePolicyAggregatedList,
-                Entry<String, ResourcePoliciesScopedList>>
+                Map.Entry<String, ResourcePoliciesScopedList>>
             context,
         ResourcePolicyAggregatedList response) {
       super(context, response);
@@ -995,7 +1011,7 @@ public class ResourcePoliciesClient implements BackgroundResource {
         PageContext<
                 AggregatedListResourcePoliciesRequest,
                 ResourcePolicyAggregatedList,
-                Entry<String, ResourcePoliciesScopedList>>
+                Map.Entry<String, ResourcePoliciesScopedList>>
             context,
         ResourcePolicyAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -1006,7 +1022,7 @@ public class ResourcePoliciesClient implements BackgroundResource {
         PageContext<
                 AggregatedListResourcePoliciesRequest,
                 ResourcePolicyAggregatedList,
-                Entry<String, ResourcePoliciesScopedList>>
+                Map.Entry<String, ResourcePoliciesScopedList>>
             context,
         ApiFuture<ResourcePolicyAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1017,7 +1033,7 @@ public class ResourcePoliciesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListResourcePoliciesRequest,
           ResourcePolicyAggregatedList,
-          Entry<String, ResourcePoliciesScopedList>,
+          Map.Entry<String, ResourcePoliciesScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

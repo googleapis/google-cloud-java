@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,24 +34,22 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The ExternalVpnGateways API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
- *   String project = "";
- *   String externalVpnGateway = "";
+ *   String project = "project-309310695";
+ *   String externalVpnGateway = "externalVpnGateway-1140582181";
  *   Operation response = externalVpnGatewaysClient.delete(project, externalVpnGateway);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the externalVpnGatewaysClient object to clean up resources
+ * <p>Note: close() needs to be called on the ExternalVpnGatewaysClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -79,30 +78,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ExternalVpnGatewaysSettings externalVpnGatewaysSettings =
  *     ExternalVpnGatewaysSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * ExternalVpnGatewaysClient externalVpnGatewaysClient =
  *     ExternalVpnGatewaysClient.create(externalVpnGatewaysSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ExternalVpnGatewaysSettings externalVpnGatewaysSettings =
  *     ExternalVpnGatewaysSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ExternalVpnGatewaysClient externalVpnGatewaysClient =
  *     ExternalVpnGatewaysClient.create(externalVpnGatewaysSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class ExternalVpnGatewaysClient implements BackgroundResource {
   private final ExternalVpnGatewaysSettings settings;
   private final ExternalVpnGatewaysStub stub;
@@ -123,7 +119,7 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ExternalVpnGatewaysClient, using the given stub for making calls.
-   * This is for advanced usage - prefer to use ExternalVpnGatewaysSettings}.
+   * This is for advanced usage - prefer using create(ExternalVpnGatewaysSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ExternalVpnGatewaysClient create(ExternalVpnGatewaysStub stub) {
@@ -155,19 +151,19 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified externalVpnGateway.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   String project = "";
-   *   String externalVpnGateway = "";
+   *   String project = "project-309310695";
+   *   String externalVpnGateway = "externalVpnGateway-1140582181";
    *   Operation response = externalVpnGatewaysClient.delete(project, externalVpnGateway);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param externalVpnGateway Name of the externalVpnGateways to delete.
@@ -182,23 +178,23 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified externalVpnGateway.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   String externalVpnGateway = "";
-   *   String project = "";
-   *   DeleteExternalVpnGatewayRequest request = DeleteExternalVpnGatewayRequest.newBuilder()
-   *     .setExternalVpnGateway(externalVpnGateway)
-   *     .setProject(project)
-   *     .build();
+   *   DeleteExternalVpnGatewayRequest request =
+   *       DeleteExternalVpnGatewayRequest.newBuilder()
+   *           .setExternalVpnGateway("externalVpnGateway-1140582181")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = externalVpnGatewaysClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -207,44 +203,44 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified externalVpnGateway.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   String externalVpnGateway = "";
-   *   String project = "";
-   *   DeleteExternalVpnGatewayRequest request = DeleteExternalVpnGatewayRequest.newBuilder()
-   *     .setExternalVpnGateway(externalVpnGateway)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = externalVpnGatewaysClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteExternalVpnGatewayRequest request =
+   *       DeleteExternalVpnGatewayRequest.newBuilder()
+   *           .setExternalVpnGateway("externalVpnGateway-1140582181")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = externalVpnGatewaysClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteExternalVpnGatewayRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified externalVpnGateway. Get a list of available externalVpnGateways by making
    * a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   String project = "";
-   *   String externalVpnGateway = "";
+   *   String project = "project-309310695";
+   *   String externalVpnGateway = "externalVpnGateway-1140582181";
    *   ExternalVpnGateway response = externalVpnGatewaysClient.get(project, externalVpnGateway);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param externalVpnGateway Name of the externalVpnGateway to return.
@@ -259,24 +255,23 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified externalVpnGateway. Get a list of available externalVpnGateways by making
    * a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   String externalVpnGateway = "";
-   *   String project = "";
-   *   GetExternalVpnGatewayRequest request = GetExternalVpnGatewayRequest.newBuilder()
-   *     .setExternalVpnGateway(externalVpnGateway)
-   *     .setProject(project)
-   *     .build();
+   *   GetExternalVpnGatewayRequest request =
+   *       GetExternalVpnGatewayRequest.newBuilder()
+   *           .setExternalVpnGateway("externalVpnGateway-1140582181")
+   *           .setProject("project-309310695")
+   *           .build();
    *   ExternalVpnGateway response = externalVpnGatewaysClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -285,44 +280,44 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified externalVpnGateway. Get a list of available externalVpnGateways by making
    * a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   String externalVpnGateway = "";
-   *   String project = "";
-   *   GetExternalVpnGatewayRequest request = GetExternalVpnGatewayRequest.newBuilder()
-   *     .setExternalVpnGateway(externalVpnGateway)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ExternalVpnGateway&gt; future = externalVpnGatewaysClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetExternalVpnGatewayRequest request =
+   *       GetExternalVpnGatewayRequest.newBuilder()
+   *           .setExternalVpnGateway("externalVpnGateway-1140582181")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<ExternalVpnGateway> future =
+   *       externalVpnGatewaysClient.getCallable().futureCall(request);
+   *   // Do something.
    *   ExternalVpnGateway response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetExternalVpnGatewayRequest, ExternalVpnGateway> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a ExternalVpnGateway in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   ExternalVpnGateway externalVpnGatewayResource = ExternalVpnGateway.newBuilder().build();
    *   Operation response = externalVpnGatewaysClient.insert(project, externalVpnGatewayResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param externalVpnGatewayResource The body resource for this request
@@ -337,23 +332,23 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a ExternalVpnGateway in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   ExternalVpnGateway externalVpnGatewayResource = ExternalVpnGateway.newBuilder().build();
-   *   String project = "";
-   *   InsertExternalVpnGatewayRequest request = InsertExternalVpnGatewayRequest.newBuilder()
-   *     .setExternalVpnGatewayResource(externalVpnGatewayResource)
-   *     .setProject(project)
-   *     .build();
+   *   InsertExternalVpnGatewayRequest request =
+   *       InsertExternalVpnGatewayRequest.newBuilder()
+   *           .setExternalVpnGatewayResource(ExternalVpnGateway.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Operation response = externalVpnGatewaysClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -362,44 +357,44 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a ExternalVpnGateway in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   ExternalVpnGateway externalVpnGatewayResource = ExternalVpnGateway.newBuilder().build();
-   *   String project = "";
-   *   InsertExternalVpnGatewayRequest request = InsertExternalVpnGatewayRequest.newBuilder()
-   *     .setExternalVpnGatewayResource(externalVpnGatewayResource)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = externalVpnGatewaysClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertExternalVpnGatewayRequest request =
+   *       InsertExternalVpnGatewayRequest.newBuilder()
+   *           .setExternalVpnGatewayResource(ExternalVpnGateway.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = externalVpnGatewaysClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertExternalVpnGatewayRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of ExternalVpnGateway available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (ExternalVpnGateway element : externalVpnGatewaysClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -410,23 +405,28 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of ExternalVpnGateway available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   String project = "";
-   *   ListExternalVpnGatewaysRequest request = ListExternalVpnGatewaysRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListExternalVpnGatewaysRequest request =
+   *       ListExternalVpnGatewaysRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (ExternalVpnGateway element : externalVpnGatewaysClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -435,46 +435,57 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of ExternalVpnGateway available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   String project = "";
-   *   ListExternalVpnGatewaysRequest request = ListExternalVpnGatewaysRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = externalVpnGatewaysClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListExternalVpnGatewaysRequest request =
+   *       ListExternalVpnGatewaysRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<ExternalVpnGateway> future =
+   *       externalVpnGatewaysClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (ExternalVpnGateway element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListExternalVpnGatewaysRequest, ListPagedResponse>
       listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of ExternalVpnGateway available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   String project = "";
-   *   ListExternalVpnGatewaysRequest request = ListExternalVpnGatewaysRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListExternalVpnGatewaysRequest request =
+   *       ListExternalVpnGatewaysRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     ExternalVpnGatewayList response = externalVpnGatewaysClient.listCallable().call(request);
-   *     for (ExternalVpnGateway element : response.getItemsList()) {
+   *     for (ExternalVpnGateway element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -485,28 +496,30 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList>
       listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the labels on an ExternalVpnGateway. To learn more about labels, read the Labeling
    * Resources documentation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
-   *   Operation response = externalVpnGatewaysClient.setLabels(project, resource, globalSetLabelsRequestResource);
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
+   *   GlobalSetLabelsRequest globalSetLabelsRequestResource =
+   *       GlobalSetLabelsRequest.newBuilder().build();
+   *   Operation response =
+   *       externalVpnGatewaysClient.setLabels(project, resource, globalSetLabelsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
@@ -524,26 +537,24 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
     return setLabels(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the labels on an ExternalVpnGateway. To learn more about labels, read the Labeling
    * Resources documentation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
-   *   String project = "";
-   *   String resource = "";
-   *   SetLabelsExternalVpnGatewayRequest request = SetLabelsExternalVpnGatewayRequest.newBuilder()
-   *     .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .build();
+   *   SetLabelsExternalVpnGatewayRequest request =
+   *       SetLabelsExternalVpnGatewayRequest.newBuilder()
+   *           .setGlobalSetLabelsRequestResource(GlobalSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
    *   Operation response = externalVpnGatewaysClient.setLabels(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -552,47 +563,49 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
     return setLabelsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the labels on an ExternalVpnGateway. To learn more about labels, read the Labeling
    * Resources documentation.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
-   *   String project = "";
-   *   String resource = "";
-   *   SetLabelsExternalVpnGatewayRequest request = SetLabelsExternalVpnGatewayRequest.newBuilder()
-   *     .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = externalVpnGatewaysClient.setLabelsCallable().futureCall(request);
-   *   // Do something
+   *   SetLabelsExternalVpnGatewayRequest request =
+   *       SetLabelsExternalVpnGatewayRequest.newBuilder()
+   *           .setGlobalSetLabelsRequestResource(GlobalSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       externalVpnGatewaysClient.setLabelsCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetLabelsExternalVpnGatewayRequest, Operation> setLabelsCallable() {
     return stub.setLabelsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestPermissionsResponse response = externalVpnGatewaysClient.testIamPermissions(project, resource, testPermissionsRequestResource);
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       externalVpnGatewaysClient.testIamPermissions(
+   *           project, resource, testPermissionsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
@@ -610,25 +623,23 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsExternalVpnGatewayRequest request = TestIamPermissionsExternalVpnGatewayRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
+   *   TestIamPermissionsExternalVpnGatewayRequest request =
+   *       TestIamPermissionsExternalVpnGatewayRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
    *   TestPermissionsResponse response = externalVpnGatewaysClient.testIamPermissions(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -638,27 +649,26 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
     return testIamPermissionsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsExternalVpnGatewayRequest request = TestIamPermissionsExternalVpnGatewayRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
-   *   ApiFuture&lt;TestPermissionsResponse&gt; future = externalVpnGatewaysClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
+   *   TestIamPermissionsExternalVpnGatewayRequest request =
+   *       TestIamPermissionsExternalVpnGatewayRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       externalVpnGatewaysClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
    *   TestPermissionsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsExternalVpnGatewayRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {

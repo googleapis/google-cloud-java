@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionAutoscalersClient.ListPagedResponse;
@@ -41,27 +42,26 @@ import com.google.cloud.compute.v1.PatchRegionAutoscalerRequest;
 import com.google.cloud.compute.v1.RegionAutoscalerList;
 import com.google.cloud.compute.v1.UpdateRegionAutoscalerRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the RegionAutoscalers service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteRegionAutoscalerRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteRegionAutoscalerRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionAutoscalerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionAutoscalers.Delete")
+              .setFullMethodName("google.cloud.compute.v1.RegionAutoscalers/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionAutoscalerRequest>newBuilder()
@@ -75,10 +75,10 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteRegionAutoscalerRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "autoscaler", request.getAutoscaler());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -102,7 +102,7 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                           new FieldsExtractor<DeleteRegionAutoscalerRequest, String>() {
                             @Override
                             public String extract(DeleteRegionAutoscalerRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -112,11 +112,10 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetRegionAutoscalerRequest, Autoscaler>
+  private static final ApiMethodDescriptor<GetRegionAutoscalerRequest, Autoscaler>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetRegionAutoscalerRequest, Autoscaler>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionAutoscalers.Get")
+              .setFullMethodName("google.cloud.compute.v1.RegionAutoscalers/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionAutoscalerRequest>newBuilder()
@@ -128,10 +127,10 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetRegionAutoscalerRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "autoscaler", request.getAutoscaler());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -144,7 +143,6 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetRegionAutoscalerRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -152,7 +150,7 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                           new FieldsExtractor<GetRegionAutoscalerRequest, String>() {
                             @Override
                             public String extract(GetRegionAutoscalerRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -162,11 +160,10 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertRegionAutoscalerRequest, Operation>
+  private static final ApiMethodDescriptor<InsertRegionAutoscalerRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertRegionAutoscalerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionAutoscalers.Insert")
+              .setFullMethodName("google.cloud.compute.v1.RegionAutoscalers/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionAutoscalerRequest>newBuilder()
@@ -216,11 +213,10 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListRegionAutoscalersRequest, RegionAutoscalerList>
+  private static final ApiMethodDescriptor<ListRegionAutoscalersRequest, RegionAutoscalerList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListRegionAutoscalersRequest, RegionAutoscalerList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionAutoscalers.List")
+              .setFullMethodName("google.cloud.compute.v1.RegionAutoscalers/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionAutoscalersRequest>newBuilder()
@@ -274,7 +270,7 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                           new FieldsExtractor<ListRegionAutoscalersRequest, String>() {
                             @Override
                             public String extract(ListRegionAutoscalersRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -284,11 +280,10 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchRegionAutoscalerRequest, Operation>
+  private static final ApiMethodDescriptor<PatchRegionAutoscalerRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchRegionAutoscalerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionAutoscalers.Patch")
+              .setFullMethodName("google.cloud.compute.v1.RegionAutoscalers/Patch")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchRegionAutoscalerRequest>newBuilder()
@@ -341,11 +336,10 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<UpdateRegionAutoscalerRequest, Operation>
+  private static final ApiMethodDescriptor<UpdateRegionAutoscalerRequest, Operation>
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateRegionAutoscalerRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionAutoscalers.Update")
+              .setFullMethodName("google.cloud.compute.v1.RegionAutoscalers/Update")
               .setHttpMethod(HttpMethods.PUT)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateRegionAutoscalerRequest>newBuilder()
@@ -399,8 +393,6 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteRegionAutoscalerRequest, Operation> deleteCallable;
   private final UnaryCallable<GetRegionAutoscalerRequest, Autoscaler> getCallable;
   private final UnaryCallable<InsertRegionAutoscalerRequest, Operation> insertCallable;
@@ -409,6 +401,7 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
   private final UnaryCallable<PatchRegionAutoscalerRequest, Operation> patchCallable;
   private final UnaryCallable<UpdateRegionAutoscalerRequest, Operation> updateCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionAutoscalersStub create(RegionAutoscalersStubSettings settings)
@@ -497,33 +490,53 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(updateMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteRegionAutoscalerRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetRegionAutoscalerRequest, Autoscaler> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertRegionAutoscalerRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListRegionAutoscalersRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListRegionAutoscalersRequest, RegionAutoscalerList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListRegionAutoscalersRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchRegionAutoscalerRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateRegionAutoscalerRequest, Operation> updateCallable() {
     return updateCallable;
   }

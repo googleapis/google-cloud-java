@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
@@ -24,24 +25,22 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The LicenseCodes API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (LicenseCodesClient licenseCodesClient = LicenseCodesClient.create()) {
- *   String project = "";
- *   String licenseCode = "";
+ *   String project = "project-309310695";
+ *   String licenseCode = "licenseCode-641557042";
  *   LicenseCode response = licenseCodesClient.get(project, licenseCode);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the licenseCodesClient object to clean up resources such
+ * <p>Note: close() needs to be called on the LicenseCodesClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -69,30 +68,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * LicenseCodesSettings licenseCodesSettings =
  *     LicenseCodesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * LicenseCodesClient licenseCodesClient =
- *     LicenseCodesClient.create(licenseCodesSettings);
- * </code>
- * </pre>
+ * LicenseCodesClient licenseCodesClient = LicenseCodesClient.create(licenseCodesSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * LicenseCodesSettings licenseCodesSettings =
  *     LicenseCodesSettings.newBuilder().setEndpoint(myEndpoint).build();
- * LicenseCodesClient licenseCodesClient =
- *     LicenseCodesClient.create(licenseCodesSettings);
- * </code>
- * </pre>
+ * LicenseCodesClient licenseCodesClient = LicenseCodesClient.create(licenseCodesSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class LicenseCodesClient implements BackgroundResource {
   private final LicenseCodesSettings settings;
   private final LicenseCodesStub stub;
@@ -112,7 +106,7 @@ public class LicenseCodesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of LicenseCodesClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use LicenseCodesSettings}.
+   * for advanced usage - prefer using create(LicenseCodesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final LicenseCodesClient create(LicenseCodesStub stub) {
@@ -144,7 +138,7 @@ public class LicenseCodesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Return a specified license code. License codes are mirrored across all projects that have
    * permissions to read the License Code. Caution This resource is intended for use only by
@@ -152,13 +146,13 @@ public class LicenseCodesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicenseCodesClient licenseCodesClient = LicenseCodesClient.create()) {
-   *   String project = "";
-   *   String licenseCode = "";
+   *   String project = "project-309310695";
+   *   String licenseCode = "licenseCode-641557042";
    *   LicenseCode response = licenseCodesClient.get(project, licenseCode);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param licenseCode Number corresponding to the License code resource to return.
@@ -170,7 +164,7 @@ public class LicenseCodesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Return a specified license code. License codes are mirrored across all projects that have
    * permissions to read the License Code. Caution This resource is intended for use only by
@@ -178,17 +172,16 @@ public class LicenseCodesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicenseCodesClient licenseCodesClient = LicenseCodesClient.create()) {
-   *   String licenseCode = "";
-   *   String project = "";
-   *   GetLicenseCodeRequest request = GetLicenseCodeRequest.newBuilder()
-   *     .setLicenseCode(licenseCode)
-   *     .setProject(project)
-   *     .build();
+   *   GetLicenseCodeRequest request =
+   *       GetLicenseCodeRequest.newBuilder()
+   *           .setLicenseCode("licenseCode-641557042")
+   *           .setProject("project-309310695")
+   *           .build();
    *   LicenseCode response = licenseCodesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -197,7 +190,7 @@ public class LicenseCodesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Return a specified license code. License codes are mirrored across all projects that have
    * permissions to read the License Code. Caution This resource is intended for use only by
@@ -205,39 +198,40 @@ public class LicenseCodesClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicenseCodesClient licenseCodesClient = LicenseCodesClient.create()) {
-   *   String licenseCode = "";
-   *   String project = "";
-   *   GetLicenseCodeRequest request = GetLicenseCodeRequest.newBuilder()
-   *     .setLicenseCode(licenseCode)
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;LicenseCode&gt; future = licenseCodesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetLicenseCodeRequest request =
+   *       GetLicenseCodeRequest.newBuilder()
+   *           .setLicenseCode("licenseCode-641557042")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<LicenseCode> future = licenseCodesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   LicenseCode response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetLicenseCodeRequest, LicenseCode> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource. Caution This resource is
    * intended for use only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicenseCodesClient licenseCodesClient = LicenseCodesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestPermissionsResponse response = licenseCodesClient.testIamPermissions(project, resource, testPermissionsRequestResource);
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       licenseCodesClient.testIamPermissions(project, resource, testPermissionsRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
@@ -255,26 +249,24 @@ public class LicenseCodesClient implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource. Caution This resource is
    * intended for use only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicenseCodesClient licenseCodesClient = LicenseCodesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsLicenseCodeRequest request = TestIamPermissionsLicenseCodeRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
+   *   TestIamPermissionsLicenseCodeRequest request =
+   *       TestIamPermissionsLicenseCodeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
    *   TestPermissionsResponse response = licenseCodesClient.testIamPermissions(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -284,28 +276,27 @@ public class LicenseCodesClient implements BackgroundResource {
     return testIamPermissionsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource. Caution This resource is
    * intended for use only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (LicenseCodesClient licenseCodesClient = LicenseCodesClient.create()) {
-   *   String project = "";
-   *   String resource = "";
-   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
-   *   TestIamPermissionsLicenseCodeRequest request = TestIamPermissionsLicenseCodeRequest.newBuilder()
-   *     .setProject(project)
-   *     .setResource(resource)
-   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
-   *     .build();
-   *   ApiFuture&lt;TestPermissionsResponse&gt; future = licenseCodesClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
+   *   TestIamPermissionsLicenseCodeRequest request =
+   *       TestIamPermissionsLicenseCodeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       licenseCodesClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
    *   TestPermissionsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsLicenseCodeRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {

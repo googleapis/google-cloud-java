@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,24 +34,22 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The TargetGrpcProxies API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
- *   String project = "";
- *   String targetGrpcProxy = "";
+ *   String project = "project-309310695";
+ *   String targetGrpcProxy = "targetGrpcProxy1045500511";
  *   Operation response = targetGrpcProxiesClient.delete(project, targetGrpcProxy);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the targetGrpcProxiesClient object to clean up resources
+ * <p>Note: close() needs to be called on the TargetGrpcProxiesClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -79,30 +78,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TargetGrpcProxiesSettings targetGrpcProxiesSettings =
  *     TargetGrpcProxiesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * TargetGrpcProxiesClient targetGrpcProxiesClient =
  *     TargetGrpcProxiesClient.create(targetGrpcProxiesSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TargetGrpcProxiesSettings targetGrpcProxiesSettings =
  *     TargetGrpcProxiesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TargetGrpcProxiesClient targetGrpcProxiesClient =
  *     TargetGrpcProxiesClient.create(targetGrpcProxiesSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class TargetGrpcProxiesClient implements BackgroundResource {
   private final TargetGrpcProxiesSettings settings;
   private final TargetGrpcProxiesStub stub;
@@ -123,7 +119,7 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of TargetGrpcProxiesClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use TargetGrpcProxiesSettings}.
+   * is for advanced usage - prefer using create(TargetGrpcProxiesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TargetGrpcProxiesClient create(TargetGrpcProxiesStub stub) {
@@ -155,19 +151,19 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified TargetGrpcProxy in the given scope
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
-   *   String project = "";
-   *   String targetGrpcProxy = "";
+   *   String project = "project-309310695";
+   *   String targetGrpcProxy = "targetGrpcProxy1045500511";
    *   Operation response = targetGrpcProxiesClient.delete(project, targetGrpcProxy);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetGrpcProxy Name of the TargetGrpcProxy resource to delete.
@@ -182,23 +178,23 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified TargetGrpcProxy in the given scope
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
-   *   String project = "";
-   *   String targetGrpcProxy = "";
-   *   DeleteTargetGrpcProxyRequest request = DeleteTargetGrpcProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetGrpcProxy(targetGrpcProxy)
-   *     .build();
+   *   DeleteTargetGrpcProxyRequest request =
+   *       DeleteTargetGrpcProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetGrpcProxy("targetGrpcProxy1045500511")
+   *           .build();
    *   Operation response = targetGrpcProxiesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -207,43 +203,43 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified TargetGrpcProxy in the given scope
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
-   *   String project = "";
-   *   String targetGrpcProxy = "";
-   *   DeleteTargetGrpcProxyRequest request = DeleteTargetGrpcProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetGrpcProxy(targetGrpcProxy)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetGrpcProxiesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteTargetGrpcProxyRequest request =
+   *       DeleteTargetGrpcProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetGrpcProxy("targetGrpcProxy1045500511")
+   *           .build();
+   *   ApiFuture<Operation> future = targetGrpcProxiesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteTargetGrpcProxyRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified TargetGrpcProxy resource in the given scope.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
-   *   String project = "";
-   *   String targetGrpcProxy = "";
+   *   String project = "project-309310695";
+   *   String targetGrpcProxy = "targetGrpcProxy1045500511";
    *   TargetGrpcProxy response = targetGrpcProxiesClient.get(project, targetGrpcProxy);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetGrpcProxy Name of the TargetGrpcProxy resource to return.
@@ -258,23 +254,22 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified TargetGrpcProxy resource in the given scope.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
-   *   String project = "";
-   *   String targetGrpcProxy = "";
-   *   GetTargetGrpcProxyRequest request = GetTargetGrpcProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetGrpcProxy(targetGrpcProxy)
-   *     .build();
+   *   GetTargetGrpcProxyRequest request =
+   *       GetTargetGrpcProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setTargetGrpcProxy("targetGrpcProxy1045500511")
+   *           .build();
    *   TargetGrpcProxy response = targetGrpcProxiesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -283,44 +278,43 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified TargetGrpcProxy resource in the given scope.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
-   *   String project = "";
-   *   String targetGrpcProxy = "";
-   *   GetTargetGrpcProxyRequest request = GetTargetGrpcProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetGrpcProxy(targetGrpcProxy)
-   *     .build();
-   *   ApiFuture&lt;TargetGrpcProxy&gt; future = targetGrpcProxiesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetTargetGrpcProxyRequest request =
+   *       GetTargetGrpcProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setTargetGrpcProxy("targetGrpcProxy1045500511")
+   *           .build();
+   *   ApiFuture<TargetGrpcProxy> future = targetGrpcProxiesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   TargetGrpcProxy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetTargetGrpcProxyRequest, TargetGrpcProxy> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TargetGrpcProxy in the specified project in the given scope using the parameters that
    * are included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
    *   Operation response = targetGrpcProxiesClient.insert(project, targetGrpcProxyResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetGrpcProxyResource The body resource for this request
@@ -335,24 +329,24 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TargetGrpcProxy in the specified project in the given scope using the parameters that
    * are included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
-   *   String project = "";
-   *   TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
-   *   InsertTargetGrpcProxyRequest request = InsertTargetGrpcProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetGrpcProxyResource(targetGrpcProxyResource)
-   *     .build();
+   *   InsertTargetGrpcProxyRequest request =
+   *       InsertTargetGrpcProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetGrpcProxyResource(TargetGrpcProxy.newBuilder().build())
+   *           .build();
    *   Operation response = targetGrpcProxiesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -361,45 +355,45 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TargetGrpcProxy in the specified project in the given scope using the parameters that
    * are included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
-   *   String project = "";
-   *   TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
-   *   InsertTargetGrpcProxyRequest request = InsertTargetGrpcProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetGrpcProxyResource(targetGrpcProxyResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetGrpcProxiesClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertTargetGrpcProxyRequest request =
+   *       InsertTargetGrpcProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetGrpcProxyResource(TargetGrpcProxy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = targetGrpcProxiesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertTargetGrpcProxyRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the TargetGrpcProxies for a project in the given scope.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (TargetGrpcProxy element : targetGrpcProxiesClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -410,23 +404,28 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the TargetGrpcProxies for a project in the given scope.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
-   *   String project = "";
-   *   ListTargetGrpcProxiesRequest request = ListTargetGrpcProxiesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListTargetGrpcProxiesRequest request =
+   *       ListTargetGrpcProxiesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (TargetGrpcProxy element : targetGrpcProxiesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -435,45 +434,56 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the TargetGrpcProxies for a project in the given scope.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
-   *   String project = "";
-   *   ListTargetGrpcProxiesRequest request = ListTargetGrpcProxiesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = targetGrpcProxiesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListTargetGrpcProxiesRequest request =
+   *       ListTargetGrpcProxiesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<TargetGrpcProxy> future =
+   *       targetGrpcProxiesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (TargetGrpcProxy element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListTargetGrpcProxiesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the TargetGrpcProxies for a project in the given scope.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
-   *   String project = "";
-   *   ListTargetGrpcProxiesRequest request = ListTargetGrpcProxiesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListTargetGrpcProxiesRequest request =
+   *       ListTargetGrpcProxiesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     TargetGrpcProxyList response = targetGrpcProxiesClient.listCallable().call(request);
-   *     for (TargetGrpcProxy element : response.getItemsList()) {
+   *     for (TargetGrpcProxy element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -484,27 +494,28 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListTargetGrpcProxiesRequest, TargetGrpcProxyList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified TargetGrpcProxy resource with the data included in the request. This
    * method supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
-   *   String project = "";
-   *   String targetGrpcProxy = "";
+   *   String project = "project-309310695";
+   *   String targetGrpcProxy = "targetGrpcProxy1045500511";
    *   TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
-   *   Operation response = targetGrpcProxiesClient.patch(project, targetGrpcProxy, targetGrpcProxyResource);
+   *   Operation response =
+   *       targetGrpcProxiesClient.patch(project, targetGrpcProxy, targetGrpcProxyResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetGrpcProxy Name of the TargetGrpcProxy resource to patch.
@@ -522,26 +533,25 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified TargetGrpcProxy resource with the data included in the request. This
    * method supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
-   *   String project = "";
-   *   String targetGrpcProxy = "";
-   *   TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
-   *   PatchTargetGrpcProxyRequest request = PatchTargetGrpcProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetGrpcProxy(targetGrpcProxy)
-   *     .setTargetGrpcProxyResource(targetGrpcProxyResource)
-   *     .build();
+   *   PatchTargetGrpcProxyRequest request =
+   *       PatchTargetGrpcProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetGrpcProxy("targetGrpcProxy1045500511")
+   *           .setTargetGrpcProxyResource(TargetGrpcProxy.newBuilder().build())
+   *           .build();
    *   Operation response = targetGrpcProxiesClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -550,28 +560,27 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified TargetGrpcProxy resource with the data included in the request. This
    * method supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
-   *   String project = "";
-   *   String targetGrpcProxy = "";
-   *   TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
-   *   PatchTargetGrpcProxyRequest request = PatchTargetGrpcProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetGrpcProxy(targetGrpcProxy)
-   *     .setTargetGrpcProxyResource(targetGrpcProxyResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetGrpcProxiesClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchTargetGrpcProxyRequest request =
+   *       PatchTargetGrpcProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetGrpcProxy("targetGrpcProxy1045500511")
+   *           .setTargetGrpcProxyResource(TargetGrpcProxy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = targetGrpcProxiesClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchTargetGrpcProxyRequest, Operation> patchCallable() {
     return stub.patchCallable();

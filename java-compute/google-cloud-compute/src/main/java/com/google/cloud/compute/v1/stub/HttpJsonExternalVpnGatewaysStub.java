@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.ExternalVpnGatewaysClient.ListPagedResponse;
@@ -42,27 +43,26 @@ import com.google.cloud.compute.v1.SetLabelsExternalVpnGatewayRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsExternalVpnGatewayRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the ExternalVpnGateways service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteExternalVpnGatewayRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteExternalVpnGatewayRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteExternalVpnGatewayRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.ExternalVpnGateways.Delete")
+              .setFullMethodName("google.cloud.compute.v1.ExternalVpnGateways/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteExternalVpnGatewayRequest>newBuilder()
@@ -76,9 +76,9 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteExternalVpnGatewayRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "externalVpnGateway", request.getExternalVpnGateway());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -102,7 +102,7 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                           new FieldsExtractor<DeleteExternalVpnGatewayRequest, String>() {
                             @Override
                             public String extract(DeleteExternalVpnGatewayRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -112,11 +112,10 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetExternalVpnGatewayRequest, ExternalVpnGateway>
+  private static final ApiMethodDescriptor<GetExternalVpnGatewayRequest, ExternalVpnGateway>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetExternalVpnGatewayRequest, ExternalVpnGateway>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.ExternalVpnGateways.Get")
+              .setFullMethodName("google.cloud.compute.v1.ExternalVpnGateways/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetExternalVpnGatewayRequest>newBuilder()
@@ -129,9 +128,9 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetExternalVpnGatewayRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "externalVpnGateway", request.getExternalVpnGateway());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -144,7 +143,6 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetExternalVpnGatewayRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -152,7 +150,7 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                           new FieldsExtractor<GetExternalVpnGatewayRequest, String>() {
                             @Override
                             public String extract(GetExternalVpnGatewayRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -162,11 +160,10 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertExternalVpnGatewayRequest, Operation>
+  private static final ApiMethodDescriptor<InsertExternalVpnGatewayRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertExternalVpnGatewayRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.ExternalVpnGateways.Insert")
+              .setFullMethodName("google.cloud.compute.v1.ExternalVpnGateways/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertExternalVpnGatewayRequest>newBuilder()
@@ -217,11 +214,10 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList>
+  private static final ApiMethodDescriptor<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.ExternalVpnGateways.List")
+              .setFullMethodName("google.cloud.compute.v1.ExternalVpnGateways/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListExternalVpnGatewaysRequest>newBuilder()
@@ -275,7 +271,7 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                           new FieldsExtractor<ListExternalVpnGatewaysRequest, String>() {
                             @Override
                             public String extract(ListExternalVpnGatewaysRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -285,11 +281,10 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetLabelsExternalVpnGatewayRequest, Operation>
+  private static final ApiMethodDescriptor<SetLabelsExternalVpnGatewayRequest, Operation>
       setLabelsMethodDescriptor =
           ApiMethodDescriptor.<SetLabelsExternalVpnGatewayRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.ExternalVpnGateways.SetLabels")
+              .setFullMethodName("google.cloud.compute.v1.ExternalVpnGateways/SetLabels")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetLabelsExternalVpnGatewayRequest>newBuilder()
@@ -317,7 +312,6 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetLabelsExternalVpnGatewayRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -338,13 +332,12 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           TestIamPermissionsExternalVpnGatewayRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           ApiMethodDescriptor
               .<TestIamPermissionsExternalVpnGatewayRequest, TestPermissionsResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.ExternalVpnGateways.TestIamPermissions")
+              .setFullMethodName("google.cloud.compute.v1.ExternalVpnGateways/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -374,7 +367,6 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<TestIamPermissionsExternalVpnGatewayRequest>
                                   serializer = ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -397,8 +389,6 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteExternalVpnGatewayRequest, Operation> deleteCallable;
   private final UnaryCallable<GetExternalVpnGatewayRequest, ExternalVpnGateway> getCallable;
   private final UnaryCallable<InsertExternalVpnGatewayRequest, Operation> insertCallable;
@@ -408,6 +398,7 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
   private final UnaryCallable<TestIamPermissionsExternalVpnGatewayRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonExternalVpnGatewaysStub create(
@@ -502,33 +493,53 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(setLabelsMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteExternalVpnGatewayRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetExternalVpnGatewayRequest, ExternalVpnGateway> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertExternalVpnGatewayRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListExternalVpnGatewaysRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListExternalVpnGatewaysRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<SetLabelsExternalVpnGatewayRequest, Operation> setLabelsCallable() {
     return setLabelsCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsExternalVpnGatewayRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

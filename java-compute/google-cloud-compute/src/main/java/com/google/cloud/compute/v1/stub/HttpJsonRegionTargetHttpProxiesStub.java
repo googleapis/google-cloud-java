@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionTargetHttpProxiesClient.ListPagedResponse;
@@ -40,27 +41,26 @@ import com.google.cloud.compute.v1.SetUrlMapRegionTargetHttpProxyRequest;
 import com.google.cloud.compute.v1.TargetHttpProxy;
 import com.google.cloud.compute.v1.TargetHttpProxyList;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the RegionTargetHttpProxies service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxiesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteRegionTargetHttpProxyRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteRegionTargetHttpProxyRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionTargetHttpProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionTargetHttpProxies.Delete")
+              .setFullMethodName("google.cloud.compute.v1.RegionTargetHttpProxies/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionTargetHttpProxyRequest>newBuilder()
@@ -101,7 +101,7 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
                           new FieldsExtractor<DeleteRegionTargetHttpProxyRequest, String>() {
                             @Override
                             public String extract(DeleteRegionTargetHttpProxyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -111,11 +111,10 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetRegionTargetHttpProxyRequest, TargetHttpProxy>
+  private static final ApiMethodDescriptor<GetRegionTargetHttpProxyRequest, TargetHttpProxy>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetRegionTargetHttpProxyRequest, TargetHttpProxy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionTargetHttpProxies.Get")
+              .setFullMethodName("google.cloud.compute.v1.RegionTargetHttpProxies/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionTargetHttpProxyRequest>newBuilder()
@@ -145,7 +144,6 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetRegionTargetHttpProxyRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -153,7 +151,7 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
                           new FieldsExtractor<GetRegionTargetHttpProxyRequest, String>() {
                             @Override
                             public String extract(GetRegionTargetHttpProxyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -163,11 +161,10 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertRegionTargetHttpProxyRequest, Operation>
+  private static final ApiMethodDescriptor<InsertRegionTargetHttpProxyRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertRegionTargetHttpProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionTargetHttpProxies.Insert")
+              .setFullMethodName("google.cloud.compute.v1.RegionTargetHttpProxies/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionTargetHttpProxyRequest>newBuilder()
@@ -219,11 +216,10 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListRegionTargetHttpProxiesRequest, TargetHttpProxyList>
+  private static final ApiMethodDescriptor<ListRegionTargetHttpProxiesRequest, TargetHttpProxyList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListRegionTargetHttpProxiesRequest, TargetHttpProxyList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionTargetHttpProxies.List")
+              .setFullMethodName("google.cloud.compute.v1.RegionTargetHttpProxies/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionTargetHttpProxiesRequest>newBuilder()
@@ -278,7 +274,7 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
                           new FieldsExtractor<ListRegionTargetHttpProxiesRequest, String>() {
                             @Override
                             public String extract(ListRegionTargetHttpProxiesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -288,11 +284,10 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetUrlMapRegionTargetHttpProxyRequest, Operation>
+  private static final ApiMethodDescriptor<SetUrlMapRegionTargetHttpProxyRequest, Operation>
       setUrlMapMethodDescriptor =
           ApiMethodDescriptor.<SetUrlMapRegionTargetHttpProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionTargetHttpProxies.SetUrlMap")
+              .setFullMethodName("google.cloud.compute.v1.RegionTargetHttpProxies/SetUrlMap")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetUrlMapRegionTargetHttpProxyRequest>newBuilder()
@@ -346,8 +341,6 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteRegionTargetHttpProxyRequest, Operation> deleteCallable;
   private final UnaryCallable<GetRegionTargetHttpProxyRequest, TargetHttpProxy> getCallable;
   private final UnaryCallable<InsertRegionTargetHttpProxyRequest, Operation> insertCallable;
@@ -356,6 +349,7 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
       listPagedCallable;
   private final UnaryCallable<SetUrlMapRegionTargetHttpProxyRequest, Operation> setUrlMapCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionTargetHttpProxiesStub create(
@@ -441,29 +435,47 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
         callableFactory.createUnaryCallable(
             setUrlMapTransportSettings, settings.setUrlMapSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(setUrlMapMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteRegionTargetHttpProxyRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetRegionTargetHttpProxyRequest, TargetHttpProxy> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertRegionTargetHttpProxyRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListRegionTargetHttpProxiesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListRegionTargetHttpProxiesRequest, TargetHttpProxyList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListRegionTargetHttpProxiesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<SetUrlMapRegionTargetHttpProxyRequest, Operation> setUrlMapCallable() {
     return setUrlMapCallable;
   }

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.InterconnectsClient.ListPagedResponse;
@@ -42,27 +43,26 @@ import com.google.cloud.compute.v1.ListInterconnectsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchInterconnectRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the Interconnects service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonInterconnectsStub extends InterconnectsStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteInterconnectRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteInterconnectRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteInterconnectRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Interconnects.Delete")
+              .setFullMethodName("google.cloud.compute.v1.Interconnects/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteInterconnectRequest>newBuilder()
@@ -74,9 +74,9 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteInterconnectRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "interconnect", request.getInterconnect());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -100,7 +100,7 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                           new FieldsExtractor<DeleteInterconnectRequest, String>() {
                             @Override
                             public String extract(DeleteInterconnectRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -110,11 +110,10 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetInterconnectRequest, Interconnect>
+  private static final ApiMethodDescriptor<GetInterconnectRequest, Interconnect>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetInterconnectRequest, Interconnect>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Interconnects.Get")
+              .setFullMethodName("google.cloud.compute.v1.Interconnects/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetInterconnectRequest>newBuilder()
@@ -126,9 +125,9 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetInterconnectRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "interconnect", request.getInterconnect());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -140,7 +139,6 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetInterconnectRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -148,7 +146,7 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                           new FieldsExtractor<GetInterconnectRequest, String>() {
                             @Override
                             public String extract(GetInterconnectRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -158,13 +156,12 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           GetDiagnosticsInterconnectRequest, InterconnectsGetDiagnosticsResponse>
       getDiagnosticsMethodDescriptor =
           ApiMethodDescriptor
               .<GetDiagnosticsInterconnectRequest, InterconnectsGetDiagnosticsResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Interconnects.GetDiagnostics")
+              .setFullMethodName("google.cloud.compute.v1.Interconnects/GetDiagnostics")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetDiagnosticsInterconnectRequest>newBuilder()
@@ -178,9 +175,9 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetDiagnosticsInterconnectRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "interconnect", request.getInterconnect());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -193,7 +190,6 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetDiagnosticsInterconnectRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -201,7 +197,7 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                           new FieldsExtractor<GetDiagnosticsInterconnectRequest, String>() {
                             @Override
                             public String extract(GetDiagnosticsInterconnectRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -211,11 +207,10 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertInterconnectRequest, Operation>
+  private static final ApiMethodDescriptor<InsertInterconnectRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertInterconnectRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Interconnects.Insert")
+              .setFullMethodName("google.cloud.compute.v1.Interconnects/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertInterconnectRequest>newBuilder()
@@ -263,11 +258,10 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListInterconnectsRequest, InterconnectList>
+  private static final ApiMethodDescriptor<ListInterconnectsRequest, InterconnectList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListInterconnectsRequest, InterconnectList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Interconnects.List")
+              .setFullMethodName("google.cloud.compute.v1.Interconnects/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListInterconnectsRequest>newBuilder()
@@ -319,7 +313,7 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                           new FieldsExtractor<ListInterconnectsRequest, String>() {
                             @Override
                             public String extract(ListInterconnectsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -329,11 +323,10 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchInterconnectRequest, Operation>
+  private static final ApiMethodDescriptor<PatchInterconnectRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchInterconnectRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Interconnects.Patch")
+              .setFullMethodName("google.cloud.compute.v1.Interconnects/Patch")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchInterconnectRequest>newBuilder()
@@ -345,9 +338,9 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<PatchInterconnectRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "interconnect", request.getInterconnect());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -383,8 +376,6 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteInterconnectRequest, Operation> deleteCallable;
   private final UnaryCallable<GetInterconnectRequest, Interconnect> getCallable;
   private final UnaryCallable<
@@ -395,6 +386,7 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
   private final UnaryCallable<ListInterconnectsRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<PatchInterconnectRequest, Operation> patchCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonInterconnectsStub create(InterconnectsStubSettings settings)
@@ -486,34 +478,54 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getDiagnosticsMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteInterconnectRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetInterconnectRequest, Interconnect> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetDiagnosticsInterconnectRequest, InterconnectsGetDiagnosticsResponse>
       getDiagnosticsCallable() {
     return getDiagnosticsCallable;
   }
 
+  @Override
   public UnaryCallable<InsertInterconnectRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListInterconnectsRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListInterconnectsRequest, InterconnectList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListInterconnectsRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchInterconnectRequest, Operation> patchCallable() {
     return patchCallable;
   }

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,25 +34,23 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The RegionUrlMaps API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
- *   String project = "";
- *   String region = "";
- *   String urlMap = "";
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String urlMap = "urlMap-836780691";
  *   Operation response = regionUrlMapsClient.delete(project, region, urlMap);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the regionUrlMapsClient object to clean up resources such
+ * <p>Note: close() needs to be called on the RegionUrlMapsClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -79,30 +78,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionUrlMapsSettings regionUrlMapsSettings =
  *     RegionUrlMapsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * RegionUrlMapsClient regionUrlMapsClient =
- *     RegionUrlMapsClient.create(regionUrlMapsSettings);
- * </code>
- * </pre>
+ * RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create(regionUrlMapsSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegionUrlMapsSettings regionUrlMapsSettings =
  *     RegionUrlMapsSettings.newBuilder().setEndpoint(myEndpoint).build();
- * RegionUrlMapsClient regionUrlMapsClient =
- *     RegionUrlMapsClient.create(regionUrlMapsSettings);
- * </code>
- * </pre>
+ * RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create(regionUrlMapsSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RegionUrlMapsClient implements BackgroundResource {
   private final RegionUrlMapsSettings settings;
   private final RegionUrlMapsStub stub;
@@ -123,7 +117,7 @@ public class RegionUrlMapsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of RegionUrlMapsClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use RegionUrlMapsSettings}.
+   * for advanced usage - prefer using create(RegionUrlMapsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionUrlMapsClient create(RegionUrlMapsStub stub) {
@@ -155,20 +149,20 @@ public class RegionUrlMapsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified UrlMap resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String urlMap = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String urlMap = "urlMap-836780691";
    *   Operation response = regionUrlMapsClient.delete(project, region, urlMap);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -185,25 +179,24 @@ public class RegionUrlMapsClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified UrlMap resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String urlMap = "";
-   *   DeleteRegionUrlMapRequest request = DeleteRegionUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setUrlMap(urlMap)
-   *     .build();
+   *   DeleteRegionUrlMapRequest request =
+   *       DeleteRegionUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMap("urlMap-836780691")
+   *           .build();
    *   Operation response = regionUrlMapsClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -212,47 +205,46 @@ public class RegionUrlMapsClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified UrlMap resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String urlMap = "";
-   *   DeleteRegionUrlMapRequest request = DeleteRegionUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setUrlMap(urlMap)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionUrlMapsClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteRegionUrlMapRequest request =
+   *       DeleteRegionUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMap("urlMap-836780691")
+   *           .build();
+   *   ApiFuture<Operation> future = regionUrlMapsClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteRegionUrlMapRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified UrlMap resource. Gets a list of available URL maps by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String urlMap = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String urlMap = "urlMap-836780691";
    *   UrlMap response = regionUrlMapsClient.get(project, region, urlMap);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -269,26 +261,24 @@ public class RegionUrlMapsClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified UrlMap resource. Gets a list of available URL maps by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String urlMap = "";
-   *   GetRegionUrlMapRequest request = GetRegionUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setUrlMap(urlMap)
-   *     .build();
+   *   GetRegionUrlMapRequest request =
+   *       GetRegionUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setUrlMap("urlMap-836780691")
+   *           .build();
    *   UrlMap response = regionUrlMapsClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -297,47 +287,45 @@ public class RegionUrlMapsClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified UrlMap resource. Gets a list of available URL maps by making a list()
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String urlMap = "";
-   *   GetRegionUrlMapRequest request = GetRegionUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setUrlMap(urlMap)
-   *     .build();
-   *   ApiFuture&lt;UrlMap&gt; future = regionUrlMapsClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetRegionUrlMapRequest request =
+   *       GetRegionUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setUrlMap("urlMap-836780691")
+   *           .build();
+   *   ApiFuture<UrlMap> future = regionUrlMapsClient.getCallable().futureCall(request);
+   *   // Do something.
    *   UrlMap response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetRegionUrlMapRequest, UrlMap> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a UrlMap resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   Operation response = regionUrlMapsClient.insert(project, region, urlMapResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -354,25 +342,24 @@ public class RegionUrlMapsClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a UrlMap resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   InsertRegionUrlMapRequest request = InsertRegionUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setUrlMapResource(urlMapResource)
-   *     .build();
+   *   InsertRegionUrlMapRequest request =
+   *       InsertRegionUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMapResource(UrlMap.newBuilder().build())
+   *           .build();
    *   Operation response = regionUrlMapsClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -381,48 +368,47 @@ public class RegionUrlMapsClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a UrlMap resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   InsertRegionUrlMapRequest request = InsertRegionUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setUrlMapResource(urlMapResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionUrlMapsClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertRegionUrlMapRequest request =
+   *       InsertRegionUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMapResource(UrlMap.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = regionUrlMapsClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertRegionUrlMapRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of UrlMap resources available to the specified project in the specified
    * region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
    *   for (UrlMap element : regionUrlMapsClient.list(project, region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -434,26 +420,30 @@ public class RegionUrlMapsClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of UrlMap resources available to the specified project in the specified
    * region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionUrlMapsRequest request = ListRegionUrlMapsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListRegionUrlMapsRequest request =
+   *       ListRegionUrlMapsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (UrlMap element : regionUrlMapsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -462,51 +452,59 @@ public class RegionUrlMapsClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of UrlMap resources available to the specified project in the specified
    * region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionUrlMapsRequest request = ListRegionUrlMapsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = regionUrlMapsClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListRegionUrlMapsRequest request =
+   *       ListRegionUrlMapsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<UrlMap> future = regionUrlMapsClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (UrlMap element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionUrlMapsRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of UrlMap resources available to the specified project in the specified
    * region.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   ListRegionUrlMapsRequest request = ListRegionUrlMapsRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .build();
+   *   ListRegionUrlMapsRequest request =
+   *       ListRegionUrlMapsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     UrlMapList response = regionUrlMapsClient.listCallable().call(request);
-   *     for (UrlMap element : response.getItemsList()) {
+   *     for (UrlMap element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -517,28 +515,28 @@ public class RegionUrlMapsClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListRegionUrlMapsRequest, UrlMapList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified UrlMap resource with the data included in the request. This method
    * supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String urlMap = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String urlMap = "urlMap-836780691";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   Operation response = regionUrlMapsClient.patch(project, region, urlMap, urlMapResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -558,28 +556,26 @@ public class RegionUrlMapsClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified UrlMap resource with the data included in the request. This method
    * supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String urlMap = "";
-   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   PatchRegionUrlMapRequest request = PatchRegionUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setUrlMap(urlMap)
-   *     .setUrlMapResource(urlMapResource)
-   *     .build();
+   *   PatchRegionUrlMapRequest request =
+   *       PatchRegionUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMap("urlMap-836780691")
+   *           .setUrlMapResource(UrlMap.newBuilder().build())
+   *           .build();
    *   Operation response = regionUrlMapsClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -588,50 +584,48 @@ public class RegionUrlMapsClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified UrlMap resource with the data included in the request. This method
    * supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String urlMap = "";
-   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   PatchRegionUrlMapRequest request = PatchRegionUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setUrlMap(urlMap)
-   *     .setUrlMapResource(urlMapResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionUrlMapsClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchRegionUrlMapRequest request =
+   *       PatchRegionUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMap("urlMap-836780691")
+   *           .setUrlMapResource(UrlMap.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = regionUrlMapsClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchRegionUrlMapRequest, Operation> patchCallable() {
     return stub.patchCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified UrlMap resource with the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String urlMap = "";
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String urlMap = "urlMap-836780691";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   Operation response = regionUrlMapsClient.update(project, region, urlMap, urlMapResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -651,27 +645,25 @@ public class RegionUrlMapsClient implements BackgroundResource {
     return update(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified UrlMap resource with the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String urlMap = "";
-   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   UpdateRegionUrlMapRequest request = UpdateRegionUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setUrlMap(urlMap)
-   *     .setUrlMapResource(urlMapResource)
-   *     .build();
+   *   UpdateRegionUrlMapRequest request =
+   *       UpdateRegionUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMap("urlMap-836780691")
+   *           .setUrlMapResource(UrlMap.newBuilder().build())
+   *           .build();
    *   Operation response = regionUrlMapsClient.update(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -680,50 +672,51 @@ public class RegionUrlMapsClient implements BackgroundResource {
     return updateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified UrlMap resource with the data included in the request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String urlMap = "";
-   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   UpdateRegionUrlMapRequest request = UpdateRegionUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setUrlMap(urlMap)
-   *     .setUrlMapResource(urlMapResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = regionUrlMapsClient.updateCallable().futureCall(request);
-   *   // Do something
+   *   UpdateRegionUrlMapRequest request =
+   *       UpdateRegionUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMap("urlMap-836780691")
+   *           .setUrlMapResource(UrlMap.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = regionUrlMapsClient.updateCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdateRegionUrlMapRequest, Operation> updateCallable() {
     return stub.updateCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be
    * run. Calling this method does NOT create the UrlMap.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   String urlMap = "";
-   *   RegionUrlMapsValidateRequest regionUrlMapsValidateRequestResource = RegionUrlMapsValidateRequest.newBuilder().build();
-   *   UrlMapsValidateResponse response = regionUrlMapsClient.validate(project, region, urlMap, regionUrlMapsValidateRequestResource);
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String urlMap = "urlMap-836780691";
+   *   RegionUrlMapsValidateRequest regionUrlMapsValidateRequestResource =
+   *       RegionUrlMapsValidateRequest.newBuilder().build();
+   *   UrlMapsValidateResponse response =
+   *       regionUrlMapsClient.validate(
+   *           project, region, urlMap, regionUrlMapsValidateRequestResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
@@ -746,28 +739,26 @@ public class RegionUrlMapsClient implements BackgroundResource {
     return validate(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be
    * run. Calling this method does NOT create the UrlMap.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   RegionUrlMapsValidateRequest regionUrlMapsValidateRequestResource = RegionUrlMapsValidateRequest.newBuilder().build();
-   *   String urlMap = "";
-   *   ValidateRegionUrlMapRequest request = ValidateRegionUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionUrlMapsValidateRequestResource(regionUrlMapsValidateRequestResource)
-   *     .setUrlMap(urlMap)
-   *     .build();
+   *   ValidateRegionUrlMapRequest request =
+   *       ValidateRegionUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionUrlMapsValidateRequestResource(
+   *               RegionUrlMapsValidateRequest.newBuilder().build())
+   *           .setUrlMap("urlMap-836780691")
+   *           .build();
    *   UrlMapsValidateResponse response = regionUrlMapsClient.validate(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -776,30 +767,29 @@ public class RegionUrlMapsClient implements BackgroundResource {
     return validateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be
    * run. Calling this method does NOT create the UrlMap.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
-   *   String project = "";
-   *   String region = "";
-   *   RegionUrlMapsValidateRequest regionUrlMapsValidateRequestResource = RegionUrlMapsValidateRequest.newBuilder().build();
-   *   String urlMap = "";
-   *   ValidateRegionUrlMapRequest request = ValidateRegionUrlMapRequest.newBuilder()
-   *     .setProject(project)
-   *     .setRegion(region)
-   *     .setRegionUrlMapsValidateRequestResource(regionUrlMapsValidateRequestResource)
-   *     .setUrlMap(urlMap)
-   *     .build();
-   *   ApiFuture&lt;UrlMapsValidateResponse&gt; future = regionUrlMapsClient.validateCallable().futureCall(request);
-   *   // Do something
+   *   ValidateRegionUrlMapRequest request =
+   *       ValidateRegionUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionUrlMapsValidateRequestResource(
+   *               RegionUrlMapsValidateRequest.newBuilder().build())
+   *           .setUrlMap("urlMap-836780691")
+   *           .build();
+   *   ApiFuture<UrlMapsValidateResponse> future =
+   *       regionUrlMapsClient.validateCallable().futureCall(request);
+   *   // Do something.
    *   UrlMapsValidateResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ValidateRegionUrlMapRequest, UrlMapsValidateResponse>
       validateCallable() {

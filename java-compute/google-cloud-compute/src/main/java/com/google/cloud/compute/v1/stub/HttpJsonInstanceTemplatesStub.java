@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.InstanceTemplatesClient.ListPagedResponse;
@@ -44,27 +45,26 @@ import com.google.cloud.compute.v1.SetIamPolicyInstanceTemplateRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsInstanceTemplateRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the InstanceTemplates service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteInstanceTemplateRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteInstanceTemplateRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteInstanceTemplateRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceTemplates.Delete")
+              .setFullMethodName("google.cloud.compute.v1.InstanceTemplates/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteInstanceTemplateRequest>newBuilder()
@@ -78,9 +78,9 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteInstanceTemplateRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "instanceTemplate", request.getInstanceTemplate());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -104,7 +104,7 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
                           new FieldsExtractor<DeleteInstanceTemplateRequest, String>() {
                             @Override
                             public String extract(DeleteInstanceTemplateRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -114,11 +114,10 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetInstanceTemplateRequest, InstanceTemplate>
+  private static final ApiMethodDescriptor<GetInstanceTemplateRequest, InstanceTemplate>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetInstanceTemplateRequest, InstanceTemplate>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceTemplates.Get")
+              .setFullMethodName("google.cloud.compute.v1.InstanceTemplates/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetInstanceTemplateRequest>newBuilder()
@@ -130,9 +129,9 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetInstanceTemplateRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
                               serializer.putPathParam(
                                   fields, "instanceTemplate", request.getInstanceTemplate());
+                              serializer.putPathParam(fields, "project", request.getProject());
                               return fields;
                             }
                           })
@@ -145,7 +144,6 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetInstanceTemplateRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -153,7 +151,7 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
                           new FieldsExtractor<GetInstanceTemplateRequest, String>() {
                             @Override
                             public String extract(GetInstanceTemplateRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -163,11 +161,10 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetIamPolicyInstanceTemplateRequest, Policy>
+  private static final ApiMethodDescriptor<GetIamPolicyInstanceTemplateRequest, Policy>
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyInstanceTemplateRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceTemplates.GetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.InstanceTemplates/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyInstanceTemplateRequest>newBuilder()
@@ -208,7 +205,7 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
                           new FieldsExtractor<GetIamPolicyInstanceTemplateRequest, String>() {
                             @Override
                             public String extract(GetIamPolicyInstanceTemplateRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -218,11 +215,10 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertInstanceTemplateRequest, Operation>
+  private static final ApiMethodDescriptor<InsertInstanceTemplateRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertInstanceTemplateRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceTemplates.Insert")
+              .setFullMethodName("google.cloud.compute.v1.InstanceTemplates/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertInstanceTemplateRequest>newBuilder()
@@ -273,11 +269,10 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListInstanceTemplatesRequest, InstanceTemplateList>
+  private static final ApiMethodDescriptor<ListInstanceTemplatesRequest, InstanceTemplateList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListInstanceTemplatesRequest, InstanceTemplateList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceTemplates.List")
+              .setFullMethodName("google.cloud.compute.v1.InstanceTemplates/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListInstanceTemplatesRequest>newBuilder()
@@ -330,7 +325,7 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
                           new FieldsExtractor<ListInstanceTemplatesRequest, String>() {
                             @Override
                             public String extract(ListInstanceTemplatesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -340,11 +335,10 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetIamPolicyInstanceTemplateRequest, Policy>
+  private static final ApiMethodDescriptor<SetIamPolicyInstanceTemplateRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyInstanceTemplateRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceTemplates.SetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.InstanceTemplates/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyInstanceTemplateRequest>newBuilder()
@@ -372,7 +366,6 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetIamPolicyInstanceTemplateRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -393,13 +386,12 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           TestIamPermissionsInstanceTemplateRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           ApiMethodDescriptor
               .<TestIamPermissionsInstanceTemplateRequest, TestPermissionsResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.InstanceTemplates.TestIamPermissions")
+              .setFullMethodName("google.cloud.compute.v1.InstanceTemplates/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -429,7 +421,6 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<TestIamPermissionsInstanceTemplateRequest>
                                   serializer = ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -451,8 +442,6 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteInstanceTemplateRequest, Operation> deleteCallable;
   private final UnaryCallable<GetInstanceTemplateRequest, InstanceTemplate> getCallable;
   private final UnaryCallable<GetIamPolicyInstanceTemplateRequest, Policy> getIamPolicyCallable;
@@ -463,6 +452,7 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
   private final UnaryCallable<TestIamPermissionsInstanceTemplateRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonInstanceTemplatesStub create(InstanceTemplatesStubSettings settings)
@@ -564,37 +554,59 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteInstanceTemplateRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetInstanceTemplateRequest, InstanceTemplate> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyInstanceTemplateRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<InsertInstanceTemplateRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListInstanceTemplatesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListInstanceTemplatesRequest, InstanceTemplateList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListInstanceTemplatesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<SetIamPolicyInstanceTemplateRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsInstanceTemplateRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

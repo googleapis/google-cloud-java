@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.SnapshotsClient.ListPagedResponse;
@@ -44,73 +45,74 @@ import com.google.cloud.compute.v1.SnapshotList;
 import com.google.cloud.compute.v1.TestIamPermissionsSnapshotRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the Snapshots service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonSnapshotsStub extends SnapshotsStub {
+  private static final ApiMethodDescriptor<DeleteSnapshotRequest, Operation>
+      deleteMethodDescriptor =
+          ApiMethodDescriptor.<DeleteSnapshotRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Snapshots/Delete")
+              .setHttpMethod(HttpMethods.DELETE)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteSnapshotRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/snapshots/{snapshot}",
+                          new FieldsExtractor<DeleteSnapshotRequest, Map<String, String>>() {
+                            @Override
+                            public Map<String, String> extract(DeleteSnapshotRequest request) {
+                              Map<String, String> fields = new HashMap<>();
+                              ProtoRestSerializer<DeleteSnapshotRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "snapshot", request.getSnapshot());
+                              return fields;
+                            }
+                          })
+                      .setQueryParamsExtractor(
+                          new FieldsExtractor<DeleteSnapshotRequest, Map<String, List<String>>>() {
+                            @Override
+                            public Map<String, List<String>> extract(
+                                DeleteSnapshotRequest request) {
+                              Map<String, List<String>> fields = new HashMap<>();
+                              ProtoRestSerializer<DeleteSnapshotRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
+                              return fields;
+                            }
+                          })
+                      .setRequestBodyExtractor(
+                          new FieldsExtractor<DeleteSnapshotRequest, String>() {
+                            @Override
+                            public String extract(DeleteSnapshotRequest request) {
+                              return null;
+                            }
+                          })
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteSnapshotRequest, Operation> deleteMethodDescriptor =
-      ApiMethodDescriptor.<DeleteSnapshotRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Snapshots.Delete")
-          .setHttpMethod(HttpMethods.DELETE)
-          .setRequestFormatter(
-              ProtoMessageRequestFormatter.<DeleteSnapshotRequest>newBuilder()
-                  .setPath(
-                      "/compute/v1/projects/{project}/global/snapshots/{snapshot}",
-                      new FieldsExtractor<DeleteSnapshotRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(DeleteSnapshotRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<DeleteSnapshotRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "snapshot", request.getSnapshot());
-                          return fields;
-                        }
-                      })
-                  .setQueryParamsExtractor(
-                      new FieldsExtractor<DeleteSnapshotRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(DeleteSnapshotRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<DeleteSnapshotRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
-                        }
-                      })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<DeleteSnapshotRequest, String>() {
-                        @Override
-                        public String extract(DeleteSnapshotRequest request) {
-                          return "";
-                        }
-                      })
-                  .build())
-          .setResponseParser(
-              ProtoMessageResponseParser.<Operation>newBuilder()
-                  .setDefaultInstance(Operation.getDefaultInstance())
-                  .build())
-          .build();
-
-  @InternalApi
-  public static final ApiMethodDescriptor<GetSnapshotRequest, Snapshot> getMethodDescriptor =
+  private static final ApiMethodDescriptor<GetSnapshotRequest, Snapshot> getMethodDescriptor =
       ApiMethodDescriptor.<GetSnapshotRequest, Snapshot>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Snapshots.Get")
+          .setFullMethodName("google.cloud.compute.v1.Snapshots/Get")
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetSnapshotRequest>newBuilder()
@@ -134,7 +136,6 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<GetSnapshotRequest> serializer =
                               ProtoRestSerializer.create();
-
                           return fields;
                         }
                       })
@@ -142,7 +143,7 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
                       new FieldsExtractor<GetSnapshotRequest, String>() {
                         @Override
                         public String extract(GetSnapshotRequest request) {
-                          return "";
+                          return null;
                         }
                       })
                   .build())
@@ -152,11 +153,10 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
                   .build())
           .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetIamPolicySnapshotRequest, Policy>
+  private static final ApiMethodDescriptor<GetIamPolicySnapshotRequest, Policy>
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicySnapshotRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Snapshots.GetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.Snapshots/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicySnapshotRequest>newBuilder()
@@ -196,7 +196,7 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
                           new FieldsExtractor<GetIamPolicySnapshotRequest, String>() {
                             @Override
                             public String extract(GetIamPolicySnapshotRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -206,70 +206,73 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListSnapshotsRequest, SnapshotList> listMethodDescriptor =
-      ApiMethodDescriptor.<ListSnapshotsRequest, SnapshotList>newBuilder()
-          .setFullMethodName("google.cloud.compute.v1.Snapshots.List")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ProtoMessageRequestFormatter.<ListSnapshotsRequest>newBuilder()
-                  .setPath(
-                      "/compute/v1/projects/{project}/global/snapshots",
-                      new FieldsExtractor<ListSnapshotsRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(ListSnapshotsRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<ListSnapshotsRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          return fields;
-                        }
-                      })
-                  .setQueryParamsExtractor(
-                      new FieldsExtractor<ListSnapshotsRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(ListSnapshotsRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<ListSnapshotsRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasFilter()) {
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
-                          }
-                          if (request.hasMaxResults()) {
-                            serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
-                          }
-                          if (request.hasOrderBy()) {
-                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                          }
-                          if (request.hasPageToken()) {
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                          }
-                          if (request.hasReturnPartialSuccess()) {
-                            serializer.putQueryParam(
-                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
-                          }
-                          return fields;
-                        }
-                      })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<ListSnapshotsRequest, String>() {
-                        @Override
-                        public String extract(ListSnapshotsRequest request) {
-                          return "";
-                        }
-                      })
-                  .build())
-          .setResponseParser(
-              ProtoMessageResponseParser.<SnapshotList>newBuilder()
-                  .setDefaultInstance(SnapshotList.getDefaultInstance())
-                  .build())
-          .build();
+  private static final ApiMethodDescriptor<ListSnapshotsRequest, SnapshotList>
+      listMethodDescriptor =
+          ApiMethodDescriptor.<ListSnapshotsRequest, SnapshotList>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Snapshots/List")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListSnapshotsRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/snapshots",
+                          new FieldsExtractor<ListSnapshotsRequest, Map<String, String>>() {
+                            @Override
+                            public Map<String, String> extract(ListSnapshotsRequest request) {
+                              Map<String, String> fields = new HashMap<>();
+                              ProtoRestSerializer<ListSnapshotsRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              return fields;
+                            }
+                          })
+                      .setQueryParamsExtractor(
+                          new FieldsExtractor<ListSnapshotsRequest, Map<String, List<String>>>() {
+                            @Override
+                            public Map<String, List<String>> extract(ListSnapshotsRequest request) {
+                              Map<String, List<String>> fields = new HashMap<>();
+                              ProtoRestSerializer<ListSnapshotsRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
+                              return fields;
+                            }
+                          })
+                      .setRequestBodyExtractor(
+                          new FieldsExtractor<ListSnapshotsRequest, String>() {
+                            @Override
+                            public String extract(ListSnapshotsRequest request) {
+                              return null;
+                            }
+                          })
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SnapshotList>newBuilder()
+                      .setDefaultInstance(SnapshotList.getDefaultInstance())
+                      .build())
+              .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetIamPolicySnapshotRequest, Policy>
+  private static final ApiMethodDescriptor<SetIamPolicySnapshotRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicySnapshotRequest, Policy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Snapshots.SetIamPolicy")
+              .setFullMethodName("google.cloud.compute.v1.Snapshots/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicySnapshotRequest>newBuilder()
@@ -296,7 +299,6 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetIamPolicySnapshotRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -317,11 +319,10 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetLabelsSnapshotRequest, Operation>
+  private static final ApiMethodDescriptor<SetLabelsSnapshotRequest, Operation>
       setLabelsMethodDescriptor =
           ApiMethodDescriptor.<SetLabelsSnapshotRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Snapshots.SetLabels")
+              .setFullMethodName("google.cloud.compute.v1.Snapshots/SetLabels")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetLabelsSnapshotRequest>newBuilder()
@@ -347,7 +348,6 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetLabelsSnapshotRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -368,13 +368,12 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           TestIamPermissionsSnapshotRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           ApiMethodDescriptor
               .<TestIamPermissionsSnapshotRequest, TestPermissionsResponse>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.Snapshots.TestIamPermissions")
+              .setFullMethodName("google.cloud.compute.v1.Snapshots/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsSnapshotRequest>newBuilder()
@@ -402,7 +401,6 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<TestIamPermissionsSnapshotRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -423,8 +421,6 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteSnapshotRequest, Operation> deleteCallable;
   private final UnaryCallable<GetSnapshotRequest, Snapshot> getCallable;
   private final UnaryCallable<GetIamPolicySnapshotRequest, Policy> getIamPolicyCallable;
@@ -435,6 +431,7 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
   private final UnaryCallable<TestIamPermissionsSnapshotRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonSnapshotsStub create(SnapshotsStubSettings settings)
@@ -532,37 +529,59 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(setLabelsMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteSnapshotRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetSnapshotRequest, Snapshot> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicySnapshotRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
-  public UnaryCallable<ListSnapshotsRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListSnapshotsRequest, SnapshotList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListSnapshotsRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<SetIamPolicySnapshotRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetLabelsSnapshotRequest, Operation> setLabelsCallable() {
     return setLabelsCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsSnapshotRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

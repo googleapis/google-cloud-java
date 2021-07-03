@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,28 +31,26 @@ import com.google.cloud.compute.v1.stub.TargetHttpProxiesStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The TargetHttpProxies API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
- *   String project = "";
- *   String targetHttpProxy = "";
+ *   String project = "project-309310695";
+ *   String targetHttpProxy = "targetHttpProxy-1944074187";
  *   Operation response = targetHttpProxiesClient.delete(project, targetHttpProxy);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the targetHttpProxiesClient object to clean up resources
+ * <p>Note: close() needs to be called on the TargetHttpProxiesClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -80,30 +79,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TargetHttpProxiesSettings targetHttpProxiesSettings =
  *     TargetHttpProxiesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * TargetHttpProxiesClient targetHttpProxiesClient =
  *     TargetHttpProxiesClient.create(targetHttpProxiesSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TargetHttpProxiesSettings targetHttpProxiesSettings =
  *     TargetHttpProxiesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TargetHttpProxiesClient targetHttpProxiesClient =
  *     TargetHttpProxiesClient.create(targetHttpProxiesSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class TargetHttpProxiesClient implements BackgroundResource {
   private final TargetHttpProxiesSettings settings;
   private final TargetHttpProxiesStub stub;
@@ -124,7 +120,7 @@ public class TargetHttpProxiesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of TargetHttpProxiesClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use TargetHttpProxiesSettings}.
+   * is for advanced usage - prefer using create(TargetHttpProxiesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TargetHttpProxiesClient create(TargetHttpProxiesStub stub) {
@@ -156,21 +152,22 @@ public class TargetHttpProxiesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all TargetHttpProxy resources, regional and global, available to the
    * specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   for (Entry&lt;String, TargetHttpProxiesScopedList&gt; element : targetHttpProxiesClient.aggregatedList(project).iterateAll()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, TargetHttpProxiesScopedList> element :
+   *       targetHttpProxiesClient.aggregatedList(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Name of the project scoping this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -181,24 +178,31 @@ public class TargetHttpProxiesClient implements BackgroundResource {
     return aggregatedList(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all TargetHttpProxy resources, regional and global, available to the
    * specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   AggregatedListTargetHttpProxiesRequest request = AggregatedListTargetHttpProxiesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   for (Entry&lt;String, TargetHttpProxiesScopedList&gt; element : targetHttpProxiesClient.aggregatedList(request).iterateAll()) {
+   *   AggregatedListTargetHttpProxiesRequest request =
+   *       AggregatedListTargetHttpProxiesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, TargetHttpProxiesScopedList> element :
+   *       targetHttpProxiesClient.aggregatedList(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -208,48 +212,62 @@ public class TargetHttpProxiesClient implements BackgroundResource {
     return aggregatedListPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all TargetHttpProxy resources, regional and global, available to the
    * specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   AggregatedListTargetHttpProxiesRequest request = AggregatedListTargetHttpProxiesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;AggregatedListPagedResponse&gt; future = targetHttpProxiesClient.aggregatedListPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Entry&lt;String, TargetHttpProxiesScopedList&gt; element : future.get().iterateAll()) {
+   *   AggregatedListTargetHttpProxiesRequest request =
+   *       AggregatedListTargetHttpProxiesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, TargetHttpProxiesScopedList>> future =
+   *       targetHttpProxiesClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, TargetHttpProxiesScopedList> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListTargetHttpProxiesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return stub.aggregatedListPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all TargetHttpProxy resources, regional and global, available to the
    * specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   AggregatedListTargetHttpProxiesRequest request = AggregatedListTargetHttpProxiesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   AggregatedListTargetHttpProxiesRequest request =
+   *       AggregatedListTargetHttpProxiesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
-   *     TargetHttpProxyAggregatedList response = targetHttpProxiesClient.aggregatedListCallable().call(request);
-   *     for (Entry&lt;String, TargetHttpProxiesScopedList&gt; element : response.getItemsMap()) {
+   *     TargetHttpProxyAggregatedList response =
+   *         targetHttpProxiesClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, TargetHttpProxiesScopedList> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -260,26 +278,26 @@ public class TargetHttpProxiesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AggregatedListTargetHttpProxiesRequest, TargetHttpProxyAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified TargetHttpProxy resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetHttpProxy = "";
+   *   String project = "project-309310695";
+   *   String targetHttpProxy = "targetHttpProxy-1944074187";
    *   Operation response = targetHttpProxiesClient.delete(project, targetHttpProxy);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetHttpProxy Name of the TargetHttpProxy resource to delete.
@@ -294,23 +312,23 @@ public class TargetHttpProxiesClient implements BackgroundResource {
     return delete(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified TargetHttpProxy resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetHttpProxy = "";
-   *   DeleteTargetHttpProxyRequest request = DeleteTargetHttpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetHttpProxy(targetHttpProxy)
-   *     .build();
+   *   DeleteTargetHttpProxyRequest request =
+   *       DeleteTargetHttpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetHttpProxy("targetHttpProxy-1944074187")
+   *           .build();
    *   Operation response = targetHttpProxiesClient.delete(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -319,44 +337,44 @@ public class TargetHttpProxiesClient implements BackgroundResource {
     return deleteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified TargetHttpProxy resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetHttpProxy = "";
-   *   DeleteTargetHttpProxyRequest request = DeleteTargetHttpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetHttpProxy(targetHttpProxy)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetHttpProxiesClient.deleteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteTargetHttpProxyRequest request =
+   *       DeleteTargetHttpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetHttpProxy("targetHttpProxy-1944074187")
+   *           .build();
+   *   ApiFuture<Operation> future = targetHttpProxiesClient.deleteCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteTargetHttpProxyRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified TargetHttpProxy resource. Gets a list of available target HTTP proxies by
    * making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetHttpProxy = "";
+   *   String project = "project-309310695";
+   *   String targetHttpProxy = "targetHttpProxy-1944074187";
    *   TargetHttpProxy response = targetHttpProxiesClient.get(project, targetHttpProxy);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetHttpProxy Name of the TargetHttpProxy resource to return.
@@ -371,24 +389,23 @@ public class TargetHttpProxiesClient implements BackgroundResource {
     return get(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified TargetHttpProxy resource. Gets a list of available target HTTP proxies by
    * making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetHttpProxy = "";
-   *   GetTargetHttpProxyRequest request = GetTargetHttpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetHttpProxy(targetHttpProxy)
-   *     .build();
+   *   GetTargetHttpProxyRequest request =
+   *       GetTargetHttpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setTargetHttpProxy("targetHttpProxy-1944074187")
+   *           .build();
    *   TargetHttpProxy response = targetHttpProxiesClient.get(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -397,45 +414,44 @@ public class TargetHttpProxiesClient implements BackgroundResource {
     return getCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified TargetHttpProxy resource. Gets a list of available target HTTP proxies by
    * making a list() request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetHttpProxy = "";
-   *   GetTargetHttpProxyRequest request = GetTargetHttpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetHttpProxy(targetHttpProxy)
-   *     .build();
-   *   ApiFuture&lt;TargetHttpProxy&gt; future = targetHttpProxiesClient.getCallable().futureCall(request);
-   *   // Do something
+   *   GetTargetHttpProxyRequest request =
+   *       GetTargetHttpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setTargetHttpProxy("targetHttpProxy-1944074187")
+   *           .build();
+   *   ApiFuture<TargetHttpProxy> future = targetHttpProxiesClient.getCallable().futureCall(request);
+   *   // Do something.
    *   TargetHttpProxy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetTargetHttpProxyRequest, TargetHttpProxy> getCallable() {
     return stub.getCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TargetHttpProxy resource in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   TargetHttpProxy targetHttpProxyResource = TargetHttpProxy.newBuilder().build();
    *   Operation response = targetHttpProxiesClient.insert(project, targetHttpProxyResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetHttpProxyResource The body resource for this request
@@ -450,24 +466,24 @@ public class TargetHttpProxiesClient implements BackgroundResource {
     return insert(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TargetHttpProxy resource in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   TargetHttpProxy targetHttpProxyResource = TargetHttpProxy.newBuilder().build();
-   *   InsertTargetHttpProxyRequest request = InsertTargetHttpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetHttpProxyResource(targetHttpProxyResource)
-   *     .build();
+   *   InsertTargetHttpProxyRequest request =
+   *       InsertTargetHttpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetHttpProxyResource(TargetHttpProxy.newBuilder().build())
+   *           .build();
    *   Operation response = targetHttpProxiesClient.insert(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -476,45 +492,45 @@ public class TargetHttpProxiesClient implements BackgroundResource {
     return insertCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TargetHttpProxy resource in the specified project using the data included in the
    * request.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   TargetHttpProxy targetHttpProxyResource = TargetHttpProxy.newBuilder().build();
-   *   InsertTargetHttpProxyRequest request = InsertTargetHttpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetHttpProxyResource(targetHttpProxyResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetHttpProxiesClient.insertCallable().futureCall(request);
-   *   // Do something
+   *   InsertTargetHttpProxyRequest request =
+   *       InsertTargetHttpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetHttpProxyResource(TargetHttpProxy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = targetHttpProxiesClient.insertCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<InsertTargetHttpProxyRequest, Operation> insertCallable() {
     return stub.insertCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of TargetHttpProxy resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
+   *   String project = "project-309310695";
    *   for (TargetHttpProxy element : targetHttpProxiesClient.list(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -525,23 +541,28 @@ public class TargetHttpProxiesClient implements BackgroundResource {
     return list(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of TargetHttpProxy resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   ListTargetHttpProxiesRequest request = ListTargetHttpProxiesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListTargetHttpProxiesRequest request =
+   *       ListTargetHttpProxiesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   for (TargetHttpProxy element : targetHttpProxiesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -550,45 +571,56 @@ public class TargetHttpProxiesClient implements BackgroundResource {
     return listPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of TargetHttpProxy resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   ListTargetHttpProxiesRequest request = ListTargetHttpProxiesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
-   *   ApiFuture&lt;ListPagedResponse&gt; future = targetHttpProxiesClient.listPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListTargetHttpProxiesRequest request =
+   *       ListTargetHttpProxiesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<TargetHttpProxy> future =
+   *       targetHttpProxiesClient.listPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (TargetHttpProxy element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListTargetHttpProxiesRequest, ListPagedResponse> listPagedCallable() {
     return stub.listPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of TargetHttpProxy resources available to the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   ListTargetHttpProxiesRequest request = ListTargetHttpProxiesRequest.newBuilder()
-   *     .setProject(project)
-   *     .build();
+   *   ListTargetHttpProxiesRequest request =
+   *       ListTargetHttpProxiesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
    *   while (true) {
    *     TargetHttpProxyList response = targetHttpProxiesClient.listCallable().call(request);
-   *     for (TargetHttpProxy element : response.getItemsList()) {
+   *     for (TargetHttpProxy element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -599,27 +631,29 @@ public class TargetHttpProxiesClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListTargetHttpProxiesRequest, TargetHttpProxyList> listCallable() {
     return stub.listCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified TargetHttpProxy resource with the data included in the request. This
-   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * method supports PATCH semantics and uses JSON merge patch format and processing rules. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetHttpProxy = "";
+   *   String project = "project-309310695";
+   *   String targetHttpProxy = "targetHttpProxy-1944074187";
    *   TargetHttpProxy targetHttpProxyResource = TargetHttpProxy.newBuilder().build();
-   *   Operation response = targetHttpProxiesClient.patch(project, targetHttpProxy, targetHttpProxyResource);
+   *   Operation response =
+   *       targetHttpProxiesClient.patch(project, targetHttpProxy, targetHttpProxyResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetHttpProxy Name of the TargetHttpProxy resource to patch.
@@ -637,26 +671,26 @@ public class TargetHttpProxiesClient implements BackgroundResource {
     return patch(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified TargetHttpProxy resource with the data included in the request. This
-   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * method supports PATCH semantics and uses JSON merge patch format and processing rules. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetHttpProxy = "";
-   *   TargetHttpProxy targetHttpProxyResource = TargetHttpProxy.newBuilder().build();
-   *   PatchTargetHttpProxyRequest request = PatchTargetHttpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetHttpProxy(targetHttpProxy)
-   *     .setTargetHttpProxyResource(targetHttpProxyResource)
-   *     .build();
+   *   PatchTargetHttpProxyRequest request =
+   *       PatchTargetHttpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetHttpProxy("targetHttpProxy-1944074187")
+   *           .setTargetHttpProxyResource(TargetHttpProxy.newBuilder().build())
+   *           .build();
    *   Operation response = targetHttpProxiesClient.patch(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -665,47 +699,48 @@ public class TargetHttpProxiesClient implements BackgroundResource {
     return patchCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified TargetHttpProxy resource with the data included in the request. This
-   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * method supports PATCH semantics and uses JSON merge patch format and processing rules. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetHttpProxy = "";
-   *   TargetHttpProxy targetHttpProxyResource = TargetHttpProxy.newBuilder().build();
-   *   PatchTargetHttpProxyRequest request = PatchTargetHttpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetHttpProxy(targetHttpProxy)
-   *     .setTargetHttpProxyResource(targetHttpProxyResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetHttpProxiesClient.patchCallable().futureCall(request);
-   *   // Do something
+   *   PatchTargetHttpProxyRequest request =
+   *       PatchTargetHttpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetHttpProxy("targetHttpProxy-1944074187")
+   *           .setTargetHttpProxyResource(TargetHttpProxy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = targetHttpProxiesClient.patchCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<PatchTargetHttpProxyRequest, Operation> patchCallable() {
     return stub.patchCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the URL map for TargetHttpProxy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetHttpProxy = "";
+   *   String project = "project-309310695";
+   *   String targetHttpProxy = "targetHttpProxy-1944074187";
    *   UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
-   *   Operation response = targetHttpProxiesClient.setUrlMap(project, targetHttpProxy, urlMapReferenceResource);
+   *   Operation response =
+   *       targetHttpProxiesClient.setUrlMap(project, targetHttpProxy, urlMapReferenceResource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param project Project ID for this request.
    * @param targetHttpProxy Name of the TargetHttpProxy to set a URL map for.
@@ -723,25 +758,24 @@ public class TargetHttpProxiesClient implements BackgroundResource {
     return setUrlMap(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the URL map for TargetHttpProxy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetHttpProxy = "";
-   *   UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
-   *   SetUrlMapTargetHttpProxyRequest request = SetUrlMapTargetHttpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetHttpProxy(targetHttpProxy)
-   *     .setUrlMapReferenceResource(urlMapReferenceResource)
-   *     .build();
+   *   SetUrlMapTargetHttpProxyRequest request =
+   *       SetUrlMapTargetHttpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetHttpProxy("targetHttpProxy-1944074187")
+   *           .setUrlMapReferenceResource(UrlMapReference.newBuilder().build())
+   *           .build();
    *   Operation response = targetHttpProxiesClient.setUrlMap(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -750,27 +784,26 @@ public class TargetHttpProxiesClient implements BackgroundResource {
     return setUrlMapCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Changes the URL map for TargetHttpProxy.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
-   *   String project = "";
-   *   String targetHttpProxy = "";
-   *   UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
-   *   SetUrlMapTargetHttpProxyRequest request = SetUrlMapTargetHttpProxyRequest.newBuilder()
-   *     .setProject(project)
-   *     .setTargetHttpProxy(targetHttpProxy)
-   *     .setUrlMapReferenceResource(urlMapReferenceResource)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = targetHttpProxiesClient.setUrlMapCallable().futureCall(request);
-   *   // Do something
+   *   SetUrlMapTargetHttpProxyRequest request =
+   *       SetUrlMapTargetHttpProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetHttpProxy("targetHttpProxy-1944074187")
+   *           .setUrlMapReferenceResource(UrlMapReference.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = targetHttpProxiesClient.setUrlMapCallable().futureCall(request);
+   *   // Do something.
    *   Operation response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetUrlMapTargetHttpProxyRequest, Operation> setUrlMapCallable() {
     return stub.setUrlMapCallable();
@@ -810,7 +843,7 @@ public class TargetHttpProxiesClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           AggregatedListTargetHttpProxiesRequest,
           TargetHttpProxyAggregatedList,
-          Entry<String, TargetHttpProxiesScopedList>,
+          Map.Entry<String, TargetHttpProxiesScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
@@ -818,7 +851,7 @@ public class TargetHttpProxiesClient implements BackgroundResource {
         PageContext<
                 AggregatedListTargetHttpProxiesRequest,
                 TargetHttpProxyAggregatedList,
-                Entry<String, TargetHttpProxiesScopedList>>
+                Map.Entry<String, TargetHttpProxiesScopedList>>
             context,
         ApiFuture<TargetHttpProxyAggregatedList> futureResponse) {
       ApiFuture<AggregatedListPage> futurePage =
@@ -843,14 +876,14 @@ public class TargetHttpProxiesClient implements BackgroundResource {
       extends AbstractPage<
           AggregatedListTargetHttpProxiesRequest,
           TargetHttpProxyAggregatedList,
-          Entry<String, TargetHttpProxiesScopedList>,
+          Map.Entry<String, TargetHttpProxiesScopedList>,
           AggregatedListPage> {
 
     private AggregatedListPage(
         PageContext<
                 AggregatedListTargetHttpProxiesRequest,
                 TargetHttpProxyAggregatedList,
-                Entry<String, TargetHttpProxiesScopedList>>
+                Map.Entry<String, TargetHttpProxiesScopedList>>
             context,
         TargetHttpProxyAggregatedList response) {
       super(context, response);
@@ -865,7 +898,7 @@ public class TargetHttpProxiesClient implements BackgroundResource {
         PageContext<
                 AggregatedListTargetHttpProxiesRequest,
                 TargetHttpProxyAggregatedList,
-                Entry<String, TargetHttpProxiesScopedList>>
+                Map.Entry<String, TargetHttpProxiesScopedList>>
             context,
         TargetHttpProxyAggregatedList response) {
       return new AggregatedListPage(context, response);
@@ -876,7 +909,7 @@ public class TargetHttpProxiesClient implements BackgroundResource {
         PageContext<
                 AggregatedListTargetHttpProxiesRequest,
                 TargetHttpProxyAggregatedList,
-                Entry<String, TargetHttpProxiesScopedList>>
+                Map.Entry<String, TargetHttpProxiesScopedList>>
             context,
         ApiFuture<TargetHttpProxyAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -887,7 +920,7 @@ public class TargetHttpProxiesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           AggregatedListTargetHttpProxiesRequest,
           TargetHttpProxyAggregatedList,
-          Entry<String, TargetHttpProxiesScopedList>,
+          Map.Entry<String, TargetHttpProxiesScopedList>,
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 

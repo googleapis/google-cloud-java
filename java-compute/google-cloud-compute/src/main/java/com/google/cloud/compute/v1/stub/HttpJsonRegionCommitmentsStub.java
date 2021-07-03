@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionCommitmentsClient.AggregatedListPagedResponse;
@@ -41,29 +42,28 @@ import com.google.cloud.compute.v1.InsertRegionCommitmentRequest;
 import com.google.cloud.compute.v1.ListRegionCommitmentsRequest;
 import com.google.cloud.compute.v1.Operation;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the RegionCommitments service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListRegionCommitmentsRequest, CommitmentAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListRegionCommitmentsRequest, CommitmentAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionCommitments.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.RegionCommitments/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListRegionCommitmentsRequest>newBuilder()
@@ -121,7 +121,7 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
                           new FieldsExtractor<AggregatedListRegionCommitmentsRequest, String>() {
                             @Override
                             public String extract(AggregatedListRegionCommitmentsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -131,11 +131,10 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetRegionCommitmentRequest, Commitment>
+  private static final ApiMethodDescriptor<GetRegionCommitmentRequest, Commitment>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetRegionCommitmentRequest, Commitment>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionCommitments.Get")
+              .setFullMethodName("google.cloud.compute.v1.RegionCommitments/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionCommitmentRequest>newBuilder()
@@ -147,10 +146,10 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetRegionCommitmentRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "commitment", request.getCommitment());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -163,7 +162,6 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetRegionCommitmentRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -171,7 +169,7 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
                           new FieldsExtractor<GetRegionCommitmentRequest, String>() {
                             @Override
                             public String extract(GetRegionCommitmentRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -181,11 +179,10 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertRegionCommitmentRequest, Operation>
+  private static final ApiMethodDescriptor<InsertRegionCommitmentRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertRegionCommitmentRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionCommitments.Insert")
+              .setFullMethodName("google.cloud.compute.v1.RegionCommitments/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionCommitmentRequest>newBuilder()
@@ -235,11 +232,10 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListRegionCommitmentsRequest, CommitmentList>
+  private static final ApiMethodDescriptor<ListRegionCommitmentsRequest, CommitmentList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListRegionCommitmentsRequest, CommitmentList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionCommitments.List")
+              .setFullMethodName("google.cloud.compute.v1.RegionCommitments/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionCommitmentsRequest>newBuilder()
@@ -293,7 +289,7 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
                           new FieldsExtractor<ListRegionCommitmentsRequest, String>() {
                             @Override
                             public String extract(ListRegionCommitmentsRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -302,8 +298,6 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
                       .setDefaultInstance(CommitmentList.getDefaultInstance())
                       .build())
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AggregatedListRegionCommitmentsRequest, CommitmentAggregatedList>
       aggregatedListCallable;
@@ -314,6 +308,7 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
   private final UnaryCallable<ListRegionCommitmentsRequest, CommitmentList> listCallable;
   private final UnaryCallable<ListRegionCommitmentsRequest, ListPagedResponse> listPagedCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionCommitmentsStub create(RegionCommitmentsStubSettings settings)
@@ -393,33 +388,50 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListRegionCommitmentsRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListRegionCommitmentsRequest, CommitmentAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListRegionCommitmentsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<GetRegionCommitmentRequest, Commitment> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertRegionCommitmentRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListRegionCommitmentsRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListRegionCommitmentsRequest, CommitmentList> listCallable() {
     return listCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRegionCommitmentsRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
   }
 
   @Override

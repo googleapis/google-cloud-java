@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.ImagesClient.ListPagedResponse;
@@ -33,7 +34,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ImagesClient}.
  *
@@ -50,23 +51,23 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of delete to 30 seconds:
  *
- * <pre>
- * <code>
- * ImagesSettings.Builder imagesSettingsBuilder =
- *     ImagesSettings.newBuilder();
+ * <pre>{@code
+ * ImagesSettings.Builder imagesSettingsBuilder = ImagesSettings.newBuilder();
  * imagesSettingsBuilder
  *     .deleteSettings()
  *     .setRetrySettings(
- *         imagesSettingsBuilder.deleteSettings().getRetrySettings().toBuilder()
+ *         imagesSettingsBuilder
+ *             .deleteSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ImagesSettings imagesSettings = imagesSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class ImagesSettings extends ClientSettings<ImagesSettings> {
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteImageRequest, Operation> deleteSettings() {
     return ((ImagesStubSettings) getStubSettings()).deleteSettings();
@@ -136,10 +137,6 @@ public class ImagesSettings extends ClientSettings<ImagesSettings> {
   public static String getDefaultEndpoint() {
     return ImagesStubSettings.getDefaultEndpoint();
   }
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return ImagesStubSettings.getDefaultServicePort();
-  }
 
   /** Returns the default service scopes. */
   public static List<String> getDefaultServiceScopes() {
@@ -187,16 +184,13 @@ public class ImagesSettings extends ClientSettings<ImagesSettings> {
 
   /** Builder for ImagesSettings. */
   public static class Builder extends ClientSettings.Builder<ImagesSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(ImagesStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(ImagesStubSettings.newBuilder());
     }
 
     protected Builder(ImagesSettings settings) {
@@ -207,11 +201,15 @@ public class ImagesSettings extends ClientSettings<ImagesSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(ImagesStubSettings.newBuilder());
+    }
+
     public ImagesStubSettings.Builder getStubSettingsBuilder() {
       return ((ImagesStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

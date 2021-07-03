@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.TargetHttpsProxiesClient.AggregatedListPagedResponse;
@@ -47,29 +48,28 @@ import com.google.cloud.compute.v1.TargetHttpsProxy;
 import com.google.cloud.compute.v1.TargetHttpsProxyAggregatedList;
 import com.google.cloud.compute.v1.TargetHttpsProxyList;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the TargetHttpsProxies service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<
+  private static final ApiMethodDescriptor<
           AggregatedListTargetHttpsProxiesRequest, TargetHttpsProxyAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor
               .<AggregatedListTargetHttpsProxiesRequest, TargetHttpsProxyAggregatedList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies.AggregatedList")
+              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListTargetHttpsProxiesRequest>newBuilder()
@@ -128,7 +128,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                           new FieldsExtractor<AggregatedListTargetHttpsProxiesRequest, String>() {
                             @Override
                             public String extract(AggregatedListTargetHttpsProxiesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -138,11 +138,10 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteTargetHttpsProxyRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteTargetHttpsProxyRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteTargetHttpsProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies.Delete")
+              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteTargetHttpsProxyRequest>newBuilder()
@@ -182,7 +181,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                           new FieldsExtractor<DeleteTargetHttpsProxyRequest, String>() {
                             @Override
                             public String extract(DeleteTargetHttpsProxyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -192,11 +191,10 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetTargetHttpsProxyRequest, TargetHttpsProxy>
+  private static final ApiMethodDescriptor<GetTargetHttpsProxyRequest, TargetHttpsProxy>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetTargetHttpsProxyRequest, TargetHttpsProxy>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies.Get")
+              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetTargetHttpsProxyRequest>newBuilder()
@@ -223,7 +221,6 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetTargetHttpsProxyRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -231,7 +228,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                           new FieldsExtractor<GetTargetHttpsProxyRequest, String>() {
                             @Override
                             public String extract(GetTargetHttpsProxyRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -241,11 +238,10 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertTargetHttpsProxyRequest, Operation>
+  private static final ApiMethodDescriptor<InsertTargetHttpsProxyRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertTargetHttpsProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies.Insert")
+              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertTargetHttpsProxyRequest>newBuilder()
@@ -296,11 +292,10 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListTargetHttpsProxiesRequest, TargetHttpsProxyList>
+  private static final ApiMethodDescriptor<ListTargetHttpsProxiesRequest, TargetHttpsProxyList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListTargetHttpsProxiesRequest, TargetHttpsProxyList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies.List")
+              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListTargetHttpsProxiesRequest>newBuilder()
@@ -354,7 +349,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                           new FieldsExtractor<ListTargetHttpsProxiesRequest, String>() {
                             @Override
                             public String extract(ListTargetHttpsProxiesRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -364,11 +359,10 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchTargetHttpsProxyRequest, Operation>
+  private static final ApiMethodDescriptor<PatchTargetHttpsProxyRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchTargetHttpsProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies.Patch")
+              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/Patch")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchTargetHttpsProxyRequest>newBuilder()
@@ -420,11 +414,10 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetQuicOverrideTargetHttpsProxyRequest, Operation>
+  private static final ApiMethodDescriptor<SetQuicOverrideTargetHttpsProxyRequest, Operation>
       setQuicOverrideMethodDescriptor =
           ApiMethodDescriptor.<SetQuicOverrideTargetHttpsProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies.SetQuicOverride")
+              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/SetQuicOverride")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetQuicOverrideTargetHttpsProxyRequest>newBuilder()
@@ -478,11 +471,10 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetSslCertificatesTargetHttpsProxyRequest, Operation>
+  private static final ApiMethodDescriptor<SetSslCertificatesTargetHttpsProxyRequest, Operation>
       setSslCertificatesMethodDescriptor =
           ApiMethodDescriptor.<SetSslCertificatesTargetHttpsProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies.SetSslCertificates")
+              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/SetSslCertificates")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -539,11 +531,10 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetSslPolicyTargetHttpsProxyRequest, Operation>
+  private static final ApiMethodDescriptor<SetSslPolicyTargetHttpsProxyRequest, Operation>
       setSslPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetSslPolicyTargetHttpsProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies.SetSslPolicy")
+              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/SetSslPolicy")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetSslPolicyTargetHttpsProxyRequest>newBuilder()
@@ -596,11 +587,10 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<SetUrlMapTargetHttpsProxyRequest, Operation>
+  private static final ApiMethodDescriptor<SetUrlMapTargetHttpsProxyRequest, Operation>
       setUrlMapMethodDescriptor =
           ApiMethodDescriptor.<SetUrlMapTargetHttpsProxyRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies.SetUrlMap")
+              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/SetUrlMap")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetUrlMapTargetHttpsProxyRequest>newBuilder()
@@ -653,8 +643,6 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<
           AggregatedListTargetHttpsProxiesRequest, TargetHttpsProxyAggregatedList>
       aggregatedListCallable;
@@ -673,6 +661,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
   private final UnaryCallable<SetSslPolicyTargetHttpsProxyRequest, Operation> setSslPolicyCallable;
   private final UnaryCallable<SetUrlMapTargetHttpsProxyRequest, Operation> setUrlMapCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonTargetHttpsProxiesStub create(TargetHttpsProxiesStubSettings settings)
@@ -801,57 +790,86 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
         callableFactory.createUnaryCallable(
             setUrlMapTransportSettings, settings.setUrlMapSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<AggregatedListTargetHttpsProxiesRequest, AggregatedListPagedResponse>
-      aggregatedListPagedCallable() {
-    return aggregatedListPagedCallable;
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(setQuicOverrideMethodDescriptor);
+    methodDescriptors.add(setSslCertificatesMethodDescriptor);
+    methodDescriptors.add(setSslPolicyMethodDescriptor);
+    methodDescriptors.add(setUrlMapMethodDescriptor);
+    return methodDescriptors;
   }
 
+  @Override
   public UnaryCallable<AggregatedListTargetHttpsProxiesRequest, TargetHttpsProxyAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
   }
 
+  @Override
+  public UnaryCallable<AggregatedListTargetHttpsProxiesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteTargetHttpsProxyRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetTargetHttpsProxyRequest, TargetHttpsProxy> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertTargetHttpsProxyRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListTargetHttpsProxiesRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListTargetHttpsProxiesRequest, TargetHttpsProxyList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListTargetHttpsProxiesRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchTargetHttpsProxyRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<SetQuicOverrideTargetHttpsProxyRequest, Operation>
       setQuicOverrideCallable() {
     return setQuicOverrideCallable;
   }
 
+  @Override
   public UnaryCallable<SetSslCertificatesTargetHttpsProxyRequest, Operation>
       setSslCertificatesCallable() {
     return setSslCertificatesCallable;
   }
 
+  @Override
   public UnaryCallable<SetSslPolicyTargetHttpsProxyRequest, Operation> setSslPolicyCallable() {
     return setSslPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetUrlMapTargetHttpsProxyRequest, Operation> setUrlMapCallable() {
     return setUrlMapCallable;
   }

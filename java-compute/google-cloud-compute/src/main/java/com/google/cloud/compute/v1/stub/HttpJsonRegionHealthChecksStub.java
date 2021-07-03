@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionHealthChecksClient.ListPagedResponse;
@@ -41,27 +42,26 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionHealthCheckRequest;
 import com.google.cloud.compute.v1.UpdateRegionHealthCheckRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub implementation for Google Compute Engine API.
+ * REST stub implementation for the RegionHealthChecks service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
-
-  @InternalApi
-  public static final ApiMethodDescriptor<DeleteRegionHealthCheckRequest, Operation>
+  private static final ApiMethodDescriptor<DeleteRegionHealthCheckRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionHealthCheckRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionHealthChecks.Delete")
+              .setFullMethodName("google.cloud.compute.v1.RegionHealthChecks/Delete")
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionHealthCheckRequest>newBuilder()
@@ -75,10 +75,10 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteRegionHealthCheckRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "healthCheck", request.getHealthCheck());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -102,7 +102,7 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                           new FieldsExtractor<DeleteRegionHealthCheckRequest, String>() {
                             @Override
                             public String extract(DeleteRegionHealthCheckRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -112,11 +112,10 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<GetRegionHealthCheckRequest, HealthCheck>
+  private static final ApiMethodDescriptor<GetRegionHealthCheckRequest, HealthCheck>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetRegionHealthCheckRequest, HealthCheck>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionHealthChecks.Get")
+              .setFullMethodName("google.cloud.compute.v1.RegionHealthChecks/Get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionHealthCheckRequest>newBuilder()
@@ -129,10 +128,10 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<GetRegionHealthCheckRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "healthCheck", request.getHealthCheck());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -145,7 +144,6 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetRegionHealthCheckRequest> serializer =
                                   ProtoRestSerializer.create();
-
                               return fields;
                             }
                           })
@@ -153,7 +151,7 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                           new FieldsExtractor<GetRegionHealthCheckRequest, String>() {
                             @Override
                             public String extract(GetRegionHealthCheckRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -163,11 +161,10 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<InsertRegionHealthCheckRequest, Operation>
+  private static final ApiMethodDescriptor<InsertRegionHealthCheckRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertRegionHealthCheckRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionHealthChecks.Insert")
+              .setFullMethodName("google.cloud.compute.v1.RegionHealthChecks/Insert")
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionHealthCheckRequest>newBuilder()
@@ -217,11 +214,10 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<ListRegionHealthChecksRequest, HealthCheckList>
+  private static final ApiMethodDescriptor<ListRegionHealthChecksRequest, HealthCheckList>
       listMethodDescriptor =
           ApiMethodDescriptor.<ListRegionHealthChecksRequest, HealthCheckList>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionHealthChecks.List")
+              .setFullMethodName("google.cloud.compute.v1.RegionHealthChecks/List")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionHealthChecksRequest>newBuilder()
@@ -276,7 +272,7 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                           new FieldsExtractor<ListRegionHealthChecksRequest, String>() {
                             @Override
                             public String extract(ListRegionHealthChecksRequest request) {
-                              return "";
+                              return null;
                             }
                           })
                       .build())
@@ -286,11 +282,10 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<PatchRegionHealthCheckRequest, Operation>
+  private static final ApiMethodDescriptor<PatchRegionHealthCheckRequest, Operation>
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchRegionHealthCheckRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionHealthChecks.Patch")
+              .setFullMethodName("google.cloud.compute.v1.RegionHealthChecks/Patch")
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchRegionHealthCheckRequest>newBuilder()
@@ -304,10 +299,10 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<PatchRegionHealthCheckRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "healthCheck", request.getHealthCheck());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -342,11 +337,10 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                       .build())
               .build();
 
-  @InternalApi
-  public static final ApiMethodDescriptor<UpdateRegionHealthCheckRequest, Operation>
+  private static final ApiMethodDescriptor<UpdateRegionHealthCheckRequest, Operation>
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateRegionHealthCheckRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.compute.v1.RegionHealthChecks.Update")
+              .setFullMethodName("google.cloud.compute.v1.RegionHealthChecks/Update")
               .setHttpMethod(HttpMethods.PUT)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateRegionHealthCheckRequest>newBuilder()
@@ -360,10 +354,10 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                               Map<String, String> fields = new HashMap<>();
                               ProtoRestSerializer<UpdateRegionHealthCheckRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
                               serializer.putPathParam(
                                   fields, "healthCheck", request.getHealthCheck());
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "region", request.getRegion());
                               return fields;
                             }
                           })
@@ -398,8 +392,6 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                       .build())
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<DeleteRegionHealthCheckRequest, Operation> deleteCallable;
   private final UnaryCallable<GetRegionHealthCheckRequest, HealthCheck> getCallable;
   private final UnaryCallable<InsertRegionHealthCheckRequest, Operation> insertCallable;
@@ -408,6 +400,7 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
   private final UnaryCallable<PatchRegionHealthCheckRequest, Operation> patchCallable;
   private final UnaryCallable<UpdateRegionHealthCheckRequest, Operation> updateCallable;
 
+  private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionHealthChecksStub create(RegionHealthChecksStubSettings settings)
@@ -496,33 +489,53 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(updateMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
   public UnaryCallable<DeleteRegionHealthCheckRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
 
+  @Override
   public UnaryCallable<GetRegionHealthCheckRequest, HealthCheck> getCallable() {
     return getCallable;
   }
 
+  @Override
   public UnaryCallable<InsertRegionHealthCheckRequest, Operation> insertCallable() {
     return insertCallable;
   }
 
-  public UnaryCallable<ListRegionHealthChecksRequest, ListPagedResponse> listPagedCallable() {
-    return listPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListRegionHealthChecksRequest, HealthCheckList> listCallable() {
     return listCallable;
   }
 
+  @Override
+  public UnaryCallable<ListRegionHealthChecksRequest, ListPagedResponse> listPagedCallable() {
+    return listPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchRegionHealthCheckRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateRegionHealthCheckRequest, Operation> updateCallable() {
     return updateCallable;
   }
