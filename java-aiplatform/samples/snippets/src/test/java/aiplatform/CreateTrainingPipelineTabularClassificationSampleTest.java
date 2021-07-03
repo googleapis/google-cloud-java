@@ -19,6 +19,10 @@ package aiplatform;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.aiplatform.v1.PipelineServiceClient;
+import com.google.cloud.aiplatform.v1.PipelineServiceSettings;
+import com.google.cloud.aiplatform.v1.TrainingPipeline;
+import com.google.cloud.aiplatform.v1.TrainingPipelineName;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -72,7 +76,25 @@ public class CreateTrainingPipelineTabularClassificationSampleTest {
     // Assert
     String cancelResponse = bout.toString();
     assertThat(cancelResponse).contains("Cancelled the Training Pipeline");
-    TimeUnit.MINUTES.sleep(2);
+
+    PipelineServiceSettings pipelineServiceSettings =
+        PipelineServiceSettings.newBuilder()
+            .setEndpoint("us-central1-aiplatform.googleapis.com:443")
+            .build();
+
+    try (PipelineServiceClient pipelineServiceClient =
+        PipelineServiceClient.create(pipelineServiceSettings)) {
+      String location = "us-central1";
+      TrainingPipelineName trainingPipelineName =
+          TrainingPipelineName.of(PROJECT, location, trainingPipelineId);
+
+      TrainingPipeline trainingPipelineResponse =
+          pipelineServiceClient.getTrainingPipeline(trainingPipelineName);
+      while (!trainingPipelineResponse.getState().name().contains("STATE_CANCELLED")) {
+        TimeUnit.SECONDS.sleep(30);
+        trainingPipelineResponse = pipelineServiceClient.getTrainingPipeline(trainingPipelineName);
+      }
+    }
 
     // Delete the Training Pipeline
     DeleteTrainingPipelineSample.deleteTrainingPipelineSample(PROJECT, trainingPipelineId);
