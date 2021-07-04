@@ -46,23 +46,19 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     creationTimestamp_ = "";
     description_ = "";
     guestOsFeatures_ = java.util.Collections.emptyList();
-    id_ = "";
     kind_ = "";
     labelFingerprint_ = "";
     lastAttachTimestamp_ = "";
     lastDetachTimestamp_ = "";
-    licenseCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    licenseCodes_ = emptyLongList();
     licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     locationHint_ = "";
     name_ = "";
     options_ = "";
-    physicalBlockSizeBytes_ = "";
-    provisionedIops_ = "";
     region_ = "";
     replicaZones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     selfLink_ = "";
-    sizeGb_ = "";
     sourceDisk_ = "";
     sourceDiskId_ = "";
     sourceImage_ = "";
@@ -107,11 +103,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 26842:
+          case 26840:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
-              id_ = s;
+              id_ = input.readUInt64();
               break;
             }
           case 26336418:
@@ -166,14 +161,27 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
               lastAttachTimestamp_ = s;
               break;
             }
-          case 363861314:
+          case 363861312:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000400) != 0)) {
-                licenseCodes_ = new com.google.protobuf.LazyStringArrayList();
+                licenseCodes_ = newLongList();
                 mutable_bitField0_ |= 0x00000400;
               }
-              licenseCodes_.add(s);
+              licenseCodes_.addLong(input.readInt64());
+              break;
+            }
+          case 363861314:
+            {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000400) != 0) && input.getBytesUntilLimit() > 0) {
+                licenseCodes_ = newLongList();
+                mutable_bitField0_ |= 0x00000400;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                licenseCodes_.addLong(input.readInt64());
+              }
+              input.popLimit(limit);
               break;
             }
           case 387506178:
@@ -264,11 +272,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
               status_ = rawValue;
               break;
             }
-          case 1494152866:
+          case 1494152864:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00001000;
-              provisionedIops_ = s;
+              provisionedIops_ = input.readInt64();
               break;
             }
           case 1864421690:
@@ -353,11 +360,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
               bitField0_ |= 0x00100000;
               break;
             }
-          case -934903750:
+          case -934903752:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000800;
-              physicalBlockSizeBytes_ = s;
+              physicalBlockSizeBytes_ = input.readInt64();
               break;
             }
           case -911466526:
@@ -394,11 +400,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
               satisfiesPzs_ = input.readBool();
               break;
             }
-          case -335532342:
+          case -335532344:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00010000;
-              sizeGb_ = s;
+              sizeGb_ = input.readInt64();
               break;
             }
           case -293404678:
@@ -432,7 +437,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000400) != 0)) {
-        licenseCodes_ = licenseCodes_.getUnmodifiableView();
+        licenseCodes_.makeImmutable(); // C
       }
       if (((mutable_bitField0_ & 0x00040000) != 0)) {
         replicaZones_ = replicaZones_.getUnmodifiableView();
@@ -884,7 +889,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private volatile java.lang.Object id_;
+  private long id_;
   /**
    *
    *
@@ -892,7 +897,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -907,44 +912,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return The id.
    */
   @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      id_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-   * </pre>
-   *
-   * <code>string id = 3355;</code>
-   *
-   * @return The bytes for id.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getIdBytes() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      id_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getId() {
+    return id_;
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
@@ -1305,7 +1279,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LICENSE_CODES_FIELD_NUMBER = 45482664;
-  private com.google.protobuf.LazyStringList licenseCodes_;
+  private com.google.protobuf.Internal.LongList licenseCodes_;
   /**
    *
    *
@@ -1313,11 +1287,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Integer license codes indicating which licenses are attached to this disk.
    * </pre>
    *
-   * <code>repeated string license_codes = 45482664;</code>
+   * <code>repeated int64 license_codes = 45482664;</code>
    *
    * @return A list containing the licenseCodes.
    */
-  public com.google.protobuf.ProtocolStringList getLicenseCodesList() {
+  @java.lang.Override
+  public java.util.List<java.lang.Long> getLicenseCodesList() {
     return licenseCodes_;
   }
   /**
@@ -1327,7 +1302,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Integer license codes indicating which licenses are attached to this disk.
    * </pre>
    *
-   * <code>repeated string license_codes = 45482664;</code>
+   * <code>repeated int64 license_codes = 45482664;</code>
    *
    * @return The count of licenseCodes.
    */
@@ -1341,29 +1316,16 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Integer license codes indicating which licenses are attached to this disk.
    * </pre>
    *
-   * <code>repeated string license_codes = 45482664;</code>
+   * <code>repeated int64 license_codes = 45482664;</code>
    *
    * @param index The index of the element to return.
    * @return The licenseCodes at the given index.
    */
-  public java.lang.String getLicenseCodes(int index) {
-    return licenseCodes_.get(index);
+  public long getLicenseCodes(int index) {
+    return licenseCodes_.getLong(index);
   }
-  /**
-   *
-   *
-   * <pre>
-   * Integer license codes indicating which licenses are attached to this disk.
-   * </pre>
-   *
-   * <code>repeated string license_codes = 45482664;</code>
-   *
-   * @param index The index of the value to return.
-   * @return The bytes of the licenseCodes at the given index.
-   */
-  public com.google.protobuf.ByteString getLicenseCodesBytes(int index) {
-    return licenseCodes_.getByteString(index);
-  }
+
+  private int licenseCodesMemoizedSerializedSize = -1;
 
   public static final int LICENSES_FIELD_NUMBER = 337642578;
   private com.google.protobuf.LazyStringList licenses_;
@@ -1619,7 +1581,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PHYSICAL_BLOCK_SIZE_BYTES_FIELD_NUMBER = 420007943;
-  private volatile java.lang.Object physicalBlockSizeBytes_;
+  private long physicalBlockSizeBytes_;
   /**
    *
    *
@@ -1627,7 +1589,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
    * </pre>
    *
-   * <code>string physical_block_size_bytes = 420007943;</code>
+   * <code>int64 physical_block_size_bytes = 420007943;</code>
    *
    * @return Whether the physicalBlockSizeBytes field is set.
    */
@@ -1642,48 +1604,17 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
    * </pre>
    *
-   * <code>string physical_block_size_bytes = 420007943;</code>
+   * <code>int64 physical_block_size_bytes = 420007943;</code>
    *
    * @return The physicalBlockSizeBytes.
    */
   @java.lang.Override
-  public java.lang.String getPhysicalBlockSizeBytes() {
-    java.lang.Object ref = physicalBlockSizeBytes_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      physicalBlockSizeBytes_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
-   * </pre>
-   *
-   * <code>string physical_block_size_bytes = 420007943;</code>
-   *
-   * @return The bytes for physicalBlockSizeBytes.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getPhysicalBlockSizeBytesBytes() {
-    java.lang.Object ref = physicalBlockSizeBytes_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      physicalBlockSizeBytes_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getPhysicalBlockSizeBytes() {
+    return physicalBlockSizeBytes_;
   }
 
   public static final int PROVISIONED_IOPS_FIELD_NUMBER = 186769108;
-  private volatile java.lang.Object provisionedIops_;
+  private long provisionedIops_;
   /**
    *
    *
@@ -1691,7 +1622,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Indicates how many IOPS must be provisioned for the disk.
    * </pre>
    *
-   * <code>string provisioned_iops = 186769108;</code>
+   * <code>int64 provisioned_iops = 186769108;</code>
    *
    * @return Whether the provisionedIops field is set.
    */
@@ -1706,44 +1637,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Indicates how many IOPS must be provisioned for the disk.
    * </pre>
    *
-   * <code>string provisioned_iops = 186769108;</code>
+   * <code>int64 provisioned_iops = 186769108;</code>
    *
    * @return The provisionedIops.
    */
   @java.lang.Override
-  public java.lang.String getProvisionedIops() {
-    java.lang.Object ref = provisionedIops_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      provisionedIops_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Indicates how many IOPS must be provisioned for the disk.
-   * </pre>
-   *
-   * <code>string provisioned_iops = 186769108;</code>
-   *
-   * @return The bytes for provisionedIops.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getProvisionedIopsBytes() {
-    java.lang.Object ref = provisionedIops_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      provisionedIops_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getProvisionedIops() {
+    return provisionedIops_;
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
@@ -2030,7 +1930,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SIZE_GB_FIELD_NUMBER = 494929369;
-  private volatile java.lang.Object sizeGb_;
+  private long sizeGb_;
   /**
    *
    *
@@ -2039,7 +1939,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
    * </pre>
    *
-   * <code>string size_gb = 494929369;</code>
+   * <code>int64 size_gb = 494929369;</code>
    *
    * @return Whether the sizeGb field is set.
    */
@@ -2055,45 +1955,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
    * </pre>
    *
-   * <code>string size_gb = 494929369;</code>
+   * <code>int64 size_gb = 494929369;</code>
    *
    * @return The sizeGb.
    */
   @java.lang.Override
-  public java.lang.String getSizeGb() {
-    java.lang.Object ref = sizeGb_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      sizeGb_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk.
-   * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
-   * </pre>
-   *
-   * <code>string size_gb = 494929369;</code>
-   *
-   * @return The bytes for sizeGb.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getSizeGbBytes() {
-    java.lang.Object ref = sizeGb_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      sizeGb_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getSizeGb() {
+    return sizeGb_;
   }
 
   public static final int SOURCE_DISK_FIELD_NUMBER = 451753793;
@@ -2975,8 +2843,9 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (((bitField0_ & 0x00000008) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
+      output.writeUInt64(3355, id_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
@@ -3000,8 +2869,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 42159653, lastAttachTimestamp_);
     }
+    if (getLicenseCodesList().size() > 0) {
+      output.writeUInt32NoTag(363861314);
+      output.writeUInt32NoTag(licenseCodesMemoizedSerializedSize);
+    }
     for (int i = 0; i < licenseCodes_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 45482664, licenseCodes_.getRaw(i));
+      output.writeInt64NoTag(licenseCodes_.getLong(i));
     }
     for (int i = 0; i < replicaZones_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 48438272, replicaZones_.getRaw(i));
@@ -3037,7 +2910,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       output.writeEnum(181260274, status_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 186769108, provisionedIops_);
+      output.writeInt64(186769108, provisionedIops_);
     }
     if (((bitField0_ & 0x02000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 233052711, sourceStorageObject_);
@@ -3061,8 +2934,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(381503659, getSourceImageEncryptionKey());
     }
     if (((bitField0_ & 0x00000800) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 420007943, physicalBlockSizeBytes_);
+      output.writeInt64(420007943, physicalBlockSizeBytes_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
@@ -3080,7 +2952,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       output.writeBool(480964267, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00010000) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 494929369, sizeGb_);
+      output.writeInt64(494929369, sizeGb_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
@@ -3094,7 +2966,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
 
     size = 0;
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
+      size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
@@ -3127,10 +2999,15 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     {
       int dataSize = 0;
       for (int i = 0; i < licenseCodes_.size(); i++) {
-        dataSize += computeStringSizeNoTag(licenseCodes_.getRaw(i));
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeInt64SizeNoTag(licenseCodes_.getLong(i));
       }
       size += dataSize;
-      size += 5 * getLicenseCodesList().size();
+      if (!getLicenseCodesList().isEmpty()) {
+        size += 5;
+        size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+      }
+      licenseCodesMemoizedSerializedSize = dataSize;
     }
     {
       int dataSize = 0;
@@ -3180,7 +3057,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(186769108, provisionedIops_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(186769108, provisionedIops_);
     }
     if (((bitField0_ & 0x02000000) != 0)) {
       size +=
@@ -3217,7 +3094,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+          com.google.protobuf.CodedOutputStream.computeInt64Size(
               420007943, physicalBlockSizeBytes_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -3236,7 +3113,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964267, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00010000) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(494929369, sizeGb_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(494929369, sizeGb_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetLabels().getMap().entrySet()) {
@@ -3278,7 +3155,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (!getGuestOsFeaturesList().equals(other.getGuestOsFeaturesList())) return false;
     if (hasId() != other.hasId()) return false;
     if (hasId()) {
-      if (!getId().equals(other.getId())) return false;
+      if (getId() != other.getId()) return false;
     }
     if (hasKind() != other.hasKind()) return false;
     if (hasKind()) {
@@ -3313,11 +3190,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasPhysicalBlockSizeBytes() != other.hasPhysicalBlockSizeBytes()) return false;
     if (hasPhysicalBlockSizeBytes()) {
-      if (!getPhysicalBlockSizeBytes().equals(other.getPhysicalBlockSizeBytes())) return false;
+      if (getPhysicalBlockSizeBytes() != other.getPhysicalBlockSizeBytes()) return false;
     }
     if (hasProvisionedIops() != other.hasProvisionedIops()) return false;
     if (hasProvisionedIops()) {
-      if (!getProvisionedIops().equals(other.getProvisionedIops())) return false;
+      if (getProvisionedIops() != other.getProvisionedIops()) return false;
     }
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
@@ -3335,7 +3212,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasSizeGb() != other.hasSizeGb()) return false;
     if (hasSizeGb()) {
-      if (!getSizeGb().equals(other.getSizeGb())) return false;
+      if (getSizeGb() != other.getSizeGb()) return false;
     }
     if (hasSourceDisk() != other.hasSourceDisk()) return false;
     if (hasSourceDisk()) {
@@ -3416,7 +3293,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasId()) {
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getId());
     }
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
@@ -3460,11 +3337,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasPhysicalBlockSizeBytes()) {
       hash = (37 * hash) + PHYSICAL_BLOCK_SIZE_BYTES_FIELD_NUMBER;
-      hash = (53 * hash) + getPhysicalBlockSizeBytes().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPhysicalBlockSizeBytes());
     }
     if (hasProvisionedIops()) {
       hash = (37 * hash) + PROVISIONED_IOPS_FIELD_NUMBER;
-      hash = (53 * hash) + getProvisionedIops().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getProvisionedIops());
     }
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -3488,7 +3365,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasSizeGb()) {
       hash = (37 * hash) + SIZE_GB_FIELD_NUMBER;
-      hash = (53 * hash) + getSizeGb().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSizeGb());
     }
     if (hasSourceDisk()) {
       hash = (37 * hash) + SOURCE_DISK_FIELD_NUMBER;
@@ -3732,7 +3609,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       } else {
         guestOsFeaturesBuilder_.clear();
       }
-      id_ = "";
+      id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000010);
       kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -3743,7 +3620,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000100);
       lastDetachTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
-      licenseCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      licenseCodes_ = emptyLongList();
       bitField0_ = (bitField0_ & ~0x00000400);
       licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000800);
@@ -3753,9 +3630,9 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00002000);
       options_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
-      physicalBlockSizeBytes_ = "";
+      physicalBlockSizeBytes_ = 0L;
       bitField0_ = (bitField0_ & ~0x00008000);
-      provisionedIops_ = "";
+      provisionedIops_ = 0L;
       bitField0_ = (bitField0_ & ~0x00010000);
       region_ = "";
       bitField0_ = (bitField0_ & ~0x00020000);
@@ -3767,7 +3644,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00100000);
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00200000);
-      sizeGb_ = "";
+      sizeGb_ = 0L;
       bitField0_ = (bitField0_ & ~0x00400000);
       sourceDisk_ = "";
       bitField0_ = (bitField0_ & ~0x00800000);
@@ -3858,9 +3735,9 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         result.guestOsFeatures_ = guestOsFeaturesBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.id_ = id_;
         to_bitField0_ |= 0x00000008;
       }
-      result.id_ = id_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         to_bitField0_ |= 0x00000010;
       }
@@ -3880,7 +3757,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       result.lastDetachTimestamp_ = lastDetachTimestamp_;
       if (((bitField0_ & 0x00000400) != 0)) {
-        licenseCodes_ = licenseCodes_.getUnmodifiableView();
+        licenseCodes_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000400);
       }
       result.licenseCodes_ = licenseCodes_;
@@ -3902,13 +3779,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       result.options_ = options_;
       if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.physicalBlockSizeBytes_ = physicalBlockSizeBytes_;
         to_bitField0_ |= 0x00000800;
       }
-      result.physicalBlockSizeBytes_ = physicalBlockSizeBytes_;
       if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.provisionedIops_ = provisionedIops_;
         to_bitField0_ |= 0x00001000;
       }
-      result.provisionedIops_ = provisionedIops_;
       if (((from_bitField0_ & 0x00020000) != 0)) {
         to_bitField0_ |= 0x00002000;
       }
@@ -3932,9 +3809,9 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.sizeGb_ = sizeGb_;
         to_bitField0_ |= 0x00010000;
       }
-      result.sizeGb_ = sizeGb_;
       if (((from_bitField0_ & 0x00800000) != 0)) {
         to_bitField0_ |= 0x00020000;
       }
@@ -4087,9 +3964,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasId()) {
-        bitField0_ |= 0x00000010;
-        id_ = other.id_;
-        onChanged();
+        setId(other.getId());
       }
       if (other.hasKind()) {
         bitField0_ |= 0x00000020;
@@ -4148,14 +4023,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasPhysicalBlockSizeBytes()) {
-        bitField0_ |= 0x00008000;
-        physicalBlockSizeBytes_ = other.physicalBlockSizeBytes_;
-        onChanged();
+        setPhysicalBlockSizeBytes(other.getPhysicalBlockSizeBytes());
       }
       if (other.hasProvisionedIops()) {
-        bitField0_ |= 0x00010000;
-        provisionedIops_ = other.provisionedIops_;
-        onChanged();
+        setProvisionedIops(other.getProvisionedIops());
       }
       if (other.hasRegion()) {
         bitField0_ |= 0x00020000;
@@ -4191,9 +4062,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasSizeGb()) {
-        bitField0_ |= 0x00400000;
-        sizeGb_ = other.sizeGb_;
-        onChanged();
+        setSizeGb(other.getSizeGb());
       }
       if (other.hasSourceDisk()) {
         bitField0_ |= 0x00800000;
@@ -5102,7 +4971,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       return guestOsFeaturesBuilder_;
     }
 
-    private java.lang.Object id_ = "";
+    private long id_;
     /**
      *
      *
@@ -5110,10 +4979,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
+    @java.lang.Override
     public boolean hasId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
@@ -5124,20 +4994,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @return The id.
      */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getId() {
+      return id_;
     }
     /**
      *
@@ -5146,37 +5009,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
-     *
-     * @return The bytes for id.
-     */
-    public com.google.protobuf.ByteString getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-     * </pre>
-     *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
      */
-    public Builder setId(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setId(long value) {
       bitField0_ |= 0x00000010;
       id_ = value;
       onChanged();
@@ -5189,35 +5027,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearId() {
       bitField0_ = (bitField0_ & ~0x00000010);
-      id_ = getDefaultInstance().getId();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-     * </pre>
-     *
-     * <code>string id = 3355;</code>
-     *
-     * @param value The bytes for id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
-      id_ = value;
+      id_ = 0L;
       onChanged();
       return this;
     }
@@ -5865,12 +5681,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList licenseCodes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.Internal.LongList licenseCodes_ = emptyLongList();
 
     private void ensureLicenseCodesIsMutable() {
       if (!((bitField0_ & 0x00000400) != 0)) {
-        licenseCodes_ = new com.google.protobuf.LazyStringArrayList(licenseCodes_);
+        licenseCodes_ = mutableCopy(licenseCodes_);
         bitField0_ |= 0x00000400;
       }
     }
@@ -5881,12 +5696,14 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Integer license codes indicating which licenses are attached to this disk.
      * </pre>
      *
-     * <code>repeated string license_codes = 45482664;</code>
+     * <code>repeated int64 license_codes = 45482664;</code>
      *
      * @return A list containing the licenseCodes.
      */
-    public com.google.protobuf.ProtocolStringList getLicenseCodesList() {
-      return licenseCodes_.getUnmodifiableView();
+    public java.util.List<java.lang.Long> getLicenseCodesList() {
+      return ((bitField0_ & 0x00000400) != 0)
+          ? java.util.Collections.unmodifiableList(licenseCodes_)
+          : licenseCodes_;
     }
     /**
      *
@@ -5895,7 +5712,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Integer license codes indicating which licenses are attached to this disk.
      * </pre>
      *
-     * <code>repeated string license_codes = 45482664;</code>
+     * <code>repeated int64 license_codes = 45482664;</code>
      *
      * @return The count of licenseCodes.
      */
@@ -5909,13 +5726,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Integer license codes indicating which licenses are attached to this disk.
      * </pre>
      *
-     * <code>repeated string license_codes = 45482664;</code>
+     * <code>repeated int64 license_codes = 45482664;</code>
      *
      * @param index The index of the element to return.
      * @return The licenseCodes at the given index.
      */
-    public java.lang.String getLicenseCodes(int index) {
-      return licenseCodes_.get(index);
+    public long getLicenseCodes(int index) {
+      return licenseCodes_.getLong(index);
     }
     /**
      *
@@ -5924,33 +5741,15 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Integer license codes indicating which licenses are attached to this disk.
      * </pre>
      *
-     * <code>repeated string license_codes = 45482664;</code>
-     *
-     * @param index The index of the value to return.
-     * @return The bytes of the licenseCodes at the given index.
-     */
-    public com.google.protobuf.ByteString getLicenseCodesBytes(int index) {
-      return licenseCodes_.getByteString(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Integer license codes indicating which licenses are attached to this disk.
-     * </pre>
-     *
-     * <code>repeated string license_codes = 45482664;</code>
+     * <code>repeated int64 license_codes = 45482664;</code>
      *
      * @param index The index to set the value at.
      * @param value The licenseCodes to set.
      * @return This builder for chaining.
      */
-    public Builder setLicenseCodes(int index, java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setLicenseCodes(int index, long value) {
       ensureLicenseCodesIsMutable();
-      licenseCodes_.set(index, value);
+      licenseCodes_.setLong(index, value);
       onChanged();
       return this;
     }
@@ -5961,17 +5760,14 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Integer license codes indicating which licenses are attached to this disk.
      * </pre>
      *
-     * <code>repeated string license_codes = 45482664;</code>
+     * <code>repeated int64 license_codes = 45482664;</code>
      *
      * @param value The licenseCodes to add.
      * @return This builder for chaining.
      */
-    public Builder addLicenseCodes(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder addLicenseCodes(long value) {
       ensureLicenseCodesIsMutable();
-      licenseCodes_.add(value);
+      licenseCodes_.addLong(value);
       onChanged();
       return this;
     }
@@ -5982,12 +5778,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Integer license codes indicating which licenses are attached to this disk.
      * </pre>
      *
-     * <code>repeated string license_codes = 45482664;</code>
+     * <code>repeated int64 license_codes = 45482664;</code>
      *
      * @param values The licenseCodes to add.
      * @return This builder for chaining.
      */
-    public Builder addAllLicenseCodes(java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllLicenseCodes(java.lang.Iterable<? extends java.lang.Long> values) {
       ensureLicenseCodesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, licenseCodes_);
       onChanged();
@@ -6000,35 +5796,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Integer license codes indicating which licenses are attached to this disk.
      * </pre>
      *
-     * <code>repeated string license_codes = 45482664;</code>
+     * <code>repeated int64 license_codes = 45482664;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearLicenseCodes() {
-      licenseCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      licenseCodes_ = emptyLongList();
       bitField0_ = (bitField0_ & ~0x00000400);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Integer license codes indicating which licenses are attached to this disk.
-     * </pre>
-     *
-     * <code>repeated string license_codes = 45482664;</code>
-     *
-     * @param value The bytes of the licenseCodes to add.
-     * @return This builder for chaining.
-     */
-    public Builder addLicenseCodesBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      ensureLicenseCodesIsMutable();
-      licenseCodes_.add(value);
       onChanged();
       return this;
     }
@@ -6561,7 +6335,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object physicalBlockSizeBytes_ = "";
+    private long physicalBlockSizeBytes_;
     /**
      *
      *
@@ -6569,10 +6343,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
      * </pre>
      *
-     * <code>string physical_block_size_bytes = 420007943;</code>
+     * <code>int64 physical_block_size_bytes = 420007943;</code>
      *
      * @return Whether the physicalBlockSizeBytes field is set.
      */
+    @java.lang.Override
     public boolean hasPhysicalBlockSizeBytes() {
       return ((bitField0_ & 0x00008000) != 0);
     }
@@ -6583,20 +6358,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
      * </pre>
      *
-     * <code>string physical_block_size_bytes = 420007943;</code>
+     * <code>int64 physical_block_size_bytes = 420007943;</code>
      *
      * @return The physicalBlockSizeBytes.
      */
-    public java.lang.String getPhysicalBlockSizeBytes() {
-      java.lang.Object ref = physicalBlockSizeBytes_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        physicalBlockSizeBytes_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getPhysicalBlockSizeBytes() {
+      return physicalBlockSizeBytes_;
     }
     /**
      *
@@ -6605,37 +6373,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
      * </pre>
      *
-     * <code>string physical_block_size_bytes = 420007943;</code>
-     *
-     * @return The bytes for physicalBlockSizeBytes.
-     */
-    public com.google.protobuf.ByteString getPhysicalBlockSizeBytesBytes() {
-      java.lang.Object ref = physicalBlockSizeBytes_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        physicalBlockSizeBytes_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
-     * </pre>
-     *
-     * <code>string physical_block_size_bytes = 420007943;</code>
+     * <code>int64 physical_block_size_bytes = 420007943;</code>
      *
      * @param value The physicalBlockSizeBytes to set.
      * @return This builder for chaining.
      */
-    public Builder setPhysicalBlockSizeBytes(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setPhysicalBlockSizeBytes(long value) {
       bitField0_ |= 0x00008000;
       physicalBlockSizeBytes_ = value;
       onChanged();
@@ -6648,40 +6391,18 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
      * </pre>
      *
-     * <code>string physical_block_size_bytes = 420007943;</code>
+     * <code>int64 physical_block_size_bytes = 420007943;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPhysicalBlockSizeBytes() {
       bitField0_ = (bitField0_ & ~0x00008000);
-      physicalBlockSizeBytes_ = getDefaultInstance().getPhysicalBlockSizeBytes();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
-     * </pre>
-     *
-     * <code>string physical_block_size_bytes = 420007943;</code>
-     *
-     * @param value The bytes for physicalBlockSizeBytes to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPhysicalBlockSizeBytesBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00008000;
-      physicalBlockSizeBytes_ = value;
+      physicalBlockSizeBytes_ = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object provisionedIops_ = "";
+    private long provisionedIops_;
     /**
      *
      *
@@ -6689,10 +6410,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Indicates how many IOPS must be provisioned for the disk.
      * </pre>
      *
-     * <code>string provisioned_iops = 186769108;</code>
+     * <code>int64 provisioned_iops = 186769108;</code>
      *
      * @return Whether the provisionedIops field is set.
      */
+    @java.lang.Override
     public boolean hasProvisionedIops() {
       return ((bitField0_ & 0x00010000) != 0);
     }
@@ -6703,20 +6425,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Indicates how many IOPS must be provisioned for the disk.
      * </pre>
      *
-     * <code>string provisioned_iops = 186769108;</code>
+     * <code>int64 provisioned_iops = 186769108;</code>
      *
      * @return The provisionedIops.
      */
-    public java.lang.String getProvisionedIops() {
-      java.lang.Object ref = provisionedIops_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        provisionedIops_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getProvisionedIops() {
+      return provisionedIops_;
     }
     /**
      *
@@ -6725,37 +6440,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Indicates how many IOPS must be provisioned for the disk.
      * </pre>
      *
-     * <code>string provisioned_iops = 186769108;</code>
-     *
-     * @return The bytes for provisionedIops.
-     */
-    public com.google.protobuf.ByteString getProvisionedIopsBytes() {
-      java.lang.Object ref = provisionedIops_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        provisionedIops_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates how many IOPS must be provisioned for the disk.
-     * </pre>
-     *
-     * <code>string provisioned_iops = 186769108;</code>
+     * <code>int64 provisioned_iops = 186769108;</code>
      *
      * @param value The provisionedIops to set.
      * @return This builder for chaining.
      */
-    public Builder setProvisionedIops(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setProvisionedIops(long value) {
       bitField0_ |= 0x00010000;
       provisionedIops_ = value;
       onChanged();
@@ -6768,35 +6458,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Indicates how many IOPS must be provisioned for the disk.
      * </pre>
      *
-     * <code>string provisioned_iops = 186769108;</code>
+     * <code>int64 provisioned_iops = 186769108;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearProvisionedIops() {
       bitField0_ = (bitField0_ & ~0x00010000);
-      provisionedIops_ = getDefaultInstance().getProvisionedIops();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates how many IOPS must be provisioned for the disk.
-     * </pre>
-     *
-     * <code>string provisioned_iops = 186769108;</code>
-     *
-     * @param value The bytes for provisionedIops to set.
-     * @return This builder for chaining.
-     */
-    public Builder setProvisionedIopsBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00010000;
-      provisionedIops_ = value;
+      provisionedIops_ = 0L;
       onChanged();
       return this;
     }
@@ -7444,7 +7112,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object sizeGb_ = "";
+    private long sizeGb_;
     /**
      *
      *
@@ -7453,10 +7121,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
      * </pre>
      *
-     * <code>string size_gb = 494929369;</code>
+     * <code>int64 size_gb = 494929369;</code>
      *
      * @return Whether the sizeGb field is set.
      */
+    @java.lang.Override
     public boolean hasSizeGb() {
       return ((bitField0_ & 0x00400000) != 0);
     }
@@ -7468,20 +7137,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
      * </pre>
      *
-     * <code>string size_gb = 494929369;</code>
+     * <code>int64 size_gb = 494929369;</code>
      *
      * @return The sizeGb.
      */
-    public java.lang.String getSizeGb() {
-      java.lang.Object ref = sizeGb_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sizeGb_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getSizeGb() {
+      return sizeGb_;
     }
     /**
      *
@@ -7491,38 +7153,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
      * </pre>
      *
-     * <code>string size_gb = 494929369;</code>
-     *
-     * @return The bytes for sizeGb.
-     */
-    public com.google.protobuf.ByteString getSizeGbBytes() {
-      java.lang.Object ref = sizeGb_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        sizeGb_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk.
-     * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
-     * </pre>
-     *
-     * <code>string size_gb = 494929369;</code>
+     * <code>int64 size_gb = 494929369;</code>
      *
      * @param value The sizeGb to set.
      * @return This builder for chaining.
      */
-    public Builder setSizeGb(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setSizeGb(long value) {
       bitField0_ |= 0x00400000;
       sizeGb_ = value;
       onChanged();
@@ -7536,36 +7172,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
      * </pre>
      *
-     * <code>string size_gb = 494929369;</code>
+     * <code>int64 size_gb = 494929369;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSizeGb() {
       bitField0_ = (bitField0_ & ~0x00400000);
-      sizeGb_ = getDefaultInstance().getSizeGb();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk.
-     * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
-     * </pre>
-     *
-     * <code>string size_gb = 494929369;</code>
-     *
-     * @param value The bytes for sizeGb to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSizeGbBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00400000;
-      sizeGb_ = value;
+      sizeGb_ = 0L;
       onChanged();
       return this;
     }

@@ -37,8 +37,6 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
   }
 
   private BulkInsertInstanceResource() {
-    count_ = "";
-    minCount_ = "";
     namePattern_ = "";
     sourceInstanceTemplate_ = "";
   }
@@ -73,11 +71,10 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
           case 0:
             done = true;
             break;
-          case 758810746:
+          case 758810744:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              count_ = s;
+              count_ = input.readInt64();
               break;
             }
           case 868018138:
@@ -146,11 +143,10 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
               bitField0_ |= 0x00000004;
               break;
             }
-          case -109140206:
+          case -109140208:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
-              minCount_ = s;
+              minCount_ = input.readInt64();
               break;
             }
           default:
@@ -200,7 +196,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
 
   private int bitField0_;
   public static final int COUNT_FIELD_NUMBER = 94851343;
-  private volatile java.lang.Object count_;
+  private long count_;
   /**
    *
    *
@@ -208,7 +204,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
    * The maximum number of instances to create.
    * </pre>
    *
-   * <code>string count = 94851343;</code>
+   * <code>int64 count = 94851343;</code>
    *
    * @return Whether the count field is set.
    */
@@ -223,44 +219,13 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
    * The maximum number of instances to create.
    * </pre>
    *
-   * <code>string count = 94851343;</code>
+   * <code>int64 count = 94851343;</code>
    *
    * @return The count.
    */
   @java.lang.Override
-  public java.lang.String getCount() {
-    java.lang.Object ref = count_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      count_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The maximum number of instances to create.
-   * </pre>
-   *
-   * <code>string count = 94851343;</code>
-   *
-   * @return The bytes for count.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getCountBytes() {
-    java.lang.Object ref = count_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      count_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getCount() {
+    return count_;
   }
 
   public static final int INSTANCE_PROPERTIES_FIELD_NUMBER = 215355165;
@@ -364,7 +329,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
   }
 
   public static final int MIN_COUNT_FIELD_NUMBER = 523228386;
-  private volatile java.lang.Object minCount_;
+  private long minCount_;
   /**
    *
    *
@@ -372,7 +337,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
    * The minimum number of instances to create. If no min_count is specified then count is used as the default value. If min_count instances cannot be created, then no instances will be created and instances already created will be deleted.
    * </pre>
    *
-   * <code>string min_count = 523228386;</code>
+   * <code>int64 min_count = 523228386;</code>
    *
    * @return Whether the minCount field is set.
    */
@@ -387,44 +352,13 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
    * The minimum number of instances to create. If no min_count is specified then count is used as the default value. If min_count instances cannot be created, then no instances will be created and instances already created will be deleted.
    * </pre>
    *
-   * <code>string min_count = 523228386;</code>
+   * <code>int64 min_count = 523228386;</code>
    *
    * @return The minCount.
    */
   @java.lang.Override
-  public java.lang.String getMinCount() {
-    java.lang.Object ref = minCount_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      minCount_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The minimum number of instances to create. If no min_count is specified then count is used as the default value. If min_count instances cannot be created, then no instances will be created and instances already created will be deleted.
-   * </pre>
-   *
-   * <code>string min_count = 523228386;</code>
-   *
-   * @return The bytes for minCount.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getMinCountBytes() {
-    java.lang.Object ref = minCount_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      minCount_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getMinCount() {
+    return minCount_;
   }
 
   public static final int NAME_PATTERN_FIELD_NUMBER = 413815260;
@@ -722,7 +656,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 94851343, count_);
+      output.writeInt64(94851343, count_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output,
@@ -743,7 +677,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
       output.writeMessage(465689852, getLocationPolicy());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 523228386, minCount_);
+      output.writeInt64(523228386, minCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -755,7 +689,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(94851343, count_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(94851343, count_);
     }
     for (java.util.Map.Entry<
             java.lang.String,
@@ -792,7 +726,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
           com.google.protobuf.CodedOutputStream.computeMessageSize(465689852, getLocationPolicy());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(523228386, minCount_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(523228386, minCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -812,7 +746,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
 
     if (hasCount() != other.hasCount()) return false;
     if (hasCount()) {
-      if (!getCount().equals(other.getCount())) return false;
+      if (getCount() != other.getCount()) return false;
     }
     if (hasInstanceProperties() != other.hasInstanceProperties()) return false;
     if (hasInstanceProperties()) {
@@ -824,7 +758,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
     }
     if (hasMinCount() != other.hasMinCount()) return false;
     if (hasMinCount()) {
-      if (!getMinCount().equals(other.getMinCount())) return false;
+      if (getMinCount() != other.getMinCount()) return false;
     }
     if (hasNamePattern() != other.hasNamePattern()) return false;
     if (hasNamePattern()) {
@@ -849,7 +783,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasCount()) {
       hash = (37 * hash) + COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getCount().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCount());
     }
     if (hasInstanceProperties()) {
       hash = (37 * hash) + INSTANCE_PROPERTIES_FIELD_NUMBER;
@@ -861,7 +795,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
     }
     if (hasMinCount()) {
       hash = (37 * hash) + MIN_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getMinCount().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMinCount());
     }
     if (hasNamePattern()) {
       hash = (37 * hash) + NAME_PATTERN_FIELD_NUMBER;
@@ -1043,7 +977,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      count_ = "";
+      count_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       if (instancePropertiesBuilder_ == null) {
         instanceProperties_ = null;
@@ -1057,7 +991,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
         locationPolicyBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
-      minCount_ = "";
+      minCount_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000008);
       namePattern_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -1094,9 +1028,9 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.count_ = count_;
         to_bitField0_ |= 0x00000001;
       }
-      result.count_ = count_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         if (instancePropertiesBuilder_ == null) {
           result.instanceProperties_ = instanceProperties_;
@@ -1114,9 +1048,9 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.minCount_ = minCount_;
         to_bitField0_ |= 0x00000008;
       }
-      result.minCount_ = minCount_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         to_bitField0_ |= 0x00000010;
       }
@@ -1179,9 +1113,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
       if (other == com.google.cloud.compute.v1.BulkInsertInstanceResource.getDefaultInstance())
         return this;
       if (other.hasCount()) {
-        bitField0_ |= 0x00000001;
-        count_ = other.count_;
-        onChanged();
+        setCount(other.getCount());
       }
       if (other.hasInstanceProperties()) {
         mergeInstanceProperties(other.getInstanceProperties());
@@ -1190,9 +1122,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
         mergeLocationPolicy(other.getLocationPolicy());
       }
       if (other.hasMinCount()) {
-        bitField0_ |= 0x00000008;
-        minCount_ = other.minCount_;
-        onChanged();
+        setMinCount(other.getMinCount());
       }
       if (other.hasNamePattern()) {
         bitField0_ |= 0x00000010;
@@ -1237,7 +1167,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
 
     private int bitField0_;
 
-    private java.lang.Object count_ = "";
+    private long count_;
     /**
      *
      *
@@ -1245,10 +1175,11 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      * The maximum number of instances to create.
      * </pre>
      *
-     * <code>string count = 94851343;</code>
+     * <code>int64 count = 94851343;</code>
      *
      * @return Whether the count field is set.
      */
+    @java.lang.Override
     public boolean hasCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -1259,20 +1190,13 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      * The maximum number of instances to create.
      * </pre>
      *
-     * <code>string count = 94851343;</code>
+     * <code>int64 count = 94851343;</code>
      *
      * @return The count.
      */
-    public java.lang.String getCount() {
-      java.lang.Object ref = count_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        count_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getCount() {
+      return count_;
     }
     /**
      *
@@ -1281,37 +1205,12 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      * The maximum number of instances to create.
      * </pre>
      *
-     * <code>string count = 94851343;</code>
-     *
-     * @return The bytes for count.
-     */
-    public com.google.protobuf.ByteString getCountBytes() {
-      java.lang.Object ref = count_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        count_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The maximum number of instances to create.
-     * </pre>
-     *
-     * <code>string count = 94851343;</code>
+     * <code>int64 count = 94851343;</code>
      *
      * @param value The count to set.
      * @return This builder for chaining.
      */
-    public Builder setCount(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setCount(long value) {
       bitField0_ |= 0x00000001;
       count_ = value;
       onChanged();
@@ -1324,35 +1223,13 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      * The maximum number of instances to create.
      * </pre>
      *
-     * <code>string count = 94851343;</code>
+     * <code>int64 count = 94851343;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearCount() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      count_ = getDefaultInstance().getCount();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The maximum number of instances to create.
-     * </pre>
-     *
-     * <code>string count = 94851343;</code>
-     *
-     * @param value The bytes for count to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCountBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
-      count_ = value;
+      count_ = 0L;
       onChanged();
       return this;
     }
@@ -1733,7 +1610,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
       return locationPolicyBuilder_;
     }
 
-    private java.lang.Object minCount_ = "";
+    private long minCount_;
     /**
      *
      *
@@ -1741,10 +1618,11 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      * The minimum number of instances to create. If no min_count is specified then count is used as the default value. If min_count instances cannot be created, then no instances will be created and instances already created will be deleted.
      * </pre>
      *
-     * <code>string min_count = 523228386;</code>
+     * <code>int64 min_count = 523228386;</code>
      *
      * @return Whether the minCount field is set.
      */
+    @java.lang.Override
     public boolean hasMinCount() {
       return ((bitField0_ & 0x00000008) != 0);
     }
@@ -1755,20 +1633,13 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      * The minimum number of instances to create. If no min_count is specified then count is used as the default value. If min_count instances cannot be created, then no instances will be created and instances already created will be deleted.
      * </pre>
      *
-     * <code>string min_count = 523228386;</code>
+     * <code>int64 min_count = 523228386;</code>
      *
      * @return The minCount.
      */
-    public java.lang.String getMinCount() {
-      java.lang.Object ref = minCount_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        minCount_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getMinCount() {
+      return minCount_;
     }
     /**
      *
@@ -1777,37 +1648,12 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      * The minimum number of instances to create. If no min_count is specified then count is used as the default value. If min_count instances cannot be created, then no instances will be created and instances already created will be deleted.
      * </pre>
      *
-     * <code>string min_count = 523228386;</code>
-     *
-     * @return The bytes for minCount.
-     */
-    public com.google.protobuf.ByteString getMinCountBytes() {
-      java.lang.Object ref = minCount_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        minCount_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The minimum number of instances to create. If no min_count is specified then count is used as the default value. If min_count instances cannot be created, then no instances will be created and instances already created will be deleted.
-     * </pre>
-     *
-     * <code>string min_count = 523228386;</code>
+     * <code>int64 min_count = 523228386;</code>
      *
      * @param value The minCount to set.
      * @return This builder for chaining.
      */
-    public Builder setMinCount(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setMinCount(long value) {
       bitField0_ |= 0x00000008;
       minCount_ = value;
       onChanged();
@@ -1820,35 +1666,13 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      * The minimum number of instances to create. If no min_count is specified then count is used as the default value. If min_count instances cannot be created, then no instances will be created and instances already created will be deleted.
      * </pre>
      *
-     * <code>string min_count = 523228386;</code>
+     * <code>int64 min_count = 523228386;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMinCount() {
       bitField0_ = (bitField0_ & ~0x00000008);
-      minCount_ = getDefaultInstance().getMinCount();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The minimum number of instances to create. If no min_count is specified then count is used as the default value. If min_count instances cannot be created, then no instances will be created and instances already created will be deleted.
-     * </pre>
-     *
-     * <code>string min_count = 523228386;</code>
-     *
-     * @param value The bytes for minCount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMinCountBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
-      minCount_ = value;
+      minCount_ = 0L;
       onChanged();
       return this;
     }

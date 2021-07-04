@@ -30,7 +30,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
    * </pre>
    *
-   * <code>string expected_rtt_ms = 422543866;</code>
+   * <code>int64 expected_rtt_ms = 422543866;</code>
    *
    * @return Whether the expectedRttMs field is set.
    */
@@ -42,23 +42,11 @@ public interface InterconnectLocationRegionInfoOrBuilder
    * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
    * </pre>
    *
-   * <code>string expected_rtt_ms = 422543866;</code>
+   * <code>int64 expected_rtt_ms = 422543866;</code>
    *
    * @return The expectedRttMs.
    */
-  java.lang.String getExpectedRttMs();
-  /**
-   *
-   *
-   * <pre>
-   * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
-   * </pre>
-   *
-   * <code>string expected_rtt_ms = 422543866;</code>
-   *
-   * @return The bytes for expectedRttMs.
-   */
-  com.google.protobuf.ByteString getExpectedRttMsBytes();
+  long getExpectedRttMs();
 
   /**
    *

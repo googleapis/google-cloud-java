@@ -166,7 +166,7 @@ public interface SnapshotOrBuilder
    * [Output Only] Size of the source disk, specified in GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>int64 disk_size_gb = 316263735;</code>
    *
    * @return Whether the diskSizeGb field is set.
    */
@@ -178,23 +178,11 @@ public interface SnapshotOrBuilder
    * [Output Only] Size of the source disk, specified in GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>int64 disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
-  java.lang.String getDiskSizeGb();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] Size of the source disk, specified in GB.
-   * </pre>
-   *
-   * <code>string disk_size_gb = 316263735;</code>
-   *
-   * @return The bytes for diskSizeGb.
-   */
-  com.google.protobuf.ByteString getDiskSizeGbBytes();
+  long getDiskSizeGb();
 
   /**
    *
@@ -203,7 +191,7 @@ public interface SnapshotOrBuilder
    * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
    * </pre>
    *
-   * <code>string download_bytes = 435054068;</code>
+   * <code>int64 download_bytes = 435054068;</code>
    *
    * @return Whether the downloadBytes field is set.
    */
@@ -215,23 +203,11 @@ public interface SnapshotOrBuilder
    * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
    * </pre>
    *
-   * <code>string download_bytes = 435054068;</code>
+   * <code>int64 download_bytes = 435054068;</code>
    *
    * @return The downloadBytes.
    */
-  java.lang.String getDownloadBytes();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
-   * </pre>
-   *
-   * <code>string download_bytes = 435054068;</code>
-   *
-   * @return The bytes for downloadBytes.
-   */
-  com.google.protobuf.ByteString getDownloadBytesBytes();
+  long getDownloadBytes();
 
   /**
    *
@@ -240,7 +216,7 @@ public interface SnapshotOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -252,23 +228,11 @@ public interface SnapshotOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return The id.
    */
-  java.lang.String getId();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-   * </pre>
-   *
-   * <code>string id = 3355;</code>
-   *
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString getIdBytes();
+  long getId();
 
   /**
    *
@@ -408,11 +372,11 @@ public interface SnapshotOrBuilder
    * [Output Only] Integer license codes indicating which licenses are attached to this snapshot.
    * </pre>
    *
-   * <code>repeated string license_codes = 45482664;</code>
+   * <code>repeated int64 license_codes = 45482664;</code>
    *
    * @return A list containing the licenseCodes.
    */
-  java.util.List<java.lang.String> getLicenseCodesList();
+  java.util.List<java.lang.Long> getLicenseCodesList();
   /**
    *
    *
@@ -420,7 +384,7 @@ public interface SnapshotOrBuilder
    * [Output Only] Integer license codes indicating which licenses are attached to this snapshot.
    * </pre>
    *
-   * <code>repeated string license_codes = 45482664;</code>
+   * <code>repeated int64 license_codes = 45482664;</code>
    *
    * @return The count of licenseCodes.
    */
@@ -432,25 +396,12 @@ public interface SnapshotOrBuilder
    * [Output Only] Integer license codes indicating which licenses are attached to this snapshot.
    * </pre>
    *
-   * <code>repeated string license_codes = 45482664;</code>
+   * <code>repeated int64 license_codes = 45482664;</code>
    *
    * @param index The index of the element to return.
    * @return The licenseCodes at the given index.
    */
-  java.lang.String getLicenseCodes(int index);
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] Integer license codes indicating which licenses are attached to this snapshot.
-   * </pre>
-   *
-   * <code>repeated string license_codes = 45482664;</code>
-   *
-   * @param index The index of the value to return.
-   * @return The bytes of the licenseCodes at the given index.
-   */
-  com.google.protobuf.ByteString getLicenseCodesBytes(int index);
+  long getLicenseCodes(int index);
 
   /**
    *
@@ -839,7 +790,7 @@ public interface SnapshotOrBuilder
    * [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
    * </pre>
    *
-   * <code>string storage_bytes = 424631719;</code>
+   * <code>int64 storage_bytes = 424631719;</code>
    *
    * @return Whether the storageBytes field is set.
    */
@@ -851,23 +802,11 @@ public interface SnapshotOrBuilder
    * [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
    * </pre>
    *
-   * <code>string storage_bytes = 424631719;</code>
+   * <code>int64 storage_bytes = 424631719;</code>
    *
    * @return The storageBytes.
    */
-  java.lang.String getStorageBytes();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
-   * </pre>
-   *
-   * <code>string storage_bytes = 424631719;</code>
-   *
-   * @return The bytes for storageBytes.
-   */
-  com.google.protobuf.ByteString getStorageBytesBytes();
+  long getStorageBytes();
 
   /**
    *

@@ -41,7 +41,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
   private GetSerialPortOutputInstanceRequest() {
     instance_ = "";
     project_ = "";
-    start_ = "";
     zone_ = "";
   }
 
@@ -95,11 +94,10 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
               instance_ = s;
               break;
             }
-          case 878060306:
+          case 878060304:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
-              start_ = s;
+              start_ = input.readInt64();
               break;
             }
           case 1820481738:
@@ -276,7 +274,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
   }
 
   public static final int START_FIELD_NUMBER = 109757538;
-  private volatile java.lang.Object start_;
+  private long start_;
   /**
    *
    *
@@ -286,7 +284,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
    * You can also provide a negative start position, which translates to the most recent number of bytes written to the serial port. For example, -3 is interpreted as the most recent 3 bytes written to the serial console.
    * </pre>
    *
-   * <code>string start = 109757538;</code>
+   * <code>int64 start = 109757538;</code>
    *
    * @return Whether the start field is set.
    */
@@ -303,46 +301,13 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
    * You can also provide a negative start position, which translates to the most recent number of bytes written to the serial port. For example, -3 is interpreted as the most recent 3 bytes written to the serial console.
    * </pre>
    *
-   * <code>string start = 109757538;</code>
+   * <code>int64 start = 109757538;</code>
    *
    * @return The start.
    */
   @java.lang.Override
-  public java.lang.String getStart() {
-    java.lang.Object ref = start_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      start_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Specifies the starting byte position of the output to return. To start with the first byte of output to the specified port, omit this field or set it to `0`.
-   * If the output for that byte position is available, this field matches the `start` parameter sent with the request. If the amount of serial console output exceeds the size of the buffer (1 MB), the oldest output is discarded and is no longer available. If the requested start position refers to discarded output, the start position is adjusted to the oldest output still available, and the adjusted start position is returned as the `start` property value.
-   * You can also provide a negative start position, which translates to the most recent number of bytes written to the serial port. For example, -3 is interpreted as the most recent 3 bytes written to the serial console.
-   * </pre>
-   *
-   * <code>string start = 109757538;</code>
-   *
-   * @return The bytes for start.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getStartBytes() {
-    java.lang.Object ref = start_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      start_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getStart() {
+    return start_;
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
@@ -418,7 +383,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 109757538, start_);
+      output.writeInt64(109757538, start_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
@@ -442,7 +407,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757538, start_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(109757538, start_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
@@ -471,7 +436,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     if (!getProject().equals(other.getProject())) return false;
     if (hasStart() != other.hasStart()) return false;
     if (hasStart()) {
-      if (!getStart().equals(other.getStart())) return false;
+      if (getStart() != other.getStart()) return false;
     }
     if (!getZone().equals(other.getZone())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -495,7 +460,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     hash = (53 * hash) + getProject().hashCode();
     if (hasStart()) {
       hash = (37 * hash) + START_FIELD_NUMBER;
-      hash = (53 * hash) + getStart().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getStart());
     }
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getZone().hashCode();
@@ -651,7 +616,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       bitField0_ = (bitField0_ & ~0x00000001);
       project_ = "";
 
-      start_ = "";
+      start_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
       zone_ = "";
 
@@ -692,9 +657,9 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       }
       result.project_ = project_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.start_ = start_;
         to_bitField0_ |= 0x00000002;
       }
-      result.start_ = start_;
       result.zone_ = zone_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -760,9 +725,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
         onChanged();
       }
       if (other.hasStart()) {
-        bitField0_ |= 0x00000002;
-        start_ = other.start_;
-        onChanged();
+        setStart(other.getStart());
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
@@ -1080,7 +1043,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       return this;
     }
 
-    private java.lang.Object start_ = "";
+    private long start_;
     /**
      *
      *
@@ -1090,10 +1053,11 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
      * You can also provide a negative start position, which translates to the most recent number of bytes written to the serial port. For example, -3 is interpreted as the most recent 3 bytes written to the serial console.
      * </pre>
      *
-     * <code>string start = 109757538;</code>
+     * <code>int64 start = 109757538;</code>
      *
      * @return Whether the start field is set.
      */
+    @java.lang.Override
     public boolean hasStart() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -1106,20 +1070,13 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
      * You can also provide a negative start position, which translates to the most recent number of bytes written to the serial port. For example, -3 is interpreted as the most recent 3 bytes written to the serial console.
      * </pre>
      *
-     * <code>string start = 109757538;</code>
+     * <code>int64 start = 109757538;</code>
      *
      * @return The start.
      */
-    public java.lang.String getStart() {
-      java.lang.Object ref = start_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        start_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getStart() {
+      return start_;
     }
     /**
      *
@@ -1130,39 +1087,12 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
      * You can also provide a negative start position, which translates to the most recent number of bytes written to the serial port. For example, -3 is interpreted as the most recent 3 bytes written to the serial console.
      * </pre>
      *
-     * <code>string start = 109757538;</code>
-     *
-     * @return The bytes for start.
-     */
-    public com.google.protobuf.ByteString getStartBytes() {
-      java.lang.Object ref = start_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        start_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the starting byte position of the output to return. To start with the first byte of output to the specified port, omit this field or set it to `0`.
-     * If the output for that byte position is available, this field matches the `start` parameter sent with the request. If the amount of serial console output exceeds the size of the buffer (1 MB), the oldest output is discarded and is no longer available. If the requested start position refers to discarded output, the start position is adjusted to the oldest output still available, and the adjusted start position is returned as the `start` property value.
-     * You can also provide a negative start position, which translates to the most recent number of bytes written to the serial port. For example, -3 is interpreted as the most recent 3 bytes written to the serial console.
-     * </pre>
-     *
-     * <code>string start = 109757538;</code>
+     * <code>int64 start = 109757538;</code>
      *
      * @param value The start to set.
      * @return This builder for chaining.
      */
-    public Builder setStart(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setStart(long value) {
       bitField0_ |= 0x00000002;
       start_ = value;
       onChanged();
@@ -1177,37 +1107,13 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
      * You can also provide a negative start position, which translates to the most recent number of bytes written to the serial port. For example, -3 is interpreted as the most recent 3 bytes written to the serial console.
      * </pre>
      *
-     * <code>string start = 109757538;</code>
+     * <code>int64 start = 109757538;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearStart() {
       bitField0_ = (bitField0_ & ~0x00000002);
-      start_ = getDefaultInstance().getStart();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the starting byte position of the output to return. To start with the first byte of output to the specified port, omit this field or set it to `0`.
-     * If the output for that byte position is available, this field matches the `start` parameter sent with the request. If the amount of serial console output exceeds the size of the buffer (1 MB), the oldest output is discarded and is no longer available. If the requested start position refers to discarded output, the start position is adjusted to the oldest output still available, and the adjusted start position is returned as the `start` property value.
-     * You can also provide a negative start position, which translates to the most recent number of bytes written to the serial port. For example, -3 is interpreted as the most recent 3 bytes written to the serial console.
-     * </pre>
-     *
-     * <code>string start = 109757538;</code>
-     *
-     * @param value The bytes for start to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStartBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
-      start_ = value;
+      start_ = 0L;
       onChanged();
       return this;
     }

@@ -39,7 +39,6 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
 
   private AttachedDisk() {
     deviceName_ = "";
-    diskSizeGb_ = "";
     guestOsFeatures_ = java.util.Collections.emptyList();
     interface_ = 0;
     kind_ = "";
@@ -188,11 +187,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
               bitField0_ |= 0x00000008;
               break;
             }
-          case -1764857414:
+          case -1764857416:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
-              diskSizeGb_ = s;
+              diskSizeGb_ = input.readInt64();
               break;
             }
           case -1593826670:
@@ -831,7 +829,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISK_SIZE_GB_FIELD_NUMBER = 316263735;
-  private volatile java.lang.Object diskSizeGb_;
+  private long diskSizeGb_;
   /**
    *
    *
@@ -839,7 +837,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * The size of the disk in GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>int64 disk_size_gb = 316263735;</code>
    *
    * @return Whether the diskSizeGb field is set.
    */
@@ -854,44 +852,13 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * The size of the disk in GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>int64 disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
   @java.lang.Override
-  public java.lang.String getDiskSizeGb() {
-    java.lang.Object ref = diskSizeGb_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      diskSizeGb_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The size of the disk in GB.
-   * </pre>
-   *
-   * <code>string disk_size_gb = 316263735;</code>
-   *
-   * @return The bytes for diskSizeGb.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getDiskSizeGbBytes() {
-    java.lang.Object ref = diskSizeGb_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      diskSizeGb_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getDiskSizeGb() {
+    return diskSizeGb_;
   }
 
   public static final int GUEST_OS_FEATURES_FIELD_NUMBER = 79294545;
@@ -1506,7 +1473,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(271660677, getDiskEncryptionKey());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 316263735, diskSizeGb_);
+      output.writeInt64(316263735, diskSizeGb_);
     }
     for (int i = 0; i < licenses_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 337642578, licenses_.getRaw(i));
@@ -1567,7 +1534,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
               271660677, getDiskEncryptionKey());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(316263735, diskSizeGb_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(316263735, diskSizeGb_);
     }
     {
       int dataSize = 0;
@@ -1616,7 +1583,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasDiskSizeGb() != other.hasDiskSizeGb()) return false;
     if (hasDiskSizeGb()) {
-      if (!getDiskSizeGb().equals(other.getDiskSizeGb())) return false;
+      if (getDiskSizeGb() != other.getDiskSizeGb()) return false;
     }
     if (!getGuestOsFeaturesList().equals(other.getGuestOsFeaturesList())) return false;
     if (hasIndex() != other.hasIndex()) return false;
@@ -1682,7 +1649,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasDiskSizeGb()) {
       hash = (37 * hash) + DISK_SIZE_GB_FIELD_NUMBER;
-      hash = (53 * hash) + getDiskSizeGb().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDiskSizeGb());
     }
     if (getGuestOsFeaturesCount() > 0) {
       hash = (37 * hash) + GUEST_OS_FEATURES_FIELD_NUMBER;
@@ -1886,7 +1853,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         diskEncryptionKeyBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
-      diskSizeGb_ = "";
+      diskSizeGb_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000010);
       if (guestOsFeaturesBuilder_ == null) {
         guestOsFeatures_ = java.util.Collections.emptyList();
@@ -1970,9 +1937,9 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.diskSizeGb_ = diskSizeGb_;
         to_bitField0_ |= 0x00000010;
       }
-      result.diskSizeGb_ = diskSizeGb_;
       if (guestOsFeaturesBuilder_ == null) {
         if (((bitField0_ & 0x00000020) != 0)) {
           guestOsFeatures_ = java.util.Collections.unmodifiableList(guestOsFeatures_);
@@ -2092,9 +2059,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         mergeDiskEncryptionKey(other.getDiskEncryptionKey());
       }
       if (other.hasDiskSizeGb()) {
-        bitField0_ |= 0x00000010;
-        diskSizeGb_ = other.diskSizeGb_;
-        onChanged();
+        setDiskSizeGb(other.getDiskSizeGb());
       }
       if (guestOsFeaturesBuilder_ == null) {
         if (!other.guestOsFeatures_.isEmpty()) {
@@ -2677,7 +2642,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       return diskEncryptionKeyBuilder_;
     }
 
-    private java.lang.Object diskSizeGb_ = "";
+    private long diskSizeGb_;
     /**
      *
      *
@@ -2685,10 +2650,11 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * The size of the disk in GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>int64 disk_size_gb = 316263735;</code>
      *
      * @return Whether the diskSizeGb field is set.
      */
+    @java.lang.Override
     public boolean hasDiskSizeGb() {
       return ((bitField0_ & 0x00000010) != 0);
     }
@@ -2699,20 +2665,13 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * The size of the disk in GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>int64 disk_size_gb = 316263735;</code>
      *
      * @return The diskSizeGb.
      */
-    public java.lang.String getDiskSizeGb() {
-      java.lang.Object ref = diskSizeGb_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        diskSizeGb_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getDiskSizeGb() {
+      return diskSizeGb_;
     }
     /**
      *
@@ -2721,37 +2680,12 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * The size of the disk in GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
-     *
-     * @return The bytes for diskSizeGb.
-     */
-    public com.google.protobuf.ByteString getDiskSizeGbBytes() {
-      java.lang.Object ref = diskSizeGb_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        diskSizeGb_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The size of the disk in GB.
-     * </pre>
-     *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>int64 disk_size_gb = 316263735;</code>
      *
      * @param value The diskSizeGb to set.
      * @return This builder for chaining.
      */
-    public Builder setDiskSizeGb(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setDiskSizeGb(long value) {
       bitField0_ |= 0x00000010;
       diskSizeGb_ = value;
       onChanged();
@@ -2764,35 +2698,13 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * The size of the disk in GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>int64 disk_size_gb = 316263735;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDiskSizeGb() {
       bitField0_ = (bitField0_ & ~0x00000010);
-      diskSizeGb_ = getDefaultInstance().getDiskSizeGb();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The size of the disk in GB.
-     * </pre>
-     *
-     * <code>string disk_size_gb = 316263735;</code>
-     *
-     * @param value The bytes for diskSizeGb to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDiskSizeGbBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
-      diskSizeGb_ = value;
+      diskSizeGb_ = 0L;
       onChanged();
       return this;
     }

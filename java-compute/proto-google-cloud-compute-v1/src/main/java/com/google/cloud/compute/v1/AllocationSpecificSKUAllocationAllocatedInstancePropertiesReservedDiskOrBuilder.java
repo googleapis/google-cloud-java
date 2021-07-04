@@ -30,7 +30,7 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    * Specifies the size of the disk in base-2 GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>int64 disk_size_gb = 316263735;</code>
    *
    * @return Whether the diskSizeGb field is set.
    */
@@ -42,23 +42,11 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    * Specifies the size of the disk in base-2 GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>int64 disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
-  java.lang.String getDiskSizeGb();
-  /**
-   *
-   *
-   * <pre>
-   * Specifies the size of the disk in base-2 GB.
-   * </pre>
-   *
-   * <code>string disk_size_gb = 316263735;</code>
-   *
-   * @return The bytes for diskSizeGb.
-   */
-  com.google.protobuf.ByteString getDiskSizeGbBytes();
+  long getDiskSizeGb();
 
   /**
    *

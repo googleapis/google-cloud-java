@@ -41,7 +41,6 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
   }
 
   private AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk() {
-    diskSizeGb_ = "";
     interface_ = 0;
   }
 
@@ -75,11 +74,10 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
           case 0:
             done = true;
             break;
-          case -1764857414:
+          case -1764857416:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              diskSizeGb_ = s;
+              diskSizeGb_ = input.readInt64();
               break;
             }
           case -273978936:
@@ -257,7 +255,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
 
   private int bitField0_;
   public static final int DISK_SIZE_GB_FIELD_NUMBER = 316263735;
-  private volatile java.lang.Object diskSizeGb_;
+  private long diskSizeGb_;
   /**
    *
    *
@@ -265,7 +263,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
    * Specifies the size of the disk in base-2 GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>int64 disk_size_gb = 316263735;</code>
    *
    * @return Whether the diskSizeGb field is set.
    */
@@ -280,44 +278,13 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
    * Specifies the size of the disk in base-2 GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>int64 disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
   @java.lang.Override
-  public java.lang.String getDiskSizeGb() {
-    java.lang.Object ref = diskSizeGb_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      diskSizeGb_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Specifies the size of the disk in base-2 GB.
-   * </pre>
-   *
-   * <code>string disk_size_gb = 316263735;</code>
-   *
-   * @return The bytes for diskSizeGb.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getDiskSizeGbBytes() {
-    java.lang.Object ref = diskSizeGb_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      diskSizeGb_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getDiskSizeGb() {
+    return diskSizeGb_;
   }
 
   public static final int INTERFACE_FIELD_NUMBER = 502623545;
@@ -402,7 +369,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 316263735, diskSizeGb_);
+      output.writeInt64(316263735, diskSizeGb_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeEnum(502623545, interface_);
@@ -417,7 +384,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(316263735, diskSizeGb_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(316263735, diskSizeGb_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(502623545, interface_);
@@ -447,7 +414,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
 
     if (hasDiskSizeGb() != other.hasDiskSizeGb()) return false;
     if (hasDiskSizeGb()) {
-      if (!getDiskSizeGb().equals(other.getDiskSizeGb())) return false;
+      if (getDiskSizeGb() != other.getDiskSizeGb()) return false;
     }
     if (hasInterface() != other.hasInterface()) return false;
     if (hasInterface()) {
@@ -466,7 +433,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasDiskSizeGb()) {
       hash = (37 * hash) + DISK_SIZE_GB_FIELD_NUMBER;
-      hash = (53 * hash) + getDiskSizeGb().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDiskSizeGb());
     }
     if (hasInterface()) {
       hash = (37 * hash) + INTERFACE_FIELD_NUMBER;
@@ -643,7 +610,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      diskSizeGb_ = "";
+      diskSizeGb_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       interface_ = 0;
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -690,9 +657,9 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.diskSizeGb_ = diskSizeGb_;
         to_bitField0_ |= 0x00000001;
       }
-      result.diskSizeGb_ = diskSizeGb_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         to_bitField0_ |= 0x00000002;
       }
@@ -760,9 +727,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
               .AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk
               .getDefaultInstance()) return this;
       if (other.hasDiskSizeGb()) {
-        bitField0_ |= 0x00000001;
-        diskSizeGb_ = other.diskSizeGb_;
-        onChanged();
+        setDiskSizeGb(other.getDiskSizeGb());
       }
       if (other.hasInterface()) {
         setInterface(other.getInterface());
@@ -803,7 +768,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
 
     private int bitField0_;
 
-    private java.lang.Object diskSizeGb_ = "";
+    private long diskSizeGb_;
     /**
      *
      *
@@ -811,10 +776,11 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
      * Specifies the size of the disk in base-2 GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>int64 disk_size_gb = 316263735;</code>
      *
      * @return Whether the diskSizeGb field is set.
      */
+    @java.lang.Override
     public boolean hasDiskSizeGb() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -825,20 +791,13 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
      * Specifies the size of the disk in base-2 GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>int64 disk_size_gb = 316263735;</code>
      *
      * @return The diskSizeGb.
      */
-    public java.lang.String getDiskSizeGb() {
-      java.lang.Object ref = diskSizeGb_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        diskSizeGb_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getDiskSizeGb() {
+      return diskSizeGb_;
     }
     /**
      *
@@ -847,37 +806,12 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
      * Specifies the size of the disk in base-2 GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
-     *
-     * @return The bytes for diskSizeGb.
-     */
-    public com.google.protobuf.ByteString getDiskSizeGbBytes() {
-      java.lang.Object ref = diskSizeGb_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        diskSizeGb_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the size of the disk in base-2 GB.
-     * </pre>
-     *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>int64 disk_size_gb = 316263735;</code>
      *
      * @param value The diskSizeGb to set.
      * @return This builder for chaining.
      */
-    public Builder setDiskSizeGb(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setDiskSizeGb(long value) {
       bitField0_ |= 0x00000001;
       diskSizeGb_ = value;
       onChanged();
@@ -890,35 +824,13 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
      * Specifies the size of the disk in base-2 GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>int64 disk_size_gb = 316263735;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDiskSizeGb() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      diskSizeGb_ = getDefaultInstance().getDiskSizeGb();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the size of the disk in base-2 GB.
-     * </pre>
-     *
-     * <code>string disk_size_gb = 316263735;</code>
-     *
-     * @param value The bytes for diskSizeGb to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDiskSizeGbBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
-      diskSizeGb_ = value;
+      diskSizeGb_ = 0L;
       onChanged();
       return this;
     }

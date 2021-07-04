@@ -78,7 +78,7 @@ public class LicenseCodesClientTest {
         LicenseCode.newBuilder()
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
-            .setId("id3355")
+            .setId(3355)
             .setKind("kind3292052")
             .addAllLicenseAlias(new ArrayList<LicenseCodeLicenseAlias>())
             .setName("name3373707")

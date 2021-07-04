@@ -30,7 +30,7 @@ public interface Int64RangeMatchOrBuilder
    * The end of the range (exclusive) in signed long integer format.
    * </pre>
    *
-   * <code>string range_end = 322439897;</code>
+   * <code>int64 range_end = 322439897;</code>
    *
    * @return Whether the rangeEnd field is set.
    */
@@ -42,23 +42,11 @@ public interface Int64RangeMatchOrBuilder
    * The end of the range (exclusive) in signed long integer format.
    * </pre>
    *
-   * <code>string range_end = 322439897;</code>
+   * <code>int64 range_end = 322439897;</code>
    *
    * @return The rangeEnd.
    */
-  java.lang.String getRangeEnd();
-  /**
-   *
-   *
-   * <pre>
-   * The end of the range (exclusive) in signed long integer format.
-   * </pre>
-   *
-   * <code>string range_end = 322439897;</code>
-   *
-   * @return The bytes for rangeEnd.
-   */
-  com.google.protobuf.ByteString getRangeEndBytes();
+  long getRangeEnd();
 
   /**
    *
@@ -67,7 +55,7 @@ public interface Int64RangeMatchOrBuilder
    * The start of the range (inclusive) in signed long integer format.
    * </pre>
    *
-   * <code>string range_start = 103333600;</code>
+   * <code>int64 range_start = 103333600;</code>
    *
    * @return Whether the rangeStart field is set.
    */
@@ -79,21 +67,9 @@ public interface Int64RangeMatchOrBuilder
    * The start of the range (inclusive) in signed long integer format.
    * </pre>
    *
-   * <code>string range_start = 103333600;</code>
+   * <code>int64 range_start = 103333600;</code>
    *
    * @return The rangeStart.
    */
-  java.lang.String getRangeStart();
-  /**
-   *
-   *
-   * <pre>
-   * The start of the range (inclusive) in signed long integer format.
-   * </pre>
-   *
-   * <code>string range_start = 103333600;</code>
-   *
-   * @return The bytes for rangeStart.
-   */
-  com.google.protobuf.ByteString getRangeStartBytes();
+  long getRangeStart();
 }

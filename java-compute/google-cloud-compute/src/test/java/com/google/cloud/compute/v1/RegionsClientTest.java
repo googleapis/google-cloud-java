@@ -82,7 +82,7 @@ public class RegionsClientTest {
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDeprecated(DeprecationStatus.newBuilder().build())
             .setDescription("description-1724546052")
-            .setId("id3355")
+            .setId(3355)
             .setKind("kind3292052")
             .setName("name3373707")
             .addAllQuotas(new ArrayList<Quota>())

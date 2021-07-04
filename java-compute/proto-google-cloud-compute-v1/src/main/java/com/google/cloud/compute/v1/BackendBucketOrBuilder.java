@@ -252,7 +252,7 @@ public interface BackendBucketOrBuilder
    * [Output Only] Unique identifier for the resource; defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -264,23 +264,11 @@ public interface BackendBucketOrBuilder
    * [Output Only] Unique identifier for the resource; defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return The id.
    */
-  java.lang.String getId();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] Unique identifier for the resource; defined by the server.
-   * </pre>
-   *
-   * <code>string id = 3355;</code>
-   *
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString getIdBytes();
+  long getId();
 
   /**
    *

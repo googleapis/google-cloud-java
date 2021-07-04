@@ -39,16 +39,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Image() {
-    archiveSizeBytes_ = "";
     creationTimestamp_ = "";
     description_ = "";
-    diskSizeGb_ = "";
     family_ = "";
     guestOsFeatures_ = java.util.Collections.emptyList();
-    id_ = "";
     kind_ = "";
     labelFingerprint_ = "";
-    licenseCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    licenseCodes_ = emptyLongList();
     licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     name_ = "";
     selfLink_ = "";
@@ -93,11 +90,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 26842:
+          case 26840:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000040;
-              id_ = s;
+              id_ = input.readUInt64();
               break;
             }
           case 26336418:
@@ -121,14 +117,27 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
               creationTimestamp_ = s;
               break;
             }
-          case 363861314:
+          case 363861312:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00001000) != 0)) {
-                licenseCodes_ = new com.google.protobuf.LazyStringArrayList();
+                licenseCodes_ = newLongList();
                 mutable_bitField0_ |= 0x00001000;
               }
-              licenseCodes_.add(s);
+              licenseCodes_.addLong(input.readInt64());
+              break;
+            }
+          case 363861314:
+            {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00001000) != 0) && input.getBytesUntilLimit() > 0) {
+                licenseCodes_ = newLongList();
+                mutable_bitField0_ |= 0x00001000;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                licenseCodes_.addLong(input.readInt64());
+              }
+              input.popLimit(limit);
               break;
             }
           case 403546554:
@@ -218,11 +227,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
               bitField0_ |= 0x00400000;
               break;
             }
-          case -1764857414:
+          case -1764857416:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
-              diskSizeGb_ = s;
+              diskSizeGb_ = input.readInt64();
               break;
             }
           case -1670925102:
@@ -269,11 +277,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
               bitField0_ |= 0x00000080;
               break;
             }
-          case -1246219694:
+          case -1246219696:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              archiveSizeBytes_ = s;
+              archiveSizeBytes_ = input.readInt64();
               break;
             }
           case -1242938022:
@@ -411,7 +418,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00001000) != 0)) {
-        licenseCodes_ = licenseCodes_.getUnmodifiableView();
+        licenseCodes_.makeImmutable(); // C
       }
       if (((mutable_bitField0_ & 0x00000040) != 0)) {
         guestOsFeatures_ = java.util.Collections.unmodifiableList(guestOsFeatures_);
@@ -711,7 +718,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int ARCHIVE_SIZE_BYTES_FIELD_NUMBER = 381093450;
-  private volatile java.lang.Object archiveSizeBytes_;
+  private long archiveSizeBytes_;
   /**
    *
    *
@@ -719,7 +726,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
    * </pre>
    *
-   * <code>string archive_size_bytes = 381093450;</code>
+   * <code>int64 archive_size_bytes = 381093450;</code>
    *
    * @return Whether the archiveSizeBytes field is set.
    */
@@ -734,44 +741,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
    * </pre>
    *
-   * <code>string archive_size_bytes = 381093450;</code>
+   * <code>int64 archive_size_bytes = 381093450;</code>
    *
    * @return The archiveSizeBytes.
    */
   @java.lang.Override
-  public java.lang.String getArchiveSizeBytes() {
-    java.lang.Object ref = archiveSizeBytes_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      archiveSizeBytes_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
-   * </pre>
-   *
-   * <code>string archive_size_bytes = 381093450;</code>
-   *
-   * @return The bytes for archiveSizeBytes.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getArchiveSizeBytesBytes() {
-    java.lang.Object ref = archiveSizeBytes_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      archiveSizeBytes_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getArchiveSizeBytes() {
+    return archiveSizeBytes_;
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
@@ -953,7 +929,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISK_SIZE_GB_FIELD_NUMBER = 316263735;
-  private volatile java.lang.Object diskSizeGb_;
+  private long diskSizeGb_;
   /**
    *
    *
@@ -961,7 +937,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    * Size of the image when restored onto a persistent disk (in GB).
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>int64 disk_size_gb = 316263735;</code>
    *
    * @return Whether the diskSizeGb field is set.
    */
@@ -976,44 +952,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    * Size of the image when restored onto a persistent disk (in GB).
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>int64 disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
   @java.lang.Override
-  public java.lang.String getDiskSizeGb() {
-    java.lang.Object ref = diskSizeGb_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      diskSizeGb_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Size of the image when restored onto a persistent disk (in GB).
-   * </pre>
-   *
-   * <code>string disk_size_gb = 316263735;</code>
-   *
-   * @return The bytes for diskSizeGb.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getDiskSizeGbBytes() {
-    java.lang.Object ref = diskSizeGb_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      diskSizeGb_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getDiskSizeGb() {
+    return diskSizeGb_;
   }
 
   public static final int FAMILY_FIELD_NUMBER = 328751972;
@@ -1151,7 +1096,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private volatile java.lang.Object id_;
+  private long id_;
   /**
    *
    *
@@ -1159,7 +1104,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -1174,44 +1119,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return The id.
    */
   @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      id_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-   * </pre>
-   *
-   * <code>string id = 3355;</code>
-   *
-   * @return The bytes for id.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getIdBytes() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      id_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getId() {
+    return id_;
   }
 
   public static final int IMAGE_ENCRYPTION_KEY_FIELD_NUMBER = 379512583;
@@ -1504,7 +1418,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LICENSE_CODES_FIELD_NUMBER = 45482664;
-  private com.google.protobuf.LazyStringList licenseCodes_;
+  private com.google.protobuf.Internal.LongList licenseCodes_;
   /**
    *
    *
@@ -1512,11 +1426,12 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    * Integer license codes indicating which licenses are attached to this image.
    * </pre>
    *
-   * <code>repeated string license_codes = 45482664;</code>
+   * <code>repeated int64 license_codes = 45482664;</code>
    *
    * @return A list containing the licenseCodes.
    */
-  public com.google.protobuf.ProtocolStringList getLicenseCodesList() {
+  @java.lang.Override
+  public java.util.List<java.lang.Long> getLicenseCodesList() {
     return licenseCodes_;
   }
   /**
@@ -1526,7 +1441,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    * Integer license codes indicating which licenses are attached to this image.
    * </pre>
    *
-   * <code>repeated string license_codes = 45482664;</code>
+   * <code>repeated int64 license_codes = 45482664;</code>
    *
    * @return The count of licenseCodes.
    */
@@ -1540,29 +1455,16 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    * Integer license codes indicating which licenses are attached to this image.
    * </pre>
    *
-   * <code>repeated string license_codes = 45482664;</code>
+   * <code>repeated int64 license_codes = 45482664;</code>
    *
    * @param index The index of the element to return.
    * @return The licenseCodes at the given index.
    */
-  public java.lang.String getLicenseCodes(int index) {
-    return licenseCodes_.get(index);
+  public long getLicenseCodes(int index) {
+    return licenseCodes_.getLong(index);
   }
-  /**
-   *
-   *
-   * <pre>
-   * Integer license codes indicating which licenses are attached to this image.
-   * </pre>
-   *
-   * <code>repeated string license_codes = 45482664;</code>
-   *
-   * @param index The index of the value to return.
-   * @return The bytes of the licenseCodes at the given index.
-   */
-  public com.google.protobuf.ByteString getLicenseCodesBytes(int index) {
-    return licenseCodes_.getByteString(index);
-  }
+
+  private int licenseCodesMemoizedSerializedSize = -1;
 
   public static final int LICENSES_FIELD_NUMBER = 337642578;
   private com.google.protobuf.LazyStringList licenses_;
@@ -2654,8 +2556,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (((bitField0_ & 0x00000040) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
+      output.writeUInt64(3355, id_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
@@ -2666,8 +2569,12 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    if (getLicenseCodesList().size() > 0) {
+      output.writeUInt32NoTag(363861314);
+      output.writeUInt32NoTag(licenseCodesMemoizedSerializedSize);
+    }
     for (int i = 0; i < licenseCodes_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 45482664, licenseCodes_.getRaw(i));
+      output.writeInt64NoTag(licenseCodes_.getLong(i));
     }
     if (((bitField0_ & 0x00040000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 50443319, sourceImage_);
@@ -2697,7 +2604,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(303679322, getSourceSnapshotEncryptionKey());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 316263735, diskSizeGb_);
+      output.writeInt64(316263735, diskSizeGb_);
     }
     for (int i = 0; i < storageLocations_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
@@ -2713,7 +2620,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(379512583, getImageEncryptionKey());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 381093450, archiveSizeBytes_);
+      output.writeInt64(381093450, archiveSizeBytes_);
     }
     if (((bitField0_ & 0x00080000) != 0)) {
       output.writeMessage(381503659, getSourceImageEncryptionKey());
@@ -2757,7 +2664,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
 
     size = 0;
     if (((bitField0_ & 0x00000040) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
+      size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
@@ -2772,10 +2679,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     {
       int dataSize = 0;
       for (int i = 0; i < licenseCodes_.size(); i++) {
-        dataSize += computeStringSizeNoTag(licenseCodes_.getRaw(i));
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeInt64SizeNoTag(licenseCodes_.getLong(i));
       }
       size += dataSize;
-      size += 5 * getLicenseCodesList().size();
+      if (!getLicenseCodesList().isEmpty()) {
+        size += 5;
+        size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+      }
+      licenseCodesMemoizedSerializedSize = dataSize;
     }
     if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(50443319, sourceImage_);
@@ -2812,7 +2724,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
               303679322, getSourceSnapshotEncryptionKey());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(316263735, diskSizeGb_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(316263735, diskSizeGb_);
     }
     {
       int dataSize = 0;
@@ -2839,8 +2751,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
               379512583, getImageEncryptionKey());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(381093450, archiveSizeBytes_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(381093450, archiveSizeBytes_);
     }
     if (((bitField0_ & 0x00080000) != 0)) {
       size +=
@@ -2903,7 +2814,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
 
     if (hasArchiveSizeBytes() != other.hasArchiveSizeBytes()) return false;
     if (hasArchiveSizeBytes()) {
-      if (!getArchiveSizeBytes().equals(other.getArchiveSizeBytes())) return false;
+      if (getArchiveSizeBytes() != other.getArchiveSizeBytes()) return false;
     }
     if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
     if (hasCreationTimestamp()) {
@@ -2919,7 +2830,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasDiskSizeGb() != other.hasDiskSizeGb()) return false;
     if (hasDiskSizeGb()) {
-      if (!getDiskSizeGb().equals(other.getDiskSizeGb())) return false;
+      if (getDiskSizeGb() != other.getDiskSizeGb()) return false;
     }
     if (hasFamily() != other.hasFamily()) return false;
     if (hasFamily()) {
@@ -2928,7 +2839,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     if (!getGuestOsFeaturesList().equals(other.getGuestOsFeaturesList())) return false;
     if (hasId() != other.hasId()) return false;
     if (hasId()) {
-      if (!getId().equals(other.getId())) return false;
+      if (getId() != other.getId()) return false;
     }
     if (hasImageEncryptionKey() != other.hasImageEncryptionKey()) return false;
     if (hasImageEncryptionKey()) {
@@ -3025,7 +2936,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasArchiveSizeBytes()) {
       hash = (37 * hash) + ARCHIVE_SIZE_BYTES_FIELD_NUMBER;
-      hash = (53 * hash) + getArchiveSizeBytes().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getArchiveSizeBytes());
     }
     if (hasCreationTimestamp()) {
       hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
@@ -3041,7 +2952,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasDiskSizeGb()) {
       hash = (37 * hash) + DISK_SIZE_GB_FIELD_NUMBER;
-      hash = (53 * hash) + getDiskSizeGb().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDiskSizeGb());
     }
     if (hasFamily()) {
       hash = (37 * hash) + FAMILY_FIELD_NUMBER;
@@ -3053,7 +2964,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasId()) {
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getId());
     }
     if (hasImageEncryptionKey()) {
       hash = (37 * hash) + IMAGE_ENCRYPTION_KEY_FIELD_NUMBER;
@@ -3321,7 +3232,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      archiveSizeBytes_ = "";
+      archiveSizeBytes_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -3333,7 +3244,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000004);
       description_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
-      diskSizeGb_ = "";
+      diskSizeGb_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000010);
       family_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -3343,7 +3254,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       } else {
         guestOsFeaturesBuilder_.clear();
       }
-      id_ = "";
+      id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000080);
       if (imageEncryptionKeyBuilder_ == null) {
         imageEncryptionKey_ = null;
@@ -3356,7 +3267,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       labelFingerprint_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
       internalGetMutableLabels().clear();
-      licenseCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      licenseCodes_ = emptyLongList();
       bitField0_ = (bitField0_ & ~0x00001000);
       licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00002000);
@@ -3443,9 +3354,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.archiveSizeBytes_ = archiveSizeBytes_;
         to_bitField0_ |= 0x00000001;
       }
-      result.archiveSizeBytes_ = archiveSizeBytes_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         to_bitField0_ |= 0x00000002;
       }
@@ -3463,9 +3374,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       result.description_ = description_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.diskSizeGb_ = diskSizeGb_;
         to_bitField0_ |= 0x00000010;
       }
-      result.diskSizeGb_ = diskSizeGb_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         to_bitField0_ |= 0x00000020;
       }
@@ -3480,9 +3391,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         result.guestOsFeatures_ = guestOsFeaturesBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.id_ = id_;
         to_bitField0_ |= 0x00000040;
       }
-      result.id_ = id_;
       if (((from_bitField0_ & 0x00000100) != 0)) {
         if (imageEncryptionKeyBuilder_ == null) {
           result.imageEncryptionKey_ = imageEncryptionKey_;
@@ -3502,7 +3413,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
       if (((bitField0_ & 0x00001000) != 0)) {
-        licenseCodes_ = licenseCodes_.getUnmodifiableView();
+        licenseCodes_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00001000);
       }
       result.licenseCodes_ = licenseCodes_;
@@ -3651,9 +3562,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.Image other) {
       if (other == com.google.cloud.compute.v1.Image.getDefaultInstance()) return this;
       if (other.hasArchiveSizeBytes()) {
-        bitField0_ |= 0x00000001;
-        archiveSizeBytes_ = other.archiveSizeBytes_;
-        onChanged();
+        setArchiveSizeBytes(other.getArchiveSizeBytes());
       }
       if (other.hasCreationTimestamp()) {
         bitField0_ |= 0x00000002;
@@ -3669,9 +3578,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasDiskSizeGb()) {
-        bitField0_ |= 0x00000010;
-        diskSizeGb_ = other.diskSizeGb_;
-        onChanged();
+        setDiskSizeGb(other.getDiskSizeGb());
       }
       if (other.hasFamily()) {
         bitField0_ |= 0x00000020;
@@ -3706,9 +3613,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasId()) {
-        bitField0_ |= 0x00000080;
-        id_ = other.id_;
-        onChanged();
+        setId(other.getId());
       }
       if (other.hasImageEncryptionKey()) {
         mergeImageEncryptionKey(other.getImageEncryptionKey());
@@ -3849,7 +3754,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private java.lang.Object archiveSizeBytes_ = "";
+    private long archiveSizeBytes_;
     /**
      *
      *
@@ -3857,10 +3762,11 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
      * </pre>
      *
-     * <code>string archive_size_bytes = 381093450;</code>
+     * <code>int64 archive_size_bytes = 381093450;</code>
      *
      * @return Whether the archiveSizeBytes field is set.
      */
+    @java.lang.Override
     public boolean hasArchiveSizeBytes() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -3871,20 +3777,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
      * </pre>
      *
-     * <code>string archive_size_bytes = 381093450;</code>
+     * <code>int64 archive_size_bytes = 381093450;</code>
      *
      * @return The archiveSizeBytes.
      */
-    public java.lang.String getArchiveSizeBytes() {
-      java.lang.Object ref = archiveSizeBytes_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        archiveSizeBytes_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getArchiveSizeBytes() {
+      return archiveSizeBytes_;
     }
     /**
      *
@@ -3893,37 +3792,12 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
      * </pre>
      *
-     * <code>string archive_size_bytes = 381093450;</code>
-     *
-     * @return The bytes for archiveSizeBytes.
-     */
-    public com.google.protobuf.ByteString getArchiveSizeBytesBytes() {
-      java.lang.Object ref = archiveSizeBytes_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        archiveSizeBytes_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
-     * </pre>
-     *
-     * <code>string archive_size_bytes = 381093450;</code>
+     * <code>int64 archive_size_bytes = 381093450;</code>
      *
      * @param value The archiveSizeBytes to set.
      * @return This builder for chaining.
      */
-    public Builder setArchiveSizeBytes(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setArchiveSizeBytes(long value) {
       bitField0_ |= 0x00000001;
       archiveSizeBytes_ = value;
       onChanged();
@@ -3936,35 +3810,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
      * </pre>
      *
-     * <code>string archive_size_bytes = 381093450;</code>
+     * <code>int64 archive_size_bytes = 381093450;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearArchiveSizeBytes() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      archiveSizeBytes_ = getDefaultInstance().getArchiveSizeBytes();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
-     * </pre>
-     *
-     * <code>string archive_size_bytes = 381093450;</code>
-     *
-     * @param value The bytes for archiveSizeBytes to set.
-     * @return This builder for chaining.
-     */
-    public Builder setArchiveSizeBytesBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
-      archiveSizeBytes_ = value;
+      archiveSizeBytes_ = 0L;
       onChanged();
       return this;
     }
@@ -4396,7 +4248,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object diskSizeGb_ = "";
+    private long diskSizeGb_;
     /**
      *
      *
@@ -4404,10 +4256,11 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Size of the image when restored onto a persistent disk (in GB).
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>int64 disk_size_gb = 316263735;</code>
      *
      * @return Whether the diskSizeGb field is set.
      */
+    @java.lang.Override
     public boolean hasDiskSizeGb() {
       return ((bitField0_ & 0x00000010) != 0);
     }
@@ -4418,20 +4271,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Size of the image when restored onto a persistent disk (in GB).
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>int64 disk_size_gb = 316263735;</code>
      *
      * @return The diskSizeGb.
      */
-    public java.lang.String getDiskSizeGb() {
-      java.lang.Object ref = diskSizeGb_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        diskSizeGb_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getDiskSizeGb() {
+      return diskSizeGb_;
     }
     /**
      *
@@ -4440,37 +4286,12 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Size of the image when restored onto a persistent disk (in GB).
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
-     *
-     * @return The bytes for diskSizeGb.
-     */
-    public com.google.protobuf.ByteString getDiskSizeGbBytes() {
-      java.lang.Object ref = diskSizeGb_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        diskSizeGb_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Size of the image when restored onto a persistent disk (in GB).
-     * </pre>
-     *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>int64 disk_size_gb = 316263735;</code>
      *
      * @param value The diskSizeGb to set.
      * @return This builder for chaining.
      */
-    public Builder setDiskSizeGb(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setDiskSizeGb(long value) {
       bitField0_ |= 0x00000010;
       diskSizeGb_ = value;
       onChanged();
@@ -4483,35 +4304,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Size of the image when restored onto a persistent disk (in GB).
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>int64 disk_size_gb = 316263735;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDiskSizeGb() {
       bitField0_ = (bitField0_ & ~0x00000010);
-      diskSizeGb_ = getDefaultInstance().getDiskSizeGb();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Size of the image when restored onto a persistent disk (in GB).
-     * </pre>
-     *
-     * <code>string disk_size_gb = 316263735;</code>
-     *
-     * @param value The bytes for diskSizeGb to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDiskSizeGbBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
-      diskSizeGb_ = value;
+      diskSizeGb_ = 0L;
       onChanged();
       return this;
     }
@@ -4991,7 +4790,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       return guestOsFeaturesBuilder_;
     }
 
-    private java.lang.Object id_ = "";
+    private long id_;
     /**
      *
      *
@@ -4999,10 +4798,11 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
+    @java.lang.Override
     public boolean hasId() {
       return ((bitField0_ & 0x00000080) != 0);
     }
@@ -5013,20 +4813,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @return The id.
      */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getId() {
+      return id_;
     }
     /**
      *
@@ -5035,37 +4828,12 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
-     *
-     * @return The bytes for id.
-     */
-    public com.google.protobuf.ByteString getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-     * </pre>
-     *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
      */
-    public Builder setId(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setId(long value) {
       bitField0_ |= 0x00000080;
       id_ = value;
       onChanged();
@@ -5078,35 +4846,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearId() {
       bitField0_ = (bitField0_ & ~0x00000080);
-      id_ = getDefaultInstance().getId();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-     * </pre>
-     *
-     * <code>string id = 3355;</code>
-     *
-     * @param value The bytes for id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
-      id_ = value;
+      id_ = 0L;
       onChanged();
       return this;
     }
@@ -5732,12 +5478,11 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList licenseCodes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.Internal.LongList licenseCodes_ = emptyLongList();
 
     private void ensureLicenseCodesIsMutable() {
       if (!((bitField0_ & 0x00001000) != 0)) {
-        licenseCodes_ = new com.google.protobuf.LazyStringArrayList(licenseCodes_);
+        licenseCodes_ = mutableCopy(licenseCodes_);
         bitField0_ |= 0x00001000;
       }
     }
@@ -5748,12 +5493,14 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Integer license codes indicating which licenses are attached to this image.
      * </pre>
      *
-     * <code>repeated string license_codes = 45482664;</code>
+     * <code>repeated int64 license_codes = 45482664;</code>
      *
      * @return A list containing the licenseCodes.
      */
-    public com.google.protobuf.ProtocolStringList getLicenseCodesList() {
-      return licenseCodes_.getUnmodifiableView();
+    public java.util.List<java.lang.Long> getLicenseCodesList() {
+      return ((bitField0_ & 0x00001000) != 0)
+          ? java.util.Collections.unmodifiableList(licenseCodes_)
+          : licenseCodes_;
     }
     /**
      *
@@ -5762,7 +5509,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Integer license codes indicating which licenses are attached to this image.
      * </pre>
      *
-     * <code>repeated string license_codes = 45482664;</code>
+     * <code>repeated int64 license_codes = 45482664;</code>
      *
      * @return The count of licenseCodes.
      */
@@ -5776,13 +5523,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Integer license codes indicating which licenses are attached to this image.
      * </pre>
      *
-     * <code>repeated string license_codes = 45482664;</code>
+     * <code>repeated int64 license_codes = 45482664;</code>
      *
      * @param index The index of the element to return.
      * @return The licenseCodes at the given index.
      */
-    public java.lang.String getLicenseCodes(int index) {
-      return licenseCodes_.get(index);
+    public long getLicenseCodes(int index) {
+      return licenseCodes_.getLong(index);
     }
     /**
      *
@@ -5791,33 +5538,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Integer license codes indicating which licenses are attached to this image.
      * </pre>
      *
-     * <code>repeated string license_codes = 45482664;</code>
-     *
-     * @param index The index of the value to return.
-     * @return The bytes of the licenseCodes at the given index.
-     */
-    public com.google.protobuf.ByteString getLicenseCodesBytes(int index) {
-      return licenseCodes_.getByteString(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Integer license codes indicating which licenses are attached to this image.
-     * </pre>
-     *
-     * <code>repeated string license_codes = 45482664;</code>
+     * <code>repeated int64 license_codes = 45482664;</code>
      *
      * @param index The index to set the value at.
      * @param value The licenseCodes to set.
      * @return This builder for chaining.
      */
-    public Builder setLicenseCodes(int index, java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setLicenseCodes(int index, long value) {
       ensureLicenseCodesIsMutable();
-      licenseCodes_.set(index, value);
+      licenseCodes_.setLong(index, value);
       onChanged();
       return this;
     }
@@ -5828,17 +5557,14 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Integer license codes indicating which licenses are attached to this image.
      * </pre>
      *
-     * <code>repeated string license_codes = 45482664;</code>
+     * <code>repeated int64 license_codes = 45482664;</code>
      *
      * @param value The licenseCodes to add.
      * @return This builder for chaining.
      */
-    public Builder addLicenseCodes(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder addLicenseCodes(long value) {
       ensureLicenseCodesIsMutable();
-      licenseCodes_.add(value);
+      licenseCodes_.addLong(value);
       onChanged();
       return this;
     }
@@ -5849,12 +5575,12 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Integer license codes indicating which licenses are attached to this image.
      * </pre>
      *
-     * <code>repeated string license_codes = 45482664;</code>
+     * <code>repeated int64 license_codes = 45482664;</code>
      *
      * @param values The licenseCodes to add.
      * @return This builder for chaining.
      */
-    public Builder addAllLicenseCodes(java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllLicenseCodes(java.lang.Iterable<? extends java.lang.Long> values) {
       ensureLicenseCodesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, licenseCodes_);
       onChanged();
@@ -5867,35 +5593,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Integer license codes indicating which licenses are attached to this image.
      * </pre>
      *
-     * <code>repeated string license_codes = 45482664;</code>
+     * <code>repeated int64 license_codes = 45482664;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearLicenseCodes() {
-      licenseCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      licenseCodes_ = emptyLongList();
       bitField0_ = (bitField0_ & ~0x00001000);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Integer license codes indicating which licenses are attached to this image.
-     * </pre>
-     *
-     * <code>repeated string license_codes = 45482664;</code>
-     *
-     * @param value The bytes of the licenseCodes to add.
-     * @return This builder for chaining.
-     */
-    public Builder addLicenseCodesBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      ensureLicenseCodesIsMutable();
-      licenseCodes_.add(value);
       onChanged();
       return this;
     }

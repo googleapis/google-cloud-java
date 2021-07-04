@@ -41,7 +41,6 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
   private AcceleratorType() {
     creationTimestamp_ = "";
     description_ = "";
-    id_ = "";
     kind_ = "";
     name_ = "";
     selfLink_ = "";
@@ -78,11 +77,10 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
           case 0:
             done = true;
             break;
-          case 26842:
+          case 26840:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
-              id_ = s;
+              id_ = input.readUInt64();
               break;
             }
           case 26336418:
@@ -363,7 +361,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private volatile java.lang.Object id_;
+  private long id_;
   /**
    *
    *
@@ -371,7 +369,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -386,44 +384,13 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return The id.
    */
   @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      id_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-   * </pre>
-   *
-   * <code>string id = 3355;</code>
-   *
-   * @return The bytes for id.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getIdBytes() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      id_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getId() {
+    return id_;
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
@@ -730,7 +697,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000008) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
+      output.writeUInt64(3355, id_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
@@ -766,7 +733,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
 
     size = 0;
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
+      size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
@@ -825,7 +792,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
     }
     if (hasId() != other.hasId()) return false;
     if (hasId()) {
-      if (!getId().equals(other.getId())) return false;
+      if (getId() != other.getId()) return false;
     }
     if (hasKind() != other.hasKind()) return false;
     if (hasKind()) {
@@ -872,7 +839,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
     }
     if (hasId()) {
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getId());
     }
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
@@ -1052,7 +1019,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
       bitField0_ = (bitField0_ & ~0x00000002);
       description_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
-      id_ = "";
+      id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000008);
       kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -1110,9 +1077,9 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
       }
       result.description_ = description_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.id_ = id_;
         to_bitField0_ |= 0x00000008;
       }
-      result.id_ = id_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         to_bitField0_ |= 0x00000010;
       }
@@ -1197,9 +1164,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
         onChanged();
       }
       if (other.hasId()) {
-        bitField0_ |= 0x00000008;
-        id_ = other.id_;
-        onChanged();
+        setId(other.getId());
       }
       if (other.hasKind()) {
         bitField0_ |= 0x00000010;
@@ -1682,7 +1647,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private java.lang.Object id_ = "";
+    private long id_;
     /**
      *
      *
@@ -1690,10 +1655,11 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
+    @java.lang.Override
     public boolean hasId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
@@ -1704,20 +1670,13 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @return The id.
      */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getId() {
+      return id_;
     }
     /**
      *
@@ -1726,37 +1685,12 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
-     *
-     * @return The bytes for id.
-     */
-    public com.google.protobuf.ByteString getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-     * </pre>
-     *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
      */
-    public Builder setId(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setId(long value) {
       bitField0_ |= 0x00000008;
       id_ = value;
       onChanged();
@@ -1769,35 +1703,13 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearId() {
       bitField0_ = (bitField0_ & ~0x00000008);
-      id_ = getDefaultInstance().getId();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-     * </pre>
-     *
-     * <code>string id = 3355;</code>
-     *
-     * @param value The bytes for id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
-      id_ = value;
+      id_ = 0L;
       onChanged();
       return this;
     }

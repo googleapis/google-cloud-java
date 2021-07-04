@@ -49,7 +49,6 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     creationTimestamp_ = "";
     description_ = "";
     fingerprint_ = "";
-    id_ = "";
     ipVersion_ = 0;
     kind_ = "";
     labelFingerprint_ = "";
@@ -60,7 +59,6 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     networkTier_ = 0;
     portRange_ = "";
     ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    pscConnectionId_ = "";
     region_ = "";
     selfLink_ = "";
     serviceDirectoryRegistrations_ = java.util.Collections.emptyList();
@@ -100,11 +98,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 26842:
+          case 26840:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000100;
-              id_ = s;
+              id_ = input.readUInt64();
               break;
             }
           case 26336418:
@@ -208,11 +205,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
               fingerprint_ = s;
               break;
             }
-          case -1958308118:
+          case -1958308120:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00040000;
-              pscConnectionId_ = s;
+              pscConnectionId_ = input.readUInt64();
               break;
             }
           case -1935290880:
@@ -1443,7 +1439,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private volatile java.lang.Object id_;
+  private long id_;
   /**
    *
    *
@@ -1451,7 +1447,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -1466,44 +1462,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return The id.
    */
   @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      id_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-   * </pre>
-   *
-   * <code>string id = 3355;</code>
-   *
-   * @return The bytes for id.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getIdBytes() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      id_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getId() {
+    return id_;
   }
 
   public static final int IP_VERSION_FIELD_NUMBER = 294959552;
@@ -2361,7 +2326,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PSC_CONNECTION_ID_FIELD_NUMBER = 292082397;
-  private volatile java.lang.Object pscConnectionId_;
+  private long pscConnectionId_;
   /**
    *
    *
@@ -2369,7 +2334,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The PSC connection id of the PSC Forwarding Rule.
    * </pre>
    *
-   * <code>string psc_connection_id = 292082397;</code>
+   * <code>uint64 psc_connection_id = 292082397;</code>
    *
    * @return Whether the pscConnectionId field is set.
    */
@@ -2384,44 +2349,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The PSC connection id of the PSC Forwarding Rule.
    * </pre>
    *
-   * <code>string psc_connection_id = 292082397;</code>
+   * <code>uint64 psc_connection_id = 292082397;</code>
    *
    * @return The pscConnectionId.
    */
   @java.lang.Override
-  public java.lang.String getPscConnectionId() {
-    java.lang.Object ref = pscConnectionId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      pscConnectionId_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The PSC connection id of the PSC Forwarding Rule.
-   * </pre>
-   *
-   * <code>string psc_connection_id = 292082397;</code>
-   *
-   * @return The bytes for pscConnectionId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getPscConnectionIdBytes() {
-    java.lang.Object ref = pscConnectionId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      pscConnectionId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getPscConnectionId() {
+    return pscConnectionId_;
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
@@ -2909,7 +2843,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000100) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
+      output.writeUInt64(3355, id_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
@@ -2951,7 +2885,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
     if (((bitField0_ & 0x00040000) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 292082397, pscConnectionId_);
+      output.writeUInt64(292082397, pscConnectionId_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeEnum(294959552, ipVersion_);
@@ -3004,7 +2938,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
 
     size = 0;
     if (((bitField0_ & 0x00000100) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
+      size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
@@ -3056,7 +2990,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
     if (((bitField0_ & 0x00040000) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(292082397, pscConnectionId_);
+      size += com.google.protobuf.CodedOutputStream.computeUInt64Size(292082397, pscConnectionId_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(294959552, ipVersion_);
@@ -3160,7 +3094,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasId() != other.hasId()) return false;
     if (hasId()) {
-      if (!getId().equals(other.getId())) return false;
+      if (getId() != other.getId()) return false;
     }
     if (hasIpVersion() != other.hasIpVersion()) return false;
     if (hasIpVersion()) {
@@ -3203,7 +3137,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (!getPortsList().equals(other.getPortsList())) return false;
     if (hasPscConnectionId() != other.hasPscConnectionId()) return false;
     if (hasPscConnectionId()) {
-      if (!getPscConnectionId().equals(other.getPscConnectionId())) return false;
+      if (getPscConnectionId() != other.getPscConnectionId()) return false;
     }
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
@@ -3276,7 +3210,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasId()) {
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getId());
     }
     if (hasIpVersion()) {
       hash = (37 * hash) + IP_VERSION_FIELD_NUMBER;
@@ -3328,7 +3262,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasPscConnectionId()) {
       hash = (37 * hash) + PSC_CONNECTION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getPscConnectionId().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPscConnectionId());
     }
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -3547,7 +3481,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000040);
       fingerprint_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      id_ = "";
+      id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000100);
       ipVersion_ = 0;
       bitField0_ = (bitField0_ & ~0x00000200);
@@ -3576,7 +3510,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00080000);
       ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00100000);
-      pscConnectionId_ = "";
+      pscConnectionId_ = 0L;
       bitField0_ = (bitField0_ & ~0x00200000);
       region_ = "";
       bitField0_ = (bitField0_ & ~0x00400000);
@@ -3658,9 +3592,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       }
       result.fingerprint_ = fingerprint_;
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.id_ = id_;
         to_bitField0_ |= 0x00000100;
       }
-      result.id_ = id_;
       if (((from_bitField0_ & 0x00000200) != 0)) {
         to_bitField0_ |= 0x00000200;
       }
@@ -3714,9 +3648,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       }
       result.ports_ = ports_;
       if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.pscConnectionId_ = pscConnectionId_;
         to_bitField0_ |= 0x00040000;
       }
-      result.pscConnectionId_ = pscConnectionId_;
       if (((from_bitField0_ & 0x00400000) != 0)) {
         to_bitField0_ |= 0x00080000;
       }
@@ -3836,9 +3770,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasId()) {
-        bitField0_ |= 0x00000100;
-        id_ = other.id_;
-        onChanged();
+        setId(other.getId());
       }
       if (other.hasIpVersion()) {
         setIpVersion(other.getIpVersion());
@@ -3916,9 +3848,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasPscConnectionId()) {
-        bitField0_ |= 0x00200000;
-        pscConnectionId_ = other.pscConnectionId_;
-        onChanged();
+        setPscConnectionId(other.getPscConnectionId());
       }
       if (other.hasRegion()) {
         bitField0_ |= 0x00400000;
@@ -4957,7 +4887,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object id_ = "";
+    private long id_;
     /**
      *
      *
@@ -4965,10 +4895,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
+    @java.lang.Override
     public boolean hasId() {
       return ((bitField0_ & 0x00000100) != 0);
     }
@@ -4979,20 +4910,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @return The id.
      */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getId() {
+      return id_;
     }
     /**
      *
@@ -5001,37 +4925,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
-     *
-     * @return The bytes for id.
-     */
-    public com.google.protobuf.ByteString getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-     * </pre>
-     *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
      */
-    public Builder setId(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setId(long value) {
       bitField0_ |= 0x00000100;
       id_ = value;
       onChanged();
@@ -5044,35 +4943,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearId() {
       bitField0_ = (bitField0_ & ~0x00000100);
-      id_ = getDefaultInstance().getId();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-     * </pre>
-     *
-     * <code>string id = 3355;</code>
-     *
-     * @param value The bytes for id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
-      id_ = value;
+      id_ = 0L;
       onChanged();
       return this;
     }
@@ -7002,7 +6879,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object pscConnectionId_ = "";
+    private long pscConnectionId_;
     /**
      *
      *
@@ -7010,10 +6887,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The PSC connection id of the PSC Forwarding Rule.
      * </pre>
      *
-     * <code>string psc_connection_id = 292082397;</code>
+     * <code>uint64 psc_connection_id = 292082397;</code>
      *
      * @return Whether the pscConnectionId field is set.
      */
+    @java.lang.Override
     public boolean hasPscConnectionId() {
       return ((bitField0_ & 0x00200000) != 0);
     }
@@ -7024,20 +6902,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The PSC connection id of the PSC Forwarding Rule.
      * </pre>
      *
-     * <code>string psc_connection_id = 292082397;</code>
+     * <code>uint64 psc_connection_id = 292082397;</code>
      *
      * @return The pscConnectionId.
      */
-    public java.lang.String getPscConnectionId() {
-      java.lang.Object ref = pscConnectionId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        pscConnectionId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getPscConnectionId() {
+      return pscConnectionId_;
     }
     /**
      *
@@ -7046,37 +6917,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The PSC connection id of the PSC Forwarding Rule.
      * </pre>
      *
-     * <code>string psc_connection_id = 292082397;</code>
-     *
-     * @return The bytes for pscConnectionId.
-     */
-    public com.google.protobuf.ByteString getPscConnectionIdBytes() {
-      java.lang.Object ref = pscConnectionId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        pscConnectionId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The PSC connection id of the PSC Forwarding Rule.
-     * </pre>
-     *
-     * <code>string psc_connection_id = 292082397;</code>
+     * <code>uint64 psc_connection_id = 292082397;</code>
      *
      * @param value The pscConnectionId to set.
      * @return This builder for chaining.
      */
-    public Builder setPscConnectionId(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setPscConnectionId(long value) {
       bitField0_ |= 0x00200000;
       pscConnectionId_ = value;
       onChanged();
@@ -7089,35 +6935,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The PSC connection id of the PSC Forwarding Rule.
      * </pre>
      *
-     * <code>string psc_connection_id = 292082397;</code>
+     * <code>uint64 psc_connection_id = 292082397;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPscConnectionId() {
       bitField0_ = (bitField0_ & ~0x00200000);
-      pscConnectionId_ = getDefaultInstance().getPscConnectionId();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The PSC connection id of the PSC Forwarding Rule.
-     * </pre>
-     *
-     * <code>string psc_connection_id = 292082397;</code>
-     *
-     * @param value The bytes for pscConnectionId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPscConnectionIdBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00200000;
-      pscConnectionId_ = value;
+      pscConnectionId_ = 0L;
       onChanged();
       return this;
     }

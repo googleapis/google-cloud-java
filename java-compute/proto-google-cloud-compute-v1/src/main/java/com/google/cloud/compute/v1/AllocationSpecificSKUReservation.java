@@ -38,10 +38,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     super(builder);
   }
 
-  private AllocationSpecificSKUReservation() {
-    count_ = "";
-    inUseCount_ = "";
-  }
+  private AllocationSpecificSKUReservation() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -73,11 +70,10 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
           case 0:
             done = true;
             break;
-          case 758810746:
+          case 758810744:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              count_ = s;
+              count_ = input.readInt64();
               break;
             }
           case 1722841322:
@@ -100,11 +96,10 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
               bitField0_ |= 0x00000004;
               break;
             }
-          case -347296278:
+          case -347296280:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
-              inUseCount_ = s;
+              inUseCount_ = input.readInt64();
               break;
             }
           default:
@@ -143,7 +138,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
 
   private int bitField0_;
   public static final int COUNT_FIELD_NUMBER = 94851343;
-  private volatile java.lang.Object count_;
+  private long count_;
   /**
    *
    *
@@ -151,7 +146,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    * Specifies the number of resources that are allocated.
    * </pre>
    *
-   * <code>string count = 94851343;</code>
+   * <code>int64 count = 94851343;</code>
    *
    * @return Whether the count field is set.
    */
@@ -166,48 +161,17 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    * Specifies the number of resources that are allocated.
    * </pre>
    *
-   * <code>string count = 94851343;</code>
+   * <code>int64 count = 94851343;</code>
    *
    * @return The count.
    */
   @java.lang.Override
-  public java.lang.String getCount() {
-    java.lang.Object ref = count_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      count_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Specifies the number of resources that are allocated.
-   * </pre>
-   *
-   * <code>string count = 94851343;</code>
-   *
-   * @return The bytes for count.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getCountBytes() {
-    java.lang.Object ref = count_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      count_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getCount() {
+    return count_;
   }
 
   public static final int IN_USE_COUNT_FIELD_NUMBER = 493458877;
-  private volatile java.lang.Object inUseCount_;
+  private long inUseCount_;
   /**
    *
    *
@@ -215,7 +179,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    * [Output Only] Indicates how many instances are in use.
    * </pre>
    *
-   * <code>string in_use_count = 493458877;</code>
+   * <code>int64 in_use_count = 493458877;</code>
    *
    * @return Whether the inUseCount field is set.
    */
@@ -230,44 +194,13 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    * [Output Only] Indicates how many instances are in use.
    * </pre>
    *
-   * <code>string in_use_count = 493458877;</code>
+   * <code>int64 in_use_count = 493458877;</code>
    *
    * @return The inUseCount.
    */
   @java.lang.Override
-  public java.lang.String getInUseCount() {
-    java.lang.Object ref = inUseCount_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      inUseCount_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] Indicates how many instances are in use.
-   * </pre>
-   *
-   * <code>string in_use_count = 493458877;</code>
-   *
-   * @return The bytes for inUseCount.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getInUseCountBytes() {
-    java.lang.Object ref = inUseCount_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      inUseCount_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getInUseCount() {
+    return inUseCount_;
   }
 
   public static final int INSTANCE_PROPERTIES_FIELD_NUMBER = 215355165;
@@ -347,13 +280,13 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 94851343, count_);
+      output.writeInt64(94851343, count_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(215355165, getInstanceProperties());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 493458877, inUseCount_);
+      output.writeInt64(493458877, inUseCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -365,7 +298,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(94851343, count_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(94851343, count_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size +=
@@ -373,7 +306,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
               215355165, getInstanceProperties());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(493458877, inUseCount_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(493458877, inUseCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -393,11 +326,11 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
 
     if (hasCount() != other.hasCount()) return false;
     if (hasCount()) {
-      if (!getCount().equals(other.getCount())) return false;
+      if (getCount() != other.getCount()) return false;
     }
     if (hasInUseCount() != other.hasInUseCount()) return false;
     if (hasInUseCount()) {
-      if (!getInUseCount().equals(other.getInUseCount())) return false;
+      if (getInUseCount() != other.getInUseCount()) return false;
     }
     if (hasInstanceProperties() != other.hasInstanceProperties()) return false;
     if (hasInstanceProperties()) {
@@ -416,11 +349,11 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasCount()) {
       hash = (37 * hash) + COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getCount().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCount());
     }
     if (hasInUseCount()) {
       hash = (37 * hash) + IN_USE_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getInUseCount().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getInUseCount());
     }
     if (hasInstanceProperties()) {
       hash = (37 * hash) + INSTANCE_PROPERTIES_FIELD_NUMBER;
@@ -574,9 +507,9 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      count_ = "";
+      count_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
-      inUseCount_ = "";
+      inUseCount_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
       if (instancePropertiesBuilder_ == null) {
         instanceProperties_ = null;
@@ -615,13 +548,13 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.count_ = count_;
         to_bitField0_ |= 0x00000001;
       }
-      result.count_ = count_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.inUseCount_ = inUseCount_;
         to_bitField0_ |= 0x00000002;
       }
-      result.inUseCount_ = inUseCount_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         if (instancePropertiesBuilder_ == null) {
           result.instanceProperties_ = instanceProperties_;
@@ -683,14 +616,10 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
           == com.google.cloud.compute.v1.AllocationSpecificSKUReservation.getDefaultInstance())
         return this;
       if (other.hasCount()) {
-        bitField0_ |= 0x00000001;
-        count_ = other.count_;
-        onChanged();
+        setCount(other.getCount());
       }
       if (other.hasInUseCount()) {
-        bitField0_ |= 0x00000002;
-        inUseCount_ = other.inUseCount_;
-        onChanged();
+        setInUseCount(other.getInUseCount());
       }
       if (other.hasInstanceProperties()) {
         mergeInstanceProperties(other.getInstanceProperties());
@@ -727,7 +656,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
 
     private int bitField0_;
 
-    private java.lang.Object count_ = "";
+    private long count_;
     /**
      *
      *
@@ -735,10 +664,11 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * Specifies the number of resources that are allocated.
      * </pre>
      *
-     * <code>string count = 94851343;</code>
+     * <code>int64 count = 94851343;</code>
      *
      * @return Whether the count field is set.
      */
+    @java.lang.Override
     public boolean hasCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -749,20 +679,13 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * Specifies the number of resources that are allocated.
      * </pre>
      *
-     * <code>string count = 94851343;</code>
+     * <code>int64 count = 94851343;</code>
      *
      * @return The count.
      */
-    public java.lang.String getCount() {
-      java.lang.Object ref = count_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        count_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getCount() {
+      return count_;
     }
     /**
      *
@@ -771,37 +694,12 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * Specifies the number of resources that are allocated.
      * </pre>
      *
-     * <code>string count = 94851343;</code>
-     *
-     * @return The bytes for count.
-     */
-    public com.google.protobuf.ByteString getCountBytes() {
-      java.lang.Object ref = count_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        count_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the number of resources that are allocated.
-     * </pre>
-     *
-     * <code>string count = 94851343;</code>
+     * <code>int64 count = 94851343;</code>
      *
      * @param value The count to set.
      * @return This builder for chaining.
      */
-    public Builder setCount(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setCount(long value) {
       bitField0_ |= 0x00000001;
       count_ = value;
       onChanged();
@@ -814,40 +712,18 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * Specifies the number of resources that are allocated.
      * </pre>
      *
-     * <code>string count = 94851343;</code>
+     * <code>int64 count = 94851343;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearCount() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      count_ = getDefaultInstance().getCount();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the number of resources that are allocated.
-     * </pre>
-     *
-     * <code>string count = 94851343;</code>
-     *
-     * @param value The bytes for count to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCountBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
-      count_ = value;
+      count_ = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object inUseCount_ = "";
+    private long inUseCount_;
     /**
      *
      *
@@ -855,10 +731,11 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * [Output Only] Indicates how many instances are in use.
      * </pre>
      *
-     * <code>string in_use_count = 493458877;</code>
+     * <code>int64 in_use_count = 493458877;</code>
      *
      * @return Whether the inUseCount field is set.
      */
+    @java.lang.Override
     public boolean hasInUseCount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -869,20 +746,13 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * [Output Only] Indicates how many instances are in use.
      * </pre>
      *
-     * <code>string in_use_count = 493458877;</code>
+     * <code>int64 in_use_count = 493458877;</code>
      *
      * @return The inUseCount.
      */
-    public java.lang.String getInUseCount() {
-      java.lang.Object ref = inUseCount_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        inUseCount_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getInUseCount() {
+      return inUseCount_;
     }
     /**
      *
@@ -891,37 +761,12 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * [Output Only] Indicates how many instances are in use.
      * </pre>
      *
-     * <code>string in_use_count = 493458877;</code>
-     *
-     * @return The bytes for inUseCount.
-     */
-    public com.google.protobuf.ByteString getInUseCountBytes() {
-      java.lang.Object ref = inUseCount_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        inUseCount_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] Indicates how many instances are in use.
-     * </pre>
-     *
-     * <code>string in_use_count = 493458877;</code>
+     * <code>int64 in_use_count = 493458877;</code>
      *
      * @param value The inUseCount to set.
      * @return This builder for chaining.
      */
-    public Builder setInUseCount(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setInUseCount(long value) {
       bitField0_ |= 0x00000002;
       inUseCount_ = value;
       onChanged();
@@ -934,35 +779,13 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * [Output Only] Indicates how many instances are in use.
      * </pre>
      *
-     * <code>string in_use_count = 493458877;</code>
+     * <code>int64 in_use_count = 493458877;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearInUseCount() {
       bitField0_ = (bitField0_ & ~0x00000002);
-      inUseCount_ = getDefaultInstance().getInUseCount();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] Indicates how many instances are in use.
-     * </pre>
-     *
-     * <code>string in_use_count = 493458877;</code>
-     *
-     * @param value The bytes for inUseCount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setInUseCountBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
-      inUseCount_ = value;
+      inUseCount_ = 0L;
       onChanged();
       return this;
     }

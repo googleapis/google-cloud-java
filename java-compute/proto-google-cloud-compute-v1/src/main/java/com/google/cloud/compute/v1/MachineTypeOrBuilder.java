@@ -216,7 +216,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -228,23 +228,11 @@ public interface MachineTypeOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return The id.
    */
-  java.lang.String getId();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-   * </pre>
-   *
-   * <code>string id = 3355;</code>
-   *
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString getIdBytes();
+  long getId();
 
   /**
    *
@@ -365,7 +353,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] Maximum total persistent disks size (GB) allowed.
    * </pre>
    *
-   * <code>string maximum_persistent_disks_size_gb = 154274471;</code>
+   * <code>int64 maximum_persistent_disks_size_gb = 154274471;</code>
    *
    * @return Whether the maximumPersistentDisksSizeGb field is set.
    */
@@ -377,23 +365,11 @@ public interface MachineTypeOrBuilder
    * [Output Only] Maximum total persistent disks size (GB) allowed.
    * </pre>
    *
-   * <code>string maximum_persistent_disks_size_gb = 154274471;</code>
+   * <code>int64 maximum_persistent_disks_size_gb = 154274471;</code>
    *
    * @return The maximumPersistentDisksSizeGb.
    */
-  java.lang.String getMaximumPersistentDisksSizeGb();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] Maximum total persistent disks size (GB) allowed.
-   * </pre>
-   *
-   * <code>string maximum_persistent_disks_size_gb = 154274471;</code>
-   *
-   * @return The bytes for maximumPersistentDisksSizeGb.
-   */
-  com.google.protobuf.ByteString getMaximumPersistentDisksSizeGbBytes();
+  long getMaximumPersistentDisksSizeGb();
 
   /**
    *

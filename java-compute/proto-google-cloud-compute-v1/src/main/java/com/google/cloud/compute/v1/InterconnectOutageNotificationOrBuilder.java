@@ -118,7 +118,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * Scheduled end time for the outage (milliseconds since Unix epoch).
    * </pre>
    *
-   * <code>string end_time = 114938801;</code>
+   * <code>int64 end_time = 114938801;</code>
    *
    * @return Whether the endTime field is set.
    */
@@ -130,23 +130,11 @@ public interface InterconnectOutageNotificationOrBuilder
    * Scheduled end time for the outage (milliseconds since Unix epoch).
    * </pre>
    *
-   * <code>string end_time = 114938801;</code>
+   * <code>int64 end_time = 114938801;</code>
    *
    * @return The endTime.
    */
-  java.lang.String getEndTime();
-  /**
-   *
-   *
-   * <pre>
-   * Scheduled end time for the outage (milliseconds since Unix epoch).
-   * </pre>
-   *
-   * <code>string end_time = 114938801;</code>
-   *
-   * @return The bytes for endTime.
-   */
-  com.google.protobuf.ByteString getEndTimeBytes();
+  long getEndTime();
 
   /**
    *
@@ -278,7 +266,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * Scheduled start time for the outage (milliseconds since Unix epoch).
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>int64 start_time = 37467274;</code>
    *
    * @return Whether the startTime field is set.
    */
@@ -290,23 +278,11 @@ public interface InterconnectOutageNotificationOrBuilder
    * Scheduled start time for the outage (milliseconds since Unix epoch).
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>int64 start_time = 37467274;</code>
    *
    * @return The startTime.
    */
-  java.lang.String getStartTime();
-  /**
-   *
-   *
-   * <pre>
-   * Scheduled start time for the outage (milliseconds since Unix epoch).
-   * </pre>
-   *
-   * <code>string start_time = 37467274;</code>
-   *
-   * @return The bytes for startTime.
-   */
-  com.google.protobuf.ByteString getStartTimeBytes();
+  long getStartTime();
 
   /**
    *

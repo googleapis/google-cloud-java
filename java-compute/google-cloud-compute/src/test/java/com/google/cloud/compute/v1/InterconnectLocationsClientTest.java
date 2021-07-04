@@ -87,7 +87,7 @@ public class InterconnectLocationsClientTest {
             .setDescription("description-1724546052")
             .setFacilityProvider("facilityProvider-132020812")
             .setFacilityProviderFacilityId("facilityProviderFacilityId459025394")
-            .setId("id3355")
+            .setId(3355)
             .setKind("kind3292052")
             .setName("name3373707")
             .setPeeringdbFacilityId("peeringdbFacilityId1154838908")

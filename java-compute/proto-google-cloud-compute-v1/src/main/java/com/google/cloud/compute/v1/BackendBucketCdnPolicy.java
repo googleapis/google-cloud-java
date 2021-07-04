@@ -41,7 +41,6 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     bypassCacheOnRequestHeaders_ = java.util.Collections.emptyList();
     cacheMode_ = 0;
     negativeCachingPolicy_ = java.util.Collections.emptyList();
-    signedUrlCacheMaxAgeSec_ = "";
     signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -115,11 +114,10 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
               serveWhileStale_ = input.readInt32();
               break;
             }
-          case -2139971022:
+          case -2139971024:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000080;
-              signedUrlCacheMaxAgeSec_ = s;
+              signedUrlCacheMaxAgeSec_ = input.readInt64();
               break;
             }
           case -1834343288:
@@ -786,7 +784,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   }
 
   public static final int SIGNED_URL_CACHE_MAX_AGE_SEC_FIELD_NUMBER = 269374534;
-  private volatile java.lang.Object signedUrlCacheMaxAgeSec_;
+  private long signedUrlCacheMaxAgeSec_;
   /**
    *
    *
@@ -794,7 +792,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
    * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
    * </pre>
    *
-   * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+   * <code>int64 signed_url_cache_max_age_sec = 269374534;</code>
    *
    * @return Whether the signedUrlCacheMaxAgeSec field is set.
    */
@@ -809,44 +807,13 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
    * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
    * </pre>
    *
-   * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+   * <code>int64 signed_url_cache_max_age_sec = 269374534;</code>
    *
    * @return The signedUrlCacheMaxAgeSec.
    */
   @java.lang.Override
-  public java.lang.String getSignedUrlCacheMaxAgeSec() {
-    java.lang.Object ref = signedUrlCacheMaxAgeSec_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      signedUrlCacheMaxAgeSec_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
-   * </pre>
-   *
-   * <code>string signed_url_cache_max_age_sec = 269374534;</code>
-   *
-   * @return The bytes for signedUrlCacheMaxAgeSec.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getSignedUrlCacheMaxAgeSecBytes() {
-    java.lang.Object ref = signedUrlCacheMaxAgeSec_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      signedUrlCacheMaxAgeSec_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getSignedUrlCacheMaxAgeSec() {
+    return signedUrlCacheMaxAgeSec_;
   }
 
   public static final int SIGNED_URL_KEY_NAMES_FIELD_NUMBER = 371848885;
@@ -940,8 +907,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       output.writeInt32(236682203, serveWhileStale_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 269374534, signedUrlCacheMaxAgeSec_);
+      output.writeInt64(269374534, signedUrlCacheMaxAgeSec_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeInt32(307578001, maxTtl_);
@@ -987,7 +953,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+          com.google.protobuf.CodedOutputStream.computeInt64Size(
               269374534, signedUrlCacheMaxAgeSec_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -1061,7 +1027,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     }
     if (hasSignedUrlCacheMaxAgeSec() != other.hasSignedUrlCacheMaxAgeSec()) return false;
     if (hasSignedUrlCacheMaxAgeSec()) {
-      if (!getSignedUrlCacheMaxAgeSec().equals(other.getSignedUrlCacheMaxAgeSec())) return false;
+      if (getSignedUrlCacheMaxAgeSec() != other.getSignedUrlCacheMaxAgeSec()) return false;
     }
     if (!getSignedUrlKeyNamesList().equals(other.getSignedUrlKeyNamesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1113,7 +1079,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     }
     if (hasSignedUrlCacheMaxAgeSec()) {
       hash = (37 * hash) + SIGNED_URL_CACHE_MAX_AGE_SEC_FIELD_NUMBER;
-      hash = (53 * hash) + getSignedUrlCacheMaxAgeSec().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSignedUrlCacheMaxAgeSec());
     }
     if (getSignedUrlKeyNamesCount() > 0) {
       hash = (37 * hash) + SIGNED_URL_KEY_NAMES_FIELD_NUMBER;
@@ -1293,7 +1259,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       bitField0_ = (bitField0_ & ~0x00000080);
       serveWhileStale_ = 0;
       bitField0_ = (bitField0_ & ~0x00000100);
-      signedUrlCacheMaxAgeSec_ = "";
+      signedUrlCacheMaxAgeSec_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000200);
       signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000400);
@@ -1374,9 +1340,9 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.signedUrlCacheMaxAgeSec_ = signedUrlCacheMaxAgeSec_;
         to_bitField0_ |= 0x00000080;
       }
-      result.signedUrlCacheMaxAgeSec_ = signedUrlCacheMaxAgeSec_;
       if (((bitField0_ & 0x00000400) != 0)) {
         signedUrlKeyNames_ = signedUrlKeyNames_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000400);
@@ -1509,9 +1475,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         setServeWhileStale(other.getServeWhileStale());
       }
       if (other.hasSignedUrlCacheMaxAgeSec()) {
-        bitField0_ |= 0x00000200;
-        signedUrlCacheMaxAgeSec_ = other.signedUrlCacheMaxAgeSec_;
-        onChanged();
+        setSignedUrlCacheMaxAgeSec(other.getSignedUrlCacheMaxAgeSec());
       }
       if (!other.signedUrlKeyNames_.isEmpty()) {
         if (signedUrlKeyNames_.isEmpty()) {
@@ -2925,7 +2889,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private java.lang.Object signedUrlCacheMaxAgeSec_ = "";
+    private long signedUrlCacheMaxAgeSec_;
     /**
      *
      *
@@ -2933,10 +2897,11 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
      * </pre>
      *
-     * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+     * <code>int64 signed_url_cache_max_age_sec = 269374534;</code>
      *
      * @return Whether the signedUrlCacheMaxAgeSec field is set.
      */
+    @java.lang.Override
     public boolean hasSignedUrlCacheMaxAgeSec() {
       return ((bitField0_ & 0x00000200) != 0);
     }
@@ -2947,20 +2912,13 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
      * </pre>
      *
-     * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+     * <code>int64 signed_url_cache_max_age_sec = 269374534;</code>
      *
      * @return The signedUrlCacheMaxAgeSec.
      */
-    public java.lang.String getSignedUrlCacheMaxAgeSec() {
-      java.lang.Object ref = signedUrlCacheMaxAgeSec_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        signedUrlCacheMaxAgeSec_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getSignedUrlCacheMaxAgeSec() {
+      return signedUrlCacheMaxAgeSec_;
     }
     /**
      *
@@ -2969,37 +2927,12 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
      * </pre>
      *
-     * <code>string signed_url_cache_max_age_sec = 269374534;</code>
-     *
-     * @return The bytes for signedUrlCacheMaxAgeSec.
-     */
-    public com.google.protobuf.ByteString getSignedUrlCacheMaxAgeSecBytes() {
-      java.lang.Object ref = signedUrlCacheMaxAgeSec_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        signedUrlCacheMaxAgeSec_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
-     * </pre>
-     *
-     * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+     * <code>int64 signed_url_cache_max_age_sec = 269374534;</code>
      *
      * @param value The signedUrlCacheMaxAgeSec to set.
      * @return This builder for chaining.
      */
-    public Builder setSignedUrlCacheMaxAgeSec(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setSignedUrlCacheMaxAgeSec(long value) {
       bitField0_ |= 0x00000200;
       signedUrlCacheMaxAgeSec_ = value;
       onChanged();
@@ -3012,35 +2945,13 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
      * </pre>
      *
-     * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+     * <code>int64 signed_url_cache_max_age_sec = 269374534;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSignedUrlCacheMaxAgeSec() {
       bitField0_ = (bitField0_ & ~0x00000200);
-      signedUrlCacheMaxAgeSec_ = getDefaultInstance().getSignedUrlCacheMaxAgeSec();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
-     * </pre>
-     *
-     * <code>string signed_url_cache_max_age_sec = 269374534;</code>
-     *
-     * @param value The bytes for signedUrlCacheMaxAgeSec to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSignedUrlCacheMaxAgeSecBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
-      signedUrlCacheMaxAgeSec_ = value;
+      signedUrlCacheMaxAgeSec_ = 0L;
       onChanged();
       return this;
     }

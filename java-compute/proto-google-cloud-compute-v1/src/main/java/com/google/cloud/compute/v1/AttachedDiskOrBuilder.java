@@ -167,7 +167,7 @@ public interface AttachedDiskOrBuilder
    * The size of the disk in GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>int64 disk_size_gb = 316263735;</code>
    *
    * @return Whether the diskSizeGb field is set.
    */
@@ -179,23 +179,11 @@ public interface AttachedDiskOrBuilder
    * The size of the disk in GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>int64 disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
-  java.lang.String getDiskSizeGb();
-  /**
-   *
-   *
-   * <pre>
-   * The size of the disk in GB.
-   * </pre>
-   *
-   * <code>string disk_size_gb = 316263735;</code>
-   *
-   * @return The bytes for diskSizeGb.
-   */
-  com.google.protobuf.ByteString getDiskSizeGbBytes();
+  long getDiskSizeGb();
 
   /**
    *

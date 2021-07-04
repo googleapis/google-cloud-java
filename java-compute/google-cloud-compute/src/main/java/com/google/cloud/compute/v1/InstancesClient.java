@@ -1389,7 +1389,7 @@ public class InstancesClient implements BackgroundResource {
    *           .setInstance("instance555127957")
    *           .setPort(3446913)
    *           .setProject("project-309310695")
-   *           .setStart("start109757538")
+   *           .setStart(109757538)
    *           .setZone("zone3744684")
    *           .build();
    *   SerialPortOutput response = instancesClient.getSerialPortOutput(request);
@@ -1416,7 +1416,7 @@ public class InstancesClient implements BackgroundResource {
    *           .setInstance("instance555127957")
    *           .setPort(3446913)
    *           .setProject("project-309310695")
-   *           .setStart("start109757538")
+   *           .setStart(109757538)
    *           .setZone("zone3744684")
    *           .build();
    *   ApiFuture<SerialPortOutput> future =

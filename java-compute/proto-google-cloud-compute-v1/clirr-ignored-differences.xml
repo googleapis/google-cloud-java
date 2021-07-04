@@ -26,15 +26,68 @@
     <className>com/google/cloud/compute/v1/*OrBuilder</className>
     <method>* get*(*)</method>
   </difference>
+  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
   <difference>
     <differenceType>7012</differenceType>
     <className>com/google/cloud/compute/v1/*OrBuilder</className>
     <method>boolean contains*(*)</method>
   </difference>
+  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
   <difference>
     <differenceType>7012</differenceType>
     <className>com/google/cloud/compute/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
-
+  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
+  <!-- Originally caused by https://github.com/googleapis/java-compute/pull/477 -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/compute/v1/**</className>
+    <method>* get*Bytes()</method>
+  </difference>
+  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
+  <!-- Originally caused by https://github.com/googleapis/java-compute/pull/477 -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/compute/v1/**</className>
+    <method>* set*Bytes(com.google.protobuf.ByteString)</method>
+  </difference>
+  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
+  <!-- Originally caused by https://github.com/googleapis/java-compute/pull/477 -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/compute/v1/**</className>
+    <method>* get*Bytes(int)</method>
+  </difference>
+  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
+  <!-- Originally caused by https://github.com/googleapis/java-compute/pull/477 -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/compute/v1/**</className>
+    <method>* add*Bytes(com.google.protobuf.ByteString)</method>
+  </difference>
+  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
+  <!-- Originally caused by https://github.com/googleapis/java-compute/pull/477 -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/compute/v1/**</className>
+    <method>* get*(*)</method>
+    <to>long</to>
+  </difference>
+  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
+  <!-- Originally caused by https://github.com/googleapis/java-compute/pull/477 -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/compute/v1/**</className>
+    <method>* get*List(*)</method>
+    <to>java.util.List</to>
+  </difference>
+  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
+  <!-- Originally caused by https://github.com/googleapis/java-compute/pull/477 -->
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/compute/v1/**</className>
+    <method>*</method>
+    <to>*</to>
+  </difference>
 </differences>

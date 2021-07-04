@@ -39,7 +39,6 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
   }
 
   private InterconnectLocationRegionInfo() {
-    expectedRttMs_ = "";
     locationPresence_ = 0;
     region_ = "";
   }
@@ -88,11 +87,10 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
               region_ = s;
               break;
             }
-          case -914616366:
+          case -914616368:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              expectedRttMs_ = s;
+              expectedRttMs_ = input.readInt64();
               break;
             }
           default:
@@ -272,7 +270,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
 
   private int bitField0_;
   public static final int EXPECTED_RTT_MS_FIELD_NUMBER = 422543866;
-  private volatile java.lang.Object expectedRttMs_;
+  private long expectedRttMs_;
   /**
    *
    *
@@ -280,7 +278,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
    * </pre>
    *
-   * <code>string expected_rtt_ms = 422543866;</code>
+   * <code>int64 expected_rtt_ms = 422543866;</code>
    *
    * @return Whether the expectedRttMs field is set.
    */
@@ -295,44 +293,13 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
    * </pre>
    *
-   * <code>string expected_rtt_ms = 422543866;</code>
+   * <code>int64 expected_rtt_ms = 422543866;</code>
    *
    * @return The expectedRttMs.
    */
   @java.lang.Override
-  public java.lang.String getExpectedRttMs() {
-    java.lang.Object ref = expectedRttMs_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      expectedRttMs_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
-   * </pre>
-   *
-   * <code>string expected_rtt_ms = 422543866;</code>
-   *
-   * @return The bytes for expectedRttMs.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getExpectedRttMsBytes() {
-    java.lang.Object ref = expectedRttMs_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      expectedRttMs_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getExpectedRttMs() {
+    return expectedRttMs_;
   }
 
   public static final int LOCATION_PRESENCE_FIELD_NUMBER = 101517893;
@@ -481,7 +448,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422543866, expectedRttMs_);
+      output.writeInt64(422543866, expectedRttMs_);
     }
     unknownFields.writeTo(output);
   }
@@ -499,7 +466,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422543866, expectedRttMs_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(422543866, expectedRttMs_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -519,7 +486,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
 
     if (hasExpectedRttMs() != other.hasExpectedRttMs()) return false;
     if (hasExpectedRttMs()) {
-      if (!getExpectedRttMs().equals(other.getExpectedRttMs())) return false;
+      if (getExpectedRttMs() != other.getExpectedRttMs()) return false;
     }
     if (hasLocationPresence() != other.hasLocationPresence()) return false;
     if (hasLocationPresence()) {
@@ -542,7 +509,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasExpectedRttMs()) {
       hash = (37 * hash) + EXPECTED_RTT_MS_FIELD_NUMBER;
-      hash = (53 * hash) + getExpectedRttMs().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getExpectedRttMs());
     }
     if (hasLocationPresence()) {
       hash = (37 * hash) + LOCATION_PRESENCE_FIELD_NUMBER;
@@ -698,7 +665,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      expectedRttMs_ = "";
+      expectedRttMs_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       locationPresence_ = 0;
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -734,9 +701,9 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.expectedRttMs_ = expectedRttMs_;
         to_bitField0_ |= 0x00000001;
       }
-      result.expectedRttMs_ = expectedRttMs_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         to_bitField0_ |= 0x00000002;
       }
@@ -797,9 +764,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
       if (other == com.google.cloud.compute.v1.InterconnectLocationRegionInfo.getDefaultInstance())
         return this;
       if (other.hasExpectedRttMs()) {
-        bitField0_ |= 0x00000001;
-        expectedRttMs_ = other.expectedRttMs_;
-        onChanged();
+        setExpectedRttMs(other.getExpectedRttMs());
       }
       if (other.hasLocationPresence()) {
         setLocationPresence(other.getLocationPresence());
@@ -841,7 +806,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
 
     private int bitField0_;
 
-    private java.lang.Object expectedRttMs_ = "";
+    private long expectedRttMs_;
     /**
      *
      *
@@ -849,10 +814,11 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
      * </pre>
      *
-     * <code>string expected_rtt_ms = 422543866;</code>
+     * <code>int64 expected_rtt_ms = 422543866;</code>
      *
      * @return Whether the expectedRttMs field is set.
      */
+    @java.lang.Override
     public boolean hasExpectedRttMs() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -863,20 +829,13 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
      * </pre>
      *
-     * <code>string expected_rtt_ms = 422543866;</code>
+     * <code>int64 expected_rtt_ms = 422543866;</code>
      *
      * @return The expectedRttMs.
      */
-    public java.lang.String getExpectedRttMs() {
-      java.lang.Object ref = expectedRttMs_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        expectedRttMs_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getExpectedRttMs() {
+      return expectedRttMs_;
     }
     /**
      *
@@ -885,37 +844,12 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
      * </pre>
      *
-     * <code>string expected_rtt_ms = 422543866;</code>
-     *
-     * @return The bytes for expectedRttMs.
-     */
-    public com.google.protobuf.ByteString getExpectedRttMsBytes() {
-      java.lang.Object ref = expectedRttMs_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        expectedRttMs_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
-     * </pre>
-     *
-     * <code>string expected_rtt_ms = 422543866;</code>
+     * <code>int64 expected_rtt_ms = 422543866;</code>
      *
      * @param value The expectedRttMs to set.
      * @return This builder for chaining.
      */
-    public Builder setExpectedRttMs(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setExpectedRttMs(long value) {
       bitField0_ |= 0x00000001;
       expectedRttMs_ = value;
       onChanged();
@@ -928,35 +862,13 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
      * </pre>
      *
-     * <code>string expected_rtt_ms = 422543866;</code>
+     * <code>int64 expected_rtt_ms = 422543866;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearExpectedRttMs() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      expectedRttMs_ = getDefaultInstance().getExpectedRttMs();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
-     * </pre>
-     *
-     * <code>string expected_rtt_ms = 422543866;</code>
-     *
-     * @param value The bytes for expectedRttMs to set.
-     * @return This builder for chaining.
-     */
-    public Builder setExpectedRttMsBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
-      expectedRttMs_ = value;
+      expectedRttMs_ = 0L;
       onChanged();
       return this;
     }

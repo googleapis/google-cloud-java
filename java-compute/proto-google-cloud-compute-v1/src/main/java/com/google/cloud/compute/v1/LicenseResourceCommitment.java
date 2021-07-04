@@ -38,7 +38,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
   }
 
   private LicenseResourceCommitment() {
-    amount_ = "";
     coresPerLicense_ = "";
     license_ = "";
   }
@@ -87,11 +86,10 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
               license_ = s;
               break;
             }
-          case 1574077122:
+          case 1574077120:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              amount_ = s;
+              amount_ = input.readInt64();
               break;
             }
           default:
@@ -130,7 +128,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
 
   private int bitField0_;
   public static final int AMOUNT_FIELD_NUMBER = 196759640;
-  private volatile java.lang.Object amount_;
+  private long amount_;
   /**
    *
    *
@@ -138,7 +136,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
    * The number of licenses purchased.
    * </pre>
    *
-   * <code>string amount = 196759640;</code>
+   * <code>int64 amount = 196759640;</code>
    *
    * @return Whether the amount field is set.
    */
@@ -153,44 +151,13 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
    * The number of licenses purchased.
    * </pre>
    *
-   * <code>string amount = 196759640;</code>
+   * <code>int64 amount = 196759640;</code>
    *
    * @return The amount.
    */
   @java.lang.Override
-  public java.lang.String getAmount() {
-    java.lang.Object ref = amount_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      amount_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The number of licenses purchased.
-   * </pre>
-   *
-   * <code>string amount = 196759640;</code>
-   *
-   * @return The bytes for amount.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getAmountBytes() {
-    java.lang.Object ref = amount_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      amount_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getAmount() {
+    return amount_;
   }
 
   public static final int CORES_PER_LICENSE_FIELD_NUMBER = 32482324;
@@ -342,7 +309,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
       com.google.protobuf.GeneratedMessageV3.writeString(output, 166757441, license_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 196759640, amount_);
+      output.writeInt64(196759640, amount_);
     }
     unknownFields.writeTo(output);
   }
@@ -360,7 +327,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(166757441, license_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(196759640, amount_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(196759640, amount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -380,7 +347,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
 
     if (hasAmount() != other.hasAmount()) return false;
     if (hasAmount()) {
-      if (!getAmount().equals(other.getAmount())) return false;
+      if (getAmount() != other.getAmount()) return false;
     }
     if (hasCoresPerLicense() != other.hasCoresPerLicense()) return false;
     if (hasCoresPerLicense()) {
@@ -403,7 +370,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasAmount()) {
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getAmount().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAmount());
     }
     if (hasCoresPerLicense()) {
       hash = (37 * hash) + CORES_PER_LICENSE_FIELD_NUMBER;
@@ -559,7 +526,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      amount_ = "";
+      amount_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       coresPerLicense_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -595,9 +562,9 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.amount_ = amount_;
         to_bitField0_ |= 0x00000001;
       }
-      result.amount_ = amount_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         to_bitField0_ |= 0x00000002;
       }
@@ -658,9 +625,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
       if (other == com.google.cloud.compute.v1.LicenseResourceCommitment.getDefaultInstance())
         return this;
       if (other.hasAmount()) {
-        bitField0_ |= 0x00000001;
-        amount_ = other.amount_;
-        onChanged();
+        setAmount(other.getAmount());
       }
       if (other.hasCoresPerLicense()) {
         bitField0_ |= 0x00000002;
@@ -704,7 +669,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
 
     private int bitField0_;
 
-    private java.lang.Object amount_ = "";
+    private long amount_;
     /**
      *
      *
@@ -712,10 +677,11 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * The number of licenses purchased.
      * </pre>
      *
-     * <code>string amount = 196759640;</code>
+     * <code>int64 amount = 196759640;</code>
      *
      * @return Whether the amount field is set.
      */
+    @java.lang.Override
     public boolean hasAmount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -726,20 +692,13 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * The number of licenses purchased.
      * </pre>
      *
-     * <code>string amount = 196759640;</code>
+     * <code>int64 amount = 196759640;</code>
      *
      * @return The amount.
      */
-    public java.lang.String getAmount() {
-      java.lang.Object ref = amount_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        amount_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getAmount() {
+      return amount_;
     }
     /**
      *
@@ -748,37 +707,12 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * The number of licenses purchased.
      * </pre>
      *
-     * <code>string amount = 196759640;</code>
-     *
-     * @return The bytes for amount.
-     */
-    public com.google.protobuf.ByteString getAmountBytes() {
-      java.lang.Object ref = amount_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        amount_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The number of licenses purchased.
-     * </pre>
-     *
-     * <code>string amount = 196759640;</code>
+     * <code>int64 amount = 196759640;</code>
      *
      * @param value The amount to set.
      * @return This builder for chaining.
      */
-    public Builder setAmount(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setAmount(long value) {
       bitField0_ |= 0x00000001;
       amount_ = value;
       onChanged();
@@ -791,35 +725,13 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * The number of licenses purchased.
      * </pre>
      *
-     * <code>string amount = 196759640;</code>
+     * <code>int64 amount = 196759640;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAmount() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      amount_ = getDefaultInstance().getAmount();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The number of licenses purchased.
-     * </pre>
-     *
-     * <code>string amount = 196759640;</code>
-     *
-     * @param value The bytes for amount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAmountBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
-      amount_ = value;
+      amount_ = 0L;
       onChanged();
       return this;
     }

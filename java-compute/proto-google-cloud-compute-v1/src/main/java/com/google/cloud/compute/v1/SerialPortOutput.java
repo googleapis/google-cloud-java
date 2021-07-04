@@ -40,9 +40,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
   private SerialPortOutput() {
     contents_ = "";
     kind_ = "";
-    next_ = "";
     selfLink_ = "";
-    start_ = "";
   }
 
   @java.lang.Override
@@ -82,18 +80,16 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
               kind_ = s;
               break;
             }
-          case 27023258:
+          case 27023256:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
-              next_ = s;
+              next_ = input.readInt64();
               break;
             }
-          case 878060306:
+          case 878060304:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
-              start_ = s;
+              start_ = input.readInt64();
               break;
             }
           case -645248918:
@@ -274,7 +270,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NEXT_FIELD_NUMBER = 3377907;
-  private volatile java.lang.Object next_;
+  private long next_;
   /**
    *
    *
@@ -282,7 +278,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    * [Output Only] The position of the next byte of content, regardless of whether the content exists, following the output returned in the `contents` property. Use this value in the next request as the start parameter.
    * </pre>
    *
-   * <code>string next = 3377907;</code>
+   * <code>int64 next = 3377907;</code>
    *
    * @return Whether the next field is set.
    */
@@ -297,44 +293,13 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    * [Output Only] The position of the next byte of content, regardless of whether the content exists, following the output returned in the `contents` property. Use this value in the next request as the start parameter.
    * </pre>
    *
-   * <code>string next = 3377907;</code>
+   * <code>int64 next = 3377907;</code>
    *
    * @return The next.
    */
   @java.lang.Override
-  public java.lang.String getNext() {
-    java.lang.Object ref = next_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      next_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The position of the next byte of content, regardless of whether the content exists, following the output returned in the `contents` property. Use this value in the next request as the start parameter.
-   * </pre>
-   *
-   * <code>string next = 3377907;</code>
-   *
-   * @return The bytes for next.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getNextBytes() {
-    java.lang.Object ref = next_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      next_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getNext() {
+    return next_;
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
@@ -402,7 +367,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int START_FIELD_NUMBER = 109757538;
-  private volatile java.lang.Object start_;
+  private long start_;
   /**
    *
    *
@@ -410,7 +375,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    * The starting byte position of the output that was returned. This should match the start parameter sent with the request. If the serial console output exceeds the size of the buffer (1 MB), older output is overwritten by newer content. The output start value will indicate the byte position of the output that was returned, which might be different than the `start` value that was specified in the request.
    * </pre>
    *
-   * <code>string start = 109757538;</code>
+   * <code>int64 start = 109757538;</code>
    *
    * @return Whether the start field is set.
    */
@@ -425,44 +390,13 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    * The starting byte position of the output that was returned. This should match the start parameter sent with the request. If the serial console output exceeds the size of the buffer (1 MB), older output is overwritten by newer content. The output start value will indicate the byte position of the output that was returned, which might be different than the `start` value that was specified in the request.
    * </pre>
    *
-   * <code>string start = 109757538;</code>
+   * <code>int64 start = 109757538;</code>
    *
    * @return The start.
    */
   @java.lang.Override
-  public java.lang.String getStart() {
-    java.lang.Object ref = start_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      start_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The starting byte position of the output that was returned. This should match the start parameter sent with the request. If the serial console output exceeds the size of the buffer (1 MB), older output is overwritten by newer content. The output start value will indicate the byte position of the output that was returned, which might be different than the `start` value that was specified in the request.
-   * </pre>
-   *
-   * <code>string start = 109757538;</code>
-   *
-   * @return The bytes for start.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getStartBytes() {
-    java.lang.Object ref = start_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      start_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getStart() {
+    return start_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -483,10 +417,10 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3377907, next_);
+      output.writeInt64(3377907, next_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 109757538, start_);
+      output.writeInt64(109757538, start_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
@@ -507,10 +441,10 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3377907, next_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(3377907, next_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757538, start_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(109757538, start_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
@@ -544,7 +478,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     }
     if (hasNext() != other.hasNext()) return false;
     if (hasNext()) {
-      if (!getNext().equals(other.getNext())) return false;
+      if (getNext() != other.getNext()) return false;
     }
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
@@ -552,7 +486,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     }
     if (hasStart() != other.hasStart()) return false;
     if (hasStart()) {
-      if (!getStart().equals(other.getStart())) return false;
+      if (getStart() != other.getStart()) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -575,7 +509,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     }
     if (hasNext()) {
       hash = (37 * hash) + NEXT_FIELD_NUMBER;
-      hash = (53 * hash) + getNext().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getNext());
     }
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
@@ -583,7 +517,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     }
     if (hasStart()) {
       hash = (37 * hash) + START_FIELD_NUMBER;
-      hash = (53 * hash) + getStart().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getStart());
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -734,11 +668,11 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       bitField0_ = (bitField0_ & ~0x00000001);
       kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
-      next_ = "";
+      next_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000004);
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
-      start_ = "";
+      start_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
@@ -778,17 +712,17 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       }
       result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.next_ = next_;
         to_bitField0_ |= 0x00000004;
       }
-      result.next_ = next_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         to_bitField0_ |= 0x00000008;
       }
       result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.start_ = start_;
         to_bitField0_ |= 0x00000010;
       }
-      result.start_ = start_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -850,9 +784,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
         onChanged();
       }
       if (other.hasNext()) {
-        bitField0_ |= 0x00000004;
-        next_ = other.next_;
-        onChanged();
+        setNext(other.getNext());
       }
       if (other.hasSelfLink()) {
         bitField0_ |= 0x00000008;
@@ -860,9 +792,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
         onChanged();
       }
       if (other.hasStart()) {
-        bitField0_ |= 0x00000010;
-        start_ = other.start_;
-        onChanged();
+        setStart(other.getStart());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1135,7 +1065,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private java.lang.Object next_ = "";
+    private long next_;
     /**
      *
      *
@@ -1143,10 +1073,11 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] The position of the next byte of content, regardless of whether the content exists, following the output returned in the `contents` property. Use this value in the next request as the start parameter.
      * </pre>
      *
-     * <code>string next = 3377907;</code>
+     * <code>int64 next = 3377907;</code>
      *
      * @return Whether the next field is set.
      */
+    @java.lang.Override
     public boolean hasNext() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -1157,20 +1088,13 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] The position of the next byte of content, regardless of whether the content exists, following the output returned in the `contents` property. Use this value in the next request as the start parameter.
      * </pre>
      *
-     * <code>string next = 3377907;</code>
+     * <code>int64 next = 3377907;</code>
      *
      * @return The next.
      */
-    public java.lang.String getNext() {
-      java.lang.Object ref = next_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        next_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getNext() {
+      return next_;
     }
     /**
      *
@@ -1179,37 +1103,12 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] The position of the next byte of content, regardless of whether the content exists, following the output returned in the `contents` property. Use this value in the next request as the start parameter.
      * </pre>
      *
-     * <code>string next = 3377907;</code>
-     *
-     * @return The bytes for next.
-     */
-    public com.google.protobuf.ByteString getNextBytes() {
-      java.lang.Object ref = next_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        next_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The position of the next byte of content, regardless of whether the content exists, following the output returned in the `contents` property. Use this value in the next request as the start parameter.
-     * </pre>
-     *
-     * <code>string next = 3377907;</code>
+     * <code>int64 next = 3377907;</code>
      *
      * @param value The next to set.
      * @return This builder for chaining.
      */
-    public Builder setNext(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setNext(long value) {
       bitField0_ |= 0x00000004;
       next_ = value;
       onChanged();
@@ -1222,35 +1121,13 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] The position of the next byte of content, regardless of whether the content exists, following the output returned in the `contents` property. Use this value in the next request as the start parameter.
      * </pre>
      *
-     * <code>string next = 3377907;</code>
+     * <code>int64 next = 3377907;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearNext() {
       bitField0_ = (bitField0_ & ~0x00000004);
-      next_ = getDefaultInstance().getNext();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The position of the next byte of content, regardless of whether the content exists, following the output returned in the `contents` property. Use this value in the next request as the start parameter.
-     * </pre>
-     *
-     * <code>string next = 3377907;</code>
-     *
-     * @param value The bytes for next to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNextBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
-      next_ = value;
+      next_ = 0L;
       onChanged();
       return this;
     }
@@ -1375,7 +1252,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private java.lang.Object start_ = "";
+    private long start_;
     /**
      *
      *
@@ -1383,10 +1260,11 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * The starting byte position of the output that was returned. This should match the start parameter sent with the request. If the serial console output exceeds the size of the buffer (1 MB), older output is overwritten by newer content. The output start value will indicate the byte position of the output that was returned, which might be different than the `start` value that was specified in the request.
      * </pre>
      *
-     * <code>string start = 109757538;</code>
+     * <code>int64 start = 109757538;</code>
      *
      * @return Whether the start field is set.
      */
+    @java.lang.Override
     public boolean hasStart() {
       return ((bitField0_ & 0x00000010) != 0);
     }
@@ -1397,20 +1275,13 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * The starting byte position of the output that was returned. This should match the start parameter sent with the request. If the serial console output exceeds the size of the buffer (1 MB), older output is overwritten by newer content. The output start value will indicate the byte position of the output that was returned, which might be different than the `start` value that was specified in the request.
      * </pre>
      *
-     * <code>string start = 109757538;</code>
+     * <code>int64 start = 109757538;</code>
      *
      * @return The start.
      */
-    public java.lang.String getStart() {
-      java.lang.Object ref = start_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        start_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getStart() {
+      return start_;
     }
     /**
      *
@@ -1419,37 +1290,12 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * The starting byte position of the output that was returned. This should match the start parameter sent with the request. If the serial console output exceeds the size of the buffer (1 MB), older output is overwritten by newer content. The output start value will indicate the byte position of the output that was returned, which might be different than the `start` value that was specified in the request.
      * </pre>
      *
-     * <code>string start = 109757538;</code>
-     *
-     * @return The bytes for start.
-     */
-    public com.google.protobuf.ByteString getStartBytes() {
-      java.lang.Object ref = start_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        start_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The starting byte position of the output that was returned. This should match the start parameter sent with the request. If the serial console output exceeds the size of the buffer (1 MB), older output is overwritten by newer content. The output start value will indicate the byte position of the output that was returned, which might be different than the `start` value that was specified in the request.
-     * </pre>
-     *
-     * <code>string start = 109757538;</code>
+     * <code>int64 start = 109757538;</code>
      *
      * @param value The start to set.
      * @return This builder for chaining.
      */
-    public Builder setStart(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setStart(long value) {
       bitField0_ |= 0x00000010;
       start_ = value;
       onChanged();
@@ -1462,35 +1308,13 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * The starting byte position of the output that was returned. This should match the start parameter sent with the request. If the serial console output exceeds the size of the buffer (1 MB), older output is overwritten by newer content. The output start value will indicate the byte position of the output that was returned, which might be different than the `start` value that was specified in the request.
      * </pre>
      *
-     * <code>string start = 109757538;</code>
+     * <code>int64 start = 109757538;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearStart() {
       bitField0_ = (bitField0_ & ~0x00000010);
-      start_ = getDefaultInstance().getStart();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The starting byte position of the output that was returned. This should match the start parameter sent with the request. If the serial console output exceeds the size of the buffer (1 MB), older output is overwritten by newer content. The output start value will indicate the byte position of the output that was returned, which might be different than the `start` value that was specified in the request.
-     * </pre>
-     *
-     * <code>string start = 109757538;</code>
-     *
-     * @param value The bytes for start to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStartBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
-      start_ = value;
+      start_ = 0L;
       onChanged();
       return this;
     }

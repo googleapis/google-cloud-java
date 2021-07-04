@@ -396,7 +396,7 @@ public interface BackendServiceCdnPolicyOrBuilder
    * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
    * </pre>
    *
-   * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+   * <code>int64 signed_url_cache_max_age_sec = 269374534;</code>
    *
    * @return Whether the signedUrlCacheMaxAgeSec field is set.
    */
@@ -408,23 +408,11 @@ public interface BackendServiceCdnPolicyOrBuilder
    * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
    * </pre>
    *
-   * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+   * <code>int64 signed_url_cache_max_age_sec = 269374534;</code>
    *
    * @return The signedUrlCacheMaxAgeSec.
    */
-  java.lang.String getSignedUrlCacheMaxAgeSec();
-  /**
-   *
-   *
-   * <pre>
-   * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
-   * </pre>
-   *
-   * <code>string signed_url_cache_max_age_sec = 269374534;</code>
-   *
-   * @return The bytes for signedUrlCacheMaxAgeSec.
-   */
-  com.google.protobuf.ByteString getSignedUrlCacheMaxAgeSecBytes();
+  long getSignedUrlCacheMaxAgeSec();
 
   /**
    *

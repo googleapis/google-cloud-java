@@ -67,7 +67,7 @@ public interface DiskTypeOrBuilder
    * [Output Only] Server-defined default disk size in GB.
    * </pre>
    *
-   * <code>string default_disk_size_gb = 270619253;</code>
+   * <code>int64 default_disk_size_gb = 270619253;</code>
    *
    * @return Whether the defaultDiskSizeGb field is set.
    */
@@ -79,23 +79,11 @@ public interface DiskTypeOrBuilder
    * [Output Only] Server-defined default disk size in GB.
    * </pre>
    *
-   * <code>string default_disk_size_gb = 270619253;</code>
+   * <code>int64 default_disk_size_gb = 270619253;</code>
    *
    * @return The defaultDiskSizeGb.
    */
-  java.lang.String getDefaultDiskSizeGb();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] Server-defined default disk size in GB.
-   * </pre>
-   *
-   * <code>string default_disk_size_gb = 270619253;</code>
-   *
-   * @return The bytes for defaultDiskSizeGb.
-   */
-  com.google.protobuf.ByteString getDefaultDiskSizeGbBytes();
+  long getDefaultDiskSizeGb();
 
   /**
    *
@@ -176,7 +164,7 @@ public interface DiskTypeOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -188,23 +176,11 @@ public interface DiskTypeOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return The id.
    */
-  java.lang.String getId();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-   * </pre>
-   *
-   * <code>string id = 3355;</code>
-   *
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString getIdBytes();
+  long getId();
 
   /**
    *

@@ -36,9 +36,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
     super(builder);
   }
 
-  private RegionDisksResizeRequest() {
-    sizeGb_ = "";
-  }
+  private RegionDisksResizeRequest() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -70,11 +68,10 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
           case 0:
             done = true;
             break;
-          case -335532342:
+          case -335532344:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              sizeGb_ = s;
+              sizeGb_ = input.readInt64();
               break;
             }
           default:
@@ -113,7 +110,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
 
   private int bitField0_;
   public static final int SIZE_GB_FIELD_NUMBER = 494929369;
-  private volatile java.lang.Object sizeGb_;
+  private long sizeGb_;
   /**
    *
    *
@@ -121,7 +118,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
    * The new size of the regional persistent disk, which is specified in GB.
    * </pre>
    *
-   * <code>string size_gb = 494929369;</code>
+   * <code>int64 size_gb = 494929369;</code>
    *
    * @return Whether the sizeGb field is set.
    */
@@ -136,44 +133,13 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
    * The new size of the regional persistent disk, which is specified in GB.
    * </pre>
    *
-   * <code>string size_gb = 494929369;</code>
+   * <code>int64 size_gb = 494929369;</code>
    *
    * @return The sizeGb.
    */
   @java.lang.Override
-  public java.lang.String getSizeGb() {
-    java.lang.Object ref = sizeGb_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      sizeGb_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The new size of the regional persistent disk, which is specified in GB.
-   * </pre>
-   *
-   * <code>string size_gb = 494929369;</code>
-   *
-   * @return The bytes for sizeGb.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getSizeGbBytes() {
-    java.lang.Object ref = sizeGb_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      sizeGb_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getSizeGb() {
+    return sizeGb_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -191,7 +157,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 494929369, sizeGb_);
+      output.writeInt64(494929369, sizeGb_);
     }
     unknownFields.writeTo(output);
   }
@@ -203,7 +169,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(494929369, sizeGb_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(494929369, sizeGb_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -223,7 +189,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
 
     if (hasSizeGb() != other.hasSizeGb()) return false;
     if (hasSizeGb()) {
-      if (!getSizeGb().equals(other.getSizeGb())) return false;
+      if (getSizeGb() != other.getSizeGb()) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -238,7 +204,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasSizeGb()) {
       hash = (37 * hash) + SIZE_GB_FIELD_NUMBER;
-      hash = (53 * hash) + getSizeGb().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSizeGb());
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -384,7 +350,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      sizeGb_ = "";
+      sizeGb_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
@@ -416,9 +382,9 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sizeGb_ = sizeGb_;
         to_bitField0_ |= 0x00000001;
       }
-      result.sizeGb_ = sizeGb_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -471,9 +437,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
       if (other == com.google.cloud.compute.v1.RegionDisksResizeRequest.getDefaultInstance())
         return this;
       if (other.hasSizeGb()) {
-        bitField0_ |= 0x00000001;
-        sizeGb_ = other.sizeGb_;
-        onChanged();
+        setSizeGb(other.getSizeGb());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -507,7 +471,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
 
     private int bitField0_;
 
-    private java.lang.Object sizeGb_ = "";
+    private long sizeGb_;
     /**
      *
      *
@@ -515,10 +479,11 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
      * The new size of the regional persistent disk, which is specified in GB.
      * </pre>
      *
-     * <code>string size_gb = 494929369;</code>
+     * <code>int64 size_gb = 494929369;</code>
      *
      * @return Whether the sizeGb field is set.
      */
+    @java.lang.Override
     public boolean hasSizeGb() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -529,20 +494,13 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
      * The new size of the regional persistent disk, which is specified in GB.
      * </pre>
      *
-     * <code>string size_gb = 494929369;</code>
+     * <code>int64 size_gb = 494929369;</code>
      *
      * @return The sizeGb.
      */
-    public java.lang.String getSizeGb() {
-      java.lang.Object ref = sizeGb_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sizeGb_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getSizeGb() {
+      return sizeGb_;
     }
     /**
      *
@@ -551,37 +509,12 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
      * The new size of the regional persistent disk, which is specified in GB.
      * </pre>
      *
-     * <code>string size_gb = 494929369;</code>
-     *
-     * @return The bytes for sizeGb.
-     */
-    public com.google.protobuf.ByteString getSizeGbBytes() {
-      java.lang.Object ref = sizeGb_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        sizeGb_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The new size of the regional persistent disk, which is specified in GB.
-     * </pre>
-     *
-     * <code>string size_gb = 494929369;</code>
+     * <code>int64 size_gb = 494929369;</code>
      *
      * @param value The sizeGb to set.
      * @return This builder for chaining.
      */
-    public Builder setSizeGb(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setSizeGb(long value) {
       bitField0_ |= 0x00000001;
       sizeGb_ = value;
       onChanged();
@@ -594,35 +527,13 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
      * The new size of the regional persistent disk, which is specified in GB.
      * </pre>
      *
-     * <code>string size_gb = 494929369;</code>
+     * <code>int64 size_gb = 494929369;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSizeGb() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      sizeGb_ = getDefaultInstance().getSizeGb();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The new size of the regional persistent disk, which is specified in GB.
-     * </pre>
-     *
-     * <code>string size_gb = 494929369;</code>
-     *
-     * @param value The bytes for sizeGb to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSizeGbBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
-      sizeGb_ = value;
+      sizeGb_ = 0L;
       onChanged();
       return this;
     }

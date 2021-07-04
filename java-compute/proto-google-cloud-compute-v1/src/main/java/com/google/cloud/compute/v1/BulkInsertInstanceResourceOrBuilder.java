@@ -30,7 +30,7 @@ public interface BulkInsertInstanceResourceOrBuilder
    * The maximum number of instances to create.
    * </pre>
    *
-   * <code>string count = 94851343;</code>
+   * <code>int64 count = 94851343;</code>
    *
    * @return Whether the count field is set.
    */
@@ -42,23 +42,11 @@ public interface BulkInsertInstanceResourceOrBuilder
    * The maximum number of instances to create.
    * </pre>
    *
-   * <code>string count = 94851343;</code>
+   * <code>int64 count = 94851343;</code>
    *
    * @return The count.
    */
-  java.lang.String getCount();
-  /**
-   *
-   *
-   * <pre>
-   * The maximum number of instances to create.
-   * </pre>
-   *
-   * <code>string count = 94851343;</code>
-   *
-   * @return The bytes for count.
-   */
-  com.google.protobuf.ByteString getCountBytes();
+  long getCount();
 
   /**
    *
@@ -137,7 +125,7 @@ public interface BulkInsertInstanceResourceOrBuilder
    * The minimum number of instances to create. If no min_count is specified then count is used as the default value. If min_count instances cannot be created, then no instances will be created and instances already created will be deleted.
    * </pre>
    *
-   * <code>string min_count = 523228386;</code>
+   * <code>int64 min_count = 523228386;</code>
    *
    * @return Whether the minCount field is set.
    */
@@ -149,23 +137,11 @@ public interface BulkInsertInstanceResourceOrBuilder
    * The minimum number of instances to create. If no min_count is specified then count is used as the default value. If min_count instances cannot be created, then no instances will be created and instances already created will be deleted.
    * </pre>
    *
-   * <code>string min_count = 523228386;</code>
+   * <code>int64 min_count = 523228386;</code>
    *
    * @return The minCount.
    */
-  java.lang.String getMinCount();
-  /**
-   *
-   *
-   * <pre>
-   * The minimum number of instances to create. If no min_count is specified then count is used as the default value. If min_count instances cannot be created, then no instances will be created and instances already created will be deleted.
-   * </pre>
-   *
-   * <code>string min_count = 523228386;</code>
-   *
-   * @return The bytes for minCount.
-   */
-  com.google.protobuf.ByteString getMinCountBytes();
+  long getMinCount();
 
   /**
    *

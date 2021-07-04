@@ -42,9 +42,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
     accelerators_ = java.util.Collections.emptyList();
     creationTimestamp_ = "";
     description_ = "";
-    id_ = "";
     kind_ = "";
-    maximumPersistentDisksSizeGb_ = "";
     name_ = "";
     scratchDisks_ = java.util.Collections.emptyList();
     selfLink_ = "";
@@ -81,11 +79,10 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 26842:
+          case 26840:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
-              id_ = s;
+              id_ = input.readUInt64();
               break;
             }
           case 26336418:
@@ -128,11 +125,10 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
               memoryMb_ = input.readInt32();
               break;
             }
-          case 1234195770:
+          case 1234195768:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000200;
-              maximumPersistentDisksSizeGb_ = s;
+              maximumPersistentDisksSizeGb_ = input.readInt64();
               break;
             }
           case -2138350782:
@@ -527,7 +523,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private volatile java.lang.Object id_;
+  private long id_;
   /**
    *
    *
@@ -535,7 +531,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -550,44 +546,13 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return The id.
    */
   @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      id_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-   * </pre>
-   *
-   * <code>string id = 3355;</code>
-   *
-   * @return The bytes for id.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getIdBytes() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      id_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getId() {
+    return id_;
   }
 
   public static final int IMAGE_SPACE_GB_FIELD_NUMBER = 75331864;
@@ -754,7 +719,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAXIMUM_PERSISTENT_DISKS_SIZE_GB_FIELD_NUMBER = 154274471;
-  private volatile java.lang.Object maximumPersistentDisksSizeGb_;
+  private long maximumPersistentDisksSizeGb_;
   /**
    *
    *
@@ -762,7 +727,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Maximum total persistent disks size (GB) allowed.
    * </pre>
    *
-   * <code>string maximum_persistent_disks_size_gb = 154274471;</code>
+   * <code>int64 maximum_persistent_disks_size_gb = 154274471;</code>
    *
    * @return Whether the maximumPersistentDisksSizeGb field is set.
    */
@@ -777,44 +742,13 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Maximum total persistent disks size (GB) allowed.
    * </pre>
    *
-   * <code>string maximum_persistent_disks_size_gb = 154274471;</code>
+   * <code>int64 maximum_persistent_disks_size_gb = 154274471;</code>
    *
    * @return The maximumPersistentDisksSizeGb.
    */
   @java.lang.Override
-  public java.lang.String getMaximumPersistentDisksSizeGb() {
-    java.lang.Object ref = maximumPersistentDisksSizeGb_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      maximumPersistentDisksSizeGb_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] Maximum total persistent disks size (GB) allowed.
-   * </pre>
-   *
-   * <code>string maximum_persistent_disks_size_gb = 154274471;</code>
-   *
-   * @return The bytes for maximumPersistentDisksSizeGb.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getMaximumPersistentDisksSizeGbBytes() {
-    java.lang.Object ref = maximumPersistentDisksSizeGb_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      maximumPersistentDisksSizeGb_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getMaximumPersistentDisksSizeGb() {
+    return maximumPersistentDisksSizeGb_;
   }
 
   public static final int MEMORY_MB_FIELD_NUMBER = 116001171;
@@ -1126,7 +1060,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000010) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
+      output.writeUInt64(3355, id_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
@@ -1147,8 +1081,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
       output.writeInt32(116001171, memoryMb_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 154274471, maximumPersistentDisksSizeGb_);
+      output.writeInt64(154274471, maximumPersistentDisksSizeGb_);
     }
     for (int i = 0; i < accelerators_.size(); i++) {
       output.writeMessage(269577064, accelerators_.get(i));
@@ -1184,7 +1117,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
 
     size = 0;
     if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
+      size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
@@ -1207,7 +1140,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+          com.google.protobuf.CodedOutputStream.computeInt64Size(
               154274471, maximumPersistentDisksSizeGb_);
     }
     for (int i = 0; i < accelerators_.size(); i++) {
@@ -1272,7 +1205,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasId() != other.hasId()) return false;
     if (hasId()) {
-      if (!getId().equals(other.getId())) return false;
+      if (getId() != other.getId()) return false;
     }
     if (hasImageSpaceGb() != other.hasImageSpaceGb()) return false;
     if (hasImageSpaceGb()) {
@@ -1292,7 +1225,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasMaximumPersistentDisksSizeGb() != other.hasMaximumPersistentDisksSizeGb()) return false;
     if (hasMaximumPersistentDisksSizeGb()) {
-      if (!getMaximumPersistentDisksSizeGb().equals(other.getMaximumPersistentDisksSizeGb()))
+      if (getMaximumPersistentDisksSizeGb() != other.getMaximumPersistentDisksSizeGb())
         return false;
     }
     if (hasMemoryMb() != other.hasMemoryMb()) return false;
@@ -1345,7 +1278,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasId()) {
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getId());
     }
     if (hasImageSpaceGb()) {
       hash = (37 * hash) + IMAGE_SPACE_GB_FIELD_NUMBER;
@@ -1365,7 +1298,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasMaximumPersistentDisksSizeGb()) {
       hash = (37 * hash) + MAXIMUM_PERSISTENT_DISKS_SIZE_GB_FIELD_NUMBER;
-      hash = (53 * hash) + getMaximumPersistentDisksSizeGb().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaximumPersistentDisksSizeGb());
     }
     if (hasMemoryMb()) {
       hash = (37 * hash) + MEMORY_MB_FIELD_NUMBER;
@@ -1555,7 +1488,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000008);
       guestCpus_ = 0;
       bitField0_ = (bitField0_ & ~0x00000010);
-      id_ = "";
+      id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000020);
       imageSpaceGb_ = 0;
       bitField0_ = (bitField0_ & ~0x00000040);
@@ -1565,7 +1498,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000100);
       maximumPersistentDisks_ = 0;
       bitField0_ = (bitField0_ & ~0x00000200);
-      maximumPersistentDisksSizeGb_ = "";
+      maximumPersistentDisksSizeGb_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000400);
       memoryMb_ = 0;
       bitField0_ = (bitField0_ & ~0x00000800);
@@ -1640,9 +1573,9 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.id_ = id_;
         to_bitField0_ |= 0x00000010;
       }
-      result.id_ = id_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.imageSpaceGb_ = imageSpaceGb_;
         to_bitField0_ |= 0x00000020;
@@ -1660,9 +1593,9 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.maximumPersistentDisksSizeGb_ = maximumPersistentDisksSizeGb_;
         to_bitField0_ |= 0x00000200;
       }
-      result.maximumPersistentDisksSizeGb_ = maximumPersistentDisksSizeGb_;
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.memoryMb_ = memoryMb_;
         to_bitField0_ |= 0x00000400;
@@ -1782,9 +1715,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
         setGuestCpus(other.getGuestCpus());
       }
       if (other.hasId()) {
-        bitField0_ |= 0x00000020;
-        id_ = other.id_;
-        onChanged();
+        setId(other.getId());
       }
       if (other.hasImageSpaceGb()) {
         setImageSpaceGb(other.getImageSpaceGb());
@@ -1801,9 +1732,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
         setMaximumPersistentDisks(other.getMaximumPersistentDisks());
       }
       if (other.hasMaximumPersistentDisksSizeGb()) {
-        bitField0_ |= 0x00000400;
-        maximumPersistentDisksSizeGb_ = other.maximumPersistentDisksSizeGb_;
-        onChanged();
+        setMaximumPersistentDisksSizeGb(other.getMaximumPersistentDisksSizeGb());
       }
       if (other.hasMemoryMb()) {
         setMemoryMb(other.getMemoryMb());
@@ -2726,7 +2655,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object id_ = "";
+    private long id_;
     /**
      *
      *
@@ -2734,10 +2663,11 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
+    @java.lang.Override
     public boolean hasId() {
       return ((bitField0_ & 0x00000020) != 0);
     }
@@ -2748,20 +2678,13 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @return The id.
      */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getId() {
+      return id_;
     }
     /**
      *
@@ -2770,37 +2693,12 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
-     *
-     * @return The bytes for id.
-     */
-    public com.google.protobuf.ByteString getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-     * </pre>
-     *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
      */
-    public Builder setId(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setId(long value) {
       bitField0_ |= 0x00000020;
       id_ = value;
       onChanged();
@@ -2813,35 +2711,13 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearId() {
       bitField0_ = (bitField0_ & ~0x00000020);
-      id_ = getDefaultInstance().getId();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-     * </pre>
-     *
-     * <code>string id = 3355;</code>
-     *
-     * @param value The bytes for id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
-      id_ = value;
+      id_ = 0L;
       onChanged();
       return this;
     }
@@ -3167,7 +3043,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object maximumPersistentDisksSizeGb_ = "";
+    private long maximumPersistentDisksSizeGb_;
     /**
      *
      *
@@ -3175,10 +3051,11 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Maximum total persistent disks size (GB) allowed.
      * </pre>
      *
-     * <code>string maximum_persistent_disks_size_gb = 154274471;</code>
+     * <code>int64 maximum_persistent_disks_size_gb = 154274471;</code>
      *
      * @return Whether the maximumPersistentDisksSizeGb field is set.
      */
+    @java.lang.Override
     public boolean hasMaximumPersistentDisksSizeGb() {
       return ((bitField0_ & 0x00000400) != 0);
     }
@@ -3189,20 +3066,13 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Maximum total persistent disks size (GB) allowed.
      * </pre>
      *
-     * <code>string maximum_persistent_disks_size_gb = 154274471;</code>
+     * <code>int64 maximum_persistent_disks_size_gb = 154274471;</code>
      *
      * @return The maximumPersistentDisksSizeGb.
      */
-    public java.lang.String getMaximumPersistentDisksSizeGb() {
-      java.lang.Object ref = maximumPersistentDisksSizeGb_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        maximumPersistentDisksSizeGb_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getMaximumPersistentDisksSizeGb() {
+      return maximumPersistentDisksSizeGb_;
     }
     /**
      *
@@ -3211,37 +3081,12 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Maximum total persistent disks size (GB) allowed.
      * </pre>
      *
-     * <code>string maximum_persistent_disks_size_gb = 154274471;</code>
-     *
-     * @return The bytes for maximumPersistentDisksSizeGb.
-     */
-    public com.google.protobuf.ByteString getMaximumPersistentDisksSizeGbBytes() {
-      java.lang.Object ref = maximumPersistentDisksSizeGb_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        maximumPersistentDisksSizeGb_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] Maximum total persistent disks size (GB) allowed.
-     * </pre>
-     *
-     * <code>string maximum_persistent_disks_size_gb = 154274471;</code>
+     * <code>int64 maximum_persistent_disks_size_gb = 154274471;</code>
      *
      * @param value The maximumPersistentDisksSizeGb to set.
      * @return This builder for chaining.
      */
-    public Builder setMaximumPersistentDisksSizeGb(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setMaximumPersistentDisksSizeGb(long value) {
       bitField0_ |= 0x00000400;
       maximumPersistentDisksSizeGb_ = value;
       onChanged();
@@ -3254,35 +3099,13 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Maximum total persistent disks size (GB) allowed.
      * </pre>
      *
-     * <code>string maximum_persistent_disks_size_gb = 154274471;</code>
+     * <code>int64 maximum_persistent_disks_size_gb = 154274471;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMaximumPersistentDisksSizeGb() {
       bitField0_ = (bitField0_ & ~0x00000400);
-      maximumPersistentDisksSizeGb_ = getDefaultInstance().getMaximumPersistentDisksSizeGb();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] Maximum total persistent disks size (GB) allowed.
-     * </pre>
-     *
-     * <code>string maximum_persistent_disks_size_gb = 154274471;</code>
-     *
-     * @param value The bytes for maximumPersistentDisksSizeGb to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMaximumPersistentDisksSizeGbBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
-      maximumPersistentDisksSizeGb_ = value;
+      maximumPersistentDisksSizeGb_ = 0L;
       onChanged();
       return this;
     }

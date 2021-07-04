@@ -200,7 +200,7 @@ public interface DiskOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -212,23 +212,11 @@ public interface DiskOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return The id.
    */
-  java.lang.String getId();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-   * </pre>
-   *
-   * <code>string id = 3355;</code>
-   *
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString getIdBytes();
+  long getId();
 
   /**
    *
@@ -442,11 +430,11 @@ public interface DiskOrBuilder
    * Integer license codes indicating which licenses are attached to this disk.
    * </pre>
    *
-   * <code>repeated string license_codes = 45482664;</code>
+   * <code>repeated int64 license_codes = 45482664;</code>
    *
    * @return A list containing the licenseCodes.
    */
-  java.util.List<java.lang.String> getLicenseCodesList();
+  java.util.List<java.lang.Long> getLicenseCodesList();
   /**
    *
    *
@@ -454,7 +442,7 @@ public interface DiskOrBuilder
    * Integer license codes indicating which licenses are attached to this disk.
    * </pre>
    *
-   * <code>repeated string license_codes = 45482664;</code>
+   * <code>repeated int64 license_codes = 45482664;</code>
    *
    * @return The count of licenseCodes.
    */
@@ -466,25 +454,12 @@ public interface DiskOrBuilder
    * Integer license codes indicating which licenses are attached to this disk.
    * </pre>
    *
-   * <code>repeated string license_codes = 45482664;</code>
+   * <code>repeated int64 license_codes = 45482664;</code>
    *
    * @param index The index of the element to return.
    * @return The licenseCodes at the given index.
    */
-  java.lang.String getLicenseCodes(int index);
-  /**
-   *
-   *
-   * <pre>
-   * Integer license codes indicating which licenses are attached to this disk.
-   * </pre>
-   *
-   * <code>repeated string license_codes = 45482664;</code>
-   *
-   * @param index The index of the value to return.
-   * @return The bytes of the licenseCodes at the given index.
-   */
-  com.google.protobuf.ByteString getLicenseCodesBytes(int index);
+  long getLicenseCodes(int index);
 
   /**
    *
@@ -655,7 +630,7 @@ public interface DiskOrBuilder
    * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
    * </pre>
    *
-   * <code>string physical_block_size_bytes = 420007943;</code>
+   * <code>int64 physical_block_size_bytes = 420007943;</code>
    *
    * @return Whether the physicalBlockSizeBytes field is set.
    */
@@ -667,23 +642,11 @@ public interface DiskOrBuilder
    * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
    * </pre>
    *
-   * <code>string physical_block_size_bytes = 420007943;</code>
+   * <code>int64 physical_block_size_bytes = 420007943;</code>
    *
    * @return The physicalBlockSizeBytes.
    */
-  java.lang.String getPhysicalBlockSizeBytes();
-  /**
-   *
-   *
-   * <pre>
-   * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
-   * </pre>
-   *
-   * <code>string physical_block_size_bytes = 420007943;</code>
-   *
-   * @return The bytes for physicalBlockSizeBytes.
-   */
-  com.google.protobuf.ByteString getPhysicalBlockSizeBytesBytes();
+  long getPhysicalBlockSizeBytes();
 
   /**
    *
@@ -692,7 +655,7 @@ public interface DiskOrBuilder
    * Indicates how many IOPS must be provisioned for the disk.
    * </pre>
    *
-   * <code>string provisioned_iops = 186769108;</code>
+   * <code>int64 provisioned_iops = 186769108;</code>
    *
    * @return Whether the provisionedIops field is set.
    */
@@ -704,23 +667,11 @@ public interface DiskOrBuilder
    * Indicates how many IOPS must be provisioned for the disk.
    * </pre>
    *
-   * <code>string provisioned_iops = 186769108;</code>
+   * <code>int64 provisioned_iops = 186769108;</code>
    *
    * @return The provisionedIops.
    */
-  java.lang.String getProvisionedIops();
-  /**
-   *
-   *
-   * <pre>
-   * Indicates how many IOPS must be provisioned for the disk.
-   * </pre>
-   *
-   * <code>string provisioned_iops = 186769108;</code>
-   *
-   * @return The bytes for provisionedIops.
-   */
-  com.google.protobuf.ByteString getProvisionedIopsBytes();
+  long getProvisionedIops();
 
   /**
    *
@@ -931,7 +882,7 @@ public interface DiskOrBuilder
    * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
    * </pre>
    *
-   * <code>string size_gb = 494929369;</code>
+   * <code>int64 size_gb = 494929369;</code>
    *
    * @return Whether the sizeGb field is set.
    */
@@ -944,24 +895,11 @@ public interface DiskOrBuilder
    * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
    * </pre>
    *
-   * <code>string size_gb = 494929369;</code>
+   * <code>int64 size_gb = 494929369;</code>
    *
    * @return The sizeGb.
    */
-  java.lang.String getSizeGb();
-  /**
-   *
-   *
-   * <pre>
-   * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk.
-   * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
-   * </pre>
-   *
-   * <code>string size_gb = 494929369;</code>
-   *
-   * @return The bytes for sizeGb.
-   */
-  com.google.protobuf.ByteString getSizeGbBytes();
+  long getSizeGb();
 
   /**
    *

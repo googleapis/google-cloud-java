@@ -30,7 +30,7 @@ public interface RegionDisksResizeRequestOrBuilder
    * The new size of the regional persistent disk, which is specified in GB.
    * </pre>
    *
-   * <code>string size_gb = 494929369;</code>
+   * <code>int64 size_gb = 494929369;</code>
    *
    * @return Whether the sizeGb field is set.
    */
@@ -42,21 +42,9 @@ public interface RegionDisksResizeRequestOrBuilder
    * The new size of the regional persistent disk, which is specified in GB.
    * </pre>
    *
-   * <code>string size_gb = 494929369;</code>
+   * <code>int64 size_gb = 494929369;</code>
    *
    * @return The sizeGb.
    */
-  java.lang.String getSizeGb();
-  /**
-   *
-   *
-   * <pre>
-   * The new size of the regional persistent disk, which is specified in GB.
-   * </pre>
-   *
-   * <code>string size_gb = 494929369;</code>
-   *
-   * @return The bytes for sizeGb.
-   */
-  com.google.protobuf.ByteString getSizeGbBytes();
+  long getSizeGb();
 }

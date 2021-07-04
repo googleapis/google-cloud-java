@@ -30,7 +30,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * Specifies the number of resources that are allocated.
    * </pre>
    *
-   * <code>string count = 94851343;</code>
+   * <code>int64 count = 94851343;</code>
    *
    * @return Whether the count field is set.
    */
@@ -42,23 +42,11 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * Specifies the number of resources that are allocated.
    * </pre>
    *
-   * <code>string count = 94851343;</code>
+   * <code>int64 count = 94851343;</code>
    *
    * @return The count.
    */
-  java.lang.String getCount();
-  /**
-   *
-   *
-   * <pre>
-   * Specifies the number of resources that are allocated.
-   * </pre>
-   *
-   * <code>string count = 94851343;</code>
-   *
-   * @return The bytes for count.
-   */
-  com.google.protobuf.ByteString getCountBytes();
+  long getCount();
 
   /**
    *
@@ -67,7 +55,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * [Output Only] Indicates how many instances are in use.
    * </pre>
    *
-   * <code>string in_use_count = 493458877;</code>
+   * <code>int64 in_use_count = 493458877;</code>
    *
    * @return Whether the inUseCount field is set.
    */
@@ -79,23 +67,11 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * [Output Only] Indicates how many instances are in use.
    * </pre>
    *
-   * <code>string in_use_count = 493458877;</code>
+   * <code>int64 in_use_count = 493458877;</code>
    *
    * @return The inUseCount.
    */
-  java.lang.String getInUseCount();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] Indicates how many instances are in use.
-   * </pre>
-   *
-   * <code>string in_use_count = 493458877;</code>
-   *
-   * @return The bytes for inUseCount.
-   */
-  com.google.protobuf.ByteString getInUseCountBytes();
+  long getInUseCount();
 
   /**
    *

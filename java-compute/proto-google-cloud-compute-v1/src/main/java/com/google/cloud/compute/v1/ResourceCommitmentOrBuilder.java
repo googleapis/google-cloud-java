@@ -67,7 +67,7 @@ public interface ResourceCommitmentOrBuilder
    * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
    * </pre>
    *
-   * <code>string amount = 196759640;</code>
+   * <code>int64 amount = 196759640;</code>
    *
    * @return Whether the amount field is set.
    */
@@ -79,23 +79,11 @@ public interface ResourceCommitmentOrBuilder
    * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
    * </pre>
    *
-   * <code>string amount = 196759640;</code>
+   * <code>int64 amount = 196759640;</code>
    *
    * @return The amount.
    */
-  java.lang.String getAmount();
-  /**
-   *
-   *
-   * <pre>
-   * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
-   * </pre>
-   *
-   * <code>string amount = 196759640;</code>
-   *
-   * @return The bytes for amount.
-   */
-  com.google.protobuf.ByteString getAmountBytes();
+  long getAmount();
 
   /**
    *

@@ -109,7 +109,7 @@ public interface ConsistentHashLoadBalancerSettingsOrBuilder
    * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
    * </pre>
    *
-   * <code>string minimum_ring_size = 234380735;</code>
+   * <code>int64 minimum_ring_size = 234380735;</code>
    *
    * @return Whether the minimumRingSize field is set.
    */
@@ -121,21 +121,9 @@ public interface ConsistentHashLoadBalancerSettingsOrBuilder
    * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
    * </pre>
    *
-   * <code>string minimum_ring_size = 234380735;</code>
+   * <code>int64 minimum_ring_size = 234380735;</code>
    *
    * @return The minimumRingSize.
    */
-  java.lang.String getMinimumRingSize();
-  /**
-   *
-   *
-   * <pre>
-   * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
-   * </pre>
-   *
-   * <code>string minimum_ring_size = 234380735;</code>
-   *
-   * @return The bytes for minimumRingSize.
-   */
-  com.google.protobuf.ByteString getMinimumRingSizeBytes();
+  long getMinimumRingSize();
 }

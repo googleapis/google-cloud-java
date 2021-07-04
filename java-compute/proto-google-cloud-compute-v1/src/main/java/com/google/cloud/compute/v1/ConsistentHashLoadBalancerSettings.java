@@ -40,7 +40,6 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
 
   private ConsistentHashLoadBalancerSettings() {
     httpHeaderName_ = "";
-    minimumRingSize_ = "";
   }
 
   @java.lang.Override
@@ -92,11 +91,10 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
               bitField0_ |= 0x00000001;
               break;
             }
-          case 1875045882:
+          case 1875045880:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
-              minimumRingSize_ = s;
+              minimumRingSize_ = input.readInt64();
               break;
             }
           case 1878384178:
@@ -265,7 +263,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
   }
 
   public static final int MINIMUM_RING_SIZE_FIELD_NUMBER = 234380735;
-  private volatile java.lang.Object minimumRingSize_;
+  private long minimumRingSize_;
   /**
    *
    *
@@ -273,7 +271,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
    * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
    * </pre>
    *
-   * <code>string minimum_ring_size = 234380735;</code>
+   * <code>int64 minimum_ring_size = 234380735;</code>
    *
    * @return Whether the minimumRingSize field is set.
    */
@@ -288,44 +286,13 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
    * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
    * </pre>
    *
-   * <code>string minimum_ring_size = 234380735;</code>
+   * <code>int64 minimum_ring_size = 234380735;</code>
    *
    * @return The minimumRingSize.
    */
   @java.lang.Override
-  public java.lang.String getMinimumRingSize() {
-    java.lang.Object ref = minimumRingSize_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      minimumRingSize_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
-   * </pre>
-   *
-   * <code>string minimum_ring_size = 234380735;</code>
-   *
-   * @return The bytes for minimumRingSize.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getMinimumRingSizeBytes() {
-    java.lang.Object ref = minimumRingSize_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      minimumRingSize_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getMinimumRingSize() {
+    return minimumRingSize_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -346,7 +313,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       output.writeMessage(6673915, getHttpCookie());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 234380735, minimumRingSize_);
+      output.writeInt64(234380735, minimumRingSize_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234798022, httpHeaderName_);
@@ -364,7 +331,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6673915, getHttpCookie());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234380735, minimumRingSize_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(234380735, minimumRingSize_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234798022, httpHeaderName_);
@@ -395,7 +362,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
     }
     if (hasMinimumRingSize() != other.hasMinimumRingSize()) return false;
     if (hasMinimumRingSize()) {
-      if (!getMinimumRingSize().equals(other.getMinimumRingSize())) return false;
+      if (getMinimumRingSize() != other.getMinimumRingSize()) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -418,7 +385,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
     }
     if (hasMinimumRingSize()) {
       hash = (37 * hash) + MINIMUM_RING_SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + getMinimumRingSize().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMinimumRingSize());
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -576,7 +543,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       bitField0_ = (bitField0_ & ~0x00000001);
       httpHeaderName_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
-      minimumRingSize_ = "";
+      minimumRingSize_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
@@ -621,9 +588,9 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       }
       result.httpHeaderName_ = httpHeaderName_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.minimumRingSize_ = minimumRingSize_;
         to_bitField0_ |= 0x00000004;
       }
-      result.minimumRingSize_ = minimumRingSize_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -685,9 +652,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
         onChanged();
       }
       if (other.hasMinimumRingSize()) {
-        bitField0_ |= 0x00000004;
-        minimumRingSize_ = other.minimumRingSize_;
-        onChanged();
+        setMinimumRingSize(other.getMinimumRingSize());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1058,7 +1023,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       return this;
     }
 
-    private java.lang.Object minimumRingSize_ = "";
+    private long minimumRingSize_;
     /**
      *
      *
@@ -1066,10 +1031,11 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
      * </pre>
      *
-     * <code>string minimum_ring_size = 234380735;</code>
+     * <code>int64 minimum_ring_size = 234380735;</code>
      *
      * @return Whether the minimumRingSize field is set.
      */
+    @java.lang.Override
     public boolean hasMinimumRingSize() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -1080,20 +1046,13 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
      * </pre>
      *
-     * <code>string minimum_ring_size = 234380735;</code>
+     * <code>int64 minimum_ring_size = 234380735;</code>
      *
      * @return The minimumRingSize.
      */
-    public java.lang.String getMinimumRingSize() {
-      java.lang.Object ref = minimumRingSize_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        minimumRingSize_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getMinimumRingSize() {
+      return minimumRingSize_;
     }
     /**
      *
@@ -1102,37 +1061,12 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
      * </pre>
      *
-     * <code>string minimum_ring_size = 234380735;</code>
-     *
-     * @return The bytes for minimumRingSize.
-     */
-    public com.google.protobuf.ByteString getMinimumRingSizeBytes() {
-      java.lang.Object ref = minimumRingSize_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        minimumRingSize_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
-     * </pre>
-     *
-     * <code>string minimum_ring_size = 234380735;</code>
+     * <code>int64 minimum_ring_size = 234380735;</code>
      *
      * @param value The minimumRingSize to set.
      * @return This builder for chaining.
      */
-    public Builder setMinimumRingSize(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setMinimumRingSize(long value) {
       bitField0_ |= 0x00000004;
       minimumRingSize_ = value;
       onChanged();
@@ -1145,35 +1079,13 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
      * </pre>
      *
-     * <code>string minimum_ring_size = 234380735;</code>
+     * <code>int64 minimum_ring_size = 234380735;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMinimumRingSize() {
       bitField0_ = (bitField0_ & ~0x00000004);
-      minimumRingSize_ = getDefaultInstance().getMinimumRingSize();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
-     * </pre>
-     *
-     * <code>string minimum_ring_size = 234380735;</code>
-     *
-     * @param value The bytes for minimumRingSize to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMinimumRingSizeBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
-      minimumRingSize_ = value;
+      minimumRingSize_ = 0L;
       onChanged();
       return this;
     }

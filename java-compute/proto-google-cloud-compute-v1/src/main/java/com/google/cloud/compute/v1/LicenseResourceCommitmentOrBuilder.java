@@ -30,7 +30,7 @@ public interface LicenseResourceCommitmentOrBuilder
    * The number of licenses purchased.
    * </pre>
    *
-   * <code>string amount = 196759640;</code>
+   * <code>int64 amount = 196759640;</code>
    *
    * @return Whether the amount field is set.
    */
@@ -42,23 +42,11 @@ public interface LicenseResourceCommitmentOrBuilder
    * The number of licenses purchased.
    * </pre>
    *
-   * <code>string amount = 196759640;</code>
+   * <code>int64 amount = 196759640;</code>
    *
    * @return The amount.
    */
-  java.lang.String getAmount();
-  /**
-   *
-   *
-   * <pre>
-   * The number of licenses purchased.
-   * </pre>
-   *
-   * <code>string amount = 196759640;</code>
-   *
-   * @return The bytes for amount.
-   */
-  com.google.protobuf.ByteString getAmountBytes();
+  long getAmount();
 
   /**
    *

@@ -137,7 +137,7 @@ public class AcceleratorTypesClientTest {
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDeprecated(DeprecationStatus.newBuilder().build())
             .setDescription("description-1724546052")
-            .setId("id3355")
+            .setId(3355)
             .setKind("kind3292052")
             .setMaximumCardsPerInstance(-1883669166)
             .setName("name3373707")

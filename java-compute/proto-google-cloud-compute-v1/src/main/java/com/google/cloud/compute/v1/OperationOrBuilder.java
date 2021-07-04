@@ -275,7 +275,7 @@ public interface OperationOrBuilder
    * [Output Only] The unique identifier for the operation. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -287,23 +287,11 @@ public interface OperationOrBuilder
    * [Output Only] The unique identifier for the operation. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return The id.
    */
-  java.lang.String getId();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The unique identifier for the operation. This identifier is defined by the server.
-   * </pre>
-   *
-   * <code>string id = 3355;</code>
-   *
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString getIdBytes();
+  long getId();
 
   /**
    *
@@ -707,7 +695,7 @@ public interface OperationOrBuilder
    * [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
    * </pre>
    *
-   * <code>string target_id = 258165385;</code>
+   * <code>uint64 target_id = 258165385;</code>
    *
    * @return Whether the targetId field is set.
    */
@@ -719,23 +707,11 @@ public interface OperationOrBuilder
    * [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
    * </pre>
    *
-   * <code>string target_id = 258165385;</code>
+   * <code>uint64 target_id = 258165385;</code>
    *
    * @return The targetId.
    */
-  java.lang.String getTargetId();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
-   * </pre>
-   *
-   * <code>string target_id = 258165385;</code>
-   *
-   * @return The bytes for targetId.
-   */
-  com.google.protobuf.ByteString getTargetIdBytes();
+  long getTargetId();
 
   /**
    *

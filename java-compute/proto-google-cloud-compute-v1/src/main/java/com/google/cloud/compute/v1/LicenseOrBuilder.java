@@ -129,7 +129,7 @@ public interface LicenseOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -141,23 +141,11 @@ public interface LicenseOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return The id.
    */
-  java.lang.String getId();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-   * </pre>
-   *
-   * <code>string id = 3355;</code>
-   *
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString getIdBytes();
+  long getId();
 
   /**
    *
@@ -203,7 +191,7 @@ public interface LicenseOrBuilder
    * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
    * </pre>
    *
-   * <code>string license_code = 1467179;</code>
+   * <code>uint64 license_code = 1467179;</code>
    *
    * @return Whether the licenseCode field is set.
    */
@@ -215,23 +203,11 @@ public interface LicenseOrBuilder
    * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
    * </pre>
    *
-   * <code>string license_code = 1467179;</code>
+   * <code>uint64 license_code = 1467179;</code>
    *
    * @return The licenseCode.
    */
-  java.lang.String getLicenseCode();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
-   * </pre>
-   *
-   * <code>string license_code = 1467179;</code>
-   *
-   * @return The bytes for licenseCode.
-   */
-  com.google.protobuf.ByteString getLicenseCodeBytes();
+  long getLicenseCode();
 
   /**
    *

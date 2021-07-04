@@ -134,10 +134,10 @@ public class DiskTypesClientTest {
     DiskType expectedResponse =
         DiskType.newBuilder()
             .setCreationTimestamp("creationTimestamp-370203401")
-            .setDefaultDiskSizeGb("defaultDiskSizeGb-1452666406")
+            .setDefaultDiskSizeGb(807490165)
             .setDeprecated(DeprecationStatus.newBuilder().build())
             .setDescription("description-1724546052")
-            .setId("id3355")
+            .setId(3355)
             .setKind("kind3292052")
             .setName("name3373707")
             .setRegion("region-934795532")

@@ -142,7 +142,7 @@ public interface NotificationEndpointOrBuilder
    * [Output Only] A unique identifier for this resource type. The server generates this identifier.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -154,23 +154,11 @@ public interface NotificationEndpointOrBuilder
    * [Output Only] A unique identifier for this resource type. The server generates this identifier.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return The id.
    */
-  java.lang.String getId();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] A unique identifier for this resource type. The server generates this identifier.
-   * </pre>
-   *
-   * <code>string id = 3355;</code>
-   *
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString getIdBytes();
+  long getId();
 
   /**
    *

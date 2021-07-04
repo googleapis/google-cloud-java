@@ -104,7 +104,7 @@ public interface SerialPortOutputOrBuilder
    * [Output Only] The position of the next byte of content, regardless of whether the content exists, following the output returned in the `contents` property. Use this value in the next request as the start parameter.
    * </pre>
    *
-   * <code>string next = 3377907;</code>
+   * <code>int64 next = 3377907;</code>
    *
    * @return Whether the next field is set.
    */
@@ -116,23 +116,11 @@ public interface SerialPortOutputOrBuilder
    * [Output Only] The position of the next byte of content, regardless of whether the content exists, following the output returned in the `contents` property. Use this value in the next request as the start parameter.
    * </pre>
    *
-   * <code>string next = 3377907;</code>
+   * <code>int64 next = 3377907;</code>
    *
    * @return The next.
    */
-  java.lang.String getNext();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The position of the next byte of content, regardless of whether the content exists, following the output returned in the `contents` property. Use this value in the next request as the start parameter.
-   * </pre>
-   *
-   * <code>string next = 3377907;</code>
-   *
-   * @return The bytes for next.
-   */
-  com.google.protobuf.ByteString getNextBytes();
+  long getNext();
 
   /**
    *
@@ -178,7 +166,7 @@ public interface SerialPortOutputOrBuilder
    * The starting byte position of the output that was returned. This should match the start parameter sent with the request. If the serial console output exceeds the size of the buffer (1 MB), older output is overwritten by newer content. The output start value will indicate the byte position of the output that was returned, which might be different than the `start` value that was specified in the request.
    * </pre>
    *
-   * <code>string start = 109757538;</code>
+   * <code>int64 start = 109757538;</code>
    *
    * @return Whether the start field is set.
    */
@@ -190,21 +178,9 @@ public interface SerialPortOutputOrBuilder
    * The starting byte position of the output that was returned. This should match the start parameter sent with the request. If the serial console output exceeds the size of the buffer (1 MB), older output is overwritten by newer content. The output start value will indicate the byte position of the output that was returned, which might be different than the `start` value that was specified in the request.
    * </pre>
    *
-   * <code>string start = 109757538;</code>
+   * <code>int64 start = 109757538;</code>
    *
    * @return The start.
    */
-  java.lang.String getStart();
-  /**
-   *
-   *
-   * <pre>
-   * The starting byte position of the output that was returned. This should match the start parameter sent with the request. If the serial console output exceeds the size of the buffer (1 MB), older output is overwritten by newer content. The output start value will indicate the byte position of the output that was returned, which might be different than the `start` value that was specified in the request.
-   * </pre>
-   *
-   * <code>string start = 109757538;</code>
-   *
-   * @return The bytes for start.
-   */
-  com.google.protobuf.ByteString getStartBytes();
+  long getStart();
 }

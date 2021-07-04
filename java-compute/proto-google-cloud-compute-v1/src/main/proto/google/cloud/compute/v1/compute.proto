@@ -101,7 +101,7 @@ message AcceleratorType {
   optional string description = 422937596;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
   optional string kind = 3292052;
@@ -418,7 +418,7 @@ message Address {
   optional string description = 422937596;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
   optional IpVersion ip_version = 294959552;
@@ -556,7 +556,7 @@ message AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk {
   }
 
   // Specifies the size of the disk in base-2 GB.
-  optional string disk_size_gb = 316263735;
+  optional int64 disk_size_gb = 316263735;
 
   // Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
   optional Interface interface = 502623545;
@@ -585,10 +585,10 @@ message AllocationSpecificSKUAllocationReservedInstanceProperties {
 // This reservation type allows to pre allocate specific instance configuration.
 message AllocationSpecificSKUReservation {
   // Specifies the number of resources that are allocated.
-  optional string count = 94851343;
+  optional int64 count = 94851343;
 
   // [Output Only] Indicates how many instances are in use.
-  optional string in_use_count = 493458877;
+  optional int64 in_use_count = 493458877;
 
   // The instance properties for the reservation.
   optional AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
@@ -665,7 +665,7 @@ message AttachedDiskInitializeParams {
   optional string disk_name = 92807149;
 
   // Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
-  optional string disk_size_gb = 316263735;
+  optional int64 disk_size_gb = 316263735;
 
   // Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example:
   // https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
@@ -684,7 +684,7 @@ message AttachedDiskInitializeParams {
   optional OnUpdateAction on_update_action = 202451980;
 
   // Indicates how many IOPS must be provisioned for the disk.
-  optional string provisioned_iops = 186769108;
+  optional int64 provisioned_iops = 186769108;
 
   // Resource policies applied to this disk for automatic snapshot creations. Specified using the full or partial URL. For instance template, specify only the resource policy name.
   repeated string resource_policies = 22220385;
@@ -803,7 +803,7 @@ message AttachedDisk {
   optional CustomerEncryptionKey disk_encryption_key = 271660677;
 
   // The size of the disk in GB.
-  optional string disk_size_gb = 316263735;
+  optional int64 disk_size_gb = 316263735;
 
   // A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
   repeated GuestOsFeature guest_os_features = 79294545;
@@ -1125,7 +1125,7 @@ message Autoscaler {
   optional string description = 422937596;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
   optional string kind = 3292052;
@@ -1495,7 +1495,7 @@ message BackendBucketCdnPolicy {
   optional int32 serve_while_stale = 236682203;
 
   // Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
-  optional string signed_url_cache_max_age_sec = 269374534;
+  optional int64 signed_url_cache_max_age_sec = 269374534;
 
   // [Output Only] Names of the keys for signing request URLs.
   repeated string signed_url_key_names = 371848885;
@@ -1525,7 +1525,7 @@ message BackendBucket {
   optional bool enable_cdn = 282942321;
 
   // [Output Only] Unique identifier for the resource; defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // Type of the resource.
   optional string kind = 3292052;
@@ -1637,7 +1637,7 @@ message BackendServiceCdnPolicy {
   optional int32 serve_while_stale = 236682203;
 
   // Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
-  optional string signed_url_cache_max_age_sec = 269374534;
+  optional int64 signed_url_cache_max_age_sec = 269374534;
 
   // [Output Only] Names of the keys for signing request URLs.
   repeated string signed_url_key_names = 371848885;
@@ -1679,7 +1679,7 @@ message ConsistentHashLoadBalancerSettings {
   optional string http_header_name = 234798022;
 
   // The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
-  optional string minimum_ring_size = 234380735;
+  optional int64 minimum_ring_size = 234380735;
 
 }
 
@@ -1730,7 +1730,7 @@ message Duration {
   optional int32 nanos = 104586303;
 
   // Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
-  optional string seconds = 359484031;
+  optional int64 seconds = 359484031;
 
 }
 
@@ -1970,7 +1970,7 @@ message BackendService {
   optional BackendServiceIAP iap = 104024;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of resource. Always compute#backendService for backend services.
   optional string kind = 3292052;
@@ -2398,7 +2398,7 @@ message BulkInsertInstanceResourcePerInstanceProperties {
 //
 message BulkInsertInstanceResource {
   // The maximum number of instances to create.
-  optional string count = 94851343;
+  optional int64 count = 94851343;
 
   // The instance properties defining the VM instances to be created. Required if sourceInstanceTemplate is not provided.
   optional InstanceProperties instance_properties = 215355165;
@@ -2407,7 +2407,7 @@ message BulkInsertInstanceResource {
   optional LocationPolicy location_policy = 465689852;
 
   // The minimum number of instances to create. If no min_count is specified then count is used as the default value. If min_count instances cannot be created, then no instances will be created and instances already created will be deleted.
-  optional string min_count = 523228386;
+  optional int64 min_count = 523228386;
 
   // The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern should contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: name_pattern of inst-#### will generate instance names such as inst-0001, inst-0002, ... . If there already exist instance(s) whose names match the name pattern in the same project and zone, then the generated instance numbers will start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### will be inst-0051, inst-0052, etc. The name pattern placeholder #...# can contain up to 18 characters.
   optional string name_pattern = 413815260;
@@ -2439,7 +2439,7 @@ message CacheInvalidationRule {
 // Commitment for a particular license resource.
 message LicenseResourceCommitment {
   // The number of licenses purchased.
-  optional string amount = 196759640;
+  optional int64 amount = 196759640;
 
   // Specifies the core range of the instance for which this license applies.
   optional string cores_per_license = 32482324;
@@ -2478,7 +2478,7 @@ message Reservation {
   optional string description = 422937596;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#reservations for reservations.
   optional string kind = 3292052;
@@ -2529,7 +2529,7 @@ message ResourceCommitment {
   optional string accelerator_type = 138031246;
 
   // The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
-  optional string amount = 196759640;
+  optional int64 amount = 196759640;
 
   // Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
   optional Type type = 3575610;
@@ -2594,7 +2594,7 @@ message Commitment {
   optional string end_timestamp = 468096690;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#commitment for commitments.
   optional string kind = 3292052;
@@ -2821,7 +2821,7 @@ message Disk {
   repeated GuestOsFeature guest_os_features = 79294545;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#disk for disks.
   optional string kind = 3292052;
@@ -2841,7 +2841,7 @@ message Disk {
   optional string last_detach_timestamp = 56471027;
 
   // Integer license codes indicating which licenses are attached to this disk.
-  repeated string license_codes = 45482664;
+  repeated int64 license_codes = 45482664;
 
   // A list of publicly visible licenses. Reserved for Google's use.
   repeated string licenses = 337642578;
@@ -2856,10 +2856,10 @@ message Disk {
   optional string options = 361137822;
 
   // Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
-  optional string physical_block_size_bytes = 420007943;
+  optional int64 physical_block_size_bytes = 420007943;
 
   // Indicates how many IOPS must be provisioned for the disk.
-  optional string provisioned_iops = 186769108;
+  optional int64 provisioned_iops = 186769108;
 
   // [Output Only] URL of the region where the disk resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   optional string region = 138946292;
@@ -2879,7 +2879,7 @@ message Disk {
   // Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk.
   //
   // If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
-  optional string size_gb = 494929369;
+  optional int64 size_gb = 494929369;
 
   // The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
   // - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
@@ -3087,7 +3087,7 @@ message DiskType {
   optional string creation_timestamp = 30525366;
 
   // [Output Only] Server-defined default disk size in GB.
-  optional string default_disk_size_gb = 270619253;
+  optional int64 default_disk_size_gb = 270619253;
 
   // [Output Only] The deprecation status associated with this disk type.
   optional DeprecationStatus deprecated = 515138995;
@@ -3096,7 +3096,7 @@ message DiskType {
   optional string description = 422937596;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#diskType for disk types.
   optional string kind = 3292052;
@@ -3192,7 +3192,7 @@ message DisksRemoveResourcePoliciesRequest {
 //
 message DisksResizeRequest {
   // The new size of the persistent disk, which is specified in GB.
-  optional string size_gb = 494929369;
+  optional int64 size_gb = 494929369;
 
 }
 
@@ -3325,7 +3325,7 @@ message ExternalVpnGateway {
   optional string description = 422937596;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // List of interfaces for this external VPN gateway.
   repeated ExternalVpnGatewayInterface interfaces = 12073562;
@@ -3481,7 +3481,7 @@ message Firewall {
   optional bool disabled = 270940796;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#firewall for firewall rules.
   optional string kind = 3292052;
@@ -3642,7 +3642,7 @@ message FirewallPolicy {
   optional string fingerprint = 234678500;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
   optional string kind = 3292052;
@@ -3911,7 +3911,7 @@ message ForwardingRule {
   optional string fingerprint = 234678500;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
   optional IpVersion ip_version = 294959552;
@@ -3996,7 +3996,7 @@ message ForwardingRule {
   repeated string ports = 106854418;
 
   // [Output Only] The PSC connection id of the PSC Forwarding Rule.
-  optional string psc_connection_id = 292082397;
+  optional uint64 psc_connection_id = 292082397;
 
   // [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   optional string region = 138946292;
@@ -4668,7 +4668,7 @@ message HealthCheck {
   optional HTTPSHealthCheck https_health_check = 436046905;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // Type of the resource.
   optional string kind = 3292052;
@@ -4766,7 +4766,7 @@ message HealthCheckService {
   optional HealthStatusAggregationPolicy health_status_aggregation_policy = 253163129;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output only] Type of the resource. Always compute#healthCheckServicefor health check services.
   optional string kind = 3292052;
@@ -4968,10 +4968,10 @@ message HttpHeaderAction {
 // HttpRouteRuleMatch criteria for field values that must stay within the specified integer range.
 message Int64RangeMatch {
   // The end of the range (exclusive) in signed long integer format.
-  optional string range_end = 322439897;
+  optional int64 range_end = 322439897;
 
   // The start of the range (inclusive) in signed long integer format.
-  optional string range_start = 103333600;
+  optional int64 range_start = 103333600;
 
 }
 
@@ -5327,7 +5327,7 @@ message Image {
   }
 
   // Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
-  optional string archive_size_bytes = 381093450;
+  optional int64 archive_size_bytes = 381093450;
 
   // [Output Only] Creation timestamp in RFC3339 text format.
   optional string creation_timestamp = 30525366;
@@ -5339,7 +5339,7 @@ message Image {
   optional string description = 422937596;
 
   // Size of the image when restored onto a persistent disk (in GB).
-  optional string disk_size_gb = 316263735;
+  optional int64 disk_size_gb = 316263735;
 
   // The name of the image family to which this image belongs. You can create disks by specifying an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
   optional string family = 328751972;
@@ -5348,7 +5348,7 @@ message Image {
   repeated GuestOsFeature guest_os_features = 79294545;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // Encrypts the image using a customer-supplied encryption key.
   //
@@ -5371,7 +5371,7 @@ message Image {
   map<string, string> labels = 500195327;
 
   // Integer license codes indicating which licenses are attached to this image.
-  repeated string license_codes = 45482664;
+  repeated int64 license_codes = 45482664;
 
   // Any applicable license URI.
   repeated string licenses = 337642578;
@@ -5723,7 +5723,7 @@ message Instance {
   optional string hostname = 237067315;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#instance for instances.
   optional string kind = 3292052;
@@ -5883,7 +5883,7 @@ message InstanceGroup {
   optional string fingerprint = 234678500;
 
   // [Output Only] A unique identifier for this instance group, generated by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] The resource type, which is always compute#instanceGroup for instance groups.
   optional string kind = 3292052;
@@ -6119,7 +6119,7 @@ message InstanceGroupManager {
   optional string fingerprint = 234678500;
 
   // [Output Only] A unique identifier for this resource type. The server generates this identifier.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] The URL of the Instance Group resource.
   optional string instance_group = 81095253;
@@ -6434,7 +6434,7 @@ message ManagedInstance {
   optional CurrentAction current_action = 178475964;
 
   // [Output only] The unique identifier for this resource. This field is empty when instance does not exist.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
   optional string instance = 18257045;
@@ -6784,7 +6784,7 @@ message InstanceTemplate {
   optional string description = 422937596;
 
   // [Output Only] A unique identifier for this instance template. The server defines this identifier.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] The resource type, which is always compute#instanceTemplate for instance templates.
   optional string kind = 3292052;
@@ -7005,7 +7005,7 @@ message InterconnectOutageNotification {
   optional string description = 422937596;
 
   // Scheduled end time for the outage (milliseconds since Unix epoch).
-  optional string end_time = 114938801;
+  optional int64 end_time = 114938801;
 
   // Form this outage is expected to take, which can take one of the following values:
   // - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window.
@@ -7020,7 +7020,7 @@ message InterconnectOutageNotification {
   optional Source source = 177235995;
 
   // Scheduled start time for the outage (milliseconds since Unix epoch).
-  optional string start_time = 37467274;
+  optional int64 start_time = 37467274;
 
   // State of this notification, which can take one of the following values:
   // - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling.
@@ -7114,7 +7114,7 @@ message Interconnect {
   optional string google_reference_id = 534944469;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
   repeated string interconnect_attachments = 425388415;
@@ -7372,7 +7372,7 @@ message InterconnectAttachment {
   optional string google_reference_id = 534944469;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // URL of the underlying Interconnect object that this attachment's traffic will traverse through.
   optional string interconnect = 224601230;
@@ -7399,7 +7399,7 @@ message InterconnectAttachment {
   optional string pairing_key = 439695464;
 
   // Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
-  optional string partner_asn = 438166149;
+  optional int64 partner_asn = 438166149;
 
   // Informational metadata about Partner attachments from Partners to display to customers. Output only for for PARTNER type, mutable for PARTNER_PROVIDER, not available for DEDICATED.
   optional InterconnectAttachmentPartnerMetadata partner_metadata = 65908934;
@@ -7642,7 +7642,7 @@ message InterconnectLocationRegionInfo {
   }
 
   // Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
-  optional string expected_rtt_ms = 422543866;
+  optional int64 expected_rtt_ms = 422543866;
 
   // Identifies the network presence of this location.
   optional LocationPresence location_presence = 101517893;
@@ -7731,7 +7731,7 @@ message InterconnectLocation {
   optional string facility_provider_facility_id = 87269125;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#interconnectLocation for interconnect locations.
   optional string kind = 3292052;
@@ -7807,13 +7807,13 @@ message License {
   optional string description = 422937596;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of resource. Always compute#license for licenses.
   optional string kind = 3292052;
 
   // [Output Only] The unique code used to attach this license to images, snapshots, and disks.
-  optional string license_code = 1467179;
+  optional uint64 license_code = 1467179;
 
   // Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
   optional string name = 3373707;
@@ -7866,7 +7866,7 @@ message LicenseCode {
   optional string description = 422937596;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of resource. Always compute#licenseCode for licenses.
   optional string kind = 3292052;
@@ -8061,7 +8061,7 @@ message MachineType {
   optional int32 guest_cpus = 393356754;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Deprecated] This property is deprecated and will never be populated with any relevant values.
   optional int32 image_space_gb = 75331864;
@@ -8076,7 +8076,7 @@ message MachineType {
   optional int32 maximum_persistent_disks = 496220941;
 
   // [Output Only] Maximum total persistent disks size (GB) allowed.
-  optional string maximum_persistent_disks_size_gb = 154274471;
+  optional int64 maximum_persistent_disks_size_gb = 154274471;
 
   // [Output Only] The amount of physical memory available to the instance, defined in MB.
   optional int32 memory_mb = 116001171;
@@ -8323,7 +8323,7 @@ message Network {
   optional string gateway_i_pv4 = 178678877;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#network for networks.
   optional string kind = 3292052;
@@ -8461,7 +8461,7 @@ message NetworkEndpointGroup {
   optional string description = 422937596;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#networkEndpointGroup for network endpoint group.
   optional string kind = 3292052;
@@ -8787,7 +8787,7 @@ message NodeGroup {
   optional string fingerprint = 234678500;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] The type of the resource. Always compute#nodeGroup for node group.
   optional string kind = 3292052;
@@ -9057,7 +9057,7 @@ message NodeTemplate {
   repeated LocalDisk disks = 95594102;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] The type of the resource. Always compute#nodeTemplate for node templates.
   optional string kind = 3292052;
@@ -9174,7 +9174,7 @@ message NodeType {
   optional int32 guest_cpus = 393356754;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] The type of the resource. Always compute#nodeType for node types.
   optional string kind = 3292052;
@@ -9288,7 +9288,7 @@ message NotificationEndpoint {
   optional NotificationEndpointGrpcSettings grpc_settings = 456139556;
 
   // [Output Only] A unique identifier for this resource type. The server generates this identifier.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#notificationEndpoint for notification endpoints.
   optional string kind = 3292052;
@@ -9454,7 +9454,7 @@ message Operation {
   optional int32 http_error_status_code = 312345196;
 
   // [Output Only] The unique identifier for the operation. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
   optional string insert_time = 433722515;
@@ -9490,7 +9490,7 @@ message Operation {
   optional string status_message = 297428154;
 
   // [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
-  optional string target_id = 258165385;
+  optional uint64 target_id = 258165385;
 
   // [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
   optional string target_link = 62671336;
@@ -9663,7 +9663,7 @@ message PacketMirroring {
   optional PacketMirroringFilter filter = 336120696;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
   optional string kind = 3292052;
@@ -10240,7 +10240,7 @@ message Project {
   repeated string enabled_features = 469017467;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is not the project ID, and is just a unique ID used by Compute Engine to identify resources.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#project for projects.
   optional string kind = 3292052;
@@ -10392,7 +10392,7 @@ message PublicAdvertisedPrefix {
   optional string fingerprint = 234678500;
 
   // [Output Only] The unique identifier for the resource type. The server generates this identifier.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // The IPv4 address range, in CIDR format, represented by this public advertised prefix.
   optional string ip_cidr_range = 98117322;
@@ -10502,7 +10502,7 @@ message PublicDelegatedPrefix {
   optional string fingerprint = 234678500;
 
   // [Output Only] The unique identifier for the resource type. The server generates this identifier.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // The IPv4 address range, in CIDR format, represented by this public delegated prefix.
   optional string ip_cidr_range = 98117322;
@@ -10615,7 +10615,7 @@ message Region {
   optional string description = 422937596;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#region for regions.
   optional string kind = 3292052;
@@ -10701,7 +10701,7 @@ message RegionDisksRemoveResourcePoliciesRequest {
 //
 message RegionDisksResizeRequest {
   // The new size of the regional persistent disk, which is specified in GB.
-  optional string size_gb = 494929369;
+  optional int64 size_gb = 494929369;
 
 }
 
@@ -11032,7 +11032,7 @@ message UrlMap {
   repeated HostRule host_rules = 311804832;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#urlMaps for url maps.
   optional string kind = 3292052;
@@ -11122,7 +11122,7 @@ message ReservationList {
 //
 message ReservationsResizeRequest {
   // Number of allocated resources can be resized with minimum = 1 and maximum = 1000.
-  optional string specific_sku_count = 13890720;
+  optional int64 specific_sku_count = 13890720;
 
 }
 
@@ -11163,7 +11163,7 @@ message ResourcePolicy {
   optional ResourcePolicyGroupPlacementPolicy group_placement_policy = 10931596;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // Resource policy for scheduling instance operations.
   optional ResourcePolicyInstanceSchedulePolicy instance_schedule_policy = 344877104;
@@ -11463,7 +11463,7 @@ message Route {
   optional string dest_range = 381327712;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of this resource. Always compute#routes for Route resources.
   optional string kind = 3292052;
@@ -11773,7 +11773,7 @@ message Router {
   optional bool encrypted_interconnect_router = 297996575;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
   repeated RouterInterface interfaces = 12073562;
@@ -12114,7 +12114,7 @@ message SecurityPolicy {
   optional string fingerprint = 234678500;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output only] Type of the resource. Always compute#securityPolicyfor security policies
   optional string kind = 3292052;
@@ -12193,13 +12193,13 @@ message SerialPortOutput {
   optional string kind = 3292052;
 
   // [Output Only] The position of the next byte of content, regardless of whether the content exists, following the output returned in the `contents` property. Use this value in the next request as the start parameter.
-  optional string next = 3377907;
+  optional int64 next = 3377907;
 
   // [Output Only] Server-defined URL for this resource.
   optional string self_link = 456214797;
 
   // The starting byte position of the output that was returned. This should match the start parameter sent with the request. If the serial console output exceeds the size of the buffer (1 MB), older output is overwritten by newer content. The output start value will indicate the byte position of the output that was returned, which might be different than the `start` value that was specified in the request.
-  optional string start = 109757538;
+  optional int64 start = 109757538;
 
 }
 
@@ -12281,13 +12281,13 @@ message Snapshot {
   optional string description = 422937596;
 
   // [Output Only] Size of the source disk, specified in GB.
-  optional string disk_size_gb = 316263735;
+  optional int64 disk_size_gb = 316263735;
 
   // [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
-  optional string download_bytes = 435054068;
+  optional int64 download_bytes = 435054068;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#snapshot for Snapshot resources.
   optional string kind = 3292052;
@@ -12301,7 +12301,7 @@ message Snapshot {
   map<string, string> labels = 500195327;
 
   // [Output Only] Integer license codes indicating which licenses are attached to this snapshot.
-  repeated string license_codes = 45482664;
+  repeated int64 license_codes = 45482664;
 
   // [Output Only] A list of public visible licenses that apply to this snapshot. This can be because the original image had licenses attached (such as a Windows image).
   repeated string licenses = 337642578;
@@ -12340,7 +12340,7 @@ message Snapshot {
   optional Status status = 181260274;
 
   // [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
-  optional string storage_bytes = 424631719;
+  optional int64 storage_bytes = 424631719;
 
   // [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
   optional StorageBytesStatus storage_bytes_status = 490739082;
@@ -12456,7 +12456,7 @@ message SslCertificate {
   optional string expire_time = 440691181;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates.
   optional string kind = 3292052;
@@ -12595,7 +12595,7 @@ message SslPolicy {
   optional string fingerprint = 234678500;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
   optional string kind = 3292052;
@@ -12813,7 +12813,7 @@ message Subnetwork {
   optional string gateway_address = 459867385;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
   optional string ip_cidr_range = 98117322;
@@ -12945,7 +12945,7 @@ message TargetGrpcProxy {
   optional string fingerprint = 234678500;
 
   // [Output Only] The unique identifier for the resource type. The server generates this identifier.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#targetGrpcProxy for target grpc proxies.
   optional string kind = 3292052;
@@ -13011,7 +13011,7 @@ message TargetHttpProxy {
   optional string fingerprint = 234678500;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of resource. Always compute#targetHttpProxy for target HTTP proxies.
   optional string kind = 3292052;
@@ -13136,7 +13136,7 @@ message TargetHttpsProxy {
   optional string fingerprint = 234678500;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of resource. Always compute#targetHttpsProxy for target HTTPS proxies.
   optional string kind = 3292052;
@@ -13288,7 +13288,7 @@ message TargetInstance {
   optional string description = 422937596;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // A URL to the virtual machine instance that handles traffic for this target instance. When creating a target instance, you can provide the fully-qualified URL or a valid partial URL to the desired virtual machine. For example, the following are all valid URLs:
   // - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
@@ -13424,7 +13424,7 @@ message TargetPool {
   repeated string health_checks = 448370606;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // A list of resource URLs to the virtual machine instances serving this pool. They must live in zones contained in the same region as this pool.
   repeated string instances = 29097598;
@@ -13609,7 +13609,7 @@ message TargetSslProxy {
   optional string description = 422937596;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#targetSslProxy for target SSL proxies.
   optional string kind = 3292052;
@@ -13703,7 +13703,7 @@ message TargetTcpProxy {
   optional string description = 422937596;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#targetTcpProxy for target TCP proxies.
   optional string kind = 3292052;
@@ -13780,7 +13780,7 @@ message TargetVpnGateway {
   repeated string forwarding_rules = 315821365;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of resource. Always compute#targetVpnGateway for target VPN gateways.
   optional string kind = 3292052;
@@ -14163,7 +14163,7 @@ message VpnGateway {
   optional string description = 422937596;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
   optional string kind = 3292052;
@@ -14384,7 +14384,7 @@ message VpnTunnel {
   optional string detailed_status = 333501025;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // IKE protocol version to use when establishing the VPN tunnel with the peer VPN gateway. Acceptable IKE versions are 1 or 2. The default version is 2.
   optional int32 ike_version = 218376220;
@@ -14571,7 +14571,7 @@ message Zone {
   optional string description = 422937596;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  optional string id = 3355;
+  optional uint64 id = 3355;
 
   // [Output Only] Type of the resource. Always compute#zone for zones.
   optional string kind = 3292052;
@@ -18526,7 +18526,7 @@ message GetSerialPortOutputInstanceRequest {
   // If the output for that byte position is available, this field matches the `start` parameter sent with the request. If the amount of serial console output exceeds the size of the buffer (1 MB), the oldest output is discarded and is no longer available. If the requested start position refers to discarded output, the start position is adjusted to the oldest output still available, and the adjusted start position is returned as the `start` property value.
   //
   // You can also provide a negative start position, which translates to the most recent number of bytes written to the serial port. For example, -3 is interpreted as the most recent 3 bytes written to the serial console.
-  optional string start = 109757538;
+  optional int64 start = 109757538;
 
   // The name of the zone for this request.
   string zone = 3744684 [(google.api.field_behavior) = REQUIRED];

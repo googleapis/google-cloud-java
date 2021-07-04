@@ -41,11 +41,9 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   private InterconnectOutageNotification() {
     affectedCircuits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     description_ = "";
-    endTime_ = "";
     issueType_ = 0;
     name_ = "";
     source_ = 0;
-    startTime_ = "";
     state_ = 0;
   }
 
@@ -86,11 +84,10 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
               name_ = s;
               break;
             }
-          case 299738194:
+          case 299738192:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000020;
-              startTime_ = s;
+              startTime_ = input.readInt64();
               break;
             }
           case 878060680:
@@ -100,11 +97,10 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
               state_ = rawValue;
               break;
             }
-          case 919510410:
+          case 919510408:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
-              endTime_ = s;
+              endTime_ = input.readInt64();
               break;
             }
           case 1417887960:
@@ -718,7 +714,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   }
 
   public static final int END_TIME_FIELD_NUMBER = 114938801;
-  private volatile java.lang.Object endTime_;
+  private long endTime_;
   /**
    *
    *
@@ -726,7 +722,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    * Scheduled end time for the outage (milliseconds since Unix epoch).
    * </pre>
    *
-   * <code>string end_time = 114938801;</code>
+   * <code>int64 end_time = 114938801;</code>
    *
    * @return Whether the endTime field is set.
    */
@@ -741,44 +737,13 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    * Scheduled end time for the outage (milliseconds since Unix epoch).
    * </pre>
    *
-   * <code>string end_time = 114938801;</code>
+   * <code>int64 end_time = 114938801;</code>
    *
    * @return The endTime.
    */
   @java.lang.Override
-  public java.lang.String getEndTime() {
-    java.lang.Object ref = endTime_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      endTime_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Scheduled end time for the outage (milliseconds since Unix epoch).
-   * </pre>
-   *
-   * <code>string end_time = 114938801;</code>
-   *
-   * @return The bytes for endTime.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getEndTimeBytes() {
-    java.lang.Object ref = endTime_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      endTime_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getEndTime() {
+    return endTime_;
   }
 
   public static final int ISSUE_TYPE_FIELD_NUMBER = 369639136;
@@ -964,7 +929,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   }
 
   public static final int START_TIME_FIELD_NUMBER = 37467274;
-  private volatile java.lang.Object startTime_;
+  private long startTime_;
   /**
    *
    *
@@ -972,7 +937,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    * Scheduled start time for the outage (milliseconds since Unix epoch).
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>int64 start_time = 37467274;</code>
    *
    * @return Whether the startTime field is set.
    */
@@ -987,44 +952,13 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    * Scheduled start time for the outage (milliseconds since Unix epoch).
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>int64 start_time = 37467274;</code>
    *
    * @return The startTime.
    */
   @java.lang.Override
-  public java.lang.String getStartTime() {
-    java.lang.Object ref = startTime_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      startTime_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Scheduled start time for the outage (milliseconds since Unix epoch).
-   * </pre>
-   *
-   * <code>string start_time = 37467274;</code>
-   *
-   * @return The bytes for startTime.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getStartTimeBytes() {
-    java.lang.Object ref = startTime_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      startTime_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getStartTime() {
+    return startTime_;
   }
 
   public static final int STATE_FIELD_NUMBER = 109757585;
@@ -1104,13 +1038,13 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 37467274, startTime_);
+      output.writeInt64(37467274, startTime_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeEnum(109757585, state_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 114938801, endTime_);
+      output.writeInt64(114938801, endTime_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeEnum(177235995, source_);
@@ -1138,13 +1072,13 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37467274, startTime_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(37467274, startTime_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(109757585, state_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(114938801, endTime_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(114938801, endTime_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(177235995, source_);
@@ -1186,7 +1120,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     }
     if (hasEndTime() != other.hasEndTime()) return false;
     if (hasEndTime()) {
-      if (!getEndTime().equals(other.getEndTime())) return false;
+      if (getEndTime() != other.getEndTime()) return false;
     }
     if (hasIssueType() != other.hasIssueType()) return false;
     if (hasIssueType()) {
@@ -1202,7 +1136,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     }
     if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
-      if (!getStartTime().equals(other.getStartTime())) return false;
+      if (getStartTime() != other.getStartTime()) return false;
     }
     if (hasState() != other.hasState()) return false;
     if (hasState()) {
@@ -1229,7 +1163,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     }
     if (hasEndTime()) {
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getEndTime().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEndTime());
     }
     if (hasIssueType()) {
       hash = (37 * hash) + ISSUE_TYPE_FIELD_NUMBER;
@@ -1245,7 +1179,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     }
     if (hasStartTime()) {
       hash = (37 * hash) + START_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getStartTime().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getStartTime());
     }
     if (hasState()) {
       hash = (37 * hash) + STATE_FIELD_NUMBER;
@@ -1401,7 +1335,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
-      endTime_ = "";
+      endTime_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000004);
       issueType_ = 0;
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1409,7 +1343,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       bitField0_ = (bitField0_ & ~0x00000010);
       source_ = 0;
       bitField0_ = (bitField0_ & ~0x00000020);
-      startTime_ = "";
+      startTime_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000040);
       state_ = 0;
       bitField0_ = (bitField0_ & ~0x00000080);
@@ -1452,9 +1386,9 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       }
       result.description_ = description_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.endTime_ = endTime_;
         to_bitField0_ |= 0x00000002;
       }
-      result.endTime_ = endTime_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         to_bitField0_ |= 0x00000004;
       }
@@ -1468,9 +1402,9 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       }
       result.source_ = source_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.startTime_ = startTime_;
         to_bitField0_ |= 0x00000020;
       }
-      result.startTime_ = startTime_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
         to_bitField0_ |= 0x00000040;
       }
@@ -1542,9 +1476,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         onChanged();
       }
       if (other.hasEndTime()) {
-        bitField0_ |= 0x00000004;
-        endTime_ = other.endTime_;
-        onChanged();
+        setEndTime(other.getEndTime());
       }
       if (other.hasIssueType()) {
         setIssueType(other.getIssueType());
@@ -1558,9 +1490,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         setSource(other.getSource());
       }
       if (other.hasStartTime()) {
-        bitField0_ |= 0x00000040;
-        startTime_ = other.startTime_;
-        onChanged();
+        setStartTime(other.getStartTime());
       }
       if (other.hasState()) {
         setState(other.getState());
@@ -1885,7 +1815,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       return this;
     }
 
-    private java.lang.Object endTime_ = "";
+    private long endTime_;
     /**
      *
      *
@@ -1893,10 +1823,11 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Scheduled end time for the outage (milliseconds since Unix epoch).
      * </pre>
      *
-     * <code>string end_time = 114938801;</code>
+     * <code>int64 end_time = 114938801;</code>
      *
      * @return Whether the endTime field is set.
      */
+    @java.lang.Override
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -1907,20 +1838,13 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Scheduled end time for the outage (milliseconds since Unix epoch).
      * </pre>
      *
-     * <code>string end_time = 114938801;</code>
+     * <code>int64 end_time = 114938801;</code>
      *
      * @return The endTime.
      */
-    public java.lang.String getEndTime() {
-      java.lang.Object ref = endTime_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        endTime_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getEndTime() {
+      return endTime_;
     }
     /**
      *
@@ -1929,37 +1853,12 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Scheduled end time for the outage (milliseconds since Unix epoch).
      * </pre>
      *
-     * <code>string end_time = 114938801;</code>
-     *
-     * @return The bytes for endTime.
-     */
-    public com.google.protobuf.ByteString getEndTimeBytes() {
-      java.lang.Object ref = endTime_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        endTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Scheduled end time for the outage (milliseconds since Unix epoch).
-     * </pre>
-     *
-     * <code>string end_time = 114938801;</code>
+     * <code>int64 end_time = 114938801;</code>
      *
      * @param value The endTime to set.
      * @return This builder for chaining.
      */
-    public Builder setEndTime(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setEndTime(long value) {
       bitField0_ |= 0x00000004;
       endTime_ = value;
       onChanged();
@@ -1972,35 +1871,13 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Scheduled end time for the outage (milliseconds since Unix epoch).
      * </pre>
      *
-     * <code>string end_time = 114938801;</code>
+     * <code>int64 end_time = 114938801;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearEndTime() {
       bitField0_ = (bitField0_ & ~0x00000004);
-      endTime_ = getDefaultInstance().getEndTime();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Scheduled end time for the outage (milliseconds since Unix epoch).
-     * </pre>
-     *
-     * <code>string end_time = 114938801;</code>
-     *
-     * @param value The bytes for endTime to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEndTimeBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
-      endTime_ = value;
+      endTime_ = 0L;
       onChanged();
       return this;
     }
@@ -2379,7 +2256,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       return this;
     }
 
-    private java.lang.Object startTime_ = "";
+    private long startTime_;
     /**
      *
      *
@@ -2387,10 +2264,11 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Scheduled start time for the outage (milliseconds since Unix epoch).
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>int64 start_time = 37467274;</code>
      *
      * @return Whether the startTime field is set.
      */
+    @java.lang.Override
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
@@ -2401,20 +2279,13 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Scheduled start time for the outage (milliseconds since Unix epoch).
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>int64 start_time = 37467274;</code>
      *
      * @return The startTime.
      */
-    public java.lang.String getStartTime() {
-      java.lang.Object ref = startTime_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        startTime_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getStartTime() {
+      return startTime_;
     }
     /**
      *
@@ -2423,37 +2294,12 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Scheduled start time for the outage (milliseconds since Unix epoch).
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
-     *
-     * @return The bytes for startTime.
-     */
-    public com.google.protobuf.ByteString getStartTimeBytes() {
-      java.lang.Object ref = startTime_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        startTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Scheduled start time for the outage (milliseconds since Unix epoch).
-     * </pre>
-     *
-     * <code>string start_time = 37467274;</code>
+     * <code>int64 start_time = 37467274;</code>
      *
      * @param value The startTime to set.
      * @return This builder for chaining.
      */
-    public Builder setStartTime(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setStartTime(long value) {
       bitField0_ |= 0x00000040;
       startTime_ = value;
       onChanged();
@@ -2466,35 +2312,13 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Scheduled start time for the outage (milliseconds since Unix epoch).
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>int64 start_time = 37467274;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearStartTime() {
       bitField0_ = (bitField0_ & ~0x00000040);
-      startTime_ = getDefaultInstance().getStartTime();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Scheduled start time for the outage (milliseconds since Unix epoch).
-     * </pre>
-     *
-     * <code>string start_time = 37467274;</code>
-     *
-     * @param value The bytes for startTime to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStartTimeBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
-      startTime_ = value;
+      startTime_ = 0L;
       onChanged();
       return this;
     }

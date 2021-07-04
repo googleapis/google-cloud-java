@@ -30,7 +30,7 @@ public interface ReservationsResizeRequestOrBuilder
    * Number of allocated resources can be resized with minimum = 1 and maximum = 1000.
    * </pre>
    *
-   * <code>string specific_sku_count = 13890720;</code>
+   * <code>int64 specific_sku_count = 13890720;</code>
    *
    * @return Whether the specificSkuCount field is set.
    */
@@ -42,21 +42,9 @@ public interface ReservationsResizeRequestOrBuilder
    * Number of allocated resources can be resized with minimum = 1 and maximum = 1000.
    * </pre>
    *
-   * <code>string specific_sku_count = 13890720;</code>
+   * <code>int64 specific_sku_count = 13890720;</code>
    *
    * @return The specificSkuCount.
    */
-  java.lang.String getSpecificSkuCount();
-  /**
-   *
-   *
-   * <pre>
-   * Number of allocated resources can be resized with minimum = 1 and maximum = 1000.
-   * </pre>
-   *
-   * <code>string specific_sku_count = 13890720;</code>
-   *
-   * @return The bytes for specificSkuCount.
-   */
-  com.google.protobuf.ByteString getSpecificSkuCountBytes();
+  long getSpecificSkuCount();
 }

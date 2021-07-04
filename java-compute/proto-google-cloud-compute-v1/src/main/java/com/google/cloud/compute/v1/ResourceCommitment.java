@@ -39,7 +39,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
 
   private ResourceCommitment() {
     acceleratorType_ = "";
-    amount_ = "";
     type_ = 0;
   }
 
@@ -87,11 +86,10 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
               acceleratorType_ = s;
               break;
             }
-          case 1574077122:
+          case 1574077120:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
-              amount_ = s;
+              amount_ = input.readInt64();
               break;
             }
           default:
@@ -337,7 +335,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int AMOUNT_FIELD_NUMBER = 196759640;
-  private volatile java.lang.Object amount_;
+  private long amount_;
   /**
    *
    *
@@ -345,7 +343,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
    * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
    * </pre>
    *
-   * <code>string amount = 196759640;</code>
+   * <code>int64 amount = 196759640;</code>
    *
    * @return Whether the amount field is set.
    */
@@ -360,44 +358,13 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
    * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
    * </pre>
    *
-   * <code>string amount = 196759640;</code>
+   * <code>int64 amount = 196759640;</code>
    *
    * @return The amount.
    */
   @java.lang.Override
-  public java.lang.String getAmount() {
-    java.lang.Object ref = amount_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      amount_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
-   * </pre>
-   *
-   * <code>string amount = 196759640;</code>
-   *
-   * @return The bytes for amount.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getAmountBytes() {
-    java.lang.Object ref = amount_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      amount_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getAmount() {
+    return amount_;
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
@@ -474,7 +441,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138031246, acceleratorType_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 196759640, amount_);
+      output.writeInt64(196759640, amount_);
     }
     unknownFields.writeTo(output);
   }
@@ -492,7 +459,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138031246, acceleratorType_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(196759640, amount_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(196759640, amount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -516,7 +483,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     }
     if (hasAmount() != other.hasAmount()) return false;
     if (hasAmount()) {
-      if (!getAmount().equals(other.getAmount())) return false;
+      if (getAmount() != other.getAmount()) return false;
     }
     if (hasType() != other.hasType()) return false;
     if (hasType()) {
@@ -539,7 +506,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     }
     if (hasAmount()) {
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getAmount().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAmount());
     }
     if (hasType()) {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
@@ -692,7 +659,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       super.clear();
       acceleratorType_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
-      amount_ = "";
+      amount_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -730,9 +697,9 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       }
       result.acceleratorType_ = acceleratorType_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.amount_ = amount_;
         to_bitField0_ |= 0x00000002;
       }
-      result.amount_ = amount_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         to_bitField0_ |= 0x00000004;
       }
@@ -793,9 +760,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
         onChanged();
       }
       if (other.hasAmount()) {
-        bitField0_ |= 0x00000002;
-        amount_ = other.amount_;
-        onChanged();
+        setAmount(other.getAmount());
       }
       if (other.hasType()) {
         setType(other.getType());
@@ -951,7 +916,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private java.lang.Object amount_ = "";
+    private long amount_;
     /**
      *
      *
@@ -959,10 +924,11 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
      * </pre>
      *
-     * <code>string amount = 196759640;</code>
+     * <code>int64 amount = 196759640;</code>
      *
      * @return Whether the amount field is set.
      */
+    @java.lang.Override
     public boolean hasAmount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -973,20 +939,13 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
      * </pre>
      *
-     * <code>string amount = 196759640;</code>
+     * <code>int64 amount = 196759640;</code>
      *
      * @return The amount.
      */
-    public java.lang.String getAmount() {
-      java.lang.Object ref = amount_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        amount_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getAmount() {
+      return amount_;
     }
     /**
      *
@@ -995,37 +954,12 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
      * </pre>
      *
-     * <code>string amount = 196759640;</code>
-     *
-     * @return The bytes for amount.
-     */
-    public com.google.protobuf.ByteString getAmountBytes() {
-      java.lang.Object ref = amount_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        amount_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
-     * </pre>
-     *
-     * <code>string amount = 196759640;</code>
+     * <code>int64 amount = 196759640;</code>
      *
      * @param value The amount to set.
      * @return This builder for chaining.
      */
-    public Builder setAmount(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setAmount(long value) {
       bitField0_ |= 0x00000002;
       amount_ = value;
       onChanged();
@@ -1038,35 +972,13 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
      * </pre>
      *
-     * <code>string amount = 196759640;</code>
+     * <code>int64 amount = 196759640;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAmount() {
       bitField0_ = (bitField0_ & ~0x00000002);
-      amount_ = getDefaultInstance().getAmount();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
-     * </pre>
-     *
-     * <code>string amount = 196759640;</code>
-     *
-     * @param value The bytes for amount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAmountBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
-      amount_ = value;
+      amount_ = 0L;
       onChanged();
       return this;
     }

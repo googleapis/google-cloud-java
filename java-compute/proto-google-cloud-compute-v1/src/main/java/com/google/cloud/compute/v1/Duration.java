@@ -37,9 +37,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private Duration() {
-    seconds_ = "";
-  }
+  private Duration() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -77,11 +75,10 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
               nanos_ = input.readInt32();
               break;
             }
-          case -1419095046:
+          case -1419095048:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
-              seconds_ = s;
+              seconds_ = input.readInt64();
               break;
             }
           default:
@@ -153,7 +150,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECONDS_FIELD_NUMBER = 359484031;
-  private volatile java.lang.Object seconds_;
+  private long seconds_;
   /**
    *
    *
@@ -161,7 +158,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
    * Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
    * </pre>
    *
-   * <code>string seconds = 359484031;</code>
+   * <code>int64 seconds = 359484031;</code>
    *
    * @return Whether the seconds field is set.
    */
@@ -176,44 +173,13 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
    * Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
    * </pre>
    *
-   * <code>string seconds = 359484031;</code>
+   * <code>int64 seconds = 359484031;</code>
    *
    * @return The seconds.
    */
   @java.lang.Override
-  public java.lang.String getSeconds() {
-    java.lang.Object ref = seconds_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      seconds_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
-   * </pre>
-   *
-   * <code>string seconds = 359484031;</code>
-   *
-   * @return The bytes for seconds.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getSecondsBytes() {
-    java.lang.Object ref = seconds_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      seconds_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getSeconds() {
+    return seconds_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -234,7 +200,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
       output.writeInt32(104586303, nanos_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 359484031, seconds_);
+      output.writeInt64(359484031, seconds_);
     }
     unknownFields.writeTo(output);
   }
@@ -249,7 +215,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(104586303, nanos_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(359484031, seconds_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(359484031, seconds_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -272,7 +238,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasSeconds() != other.hasSeconds()) return false;
     if (hasSeconds()) {
-      if (!getSeconds().equals(other.getSeconds())) return false;
+      if (getSeconds() != other.getSeconds()) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -291,7 +257,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasSeconds()) {
       hash = (37 * hash) + SECONDS_FIELD_NUMBER;
-      hash = (53 * hash) + getSeconds().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSeconds());
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -439,7 +405,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       nanos_ = 0;
       bitField0_ = (bitField0_ & ~0x00000001);
-      seconds_ = "";
+      seconds_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
@@ -474,9 +440,9 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.seconds_ = seconds_;
         to_bitField0_ |= 0x00000002;
       }
-      result.seconds_ = seconds_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -531,9 +497,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
         setNanos(other.getNanos());
       }
       if (other.hasSeconds()) {
-        bitField0_ |= 0x00000002;
-        seconds_ = other.seconds_;
-        onChanged();
+        setSeconds(other.getSeconds());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -633,7 +597,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object seconds_ = "";
+    private long seconds_;
     /**
      *
      *
@@ -641,10 +605,11 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
      * Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
      * </pre>
      *
-     * <code>string seconds = 359484031;</code>
+     * <code>int64 seconds = 359484031;</code>
      *
      * @return Whether the seconds field is set.
      */
+    @java.lang.Override
     public boolean hasSeconds() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -655,20 +620,13 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
      * Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
      * </pre>
      *
-     * <code>string seconds = 359484031;</code>
+     * <code>int64 seconds = 359484031;</code>
      *
      * @return The seconds.
      */
-    public java.lang.String getSeconds() {
-      java.lang.Object ref = seconds_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        seconds_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getSeconds() {
+      return seconds_;
     }
     /**
      *
@@ -677,37 +635,12 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
      * Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
      * </pre>
      *
-     * <code>string seconds = 359484031;</code>
-     *
-     * @return The bytes for seconds.
-     */
-    public com.google.protobuf.ByteString getSecondsBytes() {
-      java.lang.Object ref = seconds_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        seconds_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
-     * </pre>
-     *
-     * <code>string seconds = 359484031;</code>
+     * <code>int64 seconds = 359484031;</code>
      *
      * @param value The seconds to set.
      * @return This builder for chaining.
      */
-    public Builder setSeconds(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setSeconds(long value) {
       bitField0_ |= 0x00000002;
       seconds_ = value;
       onChanged();
@@ -720,35 +653,13 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
      * Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
      * </pre>
      *
-     * <code>string seconds = 359484031;</code>
+     * <code>int64 seconds = 359484031;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSeconds() {
       bitField0_ = (bitField0_ & ~0x00000002);
-      seconds_ = getDefaultInstance().getSeconds();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
-     * </pre>
-     *
-     * <code>string seconds = 359484031;</code>
-     *
-     * @param value The bytes for seconds to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSecondsBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
-      seconds_ = value;
+      seconds_ = 0L;
       onChanged();
       return this;
     }

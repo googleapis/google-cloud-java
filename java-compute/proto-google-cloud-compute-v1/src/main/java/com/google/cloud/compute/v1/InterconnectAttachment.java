@@ -48,14 +48,12 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     edgeAvailabilityDomain_ = 0;
     encryption_ = 0;
     googleReferenceId_ = "";
-    id_ = "";
     interconnect_ = "";
     ipsecInternalAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     kind_ = "";
     name_ = "";
     operationalStatus_ = 0;
     pairingKey_ = "";
-    partnerAsn_ = "";
     region_ = "";
     router_ = "";
     selfLink_ = "";
@@ -93,11 +91,10 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
           case 0:
             done = true;
             break;
-          case 26842:
+          case 26840:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000400;
-              id_ = s;
+              id_ = input.readUInt64();
               break;
             }
           case 867696:
@@ -279,11 +276,10 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
               description_ = s;
               break;
             }
-          case -789638102:
+          case -789638104:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00020000;
-              partnerAsn_ = s;
+              partnerAsn_ = input.readInt64();
               break;
             }
           case -777403582:
@@ -1922,7 +1918,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private volatile java.lang.Object id_;
+  private long id_;
   /**
    *
    *
@@ -1930,7 +1926,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -1945,44 +1941,13 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return The id.
    */
   @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      id_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-   * </pre>
-   *
-   * <code>string id = 3355;</code>
-   *
-   * @return The bytes for id.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getIdBytes() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      id_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getId() {
+    return id_;
   }
 
   public static final int INTERCONNECT_FIELD_NUMBER = 224601230;
@@ -2407,7 +2372,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARTNER_ASN_FIELD_NUMBER = 438166149;
-  private volatile java.lang.Object partnerAsn_;
+  private long partnerAsn_;
   /**
    *
    *
@@ -2415,7 +2380,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
    * </pre>
    *
-   * <code>string partner_asn = 438166149;</code>
+   * <code>int64 partner_asn = 438166149;</code>
    *
    * @return Whether the partnerAsn field is set.
    */
@@ -2430,44 +2395,13 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
    * </pre>
    *
-   * <code>string partner_asn = 438166149;</code>
+   * <code>int64 partner_asn = 438166149;</code>
    *
    * @return The partnerAsn.
    */
   @java.lang.Override
-  public java.lang.String getPartnerAsn() {
-    java.lang.Object ref = partnerAsn_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      partnerAsn_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
-   * </pre>
-   *
-   * <code>string partner_asn = 438166149;</code>
-   *
-   * @return The bytes for partnerAsn.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getPartnerAsnBytes() {
-    java.lang.Object ref = partnerAsn_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      partnerAsn_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getPartnerAsn() {
+    return partnerAsn_;
   }
 
   public static final int PARTNER_METADATA_FIELD_NUMBER = 65908934;
@@ -2958,7 +2892,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000400) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
+      output.writeUInt64(3355, id_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       output.writeInt32(108462, mtu_);
@@ -3030,7 +2964,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
     if (((bitField0_ & 0x00020000) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 438166149, partnerAsn_);
+      output.writeInt64(438166149, partnerAsn_);
     }
     if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 439695464, pairingKey_);
@@ -3054,7 +2988,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
 
     size = 0;
     if (((bitField0_ & 0x00000400) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
+      size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(108462, mtu_);
@@ -3142,7 +3076,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     if (((bitField0_ & 0x00020000) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(438166149, partnerAsn_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(438166149, partnerAsn_);
     }
     if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(439695464, pairingKey_);
@@ -3216,7 +3150,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     }
     if (hasId() != other.hasId()) return false;
     if (hasId()) {
-      if (!getId().equals(other.getId())) return false;
+      if (getId() != other.getId()) return false;
     }
     if (hasInterconnect() != other.hasInterconnect()) return false;
     if (hasInterconnect()) {
@@ -3246,7 +3180,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     }
     if (hasPartnerAsn() != other.hasPartnerAsn()) return false;
     if (hasPartnerAsn()) {
-      if (!getPartnerAsn().equals(other.getPartnerAsn())) return false;
+      if (getPartnerAsn() != other.getPartnerAsn()) return false;
     }
     if (hasPartnerMetadata() != other.hasPartnerMetadata()) return false;
     if (hasPartnerMetadata()) {
@@ -3337,7 +3271,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     }
     if (hasId()) {
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getId());
     }
     if (hasInterconnect()) {
       hash = (37 * hash) + INTERCONNECT_FIELD_NUMBER;
@@ -3369,7 +3303,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     }
     if (hasPartnerAsn()) {
       hash = (37 * hash) + PARTNER_ASN_FIELD_NUMBER;
-      hash = (53 * hash) + getPartnerAsn().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPartnerAsn());
     }
     if (hasPartnerMetadata()) {
       hash = (37 * hash) + PARTNER_METADATA_FIELD_NUMBER;
@@ -3574,7 +3508,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       bitField0_ = (bitField0_ & ~0x00000200);
       googleReferenceId_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
-      id_ = "";
+      id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000800);
       interconnect_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
@@ -3590,7 +3524,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       bitField0_ = (bitField0_ & ~0x00020000);
       pairingKey_ = "";
       bitField0_ = (bitField0_ & ~0x00040000);
-      partnerAsn_ = "";
+      partnerAsn_ = 0L;
       bitField0_ = (bitField0_ & ~0x00080000);
       if (partnerMetadataBuilder_ == null) {
         partnerMetadata_ = null;
@@ -3691,9 +3625,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       result.googleReferenceId_ = googleReferenceId_;
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.id_ = id_;
         to_bitField0_ |= 0x00000400;
       }
-      result.id_ = id_;
       if (((from_bitField0_ & 0x00001000) != 0)) {
         to_bitField0_ |= 0x00000800;
       }
@@ -3724,9 +3658,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       result.pairingKey_ = pairingKey_;
       if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.partnerAsn_ = partnerAsn_;
         to_bitField0_ |= 0x00020000;
       }
-      result.partnerAsn_ = partnerAsn_;
       if (((from_bitField0_ & 0x00100000) != 0)) {
         if (partnerMetadataBuilder_ == null) {
           result.partnerMetadata_ = partnerMetadata_;
@@ -3869,9 +3803,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         onChanged();
       }
       if (other.hasId()) {
-        bitField0_ |= 0x00000800;
-        id_ = other.id_;
-        onChanged();
+        setId(other.getId());
       }
       if (other.hasInterconnect()) {
         bitField0_ |= 0x00001000;
@@ -3910,9 +3842,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         onChanged();
       }
       if (other.hasPartnerAsn()) {
-        bitField0_ |= 0x00080000;
-        partnerAsn_ = other.partnerAsn_;
-        onChanged();
+        setPartnerAsn(other.getPartnerAsn());
       }
       if (other.hasPartnerMetadata()) {
         mergePartnerMetadata(other.getPartnerMetadata());
@@ -5333,7 +5263,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private java.lang.Object id_ = "";
+    private long id_;
     /**
      *
      *
@@ -5341,10 +5271,11 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
+    @java.lang.Override
     public boolean hasId() {
       return ((bitField0_ & 0x00000800) != 0);
     }
@@ -5355,20 +5286,13 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @return The id.
      */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getId() {
+      return id_;
     }
     /**
      *
@@ -5377,37 +5301,12 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
-     *
-     * @return The bytes for id.
-     */
-    public com.google.protobuf.ByteString getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-     * </pre>
-     *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
      */
-    public Builder setId(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setId(long value) {
       bitField0_ |= 0x00000800;
       id_ = value;
       onChanged();
@@ -5420,35 +5319,13 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearId() {
       bitField0_ = (bitField0_ & ~0x00000800);
-      id_ = getDefaultInstance().getId();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-     * </pre>
-     *
-     * <code>string id = 3355;</code>
-     *
-     * @param value The bytes for id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
-      id_ = value;
+      id_ = 0L;
       onChanged();
       return this;
     }
@@ -6313,7 +6190,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private java.lang.Object partnerAsn_ = "";
+    private long partnerAsn_;
     /**
      *
      *
@@ -6321,10 +6198,11 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
      * </pre>
      *
-     * <code>string partner_asn = 438166149;</code>
+     * <code>int64 partner_asn = 438166149;</code>
      *
      * @return Whether the partnerAsn field is set.
      */
+    @java.lang.Override
     public boolean hasPartnerAsn() {
       return ((bitField0_ & 0x00080000) != 0);
     }
@@ -6335,20 +6213,13 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
      * </pre>
      *
-     * <code>string partner_asn = 438166149;</code>
+     * <code>int64 partner_asn = 438166149;</code>
      *
      * @return The partnerAsn.
      */
-    public java.lang.String getPartnerAsn() {
-      java.lang.Object ref = partnerAsn_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        partnerAsn_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getPartnerAsn() {
+      return partnerAsn_;
     }
     /**
      *
@@ -6357,37 +6228,12 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
      * </pre>
      *
-     * <code>string partner_asn = 438166149;</code>
-     *
-     * @return The bytes for partnerAsn.
-     */
-    public com.google.protobuf.ByteString getPartnerAsnBytes() {
-      java.lang.Object ref = partnerAsn_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        partnerAsn_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
-     * </pre>
-     *
-     * <code>string partner_asn = 438166149;</code>
+     * <code>int64 partner_asn = 438166149;</code>
      *
      * @param value The partnerAsn to set.
      * @return This builder for chaining.
      */
-    public Builder setPartnerAsn(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setPartnerAsn(long value) {
       bitField0_ |= 0x00080000;
       partnerAsn_ = value;
       onChanged();
@@ -6400,35 +6246,13 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
      * </pre>
      *
-     * <code>string partner_asn = 438166149;</code>
+     * <code>int64 partner_asn = 438166149;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPartnerAsn() {
       bitField0_ = (bitField0_ & ~0x00080000);
-      partnerAsn_ = getDefaultInstance().getPartnerAsn();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
-     * </pre>
-     *
-     * <code>string partner_asn = 438166149;</code>
-     *
-     * @param value The bytes for partnerAsn to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPartnerAsnBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00080000;
-      partnerAsn_ = value;
+      partnerAsn_ = 0L;
       onChanged();
       return this;
     }

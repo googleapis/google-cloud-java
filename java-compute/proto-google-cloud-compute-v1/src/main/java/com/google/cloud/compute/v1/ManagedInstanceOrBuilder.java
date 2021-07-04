@@ -94,7 +94,7 @@ public interface ManagedInstanceOrBuilder
    * [Output only] The unique identifier for this resource. This field is empty when instance does not exist.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -106,23 +106,11 @@ public interface ManagedInstanceOrBuilder
    * [Output only] The unique identifier for this resource. This field is empty when instance does not exist.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return The id.
    */
-  java.lang.String getId();
-  /**
-   *
-   *
-   * <pre>
-   * [Output only] The unique identifier for this resource. This field is empty when instance does not exist.
-   * </pre>
-   *
-   * <code>string id = 3355;</code>
-   *
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString getIdBytes();
+  long getId();
 
   /**
    *

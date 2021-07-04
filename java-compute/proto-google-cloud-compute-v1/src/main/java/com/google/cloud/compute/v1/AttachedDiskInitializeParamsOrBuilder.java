@@ -104,7 +104,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>int64 disk_size_gb = 316263735;</code>
    *
    * @return Whether the diskSizeGb field is set.
    */
@@ -116,23 +116,11 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>int64 disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
-  java.lang.String getDiskSizeGb();
-  /**
-   *
-   *
-   * <pre>
-   * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
-   * </pre>
-   *
-   * <code>string disk_size_gb = 316263735;</code>
-   *
-   * @return The bytes for diskSizeGb.
-   */
-  com.google.protobuf.ByteString getDiskSizeGbBytes();
+  long getDiskSizeGb();
 
   /**
    *
@@ -290,7 +278,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Indicates how many IOPS must be provisioned for the disk.
    * </pre>
    *
-   * <code>string provisioned_iops = 186769108;</code>
+   * <code>int64 provisioned_iops = 186769108;</code>
    *
    * @return Whether the provisionedIops field is set.
    */
@@ -302,23 +290,11 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Indicates how many IOPS must be provisioned for the disk.
    * </pre>
    *
-   * <code>string provisioned_iops = 186769108;</code>
+   * <code>int64 provisioned_iops = 186769108;</code>
    *
    * @return The provisionedIops.
    */
-  java.lang.String getProvisionedIops();
-  /**
-   *
-   *
-   * <pre>
-   * Indicates how many IOPS must be provisioned for the disk.
-   * </pre>
-   *
-   * <code>string provisioned_iops = 186769108;</code>
-   *
-   * @return The bytes for provisionedIops.
-   */
-  com.google.protobuf.ByteString getProvisionedIopsBytes();
+  long getProvisionedIops();
 
   /**
    *

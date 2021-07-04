@@ -30,7 +30,7 @@ public interface ImageOrBuilder
    * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
    * </pre>
    *
-   * <code>string archive_size_bytes = 381093450;</code>
+   * <code>int64 archive_size_bytes = 381093450;</code>
    *
    * @return Whether the archiveSizeBytes field is set.
    */
@@ -42,23 +42,11 @@ public interface ImageOrBuilder
    * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
    * </pre>
    *
-   * <code>string archive_size_bytes = 381093450;</code>
+   * <code>int64 archive_size_bytes = 381093450;</code>
    *
    * @return The archiveSizeBytes.
    */
-  java.lang.String getArchiveSizeBytes();
-  /**
-   *
-   *
-   * <pre>
-   * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
-   * </pre>
-   *
-   * <code>string archive_size_bytes = 381093450;</code>
-   *
-   * @return The bytes for archiveSizeBytes.
-   */
-  com.google.protobuf.ByteString getArchiveSizeBytesBytes();
+  long getArchiveSizeBytes();
 
   /**
    *
@@ -176,7 +164,7 @@ public interface ImageOrBuilder
    * Size of the image when restored onto a persistent disk (in GB).
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>int64 disk_size_gb = 316263735;</code>
    *
    * @return Whether the diskSizeGb field is set.
    */
@@ -188,23 +176,11 @@ public interface ImageOrBuilder
    * Size of the image when restored onto a persistent disk (in GB).
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>int64 disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
-  java.lang.String getDiskSizeGb();
-  /**
-   *
-   *
-   * <pre>
-   * Size of the image when restored onto a persistent disk (in GB).
-   * </pre>
-   *
-   * <code>string disk_size_gb = 316263735;</code>
-   *
-   * @return The bytes for diskSizeGb.
-   */
-  com.google.protobuf.ByteString getDiskSizeGbBytes();
+  long getDiskSizeGb();
 
   /**
    *
@@ -302,7 +278,7 @@ public interface ImageOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -314,23 +290,11 @@ public interface ImageOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return The id.
    */
-  java.lang.String getId();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-   * </pre>
-   *
-   * <code>string id = 3355;</code>
-   *
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString getIdBytes();
+  long getId();
 
   /**
    *
@@ -514,11 +478,11 @@ public interface ImageOrBuilder
    * Integer license codes indicating which licenses are attached to this image.
    * </pre>
    *
-   * <code>repeated string license_codes = 45482664;</code>
+   * <code>repeated int64 license_codes = 45482664;</code>
    *
    * @return A list containing the licenseCodes.
    */
-  java.util.List<java.lang.String> getLicenseCodesList();
+  java.util.List<java.lang.Long> getLicenseCodesList();
   /**
    *
    *
@@ -526,7 +490,7 @@ public interface ImageOrBuilder
    * Integer license codes indicating which licenses are attached to this image.
    * </pre>
    *
-   * <code>repeated string license_codes = 45482664;</code>
+   * <code>repeated int64 license_codes = 45482664;</code>
    *
    * @return The count of licenseCodes.
    */
@@ -538,25 +502,12 @@ public interface ImageOrBuilder
    * Integer license codes indicating which licenses are attached to this image.
    * </pre>
    *
-   * <code>repeated string license_codes = 45482664;</code>
+   * <code>repeated int64 license_codes = 45482664;</code>
    *
    * @param index The index of the element to return.
    * @return The licenseCodes at the given index.
    */
-  java.lang.String getLicenseCodes(int index);
-  /**
-   *
-   *
-   * <pre>
-   * Integer license codes indicating which licenses are attached to this image.
-   * </pre>
-   *
-   * <code>repeated string license_codes = 45482664;</code>
-   *
-   * @param index The index of the value to return.
-   * @return The bytes of the licenseCodes at the given index.
-   */
-  com.google.protobuf.ByteString getLicenseCodesBytes(int index);
+  long getLicenseCodes(int index);
 
   /**
    *

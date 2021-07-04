@@ -355,7 +355,7 @@ public interface ForwardingRuleOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -367,23 +367,11 @@ public interface ForwardingRuleOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return The id.
    */
-  java.lang.String getId();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-   * </pre>
-   *
-   * <code>string id = 3355;</code>
-   *
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString getIdBytes();
+  long getId();
 
   /**
    *
@@ -982,7 +970,7 @@ public interface ForwardingRuleOrBuilder
    * [Output Only] The PSC connection id of the PSC Forwarding Rule.
    * </pre>
    *
-   * <code>string psc_connection_id = 292082397;</code>
+   * <code>uint64 psc_connection_id = 292082397;</code>
    *
    * @return Whether the pscConnectionId field is set.
    */
@@ -994,23 +982,11 @@ public interface ForwardingRuleOrBuilder
    * [Output Only] The PSC connection id of the PSC Forwarding Rule.
    * </pre>
    *
-   * <code>string psc_connection_id = 292082397;</code>
+   * <code>uint64 psc_connection_id = 292082397;</code>
    *
    * @return The pscConnectionId.
    */
-  java.lang.String getPscConnectionId();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The PSC connection id of the PSC Forwarding Rule.
-   * </pre>
-   *
-   * <code>string psc_connection_id = 292082397;</code>
-   *
-   * @return The bytes for pscConnectionId.
-   */
-  com.google.protobuf.ByteString getPscConnectionIdBytes();
+  long getPscConnectionId();
 
   /**
    *

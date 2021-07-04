@@ -41,10 +41,8 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
   private AttachedDiskInitializeParams() {
     description_ = "";
     diskName_ = "";
-    diskSizeGb_ = "";
     diskType_ = "";
     onUpdateAction_ = 0;
-    provisionedIops_ = "";
     resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     sourceImage_ = "";
     sourceSnapshot_ = "";
@@ -118,11 +116,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
               sourceSnapshot_ = s;
               break;
             }
-          case 1494152866:
+          case 1494152864:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000020;
-              provisionedIops_ = s;
+              provisionedIops_ = input.readInt64();
               break;
             }
           case 1619615840:
@@ -149,11 +146,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
               bitField0_ |= 0x00000200;
               break;
             }
-          case -1764857414:
+          case -1764857416:
             {
-              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
-              diskSizeGb_ = s;
+              diskSizeGb_ = input.readInt64();
               break;
             }
           case -1242938022:
@@ -504,7 +500,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
   }
 
   public static final int DISK_SIZE_GB_FIELD_NUMBER = 316263735;
-  private volatile java.lang.Object diskSizeGb_;
+  private long diskSizeGb_;
   /**
    *
    *
@@ -512,7 +508,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>int64 disk_size_gb = 316263735;</code>
    *
    * @return Whether the diskSizeGb field is set.
    */
@@ -527,44 +523,13 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>int64 disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
   @java.lang.Override
-  public java.lang.String getDiskSizeGb() {
-    java.lang.Object ref = diskSizeGb_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      diskSizeGb_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
-   * </pre>
-   *
-   * <code>string disk_size_gb = 316263735;</code>
-   *
-   * @return The bytes for diskSizeGb.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getDiskSizeGbBytes() {
-    java.lang.Object ref = diskSizeGb_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      diskSizeGb_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getDiskSizeGb() {
+    return diskSizeGb_;
   }
 
   public static final int DISK_TYPE_FIELD_NUMBER = 93009052;
@@ -806,7 +771,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
   }
 
   public static final int PROVISIONED_IOPS_FIELD_NUMBER = 186769108;
-  private volatile java.lang.Object provisionedIops_;
+  private long provisionedIops_;
   /**
    *
    *
@@ -814,7 +779,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * Indicates how many IOPS must be provisioned for the disk.
    * </pre>
    *
-   * <code>string provisioned_iops = 186769108;</code>
+   * <code>int64 provisioned_iops = 186769108;</code>
    *
    * @return Whether the provisionedIops field is set.
    */
@@ -829,44 +794,13 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * Indicates how many IOPS must be provisioned for the disk.
    * </pre>
    *
-   * <code>string provisioned_iops = 186769108;</code>
+   * <code>int64 provisioned_iops = 186769108;</code>
    *
    * @return The provisionedIops.
    */
   @java.lang.Override
-  public java.lang.String getProvisionedIops() {
-    java.lang.Object ref = provisionedIops_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      provisionedIops_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Indicates how many IOPS must be provisioned for the disk.
-   * </pre>
-   *
-   * <code>string provisioned_iops = 186769108;</code>
-   *
-   * @return The bytes for provisionedIops.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getProvisionedIopsBytes() {
-    java.lang.Object ref = provisionedIops_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      provisionedIops_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getProvisionedIops() {
+    return provisionedIops_;
   }
 
   public static final int RESOURCE_POLICIES_FIELD_NUMBER = 22220385;
@@ -1239,7 +1173,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       com.google.protobuf.GeneratedMessageV3.writeString(output, 126061928, sourceSnapshot_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 186769108, provisionedIops_);
+      output.writeInt64(186769108, provisionedIops_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeEnum(202451980, onUpdateAction_);
@@ -1248,7 +1182,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       output.writeMessage(303679322, getSourceSnapshotEncryptionKey());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 316263735, diskSizeGb_);
+      output.writeInt64(316263735, diskSizeGb_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(381503659, getSourceImageEncryptionKey());
@@ -1288,7 +1222,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(126061928, sourceSnapshot_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(186769108, provisionedIops_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(186769108, provisionedIops_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(202451980, onUpdateAction_);
@@ -1299,7 +1233,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
               303679322, getSourceSnapshotEncryptionKey());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(316263735, diskSizeGb_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(316263735, diskSizeGb_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size +=
@@ -1345,7 +1279,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     }
     if (hasDiskSizeGb() != other.hasDiskSizeGb()) return false;
     if (hasDiskSizeGb()) {
-      if (!getDiskSizeGb().equals(other.getDiskSizeGb())) return false;
+      if (getDiskSizeGb() != other.getDiskSizeGb()) return false;
     }
     if (hasDiskType() != other.hasDiskType()) return false;
     if (hasDiskType()) {
@@ -1358,7 +1292,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     }
     if (hasProvisionedIops() != other.hasProvisionedIops()) return false;
     if (hasProvisionedIops()) {
-      if (!getProvisionedIops().equals(other.getProvisionedIops())) return false;
+      if (getProvisionedIops() != other.getProvisionedIops()) return false;
     }
     if (!getResourcePoliciesList().equals(other.getResourcePoliciesList())) return false;
     if (hasSourceImage() != other.hasSourceImage()) return false;
@@ -1399,7 +1333,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     }
     if (hasDiskSizeGb()) {
       hash = (37 * hash) + DISK_SIZE_GB_FIELD_NUMBER;
-      hash = (53 * hash) + getDiskSizeGb().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDiskSizeGb());
     }
     if (hasDiskType()) {
       hash = (37 * hash) + DISK_TYPE_FIELD_NUMBER;
@@ -1415,7 +1349,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     }
     if (hasProvisionedIops()) {
       hash = (37 * hash) + PROVISIONED_IOPS_FIELD_NUMBER;
-      hash = (53 * hash) + getProvisionedIops().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getProvisionedIops());
     }
     if (getResourcePoliciesCount() > 0) {
       hash = (37 * hash) + RESOURCE_POLICIES_FIELD_NUMBER;
@@ -1611,14 +1545,14 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       bitField0_ = (bitField0_ & ~0x00000001);
       diskName_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
-      diskSizeGb_ = "";
+      diskSizeGb_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000004);
       diskType_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().clear();
       onUpdateAction_ = 0;
       bitField0_ = (bitField0_ & ~0x00000020);
-      provisionedIops_ = "";
+      provisionedIops_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000040);
       resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000080);
@@ -1676,9 +1610,9 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       }
       result.diskName_ = diskName_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.diskSizeGb_ = diskSizeGb_;
         to_bitField0_ |= 0x00000004;
       }
-      result.diskSizeGb_ = diskSizeGb_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         to_bitField0_ |= 0x00000008;
       }
@@ -1690,9 +1624,9 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       }
       result.onUpdateAction_ = onUpdateAction_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.provisionedIops_ = provisionedIops_;
         to_bitField0_ |= 0x00000020;
       }
-      result.provisionedIops_ = provisionedIops_;
       if (((bitField0_ & 0x00000080) != 0)) {
         resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -1784,9 +1718,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         onChanged();
       }
       if (other.hasDiskSizeGb()) {
-        bitField0_ |= 0x00000004;
-        diskSizeGb_ = other.diskSizeGb_;
-        onChanged();
+        setDiskSizeGb(other.getDiskSizeGb());
       }
       if (other.hasDiskType()) {
         bitField0_ |= 0x00000008;
@@ -1798,9 +1730,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         setOnUpdateAction(other.getOnUpdateAction());
       }
       if (other.hasProvisionedIops()) {
-        bitField0_ |= 0x00000040;
-        provisionedIops_ = other.provisionedIops_;
-        onChanged();
+        setProvisionedIops(other.getProvisionedIops());
       }
       if (!other.resourcePolicies_.isEmpty()) {
         if (resourcePolicies_.isEmpty()) {
@@ -2100,7 +2030,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       return this;
     }
 
-    private java.lang.Object diskSizeGb_ = "";
+    private long diskSizeGb_;
     /**
      *
      *
@@ -2108,10 +2038,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>int64 disk_size_gb = 316263735;</code>
      *
      * @return Whether the diskSizeGb field is set.
      */
+    @java.lang.Override
     public boolean hasDiskSizeGb() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -2122,20 +2053,13 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>int64 disk_size_gb = 316263735;</code>
      *
      * @return The diskSizeGb.
      */
-    public java.lang.String getDiskSizeGb() {
-      java.lang.Object ref = diskSizeGb_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        diskSizeGb_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getDiskSizeGb() {
+      return diskSizeGb_;
     }
     /**
      *
@@ -2144,37 +2068,12 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
-     *
-     * @return The bytes for diskSizeGb.
-     */
-    public com.google.protobuf.ByteString getDiskSizeGbBytes() {
-      java.lang.Object ref = diskSizeGb_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        diskSizeGb_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
-     * </pre>
-     *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>int64 disk_size_gb = 316263735;</code>
      *
      * @param value The diskSizeGb to set.
      * @return This builder for chaining.
      */
-    public Builder setDiskSizeGb(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setDiskSizeGb(long value) {
       bitField0_ |= 0x00000004;
       diskSizeGb_ = value;
       onChanged();
@@ -2187,35 +2086,13 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>int64 disk_size_gb = 316263735;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDiskSizeGb() {
       bitField0_ = (bitField0_ & ~0x00000004);
-      diskSizeGb_ = getDefaultInstance().getDiskSizeGb();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
-     * </pre>
-     *
-     * <code>string disk_size_gb = 316263735;</code>
-     *
-     * @param value The bytes for diskSizeGb to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDiskSizeGbBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
-      diskSizeGb_ = value;
+      diskSizeGb_ = 0L;
       onChanged();
       return this;
     }
@@ -2650,7 +2527,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       return this;
     }
 
-    private java.lang.Object provisionedIops_ = "";
+    private long provisionedIops_;
     /**
      *
      *
@@ -2658,10 +2535,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Indicates how many IOPS must be provisioned for the disk.
      * </pre>
      *
-     * <code>string provisioned_iops = 186769108;</code>
+     * <code>int64 provisioned_iops = 186769108;</code>
      *
      * @return Whether the provisionedIops field is set.
      */
+    @java.lang.Override
     public boolean hasProvisionedIops() {
       return ((bitField0_ & 0x00000040) != 0);
     }
@@ -2672,20 +2550,13 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Indicates how many IOPS must be provisioned for the disk.
      * </pre>
      *
-     * <code>string provisioned_iops = 186769108;</code>
+     * <code>int64 provisioned_iops = 186769108;</code>
      *
      * @return The provisionedIops.
      */
-    public java.lang.String getProvisionedIops() {
-      java.lang.Object ref = provisionedIops_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        provisionedIops_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getProvisionedIops() {
+      return provisionedIops_;
     }
     /**
      *
@@ -2694,37 +2565,12 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Indicates how many IOPS must be provisioned for the disk.
      * </pre>
      *
-     * <code>string provisioned_iops = 186769108;</code>
-     *
-     * @return The bytes for provisionedIops.
-     */
-    public com.google.protobuf.ByteString getProvisionedIopsBytes() {
-      java.lang.Object ref = provisionedIops_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        provisionedIops_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates how many IOPS must be provisioned for the disk.
-     * </pre>
-     *
-     * <code>string provisioned_iops = 186769108;</code>
+     * <code>int64 provisioned_iops = 186769108;</code>
      *
      * @param value The provisionedIops to set.
      * @return This builder for chaining.
      */
-    public Builder setProvisionedIops(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setProvisionedIops(long value) {
       bitField0_ |= 0x00000040;
       provisionedIops_ = value;
       onChanged();
@@ -2737,35 +2583,13 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Indicates how many IOPS must be provisioned for the disk.
      * </pre>
      *
-     * <code>string provisioned_iops = 186769108;</code>
+     * <code>int64 provisioned_iops = 186769108;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearProvisionedIops() {
       bitField0_ = (bitField0_ & ~0x00000040);
-      provisionedIops_ = getDefaultInstance().getProvisionedIops();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates how many IOPS must be provisioned for the disk.
-     * </pre>
-     *
-     * <code>string provisioned_iops = 186769108;</code>
-     *
-     * @param value The bytes for provisionedIops to set.
-     * @return This builder for chaining.
-     */
-    public Builder setProvisionedIopsBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
-      provisionedIops_ = value;
+      provisionedIops_ = 0L;
       onChanged();
       return this;
     }

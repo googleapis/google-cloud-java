@@ -138,7 +138,7 @@ public class NodeTypesClientTest {
             .setDeprecated(DeprecationStatus.newBuilder().build())
             .setDescription("description-1724546052")
             .setGuestCpus(-1754126894)
-            .setId("id3355")
+            .setId(3355)
             .setKind("kind3292052")
             .setLocalSsdGb(-1281375158)
             .setMemoryMb(1726613907)

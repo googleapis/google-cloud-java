@@ -488,7 +488,7 @@ public interface InterconnectAttachmentOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -500,23 +500,11 @@ public interface InterconnectAttachmentOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>uint64 id = 3355;</code>
    *
    * @return The id.
    */
-  java.lang.String getId();
-  /**
-   *
-   *
-   * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-   * </pre>
-   *
-   * <code>string id = 3355;</code>
-   *
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString getIdBytes();
+  long getId();
 
   /**
    *
@@ -802,7 +790,7 @@ public interface InterconnectAttachmentOrBuilder
    * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
    * </pre>
    *
-   * <code>string partner_asn = 438166149;</code>
+   * <code>int64 partner_asn = 438166149;</code>
    *
    * @return Whether the partnerAsn field is set.
    */
@@ -814,23 +802,11 @@ public interface InterconnectAttachmentOrBuilder
    * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
    * </pre>
    *
-   * <code>string partner_asn = 438166149;</code>
+   * <code>int64 partner_asn = 438166149;</code>
    *
    * @return The partnerAsn.
    */
-  java.lang.String getPartnerAsn();
-  /**
-   *
-   *
-   * <pre>
-   * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
-   * </pre>
-   *
-   * <code>string partner_asn = 438166149;</code>
-   *
-   * @return The bytes for partnerAsn.
-   */
-  com.google.protobuf.ByteString getPartnerAsnBytes();
+  long getPartnerAsn();
 
   /**
    *
