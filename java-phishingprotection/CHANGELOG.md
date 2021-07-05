@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.30.2](https://www.github.com/googleapis/java-phishingprotection/compare/v0.30.1...v0.30.2) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#474](https://www.github.com/googleapis/java-phishingprotection/issues/474)) ([007a605](https://www.github.com/googleapis/java-phishingprotection/commit/007a60597026eaadecf34e48cb11bad1cdabe366))
+* Update dependencies.sh to not break on mac ([#470](https://www.github.com/googleapis/java-phishingprotection/issues/470)) ([c300b9f](https://www.github.com/googleapis/java-phishingprotection/commit/c300b9f281369144b8205e4712a2b4bc0e344dd1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#478](https://www.github.com/googleapis/java-phishingprotection/issues/478)) ([d365ff3](https://www.github.com/googleapis/java-phishingprotection/commit/d365ff32e0abe9acfd594f1d72371183eee0e936))
+
 ### [0.30.1](https://www.github.com/googleapis/java-phishingprotection/compare/v0.30.0...v0.30.1) (2021-06-04)
 
 
