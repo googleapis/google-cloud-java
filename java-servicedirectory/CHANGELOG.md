@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/googleapis/java-servicedirectory/compare/v1.2.5...v1.3.0) (2021-07-05)
+
+
+### Features
+
+* Update Service Directory v1beta1 protos to include VPC Network field, and create/modify timestamp fields ([#440](https://www.github.com/googleapis/java-servicedirectory/issues/440)) ([c3ed3fb](https://www.github.com/googleapis/java-servicedirectory/commit/c3ed3fba8bf398e061ddaaaa799bc884fcb3deb8))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-servicedirectory/issues/1130)) ([#434](https://www.github.com/googleapis/java-servicedirectory/issues/434)) ([21df6c6](https://www.github.com/googleapis/java-servicedirectory/commit/21df6c6cdf993e7513227b3202ee870bdf407439))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#441](https://www.github.com/googleapis/java-servicedirectory/issues/441)) ([61674a8](https://www.github.com/googleapis/java-servicedirectory/commit/61674a823f060f31a75b939814bf4d0ac837b35e))
+
 ### [1.2.5](https://www.github.com/googleapis/java-servicedirectory/compare/v1.2.4...v1.2.5) (2021-06-04)
 
 
