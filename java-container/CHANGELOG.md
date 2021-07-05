@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.5.0](https://www.github.com/googleapis/java-container/compare/v1.4.0...v1.5.0) (2021-07-05)
+
+
+### Features
+
+* add v1beta1 client ([06f09bb](https://www.github.com/googleapis/java-container/commit/06f09bbb866945d6f6b2cf768a4ddaf5179110fd))
+* allow updating security group on existing clusters ([#492](https://www.github.com/googleapis/java-container/issues/492)) ([cf5fdd4](https://www.github.com/googleapis/java-container/commit/cf5fdd4e668949ce3b93cbc1a3b3563a204eecd9))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-container/issues/1130)) ([#486](https://www.github.com/googleapis/java-container/issues/486)) ([01d9362](https://www.github.com/googleapis/java-container/commit/01d9362d77bf20800fad022fa6ff0fc2a640104c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#491](https://www.github.com/googleapis/java-container/issues/491)) ([c359c42](https://www.github.com/googleapis/java-container/commit/c359c4257e0a2a33c6b205a1aa82f019ba7feea5))
+
 ## [1.4.0](https://www.github.com/googleapis/java-container/compare/v1.3.4...v1.4.0) (2021-06-15)
 
 
