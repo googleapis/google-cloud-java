@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.3.2](https://www.github.com/googleapis/java-os-config/compare/v1.3.1...v1.3.2) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-os-config/issues/1130)) ([#303](https://www.github.com/googleapis/java-os-config/issues/303)) ([23973fe](https://www.github.com/googleapis/java-os-config/commit/23973fe72363a52fa8d2094ed93573ceb831a5c5))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#305](https://www.github.com/googleapis/java-os-config/issues/305)) ([11e02a9](https://www.github.com/googleapis/java-os-config/commit/11e02a9e432b21d2d5cf80c587a6369ee98a7428))
+
 ### [1.3.1](https://www.github.com/googleapis/java-os-config/compare/v1.3.0...v1.3.1) (2021-06-04)
 
 
