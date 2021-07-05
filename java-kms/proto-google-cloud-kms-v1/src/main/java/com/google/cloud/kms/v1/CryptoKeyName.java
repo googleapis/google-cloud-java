@@ -247,10 +247,10 @@ public class CryptoKeyName extends KeyName {
     }
 
     private Builder(CryptoKeyName cryptoKeyName) {
-      project = cryptoKeyName.project;
-      location = cryptoKeyName.location;
-      keyRing = cryptoKeyName.keyRing;
-      cryptoKey = cryptoKeyName.cryptoKey;
+      this.project = cryptoKeyName.project;
+      this.location = cryptoKeyName.location;
+      this.keyRing = cryptoKeyName.keyRing;
+      this.cryptoKey = cryptoKeyName.cryptoKey;
     }
 
     public CryptoKeyName build() {

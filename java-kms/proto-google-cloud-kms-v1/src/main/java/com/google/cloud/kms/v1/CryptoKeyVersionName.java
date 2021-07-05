@@ -284,11 +284,11 @@ public class CryptoKeyVersionName implements ResourceName {
     }
 
     private Builder(CryptoKeyVersionName cryptoKeyVersionName) {
-      project = cryptoKeyVersionName.project;
-      location = cryptoKeyVersionName.location;
-      keyRing = cryptoKeyVersionName.keyRing;
-      cryptoKey = cryptoKeyVersionName.cryptoKey;
-      cryptoKeyVersion = cryptoKeyVersionName.cryptoKeyVersion;
+      this.project = cryptoKeyVersionName.project;
+      this.location = cryptoKeyVersionName.location;
+      this.keyRing = cryptoKeyVersionName.keyRing;
+      this.cryptoKey = cryptoKeyVersionName.cryptoKey;
+      this.cryptoKeyVersion = cryptoKeyVersionName.cryptoKeyVersion;
     }
 
     public CryptoKeyVersionName build() {

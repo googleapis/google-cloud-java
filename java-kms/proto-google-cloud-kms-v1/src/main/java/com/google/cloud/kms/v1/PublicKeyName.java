@@ -284,11 +284,11 @@ public class PublicKeyName implements ResourceName {
     }
 
     private Builder(PublicKeyName publicKeyName) {
-      project = publicKeyName.project;
-      location = publicKeyName.location;
-      keyRing = publicKeyName.keyRing;
-      cryptoKey = publicKeyName.cryptoKey;
-      cryptoKeyVersion = publicKeyName.cryptoKeyVersion;
+      this.project = publicKeyName.project;
+      this.location = publicKeyName.location;
+      this.keyRing = publicKeyName.keyRing;
+      this.cryptoKey = publicKeyName.cryptoKey;
+      this.cryptoKeyVersion = publicKeyName.cryptoKeyVersion;
     }
 
     public PublicKeyName build() {

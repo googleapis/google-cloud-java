@@ -464,6 +464,17 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * ECDSA on the non-NIST secp256k1 curve. This curve is only supported for
+     * HSM protection level.
+     * </pre>
+     *
+     * <code>EC_SIGN_SECP256K1_SHA256 = 31;</code>
+     */
+    EC_SIGN_SECP256K1_SHA256(31),
+    /**
+     *
+     *
+     * <pre>
      * Algorithm representing symmetric encryption by an external key manager.
      * </pre>
      *
@@ -637,6 +648,17 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * ECDSA on the non-NIST secp256k1 curve. This curve is only supported for
+     * HSM protection level.
+     * </pre>
+     *
+     * <code>EC_SIGN_SECP256K1_SHA256 = 31;</code>
+     */
+    public static final int EC_SIGN_SECP256K1_SHA256_VALUE = 31;
+    /**
+     *
+     *
+     * <pre>
      * Algorithm representing symmetric encryption by an external key manager.
      * </pre>
      *
@@ -700,6 +722,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           return EC_SIGN_P256_SHA256;
         case 13:
           return EC_SIGN_P384_SHA384;
+        case 31:
+          return EC_SIGN_SECP256K1_SHA256;
         case 18:
           return EXTERNAL_SYMMETRIC_ENCRYPTION;
         default:

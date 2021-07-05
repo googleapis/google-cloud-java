@@ -248,10 +248,10 @@ public class ImportJobName implements ResourceName {
     }
 
     private Builder(ImportJobName importJobName) {
-      project = importJobName.project;
-      location = importJobName.location;
-      keyRing = importJobName.keyRing;
-      importJob = importJobName.importJob;
+      this.project = importJobName.project;
+      this.location = importJobName.location;
+      this.keyRing = importJobName.keyRing;
+      this.importJob = importJobName.importJob;
     }
 
     public ImportJobName build() {

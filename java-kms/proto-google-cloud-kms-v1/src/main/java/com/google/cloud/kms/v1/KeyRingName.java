@@ -210,9 +210,9 @@ public class KeyRingName extends KeyName {
     }
 
     private Builder(KeyRingName keyRingName) {
-      project = keyRingName.project;
-      location = keyRingName.location;
-      keyRing = keyRingName.keyRing;
+      this.project = keyRingName.project;
+      this.location = keyRingName.location;
+      this.keyRing = keyRingName.keyRing;
     }
 
     public KeyRingName build() {
