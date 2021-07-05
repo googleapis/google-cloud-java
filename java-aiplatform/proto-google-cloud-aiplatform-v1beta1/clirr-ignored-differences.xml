@@ -1,183 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
-<!-- TODO: remove after next major version is released -->
 <differences>
   <difference>
+    <differenceType>7012</differenceType>
     <className>com/google/cloud/aiplatform/v1beta1/*OrBuilder</className>
-    <differenceType>7012</differenceType>
     <method>* get*(*)</method>
   </difference>
   <difference>
+    <differenceType>7012</differenceType>
     <className>com/google/cloud/aiplatform/v1beta1/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
     <differenceType>7012</differenceType>
-    <method>* has*(*)</method>
-  </difference>
-  <difference>
-    <className>
-      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*OrBuilder
-    </className>
+    <className>com/google/cloud/aiplatform/v1beta1/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
     <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/instance/*OrBuilder</className>
     <method>* get*(*)</method>
   </difference>
   <difference>
-    <className>
-      com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*OrBuilder
-    </className>
     <differenceType>7012</differenceType>
-    <method>* get*(*)</method>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/instance/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
   </difference>
   <difference>
-    <className>
-      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result
-    </className>
-    <differenceType>7006</differenceType>
-    <method>* get*(*)</method>
-    <to>java.lang.String</to>
-  </difference>
-  <difference>
-    <className>
-      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result$Builder
-    </className>
-    <differenceType>7006</differenceType>
-    <method>* get*(*)</method>
-    <to>java.lang.String</to>
-  </difference>
-  <difference>
-    <className>
-      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*OrBuilder
-    </className>
-    <differenceType>7006</differenceType>
-    <method>* get*(*)</method>
-    <to>java.lang.String</to>
-  </difference>
-  <difference>
-    <className>
-      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result$Builder
-    </className>
-    <differenceType>7005</differenceType>
-    <method>* set*(*)</method>
-    <to>* set*(*)</to>
-  </difference>
-  <difference>
-    <className>
-      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result
-    </className>
-    <differenceType>6011</differenceType>
-    <field>*FIELD_NUMBER</field>
-  </difference>
-  <difference>
-    <className>
-      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/TextSentimentPredictionResult$Prediction*
-    </className>
-    <differenceType>8001</differenceType>
-  </difference>
-  <difference>
-    <className>
-      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result*
-    </className>
-    <differenceType>7002</differenceType>
-    <method>* get*(*)</method>
-  </difference>
-  <difference>
-    <className>
-      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result*
-    </className>
-    <differenceType>7002</differenceType>
-    <method>* has*(*)</method>
-  </difference>
-  <difference>
-    <className>
-      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result*
-    </className>
-    <differenceType>7002</differenceType>
-    <method>* clear*(*)</method>
-  </difference>
-  <difference>
-    <className>
-      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result*
-    </className>
-    <differenceType>7002</differenceType>
-    <method>* merge*(*)</method>
-  </difference>
-  <difference>
-    <className>
-      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result*
-    </className>
-    <differenceType>7002</differenceType>
-    <method>* set*(*)</method>
-  </difference>
-  <difference>
-    <className>
-      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result*
-    </className>
-    <differenceType>8001</differenceType>
-  </difference>
-  <difference>
-    <className>
-      com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*Forecasting*
-    </className>
-    <differenceType>8001</differenceType>
-  </difference>
-  <difference>
-    <className>
-      com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*OrBuilder
-    </className>
     <differenceType>7012</differenceType>
-    <method>* has*()</method>
-  </difference>
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/AcceleratorType</className>
-    <differenceType>6011</differenceType>
-    <field>*VALUE</field>
-  </difference>
-  <difference>
-    <className>com/google/cloud/aiplatform/v1beta1/AcceleratorType</className>
-    <differenceType>6001</differenceType>
-    <field>TPU*</field>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs*</className>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/instance/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/params/*OrBuilder</className>
     <method>* get*(*)</method>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs*</className>
-    <method>* set*(*)</method>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/params/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs*</className>
-    <method>* has*(*)</method>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/params/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*OrBuilder</className>
+    <method>* get*(*)</method>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs*</className>
-    <method>* clear*(*)</method>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs*</className>
-    <method>* merge*(*)</method>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*OrBuilder</className>
+    <method>* get*(*)</method>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs*</className>
-    <method>* add*(*)</method>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
   </difference>
   <difference>
-    <differenceType>6001</differenceType>
-    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs*</className>
-    <field>REPEATED_*</field>
-  </difference>
-  <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs*</className>
-    <field>REPEATED_*</field>
-  </difference>
-  <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs*</className>
-    <field>*_FIELD_NUMBER</field>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*OrBuilder</className>
+    <method>boolean has*(*)</method>
   </difference>
 </differences>
