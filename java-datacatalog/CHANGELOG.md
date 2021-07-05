@@ -1,5 +1,24 @@
 # Changelog
 
+### [1.4.2](https://www.github.com/googleapis/java-datacatalog/compare/v1.4.1...v1.4.2) (2021-07-05)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#562](https://www.github.com/googleapis/java-datacatalog/issues/562)) ([dd8c163](https://www.github.com/googleapis/java-datacatalog/commit/dd8c16350d1445de0495d6c009d5054d8b519412))
+* Update dependencies.sh to not break on mac ([#558](https://www.github.com/googleapis/java-datacatalog/issues/558)) ([21de1da](https://www.github.com/googleapis/java-datacatalog/commit/21de1da8ce26bdc3c534af33e7380043e93ffee0))
+
+
+### Documentation
+
+* **samples:** add Entry, EntryGroup and TagTemplate ([#394](https://www.github.com/googleapis/java-datacatalog/issues/394)) ([fc6a167](https://www.github.com/googleapis/java-datacatalog/commit/fc6a167d9b7be8b18edb5cb6515779beaa86c6ee))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#567](https://www.github.com/googleapis/java-datacatalog/issues/567)) ([56b33ed](https://www.github.com/googleapis/java-datacatalog/commit/56b33ed46ad4d409d2f4148fac77b07dc1ce5a3a))
+* update dependency com.google.protobuf:protobuf-java-util to v3.17.3 ([#568](https://www.github.com/googleapis/java-datacatalog/issues/568)) ([f2fb70b](https://www.github.com/googleapis/java-datacatalog/commit/f2fb70b50d71debed1a7db34ed31174549285aa0))
+
 ### [1.4.1](https://www.github.com/googleapis/java-datacatalog/compare/v1.4.0...v1.4.1) (2021-06-04)
 
 
