@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.29.3](https://www.github.com/googleapis/java-speech/compare/v1.29.2...v1.29.3) (2021-07-02)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#567](https://www.github.com/googleapis/java-speech/issues/567)) ([b0d29f7](https://www.github.com/googleapis/java-speech/commit/b0d29f741459e658ffa18897301bbf313d55a3bf))
+* Update dependencies.sh to not break on mac ([#561](https://www.github.com/googleapis/java-speech/issues/561)) ([329e455](https://www.github.com/googleapis/java-speech/commit/329e455d5e6f449a45a14bb5cf8f09cd7e045ef9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#571](https://www.github.com/googleapis/java-speech/issues/571)) ([2cdec60](https://www.github.com/googleapis/java-speech/commit/2cdec60ce8ed8febb2afc3651e92943fc12f1491))
+* update dependency com.google.cloud:google-cloud-storage to v1.116.0 ([#563](https://www.github.com/googleapis/java-speech/issues/563)) ([03de3b2](https://www.github.com/googleapis/java-speech/commit/03de3b299af4750fb89400e68176e89114c13bfb))
+* update dependency com.google.cloud:google-cloud-storage to v1.117.1 ([#570](https://www.github.com/googleapis/java-speech/issues/570)) ([e7a209e](https://www.github.com/googleapis/java-speech/commit/e7a209e2f82fcfaec85c7f1a9311574d2f27a317))
+
 ### [1.29.2](https://www.github.com/googleapis/java-speech/compare/v1.29.1...v1.29.2) (2021-06-09)
 
 
