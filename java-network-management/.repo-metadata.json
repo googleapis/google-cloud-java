@@ -10,7 +10,7 @@
   "repo": "googleapis/java-network-management",
   "repo_short": "java-network-management",
   "distribution_name": "com.google.cloud:google-cloud-network-management",
-  "api_id": "network-management.googleapis.com",
+  "api_id": "networkmanagement.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
