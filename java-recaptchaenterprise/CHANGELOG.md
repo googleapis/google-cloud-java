@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.2.2](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v1.2.1...v1.2.2) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#481](https://www.github.com/googleapis/java-recaptchaenterprise/issues/481)) ([5f6bcee](https://www.github.com/googleapis/java-recaptchaenterprise/commit/5f6bcee1e5aaa88cffee5a13459f397c8c30f5ed))
+* Update dependencies.sh to not break on mac ([#476](https://www.github.com/googleapis/java-recaptchaenterprise/issues/476)) ([b390df8](https://www.github.com/googleapis/java-recaptchaenterprise/commit/b390df8d067bad6a3440c181c1d8214a7785514b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#485](https://www.github.com/googleapis/java-recaptchaenterprise/issues/485)) ([ad58696](https://www.github.com/googleapis/java-recaptchaenterprise/commit/ad5869631a2f520005422c6d9958f56c52ce30b7))
+
 ### [1.2.1](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v1.2.0...v1.2.1) (2021-06-04)
 
 
