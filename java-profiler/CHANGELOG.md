@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.1.2](https://www.github.com/googleapis/java-profiler/compare/v1.1.1...v1.1.2) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#95](https://www.github.com/googleapis/java-profiler/issues/95)) ([80ff86c](https://www.github.com/googleapis/java-profiler/commit/80ff86c792ef5745c96b0ce1a173056a21b1589a))
+* Update dependencies.sh to not break on mac ([#91](https://www.github.com/googleapis/java-profiler/issues/91)) ([318719c](https://www.github.com/googleapis/java-profiler/commit/318719cac56d697acf37251169834184bcb555bd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#96](https://www.github.com/googleapis/java-profiler/issues/96)) ([aa57d48](https://www.github.com/googleapis/java-profiler/commit/aa57d48b929ecd0f291e80f28a27cf0ac1778f23))
+
 ### [1.1.1](https://www.github.com/googleapis/java-profiler/compare/v1.1.0...v1.1.1) (2021-06-09)
 
 
