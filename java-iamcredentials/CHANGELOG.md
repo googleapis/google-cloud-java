@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.3.2](https://www.github.com/googleapis/java-iamcredentials/compare/v1.3.1...v1.3.2) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#472](https://www.github.com/googleapis/java-iamcredentials/issues/472)) ([4b584c9](https://www.github.com/googleapis/java-iamcredentials/commit/4b584c985b8b2ac6d269ce7fba28f1ad9199df5c))
+* Update dependencies.sh to not break on mac ([#468](https://www.github.com/googleapis/java-iamcredentials/issues/468)) ([abb1153](https://www.github.com/googleapis/java-iamcredentials/commit/abb1153925a51ca7b162764141a68ff1c0086b9b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#476](https://www.github.com/googleapis/java-iamcredentials/issues/476)) ([531d034](https://www.github.com/googleapis/java-iamcredentials/commit/531d034ad1ca9315074d704afc8ca7f65f9193d6))
+
 ### [1.3.1](https://www.github.com/googleapis/java-iamcredentials/compare/v1.3.0...v1.3.1) (2021-06-04)
 
 
