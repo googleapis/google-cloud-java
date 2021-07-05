@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.4.4](https://www.github.com/googleapis/java-dlp/compare/v2.4.3...v2.4.4) (2021-07-02)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#570](https://www.github.com/googleapis/java-dlp/issues/570)) ([a48d010](https://www.github.com/googleapis/java-dlp/commit/a48d0100ece21f77bf0a097668c6b928901bb97e))
+* Update dependencies.sh to not break on mac ([#565](https://www.github.com/googleapis/java-dlp/issues/565)) ([b50633b](https://www.github.com/googleapis/java-dlp/commit/b50633bb19291cffce6397e687c5ceb70cb4d425))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.113.4 ([#569](https://www.github.com/googleapis/java-dlp/issues/569)) ([2f56edd](https://www.github.com/googleapis/java-dlp/commit/2f56eddaf8c2083ea243554703532e93c111a6d5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#574](https://www.github.com/googleapis/java-dlp/issues/574)) ([31110da](https://www.github.com/googleapis/java-dlp/commit/31110da3cdce9882bb98d14adc49196050ac21dd))
+
 ### [2.4.3](https://www.github.com/googleapis/java-dlp/compare/v2.4.2...v2.4.3) (2021-06-10)
 
 
