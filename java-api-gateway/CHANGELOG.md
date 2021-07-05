@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.1.2](https://www.github.com/googleapis/java-api-gateway/compare/v1.1.1...v1.1.2) (2021-07-02)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#66](https://www.github.com/googleapis/java-api-gateway/issues/66)) ([264d2d5](https://www.github.com/googleapis/java-api-gateway/commit/264d2d5ced8fc0262068cedc97b9cb8fcfa0eb81))
+* Update dependencies.sh to not break on mac ([#62](https://www.github.com/googleapis/java-api-gateway/issues/62)) ([180cef6](https://www.github.com/googleapis/java-api-gateway/commit/180cef6e9b8b7609ade89f67c0193c4fb424b482))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#67](https://www.github.com/googleapis/java-api-gateway/issues/67)) ([7eb12ae](https://www.github.com/googleapis/java-api-gateway/commit/7eb12ae3bcf4c43b9437d079ab9d726f1dfd5854))
+
 ### [1.1.1](https://www.github.com/googleapis/java-api-gateway/compare/v1.1.0...v1.1.1) (2021-06-09)
 
 
