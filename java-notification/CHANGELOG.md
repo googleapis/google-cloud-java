@@ -1,5 +1,21 @@
 # Changelog
 
+### [0.122.3](https://www.github.com/googleapis/java-notification/compare/v0.122.2...v0.122.3) (2021-07-05)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#344](https://www.github.com/googleapis/java-notification/issues/344)) ([85a69c0](https://www.github.com/googleapis/java-notification/commit/85a69c0dbbd4c34dde52c35588fb54b960fd29ef))
+* Update dependencies.sh to not break on mac ([#335](https://www.github.com/googleapis/java-notification/issues/335)) ([38d27f7](https://www.github.com/googleapis/java-notification/commit/38d27f7850808b834076109840af3759ad41223e))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-storage to v1-rev20210127-1.32.1 ([#342](https://www.github.com/googleapis/java-notification/issues/342)) ([2439153](https://www.github.com/googleapis/java-notification/commit/2439153f09bc9eaf47382c87f001ba8d51b0e564))
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.113.4 ([#343](https://www.github.com/googleapis/java-notification/issues/343)) ([d8d565a](https://www.github.com/googleapis/java-notification/commit/d8d565a0d2c512834e34e449b02fd8f17dd1a1af))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#347](https://www.github.com/googleapis/java-notification/issues/347)) ([14645b1](https://www.github.com/googleapis/java-notification/commit/14645b1f23a961d9a9b22260cd6a2a6049722063))
+* update dependency com.google.cloud:google-cloud-storage to v1.117.1 ([#346](https://www.github.com/googleapis/java-notification/issues/346)) ([fa2463a](https://www.github.com/googleapis/java-notification/commit/fa2463aa1963802a40c8dcfc171036d0ed8e04e9))
+
 ### [0.122.2](https://www.github.com/googleapis/java-notification/compare/v0.122.1...v0.122.2) (2021-06-16)
 
 
