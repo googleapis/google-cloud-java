@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.5.2](https://www.github.com/googleapis/java-mediatranslation/compare/v0.5.1...v0.5.2) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-mediatranslation/issues/1130)) ([#316](https://www.github.com/googleapis/java-mediatranslation/issues/316)) ([930f0d2](https://www.github.com/googleapis/java-mediatranslation/commit/930f0d26d0e99c993aea97ee631cee4601a451ec))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#318](https://www.github.com/googleapis/java-mediatranslation/issues/318)) ([5287c25](https://www.github.com/googleapis/java-mediatranslation/commit/5287c2545522c86c40b85691af23d0348bdf769b))
+
 ### [0.5.1](https://www.github.com/googleapis/java-mediatranslation/compare/v0.5.0...v0.5.1) (2021-06-04)
 
 
