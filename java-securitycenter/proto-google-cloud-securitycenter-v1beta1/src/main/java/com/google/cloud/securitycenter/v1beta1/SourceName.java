@@ -181,8 +181,8 @@ public class SourceName implements ResourceName {
     }
 
     private Builder(SourceName sourceName) {
-      organization = sourceName.organization;
-      source = sourceName.source;
+      this.organization = sourceName.organization;
+      this.source = sourceName.source;
     }
 
     public SourceName build() {

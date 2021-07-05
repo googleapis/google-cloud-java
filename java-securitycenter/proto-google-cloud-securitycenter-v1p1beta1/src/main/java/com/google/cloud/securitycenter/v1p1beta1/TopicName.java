@@ -180,8 +180,8 @@ public class TopicName implements ResourceName {
     }
 
     private Builder(TopicName topicName) {
-      project = topicName.project;
-      topic = topicName.topic;
+      this.project = topicName.project;
+      this.topic = topicName.topic;
     }
 
     public TopicName build() {

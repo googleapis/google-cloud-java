@@ -291,8 +291,8 @@ public class AssetName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(assetName.pathTemplate, ORGANIZATION_ASSET),
           "toBuilder is only supported when AssetName has the pattern of organizations/{organization}/assets/{asset}");
-      organization = assetName.organization;
-      asset = assetName.asset;
+      this.organization = assetName.organization;
+      this.asset = assetName.asset;
     }
 
     public AssetName build() {

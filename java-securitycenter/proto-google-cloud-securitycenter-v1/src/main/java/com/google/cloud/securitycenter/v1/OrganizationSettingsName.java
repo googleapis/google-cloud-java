@@ -158,7 +158,7 @@ public class OrganizationSettingsName implements ResourceName {
     }
 
     private Builder(OrganizationSettingsName organizationSettingsName) {
-      organization = organizationSettingsName.organization;
+      this.organization = organizationSettingsName.organization;
     }
 
     public OrganizationSettingsName build() {

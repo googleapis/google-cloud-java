@@ -354,9 +354,9 @@ public class FindingName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(findingName.pathTemplate, ORGANIZATION_SOURCE_FINDING),
           "toBuilder is only supported when FindingName has the pattern of organizations/{organization}/sources/{source}/findings/{finding}");
-      organization = findingName.organization;
-      source = findingName.source;
-      finding = findingName.finding;
+      this.organization = findingName.organization;
+      this.source = findingName.source;
+      this.finding = findingName.finding;
     }
 
     public FindingName build() {

@@ -279,8 +279,8 @@ public class SecurityMarksName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(securityMarksName.pathTemplate, ORGANIZATION_ASSET),
           "toBuilder is only supported when SecurityMarksName has the pattern of organizations/{organization}/assets/{asset}/securityMarks");
-      organization = securityMarksName.organization;
-      asset = securityMarksName.asset;
+      this.organization = securityMarksName.organization;
+      this.asset = securityMarksName.asset;
     }
 
     public SecurityMarksName build() {

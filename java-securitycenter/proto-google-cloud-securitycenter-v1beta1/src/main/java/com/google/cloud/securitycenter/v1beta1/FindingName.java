@@ -211,9 +211,9 @@ public class FindingName implements ResourceName {
     }
 
     private Builder(FindingName findingName) {
-      organization = findingName.organization;
-      source = findingName.source;
-      finding = findingName.finding;
+      this.organization = findingName.organization;
+      this.source = findingName.source;
+      this.finding = findingName.finding;
     }
 
     public FindingName build() {

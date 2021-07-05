@@ -291,8 +291,8 @@ public class SourceName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(sourceName.pathTemplate, ORGANIZATION_SOURCE),
           "toBuilder is only supported when SourceName has the pattern of organizations/{organization}/sources/{source}");
-      organization = sourceName.organization;
-      source = sourceName.source;
+      this.organization = sourceName.organization;
+      this.source = sourceName.source;
     }
 
     public SourceName build() {

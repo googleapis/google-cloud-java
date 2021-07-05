@@ -190,8 +190,8 @@ public class NotificationConfigName implements ResourceName {
     }
 
     private Builder(NotificationConfigName notificationConfigName) {
-      organization = notificationConfigName.organization;
-      notificationConfig = notificationConfigName.notificationConfig;
+      this.organization = notificationConfigName.organization;
+      this.notificationConfig = notificationConfigName.notificationConfig;
     }
 
     public NotificationConfigName build() {
