@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.113.5](https://www.github.com/googleapis/java-pubsub/compare/v1.113.4...v1.113.5) (2021-07-02)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#724](https://www.github.com/googleapis/java-pubsub/issues/724)) ([25840d6](https://www.github.com/googleapis/java-pubsub/commit/25840d60c62123b71c64e3b2fea2b33d4c4c2fb4))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.95.3 ([#725](https://www.github.com/googleapis/java-pubsub/issues/725)) ([ae3b284](https://www.github.com/googleapis/java-pubsub/commit/ae3b2840eb25458d054c25a3c9879a8a5aa8883a))
+* update dependency com.google.cloud:google-cloud-core to v1.95.4 ([#730](https://www.github.com/googleapis/java-pubsub/issues/730)) ([b6453b3](https://www.github.com/googleapis/java-pubsub/commit/b6453b3026184e757a6f29c1baeece14ca4cc4f2))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#732](https://www.github.com/googleapis/java-pubsub/issues/732)) ([78b26c0](https://www.github.com/googleapis/java-pubsub/commit/78b26c0de4a11b88295c2861917ee354e2793bf8))
+
 ### [1.113.4](https://www.github.com/googleapis/java-pubsub/compare/v1.113.3...v1.113.4) (2021-06-22)
 
 
