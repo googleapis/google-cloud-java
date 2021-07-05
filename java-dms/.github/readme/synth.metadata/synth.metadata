@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dms.git",
-        "sha": "b7191c6f7ad63e9b4646d91bbb7743a39ed853b3"
+        "sha": "7121508b68e7c0a260eaf8897ec36cdf3b6a3df4"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "740366bbb9a7e0f4b77fc75dc26be1d3a376c3e0"
+        "sha": "39652e3948f455fd0b77535a0145eeec561a3706"
       }
     }
   ]
