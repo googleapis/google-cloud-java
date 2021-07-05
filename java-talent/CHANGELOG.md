@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.2.2](https://www.github.com/googleapis/java-talent/compare/v1.2.1...v1.2.2) (2021-07-02)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#539](https://www.github.com/googleapis/java-talent/issues/539)) ([5065856](https://www.github.com/googleapis/java-talent/commit/50658564fdd5707ba1acd4ae1651a6de8ea9bc26))
+* Update dependencies.sh to not break on mac ([#535](https://www.github.com/googleapis/java-talent/issues/535)) ([c017880](https://www.github.com/googleapis/java-talent/commit/c01788067488284fed6c4d4fba2608a0b023fc71))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#543](https://www.github.com/googleapis/java-talent/issues/543)) ([0c4d59a](https://www.github.com/googleapis/java-talent/commit/0c4d59a2f6fcb8659f0915068fa87d798ebcbb50))
+
 ### [1.2.1](https://www.github.com/googleapis/java-talent/compare/v1.2.0...v1.2.1) (2021-06-04)
 
 
