@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.0.2](https://www.github.com/googleapis/java-dataproc-metastore/compare/v1.0.1...v1.0.2) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#64](https://www.github.com/googleapis/java-dataproc-metastore/issues/64)) ([2b3073b](https://www.github.com/googleapis/java-dataproc-metastore/commit/2b3073b9191df2f025a44b6cb6b4325be2d89707))
+* Update dependencies.sh to not break on mac ([#60](https://www.github.com/googleapis/java-dataproc-metastore/issues/60)) ([a9f5b9c](https://www.github.com/googleapis/java-dataproc-metastore/commit/a9f5b9cb794f603a921f66aeeecf7e277d2fd5d8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#65](https://www.github.com/googleapis/java-dataproc-metastore/issues/65)) ([538349e](https://www.github.com/googleapis/java-dataproc-metastore/commit/538349e2f08439f924f01b68cd0599ae486bf1ac))
+
 ### [1.0.1](https://www.github.com/googleapis/java-dataproc-metastore/compare/v1.0.0...v1.0.1) (2021-06-04)
 
 
