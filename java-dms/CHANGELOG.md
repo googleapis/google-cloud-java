@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-dms/compare/v0.1.3...v1.0.0) (2021-07-02)
+
+
+### Features
+
+* promote to 1.0.0 ([#54](https://www.github.com/googleapis/java-dms/issues/54)) ([2c32958](https://www.github.com/googleapis/java-dms/commit/2c32958da2a947d9afa53660975bdb0bcb9b7abd))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-dms/issues/1130)) ([#52](https://www.github.com/googleapis/java-dms/issues/52)) ([68b2f3b](https://www.github.com/googleapis/java-dms/commit/68b2f3b624ca730c0db2827aa697653a4b95876b))
+
+
+### Documentation
+
+* update link in comments ([#45](https://www.github.com/googleapis/java-dms/issues/45)) ([c6f17f8](https://www.github.com/googleapis/java-dms/commit/c6f17f8b81c04cd8518410a0589df1084b1c6972))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#53](https://www.github.com/googleapis/java-dms/issues/53)) ([e0b2899](https://www.github.com/googleapis/java-dms/commit/e0b2899474b9d205ca11ec352365e5184cdde9ea))
+
 ### [0.1.3](https://www.github.com/googleapis/java-dms/compare/v0.1.2...v0.1.3) (2021-06-04)
 
 
