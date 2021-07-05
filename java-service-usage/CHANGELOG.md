@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-service-usage/compare/v1.0.0...v1.0.1) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-service-usage/issues/1130)) ([#50](https://www.github.com/googleapis/java-service-usage/issues/50)) ([5f4c5c2](https://www.github.com/googleapis/java-service-usage/commit/5f4c5c2dbb1f12cd68596a97ea41346936970892))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#52](https://www.github.com/googleapis/java-service-usage/issues/52)) ([ed4b31b](https://www.github.com/googleapis/java-service-usage/commit/ed4b31bb2283e4ed520ee916a0a94b9281d844ab))
+
 ## [1.0.0](https://www.github.com/googleapis/java-service-usage/compare/v0.2.1...v1.0.0) (2021-06-17)
 
 
