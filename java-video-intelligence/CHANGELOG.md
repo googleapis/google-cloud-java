@@ -1,5 +1,21 @@
 # Changelog
 
+### [1.7.4](https://www.github.com/googleapis/java-video-intelligence/compare/v1.7.3...v1.7.4) (2021-07-02)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#572](https://www.github.com/googleapis/java-video-intelligence/issues/572)) ([d605931](https://www.github.com/googleapis/java-video-intelligence/commit/d60593129ddc4f473bdc58cca54e34fdbddba489))
+* Update dependencies.sh to not break on mac ([#565](https://www.github.com/googleapis/java-video-intelligence/issues/565)) ([16c4ef8](https://www.github.com/googleapis/java-video-intelligence/commit/16c4ef8a2e9037c8493c397055bc09434f1311c1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.95.4 ([#573](https://www.github.com/googleapis/java-video-intelligence/issues/573)) ([6de0b87](https://www.github.com/googleapis/java-video-intelligence/commit/6de0b874a75d7c74412f9f64491ae20b2c055268))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#577](https://www.github.com/googleapis/java-video-intelligence/issues/577)) ([4a7309f](https://www.github.com/googleapis/java-video-intelligence/commit/4a7309f75dba030422682f0533c1df4edd6f29ab))
+* update dependency com.google.cloud:google-cloud-storage to v1.116.0 ([#566](https://www.github.com/googleapis/java-video-intelligence/issues/566)) ([1cd9093](https://www.github.com/googleapis/java-video-intelligence/commit/1cd909364cf4fc9d516e449c7b41a16e672569c2))
+* update dependency com.google.cloud:google-cloud-storage to v1.117.1 ([#576](https://www.github.com/googleapis/java-video-intelligence/issues/576)) ([9d18e2b](https://www.github.com/googleapis/java-video-intelligence/commit/9d18e2b1b3cfffda62b36dea4f65edb16d399d18))
+
 ### [1.7.3](https://www.github.com/googleapis/java-video-intelligence/compare/v1.7.2...v1.7.3) (2021-06-15)
 
 
