@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.0.2](https://www.github.com/googleapis/java-workflows/compare/v1.0.1...v1.0.2) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-workflows/issues/1130)) ([#286](https://www.github.com/googleapis/java-workflows/issues/286)) ([df42c3c](https://www.github.com/googleapis/java-workflows/commit/df42c3c22823e02aa8052ccf0990bcbb7988113c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#288](https://www.github.com/googleapis/java-workflows/issues/288)) ([50107b9](https://www.github.com/googleapis/java-workflows/commit/50107b99f17961b4b805d31c37c033ab395a9748))
+
 ### [1.0.1](https://www.github.com/googleapis/java-workflows/compare/v1.0.0...v1.0.1) (2021-06-09)
 
 
