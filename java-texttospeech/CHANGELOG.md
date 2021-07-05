@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.5.2](https://www.github.com/googleapis/java-texttospeech/compare/v1.5.1...v1.5.2) (2021-07-05)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#489](https://www.github.com/googleapis/java-texttospeech/issues/489)) ([a26a52c](https://www.github.com/googleapis/java-texttospeech/commit/a26a52cebab94076eb8622a345b9105b9dc66215))
+* Update dependencies.sh to not break on mac ([#486](https://www.github.com/googleapis/java-texttospeech/issues/486)) ([369961e](https://www.github.com/googleapis/java-texttospeech/commit/369961e6eec300763401de9d11f076f0b2f037c6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#492](https://www.github.com/googleapis/java-texttospeech/issues/492)) ([d3d3022](https://www.github.com/googleapis/java-texttospeech/commit/d3d3022cb45c0faea1dd0221a90c8d2860038e0f))
+
 ### [1.5.1](https://www.github.com/googleapis/java-texttospeech/compare/v1.5.0...v1.5.1) (2021-06-04)
 
 
