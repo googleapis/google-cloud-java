@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.2.2](https://www.github.com/googleapis/java-dns/compare/v1.2.1...v1.2.2) (2021-07-05)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#440](https://www.github.com/googleapis/java-dns/issues/440)) ([6516057](https://www.github.com/googleapis/java-dns/commit/65160575561cfc5c385dde8eab3bebdfe0c778ee))
+* Update dependencies.sh to not break on mac ([#436](https://www.github.com/googleapis/java-dns/issues/436)) ([00215cd](https://www.github.com/googleapis/java-dns/commit/00215cdb412af1e1d58012e3abb75e89ad803476))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-dns to v1-rev20210423-1.32.1 ([#439](https://www.github.com/googleapis/java-dns/issues/439)) ([1a3dbb7](https://www.github.com/googleapis/java-dns/commit/1a3dbb77784e9ff45ca50a2c77fdb1d91e3fba3b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#442](https://www.github.com/googleapis/java-dns/issues/442)) ([5fac166](https://www.github.com/googleapis/java-dns/commit/5fac166aff9aa1306d1d477355f14ef90c7d6f76))
+
 ### [1.2.1](https://www.github.com/googleapis/java-dns/compare/v1.2.0...v1.2.1) (2021-06-04)
 
 
