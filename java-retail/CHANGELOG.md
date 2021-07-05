@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.1.2](https://www.github.com/googleapis/java-retail/compare/v1.1.1...v1.1.2) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#136](https://www.github.com/googleapis/java-retail/issues/136)) ([453eab9](https://www.github.com/googleapis/java-retail/commit/453eab9120265d4f965ff1057c4b6afadac6c7d8))
+* Update dependencies.sh to not break on mac ([#132](https://www.github.com/googleapis/java-retail/issues/132)) ([af58fc2](https://www.github.com/googleapis/java-retail/commit/af58fc222938aa55ec664cf065bd12f533674eb1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#137](https://www.github.com/googleapis/java-retail/issues/137)) ([eb6b413](https://www.github.com/googleapis/java-retail/commit/eb6b4134e9b2a7288c7127201e05a107d7d4e962))
+
 ### [1.1.1](https://www.github.com/googleapis/java-retail/compare/v1.1.0...v1.1.1) (2021-06-04)
 
 
