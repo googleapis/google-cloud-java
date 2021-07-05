@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.1.3](https://www.github.com/googleapis/java-accessapproval/compare/v1.1.2...v1.1.3) (2021-07-02)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-accessapproval/issues/1130)) ([#464](https://www.github.com/googleapis/java-accessapproval/issues/464)) ([05d0124](https://www.github.com/googleapis/java-accessapproval/commit/05d0124a5ae7e34fc5e77b15fb907f90859ff224))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.95.3 ([#465](https://www.github.com/googleapis/java-accessapproval/issues/465)) ([1364ff5](https://www.github.com/googleapis/java-accessapproval/commit/1364ff58cded1884142455123168a3455d8fb6d2))
+* update dependency com.google.cloud:google-cloud-core to v1.95.4 ([#469](https://www.github.com/googleapis/java-accessapproval/issues/469)) ([7d87fdf](https://www.github.com/googleapis/java-accessapproval/commit/7d87fdf2e09f661cdbf097ff580446ef2126bfe4))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#470](https://www.github.com/googleapis/java-accessapproval/issues/470)) ([c1150b4](https://www.github.com/googleapis/java-accessapproval/commit/c1150b439c5d67725022548bcf5eee84589f0473))
+
 ### [1.1.2](https://www.github.com/googleapis/java-accessapproval/compare/v1.1.1...v1.1.2) (2021-06-15)
 
 
