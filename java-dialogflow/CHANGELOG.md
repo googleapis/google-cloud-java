@@ -1,5 +1,34 @@
 # Changelog
 
+## [3.3.0](https://www.github.com/googleapis/java-dialogflow/compare/v3.2.1...v3.3.0) (2021-07-05)
+
+
+### Features
+
+* added Automated agent reply type and allow cancellation flag for partial response feature ([#593](https://www.github.com/googleapis/java-dialogflow/issues/593)) ([c2de427](https://www.github.com/googleapis/java-dialogflow/commit/c2de42785b284d9547e49c7862ab8b099c1604ad))
+* added Automated agent reply type and allow cancellation flag for partial response feature ([#596](https://www.github.com/googleapis/java-dialogflow/issues/596)) ([da8e4cf](https://www.github.com/googleapis/java-dialogflow/commit/da8e4cfe920024a0b6f6a66f35cfb0b595c317f9))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#602](https://www.github.com/googleapis/java-dialogflow/issues/602)) ([9241481](https://www.github.com/googleapis/java-dialogflow/commit/9241481de9e7af0ab717594a7f82332af124ef9f))
+* added resource reference to agent_version ([5692ace](https://www.github.com/googleapis/java-dialogflow/commit/5692ace3c7041a33fefe79962f629ec31bbc9626))
+* Update dependencies.sh to not break on mac ([#597](https://www.github.com/googleapis/java-dialogflow/issues/597)) ([8af0ca9](https://www.github.com/googleapis/java-dialogflow/commit/8af0ca973f6e55b7e527baea133391a6308f8064))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.95.2 ([#590](https://www.github.com/googleapis/java-dialogflow/issues/590)) ([dcf177f](https://www.github.com/googleapis/java-dialogflow/commit/dcf177fc28bcccbe8d9935eaeb4edead6c5db7e3))
+* update dependency com.google.cloud:google-cloud-core to v1.95.3 ([#603](https://www.github.com/googleapis/java-dialogflow/issues/603)) ([ee19ab5](https://www.github.com/googleapis/java-dialogflow/commit/ee19ab5bdb99322aacbc63f9f317aa7e41f47d0a))
+* update dependency com.google.cloud:google-cloud-core to v1.95.4 ([#607](https://www.github.com/googleapis/java-dialogflow/issues/607)) ([6e43ac4](https://www.github.com/googleapis/java-dialogflow/commit/6e43ac4be1d1b2111c49eb1e3fdf0bd1a7cbd728))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#608](https://www.github.com/googleapis/java-dialogflow/issues/608)) ([d7f4c2c](https://www.github.com/googleapis/java-dialogflow/commit/d7f4c2c3d9cb02be63f142df183b6d58aceef26f))
+
+
+### Documentation
+
+* added notes to train agent prior to sending queries ([#601](https://www.github.com/googleapis/java-dialogflow/issues/601)) ([5692ace](https://www.github.com/googleapis/java-dialogflow/commit/5692ace3c7041a33fefe79962f629ec31bbc9626))
+* update comment in ListSuggestions to use absolute URL for /apis/design/design_patterns ([#595](https://www.github.com/googleapis/java-dialogflow/issues/595)) ([57bc112](https://www.github.com/googleapis/java-dialogflow/commit/57bc112a64d7a89bfe74381897a36f78459c7e06))
+
 ### [3.2.1](https://www.github.com/googleapis/java-dialogflow/compare/v3.2.0...v3.2.1) (2021-06-09)
 
 
