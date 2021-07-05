@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.2.2](https://www.github.com/googleapis/java-functions/compare/v1.2.1...v1.2.2) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-functions/issues/1130)) ([#235](https://www.github.com/googleapis/java-functions/issues/235)) ([813e13a](https://www.github.com/googleapis/java-functions/commit/813e13a771f3b90dfdb3aa052242f34141b5d010))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#237](https://www.github.com/googleapis/java-functions/issues/237)) ([13ac9b2](https://www.github.com/googleapis/java-functions/commit/13ac9b24e96c71a00f8edc2f1ab2ee00a57ac521))
+
 ### [1.2.1](https://www.github.com/googleapis/java-functions/compare/v1.2.0...v1.2.1) (2021-06-04)
 
 
