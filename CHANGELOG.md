@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.3.2](https://www.github.com/googleapis/java-logging/compare/v2.3.1...v2.3.2) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#564](https://www.github.com/googleapis/java-logging/issues/564)) ([5a5f737](https://www.github.com/googleapis/java-logging/commit/5a5f7371569f3e5656a3e40fcc2d72b7a8e0e916))
+* Update dependencies.sh to not break on mac ([#559](https://www.github.com/googleapis/java-logging/issues/559)) ([5877a06](https://www.github.com/googleapis/java-logging/commit/5877a068ae466b0e61d240674263ddb772b43cb2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#568](https://www.github.com/googleapis/java-logging/issues/568)) ([623a85b](https://www.github.com/googleapis/java-logging/commit/623a85b0ca9ab893b925522fe38f1b03ab822d7e))
+
 ### [2.3.1](https://www.github.com/googleapis/java-logging/compare/v2.3.0...v2.3.1) (2021-06-04)
 
 
