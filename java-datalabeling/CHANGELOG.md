@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.120.2](https://www.github.com/googleapis/java-datalabeling/compare/v0.120.1...v0.120.2) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-datalabeling/issues/1130)) ([#517](https://www.github.com/googleapis/java-datalabeling/issues/517)) ([eaceaeb](https://www.github.com/googleapis/java-datalabeling/commit/eaceaeb5d03d06c02056e0a950e9aebf8080c2e4))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#523](https://www.github.com/googleapis/java-datalabeling/issues/523)) ([860be47](https://www.github.com/googleapis/java-datalabeling/commit/860be47a4e097f450934c81de686942108c1a73a))
+
 ### [0.120.1](https://www.github.com/googleapis/java-datalabeling/compare/v0.120.0...v0.120.1) (2021-06-04)
 
 
