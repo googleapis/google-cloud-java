@@ -1,5 +1,31 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/googleapis/java-channel/compare/v2.2.1...v2.3.0) (2021-07-01)
+
+
+### Features
+
+* Add a new enum value LICENSE_CAP_CHANGED to enum EntitlementEvent.Type ([24e1b7f](https://www.github.com/googleapis/java-channel/commit/24e1b7f408c0b752e0ad0fd0bad475e45ac9aa75))
+* Add a new enum value LICENSE_CAP_CHANGED to enum EntitlementEvent.Type ([a7cc927](https://www.github.com/googleapis/java-channel/commit/a7cc927e7b18a16f6bd3e35044dedbe4922fffa7))
+* Add a new LookupOffer RPC and LookupOfferRequest proto ([a7cc927](https://www.github.com/googleapis/java-channel/commit/a7cc927e7b18a16f6bd3e35044dedbe4922fffa7))
+* Add a new LookupOffer RPC and LookupOfferRequest proto. ([24e1b7f](https://www.github.com/googleapis/java-channel/commit/24e1b7f408c0b752e0ad0fd0bad475e45ac9aa75))
+* Add additional_bindings to HTTP annotations of Customer related APIs (list/create/get/update/delete) ([a7cc927](https://www.github.com/googleapis/java-channel/commit/a7cc927e7b18a16f6bd3e35044dedbe4922fffa7))
+* Add additional_bindings to HTTP annotations of Customer related APIs (list/create/get/update/delete). ([24e1b7f](https://www.github.com/googleapis/java-channel/commit/24e1b7f408c0b752e0ad0fd0bad475e45ac9aa75))
+* Add/Update API definitions for Cloud Channel API ([#112](https://www.github.com/googleapis/java-channel/issues/112)) ([a7cc927](https://www.github.com/googleapis/java-channel/commit/a7cc927e7b18a16f6bd3e35044dedbe4922fffa7))
+* Add/Update API definitions for Cloud Channel API, including ([24e1b7f](https://www.github.com/googleapis/java-channel/commit/24e1b7f408c0b752e0ad0fd0bad475e45ac9aa75))
+* Update descriptions of APIs ([a7cc927](https://www.github.com/googleapis/java-channel/commit/a7cc927e7b18a16f6bd3e35044dedbe4922fffa7))
+* Update descriptions of APIs. ([24e1b7f](https://www.github.com/googleapis/java-channel/commit/24e1b7f408c0b752e0ad0fd0bad475e45ac9aa75))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-channel/issues/1130)) ([#123](https://www.github.com/googleapis/java-channel/issues/123)) ([3a28425](https://www.github.com/googleapis/java-channel/commit/3a284251845d50f5f03209fdab77d145df9f104a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#124](https://www.github.com/googleapis/java-channel/issues/124)) ([06e04a5](https://www.github.com/googleapis/java-channel/commit/06e04a532b9b39f813ef6c8260f009ce172c91d1))
+
 ### [2.2.1](https://www.github.com/googleapis/java-channel/compare/v2.2.0...v2.2.1) (2021-06-09)
 
 
