@@ -205,9 +205,9 @@ public class VersionName implements ResourceName {
     }
 
     private Builder(VersionName versionName) {
-      project = versionName.project;
-      model = versionName.model;
-      version = versionName.version;
+      this.project = versionName.project;
+      this.model = versionName.model;
+      this.version = versionName.version;
     }
 
     public VersionName build() {

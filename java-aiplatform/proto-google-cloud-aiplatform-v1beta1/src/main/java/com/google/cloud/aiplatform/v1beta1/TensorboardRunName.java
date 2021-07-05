@@ -284,11 +284,11 @@ public class TensorboardRunName implements ResourceName {
     }
 
     private Builder(TensorboardRunName tensorboardRunName) {
-      project = tensorboardRunName.project;
-      location = tensorboardRunName.location;
-      tensorboard = tensorboardRunName.tensorboard;
-      experiment = tensorboardRunName.experiment;
-      run = tensorboardRunName.run;
+      this.project = tensorboardRunName.project;
+      this.location = tensorboardRunName.location;
+      this.tensorboard = tensorboardRunName.tensorboard;
+      this.experiment = tensorboardRunName.experiment;
+      this.run = tensorboardRunName.run;
     }
 
     public TensorboardRunName build() {

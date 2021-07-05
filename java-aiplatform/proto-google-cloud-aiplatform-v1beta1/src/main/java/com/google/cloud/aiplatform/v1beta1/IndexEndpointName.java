@@ -215,9 +215,9 @@ public class IndexEndpointName implements ResourceName {
     }
 
     private Builder(IndexEndpointName indexEndpointName) {
-      project = indexEndpointName.project;
-      location = indexEndpointName.location;
-      indexEndpoint = indexEndpointName.indexEndpoint;
+      this.project = indexEndpointName.project;
+      this.location = indexEndpointName.location;
+      this.indexEndpoint = indexEndpointName.indexEndpoint;
     }
 
     public IndexEndpointName build() {

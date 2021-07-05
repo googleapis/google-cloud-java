@@ -50,10 +50,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class VizierServiceClientTest {
-  private static MockVizierService mockVizierService;
   private static MockServiceHelper mockServiceHelper;
-  private VizierServiceClient client;
+  private static MockVizierService mockVizierService;
   private LocalChannelProvider channelProvider;
+  private VizierServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

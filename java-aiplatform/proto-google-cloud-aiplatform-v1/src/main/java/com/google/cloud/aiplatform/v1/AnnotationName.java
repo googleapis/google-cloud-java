@@ -284,11 +284,11 @@ public class AnnotationName implements ResourceName {
     }
 
     private Builder(AnnotationName annotationName) {
-      project = annotationName.project;
-      location = annotationName.location;
-      dataset = annotationName.dataset;
-      dataItem = annotationName.dataItem;
-      annotation = annotationName.annotation;
+      this.project = annotationName.project;
+      this.location = annotationName.location;
+      this.dataset = annotationName.dataset;
+      this.dataItem = annotationName.dataItem;
+      this.annotation = annotationName.annotation;
     }
 
     public AnnotationName build() {

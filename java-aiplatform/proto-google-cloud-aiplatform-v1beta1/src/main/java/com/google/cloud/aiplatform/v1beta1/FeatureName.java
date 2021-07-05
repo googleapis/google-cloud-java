@@ -284,11 +284,11 @@ public class FeatureName implements ResourceName {
     }
 
     private Builder(FeatureName featureName) {
-      project = featureName.project;
-      location = featureName.location;
-      featurestore = featureName.featurestore;
-      entityType = featureName.entityType;
-      feature = featureName.feature;
+      this.project = featureName.project;
+      this.location = featureName.location;
+      this.featurestore = featureName.featurestore;
+      this.entityType = featureName.entityType;
+      this.feature = featureName.feature;
     }
 
     public FeatureName build() {

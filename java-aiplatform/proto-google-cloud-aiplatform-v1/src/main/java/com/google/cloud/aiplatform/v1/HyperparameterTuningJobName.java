@@ -228,9 +228,9 @@ public class HyperparameterTuningJobName implements ResourceName {
     }
 
     private Builder(HyperparameterTuningJobName hyperparameterTuningJobName) {
-      project = hyperparameterTuningJobName.project;
-      location = hyperparameterTuningJobName.location;
-      hyperparameterTuningJob = hyperparameterTuningJobName.hyperparameterTuningJob;
+      this.project = hyperparameterTuningJobName.project;
+      this.location = hyperparameterTuningJobName.location;
+      this.hyperparameterTuningJob = hyperparameterTuningJobName.hyperparameterTuningJob;
     }
 
     public HyperparameterTuningJobName build() {

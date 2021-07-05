@@ -56,8 +56,8 @@ import org.junit.Test;
 public class FeaturestoreServiceClientTest {
   private static MockFeaturestoreService mockFeaturestoreService;
   private static MockServiceHelper mockServiceHelper;
-  private FeaturestoreServiceClient client;
   private LocalChannelProvider channelProvider;
+  private FeaturestoreServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

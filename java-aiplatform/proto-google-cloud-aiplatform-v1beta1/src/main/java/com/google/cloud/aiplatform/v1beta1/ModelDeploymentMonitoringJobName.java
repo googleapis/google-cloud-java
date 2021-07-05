@@ -230,9 +230,10 @@ public class ModelDeploymentMonitoringJobName implements ResourceName {
     }
 
     private Builder(ModelDeploymentMonitoringJobName modelDeploymentMonitoringJobName) {
-      project = modelDeploymentMonitoringJobName.project;
-      location = modelDeploymentMonitoringJobName.location;
-      modelDeploymentMonitoringJob = modelDeploymentMonitoringJobName.modelDeploymentMonitoringJob;
+      this.project = modelDeploymentMonitoringJobName.project;
+      this.location = modelDeploymentMonitoringJobName.location;
+      this.modelDeploymentMonitoringJob =
+          modelDeploymentMonitoringJobName.modelDeploymentMonitoringJob;
     }
 
     public ModelDeploymentMonitoringJobName build() {

@@ -215,9 +215,9 @@ public class AnnotatedDatasetName implements ResourceName {
     }
 
     private Builder(AnnotatedDatasetName annotatedDatasetName) {
-      project = annotatedDatasetName.project;
-      dataset = annotatedDatasetName.dataset;
-      annotatedDataset = annotatedDatasetName.annotatedDataset;
+      this.project = annotatedDatasetName.project;
+      this.dataset = annotatedDatasetName.dataset;
+      this.annotatedDataset = annotatedDatasetName.annotatedDataset;
     }
 
     public AnnotatedDatasetName build() {

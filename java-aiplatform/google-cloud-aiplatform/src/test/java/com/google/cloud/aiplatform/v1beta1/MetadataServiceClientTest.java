@@ -58,8 +58,8 @@ import org.junit.Test;
 public class MetadataServiceClientTest {
   private static MockMetadataService mockMetadataService;
   private static MockServiceHelper mockServiceHelper;
-  private MetadataServiceClient client;
   private LocalChannelProvider channelProvider;
+  private MetadataServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

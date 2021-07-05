@@ -215,9 +215,9 @@ public class DataLabelingJobName implements ResourceName {
     }
 
     private Builder(DataLabelingJobName dataLabelingJobName) {
-      project = dataLabelingJobName.project;
-      location = dataLabelingJobName.location;
-      dataLabelingJob = dataLabelingJobName.dataLabelingJob;
+      this.project = dataLabelingJobName.project;
+      this.location = dataLabelingJobName.location;
+      this.dataLabelingJob = dataLabelingJobName.dataLabelingJob;
     }
 
     public DataLabelingJobName build() {

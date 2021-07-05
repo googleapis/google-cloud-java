@@ -244,10 +244,10 @@ public class TrialName implements ResourceName {
     }
 
     private Builder(TrialName trialName) {
-      project = trialName.project;
-      location = trialName.location;
-      study = trialName.study;
-      trial = trialName.trial;
+      this.project = trialName.project;
+      this.location = trialName.location;
+      this.study = trialName.study;
+      this.trial = trialName.trial;
     }
 
     public TrialName build() {

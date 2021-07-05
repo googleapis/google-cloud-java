@@ -215,9 +215,9 @@ public class TensorboardName implements ResourceName {
     }
 
     private Builder(TensorboardName tensorboardName) {
-      project = tensorboardName.project;
-      location = tensorboardName.location;
-      tensorboard = tensorboardName.tensorboard;
+      this.project = tensorboardName.project;
+      this.location = tensorboardName.location;
+      this.tensorboard = tensorboardName.tensorboard;
     }
 
     public TensorboardName build() {

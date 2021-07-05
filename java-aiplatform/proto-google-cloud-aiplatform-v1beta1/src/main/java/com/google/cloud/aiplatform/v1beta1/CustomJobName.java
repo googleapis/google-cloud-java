@@ -211,9 +211,9 @@ public class CustomJobName implements ResourceName {
     }
 
     private Builder(CustomJobName customJobName) {
-      project = customJobName.project;
-      location = customJobName.location;
-      customJob = customJobName.customJob;
+      this.project = customJobName.project;
+      this.location = customJobName.location;
+      this.customJob = customJobName.customJob;
     }
 
     public CustomJobName build() {

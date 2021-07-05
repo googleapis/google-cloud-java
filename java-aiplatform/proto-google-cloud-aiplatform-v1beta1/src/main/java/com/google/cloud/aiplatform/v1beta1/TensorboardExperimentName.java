@@ -257,10 +257,10 @@ public class TensorboardExperimentName implements ResourceName {
     }
 
     private Builder(TensorboardExperimentName tensorboardExperimentName) {
-      project = tensorboardExperimentName.project;
-      location = tensorboardExperimentName.location;
-      tensorboard = tensorboardExperimentName.tensorboard;
-      experiment = tensorboardExperimentName.experiment;
+      this.project = tensorboardExperimentName.project;
+      this.location = tensorboardExperimentName.location;
+      this.tensorboard = tensorboardExperimentName.tensorboard;
+      this.experiment = tensorboardExperimentName.experiment;
     }
 
     public TensorboardExperimentName build() {

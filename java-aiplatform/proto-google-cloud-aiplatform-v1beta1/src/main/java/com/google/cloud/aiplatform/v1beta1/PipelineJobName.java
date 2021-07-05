@@ -215,9 +215,9 @@ public class PipelineJobName implements ResourceName {
     }
 
     private Builder(PipelineJobName pipelineJobName) {
-      project = pipelineJobName.project;
-      location = pipelineJobName.location;
-      pipelineJob = pipelineJobName.pipelineJob;
+      this.project = pipelineJobName.project;
+      this.location = pipelineJobName.location;
+      this.pipelineJob = pipelineJobName.pipelineJob;
     }
 
     public PipelineJobName build() {

@@ -215,9 +215,9 @@ public class TrainingPipelineName implements ResourceName {
     }
 
     private Builder(TrainingPipelineName trainingPipelineName) {
-      project = trainingPipelineName.project;
-      location = trainingPipelineName.location;
-      trainingPipeline = trainingPipelineName.trainingPipeline;
+      this.project = trainingPipelineName.project;
+      this.location = trainingPipelineName.location;
+      this.trainingPipeline = trainingPipelineName.trainingPipeline;
     }
 
     public TrainingPipelineName build() {

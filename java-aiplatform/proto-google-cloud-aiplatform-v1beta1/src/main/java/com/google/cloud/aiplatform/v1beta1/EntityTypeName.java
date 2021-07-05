@@ -256,10 +256,10 @@ public class EntityTypeName implements ResourceName {
     }
 
     private Builder(EntityTypeName entityTypeName) {
-      project = entityTypeName.project;
-      location = entityTypeName.location;
-      featurestore = entityTypeName.featurestore;
-      entityType = entityTypeName.entityType;
+      this.project = entityTypeName.project;
+      this.location = entityTypeName.location;
+      this.featurestore = entityTypeName.featurestore;
+      this.entityType = entityTypeName.entityType;
     }
 
     public EntityTypeName build() {

@@ -323,12 +323,12 @@ public class TensorboardTimeSeriesName implements ResourceName {
     }
 
     private Builder(TensorboardTimeSeriesName tensorboardTimeSeriesName) {
-      project = tensorboardTimeSeriesName.project;
-      location = tensorboardTimeSeriesName.location;
-      tensorboard = tensorboardTimeSeriesName.tensorboard;
-      experiment = tensorboardTimeSeriesName.experiment;
-      run = tensorboardTimeSeriesName.run;
-      timeSeries = tensorboardTimeSeriesName.timeSeries;
+      this.project = tensorboardTimeSeriesName.project;
+      this.location = tensorboardTimeSeriesName.location;
+      this.tensorboard = tensorboardTimeSeriesName.tensorboard;
+      this.experiment = tensorboardTimeSeriesName.experiment;
+      this.run = tensorboardTimeSeriesName.run;
+      this.timeSeries = tensorboardTimeSeriesName.timeSeries;
     }
 
     public TensorboardTimeSeriesName build() {

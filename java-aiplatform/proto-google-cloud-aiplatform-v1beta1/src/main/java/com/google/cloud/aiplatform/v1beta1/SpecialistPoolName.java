@@ -215,9 +215,9 @@ public class SpecialistPoolName implements ResourceName {
     }
 
     private Builder(SpecialistPoolName specialistPoolName) {
-      project = specialistPoolName.project;
-      location = specialistPoolName.location;
-      specialistPool = specialistPoolName.specialistPool;
+      this.project = specialistPoolName.project;
+      this.location = specialistPoolName.location;
+      this.specialistPool = specialistPoolName.specialistPool;
     }
 
     public SpecialistPoolName build() {

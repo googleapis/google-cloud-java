@@ -53,8 +53,8 @@ import org.junit.Test;
 public class IndexEndpointServiceClientTest {
   private static MockIndexEndpointService mockIndexEndpointService;
   private static MockServiceHelper mockServiceHelper;
-  private IndexEndpointServiceClient client;
   private LocalChannelProvider channelProvider;
+  private IndexEndpointServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

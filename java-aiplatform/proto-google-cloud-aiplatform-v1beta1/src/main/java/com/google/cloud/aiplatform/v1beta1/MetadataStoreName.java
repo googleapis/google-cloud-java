@@ -215,9 +215,9 @@ public class MetadataStoreName implements ResourceName {
     }
 
     private Builder(MetadataStoreName metadataStoreName) {
-      project = metadataStoreName.project;
-      location = metadataStoreName.location;
-      metadataStore = metadataStoreName.metadataStore;
+      this.project = metadataStoreName.project;
+      this.location = metadataStoreName.location;
+      this.metadataStore = metadataStoreName.metadataStore;
     }
 
     public MetadataStoreName build() {

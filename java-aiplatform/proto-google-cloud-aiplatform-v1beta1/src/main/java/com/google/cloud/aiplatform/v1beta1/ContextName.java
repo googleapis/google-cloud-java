@@ -256,10 +256,10 @@ public class ContextName implements ResourceName {
     }
 
     private Builder(ContextName contextName) {
-      project = contextName.project;
-      location = contextName.location;
-      metadataStore = contextName.metadataStore;
-      context = contextName.context;
+      this.project = contextName.project;
+      this.location = contextName.location;
+      this.metadataStore = contextName.metadataStore;
+      this.context = contextName.context;
     }
 
     public ContextName build() {

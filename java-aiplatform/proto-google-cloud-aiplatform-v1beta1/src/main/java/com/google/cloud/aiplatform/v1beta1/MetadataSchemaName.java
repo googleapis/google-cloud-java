@@ -256,10 +256,10 @@ public class MetadataSchemaName implements ResourceName {
     }
 
     private Builder(MetadataSchemaName metadataSchemaName) {
-      project = metadataSchemaName.project;
-      location = metadataSchemaName.location;
-      metadataStore = metadataSchemaName.metadataStore;
-      metadataSchema = metadataSchemaName.metadataSchema;
+      this.project = metadataSchemaName.project;
+      this.location = metadataSchemaName.location;
+      this.metadataStore = metadataSchemaName.metadataStore;
+      this.metadataSchema = metadataSchemaName.metadataSchema;
     }
 
     public MetadataSchemaName build() {

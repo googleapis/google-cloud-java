@@ -211,9 +211,9 @@ public class StudyName implements ResourceName {
     }
 
     private Builder(StudyName studyName) {
-      project = studyName.project;
-      location = studyName.location;
-      study = studyName.study;
+      this.project = studyName.project;
+      this.location = studyName.location;
+      this.study = studyName.study;
     }
 
     public StudyName build() {

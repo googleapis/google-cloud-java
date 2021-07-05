@@ -60,10 +60,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class JobServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
-  private JobServiceClient client;
   private static MockJobService mockJobService;
+  private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
+  private JobServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

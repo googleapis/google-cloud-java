@@ -211,9 +211,9 @@ public class IndexName implements ResourceName {
     }
 
     private Builder(IndexName indexName) {
-      project = indexName.project;
-      location = indexName.location;
-      index = indexName.index;
+      this.project = indexName.project;
+      this.location = indexName.location;
+      this.index = indexName.index;
     }
 
     public IndexName build() {

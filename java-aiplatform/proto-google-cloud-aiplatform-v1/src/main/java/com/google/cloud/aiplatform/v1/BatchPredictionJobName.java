@@ -219,9 +219,9 @@ public class BatchPredictionJobName implements ResourceName {
     }
 
     private Builder(BatchPredictionJobName batchPredictionJobName) {
-      project = batchPredictionJobName.project;
-      location = batchPredictionJobName.location;
-      batchPredictionJob = batchPredictionJobName.batchPredictionJob;
+      this.project = batchPredictionJobName.project;
+      this.location = batchPredictionJobName.location;
+      this.batchPredictionJob = batchPredictionJobName.batchPredictionJob;
     }
 
     public BatchPredictionJobName build() {

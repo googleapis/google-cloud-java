@@ -215,9 +215,9 @@ public class FeaturestoreName implements ResourceName {
     }
 
     private Builder(FeaturestoreName featurestoreName) {
-      project = featurestoreName.project;
-      location = featurestoreName.location;
-      featurestore = featurestoreName.featurestore;
+      this.project = featurestoreName.project;
+      this.location = featurestoreName.location;
+      this.featurestore = featurestoreName.featurestore;
     }
 
     public FeaturestoreName build() {

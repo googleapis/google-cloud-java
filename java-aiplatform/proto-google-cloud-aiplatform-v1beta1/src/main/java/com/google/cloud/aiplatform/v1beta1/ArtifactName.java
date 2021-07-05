@@ -256,10 +256,10 @@ public class ArtifactName implements ResourceName {
     }
 
     private Builder(ArtifactName artifactName) {
-      project = artifactName.project;
-      location = artifactName.location;
-      metadataStore = artifactName.metadataStore;
-      artifact = artifactName.artifact;
+      this.project = artifactName.project;
+      this.location = artifactName.location;
+      this.metadataStore = artifactName.metadataStore;
+      this.artifact = artifactName.artifact;
     }
 
     public ArtifactName build() {

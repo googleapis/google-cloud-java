@@ -247,10 +247,10 @@ public class ModelEvaluationName implements ResourceName {
     }
 
     private Builder(ModelEvaluationName modelEvaluationName) {
-      project = modelEvaluationName.project;
-      location = modelEvaluationName.location;
-      model = modelEvaluationName.model;
-      evaluation = modelEvaluationName.evaluation;
+      this.project = modelEvaluationName.project;
+      this.location = modelEvaluationName.location;
+      this.model = modelEvaluationName.model;
+      this.evaluation = modelEvaluationName.evaluation;
     }
 
     public ModelEvaluationName build() {

@@ -246,10 +246,10 @@ public class DataItemName implements ResourceName {
     }
 
     private Builder(DataItemName dataItemName) {
-      project = dataItemName.project;
-      location = dataItemName.location;
-      dataset = dataItemName.dataset;
-      dataItem = dataItemName.dataItem;
+      this.project = dataItemName.project;
+      this.location = dataItemName.location;
+      this.dataset = dataItemName.dataset;
+      this.dataItem = dataItemName.dataItem;
     }
 
     public DataItemName build() {

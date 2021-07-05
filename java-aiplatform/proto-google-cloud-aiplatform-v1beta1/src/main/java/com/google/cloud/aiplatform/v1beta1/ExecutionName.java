@@ -256,10 +256,10 @@ public class ExecutionName implements ResourceName {
     }
 
     private Builder(ExecutionName executionName) {
-      project = executionName.project;
-      location = executionName.location;
-      metadataStore = executionName.metadataStore;
-      execution = executionName.execution;
+      this.project = executionName.project;
+      this.location = executionName.location;
+      this.metadataStore = executionName.metadataStore;
+      this.execution = executionName.execution;
     }
 
     public ExecutionName build() {

@@ -284,11 +284,11 @@ public class ModelEvaluationSliceName implements ResourceName {
     }
 
     private Builder(ModelEvaluationSliceName modelEvaluationSliceName) {
-      project = modelEvaluationSliceName.project;
-      location = modelEvaluationSliceName.location;
-      model = modelEvaluationSliceName.model;
-      evaluation = modelEvaluationSliceName.evaluation;
-      slice = modelEvaluationSliceName.slice;
+      this.project = modelEvaluationSliceName.project;
+      this.location = modelEvaluationSliceName.location;
+      this.model = modelEvaluationSliceName.model;
+      this.evaluation = modelEvaluationSliceName.evaluation;
+      this.slice = modelEvaluationSliceName.slice;
     }
 
     public ModelEvaluationSliceName build() {
