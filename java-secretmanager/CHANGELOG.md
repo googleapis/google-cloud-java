@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.6.4](https://www.github.com/googleapis/java-secretmanager/compare/v1.6.3...v1.6.4) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#522](https://www.github.com/googleapis/java-secretmanager/issues/522)) ([4349b80](https://www.github.com/googleapis/java-secretmanager/commit/4349b8099d620fd8c4d8a4e17d1623e8dde17119))
+* Update dependencies.sh to not break on mac ([#518](https://www.github.com/googleapis/java-secretmanager/issues/518)) ([7db26b9](https://www.github.com/googleapis/java-secretmanager/commit/7db26b91d8acf609f4404305b7417637fb48963b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#525](https://www.github.com/googleapis/java-secretmanager/issues/525)) ([322a7f6](https://www.github.com/googleapis/java-secretmanager/commit/322a7f68c6017a017ea58b840be4ea5c6e27ef48))
+
 ### [1.6.3](https://www.github.com/googleapis/java-secretmanager/compare/v1.6.2...v1.6.3) (2021-06-09)
 
 
