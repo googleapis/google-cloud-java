@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.2.2](https://www.github.com/googleapis/java-orgpolicy/compare/v1.2.1...v1.2.2) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#210](https://www.github.com/googleapis/java-orgpolicy/issues/210)) ([e95e60f](https://www.github.com/googleapis/java-orgpolicy/commit/e95e60fbcbd83a1f3c0f920d1830e2ea91816576))
+* Update dependencies.sh to not break on mac ([#206](https://www.github.com/googleapis/java-orgpolicy/issues/206)) ([32af8ad](https://www.github.com/googleapis/java-orgpolicy/commit/32af8ad19146c4c47434d2029c0d7ed61bf4e9f9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#211](https://www.github.com/googleapis/java-orgpolicy/issues/211)) ([05df101](https://www.github.com/googleapis/java-orgpolicy/commit/05df101c434868d2bc09b90857da3239ba9f17f9))
+
 ### [1.2.1](https://www.github.com/googleapis/java-orgpolicy/compare/v1.2.0...v1.2.1) (2021-06-04)
 
 
