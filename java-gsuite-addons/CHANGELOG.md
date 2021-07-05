@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-gsuite-addons/compare/v0.2.0...v1.0.0) (2021-07-02)
+
+
+### Features
+
+* promote to 1.0.0 ([#51](https://www.github.com/googleapis/java-gsuite-addons/issues/51)) ([c641d62](https://www.github.com/googleapis/java-gsuite-addons/commit/c641d6212c4d76bcd127b402db2061e41c501417))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-gsuite-addons/issues/1130)) ([#48](https://www.github.com/googleapis/java-gsuite-addons/issues/48)) ([3e3aadf](https://www.github.com/googleapis/java-gsuite-addons/commit/3e3aadf2dba614946aaab67b17dec27b604c9b61))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#50](https://www.github.com/googleapis/java-gsuite-addons/issues/50)) ([90e9039](https://www.github.com/googleapis/java-gsuite-addons/commit/90e90399eced4f4f7bf2170cb4b7b4cfb3bfdc45))
+
 ## [0.2.0](https://www.github.com/googleapis/java-gsuite-addons/compare/v0.1.1...v0.2.0) (2021-06-17)
 
 

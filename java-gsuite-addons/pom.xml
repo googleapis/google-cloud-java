@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gsuite-addons-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gsuite-addons:current} -->
+  <version>1.0.0</version><!-- {x-version-update:google-cloud-gsuite-addons:current} -->
   <name>Google Google Workspace Add-ons API Parent</name>
   <url>https://github.com/googleapis/java-gsuite-addons</url>
   <description>
@@ -60,22 +60,22 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gsuite-addons</artifactId>
-        <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gsuite-addons:current} -->
+        <version>1.0.0</version><!-- {x-version-update:google-cloud-gsuite-addons:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-apps-script-type-protos</artifactId>
-        <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:proto-google-apps-script-type-protos:current} -->
+        <version>1.0.0</version><!-- {x-version-update:proto-google-apps-script-type-protos:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-gsuite-addons-v1</artifactId>
-        <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-gsuite-addons-v1:current} -->
+        <version>1.0.0</version><!-- {x-version-update:grpc-google-cloud-gsuite-addons-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-gsuite-addons-v1</artifactId>
-        <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gsuite-addons-v1:current} -->
+        <version>1.0.0</version><!-- {x-version-update:proto-google-cloud-gsuite-addons-v1:current} -->
       </dependency>
 
       <dependency>
