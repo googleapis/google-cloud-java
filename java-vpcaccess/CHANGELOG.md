@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-vpcaccess/compare/v0.1.1...v1.0.0) (2021-07-02)
+
+
+### Features
+
+* promote to 1.0.0 ([#29](https://www.github.com/googleapis/java-vpcaccess/issues/29)) ([ac8254e](https://www.github.com/googleapis/java-vpcaccess/commit/ac8254e6de1aa61894c923d262e77e9bbad7e8da))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-vpcaccess/issues/1130)) ([#26](https://www.github.com/googleapis/java-vpcaccess/issues/26)) ([d139120](https://www.github.com/googleapis/java-vpcaccess/commit/d1391201526d0f1c74a0f7b2b98fb82a563dba22))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#28](https://www.github.com/googleapis/java-vpcaccess/issues/28)) ([65c96df](https://www.github.com/googleapis/java-vpcaccess/commit/65c96df8765136ee481bea42ea368175d55942f1))
+
 ### [0.1.1](https://www.github.com/googleapis/java-vpcaccess/compare/v0.1.0...v0.1.1) (2021-06-09)
 
 
