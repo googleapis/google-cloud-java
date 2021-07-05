@@ -149,12 +149,13 @@ public final class TagKeysProto {
           + "A#cloudresourcemanager.googleapis.com\322Ag"
           + "https://www.googleapis.com/auth/cloud-pl"
           + "atform,https://www.googleapis.com/auth/c"
-          + "loud-platform.read-onlyB\311\001\n#com.google.c"
+          + "loud-platform.read-onlyB\356\001\n#com.google.c"
           + "loud.resourcemanager.v3B\014TagKeysProtoP\001Z"
           + "Ngoogle.golang.org/genproto/googleapis/c"
           + "loud/resourcemanager/v3;resourcemanager\252"
           + "\002\037Google.Cloud.ResourceManager.V3\312\002\037Goog"
-          + "le\\Cloud\\ResourceManager\\V3b\006proto3"
+          + "le\\Cloud\\ResourceManager\\V3\352\002\"Google::Cl"
+          + "oud::ResourceManager::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

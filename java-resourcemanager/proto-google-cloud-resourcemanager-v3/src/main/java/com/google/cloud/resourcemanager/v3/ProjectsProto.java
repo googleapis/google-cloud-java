@@ -211,13 +211,14 @@ public final class ProjectsProto {
           + "permissions\032\220\001\312A#cloudresourcemanager.go"
           + "ogleapis.com\322Aghttps://www.googleapis.co"
           + "m/auth/cloud-platform,https://www.google"
-          + "apis.com/auth/cloud-platform.read-onlyB\312"
+          + "apis.com/auth/cloud-platform.read-onlyB\357"
           + "\001\n#com.google.cloud.resourcemanager.v3B\r"
           + "ProjectsProtoP\001ZNgoogle.golang.org/genpr"
           + "oto/googleapis/cloud/resourcemanager/v3;"
           + "resourcemanager\252\002\037Google.Cloud.ResourceM"
           + "anager.V3\312\002\037Google\\Cloud\\ResourceManager"
-          + "\\V3b\006proto3"
+          + "\\V3\352\002\"Google::Cloud::ResourceManager::V3"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

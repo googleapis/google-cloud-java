@@ -202,13 +202,14 @@ public final class FoldersProto {
           + "ssions\032\220\001\312A#cloudresourcemanager.googlea"
           + "pis.com\322Aghttps://www.googleapis.com/aut"
           + "h/cloud-platform,https://www.googleapis."
-          + "com/auth/cloud-platform.read-onlyB\311\001\n#co"
+          + "com/auth/cloud-platform.read-onlyB\356\001\n#co"
           + "m.google.cloud.resourcemanager.v3B\014Folde"
           + "rsProtoP\001ZNgoogle.golang.org/genproto/go"
           + "ogleapis/cloud/resourcemanager/v3;resour"
           + "cemanager\252\002\037Google.Cloud.ResourceManager"
-          + ".V3\312\002\037Google\\Cloud\\ResourceManager\\V3b\006p"
-          + "roto3"
+          + ".V3\312\002\037Google\\Cloud\\ResourceManager\\V3\352\002\""
+          + "Google::Cloud::ResourceManager::V3b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

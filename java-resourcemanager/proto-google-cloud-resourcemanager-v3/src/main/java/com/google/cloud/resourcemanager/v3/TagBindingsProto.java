@@ -104,13 +104,13 @@ public final class TagBindingsProto {
           + "\001\312A#cloudresourcemanager.googleapis.com\322"
           + "Aghttps://www.googleapis.com/auth/cloud-"
           + "platform,https://www.googleapis.com/auth"
-          + "/cloud-platform.read-onlyB\315\001\n#com.google"
+          + "/cloud-platform.read-onlyB\362\001\n#com.google"
           + ".cloud.resourcemanager.v3B\020TagBindingsPr"
           + "otoP\001ZNgoogle.golang.org/genproto/google"
           + "apis/cloud/resourcemanager/v3;resourcema"
           + "nager\252\002\037Google.Cloud.ResourceManager.V3\312"
-          + "\002\037Google\\Cloud\\ResourceManager\\V3b\006proto"
-          + "3"
+          + "\002\037Google\\Cloud\\ResourceManager\\V3\352\002\"Goog"
+          + "le::Cloud::ResourceManager::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

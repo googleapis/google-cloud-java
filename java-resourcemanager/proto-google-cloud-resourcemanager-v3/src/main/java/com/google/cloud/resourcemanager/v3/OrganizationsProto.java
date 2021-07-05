@@ -115,13 +115,14 @@ public final class OrganizationsProto {
           + "issions\032\220\001\312A#cloudresourcemanager.google"
           + "apis.com\322Aghttps://www.googleapis.com/au"
           + "th/cloud-platform,https://www.googleapis"
-          + ".com/auth/cloud-platform.read-onlyB\317\001\n#c"
+          + ".com/auth/cloud-platform.read-onlyB\364\001\n#c"
           + "om.google.cloud.resourcemanager.v3B\022Orga"
           + "nizationsProtoP\001ZNgoogle.golang.org/genp"
           + "roto/googleapis/cloud/resourcemanager/v3"
           + ";resourcemanager\252\002\037Google.Cloud.Resource"
           + "Manager.V3\312\002\037Google\\Cloud\\ResourceManage"
-          + "r\\V3b\006proto3"
+          + "r\\V3\352\002\"Google::Cloud::ResourceManager::V"
+          + "3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
