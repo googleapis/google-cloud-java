@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-tpu/compare/v0.1.1...v1.0.0) (2021-07-02)
+
+
+### Features
+
+* promote to 1.0.0 ([#29](https://www.github.com/googleapis/java-tpu/issues/29)) ([4a01b22](https://www.github.com/googleapis/java-tpu/commit/4a01b22193d9047cf3bd093886b94be3343372ff))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-tpu/issues/1130)) ([#26](https://www.github.com/googleapis/java-tpu/issues/26)) ([5628fd3](https://www.github.com/googleapis/java-tpu/commit/5628fd357b14a15653c8a5ad174847c1493819ec))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#28](https://www.github.com/googleapis/java-tpu/issues/28)) ([ca5b523](https://www.github.com/googleapis/java-tpu/commit/ca5b523d82a93c5cf969e81490cc632edb208f03))
+
 ### [0.1.1](https://www.github.com/googleapis/java-tpu/compare/v0.1.0...v0.1.1) (2021-06-09)
 
 
