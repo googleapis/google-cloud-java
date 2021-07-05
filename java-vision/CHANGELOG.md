@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.113.6](https://www.github.com/googleapis/java-vision/compare/v1.113.5...v1.113.6) (2021-07-02)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#562](https://www.github.com/googleapis/java-vision/issues/562)) ([0d833bc](https://www.github.com/googleapis/java-vision/commit/0d833bc80e2833999fd9c4f575fcf792b13b3b18))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.95.4 ([#563](https://www.github.com/googleapis/java-vision/issues/563)) ([af16d73](https://www.github.com/googleapis/java-vision/commit/af16d73ffc83bb1b1dce716e4774a5e87bfbd7a9))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#568](https://www.github.com/googleapis/java-vision/issues/568)) ([8785c7e](https://www.github.com/googleapis/java-vision/commit/8785c7ef03f02bf60cb9cec7cc4f28d4f0cde52c))
+* update dependency com.google.cloud:google-cloud-storage to v1.117.1 ([#567](https://www.github.com/googleapis/java-vision/issues/567)) ([9c2d249](https://www.github.com/googleapis/java-vision/commit/9c2d249a6c9ed08d422beea896741bd63eeb72c0))
+* update spring.version to v2.5.2 ([#566](https://www.github.com/googleapis/java-vision/issues/566)) ([932b79b](https://www.github.com/googleapis/java-vision/commit/932b79bae4eb24a8c3a9a54100fc37cc60b93076))
+
 ### [1.113.5](https://www.github.com/googleapis/java-vision/compare/v1.113.4...v1.113.5) (2021-06-16)
 
 
