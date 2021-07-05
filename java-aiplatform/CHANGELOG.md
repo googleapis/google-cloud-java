@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-aiplatform/compare/v1.0.0...v1.0.1) (2021-07-05)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-aiplatform/issues/1130)) ([#417](https://www.github.com/googleapis/java-aiplatform/issues/417)) ([dc73fad](https://www.github.com/googleapis/java-aiplatform/commit/dc73fad8c067081ef7b078229c2b1e933a02cbb6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#423](https://www.github.com/googleapis/java-aiplatform/issues/423)) ([0ff042a](https://www.github.com/googleapis/java-aiplatform/commit/0ff042a41d257ad1034fd343dcbb164de28cc996))
+* update dependency com.google.cloud:google-cloud-storage to v1.117.1 ([#422](https://www.github.com/googleapis/java-aiplatform/issues/422)) ([f9e4e42](https://www.github.com/googleapis/java-aiplatform/commit/f9e4e42823f646c5e81641436ed5423a177a1049))
+
 ## [1.0.0](https://www.github.com/googleapis/java-aiplatform/compare/v0.4.1...v1.0.0) (2021-06-09)
 
 
