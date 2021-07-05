@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.43.0](https://www.github.com/googleapis/java-kms/compare/v1.42.3...v1.43.0) (2021-07-05)
+
+
+### Features
+
+* add ECDSA secp256k1 to the list of supported algorithms ([#531](https://www.github.com/googleapis/java-kms/issues/531)) ([5a9fc94](https://www.github.com/googleapis/java-kms/commit/5a9fc945182078083b4e303de60e991c06e4a7e2))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#533](https://www.github.com/googleapis/java-kms/issues/533)) ([99366b6](https://www.github.com/googleapis/java-kms/commit/99366b662a4373e43ef2f6f88a902b27a8df0209))
+* replace IAMPolicy mixin in service config ([5a9fc94](https://www.github.com/googleapis/java-kms/commit/5a9fc945182078083b4e303de60e991c06e4a7e2))
+* Update dependencies.sh to not break on mac ([#529](https://www.github.com/googleapis/java-kms/issues/529)) ([e5484ad](https://www.github.com/googleapis/java-kms/commit/e5484ad5fe5d8c4440ee48a7d112d28bc42cfd34))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#537](https://www.github.com/googleapis/java-kms/issues/537)) ([0dc89f6](https://www.github.com/googleapis/java-kms/commit/0dc89f6535a1dd09c6675a9db1940f018112db47))
+
 ### [1.42.3](https://www.github.com/googleapis/java-kms/compare/v1.42.2...v1.42.3) (2021-06-09)
 
 
