@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.3.2](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v1.3.1...v1.3.2) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#404](https://www.github.com/googleapis/java-monitoring-dashboards/issues/404)) ([e23ed28](https://www.github.com/googleapis/java-monitoring-dashboards/commit/e23ed28d1c46a74b7b97035303f0412e38ab224f))
+* Update dependencies.sh to not break on mac ([#400](https://www.github.com/googleapis/java-monitoring-dashboards/issues/400)) ([8cd6caa](https://www.github.com/googleapis/java-monitoring-dashboards/commit/8cd6caa3c57369b2915e98138da0192c3e041e5c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#406](https://www.github.com/googleapis/java-monitoring-dashboards/issues/406)) ([59567b8](https://www.github.com/googleapis/java-monitoring-dashboards/commit/59567b86fe5e3f15e53ddf4c1cb4cf55e7b89ae1))
+
 ### [1.3.1](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v1.3.0...v1.3.1) (2021-06-04)
 
 
