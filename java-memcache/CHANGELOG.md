@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.1.2](https://www.github.com/googleapis/java-memcache/compare/v1.1.1...v1.1.2) (2021-07-02)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#430](https://www.github.com/googleapis/java-memcache/issues/430)) ([f4848cb](https://www.github.com/googleapis/java-memcache/commit/f4848cbac33040338808cfbdb83de636262ed01a))
+* Update dependencies.sh to not break on mac ([#425](https://www.github.com/googleapis/java-memcache/issues/425)) ([6ae6be6](https://www.github.com/googleapis/java-memcache/commit/6ae6be64f44b981d900092fea631c56e7686d8e9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#434](https://www.github.com/googleapis/java-memcache/issues/434)) ([9771c03](https://www.github.com/googleapis/java-memcache/commit/9771c030c4f10e852df3f22182f7abc024831cf5))
+
 ### [1.1.1](https://www.github.com/googleapis/java-memcache/compare/v1.1.0...v1.1.1) (2021-06-09)
 
 
