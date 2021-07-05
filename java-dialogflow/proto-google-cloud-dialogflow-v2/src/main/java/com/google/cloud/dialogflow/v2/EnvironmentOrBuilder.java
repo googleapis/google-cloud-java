@@ -87,14 +87,16 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Optional. The agent version loaded into this environment.
+   * Required. The agent version loaded into this environment.
    * Supported formats:
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
    *   ID&gt;`
    * </pre>
    *
-   * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The agentVersion.
    */
@@ -103,14 +105,16 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Optional. The agent version loaded into this environment.
+   * Required. The agent version loaded into this environment.
    * Supported formats:
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
    *   ID&gt;`
    * </pre>
    *
-   * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for agentVersion.
    */

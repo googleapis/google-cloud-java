@@ -177,7 +177,7 @@ public class EnvironmentsClientTest {
             .setName(
                 EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
             .setDescription("description-1724546052")
-            .setAgentVersion("agentVersion1928000019")
+            .setAgentVersion(VersionName.ofProjectVersionName("[PROJECT]", "[VERSION]").toString())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setFulfillment(Fulfillment.newBuilder().build())
@@ -229,7 +229,7 @@ public class EnvironmentsClientTest {
             .setName(
                 EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
             .setDescription("description-1724546052")
-            .setAgentVersion("agentVersion1928000019")
+            .setAgentVersion(VersionName.ofProjectVersionName("[PROJECT]", "[VERSION]").toString())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setFulfillment(Fulfillment.newBuilder().build())
@@ -287,7 +287,7 @@ public class EnvironmentsClientTest {
             .setName(
                 EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
             .setDescription("description-1724546052")
-            .setAgentVersion("agentVersion1928000019")
+            .setAgentVersion(VersionName.ofProjectVersionName("[PROJECT]", "[VERSION]").toString())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setFulfillment(Fulfillment.newBuilder().build())

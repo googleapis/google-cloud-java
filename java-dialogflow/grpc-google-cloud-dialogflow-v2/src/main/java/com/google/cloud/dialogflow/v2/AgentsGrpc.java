@@ -486,6 +486,9 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Creates/updates the specified agent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void setAgent(
@@ -533,7 +536,9 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Trains the specified agent.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void trainAgent(
@@ -547,7 +552,6 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Exports the specified agent to a ZIP file.
-     * Operation &lt;response: [ExportAgentResponse][google.cloud.dialogflow.v2.ExportAgentResponse]&gt;
      * </pre>
      */
     public void exportAgent(
@@ -569,9 +573,11 @@ public final class AgentsGrpc {
      * However, once the import is done, training may not be completed yet. Please
      * call [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it returns in order to train
      * explicitly.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * An operation which tracks when importing is complete. It only tracks
      * when the draft agent is updated not when it is done training.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void importAgent(
@@ -592,9 +598,11 @@ public final class AgentsGrpc {
      * agent settings). However, once the restore is done, training may not be
      * completed yet. Please call [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
      * returns in order to train explicitly.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * An operation which tracks when restoring is complete. It only tracks
      * when the draft agent is updated not when it is done training.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void restoreAgent(
@@ -719,6 +727,9 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Creates/updates the specified agent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void setAgent(
@@ -771,7 +782,9 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Trains the specified agent.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void trainAgent(
@@ -786,7 +799,6 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Exports the specified agent to a ZIP file.
-     * Operation &lt;response: [ExportAgentResponse][google.cloud.dialogflow.v2.ExportAgentResponse]&gt;
      * </pre>
      */
     public void exportAgent(
@@ -810,9 +822,11 @@ public final class AgentsGrpc {
      * However, once the import is done, training may not be completed yet. Please
      * call [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it returns in order to train
      * explicitly.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * An operation which tracks when importing is complete. It only tracks
      * when the draft agent is updated not when it is done training.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void importAgent(
@@ -835,9 +849,11 @@ public final class AgentsGrpc {
      * agent settings). However, once the restore is done, training may not be
      * completed yet. Please call [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
      * returns in order to train explicitly.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * An operation which tracks when restoring is complete. It only tracks
      * when the draft agent is updated not when it is done training.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void restoreAgent(
@@ -904,6 +920,9 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Creates/updates the specified agent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.Agent setAgent(
@@ -948,7 +967,9 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Trains the specified agent.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.longrunning.Operation trainAgent(
@@ -962,7 +983,6 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Exports the specified agent to a ZIP file.
-     * Operation &lt;response: [ExportAgentResponse][google.cloud.dialogflow.v2.ExportAgentResponse]&gt;
      * </pre>
      */
     public com.google.longrunning.Operation exportAgent(
@@ -983,9 +1003,11 @@ public final class AgentsGrpc {
      * However, once the import is done, training may not be completed yet. Please
      * call [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it returns in order to train
      * explicitly.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * An operation which tracks when importing is complete. It only tracks
      * when the draft agent is updated not when it is done training.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.longrunning.Operation importAgent(
@@ -1005,9 +1027,11 @@ public final class AgentsGrpc {
      * agent settings). However, once the restore is done, training may not be
      * completed yet. Please call [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
      * returns in order to train explicitly.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * An operation which tracks when restoring is complete. It only tracks
      * when the draft agent is updated not when it is done training.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.longrunning.Operation restoreAgent(
@@ -1067,6 +1091,9 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Creates/updates the specified agent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2.Agent>
@@ -1112,7 +1139,9 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Trains the specified agent.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1126,7 +1155,6 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Exports the specified agent to a ZIP file.
-     * Operation &lt;response: [ExportAgentResponse][google.cloud.dialogflow.v2.ExportAgentResponse]&gt;
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1147,9 +1175,11 @@ public final class AgentsGrpc {
      * However, once the import is done, training may not be completed yet. Please
      * call [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it returns in order to train
      * explicitly.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * An operation which tracks when importing is complete. It only tracks
      * when the draft agent is updated not when it is done training.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1169,9 +1199,11 @@ public final class AgentsGrpc {
      * agent settings). However, once the restore is done, training may not be
      * completed yet. Please call [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
      * returns in order to train explicitly.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * An operation which tracks when restoring is complete. It only tracks
      * when the draft agent is updated not when it is done training.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
