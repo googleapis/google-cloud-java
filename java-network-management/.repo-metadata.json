@@ -1,0 +1,16 @@
+{
+  "name": "network-management",
+  "name_pretty": "Network Management API",
+  "product_documentation": "https://cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/networkmanagement/rest/",
+  "api_description": "provides a collection of network performance monitoring and diagnostic capabilities.",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-network-management/latest/index.html",
+  "release_level": "beta",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-network-management",
+  "repo_short": "java-network-management",
+  "distribution_name": "com.google.cloud:google-cloud-network-management",
+  "api_id": "network-management.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
