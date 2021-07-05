@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.2.2](https://www.github.com/googleapis/java-webrisk/compare/v1.2.1...v1.2.2) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#468](https://www.github.com/googleapis/java-webrisk/issues/468)) ([5ce931c](https://www.github.com/googleapis/java-webrisk/commit/5ce931c55458c76a982ed12908092c4b5b61e69b))
+* Update dependencies.sh to not break on mac ([#464](https://www.github.com/googleapis/java-webrisk/issues/464)) ([d682152](https://www.github.com/googleapis/java-webrisk/commit/d682152785d1ab76d467adf0fa9e6d6b5f53d6bf))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#471](https://www.github.com/googleapis/java-webrisk/issues/471)) ([7c3c537](https://www.github.com/googleapis/java-webrisk/commit/7c3c537d995ea59b6125b7879d23cd56f89ffddf))
+
 ### [1.2.1](https://www.github.com/googleapis/java-webrisk/compare/v1.2.0...v1.2.1) (2021-06-04)
 
 
