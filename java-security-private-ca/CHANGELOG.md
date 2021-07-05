@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-security-private-ca/compare/v1.0.0...v1.1.0) (2021-07-01)
+
+
+### Features
+
+* add client code samples ([#203](https://www.github.com/googleapis/java-security-private-ca/issues/203)) ([161d88d](https://www.github.com/googleapis/java-security-private-ca/commit/161d88df6b8461154b756ee3bb70f253802f52ef))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-security-private-ca/issues/1130)) ([#201](https://www.github.com/googleapis/java-security-private-ca/issues/201)) ([2513c68](https://www.github.com/googleapis/java-security-private-ca/commit/2513c68c402638730c377bbff5febb74c0568653))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#206](https://www.github.com/googleapis/java-security-private-ca/issues/206)) ([cf79193](https://www.github.com/googleapis/java-security-private-ca/commit/cf791935f20ea7365a9713dd37b8a86bdab01dd6))
+
 ## [1.0.0](https://www.github.com/googleapis/java-security-private-ca/compare/v0.4.0...v1.0.0) (2021-06-17)
 
 
