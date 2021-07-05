@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.2.2](https://www.github.com/googleapis/java-game-servers/compare/v1.2.1...v1.2.2) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-game-servers/issues/1130)) ([#460](https://www.github.com/googleapis/java-game-servers/issues/460)) ([53869b4](https://www.github.com/googleapis/java-game-servers/commit/53869b47f2a49a6cc7fbe6f76428d6c88b637958))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#463](https://www.github.com/googleapis/java-game-servers/issues/463)) ([002a9a2](https://www.github.com/googleapis/java-game-servers/commit/002a9a22c596530bbd595db1b5f4906a18f35f63))
+
 ### [1.2.1](https://www.github.com/googleapis/java-game-servers/compare/v1.2.0...v1.2.1) (2021-06-04)
 
 
