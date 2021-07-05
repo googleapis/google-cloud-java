@@ -66,6 +66,37 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
+   * The type of the resource associated with this IAM policy. Example:
+   * `compute.googleapis.com/Disk`.
+   * To search against the `asset_type`:
+   * * specify the `asset_types` field in your search request.
+   * </pre>
+   *
+   * <code>string asset_type = 5;</code>
+   *
+   * @return The assetType.
+   */
+  java.lang.String getAssetType();
+  /**
+   *
+   *
+   * <pre>
+   * The type of the resource associated with this IAM policy. Example:
+   * `compute.googleapis.com/Disk`.
+   * To search against the `asset_type`:
+   * * specify the `asset_types` field in your search request.
+   * </pre>
+   *
+   * <code>string asset_type = 5;</code>
+   *
+   * @return The bytes for assetType.
+   */
+  com.google.protobuf.ByteString getAssetTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The project that the associated GCP resource belongs to, in the form of
    * projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource (like VM
    * instance, Cloud Storage bucket), the project field will indicate the
@@ -98,6 +129,118 @@ public interface IamPolicySearchResultOrBuilder
    * @return The bytes for project.
    */
   com.google.protobuf.ByteString getProjectBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The folder(s) that the IAM policy belongs to, in the form of
+   * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
+   * belongs to one or more folders.
+   * To search against `folders`:
+   * * use a field query. Example: `folders:(123 OR 456)`
+   * * use a free text query. Example: `123`
+   * * specify the `scope` field as this folder in your search request.
+   * </pre>
+   *
+   * <code>repeated string folders = 6;</code>
+   *
+   * @return A list containing the folders.
+   */
+  java.util.List<java.lang.String> getFoldersList();
+  /**
+   *
+   *
+   * <pre>
+   * The folder(s) that the IAM policy belongs to, in the form of
+   * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
+   * belongs to one or more folders.
+   * To search against `folders`:
+   * * use a field query. Example: `folders:(123 OR 456)`
+   * * use a free text query. Example: `123`
+   * * specify the `scope` field as this folder in your search request.
+   * </pre>
+   *
+   * <code>repeated string folders = 6;</code>
+   *
+   * @return The count of folders.
+   */
+  int getFoldersCount();
+  /**
+   *
+   *
+   * <pre>
+   * The folder(s) that the IAM policy belongs to, in the form of
+   * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
+   * belongs to one or more folders.
+   * To search against `folders`:
+   * * use a field query. Example: `folders:(123 OR 456)`
+   * * use a free text query. Example: `123`
+   * * specify the `scope` field as this folder in your search request.
+   * </pre>
+   *
+   * <code>repeated string folders = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The folders at the given index.
+   */
+  java.lang.String getFolders(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The folder(s) that the IAM policy belongs to, in the form of
+   * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
+   * belongs to one or more folders.
+   * To search against `folders`:
+   * * use a field query. Example: `folders:(123 OR 456)`
+   * * use a free text query. Example: `123`
+   * * specify the `scope` field as this folder in your search request.
+   * </pre>
+   *
+   * <code>repeated string folders = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the folders at the given index.
+   */
+  com.google.protobuf.ByteString getFoldersBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The organization that the IAM policy belongs to, in the form
+   * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
+   * IAM policy belongs to an organization.
+   * To search against `organization`:
+   * * use a field query. Example: `organization:123`
+   * * use a free text query. Example: `123`
+   * * specify the `scope` field as this organization in your search request.
+   * </pre>
+   *
+   * <code>string organization = 7;</code>
+   *
+   * @return The organization.
+   */
+  java.lang.String getOrganization();
+  /**
+   *
+   *
+   * <pre>
+   * The organization that the IAM policy belongs to, in the form
+   * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
+   * IAM policy belongs to an organization.
+   * To search against `organization`:
+   * * use a field query. Example: `organization:123`
+   * * use a free text query. Example: `123`
+   * * specify the `scope` field as this organization in your search request.
+   * </pre>
+   *
+   * <code>string organization = 7;</code>
+   *
+   * @return The bytes for organization.
+   */
+  com.google.protobuf.ByteString getOrganizationBytes();
 
   /**
    *

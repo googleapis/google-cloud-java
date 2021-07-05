@@ -106,6 +106,10 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * * `resource:(instance1 OR instance2) policy:amy` to find
    *   IAM policy bindings that are set on resources "instance1" or
    *   "instance2" and also specify user "amy".
+   * * `roles:roles/compute.admin` to find IAM policy bindings that specify the
+   *   Compute Admin role.
+   * * `memberTypes:user` to find IAM policy bindings that contain the "user"
+   *   member type.
    * </pre>
    *
    * <code>string query = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -153,6 +157,10 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * * `resource:(instance1 OR instance2) policy:amy` to find
    *   IAM policy bindings that are set on resources "instance1" or
    *   "instance2" and also specify user "amy".
+   * * `roles:roles/compute.admin` to find IAM policy bindings that specify the
+   *   Compute Admin role.
+   * * `memberTypes:user` to find IAM policy bindings that contain the "user"
+   *   member type.
    * </pre>
    *
    * <code>string query = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -207,4 +215,146 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of asset types that the IAM policies are attached to. If empty, it
+   * will search the IAM policies that are attached to all the [searchable asset
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   * Regular expressions are also supported. For example:
+   * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
+   * starts with "compute.googleapis.com".
+   * * ".*Instance" snapshots IAM policies attached to asset type ends with
+   * "Instance".
+   * * ".*Instance.*" snapshots IAM policies attached to asset type contains
+   * "Instance".
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported asset type, an INVALID_ARGUMENT error will be returned.
+   * </pre>
+   *
+   * <code>repeated string asset_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the assetTypes.
+   */
+  java.util.List<java.lang.String> getAssetTypesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of asset types that the IAM policies are attached to. If empty, it
+   * will search the IAM policies that are attached to all the [searchable asset
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   * Regular expressions are also supported. For example:
+   * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
+   * starts with "compute.googleapis.com".
+   * * ".*Instance" snapshots IAM policies attached to asset type ends with
+   * "Instance".
+   * * ".*Instance.*" snapshots IAM policies attached to asset type contains
+   * "Instance".
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported asset type, an INVALID_ARGUMENT error will be returned.
+   * </pre>
+   *
+   * <code>repeated string asset_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of assetTypes.
+   */
+  int getAssetTypesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of asset types that the IAM policies are attached to. If empty, it
+   * will search the IAM policies that are attached to all the [searchable asset
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   * Regular expressions are also supported. For example:
+   * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
+   * starts with "compute.googleapis.com".
+   * * ".*Instance" snapshots IAM policies attached to asset type ends with
+   * "Instance".
+   * * ".*Instance.*" snapshots IAM policies attached to asset type contains
+   * "Instance".
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported asset type, an INVALID_ARGUMENT error will be returned.
+   * </pre>
+   *
+   * <code>repeated string asset_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The assetTypes at the given index.
+   */
+  java.lang.String getAssetTypes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of asset types that the IAM policies are attached to. If empty, it
+   * will search the IAM policies that are attached to all the [searchable asset
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   * Regular expressions are also supported. For example:
+   * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
+   * starts with "compute.googleapis.com".
+   * * ".*Instance" snapshots IAM policies attached to asset type ends with
+   * "Instance".
+   * * ".*Instance.*" snapshots IAM policies attached to asset type contains
+   * "Instance".
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported asset type, an INVALID_ARGUMENT error will be returned.
+   * </pre>
+   *
+   * <code>repeated string asset_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the assetTypes at the given index.
+   */
+  com.google.protobuf.ByteString getAssetTypesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A comma-separated list of fields specifying the sorting order of the
+   * results. The default order is ascending. Add " DESC" after the field name
+   * to indicate descending order. Redundant space characters are ignored.
+   * Example: "assetType DESC, resource".
+   * Only singular primitive fields in the response are sortable:
+   *   * resource
+   *   * assetType
+   *   * project
+   * All the other fields such as repeated fields (e.g., `folders`) and
+   * non-primitive fields (e.g., `policy`) are not supported.
+   * </pre>
+   *
+   * <code>string order_by = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A comma-separated list of fields specifying the sorting order of the
+   * results. The default order is ascending. Add " DESC" after the field name
+   * to indicate descending order. Redundant space characters are ignored.
+   * Example: "assetType DESC, resource".
+   * Only singular primitive fields in the response are sortable:
+   *   * resource
+   *   * assetType
+   *   * project
+   * All the other fields such as repeated fields (e.g., `folders`) and
+   * non-primitive fields (e.g., `policy`) are not supported.
+   * </pre>
+   *
+   * <code>string order_by = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
 }
