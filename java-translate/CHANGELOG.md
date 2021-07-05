@@ -1,5 +1,22 @@
 # Changelog
 
+### [1.98.5](https://www.github.com/googleapis/java-translate/compare/v1.98.4...v1.98.5) (2021-07-05)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-translate/issues/1130)) ([#592](https://www.github.com/googleapis/java-translate/issues/592)) ([26be06e](https://www.github.com/googleapis/java-translate/commit/26be06ecdcc7cfd20adb99017b79d23af9c95225))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-translate to v2-rev20170525-1.31.5 ([#591](https://www.github.com/googleapis/java-translate/issues/591)) ([283a4b9](https://www.github.com/googleapis/java-translate/commit/283a4b95b960fb5d0b0918715c28fedc28a99c4c))
+* update dependency com.google.apis:google-api-services-translate to v2-rev20170525-1.32.1 ([#602](https://www.github.com/googleapis/java-translate/issues/602)) ([6c9ea73](https://www.github.com/googleapis/java-translate/commit/6c9ea73d834ff2f5dc9b921c2012fddbf2e957d5))
+* update dependency com.google.cloud:google-cloud-core to v1.95.3 ([#594](https://www.github.com/googleapis/java-translate/issues/594)) ([de7a850](https://www.github.com/googleapis/java-translate/commit/de7a850a64b5bc4925c4fc3111a932aacfc21ee0))
+* update dependency com.google.cloud:google-cloud-core to v1.95.4 ([#598](https://www.github.com/googleapis/java-translate/issues/598)) ([5c6ad8a](https://www.github.com/googleapis/java-translate/commit/5c6ad8ac9eef023355118cebeba6102369b6841a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#601](https://www.github.com/googleapis/java-translate/issues/601)) ([067f255](https://www.github.com/googleapis/java-translate/commit/067f2555c02d765e26f79818abc02cb03281c32b))
+* update dependency com.google.cloud:google-cloud-storage to v1.117.1 ([#600](https://www.github.com/googleapis/java-translate/issues/600)) ([2f9c1d3](https://www.github.com/googleapis/java-translate/commit/2f9c1d36dfb106eb277536231f03fc3e80b19e5c))
+
 ### [1.98.4](https://www.github.com/googleapis/java-translate/compare/v1.98.3...v1.98.4) (2021-06-16)
 
 
