@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-gsuite-addons.git",
-        "sha": "5c6971438e898d84b940dc521c9899146cac8e5d"
+        "sha": "f09b592a605f27d09d034f6ffd8a1301ad467e6a"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "c72e5beaba53532dc561094b2d8483e4da06921d"
+        "sha": "39652e3948f455fd0b77535a0145eeec561a3706"
       }
     }
   ]
