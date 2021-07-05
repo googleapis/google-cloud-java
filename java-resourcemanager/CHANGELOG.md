@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.119.8](https://www.github.com/googleapis/java-resourcemanager/compare/v0.119.7...v0.119.8) (2021-07-05)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-resourcemanager/issues/1130)) ([#529](https://www.github.com/googleapis/java-resourcemanager/issues/529)) ([eaff33d](https://www.github.com/googleapis/java-resourcemanager/commit/eaff33d0dce0f7d999bc8523b37767de92a66961))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-cloudresourcemanager to v1-rev20210613-1.31.5 ([#528](https://www.github.com/googleapis/java-resourcemanager/issues/528)) ([26380f8](https://www.github.com/googleapis/java-resourcemanager/commit/26380f8caa51935ed8415330c8031fb364f80958))
+* update dependency com.google.apis:google-api-services-cloudresourcemanager to v1-rev20210613-1.32.1 ([#538](https://www.github.com/googleapis/java-resourcemanager/issues/538)) ([21318ca](https://www.github.com/googleapis/java-resourcemanager/commit/21318ca59a18379f280255fc142971d37cf76469))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#537](https://www.github.com/googleapis/java-resourcemanager/issues/537)) ([e9c5e8c](https://www.github.com/googleapis/java-resourcemanager/commit/e9c5e8c7ecb5f217a6e2d9d2a1754453e130925c))
+
 ### [0.119.7](https://www.github.com/googleapis/java-resourcemanager/compare/v0.119.6...v0.119.7) (2021-06-17)
 
 
