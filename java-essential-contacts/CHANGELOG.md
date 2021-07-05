@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-essential-contacts/compare/v0.1.3...v1.0.0) (2021-07-02)
+
+
+### Features
+
+* promote to 1.0.0 ([#50](https://www.github.com/googleapis/java-essential-contacts/issues/50)) ([9bb1432](https://www.github.com/googleapis/java-essential-contacts/commit/9bb1432830e769e361153bc709d0dd65a544cbd3))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-essential-contacts/issues/1130)) ([#47](https://www.github.com/googleapis/java-essential-contacts/issues/47)) ([e0f3c5c](https://www.github.com/googleapis/java-essential-contacts/commit/e0f3c5c1bbb7a802b7e797cb0d76b6f421675572))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#49](https://www.github.com/googleapis/java-essential-contacts/issues/49)) ([be6a20d](https://www.github.com/googleapis/java-essential-contacts/commit/be6a20d841bd03d949327dff981639e2aaa65bf9))
+
 ### [0.1.3](https://www.github.com/googleapis/java-essential-contacts/compare/v0.1.2...v0.1.3) (2021-06-09)
 
 
