@@ -10,7 +10,7 @@
   "repo": "googleapis/java-data-fusion",
   "repo_short": "java-data-fusion",
   "distribution_name": "com.google.cloud:google-cloud-data-fusion",
-  "api_id": "data-fusion.googleapis.com",
+  "api_id": "datafusion.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
