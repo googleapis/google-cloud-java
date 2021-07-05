@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.2.2](https://www.github.com/googleapis/java-redis/compare/v1.2.1...v1.2.2) (2021-07-05)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#440](https://www.github.com/googleapis/java-redis/issues/440)) ([a8b67a1](https://www.github.com/googleapis/java-redis/commit/a8b67a1b7dd582e58f1d092000cc6afbe087a937))
+* Update dependencies.sh to not break on mac ([#436](https://www.github.com/googleapis/java-redis/issues/436)) ([867a5fa](https://www.github.com/googleapis/java-redis/commit/867a5fa80ce9c891c8442dca1d1e6dc569f5a965))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#443](https://www.github.com/googleapis/java-redis/issues/443)) ([bfee027](https://www.github.com/googleapis/java-redis/commit/bfee0271a2cac40513cebe7448fcf7c447f685ad))
+
 ### [1.2.1](https://www.github.com/googleapis/java-redis/compare/v1.2.0...v1.2.1) (2021-06-04)
 
 
