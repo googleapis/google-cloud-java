@@ -1057,4 +1057,49 @@ public interface ClusterUpdateOrBuilder
    * <code>.google.container.v1beta1.Master desired_master = 52;</code>
    */
   com.google.container.v1beta1.MasterOrBuilder getDesiredMasterOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * AuthenticatorGroupsConfig specifies the config for the cluster security
+   * groups settings.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;
+   * </code>
+   *
+   * @return Whether the desiredAuthenticatorGroupsConfig field is set.
+   */
+  boolean hasDesiredAuthenticatorGroupsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * AuthenticatorGroupsConfig specifies the config for the cluster security
+   * groups settings.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;
+   * </code>
+   *
+   * @return The desiredAuthenticatorGroupsConfig.
+   */
+  com.google.container.v1beta1.AuthenticatorGroupsConfig getDesiredAuthenticatorGroupsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * AuthenticatorGroupsConfig specifies the config for the cluster security
+   * groups settings.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;
+   * </code>
+   */
+  com.google.container.v1beta1.AuthenticatorGroupsConfigOrBuilder
+      getDesiredAuthenticatorGroupsConfigOrBuilder();
 }
