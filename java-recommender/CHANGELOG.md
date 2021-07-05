@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.6.1](https://www.github.com/googleapis/java-recommender/compare/v1.6.0...v1.6.1) (2021-07-02)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#530](https://www.github.com/googleapis/java-recommender/issues/530)) ([b41dfe4](https://www.github.com/googleapis/java-recommender/commit/b41dfe426ea3bf8568cdc5437c920b79e8d76bfa))
+* Update dependencies.sh to not break on mac ([#525](https://www.github.com/googleapis/java-recommender/issues/525)) ([b5f6288](https://www.github.com/googleapis/java-recommender/commit/b5f6288844b3caa19fb011f5b476ec4b69ddb9da))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#533](https://www.github.com/googleapis/java-recommender/issues/533)) ([aaac2e2](https://www.github.com/googleapis/java-recommender/commit/aaac2e28b2e252553543f8c0f981e9bb823b0376))
+
 ## [1.6.0](https://www.github.com/googleapis/java-recommender/compare/v1.5.4...v1.6.0) (2021-06-11)
 
 
