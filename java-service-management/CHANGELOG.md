@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.1.2](https://www.github.com/googleapis/java-service-management/compare/v1.1.1...v1.1.2) (2021-07-02)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#73](https://www.github.com/googleapis/java-service-management/issues/73)) ([a754904](https://www.github.com/googleapis/java-service-management/commit/a75490462a029f27687724c90ea4afe879ba6ee7))
+* Update dependencies.sh to not break on mac ([#70](https://www.github.com/googleapis/java-service-management/issues/70)) ([993124a](https://www.github.com/googleapis/java-service-management/commit/993124a483a9591b07be194b6477724fb303f7cf))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#74](https://www.github.com/googleapis/java-service-management/issues/74)) ([3e958e3](https://www.github.com/googleapis/java-service-management/commit/3e958e3a9427eea1d33b81cdbc054f02c4dbb388))
+
 ### [1.1.1](https://www.github.com/googleapis/java-service-management/compare/v1.1.0...v1.1.1) (2021-06-09)
 
 
