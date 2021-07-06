@@ -1,16 +1,16 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-asset:2.5.0:2.5.1-SNAPSHOT
-grpc-google-cloud-asset-v1:2.5.0:2.5.1-SNAPSHOT
-grpc-google-cloud-asset-v1p1beta1:0.98.0:0.98.1-SNAPSHOT
-grpc-google-cloud-asset-v1p2beta1:0.98.0:0.98.1-SNAPSHOT
-grpc-google-cloud-asset-v1p4beta1:0.98.0:0.98.1-SNAPSHOT
-grpc-google-cloud-asset-v1p5beta1:0.98.0:0.98.1-SNAPSHOT
-grpc-google-cloud-asset-v1p7beta1:2.5.0:2.5.1-SNAPSHOT
-proto-google-cloud-asset-v1:2.5.0:2.5.1-SNAPSHOT
-proto-google-cloud-asset-v1p1beta1:0.98.0:0.98.1-SNAPSHOT
-proto-google-cloud-asset-v1p2beta1:0.98.0:0.98.1-SNAPSHOT
-proto-google-cloud-asset-v1p4beta1:0.98.0:0.98.1-SNAPSHOT
-proto-google-cloud-asset-v1p5beta1:0.98.0:0.98.1-SNAPSHOT
-proto-google-cloud-asset-v1p7beta1:2.5.0:2.5.1-SNAPSHOT
+google-cloud-asset:2.6.0:2.6.0
+grpc-google-cloud-asset-v1:2.6.0:2.6.0
+grpc-google-cloud-asset-v1p1beta1:0.99.0:0.99.0
+grpc-google-cloud-asset-v1p2beta1:0.99.0:0.99.0
+grpc-google-cloud-asset-v1p4beta1:0.99.0:0.99.0
+grpc-google-cloud-asset-v1p5beta1:0.99.0:0.99.0
+grpc-google-cloud-asset-v1p7beta1:2.6.0:2.6.0
+proto-google-cloud-asset-v1:2.6.0:2.6.0
+proto-google-cloud-asset-v1p1beta1:0.99.0:0.99.0
+proto-google-cloud-asset-v1p2beta1:0.99.0:0.99.0
+proto-google-cloud-asset-v1p4beta1:0.99.0:0.99.0
+proto-google-cloud-asset-v1p5beta1:0.99.0:0.99.0
+proto-google-cloud-asset-v1p7beta1:2.6.0:2.6.0
