@@ -17,7 +17,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>20.6.0</version>
+      <version>20.7.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -51,12 +51,12 @@ compile 'com.google.cloud:google-cloud-webrisk'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-webrisk:1.2.1'
+compile 'com.google.cloud:google-cloud-webrisk:1.2.2'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-webrisk" % "1.2.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-webrisk" % "1.2.2"
 ```
 
 ## Authentication
