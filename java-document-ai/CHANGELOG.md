@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-document-ai/compare/v1.1.1...v1.2.0) (2021-07-02)
+
+
+### Features
+
+* update document.proto, add the processor management methods ([#515](https://www.github.com/googleapis/java-document-ai/issues/515)) ([f2852ab](https://www.github.com/googleapis/java-document-ai/commit/f2852ab1fb233b12ea4015abbf172b75408ef95e))
+* update ReviewDocumentRequest to allow set priority and enable validation ([#527](https://www.github.com/googleapis/java-document-ai/issues/527)) ([f69e920](https://www.github.com/googleapis/java-document-ai/commit/f69e920ffee1de9257691228f72a62c36b410701))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-document-ai/issues/1130)) ([#526](https://www.github.com/googleapis/java-document-ai/issues/526)) ([363547c](https://www.github.com/googleapis/java-document-ai/commit/363547cf0a58068841f69f37ef1602bdf171fafb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#532](https://www.github.com/googleapis/java-document-ai/issues/532)) ([a6d9c6f](https://www.github.com/googleapis/java-document-ai/commit/a6d9c6f265ee03a60491fb1fd15f609785780509))
+* update dependency com.google.cloud:google-cloud-storage to v1.117.1 ([#531](https://www.github.com/googleapis/java-document-ai/issues/531)) ([0d5b684](https://www.github.com/googleapis/java-document-ai/commit/0d5b684697c1a9f1a7226267083e0c7a342b7015))
+
 ### [1.1.1](https://www.github.com/googleapis/java-document-ai/compare/v1.1.0...v1.1.1) (2021-06-16)
 
 
