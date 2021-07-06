@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.2.2](https://www.github.com/googleapis/java-billing/compare/v1.2.1...v1.2.2) (2021-07-05)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-billing/issues/1130)) ([#440](https://www.github.com/googleapis/java-billing/issues/440)) ([5972d86](https://www.github.com/googleapis/java-billing/commit/5972d86f359aa2059c96002b0a66063223d880b6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#444](https://www.github.com/googleapis/java-billing/issues/444)) ([9d59a7d](https://www.github.com/googleapis/java-billing/commit/9d59a7d91b6c2674db85a3d98742051cd4029847))
+
 ### [1.2.1](https://www.github.com/googleapis/java-billing/compare/v1.2.0...v1.2.1) (2021-06-04)
 
 
