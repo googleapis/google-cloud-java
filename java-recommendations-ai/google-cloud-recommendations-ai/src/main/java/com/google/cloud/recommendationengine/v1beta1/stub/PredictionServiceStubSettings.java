@@ -46,8 +46,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.protobuf.Value;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -96,10 +99,9 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       predictSettings;
 
   private static final PagedListDescriptor<
-          PredictRequest, PredictResponse, PredictResponse.PredictionResult>
+          PredictRequest, PredictResponse, Map.Entry<String, Value>>
       PREDICT_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              PredictRequest, PredictResponse, PredictResponse.PredictionResult>() {
+          new PagedListDescriptor<PredictRequest, PredictResponse, Map.Entry<String, Value>>() {
             @Override
             public String emptyToken() {
               return "";
@@ -126,11 +128,10 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
             }
 
             @Override
-            public Iterable<PredictResponse.PredictionResult> extractResources(
-                PredictResponse payload) {
-              return payload.getResultsList() == null
-                  ? ImmutableList.<PredictResponse.PredictionResult>of()
-                  : payload.getResultsList();
+            public Iterable<Map.Entry<String, Value>> extractResources(PredictResponse payload) {
+              return payload.getMetadataMap() == null
+                  ? Collections.<Map.Entry<String, Value>>emptySet()
+                  : payload.getMetadataMap().entrySet();
             }
           };
 
@@ -144,9 +145,8 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
                 PredictRequest request,
                 ApiCallContext context,
                 ApiFuture<PredictResponse> futureResponse) {
-              PageContext<PredictRequest, PredictResponse, PredictResponse.PredictionResult>
-                  pageContext =
-                      PageContext.create(callable, PREDICT_PAGE_STR_DESC, request, context);
+              PageContext<PredictRequest, PredictResponse, Map.Entry<String, Value>> pageContext =
+                  PageContext.create(callable, PREDICT_PAGE_STR_DESC, request, context);
               return PredictPagedResponse.createAsync(pageContext, futureResponse);
             }
           };

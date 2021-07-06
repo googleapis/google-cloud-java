@@ -29,8 +29,10 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommendationengine.v1beta1.stub.PredictionServiceStub;
 import com.google.cloud.recommendationengine.v1beta1.stub.PredictionServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.Value;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -46,7 +48,7 @@ import javax.annotation.Generated;
  *   PlacementName name =
  *       PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
  *   UserEvent userEvent = UserEvent.newBuilder().build();
- *   for (PredictResponse.PredictionResult element :
+ *   for (Map.Entry<String, Value> element :
  *       predictionServiceClient.predict(name, userEvent).iterateAll()) {
  *     // doThingsWith(element);
  *   }
@@ -170,7 +172,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *   PlacementName name =
    *       PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
    *   UserEvent userEvent = UserEvent.newBuilder().build();
-   *   for (PredictResponse.PredictionResult element :
+   *   for (Map.Entry<String, Value> element :
    *       predictionServiceClient.predict(name, userEvent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -235,7 +237,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *       PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]")
    *           .toString();
    *   UserEvent userEvent = UserEvent.newBuilder().build();
-   *   for (PredictResponse.PredictionResult element :
+   *   for (Map.Entry<String, Value> element :
    *       predictionServiceClient.predict(name, userEvent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -307,7 +309,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .putAllParams(new HashMap<String, Value>())
    *           .putAllLabels(new HashMap<String, String>())
    *           .build();
-   *   for (PredictResponse.PredictionResult element :
+   *   for (Map.Entry<String, Value> element :
    *       predictionServiceClient.predict(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -346,10 +348,10 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .putAllParams(new HashMap<String, Value>())
    *           .putAllLabels(new HashMap<String, String>())
    *           .build();
-   *   ApiFuture<PredictResponse.PredictionResult> future =
+   *   ApiFuture<Map.Entry<String, Value>> future =
    *       predictionServiceClient.predictPagedCallable().futureCall(request);
    *   // Do something.
-   *   for (PredictResponse.PredictionResult element : future.get().iterateAll()) {
+   *   for (Map.Entry<String, Value> element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -386,7 +388,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     PredictResponse response = predictionServiceClient.predictCallable().call(request);
-   *     for (PredictResponse.PredictionResult element : response.getResponsesList()) {
+   *     for (Map.Entry<String, Value> element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -437,12 +439,12 @@ public class PredictionServiceClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           PredictRequest,
           PredictResponse,
-          PredictResponse.PredictionResult,
+          Map.Entry<String, Value>,
           PredictPage,
           PredictFixedSizeCollection> {
 
     public static ApiFuture<PredictPagedResponse> createAsync(
-        PageContext<PredictRequest, PredictResponse, PredictResponse.PredictionResult> context,
+        PageContext<PredictRequest, PredictResponse, Map.Entry<String, Value>> context,
         ApiFuture<PredictResponse> futureResponse) {
       ApiFuture<PredictPage> futurePage =
           PredictPage.createEmptyPage().createPageAsync(context, futureResponse);
@@ -463,11 +465,10 @@ public class PredictionServiceClient implements BackgroundResource {
   }
 
   public static class PredictPage
-      extends AbstractPage<
-          PredictRequest, PredictResponse, PredictResponse.PredictionResult, PredictPage> {
+      extends AbstractPage<PredictRequest, PredictResponse, Map.Entry<String, Value>, PredictPage> {
 
     private PredictPage(
-        PageContext<PredictRequest, PredictResponse, PredictResponse.PredictionResult> context,
+        PageContext<PredictRequest, PredictResponse, Map.Entry<String, Value>> context,
         PredictResponse response) {
       super(context, response);
     }
@@ -478,14 +479,14 @@ public class PredictionServiceClient implements BackgroundResource {
 
     @Override
     protected PredictPage createPage(
-        PageContext<PredictRequest, PredictResponse, PredictResponse.PredictionResult> context,
+        PageContext<PredictRequest, PredictResponse, Map.Entry<String, Value>> context,
         PredictResponse response) {
       return new PredictPage(context, response);
     }
 
     @Override
     public ApiFuture<PredictPage> createPageAsync(
-        PageContext<PredictRequest, PredictResponse, PredictResponse.PredictionResult> context,
+        PageContext<PredictRequest, PredictResponse, Map.Entry<String, Value>> context,
         ApiFuture<PredictResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -495,7 +496,7 @@ public class PredictionServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           PredictRequest,
           PredictResponse,
-          PredictResponse.PredictionResult,
+          Map.Entry<String, Value>,
           PredictPage,
           PredictFixedSizeCollection> {
 

@@ -27,10 +27,13 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Value;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -80,12 +83,11 @@ public class PredictionServiceClientTest {
 
   @Test
   public void predictTest() throws Exception {
-    PredictResponse.PredictionResult responsesElement =
-        PredictResponse.PredictionResult.newBuilder().build();
+    Value responsesElement = Value.newBuilder().build();
     PredictResponse expectedResponse =
         PredictResponse.newBuilder()
             .setNextPageToken("")
-            .addAllResults(Arrays.asList(responsesElement))
+            .putAllMetadata(Collections.singletonMap("metadata", responsesElement))
             .build();
     mockPredictionService.addResponse(expectedResponse);
 
@@ -95,11 +97,11 @@ public class PredictionServiceClientTest {
 
     PredictPagedResponse pagedListResponse = client.predict(name, userEvent);
 
-    List<PredictResponse.PredictionResult> resources =
-        Lists.newArrayList(pagedListResponse.iterateAll());
+    List<Map.Entry<String, Value>> resources = Lists.newArrayList(pagedListResponse.iterateAll());
 
     Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getResultsList().get(0), resources.get(0));
+    Assert.assertEquals(
+        expectedResponse.getMetadataMap().entrySet().iterator().next(), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockPredictionService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -131,12 +133,11 @@ public class PredictionServiceClientTest {
 
   @Test
   public void predictTest2() throws Exception {
-    PredictResponse.PredictionResult responsesElement =
-        PredictResponse.PredictionResult.newBuilder().build();
+    Value responsesElement = Value.newBuilder().build();
     PredictResponse expectedResponse =
         PredictResponse.newBuilder()
             .setNextPageToken("")
-            .addAllResults(Arrays.asList(responsesElement))
+            .putAllMetadata(Collections.singletonMap("metadata", responsesElement))
             .build();
     mockPredictionService.addResponse(expectedResponse);
 
@@ -145,11 +146,11 @@ public class PredictionServiceClientTest {
 
     PredictPagedResponse pagedListResponse = client.predict(name, userEvent);
 
-    List<PredictResponse.PredictionResult> resources =
-        Lists.newArrayList(pagedListResponse.iterateAll());
+    List<Map.Entry<String, Value>> resources = Lists.newArrayList(pagedListResponse.iterateAll());
 
     Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getResultsList().get(0), resources.get(0));
+    Assert.assertEquals(
+        expectedResponse.getMetadataMap().entrySet().iterator().next(), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockPredictionService.getRequests();
     Assert.assertEquals(1, actualRequests.size());

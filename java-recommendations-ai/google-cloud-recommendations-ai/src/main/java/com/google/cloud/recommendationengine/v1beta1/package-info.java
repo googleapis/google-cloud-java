@@ -64,7 +64,7 @@
  *   PlacementName name =
  *       PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
  *   UserEvent userEvent = UserEvent.newBuilder().build();
- *   for (PredictResponse.PredictionResult element :
+ *   for (Map.Entry<String, Value> element :
  *       predictionServiceClient.predict(name, userEvent).iterateAll()) {
  *     // doThingsWith(element);
  *   }
