@@ -40,9 +40,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class BetaAnalyticsDataClientTest {
+  private static MockBetaAnalyticsData mockBetaAnalyticsData;
   private static MockServiceHelper mockServiceHelper;
   private BetaAnalyticsDataClient client;
-  private static MockBetaAnalyticsData mockBetaAnalyticsData;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
