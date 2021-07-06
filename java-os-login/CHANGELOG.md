@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.3.1](https://www.github.com/googleapis/java-os-login/compare/v1.3.0...v1.3.1) (2021-07-05)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#481](https://www.github.com/googleapis/java-os-login/issues/481)) ([0af9a2c](https://www.github.com/googleapis/java-os-login/commit/0af9a2c215985f383c6c03f4c2c6fe8b2c9c5b47))
+* Update dependencies.sh to not break on mac ([#476](https://www.github.com/googleapis/java-os-login/issues/476)) ([20ac737](https://www.github.com/googleapis/java-os-login/commit/20ac737e06ae336bd19390aa87cac793c0fe66e0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#484](https://www.github.com/googleapis/java-os-login/issues/484)) ([db77f7c](https://www.github.com/googleapis/java-os-login/commit/db77f7cdcfc58f551fa98f6680afadb9281406c6))
+
 ## [1.3.0](https://www.github.com/googleapis/java-os-login/compare/v1.2.6...v1.3.0) (2021-06-11)
 
 
