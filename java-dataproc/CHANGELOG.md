@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.5.3](https://www.github.com/googleapis/java-dataproc/compare/v1.5.2...v1.5.3) (2021-07-05)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-dataproc/issues/1130)) ([#588](https://www.github.com/googleapis/java-dataproc/issues/588)) ([f19587f](https://www.github.com/googleapis/java-dataproc/commit/f19587f164b3961095ee2ffd4f6e37b57f6f79f3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#593](https://www.github.com/googleapis/java-dataproc/issues/593)) ([55fb5f4](https://www.github.com/googleapis/java-dataproc/commit/55fb5f42b7e06ca1b590c0f8bc8d8dd0f3677c75))
+* update dependency com.google.cloud:google-cloud-storage to v1.117.1 ([#592](https://www.github.com/googleapis/java-dataproc/issues/592)) ([c6e3f76](https://www.github.com/googleapis/java-dataproc/commit/c6e3f76289f6703c627b899ce9397ac5d3e2d338))
+
 ### [1.5.2](https://www.github.com/googleapis/java-dataproc/compare/v1.5.1...v1.5.2) (2021-06-04)
 
 
