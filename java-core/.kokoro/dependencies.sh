@@ -14,6 +14,7 @@
 # limitations under the License.
 
 set -eo pipefail
+shopt -s nullglob
 
 ## Get the directory of the build script
 scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
@@ -46,7 +47,7 @@ function completenessCheck() {
   # This is stripped from the output as it is not present in the flattened pom.
   # Only dependencies with 'compile' or 'runtime' scope are included from original dependency list.
   msg "Generating dependency list using original pom..."
-  mvn dependency:list -f pom.xml -DincludeScope=runtime -Dsort=true | grep '\[INFO]    .*:.*:.*:.*:.*' | sed -e s/\\s--\\smodule.*// >.org-list.txt
+  mvn dependency:list -f pom.xml -DincludeScope=runtime -Dsort=true | grep '\[INFO]    .*:.*:.*:.*:.*' | sed -e 's/ --.*//' >.org-list.txt
 
   # Output dep list generated using the flattened pom (only 'compile' and 'runtime' scopes)
   msg "Generating dependency list using flattened pom..."
@@ -70,7 +71,7 @@ function completenessCheck() {
 set +e
 
 error_count=0
-for path in $(find -name ".flattened-pom.xml")
+for path in **/.flattened-pom.xml
 do
   # Check flattened pom in each dir that contains it for completeness
   dir=$(dirname "$path")
