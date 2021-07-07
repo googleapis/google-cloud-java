@@ -52,12 +52,12 @@ compile 'com.google.cloud:google-cloud-dataproc'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-dataproc:1.5.2'
+compile 'com.google.cloud:google-cloud-dataproc:1.5.3'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dataproc" % "1.5.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-dataproc" % "1.5.3"
 ```
 
 ## Authentication

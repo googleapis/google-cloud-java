@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dataproc.git",
-        "sha": "3f59bcd646f46d00eff09ec7b8cf3353df8cb209"
+        "sha": "5ec2583fe1d3ae3a8958a25a02f8ca1461661754"
       }
     },
     {
