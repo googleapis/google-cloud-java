@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-channel.git",
-        "sha": "3736b42ee5a65bb2639786df6a536dda7cda4a51"
+        "sha": "f9b923cc5a9e0f61fcdb49071b2c007ad1a55e94"
       }
     },
     {
