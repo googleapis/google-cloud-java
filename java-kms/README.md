@@ -52,12 +52,12 @@ compile 'com.google.cloud:google-cloud-kms'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-kms:1.42.3'
+compile 'com.google.cloud:google-cloud-kms:1.43.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-kms" % "1.42.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-kms" % "1.43.0"
 ```
 
 ## Authentication
