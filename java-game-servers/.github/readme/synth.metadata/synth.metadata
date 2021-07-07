@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-game-servers.git",
-        "sha": "3ec9d3fa77f59e63182d572216bc958a63ca31de"
+        "sha": "fb09edee54f6e897fd744cdd8928fb90bd92648c"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "2430f8d90ed8a508e8422a3a7191e656d5a6bf53"
+        "sha": "39652e3948f455fd0b77535a0145eeec561a3706"
       }
     }
   ]
