@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-memcache.git",
-        "sha": "e9941e155c3a0bf7aea2dbc332c7e134864c8ebb"
+        "sha": "e21334298f22cd093c2e280d8aa53e1b8bf1224c"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "26558bae8976a985d73c2d98c31d8612273f907d"
+        "sha": "39652e3948f455fd0b77535a0145eeec561a3706"
       }
     }
   ]
