@@ -1,5 +1,38 @@
 # Changelog
 
+## [0.8.0](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.7.0...v0.8.0) (2021-07-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* Set agent default language code as required (#238)
+
+### Features
+
+* add return_partial response to Fulfillment ([a3432ed](https://www.github.com/googleapis/java-dialogflow-cx/commit/a3432ed7f9364d21a9b0bfd5e605dbe9feade2ea))
+* added API for running continuous test ([#226](https://www.github.com/googleapis/java-dialogflow-cx/issues/226)) ([97f71ab](https://www.github.com/googleapis/java-dialogflow-cx/commit/97f71abf7b6ffc6ea89dfdfdf1e7a7a0c79a0590))
+* mark agent.default_language_code as required ([#246](https://www.github.com/googleapis/java-dialogflow-cx/issues/246)) ([a3432ed](https://www.github.com/googleapis/java-dialogflow-cx/commit/a3432ed7f9364d21a9b0bfd5e605dbe9feade2ea))
+* Support partial response feature ([d14161e](https://www.github.com/googleapis/java-dialogflow-cx/commit/d14161eb59c050b0a612a9c1aab3bab5c2166581))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-dialogflow-cx/issues/1130)) ([#245](https://www.github.com/googleapis/java-dialogflow-cx/issues/245)) ([ae502ce](https://www.github.com/googleapis/java-dialogflow-cx/commit/ae502ce2ddf4b22e22261aafa576068ed9039d01))
+* Set agent default language code as required ([#238](https://www.github.com/googleapis/java-dialogflow-cx/issues/238)) ([d14161e](https://www.github.com/googleapis/java-dialogflow-cx/commit/d14161eb59c050b0a612a9c1aab3bab5c2166581))
+
+
+### Documentation
+
+* add notes to train agent before sending queries ([a3432ed](https://www.github.com/googleapis/java-dialogflow-cx/commit/a3432ed7f9364d21a9b0bfd5e605dbe9feade2ea))
+* added notes to train agent before sending queries ([#244](https://www.github.com/googleapis/java-dialogflow-cx/issues/244)) ([dbbc03f](https://www.github.com/googleapis/java-dialogflow-cx/commit/dbbc03f917bb4970c2838a35c639385b7725bece))
+* Update docs of Agents, Fulfillments, SecuritySettings and Sessions ([d14161e](https://www.github.com/googleapis/java-dialogflow-cx/commit/d14161eb59c050b0a612a9c1aab3bab5c2166581))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#229](https://www.github.com/googleapis/java-dialogflow-cx/issues/229)) ([06c8e0e](https://www.github.com/googleapis/java-dialogflow-cx/commit/06c8e0e9921916967e7d67174fc22016c42b925f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#247](https://www.github.com/googleapis/java-dialogflow-cx/issues/247)) ([1979783](https://www.github.com/googleapis/java-dialogflow-cx/commit/197978352a49a97440595e1ff3f03e2f06a6c3ad))
+
 ## [0.7.0](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.6.1...v0.7.0) (2021-05-31)
 
 
