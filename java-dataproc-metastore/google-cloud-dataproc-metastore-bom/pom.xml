@@ -43,17 +43,6 @@
     <maven.antrun.skip>true</maven.antrun.skip>
   </properties>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>sonatype-nexus-snapshots</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <repository>
-      <id>sonatype-nexus-staging</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-  </distributionManagement>
-
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
