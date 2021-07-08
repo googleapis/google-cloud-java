@@ -10,7 +10,7 @@
   "repo": "googleapis/java-orchestration-airflow",
   "repo_short": "java-orchestration-airflow",
   "distribution_name": "com.google.cloud:google-cloud-orchestration-airflow",
-  "api_id": "orchestration-airflow.googleapis.com",
+  "api_id": "composer.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
