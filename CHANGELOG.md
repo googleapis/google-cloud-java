@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.136.0](https://www.github.com/googleapis/java-bigquery/compare/v1.135.4...v1.136.0) (2021-07-08)
+
+
+### Features
+
+* add dmlStatistics support ([#1431](https://www.github.com/googleapis/java-bigquery/issues/1431)) ([9d67e05](https://www.github.com/googleapis/java-bigquery/commit/9d67e05d2a6fab0c9e6017dec33b0d74ad821825))
+
 ### [1.135.4](https://www.github.com/googleapis/java-bigquery/compare/v1.135.3...v1.135.4) (2021-07-08)
 
 
