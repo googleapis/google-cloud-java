@@ -1,5 +1,20 @@
 # Changelog
 
+### [0.121.3](https://www.github.com/googleapis/java-logging-logback/compare/v0.121.2...v0.121.3) (2021-07-07)
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#446](https://www.github.com/googleapis/java-logging-logback/issues/446)) ([446cc69](https://www.github.com/googleapis/java-logging-logback/commit/446cc6997c436a07aeda687f773a07ac3a289dac))
+* Update dependencies.sh to not break on mac ([#441](https://www.github.com/googleapis/java-logging-logback/issues/441)) ([ed8f06b](https://www.github.com/googleapis/java-logging-logback/commit/ed8f06b82491975fd745bf609666588452214a13))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-logging to v2.3.2 ([#449](https://www.github.com/googleapis/java-logging-logback/issues/449)) ([b9b3da9](https://www.github.com/googleapis/java-logging-logback/commit/b9b3da9ba39bcf77e458a87f10f3410a6f236dfb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#448](https://www.github.com/googleapis/java-logging-logback/issues/448)) ([1e192d2](https://www.github.com/googleapis/java-logging-logback/commit/1e192d297b0e8ac5ae6a5eadd979b29863ce5cca))
+* update dependency org.slf4j:slf4j-api to v1.7.31 ([#444](https://www.github.com/googleapis/java-logging-logback/issues/444)) ([c7881e3](https://www.github.com/googleapis/java-logging-logback/commit/c7881e3176b574d718172c214da7a9c17a5a5333))
+
 ### [0.121.2](https://www.github.com/googleapis/java-logging-logback/compare/v0.121.1...v0.121.2) (2021-06-09)
 
 
