@@ -2206,6 +2206,26 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testDmlStatistics() throws InterruptedException {
+    String tableName = TABLE_ID_FASTQUERY.getTable();
+    // Run a DML statement to UPDATE 2 rows of data
+    String dmlQuery =
+        String.format("UPDATE %s.%s SET StringField = 'hello' WHERE TRUE", DATASET, tableName);
+    QueryJobConfiguration dmlConfig = QueryJobConfiguration.newBuilder(dmlQuery).build();
+    Job remoteJob = bigquery.create(JobInfo.of(dmlConfig));
+    remoteJob = remoteJob.waitFor();
+    assertNull(remoteJob.getStatus().getError());
+
+    TableResult result = remoteJob.getQueryResults();
+    assertEquals(TABLE_SCHEMA, result.getSchema());
+
+    Job queryJob = bigquery.getJob(remoteJob.getJobId());
+    JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
+    assertEquals(2L, statistics.getNumDmlAffectedRows().longValue());
+    assertEquals(2L, statistics.getDmlStats().getUpdatedRowCount().longValue());
+  }
+
+  @Test
   public void testScriptStatistics() throws InterruptedException {
     String script =
         "-- Declare a variable to hold names as an array.\n"

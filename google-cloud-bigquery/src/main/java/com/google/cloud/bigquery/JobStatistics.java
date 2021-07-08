@@ -326,6 +326,7 @@ public abstract class JobStatistics implements Serializable {
     private final RoutineId ddlTargetRoutine;
     private final Long estimatedBytesProcessed;
     private final Long numDmlAffectedRows;
+    private final DmlStats dmlStats;
     private final List<TableId> referencedTables;
     private final StatementType statementType;
     private final Long totalBytesBilled;
@@ -406,6 +407,7 @@ public abstract class JobStatistics implements Serializable {
       private RoutineId ddlTargetRoutine;
       private Long estimatedBytesProcessed;
       private Long numDmlAffectedRows;
+      private DmlStats dmlStats;
       private List<TableId> referencedTables;
       private StatementType statementType;
       private Long totalBytesBilled;
@@ -458,6 +460,9 @@ public abstract class JobStatistics implements Serializable {
           if (statisticsPb.getQuery().getSchema() != null) {
             this.schema = Schema.fromPb(statisticsPb.getQuery().getSchema());
           }
+          if (statisticsPb.getQuery().getDmlStats() != null) {
+            this.dmlStats = DmlStats.fromPb(statisticsPb.getQuery().getDmlStats());
+          }
         }
       }
 
@@ -493,6 +498,11 @@ public abstract class JobStatistics implements Serializable {
 
       Builder setNumDmlAffectedRows(Long numDmlAffectedRows) {
         this.numDmlAffectedRows = numDmlAffectedRows;
+        return self();
+      }
+
+      Builder setDmlStats(DmlStats dmlStats) {
+        this.dmlStats = dmlStats;
         return self();
       }
 
@@ -561,6 +571,7 @@ public abstract class JobStatistics implements Serializable {
       this.ddlTargetRoutine = builder.ddlTargetRoutine;
       this.estimatedBytesProcessed = builder.estimatedBytesProcessed;
       this.numDmlAffectedRows = builder.numDmlAffectedRows;
+      this.dmlStats = builder.dmlStats;
       this.referencedTables = builder.referencedTables;
       this.statementType = builder.statementType;
       this.totalBytesBilled = builder.totalBytesBilled;
@@ -612,6 +623,11 @@ public abstract class JobStatistics implements Serializable {
      */
     public Long getNumDmlAffectedRows() {
       return numDmlAffectedRows;
+    }
+
+    /** Detailed statistics for DML statements. */
+    public DmlStats getDmlStats() {
+      return dmlStats;
     }
 
     /**
@@ -729,7 +745,9 @@ public abstract class JobStatistics implements Serializable {
       if (ddlTargetRoutine != null) {
         queryStatisticsPb.setDdlTargetRoutine(ddlTargetRoutine.toPb());
       }
-
+      if (dmlStats != null) {
+        queryStatisticsPb.setDmlStats(dmlStats.toPb());
+      }
       if (referencedTables != null) {
         queryStatisticsPb.setReferencedTables(
             Lists.transform(referencedTables, TableId.TO_PB_FUNCTION));

@@ -42,6 +42,15 @@ public class JobStatisticsTest {
   private static final RoutineId DDL_TARGET_ROUTINE = RoutineId.of("alpha", "beta", "gamma");
   private static final Long ESTIMATE_BYTES_PROCESSED = 101L;
   private static final Long NUM_DML_AFFECTED_ROWS = 88L;
+  private static final Long DELETED_ROW_COUNT = 10L;
+  private static final Long INSERTED_ROW_COUNT = 20L;
+  private static final Long UPDATED_ROW_COUNT = 30L;
+  private static final DmlStats DML_STATS =
+      DmlStats.newBuilder()
+          .setDeletedRowCount(DELETED_ROW_COUNT)
+          .setInsertedRowCount(INSERTED_ROW_COUNT)
+          .setUpdatedRowCount(UPDATED_ROW_COUNT)
+          .build();
   private static final QueryStatistics.StatementType STATEMENT_TYPE =
       QueryStatistics.StatementType.SELECT;
   private static final Long TOTAL_BYTES_BILLED = 24L;
@@ -147,6 +156,7 @@ public class JobStatisticsTest {
           .setDDLTargetRoutine(DDL_TARGET_ROUTINE)
           .setEstimatedBytesProcessed(ESTIMATE_BYTES_PROCESSED)
           .setNumDmlAffectedRows(NUM_DML_AFFECTED_ROWS)
+          .setDmlStats(DML_STATS)
           .setReferenceTables(REFERENCED_TABLES)
           .setStatementType(STATEMENT_TYPE)
           .setTotalBytesBilled(TOTAL_BYTES_BILLED)
@@ -232,6 +242,7 @@ public class JobStatisticsTest {
     assertEquals(DDL_TARGET_ROUTINE, QUERY_STATISTICS.getDdlTargetRoutine());
     assertEquals(ESTIMATE_BYTES_PROCESSED, QUERY_STATISTICS.getEstimatedBytesProcessed());
     assertEquals(NUM_DML_AFFECTED_ROWS, QUERY_STATISTICS.getNumDmlAffectedRows());
+    assertEquals(DML_STATS, QUERY_STATISTICS.getDmlStats());
     assertEquals(REFERENCED_TABLES, QUERY_STATISTICS.getReferencedTables());
     assertEquals(STATEMENT_TYPE, QUERY_STATISTICS.getStatementType());
     assertEquals(TOTAL_BYTES_BILLED, QUERY_STATISTICS.getTotalBytesBilled());
