@@ -158,7 +158,7 @@ public class AccountName implements ResourceName {
     }
 
     private Builder(AccountName accountName) {
-      account = accountName.account;
+      this.account = accountName.account;
     }
 
     public AccountName build() {

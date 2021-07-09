@@ -187,8 +187,8 @@ public class AndroidAppDataStreamName implements ResourceName {
     }
 
     private Builder(AndroidAppDataStreamName androidAppDataStreamName) {
-      property = androidAppDataStreamName.property;
-      androidAppDataStream = androidAppDataStreamName.androidAppDataStream;
+      this.property = androidAppDataStreamName.property;
+      this.androidAppDataStream = androidAppDataStreamName.androidAppDataStream;
     }
 
     public AndroidAppDataStreamName build() {

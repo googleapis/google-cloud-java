@@ -158,7 +158,7 @@ public class DataSharingSettingsName implements ResourceName {
     }
 
     private Builder(DataSharingSettingsName dataSharingSettingsName) {
-      account = dataSharingSettingsName.account;
+      this.account = dataSharingSettingsName.account;
     }
 
     public DataSharingSettingsName build() {

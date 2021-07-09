@@ -63,8 +63,8 @@ import org.junit.Test;
 public class AnalyticsAdminServiceClientTest {
   private static MockAnalyticsAdminService mockAnalyticsAdminService;
   private static MockServiceHelper mockServiceHelper;
-  private AnalyticsAdminServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AnalyticsAdminServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -158,7 +158,7 @@ public class CustomMetricName implements ResourceName {
     }
 
     private Builder(CustomMetricName customMetricName) {
-      property = customMetricName.property;
+      this.property = customMetricName.property;
     }
 
     public CustomMetricName build() {

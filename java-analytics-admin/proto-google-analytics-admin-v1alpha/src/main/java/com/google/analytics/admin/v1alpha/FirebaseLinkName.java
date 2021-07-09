@@ -181,8 +181,8 @@ public class FirebaseLinkName implements ResourceName {
     }
 
     private Builder(FirebaseLinkName firebaseLinkName) {
-      property = firebaseLinkName.property;
-      firebaseLink = firebaseLinkName.firebaseLink;
+      this.property = firebaseLinkName.property;
+      this.firebaseLink = firebaseLinkName.firebaseLink;
     }
 
     public FirebaseLinkName build() {

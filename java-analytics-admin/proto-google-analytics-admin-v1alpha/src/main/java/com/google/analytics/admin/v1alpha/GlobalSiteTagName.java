@@ -158,7 +158,7 @@ public class GlobalSiteTagName implements ResourceName {
     }
 
     private Builder(GlobalSiteTagName globalSiteTagName) {
-      property = globalSiteTagName.property;
+      this.property = globalSiteTagName.property;
     }
 
     public GlobalSiteTagName build() {

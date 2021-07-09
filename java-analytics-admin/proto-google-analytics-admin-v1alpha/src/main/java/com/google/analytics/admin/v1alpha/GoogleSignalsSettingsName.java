@@ -159,7 +159,7 @@ public class GoogleSignalsSettingsName implements ResourceName {
     }
 
     private Builder(GoogleSignalsSettingsName googleSignalsSettingsName) {
-      property = googleSignalsSettingsName.property;
+      this.property = googleSignalsSettingsName.property;
     }
 
     public GoogleSignalsSettingsName build() {

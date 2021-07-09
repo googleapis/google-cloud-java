@@ -186,8 +186,8 @@ public class EnhancedMeasurementSettingsName implements ResourceName {
     }
 
     private Builder(EnhancedMeasurementSettingsName enhancedMeasurementSettingsName) {
-      property = enhancedMeasurementSettingsName.property;
-      webDataStream = enhancedMeasurementSettingsName.webDataStream;
+      this.property = enhancedMeasurementSettingsName.property;
+      this.webDataStream = enhancedMeasurementSettingsName.webDataStream;
     }
 
     public EnhancedMeasurementSettingsName build() {

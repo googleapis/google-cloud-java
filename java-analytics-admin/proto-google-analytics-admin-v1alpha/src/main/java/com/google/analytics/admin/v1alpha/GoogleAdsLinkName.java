@@ -183,8 +183,8 @@ public class GoogleAdsLinkName implements ResourceName {
     }
 
     private Builder(GoogleAdsLinkName googleAdsLinkName) {
-      property = googleAdsLinkName.property;
-      googleAdsLink = googleAdsLinkName.googleAdsLink;
+      this.property = googleAdsLinkName.property;
+      this.googleAdsLink = googleAdsLinkName.googleAdsLink;
     }
 
     public GoogleAdsLinkName build() {

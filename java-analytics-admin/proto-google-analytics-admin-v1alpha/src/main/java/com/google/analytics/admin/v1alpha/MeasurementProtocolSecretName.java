@@ -229,9 +229,9 @@ public class MeasurementProtocolSecretName implements ResourceName {
     }
 
     private Builder(MeasurementProtocolSecretName measurementProtocolSecretName) {
-      property = measurementProtocolSecretName.property;
-      webDataStream = measurementProtocolSecretName.webDataStream;
-      measurementProtocolSecret = measurementProtocolSecretName.measurementProtocolSecret;
+      this.property = measurementProtocolSecretName.property;
+      this.webDataStream = measurementProtocolSecretName.webDataStream;
+      this.measurementProtocolSecret = measurementProtocolSecretName.measurementProtocolSecret;
     }
 
     public MeasurementProtocolSecretName build() {

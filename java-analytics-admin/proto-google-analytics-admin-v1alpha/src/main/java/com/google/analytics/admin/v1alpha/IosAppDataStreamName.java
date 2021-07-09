@@ -187,8 +187,8 @@ public class IosAppDataStreamName implements ResourceName {
     }
 
     private Builder(IosAppDataStreamName iosAppDataStreamName) {
-      property = iosAppDataStreamName.property;
-      iosAppDataStream = iosAppDataStreamName.iosAppDataStream;
+      this.property = iosAppDataStreamName.property;
+      this.iosAppDataStream = iosAppDataStreamName.iosAppDataStream;
     }
 
     public IosAppDataStreamName build() {

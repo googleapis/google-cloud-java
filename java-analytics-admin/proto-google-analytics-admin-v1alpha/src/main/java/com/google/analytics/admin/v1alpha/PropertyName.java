@@ -158,7 +158,7 @@ public class PropertyName implements ResourceName {
     }
 
     private Builder(PropertyName propertyName) {
-      property = propertyName.property;
+      this.property = propertyName.property;
     }
 
     public PropertyName build() {

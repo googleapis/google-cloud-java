@@ -158,7 +158,7 @@ public class CustomDimensionName implements ResourceName {
     }
 
     private Builder(CustomDimensionName customDimensionName) {
-      property = customDimensionName.property;
+      this.property = customDimensionName.property;
     }
 
     public CustomDimensionName build() {

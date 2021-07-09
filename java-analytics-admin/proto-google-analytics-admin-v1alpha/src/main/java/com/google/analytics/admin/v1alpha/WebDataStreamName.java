@@ -183,8 +183,8 @@ public class WebDataStreamName implements ResourceName {
     }
 
     private Builder(WebDataStreamName webDataStreamName) {
-      property = webDataStreamName.property;
-      webDataStream = webDataStreamName.webDataStream;
+      this.property = webDataStreamName.property;
+      this.webDataStream = webDataStreamName.webDataStream;
     }
 
     public WebDataStreamName build() {

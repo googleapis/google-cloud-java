@@ -187,8 +187,8 @@ public class ConversionEventName implements ResourceName {
     }
 
     private Builder(ConversionEventName conversionEventName) {
-      property = conversionEventName.property;
-      conversionEvent = conversionEventName.conversionEvent;
+      this.property = conversionEventName.property;
+      this.conversionEvent = conversionEventName.conversionEvent;
     }
 
     public ConversionEventName build() {

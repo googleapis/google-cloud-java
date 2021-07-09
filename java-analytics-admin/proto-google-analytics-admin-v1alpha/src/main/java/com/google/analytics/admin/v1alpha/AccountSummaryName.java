@@ -158,7 +158,7 @@ public class AccountSummaryName implements ResourceName {
     }
 
     private Builder(AccountSummaryName accountSummaryName) {
-      accountSummary = accountSummaryName.accountSummary;
+      this.accountSummary = accountSummaryName.accountSummary;
     }
 
     public AccountSummaryName build() {
