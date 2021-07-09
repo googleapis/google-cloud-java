@@ -1,3 +1,3 @@
 docker:
   image: gcr.io/repo-automation-bots/owlbot-java:latest
-  digest: sha256:649fac54a80ecd8539e971b87cc36273ba68bb71bd65609f523406f7981691ac
+  digest: sha256:2e88a4a7fe3377cf8de1fa5982134f6ef2768980fa2f94edcc1ba6604ae2e7ca
