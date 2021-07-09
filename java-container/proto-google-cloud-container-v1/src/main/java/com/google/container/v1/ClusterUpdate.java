@@ -351,6 +351,23 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 506:
+            {
+              com.google.container.v1.AuthenticatorGroupsConfig.Builder subBuilder = null;
+              if (desiredAuthenticatorGroupsConfig_ != null) {
+                subBuilder = desiredAuthenticatorGroupsConfig_.toBuilder();
+              }
+              desiredAuthenticatorGroupsConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.AuthenticatorGroupsConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredAuthenticatorGroupsConfig_);
+                desiredAuthenticatorGroupsConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 802:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -1482,6 +1499,58 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     return getDesiredReleaseChannel();
   }
 
+  public static final int DESIRED_AUTHENTICATOR_GROUPS_CONFIG_FIELD_NUMBER = 63;
+  private com.google.container.v1.AuthenticatorGroupsConfig desiredAuthenticatorGroupsConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired authenticator groups config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;
+   * </code>
+   *
+   * @return Whether the desiredAuthenticatorGroupsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredAuthenticatorGroupsConfig() {
+    return desiredAuthenticatorGroupsConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired authenticator groups config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;
+   * </code>
+   *
+   * @return The desiredAuthenticatorGroupsConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.AuthenticatorGroupsConfig getDesiredAuthenticatorGroupsConfig() {
+    return desiredAuthenticatorGroupsConfig_ == null
+        ? com.google.container.v1.AuthenticatorGroupsConfig.getDefaultInstance()
+        : desiredAuthenticatorGroupsConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired authenticator groups config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.AuthenticatorGroupsConfigOrBuilder
+      getDesiredAuthenticatorGroupsConfigOrBuilder() {
+    return getDesiredAuthenticatorGroupsConfig();
+  }
+
   public static final int DESIRED_MASTER_VERSION_FIELD_NUMBER = 100;
   private volatile java.lang.Object desiredMasterVersion_;
   /**
@@ -1619,6 +1688,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (desiredShieldedNodes_ != null) {
       output.writeMessage(48, getDesiredShieldedNodes());
     }
+    if (desiredAuthenticatorGroupsConfig_ != null) {
+      output.writeMessage(63, getDesiredAuthenticatorGroupsConfig());
+    }
     if (!getDesiredMasterVersionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, desiredMasterVersion_);
     }
@@ -1721,6 +1793,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(48, getDesiredShieldedNodes());
     }
+    if (desiredAuthenticatorGroupsConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              63, getDesiredAuthenticatorGroupsConfig());
+    }
     if (!getDesiredMasterVersionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, desiredMasterVersion_);
     }
@@ -1816,6 +1893,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredReleaseChannel()) {
       if (!getDesiredReleaseChannel().equals(other.getDesiredReleaseChannel())) return false;
     }
+    if (hasDesiredAuthenticatorGroupsConfig() != other.hasDesiredAuthenticatorGroupsConfig())
+      return false;
+    if (hasDesiredAuthenticatorGroupsConfig()) {
+      if (!getDesiredAuthenticatorGroupsConfig()
+          .equals(other.getDesiredAuthenticatorGroupsConfig())) return false;
+    }
     if (!getDesiredMasterVersion().equals(other.getDesiredMasterVersion())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1897,6 +1980,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredReleaseChannel()) {
       hash = (37 * hash) + DESIRED_RELEASE_CHANNEL_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredReleaseChannel().hashCode();
+    }
+    if (hasDesiredAuthenticatorGroupsConfig()) {
+      hash = (37 * hash) + DESIRED_AUTHENTICATOR_GROUPS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredAuthenticatorGroupsConfig().hashCode();
     }
     hash = (37 * hash) + DESIRED_MASTER_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getDesiredMasterVersion().hashCode();
@@ -2142,6 +2229,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredReleaseChannel_ = null;
         desiredReleaseChannelBuilder_ = null;
       }
+      if (desiredAuthenticatorGroupsConfigBuilder_ == null) {
+        desiredAuthenticatorGroupsConfig_ = null;
+      } else {
+        desiredAuthenticatorGroupsConfig_ = null;
+        desiredAuthenticatorGroupsConfigBuilder_ = null;
+      }
       desiredMasterVersion_ = "";
 
       return this;
@@ -2252,6 +2345,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         result.desiredReleaseChannel_ = desiredReleaseChannel_;
       } else {
         result.desiredReleaseChannel_ = desiredReleaseChannelBuilder_.build();
+      }
+      if (desiredAuthenticatorGroupsConfigBuilder_ == null) {
+        result.desiredAuthenticatorGroupsConfig_ = desiredAuthenticatorGroupsConfig_;
+      } else {
+        result.desiredAuthenticatorGroupsConfig_ = desiredAuthenticatorGroupsConfigBuilder_.build();
       }
       result.desiredMasterVersion_ = desiredMasterVersion_;
       onBuilt();
@@ -2375,6 +2473,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDesiredReleaseChannel()) {
         mergeDesiredReleaseChannel(other.getDesiredReleaseChannel());
+      }
+      if (other.hasDesiredAuthenticatorGroupsConfig()) {
+        mergeDesiredAuthenticatorGroupsConfig(other.getDesiredAuthenticatorGroupsConfig());
       }
       if (!other.getDesiredMasterVersion().isEmpty()) {
         desiredMasterVersion_ = other.desiredMasterVersion_;
@@ -6046,6 +6147,216 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredReleaseChannel_ = null;
       }
       return desiredReleaseChannelBuilder_;
+    }
+
+    private com.google.container.v1.AuthenticatorGroupsConfig desiredAuthenticatorGroupsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.AuthenticatorGroupsConfig,
+            com.google.container.v1.AuthenticatorGroupsConfig.Builder,
+            com.google.container.v1.AuthenticatorGroupsConfigOrBuilder>
+        desiredAuthenticatorGroupsConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired authenticator groups config for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;
+     * </code>
+     *
+     * @return Whether the desiredAuthenticatorGroupsConfig field is set.
+     */
+    public boolean hasDesiredAuthenticatorGroupsConfig() {
+      return desiredAuthenticatorGroupsConfigBuilder_ != null
+          || desiredAuthenticatorGroupsConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired authenticator groups config for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;
+     * </code>
+     *
+     * @return The desiredAuthenticatorGroupsConfig.
+     */
+    public com.google.container.v1.AuthenticatorGroupsConfig getDesiredAuthenticatorGroupsConfig() {
+      if (desiredAuthenticatorGroupsConfigBuilder_ == null) {
+        return desiredAuthenticatorGroupsConfig_ == null
+            ? com.google.container.v1.AuthenticatorGroupsConfig.getDefaultInstance()
+            : desiredAuthenticatorGroupsConfig_;
+      } else {
+        return desiredAuthenticatorGroupsConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired authenticator groups config for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;
+     * </code>
+     */
+    public Builder setDesiredAuthenticatorGroupsConfig(
+        com.google.container.v1.AuthenticatorGroupsConfig value) {
+      if (desiredAuthenticatorGroupsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredAuthenticatorGroupsConfig_ = value;
+        onChanged();
+      } else {
+        desiredAuthenticatorGroupsConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired authenticator groups config for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;
+     * </code>
+     */
+    public Builder setDesiredAuthenticatorGroupsConfig(
+        com.google.container.v1.AuthenticatorGroupsConfig.Builder builderForValue) {
+      if (desiredAuthenticatorGroupsConfigBuilder_ == null) {
+        desiredAuthenticatorGroupsConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredAuthenticatorGroupsConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired authenticator groups config for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;
+     * </code>
+     */
+    public Builder mergeDesiredAuthenticatorGroupsConfig(
+        com.google.container.v1.AuthenticatorGroupsConfig value) {
+      if (desiredAuthenticatorGroupsConfigBuilder_ == null) {
+        if (desiredAuthenticatorGroupsConfig_ != null) {
+          desiredAuthenticatorGroupsConfig_ =
+              com.google.container.v1.AuthenticatorGroupsConfig.newBuilder(
+                      desiredAuthenticatorGroupsConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredAuthenticatorGroupsConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredAuthenticatorGroupsConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired authenticator groups config for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;
+     * </code>
+     */
+    public Builder clearDesiredAuthenticatorGroupsConfig() {
+      if (desiredAuthenticatorGroupsConfigBuilder_ == null) {
+        desiredAuthenticatorGroupsConfig_ = null;
+        onChanged();
+      } else {
+        desiredAuthenticatorGroupsConfig_ = null;
+        desiredAuthenticatorGroupsConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired authenticator groups config for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;
+     * </code>
+     */
+    public com.google.container.v1.AuthenticatorGroupsConfig.Builder
+        getDesiredAuthenticatorGroupsConfigBuilder() {
+
+      onChanged();
+      return getDesiredAuthenticatorGroupsConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired authenticator groups config for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;
+     * </code>
+     */
+    public com.google.container.v1.AuthenticatorGroupsConfigOrBuilder
+        getDesiredAuthenticatorGroupsConfigOrBuilder() {
+      if (desiredAuthenticatorGroupsConfigBuilder_ != null) {
+        return desiredAuthenticatorGroupsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredAuthenticatorGroupsConfig_ == null
+            ? com.google.container.v1.AuthenticatorGroupsConfig.getDefaultInstance()
+            : desiredAuthenticatorGroupsConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired authenticator groups config for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.AuthenticatorGroupsConfig,
+            com.google.container.v1.AuthenticatorGroupsConfig.Builder,
+            com.google.container.v1.AuthenticatorGroupsConfigOrBuilder>
+        getDesiredAuthenticatorGroupsConfigFieldBuilder() {
+      if (desiredAuthenticatorGroupsConfigBuilder_ == null) {
+        desiredAuthenticatorGroupsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.AuthenticatorGroupsConfig,
+                com.google.container.v1.AuthenticatorGroupsConfig.Builder,
+                com.google.container.v1.AuthenticatorGroupsConfigOrBuilder>(
+                getDesiredAuthenticatorGroupsConfig(), getParentForChildren(), isClean());
+        desiredAuthenticatorGroupsConfig_ = null;
+      }
+      return desiredAuthenticatorGroupsConfigBuilder_;
     }
 
     private java.lang.Object desiredMasterVersion_ = "";

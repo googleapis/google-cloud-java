@@ -795,6 +795,45 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * The desired authenticator groups config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;
+   * </code>
+   *
+   * @return Whether the desiredAuthenticatorGroupsConfig field is set.
+   */
+  boolean hasDesiredAuthenticatorGroupsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired authenticator groups config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;
+   * </code>
+   *
+   * @return The desiredAuthenticatorGroupsConfig.
+   */
+  com.google.container.v1.AuthenticatorGroupsConfig getDesiredAuthenticatorGroupsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired authenticator groups config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;
+   * </code>
+   */
+  com.google.container.v1.AuthenticatorGroupsConfigOrBuilder
+      getDesiredAuthenticatorGroupsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The Kubernetes version to change the master to.
    * Users may specify either explicit versions offered by
    * Kubernetes Engine or version aliases, which have the following behavior:
