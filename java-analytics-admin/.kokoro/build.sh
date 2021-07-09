@@ -23,8 +23,8 @@ cd ${scriptDir}/..
 # include common functions
 source ${scriptDir}/common.sh
 
-# Print out Maven & Java version
-mvn -version
+# Print out Java version
+java -version
 echo ${JOB_TYPE}
 
 # attempt to install 3 times with exponential backoff (starting with 10 seconds)
