@@ -15,8 +15,8 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
-import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
+import com.google.api.gax.tracing.BaseApiTracer;
 import com.google.api.gax.tracing.SpanName;
 import com.google.common.base.Stopwatch;
 import io.opencensus.stats.MeasureMap;
@@ -34,7 +34,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 
-class MetricsTracer implements ApiTracer {
+class MetricsTracer extends BaseApiTracer {
 
   private final OperationType operationType;
 

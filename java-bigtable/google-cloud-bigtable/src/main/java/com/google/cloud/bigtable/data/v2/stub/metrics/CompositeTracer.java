@@ -16,13 +16,14 @@
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import com.google.api.gax.tracing.ApiTracer;
+import com.google.api.gax.tracing.BaseApiTracer;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
 import org.threeten.bp.Duration;
 
 /** Combines multiple {@link ApiTracer}s into a single {@link ApiTracer}. */
-class CompositeTracer implements ApiTracer {
+class CompositeTracer extends BaseApiTracer {
   private final List<ApiTracer> children;
 
   CompositeTracer(List<ApiTracer> children) {

@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.data.v2.stub.metrics;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.ApiTracerFactory;
+import com.google.api.gax.tracing.BaseApiTracerFactory;
 import com.google.api.gax.tracing.SpanName;
 import com.google.common.collect.ImmutableMap;
 import io.opencensus.stats.StatsRecorder;
@@ -30,7 +31,7 @@ import io.opencensus.tags.Tagger;
  * api.
  */
 @InternalApi("For internal use only")
-public class MetricsTracerFactory implements ApiTracerFactory {
+public class MetricsTracerFactory extends BaseApiTracerFactory {
   private final Tagger tagger;
   private final StatsRecorder stats;
   private final ImmutableMap<TagKey, TagValue> statsAttributes;

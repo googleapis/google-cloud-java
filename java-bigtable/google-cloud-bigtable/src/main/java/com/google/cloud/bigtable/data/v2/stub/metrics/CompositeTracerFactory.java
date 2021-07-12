@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.data.v2.stub.metrics;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.ApiTracerFactory;
+import com.google.api.gax.tracing.BaseApiTracerFactory;
 import com.google.api.gax.tracing.SpanName;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ import java.util.List;
 
 /** Combines multiple {@link ApiTracerFactory} into a single {@link ApiTracerFactory}. */
 @InternalApi("For internal use only")
-public class CompositeTracerFactory implements ApiTracerFactory {
+public class CompositeTracerFactory extends BaseApiTracerFactory {
   private final List<ApiTracerFactory> apiTracerFactories;
 
   public CompositeTracerFactory(List<ApiTracerFactory> apiTracerFactories) {
