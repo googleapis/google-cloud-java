@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-appengine-admin/compare/v0.1.3...v1.0.0) (2021-07-12)
+
+
+### Features
+
+* promote to ga ([#72](https://www.github.com/googleapis/java-appengine-admin/issues/72)) ([534ba43](https://www.github.com/googleapis/java-appengine-admin/commit/534ba43f8e38944ee9ffae8cc91019df23f6737f))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-appengine-admin/issues/1130)) ([#69](https://www.github.com/googleapis/java-appengine-admin/issues/69)) ([c3f6daa](https://www.github.com/googleapis/java-appengine-admin/commit/c3f6daac5b133d20aabc855d5512d41cda0d6ed3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#71](https://www.github.com/googleapis/java-appengine-admin/issues/71)) ([18e40f2](https://www.github.com/googleapis/java-appengine-admin/commit/18e40f2298d05469dcbd4988a3ca54243881b245))
+
 ### [0.1.3](https://www.github.com/googleapis/java-appengine-admin/compare/v0.1.2...v0.1.3) (2021-06-09)
 
 
