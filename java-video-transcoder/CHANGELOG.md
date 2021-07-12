@@ -1,5 +1,34 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-video-transcoder/compare/v0.1.9...v0.2.0) (2021-07-12)
+
+
+### Features
+
+* add gcf-owl-bot[bot] to ignoreAuthors  ([#166](https://www.github.com/googleapis/java-video-transcoder/issues/166)) ([a996661](https://www.github.com/googleapis/java-video-transcoder/commit/a9966615c5771572452d549d69f46059e70d280f))
+* add v1 client ([#180](https://www.github.com/googleapis/java-video-transcoder/issues/180)) ([3a39c8a](https://www.github.com/googleapis/java-video-transcoder/commit/3a39c8a0b0fb9e13b78859874f665abf022707c0))
+* **generator:** update protoc to v3.15.3 ([#127](https://www.github.com/googleapis/java-video-transcoder/issues/127)) ([0310bc9](https://www.github.com/googleapis/java-video-transcoder/commit/0310bc94992af73ce7048ebd80b105b190c06164))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#175](https://www.github.com/googleapis/java-video-transcoder/issues/175)) ([70b7731](https://www.github.com/googleapis/java-video-transcoder/commit/70b773104588c40160d31177ea3df07fc33c84e5))
+* release scripts from issuing overlapping phases ([#147](https://www.github.com/googleapis/java-video-transcoder/issues/147)) ([456c7db](https://www.github.com/googleapis/java-video-transcoder/commit/456c7db5bb2ff9de59460d3b44b156f9846d8133))
+* typo ([#145](https://www.github.com/googleapis/java-video-transcoder/issues/145)) ([d49a92e](https://www.github.com/googleapis/java-video-transcoder/commit/d49a92e8a5fc08087462fc70cd42486ecf02b903))
+* Update dependencies.sh to not break on mac ([#172](https://www.github.com/googleapis/java-video-transcoder/issues/172)) ([cea9a0a](https://www.github.com/googleapis/java-video-transcoder/commit/cea9a0aa491b484da06b67ad95588740988a7814))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#133](https://www.github.com/googleapis/java-video-transcoder/issues/133)) ([edb6c68](https://www.github.com/googleapis/java-video-transcoder/commit/edb6c68f7518a97164395acf78c2acc56188bdaf))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#141](https://www.github.com/googleapis/java-video-transcoder/issues/141)) ([46de5c6](https://www.github.com/googleapis/java-video-transcoder/commit/46de5c6703ae46a3a6361144df24029d7151ceb5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#148](https://www.github.com/googleapis/java-video-transcoder/issues/148)) ([356b515](https://www.github.com/googleapis/java-video-transcoder/commit/356b515c086946d51f454d38fef3c0c713e86f29))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#151](https://www.github.com/googleapis/java-video-transcoder/issues/151)) ([608a242](https://www.github.com/googleapis/java-video-transcoder/commit/608a2423488c6a94aa2a44c21fcb4f955e7b8144))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#159](https://www.github.com/googleapis/java-video-transcoder/issues/159)) ([57b7a93](https://www.github.com/googleapis/java-video-transcoder/commit/57b7a93fca5aa79f55652a7b1e536ef1c2991a16))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#162](https://www.github.com/googleapis/java-video-transcoder/issues/162)) ([59fcc02](https://www.github.com/googleapis/java-video-transcoder/commit/59fcc02497985c25eef948afb4eec6d91520607f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#168](https://www.github.com/googleapis/java-video-transcoder/issues/168)) ([0486ffa](https://www.github.com/googleapis/java-video-transcoder/commit/0486ffa431a6baf19f96e09a6ff213b50ff33a16))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#176](https://www.github.com/googleapis/java-video-transcoder/issues/176)) ([3e6c5ca](https://www.github.com/googleapis/java-video-transcoder/commit/3e6c5ca765d7b0f8e429b217cb2cb6ec6d70d99b))
+
 ### [0.1.9](https://www.github.com/googleapis/java-video-transcoder/compare/v0.1.8...v0.1.9) (2021-02-25)
 
 
