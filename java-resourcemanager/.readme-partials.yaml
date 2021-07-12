@@ -84,7 +84,7 @@ custom_content: |
   Then add the following code to print a list of projects you can view:
 
   ```java
-  Iterator<Project> projectIterator = resourceManager.list().iterateAll();
+  Iterator<Project> projectIterator = resourceManager.list().iterateAll().iterator();
   System.out.println("Projects I can view:");
   while (projectIterator.hasNext()) {
     System.out.println(projectIterator.next().getProjectId());
