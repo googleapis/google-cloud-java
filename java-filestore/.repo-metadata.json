@@ -10,7 +10,7 @@
   "repo": "googleapis/java-filestore",
   "repo_short": "java-filestore",
   "distribution_name": "com.google.cloud:google-cloud-filestore",
-  "api_id": "filestore.googleapis.com",
+  "api_id": "file.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
