@@ -175,7 +175,7 @@ import java.util.Iterator;
 Then add the following code to print a list of projects you can view:
 
 ```java
-Iterator<Project> projectIterator = resourceManager.list().iterateAll();
+Iterator<Project> projectIterator = resourceManager.list().iterateAll().iterator();
 System.out.println("Projects I can view:");
 while (projectIterator.hasNext()) {
   System.out.println(projectIterator.next().getProjectId());
@@ -230,6 +230,7 @@ view. Complete source code can be found at
 The third program modifies the IAM policy associated with a project using the read-modify-write
 pattern.  Complete source code can be found at
 [ModifyPolicy.java](https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/ModifyPolicy.java)
+
 
 
 
