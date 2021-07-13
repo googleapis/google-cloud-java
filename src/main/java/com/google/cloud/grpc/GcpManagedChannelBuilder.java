@@ -16,6 +16,8 @@
 
 package com.google.cloud.grpc;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.google.cloud.grpc.proto.ApiConfig;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.protobuf.util.JsonFormat;
@@ -23,8 +25,9 @@ import io.grpc.ForwardingChannelBuilder;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
+import java.nio.file.Files;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
@@ -47,7 +50,7 @@ public class GcpManagedChannelBuilder extends ForwardingChannelBuilder<GcpManage
     JsonFormat.Parser parser = JsonFormat.parser();
     ApiConfig.Builder apiConfig = ApiConfig.newBuilder();
     try {
-      FileReader reader = new FileReader(file);
+      Reader reader = Files.newBufferedReader(file.toPath(), UTF_8);
       parser.merge(reader, apiConfig);
     } catch (IOException e) {
       logger.severe(e.getMessage());
