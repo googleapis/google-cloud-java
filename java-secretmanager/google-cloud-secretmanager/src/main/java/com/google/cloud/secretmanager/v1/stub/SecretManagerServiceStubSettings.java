@@ -467,7 +467,7 @@ public class SecretManagerServiceStubSettings
           "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.UNAVAILABLE, StatusCode.Code.UNKNOWN)));
+                  StatusCode.Code.UNAVAILABLE, StatusCode.Code.RESOURCE_EXHAUSTED)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -486,8 +486,8 @@ public class SecretManagerServiceStubSettings
       definitions.put("no_retry_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
-              .setRetryDelayMultiplier(1.3)
+              .setInitialRetryDelay(Duration.ofMillis(2000L))
+              .setRetryDelayMultiplier(2.0)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
