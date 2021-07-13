@@ -93,6 +93,11 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
 
               break;
             }
+          case 24:
+            {
+              validateOnly_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -234,6 +239,25 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
     return getDashboard();
   }
 
+  public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
+  private boolean validateOnly_;
+  /**
+   *
+   *
+   * <pre>
+   * If set, validate the request and preview the review, but do not actually
+   * save it.
+   * </pre>
+   *
+   * <code>bool validate_only = 3;</code>
+   *
+   * @return The validateOnly.
+   */
+  @java.lang.Override
+  public boolean getValidateOnly() {
+    return validateOnly_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -254,6 +278,9 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
     if (dashboard_ != null) {
       output.writeMessage(2, getDashboard());
     }
+    if (validateOnly_ != false) {
+      output.writeBool(3, validateOnly_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -268,6 +295,9 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
     }
     if (dashboard_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDashboard());
+    }
+    if (validateOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, validateOnly_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -290,6 +320,7 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
     if (hasDashboard()) {
       if (!getDashboard().equals(other.getDashboard())) return false;
     }
+    if (getValidateOnly() != other.getValidateOnly()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -307,6 +338,8 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + DASHBOARD_FIELD_NUMBER;
       hash = (53 * hash) + getDashboard().hashCode();
     }
+    hash = (37 * hash) + VALIDATE_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -461,6 +494,8 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
         dashboard_ = null;
         dashboardBuilder_ = null;
       }
+      validateOnly_ = false;
+
       return this;
     }
 
@@ -494,6 +529,7 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
       } else {
         result.dashboard_ = dashboardBuilder_.build();
       }
+      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
     }
@@ -550,6 +586,9 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
       }
       if (other.hasDashboard()) {
         mergeDashboard(other.getDashboard());
+      }
+      if (other.getValidateOnly() != false) {
+        setValidateOnly(other.getValidateOnly());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -899,6 +938,61 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
         dashboard_ = null;
       }
       return dashboardBuilder_;
+    }
+
+    private boolean validateOnly_;
+    /**
+     *
+     *
+     * <pre>
+     * If set, validate the request and preview the review, but do not actually
+     * save it.
+     * </pre>
+     *
+     * <code>bool validate_only = 3;</code>
+     *
+     * @return The validateOnly.
+     */
+    @java.lang.Override
+    public boolean getValidateOnly() {
+      return validateOnly_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, validate the request and preview the review, but do not actually
+     * save it.
+     * </pre>
+     *
+     * <code>bool validate_only = 3;</code>
+     *
+     * @param value The validateOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setValidateOnly(boolean value) {
+
+      validateOnly_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, validate the request and preview the review, but do not actually
+     * save it.
+     * </pre>
+     *
+     * <code>bool validate_only = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearValidateOnly() {
+
+      validateOnly_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

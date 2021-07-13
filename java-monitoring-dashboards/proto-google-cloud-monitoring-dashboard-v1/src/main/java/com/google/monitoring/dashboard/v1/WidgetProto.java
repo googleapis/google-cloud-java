@@ -42,29 +42,33 @@ public final class WidgetProto {
     java.lang.String[] descriptorData = {
       "\n+google/monitoring/dashboard/v1/widget."
           + "proto\022\036google.monitoring.dashboard.v1\032\037g"
-          + "oogle/api/field_behavior.proto\032.google/m"
-          + "onitoring/dashboard/v1/scorecard.proto\032)"
-          + "google/monitoring/dashboard/v1/text.prot"
-          + "o\032,google/monitoring/dashboard/v1/xychar"
-          + "t.proto\032\033google/protobuf/empty.proto\"\203\002\n"
-          + "\006Widget\022\022\n\005title\030\001 \001(\tB\003\340A\001\022;\n\010xy_chart\030"
-          + "\002 \001(\0132\'.google.monitoring.dashboard.v1.X"
-          + "yChartH\000\022>\n\tscorecard\030\003 \001(\0132).google.mon"
-          + "itoring.dashboard.v1.ScorecardH\000\0224\n\004text"
-          + "\030\004 \001(\0132$.google.monitoring.dashboard.v1."
-          + "TextH\000\022\'\n\005blank\030\005 \001(\0132\026.google.protobuf."
-          + "EmptyH\000B\t\n\007contentB\316\001\n\"com.google.monito"
-          + "ring.dashboard.v1B\013WidgetProtoP\001ZGgoogle"
-          + ".golang.org/genproto/googleapis/monitori"
-          + "ng/dashboard/v1;dashboard\312\002$Google\\Cloud"
-          + "\\Monitoring\\Dashboard\\V1\352\002(Google::Cloud"
-          + "::Monitoring::Dashboard::V1b\006proto3"
+          + "oogle/api/field_behavior.proto\032/google/m"
+          + "onitoring/dashboard/v1/alertchart.proto\032"
+          + ".google/monitoring/dashboard/v1/scorecar"
+          + "d.proto\032)google/monitoring/dashboard/v1/"
+          + "text.proto\032,google/monitoring/dashboard/"
+          + "v1/xychart.proto\032\033google/protobuf/empty."
+          + "proto\"\306\002\n\006Widget\022\022\n\005title\030\001 \001(\tB\003\340A\001\022;\n\010"
+          + "xy_chart\030\002 \001(\0132\'.google.monitoring.dashb"
+          + "oard.v1.XyChartH\000\022>\n\tscorecard\030\003 \001(\0132).g"
+          + "oogle.monitoring.dashboard.v1.ScorecardH"
+          + "\000\0224\n\004text\030\004 \001(\0132$.google.monitoring.dash"
+          + "board.v1.TextH\000\022\'\n\005blank\030\005 \001(\0132\026.google."
+          + "protobuf.EmptyH\000\022A\n\013alert_chart\030\007 \001(\0132*."
+          + "google.monitoring.dashboard.v1.AlertChar"
+          + "tH\000B\t\n\007contentB\316\001\n\"com.google.monitoring"
+          + ".dashboard.v1B\013WidgetProtoP\001ZGgoogle.gol"
+          + "ang.org/genproto/googleapis/monitoring/d"
+          + "ashboard/v1;dashboard\312\002$Google\\Cloud\\Mon"
+          + "itoring\\Dashboard\\V1\352\002(Google::Cloud::Mo"
+          + "nitoring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.monitoring.dashboard.v1.AlertChartProto.getDescriptor(),
               com.google.monitoring.dashboard.v1.ScorecardProto.getDescriptor(),
               com.google.monitoring.dashboard.v1.TextProto.getDescriptor(),
               com.google.monitoring.dashboard.v1.XyChartProto.getDescriptor(),
@@ -76,7 +80,7 @@ public final class WidgetProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_monitoring_dashboard_v1_Widget_descriptor,
             new java.lang.String[] {
-              "Title", "XyChart", "Scorecard", "Text", "Blank", "Content",
+              "Title", "XyChart", "Scorecard", "Text", "Blank", "AlertChart", "Content",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -84,6 +88,7 @@ public final class WidgetProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.monitoring.dashboard.v1.AlertChartProto.getDescriptor();
     com.google.monitoring.dashboard.v1.ScorecardProto.getDescriptor();
     com.google.monitoring.dashboard.v1.TextProto.getDescriptor();
     com.google.monitoring.dashboard.v1.XyChartProto.getDescriptor();

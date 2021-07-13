@@ -307,10 +307,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The lower bound on data point frequency for this data set,
-     * implemented by specifying the minimum alignment period to use in a time
-     * series query. For example, if the data is published once every 10 minutes,
-     * the `min_alignment_period` should be at least 10 minutes. It would not
+     * Optional. The lower bound on data point frequency for this data set, implemented by
+     * specifying the minimum alignment period to use in a time series query
+     * For example, if the data is published once every 10 minutes, the
+     * `min_alignment_period` should be at least 10 minutes. It would not
      * make sense to fetch and align data at one minute intervals.
      * </pre>
      *
@@ -325,10 +325,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The lower bound on data point frequency for this data set,
-     * implemented by specifying the minimum alignment period to use in a time
-     * series query. For example, if the data is published once every 10 minutes,
-     * the `min_alignment_period` should be at least 10 minutes. It would not
+     * Optional. The lower bound on data point frequency for this data set, implemented by
+     * specifying the minimum alignment period to use in a time series query
+     * For example, if the data is published once every 10 minutes, the
+     * `min_alignment_period` should be at least 10 minutes. It would not
      * make sense to fetch and align data at one minute intervals.
      * </pre>
      *
@@ -343,10 +343,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The lower bound on data point frequency for this data set,
-     * implemented by specifying the minimum alignment period to use in a time
-     * series query. For example, if the data is published once every 10 minutes,
-     * the `min_alignment_period` should be at least 10 minutes. It would not
+     * Optional. The lower bound on data point frequency for this data set, implemented by
+     * specifying the minimum alignment period to use in a time series query
+     * For example, if the data is published once every 10 minutes, the
+     * `min_alignment_period` should be at least 10 minutes. It would not
      * make sense to fetch and align data at one minute intervals.
      * </pre>
      *
@@ -865,10 +865,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The lower bound on data point frequency for this data set,
-     * implemented by specifying the minimum alignment period to use in a time
-     * series query. For example, if the data is published once every 10 minutes,
-     * the `min_alignment_period` should be at least 10 minutes. It would not
+     * Optional. The lower bound on data point frequency for this data set, implemented by
+     * specifying the minimum alignment period to use in a time series query
+     * For example, if the data is published once every 10 minutes, the
+     * `min_alignment_period` should be at least 10 minutes. It would not
      * make sense to fetch and align data at one minute intervals.
      * </pre>
      *
@@ -886,10 +886,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The lower bound on data point frequency for this data set,
-     * implemented by specifying the minimum alignment period to use in a time
-     * series query. For example, if the data is published once every 10 minutes,
-     * the `min_alignment_period` should be at least 10 minutes. It would not
+     * Optional. The lower bound on data point frequency for this data set, implemented by
+     * specifying the minimum alignment period to use in a time series query
+     * For example, if the data is published once every 10 minutes, the
+     * `min_alignment_period` should be at least 10 minutes. It would not
      * make sense to fetch and align data at one minute intervals.
      * </pre>
      *
@@ -909,10 +909,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The lower bound on data point frequency for this data set,
-     * implemented by specifying the minimum alignment period to use in a time
-     * series query. For example, if the data is published once every 10 minutes,
-     * the `min_alignment_period` should be at least 10 minutes. It would not
+     * Optional. The lower bound on data point frequency for this data set, implemented by
+     * specifying the minimum alignment period to use in a time series query
+     * For example, if the data is published once every 10 minutes, the
+     * `min_alignment_period` should be at least 10 minutes. It would not
      * make sense to fetch and align data at one minute intervals.
      * </pre>
      *
@@ -1759,10 +1759,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The lower bound on data point frequency for this data set,
-       * implemented by specifying the minimum alignment period to use in a time
-       * series query. For example, if the data is published once every 10 minutes,
-       * the `min_alignment_period` should be at least 10 minutes. It would not
+       * Optional. The lower bound on data point frequency for this data set, implemented by
+       * specifying the minimum alignment period to use in a time series query
+       * For example, if the data is published once every 10 minutes, the
+       * `min_alignment_period` should be at least 10 minutes. It would not
        * make sense to fetch and align data at one minute intervals.
        * </pre>
        *
@@ -1779,10 +1779,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The lower bound on data point frequency for this data set,
-       * implemented by specifying the minimum alignment period to use in a time
-       * series query. For example, if the data is published once every 10 minutes,
-       * the `min_alignment_period` should be at least 10 minutes. It would not
+       * Optional. The lower bound on data point frequency for this data set, implemented by
+       * specifying the minimum alignment period to use in a time series query
+       * For example, if the data is published once every 10 minutes, the
+       * `min_alignment_period` should be at least 10 minutes. It would not
        * make sense to fetch and align data at one minute intervals.
        * </pre>
        *
@@ -1805,10 +1805,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The lower bound on data point frequency for this data set,
-       * implemented by specifying the minimum alignment period to use in a time
-       * series query. For example, if the data is published once every 10 minutes,
-       * the `min_alignment_period` should be at least 10 minutes. It would not
+       * Optional. The lower bound on data point frequency for this data set, implemented by
+       * specifying the minimum alignment period to use in a time series query
+       * For example, if the data is published once every 10 minutes, the
+       * `min_alignment_period` should be at least 10 minutes. It would not
        * make sense to fetch and align data at one minute intervals.
        * </pre>
        *
@@ -1833,10 +1833,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The lower bound on data point frequency for this data set,
-       * implemented by specifying the minimum alignment period to use in a time
-       * series query. For example, if the data is published once every 10 minutes,
-       * the `min_alignment_period` should be at least 10 minutes. It would not
+       * Optional. The lower bound on data point frequency for this data set, implemented by
+       * specifying the minimum alignment period to use in a time series query
+       * For example, if the data is published once every 10 minutes, the
+       * `min_alignment_period` should be at least 10 minutes. It would not
        * make sense to fetch and align data at one minute intervals.
        * </pre>
        *
@@ -1858,10 +1858,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The lower bound on data point frequency for this data set,
-       * implemented by specifying the minimum alignment period to use in a time
-       * series query. For example, if the data is published once every 10 minutes,
-       * the `min_alignment_period` should be at least 10 minutes. It would not
+       * Optional. The lower bound on data point frequency for this data set, implemented by
+       * specifying the minimum alignment period to use in a time series query
+       * For example, if the data is published once every 10 minutes, the
+       * `min_alignment_period` should be at least 10 minutes. It would not
        * make sense to fetch and align data at one minute intervals.
        * </pre>
        *
@@ -1890,10 +1890,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The lower bound on data point frequency for this data set,
-       * implemented by specifying the minimum alignment period to use in a time
-       * series query. For example, if the data is published once every 10 minutes,
-       * the `min_alignment_period` should be at least 10 minutes. It would not
+       * Optional. The lower bound on data point frequency for this data set, implemented by
+       * specifying the minimum alignment period to use in a time series query
+       * For example, if the data is published once every 10 minutes, the
+       * `min_alignment_period` should be at least 10 minutes. It would not
        * make sense to fetch and align data at one minute intervals.
        * </pre>
        *
@@ -1916,10 +1916,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The lower bound on data point frequency for this data set,
-       * implemented by specifying the minimum alignment period to use in a time
-       * series query. For example, if the data is published once every 10 minutes,
-       * the `min_alignment_period` should be at least 10 minutes. It would not
+       * Optional. The lower bound on data point frequency for this data set, implemented by
+       * specifying the minimum alignment period to use in a time series query
+       * For example, if the data is published once every 10 minutes, the
+       * `min_alignment_period` should be at least 10 minutes. It would not
        * make sense to fetch and align data at one minute intervals.
        * </pre>
        *
@@ -1936,10 +1936,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The lower bound on data point frequency for this data set,
-       * implemented by specifying the minimum alignment period to use in a time
-       * series query. For example, if the data is published once every 10 minutes,
-       * the `min_alignment_period` should be at least 10 minutes. It would not
+       * Optional. The lower bound on data point frequency for this data set, implemented by
+       * specifying the minimum alignment period to use in a time series query
+       * For example, if the data is published once every 10 minutes, the
+       * `min_alignment_period` should be at least 10 minutes. It would not
        * make sense to fetch and align data at one minute intervals.
        * </pre>
        *
@@ -1960,10 +1960,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The lower bound on data point frequency for this data set,
-       * implemented by specifying the minimum alignment period to use in a time
-       * series query. For example, if the data is published once every 10 minutes,
-       * the `min_alignment_period` should be at least 10 minutes. It would not
+       * Optional. The lower bound on data point frequency for this data set, implemented by
+       * specifying the minimum alignment period to use in a time series query
+       * For example, if the data is published once every 10 minutes, the
+       * `min_alignment_period` should be at least 10 minutes. It would not
        * make sense to fetch and align data at one minute intervals.
        * </pre>
        *

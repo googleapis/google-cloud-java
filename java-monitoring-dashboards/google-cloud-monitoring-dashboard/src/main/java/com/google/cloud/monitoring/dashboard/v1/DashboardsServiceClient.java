@@ -56,6 +56,7 @@ import javax.annotation.Generated;
  *       CreateDashboardRequest.newBuilder()
  *           .setParent("parent-995424086")
  *           .setDashboard(Dashboard.newBuilder().build())
+ *           .setValidateOnly(true)
  *           .build();
  *   Dashboard response = dashboardsServiceClient.createDashboard(request);
  * }
@@ -166,10 +167,9 @@ public class DashboardsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new custom dashboard. For examples on how you can use this API to create dashboards,
-   * see [Managing dashboards by API](https://cloud.google.com/monitoring/dashboards/api-dashboard).
-   * This method requires the `monitoring.dashboards.create` permission on the specified project.
-   * For more information about permissions, see [Cloud Identity and Access
-   * Management](https://cloud.google.com/iam).
+   * see [Managing dashboards by API](/monitoring/dashboards/api-dashboard). This method requires
+   * the `monitoring.dashboards.create` permission on the specified project. For more information
+   * about permissions, see [Cloud Identity and Access Management](/iam).
    *
    * <p>Sample code:
    *
@@ -179,6 +179,7 @@ public class DashboardsServiceClient implements BackgroundResource {
    *       CreateDashboardRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setDashboard(Dashboard.newBuilder().build())
+   *           .setValidateOnly(true)
    *           .build();
    *   Dashboard response = dashboardsServiceClient.createDashboard(request);
    * }
@@ -194,10 +195,9 @@ public class DashboardsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new custom dashboard. For examples on how you can use this API to create dashboards,
-   * see [Managing dashboards by API](https://cloud.google.com/monitoring/dashboards/api-dashboard).
-   * This method requires the `monitoring.dashboards.create` permission on the specified project.
-   * For more information about permissions, see [Cloud Identity and Access
-   * Management](https://cloud.google.com/iam).
+   * see [Managing dashboards by API](/monitoring/dashboards/api-dashboard). This method requires
+   * the `monitoring.dashboards.create` permission on the specified project. For more information
+   * about permissions, see [Cloud Identity and Access Management](/iam).
    *
    * <p>Sample code:
    *
@@ -207,6 +207,7 @@ public class DashboardsServiceClient implements BackgroundResource {
    *       CreateDashboardRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setDashboard(Dashboard.newBuilder().build())
+   *           .setValidateOnly(true)
    *           .build();
    *   ApiFuture<Dashboard> future =
    *       dashboardsServiceClient.createDashboardCallable().futureCall(request);
@@ -437,7 +438,10 @@ public class DashboardsServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
    *   UpdateDashboardRequest request =
-   *       UpdateDashboardRequest.newBuilder().setDashboard(Dashboard.newBuilder().build()).build();
+   *       UpdateDashboardRequest.newBuilder()
+   *           .setDashboard(Dashboard.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
    *   Dashboard response = dashboardsServiceClient.updateDashboard(request);
    * }
    * }</pre>
@@ -462,7 +466,10 @@ public class DashboardsServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
    *   UpdateDashboardRequest request =
-   *       UpdateDashboardRequest.newBuilder().setDashboard(Dashboard.newBuilder().build()).build();
+   *       UpdateDashboardRequest.newBuilder()
+   *           .setDashboard(Dashboard.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
    *   ApiFuture<Dashboard> future =
    *       dashboardsServiceClient.updateDashboardCallable().futureCall(request);
    *   // Do something.

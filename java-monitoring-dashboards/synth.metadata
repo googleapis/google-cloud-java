@@ -11,8 +11,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "551681f25e36b11829e87e580281350461f4f3f5",
-        "internalRef": "379784268"
+        "sha": "b5532bb5023faa22f8b44f6e14608646178a2ee7",
+        "internalRef": "383440655"
       }
     },
     {
@@ -119,6 +119,10 @@
     "license-checks.xml",
     "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/Aggregation.java",
     "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/AggregationOrBuilder.java",
+    "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/AlertChart.java",
+    "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/AlertChartOrBuilder.java",
+    "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/AlertChartProto.java",
+    "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/AlertPolicyName.java",
     "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ChartOptions.java",
     "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ChartOptionsOrBuilder.java",
     "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ColumnLayout.java",
@@ -177,6 +181,7 @@
     "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/XyChart.java",
     "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/XyChartOrBuilder.java",
     "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/XyChartProto.java",
+    "proto-google-cloud-monitoring-dashboard-v1/src/main/proto/google/monitoring/dashboard/v1/alertchart.proto",
     "proto-google-cloud-monitoring-dashboard-v1/src/main/proto/google/monitoring/dashboard/v1/common.proto",
     "proto-google-cloud-monitoring-dashboard-v1/src/main/proto/google/monitoring/dashboard/v1/dashboard.proto",
     "proto-google-cloud-monitoring-dashboard-v1/src/main/proto/google/monitoring/dashboard/v1/dashboards_service.proto",

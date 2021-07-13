@@ -102,6 +102,7 @@ public class DashboardsServiceClientTest {
         CreateDashboardRequest.newBuilder()
             .setParent("parent-995424086")
             .setDashboard(Dashboard.newBuilder().build())
+            .setValidateOnly(true)
             .build();
 
     Dashboard actualResponse = client.createDashboard(request);
@@ -113,6 +114,7 @@ public class DashboardsServiceClientTest {
 
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getDashboard(), actualRequest.getDashboard());
+    Assert.assertEquals(request.getValidateOnly(), actualRequest.getValidateOnly());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -129,6 +131,7 @@ public class DashboardsServiceClientTest {
           CreateDashboardRequest.newBuilder()
               .setParent("parent-995424086")
               .setDashboard(Dashboard.newBuilder().build())
+              .setValidateOnly(true)
               .build();
       client.createDashboard(request);
       Assert.fail("No exception raised");
@@ -290,7 +293,10 @@ public class DashboardsServiceClientTest {
     mockDashboardsService.addResponse(expectedResponse);
 
     UpdateDashboardRequest request =
-        UpdateDashboardRequest.newBuilder().setDashboard(Dashboard.newBuilder().build()).build();
+        UpdateDashboardRequest.newBuilder()
+            .setDashboard(Dashboard.newBuilder().build())
+            .setValidateOnly(true)
+            .build();
 
     Dashboard actualResponse = client.updateDashboard(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -300,6 +306,7 @@ public class DashboardsServiceClientTest {
     UpdateDashboardRequest actualRequest = ((UpdateDashboardRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getDashboard(), actualRequest.getDashboard());
+    Assert.assertEquals(request.getValidateOnly(), actualRequest.getValidateOnly());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -313,7 +320,10 @@ public class DashboardsServiceClientTest {
 
     try {
       UpdateDashboardRequest request =
-          UpdateDashboardRequest.newBuilder().setDashboard(Dashboard.newBuilder().build()).build();
+          UpdateDashboardRequest.newBuilder()
+              .setDashboard(Dashboard.newBuilder().build())
+              .setValidateOnly(true)
+              .build();
       client.updateDashboard(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

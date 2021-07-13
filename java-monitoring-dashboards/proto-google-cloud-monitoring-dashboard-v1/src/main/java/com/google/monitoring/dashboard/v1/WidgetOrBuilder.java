@@ -188,5 +188,40 @@ public interface WidgetOrBuilder
    */
   com.google.protobuf.EmptyOrBuilder getBlankOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * A chart of alert policy data.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.AlertChart alert_chart = 7;</code>
+   *
+   * @return Whether the alertChart field is set.
+   */
+  boolean hasAlertChart();
+  /**
+   *
+   *
+   * <pre>
+   * A chart of alert policy data.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.AlertChart alert_chart = 7;</code>
+   *
+   * @return The alertChart.
+   */
+  com.google.monitoring.dashboard.v1.AlertChart getAlertChart();
+  /**
+   *
+   *
+   * <pre>
+   * A chart of alert policy data.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.AlertChart alert_chart = 7;</code>
+   */
+  com.google.monitoring.dashboard.v1.AlertChartOrBuilder getAlertChartOrBuilder();
+
   public com.google.monitoring.dashboard.v1.Widget.ContentCase getContentCase();
 }

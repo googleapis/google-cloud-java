@@ -30,6 +30,7 @@
  *       CreateDashboardRequest.newBuilder()
  *           .setParent("parent-995424086")
  *           .setDashboard(Dashboard.newBuilder().build())
+ *           .setValidateOnly(true)
  *           .build();
  *   Dashboard response = dashboardsServiceClient.createDashboard(request);
  * }

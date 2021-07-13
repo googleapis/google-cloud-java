@@ -241,9 +241,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The [monitoring
-   * filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
-   * the metric types, resources, and projects to query.
+   * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+   * that identifies the metric types, resources, and projects to query.
    * </pre>
    *
    * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -266,9 +265,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The [monitoring
-   * filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
-   * the metric types, resources, and projects to query.
+   * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+   * that identifies the metric types, resources, and projects to query.
    * </pre>
    *
    * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -980,9 +978,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring
-     * filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
-     * the metric types, resources, and projects to query.
+     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+     * that identifies the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1004,9 +1001,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring
-     * filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
-     * the metric types, resources, and projects to query.
+     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+     * that identifies the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1028,9 +1024,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring
-     * filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
-     * the metric types, resources, and projects to query.
+     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+     * that identifies the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1051,9 +1046,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring
-     * filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
-     * the metric types, resources, and projects to query.
+     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+     * that identifies the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1070,9 +1064,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring
-     * filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
-     * the metric types, resources, and projects to query.
+     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+     * that identifies the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
