@@ -989,6 +989,9 @@ public class GcpManagedChannel extends ManagedChannel {
    * channel.
    */
   protected void bind(ChannelRef channelRef, List<String> affinityKeys) {
+    if (channelRef == null || affinityKeys == null) {
+      return;
+    }
     for (String affinityKey : affinityKeys) {
       while (affinityKeyToChannelRef.putIfAbsent(affinityKey, channelRef) != null) {
         unbind(Collections.singletonList(affinityKey));
@@ -999,6 +1002,9 @@ public class GcpManagedChannel extends ManagedChannel {
 
   /** Unbind channel with affinity key. */
   protected void unbind(List<String> affinityKeys) {
+    if (affinityKeys == null) {
+      return;
+    }
     for (String affinityKey : affinityKeys) {
       ChannelRef channelRef = affinityKeyToChannelRef.remove(affinityKey);
       if (channelRef != null) {
