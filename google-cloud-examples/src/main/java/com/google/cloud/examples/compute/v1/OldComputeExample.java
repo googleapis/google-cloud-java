@@ -14,61 +14,61 @@
  * limitations under the License.
  */
 
-package com.google.cloud.examples.compute.deprecated;
+package com.google.cloud.examples.compute.v1;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.Tuple;
-import com.google.cloud.compute.deprecated.Address;
-import com.google.cloud.compute.deprecated.AddressId;
-import com.google.cloud.compute.deprecated.AddressInfo;
-import com.google.cloud.compute.deprecated.AttachedDisk;
-import com.google.cloud.compute.deprecated.AttachedDisk.PersistentDiskConfiguration;
-import com.google.cloud.compute.deprecated.Compute;
-import com.google.cloud.compute.deprecated.ComputeOptions;
-import com.google.cloud.compute.deprecated.Disk;
-import com.google.cloud.compute.deprecated.DiskConfiguration;
-import com.google.cloud.compute.deprecated.DiskId;
-import com.google.cloud.compute.deprecated.DiskImageConfiguration;
-import com.google.cloud.compute.deprecated.DiskInfo;
-import com.google.cloud.compute.deprecated.DiskType;
-import com.google.cloud.compute.deprecated.DiskTypeId;
-import com.google.cloud.compute.deprecated.GlobalAddressId;
-import com.google.cloud.compute.deprecated.GlobalOperationId;
-import com.google.cloud.compute.deprecated.Image;
-import com.google.cloud.compute.deprecated.ImageDiskConfiguration;
-import com.google.cloud.compute.deprecated.ImageId;
-import com.google.cloud.compute.deprecated.ImageInfo;
-import com.google.cloud.compute.deprecated.Instance;
-import com.google.cloud.compute.deprecated.InstanceId;
-import com.google.cloud.compute.deprecated.InstanceInfo;
-import com.google.cloud.compute.deprecated.LicenseId;
-import com.google.cloud.compute.deprecated.MachineType;
-import com.google.cloud.compute.deprecated.MachineTypeId;
-import com.google.cloud.compute.deprecated.Network;
-import com.google.cloud.compute.deprecated.NetworkId;
-import com.google.cloud.compute.deprecated.NetworkInfo;
-import com.google.cloud.compute.deprecated.NetworkInterface;
-import com.google.cloud.compute.deprecated.NetworkInterface.AccessConfig;
-import com.google.cloud.compute.deprecated.Operation;
-import com.google.cloud.compute.deprecated.Region;
-import com.google.cloud.compute.deprecated.RegionAddressId;
-import com.google.cloud.compute.deprecated.RegionId;
-import com.google.cloud.compute.deprecated.RegionOperationId;
-import com.google.cloud.compute.deprecated.SchedulingOptions;
-import com.google.cloud.compute.deprecated.SchedulingOptions.Maintenance;
-import com.google.cloud.compute.deprecated.Snapshot;
-import com.google.cloud.compute.deprecated.SnapshotDiskConfiguration;
-import com.google.cloud.compute.deprecated.SnapshotId;
-import com.google.cloud.compute.deprecated.SnapshotInfo;
-import com.google.cloud.compute.deprecated.StandardDiskConfiguration;
-import com.google.cloud.compute.deprecated.StandardNetworkConfiguration;
-import com.google.cloud.compute.deprecated.SubnetNetworkConfiguration;
-import com.google.cloud.compute.deprecated.Subnetwork;
-import com.google.cloud.compute.deprecated.SubnetworkId;
-import com.google.cloud.compute.deprecated.SubnetworkInfo;
-import com.google.cloud.compute.deprecated.Zone;
-import com.google.cloud.compute.deprecated.ZoneId;
-import com.google.cloud.compute.deprecated.ZoneOperationId;
+import com.google.cloud.compute.v1.Address;
+import com.google.cloud.compute.v1.AddressId;
+import com.google.cloud.compute.v1.AddressInfo;
+import com.google.cloud.compute.v1.AttachedDisk;
+import com.google.cloud.compute.v1.AttachedDisk.PersistentDiskConfiguration;
+import com.google.cloud.compute.v1.Compute;
+import com.google.cloud.compute.v1.ComputeOptions;
+import com.google.cloud.compute.v1.Disk;
+import com.google.cloud.compute.v1.DiskConfiguration;
+import com.google.cloud.compute.v1.DiskId;
+import com.google.cloud.compute.v1.DiskImageConfiguration;
+import com.google.cloud.compute.v1.DiskInfo;
+import com.google.cloud.compute.v1.DiskType;
+import com.google.cloud.compute.v1.DiskTypeId;
+import com.google.cloud.compute.v1.GlobalAddressId;
+import com.google.cloud.compute.v1.GlobalOperationId;
+import com.google.cloud.compute.v1.Image;
+import com.google.cloud.compute.v1.ImageDiskConfiguration;
+import com.google.cloud.compute.v1.ImageId;
+import com.google.cloud.compute.v1.ImageInfo;
+import com.google.cloud.compute.v1.Instance;
+import com.google.cloud.compute.v1.InstanceId;
+import com.google.cloud.compute.v1.InstanceInfo;
+import com.google.cloud.compute.v1.LicenseId;
+import com.google.cloud.compute.v1.MachineType;
+import com.google.cloud.compute.v1.MachineTypeId;
+import com.google.cloud.compute.v1.Network;
+import com.google.cloud.compute.v1.NetworkId;
+import com.google.cloud.compute.v1.NetworkInfo;
+import com.google.cloud.compute.v1.NetworkInterface;
+import com.google.cloud.compute.v1.NetworkInterface.AccessConfig;
+import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Region;
+import com.google.cloud.compute.v1.RegionAddressId;
+import com.google.cloud.compute.v1.RegionId;
+import com.google.cloud.compute.v1.RegionOperationId;
+import com.google.cloud.compute.v1.SchedulingOptions;
+import com.google.cloud.compute.v1.SchedulingOptions.Maintenance;
+import com.google.cloud.compute.v1.Snapshot;
+import com.google.cloud.compute.v1.SnapshotDiskConfiguration;
+import com.google.cloud.compute.v1.SnapshotId;
+import com.google.cloud.compute.v1.SnapshotInfo;
+import com.google.cloud.compute.v1.StandardDiskConfiguration;
+import com.google.cloud.compute.v1.StandardNetworkConfiguration;
+import com.google.cloud.compute.v1.SubnetNetworkConfiguration;
+import com.google.cloud.compute.v1.Subnetwork;
+import com.google.cloud.compute.v1.SubnetworkId;
+import com.google.cloud.compute.v1.SubnetworkInfo;
+import com.google.cloud.compute.v1.Zone;
+import com.google.cloud.compute.v1.ZoneId;
+import com.google.cloud.compute.v1.ZoneOperationId;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -155,7 +155,7 @@ import java.util.Map;
  * operations that apply to more than one entity (`list`, `create`, `info` and `delete`) the third
  * parameter specifies the entity.
  */
-public class ComputeExample {
+public class OldComputeExample {
 
   private static final Map<String, ComputeAction> CREATE_ACTIONS = new HashMap<>();
   private static final Map<String, ComputeAction> INFO_ACTIONS = new HashMap<>();
@@ -2493,7 +2493,7 @@ public class ComputeExample {
     }
     System.out.printf(
         "Usage: %s [<project_id>] operation [entity] <args>*%s%n",
-        ComputeExample.class.getSimpleName(), actionAndParams);
+        OldComputeExample.class.getSimpleName(), actionAndParams);
   }
 
   @SuppressWarnings("unchecked")

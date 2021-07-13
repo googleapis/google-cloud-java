@@ -20,7 +20,7 @@ import com.google.cloud.ServiceOptions;
 import com.google.cloud.compute.v1.AttachedDisk;
 import com.google.cloud.compute.v1.AttachedDiskInitializeParams;
 import com.google.cloud.compute.v1.Instance;
-import com.google.cloud.compute.v1.InstanceClient;
+import com.google.cloud.compute.v1.InstancesClient;
 import com.google.cloud.compute.v1.NetworkInterface;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectZoneMachineTypeName;
@@ -35,7 +35,7 @@ public class CreateInstance {
   private static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
 
   public static void main(String... args) throws IOException {
-    try (InstanceClient instanceClient = InstanceClient.create()) {
+    try (InstancesClient InstancesClient = InstancesClient.create()) {
       ProjectZoneName zone = ProjectZoneName.of(DEFAULT_PROJECT, ZONE);
       String machineType =
           ProjectZoneMachineTypeName.of("n1-standard-1", DEFAULT_PROJECT, ZONE).toString();
@@ -55,7 +55,7 @@ public class CreateInstance {
               .addDisks(disk)
               .addNetworkInterfaces(networkInterface)
               .build();
-      Operation response = instanceClient.insertInstance(zone.toString(), instanceResource);
+      Operation response = InstancesClient.insert(DEFAULT_PROJECT, zone.toString(), instanceResource);
       if (response.getError() == null) {
         System.out.println("Instance was created successfully");
       } else {
