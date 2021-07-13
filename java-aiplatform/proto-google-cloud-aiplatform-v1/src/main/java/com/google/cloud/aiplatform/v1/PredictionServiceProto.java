@@ -63,11 +63,13 @@ public final class PredictionServiceProto {
           + "jects/*/locations/*/endpoints/*}:predict"
           + ":\001*\332A\035endpoint,instances,parameters\032M\312A\031"
           + "aiplatform.googleapis.com\322A.https://www."
-          + "googleapis.com/auth/cloud-platformB\200\001\n\036c"
+          + "googleapis.com/auth/cloud-platformB\332\001\n\036c"
           + "om.google.cloud.aiplatform.v1B\026Predictio"
           + "nServiceProtoP\001ZDgoogle.golang.org/genpr"
           + "oto/googleapis/cloud/aiplatform/v1;aipla"
-          + "tformb\006proto3"
+          + "tform\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Goo"
+          + "gle\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud:"
+          + ":AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

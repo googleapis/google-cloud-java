@@ -47,12 +47,16 @@ public final class VideoClassificationPredictionInstanceProto {
           + "o\"\201\001\n%VideoClassificationPredictionInsta"
           + "nce\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\t\022"
           + "\032\n\022time_segment_start\030\003 \001(\t\022\030\n\020time_segm"
-          + "ent_end\030\004 \001(\tB\302\001\n6com.google.cloud.aipla"
+          + "ent_end\030\004 \001(\tB\347\002\n6com.google.cloud.aipla"
           + "tform.v1.schema.predict.instanceB*VideoC"
           + "lassificationPredictionInstanceProtoP\001ZZ"
           + "google.golang.org/genproto/googleapis/cl"
           + "oud/aiplatform/v1/schema/predict/instanc"
-          + "e;instanceb\006proto3"
+          + "e;instance\252\0022Google.Cloud.AIPlatform.V1."
+          + "Schema.Predict.Instance\312\0022Google\\Cloud\\A"
+          + "IPlatform\\V1\\Schema\\Predict\\Instance\352\0028G"
+          + "oogle::Cloud::AIPlatform::V1::Schema::Pr"
+          + "edict::Instanceb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

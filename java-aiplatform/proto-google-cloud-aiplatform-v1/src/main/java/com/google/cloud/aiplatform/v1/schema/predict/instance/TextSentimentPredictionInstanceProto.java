@@ -45,12 +45,16 @@ public final class TextSentimentPredictionInstanceProto {
           + "e.cloud.aiplatform.v1.schema.predict.ins"
           + "tance\032\034google/api/annotations.proto\"E\n\037T"
           + "extSentimentPredictionInstance\022\017\n\007conten"
-          + "t\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\tB\274\001\n6com.googl"
+          + "t\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\tB\341\002\n6com.googl"
           + "e.cloud.aiplatform.v1.schema.predict.ins"
           + "tanceB$TextSentimentPredictionInstancePr"
           + "otoP\001ZZgoogle.golang.org/genproto/google"
           + "apis/cloud/aiplatform/v1/schema/predict/"
-          + "instance;instanceb\006proto3"
+          + "instance;instance\252\0022Google.Cloud.AIPlatf"
+          + "orm.V1.Schema.Predict.Instance\312\0022Google\\"
+          + "Cloud\\AIPlatform\\V1\\Schema\\Predict\\Insta"
+          + "nce\352\0028Google::Cloud::AIPlatform::V1::Sch"
+          + "ema::Predict::Instanceb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

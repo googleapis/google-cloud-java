@@ -64,10 +64,13 @@ public final class IoProto {
           + "\001 \001(\tB\003\340A\002\"(\n\016BigQuerySource\022\026\n\tinput_ur"
           + "i\030\001 \001(\tB\003\340A\002\".\n\023BigQueryDestination\022\027\n\no"
           + "utput_uri\030\001 \001(\tB\003\340A\002\"7\n\034ContainerRegistr"
-          + "yDestination\022\027\n\noutput_uri\030\001 \001(\tB\003\340A\002Bq\n"
-          + "\036com.google.cloud.aiplatform.v1B\007IoProto"
-          + "P\001ZDgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/aiplatform/v1;aiplatformb\006proto3"
+          + "yDestination\022\027\n\noutput_uri\030\001 \001(\tB\003\340A\002B\313\001"
+          + "\n\036com.google.cloud.aiplatform.v1B\007IoProt"
+          + "oP\001ZDgoogle.golang.org/genproto/googleap"
+          + "is/cloud/aiplatform/v1;aiplatform\252\002\032Goog"
+          + "le.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AI"
+          + "Platform\\V1\352\002\035Google::Cloud::AIPlatform:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -52,12 +52,17 @@ public final class AutoMLTextSentimentProto {
           + "\006inputs\030\001 \001(\0132S.google.cloud.aiplatform."
           + "v1.schema.trainingjob.definition.AutoMlT"
           + "extSentimentInputs\"2\n\031AutoMlTextSentimen"
-          + "tInputs\022\025\n\rsentiment_max\030\001 \001(\005B\276\001\n<com.g"
+          + "tInputs\022\025\n\rsentiment_max\030\001 \001(\005B\365\002\n<com.g"
           + "oogle.cloud.aiplatform.v1.schema.trainin"
           + "gjob.definitionB\030AutoMLTextSentimentProt"
           + "oP\001Zbgoogle.golang.org/genproto/googleap"
           + "is/cloud/aiplatform/v1/schema/trainingjo"
-          + "b/definition;definitionb\006proto3"
+          + "b/definition;definition\252\0028Google.Cloud.A"
+          + "IPlatform.V1.Schema.TrainingJob.Definiti"
+          + "on\312\0028Google\\Cloud\\AIPlatform\\V1\\Schema\\T"
+          + "rainingJob\\Definition\352\002>Google::Cloud::A"
+          + "IPlatform::V1::Schema::TrainingJob::Defi"
+          + "nitionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

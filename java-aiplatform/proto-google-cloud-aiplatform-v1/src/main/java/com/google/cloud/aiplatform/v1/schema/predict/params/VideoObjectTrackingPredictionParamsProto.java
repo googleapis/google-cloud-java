@@ -47,11 +47,15 @@ public final class VideoObjectTrackingPredictionParamsProto {
           + "\n#VideoObjectTrackingPredictionParams\022\034\n"
           + "\024confidence_threshold\030\001 \001(\002\022\027\n\017max_predi"
           + "ctions\030\002 \001(\005\022\035\n\025min_bounding_box_size\030\003 "
-          + "\001(\002B\272\001\n4com.google.cloud.aiplatform.v1.s"
+          + "\001(\002B\331\002\n4com.google.cloud.aiplatform.v1.s"
           + "chema.predict.paramsB(VideoObjectTrackin"
           + "gPredictionParamsProtoP\001ZVgoogle.golang."
           + "org/genproto/googleapis/cloud/aiplatform"
-          + "/v1/schema/predict/params;paramsb\006proto3"
+          + "/v1/schema/predict/params;params\252\0020Googl"
+          + "e.Cloud.AIPlatform.V1.Schema.Predict.Par"
+          + "ams\312\0020Google\\Cloud\\AIPlatform\\V1\\Schema\\"
+          + "Predict\\Params\352\0026Google::Cloud::AIPlatfo"
+          + "rm::V1::Schema::Predict::Paramsb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

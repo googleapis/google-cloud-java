@@ -119,11 +119,13 @@ public final class BatchPredictionJobProto {
           + "\t:\0028\001:\206\001\352A\202\001\n,aiplatform.googleapis.com/"
           + "BatchPredictionJob\022Rprojects/{project}/l"
           + "ocations/{location}/batchPredictionJobs/"
-          + "{batch_prediction_job}B\201\001\n\036com.google.cl"
+          + "{batch_prediction_job}B\333\001\n\036com.google.cl"
           + "oud.aiplatform.v1B\027BatchPredictionJobPro"
           + "toP\001ZDgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/aiplatform/v1;aiplatformb\006prot"
-          + "o3"
+          + "pis/cloud/aiplatform/v1;aiplatform\252\002\032Goo"
+          + "gle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\A"
+          + "IPlatform\\V1\352\002\035Google::Cloud::AIPlatform"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

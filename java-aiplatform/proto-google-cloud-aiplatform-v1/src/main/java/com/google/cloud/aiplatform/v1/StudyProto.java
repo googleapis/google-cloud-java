@@ -188,10 +188,12 @@ public final class StudyProto {
           + "_count\030\002 \001(\003B\003\340A\003\022D\n\007metrics\030\003 \003(\0132..goo"
           + "gle.cloud.aiplatform.v1.Measurement.Metr"
           + "icB\003\340A\003\0324\n\006Metric\022\026\n\tmetric_id\030\001 \001(\tB\003\340A"
-          + "\003\022\022\n\005value\030\002 \001(\001B\003\340A\003Bt\n\036com.google.clou"
-          + "d.aiplatform.v1B\nStudyProtoP\001ZDgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/aipla"
-          + "tform/v1;aiplatformb\006proto3"
+          + "\003\022\022\n\005value\030\002 \001(\001B\003\340A\003B\316\001\n\036com.google.clo"
+          + "ud.aiplatform.v1B\nStudyProtoP\001ZDgoogle.g"
+          + "olang.org/genproto/googleapis/cloud/aipl"
+          + "atform/v1;aiplatform\252\002\032Google.Cloud.AIPl"
+          + "atform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002"
+          + "\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -46,12 +46,16 @@ public final class TabularClassificationPredictionResultProto {
           + "redict.prediction\032\034google/api/annotation"
           + "s.proto\"H\n%TabularClassificationPredicti"
           + "onResult\022\017\n\007classes\030\001 \003(\t\022\016\n\006scores\030\002 \003("
-          + "\002B\310\001\n8com.google.cloud.aiplatform.v1.sch"
+          + "\002B\363\002\n8com.google.cloud.aiplatform.v1.sch"
           + "ema.predict.predictionB*TabularClassific"
           + "ationPredictionResultProtoP\001Z^google.gol"
           + "ang.org/genproto/googleapis/cloud/aiplat"
           + "form/v1/schema/predict/prediction;predic"
-          + "tionb\006proto3"
+          + "tion\252\0024Google.Cloud.AIPlatform.V1.Schema"
+          + ".Predict.Prediction\312\0024Google\\Cloud\\AIPla"
+          + "tform\\V1\\Schema\\Predict\\Prediction\352\002:Goo"
+          + "gle::Cloud::AIPlatform::V1::Schema::Pred"
+          + "ict::Predictionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -51,12 +51,17 @@ public final class VideoActionRecognitionPredictionResultProto {
           + "egment_start\030\004 \001(\0132\031.google.protobuf.Dur"
           + "ation\0223\n\020time_segment_end\030\005 \001(\0132\031.google"
           + ".protobuf.Duration\022/\n\nconfidence\030\006 \001(\0132\033"
-          + ".google.protobuf.FloatValueB\311\001\n8com.goog"
+          + ".google.protobuf.FloatValueB\364\002\n8com.goog"
           + "le.cloud.aiplatform.v1.schema.predict.pr"
           + "edictionB+VideoActionRecognitionPredicti"
           + "onResultProtoP\001Z^google.golang.org/genpr"
           + "oto/googleapis/cloud/aiplatform/v1/schem"
-          + "a/predict/prediction;predictionb\006proto3"
+          + "a/predict/prediction;prediction\252\0024Google"
+          + ".Cloud.AIPlatform.V1.Schema.Predict.Pred"
+          + "iction\312\0024Google\\Cloud\\AIPlatform\\V1\\Sche"
+          + "ma\\Predict\\Prediction\352\002:Google::Cloud::A"
+          + "IPlatform::V1::Schema::Predict::Predicti"
+          + "onb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

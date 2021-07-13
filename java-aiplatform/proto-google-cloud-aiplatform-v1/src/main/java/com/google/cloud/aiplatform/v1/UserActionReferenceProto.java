@@ -45,10 +45,13 @@ public final class UserActionReferenceProto {
           + "m.v1\032\034google/api/annotations.proto\"d\n\023Us"
           + "erActionReference\022\023\n\toperation\030\001 \001(\tH\000\022\033"
           + "\n\021data_labeling_job\030\002 \001(\tH\000\022\016\n\006method\030\003 "
-          + "\001(\tB\013\n\treferenceB\202\001\n\036com.google.cloud.ai"
+          + "\001(\tB\013\n\treferenceB\334\001\n\036com.google.cloud.ai"
           + "platform.v1B\030UserActionReferenceProtoP\001Z"
           + "Dgoogle.golang.org/genproto/googleapis/c"
-          + "loud/aiplatform/v1;aiplatformb\006proto3"
+          + "loud/aiplatform/v1;aiplatform\252\002\032Google.C"
+          + "loud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlat"
+          + "form\\V1\352\002\035Google::Cloud::AIPlatform::V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

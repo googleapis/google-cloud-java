@@ -61,10 +61,13 @@ public final class ModelEvaluationSliceProto {
           + "orm.googleapis.com/ModelEvaluationSlice\022"
           + "^projects/{project}/locations/{location}"
           + "/models/{model}/evaluations/{evaluation}"
-          + "/slices/{slice}B\203\001\n\036com.google.cloud.aip"
+          + "/slices/{slice}B\335\001\n\036com.google.cloud.aip"
           + "latform.v1B\031ModelEvaluationSliceProtoP\001Z"
           + "Dgoogle.golang.org/genproto/googleapis/c"
-          + "loud/aiplatform/v1;aiplatformb\006proto3"
+          + "loud/aiplatform/v1;aiplatform\252\002\032Google.C"
+          + "loud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlat"
+          + "form\\V1\352\002\035Google::Cloud::AIPlatform::V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

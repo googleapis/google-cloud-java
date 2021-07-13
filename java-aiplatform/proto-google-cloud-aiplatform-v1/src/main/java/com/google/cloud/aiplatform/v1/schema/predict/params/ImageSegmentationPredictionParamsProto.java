@@ -45,12 +45,16 @@ public final class ImageSegmentationPredictionParamsProto {
           + "gle.cloud.aiplatform.v1.schema.predict.p"
           + "arams\032\034google/api/annotations.proto\"A\n!I"
           + "mageSegmentationPredictionParams\022\034\n\024conf"
-          + "idence_threshold\030\001 \001(\002B\270\001\n4com.google.cl"
+          + "idence_threshold\030\001 \001(\002B\327\002\n4com.google.cl"
           + "oud.aiplatform.v1.schema.predict.paramsB"
           + "&ImageSegmentationPredictionParamsProtoP"
           + "\001ZVgoogle.golang.org/genproto/googleapis"
           + "/cloud/aiplatform/v1/schema/predict/para"
-          + "ms;paramsb\006proto3"
+          + "ms;params\252\0020Google.Cloud.AIPlatform.V1.S"
+          + "chema.Predict.Params\312\0020Google\\Cloud\\AIPl"
+          + "atform\\V1\\Schema\\Predict\\Params\352\0026Google"
+          + "::Cloud::AIPlatform::V1::Schema::Predict"
+          + "::Paramsb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -87,10 +87,13 @@ public final class EndpointProto {
           + "2\032.google.protobuf.TimestampB\003\340A\003\022\027\n\017ser"
           + "vice_account\030\013 \001(\t\022!\n\031disable_container_"
           + "logging\030\017 \001(\010\022\035\n\025enable_access_logging\030\r"
-          + " \001(\010B\026\n\024prediction_resourcesBw\n\036com.goog"
-          + "le.cloud.aiplatform.v1B\rEndpointProtoP\001Z"
-          + "Dgoogle.golang.org/genproto/googleapis/c"
-          + "loud/aiplatform/v1;aiplatformb\006proto3"
+          + " \001(\010B\026\n\024prediction_resourcesB\321\001\n\036com.goo"
+          + "gle.cloud.aiplatform.v1B\rEndpointProtoP\001"
+          + "ZDgoogle.golang.org/genproto/googleapis/"
+          + "cloud/aiplatform/v1;aiplatform\252\002\032Google."
+          + "Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPla"
+          + "tform\\V1\352\002\035Google::Cloud::AIPlatform::V1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

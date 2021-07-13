@@ -337,10 +337,13 @@ public final class JobServiceProto {
           + "e=projects/*/locations/*/batchPrediction"
           + "Jobs/*}:cancel:\001*\332A\004name\032M\312A\031aiplatform."
           + "googleapis.com\322A.https://www.googleapis."
-          + "com/auth/cloud-platformBy\n\036com.google.cl"
-          + "oud.aiplatform.v1B\017JobServiceProtoP\001ZDgo"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/aiplatform/v1;aiplatformb\006proto3"
+          + "com/auth/cloud-platformB\323\001\n\036com.google.c"
+          + "loud.aiplatform.v1B\017JobServiceProtoP\001ZDg"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/aiplatform/v1;aiplatform\252\002\032Google.Clo"
+          + "ud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatfo"
+          + "rm\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

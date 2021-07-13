@@ -47,12 +47,16 @@ public final class VideoObjectTrackingPredictionInstanceProto {
           + "to\"\201\001\n%VideoObjectTrackingPredictionInst"
           + "ance\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\t"
           + "\022\032\n\022time_segment_start\030\003 \001(\t\022\030\n\020time_seg"
-          + "ment_end\030\004 \001(\tB\302\001\n6com.google.cloud.aipl"
+          + "ment_end\030\004 \001(\tB\347\002\n6com.google.cloud.aipl"
           + "atform.v1.schema.predict.instanceB*Video"
           + "ObjectTrackingPredictionInstanceProtoP\001Z"
           + "Zgoogle.golang.org/genproto/googleapis/c"
           + "loud/aiplatform/v1/schema/predict/instan"
-          + "ce;instanceb\006proto3"
+          + "ce;instance\252\0022Google.Cloud.AIPlatform.V1"
+          + ".Schema.Predict.Instance\312\0022Google\\Cloud\\"
+          + "AIPlatform\\V1\\Schema\\Predict\\Instance\352\0028"
+          + "Google::Cloud::AIPlatform::V1::Schema::P"
+          + "redict::Instanceb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

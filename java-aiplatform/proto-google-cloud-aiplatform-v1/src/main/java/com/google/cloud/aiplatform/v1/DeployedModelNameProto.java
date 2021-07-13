@@ -47,10 +47,12 @@ public final class DeployedModelNameProto {
           + "tions.proto\"p\n\020DeployedModelRef\022<\n\010endpo"
           + "int\030\001 \001(\tB*\340A\005\372A$\n\"aiplatform.googleapis"
           + ".com/Endpoint\022\036\n\021deployed_model_id\030\002 \001(\t"
-          + "B\003\340A\005B\200\001\n\036com.google.cloud.aiplatform.v1"
+          + "B\003\340A\005B\332\001\n\036com.google.cloud.aiplatform.v1"
           + "B\026DeployedModelNameProtoP\001ZDgoogle.golan"
           + "g.org/genproto/googleapis/cloud/aiplatfo"
-          + "rm/v1;aiplatformb\006proto3"
+          + "rm/v1;aiplatform\252\002\032Google.Cloud.AIPlatfo"
+          + "rm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goo"
+          + "gle::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

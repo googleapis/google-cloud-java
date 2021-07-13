@@ -190,11 +190,13 @@ public final class EndpointServiceProto {
           + "ffic_split\312A7\n\025UndeployModelResponse\022\036Un"
           + "deployModelOperationMetadata\032M\312A\031aiplatf"
           + "orm.googleapis.com\322A.https://www.googlea"
-          + "pis.com/auth/cloud-platformB~\n\036com.googl"
-          + "e.cloud.aiplatform.v1B\024EndpointServicePr"
-          + "otoP\001ZDgoogle.golang.org/genproto/google"
-          + "apis/cloud/aiplatform/v1;aiplatformb\006pro"
-          + "to3"
+          + "pis.com/auth/cloud-platformB\330\001\n\036com.goog"
+          + "le.cloud.aiplatform.v1B\024EndpointServiceP"
+          + "rotoP\001ZDgoogle.golang.org/genproto/googl"
+          + "eapis/cloud/aiplatform/v1;aiplatform\252\002\032G"
+          + "oogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud"
+          + "\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfo"
+          + "rm::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

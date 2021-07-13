@@ -239,10 +239,12 @@ public final class ModelServiceProto {
           + "ions/*/models/*/evaluations/*}/slices\332A\006"
           + "parent\032M\312A\031aiplatform.googleapis.com\322A.h"
           + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tformB{\n\036com.google.cloud.aiplatform.v1B"
-          + "\021ModelServiceProtoP\001ZDgoogle.golang.org/"
-          + "genproto/googleapis/cloud/aiplatform/v1;"
-          + "aiplatformb\006proto3"
+          + "tformB\325\001\n\036com.google.cloud.aiplatform.v1"
+          + "B\021ModelServiceProtoP\001ZDgoogle.golang.org"
+          + "/genproto/googleapis/cloud/aiplatform/v1"
+          + ";aiplatform\252\002\032Google.Cloud.AIPlatform.V1"
+          + "\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::"
+          + "Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -59,12 +59,16 @@ public final class AutoMLVideoActionRecognitionProto {
           + "ition.AutoMlVideoActionRecognitionInputs"
           + ".ModelType\"J\n\tModelType\022\032\n\026MODEL_TYPE_UN"
           + "SPECIFIED\020\000\022\t\n\005CLOUD\020\001\022\026\n\022MOBILE_VERSATI"
-          + "LE_1\020\002B\307\001\n<com.google.cloud.aiplatform.v"
+          + "LE_1\020\002B\376\002\n<com.google.cloud.aiplatform.v"
           + "1.schema.trainingjob.definitionB!AutoMLV"
           + "ideoActionRecognitionProtoP\001Zbgoogle.gol"
           + "ang.org/genproto/googleapis/cloud/aiplat"
           + "form/v1/schema/trainingjob/definition;de"
-          + "finitionb\006proto3"
+          + "finition\252\0028Google.Cloud.AIPlatform.V1.Sc"
+          + "hema.TrainingJob.Definition\312\0028Google\\Clo"
+          + "ud\\AIPlatform\\V1\\Schema\\TrainingJob\\Defi"
+          + "nition\352\002>Google::Cloud::AIPlatform::V1::"
+          + "Schema::TrainingJob::Definitionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -48,12 +48,16 @@ public final class VideoClassificationPredictionParamsProto {
           + "\024confidence_threshold\030\001 \001(\002\022\027\n\017max_predi"
           + "ctions\030\002 \001(\005\022\036\n\026segment_classification\030\003"
           + " \001(\010\022\033\n\023shot_classification\030\004 \001(\010\022\'\n\037one"
-          + "_sec_interval_classification\030\005 \001(\010B\272\001\n4c"
+          + "_sec_interval_classification\030\005 \001(\010B\331\002\n4c"
           + "om.google.cloud.aiplatform.v1.schema.pre"
           + "dict.paramsB(VideoClassificationPredicti"
           + "onParamsProtoP\001ZVgoogle.golang.org/genpr"
           + "oto/googleapis/cloud/aiplatform/v1/schem"
-          + "a/predict/params;paramsb\006proto3"
+          + "a/predict/params;params\252\0020Google.Cloud.A"
+          + "IPlatform.V1.Schema.Predict.Params\312\0020Goo"
+          + "gle\\Cloud\\AIPlatform\\V1\\Schema\\Predict\\P"
+          + "arams\352\0026Google::Cloud::AIPlatform::V1::S"
+          + "chema::Predict::Paramsb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

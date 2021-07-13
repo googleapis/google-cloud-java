@@ -46,11 +46,13 @@ public final class CompletionStatsProto {
           + "/rpc/status.proto\032\034google/api/annotation"
           + "s.proto\"j\n\017CompletionStats\022\035\n\020successful"
           + "_count\030\001 \001(\003B\003\340A\003\022\031\n\014failed_count\030\002 \001(\003B"
-          + "\003\340A\003\022\035\n\020incomplete_count\030\003 \001(\003B\003\340A\003B~\n\036c"
-          + "om.google.cloud.aiplatform.v1B\024Completio"
-          + "nStatsProtoP\001ZDgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/aiplatform/v1;aiplatf"
-          + "ormb\006proto3"
+          + "\003\340A\003\022\035\n\020incomplete_count\030\003 \001(\003B\003\340A\003B\330\001\n\036"
+          + "com.google.cloud.aiplatform.v1B\024Completi"
+          + "onStatsProtoP\001ZDgoogle.golang.org/genpro"
+          + "to/googleapis/cloud/aiplatform/v1;aiplat"
+          + "form\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Goog"
+          + "le\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::"
+          + "AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

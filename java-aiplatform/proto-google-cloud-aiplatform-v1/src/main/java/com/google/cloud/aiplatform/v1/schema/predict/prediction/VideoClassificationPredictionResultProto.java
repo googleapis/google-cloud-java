@@ -51,13 +51,17 @@ public final class VideoClassificationPredictionResultProto {
           + "\022time_segment_start\030\004 \001(\0132\031.google.proto"
           + "buf.Duration\0223\n\020time_segment_end\030\005 \001(\0132\031"
           + ".google.protobuf.Duration\022/\n\nconfidence\030"
-          + "\006 \001(\0132\033.google.protobuf.FloatValueB\306\001\n8c"
+          + "\006 \001(\0132\033.google.protobuf.FloatValueB\361\002\n8c"
           + "om.google.cloud.aiplatform.v1.schema.pre"
           + "dict.predictionB(VideoClassificationPred"
           + "ictionResultProtoP\001Z^google.golang.org/g"
           + "enproto/googleapis/cloud/aiplatform/v1/s"
-          + "chema/predict/prediction;predictionb\006pro"
-          + "to3"
+          + "chema/predict/prediction;prediction\252\0024Go"
+          + "ogle.Cloud.AIPlatform.V1.Schema.Predict."
+          + "Prediction\312\0024Google\\Cloud\\AIPlatform\\V1\\"
+          + "Schema\\Predict\\Prediction\352\002:Google::Clou"
+          + "d::AIPlatform::V1::Schema::Predict::Pred"
+          + "ictionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

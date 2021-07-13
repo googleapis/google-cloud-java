@@ -45,11 +45,13 @@ public final class ManualBatchTuningParametersProto {
           + "aiplatform.v1\032\037google/api/field_behavior"
           + ".proto\032\034google/api/annotations.proto\"6\n\033"
           + "ManualBatchTuningParameters\022\027\n\nbatch_siz"
-          + "e\030\001 \001(\005B\003\340A\005B\212\001\n\036com.google.cloud.aiplat"
+          + "e\030\001 \001(\005B\003\340A\005B\344\001\n\036com.google.cloud.aiplat"
           + "form.v1B ManualBatchTuningParametersProt"
           + "oP\001ZDgoogle.golang.org/genproto/googleap"
-          + "is/cloud/aiplatform/v1;aiplatformb\006proto"
-          + "3"
+          + "is/cloud/aiplatform/v1;aiplatform\252\002\032Goog"
+          + "le.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AI"
+          + "Platform\\V1\352\002\035Google::Cloud::AIPlatform:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

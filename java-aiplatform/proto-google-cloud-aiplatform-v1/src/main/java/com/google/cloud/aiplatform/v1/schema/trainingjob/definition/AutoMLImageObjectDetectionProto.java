@@ -78,12 +78,16 @@ public final class AutoMLImageObjectDetectionProto {
           + "essfulStopReason\"g\n\024SuccessfulStopReason"
           + "\022&\n\"SUCCESSFUL_STOP_REASON_UNSPECIFIED\020\000"
           + "\022\022\n\016BUDGET_REACHED\020\001\022\023\n\017MODEL_CONVERGED\020"
-          + "\002B\305\001\n<com.google.cloud.aiplatform.v1.sch"
+          + "\002B\374\002\n<com.google.cloud.aiplatform.v1.sch"
           + "ema.trainingjob.definitionB\037AutoMLImageO"
           + "bjectDetectionProtoP\001Zbgoogle.golang.org"
           + "/genproto/googleapis/cloud/aiplatform/v1"
           + "/schema/trainingjob/definition;definitio"
-          + "nb\006proto3"
+          + "n\252\0028Google.Cloud.AIPlatform.V1.Schema.Tr"
+          + "ainingJob.Definition\312\0028Google\\Cloud\\AIPl"
+          + "atform\\V1\\Schema\\TrainingJob\\Definition\352"
+          + "\002>Google::Cloud::AIPlatform::V1::Schema:"
+          + ":TrainingJob::Definitionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -46,12 +46,16 @@ public final class TextExtractionPredictionInstanceProto {
           + "stance\032\034google/api/annotations.proto\"S\n "
           + "TextExtractionPredictionInstance\022\017\n\007cont"
           + "ent\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\t\022\013\n\003key\030\003 \001("
-          + "\tB\275\001\n6com.google.cloud.aiplatform.v1.sch"
+          + "\tB\342\002\n6com.google.cloud.aiplatform.v1.sch"
           + "ema.predict.instanceB%TextExtractionPred"
           + "ictionInstanceProtoP\001ZZgoogle.golang.org"
           + "/genproto/googleapis/cloud/aiplatform/v1"
-          + "/schema/predict/instance;instanceb\006proto"
-          + "3"
+          + "/schema/predict/instance;instance\252\0022Goog"
+          + "le.Cloud.AIPlatform.V1.Schema.Predict.In"
+          + "stance\312\0022Google\\Cloud\\AIPlatform\\V1\\Sche"
+          + "ma\\Predict\\Instance\352\0028Google::Cloud::AIP"
+          + "latform::V1::Schema::Predict::Instanceb\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

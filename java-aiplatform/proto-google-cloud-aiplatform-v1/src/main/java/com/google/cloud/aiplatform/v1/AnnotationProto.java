@@ -65,11 +65,13 @@ public final class AnnotationProto {
           + "\0028\001:\225\001\352A\221\001\n$aiplatform.googleapis.com/An"
           + "notation\022iprojects/{project}/locations/{"
           + "location}/datasets/{dataset}/dataItems/{"
-          + "data_item}/annotations/{annotation}By\n\036c"
-          + "om.google.cloud.aiplatform.v1B\017Annotatio"
-          + "nProtoP\001ZDgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/aiplatform/v1;aiplatformb\006"
-          + "proto3"
+          + "data_item}/annotations/{annotation}B\323\001\n\036"
+          + "com.google.cloud.aiplatform.v1B\017Annotati"
+          + "onProtoP\001ZDgoogle.golang.org/genproto/go"
+          + "ogleapis/cloud/aiplatform/v1;aiplatform\252"
+          + "\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\Cl"
+          + "oud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPla"
+          + "tform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

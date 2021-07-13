@@ -118,10 +118,12 @@ public final class ModelProto {
           + "google.cloud.aiplatform.v1.PortB\003\340A\005\022\032\n\r"
           + "predict_route\030\006 \001(\tB\003\340A\005\022\031\n\014health_route"
           + "\030\007 \001(\tB\003\340A\005\"\036\n\004Port\022\026\n\016container_port\030\003 "
-          + "\001(\005Bt\n\036com.google.cloud.aiplatform.v1B\nM"
-          + "odelProtoP\001ZDgoogle.golang.org/genproto/"
-          + "googleapis/cloud/aiplatform/v1;aiplatfor"
-          + "mb\006proto3"
+          + "\001(\005B\316\001\n\036com.google.cloud.aiplatform.v1B\n"
+          + "ModelProtoP\001ZDgoogle.golang.org/genproto"
+          + "/googleapis/cloud/aiplatform/v1;aiplatfo"
+          + "rm\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google"
+          + "\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AI"
+          + "Platform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

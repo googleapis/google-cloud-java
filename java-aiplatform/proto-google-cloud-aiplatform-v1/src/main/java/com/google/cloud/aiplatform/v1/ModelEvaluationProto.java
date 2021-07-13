@@ -54,10 +54,12 @@ public final class ModelEvaluationProto {
           + "\n)aiplatform.googleapis.com/ModelEvaluat"
           + "ion\022Oprojects/{project}/locations/{locat"
           + "ion}/models/{model}/evaluations/{evaluat"
-          + "ion}B~\n\036com.google.cloud.aiplatform.v1B\024"
-          + "ModelEvaluationProtoP\001ZDgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/aiplatform/v"
-          + "1;aiplatformb\006proto3"
+          + "ion}B\330\001\n\036com.google.cloud.aiplatform.v1B"
+          + "\024ModelEvaluationProtoP\001ZDgoogle.golang.o"
+          + "rg/genproto/googleapis/cloud/aiplatform/"
+          + "v1;aiplatform\252\002\032Google.Cloud.AIPlatform."
+          + "V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google"
+          + "::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -46,12 +46,16 @@ public final class TabularRegressionPredictionResultProto {
           + "ct.prediction\032\034google/api/annotations.pr"
           + "oto\"\\\n!TabularRegressionPredictionResult"
           + "\022\r\n\005value\030\001 \001(\002\022\023\n\013lower_bound\030\002 \001(\002\022\023\n\013"
-          + "upper_bound\030\003 \001(\002B\304\001\n8com.google.cloud.a"
+          + "upper_bound\030\003 \001(\002B\357\002\n8com.google.cloud.a"
           + "iplatform.v1.schema.predict.predictionB&"
           + "TabularRegressionPredictionResultProtoP\001"
           + "Z^google.golang.org/genproto/googleapis/"
           + "cloud/aiplatform/v1/schema/predict/predi"
-          + "ction;predictionb\006proto3"
+          + "ction;prediction\252\0024Google.Cloud.AIPlatfo"
+          + "rm.V1.Schema.Predict.Prediction\312\0024Google"
+          + "\\Cloud\\AIPlatform\\V1\\Schema\\Predict\\Pred"
+          + "iction\352\002:Google::Cloud::AIPlatform::V1::"
+          + "Schema::Predict::Predictionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -52,12 +52,16 @@ public final class AutoMLTextExtractionProto {
           + "d\n\006inputs\030\001 \001(\0132T.google.cloud.aiplatfor"
           + "m.v1.schema.trainingjob.definition.AutoM"
           + "lTextExtractionInputs\"\034\n\032AutoMlTextExtra"
-          + "ctionInputsB\277\001\n<com.google.cloud.aiplatf"
+          + "ctionInputsB\366\002\n<com.google.cloud.aiplatf"
           + "orm.v1.schema.trainingjob.definitionB\031Au"
           + "toMLTextExtractionProtoP\001Zbgoogle.golang"
           + ".org/genproto/googleapis/cloud/aiplatfor"
           + "m/v1/schema/trainingjob/definition;defin"
-          + "itionb\006proto3"
+          + "ition\252\0028Google.Cloud.AIPlatform.V1.Schem"
+          + "a.TrainingJob.Definition\312\0028Google\\Cloud\\"
+          + "AIPlatform\\V1\\Schema\\TrainingJob\\Definit"
+          + "ion\352\002>Google::Cloud::AIPlatform::V1::Sch"
+          + "ema::TrainingJob::Definitionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

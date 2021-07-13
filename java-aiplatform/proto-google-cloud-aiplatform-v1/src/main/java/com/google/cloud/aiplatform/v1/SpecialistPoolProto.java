@@ -51,11 +51,13 @@ public final class SpecialistPoolProto {
           + "data_labeling_jobs\030\005 \003(\tB\003\340A\003:x\352Au\n(aipl"
           + "atform.googleapis.com/SpecialistPool\022Ipr"
           + "ojects/{project}/locations/{location}/sp"
-          + "ecialistPools/{specialist_pool}B}\n\036com.g"
-          + "oogle.cloud.aiplatform.v1B\023SpecialistPoo"
-          + "lProtoP\001ZDgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/aiplatform/v1;aiplatformb\006"
-          + "proto3"
+          + "ecialistPools/{specialist_pool}B\327\001\n\036com."
+          + "google.cloud.aiplatform.v1B\023SpecialistPo"
+          + "olProtoP\001ZDgoogle.golang.org/genproto/go"
+          + "ogleapis/cloud/aiplatform/v1;aiplatform\252"
+          + "\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\Cl"
+          + "oud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPla"
+          + "tform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

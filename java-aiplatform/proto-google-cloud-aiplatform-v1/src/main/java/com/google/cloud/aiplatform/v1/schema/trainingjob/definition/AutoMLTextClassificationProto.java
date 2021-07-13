@@ -53,12 +53,16 @@ public final class AutoMLTextClassificationProto {
           + "aiplatform.v1.schema.trainingjob.definit"
           + "ion.AutoMlTextClassificationInputs\"5\n\036Au"
           + "toMlTextClassificationInputs\022\023\n\013multi_la"
-          + "bel\030\001 \001(\010B\303\001\n<com.google.cloud.aiplatfor"
+          + "bel\030\001 \001(\010B\372\002\n<com.google.cloud.aiplatfor"
           + "m.v1.schema.trainingjob.definitionB\035Auto"
           + "MLTextClassificationProtoP\001Zbgoogle.gola"
           + "ng.org/genproto/googleapis/cloud/aiplatf"
           + "orm/v1/schema/trainingjob/definition;def"
-          + "initionb\006proto3"
+          + "inition\252\0028Google.Cloud.AIPlatform.V1.Sch"
+          + "ema.TrainingJob.Definition\312\0028Google\\Clou"
+          + "d\\AIPlatform\\V1\\Schema\\TrainingJob\\Defin"
+          + "ition\352\002>Google::Cloud::AIPlatform::V1::S"
+          + "chema::TrainingJob::Definitionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

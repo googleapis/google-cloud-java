@@ -45,12 +45,17 @@ public final class ImageSegmentationPredictionInstanceProto {
           + "oogle.cloud.aiplatform.v1.schema.predict"
           + ".instance\032\034google/api/annotations.proto\""
           + "I\n#ImageSegmentationPredictionInstance\022\017"
-          + "\n\007content\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\tB\300\001\n6c"
+          + "\n\007content\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\tB\345\002\n6c"
           + "om.google.cloud.aiplatform.v1.schema.pre"
           + "dict.instanceB(ImageSegmentationPredicti"
           + "onInstanceProtoP\001ZZgoogle.golang.org/gen"
           + "proto/googleapis/cloud/aiplatform/v1/sch"
-          + "ema/predict/instance;instanceb\006proto3"
+          + "ema/predict/instance;instance\252\0022Google.C"
+          + "loud.AIPlatform.V1.Schema.Predict.Instan"
+          + "ce\312\0022Google\\Cloud\\AIPlatform\\V1\\Schema\\P"
+          + "redict\\Instance\352\0028Google::Cloud::AIPlatf"
+          + "orm::V1::Schema::Predict::Instanceb\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

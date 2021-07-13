@@ -45,13 +45,17 @@ public final class ImageClassificationPredictionInstanceProto {
           + "2google.cloud.aiplatform.v1.schema.predi"
           + "ct.instance\032\034google/api/annotations.prot"
           + "o\"K\n%ImageClassificationPredictionInstan"
-          + "ce\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\tB\302"
-          + "\001\n6com.google.cloud.aiplatform.v1.schema"
+          + "ce\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\tB\347"
+          + "\002\n6com.google.cloud.aiplatform.v1.schema"
           + ".predict.instanceB*ImageClassificationPr"
           + "edictionInstanceProtoP\001ZZgoogle.golang.o"
           + "rg/genproto/googleapis/cloud/aiplatform/"
-          + "v1/schema/predict/instance;instanceb\006pro"
-          + "to3"
+          + "v1/schema/predict/instance;instance\252\0022Go"
+          + "ogle.Cloud.AIPlatform.V1.Schema.Predict."
+          + "Instance\312\0022Google\\Cloud\\AIPlatform\\V1\\Sc"
+          + "hema\\Predict\\Instance\352\0028Google::Cloud::A"
+          + "IPlatform::V1::Schema::Predict::Instance"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

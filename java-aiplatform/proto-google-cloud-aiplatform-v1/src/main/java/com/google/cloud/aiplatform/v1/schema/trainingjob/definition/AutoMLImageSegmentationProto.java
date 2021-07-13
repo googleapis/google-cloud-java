@@ -74,12 +74,17 @@ public final class AutoMLImageSegmentationProto {
           + "ageSegmentationMetadata.SuccessfulStopRe"
           + "ason\"g\n\024SuccessfulStopReason\022&\n\"SUCCESSF"
           + "UL_STOP_REASON_UNSPECIFIED\020\000\022\022\n\016BUDGET_R"
-          + "EACHED\020\001\022\023\n\017MODEL_CONVERGED\020\002B\302\001\n<com.go"
+          + "EACHED\020\001\022\023\n\017MODEL_CONVERGED\020\002B\371\002\n<com.go"
           + "ogle.cloud.aiplatform.v1.schema.training"
           + "job.definitionB\034AutoMLImageSegmentationP"
           + "rotoP\001Zbgoogle.golang.org/genproto/googl"
           + "eapis/cloud/aiplatform/v1/schema/trainin"
-          + "gjob/definition;definitionb\006proto3"
+          + "gjob/definition;definition\252\0028Google.Clou"
+          + "d.AIPlatform.V1.Schema.TrainingJob.Defin"
+          + "ition\312\0028Google\\Cloud\\AIPlatform\\V1\\Schem"
+          + "a\\TrainingJob\\Definition\352\002>Google::Cloud"
+          + "::AIPlatform::V1::Schema::TrainingJob::D"
+          + "efinitionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -81,11 +81,13 @@ public final class MachineResourcesProto {
           + "\340A\005\022\036\n\021max_replica_count\030\003 \001(\005B\003\340A\005\"/\n\021R"
           + "esourcesConsumed\022\032\n\rreplica_hours\030\001 \001(\001B"
           + "\003\340A\003\"=\n\010DiskSpec\022\026\n\016boot_disk_type\030\001 \001(\t"
-          + "\022\031\n\021boot_disk_size_gb\030\002 \001(\005B\177\n\036com.googl"
-          + "e.cloud.aiplatform.v1B\025MachineResourcesP"
-          + "rotoP\001ZDgoogle.golang.org/genproto/googl"
-          + "eapis/cloud/aiplatform/v1;aiplatformb\006pr"
-          + "oto3"
+          + "\022\031\n\021boot_disk_size_gb\030\002 \001(\005B\331\001\n\036com.goog"
+          + "le.cloud.aiplatform.v1B\025MachineResources"
+          + "ProtoP\001ZDgoogle.golang.org/genproto/goog"
+          + "leapis/cloud/aiplatform/v1;aiplatform\252\002\032"
+          + "Google.Cloud.AIPlatform.V1\312\002\032Google\\Clou"
+          + "d\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatf"
+          + "orm::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -45,12 +45,16 @@ public final class TextSentimentPredictionResultProto {
           + "gle.cloud.aiplatform.v1.schema.predict.p"
           + "rediction\032\034google/api/annotations.proto\""
           + "2\n\035TextSentimentPredictionResult\022\021\n\tsent"
-          + "iment\030\001 \001(\005B\300\001\n8com.google.cloud.aiplatf"
+          + "iment\030\001 \001(\005B\353\002\n8com.google.cloud.aiplatf"
           + "orm.v1.schema.predict.predictionB\"TextSe"
           + "ntimentPredictionResultProtoP\001Z^google.g"
           + "olang.org/genproto/googleapis/cloud/aipl"
           + "atform/v1/schema/predict/prediction;pred"
-          + "ictionb\006proto3"
+          + "iction\252\0024Google.Cloud.AIPlatform.V1.Sche"
+          + "ma.Predict.Prediction\312\0024Google\\Cloud\\AIP"
+          + "latform\\V1\\Schema\\Predict\\Prediction\352\002:G"
+          + "oogle::Cloud::AIPlatform::V1::Schema::Pr"
+          + "edict::Predictionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -53,10 +53,13 @@ public final class AnnotationSpecProto {
           + "\n(aiplatform.googleapis.com/AnnotationSp"
           + "ec\022\\projects/{project}/locations/{locati"
           + "on}/datasets/{dataset}/annotationSpecs/{"
-          + "annotation_spec}B}\n\036com.google.cloud.aip"
-          + "latform.v1B\023AnnotationSpecProtoP\001ZDgoogl"
-          + "e.golang.org/genproto/googleapis/cloud/a"
-          + "iplatform/v1;aiplatformb\006proto3"
+          + "annotation_spec}B\327\001\n\036com.google.cloud.ai"
+          + "platform.v1B\023AnnotationSpecProtoP\001ZDgoog"
+          + "le.golang.org/genproto/googleapis/cloud/"
+          + "aiplatform/v1;aiplatform\252\002\032Google.Cloud."
+          + "AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatform\\"
+          + "V1\352\002\035Google::Cloud::AIPlatform::V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

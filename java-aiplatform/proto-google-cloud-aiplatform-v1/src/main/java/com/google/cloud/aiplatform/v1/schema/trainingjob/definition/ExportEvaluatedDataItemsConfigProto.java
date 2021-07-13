@@ -48,12 +48,17 @@ public final class ExportEvaluatedDataItemsConfigProto {
           + "oogle/api/annotations.proto\"c\n\036ExportEva"
           + "luatedDataItemsConfig\022 \n\030destination_big"
           + "query_uri\030\001 \001(\t\022\037\n\027override_existing_tab"
-          + "le\030\002 \001(\010B\311\001\n<com.google.cloud.aiplatform"
+          + "le\030\002 \001(\010B\200\003\n<com.google.cloud.aiplatform"
           + ".v1.schema.trainingjob.definitionB#Expor"
           + "tEvaluatedDataItemsConfigProtoP\001Zbgoogle"
           + ".golang.org/genproto/googleapis/cloud/ai"
           + "platform/v1/schema/trainingjob/definitio"
-          + "n;definitionb\006proto3"
+          + "n;definition\252\0028Google.Cloud.AIPlatform.V"
+          + "1.Schema.TrainingJob.Definition\312\0028Google"
+          + "\\Cloud\\AIPlatform\\V1\\Schema\\TrainingJob\\"
+          + "Definition\352\002>Google::Cloud::AIPlatform::"
+          + "V1::Schema::TrainingJob::Definitionb\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
