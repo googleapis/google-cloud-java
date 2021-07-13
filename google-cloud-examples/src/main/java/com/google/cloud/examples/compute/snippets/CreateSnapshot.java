@@ -20,7 +20,6 @@ import com.google.cloud.ServiceOptions;
 import com.google.cloud.compute.v1.CreateSnapshotDiskRequest;
 import com.google.cloud.compute.v1.DisksClient;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectZoneDiskName;
 import com.google.cloud.compute.v1.Snapshot;
 import java.io.IOException;
 
@@ -32,13 +31,11 @@ public class CreateSnapshot {
   private static final String DISK_NAME = "test-disk";
   private static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
   private static final String ZONE = "us-central1-a";
-  private static final ProjectZoneDiskName PROJECT_ZONE_DISK_NAME =
-      ProjectZoneDiskName.of(DISK_NAME, DEFAULT_PROJECT, ZONE);
   public static void main(String... args) throws IOException {
     Snapshot snapshotResource = Snapshot.newBuilder().setName("test-snapshot").build();
     CreateSnapshotDiskRequest diskHttpRequest =
         CreateSnapshotDiskRequest.newBuilder()
-            .setDisk(PROJECT_ZONE_DISK_NAME.toString())
+            .setDisk(DISK_NAME)
             .setGuestFlush(Boolean.FALSE)
             .setSnapshotResource(snapshotResource)
             .build();

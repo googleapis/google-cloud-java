@@ -7,12 +7,11 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.compute.v1.Address;
 import com.google.cloud.compute.v1.AddressesClient;
 import com.google.cloud.compute.v1.AddressesSettings;
+import com.google.cloud.compute.v1.DeleteAddressRequest;
 import com.google.cloud.compute.v1.GetAddressRequest;
 import com.google.cloud.compute.v1.InsertAddressRequest;
 import com.google.cloud.compute.v1.ListAddressesRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectRegionAddressName;
-import com.google.cloud.compute.v1.ProjectRegionName;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -45,7 +44,12 @@ public class ComputeExample {
 
     System.out.println("Deleting address:");
     Operation deleteResponse =
-        client.delete(ProjectRegionAddressName.of(newAddressName, PROJECT_NAME, REGION));
+        client.delete(
+            DeleteAddressRequest.newBuilder()
+                .setProject(PROJECT_NAME)
+                .setAddress(newAddressName)
+                .setRegion(REGION)
+                .build());
     System.out.format("Result of delete: %s\n", deleteResponse.toString());
     int sleepTimeInSeconds = 3;
     System.out.format("Waiting %d seconds for server to update...\n", sleepTimeInSeconds);
@@ -62,7 +66,7 @@ public class ComputeExample {
     Credentials myCredentials = GoogleCredentials.getApplicationDefault();
     String myEndpoint = AddressesSettings.getDefaultEndpoint();
 
-    AddressesSettings AddressesSettings =
+    AddressesSettings addressesSettings =
         AddressesSettings.newBuilder()
             .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
             .setTransportChannelProvider(
@@ -70,7 +74,7 @@ public class ComputeExample {
                     .setEndpoint(myEndpoint)
                     .build())
             .build();
-    return AddressesClient.create(AddressesSettings);
+    return AddressesClient.create(addressesSettings);
   }
 
   private static void insertNewAddressJustClient(AddressesClient client, String newAddressName) {
@@ -85,13 +89,9 @@ public class ComputeExample {
   private static void insertNewAddressUsingRequest(AddressesClient client, String newAddressName)
       throws InterruptedException, ExecutionException {
     // Begin samplegen code for insertAddress().
-    ProjectRegionName region = ProjectRegionName.of(PROJECT_NAME, REGION);
     Address address = Address.newBuilder().build();
     InsertAddressRequest request =
-        InsertAddressRequest.newBuilder()
-            .setRegion(region.toString())
-            .setAddressResource(address)
-            .build();
+        InsertAddressRequest.newBuilder().setRegion(REGION).setAddressResource(address).build();
     // Do something
     Operation response = client.insert(request);
 
@@ -103,11 +103,11 @@ public class ComputeExample {
   private static void insertAddressUsingCallable(AddressesClient client, String newAddressName)
       throws InterruptedException, ExecutionException {
     // Begin samplegen code for insertAddress().
-    ProjectRegionName region = ProjectRegionName.of(PROJECT_NAME, REGION);
     Address address = Address.newBuilder().build();
     InsertAddressRequest request =
         InsertAddressRequest.newBuilder()
-            .setRegion(region.toString())
+            .setProject(PROJECT_NAME)
+            .setRegion(REGION)
             .setAddressResource(address)
             .build();
     ApiFuture<Operation> future = client.insertCallable().futureCall(request);
@@ -121,10 +121,8 @@ public class ComputeExample {
   /** List Addresses in the under the project PROJECT_NAME and region REGION. */
   private static AddressesClient.ListPagedResponse listAddresses(AddressesClient client) {
     System.out.println("Listing addresses:");
-    ProjectRegionName regionName =
-        ProjectRegionName.newBuilder().setRegion(REGION).setProject(PROJECT_NAME).build();
     ListAddressesRequest listRequest =
-        ListAddressesRequest.newBuilder().setRegion(regionName.toString()).build();
+        ListAddressesRequest.newBuilder().setProject(PROJECT_NAME).setRegion(REGION).build();
     AddressesClient.ListPagedResponse response = client.list(listRequest);
     for (Address address : response.iterateAll()) {
       System.out.println("\t - " + address.toString());
@@ -138,9 +136,12 @@ public class ComputeExample {
       System.out.format("Making get request for address \"%s\"...\n", address.getName());
 
       Address fetchedAddress =
-          client.get(GetAddressRequest.newBuilder().setAddress(address.getName())
-              .setProject(PROJECT_NAME)
-              .setRegion(REGION).build());
+          client.get(
+              GetAddressRequest.newBuilder()
+                  .setAddress(address.getName())
+                  .setProject(PROJECT_NAME)
+                  .setRegion(REGION)
+                  .build());
       System.out.format("addresses.get returns \n\t%s\n\n", fetchedAddress.toString());
     }
   }
