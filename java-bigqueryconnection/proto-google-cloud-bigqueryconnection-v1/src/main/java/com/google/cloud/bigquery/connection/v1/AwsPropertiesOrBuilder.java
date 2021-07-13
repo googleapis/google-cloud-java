@@ -62,6 +62,44 @@ public interface AwsPropertiesOrBuilder
   com.google.cloud.bigquery.connection.v1.AwsCrossAccountRoleOrBuilder
       getCrossAccountRoleOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Authentication using Google owned service account to assume into
+   * customer's AWS IAM Role.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.AwsAccessRole access_role = 3;</code>
+   *
+   * @return Whether the accessRole field is set.
+   */
+  boolean hasAccessRole();
+  /**
+   *
+   *
+   * <pre>
+   * Authentication using Google owned service account to assume into
+   * customer's AWS IAM Role.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.AwsAccessRole access_role = 3;</code>
+   *
+   * @return The accessRole.
+   */
+  com.google.cloud.bigquery.connection.v1.AwsAccessRole getAccessRole();
+  /**
+   *
+   *
+   * <pre>
+   * Authentication using Google owned service account to assume into
+   * customer's AWS IAM Role.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.AwsAccessRole access_role = 3;</code>
+   */
+  com.google.cloud.bigquery.connection.v1.AwsAccessRoleOrBuilder getAccessRoleOrBuilder();
+
   public com.google.cloud.bigquery.connection.v1.AwsProperties.AuthenticationMethodCase
       getAuthenticationMethodCase();
 }

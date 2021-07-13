@@ -211,9 +211,9 @@ public class ConnectionName implements ResourceName {
     }
 
     private Builder(ConnectionName connectionName) {
-      project = connectionName.project;
-      location = connectionName.location;
-      connection = connectionName.connection;
+      this.project = connectionName.project;
+      this.location = connectionName.location;
+      this.connection = connectionName.connection;
     }
 
     public ConnectionName build() {

@@ -174,6 +174,42 @@ public interface ConnectionOrBuilder
    *
    *
    * <pre>
+   * Cloud Spanner properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.CloudSpannerProperties cloud_spanner = 21;</code>
+   *
+   * @return Whether the cloudSpanner field is set.
+   */
+  boolean hasCloudSpanner();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Spanner properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.CloudSpannerProperties cloud_spanner = 21;</code>
+   *
+   * @return The cloudSpanner.
+   */
+  com.google.cloud.bigquery.connection.v1.CloudSpannerProperties getCloudSpanner();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Spanner properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.CloudSpannerProperties cloud_spanner = 21;</code>
+   */
+  com.google.cloud.bigquery.connection.v1.CloudSpannerPropertiesOrBuilder
+      getCloudSpannerOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The creation timestamp of the connection.
    * </pre>
    *
