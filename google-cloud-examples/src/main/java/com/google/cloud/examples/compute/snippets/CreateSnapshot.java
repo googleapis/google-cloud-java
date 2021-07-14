@@ -33,14 +33,14 @@ public class CreateSnapshot {
   private static final String ZONE = "us-central1-a";
   public static void main(String... args) throws IOException {
     Snapshot snapshotResource = Snapshot.newBuilder().setName("test-snapshot").build();
-    CreateSnapshotDiskRequest diskHttpRequest =
+    CreateSnapshotDiskRequest diskRequest =
         CreateSnapshotDiskRequest.newBuilder()
             .setDisk(DISK_NAME)
             .setGuestFlush(Boolean.FALSE)
             .setSnapshotResource(snapshotResource)
             .build();
     try (DisksClient disksClient = DisksClient.create()) {
-      Operation snapshotDisk = disksClient.createSnapshot(diskHttpRequest);
+      Operation snapshotDisk = disksClient.createSnapshot(diskRequest);
       if (snapshotDisk.getError() == null) {
         System.out.println("Snapshot was successfully created");
       } else {
