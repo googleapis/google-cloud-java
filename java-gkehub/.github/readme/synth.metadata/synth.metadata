@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-gkehub.git",
-        "sha": "58eda880ec73eb17490f9fab4df4552835580548"
+        "sha": "ecf6634b487555412649bb715500871905fd48c6"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "740366bbb9a7e0f4b77fc75dc26be1d3a376c3e0"
+        "sha": "e44dc0c742b1230887a73552357e0c18dcc30b92"
       }
     }
   ]
