@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-appengine-admin.git",
-        "sha": "534ba43f8e38944ee9ffae8cc91019df23f6737f"
+        "sha": "86c61e551e1b1e5affb3ff7e6bc256df0f2a566b"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "1620b2cbb253f05f9e97be5efc371d2ba3844179"
+        "sha": "e44dc0c742b1230887a73552357e0c18dcc30b92"
       }
     }
   ]
