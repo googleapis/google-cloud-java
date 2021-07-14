@@ -31,6 +31,7 @@ public class CreateSnapshot {
   private static final String DISK_NAME = "test-disk";
   private static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
   private static final String ZONE = "us-central1-a";
+
   public static void main(String... args) throws IOException {
     Snapshot snapshotResource = Snapshot.newBuilder().setName("test-snapshot").build();
     CreateSnapshotDiskRequest diskRequest =
