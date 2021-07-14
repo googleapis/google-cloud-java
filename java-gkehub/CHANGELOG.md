@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-gkehub/compare/v0.2.1...v0.3.0) (2021-07-14)
+
+
+### Features
+
+* added v1alpha messages and client for gkehub ([ecf6634](https://www.github.com/googleapis/java-gkehub/commit/ecf6634b487555412649bb715500871905fd48c6))
+* added v1beta, v1 messages and client for gkehub ([ecf6634](https://www.github.com/googleapis/java-gkehub/commit/ecf6634b487555412649bb715500871905fd48c6))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-gkehub/issues/1130)) ([#64](https://www.github.com/googleapis/java-gkehub/issues/64)) ([b0c235d](https://www.github.com/googleapis/java-gkehub/commit/b0c235d612de4beb604f2c2e3771748c60e3a3e2))
+* add missing dependency configmanagement.proto, cloudauditlogging.proto, metering.proto, multiclusteringress.proto, servicemesh.proto to v1alpha client ([ecf6634](https://www.github.com/googleapis/java-gkehub/commit/ecf6634b487555412649bb715500871905fd48c6))
+* add missing dependency configmanagement.proto, metering.proto, multiclusteringress.proto to v1beta client ([ecf6634](https://www.github.com/googleapis/java-gkehub/commit/ecf6634b487555412649bb715500871905fd48c6))
+* add missing dependency configmanagement.proto, multiclusteringress.proto to v1 client ([#72](https://www.github.com/googleapis/java-gkehub/issues/72)) ([ecf6634](https://www.github.com/googleapis/java-gkehub/commit/ecf6634b487555412649bb715500871905fd48c6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#68](https://www.github.com/googleapis/java-gkehub/issues/68)) ([cdd5a08](https://www.github.com/googleapis/java-gkehub/commit/cdd5a08ea44c287aeb07dce816c88461d4bf94aa))
+
 ### [0.2.1](https://www.github.com/googleapis/java-gkehub/compare/v0.2.0...v0.2.1) (2021-06-04)
 
 
