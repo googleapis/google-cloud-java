@@ -122,6 +122,14 @@ public final class BigQueryException extends BaseHttpServiceException {
     throw new BigQueryException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }
 
+  static BaseServiceException translateAndThrow(
+      BigQueryRetryHelper.BigQueryRetryHelperException ex) {
+    if (ex.getCause() instanceof BaseServiceException) {
+      throw (BaseServiceException) ex.getCause();
+    }
+    throw new BigQueryException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
+  }
+
   static BaseServiceException translateAndThrow(ExecutionException ex) {
     BaseServiceException.translate(ex);
     throw new BigQueryException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());

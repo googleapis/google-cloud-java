@@ -237,6 +237,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   private final BigQueryRpc bigQueryRpc;
+  private static final BigQueryRetryConfig DEFAULT_RETRY_CONFIG =
+      BigQueryRetryConfig.newBuilder()
+          .retryOnMessage(BigQueryErrorMessages.RATE_LIMIT_EXCEEDED_MSG)
+          .build(); // retry config with Error Message for RateLimitExceeded Error
 
   BigQueryImpl(BigQueryOptions options) {
     super(options);
@@ -1271,7 +1275,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     com.google.api.services.bigquery.model.QueryResponse results;
     try {
       results =
-          runWithRetries(
+          BigQueryRetryHelper.runWithRetries(
               new Callable<com.google.api.services.bigquery.model.QueryResponse>() {
                 @Override
                 public com.google.api.services.bigquery.model.QueryResponse call() {
@@ -1280,8 +1284,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               },
               getOptions().getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
-              getOptions().getClock());
-    } catch (RetryHelperException e) {
+              getOptions().getClock(),
+              DEFAULT_RETRY_CONFIG);
+    } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
 
@@ -1362,7 +1367,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                     : jobId.getLocation());
     try {
       GetQueryResultsResponse results =
-          runWithRetries(
+          BigQueryRetryHelper.runWithRetries(
               new Callable<GetQueryResultsResponse>() {
                 @Override
                 public GetQueryResultsResponse call() {
@@ -1376,8 +1381,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               serviceOptions.getRetrySettings(),
-              EXCEPTION_HANDLER,
-              serviceOptions.getClock());
+              BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
+              serviceOptions.getClock(),
+              DEFAULT_RETRY_CONFIG);
+
       TableSchema schemaPb = results.getSchema();
 
       ImmutableList.Builder<BigQueryError> errors = ImmutableList.builder();
@@ -1393,7 +1400,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           .setTotalRows(results.getTotalRows() == null ? 0 : results.getTotalRows().longValue())
           .setErrors(errors.build())
           .build();
-    } catch (RetryHelper.RetryHelperException e) {
+    } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
   }

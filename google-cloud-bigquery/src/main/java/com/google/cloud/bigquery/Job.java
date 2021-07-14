@@ -73,6 +73,10 @@ public class Job extends JobInfo {
 
   private final BigQueryOptions options;
   private transient BigQuery bigquery;
+  private static final BigQueryRetryConfig DEFAULT_RETRY_CONFIG =
+      BigQueryRetryConfig.newBuilder()
+          .retryOnMessage(BigQueryErrorMessages.RATE_LIMIT_EXCEEDED_MSG)
+          .build(); // retry config with Error Message for RateLimitExceeded Error
 
   /** A builder for {@code Job} objects. */
   public static final class Builder extends JobInfo.Builder {
@@ -319,7 +323,7 @@ public class Job extends JobInfo {
   }
 
   private QueryResponse waitForQueryResults(
-      RetrySettings waitSettings, final QueryResultsOption... resultsOptions)
+      RetrySettings retrySettings, final QueryResultsOption... resultsOptions)
       throws InterruptedException {
     if (getConfiguration().getType() != Type.QUERY) {
       throw new UnsupportedOperationException(
@@ -327,22 +331,26 @@ public class Job extends JobInfo {
     }
 
     try {
-      return RetryHelper.poll(
+      return BigQueryRetryHelper.runWithRetries(
           new Callable<QueryResponse>() {
             @Override
             public QueryResponse call() {
               return bigquery.getQueryResults(getJobId(), resultsOptions);
             }
           },
-          waitSettings,
+          retrySettings,
           new BasicResultRetryAlgorithm<QueryResponse>() {
             @Override
-            public boolean shouldRetry(Throwable prevThrowable, QueryResponse prevResponse) {
+            public boolean shouldRetry(
+                Throwable prevThrowable,
+                QueryResponse
+                    prevResponse) { // Used by BigQueryRetryAlgorithm.shouldRetryBasedOnResult
               return prevResponse != null && !prevResponse.getCompleted();
             }
           },
-          options.getClock());
-    } catch (ExecutionException e) {
+          options.getClock(),
+          DEFAULT_RETRY_CONFIG);
+    } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
   }
