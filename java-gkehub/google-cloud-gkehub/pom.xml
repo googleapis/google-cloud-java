@@ -44,6 +44,22 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-gkehub-v1beta</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-gkehub-v1alpha2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-gkehub-v1alpha</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-gkehub-v1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-gkehub-v1beta1</artifactId>
     </dependency>
     <dependency>
@@ -74,6 +90,26 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-gkehub-v1beta1</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-gkehub-v1alpha2</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-gkehub-v1beta</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-gkehub-v1alpha</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-gkehub-v1</artifactId>
       <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
