@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.137.0](https://www.github.com/googleapis/java-bigquery/compare/v1.136.0...v1.137.0) (2021-07-14)
+
+
+### Features
+
+* Implemented BigQueryRetryAlgorithm to retry on the basis of the configured re-triable error messages ([#1426](https://www.github.com/googleapis/java-bigquery/issues/1426)) ([44d9795](https://www.github.com/googleapis/java-bigquery/commit/44d97953febac11c9167efe6781c779f486355d0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v1.118.0 ([#1445](https://www.github.com/googleapis/java-bigquery/issues/1445)) ([271b861](https://www.github.com/googleapis/java-bigquery/commit/271b8612da64e5216ac6dc5a39493b0593b23320))
+
 ## [1.136.0](https://www.github.com/googleapis/java-bigquery/compare/v1.135.4...v1.136.0) (2021-07-08)
 
 
