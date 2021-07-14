@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.23.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.22.8...v1.23.0) (2021-07-14)
+
+
+### Features
+
+* Expand bytes field type handling ([#1180](https://www.github.com/googleapis/java-bigquerystorage/issues/1180)) ([aab33a5](https://www.github.com/googleapis/java-bigquerystorage/commit/aab33a55f3cb91003363ada1395f07868bc17ee5))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.136.0 ([#1176](https://www.github.com/googleapis/java-bigquerystorage/issues/1176)) ([95c77e2](https://www.github.com/googleapis/java-bigquerystorage/commit/95c77e24f2ed8319b0e08194f331a59e975369cc))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.137.0 ([#1184](https://www.github.com/googleapis/java-bigquerystorage/issues/1184)) ([8bf328c](https://www.github.com/googleapis/java-bigquerystorage/commit/8bf328c1e939b46b297c65359433bed8fbda03b2))
+
 ### [1.22.8](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.22.7...v1.22.8) (2021-07-07)
 
 
