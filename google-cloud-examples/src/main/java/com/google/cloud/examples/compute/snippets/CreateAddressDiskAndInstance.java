@@ -38,6 +38,7 @@ import java.io.IOException;
 public class CreateAddressDiskAndInstance {
   private static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
   private static final String ZONE = "us-central1-a";
+  private static final String REGION = "us-central1";
   private static final String ADDRESS_NAME = "test-address";
 
   // Setting image project and image family available in
@@ -48,7 +49,6 @@ public class CreateAddressDiskAndInstance {
       String.format(
           "https://www.googleapis.com/compute/v1/projects/%s/global/images/%s",
           IMAGE_PROJECT, IMAGE_FAMILY);
-  private static final String REGION = "us-central1";
 
   public static void main(String... args) throws IOException {
     try (AddressesClient addressClient = AddressesClient.create()) {
