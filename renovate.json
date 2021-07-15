@@ -78,5 +78,8 @@
     }
   ],
   "semanticCommits": true,
-  "masterIssue": true
+  "dependencyDashboard": true,
+  "dependencyDashboardLabels": [
+    "type: process"
+  ]
 }
