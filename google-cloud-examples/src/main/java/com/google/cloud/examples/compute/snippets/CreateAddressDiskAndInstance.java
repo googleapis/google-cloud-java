@@ -18,19 +18,17 @@ package com.google.cloud.examples.compute.snippets;
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.compute.v1.Address;
-import com.google.cloud.compute.v1.AddressClient;
+import com.google.cloud.compute.v1.AddressesClient;
 import com.google.cloud.compute.v1.AttachedDisk;
+import com.google.cloud.compute.v1.AttachedDisk.Type;
 import com.google.cloud.compute.v1.AttachedDiskInitializeParams;
 import com.google.cloud.compute.v1.Disk;
-import com.google.cloud.compute.v1.DiskClient;
-import com.google.cloud.compute.v1.InsertDiskHttpRequest;
+import com.google.cloud.compute.v1.DisksClient;
+import com.google.cloud.compute.v1.InsertDiskRequest;
 import com.google.cloud.compute.v1.Instance;
-import com.google.cloud.compute.v1.InstanceClient;
+import com.google.cloud.compute.v1.InstancesClient;
 import com.google.cloud.compute.v1.NetworkInterface;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectRegionName;
-import com.google.cloud.compute.v1.ProjectZoneMachineTypeName;
-import com.google.cloud.compute.v1.ProjectZoneName;
 import java.io.IOException;
 
 /**
@@ -40,17 +38,22 @@ import java.io.IOException;
 public class CreateAddressDiskAndInstance {
   private static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
   private static final String ZONE = "us-central1-a";
-  private static final String ADDRESS_NAME = "test-address";
-  private static final String DEFAULT_IMAGE =
-      "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20150710";
-  private static final String FORMATTED_ZONE = ProjectZoneName.format(DEFAULT_PROJECT, ZONE);
   private static final String REGION = "us-central1";
+  private static final String ADDRESS_NAME = "test-address";
+
+  // Setting image project and image family available in
+  // https://cloud.google.com/compute/docs/images/os-details
+  private static final String IMAGE_PROJECT = "debian-cloud";
+  private static final String IMAGE_FAMILY = "debian-10";
+  private static final String DEFAULT_IMAGE =
+      String.format(
+          "https://www.googleapis.com/compute/v1/projects/%s/global/images/%s",
+          IMAGE_PROJECT, IMAGE_FAMILY);
 
   public static void main(String... args) throws IOException {
-    try (AddressClient addressClient = AddressClient.create()) {
-      ProjectRegionName projectRegionName = ProjectRegionName.of(DEFAULT_PROJECT, REGION);
+    try (AddressesClient addressClient = AddressesClient.create()) {
       Address address = Address.newBuilder().setName(ADDRESS_NAME).build();
-      Operation operation = addressClient.insertAddress(projectRegionName, address);
+      Operation operation = addressClient.insert(DEFAULT_PROJECT, REGION, address);
       if (operation.getError() == null) {
         System.out.println("Address " + ADDRESS_NAME + " was successfully created");
       } else {
@@ -59,19 +62,20 @@ public class CreateAddressDiskAndInstance {
       }
     }
     // Create a persistent disk
-    try (DiskClient diskClient = DiskClient.create()) {
+    try (DisksClient diskClient = DisksClient.create()) {
       Disk diskResource =
           Disk.newBuilder()
               .setName("test-disk")
               .setSourceImageId("debian-8-jessie-v20160329")
-              .setSizeGb("10")
+              .setSizeGb(10L)
               .build();
-      InsertDiskHttpRequest request =
-          InsertDiskHttpRequest.newBuilder()
-              .setZone(FORMATTED_ZONE)
+      InsertDiskRequest request =
+          InsertDiskRequest.newBuilder()
+              .setProject(DEFAULT_PROJECT)
+              .setZone(ZONE)
               .setDiskResource(diskResource)
               .build();
-      Operation response = diskClient.insertDisk(request);
+      Operation response = diskClient.insert(request);
       if (response.getError() == null) {
         System.out.println("Disk " + diskResource.getName() + " was successfully created");
       } else {
@@ -80,15 +84,15 @@ public class CreateAddressDiskAndInstance {
       }
     }
     // Create a virtual machine instance
-    try (InstanceClient instanceClient = InstanceClient.create()) {
-      String machineType =
-          ProjectZoneMachineTypeName.of("n1-standard-1", DEFAULT_PROJECT, ZONE).toString();
+    try (InstancesClient instanceClient = InstancesClient.create()) {
+      String machineType = String.format("zones/%s/machineTypes/%s", ZONE, "n1-standard-1");
+
       AttachedDisk disk =
           AttachedDisk.newBuilder()
               .setBoot(true)
               .setAutoDelete(true)
-              .setType("PERSISTENT")
-              .setDiskSizeGb("10")
+              .setType(Type.PERSISTENT)
+              .setDiskSizeGb(10L)
               .setInitializeParams(
                   AttachedDiskInitializeParams.newBuilder().setSourceImage(DEFAULT_IMAGE).build())
               .build();
@@ -100,7 +104,7 @@ public class CreateAddressDiskAndInstance {
               .addDisks(disk)
               .addNetworkInterfaces(networkInterface)
               .build();
-      Operation response = instanceClient.insertInstance(FORMATTED_ZONE, instanceResource);
+      Operation response = instanceClient.insert(DEFAULT_PROJECT, ZONE, instanceResource);
       if (response.getError() == null) {
         System.out.println("Instance " + instanceResource.getName() + " was successfully created");
       } else {

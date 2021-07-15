@@ -18,13 +18,12 @@ package com.google.cloud.examples.compute.snippets;
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.compute.v1.AttachedDisk;
+import com.google.cloud.compute.v1.AttachedDisk.Type;
 import com.google.cloud.compute.v1.AttachedDiskInitializeParams;
 import com.google.cloud.compute.v1.Instance;
-import com.google.cloud.compute.v1.InstanceClient;
+import com.google.cloud.compute.v1.InstancesClient;
 import com.google.cloud.compute.v1.NetworkInterface;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectZoneMachineTypeName;
-import com.google.cloud.compute.v1.ProjectZoneName;
 import java.io.IOException;
 
 /** A snippet for Google Cloud Compute Engine showing how to create a virtual machine instance. */
@@ -35,15 +34,13 @@ public class CreateInstance {
   private static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
 
   public static void main(String... args) throws IOException {
-    try (InstanceClient instanceClient = InstanceClient.create()) {
-      ProjectZoneName zone = ProjectZoneName.of(DEFAULT_PROJECT, ZONE);
-      String machineType =
-          ProjectZoneMachineTypeName.of("n1-standard-1", DEFAULT_PROJECT, ZONE).toString();
+    try (InstancesClient instancesClient = InstancesClient.create()) {
+      String machineType = String.format("zones/%s/machineTypes/%s", ZONE, "n1-standard-1");
       AttachedDisk disk =
           AttachedDisk.newBuilder()
               .setBoot(true)
               .setAutoDelete(true)
-              .setType("PERSISTENT")
+              .setType(Type.PERSISTENT)
               .setInitializeParams(
                   AttachedDiskInitializeParams.newBuilder().setSourceImage(DEFAULT_IMAGE).build())
               .build();
@@ -55,7 +52,7 @@ public class CreateInstance {
               .addDisks(disk)
               .addNetworkInterfaces(networkInterface)
               .build();
-      Operation response = instanceClient.insertInstance(zone.toString(), instanceResource);
+      Operation response = instancesClient.insert(DEFAULT_PROJECT, ZONE, instanceResource);
       if (response.getError() == null) {
         System.out.println("Instance was created successfully");
       } else {
