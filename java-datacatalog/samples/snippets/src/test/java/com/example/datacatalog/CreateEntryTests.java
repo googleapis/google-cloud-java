@@ -16,7 +16,7 @@
 
 package com.example.datacatalog;
 
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.fail;
 
 import com.google.cloud.datacatalog.v1.DataCatalogClient;
@@ -87,7 +87,7 @@ public class CreateEntryTests {
 
     // Must create a Entry Group before creating the entry.
     CreateEntryGroup.createEntryGroup(PROJECT_ID, LOCATION, entryGroupId);
-    CreateFilesetEntry.createEntry(PROJECT_ID, entryGroupId, entryId);
+    CreateFilesetEntry.createFilesetEntry(PROJECT_ID, entryGroupId, entryId);
 
     // Store names for clean up on teardown
     String expectedEntryGroupName =

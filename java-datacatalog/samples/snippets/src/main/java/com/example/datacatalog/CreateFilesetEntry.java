@@ -16,9 +16,7 @@
 
 package com.example.datacatalog;
 
-// [START datacatalog_create_fileset_tag]
-
-import com.google.api.gax.rpc.AlreadyExistsException;
+// [START data_catalog_create_fileset]
 import com.google.cloud.datacatalog.v1.ColumnSchema;
 import com.google.cloud.datacatalog.v1.CreateEntryRequest;
 import com.google.cloud.datacatalog.v1.DataCatalogClient;
@@ -29,18 +27,20 @@ import com.google.cloud.datacatalog.v1.GcsFilesetSpec;
 import com.google.cloud.datacatalog.v1.Schema;
 import java.io.IOException;
 
+// Sample to create file set entry
 public class CreateFilesetEntry {
 
-  public static void createEntry() {
+  public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "my-project-id";
     String entryGroupId = "fileset_entry_group";
     String entryId = "fileset_entry_id";
-    createEntry(projectId, entryGroupId, entryId);
+    createFilesetEntry(projectId, entryGroupId, entryId);
   }
 
   // Create Fileset Entry.
-  public static void createEntry(String projectId, String entryGroupId, String entryId) {
+  public static void createFilesetEntry(String projectId, String entryGroupId, String entryId)
+      throws IOException {
     // Currently, Data Catalog stores metadata in the us-central1 region.
     String location = "us-central1";
 
@@ -105,14 +105,9 @@ public class CreateFilesetEntry {
               .build();
 
       // Use the client to send the API request.
-      Entry entryResponse = dataCatalogClient.createEntry(entryRequest);
-      System.out.printf("\nEntry created with name: %s\n", entryResponse.getName());
-    } catch (AlreadyExistsException | IOException e) {
-      // AlreadyExistsException's are thrown if EntryGroup or Entry already exists.
-      // IOException's are thrown when unable to create the DataCatalogClient,
-      // for example an invalid Service Account path.
-      System.out.println("Error in create entry process:\n" + e.toString());
+      Entry entryCreated = dataCatalogClient.createEntry(entryRequest);
+      System.out.printf("Entry created with name: %s", entryCreated.getName());
     }
   }
 }
-// [END datacatalog_create_fileset_tag]
+// [END data_catalog_create_fileset]

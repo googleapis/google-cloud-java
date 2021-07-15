@@ -19,9 +19,14 @@ package com.example.datacatalog;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.datacatalog.v1.CreateTagTemplateRequest;
 import com.google.cloud.datacatalog.v1.DataCatalogClient;
-import com.google.cloud.datacatalog.v1.DeleteEntryGroupRequest;
-import com.google.cloud.datacatalog.v1.EntryGroupName;
+import com.google.cloud.datacatalog.v1.DeleteTagTemplateRequest;
+import com.google.cloud.datacatalog.v1.FieldType;
+import com.google.cloud.datacatalog.v1.LocationName;
+import com.google.cloud.datacatalog.v1.TagTemplate;
+import com.google.cloud.datacatalog.v1.TagTemplateField;
+import com.google.cloud.datacatalog.v1.TagTemplateName;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -33,12 +38,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class CreateEntryGroupIT {
+public class GrantTagTemplateUserRoleIT {
 
   private static final String ID = UUID.randomUUID().toString().substring(0, 8);
   private static final String LOCATION = "us-central1";
   private final Logger log = Logger.getLogger(this.getClass().getName());
-  private String entryGroup;
+  private String tagTemplateId;
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -59,22 +64,44 @@ public class CreateEntryGroupIT {
   }
 
   @Before
-  public void setUp() {
-    entryGroup = "CREATE_ENTRY_GROUP_TEST_" + ID;
+  public void setUp() throws IOException {
+    tagTemplateId = "create_tag_template_id_test_" + ID;
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     originalPrintStream = System.out;
     System.setOut(out);
+    try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+      LocationName parent = LocationName.of(PROJECT_ID, LOCATION);
+      TagTemplateField sourceField =
+          TagTemplateField.newBuilder()
+              .setDisplayName("Source of data asset")
+              .setType(
+                  FieldType.newBuilder().setPrimitiveType(FieldType.PrimitiveType.STRING).build())
+              .build();
+      TagTemplate tagTemplate =
+          TagTemplate.newBuilder()
+              .setDisplayName("Demo Tag Template")
+              .putFields("source", sourceField)
+              .build();
+      CreateTagTemplateRequest request =
+          CreateTagTemplateRequest.newBuilder()
+              .setParent(parent.toString())
+              .setTagTemplateId(tagTemplateId)
+              .setTagTemplate(tagTemplate)
+              .build();
+      dataCatalogClient.createTagTemplate(request);
+    }
   }
 
   @After
   public void tearDown() throws IOException {
     // Clean up
     try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-      EntryGroupName name = EntryGroupName.of(PROJECT_ID, LOCATION, entryGroup);
-      DeleteEntryGroupRequest request =
-          DeleteEntryGroupRequest.newBuilder().setName(name.toString()).build();
-      dataCatalogClient.deleteEntryGroup(request);
+      TagTemplateName name = TagTemplateName.of(PROJECT_ID, LOCATION, tagTemplateId);
+      boolean force = true;
+      DeleteTagTemplateRequest request =
+          DeleteTagTemplateRequest.newBuilder().setName(name.toString()).setForce(force).build();
+      dataCatalogClient.deleteTagTemplate(request);
     }
     // restores print statements in the original method
     System.out.flush();
@@ -83,8 +110,8 @@ public class CreateEntryGroupIT {
   }
 
   @Test
-  public void testCreateEntryGroup() throws IOException {
-    CreateEntryGroup.createEntryGroup(PROJECT_ID, LOCATION, entryGroup);
-    assertThat(bout.toString()).contains("Entry Group created");
+  public void testGrantTagTemplateUserRole() throws IOException {
+    GrantTagTemplateUserRole.grantTagTemplateUserRole(PROJECT_ID, tagTemplateId);
+    assertThat(bout.toString()).contains("Role successfully granted");
   }
 }

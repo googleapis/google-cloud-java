@@ -21,7 +21,9 @@ import static junit.framework.TestCase.assertNotNull;
 
 import com.google.cloud.datacatalog.v1.DataCatalogClient;
 import com.google.cloud.datacatalog.v1.DeleteEntryGroupRequest;
+import com.google.cloud.datacatalog.v1.DeleteEntryRequest;
 import com.google.cloud.datacatalog.v1.EntryGroupName;
+import com.google.cloud.datacatalog.v1.EntryName;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -33,11 +35,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class CreateEntryGroupIT {
+public class CreateCustomEntryIT {
 
   private static final String ID = UUID.randomUUID().toString().substring(0, 8);
   private static final String LOCATION = "us-central1";
   private final Logger log = Logger.getLogger(this.getClass().getName());
+  private String entry;
   private String entryGroup;
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -60,7 +63,8 @@ public class CreateEntryGroupIT {
 
   @Before
   public void setUp() {
-    entryGroup = "CREATE_ENTRY_GROUP_TEST_" + ID;
+    entry = "CREATE_CUSTOM_ENTRY_TEST_" + ID;
+    entryGroup = "CREATE_CUSTOME_ENTRY_GROUP_TEST_" + ID;
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     originalPrintStream = System.out;
@@ -71,6 +75,10 @@ public class CreateEntryGroupIT {
   public void tearDown() throws IOException {
     // Clean up
     try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+      EntryName entryName = EntryName.of(PROJECT_ID, LOCATION, entryGroup, entry);
+      DeleteEntryRequest entryRequest =
+          DeleteEntryRequest.newBuilder().setName(entryName.toString()).build();
+      dataCatalogClient.deleteEntry(entryRequest);
       EntryGroupName name = EntryGroupName.of(PROJECT_ID, LOCATION, entryGroup);
       DeleteEntryGroupRequest request =
           DeleteEntryGroupRequest.newBuilder().setName(name.toString()).build();
@@ -83,8 +91,8 @@ public class CreateEntryGroupIT {
   }
 
   @Test
-  public void testCreateEntryGroup() throws IOException {
-    CreateEntryGroup.createEntryGroup(PROJECT_ID, LOCATION, entryGroup);
-    assertThat(bout.toString()).contains("Entry Group created");
+  public void testCreateCustomEntry() throws IOException {
+    CreateCustomEntry.createCustomEntry(PROJECT_ID, entryGroup, entry);
+    assertThat(bout.toString()).contains("Custom entry created with name:");
   }
 }

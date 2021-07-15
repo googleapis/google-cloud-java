@@ -21,7 +21,9 @@ import static junit.framework.TestCase.assertNotNull;
 
 import com.google.cloud.datacatalog.v1.DataCatalogClient;
 import com.google.cloud.datacatalog.v1.DeleteEntryGroupRequest;
+import com.google.cloud.datacatalog.v1.DeleteEntryRequest;
 import com.google.cloud.datacatalog.v1.EntryGroupName;
+import com.google.cloud.datacatalog.v1.EntryName;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -33,12 +35,13 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class CreateEntryGroupIT {
+public class CreateFilesetEntryIT {
 
   private static final String ID = UUID.randomUUID().toString().substring(0, 8);
   private static final String LOCATION = "us-central1";
   private final Logger log = Logger.getLogger(this.getClass().getName());
   private String entryGroup;
+  private String entry;
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -59,18 +62,24 @@ public class CreateEntryGroupIT {
   }
 
   @Before
-  public void setUp() {
+  public void setUp() throws IOException {
     entryGroup = "CREATE_ENTRY_GROUP_TEST_" + ID;
+    entry = "CREATE_ENTRY_TEST_" + ID;
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     originalPrintStream = System.out;
     System.setOut(out);
+    CreateEntryGroup.createEntryGroup(PROJECT_ID, LOCATION, entryGroup);
   }
 
   @After
   public void tearDown() throws IOException {
     // Clean up
     try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+      EntryName entryName = EntryName.of(PROJECT_ID, LOCATION, entryGroup, entry);
+      DeleteEntryRequest entryRequest =
+          DeleteEntryRequest.newBuilder().setName(entryName.toString()).build();
+      dataCatalogClient.deleteEntry(entryRequest);
       EntryGroupName name = EntryGroupName.of(PROJECT_ID, LOCATION, entryGroup);
       DeleteEntryGroupRequest request =
           DeleteEntryGroupRequest.newBuilder().setName(name.toString()).build();
@@ -83,8 +92,8 @@ public class CreateEntryGroupIT {
   }
 
   @Test
-  public void testCreateEntryGroup() throws IOException {
-    CreateEntryGroup.createEntryGroup(PROJECT_ID, LOCATION, entryGroup);
-    assertThat(bout.toString()).contains("Entry Group created");
+  public void testCreateFilesetEntry() throws IOException {
+    CreateFilesetEntry.createFilesetEntry(PROJECT_ID, entryGroup, entry);
+    assertThat(bout.toString()).contains("Entry created with name:");
   }
 }
