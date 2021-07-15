@@ -39,8 +39,15 @@ public class CreateAddressDiskAndInstance {
   private static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
   private static final String ZONE = "us-central1-a";
   private static final String ADDRESS_NAME = "test-address";
+
+  // Setting image project and image family available in
+  // https://cloud.google.com/compute/docs/images/os-details
+  private static final String IMAGE_PROJECT = "debian-cloud";
+  private static final String IMAGE_FAMILY = "debian-10";
   private static final String DEFAULT_IMAGE =
-      "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20150710";
+      String.format(
+          "https://www.googleapis.com/compute/v1/projects/%s/global/images/%s",
+          IMAGE_PROJECT, IMAGE_FAMILY);
   private static final String REGION = "us-central1";
 
   public static void main(String... args) throws IOException {
