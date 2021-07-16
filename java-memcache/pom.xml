@@ -119,11 +119,11 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-memcache-v1beta2</module>
-    <module>grpc-google-cloud-memcache-v1beta2</module>
-    <module>proto-google-cloud-memcache-v1</module>
-    <module>grpc-google-cloud-memcache-v1</module>
     <module>google-cloud-memcache</module>
+    <module>grpc-google-cloud-memcache-v1beta2</module>
+    <module>grpc-google-cloud-memcache-v1</module>
+    <module>proto-google-cloud-memcache-v1beta2</module>
+    <module>proto-google-cloud-memcache-v1</module>
     <module>google-cloud-memcache-bom</module>
   </modules>
 
