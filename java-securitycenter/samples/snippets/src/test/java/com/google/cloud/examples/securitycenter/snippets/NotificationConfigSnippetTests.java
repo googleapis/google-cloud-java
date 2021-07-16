@@ -45,8 +45,7 @@ public class NotificationConfigSnippetTests {
     createConfig(configId);
 
     assertTrue(
-        DeleteNotificationConfigSnippets.deleteNotificationConfig(
-            getOrganizationId(), configId));
+        DeleteNotificationConfigSnippets.deleteNotificationConfig(getOrganizationId(), configId));
   }
 
   @Test
@@ -65,8 +64,7 @@ public class NotificationConfigSnippetTests {
     createConfig(configId);
 
     assertNotNull(
-        GetNotificationConfigSnippets.getNotificationConfig(
-            getOrganizationId(), configId));
+        GetNotificationConfigSnippets.getNotificationConfig(getOrganizationId(), configId));
 
     deleteConfig(configId);
   }

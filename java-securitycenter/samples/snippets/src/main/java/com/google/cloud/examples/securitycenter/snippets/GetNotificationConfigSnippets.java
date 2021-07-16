@@ -21,6 +21,7 @@ import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.NotificationConfigName;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import java.io.IOException;
+
 // [END securitycenter_get_notification_config]
 
 /** Snippets for how to GetNotificationConfig. */

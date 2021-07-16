@@ -23,6 +23,7 @@ import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
+
 // [END securitycenter_list_notification_configs]
 
 /** Snippets for how to ListNotificationConfig. */

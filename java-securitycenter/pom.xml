@@ -129,14 +129,14 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-securitycenter-v1</module>
-    <module>proto-google-cloud-securitycenter-v1beta1</module>
-    <module>proto-google-cloud-securitycenter-v1p1beta1</module>
+    <module>google-cloud-securitycenter</module>
     <module>grpc-google-cloud-securitycenter-v1</module>
     <module>grpc-google-cloud-securitycenter-v1beta1</module>
     <module>grpc-google-cloud-securitycenter-v1p1beta1</module>
-    <module>google-cloud-securitycenter</module>
-  <module>google-cloud-securitycenter-bom</module>
+    <module>proto-google-cloud-securitycenter-v1</module>
+    <module>proto-google-cloud-securitycenter-v1beta1</module>
+    <module>proto-google-cloud-securitycenter-v1p1beta1</module>
+    <module>google-cloud-securitycenter-bom</module>
   </modules>
 
   <reporting>

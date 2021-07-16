@@ -22,6 +22,7 @@ import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.NotificationConfig.StreamingConfig;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import java.io.IOException;
+
 // [END securitycenter_create_notification_config]
 
 /** Create NotificationConfig Snippet. */

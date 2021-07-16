@@ -22,6 +22,7 @@ import com.google.cloud.securitycenter.v1.NotificationConfig.StreamingConfig;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
+
 // [END securitycenter_update_notification_config]
 
 /** Snippets for UpdateNotificationConfig. */
@@ -53,9 +54,10 @@ final class UpdateNotificationConfigSnippets {
             .build();
     FieldMask fieldMask =
         FieldMask.newBuilder()
-          .addPaths("description")
-          .addPaths("pubsub_topic")
-          .addPaths("streaming_config.filter").build();
+            .addPaths("description")
+            .addPaths("pubsub_topic")
+            .addPaths("streaming_config.filter")
+            .build();
 
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       NotificationConfig updatedConfig = client.updateNotificationConfig(configToUpdate, fieldMask);
