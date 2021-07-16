@@ -2,5 +2,5 @@
 # module:released-version:current-version
 
 google-cloud-policy-troubleshooter:0.2.1:0.2.2-SNAPSHOT
-proto-google-cloud-policy-troubleshooter-v1:0.2.1:0.2.2-SNAPSHOT
 grpc-google-cloud-policy-troubleshooter-v1:0.2.1:0.2.2-SNAPSHOT
+proto-google-cloud-policy-troubleshooter-v1:0.2.1:0.2.2-SNAPSHOT
