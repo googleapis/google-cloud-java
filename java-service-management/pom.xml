@@ -103,8 +103,8 @@
 
   <modules>
     <module>google-cloud-service-management</module>
-    <module>proto-google-cloud-service-management-v1</module>
     <module>grpc-google-cloud-service-management-v1</module>
+    <module>proto-google-cloud-service-management-v1</module>
     <module>google-cloud-service-management-bom</module>
   </modules>
 

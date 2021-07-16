@@ -2,5 +2,5 @@
 # module:released-version:current-version
 
 google-cloud-service-management:1.1.2:1.1.3-SNAPSHOT
-proto-google-cloud-service-management-v1:1.1.2:1.1.3-SNAPSHOT
 grpc-google-cloud-service-management-v1:1.1.2:1.1.3-SNAPSHOT
+proto-google-cloud-service-management-v1:1.1.2:1.1.3-SNAPSHOT
