@@ -103,8 +103,8 @@
 
   <modules>
     <module>google-cloud-networkconnectivity</module>
-    <module>proto-google-cloud-networkconnectivity-v1alpha1</module>
     <module>grpc-google-cloud-networkconnectivity-v1alpha1</module>
+    <module>proto-google-cloud-networkconnectivity-v1alpha1</module>
     <module>google-cloud-networkconnectivity-bom</module>
   </modules>
 
