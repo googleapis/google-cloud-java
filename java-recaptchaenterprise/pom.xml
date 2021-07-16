@@ -119,12 +119,12 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-recaptchaenterprise-v1</module>
-    <module>proto-google-cloud-recaptchaenterprise-v1beta1</module>
+    <module>google-cloud-recaptchaenterprise</module>
     <module>grpc-google-cloud-recaptchaenterprise-v1</module>
     <module>grpc-google-cloud-recaptchaenterprise-v1beta1</module>
-    <module>google-cloud-recaptchaenterprise</module>
-  <module>google-cloud-recaptchaenterprise-bom</module>
+    <module>proto-google-cloud-recaptchaenterprise-v1</module>
+    <module>proto-google-cloud-recaptchaenterprise-v1beta1</module>
+    <module>google-cloud-recaptchaenterprise-bom</module>
   </modules>
 
   <reporting>
