@@ -109,9 +109,9 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-monitoring-dashboard-v1</module>
-    <module>grpc-google-cloud-monitoring-dashboard-v1</module>
     <module>google-cloud-monitoring-dashboard</module>
+    <module>grpc-google-cloud-monitoring-dashboard-v1</module>
+    <module>proto-google-cloud-monitoring-dashboard-v1</module>
     <module>google-cloud-monitoring-dashboard-bom</module>
   </modules>
 
