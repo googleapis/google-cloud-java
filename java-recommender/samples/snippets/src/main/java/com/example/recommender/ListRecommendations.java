@@ -78,9 +78,11 @@ public class ListRecommendations {
         // Indicate the request was successful
         System.out.println("List recommendations successful");
       } catch (PermissionDeniedException e) {
-        System.out.println("Permission denied for project '" + projectId
-            + "'. Ensure you have the appropriate permissions to list recommendations: \n" + e
-            .toString());
+        System.out.println(
+            "Permission denied for project '"
+                + projectId
+                + "'. Ensure you have the appropriate permissions to list recommendations: \n"
+                + e.toString());
       } catch (InvalidArgumentException e) {
         System.out.println(
             ("Invalid argument for projectId. Ensure you have 'GOOGLE_CLOUD_PROJECT' set: \n"

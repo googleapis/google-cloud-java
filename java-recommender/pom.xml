@@ -63,6 +63,11 @@
         <version>1.6.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-recommender-v1:current} -->
       </dependency>
       <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-recommender</artifactId>
+        <version>1.6.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-recommender:current} -->
+      </dependency>
+      <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-recommender-v1beta1</artifactId>
         <version>0.11.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-recommender-v1beta1:current} -->
@@ -113,11 +118,11 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-recommender-v1</module>
-    <module>proto-google-cloud-recommender-v1beta1</module>
+    <module>google-cloud-recommender</module>
     <module>grpc-google-cloud-recommender-v1</module>
     <module>grpc-google-cloud-recommender-v1beta1</module>
-    <module>google-cloud-recommender</module>
+    <module>proto-google-cloud-recommender-v1</module>
+    <module>proto-google-cloud-recommender-v1beta1</module>
     <module>google-cloud-recommender-bom</module>
   </modules>
 
