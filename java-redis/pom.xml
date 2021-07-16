@@ -119,12 +119,12 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-redis-v1</module>
-    <module>proto-google-cloud-redis-v1beta1</module>
+    <module>google-cloud-redis</module>
     <module>grpc-google-cloud-redis-v1beta1</module>
     <module>grpc-google-cloud-redis-v1</module>
-    <module>google-cloud-redis</module>
-  <module>google-cloud-redis-bom</module>
+    <module>proto-google-cloud-redis-v1</module>
+    <module>proto-google-cloud-redis-v1beta1</module>
+    <module>google-cloud-redis-bom</module>
   </modules>
 
   <reporting>
