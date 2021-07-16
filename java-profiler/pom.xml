@@ -103,8 +103,8 @@
 
   <modules>
     <module>google-cloud-profiler</module>
-    <module>proto-google-cloud-profiler-v2</module>
     <module>grpc-google-cloud-profiler-v2</module>
+    <module>proto-google-cloud-profiler-v2</module>
     <module>google-cloud-profiler-bom</module>
   </modules>
 
