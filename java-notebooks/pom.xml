@@ -110,8 +110,8 @@
 
   <modules>
     <module>google-cloud-notebooks</module>
-    <module>proto-google-cloud-notebooks-v1beta1</module>
     <module>grpc-google-cloud-notebooks-v1beta1</module>
+    <module>proto-google-cloud-notebooks-v1beta1</module>
     <module>google-cloud-notebooks-bom</module>
   </modules>
 
