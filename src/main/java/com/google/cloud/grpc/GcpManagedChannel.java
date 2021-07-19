@@ -52,6 +52,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
@@ -964,6 +965,8 @@ public class GcpManagedChannel extends ManagedChannel {
         case IDLE:
           idle++;
           break;
+        default:
+          logger.log(Level.WARNING, "Unknown ConnectivityState: {0}", cur);
       }
     }
 
