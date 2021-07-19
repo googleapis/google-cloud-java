@@ -803,7 +803,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
   @Override
   public void close() {
     for (BackgroundResource backgroundResource : clientContext.getBackgroundResources()) {
-      backgroundResource.shutdown();
+      try {
+        backgroundResource.close();
+      } catch (Exception e) {
+        throw new IllegalStateException("Failed to close resource", e);
+      }
     }
   }
 }
