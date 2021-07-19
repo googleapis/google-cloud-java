@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.27.3](https://www.github.com/googleapis/java-bigtable/compare/v1.27.2...v1.27.3) (2021-07-19)
+
+
+### Bug Fixes
+
+* client.close() should wait until the channels are terminated before shutting down the executor ([#916](https://www.github.com/googleapis/java-bigtable/issues/916)) ([914f0cc](https://www.github.com/googleapis/java-bigtable/commit/914f0cc4a928974e14b2ab49b848f757862ad140))
+
 ### [1.27.2](https://www.github.com/googleapis/java-bigtable/compare/v1.27.1...v1.27.2) (2021-07-01)
 
 
