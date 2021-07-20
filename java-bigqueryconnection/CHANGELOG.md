@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-bigqueryconnection/compare/v1.1.5...v1.2.0) (2021-07-15)
+
+
+### Features
+
+* add cloud spanner connection support ([#467](https://www.github.com/googleapis/java-bigqueryconnection/issues/467)) ([d672411](https://www.github.com/googleapis/java-bigqueryconnection/commit/d6724112199b9d02bc3fcc20f9c750e1268d3898))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-bigqueryconnection/issues/1154)) ([#469](https://www.github.com/googleapis/java-bigqueryconnection/issues/469)) ([2f71119](https://www.github.com/googleapis/java-bigqueryconnection/commit/2f71119442912103a174b222760d10bb0a4eaa43)), closes [#1146](https://www.github.com/googleapis/java-bigqueryconnection/issues/1146) [#1147](https://www.github.com/googleapis/java-bigqueryconnection/issues/1147)
+
 ### [1.1.5](https://www.github.com/googleapis/java-bigqueryconnection/compare/v1.1.4...v1.1.5) (2021-07-07)
 
 
