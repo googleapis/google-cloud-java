@@ -1,5 +1,33 @@
 # Changelog
 
+## [0.8.0](https://www.github.com/googleapis/java-analytics-data/compare/v0.7.1...v0.8.0) (2021-07-15)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#213](https://www.github.com/googleapis/java-analytics-data/issues/213)) ([4791520](https://www.github.com/googleapis/java-analytics-data/commit/479152031b0f2963191c387a8500d83fddaf6624))
+* add `kind` field which is used to distinguish between response types feat: add `potentially_thresholded_requests_per_hour` field to `PropertyQuota` ([#182](https://www.github.com/googleapis/java-analytics-data/issues/182)) ([8b30dcd](https://www.github.com/googleapis/java-analytics-data/commit/8b30dcd3132fd5a43955dda3f4c4aaddac2d0035))
+* add `potentially_thresholded_requests_per_hour` field to `PropertyQuota` ([c1d3e02](https://www.github.com/googleapis/java-analytics-data/commit/c1d3e02456af734220c88fce4b67e8702583cf1a))
+* add kind field which is used to distinguish between responsetypes ([c1d3e02](https://www.github.com/googleapis/java-analytics-data/commit/c1d3e02456af734220c88fce4b67e8702583cf1a))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-analytics-data/issues/1130)) ([#228](https://www.github.com/googleapis/java-analytics-data/issues/228)) ([f4ea7d3](https://www.github.com/googleapis/java-analytics-data/commit/f4ea7d32ba63a60401940968d00e15ac31f7409c))
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-analytics-data/issues/1154)) ([#234](https://www.github.com/googleapis/java-analytics-data/issues/234)) ([89cd9b5](https://www.github.com/googleapis/java-analytics-data/commit/89cd9b51a892cadee81932c3562264c5c6f2a0f8)), closes [#1146](https://www.github.com/googleapis/java-analytics-data/issues/1146) [#1147](https://www.github.com/googleapis/java-analytics-data/issues/1147)
+* release scripts from issuing overlapping phases ([#196](https://www.github.com/googleapis/java-analytics-data/issues/196)) ([a17287f](https://www.github.com/googleapis/java-analytics-data/commit/a17287fe5ce6b76f4a55d340c77fba11c9c459b8))
+* typo ([#194](https://www.github.com/googleapis/java-analytics-data/issues/194)) ([e62c6ef](https://www.github.com/googleapis/java-analytics-data/commit/e62c6ef3069442fd32727609215521478a07e8ca))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#197](https://www.github.com/googleapis/java-analytics-data/issues/197)) ([4aba8fa](https://www.github.com/googleapis/java-analytics-data/commit/4aba8fa114b46ca1eefd64f63a5ffe9f1d726dd2))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#201](https://www.github.com/googleapis/java-analytics-data/issues/201)) ([46af6c8](https://www.github.com/googleapis/java-analytics-data/commit/46af6c80d0c838dcec27087e585c83f7eca50eda))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#209](https://www.github.com/googleapis/java-analytics-data/issues/209)) ([f15138c](https://www.github.com/googleapis/java-analytics-data/commit/f15138c30e675f56a47480e76ead95193286669e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#212](https://www.github.com/googleapis/java-analytics-data/issues/212)) ([f34f92b](https://www.github.com/googleapis/java-analytics-data/commit/f34f92b0869cbd87b7f8909d1a5335e4adbb4851))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#221](https://www.github.com/googleapis/java-analytics-data/issues/221)) ([1edc82e](https://www.github.com/googleapis/java-analytics-data/commit/1edc82e2a151692805472f87c550df7f0321b190))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#229](https://www.github.com/googleapis/java-analytics-data/issues/229)) ([f3e97ab](https://www.github.com/googleapis/java-analytics-data/commit/f3e97ab77a5b09879ade1b49fdac067ede5d6a88))
+
 ### [0.7.1](https://www.github.com/googleapis/java-analytics-data/compare/v0.7.0...v0.7.1) (2021-04-09)
 
 
