@@ -16,49 +16,4 @@
     <className>com/google/analytics/data/v1beta/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/analytics/data/v1beta/*Request*</className>
-    <method>* get*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/analytics/data/v1beta/*Request*</className>
-    <method>* set*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/analytics/data/v1beta/*Request*</className>
-    <method>* clear*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/analytics/data/v1beta/*Response*</className>
-    <method>* get*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/analytics/data/v1beta/*Response*</className>
-    <method>* set*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/analytics/data/v1beta/*Response*</className>
-    <method>* clear*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/analytics/data/v1beta/*Request*</className>
-    <field>*_FIELD_NUMBER</field>
-  </difference>
-  <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/analytics/data/v1beta/*Response*</className>
-    <field>*_FIELD_NUMBER</field>
-  </difference>
-  <difference>
-    <differenceType>6003</differenceType>
-    <className>com/google/analytics/data/v1beta/*Response*</className>
-    <field>*_FIELD_NUMBER</field>
-  </difference>
 </differences>
