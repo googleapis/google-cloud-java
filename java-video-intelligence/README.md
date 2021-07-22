@@ -47,7 +47,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>1.117.1</version>
+  <version>1.118.0</version>
 </dependency>
 
 ```
@@ -101,8 +101,7 @@ use this Cloud Video Intelligence Client Library.
 
 ## Samples
 
-Samples are in the [`samples/`](https://github.com/googleapis/java-video-intelligence/tree/master/samples) directory. The samples' `README.md`
-has instructions for running the samples.
+Samples are in the [`samples/`](https://github.com/googleapis/java-video-intelligence/tree/master/samples) directory.
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
