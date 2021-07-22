@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-automl.git",
-        "sha": "49e2aa22be3b693ca0b54348fb15a92c8d9d5411"
+        "sha": "0a6049f112443254c995ddd1ee0dd75c52a89b3b"
       }
     },
     {
