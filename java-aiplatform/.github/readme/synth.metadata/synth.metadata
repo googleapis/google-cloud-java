@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-aiplatform.git",
-        "sha": "a0049a149b09eb31910185942dbae0a30b01e47b"
+        "sha": "52b0cf447861e7453539e942a852646f2163f92e"
       }
     },
     {
