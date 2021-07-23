@@ -36,9 +36,9 @@ public class QuickStart {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String location = "your-project-location"; // Format is "us" or "eu".
-    String processerId = "your-processor-id";
+    String processorId = "your-processor-id";
     String filePath = "path/to/input/file.pdf";
-    quickStart(projectId, location, processerId, filePath);
+    quickStart(projectId, location, processorId, filePath);
   }
 
   public static void quickStart(
