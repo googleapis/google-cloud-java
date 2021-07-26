@@ -28,7 +28,6 @@ job=$(basename ${KOKORO_JOB_NAME})
 echo "coercing sponge logs..."
 for xml in `find . -name *-sponge_log.xml`
 do
-  echo "processing ${xml}"
   class=$(basename ${xml} | cut -d- -f2)
   dir=$(dirname ${xml})/${job}/${class}
   text=$(dirname ${xml})/${class}-sponge_log.txt
