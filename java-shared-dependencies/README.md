@@ -7,7 +7,7 @@ Shared Maven dependencies for Google Cloud Java client libraries.
 ## Quickstart
 
 [//]: # ({x-version-update-start:google-cloud-shared-dependencies:released})
-If you are using Maven, use this artifact as your project's parent.
+If you are using Maven, add this to the `dependencyManagement` section.
 ```xml
 <dependencyManagement>
   <dependencies>
