@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.6.3](https://www.github.com/googleapis/java-cloudbuild/compare/v2.6.2...v2.6.3) (2021-07-15)
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-cloudbuild/issues/1154)) ([#531](https://www.github.com/googleapis/java-cloudbuild/issues/531)) ([9e6f397](https://www.github.com/googleapis/java-cloudbuild/commit/9e6f39711032048aacd58edeae9590563260ce4c)), closes [#1146](https://www.github.com/googleapis/java-cloudbuild/issues/1146) [#1147](https://www.github.com/googleapis/java-cloudbuild/issues/1147)
+
 ### [2.6.2](https://www.github.com/googleapis/java-cloudbuild/compare/v2.6.1...v2.6.2) (2021-07-01)
 
 
