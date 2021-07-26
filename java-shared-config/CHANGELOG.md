@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.12.0](https://www.github.com/googleapis/java-shared-config/compare/v0.11.4...v0.12.0) (2021-07-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#264](https://www.github.com/googleapis/java-shared-config/issues/264)) ([d274af8](https://www.github.com/googleapis/java-shared-config/commit/d274af836ac9b3e98be84e551b7e9e552397ecc1))
+
+
+### Bug Fixes
+
+* Add shopt -s nullglob to dependencies script ([865ca3c](https://www.github.com/googleapis/java-shared-config/commit/865ca3cbf106a7aaae1a989320a1ad5a47b6ffaf))
+* Update dependencies.sh to not break on mac  ([#276](https://www.github.com/googleapis/java-shared-config/issues/276)) ([865ca3c](https://www.github.com/googleapis/java-shared-config/commit/865ca3cbf106a7aaae1a989320a1ad5a47b6ffaf))
+
+
+### Dependencies
+
+* update auto-value-annotation.version to v1.8.2 ([#275](https://www.github.com/googleapis/java-shared-config/issues/275)) ([4d15246](https://www.github.com/googleapis/java-shared-config/commit/4d152461a5592940a8be762c7a8698a02dbe26cf))
+* update dependency com.puppycrawl.tools:checkstyle to v8.43 ([#266](https://www.github.com/googleapis/java-shared-config/issues/266)) ([fae7961](https://www.github.com/googleapis/java-shared-config/commit/fae7961412b33e34e8fcfec78d1451894d4e61d9))
+* update dependency com.puppycrawl.tools:checkstyle to v8.44 ([#274](https://www.github.com/googleapis/java-shared-config/issues/274)) ([d53d0e0](https://www.github.com/googleapis/java-shared-config/commit/d53d0e0935e908d16f4e7cf763577cf3fd8128d3))
+
 ### [0.11.4](https://www.github.com/googleapis/java-shared-config/compare/v0.11.2...v0.11.4) (2021-05-19)
 
 
