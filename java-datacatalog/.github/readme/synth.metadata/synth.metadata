@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-datacatalog.git",
-        "sha": "eff2228a09fc16d5b682740727f425d4290e1058"
+        "sha": "f4787379863f7c7016cd5b532012691db8f7b7ee"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "4124d245133c0f740ac5e6fa2e7daeba327f1297"
+        "sha": "dd05f9d12f134871c9e45282349c9856fbebecdd"
       }
     }
   ]
