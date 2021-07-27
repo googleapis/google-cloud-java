@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-artifact-registry.git",
-        "sha": "db4e2ad8122dcd2e2229760228d280540adefeec"
+        "sha": "0567bd003a564ce75ac0655fe60197f7a589533d"
       }
     },
     {
