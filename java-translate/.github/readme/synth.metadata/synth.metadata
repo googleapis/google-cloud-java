@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-translate.git",
-        "sha": "4849ec6c1044eb8d9749ec816464870b6bdceff4"
+        "sha": "90ce8b84457eafa66d0f16017dbf189582f891eb"
       }
     },
     {
