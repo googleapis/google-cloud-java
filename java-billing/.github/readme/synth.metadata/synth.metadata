@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-billing.git",
-        "sha": "473f9cf9464c26556396e187f962a3115b407a85"
+        "sha": "142c23bc11ad7fe4fa031248e751a594f3154202"
       }
     },
     {
