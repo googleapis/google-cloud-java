@@ -1,24 +1,27 @@
 custom_content: |
   #### Creating an authorized service object
-  To make authenticated requests to Cloud Logging, you must create a service object with
-  credentials. You can then make API calls by calling methods on the Logging service object. The
-  simplest way to authenticate is to use
-  [Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials).
-  These credentials are automatically inferred from your environment, so you only need the following
-  code to create your service object:
-
+  
+  To make requests to Cloud Logging, you must create a service object with valid credentials.
+  You can then make API calls by calling methods on the Logging service object. 
+  You can obtain credentials by using [Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials).
+  Or you can use a [Service Account](https://cloud.google.com/iam/docs/service-accounts) which is a recommended way to obtain credentials.
+  The credentials can be automatically inferred from your [environment](https://cloud.google.com/docs/authentication/getting-started#setting_the_environment_variable).
+  Then you only need the following code to create your service object:
+  
   ```java
   import com.google.cloud.logging.Logging;
   import com.google.cloud.logging.LoggingOptions;
-
+  
   LoggingOptions options = LoggingOptions.getDefaultInstance();
   try(Logging logging = options.getService()) {
     // use logging here
   }
   ```
-
-  For other authentication options, see the
-  [Authentication](https://github.com/googleapis/google-cloud-java#authentication) page.
+  
+  For other options, see the [Authentication](https://github.com/googleapis/google-cloud-java#authentication) page.
+  The service object should be granted permissions to make API calls.
+  Each API call describes the permissions under Authorized Scopes section.
+  See [Logging API](https://cloud.google.com/logging/docs/reference/v2/rest) to find the required list of permissions or consult with [Access control guide](https://cloud.google.com/logging/docs/access-control) for predefined IAM roles that can be granted to the Logging service object.
 
   #### Creating a metric
   With Logging you can create logs-based metrics. Logs-based metrics allow to keep track of the number
@@ -28,6 +31,7 @@ custom_content: |
   import com.google.cloud.logging.Metric;
   import com.google.cloud.logging.MetricInfo;
   ```
+  
   Then, to create the metric, use the following code:
 
   ```java
@@ -38,8 +42,10 @@ custom_content: |
   ```
 
   #### Writing log entries
+  
   With Logging you can also write custom log entries. Add the following imports at the top of your
   file:
+  
   ```java
   import com.google.cloud.MonitoredResource;
   import com.google.cloud.logging.LogEntry;
@@ -48,7 +54,9 @@ custom_content: |
 
   import java.util.Collections;
   ```
+  
   Then, to write the log entries, use the following code:
+  
   ```java
   LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
       .setLogName("test-log")
@@ -60,13 +68,16 @@ custom_content: |
   ```
 
   #### Listing log entries
+  
   With Logging you can also list log entries that have been previously written. Add the following
   imports at the top of your file:
+  
   ```java
   import com.google.cloud.Page;
   import com.google.cloud.logging.LogEntry;
   import com.google.cloud.logging.Logging.EntryListOption;
   ```
+  
   Then, to list the log entries, use the following code:
 
   ``` java
@@ -79,22 +90,29 @@ custom_content: |
   ```
 
   #### Add a Cloud Logging handler to a logger
+  
   You can also register a `LoggingHandler` to a `java.util.logging.Logger` that publishes log entries
   to Cloud Logging. Given the following logger:
+  
   ```java
   private final static Logger LOGGER = Logger.getLogger(MyClass.class.getName());
   ```
+  
   You can register a `LoggingHandler` with the code:
+  
   ```java
   LoggingHandler.addHandler(LOGGER, new LoggingHandler());
   ```
+  
   After that, logs generated using `LOGGER` will be also directed to Cloud Logging.
 
   Notice that you can also register a `LoggingHandler` via the `logging.properties` configuration
   file. Adding, for instance, the following line:
+  
   ```
   com.google.cloud.examples.logging.snippets.AddLoggingHandler.handlers=com.google.cloud.logging.LoggingHandler
   ```
+  
   #### Complete source code
 
   In

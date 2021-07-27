@@ -11,6 +11,7 @@ Java idiomatic client for [Cloud Logging][product-docs].
 ## Quickstart
 
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
+
 ```xml
 <dependencyManagement>
   <dependencies>
@@ -45,17 +46,21 @@ If you are using Maven without BOM, add this to your dependencies:
 ```
 
 If you are using Gradle 5.x or later, add this to your dependencies
+
 ```Groovy
 implementation platform('com.google.cloud:libraries-bom:20.8.0')
 
 compile 'com.google.cloud:google-cloud-logging'
 ```
+
 If you are using Gradle without BOM, add this to your dependencies
+
 ```Groovy
 compile 'com.google.cloud:google-cloud-logging:2.3.2'
 ```
 
 If you are using SBT, add this to your dependencies
+
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "2.3.2"
 ```
@@ -63,6 +68,10 @@ libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "2.3.2"
 ## Authentication
 
 See the [Authentication][authentication] section in the base directory's README.
+
+## Authorization
+
+A GCP account credentials that are used in API calls should be granted [Authorization Scopes](https://developers.google.com/identity/protocols/oauth2/scopes) to call these APIs. You can also review existing [predefined IAM roles](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles) that can be granted to GCP account which is used for authentication.
 
 ## Getting Started
 
@@ -81,20 +90,19 @@ to add `google-cloud-logging` as a dependency in your code.
 
 ## About Cloud Logging
 
-
 [Cloud Logging][product-docs] allows you to store, search, analyze, monitor, and alert on log data and events from Google Cloud and Amazon Web Services. Using the BindPlane service, you can also collect this data from over 150 common application components, on-premises systems, and hybrid cloud systems. BindPlane is included with your Google Cloud project at no additional cost.
 
 See the [Cloud Logging client library docs][javadocs] to learn how to
 use this Cloud Logging Client Library.
 
-
 #### Creating an authorized service object
-To make authenticated requests to Cloud Logging, you must create a service object with
-credentials. You can then make API calls by calling methods on the Logging service object. The
-simplest way to authenticate is to use
-[Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials).
-These credentials are automatically inferred from your environment, so you only need the following
-code to create your service object:
+
+To make requests to Cloud Logging, you must create a service object with valid credentials.
+You can then make API calls by calling methods on the Logging service object. 
+You can obtain credentials by using [Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials).
+Or you can use a [Service Account](https://cloud.google.com/iam/docs/service-accounts) which is a recommended way to obtain credentials.
+The credentials can be automatically inferred from your [environment](https://cloud.google.com/docs/authentication/getting-started#setting_the_environment_variable).
+Then you only need the following code to create your service object:
 
 ```java
 import com.google.cloud.logging.Logging;
@@ -106,10 +114,13 @@ try(Logging logging = options.getService()) {
 }
 ```
 
-For other authentication options, see the
-[Authentication](https://github.com/googleapis/google-cloud-java#authentication) page.
+For other options, see the [Authentication](https://github.com/googleapis/google-cloud-java#authentication) page.
+The service object should be granted permissions to make API calls.
+Each API call describes the permissions under Authorized Scopes section.
+See [Logging API](https://cloud.google.com/logging/docs/reference/v2/rest) to find the required list of permissions or consult with [Access control guide](https://cloud.google.com/logging/docs/access-control) for predefined IAM roles that can be granted to the Logging service object.
 
 #### Creating a metric
+
 With Logging you can create logs-based metrics. Logs-based metrics allow to keep track of the number
 of log messages associated to specific events. Add the following imports at the top of your file:
 
@@ -117,6 +128,7 @@ of log messages associated to specific events. Add the following imports at the 
 import com.google.cloud.logging.Metric;
 import com.google.cloud.logging.MetricInfo;
 ```
+
 Then, to create the metric, use the following code:
 
 ```java
@@ -127,8 +139,10 @@ logging.create(metricInfo);
 ```
 
 #### Writing log entries
+
 With Logging you can also write custom log entries. Add the following imports at the top of your
 file:
+
 ```java
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.LogEntry;
@@ -137,7 +151,9 @@ import com.google.cloud.logging.Payload.StringPayload;
 
 import java.util.Collections;
 ```
+
 Then, to write the log entries, use the following code:
+
 ```java
 LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
     .setLogName("test-log")
@@ -149,13 +165,16 @@ logging.write(Collections.singleton(firstEntry));
 ```
 
 #### Listing log entries
+
 With Logging you can also list log entries that have been previously written. Add the following
 imports at the top of your file:
+
 ```java
 import com.google.cloud.Page;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging.EntryListOption;
 ```
+
 Then, to list the log entries, use the following code:
 
 ``` java
@@ -168,22 +187,29 @@ while (entryIterator.hasNext()) {
 ```
 
 #### Add a Cloud Logging handler to a logger
+
 You can also register a `LoggingHandler` to a `java.util.logging.Logger` that publishes log entries
 to Cloud Logging. Given the following logger:
+
 ```java
 private final static Logger LOGGER = Logger.getLogger(MyClass.class.getName());
 ```
+
 You can register a `LoggingHandler` with the code:
+
 ```java
 LoggingHandler.addHandler(LOGGER, new LoggingHandler());
 ```
+
 After that, logs generated using `LOGGER` will be also directed to Cloud Logging.
 
 Notice that you can also register a `LoggingHandler` via the `logging.properties` configuration
 file. Adding, for instance, the following line:
-```
+
+```java
 com.google.cloud.examples.logging.snippets.AddLoggingHandler.handlers=com.google.cloud.logging.LoggingHandler
 ```
+
 #### Complete source code
 
 In
@@ -193,8 +219,6 @@ and
 [AddLoggingHandler.java](https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/AddLoggingHandler.java)
 we put together all the code shown above into three programs. The programs assume that you are
 running on Compute Engine or from your own desktop.
-
-
 
 ## Samples
 
@@ -209,8 +233,6 @@ has instructions for running the samples.
 | Quickstart Sample | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/QuickstartSample.java) |
 | Quickstart | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/jul/Quickstart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/jul/Quickstart.java) |
 | Example Enhancer | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/jul/enhancers/ExampleEnhancer.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/jul/enhancers/ExampleEnhancer.java) |
-
-
 
 ## Troubleshooting
 
@@ -266,12 +288,9 @@ and on [google-cloud-java][g-c-j].
 
 ## Versioning
 
-
 This library follows [Semantic Versioning](http://semver.org/).
 
-
 ## Contributing
-
 
 Contributions to this library are always welcome and highly encouraged.
 
