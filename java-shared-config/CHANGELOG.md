@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.13.1](https://www.github.com/googleapis/java-shared-config/compare/v0.13.0...v0.13.1) (2021-07-27)
+
+
+### Bug Fixes
+
+* revert update dependency org.apache.maven.plugins:maven-dependency-plugin to v3.2.0 ([#280](https://www.github.com/googleapis/java-shared-config/issues/280)) ([bdbbb9c](https://www.github.com/googleapis/java-shared-config/commit/bdbbb9c13571d0ef06009ebf03bc25c6e6fcbc17))
+
 ## [0.12.0](https://www.github.com/googleapis/java-shared-config/compare/v0.11.4...v0.12.0) (2021-07-26)
 
 
