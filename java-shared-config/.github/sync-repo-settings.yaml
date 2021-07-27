@@ -37,6 +37,16 @@ branchProtectionRules:
     - "units (8)"
     - "units (11)"
     - "Kokoro - Test: Integration"
+    - "dependencies (8, java-bigquery)"
+    - "dependencies (8, java-bigqueryconnection)"
+    - "dependencies (8, java-spanner)"
+    - "dependencies (8, java-storage)"
+    - "dependencies (8, java-pubsub)"
+    - "dependencies (11, java-bigquery)"
+    - "dependencies (11, java-bigqueryconnection)"
+    - "dependencies (11, java-spanner)"
+    - "dependencies (11, java-storage)"
+    - "dependencies (11, java-pubsub)"
     - "cla/google"
 # List of explicit permissions to add (additive only)
 permissionRules:

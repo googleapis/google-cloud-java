@@ -1,0 +1,27 @@
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+name: downstream
+jobs:
+  dependencies:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [8, 11]
+        repo:
+        - java-bigquery
+        - java-bigqueryconnection
+        - java-spanner
+        - java-storage
+        - java-pubsub
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-java@v1
+      with:
+        java-version: ${{matrix.java}}
+    - run: java -version
+    - run: sudo apt-get install libxml2-utils
+    - run: .kokoro/client-library-check.sh ${{matrix.repo}}
