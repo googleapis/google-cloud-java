@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-assured-workloads.git",
-        "sha": "1662e8c6099a2f7d503e9faed116bff1b747aa53"
+        "sha": "be90cf27249f7fef33c3bb7199d8a71f86de88e1"
       }
     },
     {
