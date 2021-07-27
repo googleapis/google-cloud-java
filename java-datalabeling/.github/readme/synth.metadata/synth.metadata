@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-datalabeling.git",
-        "sha": "9b4c8d967d82988cc88b669daad89544aed1829e"
+        "sha": "9f7a1ad036a12926a92ac4ac0f63dc778676424b"
       }
     },
     {
