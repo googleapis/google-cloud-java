@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.121.4](https://www.github.com/googleapis/java-logging-logback/compare/v0.121.3...v0.121.4) (2021-07-27)
+
+
+### Dependencies
+
+* update dependency org.slf4j:slf4j-api to v1.7.32 ([#459](https://www.github.com/googleapis/java-logging-logback/issues/459)) ([74d607b](https://www.github.com/googleapis/java-logging-logback/commit/74d607b2c3d8bde0f3d74ba4102907ee0154f3d7))
+* update logback.version ([#458](https://www.github.com/googleapis/java-logging-logback/issues/458)) ([cae7ff5](https://www.github.com/googleapis/java-logging-logback/commit/cae7ff5afd996feaf6254ab41edbd9e22db10837))
+
 ### [0.121.3](https://www.github.com/googleapis/java-logging-logback/compare/v0.121.2...v0.121.3) (2021-07-07)
 
 
