@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-resourcemanager.git",
-        "sha": "5dbd8f335b6a01054c608aa539b3cedcc287d3e6"
+        "sha": "993c3b374046b565d39f5cdafba432154d38aa60"
       }
     },
     {
