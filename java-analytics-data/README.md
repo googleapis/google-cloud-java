@@ -20,18 +20,18 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.analytics</groupId>
   <artifactId>google-analytics-data</artifactId>
-  <version>0.7.1</version>
+  <version>0.8.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.analytics:google-analytics-data:0.7.1'
+compile 'com.google.analytics:google-analytics-data:0.8.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.analytics" % "google-analytics-data" % "0.7.1"
+libraryDependencies += "com.google.analytics" % "google-analytics-data" % "0.8.0"
 ```
 
 ## Authentication
