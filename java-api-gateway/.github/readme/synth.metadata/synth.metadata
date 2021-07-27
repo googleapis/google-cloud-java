@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-api-gateway.git",
-        "sha": "e7067a958164826ef8737fa66943ab21c32d3f89"
+        "sha": "9f04f8e2b14a4276465af4e2944175e11a13f02c"
       }
     },
     {
