@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-analytics-data.git",
-        "sha": "d6ec22a3545f5457fed5699ef984d5e0dbfd5187"
+        "sha": "afbc3928adb46480849f328e132ab229b3032d91"
       }
     },
     {
