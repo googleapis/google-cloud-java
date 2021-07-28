@@ -11,10 +11,12 @@ Java idiomatic client for [Analytics Data][product-docs].
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
 
+
 ## Quickstart
 
 
 If you are using Maven, add this to your pom.xml file:
+
 
 ```xml
 <dependency>
@@ -25,11 +27,13 @@ If you are using Maven, add this to your pom.xml file:
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
+
 ```Groovy
 compile 'com.google.analytics:google-analytics-data:0.8.0'
 ```
 
 If you are using SBT, add this to your dependencies
+
 ```Scala
 libraryDependencies += "com.google.analytics" % "google-analytics-data" % "0.8.0"
 ```
@@ -37,6 +41,10 @@ libraryDependencies += "com.google.analytics" % "google-analytics-data" % "0.8.0
 ## Authentication
 
 See the [Authentication][authentication] section in the base directory's README.
+
+## Authorization
+
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Analytics Data APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Analytics Data API calls.
 
 ## Getting Started
 
@@ -67,8 +75,7 @@ use this Analytics Data Client Library.
 
 ## Samples
 
-Samples are in the [`samples/`](https://github.com/googleapis/java-analytics-data/tree/master/samples) directory. The samples' `README.md`
-has instructions for running the samples.
+Samples are in the [`samples/`](https://github.com/googleapis/java-analytics-data/tree/master/samples) directory.
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
@@ -138,6 +145,7 @@ This library follows [Semantic Versioning](http://semver.org/).
 It is currently in major version zero (``0.y.z``), which means that anything may change at any time
 and the public API should not be considered stable.
 
+
 ## Contributing
 
 
@@ -148,6 +156,7 @@ See [CONTRIBUTING][contributing] for more information how to get started.
 Please note that this project is released with a Contributor Code of Conduct. By participating in
 this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more
 information.
+
 
 ## License
 
@@ -181,6 +190,9 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.analytics/google-analytics-data.svg
 [maven-version-link]: https://search.maven.org/search?q=g:com.google.analytics%20AND%20a:google-analytics-data&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
+[auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
+[predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
+[iam-policy]: https://cloud.google.com/iam/docs/overview#cloud-iam-policy
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-sdk]: https://cloud.google.com/sdk/
