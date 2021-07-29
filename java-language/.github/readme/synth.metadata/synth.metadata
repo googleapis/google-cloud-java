@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-language.git",
-        "sha": "6d984aeac51c3d4c87555ea37f34cc18c7adf4c5"
+        "sha": "759f28c79efc6867ecbe081595e6d854f132380d"
       }
     },
     {
