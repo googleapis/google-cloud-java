@@ -1,8 +1,12 @@
 branches:
-- branch: 2.1.0-sp
-  bumpMinorPreMajor: true
-  handleGHRelease: true
-  releaseType: java-lts
+  - branch: 2.1.0-sp
+    bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-lts
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-yoshi
+    branch: java7
 bumpMinorPreMajor: true
 handleGHRelease: true
 releaseType: java-yoshi
