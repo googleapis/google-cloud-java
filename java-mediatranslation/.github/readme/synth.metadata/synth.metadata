@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-mediatranslation.git",
-        "sha": "e5d5d0cfa4db0d03cefb3a4d30745bb37f47305c"
+        "sha": "ce63eece028eaff091b14476500cea1f015c60c1"
       }
     },
     {
