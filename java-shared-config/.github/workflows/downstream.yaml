@@ -12,7 +12,6 @@ jobs:
       matrix:
         java: [8, 11]
         repo:
-        - java-bigquery
         - java-bigqueryconnection
         - java-spanner
         - java-storage
