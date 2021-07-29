@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-shared-config/compare/v0.13.1...v1.0.0) (2021-07-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* update shared-config to java 1.8 (#277)
+
+### Features
+
+* update shared-config to java 1.8 ([#277](https://www.github.com/googleapis/java-shared-config/issues/277)) ([9c297a2](https://www.github.com/googleapis/java-shared-config/commit/9c297a27bc236092aab3ae292c7bed206293bc51))
+
 ### [0.13.1](https://www.github.com/googleapis/java-shared-config/compare/v0.13.0...v0.13.1) (2021-07-27)
 
 
