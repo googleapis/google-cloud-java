@@ -1,5 +1,31 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-core/compare/v1.95.4...v2.0.0) (2021-07-29)
+
+
+### Features
+
+* promote to 2.0.0 ([#504](https://www.github.com/googleapis/java-core/issues/504)) ([48076ba](https://www.github.com/googleapis/java-core/commit/48076bafa2a89dc6b3ad88a698166da8ebb144f4))
+
+
+### Bug Fixes
+
+* Add shopt -s nullglob to dependencies script ([1fa147c](https://www.github.com/googleapis/java-core/commit/1fa147c9cded08f9eea4a717c622c0b33ad239d0))
+* Update dependencies.sh to not break on mac ([#484](https://www.github.com/googleapis/java-core/issues/484)) ([1fa147c](https://www.github.com/googleapis/java-core/commit/1fa147c9cded08f9eea4a717c622c0b33ad239d0))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.10.6 ([#494](https://www.github.com/googleapis/java-core/issues/494)) ([1353d7b](https://www.github.com/googleapis/java-core/commit/1353d7b42dc98110733d279404f9295067f632cf))
+* update dependency com.google.api:api-common to v2 ([#497](https://www.github.com/googleapis/java-core/issues/497)) ([05edb6e](https://www.github.com/googleapis/java-core/commit/05edb6ec2156978b49e72f16de35a935acd43ca8))
+* update dependency com.google.api:gax-bom to v1.66.0 ([#483](https://www.github.com/googleapis/java-core/issues/483)) ([0698c66](https://www.github.com/googleapis/java-core/commit/0698c6679877e0666c684ea5c5daaf8ebae7c15c))
+* update dependency com.google.api:gax-bom to v1.67.0 ([#491](https://www.github.com/googleapis/java-core/issues/491)) ([65f4a1e](https://www.github.com/googleapis/java-core/commit/65f4a1e4ace1ec70cd2a151233c626d80874beb4))
+* update dependency com.google.auth:google-auth-library-bom to v0.27.0 ([#489](https://www.github.com/googleapis/java-core/issues/489)) ([21b0afe](https://www.github.com/googleapis/java-core/commit/21b0afea717805dfd5c93929d2a72de86f048781))
+* update dependency com.google.auth:google-auth-library-bom to v1 ([#496](https://www.github.com/googleapis/java-core/issues/496)) ([9cddefc](https://www.github.com/googleapis/java-core/commit/9cddefc0fdb0eb400121db0faf18bf1bdfdfc7f5))
+* update dependency com.google.errorprone:error_prone_annotations to v2.8.0 ([#492](https://www.github.com/googleapis/java-core/issues/492)) ([acd03c0](https://www.github.com/googleapis/java-core/commit/acd03c00896a1e8f6ab948823e5a5ebd5b741115))
+* update dependency io.grpc:grpc-bom to v1.39.0 ([#482](https://www.github.com/googleapis/java-core/issues/482)) ([02e69d4](https://www.github.com/googleapis/java-core/commit/02e69d46d3b8a71b6286915e08e987a5fc9ce8a6))
+* update guava 30.1.1-jre ([#503](https://www.github.com/googleapis/java-core/issues/503)) ([cac0c63](https://www.github.com/googleapis/java-core/commit/cac0c6367d42afb8af2dec56b9eec4de2e95978e))
+
 ### [1.95.4](https://www.github.com/googleapis/java-core/compare/v1.95.3...v1.95.4) (2021-06-25)
 
 
