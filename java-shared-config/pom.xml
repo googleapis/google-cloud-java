@@ -171,8 +171,8 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.1</version>
           <configuration>
-            <source>1.7</source>
-            <target>1.7</target>
+            <source>1.8</source>
+            <target>1.8</target>
             <encoding>UTF-8</encoding>
             <compilerArgument>-Xlint:unchecked</compilerArgument>
             <compilerArgument>-Xlint:deprecation</compilerArgument>
@@ -407,6 +407,25 @@
             <goals>
               <goal>check</goal>
             </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>animal-sniffer-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>java8</id>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <signature>
+                <groupId>org.codehaus.mojo.signature</groupId>
+                <artifactId>java18</artifactId>
+                <version>1.0</version>
+              </signature>
+            </configuration>
           </execution>
         </executions>
       </plugin>
@@ -711,45 +730,6 @@
       </reporting>
     </profile>
     
-    <profile>
-      <id>autovalue-java7</id>
-      <activation>
-        <jdk>1.7</jdk>
-        <file>
-          <exists>${basedir}/EnableAutoValue.txt</exists>
-        </file>
-      </activation>
-      <properties>
-        <!--
-        We need to back pin to 1.4 because it is the last version of auto-value
-        that was compiled for java 1.7.
-        -->
-        <auto-value.version>1.4</auto-value.version>
-      </properties>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-              <annotationProcessorPaths>
-                <path>
-                  <groupId>com.google.auto.value</groupId>
-                  <artifactId>auto-value</artifactId>
-                  <version>${auto-value.version}</version>
-                </path>
-                <!--
-                There is currently no available version of auto-service-annotations
-                in maven central compiled for java 1.7, so we can't include it here.
-
-                If you're using IntelliJ please use a newer jdk and set the language
-                level to 1.7 for your dev work.
-                -->
-              </annotationProcessorPaths>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
     <profile>
       <id>autovalue-java8</id>
       <activation>
