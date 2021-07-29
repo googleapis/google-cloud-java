@@ -72,4 +72,24 @@
     <className>com/google/cloud/aiplatform/v1/schema/trainingjob/definition/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/aiplatform/v1/*AcceleratorType*</className>
+    <field>*6*</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/aiplatform/v1/*AcceleratorType*</className>
+    <field>*6*</field>
+  </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/aiplatform/v1/*AcceleratorType*</className>
+    <field>*7*</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/aiplatform/v1/*AcceleratorType*</className>
+    <field>*7*</field>
+  </difference>
 </differences>
