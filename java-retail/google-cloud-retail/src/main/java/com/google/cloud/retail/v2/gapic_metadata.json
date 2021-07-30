@@ -10,11 +10,32 @@
         "grpc": {
           "libraryClient": "CatalogServiceClient",
           "rpcs": {
+            "GetDefaultBranch": {
+              "methods": ["getDefaultBranch", "getDefaultBranch", "getDefaultBranch", "getDefaultBranchCallable"]
+            },
             "ListCatalogs": {
               "methods": ["listCatalogs", "listCatalogs", "listCatalogs", "listCatalogsPagedCallable", "listCatalogsCallable"]
             },
+            "SetDefaultBranch": {
+              "methods": ["setDefaultBranch", "setDefaultBranch", "setDefaultBranch", "setDefaultBranchCallable"]
+            },
             "UpdateCatalog": {
               "methods": ["updateCatalog", "updateCatalog", "updateCatalogCallable"]
+            }
+          }
+        }
+      }
+    },
+    "CompletionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CompletionServiceClient",
+          "rpcs": {
+            "CompleteQuery": {
+              "methods": ["completeQuery", "completeQueryCallable"]
+            },
+            "ImportCompletionData": {
+              "methods": ["importCompletionDataAsync", "importCompletionDataOperationCallable", "importCompletionDataCallable"]
             }
           }
         }
@@ -37,6 +58,9 @@
         "grpc": {
           "libraryClient": "ProductServiceClient",
           "rpcs": {
+            "AddFulfillmentPlaces": {
+              "methods": ["addFulfillmentPlacesAsync", "addFulfillmentPlacesAsync", "addFulfillmentPlacesAsync", "addFulfillmentPlacesOperationCallable", "addFulfillmentPlacesCallable"]
+            },
             "CreateProduct": {
               "methods": ["createProduct", "createProduct", "createProduct", "createProductCallable"]
             },
@@ -49,8 +73,29 @@
             "ImportProducts": {
               "methods": ["importProductsAsync", "importProductsOperationCallable", "importProductsCallable"]
             },
+            "ListProducts": {
+              "methods": ["listProducts", "listProducts", "listProducts", "listProductsPagedCallable", "listProductsCallable"]
+            },
+            "RemoveFulfillmentPlaces": {
+              "methods": ["removeFulfillmentPlacesAsync", "removeFulfillmentPlacesAsync", "removeFulfillmentPlacesAsync", "removeFulfillmentPlacesOperationCallable", "removeFulfillmentPlacesCallable"]
+            },
+            "SetInventory": {
+              "methods": ["setInventoryAsync", "setInventoryAsync", "setInventoryOperationCallable", "setInventoryCallable"]
+            },
             "UpdateProduct": {
               "methods": ["updateProduct", "updateProduct", "updateProductCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SearchService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SearchServiceClient",
+          "rpcs": {
+            "Search": {
+              "methods": ["search", "searchPagedCallable", "searchCallable"]
             }
           }
         }

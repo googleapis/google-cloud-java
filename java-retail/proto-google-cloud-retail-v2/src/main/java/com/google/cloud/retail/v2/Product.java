@@ -43,13 +43,24 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     id_ = "";
     type_ = 0;
     primaryProductId_ = "";
+    collectionMemberIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    gtin_ = "";
     categories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     title_ = "";
+    brands_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     description_ = "";
+    languageCode_ = "";
     tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     availability_ = 0;
+    fulfillmentInfo_ = java.util.Collections.emptyList();
     uri_ = "";
     images_ = java.util.Collections.emptyList();
+    sizes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    materials_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    patterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    conditions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    promotions_ = java.util.Collections.emptyList();
+    variants_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -110,12 +121,29 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
               primaryProductId_ = s;
               break;
             }
-          case 58:
+          case 42:
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                categories_ = new com.google.protobuf.LazyStringArrayList();
+                collectionMemberIds_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
+              }
+              collectionMemberIds_.add(s);
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              gtin_ = s;
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                categories_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
               }
               categories_.add(s);
               break;
@@ -127,6 +155,16 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
               title_ = s;
               break;
             }
+          case 74:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                brands_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              brands_.add(s);
+              break;
+            }
           case 82:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -134,13 +172,20 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
               description_ = s;
               break;
             }
+          case 90:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              languageCode_ = s;
+              break;
+            }
           case 98:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 attributes_ =
                     com.google.protobuf.MapField.newMapField(
                         AttributesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000008;
               }
               com.google.protobuf.MapEntry<
                       java.lang.String, com.google.cloud.retail.v2.CustomAttribute>
@@ -154,9 +199,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
           case 106:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000010;
               }
               tags_.add(s);
               break;
@@ -175,6 +220,51 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
                 priceInfo_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 122:
+            {
+              com.google.cloud.retail.v2.Rating.Builder subBuilder = null;
+              if (rating_ != null) {
+                subBuilder = rating_.toBuilder();
+              }
+              rating_ =
+                  input.readMessage(com.google.cloud.retail.v2.Rating.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(rating_);
+                rating_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 130:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (expirationCase_ == 16) {
+                subBuilder = ((com.google.protobuf.Timestamp) expiration_).toBuilder();
+              }
+              expiration_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.protobuf.Timestamp) expiration_);
+                expiration_ = subBuilder.buildPartial();
+              }
+              expirationCase_ = 16;
+              break;
+            }
+          case 138:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (expirationCase_ == 17) {
+                subBuilder = ((com.google.protobuf.Duration) expiration_).toBuilder();
+              }
+              expiration_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.protobuf.Duration) expiration_);
+                expiration_ = subBuilder.buildPartial();
+              }
+              expirationCase_ = 17;
               break;
             }
           case 146:
@@ -214,6 +304,18 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 170:
+            {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                fulfillmentInfo_ =
+                    new java.util.ArrayList<com.google.cloud.retail.v2.FulfillmentInfo>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              fulfillmentInfo_.add(
+                  input.readMessage(
+                      com.google.cloud.retail.v2.FulfillmentInfo.parser(), extensionRegistry));
+              break;
+            }
           case 178:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -223,12 +325,136 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
             }
           case 186:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 images_ = new java.util.ArrayList<com.google.cloud.retail.v2.Image>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000040;
               }
               images_.add(
                   input.readMessage(com.google.cloud.retail.v2.Image.parser(), extensionRegistry));
+              break;
+            }
+          case 194:
+            {
+              com.google.cloud.retail.v2.Audience.Builder subBuilder = null;
+              if (audience_ != null) {
+                subBuilder = audience_.toBuilder();
+              }
+              audience_ =
+                  input.readMessage(
+                      com.google.cloud.retail.v2.Audience.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(audience_);
+                audience_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 202:
+            {
+              com.google.cloud.retail.v2.ColorInfo.Builder subBuilder = null;
+              if (colorInfo_ != null) {
+                subBuilder = colorInfo_.toBuilder();
+              }
+              colorInfo_ =
+                  input.readMessage(
+                      com.google.cloud.retail.v2.ColorInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(colorInfo_);
+                colorInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 210:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                sizes_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              sizes_.add(s);
+              break;
+            }
+          case 218:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+                materials_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              materials_.add(s);
+              break;
+            }
+          case 226:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+                patterns_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000200;
+              }
+              patterns_.add(s);
+              break;
+            }
+          case 234:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+                conditions_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000400;
+              }
+              conditions_.add(s);
+              break;
+            }
+          case 242:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (retrievableFields_ != null) {
+                subBuilder = retrievableFields_.toBuilder();
+              }
+              retrievableFields_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(retrievableFields_);
+                retrievableFields_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 250:
+            {
+              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
+                variants_ = new java.util.ArrayList<com.google.cloud.retail.v2.Product>();
+                mutable_bitField0_ |= 0x00001000;
+              }
+              variants_.add(
+                  input.readMessage(
+                      com.google.cloud.retail.v2.Product.parser(), extensionRegistry));
+              break;
+            }
+          case 266:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (publishTime_ != null) {
+                subBuilder = publishTime_.toBuilder();
+              }
+              publishTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(publishTime_);
+                publishTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 274:
+            {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+                promotions_ = new java.util.ArrayList<com.google.cloud.retail.v2.Promotion>();
+                mutable_bitField0_ |= 0x00000800;
+              }
+              promotions_.add(
+                  input.readMessage(
+                      com.google.cloud.retail.v2.Promotion.parser(), extensionRegistry));
               break;
             }
           default:
@@ -246,13 +472,40 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        collectionMemberIds_ = collectionMemberIds_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         categories_ = categories_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        brands_ = brands_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         tags_ = tags_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+        fulfillmentInfo_ = java.util.Collections.unmodifiableList(fulfillmentInfo_);
+      }
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         images_ = java.util.Collections.unmodifiableList(images_);
+      }
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+        sizes_ = sizes_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+        materials_ = materials_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+        patterns_ = patterns_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+        conditions_ = conditions_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00001000) != 0)) {
+        variants_ = java.util.Collections.unmodifiableList(variants_);
+      }
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
+        promotions_ = java.util.Collections.unmodifiableList(promotions_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -300,7 +553,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Default value. Default to
-     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] if unset.
+     * [Catalog.product_level_config.ingestion_product_type][google.cloud.retail.v2.ProductLevelConfig.ingestion_product_type]
+     * if unset.
      * </pre>
      *
      * <code>TYPE_UNSPECIFIED = 0;</code>
@@ -360,7 +614,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Default value. Default to
-     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] if unset.
+     * [Catalog.product_level_config.ingestion_product_type][google.cloud.retail.v2.ProductLevelConfig.ingestion_product_type]
+     * if unset.
      * </pre>
      *
      * <code>TYPE_UNSPECIFIED = 0;</code>
@@ -704,6 +959,227 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.retail.v2.Product.Availability)
   }
 
+  private int expirationCase_ = 0;
+  private java.lang.Object expiration_;
+
+  public enum ExpirationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    EXPIRE_TIME(16),
+    TTL(17),
+    EXPIRATION_NOT_SET(0);
+    private final int value;
+
+    private ExpirationCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ExpirationCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ExpirationCase forNumber(int value) {
+      switch (value) {
+        case 16:
+          return EXPIRE_TIME;
+        case 17:
+          return TTL;
+        case 0:
+          return EXPIRATION_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ExpirationCase getExpirationCase() {
+    return ExpirationCase.forNumber(expirationCase_);
+  }
+
+  public static final int EXPIRE_TIME_FIELD_NUMBER = 16;
+  /**
+   *
+   *
+   * <pre>
+   * The timestamp when this product becomes unavailable for
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * If it is set, the [Product][google.cloud.retail.v2.Product] is not
+   * available for
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+   * [expire_time][google.cloud.retail.v2.Product.expire_time]. However, the
+   * product can still be retrieved by
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+   * and
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * Google Merchant Center property
+   * [expiration_date](https://support.google.com/merchants/answer/6324499).
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 16;</code>
+   *
+   * @return Whether the expireTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasExpireTime() {
+    return expirationCase_ == 16;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The timestamp when this product becomes unavailable for
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * If it is set, the [Product][google.cloud.retail.v2.Product] is not
+   * available for
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+   * [expire_time][google.cloud.retail.v2.Product.expire_time]. However, the
+   * product can still be retrieved by
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+   * and
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * Google Merchant Center property
+   * [expiration_date](https://support.google.com/merchants/answer/6324499).
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 16;</code>
+   *
+   * @return The expireTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getExpireTime() {
+    if (expirationCase_ == 16) {
+      return (com.google.protobuf.Timestamp) expiration_;
+    }
+    return com.google.protobuf.Timestamp.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The timestamp when this product becomes unavailable for
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * If it is set, the [Product][google.cloud.retail.v2.Product] is not
+   * available for
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+   * [expire_time][google.cloud.retail.v2.Product.expire_time]. However, the
+   * product can still be retrieved by
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+   * and
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * Google Merchant Center property
+   * [expiration_date](https://support.google.com/merchants/answer/6324499).
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 16;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
+    if (expirationCase_ == 16) {
+      return (com.google.protobuf.Timestamp) expiration_;
+    }
+    return com.google.protobuf.Timestamp.getDefaultInstance();
+  }
+
+  public static final int TTL_FIELD_NUMBER = 17;
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The TTL (time to live) of the product.
+   * If it is set, [expire_time][google.cloud.retail.v2.Product.expire_time]
+   * is set as current timestamp plus
+   * [ttl][google.cloud.retail.v2.Product.ttl]. The derived
+   * [expire_time][google.cloud.retail.v2.Product.expire_time] is returned in
+   * the output and [ttl][google.cloud.retail.v2.Product.ttl] is left blank
+   * when retrieving the [Product][google.cloud.retail.v2.Product].
+   * If it is set, the product is not available for
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+   * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl].
+   * However, the product can still be retrieved by
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+   * and
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration ttl = 17 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return Whether the ttl field is set.
+   */
+  @java.lang.Override
+  public boolean hasTtl() {
+    return expirationCase_ == 17;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The TTL (time to live) of the product.
+   * If it is set, [expire_time][google.cloud.retail.v2.Product.expire_time]
+   * is set as current timestamp plus
+   * [ttl][google.cloud.retail.v2.Product.ttl]. The derived
+   * [expire_time][google.cloud.retail.v2.Product.expire_time] is returned in
+   * the output and [ttl][google.cloud.retail.v2.Product.ttl] is left blank
+   * when retrieving the [Product][google.cloud.retail.v2.Product].
+   * If it is set, the product is not available for
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+   * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl].
+   * However, the product can still be retrieved by
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+   * and
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration ttl = 17 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The ttl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getTtl() {
+    if (expirationCase_ == 17) {
+      return (com.google.protobuf.Duration) expiration_;
+    }
+    return com.google.protobuf.Duration.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The TTL (time to live) of the product.
+   * If it is set, [expire_time][google.cloud.retail.v2.Product.expire_time]
+   * is set as current timestamp plus
+   * [ttl][google.cloud.retail.v2.Product.ttl]. The derived
+   * [expire_time][google.cloud.retail.v2.Product.expire_time] is returned in
+   * the output and [ttl][google.cloud.retail.v2.Product.ttl] is left blank
+   * when retrieving the [Product][google.cloud.retail.v2.Product].
+   * If it is set, the product is not available for
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+   * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl].
+   * However, the product can still be retrieved by
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+   * and
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration ttl = 17 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getTtlOrBuilder() {
+    if (expirationCase_ == 17) {
+      return (com.google.protobuf.Duration) expiration_;
+    }
+    return com.google.protobuf.Duration.getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -830,7 +1306,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The type of the product. This field is output-only.
+   * Immutable. The type of the product. Default to
+   * [Catalog.product_level_config.ingestion_product_type][google.cloud.retail.v2.ProductLevelConfig.ingestion_product_type]
+   * if unset.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.Product.Type type = 3 [(.google.api.field_behavior) = IMMUTABLE];
@@ -846,7 +1324,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The type of the product. This field is output-only.
+   * Immutable. The type of the product. Default to
+   * [Catalog.product_level_config.ingestion_product_type][google.cloud.retail.v2.ProductLevelConfig.ingestion_product_type]
+   * if unset.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.Product.Type type = 3 [(.google.api.field_behavior) = IMMUTABLE];
@@ -937,6 +1417,154 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       primaryProductId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int COLLECTION_MEMBER_IDS_FIELD_NUMBER = 5;
+  private com.google.protobuf.LazyStringList collectionMemberIds_;
+  /**
+   *
+   *
+   * <pre>
+   * The [id][google.cloud.retail.v2.Product.id] of the collection members when
+   * [type][google.cloud.retail.v2.Product.type] is
+   * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION].
+   * Should not set it for other types. A maximum of 1000 values are allowed.
+   * Otherwise, an INVALID_ARGUMENT error is return.
+   * </pre>
+   *
+   * <code>repeated string collection_member_ids = 5;</code>
+   *
+   * @return A list containing the collectionMemberIds.
+   */
+  public com.google.protobuf.ProtocolStringList getCollectionMemberIdsList() {
+    return collectionMemberIds_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The [id][google.cloud.retail.v2.Product.id] of the collection members when
+   * [type][google.cloud.retail.v2.Product.type] is
+   * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION].
+   * Should not set it for other types. A maximum of 1000 values are allowed.
+   * Otherwise, an INVALID_ARGUMENT error is return.
+   * </pre>
+   *
+   * <code>repeated string collection_member_ids = 5;</code>
+   *
+   * @return The count of collectionMemberIds.
+   */
+  public int getCollectionMemberIdsCount() {
+    return collectionMemberIds_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The [id][google.cloud.retail.v2.Product.id] of the collection members when
+   * [type][google.cloud.retail.v2.Product.type] is
+   * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION].
+   * Should not set it for other types. A maximum of 1000 values are allowed.
+   * Otherwise, an INVALID_ARGUMENT error is return.
+   * </pre>
+   *
+   * <code>repeated string collection_member_ids = 5;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The collectionMemberIds at the given index.
+   */
+  public java.lang.String getCollectionMemberIds(int index) {
+    return collectionMemberIds_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The [id][google.cloud.retail.v2.Product.id] of the collection members when
+   * [type][google.cloud.retail.v2.Product.type] is
+   * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION].
+   * Should not set it for other types. A maximum of 1000 values are allowed.
+   * Otherwise, an INVALID_ARGUMENT error is return.
+   * </pre>
+   *
+   * <code>repeated string collection_member_ids = 5;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the collectionMemberIds at the given index.
+   */
+  public com.google.protobuf.ByteString getCollectionMemberIdsBytes(int index) {
+    return collectionMemberIds_.getByteString(index);
+  }
+
+  public static final int GTIN_FIELD_NUMBER = 6;
+  private volatile java.lang.Object gtin_;
+  /**
+   *
+   *
+   * <pre>
+   * The Global Trade Item Number (GTIN) of the product.
+   * This field must be a UTF-8 encoded string with a length limit of 128
+   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [gtin](https://support.google.com/merchants/answer/6324461).
+   * Schema.org property
+   * [Product.isbn](https://schema.org/isbn) or
+   * [Product.gtin8](https://schema.org/gtin8) or
+   * [Product.gtin12](https://schema.org/gtin12) or
+   * [Product.gtin13](https://schema.org/gtin13) or
+   * [Product.gtin14](https://schema.org/gtin14).
+   * If the value is not a valid GTIN, an INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>string gtin = 6;</code>
+   *
+   * @return The gtin.
+   */
+  @java.lang.Override
+  public java.lang.String getGtin() {
+    java.lang.Object ref = gtin_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      gtin_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Global Trade Item Number (GTIN) of the product.
+   * This field must be a UTF-8 encoded string with a length limit of 128
+   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [gtin](https://support.google.com/merchants/answer/6324461).
+   * Schema.org property
+   * [Product.isbn](https://schema.org/isbn) or
+   * [Product.gtin8](https://schema.org/gtin8) or
+   * [Product.gtin12](https://schema.org/gtin12) or
+   * [Product.gtin13](https://schema.org/gtin13) or
+   * [Product.gtin14](https://schema.org/gtin14).
+   * If the value is not a valid GTIN, an INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>string gtin = 6;</code>
+   *
+   * @return The bytes for gtin.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getGtinBytes() {
+    java.lang.Object ref = gtin_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      gtin_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1111,7 +1739,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Product title.
-   * This field must be a UTF-8 encoded string with a length limit of 128
+   * This field must be a UTF-8 encoded string with a length limit of 1,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * Google Merchant Center property
    * [title](https://support.google.com/merchants/answer/6324415). Schema.org
@@ -1139,7 +1767,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Product title.
-   * This field must be a UTF-8 encoded string with a length limit of 128
+   * This field must be a UTF-8 encoded string with a length limit of 1,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * Google Merchant Center property
    * [title](https://support.google.com/merchants/answer/6324415). Schema.org
@@ -1161,6 +1789,91 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int BRANDS_FIELD_NUMBER = 9;
+  private com.google.protobuf.LazyStringList brands_;
+  /**
+   *
+   *
+   * <pre>
+   * The brands of the product.
+   * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
+   * string with a length limit of 1,000 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
+   * property [Product.brand](https://schema.org/brand).
+   * </pre>
+   *
+   * <code>repeated string brands = 9;</code>
+   *
+   * @return A list containing the brands.
+   */
+  public com.google.protobuf.ProtocolStringList getBrandsList() {
+    return brands_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The brands of the product.
+   * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
+   * string with a length limit of 1,000 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
+   * property [Product.brand](https://schema.org/brand).
+   * </pre>
+   *
+   * <code>repeated string brands = 9;</code>
+   *
+   * @return The count of brands.
+   */
+  public int getBrandsCount() {
+    return brands_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The brands of the product.
+   * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
+   * string with a length limit of 1,000 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
+   * property [Product.brand](https://schema.org/brand).
+   * </pre>
+   *
+   * <code>repeated string brands = 9;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The brands at the given index.
+   */
+  public java.lang.String getBrands(int index) {
+    return brands_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The brands of the product.
+   * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
+   * string with a length limit of 1,000 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
+   * property [Product.brand](https://schema.org/brand).
+   * </pre>
+   *
+   * <code>repeated string brands = 9;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the brands at the given index.
+   */
+  public com.google.protobuf.ByteString getBrandsBytes(int index) {
+    return brands_.getByteString(index);
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 10;
@@ -1222,6 +1935,69 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int LANGUAGE_CODE_FIELD_NUMBER = 11;
+  private volatile java.lang.Object languageCode_;
+  /**
+   *
+   *
+   * <pre>
+   * Language of the title/description and other string attributes. Use language
+   * tags defined by [BCP 47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+   * For product prediction, this field is ignored and the model automatically
+   * detects the text language. The [Product][google.cloud.retail.v2.Product]
+   * can include text in different languages, but duplicating
+   * [Product][google.cloud.retail.v2.Product]s to provide text in multiple
+   * languages can result in degraded model performance.
+   * For product search this field is in use. It defaults to "en-US" if unset.
+   * </pre>
+   *
+   * <code>string language_code = 11;</code>
+   *
+   * @return The languageCode.
+   */
+  @java.lang.Override
+  public java.lang.String getLanguageCode() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      languageCode_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Language of the title/description and other string attributes. Use language
+   * tags defined by [BCP 47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+   * For product prediction, this field is ignored and the model automatically
+   * detects the text language. The [Product][google.cloud.retail.v2.Product]
+   * can include text in different languages, but duplicating
+   * [Product][google.cloud.retail.v2.Product]s to provide text in multiple
+   * languages can result in degraded model performance.
+   * For product search this field is in use. It defaults to "en-US" if unset.
+   * </pre>
+   *
+   * <code>string language_code = 11;</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLanguageCodeBytes() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      languageCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ATTRIBUTES_FIELD_NUMBER = 12;
 
   private static final class AttributesDefaultEntryHolder {
@@ -1268,10 +2044,17 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * For example: `{ "vendor": {"text": ["vendor123", "vendor456"]},
    * "lengths_cm": {"numbers":[2.3, 15.4]}, "heights_cm": {"numbers":[8.1, 6.4]}
    * }`.
-   * A maximum of 150 attributes are allowed. Otherwise, an INVALID_ARGUMENT
-   * error is returned.
-   * The key must be a UTF-8 encoded string with a length limit of 5,000
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
+   * error is returned:
+   * * Max entries count: 200 by default; 100 for
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+   * * The key must be a UTF-8 encoded string with a length limit of 128
+   *   characters.
+   * * Max indexable entries count: 200 by default; 40 for
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+   * * Max searchable entries count: 30.
+   * * For indexable attribute, the key must match the pattern:
+   *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -1306,10 +2089,17 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * For example: `{ "vendor": {"text": ["vendor123", "vendor456"]},
    * "lengths_cm": {"numbers":[2.3, 15.4]}, "heights_cm": {"numbers":[8.1, 6.4]}
    * }`.
-   * A maximum of 150 attributes are allowed. Otherwise, an INVALID_ARGUMENT
-   * error is returned.
-   * The key must be a UTF-8 encoded string with a length limit of 5,000
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
+   * error is returned:
+   * * Max entries count: 200 by default; 100 for
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+   * * The key must be a UTF-8 encoded string with a length limit of 128
+   *   characters.
+   * * Max indexable entries count: 200 by default; 40 for
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+   * * Max searchable entries count: 30.
+   * * For indexable attribute, the key must match the pattern:
+   *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -1335,10 +2125,17 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * For example: `{ "vendor": {"text": ["vendor123", "vendor456"]},
    * "lengths_cm": {"numbers":[2.3, 15.4]}, "heights_cm": {"numbers":[8.1, 6.4]}
    * }`.
-   * A maximum of 150 attributes are allowed. Otherwise, an INVALID_ARGUMENT
-   * error is returned.
-   * The key must be a UTF-8 encoded string with a length limit of 5,000
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
+   * error is returned:
+   * * Max entries count: 200 by default; 100 for
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+   * * The key must be a UTF-8 encoded string with a length limit of 128
+   *   characters.
+   * * Max indexable entries count: 200 by default; 40 for
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+   * * Max searchable entries count: 30.
+   * * For indexable attribute, the key must match the pattern:
+   *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -1369,10 +2166,17 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * For example: `{ "vendor": {"text": ["vendor123", "vendor456"]},
    * "lengths_cm": {"numbers":[2.3, 15.4]}, "heights_cm": {"numbers":[8.1, 6.4]}
    * }`.
-   * A maximum of 150 attributes are allowed. Otherwise, an INVALID_ARGUMENT
-   * error is returned.
-   * The key must be a UTF-8 encoded string with a length limit of 5,000
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
+   * error is returned:
+   * * Max entries count: 200 by default; 100 for
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+   * * The key must be a UTF-8 encoded string with a length limit of 128
+   *   characters.
+   * * Max indexable entries count: 200 by default; 40 for
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+   * * Max searchable entries count: 30.
+   * * For indexable attribute, the key must match the pattern:
+   *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -1541,6 +2345,52 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     return getPriceInfo();
   }
 
+  public static final int RATING_FIELD_NUMBER = 15;
+  private com.google.cloud.retail.v2.Rating rating_;
+  /**
+   *
+   *
+   * <pre>
+   * The rating of this product.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.Rating rating = 15;</code>
+   *
+   * @return Whether the rating field is set.
+   */
+  @java.lang.Override
+  public boolean hasRating() {
+    return rating_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The rating of this product.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.Rating rating = 15;</code>
+   *
+   * @return The rating.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.Rating getRating() {
+    return rating_ == null ? com.google.cloud.retail.v2.Rating.getDefaultInstance() : rating_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The rating of this product.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.Rating rating = 15;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.RatingOrBuilder getRatingOrBuilder() {
+    return getRating();
+  }
+
   public static final int AVAILABLE_TIME_FIELD_NUMBER = 18;
   private com.google.protobuf.Timestamp availableTime_;
   /**
@@ -1548,7 +2398,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
-   * available recommendation and search.
+   * available for
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
    * </pre>
    *
    * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -1564,7 +2415,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
-   * available recommendation and search.
+   * available for
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
    * </pre>
    *
    * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -1582,7 +2434,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
-   * available recommendation and search.
+   * available for
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
    * </pre>
    *
    * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -1686,6 +2539,96 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     return getAvailableQuantity();
   }
 
+  public static final int FULFILLMENT_INFO_FIELD_NUMBER = 21;
+  private java.util.List<com.google.cloud.retail.v2.FulfillmentInfo> fulfillmentInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Fulfillment information, such as the store IDs for in-store pickup or
+   * region IDs for different shipping methods.
+   * All the elements must have distinct
+   * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+   * Otherwise, an INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.retail.v2.FulfillmentInfo> getFulfillmentInfoList() {
+    return fulfillmentInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fulfillment information, such as the store IDs for in-store pickup or
+   * region IDs for different shipping methods.
+   * All the elements must have distinct
+   * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+   * Otherwise, an INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.retail.v2.FulfillmentInfoOrBuilder>
+      getFulfillmentInfoOrBuilderList() {
+    return fulfillmentInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fulfillment information, such as the store IDs for in-store pickup or
+   * region IDs for different shipping methods.
+   * All the elements must have distinct
+   * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+   * Otherwise, an INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+   */
+  @java.lang.Override
+  public int getFulfillmentInfoCount() {
+    return fulfillmentInfo_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fulfillment information, such as the store IDs for in-store pickup or
+   * region IDs for different shipping methods.
+   * All the elements must have distinct
+   * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+   * Otherwise, an INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.FulfillmentInfo getFulfillmentInfo(int index) {
+    return fulfillmentInfo_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fulfillment information, such as the store IDs for in-store pickup or
+   * region IDs for different shipping methods.
+   * All the elements must have distinct
+   * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+   * Otherwise, an INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.FulfillmentInfoOrBuilder getFulfillmentInfoOrBuilder(
+      int index) {
+    return fulfillmentInfo_.get(index);
+  }
+
   public static final int URI_FIELD_NUMBER = 22;
   private volatile java.lang.Object uri_;
   /**
@@ -1693,6 +2636,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Canonical URL directly linking to the product detail page.
+   * It is strongly recommended to provide a valid uri for the product,
+   * otherwise the service performance could be significantly degraded.
    * This field must be a UTF-8 encoded string with a length limit of 5,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * Google Merchant Center property
@@ -1721,6 +2666,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Canonical URL directly linking to the product detail page.
+   * It is strongly recommended to provide a valid uri for the product,
+   * otherwise the service performance could be significantly degraded.
    * This field must be a UTF-8 encoded string with a length limit of 5,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * Google Merchant Center property
@@ -1751,7 +2698,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Product images for the product.
+   * Product images for the product.Highly recommended to put the main image
+   * to the first.
    * A maximum of 300 images are allowed.
    * Google Merchant Center property
    * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -1768,7 +2716,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Product images for the product.
+   * Product images for the product.Highly recommended to put the main image
+   * to the first.
    * A maximum of 300 images are allowed.
    * Google Merchant Center property
    * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -1786,7 +2735,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Product images for the product.
+   * Product images for the product.Highly recommended to put the main image
+   * to the first.
    * A maximum of 300 images are allowed.
    * Google Merchant Center property
    * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -1803,7 +2753,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Product images for the product.
+   * Product images for the product.Highly recommended to put the main image
+   * to the first.
    * A maximum of 300 images are allowed.
    * Google Merchant Center property
    * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -1820,7 +2771,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Product images for the product.
+   * Product images for the product.Highly recommended to put the main image
+   * to the first.
    * A maximum of 300 images are allowed.
    * Google Merchant Center property
    * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -1832,6 +2784,926 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.retail.v2.ImageOrBuilder getImagesOrBuilder(int index) {
     return images_.get(index);
+  }
+
+  public static final int AUDIENCE_FIELD_NUMBER = 24;
+  private com.google.cloud.retail.v2.Audience audience_;
+  /**
+   *
+   *
+   * <pre>
+   * The target group associated with a given audience (e.g. male, veterans,
+   * car owners, musicians, etc.) of the product.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.Audience audience = 24;</code>
+   *
+   * @return Whether the audience field is set.
+   */
+  @java.lang.Override
+  public boolean hasAudience() {
+    return audience_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The target group associated with a given audience (e.g. male, veterans,
+   * car owners, musicians, etc.) of the product.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.Audience audience = 24;</code>
+   *
+   * @return The audience.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.Audience getAudience() {
+    return audience_ == null ? com.google.cloud.retail.v2.Audience.getDefaultInstance() : audience_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The target group associated with a given audience (e.g. male, veterans,
+   * car owners, musicians, etc.) of the product.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.Audience audience = 24;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.AudienceOrBuilder getAudienceOrBuilder() {
+    return getAudience();
+  }
+
+  public static final int COLOR_INFO_FIELD_NUMBER = 25;
+  private com.google.cloud.retail.v2.ColorInfo colorInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * The color of the product.
+   * Google Merchant Center property
+   * [color](https://support.google.com/merchants/answer/6324487). Schema.org
+   * property [Product.color](https://schema.org/color).
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.ColorInfo color_info = 25;</code>
+   *
+   * @return Whether the colorInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasColorInfo() {
+    return colorInfo_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The color of the product.
+   * Google Merchant Center property
+   * [color](https://support.google.com/merchants/answer/6324487). Schema.org
+   * property [Product.color](https://schema.org/color).
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.ColorInfo color_info = 25;</code>
+   *
+   * @return The colorInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.ColorInfo getColorInfo() {
+    return colorInfo_ == null
+        ? com.google.cloud.retail.v2.ColorInfo.getDefaultInstance()
+        : colorInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The color of the product.
+   * Google Merchant Center property
+   * [color](https://support.google.com/merchants/answer/6324487). Schema.org
+   * property [Product.color](https://schema.org/color).
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.ColorInfo color_info = 25;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.ColorInfoOrBuilder getColorInfoOrBuilder() {
+    return getColorInfo();
+  }
+
+  public static final int SIZES_FIELD_NUMBER = 26;
+  private com.google.protobuf.LazyStringList sizes_;
+  /**
+   *
+   *
+   * <pre>
+   * The size of the product. To represent different size systems or size types,
+   * consider using this format: [[[size_system:]size_type:]size_value].
+   * For example, in "US:MENS:M", "US" represents size system; "MENS" represents
+   * size type; "M" represents size value. In "GIRLS:27", size system is empty;
+   * "GIRLS" represents size type; "27" represents size value. In "32 inches",
+   * both size system and size type are empty, while size value is "32 inches".
+   * A maximum of 20 values are allowed per
+   * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+   * encoded string with a length limit of 128 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [size](https://support.google.com/merchants/answer/6324492),
+   * [size_type](https://support.google.com/merchants/answer/6324497) and
+   * [size_system](https://support.google.com/merchants/answer/6324502).
+   * Schema.org property [Product.size](https://schema.org/size).
+   * </pre>
+   *
+   * <code>repeated string sizes = 26;</code>
+   *
+   * @return A list containing the sizes.
+   */
+  public com.google.protobuf.ProtocolStringList getSizesList() {
+    return sizes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The size of the product. To represent different size systems or size types,
+   * consider using this format: [[[size_system:]size_type:]size_value].
+   * For example, in "US:MENS:M", "US" represents size system; "MENS" represents
+   * size type; "M" represents size value. In "GIRLS:27", size system is empty;
+   * "GIRLS" represents size type; "27" represents size value. In "32 inches",
+   * both size system and size type are empty, while size value is "32 inches".
+   * A maximum of 20 values are allowed per
+   * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+   * encoded string with a length limit of 128 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [size](https://support.google.com/merchants/answer/6324492),
+   * [size_type](https://support.google.com/merchants/answer/6324497) and
+   * [size_system](https://support.google.com/merchants/answer/6324502).
+   * Schema.org property [Product.size](https://schema.org/size).
+   * </pre>
+   *
+   * <code>repeated string sizes = 26;</code>
+   *
+   * @return The count of sizes.
+   */
+  public int getSizesCount() {
+    return sizes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The size of the product. To represent different size systems or size types,
+   * consider using this format: [[[size_system:]size_type:]size_value].
+   * For example, in "US:MENS:M", "US" represents size system; "MENS" represents
+   * size type; "M" represents size value. In "GIRLS:27", size system is empty;
+   * "GIRLS" represents size type; "27" represents size value. In "32 inches",
+   * both size system and size type are empty, while size value is "32 inches".
+   * A maximum of 20 values are allowed per
+   * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+   * encoded string with a length limit of 128 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [size](https://support.google.com/merchants/answer/6324492),
+   * [size_type](https://support.google.com/merchants/answer/6324497) and
+   * [size_system](https://support.google.com/merchants/answer/6324502).
+   * Schema.org property [Product.size](https://schema.org/size).
+   * </pre>
+   *
+   * <code>repeated string sizes = 26;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The sizes at the given index.
+   */
+  public java.lang.String getSizes(int index) {
+    return sizes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The size of the product. To represent different size systems or size types,
+   * consider using this format: [[[size_system:]size_type:]size_value].
+   * For example, in "US:MENS:M", "US" represents size system; "MENS" represents
+   * size type; "M" represents size value. In "GIRLS:27", size system is empty;
+   * "GIRLS" represents size type; "27" represents size value. In "32 inches",
+   * both size system and size type are empty, while size value is "32 inches".
+   * A maximum of 20 values are allowed per
+   * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+   * encoded string with a length limit of 128 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [size](https://support.google.com/merchants/answer/6324492),
+   * [size_type](https://support.google.com/merchants/answer/6324497) and
+   * [size_system](https://support.google.com/merchants/answer/6324502).
+   * Schema.org property [Product.size](https://schema.org/size).
+   * </pre>
+   *
+   * <code>repeated string sizes = 26;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the sizes at the given index.
+   */
+  public com.google.protobuf.ByteString getSizesBytes(int index) {
+    return sizes_.getByteString(index);
+  }
+
+  public static final int MATERIALS_FIELD_NUMBER = 27;
+  private com.google.protobuf.LazyStringList materials_;
+  /**
+   *
+   *
+   * <pre>
+   * The material of the product. For example, "leather", "wooden".
+   * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+   * string with a length limit of 128 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [material](https://support.google.com/merchants/answer/6324410). Schema.org
+   * property [Product.material](https://schema.org/material).
+   * </pre>
+   *
+   * <code>repeated string materials = 27;</code>
+   *
+   * @return A list containing the materials.
+   */
+  public com.google.protobuf.ProtocolStringList getMaterialsList() {
+    return materials_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The material of the product. For example, "leather", "wooden".
+   * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+   * string with a length limit of 128 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [material](https://support.google.com/merchants/answer/6324410). Schema.org
+   * property [Product.material](https://schema.org/material).
+   * </pre>
+   *
+   * <code>repeated string materials = 27;</code>
+   *
+   * @return The count of materials.
+   */
+  public int getMaterialsCount() {
+    return materials_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The material of the product. For example, "leather", "wooden".
+   * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+   * string with a length limit of 128 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [material](https://support.google.com/merchants/answer/6324410). Schema.org
+   * property [Product.material](https://schema.org/material).
+   * </pre>
+   *
+   * <code>repeated string materials = 27;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The materials at the given index.
+   */
+  public java.lang.String getMaterials(int index) {
+    return materials_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The material of the product. For example, "leather", "wooden".
+   * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+   * string with a length limit of 128 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [material](https://support.google.com/merchants/answer/6324410). Schema.org
+   * property [Product.material](https://schema.org/material).
+   * </pre>
+   *
+   * <code>repeated string materials = 27;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the materials at the given index.
+   */
+  public com.google.protobuf.ByteString getMaterialsBytes(int index) {
+    return materials_.getByteString(index);
+  }
+
+  public static final int PATTERNS_FIELD_NUMBER = 28;
+  private com.google.protobuf.LazyStringList patterns_;
+  /**
+   *
+   *
+   * <pre>
+   * The pattern or graphic print of the product. For example, "striped", "polka
+   * dot", "paisley".
+   * A maximum of 5 values are allowed per
+   * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+   * encoded string with a length limit of 128 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [pattern](https://support.google.com/merchants/answer/6324483). Schema.org
+   * property [Product.pattern](https://schema.org/pattern).
+   * </pre>
+   *
+   * <code>repeated string patterns = 28;</code>
+   *
+   * @return A list containing the patterns.
+   */
+  public com.google.protobuf.ProtocolStringList getPatternsList() {
+    return patterns_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The pattern or graphic print of the product. For example, "striped", "polka
+   * dot", "paisley".
+   * A maximum of 5 values are allowed per
+   * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+   * encoded string with a length limit of 128 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [pattern](https://support.google.com/merchants/answer/6324483). Schema.org
+   * property [Product.pattern](https://schema.org/pattern).
+   * </pre>
+   *
+   * <code>repeated string patterns = 28;</code>
+   *
+   * @return The count of patterns.
+   */
+  public int getPatternsCount() {
+    return patterns_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The pattern or graphic print of the product. For example, "striped", "polka
+   * dot", "paisley".
+   * A maximum of 5 values are allowed per
+   * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+   * encoded string with a length limit of 128 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [pattern](https://support.google.com/merchants/answer/6324483). Schema.org
+   * property [Product.pattern](https://schema.org/pattern).
+   * </pre>
+   *
+   * <code>repeated string patterns = 28;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The patterns at the given index.
+   */
+  public java.lang.String getPatterns(int index) {
+    return patterns_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The pattern or graphic print of the product. For example, "striped", "polka
+   * dot", "paisley".
+   * A maximum of 5 values are allowed per
+   * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+   * encoded string with a length limit of 128 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [pattern](https://support.google.com/merchants/answer/6324483). Schema.org
+   * property [Product.pattern](https://schema.org/pattern).
+   * </pre>
+   *
+   * <code>repeated string patterns = 28;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the patterns at the given index.
+   */
+  public com.google.protobuf.ByteString getPatternsBytes(int index) {
+    return patterns_.getByteString(index);
+  }
+
+  public static final int CONDITIONS_FIELD_NUMBER = 29;
+  private com.google.protobuf.LazyStringList conditions_;
+  /**
+   *
+   *
+   * <pre>
+   * The condition of the product. Strongly encouraged to use the standard
+   * values: "new", "refurbished", "used".
+   * A maximum of 5 values are allowed per
+   * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+   * encoded string with a length limit of 128 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [condition](https://support.google.com/merchants/answer/6324469).
+   * Schema.org property
+   * [Offer.itemCondition](https://schema.org/itemCondition).
+   * </pre>
+   *
+   * <code>repeated string conditions = 29;</code>
+   *
+   * @return A list containing the conditions.
+   */
+  public com.google.protobuf.ProtocolStringList getConditionsList() {
+    return conditions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The condition of the product. Strongly encouraged to use the standard
+   * values: "new", "refurbished", "used".
+   * A maximum of 5 values are allowed per
+   * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+   * encoded string with a length limit of 128 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [condition](https://support.google.com/merchants/answer/6324469).
+   * Schema.org property
+   * [Offer.itemCondition](https://schema.org/itemCondition).
+   * </pre>
+   *
+   * <code>repeated string conditions = 29;</code>
+   *
+   * @return The count of conditions.
+   */
+  public int getConditionsCount() {
+    return conditions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The condition of the product. Strongly encouraged to use the standard
+   * values: "new", "refurbished", "used".
+   * A maximum of 5 values are allowed per
+   * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+   * encoded string with a length limit of 128 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [condition](https://support.google.com/merchants/answer/6324469).
+   * Schema.org property
+   * [Offer.itemCondition](https://schema.org/itemCondition).
+   * </pre>
+   *
+   * <code>repeated string conditions = 29;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The conditions at the given index.
+   */
+  public java.lang.String getConditions(int index) {
+    return conditions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The condition of the product. Strongly encouraged to use the standard
+   * values: "new", "refurbished", "used".
+   * A maximum of 5 values are allowed per
+   * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+   * encoded string with a length limit of 128 characters. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * Google Merchant Center property
+   * [condition](https://support.google.com/merchants/answer/6324469).
+   * Schema.org property
+   * [Offer.itemCondition](https://schema.org/itemCondition).
+   * </pre>
+   *
+   * <code>repeated string conditions = 29;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the conditions at the given index.
+   */
+  public com.google.protobuf.ByteString getConditionsBytes(int index) {
+    return conditions_.getByteString(index);
+  }
+
+  public static final int PROMOTIONS_FIELD_NUMBER = 34;
+  private java.util.List<com.google.cloud.retail.v2.Promotion> promotions_;
+  /**
+   *
+   *
+   * <pre>
+   * The promotions applied to the product. A maximum of 10 values are allowed
+   * per [Product][google.cloud.retail.v2.Product].
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.retail.v2.Promotion> getPromotionsList() {
+    return promotions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The promotions applied to the product. A maximum of 10 values are allowed
+   * per [Product][google.cloud.retail.v2.Product].
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.retail.v2.PromotionOrBuilder>
+      getPromotionsOrBuilderList() {
+    return promotions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The promotions applied to the product. A maximum of 10 values are allowed
+   * per [Product][google.cloud.retail.v2.Product].
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+   */
+  @java.lang.Override
+  public int getPromotionsCount() {
+    return promotions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The promotions applied to the product. A maximum of 10 values are allowed
+   * per [Product][google.cloud.retail.v2.Product].
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.Promotion getPromotions(int index) {
+    return promotions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The promotions applied to the product. A maximum of 10 values are allowed
+   * per [Product][google.cloud.retail.v2.Product].
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.PromotionOrBuilder getPromotionsOrBuilder(int index) {
+    return promotions_.get(index);
+  }
+
+  public static final int PUBLISH_TIME_FIELD_NUMBER = 33;
+  private com.google.protobuf.Timestamp publishTime_;
+  /**
+   *
+   *
+   * <pre>
+   * The timestamp when the product is published by the retailer for the first
+   * time, which indicates the freshness of the products. Note that this field
+   * is different from
+   * [available_time][google.cloud.retail.v2.Product.available_time], given it
+   * purely describes product freshness regardless of when it is available on
+   * search and recommendation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp publish_time = 33;</code>
+   *
+   * @return Whether the publishTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasPublishTime() {
+    return publishTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The timestamp when the product is published by the retailer for the first
+   * time, which indicates the freshness of the products. Note that this field
+   * is different from
+   * [available_time][google.cloud.retail.v2.Product.available_time], given it
+   * purely describes product freshness regardless of when it is available on
+   * search and recommendation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp publish_time = 33;</code>
+   *
+   * @return The publishTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getPublishTime() {
+    return publishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : publishTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The timestamp when the product is published by the retailer for the first
+   * time, which indicates the freshness of the products. Note that this field
+   * is different from
+   * [available_time][google.cloud.retail.v2.Product.available_time], given it
+   * purely describes product freshness regardless of when it is available on
+   * search and recommendation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp publish_time = 33;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getPublishTimeOrBuilder() {
+    return getPublishTime();
+  }
+
+  public static final int RETRIEVABLE_FIELDS_FIELD_NUMBER = 30;
+  private com.google.protobuf.FieldMask retrievableFields_;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which fields in the [Product][google.cloud.retail.v2.Product]s
+   * are returned in [SearchResponse][google.cloud.retail.v2.SearchResponse].
+   * Supported fields for all [type][google.cloud.retail.v2.Product.type]s:
+   * * [audience][google.cloud.retail.v2.Product.audience]
+   * * [availability][google.cloud.retail.v2.Product.availability]
+   * * [brands][google.cloud.retail.v2.Product.brands]
+   * * [color_info][google.cloud.retail.v2.Product.color_info]
+   * * [conditions][google.cloud.retail.v2.Product.conditions]
+   * * [gtin][google.cloud.retail.v2.Product.gtin]
+   * * [materials][google.cloud.retail.v2.Product.materials]
+   * * [name][google.cloud.retail.v2.Product.name]
+   * * [patterns][google.cloud.retail.v2.Product.patterns]
+   * * [price_info][google.cloud.retail.v2.Product.price_info]
+   * * [rating][google.cloud.retail.v2.Product.rating]
+   * * [sizes][google.cloud.retail.v2.Product.sizes]
+   * * [title][google.cloud.retail.v2.Product.title]
+   * * [uri][google.cloud.retail.v2.Product.uri]
+   * Supported fields only for
+   * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+   * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]:
+   * * [categories][google.cloud.retail.v2.Product.categories]
+   * * [description][google.cloud.retail.v2.Product.description]
+   * * [images][google.cloud.retail.v2.Product.images]
+   * Supported fields only for
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]:
+   * * Only the first image in [images][google.cloud.retail.v2.Product.images]
+   * To mark [attributes][google.cloud.retail.v2.Product.attributes] as
+   * retrievable, include paths of the form "attributes.key" where "key" is the
+   * key of a custom attribute, as specified in
+   * [attributes][google.cloud.retail.v2.Product.attributes].
+   * For [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+   * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], the
+   * following fields are always returned in
+   * [SearchResponse][google.cloud.retail.v2.SearchResponse] by default:
+   * * [name][google.cloud.retail.v2.Product.name]
+   * For [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT], the
+   * following fields are always returned in by default:
+   * * [name][google.cloud.retail.v2.Product.name]
+   * * [color_info][google.cloud.retail.v2.Product.color_info]
+   * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+   * returned.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+   *
+   * @return Whether the retrievableFields field is set.
+   */
+  @java.lang.Override
+  public boolean hasRetrievableFields() {
+    return retrievableFields_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which fields in the [Product][google.cloud.retail.v2.Product]s
+   * are returned in [SearchResponse][google.cloud.retail.v2.SearchResponse].
+   * Supported fields for all [type][google.cloud.retail.v2.Product.type]s:
+   * * [audience][google.cloud.retail.v2.Product.audience]
+   * * [availability][google.cloud.retail.v2.Product.availability]
+   * * [brands][google.cloud.retail.v2.Product.brands]
+   * * [color_info][google.cloud.retail.v2.Product.color_info]
+   * * [conditions][google.cloud.retail.v2.Product.conditions]
+   * * [gtin][google.cloud.retail.v2.Product.gtin]
+   * * [materials][google.cloud.retail.v2.Product.materials]
+   * * [name][google.cloud.retail.v2.Product.name]
+   * * [patterns][google.cloud.retail.v2.Product.patterns]
+   * * [price_info][google.cloud.retail.v2.Product.price_info]
+   * * [rating][google.cloud.retail.v2.Product.rating]
+   * * [sizes][google.cloud.retail.v2.Product.sizes]
+   * * [title][google.cloud.retail.v2.Product.title]
+   * * [uri][google.cloud.retail.v2.Product.uri]
+   * Supported fields only for
+   * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+   * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]:
+   * * [categories][google.cloud.retail.v2.Product.categories]
+   * * [description][google.cloud.retail.v2.Product.description]
+   * * [images][google.cloud.retail.v2.Product.images]
+   * Supported fields only for
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]:
+   * * Only the first image in [images][google.cloud.retail.v2.Product.images]
+   * To mark [attributes][google.cloud.retail.v2.Product.attributes] as
+   * retrievable, include paths of the form "attributes.key" where "key" is the
+   * key of a custom attribute, as specified in
+   * [attributes][google.cloud.retail.v2.Product.attributes].
+   * For [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+   * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], the
+   * following fields are always returned in
+   * [SearchResponse][google.cloud.retail.v2.SearchResponse] by default:
+   * * [name][google.cloud.retail.v2.Product.name]
+   * For [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT], the
+   * following fields are always returned in by default:
+   * * [name][google.cloud.retail.v2.Product.name]
+   * * [color_info][google.cloud.retail.v2.Product.color_info]
+   * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+   * returned.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+   *
+   * @return The retrievableFields.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getRetrievableFields() {
+    return retrievableFields_ == null
+        ? com.google.protobuf.FieldMask.getDefaultInstance()
+        : retrievableFields_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which fields in the [Product][google.cloud.retail.v2.Product]s
+   * are returned in [SearchResponse][google.cloud.retail.v2.SearchResponse].
+   * Supported fields for all [type][google.cloud.retail.v2.Product.type]s:
+   * * [audience][google.cloud.retail.v2.Product.audience]
+   * * [availability][google.cloud.retail.v2.Product.availability]
+   * * [brands][google.cloud.retail.v2.Product.brands]
+   * * [color_info][google.cloud.retail.v2.Product.color_info]
+   * * [conditions][google.cloud.retail.v2.Product.conditions]
+   * * [gtin][google.cloud.retail.v2.Product.gtin]
+   * * [materials][google.cloud.retail.v2.Product.materials]
+   * * [name][google.cloud.retail.v2.Product.name]
+   * * [patterns][google.cloud.retail.v2.Product.patterns]
+   * * [price_info][google.cloud.retail.v2.Product.price_info]
+   * * [rating][google.cloud.retail.v2.Product.rating]
+   * * [sizes][google.cloud.retail.v2.Product.sizes]
+   * * [title][google.cloud.retail.v2.Product.title]
+   * * [uri][google.cloud.retail.v2.Product.uri]
+   * Supported fields only for
+   * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+   * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]:
+   * * [categories][google.cloud.retail.v2.Product.categories]
+   * * [description][google.cloud.retail.v2.Product.description]
+   * * [images][google.cloud.retail.v2.Product.images]
+   * Supported fields only for
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]:
+   * * Only the first image in [images][google.cloud.retail.v2.Product.images]
+   * To mark [attributes][google.cloud.retail.v2.Product.attributes] as
+   * retrievable, include paths of the form "attributes.key" where "key" is the
+   * key of a custom attribute, as specified in
+   * [attributes][google.cloud.retail.v2.Product.attributes].
+   * For [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+   * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], the
+   * following fields are always returned in
+   * [SearchResponse][google.cloud.retail.v2.SearchResponse] by default:
+   * * [name][google.cloud.retail.v2.Product.name]
+   * For [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT], the
+   * following fields are always returned in by default:
+   * * [name][google.cloud.retail.v2.Product.name]
+   * * [color_info][google.cloud.retail.v2.Product.color_info]
+   * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+   * returned.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getRetrievableFieldsOrBuilder() {
+    return getRetrievableFields();
+  }
+
+  public static final int VARIANTS_FIELD_NUMBER = 31;
+  private java.util.List<com.google.cloud.retail.v2.Product> variants_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Product variants grouped together on primary product which
+   * share similar product attributes. It's automatically grouped by
+   * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+   * all the product variants. Only populated for
+   * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+   * [Product][google.cloud.retail.v2.Product]s.
+   * Note: This field is OUTPUT_ONLY for
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+   * Do not set this field in API requests.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.retail.v2.Product> getVariantsList() {
+    return variants_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Product variants grouped together on primary product which
+   * share similar product attributes. It's automatically grouped by
+   * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+   * all the product variants. Only populated for
+   * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+   * [Product][google.cloud.retail.v2.Product]s.
+   * Note: This field is OUTPUT_ONLY for
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+   * Do not set this field in API requests.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.retail.v2.ProductOrBuilder>
+      getVariantsOrBuilderList() {
+    return variants_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Product variants grouped together on primary product which
+   * share similar product attributes. It's automatically grouped by
+   * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+   * all the product variants. Only populated for
+   * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+   * [Product][google.cloud.retail.v2.Product]s.
+   * Note: This field is OUTPUT_ONLY for
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+   * Do not set this field in API requests.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getVariantsCount() {
+    return variants_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Product variants grouped together on primary product which
+   * share similar product attributes. It's automatically grouped by
+   * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+   * all the product variants. Only populated for
+   * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+   * [Product][google.cloud.retail.v2.Product]s.
+   * Note: This field is OUTPUT_ONLY for
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+   * Do not set this field in API requests.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.Product getVariants(int index) {
+    return variants_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Product variants grouped together on primary product which
+   * share similar product attributes. It's automatically grouped by
+   * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+   * all the product variants. Only populated for
+   * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+   * [Product][google.cloud.retail.v2.Product]s.
+   * Note: This field is OUTPUT_ONLY for
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+   * Do not set this field in API requests.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.ProductOrBuilder getVariantsOrBuilder(int index) {
+    return variants_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1860,14 +3732,26 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     if (!getPrimaryProductIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, primaryProductId_);
     }
+    for (int i = 0; i < collectionMemberIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, collectionMemberIds_.getRaw(i));
+    }
+    if (!getGtinBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, gtin_);
+    }
     for (int i = 0; i < categories_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, categories_.getRaw(i));
     }
     if (!getTitleBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, title_);
     }
+    for (int i = 0; i < brands_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, brands_.getRaw(i));
+    }
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, description_);
+    }
+    if (!getLanguageCodeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, languageCode_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetAttributes(), AttributesDefaultEntryHolder.defaultEntry, 12);
@@ -1876,6 +3760,15 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     }
     if (priceInfo_ != null) {
       output.writeMessage(14, getPriceInfo());
+    }
+    if (rating_ != null) {
+      output.writeMessage(15, getRating());
+    }
+    if (expirationCase_ == 16) {
+      output.writeMessage(16, (com.google.protobuf.Timestamp) expiration_);
+    }
+    if (expirationCase_ == 17) {
+      output.writeMessage(17, (com.google.protobuf.Duration) expiration_);
     }
     if (availableTime_ != null) {
       output.writeMessage(18, getAvailableTime());
@@ -1887,11 +3780,44 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     if (availableQuantity_ != null) {
       output.writeMessage(20, getAvailableQuantity());
     }
+    for (int i = 0; i < fulfillmentInfo_.size(); i++) {
+      output.writeMessage(21, fulfillmentInfo_.get(i));
+    }
     if (!getUriBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 22, uri_);
     }
     for (int i = 0; i < images_.size(); i++) {
       output.writeMessage(23, images_.get(i));
+    }
+    if (audience_ != null) {
+      output.writeMessage(24, getAudience());
+    }
+    if (colorInfo_ != null) {
+      output.writeMessage(25, getColorInfo());
+    }
+    for (int i = 0; i < sizes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 26, sizes_.getRaw(i));
+    }
+    for (int i = 0; i < materials_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 27, materials_.getRaw(i));
+    }
+    for (int i = 0; i < patterns_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 28, patterns_.getRaw(i));
+    }
+    for (int i = 0; i < conditions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 29, conditions_.getRaw(i));
+    }
+    if (retrievableFields_ != null) {
+      output.writeMessage(30, getRetrievableFields());
+    }
+    for (int i = 0; i < variants_.size(); i++) {
+      output.writeMessage(31, variants_.get(i));
+    }
+    if (publishTime_ != null) {
+      output.writeMessage(33, getPublishTime());
+    }
+    for (int i = 0; i < promotions_.size(); i++) {
+      output.writeMessage(34, promotions_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1916,6 +3842,17 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     }
     {
       int dataSize = 0;
+      for (int i = 0; i < collectionMemberIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(collectionMemberIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getCollectionMemberIdsList().size();
+    }
+    if (!getGtinBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, gtin_);
+    }
+    {
+      int dataSize = 0;
       for (int i = 0; i < categories_.size(); i++) {
         dataSize += computeStringSizeNoTag(categories_.getRaw(i));
       }
@@ -1925,8 +3862,19 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     if (!getTitleBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, title_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < brands_.size(); i++) {
+        dataSize += computeStringSizeNoTag(brands_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getBrandsList().size();
+    }
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, description_);
+    }
+    if (!getLanguageCodeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, languageCode_);
     }
     for (java.util.Map.Entry<java.lang.String, com.google.cloud.retail.v2.CustomAttribute> entry :
         internalGetAttributes().getMap().entrySet()) {
@@ -1950,6 +3898,19 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     if (priceInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getPriceInfo());
     }
+    if (rating_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getRating());
+    }
+    if (expirationCase_ == 16) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              16, (com.google.protobuf.Timestamp) expiration_);
+    }
+    if (expirationCase_ == 17) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17, (com.google.protobuf.Duration) expiration_);
+    }
     if (availableTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getAvailableTime());
     }
@@ -1960,11 +3921,64 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     if (availableQuantity_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getAvailableQuantity());
     }
+    for (int i = 0; i < fulfillmentInfo_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, fulfillmentInfo_.get(i));
+    }
     if (!getUriBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, uri_);
     }
     for (int i = 0; i < images_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, images_.get(i));
+    }
+    if (audience_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getAudience());
+    }
+    if (colorInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getColorInfo());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < sizes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(sizes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getSizesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < materials_.size(); i++) {
+        dataSize += computeStringSizeNoTag(materials_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getMaterialsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < patterns_.size(); i++) {
+        dataSize += computeStringSizeNoTag(patterns_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getPatternsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < conditions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(conditions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getConditionsList().size();
+    }
+    if (retrievableFields_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, getRetrievableFields());
+    }
+    for (int i = 0; i < variants_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, variants_.get(i));
+    }
+    if (publishTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(33, getPublishTime());
+    }
+    for (int i = 0; i < promotions_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(34, promotions_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1985,14 +3999,22 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     if (!getId().equals(other.getId())) return false;
     if (type_ != other.type_) return false;
     if (!getPrimaryProductId().equals(other.getPrimaryProductId())) return false;
+    if (!getCollectionMemberIdsList().equals(other.getCollectionMemberIdsList())) return false;
+    if (!getGtin().equals(other.getGtin())) return false;
     if (!getCategoriesList().equals(other.getCategoriesList())) return false;
     if (!getTitle().equals(other.getTitle())) return false;
+    if (!getBrandsList().equals(other.getBrandsList())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
+    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (!internalGetAttributes().equals(other.internalGetAttributes())) return false;
     if (!getTagsList().equals(other.getTagsList())) return false;
     if (hasPriceInfo() != other.hasPriceInfo()) return false;
     if (hasPriceInfo()) {
       if (!getPriceInfo().equals(other.getPriceInfo())) return false;
+    }
+    if (hasRating() != other.hasRating()) return false;
+    if (hasRating()) {
+      if (!getRating().equals(other.getRating())) return false;
     }
     if (hasAvailableTime() != other.hasAvailableTime()) return false;
     if (hasAvailableTime()) {
@@ -2003,8 +4025,42 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     if (hasAvailableQuantity()) {
       if (!getAvailableQuantity().equals(other.getAvailableQuantity())) return false;
     }
+    if (!getFulfillmentInfoList().equals(other.getFulfillmentInfoList())) return false;
     if (!getUri().equals(other.getUri())) return false;
     if (!getImagesList().equals(other.getImagesList())) return false;
+    if (hasAudience() != other.hasAudience()) return false;
+    if (hasAudience()) {
+      if (!getAudience().equals(other.getAudience())) return false;
+    }
+    if (hasColorInfo() != other.hasColorInfo()) return false;
+    if (hasColorInfo()) {
+      if (!getColorInfo().equals(other.getColorInfo())) return false;
+    }
+    if (!getSizesList().equals(other.getSizesList())) return false;
+    if (!getMaterialsList().equals(other.getMaterialsList())) return false;
+    if (!getPatternsList().equals(other.getPatternsList())) return false;
+    if (!getConditionsList().equals(other.getConditionsList())) return false;
+    if (!getPromotionsList().equals(other.getPromotionsList())) return false;
+    if (hasPublishTime() != other.hasPublishTime()) return false;
+    if (hasPublishTime()) {
+      if (!getPublishTime().equals(other.getPublishTime())) return false;
+    }
+    if (hasRetrievableFields() != other.hasRetrievableFields()) return false;
+    if (hasRetrievableFields()) {
+      if (!getRetrievableFields().equals(other.getRetrievableFields())) return false;
+    }
+    if (!getVariantsList().equals(other.getVariantsList())) return false;
+    if (!getExpirationCase().equals(other.getExpirationCase())) return false;
+    switch (expirationCase_) {
+      case 16:
+        if (!getExpireTime().equals(other.getExpireTime())) return false;
+        break;
+      case 17:
+        if (!getTtl().equals(other.getTtl())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2024,14 +4080,26 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + type_;
     hash = (37 * hash) + PRIMARY_PRODUCT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getPrimaryProductId().hashCode();
+    if (getCollectionMemberIdsCount() > 0) {
+      hash = (37 * hash) + COLLECTION_MEMBER_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getCollectionMemberIdsList().hashCode();
+    }
+    hash = (37 * hash) + GTIN_FIELD_NUMBER;
+    hash = (53 * hash) + getGtin().hashCode();
     if (getCategoriesCount() > 0) {
       hash = (37 * hash) + CATEGORIES_FIELD_NUMBER;
       hash = (53 * hash) + getCategoriesList().hashCode();
     }
     hash = (37 * hash) + TITLE_FIELD_NUMBER;
     hash = (53 * hash) + getTitle().hashCode();
+    if (getBrandsCount() > 0) {
+      hash = (37 * hash) + BRANDS_FIELD_NUMBER;
+      hash = (53 * hash) + getBrandsList().hashCode();
+    }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguageCode().hashCode();
     if (!internalGetAttributes().getMap().isEmpty()) {
       hash = (37 * hash) + ATTRIBUTES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetAttributes().hashCode();
@@ -2044,6 +4112,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PRICE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getPriceInfo().hashCode();
     }
+    if (hasRating()) {
+      hash = (37 * hash) + RATING_FIELD_NUMBER;
+      hash = (53 * hash) + getRating().hashCode();
+    }
     if (hasAvailableTime()) {
       hash = (37 * hash) + AVAILABLE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getAvailableTime().hashCode();
@@ -2054,11 +4126,67 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + AVAILABLE_QUANTITY_FIELD_NUMBER;
       hash = (53 * hash) + getAvailableQuantity().hashCode();
     }
+    if (getFulfillmentInfoCount() > 0) {
+      hash = (37 * hash) + FULFILLMENT_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getFulfillmentInfoList().hashCode();
+    }
     hash = (37 * hash) + URI_FIELD_NUMBER;
     hash = (53 * hash) + getUri().hashCode();
     if (getImagesCount() > 0) {
       hash = (37 * hash) + IMAGES_FIELD_NUMBER;
       hash = (53 * hash) + getImagesList().hashCode();
+    }
+    if (hasAudience()) {
+      hash = (37 * hash) + AUDIENCE_FIELD_NUMBER;
+      hash = (53 * hash) + getAudience().hashCode();
+    }
+    if (hasColorInfo()) {
+      hash = (37 * hash) + COLOR_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getColorInfo().hashCode();
+    }
+    if (getSizesCount() > 0) {
+      hash = (37 * hash) + SIZES_FIELD_NUMBER;
+      hash = (53 * hash) + getSizesList().hashCode();
+    }
+    if (getMaterialsCount() > 0) {
+      hash = (37 * hash) + MATERIALS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaterialsList().hashCode();
+    }
+    if (getPatternsCount() > 0) {
+      hash = (37 * hash) + PATTERNS_FIELD_NUMBER;
+      hash = (53 * hash) + getPatternsList().hashCode();
+    }
+    if (getConditionsCount() > 0) {
+      hash = (37 * hash) + CONDITIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getConditionsList().hashCode();
+    }
+    if (getPromotionsCount() > 0) {
+      hash = (37 * hash) + PROMOTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getPromotionsList().hashCode();
+    }
+    if (hasPublishTime()) {
+      hash = (37 * hash) + PUBLISH_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getPublishTime().hashCode();
+    }
+    if (hasRetrievableFields()) {
+      hash = (37 * hash) + RETRIEVABLE_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getRetrievableFields().hashCode();
+    }
+    if (getVariantsCount() > 0) {
+      hash = (37 * hash) + VARIANTS_FIELD_NUMBER;
+      hash = (53 * hash) + getVariantsList().hashCode();
+    }
+    switch (expirationCase_) {
+      case 16:
+        hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getExpireTime().hashCode();
+        break;
+      case 17:
+        hash = (37 * hash) + TTL_FIELD_NUMBER;
+        hash = (53 * hash) + getTtl().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2220,7 +4348,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getFulfillmentInfoFieldBuilder();
         getImagesFieldBuilder();
+        getPromotionsFieldBuilder();
+        getVariantsFieldBuilder();
       }
     }
 
@@ -2235,20 +4366,34 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
 
       primaryProductId_ = "";
 
-      categories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      collectionMemberIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      gtin_ = "";
+
+      categories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       title_ = "";
 
+      brands_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = "";
+
+      languageCode_ = "";
 
       internalGetMutableAttributes().clear();
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (priceInfoBuilder_ == null) {
         priceInfo_ = null;
       } else {
         priceInfo_ = null;
         priceInfoBuilder_ = null;
+      }
+      if (ratingBuilder_ == null) {
+        rating_ = null;
+      } else {
+        rating_ = null;
+        ratingBuilder_ = null;
       }
       if (availableTimeBuilder_ == null) {
         availableTime_ = null;
@@ -2264,14 +4409,66 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         availableQuantity_ = null;
         availableQuantityBuilder_ = null;
       }
+      if (fulfillmentInfoBuilder_ == null) {
+        fulfillmentInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      } else {
+        fulfillmentInfoBuilder_.clear();
+      }
       uri_ = "";
 
       if (imagesBuilder_ == null) {
         images_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000040);
       } else {
         imagesBuilder_.clear();
       }
+      if (audienceBuilder_ == null) {
+        audience_ = null;
+      } else {
+        audience_ = null;
+        audienceBuilder_ = null;
+      }
+      if (colorInfoBuilder_ == null) {
+        colorInfo_ = null;
+      } else {
+        colorInfo_ = null;
+        colorInfoBuilder_ = null;
+      }
+      sizes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      materials_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      patterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      conditions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      if (promotionsBuilder_ == null) {
+        promotions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000800);
+      } else {
+        promotionsBuilder_.clear();
+      }
+      if (publishTimeBuilder_ == null) {
+        publishTime_ = null;
+      } else {
+        publishTime_ = null;
+        publishTimeBuilder_ = null;
+      }
+      if (retrievableFieldsBuilder_ == null) {
+        retrievableFields_ = null;
+      } else {
+        retrievableFields_ = null;
+        retrievableFieldsBuilder_ = null;
+      }
+      if (variantsBuilder_ == null) {
+        variants_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+      } else {
+        variantsBuilder_.clear();
+      }
+      expirationCase_ = 0;
+      expiration_ = null;
       return this;
     }
 
@@ -2299,28 +4496,59 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2.Product buildPartial() {
       com.google.cloud.retail.v2.Product result = new com.google.cloud.retail.v2.Product(this);
       int from_bitField0_ = bitField0_;
+      if (expirationCase_ == 16) {
+        if (expireTimeBuilder_ == null) {
+          result.expiration_ = expiration_;
+        } else {
+          result.expiration_ = expireTimeBuilder_.build();
+        }
+      }
+      if (expirationCase_ == 17) {
+        if (ttlBuilder_ == null) {
+          result.expiration_ = expiration_;
+        } else {
+          result.expiration_ = ttlBuilder_.build();
+        }
+      }
       result.name_ = name_;
       result.id_ = id_;
       result.type_ = type_;
       result.primaryProductId_ = primaryProductId_;
       if (((bitField0_ & 0x00000001) != 0)) {
-        categories_ = categories_.getUnmodifiableView();
+        collectionMemberIds_ = collectionMemberIds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.collectionMemberIds_ = collectionMemberIds_;
+      result.gtin_ = gtin_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        categories_ = categories_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.categories_ = categories_;
       result.title_ = title_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        brands_ = brands_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.brands_ = brands_;
       result.description_ = description_;
+      result.languageCode_ = languageCode_;
       result.attributes_ = internalGetAttributes();
       result.attributes_.makeImmutable();
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.tags_ = tags_;
       if (priceInfoBuilder_ == null) {
         result.priceInfo_ = priceInfo_;
       } else {
         result.priceInfo_ = priceInfoBuilder_.build();
+      }
+      if (ratingBuilder_ == null) {
+        result.rating_ = rating_;
+      } else {
+        result.rating_ = ratingBuilder_.build();
       }
       if (availableTimeBuilder_ == null) {
         result.availableTime_ = availableTime_;
@@ -2333,16 +4561,84 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.availableQuantity_ = availableQuantityBuilder_.build();
       }
+      if (fulfillmentInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          fulfillmentInfo_ = java.util.Collections.unmodifiableList(fulfillmentInfo_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.fulfillmentInfo_ = fulfillmentInfo_;
+      } else {
+        result.fulfillmentInfo_ = fulfillmentInfoBuilder_.build();
+      }
       result.uri_ = uri_;
       if (imagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           images_ = java.util.Collections.unmodifiableList(images_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.images_ = images_;
       } else {
         result.images_ = imagesBuilder_.build();
       }
+      if (audienceBuilder_ == null) {
+        result.audience_ = audience_;
+      } else {
+        result.audience_ = audienceBuilder_.build();
+      }
+      if (colorInfoBuilder_ == null) {
+        result.colorInfo_ = colorInfo_;
+      } else {
+        result.colorInfo_ = colorInfoBuilder_.build();
+      }
+      if (((bitField0_ & 0x00000080) != 0)) {
+        sizes_ = sizes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      }
+      result.sizes_ = sizes_;
+      if (((bitField0_ & 0x00000100) != 0)) {
+        materials_ = materials_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      }
+      result.materials_ = materials_;
+      if (((bitField0_ & 0x00000200) != 0)) {
+        patterns_ = patterns_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000200);
+      }
+      result.patterns_ = patterns_;
+      if (((bitField0_ & 0x00000400) != 0)) {
+        conditions_ = conditions_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000400);
+      }
+      result.conditions_ = conditions_;
+      if (promotionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)) {
+          promotions_ = java.util.Collections.unmodifiableList(promotions_);
+          bitField0_ = (bitField0_ & ~0x00000800);
+        }
+        result.promotions_ = promotions_;
+      } else {
+        result.promotions_ = promotionsBuilder_.build();
+      }
+      if (publishTimeBuilder_ == null) {
+        result.publishTime_ = publishTime_;
+      } else {
+        result.publishTime_ = publishTimeBuilder_.build();
+      }
+      if (retrievableFieldsBuilder_ == null) {
+        result.retrievableFields_ = retrievableFields_;
+      } else {
+        result.retrievableFields_ = retrievableFieldsBuilder_.build();
+      }
+      if (variantsBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)) {
+          variants_ = java.util.Collections.unmodifiableList(variants_);
+          bitField0_ = (bitField0_ & ~0x00001000);
+        }
+        result.variants_ = variants_;
+      } else {
+        result.variants_ = variantsBuilder_.build();
+      }
+      result.expirationCase_ = expirationCase_;
       onBuilt();
       return result;
     }
@@ -2407,10 +4703,24 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         primaryProductId_ = other.primaryProductId_;
         onChanged();
       }
+      if (!other.collectionMemberIds_.isEmpty()) {
+        if (collectionMemberIds_.isEmpty()) {
+          collectionMemberIds_ = other.collectionMemberIds_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureCollectionMemberIdsIsMutable();
+          collectionMemberIds_.addAll(other.collectionMemberIds_);
+        }
+        onChanged();
+      }
+      if (!other.getGtin().isEmpty()) {
+        gtin_ = other.gtin_;
+        onChanged();
+      }
       if (!other.categories_.isEmpty()) {
         if (categories_.isEmpty()) {
           categories_ = other.categories_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureCategoriesIsMutable();
           categories_.addAll(other.categories_);
@@ -2421,15 +4731,29 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         title_ = other.title_;
         onChanged();
       }
+      if (!other.brands_.isEmpty()) {
+        if (brands_.isEmpty()) {
+          brands_ = other.brands_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureBrandsIsMutable();
+          brands_.addAll(other.brands_);
+        }
+        onChanged();
+      }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        onChanged();
+      }
+      if (!other.getLanguageCode().isEmpty()) {
+        languageCode_ = other.languageCode_;
         onChanged();
       }
       internalGetMutableAttributes().mergeFrom(other.internalGetAttributes());
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -2438,6 +4762,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPriceInfo()) {
         mergePriceInfo(other.getPriceInfo());
+      }
+      if (other.hasRating()) {
+        mergeRating(other.getRating());
       }
       if (other.hasAvailableTime()) {
         mergeAvailableTime(other.getAvailableTime());
@@ -2448,6 +4775,33 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAvailableQuantity()) {
         mergeAvailableQuantity(other.getAvailableQuantity());
       }
+      if (fulfillmentInfoBuilder_ == null) {
+        if (!other.fulfillmentInfo_.isEmpty()) {
+          if (fulfillmentInfo_.isEmpty()) {
+            fulfillmentInfo_ = other.fulfillmentInfo_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureFulfillmentInfoIsMutable();
+            fulfillmentInfo_.addAll(other.fulfillmentInfo_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.fulfillmentInfo_.isEmpty()) {
+          if (fulfillmentInfoBuilder_.isEmpty()) {
+            fulfillmentInfoBuilder_.dispose();
+            fulfillmentInfoBuilder_ = null;
+            fulfillmentInfo_ = other.fulfillmentInfo_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            fulfillmentInfoBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getFulfillmentInfoFieldBuilder()
+                    : null;
+          } else {
+            fulfillmentInfoBuilder_.addAllMessages(other.fulfillmentInfo_);
+          }
+        }
+      }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
         onChanged();
@@ -2456,7 +4810,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         if (!other.images_.isEmpty()) {
           if (images_.isEmpty()) {
             images_ = other.images_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureImagesIsMutable();
             images_.addAll(other.images_);
@@ -2469,7 +4823,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
             imagesBuilder_.dispose();
             imagesBuilder_ = null;
             images_ = other.images_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000040);
             imagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getImagesFieldBuilder()
@@ -2478,6 +4832,128 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
             imagesBuilder_.addAllMessages(other.images_);
           }
         }
+      }
+      if (other.hasAudience()) {
+        mergeAudience(other.getAudience());
+      }
+      if (other.hasColorInfo()) {
+        mergeColorInfo(other.getColorInfo());
+      }
+      if (!other.sizes_.isEmpty()) {
+        if (sizes_.isEmpty()) {
+          sizes_ = other.sizes_;
+          bitField0_ = (bitField0_ & ~0x00000080);
+        } else {
+          ensureSizesIsMutable();
+          sizes_.addAll(other.sizes_);
+        }
+        onChanged();
+      }
+      if (!other.materials_.isEmpty()) {
+        if (materials_.isEmpty()) {
+          materials_ = other.materials_;
+          bitField0_ = (bitField0_ & ~0x00000100);
+        } else {
+          ensureMaterialsIsMutable();
+          materials_.addAll(other.materials_);
+        }
+        onChanged();
+      }
+      if (!other.patterns_.isEmpty()) {
+        if (patterns_.isEmpty()) {
+          patterns_ = other.patterns_;
+          bitField0_ = (bitField0_ & ~0x00000200);
+        } else {
+          ensurePatternsIsMutable();
+          patterns_.addAll(other.patterns_);
+        }
+        onChanged();
+      }
+      if (!other.conditions_.isEmpty()) {
+        if (conditions_.isEmpty()) {
+          conditions_ = other.conditions_;
+          bitField0_ = (bitField0_ & ~0x00000400);
+        } else {
+          ensureConditionsIsMutable();
+          conditions_.addAll(other.conditions_);
+        }
+        onChanged();
+      }
+      if (promotionsBuilder_ == null) {
+        if (!other.promotions_.isEmpty()) {
+          if (promotions_.isEmpty()) {
+            promotions_ = other.promotions_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+          } else {
+            ensurePromotionsIsMutable();
+            promotions_.addAll(other.promotions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.promotions_.isEmpty()) {
+          if (promotionsBuilder_.isEmpty()) {
+            promotionsBuilder_.dispose();
+            promotionsBuilder_ = null;
+            promotions_ = other.promotions_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+            promotionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPromotionsFieldBuilder()
+                    : null;
+          } else {
+            promotionsBuilder_.addAllMessages(other.promotions_);
+          }
+        }
+      }
+      if (other.hasPublishTime()) {
+        mergePublishTime(other.getPublishTime());
+      }
+      if (other.hasRetrievableFields()) {
+        mergeRetrievableFields(other.getRetrievableFields());
+      }
+      if (variantsBuilder_ == null) {
+        if (!other.variants_.isEmpty()) {
+          if (variants_.isEmpty()) {
+            variants_ = other.variants_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+          } else {
+            ensureVariantsIsMutable();
+            variants_.addAll(other.variants_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.variants_.isEmpty()) {
+          if (variantsBuilder_.isEmpty()) {
+            variantsBuilder_.dispose();
+            variantsBuilder_ = null;
+            variants_ = other.variants_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+            variantsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getVariantsFieldBuilder()
+                    : null;
+          } else {
+            variantsBuilder_.addAllMessages(other.variants_);
+          }
+        }
+      }
+      switch (other.getExpirationCase()) {
+        case EXPIRE_TIME:
+          {
+            mergeExpireTime(other.getExpireTime());
+            break;
+          }
+        case TTL:
+          {
+            mergeTtl(other.getTtl());
+            break;
+          }
+        case EXPIRATION_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2508,7 +4984,647 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int expirationCase_ = 0;
+    private java.lang.Object expiration_;
+
+    public ExpirationCase getExpirationCase() {
+      return ExpirationCase.forNumber(expirationCase_);
+    }
+
+    public Builder clearExpiration() {
+      expirationCase_ = 0;
+      expiration_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        expireTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when this product becomes unavailable for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * If it is set, the [Product][google.cloud.retail.v2.Product] is not
+     * available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+     * [expire_time][google.cloud.retail.v2.Product.expire_time]. However, the
+     * product can still be retrieved by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * and
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * Google Merchant Center property
+     * [expiration_date](https://support.google.com/merchants/answer/6324499).
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 16;</code>
+     *
+     * @return Whether the expireTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasExpireTime() {
+      return expirationCase_ == 16;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when this product becomes unavailable for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * If it is set, the [Product][google.cloud.retail.v2.Product] is not
+     * available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+     * [expire_time][google.cloud.retail.v2.Product.expire_time]. However, the
+     * product can still be retrieved by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * and
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * Google Merchant Center property
+     * [expiration_date](https://support.google.com/merchants/answer/6324499).
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 16;</code>
+     *
+     * @return The expireTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getExpireTime() {
+      if (expireTimeBuilder_ == null) {
+        if (expirationCase_ == 16) {
+          return (com.google.protobuf.Timestamp) expiration_;
+        }
+        return com.google.protobuf.Timestamp.getDefaultInstance();
+      } else {
+        if (expirationCase_ == 16) {
+          return expireTimeBuilder_.getMessage();
+        }
+        return com.google.protobuf.Timestamp.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when this product becomes unavailable for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * If it is set, the [Product][google.cloud.retail.v2.Product] is not
+     * available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+     * [expire_time][google.cloud.retail.v2.Product.expire_time]. However, the
+     * product can still be retrieved by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * and
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * Google Merchant Center property
+     * [expiration_date](https://support.google.com/merchants/answer/6324499).
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 16;</code>
+     */
+    public Builder setExpireTime(com.google.protobuf.Timestamp value) {
+      if (expireTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expiration_ = value;
+        onChanged();
+      } else {
+        expireTimeBuilder_.setMessage(value);
+      }
+      expirationCase_ = 16;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when this product becomes unavailable for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * If it is set, the [Product][google.cloud.retail.v2.Product] is not
+     * available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+     * [expire_time][google.cloud.retail.v2.Product.expire_time]. However, the
+     * product can still be retrieved by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * and
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * Google Merchant Center property
+     * [expiration_date](https://support.google.com/merchants/answer/6324499).
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 16;</code>
+     */
+    public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (expireTimeBuilder_ == null) {
+        expiration_ = builderForValue.build();
+        onChanged();
+      } else {
+        expireTimeBuilder_.setMessage(builderForValue.build());
+      }
+      expirationCase_ = 16;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when this product becomes unavailable for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * If it is set, the [Product][google.cloud.retail.v2.Product] is not
+     * available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+     * [expire_time][google.cloud.retail.v2.Product.expire_time]. However, the
+     * product can still be retrieved by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * and
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * Google Merchant Center property
+     * [expiration_date](https://support.google.com/merchants/answer/6324499).
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 16;</code>
+     */
+    public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
+      if (expireTimeBuilder_ == null) {
+        if (expirationCase_ == 16
+            && expiration_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          expiration_ =
+              com.google.protobuf.Timestamp.newBuilder((com.google.protobuf.Timestamp) expiration_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          expiration_ = value;
+        }
+        onChanged();
+      } else {
+        if (expirationCase_ == 16) {
+          expireTimeBuilder_.mergeFrom(value);
+        }
+        expireTimeBuilder_.setMessage(value);
+      }
+      expirationCase_ = 16;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when this product becomes unavailable for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * If it is set, the [Product][google.cloud.retail.v2.Product] is not
+     * available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+     * [expire_time][google.cloud.retail.v2.Product.expire_time]. However, the
+     * product can still be retrieved by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * and
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * Google Merchant Center property
+     * [expiration_date](https://support.google.com/merchants/answer/6324499).
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 16;</code>
+     */
+    public Builder clearExpireTime() {
+      if (expireTimeBuilder_ == null) {
+        if (expirationCase_ == 16) {
+          expirationCase_ = 0;
+          expiration_ = null;
+          onChanged();
+        }
+      } else {
+        if (expirationCase_ == 16) {
+          expirationCase_ = 0;
+          expiration_ = null;
+        }
+        expireTimeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when this product becomes unavailable for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * If it is set, the [Product][google.cloud.retail.v2.Product] is not
+     * available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+     * [expire_time][google.cloud.retail.v2.Product.expire_time]. However, the
+     * product can still be retrieved by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * and
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * Google Merchant Center property
+     * [expiration_date](https://support.google.com/merchants/answer/6324499).
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 16;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
+      return getExpireTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when this product becomes unavailable for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * If it is set, the [Product][google.cloud.retail.v2.Product] is not
+     * available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+     * [expire_time][google.cloud.retail.v2.Product.expire_time]. However, the
+     * product can still be retrieved by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * and
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * Google Merchant Center property
+     * [expiration_date](https://support.google.com/merchants/answer/6324499).
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 16;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
+      if ((expirationCase_ == 16) && (expireTimeBuilder_ != null)) {
+        return expireTimeBuilder_.getMessageOrBuilder();
+      } else {
+        if (expirationCase_ == 16) {
+          return (com.google.protobuf.Timestamp) expiration_;
+        }
+        return com.google.protobuf.Timestamp.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when this product becomes unavailable for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * If it is set, the [Product][google.cloud.retail.v2.Product] is not
+     * available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+     * [expire_time][google.cloud.retail.v2.Product.expire_time]. However, the
+     * product can still be retrieved by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * and
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * Google Merchant Center property
+     * [expiration_date](https://support.google.com/merchants/answer/6324499).
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getExpireTimeFieldBuilder() {
+      if (expireTimeBuilder_ == null) {
+        if (!(expirationCase_ == 16)) {
+          expiration_ = com.google.protobuf.Timestamp.getDefaultInstance();
+        }
+        expireTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                (com.google.protobuf.Timestamp) expiration_, getParentForChildren(), isClean());
+        expiration_ = null;
+      }
+      expirationCase_ = 16;
+      onChanged();
+      ;
+      return expireTimeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        ttlBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The TTL (time to live) of the product.
+     * If it is set, [expire_time][google.cloud.retail.v2.Product.expire_time]
+     * is set as current timestamp plus
+     * [ttl][google.cloud.retail.v2.Product.ttl]. The derived
+     * [expire_time][google.cloud.retail.v2.Product.expire_time] is returned in
+     * the output and [ttl][google.cloud.retail.v2.Product.ttl] is left blank
+     * when retrieving the [Product][google.cloud.retail.v2.Product].
+     * If it is set, the product is not available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+     * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl].
+     * However, the product can still be retrieved by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * and
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 17 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return Whether the ttl field is set.
+     */
+    @java.lang.Override
+    public boolean hasTtl() {
+      return expirationCase_ == 17;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The TTL (time to live) of the product.
+     * If it is set, [expire_time][google.cloud.retail.v2.Product.expire_time]
+     * is set as current timestamp plus
+     * [ttl][google.cloud.retail.v2.Product.ttl]. The derived
+     * [expire_time][google.cloud.retail.v2.Product.expire_time] is returned in
+     * the output and [ttl][google.cloud.retail.v2.Product.ttl] is left blank
+     * when retrieving the [Product][google.cloud.retail.v2.Product].
+     * If it is set, the product is not available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+     * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl].
+     * However, the product can still be retrieved by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * and
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 17 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The ttl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getTtl() {
+      if (ttlBuilder_ == null) {
+        if (expirationCase_ == 17) {
+          return (com.google.protobuf.Duration) expiration_;
+        }
+        return com.google.protobuf.Duration.getDefaultInstance();
+      } else {
+        if (expirationCase_ == 17) {
+          return ttlBuilder_.getMessage();
+        }
+        return com.google.protobuf.Duration.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The TTL (time to live) of the product.
+     * If it is set, [expire_time][google.cloud.retail.v2.Product.expire_time]
+     * is set as current timestamp plus
+     * [ttl][google.cloud.retail.v2.Product.ttl]. The derived
+     * [expire_time][google.cloud.retail.v2.Product.expire_time] is returned in
+     * the output and [ttl][google.cloud.retail.v2.Product.ttl] is left blank
+     * when retrieving the [Product][google.cloud.retail.v2.Product].
+     * If it is set, the product is not available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+     * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl].
+     * However, the product can still be retrieved by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * and
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 17 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     */
+    public Builder setTtl(com.google.protobuf.Duration value) {
+      if (ttlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expiration_ = value;
+        onChanged();
+      } else {
+        ttlBuilder_.setMessage(value);
+      }
+      expirationCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The TTL (time to live) of the product.
+     * If it is set, [expire_time][google.cloud.retail.v2.Product.expire_time]
+     * is set as current timestamp plus
+     * [ttl][google.cloud.retail.v2.Product.ttl]. The derived
+     * [expire_time][google.cloud.retail.v2.Product.expire_time] is returned in
+     * the output and [ttl][google.cloud.retail.v2.Product.ttl] is left blank
+     * when retrieving the [Product][google.cloud.retail.v2.Product].
+     * If it is set, the product is not available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+     * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl].
+     * However, the product can still be retrieved by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * and
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 17 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     */
+    public Builder setTtl(com.google.protobuf.Duration.Builder builderForValue) {
+      if (ttlBuilder_ == null) {
+        expiration_ = builderForValue.build();
+        onChanged();
+      } else {
+        ttlBuilder_.setMessage(builderForValue.build());
+      }
+      expirationCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The TTL (time to live) of the product.
+     * If it is set, [expire_time][google.cloud.retail.v2.Product.expire_time]
+     * is set as current timestamp plus
+     * [ttl][google.cloud.retail.v2.Product.ttl]. The derived
+     * [expire_time][google.cloud.retail.v2.Product.expire_time] is returned in
+     * the output and [ttl][google.cloud.retail.v2.Product.ttl] is left blank
+     * when retrieving the [Product][google.cloud.retail.v2.Product].
+     * If it is set, the product is not available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+     * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl].
+     * However, the product can still be retrieved by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * and
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 17 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     */
+    public Builder mergeTtl(com.google.protobuf.Duration value) {
+      if (ttlBuilder_ == null) {
+        if (expirationCase_ == 17
+            && expiration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          expiration_ =
+              com.google.protobuf.Duration.newBuilder((com.google.protobuf.Duration) expiration_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          expiration_ = value;
+        }
+        onChanged();
+      } else {
+        if (expirationCase_ == 17) {
+          ttlBuilder_.mergeFrom(value);
+        }
+        ttlBuilder_.setMessage(value);
+      }
+      expirationCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The TTL (time to live) of the product.
+     * If it is set, [expire_time][google.cloud.retail.v2.Product.expire_time]
+     * is set as current timestamp plus
+     * [ttl][google.cloud.retail.v2.Product.ttl]. The derived
+     * [expire_time][google.cloud.retail.v2.Product.expire_time] is returned in
+     * the output and [ttl][google.cloud.retail.v2.Product.ttl] is left blank
+     * when retrieving the [Product][google.cloud.retail.v2.Product].
+     * If it is set, the product is not available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+     * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl].
+     * However, the product can still be retrieved by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * and
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 17 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     */
+    public Builder clearTtl() {
+      if (ttlBuilder_ == null) {
+        if (expirationCase_ == 17) {
+          expirationCase_ = 0;
+          expiration_ = null;
+          onChanged();
+        }
+      } else {
+        if (expirationCase_ == 17) {
+          expirationCase_ = 0;
+          expiration_ = null;
+        }
+        ttlBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The TTL (time to live) of the product.
+     * If it is set, [expire_time][google.cloud.retail.v2.Product.expire_time]
+     * is set as current timestamp plus
+     * [ttl][google.cloud.retail.v2.Product.ttl]. The derived
+     * [expire_time][google.cloud.retail.v2.Product.expire_time] is returned in
+     * the output and [ttl][google.cloud.retail.v2.Product.ttl] is left blank
+     * when retrieving the [Product][google.cloud.retail.v2.Product].
+     * If it is set, the product is not available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+     * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl].
+     * However, the product can still be retrieved by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * and
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 17 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     */
+    public com.google.protobuf.Duration.Builder getTtlBuilder() {
+      return getTtlFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The TTL (time to live) of the product.
+     * If it is set, [expire_time][google.cloud.retail.v2.Product.expire_time]
+     * is set as current timestamp plus
+     * [ttl][google.cloud.retail.v2.Product.ttl]. The derived
+     * [expire_time][google.cloud.retail.v2.Product.expire_time] is returned in
+     * the output and [ttl][google.cloud.retail.v2.Product.ttl] is left blank
+     * when retrieving the [Product][google.cloud.retail.v2.Product].
+     * If it is set, the product is not available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+     * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl].
+     * However, the product can still be retrieved by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * and
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 17 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getTtlOrBuilder() {
+      if ((expirationCase_ == 17) && (ttlBuilder_ != null)) {
+        return ttlBuilder_.getMessageOrBuilder();
+      } else {
+        if (expirationCase_ == 17) {
+          return (com.google.protobuf.Duration) expiration_;
+        }
+        return com.google.protobuf.Duration.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The TTL (time to live) of the product.
+     * If it is set, [expire_time][google.cloud.retail.v2.Product.expire_time]
+     * is set as current timestamp plus
+     * [ttl][google.cloud.retail.v2.Product.ttl]. The derived
+     * [expire_time][google.cloud.retail.v2.Product.expire_time] is returned in
+     * the output and [ttl][google.cloud.retail.v2.Product.ttl] is left blank
+     * when retrieving the [Product][google.cloud.retail.v2.Product].
+     * If it is set, the product is not available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
+     * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl].
+     * However, the product can still be retrieved by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * and
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 17 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getTtlFieldBuilder() {
+      if (ttlBuilder_ == null) {
+        if (!(expirationCase_ == 17)) {
+          expiration_ = com.google.protobuf.Duration.getDefaultInstance();
+        }
+        ttlBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                (com.google.protobuf.Duration) expiration_, getParentForChildren(), isClean());
+        expiration_ = null;
+      }
+      expirationCase_ = 17;
+      onChanged();
+      ;
+      return ttlBuilder_;
+    }
 
     private java.lang.Object name_ = "";
     /**
@@ -2782,7 +5898,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The type of the product. This field is output-only.
+     * Immutable. The type of the product. Default to
+     * [Catalog.product_level_config.ingestion_product_type][google.cloud.retail.v2.ProductLevelConfig.ingestion_product_type]
+     * if unset.
      * </pre>
      *
      * <code>
@@ -2799,7 +5917,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The type of the product. This field is output-only.
+     * Immutable. The type of the product. Default to
+     * [Catalog.product_level_config.ingestion_product_type][google.cloud.retail.v2.ProductLevelConfig.ingestion_product_type]
+     * if unset.
      * </pre>
      *
      * <code>
@@ -2819,7 +5939,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The type of the product. This field is output-only.
+     * Immutable. The type of the product. Default to
+     * [Catalog.product_level_config.ingestion_product_type][google.cloud.retail.v2.ProductLevelConfig.ingestion_product_type]
+     * if unset.
      * </pre>
      *
      * <code>
@@ -2839,7 +5961,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The type of the product. This field is output-only.
+     * Immutable. The type of the product. Default to
+     * [Catalog.product_level_config.ingestion_product_type][google.cloud.retail.v2.ProductLevelConfig.ingestion_product_type]
+     * if unset.
      * </pre>
      *
      * <code>
@@ -2862,7 +5986,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The type of the product. This field is output-only.
+     * Immutable. The type of the product. Default to
+     * [Catalog.product_level_config.ingestion_product_type][google.cloud.retail.v2.ProductLevelConfig.ingestion_product_type]
+     * if unset.
      * </pre>
      *
      * <code>
@@ -3064,13 +6190,378 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.LazyStringList collectionMemberIds_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureCollectionMemberIdsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        collectionMemberIds_ = new com.google.protobuf.LazyStringArrayList(collectionMemberIds_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [id][google.cloud.retail.v2.Product.id] of the collection members when
+     * [type][google.cloud.retail.v2.Product.type] is
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION].
+     * Should not set it for other types. A maximum of 1000 values are allowed.
+     * Otherwise, an INVALID_ARGUMENT error is return.
+     * </pre>
+     *
+     * <code>repeated string collection_member_ids = 5;</code>
+     *
+     * @return A list containing the collectionMemberIds.
+     */
+    public com.google.protobuf.ProtocolStringList getCollectionMemberIdsList() {
+      return collectionMemberIds_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [id][google.cloud.retail.v2.Product.id] of the collection members when
+     * [type][google.cloud.retail.v2.Product.type] is
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION].
+     * Should not set it for other types. A maximum of 1000 values are allowed.
+     * Otherwise, an INVALID_ARGUMENT error is return.
+     * </pre>
+     *
+     * <code>repeated string collection_member_ids = 5;</code>
+     *
+     * @return The count of collectionMemberIds.
+     */
+    public int getCollectionMemberIdsCount() {
+      return collectionMemberIds_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [id][google.cloud.retail.v2.Product.id] of the collection members when
+     * [type][google.cloud.retail.v2.Product.type] is
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION].
+     * Should not set it for other types. A maximum of 1000 values are allowed.
+     * Otherwise, an INVALID_ARGUMENT error is return.
+     * </pre>
+     *
+     * <code>repeated string collection_member_ids = 5;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The collectionMemberIds at the given index.
+     */
+    public java.lang.String getCollectionMemberIds(int index) {
+      return collectionMemberIds_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [id][google.cloud.retail.v2.Product.id] of the collection members when
+     * [type][google.cloud.retail.v2.Product.type] is
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION].
+     * Should not set it for other types. A maximum of 1000 values are allowed.
+     * Otherwise, an INVALID_ARGUMENT error is return.
+     * </pre>
+     *
+     * <code>repeated string collection_member_ids = 5;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the collectionMemberIds at the given index.
+     */
+    public com.google.protobuf.ByteString getCollectionMemberIdsBytes(int index) {
+      return collectionMemberIds_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [id][google.cloud.retail.v2.Product.id] of the collection members when
+     * [type][google.cloud.retail.v2.Product.type] is
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION].
+     * Should not set it for other types. A maximum of 1000 values are allowed.
+     * Otherwise, an INVALID_ARGUMENT error is return.
+     * </pre>
+     *
+     * <code>repeated string collection_member_ids = 5;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The collectionMemberIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCollectionMemberIds(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCollectionMemberIdsIsMutable();
+      collectionMemberIds_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [id][google.cloud.retail.v2.Product.id] of the collection members when
+     * [type][google.cloud.retail.v2.Product.type] is
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION].
+     * Should not set it for other types. A maximum of 1000 values are allowed.
+     * Otherwise, an INVALID_ARGUMENT error is return.
+     * </pre>
+     *
+     * <code>repeated string collection_member_ids = 5;</code>
+     *
+     * @param value The collectionMemberIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCollectionMemberIds(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCollectionMemberIdsIsMutable();
+      collectionMemberIds_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [id][google.cloud.retail.v2.Product.id] of the collection members when
+     * [type][google.cloud.retail.v2.Product.type] is
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION].
+     * Should not set it for other types. A maximum of 1000 values are allowed.
+     * Otherwise, an INVALID_ARGUMENT error is return.
+     * </pre>
+     *
+     * <code>repeated string collection_member_ids = 5;</code>
+     *
+     * @param values The collectionMemberIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCollectionMemberIds(java.lang.Iterable<java.lang.String> values) {
+      ensureCollectionMemberIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, collectionMemberIds_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [id][google.cloud.retail.v2.Product.id] of the collection members when
+     * [type][google.cloud.retail.v2.Product.type] is
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION].
+     * Should not set it for other types. A maximum of 1000 values are allowed.
+     * Otherwise, an INVALID_ARGUMENT error is return.
+     * </pre>
+     *
+     * <code>repeated string collection_member_ids = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCollectionMemberIds() {
+      collectionMemberIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [id][google.cloud.retail.v2.Product.id] of the collection members when
+     * [type][google.cloud.retail.v2.Product.type] is
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION].
+     * Should not set it for other types. A maximum of 1000 values are allowed.
+     * Otherwise, an INVALID_ARGUMENT error is return.
+     * </pre>
+     *
+     * <code>repeated string collection_member_ids = 5;</code>
+     *
+     * @param value The bytes of the collectionMemberIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCollectionMemberIdsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureCollectionMemberIdsIsMutable();
+      collectionMemberIds_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object gtin_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The Global Trade Item Number (GTIN) of the product.
+     * This field must be a UTF-8 encoded string with a length limit of 128
+     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [gtin](https://support.google.com/merchants/answer/6324461).
+     * Schema.org property
+     * [Product.isbn](https://schema.org/isbn) or
+     * [Product.gtin8](https://schema.org/gtin8) or
+     * [Product.gtin12](https://schema.org/gtin12) or
+     * [Product.gtin13](https://schema.org/gtin13) or
+     * [Product.gtin14](https://schema.org/gtin14).
+     * If the value is not a valid GTIN, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>string gtin = 6;</code>
+     *
+     * @return The gtin.
+     */
+    public java.lang.String getGtin() {
+      java.lang.Object ref = gtin_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gtin_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Global Trade Item Number (GTIN) of the product.
+     * This field must be a UTF-8 encoded string with a length limit of 128
+     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [gtin](https://support.google.com/merchants/answer/6324461).
+     * Schema.org property
+     * [Product.isbn](https://schema.org/isbn) or
+     * [Product.gtin8](https://schema.org/gtin8) or
+     * [Product.gtin12](https://schema.org/gtin12) or
+     * [Product.gtin13](https://schema.org/gtin13) or
+     * [Product.gtin14](https://schema.org/gtin14).
+     * If the value is not a valid GTIN, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>string gtin = 6;</code>
+     *
+     * @return The bytes for gtin.
+     */
+    public com.google.protobuf.ByteString getGtinBytes() {
+      java.lang.Object ref = gtin_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        gtin_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Global Trade Item Number (GTIN) of the product.
+     * This field must be a UTF-8 encoded string with a length limit of 128
+     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [gtin](https://support.google.com/merchants/answer/6324461).
+     * Schema.org property
+     * [Product.isbn](https://schema.org/isbn) or
+     * [Product.gtin8](https://schema.org/gtin8) or
+     * [Product.gtin12](https://schema.org/gtin12) or
+     * [Product.gtin13](https://schema.org/gtin13) or
+     * [Product.gtin14](https://schema.org/gtin14).
+     * If the value is not a valid GTIN, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>string gtin = 6;</code>
+     *
+     * @param value The gtin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGtin(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      gtin_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Global Trade Item Number (GTIN) of the product.
+     * This field must be a UTF-8 encoded string with a length limit of 128
+     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [gtin](https://support.google.com/merchants/answer/6324461).
+     * Schema.org property
+     * [Product.isbn](https://schema.org/isbn) or
+     * [Product.gtin8](https://schema.org/gtin8) or
+     * [Product.gtin12](https://schema.org/gtin12) or
+     * [Product.gtin13](https://schema.org/gtin13) or
+     * [Product.gtin14](https://schema.org/gtin14).
+     * If the value is not a valid GTIN, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>string gtin = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGtin() {
+
+      gtin_ = getDefaultInstance().getGtin();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Global Trade Item Number (GTIN) of the product.
+     * This field must be a UTF-8 encoded string with a length limit of 128
+     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [gtin](https://support.google.com/merchants/answer/6324461).
+     * Schema.org property
+     * [Product.isbn](https://schema.org/isbn) or
+     * [Product.gtin8](https://schema.org/gtin8) or
+     * [Product.gtin12](https://schema.org/gtin12) or
+     * [Product.gtin13](https://schema.org/gtin13) or
+     * [Product.gtin14](https://schema.org/gtin14).
+     * If the value is not a valid GTIN, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>string gtin = 6;</code>
+     *
+     * @param value The bytes for gtin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGtinBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      gtin_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringList categories_ =
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         categories_ = new com.google.protobuf.LazyStringArrayList(categories_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -3405,7 +6896,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCategories() {
       categories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -3463,7 +6954,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Product title.
-     * This field must be a UTF-8 encoded string with a length limit of 128
+     * This field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
      * [title](https://support.google.com/merchants/answer/6324415). Schema.org
@@ -3490,7 +6981,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Product title.
-     * This field must be a UTF-8 encoded string with a length limit of 128
+     * This field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
      * [title](https://support.google.com/merchants/answer/6324415). Schema.org
@@ -3517,7 +7008,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Product title.
-     * This field must be a UTF-8 encoded string with a length limit of 128
+     * This field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
      * [title](https://support.google.com/merchants/answer/6324415). Schema.org
@@ -3543,7 +7034,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Product title.
-     * This field must be a UTF-8 encoded string with a length limit of 128
+     * This field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
      * [title](https://support.google.com/merchants/answer/6324415). Schema.org
@@ -3565,7 +7056,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Product title.
-     * This field must be a UTF-8 encoded string with a length limit of 128
+     * This field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
      * [title](https://support.google.com/merchants/answer/6324415). Schema.org
@@ -3584,6 +7075,228 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       title_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList brands_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureBrandsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        brands_ = new com.google.protobuf.LazyStringArrayList(brands_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The brands of the product.
+     * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
+     * string with a length limit of 1,000 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
+     * property [Product.brand](https://schema.org/brand).
+     * </pre>
+     *
+     * <code>repeated string brands = 9;</code>
+     *
+     * @return A list containing the brands.
+     */
+    public com.google.protobuf.ProtocolStringList getBrandsList() {
+      return brands_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The brands of the product.
+     * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
+     * string with a length limit of 1,000 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
+     * property [Product.brand](https://schema.org/brand).
+     * </pre>
+     *
+     * <code>repeated string brands = 9;</code>
+     *
+     * @return The count of brands.
+     */
+    public int getBrandsCount() {
+      return brands_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The brands of the product.
+     * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
+     * string with a length limit of 1,000 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
+     * property [Product.brand](https://schema.org/brand).
+     * </pre>
+     *
+     * <code>repeated string brands = 9;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The brands at the given index.
+     */
+    public java.lang.String getBrands(int index) {
+      return brands_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The brands of the product.
+     * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
+     * string with a length limit of 1,000 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
+     * property [Product.brand](https://schema.org/brand).
+     * </pre>
+     *
+     * <code>repeated string brands = 9;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the brands at the given index.
+     */
+    public com.google.protobuf.ByteString getBrandsBytes(int index) {
+      return brands_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The brands of the product.
+     * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
+     * string with a length limit of 1,000 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
+     * property [Product.brand](https://schema.org/brand).
+     * </pre>
+     *
+     * <code>repeated string brands = 9;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The brands to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBrands(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureBrandsIsMutable();
+      brands_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The brands of the product.
+     * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
+     * string with a length limit of 1,000 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
+     * property [Product.brand](https://schema.org/brand).
+     * </pre>
+     *
+     * <code>repeated string brands = 9;</code>
+     *
+     * @param value The brands to add.
+     * @return This builder for chaining.
+     */
+    public Builder addBrands(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureBrandsIsMutable();
+      brands_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The brands of the product.
+     * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
+     * string with a length limit of 1,000 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
+     * property [Product.brand](https://schema.org/brand).
+     * </pre>
+     *
+     * <code>repeated string brands = 9;</code>
+     *
+     * @param values The brands to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllBrands(java.lang.Iterable<java.lang.String> values) {
+      ensureBrandsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, brands_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The brands of the product.
+     * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
+     * string with a length limit of 1,000 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
+     * property [Product.brand](https://schema.org/brand).
+     * </pre>
+     *
+     * <code>repeated string brands = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBrands() {
+      brands_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The brands of the product.
+     * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
+     * string with a length limit of 1,000 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
+     * property [Product.brand](https://schema.org/brand).
+     * </pre>
+     *
+     * <code>repeated string brands = 9;</code>
+     *
+     * @param value The bytes of the brands to add.
+     * @return This builder for chaining.
+     */
+    public Builder addBrandsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureBrandsIsMutable();
+      brands_.add(value);
       onChanged();
       return this;
     }
@@ -3719,6 +7432,147 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object languageCode_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Language of the title/description and other string attributes. Use language
+     * tags defined by [BCP 47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+     * For product prediction, this field is ignored and the model automatically
+     * detects the text language. The [Product][google.cloud.retail.v2.Product]
+     * can include text in different languages, but duplicating
+     * [Product][google.cloud.retail.v2.Product]s to provide text in multiple
+     * languages can result in degraded model performance.
+     * For product search this field is in use. It defaults to "en-US" if unset.
+     * </pre>
+     *
+     * <code>string language_code = 11;</code>
+     *
+     * @return The languageCode.
+     */
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Language of the title/description and other string attributes. Use language
+     * tags defined by [BCP 47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+     * For product prediction, this field is ignored and the model automatically
+     * detects the text language. The [Product][google.cloud.retail.v2.Product]
+     * can include text in different languages, but duplicating
+     * [Product][google.cloud.retail.v2.Product]s to provide text in multiple
+     * languages can result in degraded model performance.
+     * For product search this field is in use. It defaults to "en-US" if unset.
+     * </pre>
+     *
+     * <code>string language_code = 11;</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Language of the title/description and other string attributes. Use language
+     * tags defined by [BCP 47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+     * For product prediction, this field is ignored and the model automatically
+     * detects the text language. The [Product][google.cloud.retail.v2.Product]
+     * can include text in different languages, but duplicating
+     * [Product][google.cloud.retail.v2.Product]s to provide text in multiple
+     * languages can result in degraded model performance.
+     * For product search this field is in use. It defaults to "en-US" if unset.
+     * </pre>
+     *
+     * <code>string language_code = 11;</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      languageCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Language of the title/description and other string attributes. Use language
+     * tags defined by [BCP 47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+     * For product prediction, this field is ignored and the model automatically
+     * detects the text language. The [Product][google.cloud.retail.v2.Product]
+     * can include text in different languages, but duplicating
+     * [Product][google.cloud.retail.v2.Product]s to provide text in multiple
+     * languages can result in degraded model performance.
+     * For product search this field is in use. It defaults to "en-US" if unset.
+     * </pre>
+     *
+     * <code>string language_code = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguageCode() {
+
+      languageCode_ = getDefaultInstance().getLanguageCode();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Language of the title/description and other string attributes. Use language
+     * tags defined by [BCP 47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+     * For product prediction, this field is ignored and the model automatically
+     * detects the text language. The [Product][google.cloud.retail.v2.Product]
+     * can include text in different languages, but duplicating
+     * [Product][google.cloud.retail.v2.Product]s to provide text in multiple
+     * languages can result in degraded model performance.
+     * For product search this field is in use. It defaults to "en-US" if unset.
+     * </pre>
+     *
+     * <code>string language_code = 11;</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      languageCode_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.retail.v2.CustomAttribute>
         attributes_;
@@ -3767,10 +7621,17 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * For example: `{ "vendor": {"text": ["vendor123", "vendor456"]},
      * "lengths_cm": {"numbers":[2.3, 15.4]}, "heights_cm": {"numbers":[8.1, 6.4]}
      * }`.
-     * A maximum of 150 attributes are allowed. Otherwise, an INVALID_ARGUMENT
-     * error is returned.
-     * The key must be a UTF-8 encoded string with a length limit of 5,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
+     * error is returned:
+     * * Max entries count: 200 by default; 100 for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * The key must be a UTF-8 encoded string with a length limit of 128
+     *   characters.
+     * * Max indexable entries count: 200 by default; 40 for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * Max searchable entries count: 30.
+     * * For indexable attribute, the key must match the pattern:
+     *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -3805,10 +7666,17 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * For example: `{ "vendor": {"text": ["vendor123", "vendor456"]},
      * "lengths_cm": {"numbers":[2.3, 15.4]}, "heights_cm": {"numbers":[8.1, 6.4]}
      * }`.
-     * A maximum of 150 attributes are allowed. Otherwise, an INVALID_ARGUMENT
-     * error is returned.
-     * The key must be a UTF-8 encoded string with a length limit of 5,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
+     * error is returned:
+     * * Max entries count: 200 by default; 100 for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * The key must be a UTF-8 encoded string with a length limit of 128
+     *   characters.
+     * * Max indexable entries count: 200 by default; 40 for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * Max searchable entries count: 30.
+     * * For indexable attribute, the key must match the pattern:
+     *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -3834,10 +7702,17 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * For example: `{ "vendor": {"text": ["vendor123", "vendor456"]},
      * "lengths_cm": {"numbers":[2.3, 15.4]}, "heights_cm": {"numbers":[8.1, 6.4]}
      * }`.
-     * A maximum of 150 attributes are allowed. Otherwise, an INVALID_ARGUMENT
-     * error is returned.
-     * The key must be a UTF-8 encoded string with a length limit of 5,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
+     * error is returned:
+     * * Max entries count: 200 by default; 100 for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * The key must be a UTF-8 encoded string with a length limit of 128
+     *   characters.
+     * * Max indexable entries count: 200 by default; 40 for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * Max searchable entries count: 30.
+     * * For indexable attribute, the key must match the pattern:
+     *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -3868,10 +7743,17 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * For example: `{ "vendor": {"text": ["vendor123", "vendor456"]},
      * "lengths_cm": {"numbers":[2.3, 15.4]}, "heights_cm": {"numbers":[8.1, 6.4]}
      * }`.
-     * A maximum of 150 attributes are allowed. Otherwise, an INVALID_ARGUMENT
-     * error is returned.
-     * The key must be a UTF-8 encoded string with a length limit of 5,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
+     * error is returned:
+     * * Max entries count: 200 by default; 100 for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * The key must be a UTF-8 encoded string with a length limit of 128
+     *   characters.
+     * * Max indexable entries count: 200 by default; 40 for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * Max searchable entries count: 30.
+     * * For indexable attribute, the key must match the pattern:
+     *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -3909,10 +7791,17 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * For example: `{ "vendor": {"text": ["vendor123", "vendor456"]},
      * "lengths_cm": {"numbers":[2.3, 15.4]}, "heights_cm": {"numbers":[8.1, 6.4]}
      * }`.
-     * A maximum of 150 attributes are allowed. Otherwise, an INVALID_ARGUMENT
-     * error is returned.
-     * The key must be a UTF-8 encoded string with a length limit of 5,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
+     * error is returned:
+     * * Max entries count: 200 by default; 100 for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * The key must be a UTF-8 encoded string with a length limit of 128
+     *   characters.
+     * * Max indexable entries count: 200 by default; 40 for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * Max searchable entries count: 30.
+     * * For indexable attribute, the key must match the pattern:
+     *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -3946,10 +7835,17 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * For example: `{ "vendor": {"text": ["vendor123", "vendor456"]},
      * "lengths_cm": {"numbers":[2.3, 15.4]}, "heights_cm": {"numbers":[8.1, 6.4]}
      * }`.
-     * A maximum of 150 attributes are allowed. Otherwise, an INVALID_ARGUMENT
-     * error is returned.
-     * The key must be a UTF-8 encoded string with a length limit of 5,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
+     * error is returned:
+     * * Max entries count: 200 by default; 100 for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * The key must be a UTF-8 encoded string with a length limit of 128
+     *   characters.
+     * * Max indexable entries count: 200 by default; 40 for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * Max searchable entries count: 30.
+     * * For indexable attribute, the key must match the pattern:
+     *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -3981,10 +7877,17 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * For example: `{ "vendor": {"text": ["vendor123", "vendor456"]},
      * "lengths_cm": {"numbers":[2.3, 15.4]}, "heights_cm": {"numbers":[8.1, 6.4]}
      * }`.
-     * A maximum of 150 attributes are allowed. Otherwise, an INVALID_ARGUMENT
-     * error is returned.
-     * The key must be a UTF-8 encoded string with a length limit of 5,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
+     * error is returned:
+     * * Max entries count: 200 by default; 100 for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * The key must be a UTF-8 encoded string with a length limit of 128
+     *   characters.
+     * * Max indexable entries count: 200 by default; 40 for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * Max searchable entries count: 30.
+     * * For indexable attribute, the key must match the pattern:
+     *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -3999,9 +7902,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -4208,7 +8111,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTags() {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -4447,6 +8350,185 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       return priceInfoBuilder_;
     }
 
+    private com.google.cloud.retail.v2.Rating rating_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2.Rating,
+            com.google.cloud.retail.v2.Rating.Builder,
+            com.google.cloud.retail.v2.RatingOrBuilder>
+        ratingBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The rating of this product.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rating rating = 15;</code>
+     *
+     * @return Whether the rating field is set.
+     */
+    public boolean hasRating() {
+      return ratingBuilder_ != null || rating_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The rating of this product.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rating rating = 15;</code>
+     *
+     * @return The rating.
+     */
+    public com.google.cloud.retail.v2.Rating getRating() {
+      if (ratingBuilder_ == null) {
+        return rating_ == null ? com.google.cloud.retail.v2.Rating.getDefaultInstance() : rating_;
+      } else {
+        return ratingBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The rating of this product.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rating rating = 15;</code>
+     */
+    public Builder setRating(com.google.cloud.retail.v2.Rating value) {
+      if (ratingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rating_ = value;
+        onChanged();
+      } else {
+        ratingBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The rating of this product.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rating rating = 15;</code>
+     */
+    public Builder setRating(com.google.cloud.retail.v2.Rating.Builder builderForValue) {
+      if (ratingBuilder_ == null) {
+        rating_ = builderForValue.build();
+        onChanged();
+      } else {
+        ratingBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The rating of this product.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rating rating = 15;</code>
+     */
+    public Builder mergeRating(com.google.cloud.retail.v2.Rating value) {
+      if (ratingBuilder_ == null) {
+        if (rating_ != null) {
+          rating_ =
+              com.google.cloud.retail.v2.Rating.newBuilder(rating_).mergeFrom(value).buildPartial();
+        } else {
+          rating_ = value;
+        }
+        onChanged();
+      } else {
+        ratingBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The rating of this product.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rating rating = 15;</code>
+     */
+    public Builder clearRating() {
+      if (ratingBuilder_ == null) {
+        rating_ = null;
+        onChanged();
+      } else {
+        rating_ = null;
+        ratingBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The rating of this product.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rating rating = 15;</code>
+     */
+    public com.google.cloud.retail.v2.Rating.Builder getRatingBuilder() {
+
+      onChanged();
+      return getRatingFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The rating of this product.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rating rating = 15;</code>
+     */
+    public com.google.cloud.retail.v2.RatingOrBuilder getRatingOrBuilder() {
+      if (ratingBuilder_ != null) {
+        return ratingBuilder_.getMessageOrBuilder();
+      } else {
+        return rating_ == null ? com.google.cloud.retail.v2.Rating.getDefaultInstance() : rating_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The rating of this product.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rating rating = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2.Rating,
+            com.google.cloud.retail.v2.Rating.Builder,
+            com.google.cloud.retail.v2.RatingOrBuilder>
+        getRatingFieldBuilder() {
+      if (ratingBuilder_ == null) {
+        ratingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.retail.v2.Rating,
+                com.google.cloud.retail.v2.Rating.Builder,
+                com.google.cloud.retail.v2.RatingOrBuilder>(
+                getRating(), getParentForChildren(), isClean());
+        rating_ = null;
+      }
+      return ratingBuilder_;
+    }
+
     private com.google.protobuf.Timestamp availableTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -4458,7 +8540,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
-     * available recommendation and search.
+     * available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -4473,7 +8556,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
-     * available recommendation and search.
+     * available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -4494,7 +8578,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
-     * available recommendation and search.
+     * available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -4517,7 +8602,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
-     * available recommendation and search.
+     * available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -4537,7 +8623,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
-     * available recommendation and search.
+     * available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -4564,7 +8651,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
-     * available recommendation and search.
+     * available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -4585,7 +8673,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
-     * available recommendation and search.
+     * available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -4600,7 +8689,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
-     * available recommendation and search.
+     * available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -4619,7 +8709,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
-     * available recommendation and search.
+     * available for
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -4942,12 +9033,441 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       return availableQuantityBuilder_;
     }
 
+    private java.util.List<com.google.cloud.retail.v2.FulfillmentInfo> fulfillmentInfo_ =
+        java.util.Collections.emptyList();
+
+    private void ensureFulfillmentInfoIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        fulfillmentInfo_ =
+            new java.util.ArrayList<com.google.cloud.retail.v2.FulfillmentInfo>(fulfillmentInfo_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.retail.v2.FulfillmentInfo,
+            com.google.cloud.retail.v2.FulfillmentInfo.Builder,
+            com.google.cloud.retail.v2.FulfillmentInfoOrBuilder>
+        fulfillmentInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Fulfillment information, such as the store IDs for in-store pickup or
+     * region IDs for different shipping methods.
+     * All the elements must have distinct
+     * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+     * Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+     */
+    public java.util.List<com.google.cloud.retail.v2.FulfillmentInfo> getFulfillmentInfoList() {
+      if (fulfillmentInfoBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(fulfillmentInfo_);
+      } else {
+        return fulfillmentInfoBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fulfillment information, such as the store IDs for in-store pickup or
+     * region IDs for different shipping methods.
+     * All the elements must have distinct
+     * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+     * Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+     */
+    public int getFulfillmentInfoCount() {
+      if (fulfillmentInfoBuilder_ == null) {
+        return fulfillmentInfo_.size();
+      } else {
+        return fulfillmentInfoBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fulfillment information, such as the store IDs for in-store pickup or
+     * region IDs for different shipping methods.
+     * All the elements must have distinct
+     * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+     * Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+     */
+    public com.google.cloud.retail.v2.FulfillmentInfo getFulfillmentInfo(int index) {
+      if (fulfillmentInfoBuilder_ == null) {
+        return fulfillmentInfo_.get(index);
+      } else {
+        return fulfillmentInfoBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fulfillment information, such as the store IDs for in-store pickup or
+     * region IDs for different shipping methods.
+     * All the elements must have distinct
+     * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+     * Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+     */
+    public Builder setFulfillmentInfo(int index, com.google.cloud.retail.v2.FulfillmentInfo value) {
+      if (fulfillmentInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFulfillmentInfoIsMutable();
+        fulfillmentInfo_.set(index, value);
+        onChanged();
+      } else {
+        fulfillmentInfoBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fulfillment information, such as the store IDs for in-store pickup or
+     * region IDs for different shipping methods.
+     * All the elements must have distinct
+     * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+     * Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+     */
+    public Builder setFulfillmentInfo(
+        int index, com.google.cloud.retail.v2.FulfillmentInfo.Builder builderForValue) {
+      if (fulfillmentInfoBuilder_ == null) {
+        ensureFulfillmentInfoIsMutable();
+        fulfillmentInfo_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        fulfillmentInfoBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fulfillment information, such as the store IDs for in-store pickup or
+     * region IDs for different shipping methods.
+     * All the elements must have distinct
+     * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+     * Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+     */
+    public Builder addFulfillmentInfo(com.google.cloud.retail.v2.FulfillmentInfo value) {
+      if (fulfillmentInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFulfillmentInfoIsMutable();
+        fulfillmentInfo_.add(value);
+        onChanged();
+      } else {
+        fulfillmentInfoBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fulfillment information, such as the store IDs for in-store pickup or
+     * region IDs for different shipping methods.
+     * All the elements must have distinct
+     * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+     * Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+     */
+    public Builder addFulfillmentInfo(int index, com.google.cloud.retail.v2.FulfillmentInfo value) {
+      if (fulfillmentInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFulfillmentInfoIsMutable();
+        fulfillmentInfo_.add(index, value);
+        onChanged();
+      } else {
+        fulfillmentInfoBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fulfillment information, such as the store IDs for in-store pickup or
+     * region IDs for different shipping methods.
+     * All the elements must have distinct
+     * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+     * Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+     */
+    public Builder addFulfillmentInfo(
+        com.google.cloud.retail.v2.FulfillmentInfo.Builder builderForValue) {
+      if (fulfillmentInfoBuilder_ == null) {
+        ensureFulfillmentInfoIsMutable();
+        fulfillmentInfo_.add(builderForValue.build());
+        onChanged();
+      } else {
+        fulfillmentInfoBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fulfillment information, such as the store IDs for in-store pickup or
+     * region IDs for different shipping methods.
+     * All the elements must have distinct
+     * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+     * Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+     */
+    public Builder addFulfillmentInfo(
+        int index, com.google.cloud.retail.v2.FulfillmentInfo.Builder builderForValue) {
+      if (fulfillmentInfoBuilder_ == null) {
+        ensureFulfillmentInfoIsMutable();
+        fulfillmentInfo_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        fulfillmentInfoBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fulfillment information, such as the store IDs for in-store pickup or
+     * region IDs for different shipping methods.
+     * All the elements must have distinct
+     * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+     * Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+     */
+    public Builder addAllFulfillmentInfo(
+        java.lang.Iterable<? extends com.google.cloud.retail.v2.FulfillmentInfo> values) {
+      if (fulfillmentInfoBuilder_ == null) {
+        ensureFulfillmentInfoIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fulfillmentInfo_);
+        onChanged();
+      } else {
+        fulfillmentInfoBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fulfillment information, such as the store IDs for in-store pickup or
+     * region IDs for different shipping methods.
+     * All the elements must have distinct
+     * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+     * Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+     */
+    public Builder clearFulfillmentInfo() {
+      if (fulfillmentInfoBuilder_ == null) {
+        fulfillmentInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        fulfillmentInfoBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fulfillment information, such as the store IDs for in-store pickup or
+     * region IDs for different shipping methods.
+     * All the elements must have distinct
+     * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+     * Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+     */
+    public Builder removeFulfillmentInfo(int index) {
+      if (fulfillmentInfoBuilder_ == null) {
+        ensureFulfillmentInfoIsMutable();
+        fulfillmentInfo_.remove(index);
+        onChanged();
+      } else {
+        fulfillmentInfoBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fulfillment information, such as the store IDs for in-store pickup or
+     * region IDs for different shipping methods.
+     * All the elements must have distinct
+     * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+     * Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+     */
+    public com.google.cloud.retail.v2.FulfillmentInfo.Builder getFulfillmentInfoBuilder(int index) {
+      return getFulfillmentInfoFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fulfillment information, such as the store IDs for in-store pickup or
+     * region IDs for different shipping methods.
+     * All the elements must have distinct
+     * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+     * Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+     */
+    public com.google.cloud.retail.v2.FulfillmentInfoOrBuilder getFulfillmentInfoOrBuilder(
+        int index) {
+      if (fulfillmentInfoBuilder_ == null) {
+        return fulfillmentInfo_.get(index);
+      } else {
+        return fulfillmentInfoBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fulfillment information, such as the store IDs for in-store pickup or
+     * region IDs for different shipping methods.
+     * All the elements must have distinct
+     * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+     * Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+     */
+    public java.util.List<? extends com.google.cloud.retail.v2.FulfillmentInfoOrBuilder>
+        getFulfillmentInfoOrBuilderList() {
+      if (fulfillmentInfoBuilder_ != null) {
+        return fulfillmentInfoBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(fulfillmentInfo_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fulfillment information, such as the store IDs for in-store pickup or
+     * region IDs for different shipping methods.
+     * All the elements must have distinct
+     * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+     * Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+     */
+    public com.google.cloud.retail.v2.FulfillmentInfo.Builder addFulfillmentInfoBuilder() {
+      return getFulfillmentInfoFieldBuilder()
+          .addBuilder(com.google.cloud.retail.v2.FulfillmentInfo.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fulfillment information, such as the store IDs for in-store pickup or
+     * region IDs for different shipping methods.
+     * All the elements must have distinct
+     * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+     * Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+     */
+    public com.google.cloud.retail.v2.FulfillmentInfo.Builder addFulfillmentInfoBuilder(int index) {
+      return getFulfillmentInfoFieldBuilder()
+          .addBuilder(index, com.google.cloud.retail.v2.FulfillmentInfo.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fulfillment information, such as the store IDs for in-store pickup or
+     * region IDs for different shipping methods.
+     * All the elements must have distinct
+     * [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type].
+     * Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.FulfillmentInfo fulfillment_info = 21;</code>
+     */
+    public java.util.List<com.google.cloud.retail.v2.FulfillmentInfo.Builder>
+        getFulfillmentInfoBuilderList() {
+      return getFulfillmentInfoFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.retail.v2.FulfillmentInfo,
+            com.google.cloud.retail.v2.FulfillmentInfo.Builder,
+            com.google.cloud.retail.v2.FulfillmentInfoOrBuilder>
+        getFulfillmentInfoFieldBuilder() {
+      if (fulfillmentInfoBuilder_ == null) {
+        fulfillmentInfoBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.retail.v2.FulfillmentInfo,
+                com.google.cloud.retail.v2.FulfillmentInfo.Builder,
+                com.google.cloud.retail.v2.FulfillmentInfoOrBuilder>(
+                fulfillmentInfo_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        fulfillmentInfo_ = null;
+      }
+      return fulfillmentInfoBuilder_;
+    }
+
     private java.lang.Object uri_ = "";
     /**
      *
      *
      * <pre>
      * Canonical URL directly linking to the product detail page.
+     * It is strongly recommended to provide a valid uri for the product,
+     * otherwise the service performance could be significantly degraded.
      * This field must be a UTF-8 encoded string with a length limit of 5,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -4975,6 +9495,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Canonical URL directly linking to the product detail page.
+     * It is strongly recommended to provide a valid uri for the product,
+     * otherwise the service performance could be significantly degraded.
      * This field must be a UTF-8 encoded string with a length limit of 5,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -5002,6 +9524,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Canonical URL directly linking to the product detail page.
+     * It is strongly recommended to provide a valid uri for the product,
+     * otherwise the service performance could be significantly degraded.
      * This field must be a UTF-8 encoded string with a length limit of 5,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -5028,6 +9552,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Canonical URL directly linking to the product detail page.
+     * It is strongly recommended to provide a valid uri for the product,
+     * otherwise the service performance could be significantly degraded.
      * This field must be a UTF-8 encoded string with a length limit of 5,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -5050,6 +9576,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Canonical URL directly linking to the product detail page.
+     * It is strongly recommended to provide a valid uri for the product,
+     * otherwise the service performance could be significantly degraded.
      * This field must be a UTF-8 encoded string with a length limit of 5,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -5077,9 +9605,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureImagesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         images_ = new java.util.ArrayList<com.google.cloud.retail.v2.Image>(images_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -5093,7 +9621,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product images for the product.
+     * Product images for the product.Highly recommended to put the main image
+     * to the first.
      * A maximum of 300 images are allowed.
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -5113,7 +9642,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product images for the product.
+     * Product images for the product.Highly recommended to put the main image
+     * to the first.
      * A maximum of 300 images are allowed.
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -5133,7 +9663,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product images for the product.
+     * Product images for the product.Highly recommended to put the main image
+     * to the first.
      * A maximum of 300 images are allowed.
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -5153,7 +9684,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product images for the product.
+     * Product images for the product.Highly recommended to put the main image
+     * to the first.
      * A maximum of 300 images are allowed.
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -5179,7 +9711,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product images for the product.
+     * Product images for the product.Highly recommended to put the main image
+     * to the first.
      * A maximum of 300 images are allowed.
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -5202,7 +9735,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product images for the product.
+     * Product images for the product.Highly recommended to put the main image
+     * to the first.
      * A maximum of 300 images are allowed.
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -5228,7 +9762,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product images for the product.
+     * Product images for the product.Highly recommended to put the main image
+     * to the first.
      * A maximum of 300 images are allowed.
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -5254,7 +9789,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product images for the product.
+     * Product images for the product.Highly recommended to put the main image
+     * to the first.
      * A maximum of 300 images are allowed.
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -5277,7 +9813,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product images for the product.
+     * Product images for the product.Highly recommended to put the main image
+     * to the first.
      * A maximum of 300 images are allowed.
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -5300,7 +9837,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product images for the product.
+     * Product images for the product.Highly recommended to put the main image
+     * to the first.
      * A maximum of 300 images are allowed.
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -5324,7 +9862,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product images for the product.
+     * Product images for the product.Highly recommended to put the main image
+     * to the first.
      * A maximum of 300 images are allowed.
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -5336,7 +9875,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     public Builder clearImages() {
       if (imagesBuilder_ == null) {
         images_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         imagesBuilder_.clear();
@@ -5347,7 +9886,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product images for the product.
+     * Product images for the product.Highly recommended to put the main image
+     * to the first.
      * A maximum of 300 images are allowed.
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -5370,7 +9910,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product images for the product.
+     * Product images for the product.Highly recommended to put the main image
+     * to the first.
      * A maximum of 300 images are allowed.
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -5386,7 +9927,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product images for the product.
+     * Product images for the product.Highly recommended to put the main image
+     * to the first.
      * A maximum of 300 images are allowed.
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -5406,7 +9948,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product images for the product.
+     * Product images for the product.Highly recommended to put the main image
+     * to the first.
      * A maximum of 300 images are allowed.
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -5427,7 +9970,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product images for the product.
+     * Product images for the product.Highly recommended to put the main image
+     * to the first.
      * A maximum of 300 images are allowed.
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -5444,7 +9988,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product images for the product.
+     * Product images for the product.Highly recommended to put the main image
+     * to the first.
      * A maximum of 300 images are allowed.
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -5461,7 +10006,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product images for the product.
+     * Product images for the product.Highly recommended to put the main image
+     * to the first.
      * A maximum of 300 images are allowed.
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
@@ -5485,10 +10031,3090 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.retail.v2.Image,
                 com.google.cloud.retail.v2.Image.Builder,
                 com.google.cloud.retail.v2.ImageOrBuilder>(
-                images_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                images_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
         images_ = null;
       }
       return imagesBuilder_;
+    }
+
+    private com.google.cloud.retail.v2.Audience audience_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2.Audience,
+            com.google.cloud.retail.v2.Audience.Builder,
+            com.google.cloud.retail.v2.AudienceOrBuilder>
+        audienceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The target group associated with a given audience (e.g. male, veterans,
+     * car owners, musicians, etc.) of the product.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Audience audience = 24;</code>
+     *
+     * @return Whether the audience field is set.
+     */
+    public boolean hasAudience() {
+      return audienceBuilder_ != null || audience_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target group associated with a given audience (e.g. male, veterans,
+     * car owners, musicians, etc.) of the product.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Audience audience = 24;</code>
+     *
+     * @return The audience.
+     */
+    public com.google.cloud.retail.v2.Audience getAudience() {
+      if (audienceBuilder_ == null) {
+        return audience_ == null
+            ? com.google.cloud.retail.v2.Audience.getDefaultInstance()
+            : audience_;
+      } else {
+        return audienceBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target group associated with a given audience (e.g. male, veterans,
+     * car owners, musicians, etc.) of the product.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Audience audience = 24;</code>
+     */
+    public Builder setAudience(com.google.cloud.retail.v2.Audience value) {
+      if (audienceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        audience_ = value;
+        onChanged();
+      } else {
+        audienceBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target group associated with a given audience (e.g. male, veterans,
+     * car owners, musicians, etc.) of the product.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Audience audience = 24;</code>
+     */
+    public Builder setAudience(com.google.cloud.retail.v2.Audience.Builder builderForValue) {
+      if (audienceBuilder_ == null) {
+        audience_ = builderForValue.build();
+        onChanged();
+      } else {
+        audienceBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target group associated with a given audience (e.g. male, veterans,
+     * car owners, musicians, etc.) of the product.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Audience audience = 24;</code>
+     */
+    public Builder mergeAudience(com.google.cloud.retail.v2.Audience value) {
+      if (audienceBuilder_ == null) {
+        if (audience_ != null) {
+          audience_ =
+              com.google.cloud.retail.v2.Audience.newBuilder(audience_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          audience_ = value;
+        }
+        onChanged();
+      } else {
+        audienceBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target group associated with a given audience (e.g. male, veterans,
+     * car owners, musicians, etc.) of the product.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Audience audience = 24;</code>
+     */
+    public Builder clearAudience() {
+      if (audienceBuilder_ == null) {
+        audience_ = null;
+        onChanged();
+      } else {
+        audience_ = null;
+        audienceBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target group associated with a given audience (e.g. male, veterans,
+     * car owners, musicians, etc.) of the product.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Audience audience = 24;</code>
+     */
+    public com.google.cloud.retail.v2.Audience.Builder getAudienceBuilder() {
+
+      onChanged();
+      return getAudienceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target group associated with a given audience (e.g. male, veterans,
+     * car owners, musicians, etc.) of the product.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Audience audience = 24;</code>
+     */
+    public com.google.cloud.retail.v2.AudienceOrBuilder getAudienceOrBuilder() {
+      if (audienceBuilder_ != null) {
+        return audienceBuilder_.getMessageOrBuilder();
+      } else {
+        return audience_ == null
+            ? com.google.cloud.retail.v2.Audience.getDefaultInstance()
+            : audience_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target group associated with a given audience (e.g. male, veterans,
+     * car owners, musicians, etc.) of the product.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Audience audience = 24;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2.Audience,
+            com.google.cloud.retail.v2.Audience.Builder,
+            com.google.cloud.retail.v2.AudienceOrBuilder>
+        getAudienceFieldBuilder() {
+      if (audienceBuilder_ == null) {
+        audienceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.retail.v2.Audience,
+                com.google.cloud.retail.v2.Audience.Builder,
+                com.google.cloud.retail.v2.AudienceOrBuilder>(
+                getAudience(), getParentForChildren(), isClean());
+        audience_ = null;
+      }
+      return audienceBuilder_;
+    }
+
+    private com.google.cloud.retail.v2.ColorInfo colorInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2.ColorInfo,
+            com.google.cloud.retail.v2.ColorInfo.Builder,
+            com.google.cloud.retail.v2.ColorInfoOrBuilder>
+        colorInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The color of the product.
+     * Google Merchant Center property
+     * [color](https://support.google.com/merchants/answer/6324487). Schema.org
+     * property [Product.color](https://schema.org/color).
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.ColorInfo color_info = 25;</code>
+     *
+     * @return Whether the colorInfo field is set.
+     */
+    public boolean hasColorInfo() {
+      return colorInfoBuilder_ != null || colorInfo_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The color of the product.
+     * Google Merchant Center property
+     * [color](https://support.google.com/merchants/answer/6324487). Schema.org
+     * property [Product.color](https://schema.org/color).
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.ColorInfo color_info = 25;</code>
+     *
+     * @return The colorInfo.
+     */
+    public com.google.cloud.retail.v2.ColorInfo getColorInfo() {
+      if (colorInfoBuilder_ == null) {
+        return colorInfo_ == null
+            ? com.google.cloud.retail.v2.ColorInfo.getDefaultInstance()
+            : colorInfo_;
+      } else {
+        return colorInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The color of the product.
+     * Google Merchant Center property
+     * [color](https://support.google.com/merchants/answer/6324487). Schema.org
+     * property [Product.color](https://schema.org/color).
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.ColorInfo color_info = 25;</code>
+     */
+    public Builder setColorInfo(com.google.cloud.retail.v2.ColorInfo value) {
+      if (colorInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        colorInfo_ = value;
+        onChanged();
+      } else {
+        colorInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The color of the product.
+     * Google Merchant Center property
+     * [color](https://support.google.com/merchants/answer/6324487). Schema.org
+     * property [Product.color](https://schema.org/color).
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.ColorInfo color_info = 25;</code>
+     */
+    public Builder setColorInfo(com.google.cloud.retail.v2.ColorInfo.Builder builderForValue) {
+      if (colorInfoBuilder_ == null) {
+        colorInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        colorInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The color of the product.
+     * Google Merchant Center property
+     * [color](https://support.google.com/merchants/answer/6324487). Schema.org
+     * property [Product.color](https://schema.org/color).
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.ColorInfo color_info = 25;</code>
+     */
+    public Builder mergeColorInfo(com.google.cloud.retail.v2.ColorInfo value) {
+      if (colorInfoBuilder_ == null) {
+        if (colorInfo_ != null) {
+          colorInfo_ =
+              com.google.cloud.retail.v2.ColorInfo.newBuilder(colorInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          colorInfo_ = value;
+        }
+        onChanged();
+      } else {
+        colorInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The color of the product.
+     * Google Merchant Center property
+     * [color](https://support.google.com/merchants/answer/6324487). Schema.org
+     * property [Product.color](https://schema.org/color).
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.ColorInfo color_info = 25;</code>
+     */
+    public Builder clearColorInfo() {
+      if (colorInfoBuilder_ == null) {
+        colorInfo_ = null;
+        onChanged();
+      } else {
+        colorInfo_ = null;
+        colorInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The color of the product.
+     * Google Merchant Center property
+     * [color](https://support.google.com/merchants/answer/6324487). Schema.org
+     * property [Product.color](https://schema.org/color).
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.ColorInfo color_info = 25;</code>
+     */
+    public com.google.cloud.retail.v2.ColorInfo.Builder getColorInfoBuilder() {
+
+      onChanged();
+      return getColorInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The color of the product.
+     * Google Merchant Center property
+     * [color](https://support.google.com/merchants/answer/6324487). Schema.org
+     * property [Product.color](https://schema.org/color).
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.ColorInfo color_info = 25;</code>
+     */
+    public com.google.cloud.retail.v2.ColorInfoOrBuilder getColorInfoOrBuilder() {
+      if (colorInfoBuilder_ != null) {
+        return colorInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return colorInfo_ == null
+            ? com.google.cloud.retail.v2.ColorInfo.getDefaultInstance()
+            : colorInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The color of the product.
+     * Google Merchant Center property
+     * [color](https://support.google.com/merchants/answer/6324487). Schema.org
+     * property [Product.color](https://schema.org/color).
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.ColorInfo color_info = 25;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2.ColorInfo,
+            com.google.cloud.retail.v2.ColorInfo.Builder,
+            com.google.cloud.retail.v2.ColorInfoOrBuilder>
+        getColorInfoFieldBuilder() {
+      if (colorInfoBuilder_ == null) {
+        colorInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.retail.v2.ColorInfo,
+                com.google.cloud.retail.v2.ColorInfo.Builder,
+                com.google.cloud.retail.v2.ColorInfoOrBuilder>(
+                getColorInfo(), getParentForChildren(), isClean());
+        colorInfo_ = null;
+      }
+      return colorInfoBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList sizes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureSizesIsMutable() {
+      if (!((bitField0_ & 0x00000080) != 0)) {
+        sizes_ = new com.google.protobuf.LazyStringArrayList(sizes_);
+        bitField0_ |= 0x00000080;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The size of the product. To represent different size systems or size types,
+     * consider using this format: [[[size_system:]size_type:]size_value].
+     * For example, in "US:MENS:M", "US" represents size system; "MENS" represents
+     * size type; "M" represents size value. In "GIRLS:27", size system is empty;
+     * "GIRLS" represents size type; "27" represents size value. In "32 inches",
+     * both size system and size type are empty, while size value is "32 inches".
+     * A maximum of 20 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [size](https://support.google.com/merchants/answer/6324492),
+     * [size_type](https://support.google.com/merchants/answer/6324497) and
+     * [size_system](https://support.google.com/merchants/answer/6324502).
+     * Schema.org property [Product.size](https://schema.org/size).
+     * </pre>
+     *
+     * <code>repeated string sizes = 26;</code>
+     *
+     * @return A list containing the sizes.
+     */
+    public com.google.protobuf.ProtocolStringList getSizesList() {
+      return sizes_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The size of the product. To represent different size systems or size types,
+     * consider using this format: [[[size_system:]size_type:]size_value].
+     * For example, in "US:MENS:M", "US" represents size system; "MENS" represents
+     * size type; "M" represents size value. In "GIRLS:27", size system is empty;
+     * "GIRLS" represents size type; "27" represents size value. In "32 inches",
+     * both size system and size type are empty, while size value is "32 inches".
+     * A maximum of 20 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [size](https://support.google.com/merchants/answer/6324492),
+     * [size_type](https://support.google.com/merchants/answer/6324497) and
+     * [size_system](https://support.google.com/merchants/answer/6324502).
+     * Schema.org property [Product.size](https://schema.org/size).
+     * </pre>
+     *
+     * <code>repeated string sizes = 26;</code>
+     *
+     * @return The count of sizes.
+     */
+    public int getSizesCount() {
+      return sizes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The size of the product. To represent different size systems or size types,
+     * consider using this format: [[[size_system:]size_type:]size_value].
+     * For example, in "US:MENS:M", "US" represents size system; "MENS" represents
+     * size type; "M" represents size value. In "GIRLS:27", size system is empty;
+     * "GIRLS" represents size type; "27" represents size value. In "32 inches",
+     * both size system and size type are empty, while size value is "32 inches".
+     * A maximum of 20 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [size](https://support.google.com/merchants/answer/6324492),
+     * [size_type](https://support.google.com/merchants/answer/6324497) and
+     * [size_system](https://support.google.com/merchants/answer/6324502).
+     * Schema.org property [Product.size](https://schema.org/size).
+     * </pre>
+     *
+     * <code>repeated string sizes = 26;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The sizes at the given index.
+     */
+    public java.lang.String getSizes(int index) {
+      return sizes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The size of the product. To represent different size systems or size types,
+     * consider using this format: [[[size_system:]size_type:]size_value].
+     * For example, in "US:MENS:M", "US" represents size system; "MENS" represents
+     * size type; "M" represents size value. In "GIRLS:27", size system is empty;
+     * "GIRLS" represents size type; "27" represents size value. In "32 inches",
+     * both size system and size type are empty, while size value is "32 inches".
+     * A maximum of 20 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [size](https://support.google.com/merchants/answer/6324492),
+     * [size_type](https://support.google.com/merchants/answer/6324497) and
+     * [size_system](https://support.google.com/merchants/answer/6324502).
+     * Schema.org property [Product.size](https://schema.org/size).
+     * </pre>
+     *
+     * <code>repeated string sizes = 26;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the sizes at the given index.
+     */
+    public com.google.protobuf.ByteString getSizesBytes(int index) {
+      return sizes_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The size of the product. To represent different size systems or size types,
+     * consider using this format: [[[size_system:]size_type:]size_value].
+     * For example, in "US:MENS:M", "US" represents size system; "MENS" represents
+     * size type; "M" represents size value. In "GIRLS:27", size system is empty;
+     * "GIRLS" represents size type; "27" represents size value. In "32 inches",
+     * both size system and size type are empty, while size value is "32 inches".
+     * A maximum of 20 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [size](https://support.google.com/merchants/answer/6324492),
+     * [size_type](https://support.google.com/merchants/answer/6324497) and
+     * [size_system](https://support.google.com/merchants/answer/6324502).
+     * Schema.org property [Product.size](https://schema.org/size).
+     * </pre>
+     *
+     * <code>repeated string sizes = 26;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The sizes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSizes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSizesIsMutable();
+      sizes_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The size of the product. To represent different size systems or size types,
+     * consider using this format: [[[size_system:]size_type:]size_value].
+     * For example, in "US:MENS:M", "US" represents size system; "MENS" represents
+     * size type; "M" represents size value. In "GIRLS:27", size system is empty;
+     * "GIRLS" represents size type; "27" represents size value. In "32 inches",
+     * both size system and size type are empty, while size value is "32 inches".
+     * A maximum of 20 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [size](https://support.google.com/merchants/answer/6324492),
+     * [size_type](https://support.google.com/merchants/answer/6324497) and
+     * [size_system](https://support.google.com/merchants/answer/6324502).
+     * Schema.org property [Product.size](https://schema.org/size).
+     * </pre>
+     *
+     * <code>repeated string sizes = 26;</code>
+     *
+     * @param value The sizes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSizes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSizesIsMutable();
+      sizes_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The size of the product. To represent different size systems or size types,
+     * consider using this format: [[[size_system:]size_type:]size_value].
+     * For example, in "US:MENS:M", "US" represents size system; "MENS" represents
+     * size type; "M" represents size value. In "GIRLS:27", size system is empty;
+     * "GIRLS" represents size type; "27" represents size value. In "32 inches",
+     * both size system and size type are empty, while size value is "32 inches".
+     * A maximum of 20 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [size](https://support.google.com/merchants/answer/6324492),
+     * [size_type](https://support.google.com/merchants/answer/6324497) and
+     * [size_system](https://support.google.com/merchants/answer/6324502).
+     * Schema.org property [Product.size](https://schema.org/size).
+     * </pre>
+     *
+     * <code>repeated string sizes = 26;</code>
+     *
+     * @param values The sizes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSizes(java.lang.Iterable<java.lang.String> values) {
+      ensureSizesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sizes_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The size of the product. To represent different size systems or size types,
+     * consider using this format: [[[size_system:]size_type:]size_value].
+     * For example, in "US:MENS:M", "US" represents size system; "MENS" represents
+     * size type; "M" represents size value. In "GIRLS:27", size system is empty;
+     * "GIRLS" represents size type; "27" represents size value. In "32 inches",
+     * both size system and size type are empty, while size value is "32 inches".
+     * A maximum of 20 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [size](https://support.google.com/merchants/answer/6324492),
+     * [size_type](https://support.google.com/merchants/answer/6324497) and
+     * [size_system](https://support.google.com/merchants/answer/6324502).
+     * Schema.org property [Product.size](https://schema.org/size).
+     * </pre>
+     *
+     * <code>repeated string sizes = 26;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSizes() {
+      sizes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The size of the product. To represent different size systems or size types,
+     * consider using this format: [[[size_system:]size_type:]size_value].
+     * For example, in "US:MENS:M", "US" represents size system; "MENS" represents
+     * size type; "M" represents size value. In "GIRLS:27", size system is empty;
+     * "GIRLS" represents size type; "27" represents size value. In "32 inches",
+     * both size system and size type are empty, while size value is "32 inches".
+     * A maximum of 20 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [size](https://support.google.com/merchants/answer/6324492),
+     * [size_type](https://support.google.com/merchants/answer/6324497) and
+     * [size_system](https://support.google.com/merchants/answer/6324502).
+     * Schema.org property [Product.size](https://schema.org/size).
+     * </pre>
+     *
+     * <code>repeated string sizes = 26;</code>
+     *
+     * @param value The bytes of the sizes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSizesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSizesIsMutable();
+      sizes_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList materials_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureMaterialsIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        materials_ = new com.google.protobuf.LazyStringArrayList(materials_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The material of the product. For example, "leather", "wooden".
+     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [material](https://support.google.com/merchants/answer/6324410). Schema.org
+     * property [Product.material](https://schema.org/material).
+     * </pre>
+     *
+     * <code>repeated string materials = 27;</code>
+     *
+     * @return A list containing the materials.
+     */
+    public com.google.protobuf.ProtocolStringList getMaterialsList() {
+      return materials_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The material of the product. For example, "leather", "wooden".
+     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [material](https://support.google.com/merchants/answer/6324410). Schema.org
+     * property [Product.material](https://schema.org/material).
+     * </pre>
+     *
+     * <code>repeated string materials = 27;</code>
+     *
+     * @return The count of materials.
+     */
+    public int getMaterialsCount() {
+      return materials_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The material of the product. For example, "leather", "wooden".
+     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [material](https://support.google.com/merchants/answer/6324410). Schema.org
+     * property [Product.material](https://schema.org/material).
+     * </pre>
+     *
+     * <code>repeated string materials = 27;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The materials at the given index.
+     */
+    public java.lang.String getMaterials(int index) {
+      return materials_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The material of the product. For example, "leather", "wooden".
+     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [material](https://support.google.com/merchants/answer/6324410). Schema.org
+     * property [Product.material](https://schema.org/material).
+     * </pre>
+     *
+     * <code>repeated string materials = 27;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the materials at the given index.
+     */
+    public com.google.protobuf.ByteString getMaterialsBytes(int index) {
+      return materials_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The material of the product. For example, "leather", "wooden".
+     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [material](https://support.google.com/merchants/answer/6324410). Schema.org
+     * property [Product.material](https://schema.org/material).
+     * </pre>
+     *
+     * <code>repeated string materials = 27;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The materials to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaterials(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureMaterialsIsMutable();
+      materials_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The material of the product. For example, "leather", "wooden".
+     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [material](https://support.google.com/merchants/answer/6324410). Schema.org
+     * property [Product.material](https://schema.org/material).
+     * </pre>
+     *
+     * <code>repeated string materials = 27;</code>
+     *
+     * @param value The materials to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMaterials(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureMaterialsIsMutable();
+      materials_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The material of the product. For example, "leather", "wooden".
+     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [material](https://support.google.com/merchants/answer/6324410). Schema.org
+     * property [Product.material](https://schema.org/material).
+     * </pre>
+     *
+     * <code>repeated string materials = 27;</code>
+     *
+     * @param values The materials to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllMaterials(java.lang.Iterable<java.lang.String> values) {
+      ensureMaterialsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, materials_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The material of the product. For example, "leather", "wooden".
+     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [material](https://support.google.com/merchants/answer/6324410). Schema.org
+     * property [Product.material](https://schema.org/material).
+     * </pre>
+     *
+     * <code>repeated string materials = 27;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaterials() {
+      materials_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The material of the product. For example, "leather", "wooden".
+     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [material](https://support.google.com/merchants/answer/6324410). Schema.org
+     * property [Product.material](https://schema.org/material).
+     * </pre>
+     *
+     * <code>repeated string materials = 27;</code>
+     *
+     * @param value The bytes of the materials to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMaterialsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureMaterialsIsMutable();
+      materials_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList patterns_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensurePatternsIsMutable() {
+      if (!((bitField0_ & 0x00000200) != 0)) {
+        patterns_ = new com.google.protobuf.LazyStringArrayList(patterns_);
+        bitField0_ |= 0x00000200;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The pattern or graphic print of the product. For example, "striped", "polka
+     * dot", "paisley".
+     * A maximum of 5 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [pattern](https://support.google.com/merchants/answer/6324483). Schema.org
+     * property [Product.pattern](https://schema.org/pattern).
+     * </pre>
+     *
+     * <code>repeated string patterns = 28;</code>
+     *
+     * @return A list containing the patterns.
+     */
+    public com.google.protobuf.ProtocolStringList getPatternsList() {
+      return patterns_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The pattern or graphic print of the product. For example, "striped", "polka
+     * dot", "paisley".
+     * A maximum of 5 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [pattern](https://support.google.com/merchants/answer/6324483). Schema.org
+     * property [Product.pattern](https://schema.org/pattern).
+     * </pre>
+     *
+     * <code>repeated string patterns = 28;</code>
+     *
+     * @return The count of patterns.
+     */
+    public int getPatternsCount() {
+      return patterns_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The pattern or graphic print of the product. For example, "striped", "polka
+     * dot", "paisley".
+     * A maximum of 5 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [pattern](https://support.google.com/merchants/answer/6324483). Schema.org
+     * property [Product.pattern](https://schema.org/pattern).
+     * </pre>
+     *
+     * <code>repeated string patterns = 28;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The patterns at the given index.
+     */
+    public java.lang.String getPatterns(int index) {
+      return patterns_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The pattern or graphic print of the product. For example, "striped", "polka
+     * dot", "paisley".
+     * A maximum of 5 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [pattern](https://support.google.com/merchants/answer/6324483). Schema.org
+     * property [Product.pattern](https://schema.org/pattern).
+     * </pre>
+     *
+     * <code>repeated string patterns = 28;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the patterns at the given index.
+     */
+    public com.google.protobuf.ByteString getPatternsBytes(int index) {
+      return patterns_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The pattern or graphic print of the product. For example, "striped", "polka
+     * dot", "paisley".
+     * A maximum of 5 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [pattern](https://support.google.com/merchants/answer/6324483). Schema.org
+     * property [Product.pattern](https://schema.org/pattern).
+     * </pre>
+     *
+     * <code>repeated string patterns = 28;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The patterns to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPatterns(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePatternsIsMutable();
+      patterns_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The pattern or graphic print of the product. For example, "striped", "polka
+     * dot", "paisley".
+     * A maximum of 5 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [pattern](https://support.google.com/merchants/answer/6324483). Schema.org
+     * property [Product.pattern](https://schema.org/pattern).
+     * </pre>
+     *
+     * <code>repeated string patterns = 28;</code>
+     *
+     * @param value The patterns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPatterns(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePatternsIsMutable();
+      patterns_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The pattern or graphic print of the product. For example, "striped", "polka
+     * dot", "paisley".
+     * A maximum of 5 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [pattern](https://support.google.com/merchants/answer/6324483). Schema.org
+     * property [Product.pattern](https://schema.org/pattern).
+     * </pre>
+     *
+     * <code>repeated string patterns = 28;</code>
+     *
+     * @param values The patterns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllPatterns(java.lang.Iterable<java.lang.String> values) {
+      ensurePatternsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, patterns_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The pattern or graphic print of the product. For example, "striped", "polka
+     * dot", "paisley".
+     * A maximum of 5 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [pattern](https://support.google.com/merchants/answer/6324483). Schema.org
+     * property [Product.pattern](https://schema.org/pattern).
+     * </pre>
+     *
+     * <code>repeated string patterns = 28;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPatterns() {
+      patterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The pattern or graphic print of the product. For example, "striped", "polka
+     * dot", "paisley".
+     * A maximum of 5 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [pattern](https://support.google.com/merchants/answer/6324483). Schema.org
+     * property [Product.pattern](https://schema.org/pattern).
+     * </pre>
+     *
+     * <code>repeated string patterns = 28;</code>
+     *
+     * @param value The bytes of the patterns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPatternsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensurePatternsIsMutable();
+      patterns_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList conditions_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureConditionsIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        conditions_ = new com.google.protobuf.LazyStringArrayList(conditions_);
+        bitField0_ |= 0x00000400;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The condition of the product. Strongly encouraged to use the standard
+     * values: "new", "refurbished", "used".
+     * A maximum of 5 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [condition](https://support.google.com/merchants/answer/6324469).
+     * Schema.org property
+     * [Offer.itemCondition](https://schema.org/itemCondition).
+     * </pre>
+     *
+     * <code>repeated string conditions = 29;</code>
+     *
+     * @return A list containing the conditions.
+     */
+    public com.google.protobuf.ProtocolStringList getConditionsList() {
+      return conditions_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The condition of the product. Strongly encouraged to use the standard
+     * values: "new", "refurbished", "used".
+     * A maximum of 5 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [condition](https://support.google.com/merchants/answer/6324469).
+     * Schema.org property
+     * [Offer.itemCondition](https://schema.org/itemCondition).
+     * </pre>
+     *
+     * <code>repeated string conditions = 29;</code>
+     *
+     * @return The count of conditions.
+     */
+    public int getConditionsCount() {
+      return conditions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The condition of the product. Strongly encouraged to use the standard
+     * values: "new", "refurbished", "used".
+     * A maximum of 5 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [condition](https://support.google.com/merchants/answer/6324469).
+     * Schema.org property
+     * [Offer.itemCondition](https://schema.org/itemCondition).
+     * </pre>
+     *
+     * <code>repeated string conditions = 29;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The conditions at the given index.
+     */
+    public java.lang.String getConditions(int index) {
+      return conditions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The condition of the product. Strongly encouraged to use the standard
+     * values: "new", "refurbished", "used".
+     * A maximum of 5 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [condition](https://support.google.com/merchants/answer/6324469).
+     * Schema.org property
+     * [Offer.itemCondition](https://schema.org/itemCondition).
+     * </pre>
+     *
+     * <code>repeated string conditions = 29;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the conditions at the given index.
+     */
+    public com.google.protobuf.ByteString getConditionsBytes(int index) {
+      return conditions_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The condition of the product. Strongly encouraged to use the standard
+     * values: "new", "refurbished", "used".
+     * A maximum of 5 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [condition](https://support.google.com/merchants/answer/6324469).
+     * Schema.org property
+     * [Offer.itemCondition](https://schema.org/itemCondition).
+     * </pre>
+     *
+     * <code>repeated string conditions = 29;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The conditions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConditions(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureConditionsIsMutable();
+      conditions_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The condition of the product. Strongly encouraged to use the standard
+     * values: "new", "refurbished", "used".
+     * A maximum of 5 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [condition](https://support.google.com/merchants/answer/6324469).
+     * Schema.org property
+     * [Offer.itemCondition](https://schema.org/itemCondition).
+     * </pre>
+     *
+     * <code>repeated string conditions = 29;</code>
+     *
+     * @param value The conditions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addConditions(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureConditionsIsMutable();
+      conditions_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The condition of the product. Strongly encouraged to use the standard
+     * values: "new", "refurbished", "used".
+     * A maximum of 5 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [condition](https://support.google.com/merchants/answer/6324469).
+     * Schema.org property
+     * [Offer.itemCondition](https://schema.org/itemCondition).
+     * </pre>
+     *
+     * <code>repeated string conditions = 29;</code>
+     *
+     * @param values The conditions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllConditions(java.lang.Iterable<java.lang.String> values) {
+      ensureConditionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, conditions_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The condition of the product. Strongly encouraged to use the standard
+     * values: "new", "refurbished", "used".
+     * A maximum of 5 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [condition](https://support.google.com/merchants/answer/6324469).
+     * Schema.org property
+     * [Offer.itemCondition](https://schema.org/itemCondition).
+     * </pre>
+     *
+     * <code>repeated string conditions = 29;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConditions() {
+      conditions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The condition of the product. Strongly encouraged to use the standard
+     * values: "new", "refurbished", "used".
+     * A maximum of 5 values are allowed per
+     * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
+     * encoded string with a length limit of 128 characters. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * Google Merchant Center property
+     * [condition](https://support.google.com/merchants/answer/6324469).
+     * Schema.org property
+     * [Offer.itemCondition](https://schema.org/itemCondition).
+     * </pre>
+     *
+     * <code>repeated string conditions = 29;</code>
+     *
+     * @param value The bytes of the conditions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addConditionsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureConditionsIsMutable();
+      conditions_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.retail.v2.Promotion> promotions_ =
+        java.util.Collections.emptyList();
+
+    private void ensurePromotionsIsMutable() {
+      if (!((bitField0_ & 0x00000800) != 0)) {
+        promotions_ = new java.util.ArrayList<com.google.cloud.retail.v2.Promotion>(promotions_);
+        bitField0_ |= 0x00000800;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.retail.v2.Promotion,
+            com.google.cloud.retail.v2.Promotion.Builder,
+            com.google.cloud.retail.v2.PromotionOrBuilder>
+        promotionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The promotions applied to the product. A maximum of 10 values are allowed
+     * per [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+     */
+    public java.util.List<com.google.cloud.retail.v2.Promotion> getPromotionsList() {
+      if (promotionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(promotions_);
+      } else {
+        return promotionsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The promotions applied to the product. A maximum of 10 values are allowed
+     * per [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+     */
+    public int getPromotionsCount() {
+      if (promotionsBuilder_ == null) {
+        return promotions_.size();
+      } else {
+        return promotionsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The promotions applied to the product. A maximum of 10 values are allowed
+     * per [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+     */
+    public com.google.cloud.retail.v2.Promotion getPromotions(int index) {
+      if (promotionsBuilder_ == null) {
+        return promotions_.get(index);
+      } else {
+        return promotionsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The promotions applied to the product. A maximum of 10 values are allowed
+     * per [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+     */
+    public Builder setPromotions(int index, com.google.cloud.retail.v2.Promotion value) {
+      if (promotionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePromotionsIsMutable();
+        promotions_.set(index, value);
+        onChanged();
+      } else {
+        promotionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The promotions applied to the product. A maximum of 10 values are allowed
+     * per [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+     */
+    public Builder setPromotions(
+        int index, com.google.cloud.retail.v2.Promotion.Builder builderForValue) {
+      if (promotionsBuilder_ == null) {
+        ensurePromotionsIsMutable();
+        promotions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        promotionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The promotions applied to the product. A maximum of 10 values are allowed
+     * per [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+     */
+    public Builder addPromotions(com.google.cloud.retail.v2.Promotion value) {
+      if (promotionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePromotionsIsMutable();
+        promotions_.add(value);
+        onChanged();
+      } else {
+        promotionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The promotions applied to the product. A maximum of 10 values are allowed
+     * per [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+     */
+    public Builder addPromotions(int index, com.google.cloud.retail.v2.Promotion value) {
+      if (promotionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePromotionsIsMutable();
+        promotions_.add(index, value);
+        onChanged();
+      } else {
+        promotionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The promotions applied to the product. A maximum of 10 values are allowed
+     * per [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+     */
+    public Builder addPromotions(com.google.cloud.retail.v2.Promotion.Builder builderForValue) {
+      if (promotionsBuilder_ == null) {
+        ensurePromotionsIsMutable();
+        promotions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        promotionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The promotions applied to the product. A maximum of 10 values are allowed
+     * per [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+     */
+    public Builder addPromotions(
+        int index, com.google.cloud.retail.v2.Promotion.Builder builderForValue) {
+      if (promotionsBuilder_ == null) {
+        ensurePromotionsIsMutable();
+        promotions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        promotionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The promotions applied to the product. A maximum of 10 values are allowed
+     * per [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+     */
+    public Builder addAllPromotions(
+        java.lang.Iterable<? extends com.google.cloud.retail.v2.Promotion> values) {
+      if (promotionsBuilder_ == null) {
+        ensurePromotionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, promotions_);
+        onChanged();
+      } else {
+        promotionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The promotions applied to the product. A maximum of 10 values are allowed
+     * per [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+     */
+    public Builder clearPromotions() {
+      if (promotionsBuilder_ == null) {
+        promotions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+      } else {
+        promotionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The promotions applied to the product. A maximum of 10 values are allowed
+     * per [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+     */
+    public Builder removePromotions(int index) {
+      if (promotionsBuilder_ == null) {
+        ensurePromotionsIsMutable();
+        promotions_.remove(index);
+        onChanged();
+      } else {
+        promotionsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The promotions applied to the product. A maximum of 10 values are allowed
+     * per [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+     */
+    public com.google.cloud.retail.v2.Promotion.Builder getPromotionsBuilder(int index) {
+      return getPromotionsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The promotions applied to the product. A maximum of 10 values are allowed
+     * per [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+     */
+    public com.google.cloud.retail.v2.PromotionOrBuilder getPromotionsOrBuilder(int index) {
+      if (promotionsBuilder_ == null) {
+        return promotions_.get(index);
+      } else {
+        return promotionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The promotions applied to the product. A maximum of 10 values are allowed
+     * per [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+     */
+    public java.util.List<? extends com.google.cloud.retail.v2.PromotionOrBuilder>
+        getPromotionsOrBuilderList() {
+      if (promotionsBuilder_ != null) {
+        return promotionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(promotions_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The promotions applied to the product. A maximum of 10 values are allowed
+     * per [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+     */
+    public com.google.cloud.retail.v2.Promotion.Builder addPromotionsBuilder() {
+      return getPromotionsFieldBuilder()
+          .addBuilder(com.google.cloud.retail.v2.Promotion.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The promotions applied to the product. A maximum of 10 values are allowed
+     * per [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+     */
+    public com.google.cloud.retail.v2.Promotion.Builder addPromotionsBuilder(int index) {
+      return getPromotionsFieldBuilder()
+          .addBuilder(index, com.google.cloud.retail.v2.Promotion.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The promotions applied to the product. A maximum of 10 values are allowed
+     * per [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
+     */
+    public java.util.List<com.google.cloud.retail.v2.Promotion.Builder> getPromotionsBuilderList() {
+      return getPromotionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.retail.v2.Promotion,
+            com.google.cloud.retail.v2.Promotion.Builder,
+            com.google.cloud.retail.v2.PromotionOrBuilder>
+        getPromotionsFieldBuilder() {
+      if (promotionsBuilder_ == null) {
+        promotionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.retail.v2.Promotion,
+                com.google.cloud.retail.v2.Promotion.Builder,
+                com.google.cloud.retail.v2.PromotionOrBuilder>(
+                promotions_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
+        promotions_ = null;
+      }
+      return promotionsBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp publishTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        publishTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the product is published by the retailer for the first
+     * time, which indicates the freshness of the products. Note that this field
+     * is different from
+     * [available_time][google.cloud.retail.v2.Product.available_time], given it
+     * purely describes product freshness regardless of when it is available on
+     * search and recommendation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp publish_time = 33;</code>
+     *
+     * @return Whether the publishTime field is set.
+     */
+    public boolean hasPublishTime() {
+      return publishTimeBuilder_ != null || publishTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the product is published by the retailer for the first
+     * time, which indicates the freshness of the products. Note that this field
+     * is different from
+     * [available_time][google.cloud.retail.v2.Product.available_time], given it
+     * purely describes product freshness regardless of when it is available on
+     * search and recommendation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp publish_time = 33;</code>
+     *
+     * @return The publishTime.
+     */
+    public com.google.protobuf.Timestamp getPublishTime() {
+      if (publishTimeBuilder_ == null) {
+        return publishTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : publishTime_;
+      } else {
+        return publishTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the product is published by the retailer for the first
+     * time, which indicates the freshness of the products. Note that this field
+     * is different from
+     * [available_time][google.cloud.retail.v2.Product.available_time], given it
+     * purely describes product freshness regardless of when it is available on
+     * search and recommendation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp publish_time = 33;</code>
+     */
+    public Builder setPublishTime(com.google.protobuf.Timestamp value) {
+      if (publishTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        publishTime_ = value;
+        onChanged();
+      } else {
+        publishTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the product is published by the retailer for the first
+     * time, which indicates the freshness of the products. Note that this field
+     * is different from
+     * [available_time][google.cloud.retail.v2.Product.available_time], given it
+     * purely describes product freshness regardless of when it is available on
+     * search and recommendation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp publish_time = 33;</code>
+     */
+    public Builder setPublishTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (publishTimeBuilder_ == null) {
+        publishTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        publishTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the product is published by the retailer for the first
+     * time, which indicates the freshness of the products. Note that this field
+     * is different from
+     * [available_time][google.cloud.retail.v2.Product.available_time], given it
+     * purely describes product freshness regardless of when it is available on
+     * search and recommendation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp publish_time = 33;</code>
+     */
+    public Builder mergePublishTime(com.google.protobuf.Timestamp value) {
+      if (publishTimeBuilder_ == null) {
+        if (publishTime_ != null) {
+          publishTime_ =
+              com.google.protobuf.Timestamp.newBuilder(publishTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          publishTime_ = value;
+        }
+        onChanged();
+      } else {
+        publishTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the product is published by the retailer for the first
+     * time, which indicates the freshness of the products. Note that this field
+     * is different from
+     * [available_time][google.cloud.retail.v2.Product.available_time], given it
+     * purely describes product freshness regardless of when it is available on
+     * search and recommendation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp publish_time = 33;</code>
+     */
+    public Builder clearPublishTime() {
+      if (publishTimeBuilder_ == null) {
+        publishTime_ = null;
+        onChanged();
+      } else {
+        publishTime_ = null;
+        publishTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the product is published by the retailer for the first
+     * time, which indicates the freshness of the products. Note that this field
+     * is different from
+     * [available_time][google.cloud.retail.v2.Product.available_time], given it
+     * purely describes product freshness regardless of when it is available on
+     * search and recommendation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp publish_time = 33;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getPublishTimeBuilder() {
+
+      onChanged();
+      return getPublishTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the product is published by the retailer for the first
+     * time, which indicates the freshness of the products. Note that this field
+     * is different from
+     * [available_time][google.cloud.retail.v2.Product.available_time], given it
+     * purely describes product freshness regardless of when it is available on
+     * search and recommendation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp publish_time = 33;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getPublishTimeOrBuilder() {
+      if (publishTimeBuilder_ != null) {
+        return publishTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return publishTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : publishTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp when the product is published by the retailer for the first
+     * time, which indicates the freshness of the products. Note that this field
+     * is different from
+     * [available_time][google.cloud.retail.v2.Product.available_time], given it
+     * purely describes product freshness regardless of when it is available on
+     * search and recommendation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp publish_time = 33;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getPublishTimeFieldBuilder() {
+      if (publishTimeBuilder_ == null) {
+        publishTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getPublishTime(), getParentForChildren(), isClean());
+        publishTime_ = null;
+      }
+      return publishTimeBuilder_;
+    }
+
+    private com.google.protobuf.FieldMask retrievableFields_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        retrievableFieldsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which fields in the [Product][google.cloud.retail.v2.Product]s
+     * are returned in [SearchResponse][google.cloud.retail.v2.SearchResponse].
+     * Supported fields for all [type][google.cloud.retail.v2.Product.type]s:
+     * * [audience][google.cloud.retail.v2.Product.audience]
+     * * [availability][google.cloud.retail.v2.Product.availability]
+     * * [brands][google.cloud.retail.v2.Product.brands]
+     * * [color_info][google.cloud.retail.v2.Product.color_info]
+     * * [conditions][google.cloud.retail.v2.Product.conditions]
+     * * [gtin][google.cloud.retail.v2.Product.gtin]
+     * * [materials][google.cloud.retail.v2.Product.materials]
+     * * [name][google.cloud.retail.v2.Product.name]
+     * * [patterns][google.cloud.retail.v2.Product.patterns]
+     * * [price_info][google.cloud.retail.v2.Product.price_info]
+     * * [rating][google.cloud.retail.v2.Product.rating]
+     * * [sizes][google.cloud.retail.v2.Product.sizes]
+     * * [title][google.cloud.retail.v2.Product.title]
+     * * [uri][google.cloud.retail.v2.Product.uri]
+     * Supported fields only for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]:
+     * * [categories][google.cloud.retail.v2.Product.categories]
+     * * [description][google.cloud.retail.v2.Product.description]
+     * * [images][google.cloud.retail.v2.Product.images]
+     * Supported fields only for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]:
+     * * Only the first image in [images][google.cloud.retail.v2.Product.images]
+     * To mark [attributes][google.cloud.retail.v2.Product.attributes] as
+     * retrievable, include paths of the form "attributes.key" where "key" is the
+     * key of a custom attribute, as specified in
+     * [attributes][google.cloud.retail.v2.Product.attributes].
+     * For [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], the
+     * following fields are always returned in
+     * [SearchResponse][google.cloud.retail.v2.SearchResponse] by default:
+     * * [name][google.cloud.retail.v2.Product.name]
+     * For [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT], the
+     * following fields are always returned in by default:
+     * * [name][google.cloud.retail.v2.Product.name]
+     * * [color_info][google.cloud.retail.v2.Product.color_info]
+     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+     *
+     * @return Whether the retrievableFields field is set.
+     */
+    public boolean hasRetrievableFields() {
+      return retrievableFieldsBuilder_ != null || retrievableFields_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which fields in the [Product][google.cloud.retail.v2.Product]s
+     * are returned in [SearchResponse][google.cloud.retail.v2.SearchResponse].
+     * Supported fields for all [type][google.cloud.retail.v2.Product.type]s:
+     * * [audience][google.cloud.retail.v2.Product.audience]
+     * * [availability][google.cloud.retail.v2.Product.availability]
+     * * [brands][google.cloud.retail.v2.Product.brands]
+     * * [color_info][google.cloud.retail.v2.Product.color_info]
+     * * [conditions][google.cloud.retail.v2.Product.conditions]
+     * * [gtin][google.cloud.retail.v2.Product.gtin]
+     * * [materials][google.cloud.retail.v2.Product.materials]
+     * * [name][google.cloud.retail.v2.Product.name]
+     * * [patterns][google.cloud.retail.v2.Product.patterns]
+     * * [price_info][google.cloud.retail.v2.Product.price_info]
+     * * [rating][google.cloud.retail.v2.Product.rating]
+     * * [sizes][google.cloud.retail.v2.Product.sizes]
+     * * [title][google.cloud.retail.v2.Product.title]
+     * * [uri][google.cloud.retail.v2.Product.uri]
+     * Supported fields only for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]:
+     * * [categories][google.cloud.retail.v2.Product.categories]
+     * * [description][google.cloud.retail.v2.Product.description]
+     * * [images][google.cloud.retail.v2.Product.images]
+     * Supported fields only for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]:
+     * * Only the first image in [images][google.cloud.retail.v2.Product.images]
+     * To mark [attributes][google.cloud.retail.v2.Product.attributes] as
+     * retrievable, include paths of the form "attributes.key" where "key" is the
+     * key of a custom attribute, as specified in
+     * [attributes][google.cloud.retail.v2.Product.attributes].
+     * For [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], the
+     * following fields are always returned in
+     * [SearchResponse][google.cloud.retail.v2.SearchResponse] by default:
+     * * [name][google.cloud.retail.v2.Product.name]
+     * For [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT], the
+     * following fields are always returned in by default:
+     * * [name][google.cloud.retail.v2.Product.name]
+     * * [color_info][google.cloud.retail.v2.Product.color_info]
+     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+     *
+     * @return The retrievableFields.
+     */
+    public com.google.protobuf.FieldMask getRetrievableFields() {
+      if (retrievableFieldsBuilder_ == null) {
+        return retrievableFields_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : retrievableFields_;
+      } else {
+        return retrievableFieldsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which fields in the [Product][google.cloud.retail.v2.Product]s
+     * are returned in [SearchResponse][google.cloud.retail.v2.SearchResponse].
+     * Supported fields for all [type][google.cloud.retail.v2.Product.type]s:
+     * * [audience][google.cloud.retail.v2.Product.audience]
+     * * [availability][google.cloud.retail.v2.Product.availability]
+     * * [brands][google.cloud.retail.v2.Product.brands]
+     * * [color_info][google.cloud.retail.v2.Product.color_info]
+     * * [conditions][google.cloud.retail.v2.Product.conditions]
+     * * [gtin][google.cloud.retail.v2.Product.gtin]
+     * * [materials][google.cloud.retail.v2.Product.materials]
+     * * [name][google.cloud.retail.v2.Product.name]
+     * * [patterns][google.cloud.retail.v2.Product.patterns]
+     * * [price_info][google.cloud.retail.v2.Product.price_info]
+     * * [rating][google.cloud.retail.v2.Product.rating]
+     * * [sizes][google.cloud.retail.v2.Product.sizes]
+     * * [title][google.cloud.retail.v2.Product.title]
+     * * [uri][google.cloud.retail.v2.Product.uri]
+     * Supported fields only for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]:
+     * * [categories][google.cloud.retail.v2.Product.categories]
+     * * [description][google.cloud.retail.v2.Product.description]
+     * * [images][google.cloud.retail.v2.Product.images]
+     * Supported fields only for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]:
+     * * Only the first image in [images][google.cloud.retail.v2.Product.images]
+     * To mark [attributes][google.cloud.retail.v2.Product.attributes] as
+     * retrievable, include paths of the form "attributes.key" where "key" is the
+     * key of a custom attribute, as specified in
+     * [attributes][google.cloud.retail.v2.Product.attributes].
+     * For [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], the
+     * following fields are always returned in
+     * [SearchResponse][google.cloud.retail.v2.SearchResponse] by default:
+     * * [name][google.cloud.retail.v2.Product.name]
+     * For [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT], the
+     * following fields are always returned in by default:
+     * * [name][google.cloud.retail.v2.Product.name]
+     * * [color_info][google.cloud.retail.v2.Product.color_info]
+     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+     */
+    public Builder setRetrievableFields(com.google.protobuf.FieldMask value) {
+      if (retrievableFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        retrievableFields_ = value;
+        onChanged();
+      } else {
+        retrievableFieldsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which fields in the [Product][google.cloud.retail.v2.Product]s
+     * are returned in [SearchResponse][google.cloud.retail.v2.SearchResponse].
+     * Supported fields for all [type][google.cloud.retail.v2.Product.type]s:
+     * * [audience][google.cloud.retail.v2.Product.audience]
+     * * [availability][google.cloud.retail.v2.Product.availability]
+     * * [brands][google.cloud.retail.v2.Product.brands]
+     * * [color_info][google.cloud.retail.v2.Product.color_info]
+     * * [conditions][google.cloud.retail.v2.Product.conditions]
+     * * [gtin][google.cloud.retail.v2.Product.gtin]
+     * * [materials][google.cloud.retail.v2.Product.materials]
+     * * [name][google.cloud.retail.v2.Product.name]
+     * * [patterns][google.cloud.retail.v2.Product.patterns]
+     * * [price_info][google.cloud.retail.v2.Product.price_info]
+     * * [rating][google.cloud.retail.v2.Product.rating]
+     * * [sizes][google.cloud.retail.v2.Product.sizes]
+     * * [title][google.cloud.retail.v2.Product.title]
+     * * [uri][google.cloud.retail.v2.Product.uri]
+     * Supported fields only for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]:
+     * * [categories][google.cloud.retail.v2.Product.categories]
+     * * [description][google.cloud.retail.v2.Product.description]
+     * * [images][google.cloud.retail.v2.Product.images]
+     * Supported fields only for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]:
+     * * Only the first image in [images][google.cloud.retail.v2.Product.images]
+     * To mark [attributes][google.cloud.retail.v2.Product.attributes] as
+     * retrievable, include paths of the form "attributes.key" where "key" is the
+     * key of a custom attribute, as specified in
+     * [attributes][google.cloud.retail.v2.Product.attributes].
+     * For [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], the
+     * following fields are always returned in
+     * [SearchResponse][google.cloud.retail.v2.SearchResponse] by default:
+     * * [name][google.cloud.retail.v2.Product.name]
+     * For [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT], the
+     * following fields are always returned in by default:
+     * * [name][google.cloud.retail.v2.Product.name]
+     * * [color_info][google.cloud.retail.v2.Product.color_info]
+     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+     */
+    public Builder setRetrievableFields(com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (retrievableFieldsBuilder_ == null) {
+        retrievableFields_ = builderForValue.build();
+        onChanged();
+      } else {
+        retrievableFieldsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which fields in the [Product][google.cloud.retail.v2.Product]s
+     * are returned in [SearchResponse][google.cloud.retail.v2.SearchResponse].
+     * Supported fields for all [type][google.cloud.retail.v2.Product.type]s:
+     * * [audience][google.cloud.retail.v2.Product.audience]
+     * * [availability][google.cloud.retail.v2.Product.availability]
+     * * [brands][google.cloud.retail.v2.Product.brands]
+     * * [color_info][google.cloud.retail.v2.Product.color_info]
+     * * [conditions][google.cloud.retail.v2.Product.conditions]
+     * * [gtin][google.cloud.retail.v2.Product.gtin]
+     * * [materials][google.cloud.retail.v2.Product.materials]
+     * * [name][google.cloud.retail.v2.Product.name]
+     * * [patterns][google.cloud.retail.v2.Product.patterns]
+     * * [price_info][google.cloud.retail.v2.Product.price_info]
+     * * [rating][google.cloud.retail.v2.Product.rating]
+     * * [sizes][google.cloud.retail.v2.Product.sizes]
+     * * [title][google.cloud.retail.v2.Product.title]
+     * * [uri][google.cloud.retail.v2.Product.uri]
+     * Supported fields only for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]:
+     * * [categories][google.cloud.retail.v2.Product.categories]
+     * * [description][google.cloud.retail.v2.Product.description]
+     * * [images][google.cloud.retail.v2.Product.images]
+     * Supported fields only for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]:
+     * * Only the first image in [images][google.cloud.retail.v2.Product.images]
+     * To mark [attributes][google.cloud.retail.v2.Product.attributes] as
+     * retrievable, include paths of the form "attributes.key" where "key" is the
+     * key of a custom attribute, as specified in
+     * [attributes][google.cloud.retail.v2.Product.attributes].
+     * For [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], the
+     * following fields are always returned in
+     * [SearchResponse][google.cloud.retail.v2.SearchResponse] by default:
+     * * [name][google.cloud.retail.v2.Product.name]
+     * For [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT], the
+     * following fields are always returned in by default:
+     * * [name][google.cloud.retail.v2.Product.name]
+     * * [color_info][google.cloud.retail.v2.Product.color_info]
+     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+     */
+    public Builder mergeRetrievableFields(com.google.protobuf.FieldMask value) {
+      if (retrievableFieldsBuilder_ == null) {
+        if (retrievableFields_ != null) {
+          retrievableFields_ =
+              com.google.protobuf.FieldMask.newBuilder(retrievableFields_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          retrievableFields_ = value;
+        }
+        onChanged();
+      } else {
+        retrievableFieldsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which fields in the [Product][google.cloud.retail.v2.Product]s
+     * are returned in [SearchResponse][google.cloud.retail.v2.SearchResponse].
+     * Supported fields for all [type][google.cloud.retail.v2.Product.type]s:
+     * * [audience][google.cloud.retail.v2.Product.audience]
+     * * [availability][google.cloud.retail.v2.Product.availability]
+     * * [brands][google.cloud.retail.v2.Product.brands]
+     * * [color_info][google.cloud.retail.v2.Product.color_info]
+     * * [conditions][google.cloud.retail.v2.Product.conditions]
+     * * [gtin][google.cloud.retail.v2.Product.gtin]
+     * * [materials][google.cloud.retail.v2.Product.materials]
+     * * [name][google.cloud.retail.v2.Product.name]
+     * * [patterns][google.cloud.retail.v2.Product.patterns]
+     * * [price_info][google.cloud.retail.v2.Product.price_info]
+     * * [rating][google.cloud.retail.v2.Product.rating]
+     * * [sizes][google.cloud.retail.v2.Product.sizes]
+     * * [title][google.cloud.retail.v2.Product.title]
+     * * [uri][google.cloud.retail.v2.Product.uri]
+     * Supported fields only for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]:
+     * * [categories][google.cloud.retail.v2.Product.categories]
+     * * [description][google.cloud.retail.v2.Product.description]
+     * * [images][google.cloud.retail.v2.Product.images]
+     * Supported fields only for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]:
+     * * Only the first image in [images][google.cloud.retail.v2.Product.images]
+     * To mark [attributes][google.cloud.retail.v2.Product.attributes] as
+     * retrievable, include paths of the form "attributes.key" where "key" is the
+     * key of a custom attribute, as specified in
+     * [attributes][google.cloud.retail.v2.Product.attributes].
+     * For [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], the
+     * following fields are always returned in
+     * [SearchResponse][google.cloud.retail.v2.SearchResponse] by default:
+     * * [name][google.cloud.retail.v2.Product.name]
+     * For [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT], the
+     * following fields are always returned in by default:
+     * * [name][google.cloud.retail.v2.Product.name]
+     * * [color_info][google.cloud.retail.v2.Product.color_info]
+     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+     */
+    public Builder clearRetrievableFields() {
+      if (retrievableFieldsBuilder_ == null) {
+        retrievableFields_ = null;
+        onChanged();
+      } else {
+        retrievableFields_ = null;
+        retrievableFieldsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which fields in the [Product][google.cloud.retail.v2.Product]s
+     * are returned in [SearchResponse][google.cloud.retail.v2.SearchResponse].
+     * Supported fields for all [type][google.cloud.retail.v2.Product.type]s:
+     * * [audience][google.cloud.retail.v2.Product.audience]
+     * * [availability][google.cloud.retail.v2.Product.availability]
+     * * [brands][google.cloud.retail.v2.Product.brands]
+     * * [color_info][google.cloud.retail.v2.Product.color_info]
+     * * [conditions][google.cloud.retail.v2.Product.conditions]
+     * * [gtin][google.cloud.retail.v2.Product.gtin]
+     * * [materials][google.cloud.retail.v2.Product.materials]
+     * * [name][google.cloud.retail.v2.Product.name]
+     * * [patterns][google.cloud.retail.v2.Product.patterns]
+     * * [price_info][google.cloud.retail.v2.Product.price_info]
+     * * [rating][google.cloud.retail.v2.Product.rating]
+     * * [sizes][google.cloud.retail.v2.Product.sizes]
+     * * [title][google.cloud.retail.v2.Product.title]
+     * * [uri][google.cloud.retail.v2.Product.uri]
+     * Supported fields only for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]:
+     * * [categories][google.cloud.retail.v2.Product.categories]
+     * * [description][google.cloud.retail.v2.Product.description]
+     * * [images][google.cloud.retail.v2.Product.images]
+     * Supported fields only for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]:
+     * * Only the first image in [images][google.cloud.retail.v2.Product.images]
+     * To mark [attributes][google.cloud.retail.v2.Product.attributes] as
+     * retrievable, include paths of the form "attributes.key" where "key" is the
+     * key of a custom attribute, as specified in
+     * [attributes][google.cloud.retail.v2.Product.attributes].
+     * For [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], the
+     * following fields are always returned in
+     * [SearchResponse][google.cloud.retail.v2.SearchResponse] by default:
+     * * [name][google.cloud.retail.v2.Product.name]
+     * For [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT], the
+     * following fields are always returned in by default:
+     * * [name][google.cloud.retail.v2.Product.name]
+     * * [color_info][google.cloud.retail.v2.Product.color_info]
+     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getRetrievableFieldsBuilder() {
+
+      onChanged();
+      return getRetrievableFieldsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which fields in the [Product][google.cloud.retail.v2.Product]s
+     * are returned in [SearchResponse][google.cloud.retail.v2.SearchResponse].
+     * Supported fields for all [type][google.cloud.retail.v2.Product.type]s:
+     * * [audience][google.cloud.retail.v2.Product.audience]
+     * * [availability][google.cloud.retail.v2.Product.availability]
+     * * [brands][google.cloud.retail.v2.Product.brands]
+     * * [color_info][google.cloud.retail.v2.Product.color_info]
+     * * [conditions][google.cloud.retail.v2.Product.conditions]
+     * * [gtin][google.cloud.retail.v2.Product.gtin]
+     * * [materials][google.cloud.retail.v2.Product.materials]
+     * * [name][google.cloud.retail.v2.Product.name]
+     * * [patterns][google.cloud.retail.v2.Product.patterns]
+     * * [price_info][google.cloud.retail.v2.Product.price_info]
+     * * [rating][google.cloud.retail.v2.Product.rating]
+     * * [sizes][google.cloud.retail.v2.Product.sizes]
+     * * [title][google.cloud.retail.v2.Product.title]
+     * * [uri][google.cloud.retail.v2.Product.uri]
+     * Supported fields only for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]:
+     * * [categories][google.cloud.retail.v2.Product.categories]
+     * * [description][google.cloud.retail.v2.Product.description]
+     * * [images][google.cloud.retail.v2.Product.images]
+     * Supported fields only for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]:
+     * * Only the first image in [images][google.cloud.retail.v2.Product.images]
+     * To mark [attributes][google.cloud.retail.v2.Product.attributes] as
+     * retrievable, include paths of the form "attributes.key" where "key" is the
+     * key of a custom attribute, as specified in
+     * [attributes][google.cloud.retail.v2.Product.attributes].
+     * For [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], the
+     * following fields are always returned in
+     * [SearchResponse][google.cloud.retail.v2.SearchResponse] by default:
+     * * [name][google.cloud.retail.v2.Product.name]
+     * For [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT], the
+     * following fields are always returned in by default:
+     * * [name][google.cloud.retail.v2.Product.name]
+     * * [color_info][google.cloud.retail.v2.Product.color_info]
+     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getRetrievableFieldsOrBuilder() {
+      if (retrievableFieldsBuilder_ != null) {
+        return retrievableFieldsBuilder_.getMessageOrBuilder();
+      } else {
+        return retrievableFields_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : retrievableFields_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which fields in the [Product][google.cloud.retail.v2.Product]s
+     * are returned in [SearchResponse][google.cloud.retail.v2.SearchResponse].
+     * Supported fields for all [type][google.cloud.retail.v2.Product.type]s:
+     * * [audience][google.cloud.retail.v2.Product.audience]
+     * * [availability][google.cloud.retail.v2.Product.availability]
+     * * [brands][google.cloud.retail.v2.Product.brands]
+     * * [color_info][google.cloud.retail.v2.Product.color_info]
+     * * [conditions][google.cloud.retail.v2.Product.conditions]
+     * * [gtin][google.cloud.retail.v2.Product.gtin]
+     * * [materials][google.cloud.retail.v2.Product.materials]
+     * * [name][google.cloud.retail.v2.Product.name]
+     * * [patterns][google.cloud.retail.v2.Product.patterns]
+     * * [price_info][google.cloud.retail.v2.Product.price_info]
+     * * [rating][google.cloud.retail.v2.Product.rating]
+     * * [sizes][google.cloud.retail.v2.Product.sizes]
+     * * [title][google.cloud.retail.v2.Product.title]
+     * * [uri][google.cloud.retail.v2.Product.uri]
+     * Supported fields only for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]:
+     * * [categories][google.cloud.retail.v2.Product.categories]
+     * * [description][google.cloud.retail.v2.Product.description]
+     * * [images][google.cloud.retail.v2.Product.images]
+     * Supported fields only for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]:
+     * * Only the first image in [images][google.cloud.retail.v2.Product.images]
+     * To mark [attributes][google.cloud.retail.v2.Product.attributes] as
+     * retrievable, include paths of the form "attributes.key" where "key" is the
+     * key of a custom attribute, as specified in
+     * [attributes][google.cloud.retail.v2.Product.attributes].
+     * For [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], the
+     * following fields are always returned in
+     * [SearchResponse][google.cloud.retail.v2.SearchResponse] by default:
+     * * [name][google.cloud.retail.v2.Product.name]
+     * For [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT], the
+     * following fields are always returned in by default:
+     * * [name][google.cloud.retail.v2.Product.name]
+     * * [color_info][google.cloud.retail.v2.Product.color_info]
+     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        getRetrievableFieldsFieldBuilder() {
+      if (retrievableFieldsBuilder_ == null) {
+        retrievableFieldsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getRetrievableFields(), getParentForChildren(), isClean());
+        retrievableFields_ = null;
+      }
+      return retrievableFieldsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.retail.v2.Product> variants_ =
+        java.util.Collections.emptyList();
+
+    private void ensureVariantsIsMutable() {
+      if (!((bitField0_ & 0x00001000) != 0)) {
+        variants_ = new java.util.ArrayList<com.google.cloud.retail.v2.Product>(variants_);
+        bitField0_ |= 0x00001000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.retail.v2.Product,
+            com.google.cloud.retail.v2.Product.Builder,
+            com.google.cloud.retail.v2.ProductOrBuilder>
+        variantsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Product variants grouped together on primary product which
+     * share similar product attributes. It's automatically grouped by
+     * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+     * all the product variants. Only populated for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.retail.v2.Product> getVariantsList() {
+      if (variantsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(variants_);
+      } else {
+        return variantsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Product variants grouped together on primary product which
+     * share similar product attributes. It's automatically grouped by
+     * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+     * all the product variants. Only populated for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getVariantsCount() {
+      if (variantsBuilder_ == null) {
+        return variants_.size();
+      } else {
+        return variantsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Product variants grouped together on primary product which
+     * share similar product attributes. It's automatically grouped by
+     * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+     * all the product variants. Only populated for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.retail.v2.Product getVariants(int index) {
+      if (variantsBuilder_ == null) {
+        return variants_.get(index);
+      } else {
+        return variantsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Product variants grouped together on primary product which
+     * share similar product attributes. It's automatically grouped by
+     * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+     * all the product variants. Only populated for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setVariants(int index, com.google.cloud.retail.v2.Product value) {
+      if (variantsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVariantsIsMutable();
+        variants_.set(index, value);
+        onChanged();
+      } else {
+        variantsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Product variants grouped together on primary product which
+     * share similar product attributes. It's automatically grouped by
+     * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+     * all the product variants. Only populated for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setVariants(
+        int index, com.google.cloud.retail.v2.Product.Builder builderForValue) {
+      if (variantsBuilder_ == null) {
+        ensureVariantsIsMutable();
+        variants_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        variantsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Product variants grouped together on primary product which
+     * share similar product attributes. It's automatically grouped by
+     * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+     * all the product variants. Only populated for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addVariants(com.google.cloud.retail.v2.Product value) {
+      if (variantsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVariantsIsMutable();
+        variants_.add(value);
+        onChanged();
+      } else {
+        variantsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Product variants grouped together on primary product which
+     * share similar product attributes. It's automatically grouped by
+     * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+     * all the product variants. Only populated for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addVariants(int index, com.google.cloud.retail.v2.Product value) {
+      if (variantsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVariantsIsMutable();
+        variants_.add(index, value);
+        onChanged();
+      } else {
+        variantsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Product variants grouped together on primary product which
+     * share similar product attributes. It's automatically grouped by
+     * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+     * all the product variants. Only populated for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addVariants(com.google.cloud.retail.v2.Product.Builder builderForValue) {
+      if (variantsBuilder_ == null) {
+        ensureVariantsIsMutable();
+        variants_.add(builderForValue.build());
+        onChanged();
+      } else {
+        variantsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Product variants grouped together on primary product which
+     * share similar product attributes. It's automatically grouped by
+     * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+     * all the product variants. Only populated for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addVariants(
+        int index, com.google.cloud.retail.v2.Product.Builder builderForValue) {
+      if (variantsBuilder_ == null) {
+        ensureVariantsIsMutable();
+        variants_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        variantsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Product variants grouped together on primary product which
+     * share similar product attributes. It's automatically grouped by
+     * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+     * all the product variants. Only populated for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllVariants(
+        java.lang.Iterable<? extends com.google.cloud.retail.v2.Product> values) {
+      if (variantsBuilder_ == null) {
+        ensureVariantsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, variants_);
+        onChanged();
+      } else {
+        variantsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Product variants grouped together on primary product which
+     * share similar product attributes. It's automatically grouped by
+     * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+     * all the product variants. Only populated for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearVariants() {
+      if (variantsBuilder_ == null) {
+        variants_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+      } else {
+        variantsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Product variants grouped together on primary product which
+     * share similar product attributes. It's automatically grouped by
+     * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+     * all the product variants. Only populated for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeVariants(int index) {
+      if (variantsBuilder_ == null) {
+        ensureVariantsIsMutable();
+        variants_.remove(index);
+        onChanged();
+      } else {
+        variantsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Product variants grouped together on primary product which
+     * share similar product attributes. It's automatically grouped by
+     * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+     * all the product variants. Only populated for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.retail.v2.Product.Builder getVariantsBuilder(int index) {
+      return getVariantsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Product variants grouped together on primary product which
+     * share similar product attributes. It's automatically grouped by
+     * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+     * all the product variants. Only populated for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.retail.v2.ProductOrBuilder getVariantsOrBuilder(int index) {
+      if (variantsBuilder_ == null) {
+        return variants_.get(index);
+      } else {
+        return variantsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Product variants grouped together on primary product which
+     * share similar product attributes. It's automatically grouped by
+     * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+     * all the product variants. Only populated for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.retail.v2.ProductOrBuilder>
+        getVariantsOrBuilderList() {
+      if (variantsBuilder_ != null) {
+        return variantsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(variants_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Product variants grouped together on primary product which
+     * share similar product attributes. It's automatically grouped by
+     * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+     * all the product variants. Only populated for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.retail.v2.Product.Builder addVariantsBuilder() {
+      return getVariantsFieldBuilder()
+          .addBuilder(com.google.cloud.retail.v2.Product.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Product variants grouped together on primary product which
+     * share similar product attributes. It's automatically grouped by
+     * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+     * all the product variants. Only populated for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.retail.v2.Product.Builder addVariantsBuilder(int index) {
+      return getVariantsFieldBuilder()
+          .addBuilder(index, com.google.cloud.retail.v2.Product.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Product variants grouped together on primary product which
+     * share similar product attributes. It's automatically grouped by
+     * [primary_product_id][google.cloud.retail.v2.Product.primary_product_id] for
+     * all the product variants. Only populated for
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Product variants = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.retail.v2.Product.Builder> getVariantsBuilderList() {
+      return getVariantsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.retail.v2.Product,
+            com.google.cloud.retail.v2.Product.Builder,
+            com.google.cloud.retail.v2.ProductOrBuilder>
+        getVariantsFieldBuilder() {
+      if (variantsBuilder_ == null) {
+        variantsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.retail.v2.Product,
+                com.google.cloud.retail.v2.Product.Builder,
+                com.google.cloud.retail.v2.ProductOrBuilder>(
+                variants_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
+        variants_ = null;
+      }
+      return variantsBuilder_;
     }
 
     @java.lang.Override

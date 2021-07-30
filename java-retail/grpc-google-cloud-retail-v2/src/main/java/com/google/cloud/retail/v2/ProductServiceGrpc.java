@@ -119,6 +119,51 @@ public final class ProductServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2.ListProductsRequest,
+          com.google.cloud.retail.v2.ListProductsResponse>
+      getListProductsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListProducts",
+      requestType = com.google.cloud.retail.v2.ListProductsRequest.class,
+      responseType = com.google.cloud.retail.v2.ListProductsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2.ListProductsRequest,
+          com.google.cloud.retail.v2.ListProductsResponse>
+      getListProductsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.retail.v2.ListProductsRequest,
+            com.google.cloud.retail.v2.ListProductsResponse>
+        getListProductsMethod;
+    if ((getListProductsMethod = ProductServiceGrpc.getListProductsMethod) == null) {
+      synchronized (ProductServiceGrpc.class) {
+        if ((getListProductsMethod = ProductServiceGrpc.getListProductsMethod) == null) {
+          ProductServiceGrpc.getListProductsMethod =
+              getListProductsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.retail.v2.ListProductsRequest,
+                          com.google.cloud.retail.v2.ListProductsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListProducts"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.retail.v2.ListProductsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.retail.v2.ListProductsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ProductServiceMethodDescriptorSupplier("ListProducts"))
+                      .build();
+        }
+      }
+    }
+    return getListProductsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.retail.v2.UpdateProductRequest, com.google.cloud.retail.v2.Product>
       getUpdateProductMethod;
 
@@ -244,6 +289,144 @@ public final class ProductServiceGrpc {
     return getImportProductsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2.SetInventoryRequest, com.google.longrunning.Operation>
+      getSetInventoryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetInventory",
+      requestType = com.google.cloud.retail.v2.SetInventoryRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2.SetInventoryRequest, com.google.longrunning.Operation>
+      getSetInventoryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.retail.v2.SetInventoryRequest, com.google.longrunning.Operation>
+        getSetInventoryMethod;
+    if ((getSetInventoryMethod = ProductServiceGrpc.getSetInventoryMethod) == null) {
+      synchronized (ProductServiceGrpc.class) {
+        if ((getSetInventoryMethod = ProductServiceGrpc.getSetInventoryMethod) == null) {
+          ProductServiceGrpc.getSetInventoryMethod =
+              getSetInventoryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.retail.v2.SetInventoryRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetInventory"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.retail.v2.SetInventoryRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ProductServiceMethodDescriptorSupplier("SetInventory"))
+                      .build();
+        }
+      }
+    }
+    return getSetInventoryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2.AddFulfillmentPlacesRequest, com.google.longrunning.Operation>
+      getAddFulfillmentPlacesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddFulfillmentPlaces",
+      requestType = com.google.cloud.retail.v2.AddFulfillmentPlacesRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2.AddFulfillmentPlacesRequest, com.google.longrunning.Operation>
+      getAddFulfillmentPlacesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.retail.v2.AddFulfillmentPlacesRequest,
+            com.google.longrunning.Operation>
+        getAddFulfillmentPlacesMethod;
+    if ((getAddFulfillmentPlacesMethod = ProductServiceGrpc.getAddFulfillmentPlacesMethod)
+        == null) {
+      synchronized (ProductServiceGrpc.class) {
+        if ((getAddFulfillmentPlacesMethod = ProductServiceGrpc.getAddFulfillmentPlacesMethod)
+            == null) {
+          ProductServiceGrpc.getAddFulfillmentPlacesMethod =
+              getAddFulfillmentPlacesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.retail.v2.AddFulfillmentPlacesRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "AddFulfillmentPlaces"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.retail.v2.AddFulfillmentPlacesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ProductServiceMethodDescriptorSupplier("AddFulfillmentPlaces"))
+                      .build();
+        }
+      }
+    }
+    return getAddFulfillmentPlacesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest,
+          com.google.longrunning.Operation>
+      getRemoveFulfillmentPlacesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RemoveFulfillmentPlaces",
+      requestType = com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest,
+          com.google.longrunning.Operation>
+      getRemoveFulfillmentPlacesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest,
+            com.google.longrunning.Operation>
+        getRemoveFulfillmentPlacesMethod;
+    if ((getRemoveFulfillmentPlacesMethod = ProductServiceGrpc.getRemoveFulfillmentPlacesMethod)
+        == null) {
+      synchronized (ProductServiceGrpc.class) {
+        if ((getRemoveFulfillmentPlacesMethod = ProductServiceGrpc.getRemoveFulfillmentPlacesMethod)
+            == null) {
+          ProductServiceGrpc.getRemoveFulfillmentPlacesMethod =
+              getRemoveFulfillmentPlacesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RemoveFulfillmentPlaces"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ProductServiceMethodDescriptorSupplier("RemoveFulfillmentPlaces"))
+                      .build();
+        }
+      }
+    }
+    return getRemoveFulfillmentPlacesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ProductServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ProductServiceStub> factory =
@@ -326,6 +509,21 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * Gets a list of [Product][google.cloud.retail.v2.Product]s.
+     * </pre>
+     */
+    public void listProducts(
+        com.google.cloud.retail.v2.ListProductsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.ListProductsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListProductsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a [Product][google.cloud.retail.v2.Product].
      * </pre>
      */
@@ -368,6 +566,105 @@ public final class ProductServiceGrpc {
           getImportProductsMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Updates inventory information for a
+     * [Product][google.cloud.retail.v2.Product] while respecting the last update
+     * timestamps of each inventory field.
+     * This process is asynchronous and does not require the
+     * [Product][google.cloud.retail.v2.Product] to exist before updating
+     * fulfillment information. If the request is valid, the update will be
+     * enqueued and processed downstream. As a consequence, when a response is
+     * returned, updates are not immediately manifested in the
+     * [Product][google.cloud.retail.v2.Product] queried by
+     * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+     * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * When inventory is updated with
+     * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+     * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct], the
+     * specified inventory field value(s) will overwrite any existing value(s)
+     * while ignoring the last update time for this field. Furthermore, the last
+     * update time for the specified inventory fields will be overwritten to the
+     * time of the
+     * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] or
+     * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct]
+     * request.
+     * If no inventory fields are set in
+     * [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product],
+     * then any pre-existing inventory information for this product will be used.
+     * If no inventory fields are set in [UpdateProductRequest.set_mask][],
+     * then any existing inventory information will be preserved.
+     * Pre-existing inventory information can only be updated with
+     * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
+     * [AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces],
+     * and
+     * [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public void setInventory(
+        com.google.cloud.retail.v2.SetInventoryRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetInventoryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incrementally adds place IDs to
+     * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+     * This process is asynchronous and does not require the
+     * [Product][google.cloud.retail.v2.Product] to exist before updating
+     * fulfillment information. If the request is valid, the update will be
+     * enqueued and processed downstream. As a consequence, when a response is
+     * returned, the added place IDs are not immediately manifested in the
+     * [Product][google.cloud.retail.v2.Product] queried by
+     * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+     * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public void addFulfillmentPlaces(
+        com.google.cloud.retail.v2.AddFulfillmentPlacesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAddFulfillmentPlacesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incrementally removes place IDs from a
+     * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+     * This process is asynchronous and does not require the
+     * [Product][google.cloud.retail.v2.Product] to exist before updating
+     * fulfillment information. If the request is valid, the update will be
+     * enqueued and processed downstream. As a consequence, when a response is
+     * returned, the removed place IDs are not immediately manifested in the
+     * [Product][google.cloud.retail.v2.Product] queried by
+     * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+     * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public void removeFulfillmentPlaces(
+        com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRemoveFulfillmentPlacesMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -383,6 +680,13 @@ public final class ProductServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.retail.v2.GetProductRequest,
                       com.google.cloud.retail.v2.Product>(this, METHODID_GET_PRODUCT)))
+          .addMethod(
+              getListProductsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.retail.v2.ListProductsRequest,
+                      com.google.cloud.retail.v2.ListProductsResponse>(
+                      this, METHODID_LIST_PRODUCTS)))
           .addMethod(
               getUpdateProductMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -401,6 +705,24 @@ public final class ProductServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.retail.v2.ImportProductsRequest,
                       com.google.longrunning.Operation>(this, METHODID_IMPORT_PRODUCTS)))
+          .addMethod(
+              getSetInventoryMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.retail.v2.SetInventoryRequest,
+                      com.google.longrunning.Operation>(this, METHODID_SET_INVENTORY)))
+          .addMethod(
+              getAddFulfillmentPlacesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.retail.v2.AddFulfillmentPlacesRequest,
+                      com.google.longrunning.Operation>(this, METHODID_ADD_FULFILLMENT_PLACES)))
+          .addMethod(
+              getRemoveFulfillmentPlacesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest,
+                      com.google.longrunning.Operation>(this, METHODID_REMOVE_FULFILLMENT_PLACES)))
           .build();
     }
   }
@@ -458,6 +780,23 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * Gets a list of [Product][google.cloud.retail.v2.Product]s.
+     * </pre>
+     */
+    public void listProducts(
+        com.google.cloud.retail.v2.ListProductsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.ListProductsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListProductsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a [Product][google.cloud.retail.v2.Product].
      * </pre>
      */
@@ -502,6 +841,111 @@ public final class ProductServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getImportProductsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates inventory information for a
+     * [Product][google.cloud.retail.v2.Product] while respecting the last update
+     * timestamps of each inventory field.
+     * This process is asynchronous and does not require the
+     * [Product][google.cloud.retail.v2.Product] to exist before updating
+     * fulfillment information. If the request is valid, the update will be
+     * enqueued and processed downstream. As a consequence, when a response is
+     * returned, updates are not immediately manifested in the
+     * [Product][google.cloud.retail.v2.Product] queried by
+     * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+     * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * When inventory is updated with
+     * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+     * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct], the
+     * specified inventory field value(s) will overwrite any existing value(s)
+     * while ignoring the last update time for this field. Furthermore, the last
+     * update time for the specified inventory fields will be overwritten to the
+     * time of the
+     * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] or
+     * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct]
+     * request.
+     * If no inventory fields are set in
+     * [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product],
+     * then any pre-existing inventory information for this product will be used.
+     * If no inventory fields are set in [UpdateProductRequest.set_mask][],
+     * then any existing inventory information will be preserved.
+     * Pre-existing inventory information can only be updated with
+     * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
+     * [AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces],
+     * and
+     * [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public void setInventory(
+        com.google.cloud.retail.v2.SetInventoryRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSetInventoryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incrementally adds place IDs to
+     * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+     * This process is asynchronous and does not require the
+     * [Product][google.cloud.retail.v2.Product] to exist before updating
+     * fulfillment information. If the request is valid, the update will be
+     * enqueued and processed downstream. As a consequence, when a response is
+     * returned, the added place IDs are not immediately manifested in the
+     * [Product][google.cloud.retail.v2.Product] queried by
+     * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+     * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public void addFulfillmentPlaces(
+        com.google.cloud.retail.v2.AddFulfillmentPlacesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAddFulfillmentPlacesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incrementally removes place IDs from a
+     * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+     * This process is asynchronous and does not require the
+     * [Product][google.cloud.retail.v2.Product] to exist before updating
+     * fulfillment information. If the request is valid, the update will be
+     * enqueued and processed downstream. As a consequence, when a response is
+     * returned, the removed place IDs are not immediately manifested in the
+     * [Product][google.cloud.retail.v2.Product] queried by
+     * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+     * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public void removeFulfillmentPlaces(
+        com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRemoveFulfillmentPlacesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -557,6 +1001,19 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * Gets a list of [Product][google.cloud.retail.v2.Product]s.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2.ListProductsResponse listProducts(
+        com.google.cloud.retail.v2.ListProductsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListProductsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a [Product][google.cloud.retail.v2.Product].
      * </pre>
      */
@@ -594,6 +1051,102 @@ public final class ProductServiceGrpc {
         com.google.cloud.retail.v2.ImportProductsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getImportProductsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates inventory information for a
+     * [Product][google.cloud.retail.v2.Product] while respecting the last update
+     * timestamps of each inventory field.
+     * This process is asynchronous and does not require the
+     * [Product][google.cloud.retail.v2.Product] to exist before updating
+     * fulfillment information. If the request is valid, the update will be
+     * enqueued and processed downstream. As a consequence, when a response is
+     * returned, updates are not immediately manifested in the
+     * [Product][google.cloud.retail.v2.Product] queried by
+     * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+     * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * When inventory is updated with
+     * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+     * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct], the
+     * specified inventory field value(s) will overwrite any existing value(s)
+     * while ignoring the last update time for this field. Furthermore, the last
+     * update time for the specified inventory fields will be overwritten to the
+     * time of the
+     * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] or
+     * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct]
+     * request.
+     * If no inventory fields are set in
+     * [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product],
+     * then any pre-existing inventory information for this product will be used.
+     * If no inventory fields are set in [UpdateProductRequest.set_mask][],
+     * then any existing inventory information will be preserved.
+     * Pre-existing inventory information can only be updated with
+     * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
+     * [AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces],
+     * and
+     * [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public com.google.longrunning.Operation setInventory(
+        com.google.cloud.retail.v2.SetInventoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetInventoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incrementally adds place IDs to
+     * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+     * This process is asynchronous and does not require the
+     * [Product][google.cloud.retail.v2.Product] to exist before updating
+     * fulfillment information. If the request is valid, the update will be
+     * enqueued and processed downstream. As a consequence, when a response is
+     * returned, the added place IDs are not immediately manifested in the
+     * [Product][google.cloud.retail.v2.Product] queried by
+     * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+     * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addFulfillmentPlaces(
+        com.google.cloud.retail.v2.AddFulfillmentPlacesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddFulfillmentPlacesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incrementally removes place IDs from a
+     * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+     * This process is asynchronous and does not require the
+     * [Product][google.cloud.retail.v2.Product] to exist before updating
+     * fulfillment information. If the request is valid, the update will be
+     * enqueued and processed downstream. As a consequence, when a response is
+     * returned, the removed place IDs are not immediately manifested in the
+     * [Product][google.cloud.retail.v2.Product] queried by
+     * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+     * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public com.google.longrunning.Operation removeFulfillmentPlaces(
+        com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveFulfillmentPlacesMethod(), getCallOptions(), request);
     }
   }
 
@@ -647,6 +1200,20 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * Gets a list of [Product][google.cloud.retail.v2.Product]s.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.retail.v2.ListProductsResponse>
+        listProducts(com.google.cloud.retail.v2.ListProductsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListProductsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a [Product][google.cloud.retail.v2.Product].
      * </pre>
      */
@@ -685,13 +1252,113 @@ public final class ProductServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getImportProductsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates inventory information for a
+     * [Product][google.cloud.retail.v2.Product] while respecting the last update
+     * timestamps of each inventory field.
+     * This process is asynchronous and does not require the
+     * [Product][google.cloud.retail.v2.Product] to exist before updating
+     * fulfillment information. If the request is valid, the update will be
+     * enqueued and processed downstream. As a consequence, when a response is
+     * returned, updates are not immediately manifested in the
+     * [Product][google.cloud.retail.v2.Product] queried by
+     * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+     * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * When inventory is updated with
+     * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+     * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct], the
+     * specified inventory field value(s) will overwrite any existing value(s)
+     * while ignoring the last update time for this field. Furthermore, the last
+     * update time for the specified inventory fields will be overwritten to the
+     * time of the
+     * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] or
+     * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct]
+     * request.
+     * If no inventory fields are set in
+     * [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product],
+     * then any pre-existing inventory information for this product will be used.
+     * If no inventory fields are set in [UpdateProductRequest.set_mask][],
+     * then any existing inventory information will be preserved.
+     * Pre-existing inventory information can only be updated with
+     * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
+     * [AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces],
+     * and
+     * [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        setInventory(com.google.cloud.retail.v2.SetInventoryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetInventoryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incrementally adds place IDs to
+     * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+     * This process is asynchronous and does not require the
+     * [Product][google.cloud.retail.v2.Product] to exist before updating
+     * fulfillment information. If the request is valid, the update will be
+     * enqueued and processed downstream. As a consequence, when a response is
+     * returned, the added place IDs are not immediately manifested in the
+     * [Product][google.cloud.retail.v2.Product] queried by
+     * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+     * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        addFulfillmentPlaces(com.google.cloud.retail.v2.AddFulfillmentPlacesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAddFulfillmentPlacesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incrementally removes place IDs from a
+     * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+     * This process is asynchronous and does not require the
+     * [Product][google.cloud.retail.v2.Product] to exist before updating
+     * fulfillment information. If the request is valid, the update will be
+     * enqueued and processed downstream. As a consequence, when a response is
+     * returned, the removed place IDs are not immediately manifested in the
+     * [Product][google.cloud.retail.v2.Product] queried by
+     * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+     * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        removeFulfillmentPlaces(com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRemoveFulfillmentPlacesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_PRODUCT = 0;
   private static final int METHODID_GET_PRODUCT = 1;
-  private static final int METHODID_UPDATE_PRODUCT = 2;
-  private static final int METHODID_DELETE_PRODUCT = 3;
-  private static final int METHODID_IMPORT_PRODUCTS = 4;
+  private static final int METHODID_LIST_PRODUCTS = 2;
+  private static final int METHODID_UPDATE_PRODUCT = 3;
+  private static final int METHODID_DELETE_PRODUCT = 4;
+  private static final int METHODID_IMPORT_PRODUCTS = 5;
+  private static final int METHODID_SET_INVENTORY = 6;
+  private static final int METHODID_ADD_FULFILLMENT_PLACES = 7;
+  private static final int METHODID_REMOVE_FULFILLMENT_PLACES = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -720,6 +1387,12 @@ public final class ProductServiceGrpc {
               (com.google.cloud.retail.v2.GetProductRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.Product>) responseObserver);
           break;
+        case METHODID_LIST_PRODUCTS:
+          serviceImpl.listProducts(
+              (com.google.cloud.retail.v2.ListProductsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.ListProductsResponse>)
+                  responseObserver);
+          break;
         case METHODID_UPDATE_PRODUCT:
           serviceImpl.updateProduct(
               (com.google.cloud.retail.v2.UpdateProductRequest) request,
@@ -733,6 +1406,21 @@ public final class ProductServiceGrpc {
         case METHODID_IMPORT_PRODUCTS:
           serviceImpl.importProducts(
               (com.google.cloud.retail.v2.ImportProductsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_SET_INVENTORY:
+          serviceImpl.setInventory(
+              (com.google.cloud.retail.v2.SetInventoryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_ADD_FULFILLMENT_PLACES:
+          serviceImpl.addFulfillmentPlaces(
+              (com.google.cloud.retail.v2.AddFulfillmentPlacesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_REMOVE_FULFILLMENT_PLACES:
+          serviceImpl.removeFulfillmentPlaces(
+              (com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -801,9 +1489,13 @@ public final class ProductServiceGrpc {
                       .setSchemaDescriptor(new ProductServiceFileDescriptorSupplier())
                       .addMethod(getCreateProductMethod())
                       .addMethod(getGetProductMethod())
+                      .addMethod(getListProductsMethod())
                       .addMethod(getUpdateProductMethod())
                       .addMethod(getDeleteProductMethod())
                       .addMethod(getImportProductsMethod())
+                      .addMethod(getSetInventoryMethod())
+                      .addMethod(getAddFulfillmentPlacesMethod())
+                      .addMethod(getRemoveFulfillmentPlacesMethod())
                       .build();
         }
       }

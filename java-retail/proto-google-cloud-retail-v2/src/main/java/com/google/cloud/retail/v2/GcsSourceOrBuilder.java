@@ -33,7 +33,7 @@ public interface GcsSourceOrBuilder
    * files, such as `gs://bucket/directory/&#42;.json`. A request can
    * contain at most 100 files, and each file can be up to 2 GB. See
    * [Importing product
-   * information](https://cloud.google.com/recommendations-ai/docs/upload-catalog)
+   * information](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog)
    * for the expected file format and setup instructions.
    * </pre>
    *
@@ -52,7 +52,7 @@ public interface GcsSourceOrBuilder
    * files, such as `gs://bucket/directory/&#42;.json`. A request can
    * contain at most 100 files, and each file can be up to 2 GB. See
    * [Importing product
-   * information](https://cloud.google.com/recommendations-ai/docs/upload-catalog)
+   * information](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog)
    * for the expected file format and setup instructions.
    * </pre>
    *
@@ -71,7 +71,7 @@ public interface GcsSourceOrBuilder
    * files, such as `gs://bucket/directory/&#42;.json`. A request can
    * contain at most 100 files, and each file can be up to 2 GB. See
    * [Importing product
-   * information](https://cloud.google.com/recommendations-ai/docs/upload-catalog)
+   * information](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog)
    * for the expected file format and setup instructions.
    * </pre>
    *
@@ -91,7 +91,7 @@ public interface GcsSourceOrBuilder
    * files, such as `gs://bucket/directory/&#42;.json`. A request can
    * contain at most 100 files, and each file can be up to 2 GB. See
    * [Importing product
-   * information](https://cloud.google.com/recommendations-ai/docs/upload-catalog)
+   * information](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog)
    * for the expected file format and setup instructions.
    * </pre>
    *
@@ -117,7 +117,7 @@ public interface GcsSourceOrBuilder
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.retail.v2.UserEvent] per line.
    * * `user_event_ga360`: Using
-   *   https://support.google.com/analytics/answer/3437719?hl=en.
+   *   https://support.google.com/analytics/answer/3437719.
    * </pre>
    *
    * <code>string data_schema = 2;</code>
@@ -140,7 +140,7 @@ public interface GcsSourceOrBuilder
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.retail.v2.UserEvent] per line.
    * * `user_event_ga360`: Using
-   *   https://support.google.com/analytics/answer/3437719?hl=en.
+   *   https://support.google.com/analytics/answer/3437719.
    * </pre>
    *
    * <code>string data_schema = 2;</code>

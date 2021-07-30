@@ -127,7 +127,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. A list of products to update/create. Each product must have a
    * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-   * 10k items.
+   * 100 items.
    * </pre>
    *
    * <code>
@@ -144,7 +144,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. A list of products to update/create. Each product must have a
    * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-   * 10k items.
+   * 100 items.
    * </pre>
    *
    * <code>
@@ -162,7 +162,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. A list of products to update/create. Each product must have a
    * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-   * 10k items.
+   * 100 items.
    * </pre>
    *
    * <code>
@@ -179,7 +179,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. A list of products to update/create. Each product must have a
    * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-   * 10k items.
+   * 100 items.
    * </pre>
    *
    * <code>
@@ -196,7 +196,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. A list of products to update/create. Each product must have a
    * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-   * 10k items.
+   * 100 items.
    * </pre>
    *
    * <code>
@@ -588,7 +588,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A list of products to update/create. Each product must have a
      * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-     * 10k items.
+     * 100 items.
      * </pre>
      *
      * <code>
@@ -608,7 +608,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A list of products to update/create. Each product must have a
      * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-     * 10k items.
+     * 100 items.
      * </pre>
      *
      * <code>
@@ -628,7 +628,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A list of products to update/create. Each product must have a
      * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-     * 10k items.
+     * 100 items.
      * </pre>
      *
      * <code>
@@ -648,7 +648,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A list of products to update/create. Each product must have a
      * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-     * 10k items.
+     * 100 items.
      * </pre>
      *
      * <code>
@@ -674,7 +674,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A list of products to update/create. Each product must have a
      * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-     * 10k items.
+     * 100 items.
      * </pre>
      *
      * <code>
@@ -698,7 +698,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A list of products to update/create. Each product must have a
      * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-     * 10k items.
+     * 100 items.
      * </pre>
      *
      * <code>
@@ -724,7 +724,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A list of products to update/create. Each product must have a
      * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-     * 10k items.
+     * 100 items.
      * </pre>
      *
      * <code>
@@ -750,7 +750,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A list of products to update/create. Each product must have a
      * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-     * 10k items.
+     * 100 items.
      * </pre>
      *
      * <code>
@@ -773,7 +773,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A list of products to update/create. Each product must have a
      * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-     * 10k items.
+     * 100 items.
      * </pre>
      *
      * <code>
@@ -797,7 +797,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A list of products to update/create. Each product must have a
      * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-     * 10k items.
+     * 100 items.
      * </pre>
      *
      * <code>
@@ -821,7 +821,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A list of products to update/create. Each product must have a
      * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-     * 10k items.
+     * 100 items.
      * </pre>
      *
      * <code>
@@ -844,7 +844,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A list of products to update/create. Each product must have a
      * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-     * 10k items.
+     * 100 items.
      * </pre>
      *
      * <code>
@@ -867,7 +867,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A list of products to update/create. Each product must have a
      * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-     * 10k items.
+     * 100 items.
      * </pre>
      *
      * <code>
@@ -883,7 +883,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A list of products to update/create. Each product must have a
      * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-     * 10k items.
+     * 100 items.
      * </pre>
      *
      * <code>
@@ -903,7 +903,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A list of products to update/create. Each product must have a
      * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-     * 10k items.
+     * 100 items.
      * </pre>
      *
      * <code>
@@ -924,7 +924,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A list of products to update/create. Each product must have a
      * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-     * 10k items.
+     * 100 items.
      * </pre>
      *
      * <code>
@@ -941,7 +941,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A list of products to update/create. Each product must have a
      * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-     * 10k items.
+     * 100 items.
      * </pre>
      *
      * <code>
@@ -958,7 +958,7 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A list of products to update/create. Each product must have a
      * valid [Product.id][google.cloud.retail.v2.Product.id]. Recommended max of
-     * 10k items.
+     * 100 items.
      * </pre>
      *
      * <code>

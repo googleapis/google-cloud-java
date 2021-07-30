@@ -205,10 +205,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Indicates which fields in the provided
-   * [Catalog][google.cloud.retail.v2.Catalog] to update. If not set, will only
-   * update the
-   * [Catalog.product_level_config][google.cloud.retail.v2.Catalog.product_level_config]
-   * field, which is also the only currently supported field to update.
+   * [Catalog][google.cloud.retail.v2.Catalog] to update.
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
@@ -226,10 +223,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Indicates which fields in the provided
-   * [Catalog][google.cloud.retail.v2.Catalog] to update. If not set, will only
-   * update the
-   * [Catalog.product_level_config][google.cloud.retail.v2.Catalog.product_level_config]
-   * field, which is also the only currently supported field to update.
+   * [Catalog][google.cloud.retail.v2.Catalog] to update.
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
@@ -247,10 +241,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Indicates which fields in the provided
-   * [Catalog][google.cloud.retail.v2.Catalog] to update. If not set, will only
-   * update the
-   * [Catalog.product_level_config][google.cloud.retail.v2.Catalog.product_level_config]
-   * field, which is also the only currently supported field to update.
+   * [Catalog][google.cloud.retail.v2.Catalog] to update.
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
@@ -871,10 +862,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Indicates which fields in the provided
-     * [Catalog][google.cloud.retail.v2.Catalog] to update. If not set, will only
-     * update the
-     * [Catalog.product_level_config][google.cloud.retail.v2.Catalog.product_level_config]
-     * field, which is also the only currently supported field to update.
+     * [Catalog][google.cloud.retail.v2.Catalog] to update.
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -891,10 +879,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Indicates which fields in the provided
-     * [Catalog][google.cloud.retail.v2.Catalog] to update. If not set, will only
-     * update the
-     * [Catalog.product_level_config][google.cloud.retail.v2.Catalog.product_level_config]
-     * field, which is also the only currently supported field to update.
+     * [Catalog][google.cloud.retail.v2.Catalog] to update.
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -917,10 +902,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Indicates which fields in the provided
-     * [Catalog][google.cloud.retail.v2.Catalog] to update. If not set, will only
-     * update the
-     * [Catalog.product_level_config][google.cloud.retail.v2.Catalog.product_level_config]
-     * field, which is also the only currently supported field to update.
+     * [Catalog][google.cloud.retail.v2.Catalog] to update.
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -945,10 +927,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Indicates which fields in the provided
-     * [Catalog][google.cloud.retail.v2.Catalog] to update. If not set, will only
-     * update the
-     * [Catalog.product_level_config][google.cloud.retail.v2.Catalog.product_level_config]
-     * field, which is also the only currently supported field to update.
+     * [Catalog][google.cloud.retail.v2.Catalog] to update.
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -970,10 +949,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Indicates which fields in the provided
-     * [Catalog][google.cloud.retail.v2.Catalog] to update. If not set, will only
-     * update the
-     * [Catalog.product_level_config][google.cloud.retail.v2.Catalog.product_level_config]
-     * field, which is also the only currently supported field to update.
+     * [Catalog][google.cloud.retail.v2.Catalog] to update.
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -1000,10 +976,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Indicates which fields in the provided
-     * [Catalog][google.cloud.retail.v2.Catalog] to update. If not set, will only
-     * update the
-     * [Catalog.product_level_config][google.cloud.retail.v2.Catalog.product_level_config]
-     * field, which is also the only currently supported field to update.
+     * [Catalog][google.cloud.retail.v2.Catalog] to update.
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -1026,10 +999,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Indicates which fields in the provided
-     * [Catalog][google.cloud.retail.v2.Catalog] to update. If not set, will only
-     * update the
-     * [Catalog.product_level_config][google.cloud.retail.v2.Catalog.product_level_config]
-     * field, which is also the only currently supported field to update.
+     * [Catalog][google.cloud.retail.v2.Catalog] to update.
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -1046,10 +1016,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Indicates which fields in the provided
-     * [Catalog][google.cloud.retail.v2.Catalog] to update. If not set, will only
-     * update the
-     * [Catalog.product_level_config][google.cloud.retail.v2.Catalog.product_level_config]
-     * field, which is also the only currently supported field to update.
+     * [Catalog][google.cloud.retail.v2.Catalog] to update.
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -1070,10 +1037,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Indicates which fields in the provided
-     * [Catalog][google.cloud.retail.v2.Catalog] to update. If not set, will only
-     * update the
-     * [Catalog.product_level_config][google.cloud.retail.v2.Catalog.product_level_config]
-     * field, which is also the only currently supported field to update.
+     * [Catalog][google.cloud.retail.v2.Catalog] to update.
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>

@@ -16,16 +16,29 @@
 
 package com.google.cloud.retail.v2.stub;
 
+import static com.google.cloud.retail.v2.ProductServiceClient.ListProductsPagedResponse;
+
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.retail.v2.AddFulfillmentPlacesMetadata;
+import com.google.cloud.retail.v2.AddFulfillmentPlacesRequest;
+import com.google.cloud.retail.v2.AddFulfillmentPlacesResponse;
 import com.google.cloud.retail.v2.CreateProductRequest;
 import com.google.cloud.retail.v2.DeleteProductRequest;
 import com.google.cloud.retail.v2.GetProductRequest;
 import com.google.cloud.retail.v2.ImportMetadata;
 import com.google.cloud.retail.v2.ImportProductsRequest;
 import com.google.cloud.retail.v2.ImportProductsResponse;
+import com.google.cloud.retail.v2.ListProductsRequest;
+import com.google.cloud.retail.v2.ListProductsResponse;
 import com.google.cloud.retail.v2.Product;
+import com.google.cloud.retail.v2.RemoveFulfillmentPlacesMetadata;
+import com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest;
+import com.google.cloud.retail.v2.RemoveFulfillmentPlacesResponse;
+import com.google.cloud.retail.v2.SetInventoryMetadata;
+import com.google.cloud.retail.v2.SetInventoryRequest;
+import com.google.cloud.retail.v2.SetInventoryResponse;
 import com.google.cloud.retail.v2.UpdateProductRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -53,6 +66,14 @@ public abstract class ProductServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getProductCallable()");
   }
 
+  public UnaryCallable<ListProductsRequest, ListProductsPagedResponse> listProductsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listProductsPagedCallable()");
+  }
+
+  public UnaryCallable<ListProductsRequest, ListProductsResponse> listProductsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listProductsCallable()");
+  }
+
   public UnaryCallable<UpdateProductRequest, Product> updateProductCallable() {
     throw new UnsupportedOperationException("Not implemented: updateProductCallable()");
   }
@@ -68,6 +89,40 @@ public abstract class ProductServiceStub implements BackgroundResource {
 
   public UnaryCallable<ImportProductsRequest, Operation> importProductsCallable() {
     throw new UnsupportedOperationException("Not implemented: importProductsCallable()");
+  }
+
+  public OperationCallable<SetInventoryRequest, SetInventoryResponse, SetInventoryMetadata>
+      setInventoryOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setInventoryOperationCallable()");
+  }
+
+  public UnaryCallable<SetInventoryRequest, Operation> setInventoryCallable() {
+    throw new UnsupportedOperationException("Not implemented: setInventoryCallable()");
+  }
+
+  public OperationCallable<
+          AddFulfillmentPlacesRequest, AddFulfillmentPlacesResponse, AddFulfillmentPlacesMetadata>
+      addFulfillmentPlacesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: addFulfillmentPlacesOperationCallable()");
+  }
+
+  public UnaryCallable<AddFulfillmentPlacesRequest, Operation> addFulfillmentPlacesCallable() {
+    throw new UnsupportedOperationException("Not implemented: addFulfillmentPlacesCallable()");
+  }
+
+  public OperationCallable<
+          RemoveFulfillmentPlacesRequest,
+          RemoveFulfillmentPlacesResponse,
+          RemoveFulfillmentPlacesMetadata>
+      removeFulfillmentPlacesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: removeFulfillmentPlacesOperationCallable()");
+  }
+
+  public UnaryCallable<RemoveFulfillmentPlacesRequest, Operation>
+      removeFulfillmentPlacesCallable() {
+    throw new UnsupportedOperationException("Not implemented: removeFulfillmentPlacesCallable()");
   }
 
   @Override

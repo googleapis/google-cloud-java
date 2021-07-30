@@ -157,4 +157,78 @@ public interface CustomAttributeOrBuilder
    * @return The numbers at the given index.
    */
   double getNumbers(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, custom attribute values are searchable by text queries in
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * This field is ignored in a [UserEvent][google.cloud.retail.v2.UserEvent].
+   * Only set if type [text][google.cloud.retail.v2.CustomAttribute.text] is
+   * set. Otherwise, a INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>bool searchable = 3;</code>
+   *
+   * @return Whether the searchable field is set.
+   */
+  boolean hasSearchable();
+  /**
+   *
+   *
+   * <pre>
+   * If true, custom attribute values are searchable by text queries in
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * This field is ignored in a [UserEvent][google.cloud.retail.v2.UserEvent].
+   * Only set if type [text][google.cloud.retail.v2.CustomAttribute.text] is
+   * set. Otherwise, a INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>bool searchable = 3;</code>
+   *
+   * @return The searchable.
+   */
+  boolean getSearchable();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, custom attribute values are indexed, so that it can be filtered,
+   * faceted or boosted in
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * This field is ignored in a [UserEvent][google.cloud.retail.v2.UserEvent].
+   * See [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter],
+   * [SearchRequest.facet_specs][google.cloud.retail.v2.SearchRequest.facet_specs]
+   * and
+   * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
+   * for more details.
+   * </pre>
+   *
+   * <code>bool indexable = 4;</code>
+   *
+   * @return Whether the indexable field is set.
+   */
+  boolean hasIndexable();
+  /**
+   *
+   *
+   * <pre>
+   * If true, custom attribute values are indexed, so that it can be filtered,
+   * faceted or boosted in
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * This field is ignored in a [UserEvent][google.cloud.retail.v2.UserEvent].
+   * See [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter],
+   * [SearchRequest.facet_specs][google.cloud.retail.v2.SearchRequest.facet_specs]
+   * and
+   * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
+   * for more details.
+   * </pre>
+   *
+   * <code>bool indexable = 4;</code>
+   *
+   * @return The indexable.
+   */
+  boolean getIndexable();
 }

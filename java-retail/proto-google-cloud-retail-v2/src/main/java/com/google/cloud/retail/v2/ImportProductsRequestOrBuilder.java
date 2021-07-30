@@ -33,7 +33,9 @@ public interface ImportProductsRequestOrBuilder
    * If updateMask is specified, requires products.update permission.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -48,11 +50,52 @@ public interface ImportProductsRequestOrBuilder
    * If updateMask is specified, requires products.update permission.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier provided by client, within the ancestor
+   * dataset scope. Ensures idempotency and used for request deduplication.
+   * Server-generated if unspecified. Up to 128 characters long and must match
+   * the pattern: "[a-zA-Z0-9_]+". This is returned as [Operation.name][] in
+   * [ImportMetadata][google.cloud.retail.v2.ImportMetadata].
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
+   * </pre>
+   *
+   * <code>string request_id = 6;</code>
+   *
+   * @return The requestId.
+   */
+  java.lang.String getRequestId();
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier provided by client, within the ancestor
+   * dataset scope. Ensures idempotency and used for request deduplication.
+   * Server-generated if unspecified. Up to 128 characters long and must match
+   * the pattern: "[a-zA-Z0-9_]+". This is returned as [Operation.name][] in
+   * [ImportMetadata][google.cloud.retail.v2.ImportMetadata].
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
+   * </pre>
+   *
+   * <code>string request_id = 6;</code>
+   *
+   * @return The bytes for requestId.
+   */
+  com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
    *
@@ -167,4 +210,74 @@ public interface ImportProductsRequestOrBuilder
    * <code>.google.protobuf.FieldMask update_mask = 4;</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The mode of reconciliation between existing products and the products to be
+   * imported. Defaults to
+   * [ReconciliationMode.INCREMENTAL][google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode.INCREMENTAL].
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode reconciliation_mode = 5;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for reconciliationMode.
+   */
+  int getReconciliationModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * The mode of reconciliation between existing products and the products to be
+   * imported. Defaults to
+   * [ReconciliationMode.INCREMENTAL][google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode.INCREMENTAL].
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode reconciliation_mode = 5;
+   * </code>
+   *
+   * @return The reconciliationMode.
+   */
+  com.google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode getReconciliationMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic for receiving notification. If this field is set,
+   * when the import is finished, a notification will be sent to
+   * specified Pub/Sub topic. The message data will be JSON string of a
+   * [Operation][google.longrunning.Operation].
+   * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
+   * </pre>
+   *
+   * <code>string notification_pubsub_topic = 7;</code>
+   *
+   * @return The notificationPubsubTopic.
+   */
+  java.lang.String getNotificationPubsubTopic();
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic for receiving notification. If this field is set,
+   * when the import is finished, a notification will be sent to
+   * specified Pub/Sub topic. The message data will be JSON string of a
+   * [Operation][google.longrunning.Operation].
+   * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
+   * </pre>
+   *
+   * <code>string notification_pubsub_topic = 7;</code>
+   *
+   * @return The bytes for notificationPubsubTopic.
+   */
+  com.google.protobuf.ByteString getNotificationPubsubTopicBytes();
 }

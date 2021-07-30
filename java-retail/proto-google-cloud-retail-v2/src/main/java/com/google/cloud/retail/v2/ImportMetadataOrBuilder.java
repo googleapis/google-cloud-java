@@ -121,4 +121,64 @@ public interface ImportMetadataOrBuilder
    * @return The failureCount.
    */
   long getFailureCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Id of the request / operation. This is parroting back the requestId
+   * that was passed in the request.
+   * </pre>
+   *
+   * <code>string request_id = 5;</code>
+   *
+   * @return The requestId.
+   */
+  java.lang.String getRequestId();
+  /**
+   *
+   *
+   * <pre>
+   * Id of the request / operation. This is parroting back the requestId
+   * that was passed in the request.
+   * </pre>
+   *
+   * <code>string request_id = 5;</code>
+   *
+   * @return The bytes for requestId.
+   */
+  com.google.protobuf.ByteString getRequestIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic for receiving notification. If this field is set,
+   * when the import is finished, a notification will be sent to
+   * specified Pub/Sub topic. The message data will be JSON string of a
+   * [Operation][google.longrunning.Operation].
+   * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+   * </pre>
+   *
+   * <code>string notification_pubsub_topic = 6;</code>
+   *
+   * @return The notificationPubsubTopic.
+   */
+  java.lang.String getNotificationPubsubTopic();
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic for receiving notification. If this field is set,
+   * when the import is finished, a notification will be sent to
+   * specified Pub/Sub topic. The message data will be JSON string of a
+   * [Operation][google.longrunning.Operation].
+   * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+   * </pre>
+   *
+   * <code>string notification_pubsub_topic = 6;</code>
+   *
+   * @return The bytes for notificationPubsubTopic.
+   */
+  com.google.protobuf.ByteString getNotificationPubsubTopicBytes();
 }

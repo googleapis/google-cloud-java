@@ -30,6 +30,7 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.retail.v2.stub.CatalogServiceStubSettings;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -78,6 +79,17 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
   /** Returns the object with the settings used for calls to updateCatalog. */
   public UnaryCallSettings<UpdateCatalogRequest, Catalog> updateCatalogSettings() {
     return ((CatalogServiceStubSettings) getStubSettings()).updateCatalogSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setDefaultBranch. */
+  public UnaryCallSettings<SetDefaultBranchRequest, Empty> setDefaultBranchSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).setDefaultBranchSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDefaultBranch. */
+  public UnaryCallSettings<GetDefaultBranchRequest, GetDefaultBranchResponse>
+      getDefaultBranchSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).getDefaultBranchSettings();
   }
 
   public static final CatalogServiceSettings create(CatalogServiceStubSettings stub)
@@ -188,6 +200,17 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
     /** Returns the builder for the settings used for calls to updateCatalog. */
     public UnaryCallSettings.Builder<UpdateCatalogRequest, Catalog> updateCatalogSettings() {
       return getStubSettingsBuilder().updateCatalogSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setDefaultBranch. */
+    public UnaryCallSettings.Builder<SetDefaultBranchRequest, Empty> setDefaultBranchSettings() {
+      return getStubSettingsBuilder().setDefaultBranchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDefaultBranch. */
+    public UnaryCallSettings.Builder<GetDefaultBranchRequest, GetDefaultBranchResponse>
+        getDefaultBranchSettings() {
+      return getStubSettingsBuilder().getDefaultBranchSettings();
     }
 
     @Override

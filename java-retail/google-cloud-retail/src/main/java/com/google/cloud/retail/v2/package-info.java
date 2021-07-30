@@ -31,6 +31,32 @@
  * }
  * }</pre>
  *
+ * <p>======================= CompletionServiceClient =======================
+ *
+ * <p>Service Description: Auto-completion service for retail.
+ *
+ * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+ * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+ * Search.
+ *
+ * <p>Sample for CompletionServiceClient:
+ *
+ * <pre>{@code
+ * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+ *   CompleteQueryRequest request =
+ *       CompleteQueryRequest.newBuilder()
+ *           .setCatalog(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+ *           .setQuery("query107944136")
+ *           .setVisitorId("visitorId1880545833")
+ *           .addAllLanguageCodes(new ArrayList<String>())
+ *           .setDeviceType("deviceType781190832")
+ *           .setDataset("dataset1443214456")
+ *           .setMaxSuggestions(618824852)
+ *           .build();
+ *   CompleteQueryResponse response = completionServiceClient.completeQuery(request);
+ * }
+ * }</pre>
+ *
  * <p>======================= PredictionServiceClient =======================
  *
  * <p>Service Description: Service for making recommendation prediction.
@@ -67,6 +93,45 @@
  *   Product product = Product.newBuilder().build();
  *   String productId = "productId-1051830678";
  *   Product response = productServiceClient.createProduct(parent, product, productId);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SearchServiceClient =======================
+ *
+ * <p>Service Description: Service for search.
+ *
+ * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+ * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+ * Search.
+ *
+ * <p>Sample for SearchServiceClient:
+ *
+ * <pre>{@code
+ * try (SearchServiceClient searchServiceClient = SearchServiceClient.create()) {
+ *   SearchRequest request =
+ *       SearchRequest.newBuilder()
+ *           .setPlacement("placement1792938725")
+ *           .setBranch(
+ *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+ *           .setQuery("query107944136")
+ *           .setVisitorId("visitorId1880545833")
+ *           .setUserInfo(UserInfo.newBuilder().build())
+ *           .setPageSize(883849137)
+ *           .setPageToken("pageToken873572522")
+ *           .setOffset(-1019779949)
+ *           .setFilter("filter-1274492040")
+ *           .setCanonicalFilter("canonicalFilter-722283124")
+ *           .setOrderBy("orderBy-1207110587")
+ *           .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
+ *           .setDynamicFacetSpec(SearchRequest.DynamicFacetSpec.newBuilder().build())
+ *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
+ *           .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
+ *           .addAllVariantRollupKeys(new ArrayList<String>())
+ *           .addAllPageCategories(new ArrayList<String>())
+ *           .build();
+ *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
  * }
  * }</pre>
  *

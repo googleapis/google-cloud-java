@@ -145,9 +145,9 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
    * If this field is `variant` and
    * [merchant_center_product_id_field][google.cloud.retail.v2.ProductLevelConfig.merchant_center_product_id_field]
    * is `itemGroupId`, an INVALID_ARGUMENT error is returned.
-   * See [Using catalog
-   * levels](/retail/recommendations-ai/docs/catalog#catalog-levels) for more
-   * details.
+   * See [Using product
+   * levels](https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels)
+   * for more details.
    * </pre>
    *
    * <code>string ingestion_product_type = 1;</code>
@@ -189,9 +189,9 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
    * If this field is `variant` and
    * [merchant_center_product_id_field][google.cloud.retail.v2.ProductLevelConfig.merchant_center_product_id_field]
    * is `itemGroupId`, an INVALID_ARGUMENT error is returned.
-   * See [Using catalog
-   * levels](/retail/recommendations-ai/docs/catalog#catalog-levels) for more
-   * details.
+   * See [Using product
+   * levels](https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels)
+   * for more details.
    * </pre>
    *
    * <code>string ingestion_product_type = 1;</code>
@@ -230,9 +230,9 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
    * If this field is `itemGroupId` and
    * [ingestion_product_type][google.cloud.retail.v2.ProductLevelConfig.ingestion_product_type]
    * is `variant`, an INVALID_ARGUMENT error is returned.
-   * See [Using catalog
-   * levels](/retail/recommendations-ai/docs/catalog#catalog-levels) for more
-   * details.
+   * See [Using product
+   * levels](https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels)
+   * for more details.
    * </pre>
    *
    * <code>string merchant_center_product_id_field = 2;</code>
@@ -268,9 +268,9 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
    * If this field is `itemGroupId` and
    * [ingestion_product_type][google.cloud.retail.v2.ProductLevelConfig.ingestion_product_type]
    * is `variant`, an INVALID_ARGUMENT error is returned.
-   * See [Using catalog
-   * levels](/retail/recommendations-ai/docs/catalog#catalog-levels) for more
-   * details.
+   * See [Using product
+   * levels](https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels)
+   * for more details.
    * </pre>
    *
    * <code>string merchant_center_product_id_field = 2;</code>
@@ -650,9 +650,9 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * If this field is `variant` and
      * [merchant_center_product_id_field][google.cloud.retail.v2.ProductLevelConfig.merchant_center_product_id_field]
      * is `itemGroupId`, an INVALID_ARGUMENT error is returned.
-     * See [Using catalog
-     * levels](/retail/recommendations-ai/docs/catalog#catalog-levels) for more
-     * details.
+     * See [Using product
+     * levels](https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels)
+     * for more details.
      * </pre>
      *
      * <code>string ingestion_product_type = 1;</code>
@@ -693,9 +693,9 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * If this field is `variant` and
      * [merchant_center_product_id_field][google.cloud.retail.v2.ProductLevelConfig.merchant_center_product_id_field]
      * is `itemGroupId`, an INVALID_ARGUMENT error is returned.
-     * See [Using catalog
-     * levels](/retail/recommendations-ai/docs/catalog#catalog-levels) for more
-     * details.
+     * See [Using product
+     * levels](https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels)
+     * for more details.
      * </pre>
      *
      * <code>string ingestion_product_type = 1;</code>
@@ -736,9 +736,9 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * If this field is `variant` and
      * [merchant_center_product_id_field][google.cloud.retail.v2.ProductLevelConfig.merchant_center_product_id_field]
      * is `itemGroupId`, an INVALID_ARGUMENT error is returned.
-     * See [Using catalog
-     * levels](/retail/recommendations-ai/docs/catalog#catalog-levels) for more
-     * details.
+     * See [Using product
+     * levels](https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels)
+     * for more details.
      * </pre>
      *
      * <code>string ingestion_product_type = 1;</code>
@@ -778,9 +778,9 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * If this field is `variant` and
      * [merchant_center_product_id_field][google.cloud.retail.v2.ProductLevelConfig.merchant_center_product_id_field]
      * is `itemGroupId`, an INVALID_ARGUMENT error is returned.
-     * See [Using catalog
-     * levels](/retail/recommendations-ai/docs/catalog#catalog-levels) for more
-     * details.
+     * See [Using product
+     * levels](https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels)
+     * for more details.
      * </pre>
      *
      * <code>string ingestion_product_type = 1;</code>
@@ -816,9 +816,9 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * If this field is `variant` and
      * [merchant_center_product_id_field][google.cloud.retail.v2.ProductLevelConfig.merchant_center_product_id_field]
      * is `itemGroupId`, an INVALID_ARGUMENT error is returned.
-     * See [Using catalog
-     * levels](/retail/recommendations-ai/docs/catalog#catalog-levels) for more
-     * details.
+     * See [Using product
+     * levels](https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels)
+     * for more details.
      * </pre>
      *
      * <code>string ingestion_product_type = 1;</code>
@@ -855,9 +855,9 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * If this field is `itemGroupId` and
      * [ingestion_product_type][google.cloud.retail.v2.ProductLevelConfig.ingestion_product_type]
      * is `variant`, an INVALID_ARGUMENT error is returned.
-     * See [Using catalog
-     * levels](/retail/recommendations-ai/docs/catalog#catalog-levels) for more
-     * details.
+     * See [Using product
+     * levels](https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels)
+     * for more details.
      * </pre>
      *
      * <code>string merchant_center_product_id_field = 2;</code>
@@ -892,9 +892,9 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * If this field is `itemGroupId` and
      * [ingestion_product_type][google.cloud.retail.v2.ProductLevelConfig.ingestion_product_type]
      * is `variant`, an INVALID_ARGUMENT error is returned.
-     * See [Using catalog
-     * levels](/retail/recommendations-ai/docs/catalog#catalog-levels) for more
-     * details.
+     * See [Using product
+     * levels](https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels)
+     * for more details.
      * </pre>
      *
      * <code>string merchant_center_product_id_field = 2;</code>
@@ -929,9 +929,9 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * If this field is `itemGroupId` and
      * [ingestion_product_type][google.cloud.retail.v2.ProductLevelConfig.ingestion_product_type]
      * is `variant`, an INVALID_ARGUMENT error is returned.
-     * See [Using catalog
-     * levels](/retail/recommendations-ai/docs/catalog#catalog-levels) for more
-     * details.
+     * See [Using product
+     * levels](https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels)
+     * for more details.
      * </pre>
      *
      * <code>string merchant_center_product_id_field = 2;</code>
@@ -965,9 +965,9 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * If this field is `itemGroupId` and
      * [ingestion_product_type][google.cloud.retail.v2.ProductLevelConfig.ingestion_product_type]
      * is `variant`, an INVALID_ARGUMENT error is returned.
-     * See [Using catalog
-     * levels](/retail/recommendations-ai/docs/catalog#catalog-levels) for more
-     * details.
+     * See [Using product
+     * levels](https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels)
+     * for more details.
      * </pre>
      *
      * <code>string merchant_center_product_id_field = 2;</code>
@@ -997,9 +997,9 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * If this field is `itemGroupId` and
      * [ingestion_product_type][google.cloud.retail.v2.ProductLevelConfig.ingestion_product_type]
      * is `variant`, an INVALID_ARGUMENT error is returned.
-     * See [Using catalog
-     * levels](/retail/recommendations-ai/docs/catalog#catalog-levels) for more
-     * details.
+     * See [Using product
+     * levels](https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels)
+     * for more details.
      * </pre>
      *
      * <code>string merchant_center_product_id_field = 2;</code>

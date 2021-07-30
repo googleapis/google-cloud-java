@@ -91,14 +91,19 @@ public class UserEventServiceClientTest {
         UserEvent.newBuilder()
             .setEventType("eventType31430900")
             .setVisitorId("visitorId1880545833")
+            .setSessionId("sessionId607796817")
             .setEventTime(Timestamp.newBuilder().build())
             .addAllExperimentIds(new ArrayList<String>())
             .setAttributionToken("attributionToken104706234")
             .addAllProductDetails(new ArrayList<ProductDetail>())
+            .setCompletionDetail(CompletionDetail.newBuilder().build())
             .putAllAttributes(new HashMap<String, CustomAttribute>())
             .setCartId("cartId-1367589797")
             .setPurchaseTransaction(PurchaseTransaction.newBuilder().build())
             .setSearchQuery("searchQuery-552137728")
+            .setFilter("filter-1274492040")
+            .setOrderBy("orderBy-1207110587")
+            .setOffset(-1019779949)
             .addAllPageCategories(new ArrayList<String>())
             .setUserInfo(UserInfo.newBuilder().build())
             .setUri("uri116076")
@@ -275,7 +280,7 @@ public class UserEventServiceClientTest {
 
     ImportUserEventsRequest request =
         ImportUserEventsRequest.newBuilder()
-            .setParent("parent-995424086")
+            .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
             .setInputConfig(UserEventInputConfig.newBuilder().build())
             .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
             .build();
@@ -304,7 +309,7 @@ public class UserEventServiceClientTest {
     try {
       ImportUserEventsRequest request =
           ImportUserEventsRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
               .setInputConfig(UserEventInputConfig.newBuilder().build())
               .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
               .build();

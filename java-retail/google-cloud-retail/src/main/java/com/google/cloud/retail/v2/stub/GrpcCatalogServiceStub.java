@@ -26,11 +26,15 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2.Catalog;
+import com.google.cloud.retail.v2.GetDefaultBranchRequest;
+import com.google.cloud.retail.v2.GetDefaultBranchResponse;
 import com.google.cloud.retail.v2.ListCatalogsRequest;
 import com.google.cloud.retail.v2.ListCatalogsResponse;
+import com.google.cloud.retail.v2.SetDefaultBranchRequest;
 import com.google.cloud.retail.v2.UpdateCatalogRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -66,10 +70,34 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Catalog.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<SetDefaultBranchRequest, Empty>
+      setDefaultBranchMethodDescriptor =
+          MethodDescriptor.<SetDefaultBranchRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2.CatalogService/SetDefaultBranch")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SetDefaultBranchRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetDefaultBranchRequest, GetDefaultBranchResponse>
+      getDefaultBranchMethodDescriptor =
+          MethodDescriptor.<GetDefaultBranchRequest, GetDefaultBranchResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2.CatalogService/GetDefaultBranch")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDefaultBranchRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GetDefaultBranchResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListCatalogsRequest, ListCatalogsResponse> listCatalogsCallable;
   private final UnaryCallable<ListCatalogsRequest, ListCatalogsPagedResponse>
       listCatalogsPagedCallable;
   private final UnaryCallable<UpdateCatalogRequest, Catalog> updateCatalogCallable;
+  private final UnaryCallable<SetDefaultBranchRequest, Empty> setDefaultBranchCallable;
+  private final UnaryCallable<GetDefaultBranchRequest, GetDefaultBranchResponse>
+      getDefaultBranchCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -141,6 +169,33 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<SetDefaultBranchRequest, Empty> setDefaultBranchTransportSettings =
+        GrpcCallSettings.<SetDefaultBranchRequest, Empty>newBuilder()
+            .setMethodDescriptor(setDefaultBranchMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<SetDefaultBranchRequest>() {
+                  @Override
+                  public Map<String, String> extract(SetDefaultBranchRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("catalog", String.valueOf(request.getCatalog()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetDefaultBranchRequest, GetDefaultBranchResponse>
+        getDefaultBranchTransportSettings =
+            GrpcCallSettings.<GetDefaultBranchRequest, GetDefaultBranchResponse>newBuilder()
+                .setMethodDescriptor(getDefaultBranchMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<GetDefaultBranchRequest>() {
+                      @Override
+                      public Map<String, String> extract(GetDefaultBranchRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("catalog", String.valueOf(request.getCatalog()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.listCatalogsCallable =
         callableFactory.createUnaryCallable(
@@ -151,6 +206,12 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
     this.updateCatalogCallable =
         callableFactory.createUnaryCallable(
             updateCatalogTransportSettings, settings.updateCatalogSettings(), clientContext);
+    this.setDefaultBranchCallable =
+        callableFactory.createUnaryCallable(
+            setDefaultBranchTransportSettings, settings.setDefaultBranchSettings(), clientContext);
+    this.getDefaultBranchCallable =
+        callableFactory.createUnaryCallable(
+            getDefaultBranchTransportSettings, settings.getDefaultBranchSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -173,6 +234,17 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
   @Override
   public UnaryCallable<UpdateCatalogRequest, Catalog> updateCatalogCallable() {
     return updateCatalogCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetDefaultBranchRequest, Empty> setDefaultBranchCallable() {
+    return setDefaultBranchCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDefaultBranchRequest, GetDefaultBranchResponse>
+      getDefaultBranchCallable() {
+    return getDefaultBranchCallable;
   }
 
   @Override

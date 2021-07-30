@@ -16,6 +16,8 @@
 
 package com.google.cloud.retail.v2;
 
+import static com.google.cloud.retail.v2.ProductServiceClient.ListProductsPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -25,6 +27,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.OperationCallSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.retail.v2.stub.ProductServiceStubSettings;
@@ -79,6 +82,12 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
     return ((ProductServiceStubSettings) getStubSettings()).getProductSettings();
   }
 
+  /** Returns the object with the settings used for calls to listProducts. */
+  public PagedCallSettings<ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
+      listProductsSettings() {
+    return ((ProductServiceStubSettings) getStubSettings()).listProductsSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateProduct. */
   public UnaryCallSettings<UpdateProductRequest, Product> updateProductSettings() {
     return ((ProductServiceStubSettings) getStubSettings()).updateProductSettings();
@@ -98,6 +107,45 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
   public OperationCallSettings<ImportProductsRequest, ImportProductsResponse, ImportMetadata>
       importProductsOperationSettings() {
     return ((ProductServiceStubSettings) getStubSettings()).importProductsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setInventory. */
+  public UnaryCallSettings<SetInventoryRequest, Operation> setInventorySettings() {
+    return ((ProductServiceStubSettings) getStubSettings()).setInventorySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setInventory. */
+  public OperationCallSettings<SetInventoryRequest, SetInventoryResponse, SetInventoryMetadata>
+      setInventoryOperationSettings() {
+    return ((ProductServiceStubSettings) getStubSettings()).setInventoryOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addFulfillmentPlaces. */
+  public UnaryCallSettings<AddFulfillmentPlacesRequest, Operation> addFulfillmentPlacesSettings() {
+    return ((ProductServiceStubSettings) getStubSettings()).addFulfillmentPlacesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addFulfillmentPlaces. */
+  public OperationCallSettings<
+          AddFulfillmentPlacesRequest, AddFulfillmentPlacesResponse, AddFulfillmentPlacesMetadata>
+      addFulfillmentPlacesOperationSettings() {
+    return ((ProductServiceStubSettings) getStubSettings()).addFulfillmentPlacesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeFulfillmentPlaces. */
+  public UnaryCallSettings<RemoveFulfillmentPlacesRequest, Operation>
+      removeFulfillmentPlacesSettings() {
+    return ((ProductServiceStubSettings) getStubSettings()).removeFulfillmentPlacesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeFulfillmentPlaces. */
+  public OperationCallSettings<
+          RemoveFulfillmentPlacesRequest,
+          RemoveFulfillmentPlacesResponse,
+          RemoveFulfillmentPlacesMetadata>
+      removeFulfillmentPlacesOperationSettings() {
+    return ((ProductServiceStubSettings) getStubSettings())
+        .removeFulfillmentPlacesOperationSettings();
   }
 
   public static final ProductServiceSettings create(ProductServiceStubSettings stub)
@@ -208,6 +256,13 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
       return getStubSettingsBuilder().getProductSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listProducts. */
+    public PagedCallSettings.Builder<
+            ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
+        listProductsSettings() {
+      return getStubSettingsBuilder().listProductsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updateProduct. */
     public UnaryCallSettings.Builder<UpdateProductRequest, Product> updateProductSettings() {
       return getStubSettingsBuilder().updateProductSettings();
@@ -228,6 +283,46 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
             ImportProductsRequest, ImportProductsResponse, ImportMetadata>
         importProductsOperationSettings() {
       return getStubSettingsBuilder().importProductsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setInventory. */
+    public UnaryCallSettings.Builder<SetInventoryRequest, Operation> setInventorySettings() {
+      return getStubSettingsBuilder().setInventorySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setInventory. */
+    public OperationCallSettings.Builder<
+            SetInventoryRequest, SetInventoryResponse, SetInventoryMetadata>
+        setInventoryOperationSettings() {
+      return getStubSettingsBuilder().setInventoryOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addFulfillmentPlaces. */
+    public UnaryCallSettings.Builder<AddFulfillmentPlacesRequest, Operation>
+        addFulfillmentPlacesSettings() {
+      return getStubSettingsBuilder().addFulfillmentPlacesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addFulfillmentPlaces. */
+    public OperationCallSettings.Builder<
+            AddFulfillmentPlacesRequest, AddFulfillmentPlacesResponse, AddFulfillmentPlacesMetadata>
+        addFulfillmentPlacesOperationSettings() {
+      return getStubSettingsBuilder().addFulfillmentPlacesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeFulfillmentPlaces. */
+    public UnaryCallSettings.Builder<RemoveFulfillmentPlacesRequest, Operation>
+        removeFulfillmentPlacesSettings() {
+      return getStubSettingsBuilder().removeFulfillmentPlacesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeFulfillmentPlaces. */
+    public OperationCallSettings.Builder<
+            RemoveFulfillmentPlacesRequest,
+            RemoveFulfillmentPlacesResponse,
+            RemoveFulfillmentPlacesMetadata>
+        removeFulfillmentPlacesOperationSettings() {
+      return getStubSettingsBuilder().removeFulfillmentPlacesOperationSettings();
     }
 
     @Override

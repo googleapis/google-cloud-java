@@ -19,6 +19,7 @@ package com.google.cloud.retail.v2;
 import com.google.api.core.BetaApi;
 import com.google.cloud.retail.v2.CatalogServiceGrpc.CatalogServiceImplBase;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -96,6 +97,48 @@ public class MockCatalogServiceImpl extends CatalogServiceImplBase {
                   "Unrecognized response type %s for method UpdateCatalog, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Catalog.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void setDefaultBranch(
+      SetDefaultBranchRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetDefaultBranch, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDefaultBranch(
+      GetDefaultBranchRequest request, StreamObserver<GetDefaultBranchResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GetDefaultBranchResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GetDefaultBranchResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDefaultBranch, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GetDefaultBranchResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

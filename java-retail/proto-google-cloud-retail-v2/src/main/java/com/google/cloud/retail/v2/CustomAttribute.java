@@ -23,7 +23,7 @@ package com.google.cloud.retail.v2;
  *
  * <pre>
  * A custom attribute that is not explicitly modeled in
- * [Product][google.cloud.retail.v2.Product]].
+ * [Product][google.cloud.retail.v2.Product].
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2.CustomAttribute}
@@ -106,6 +106,18 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
               input.popLimit(limit);
               break;
             }
+          case 24:
+            {
+              bitField0_ |= 0x00000001;
+              searchable_ = input.readBool();
+              break;
+            }
+          case 32:
+            {
+              bitField0_ |= 0x00000002;
+              indexable_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -146,6 +158,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.retail.v2.CustomAttribute.Builder.class);
   }
 
+  private int bitField0_;
   public static final int TEXT_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList text_;
   /**
@@ -302,6 +315,96 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
 
   private int numbersMemoizedSerializedSize = -1;
 
+  public static final int SEARCHABLE_FIELD_NUMBER = 3;
+  private boolean searchable_;
+  /**
+   *
+   *
+   * <pre>
+   * If true, custom attribute values are searchable by text queries in
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * This field is ignored in a [UserEvent][google.cloud.retail.v2.UserEvent].
+   * Only set if type [text][google.cloud.retail.v2.CustomAttribute.text] is
+   * set. Otherwise, a INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>bool searchable = 3;</code>
+   *
+   * @return Whether the searchable field is set.
+   */
+  @java.lang.Override
+  public boolean hasSearchable() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If true, custom attribute values are searchable by text queries in
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * This field is ignored in a [UserEvent][google.cloud.retail.v2.UserEvent].
+   * Only set if type [text][google.cloud.retail.v2.CustomAttribute.text] is
+   * set. Otherwise, a INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>bool searchable = 3;</code>
+   *
+   * @return The searchable.
+   */
+  @java.lang.Override
+  public boolean getSearchable() {
+    return searchable_;
+  }
+
+  public static final int INDEXABLE_FIELD_NUMBER = 4;
+  private boolean indexable_;
+  /**
+   *
+   *
+   * <pre>
+   * If true, custom attribute values are indexed, so that it can be filtered,
+   * faceted or boosted in
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * This field is ignored in a [UserEvent][google.cloud.retail.v2.UserEvent].
+   * See [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter],
+   * [SearchRequest.facet_specs][google.cloud.retail.v2.SearchRequest.facet_specs]
+   * and
+   * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
+   * for more details.
+   * </pre>
+   *
+   * <code>bool indexable = 4;</code>
+   *
+   * @return Whether the indexable field is set.
+   */
+  @java.lang.Override
+  public boolean hasIndexable() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If true, custom attribute values are indexed, so that it can be filtered,
+   * faceted or boosted in
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * This field is ignored in a [UserEvent][google.cloud.retail.v2.UserEvent].
+   * See [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter],
+   * [SearchRequest.facet_specs][google.cloud.retail.v2.SearchRequest.facet_specs]
+   * and
+   * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
+   * for more details.
+   * </pre>
+   *
+   * <code>bool indexable = 4;</code>
+   *
+   * @return The indexable.
+   */
+  @java.lang.Override
+  public boolean getIndexable() {
+    return indexable_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -326,6 +429,12 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     }
     for (int i = 0; i < numbers_.size(); i++) {
       output.writeDoubleNoTag(numbers_.getDouble(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(3, searchable_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(4, indexable_);
     }
     unknownFields.writeTo(output);
   }
@@ -354,6 +463,12 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       }
       numbersMemoizedSerializedSize = dataSize;
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, searchable_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, indexable_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -372,6 +487,14 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
 
     if (!getTextList().equals(other.getTextList())) return false;
     if (!getNumbersList().equals(other.getNumbersList())) return false;
+    if (hasSearchable() != other.hasSearchable()) return false;
+    if (hasSearchable()) {
+      if (getSearchable() != other.getSearchable()) return false;
+    }
+    if (hasIndexable() != other.hasIndexable()) return false;
+    if (hasIndexable()) {
+      if (getIndexable() != other.getIndexable()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -390,6 +513,14 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     if (getNumbersCount() > 0) {
       hash = (37 * hash) + NUMBERS_FIELD_NUMBER;
       hash = (53 * hash) + getNumbersList().hashCode();
+    }
+    if (hasSearchable()) {
+      hash = (37 * hash) + SEARCHABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSearchable());
+    }
+    if (hasIndexable()) {
+      hash = (37 * hash) + INDEXABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIndexable());
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -496,7 +627,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * A custom attribute that is not explicitly modeled in
-   * [Product][google.cloud.retail.v2.Product]].
+   * [Product][google.cloud.retail.v2.Product].
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2.CustomAttribute}
@@ -541,6 +672,10 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       bitField0_ = (bitField0_ & ~0x00000001);
       numbers_ = emptyDoubleList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      searchable_ = false;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      indexable_ = false;
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -569,6 +704,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.retail.v2.CustomAttribute result =
           new com.google.cloud.retail.v2.CustomAttribute(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         text_ = text_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -579,6 +715,15 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.numbers_ = numbers_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.searchable_ = searchable_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.indexable_ = indexable_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -647,6 +792,12 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
           numbers_.addAll(other.numbers_);
         }
         onChanged();
+      }
+      if (other.hasSearchable()) {
+        setSearchable(other.getSearchable());
+      }
+      if (other.hasIndexable()) {
+        setIndexable(other.getIndexable());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1074,6 +1225,188 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     public Builder clearNumbers() {
       numbers_ = emptyDoubleList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    private boolean searchable_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, custom attribute values are searchable by text queries in
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * This field is ignored in a [UserEvent][google.cloud.retail.v2.UserEvent].
+     * Only set if type [text][google.cloud.retail.v2.CustomAttribute.text] is
+     * set. Otherwise, a INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>bool searchable = 3;</code>
+     *
+     * @return Whether the searchable field is set.
+     */
+    @java.lang.Override
+    public boolean hasSearchable() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, custom attribute values are searchable by text queries in
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * This field is ignored in a [UserEvent][google.cloud.retail.v2.UserEvent].
+     * Only set if type [text][google.cloud.retail.v2.CustomAttribute.text] is
+     * set. Otherwise, a INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>bool searchable = 3;</code>
+     *
+     * @return The searchable.
+     */
+    @java.lang.Override
+    public boolean getSearchable() {
+      return searchable_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, custom attribute values are searchable by text queries in
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * This field is ignored in a [UserEvent][google.cloud.retail.v2.UserEvent].
+     * Only set if type [text][google.cloud.retail.v2.CustomAttribute.text] is
+     * set. Otherwise, a INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>bool searchable = 3;</code>
+     *
+     * @param value The searchable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearchable(boolean value) {
+      bitField0_ |= 0x00000004;
+      searchable_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, custom attribute values are searchable by text queries in
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * This field is ignored in a [UserEvent][google.cloud.retail.v2.UserEvent].
+     * Only set if type [text][google.cloud.retail.v2.CustomAttribute.text] is
+     * set. Otherwise, a INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>bool searchable = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSearchable() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      searchable_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean indexable_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, custom attribute values are indexed, so that it can be filtered,
+     * faceted or boosted in
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * This field is ignored in a [UserEvent][google.cloud.retail.v2.UserEvent].
+     * See [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter],
+     * [SearchRequest.facet_specs][google.cloud.retail.v2.SearchRequest.facet_specs]
+     * and
+     * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
+     * for more details.
+     * </pre>
+     *
+     * <code>bool indexable = 4;</code>
+     *
+     * @return Whether the indexable field is set.
+     */
+    @java.lang.Override
+    public boolean hasIndexable() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, custom attribute values are indexed, so that it can be filtered,
+     * faceted or boosted in
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * This field is ignored in a [UserEvent][google.cloud.retail.v2.UserEvent].
+     * See [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter],
+     * [SearchRequest.facet_specs][google.cloud.retail.v2.SearchRequest.facet_specs]
+     * and
+     * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
+     * for more details.
+     * </pre>
+     *
+     * <code>bool indexable = 4;</code>
+     *
+     * @return The indexable.
+     */
+    @java.lang.Override
+    public boolean getIndexable() {
+      return indexable_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, custom attribute values are indexed, so that it can be filtered,
+     * faceted or boosted in
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * This field is ignored in a [UserEvent][google.cloud.retail.v2.UserEvent].
+     * See [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter],
+     * [SearchRequest.facet_specs][google.cloud.retail.v2.SearchRequest.facet_specs]
+     * and
+     * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
+     * for more details.
+     * </pre>
+     *
+     * <code>bool indexable = 4;</code>
+     *
+     * @param value The indexable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIndexable(boolean value) {
+      bitField0_ |= 0x00000008;
+      indexable_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, custom attribute values are indexed, so that it can be filtered,
+     * faceted or boosted in
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * This field is ignored in a [UserEvent][google.cloud.retail.v2.UserEvent].
+     * See [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter],
+     * [SearchRequest.facet_specs][google.cloud.retail.v2.SearchRequest.facet_specs]
+     * and
+     * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
+     * for more details.
+     * </pre>
+     *
+     * <code>bool indexable = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIndexable() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      indexable_ = false;
       onChanged();
       return this;
     }

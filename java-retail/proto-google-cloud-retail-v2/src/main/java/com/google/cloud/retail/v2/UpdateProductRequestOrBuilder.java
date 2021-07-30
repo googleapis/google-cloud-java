@@ -31,8 +31,10 @@ public interface UpdateProductRequestOrBuilder
    * If the caller does not have permission to update the
    * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
    * exists, a PERMISSION_DENIED error is returned.
-   * If the [Product][google.cloud.retail.v2.Product] to update does not exist,
-   * a NOT_FOUND error is returned.
+   * If the [Product][google.cloud.retail.v2.Product] to update does not exist
+   * and
+   * [allow_missing][google.cloud.retail.v2.UpdateProductRequest.allow_missing]
+   * is not set, a NOT_FOUND error is returned.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -49,8 +51,10 @@ public interface UpdateProductRequestOrBuilder
    * If the caller does not have permission to update the
    * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
    * exists, a PERMISSION_DENIED error is returned.
-   * If the [Product][google.cloud.retail.v2.Product] to update does not exist,
-   * a NOT_FOUND error is returned.
+   * If the [Product][google.cloud.retail.v2.Product] to update does not exist
+   * and
+   * [allow_missing][google.cloud.retail.v2.UpdateProductRequest.allow_missing]
+   * is not set, a NOT_FOUND error is returned.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -67,8 +71,10 @@ public interface UpdateProductRequestOrBuilder
    * If the caller does not have permission to update the
    * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
    * exists, a PERMISSION_DENIED error is returned.
-   * If the [Product][google.cloud.retail.v2.Product] to update does not exist,
-   * a NOT_FOUND error is returned.
+   * If the [Product][google.cloud.retail.v2.Product] to update does not exist
+   * and
+   * [allow_missing][google.cloud.retail.v2.UpdateProductRequest.allow_missing]
+   * is not set, a NOT_FOUND error is returned.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -125,4 +131,19 @@ public interface UpdateProductRequestOrBuilder
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, and the [Product][google.cloud.retail.v2.Product] is not
+   * found, a new [Product][google.cloud.retail.v2.Product] will be created. In
+   * this situation, `update_mask` is ignored.
+   * </pre>
+   *
+   * <code>bool allow_missing = 3;</code>
+   *
+   * @return The allowMissing.
+   */
+  boolean getAllowMissing();
 }

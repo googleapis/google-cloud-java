@@ -41,11 +41,14 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
   private UserEvent() {
     eventType_ = "";
     visitorId_ = "";
+    sessionId_ = "";
     experimentIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     attributionToken_ = "";
     productDetails_ = java.util.Collections.emptyList();
     cartId_ = "";
     searchQuery_ = "";
+    filter_ = "";
+    orderBy_ = "";
     pageCategories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     uri_ = "";
     referrerUri_ = "";
@@ -234,6 +237,48 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
               pageViewId_ = s;
               break;
             }
+          case 130:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              filter_ = s;
+              break;
+            }
+          case 138:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              orderBy_ = s;
+              break;
+            }
+          case 144:
+            {
+              offset_ = input.readInt32();
+              break;
+            }
+          case 170:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sessionId_ = s;
+              break;
+            }
+          case 178:
+            {
+              com.google.cloud.retail.v2.CompletionDetail.Builder subBuilder = null;
+              if (completionDetail_ != null) {
+                subBuilder = completionDetail_.toBuilder();
+              }
+              completionDetail_ =
+                  input.readMessage(
+                      com.google.cloud.retail.v2.CompletionDetail.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(completionDetail_);
+                completionDetail_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -298,8 +343,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * * `add-to-cart`: Products being added to cart.
    * * `category-page-view`: Special pages such as sale or promotion pages
    *   viewed.
+   * * `completion`: Completion query result showed/clicked.
    * * `detail-page-view`: Products detail page viewed.
    * * `home-page-view`: Homepage viewed.
+   * * `promotion-offered`: Promotion is offered to a user.
+   * * `promotion-not-offered`: Promotion is not offered to a user.
    * * `purchase-complete`: User finishing a purchase.
    * * `search`: Product search.
    * * `shopping-cart-page-view`: User viewing a shopping cart.
@@ -329,8 +377,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * * `add-to-cart`: Products being added to cart.
    * * `category-page-view`: Special pages such as sale or promotion pages
    *   viewed.
+   * * `completion`: Completion query result showed/clicked.
    * * `detail-page-view`: Products detail page viewed.
    * * `home-page-view`: Homepage viewed.
+   * * `promotion-offered`: Promotion is offered to a user.
+   * * `promotion-not-offered`: Promotion is not offered to a user.
    * * `purchase-complete`: User finishing a purchase.
    * * `search`: Product search.
    * * `shopping-cart-page-view`: User viewing a shopping cart.
@@ -365,6 +416,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * identifier should not change if the visitor log in/out of the website.
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * The field should not contain PII or user-data. We recommend to use Google
+   * Analystics [Client
+   * ID](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#clientId)
+   * for this field.
    * </pre>
    *
    * <code>string visitor_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -393,6 +448,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * identifier should not change if the visitor log in/out of the website.
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * The field should not contain PII or user-data. We recommend to use Google
+   * Analystics [Client
+   * ID](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#clientId)
+   * for this field.
    * </pre>
    *
    * <code>string visitor_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -406,6 +465,67 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       visitorId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SESSION_ID_FIELD_NUMBER = 21;
+  private volatile java.lang.Object sessionId_;
+  /**
+   *
+   *
+   * <pre>
+   * A unique identifier for tracking a visitor session with a length limit of
+   * 128 bytes. A session is an aggregation of an end user behavior in a time
+   * span.
+   * A general guideline to populate the sesion_id:
+   * 1. If user has no activity for 30 min, a new session_id should be assigned.
+   * 2. The session_id should be unique across users, suggest use uuid or add
+   * visitor_id as prefix.
+   * </pre>
+   *
+   * <code>string session_id = 21;</code>
+   *
+   * @return The sessionId.
+   */
+  @java.lang.Override
+  public java.lang.String getSessionId() {
+    java.lang.Object ref = sessionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sessionId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A unique identifier for tracking a visitor session with a length limit of
+   * 128 bytes. A session is an aggregation of an end user behavior in a time
+   * span.
+   * A general guideline to populate the sesion_id:
+   * 1. If user has no activity for 30 min, a new session_id should be assigned.
+   * 2. The session_id should be unique across users, suggest use uuid or add
+   * visitor_id as prefix.
+   * </pre>
+   *
+   * <code>string session_id = 21;</code>
+   *
+   * @return The bytes for sessionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSessionIdBytes() {
+    java.lang.Object ref = sessionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sessionId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -551,6 +671,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * [PredictResponse.attribution_token][google.cloud.retail.v2.PredictResponse.attribution_token]
    * for user events that are the result of
    * [PredictionService.Predict][google.cloud.retail.v2.PredictionService.Predict].
+   * The value must be a valid
+   * [SearchResponse.attribution_token][google.cloud.retail.v2.SearchResponse.attribution_token]
+   * for user events that are the result of
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
    * This token enables us to accurately attribute page view or purchase back to
    * the event and the particular predict response containing this
    * clicked/purchased product. If user clicks on product K in the
@@ -590,6 +714,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * [PredictResponse.attribution_token][google.cloud.retail.v2.PredictResponse.attribution_token]
    * for user events that are the result of
    * [PredictionService.Predict][google.cloud.retail.v2.PredictionService.Predict].
+   * The value must be a valid
+   * [SearchResponse.attribution_token][google.cloud.retail.v2.SearchResponse.attribution_token]
+   * for user events that are the result of
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
    * This token enables us to accurately attribute page view or purchase back to
    * the event and the particular predict response containing this
    * clicked/purchased product. If user clicks on product K in the
@@ -740,6 +868,63 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.retail.v2.ProductDetailOrBuilder getProductDetailsOrBuilder(int index) {
     return productDetails_.get(index);
+  }
+
+  public static final int COMPLETION_DETAIL_FIELD_NUMBER = 22;
+  private com.google.cloud.retail.v2.CompletionDetail completionDetail_;
+  /**
+   *
+   *
+   * <pre>
+   * The main completion details related to the event.
+   * In a `completion` event, this field represents the completions returned to
+   * the end user and the clicked completion by the end user. In a `search`
+   * event, it represents the search event happens after clicking completion.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.CompletionDetail completion_detail = 22;</code>
+   *
+   * @return Whether the completionDetail field is set.
+   */
+  @java.lang.Override
+  public boolean hasCompletionDetail() {
+    return completionDetail_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The main completion details related to the event.
+   * In a `completion` event, this field represents the completions returned to
+   * the end user and the clicked completion by the end user. In a `search`
+   * event, it represents the search event happens after clicking completion.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.CompletionDetail completion_detail = 22;</code>
+   *
+   * @return The completionDetail.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.CompletionDetail getCompletionDetail() {
+    return completionDetail_ == null
+        ? com.google.cloud.retail.v2.CompletionDetail.getDefaultInstance()
+        : completionDetail_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The main completion details related to the event.
+   * In a `completion` event, this field represents the completions returned to
+   * the end user and the clicked completion by the end user. In a `search`
+   * event, it represents the search event happens after clicking completion.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.CompletionDetail completion_detail = 22;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.CompletionDetailOrBuilder getCompletionDetailOrBuilder() {
+    return getCompletionDetail();
   }
 
   public static final int ATTRIBUTES_FIELD_NUMBER = 7;
@@ -990,9 +1175,14 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The user's search query.
+   * See [SearchRequest.query][google.cloud.retail.v2.SearchRequest.query] for
+   * definition.
    * The value must be a UTF-8 encoded string with a length limit of 5,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-   * Required for `search` events. Other event types should not set this field.
+   * At least one of
+   * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+   * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+   * required for `search` events. Other event types should not set this field.
    * Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
@@ -1017,9 +1207,14 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The user's search query.
+   * See [SearchRequest.query][google.cloud.retail.v2.SearchRequest.query] for
+   * definition.
    * The value must be a UTF-8 encoded string with a length limit of 5,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-   * Required for `search` events. Other event types should not set this field.
+   * At least one of
+   * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+   * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+   * required for `search` events. Other event types should not set this field.
    * Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
@@ -1040,6 +1235,150 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int FILTER_FIELD_NUMBER = 16;
+  private volatile java.lang.Object filter_;
+  /**
+   *
+   *
+   * <pre>
+   * The filter syntax consists of an expression language for constructing a
+   * predicate from one or more fields of the products being filtered.
+   * See [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter] for
+   * definition and syntax.
+   * The value must be a UTF-8 encoded string with a length limit of 1,000
+   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>string filter = 16;</code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The filter syntax consists of an expression language for constructing a
+   * predicate from one or more fields of the products being filtered.
+   * See [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter] for
+   * definition and syntax.
+   * The value must be a UTF-8 encoded string with a length limit of 1,000
+   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>string filter = 16;</code>
+   *
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ORDER_BY_FIELD_NUMBER = 17;
+  private volatile java.lang.Object orderBy_;
+  /**
+   *
+   *
+   * <pre>
+   * The order in which products are returned.
+   * See [SearchRequest.order_by][google.cloud.retail.v2.SearchRequest.order_by]
+   * for definition and syntax.
+   * The value must be a UTF-8 encoded string with a length limit of 1,000
+   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * This can only be set for `search` events. Other event types should not set
+   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>string order_by = 17;</code>
+   *
+   * @return The orderBy.
+   */
+  @java.lang.Override
+  public java.lang.String getOrderBy() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      orderBy_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The order in which products are returned.
+   * See [SearchRequest.order_by][google.cloud.retail.v2.SearchRequest.order_by]
+   * for definition and syntax.
+   * The value must be a UTF-8 encoded string with a length limit of 1,000
+   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * This can only be set for `search` events. Other event types should not set
+   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>string order_by = 17;</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOrderByBytes() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      orderBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int OFFSET_FIELD_NUMBER = 18;
+  private int offset_;
+  /**
+   *
+   *
+   * <pre>
+   * An integer that specifies the current offset for pagination (the 0-indexed
+   * starting location, amongst the products deemed by the API as relevant).
+   * See [SearchRequest.offset][google.cloud.retail.v2.SearchRequest.offset] for
+   * definition.
+   * If this field is negative, an INVALID_ARGUMENT is returned.
+   * This can only be set for `search` events. Other event types should not set
+   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>int32 offset = 18;</code>
+   *
+   * @return The offset.
+   */
+  @java.lang.Override
+  public int getOffset() {
+    return offset_;
+  }
+
   public static final int PAGE_CATEGORIES_FIELD_NUMBER = 11;
   private com.google.protobuf.LazyStringList pageCategories_;
   /**
@@ -1053,8 +1392,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
    * "pageCategories" : ["Sales &gt; 2017 Black Friday Deals"].
-   * Required for `category-page-view` events. Other event types should not set
-   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * Required for `category-page-view` events. At least one of
+   * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+   * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+   * required for `search` events. Other event types should not set this field.
+   * Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
    * <code>repeated string page_categories = 11;</code>
@@ -1075,8 +1417,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
    * "pageCategories" : ["Sales &gt; 2017 Black Friday Deals"].
-   * Required for `category-page-view` events. Other event types should not set
-   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * Required for `category-page-view` events. At least one of
+   * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+   * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+   * required for `search` events. Other event types should not set this field.
+   * Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
    * <code>repeated string page_categories = 11;</code>
@@ -1097,8 +1442,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
    * "pageCategories" : ["Sales &gt; 2017 Black Friday Deals"].
-   * Required for `category-page-view` events. Other event types should not set
-   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * Required for `category-page-view` events. At least one of
+   * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+   * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+   * required for `search` events. Other event types should not set this field.
+   * Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
    * <code>repeated string page_categories = 11;</code>
@@ -1120,8 +1468,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
    * "pageCategories" : ["Sales &gt; 2017 Black Friday Deals"].
-   * Required for `category-page-view` events. Other event types should not set
-   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * Required for `category-page-view` events. At least one of
+   * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+   * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+   * required for `search` events. Other event types should not set this field.
+   * Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
    * <code>repeated string page_categories = 11;</code>
@@ -1408,6 +1759,21 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     if (!getPageViewIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, pageViewId_);
     }
+    if (!getFilterBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, filter_);
+    }
+    if (!getOrderByBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, orderBy_);
+    }
+    if (offset_ != 0) {
+      output.writeInt32(18, offset_);
+    }
+    if (!getSessionIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, sessionId_);
+    }
+    if (completionDetail_ != null) {
+      output.writeMessage(22, getCompletionDetail());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1480,6 +1846,21 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     if (!getPageViewIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, pageViewId_);
     }
+    if (!getFilterBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, filter_);
+    }
+    if (!getOrderByBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, orderBy_);
+    }
+    if (offset_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(18, offset_);
+    }
+    if (!getSessionIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, sessionId_);
+    }
+    if (completionDetail_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getCompletionDetail());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1497,6 +1878,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
 
     if (!getEventType().equals(other.getEventType())) return false;
     if (!getVisitorId().equals(other.getVisitorId())) return false;
+    if (!getSessionId().equals(other.getSessionId())) return false;
     if (hasEventTime() != other.hasEventTime()) return false;
     if (hasEventTime()) {
       if (!getEventTime().equals(other.getEventTime())) return false;
@@ -1504,6 +1886,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     if (!getExperimentIdsList().equals(other.getExperimentIdsList())) return false;
     if (!getAttributionToken().equals(other.getAttributionToken())) return false;
     if (!getProductDetailsList().equals(other.getProductDetailsList())) return false;
+    if (hasCompletionDetail() != other.hasCompletionDetail()) return false;
+    if (hasCompletionDetail()) {
+      if (!getCompletionDetail().equals(other.getCompletionDetail())) return false;
+    }
     if (!internalGetAttributes().equals(other.internalGetAttributes())) return false;
     if (!getCartId().equals(other.getCartId())) return false;
     if (hasPurchaseTransaction() != other.hasPurchaseTransaction()) return false;
@@ -1511,6 +1897,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       if (!getPurchaseTransaction().equals(other.getPurchaseTransaction())) return false;
     }
     if (!getSearchQuery().equals(other.getSearchQuery())) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
+    if (!getOrderBy().equals(other.getOrderBy())) return false;
+    if (getOffset() != other.getOffset()) return false;
     if (!getPageCategoriesList().equals(other.getPageCategoriesList())) return false;
     if (hasUserInfo() != other.hasUserInfo()) return false;
     if (hasUserInfo()) {
@@ -1534,6 +1923,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getEventType().hashCode();
     hash = (37 * hash) + VISITOR_ID_FIELD_NUMBER;
     hash = (53 * hash) + getVisitorId().hashCode();
+    hash = (37 * hash) + SESSION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getSessionId().hashCode();
     if (hasEventTime()) {
       hash = (37 * hash) + EVENT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEventTime().hashCode();
@@ -1548,6 +1939,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PRODUCT_DETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getProductDetailsList().hashCode();
     }
+    if (hasCompletionDetail()) {
+      hash = (37 * hash) + COMPLETION_DETAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getCompletionDetail().hashCode();
+    }
     if (!internalGetAttributes().getMap().isEmpty()) {
       hash = (37 * hash) + ATTRIBUTES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetAttributes().hashCode();
@@ -1560,6 +1955,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SEARCH_QUERY_FIELD_NUMBER;
     hash = (53 * hash) + getSearchQuery().hashCode();
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
+    hash = (53 * hash) + getOrderBy().hashCode();
+    hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+    hash = (53 * hash) + getOffset();
     if (getPageCategoriesCount() > 0) {
       hash = (37 * hash) + PAGE_CATEGORIES_FIELD_NUMBER;
       hash = (53 * hash) + getPageCategoriesList().hashCode();
@@ -1745,6 +2146,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
 
       visitorId_ = "";
 
+      sessionId_ = "";
+
       if (eventTimeBuilder_ == null) {
         eventTime_ = null;
       } else {
@@ -1761,6 +2164,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       } else {
         productDetailsBuilder_.clear();
       }
+      if (completionDetailBuilder_ == null) {
+        completionDetail_ = null;
+      } else {
+        completionDetail_ = null;
+        completionDetailBuilder_ = null;
+      }
       internalGetMutableAttributes().clear();
       cartId_ = "";
 
@@ -1771,6 +2180,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         purchaseTransactionBuilder_ = null;
       }
       searchQuery_ = "";
+
+      filter_ = "";
+
+      orderBy_ = "";
+
+      offset_ = 0;
 
       pageCategories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1815,6 +2230,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       result.eventType_ = eventType_;
       result.visitorId_ = visitorId_;
+      result.sessionId_ = sessionId_;
       if (eventTimeBuilder_ == null) {
         result.eventTime_ = eventTime_;
       } else {
@@ -1835,6 +2251,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.productDetails_ = productDetailsBuilder_.build();
       }
+      if (completionDetailBuilder_ == null) {
+        result.completionDetail_ = completionDetail_;
+      } else {
+        result.completionDetail_ = completionDetailBuilder_.build();
+      }
       result.attributes_ = internalGetAttributes();
       result.attributes_.makeImmutable();
       result.cartId_ = cartId_;
@@ -1844,6 +2265,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         result.purchaseTransaction_ = purchaseTransactionBuilder_.build();
       }
       result.searchQuery_ = searchQuery_;
+      result.filter_ = filter_;
+      result.orderBy_ = orderBy_;
+      result.offset_ = offset_;
       if (((bitField0_ & 0x00000008) != 0)) {
         pageCategories_ = pageCategories_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -1914,6 +2338,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         visitorId_ = other.visitorId_;
         onChanged();
       }
+      if (!other.getSessionId().isEmpty()) {
+        sessionId_ = other.sessionId_;
+        onChanged();
+      }
       if (other.hasEventTime()) {
         mergeEventTime(other.getEventTime());
       }
@@ -1958,6 +2386,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasCompletionDetail()) {
+        mergeCompletionDetail(other.getCompletionDetail());
+      }
       internalGetMutableAttributes().mergeFrom(other.internalGetAttributes());
       if (!other.getCartId().isEmpty()) {
         cartId_ = other.cartId_;
@@ -1969,6 +2400,17 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       if (!other.getSearchQuery().isEmpty()) {
         searchQuery_ = other.searchQuery_;
         onChanged();
+      }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        onChanged();
+      }
+      if (!other.getOrderBy().isEmpty()) {
+        orderBy_ = other.orderBy_;
+        onChanged();
+      }
+      if (other.getOffset() != 0) {
+        setOffset(other.getOffset());
       }
       if (!other.pageCategories_.isEmpty()) {
         if (pageCategories_.isEmpty()) {
@@ -2035,8 +2477,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `add-to-cart`: Products being added to cart.
      * * `category-page-view`: Special pages such as sale or promotion pages
      *   viewed.
+     * * `completion`: Completion query result showed/clicked.
      * * `detail-page-view`: Products detail page viewed.
      * * `home-page-view`: Homepage viewed.
+     * * `promotion-offered`: Promotion is offered to a user.
+     * * `promotion-not-offered`: Promotion is not offered to a user.
      * * `purchase-complete`: User finishing a purchase.
      * * `search`: Product search.
      * * `shopping-cart-page-view`: User viewing a shopping cart.
@@ -2065,8 +2510,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `add-to-cart`: Products being added to cart.
      * * `category-page-view`: Special pages such as sale or promotion pages
      *   viewed.
+     * * `completion`: Completion query result showed/clicked.
      * * `detail-page-view`: Products detail page viewed.
      * * `home-page-view`: Homepage viewed.
+     * * `promotion-offered`: Promotion is offered to a user.
+     * * `promotion-not-offered`: Promotion is not offered to a user.
      * * `purchase-complete`: User finishing a purchase.
      * * `search`: Product search.
      * * `shopping-cart-page-view`: User viewing a shopping cart.
@@ -2095,8 +2543,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `add-to-cart`: Products being added to cart.
      * * `category-page-view`: Special pages such as sale or promotion pages
      *   viewed.
+     * * `completion`: Completion query result showed/clicked.
      * * `detail-page-view`: Products detail page viewed.
      * * `home-page-view`: Homepage viewed.
+     * * `promotion-offered`: Promotion is offered to a user.
+     * * `promotion-not-offered`: Promotion is not offered to a user.
      * * `purchase-complete`: User finishing a purchase.
      * * `search`: Product search.
      * * `shopping-cart-page-view`: User viewing a shopping cart.
@@ -2124,8 +2575,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `add-to-cart`: Products being added to cart.
      * * `category-page-view`: Special pages such as sale or promotion pages
      *   viewed.
+     * * `completion`: Completion query result showed/clicked.
      * * `detail-page-view`: Products detail page viewed.
      * * `home-page-view`: Homepage viewed.
+     * * `promotion-offered`: Promotion is offered to a user.
+     * * `promotion-not-offered`: Promotion is not offered to a user.
      * * `purchase-complete`: User finishing a purchase.
      * * `search`: Product search.
      * * `shopping-cart-page-view`: User viewing a shopping cart.
@@ -2149,8 +2603,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `add-to-cart`: Products being added to cart.
      * * `category-page-view`: Special pages such as sale or promotion pages
      *   viewed.
+     * * `completion`: Completion query result showed/clicked.
      * * `detail-page-view`: Products detail page viewed.
      * * `home-page-view`: Homepage viewed.
+     * * `promotion-offered`: Promotion is offered to a user.
+     * * `promotion-not-offered`: Promotion is not offered to a user.
      * * `purchase-complete`: User finishing a purchase.
      * * `search`: Product search.
      * * `shopping-cart-page-view`: User viewing a shopping cart.
@@ -2183,6 +2640,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * identifier should not change if the visitor log in/out of the website.
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * The field should not contain PII or user-data. We recommend to use Google
+     * Analystics [Client
+     * ID](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#clientId)
+     * for this field.
      * </pre>
      *
      * <code>string visitor_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2210,6 +2671,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * identifier should not change if the visitor log in/out of the website.
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * The field should not contain PII or user-data. We recommend to use Google
+     * Analystics [Client
+     * ID](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#clientId)
+     * for this field.
      * </pre>
      *
      * <code>string visitor_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2237,6 +2702,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * identifier should not change if the visitor log in/out of the website.
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * The field should not contain PII or user-data. We recommend to use Google
+     * Analystics [Client
+     * ID](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#clientId)
+     * for this field.
      * </pre>
      *
      * <code>string visitor_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2263,6 +2732,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * identifier should not change if the visitor log in/out of the website.
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * The field should not contain PII or user-data. We recommend to use Google
+     * Analystics [Client
+     * ID](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#clientId)
+     * for this field.
      * </pre>
      *
      * <code>string visitor_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2285,6 +2758,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * identifier should not change if the visitor log in/out of the website.
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * The field should not contain PII or user-data. We recommend to use Google
+     * Analystics [Client
+     * ID](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#clientId)
+     * for this field.
      * </pre>
      *
      * <code>string visitor_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2299,6 +2776,142 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       visitorId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sessionId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A unique identifier for tracking a visitor session with a length limit of
+     * 128 bytes. A session is an aggregation of an end user behavior in a time
+     * span.
+     * A general guideline to populate the sesion_id:
+     * 1. If user has no activity for 30 min, a new session_id should be assigned.
+     * 2. The session_id should be unique across users, suggest use uuid or add
+     * visitor_id as prefix.
+     * </pre>
+     *
+     * <code>string session_id = 21;</code>
+     *
+     * @return The sessionId.
+     */
+    public java.lang.String getSessionId() {
+      java.lang.Object ref = sessionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sessionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A unique identifier for tracking a visitor session with a length limit of
+     * 128 bytes. A session is an aggregation of an end user behavior in a time
+     * span.
+     * A general guideline to populate the sesion_id:
+     * 1. If user has no activity for 30 min, a new session_id should be assigned.
+     * 2. The session_id should be unique across users, suggest use uuid or add
+     * visitor_id as prefix.
+     * </pre>
+     *
+     * <code>string session_id = 21;</code>
+     *
+     * @return The bytes for sessionId.
+     */
+    public com.google.protobuf.ByteString getSessionIdBytes() {
+      java.lang.Object ref = sessionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sessionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A unique identifier for tracking a visitor session with a length limit of
+     * 128 bytes. A session is an aggregation of an end user behavior in a time
+     * span.
+     * A general guideline to populate the sesion_id:
+     * 1. If user has no activity for 30 min, a new session_id should be assigned.
+     * 2. The session_id should be unique across users, suggest use uuid or add
+     * visitor_id as prefix.
+     * </pre>
+     *
+     * <code>string session_id = 21;</code>
+     *
+     * @param value The sessionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSessionId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      sessionId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A unique identifier for tracking a visitor session with a length limit of
+     * 128 bytes. A session is an aggregation of an end user behavior in a time
+     * span.
+     * A general guideline to populate the sesion_id:
+     * 1. If user has no activity for 30 min, a new session_id should be assigned.
+     * 2. The session_id should be unique across users, suggest use uuid or add
+     * visitor_id as prefix.
+     * </pre>
+     *
+     * <code>string session_id = 21;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSessionId() {
+
+      sessionId_ = getDefaultInstance().getSessionId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A unique identifier for tracking a visitor session with a length limit of
+     * 128 bytes. A session is an aggregation of an end user behavior in a time
+     * span.
+     * A general guideline to populate the sesion_id:
+     * 1. If user has no activity for 30 min, a new session_id should be assigned.
+     * 2. The session_id should be unique across users, suggest use uuid or add
+     * visitor_id as prefix.
+     * </pre>
+     *
+     * <code>string session_id = 21;</code>
+     *
+     * @param value The bytes for sessionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSessionIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      sessionId_ = value;
       onChanged();
       return this;
     }
@@ -2708,6 +3321,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * [PredictResponse.attribution_token][google.cloud.retail.v2.PredictResponse.attribution_token]
      * for user events that are the result of
      * [PredictionService.Predict][google.cloud.retail.v2.PredictionService.Predict].
+     * The value must be a valid
+     * [SearchResponse.attribution_token][google.cloud.retail.v2.SearchResponse.attribution_token]
+     * for user events that are the result of
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
      * This token enables us to accurately attribute page view or purchase back to
      * the event and the particular predict response containing this
      * clicked/purchased product. If user clicks on product K in the
@@ -2746,6 +3363,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * [PredictResponse.attribution_token][google.cloud.retail.v2.PredictResponse.attribution_token]
      * for user events that are the result of
      * [PredictionService.Predict][google.cloud.retail.v2.PredictionService.Predict].
+     * The value must be a valid
+     * [SearchResponse.attribution_token][google.cloud.retail.v2.SearchResponse.attribution_token]
+     * for user events that are the result of
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
      * This token enables us to accurately attribute page view or purchase back to
      * the event and the particular predict response containing this
      * clicked/purchased product. If user clicks on product K in the
@@ -2784,6 +3405,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * [PredictResponse.attribution_token][google.cloud.retail.v2.PredictResponse.attribution_token]
      * for user events that are the result of
      * [PredictionService.Predict][google.cloud.retail.v2.PredictionService.Predict].
+     * The value must be a valid
+     * [SearchResponse.attribution_token][google.cloud.retail.v2.SearchResponse.attribution_token]
+     * for user events that are the result of
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
      * This token enables us to accurately attribute page view or purchase back to
      * the event and the particular predict response containing this
      * clicked/purchased product. If user clicks on product K in the
@@ -2821,6 +3446,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * [PredictResponse.attribution_token][google.cloud.retail.v2.PredictResponse.attribution_token]
      * for user events that are the result of
      * [PredictionService.Predict][google.cloud.retail.v2.PredictionService.Predict].
+     * The value must be a valid
+     * [SearchResponse.attribution_token][google.cloud.retail.v2.SearchResponse.attribution_token]
+     * for user events that are the result of
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
      * This token enables us to accurately attribute page view or purchase back to
      * the event and the particular predict response containing this
      * clicked/purchased product. If user clicks on product K in the
@@ -2854,6 +3483,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * [PredictResponse.attribution_token][google.cloud.retail.v2.PredictResponse.attribution_token]
      * for user events that are the result of
      * [PredictionService.Predict][google.cloud.retail.v2.PredictionService.Predict].
+     * The value must be a valid
+     * [SearchResponse.attribution_token][google.cloud.retail.v2.SearchResponse.attribution_token]
+     * for user events that are the result of
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
      * This token enables us to accurately attribute page view or purchase back to
      * the event and the particular predict response containing this
      * clicked/purchased product. If user clicks on product K in the
@@ -3433,6 +4066,219 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       return productDetailsBuilder_;
     }
 
+    private com.google.cloud.retail.v2.CompletionDetail completionDetail_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2.CompletionDetail,
+            com.google.cloud.retail.v2.CompletionDetail.Builder,
+            com.google.cloud.retail.v2.CompletionDetailOrBuilder>
+        completionDetailBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The main completion details related to the event.
+     * In a `completion` event, this field represents the completions returned to
+     * the end user and the clicked completion by the end user. In a `search`
+     * event, it represents the search event happens after clicking completion.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.CompletionDetail completion_detail = 22;</code>
+     *
+     * @return Whether the completionDetail field is set.
+     */
+    public boolean hasCompletionDetail() {
+      return completionDetailBuilder_ != null || completionDetail_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The main completion details related to the event.
+     * In a `completion` event, this field represents the completions returned to
+     * the end user and the clicked completion by the end user. In a `search`
+     * event, it represents the search event happens after clicking completion.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.CompletionDetail completion_detail = 22;</code>
+     *
+     * @return The completionDetail.
+     */
+    public com.google.cloud.retail.v2.CompletionDetail getCompletionDetail() {
+      if (completionDetailBuilder_ == null) {
+        return completionDetail_ == null
+            ? com.google.cloud.retail.v2.CompletionDetail.getDefaultInstance()
+            : completionDetail_;
+      } else {
+        return completionDetailBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The main completion details related to the event.
+     * In a `completion` event, this field represents the completions returned to
+     * the end user and the clicked completion by the end user. In a `search`
+     * event, it represents the search event happens after clicking completion.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.CompletionDetail completion_detail = 22;</code>
+     */
+    public Builder setCompletionDetail(com.google.cloud.retail.v2.CompletionDetail value) {
+      if (completionDetailBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        completionDetail_ = value;
+        onChanged();
+      } else {
+        completionDetailBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The main completion details related to the event.
+     * In a `completion` event, this field represents the completions returned to
+     * the end user and the clicked completion by the end user. In a `search`
+     * event, it represents the search event happens after clicking completion.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.CompletionDetail completion_detail = 22;</code>
+     */
+    public Builder setCompletionDetail(
+        com.google.cloud.retail.v2.CompletionDetail.Builder builderForValue) {
+      if (completionDetailBuilder_ == null) {
+        completionDetail_ = builderForValue.build();
+        onChanged();
+      } else {
+        completionDetailBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The main completion details related to the event.
+     * In a `completion` event, this field represents the completions returned to
+     * the end user and the clicked completion by the end user. In a `search`
+     * event, it represents the search event happens after clicking completion.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.CompletionDetail completion_detail = 22;</code>
+     */
+    public Builder mergeCompletionDetail(com.google.cloud.retail.v2.CompletionDetail value) {
+      if (completionDetailBuilder_ == null) {
+        if (completionDetail_ != null) {
+          completionDetail_ =
+              com.google.cloud.retail.v2.CompletionDetail.newBuilder(completionDetail_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          completionDetail_ = value;
+        }
+        onChanged();
+      } else {
+        completionDetailBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The main completion details related to the event.
+     * In a `completion` event, this field represents the completions returned to
+     * the end user and the clicked completion by the end user. In a `search`
+     * event, it represents the search event happens after clicking completion.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.CompletionDetail completion_detail = 22;</code>
+     */
+    public Builder clearCompletionDetail() {
+      if (completionDetailBuilder_ == null) {
+        completionDetail_ = null;
+        onChanged();
+      } else {
+        completionDetail_ = null;
+        completionDetailBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The main completion details related to the event.
+     * In a `completion` event, this field represents the completions returned to
+     * the end user and the clicked completion by the end user. In a `search`
+     * event, it represents the search event happens after clicking completion.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.CompletionDetail completion_detail = 22;</code>
+     */
+    public com.google.cloud.retail.v2.CompletionDetail.Builder getCompletionDetailBuilder() {
+
+      onChanged();
+      return getCompletionDetailFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The main completion details related to the event.
+     * In a `completion` event, this field represents the completions returned to
+     * the end user and the clicked completion by the end user. In a `search`
+     * event, it represents the search event happens after clicking completion.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.CompletionDetail completion_detail = 22;</code>
+     */
+    public com.google.cloud.retail.v2.CompletionDetailOrBuilder getCompletionDetailOrBuilder() {
+      if (completionDetailBuilder_ != null) {
+        return completionDetailBuilder_.getMessageOrBuilder();
+      } else {
+        return completionDetail_ == null
+            ? com.google.cloud.retail.v2.CompletionDetail.getDefaultInstance()
+            : completionDetail_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The main completion details related to the event.
+     * In a `completion` event, this field represents the completions returned to
+     * the end user and the clicked completion by the end user. In a `search`
+     * event, it represents the search event happens after clicking completion.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.CompletionDetail completion_detail = 22;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2.CompletionDetail,
+            com.google.cloud.retail.v2.CompletionDetail.Builder,
+            com.google.cloud.retail.v2.CompletionDetailOrBuilder>
+        getCompletionDetailFieldBuilder() {
+      if (completionDetailBuilder_ == null) {
+        completionDetailBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.retail.v2.CompletionDetail,
+                com.google.cloud.retail.v2.CompletionDetail.Builder,
+                com.google.cloud.retail.v2.CompletionDetailOrBuilder>(
+                getCompletionDetail(), getParentForChildren(), isClean());
+        completionDetail_ = null;
+      }
+      return completionDetailBuilder_;
+    }
+
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.retail.v2.CustomAttribute>
         attributes_;
@@ -3978,9 +4824,14 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user's search query.
+     * See [SearchRequest.query][google.cloud.retail.v2.SearchRequest.query] for
+     * definition.
      * The value must be a UTF-8 encoded string with a length limit of 5,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-     * Required for `search` events. Other event types should not set this field.
+     * At least one of
+     * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+     * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+     * required for `search` events. Other event types should not set this field.
      * Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
@@ -4004,9 +4855,14 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user's search query.
+     * See [SearchRequest.query][google.cloud.retail.v2.SearchRequest.query] for
+     * definition.
      * The value must be a UTF-8 encoded string with a length limit of 5,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-     * Required for `search` events. Other event types should not set this field.
+     * At least one of
+     * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+     * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+     * required for `search` events. Other event types should not set this field.
      * Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
@@ -4030,9 +4886,14 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user's search query.
+     * See [SearchRequest.query][google.cloud.retail.v2.SearchRequest.query] for
+     * definition.
      * The value must be a UTF-8 encoded string with a length limit of 5,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-     * Required for `search` events. Other event types should not set this field.
+     * At least one of
+     * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+     * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+     * required for `search` events. Other event types should not set this field.
      * Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
@@ -4055,9 +4916,14 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user's search query.
+     * See [SearchRequest.query][google.cloud.retail.v2.SearchRequest.query] for
+     * definition.
      * The value must be a UTF-8 encoded string with a length limit of 5,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-     * Required for `search` events. Other event types should not set this field.
+     * At least one of
+     * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+     * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+     * required for `search` events. Other event types should not set this field.
      * Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
@@ -4076,9 +4942,14 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user's search query.
+     * See [SearchRequest.query][google.cloud.retail.v2.SearchRequest.query] for
+     * definition.
      * The value must be a UTF-8 encoded string with a length limit of 5,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-     * Required for `search` events. Other event types should not set this field.
+     * At least one of
+     * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+     * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+     * required for `search` events. Other event types should not set this field.
      * Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
@@ -4094,6 +4965,343 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       searchQuery_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The filter syntax consists of an expression language for constructing a
+     * predicate from one or more fields of the products being filtered.
+     * See [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter] for
+     * definition and syntax.
+     * The value must be a UTF-8 encoded string with a length limit of 1,000
+     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>string filter = 16;</code>
+     *
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The filter syntax consists of an expression language for constructing a
+     * predicate from one or more fields of the products being filtered.
+     * See [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter] for
+     * definition and syntax.
+     * The value must be a UTF-8 encoded string with a length limit of 1,000
+     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>string filter = 16;</code>
+     *
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The filter syntax consists of an expression language for constructing a
+     * predicate from one or more fields of the products being filtered.
+     * See [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter] for
+     * definition and syntax.
+     * The value must be a UTF-8 encoded string with a length limit of 1,000
+     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>string filter = 16;</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      filter_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The filter syntax consists of an expression language for constructing a
+     * predicate from one or more fields of the products being filtered.
+     * See [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter] for
+     * definition and syntax.
+     * The value must be a UTF-8 encoded string with a length limit of 1,000
+     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>string filter = 16;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+
+      filter_ = getDefaultInstance().getFilter();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The filter syntax consists of an expression language for constructing a
+     * predicate from one or more fields of the products being filtered.
+     * See [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter] for
+     * definition and syntax.
+     * The value must be a UTF-8 encoded string with a length limit of 1,000
+     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>string filter = 16;</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      filter_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object orderBy_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The order in which products are returned.
+     * See [SearchRequest.order_by][google.cloud.retail.v2.SearchRequest.order_by]
+     * for definition and syntax.
+     * The value must be a UTF-8 encoded string with a length limit of 1,000
+     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * This can only be set for `search` events. Other event types should not set
+     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>string order_by = 17;</code>
+     *
+     * @return The orderBy.
+     */
+    public java.lang.String getOrderBy() {
+      java.lang.Object ref = orderBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The order in which products are returned.
+     * See [SearchRequest.order_by][google.cloud.retail.v2.SearchRequest.order_by]
+     * for definition and syntax.
+     * The value must be a UTF-8 encoded string with a length limit of 1,000
+     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * This can only be set for `search` events. Other event types should not set
+     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>string order_by = 17;</code>
+     *
+     * @return The bytes for orderBy.
+     */
+    public com.google.protobuf.ByteString getOrderByBytes() {
+      java.lang.Object ref = orderBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        orderBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The order in which products are returned.
+     * See [SearchRequest.order_by][google.cloud.retail.v2.SearchRequest.order_by]
+     * for definition and syntax.
+     * The value must be a UTF-8 encoded string with a length limit of 1,000
+     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * This can only be set for `search` events. Other event types should not set
+     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>string order_by = 17;</code>
+     *
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderBy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      orderBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The order in which products are returned.
+     * See [SearchRequest.order_by][google.cloud.retail.v2.SearchRequest.order_by]
+     * for definition and syntax.
+     * The value must be a UTF-8 encoded string with a length limit of 1,000
+     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * This can only be set for `search` events. Other event types should not set
+     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>string order_by = 17;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOrderBy() {
+
+      orderBy_ = getDefaultInstance().getOrderBy();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The order in which products are returned.
+     * See [SearchRequest.order_by][google.cloud.retail.v2.SearchRequest.order_by]
+     * for definition and syntax.
+     * The value must be a UTF-8 encoded string with a length limit of 1,000
+     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * This can only be set for `search` events. Other event types should not set
+     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>string order_by = 17;</code>
+     *
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      orderBy_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int offset_;
+    /**
+     *
+     *
+     * <pre>
+     * An integer that specifies the current offset for pagination (the 0-indexed
+     * starting location, amongst the products deemed by the API as relevant).
+     * See [SearchRequest.offset][google.cloud.retail.v2.SearchRequest.offset] for
+     * definition.
+     * If this field is negative, an INVALID_ARGUMENT is returned.
+     * This can only be set for `search` events. Other event types should not set
+     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>int32 offset = 18;</code>
+     *
+     * @return The offset.
+     */
+    @java.lang.Override
+    public int getOffset() {
+      return offset_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An integer that specifies the current offset for pagination (the 0-indexed
+     * starting location, amongst the products deemed by the API as relevant).
+     * See [SearchRequest.offset][google.cloud.retail.v2.SearchRequest.offset] for
+     * definition.
+     * If this field is negative, an INVALID_ARGUMENT is returned.
+     * This can only be set for `search` events. Other event types should not set
+     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>int32 offset = 18;</code>
+     *
+     * @param value The offset to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOffset(int value) {
+
+      offset_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An integer that specifies the current offset for pagination (the 0-indexed
+     * starting location, amongst the products deemed by the API as relevant).
+     * See [SearchRequest.offset][google.cloud.retail.v2.SearchRequest.offset] for
+     * definition.
+     * If this field is negative, an INVALID_ARGUMENT is returned.
+     * This can only be set for `search` events. Other event types should not set
+     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * </pre>
+     *
+     * <code>int32 offset = 18;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOffset() {
+
+      offset_ = 0;
       onChanged();
       return this;
     }
@@ -4118,8 +5326,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
      * "pageCategories" : ["Sales &gt; 2017 Black Friday Deals"].
-     * Required for `category-page-view` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Required for `category-page-view` events. At least one of
+     * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+     * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+     * required for `search` events. Other event types should not set this field.
+     * Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
      * <code>repeated string page_categories = 11;</code>
@@ -4140,8 +5351,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
      * "pageCategories" : ["Sales &gt; 2017 Black Friday Deals"].
-     * Required for `category-page-view` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Required for `category-page-view` events. At least one of
+     * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+     * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+     * required for `search` events. Other event types should not set this field.
+     * Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
      * <code>repeated string page_categories = 11;</code>
@@ -4162,8 +5376,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
      * "pageCategories" : ["Sales &gt; 2017 Black Friday Deals"].
-     * Required for `category-page-view` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Required for `category-page-view` events. At least one of
+     * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+     * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+     * required for `search` events. Other event types should not set this field.
+     * Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
      * <code>repeated string page_categories = 11;</code>
@@ -4185,8 +5402,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
      * "pageCategories" : ["Sales &gt; 2017 Black Friday Deals"].
-     * Required for `category-page-view` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Required for `category-page-view` events. At least one of
+     * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+     * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+     * required for `search` events. Other event types should not set this field.
+     * Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
      * <code>repeated string page_categories = 11;</code>
@@ -4208,8 +5428,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
      * "pageCategories" : ["Sales &gt; 2017 Black Friday Deals"].
-     * Required for `category-page-view` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Required for `category-page-view` events. At least one of
+     * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+     * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+     * required for `search` events. Other event types should not set this field.
+     * Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
      * <code>repeated string page_categories = 11;</code>
@@ -4238,8 +5461,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
      * "pageCategories" : ["Sales &gt; 2017 Black Friday Deals"].
-     * Required for `category-page-view` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Required for `category-page-view` events. At least one of
+     * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+     * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+     * required for `search` events. Other event types should not set this field.
+     * Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
      * <code>repeated string page_categories = 11;</code>
@@ -4267,8 +5493,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
      * "pageCategories" : ["Sales &gt; 2017 Black Friday Deals"].
-     * Required for `category-page-view` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Required for `category-page-view` events. At least one of
+     * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+     * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+     * required for `search` events. Other event types should not set this field.
+     * Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
      * <code>repeated string page_categories = 11;</code>
@@ -4293,8 +5522,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
      * "pageCategories" : ["Sales &gt; 2017 Black Friday Deals"].
-     * Required for `category-page-view` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Required for `category-page-view` events. At least one of
+     * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+     * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+     * required for `search` events. Other event types should not set this field.
+     * Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
      * <code>repeated string page_categories = 11;</code>
@@ -4318,8 +5550,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
      * "pageCategories" : ["Sales &gt; 2017 Black Friday Deals"].
-     * Required for `category-page-view` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Required for `category-page-view` events. At least one of
+     * [search_query][google.cloud.retail.v2.UserEvent.search_query] or
+     * [page_categories][google.cloud.retail.v2.UserEvent.page_categories] is
+     * required for `search` events. Other event types should not set this field.
+     * Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
      * <code>repeated string page_categories = 11;</code>

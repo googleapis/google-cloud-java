@@ -366,7 +366,7 @@ public class UserEventServiceClient implements BackgroundResource {
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   ImportUserEventsRequest request =
    *       ImportUserEventsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
    *           .setInputConfig(UserEventInputConfig.newBuilder().build())
    *           .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
    *           .build();
@@ -397,7 +397,7 @@ public class UserEventServiceClient implements BackgroundResource {
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   ImportUserEventsRequest request =
    *       ImportUserEventsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
    *           .setInputConfig(UserEventInputConfig.newBuilder().build())
    *           .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
    *           .build();
@@ -427,7 +427,7 @@ public class UserEventServiceClient implements BackgroundResource {
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   ImportUserEventsRequest request =
    *       ImportUserEventsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
    *           .setInputConfig(UserEventInputConfig.newBuilder().build())
    *           .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
    *           .build();

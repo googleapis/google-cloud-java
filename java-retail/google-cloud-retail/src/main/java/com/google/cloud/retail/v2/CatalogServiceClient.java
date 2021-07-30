@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2.stub.CatalogServiceStub;
 import com.google.cloud.retail.v2.stub.CatalogServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
@@ -313,9 +314,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     <p>If the [Catalog][google.cloud.retail.v2.Catalog] to update does not exist, a NOT_FOUND
    *     error is returned.
    * @param updateMask Indicates which fields in the provided
-   *     [Catalog][google.cloud.retail.v2.Catalog] to update. If not set, will only update the
-   *     [Catalog.product_level_config][google.cloud.retail.v2.Catalog.product_level_config] field,
-   *     which is also the only currently supported field to update.
+   *     [Catalog][google.cloud.retail.v2.Catalog] to update.
    *     <p>If an unsupported or unknown field is provided, an INVALID_ARGUMENT error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -370,6 +369,356 @@ public class CatalogServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateCatalogRequest, Catalog> updateCatalogCallable() {
     return stub.updateCatalogCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Set a specified branch id as default branch. API methods such as
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search],
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct],
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts] will treat
+   * requests using "default_branch" to the actual branch id set as default.
+   *
+   * <p>For example, if `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/1` is set as
+   * default, setting [SearchRequest.branch][google.cloud.retail.v2.SearchRequest.branch] to
+   * `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/default_branch` is equivalent to
+   * setting [SearchRequest.branch][google.cloud.retail.v2.SearchRequest.branch] to
+   * `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/1`.
+   *
+   * <p>Using multiple branches can be useful when developers would like to have a staging branch to
+   * test and verify for future usage. When it becomes ready, developers switch on the staging
+   * branch using this API while keeping using
+   * `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/default_branch` as
+   * [SearchRequest.branch][google.cloud.retail.v2.SearchRequest.branch] to route the traffic to
+   * this staging branch.
+   *
+   * <p>CAUTION: If you have live predict/search traffic, switching the default branch could
+   * potentially cause outages if the ID space of the new branch is very different from the old one.
+   *
+   * <p>More specifically:
+   *
+   * <ul>
+   *   <li>PredictionService will only return product IDs from branch {newBranch}.
+   *   <li>SearchService will only return product IDs from branch {newBranch} (if branch is not
+   *       explicitly set).
+   *   <li>UserEventService will only join events with products from branch {newBranch}.
+   * </ul>
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CatalogName catalog = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+   *   catalogServiceClient.setDefaultBranch(catalog);
+   * }
+   * }</pre>
+   *
+   * @param catalog Full resource name of the catalog, such as
+   *     `projects/&#42;/locations/global/catalogs/default_catalog`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void setDefaultBranch(CatalogName catalog) {
+    SetDefaultBranchRequest request =
+        SetDefaultBranchRequest.newBuilder()
+            .setCatalog(catalog == null ? null : catalog.toString())
+            .build();
+    setDefaultBranch(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Set a specified branch id as default branch. API methods such as
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search],
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct],
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts] will treat
+   * requests using "default_branch" to the actual branch id set as default.
+   *
+   * <p>For example, if `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/1` is set as
+   * default, setting [SearchRequest.branch][google.cloud.retail.v2.SearchRequest.branch] to
+   * `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/default_branch` is equivalent to
+   * setting [SearchRequest.branch][google.cloud.retail.v2.SearchRequest.branch] to
+   * `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/1`.
+   *
+   * <p>Using multiple branches can be useful when developers would like to have a staging branch to
+   * test and verify for future usage. When it becomes ready, developers switch on the staging
+   * branch using this API while keeping using
+   * `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/default_branch` as
+   * [SearchRequest.branch][google.cloud.retail.v2.SearchRequest.branch] to route the traffic to
+   * this staging branch.
+   *
+   * <p>CAUTION: If you have live predict/search traffic, switching the default branch could
+   * potentially cause outages if the ID space of the new branch is very different from the old one.
+   *
+   * <p>More specifically:
+   *
+   * <ul>
+   *   <li>PredictionService will only return product IDs from branch {newBranch}.
+   *   <li>SearchService will only return product IDs from branch {newBranch} (if branch is not
+   *       explicitly set).
+   *   <li>UserEventService will only join events with products from branch {newBranch}.
+   * </ul>
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String catalog = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString();
+   *   catalogServiceClient.setDefaultBranch(catalog);
+   * }
+   * }</pre>
+   *
+   * @param catalog Full resource name of the catalog, such as
+   *     `projects/&#42;/locations/global/catalogs/default_catalog`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void setDefaultBranch(String catalog) {
+    SetDefaultBranchRequest request =
+        SetDefaultBranchRequest.newBuilder().setCatalog(catalog).build();
+    setDefaultBranch(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Set a specified branch id as default branch. API methods such as
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search],
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct],
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts] will treat
+   * requests using "default_branch" to the actual branch id set as default.
+   *
+   * <p>For example, if `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/1` is set as
+   * default, setting [SearchRequest.branch][google.cloud.retail.v2.SearchRequest.branch] to
+   * `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/default_branch` is equivalent to
+   * setting [SearchRequest.branch][google.cloud.retail.v2.SearchRequest.branch] to
+   * `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/1`.
+   *
+   * <p>Using multiple branches can be useful when developers would like to have a staging branch to
+   * test and verify for future usage. When it becomes ready, developers switch on the staging
+   * branch using this API while keeping using
+   * `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/default_branch` as
+   * [SearchRequest.branch][google.cloud.retail.v2.SearchRequest.branch] to route the traffic to
+   * this staging branch.
+   *
+   * <p>CAUTION: If you have live predict/search traffic, switching the default branch could
+   * potentially cause outages if the ID space of the new branch is very different from the old one.
+   *
+   * <p>More specifically:
+   *
+   * <ul>
+   *   <li>PredictionService will only return product IDs from branch {newBranch}.
+   *   <li>SearchService will only return product IDs from branch {newBranch} (if branch is not
+   *       explicitly set).
+   *   <li>UserEventService will only join events with products from branch {newBranch}.
+   * </ul>
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   SetDefaultBranchRequest request =
+   *       SetDefaultBranchRequest.newBuilder()
+   *           .setCatalog(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setBranchId(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setNote("note3387378")
+   *           .build();
+   *   catalogServiceClient.setDefaultBranch(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void setDefaultBranch(SetDefaultBranchRequest request) {
+    setDefaultBranchCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Set a specified branch id as default branch. API methods such as
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search],
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct],
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts] will treat
+   * requests using "default_branch" to the actual branch id set as default.
+   *
+   * <p>For example, if `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/1` is set as
+   * default, setting [SearchRequest.branch][google.cloud.retail.v2.SearchRequest.branch] to
+   * `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/default_branch` is equivalent to
+   * setting [SearchRequest.branch][google.cloud.retail.v2.SearchRequest.branch] to
+   * `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/1`.
+   *
+   * <p>Using multiple branches can be useful when developers would like to have a staging branch to
+   * test and verify for future usage. When it becomes ready, developers switch on the staging
+   * branch using this API while keeping using
+   * `projects/&#42;/locations/&#42;/catalogs/&#42;/branches/default_branch` as
+   * [SearchRequest.branch][google.cloud.retail.v2.SearchRequest.branch] to route the traffic to
+   * this staging branch.
+   *
+   * <p>CAUTION: If you have live predict/search traffic, switching the default branch could
+   * potentially cause outages if the ID space of the new branch is very different from the old one.
+   *
+   * <p>More specifically:
+   *
+   * <ul>
+   *   <li>PredictionService will only return product IDs from branch {newBranch}.
+   *   <li>SearchService will only return product IDs from branch {newBranch} (if branch is not
+   *       explicitly set).
+   *   <li>UserEventService will only join events with products from branch {newBranch}.
+   * </ul>
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   SetDefaultBranchRequest request =
+   *       SetDefaultBranchRequest.newBuilder()
+   *           .setCatalog(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setBranchId(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setNote("note3387378")
+   *           .build();
+   *   ApiFuture<Empty> future = catalogServiceClient.setDefaultBranchCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetDefaultBranchRequest, Empty> setDefaultBranchCallable() {
+    return stub.setDefaultBranchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get which branch is currently default branch set by
+   * [CatalogService.SetDefaultBranch][google.cloud.retail.v2.CatalogService.SetDefaultBranch]
+   * method under a specified parent catalog.
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CatalogName catalog = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+   *   GetDefaultBranchResponse response = catalogServiceClient.getDefaultBranch(catalog);
+   * }
+   * }</pre>
+   *
+   * @param catalog The parent catalog resource name, such as
+   *     `projects/&#42;/locations/global/catalogs/default_catalog`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetDefaultBranchResponse getDefaultBranch(CatalogName catalog) {
+    GetDefaultBranchRequest request =
+        GetDefaultBranchRequest.newBuilder()
+            .setCatalog(catalog == null ? null : catalog.toString())
+            .build();
+    return getDefaultBranch(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get which branch is currently default branch set by
+   * [CatalogService.SetDefaultBranch][google.cloud.retail.v2.CatalogService.SetDefaultBranch]
+   * method under a specified parent catalog.
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String catalog = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString();
+   *   GetDefaultBranchResponse response = catalogServiceClient.getDefaultBranch(catalog);
+   * }
+   * }</pre>
+   *
+   * @param catalog The parent catalog resource name, such as
+   *     `projects/&#42;/locations/global/catalogs/default_catalog`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetDefaultBranchResponse getDefaultBranch(String catalog) {
+    GetDefaultBranchRequest request =
+        GetDefaultBranchRequest.newBuilder().setCatalog(catalog).build();
+    return getDefaultBranch(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get which branch is currently default branch set by
+   * [CatalogService.SetDefaultBranch][google.cloud.retail.v2.CatalogService.SetDefaultBranch]
+   * method under a specified parent catalog.
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   GetDefaultBranchRequest request =
+   *       GetDefaultBranchRequest.newBuilder()
+   *           .setCatalog(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .build();
+   *   GetDefaultBranchResponse response = catalogServiceClient.getDefaultBranch(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetDefaultBranchResponse getDefaultBranch(GetDefaultBranchRequest request) {
+    return getDefaultBranchCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get which branch is currently default branch set by
+   * [CatalogService.SetDefaultBranch][google.cloud.retail.v2.CatalogService.SetDefaultBranch]
+   * method under a specified parent catalog.
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   GetDefaultBranchRequest request =
+   *       GetDefaultBranchRequest.newBuilder()
+   *           .setCatalog(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .build();
+   *   ApiFuture<GetDefaultBranchResponse> future =
+   *       catalogServiceClient.getDefaultBranchCallable().futureCall(request);
+   *   // Do something.
+   *   GetDefaultBranchResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDefaultBranchRequest, GetDefaultBranchResponse>
+      getDefaultBranchCallable() {
+    return stub.getDefaultBranchCallable();
   }
 
   @Override

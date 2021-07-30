@@ -29,25 +29,10 @@ public interface PredictRequestOrBuilder
    * <pre>
    * Required. Full resource name of the format:
    * {name=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}
-   * The id of the recommendation engine placement. This id is used to identify
-   * the set of models that will be used to make the prediction.
-   * We currently support three placements with the following IDs by default:
-   * * `shopping_cart`: Predicts products frequently bought together with one or
-   *   more  products in the same shopping session. Commonly displayed after
-   *   `add-to-cart` events, on product detail pages, or on the shopping cart
-   *   page.
-   * * `home_page`: Predicts the next product that a user will most likely
-   *   engage with or purchase based on the shopping or viewing history of the
-   *   specified `userId` or `visitorId`. For example - Recommendations for you.
-   * * `product_detail`: Predicts the next product that a user will most likely
-   *   engage with or purchase. The prediction is based on the shopping or
-   *   viewing history of the specified `userId` or `visitorId` and its
-   *   relevance to a specified `CatalogItem`. Typically used on product detail
-   *   pages. For example - More products like this.
-   * * `recently_viewed_default`: Returns up to 75 products recently viewed by
-   *   the specified `userId` or `visitorId`, most recent ones first. Returns
-   *   nothing if neither of them has viewed any products yet. For example -
-   *   Recently viewed.
+   * The ID of the Recommendations AI placement. Before you can request
+   * predictions from your model, you must create at least one placement for it.
+   * For more information, see [Managing
+   * placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements).
    * The full list of available placements can be seen at
    * https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
    * </pre>
@@ -63,25 +48,10 @@ public interface PredictRequestOrBuilder
    * <pre>
    * Required. Full resource name of the format:
    * {name=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}
-   * The id of the recommendation engine placement. This id is used to identify
-   * the set of models that will be used to make the prediction.
-   * We currently support three placements with the following IDs by default:
-   * * `shopping_cart`: Predicts products frequently bought together with one or
-   *   more  products in the same shopping session. Commonly displayed after
-   *   `add-to-cart` events, on product detail pages, or on the shopping cart
-   *   page.
-   * * `home_page`: Predicts the next product that a user will most likely
-   *   engage with or purchase based on the shopping or viewing history of the
-   *   specified `userId` or `visitorId`. For example - Recommendations for you.
-   * * `product_detail`: Predicts the next product that a user will most likely
-   *   engage with or purchase. The prediction is based on the shopping or
-   *   viewing history of the specified `userId` or `visitorId` and its
-   *   relevance to a specified `CatalogItem`. Typically used on product detail
-   *   pages. For example - More products like this.
-   * * `recently_viewed_default`: Returns up to 75 products recently viewed by
-   *   the specified `userId` or `visitorId`, most recent ones first. Returns
-   *   nothing if neither of them has viewed any products yet. For example -
-   *   Recently viewed.
+   * The ID of the Recommendations AI placement. Before you can request
+   * predictions from your model, you must create at least one placement for it.
+   * For more information, see [Managing
+   * placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements).
    * The full list of available placements can be seen at
    * https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
    * </pre>
@@ -195,6 +165,8 @@ public interface PredictRequestOrBuilder
    *    tag values by a space. `-"tagA"` is also supported and is equivalent to
    *    `NOT "tagA"`. Tag values must be double quoted UTF-8 encoded strings
    *    with a size limit of 1,000 characters.
+   *    Note: "Recently viewed" models don't support tag filtering at the
+   *    moment.
    *  * filterOutOfStockItems. Restricts predictions to products that do not
    *  have a
    *    stockState value of OUT_OF_STOCK.
@@ -224,6 +196,8 @@ public interface PredictRequestOrBuilder
    *    tag values by a space. `-"tagA"` is also supported and is equivalent to
    *    `NOT "tagA"`. Tag values must be double quoted UTF-8 encoded strings
    *    with a size limit of 1,000 characters.
+   *    Note: "Recently viewed" models don't support tag filtering at the
+   *    moment.
    *  * filterOutOfStockItems. Restricts predictions to products that do not
    *  have a
    *    stockState value of OUT_OF_STOCK.
@@ -275,6 +249,16 @@ public interface PredictRequestOrBuilder
    * * `strictFiltering`: Boolean. True by default. If set to false, the service
    *    will return generic (unfiltered) popular products instead of empty if
    *    your filter blocks all prediction results.
+   * * `priceRerankLevel`: String. Default empty. If set to be non-empty, then
+   *    it needs to be one of {'no-price-reranking', 'low-price-reranking',
+   *    'medium-price-reranking', 'high-price-reranking'}. This gives
+   *    request-level control and adjusts prediction results based on product
+   *    price.
+   * * `diversityLevel`: String. Default empty. If set to be non-empty, then
+   *    it needs to be one of {'no-diversity', 'low-diversity',
+   *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
+   *    request-level control and adjusts prediction results based on product
+   *    category.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -297,6 +281,16 @@ public interface PredictRequestOrBuilder
    * * `strictFiltering`: Boolean. True by default. If set to false, the service
    *    will return generic (unfiltered) popular products instead of empty if
    *    your filter blocks all prediction results.
+   * * `priceRerankLevel`: String. Default empty. If set to be non-empty, then
+   *    it needs to be one of {'no-price-reranking', 'low-price-reranking',
+   *    'medium-price-reranking', 'high-price-reranking'}. This gives
+   *    request-level control and adjusts prediction results based on product
+   *    price.
+   * * `diversityLevel`: String. Default empty. If set to be non-empty, then
+   *    it needs to be one of {'no-diversity', 'low-diversity',
+   *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
+   *    request-level control and adjusts prediction results based on product
+   *    category.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -322,6 +316,16 @@ public interface PredictRequestOrBuilder
    * * `strictFiltering`: Boolean. True by default. If set to false, the service
    *    will return generic (unfiltered) popular products instead of empty if
    *    your filter blocks all prediction results.
+   * * `priceRerankLevel`: String. Default empty. If set to be non-empty, then
+   *    it needs to be one of {'no-price-reranking', 'low-price-reranking',
+   *    'medium-price-reranking', 'high-price-reranking'}. This gives
+   *    request-level control and adjusts prediction results based on product
+   *    price.
+   * * `diversityLevel`: String. Default empty. If set to be non-empty, then
+   *    it needs to be one of {'no-diversity', 'low-diversity',
+   *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
+   *    request-level control and adjusts prediction results based on product
+   *    category.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -344,6 +348,16 @@ public interface PredictRequestOrBuilder
    * * `strictFiltering`: Boolean. True by default. If set to false, the service
    *    will return generic (unfiltered) popular products instead of empty if
    *    your filter blocks all prediction results.
+   * * `priceRerankLevel`: String. Default empty. If set to be non-empty, then
+   *    it needs to be one of {'no-price-reranking', 'low-price-reranking',
+   *    'medium-price-reranking', 'high-price-reranking'}. This gives
+   *    request-level control and adjusts prediction results based on product
+   *    price.
+   * * `diversityLevel`: String. Default empty. If set to be non-empty, then
+   *    it needs to be one of {'no-diversity', 'low-diversity',
+   *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
+   *    request-level control and adjusts prediction results based on product
+   *    category.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -367,6 +381,16 @@ public interface PredictRequestOrBuilder
    * * `strictFiltering`: Boolean. True by default. If set to false, the service
    *    will return generic (unfiltered) popular products instead of empty if
    *    your filter blocks all prediction results.
+   * * `priceRerankLevel`: String. Default empty. If set to be non-empty, then
+   *    it needs to be one of {'no-price-reranking', 'low-price-reranking',
+   *    'medium-price-reranking', 'high-price-reranking'}. This gives
+   *    request-level control and adjusts prediction results based on product
+   *    price.
+   * * `diversityLevel`: String. Default empty. If set to be non-empty, then
+   *    it needs to be one of {'no-diversity', 'low-diversity',
+   *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
+   *    request-level control and adjusts prediction results based on product
+   *    category.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -377,13 +401,21 @@ public interface PredictRequestOrBuilder
    *
    *
    * <pre>
-   * The labels for the predict request.
-   *  * Label keys can contain lowercase letters, digits and hyphens, must start
-   *    with a letter, and must end with a letter or digit.
-   *  * Non-zero label values can contain lowercase letters, digits and hyphens,
-   *    must start with a letter, and must end with a letter or digit.
-   *  * No more than 64 labels can be associated with a given request.
-   * See https://goo.gl/xmQnxf for more information on and examples of labels.
+   * The labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters, and cannot be empty. Values can be empty, and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -393,13 +425,21 @@ public interface PredictRequestOrBuilder
    *
    *
    * <pre>
-   * The labels for the predict request.
-   *  * Label keys can contain lowercase letters, digits and hyphens, must start
-   *    with a letter, and must end with a letter or digit.
-   *  * Non-zero label values can contain lowercase letters, digits and hyphens,
-   *    must start with a letter, and must end with a letter or digit.
-   *  * No more than 64 labels can be associated with a given request.
-   * See https://goo.gl/xmQnxf for more information on and examples of labels.
+   * The labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters, and cannot be empty. Values can be empty, and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -412,13 +452,21 @@ public interface PredictRequestOrBuilder
    *
    *
    * <pre>
-   * The labels for the predict request.
-   *  * Label keys can contain lowercase letters, digits and hyphens, must start
-   *    with a letter, and must end with a letter or digit.
-   *  * Non-zero label values can contain lowercase letters, digits and hyphens,
-   *    must start with a letter, and must end with a letter or digit.
-   *  * No more than 64 labels can be associated with a given request.
-   * See https://goo.gl/xmQnxf for more information on and examples of labels.
+   * The labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters, and cannot be empty. Values can be empty, and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -428,13 +476,21 @@ public interface PredictRequestOrBuilder
    *
    *
    * <pre>
-   * The labels for the predict request.
-   *  * Label keys can contain lowercase letters, digits and hyphens, must start
-   *    with a letter, and must end with a letter or digit.
-   *  * Non-zero label values can contain lowercase letters, digits and hyphens,
-   *    must start with a letter, and must end with a letter or digit.
-   *  * No more than 64 labels can be associated with a given request.
-   * See https://goo.gl/xmQnxf for more information on and examples of labels.
+   * The labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters, and cannot be empty. Values can be empty, and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -444,13 +500,21 @@ public interface PredictRequestOrBuilder
    *
    *
    * <pre>
-   * The labels for the predict request.
-   *  * Label keys can contain lowercase letters, digits and hyphens, must start
-   *    with a letter, and must end with a letter or digit.
-   *  * Non-zero label values can contain lowercase letters, digits and hyphens,
-   *    must start with a letter, and must end with a letter or digit.
-   *  * No more than 64 labels can be associated with a given request.
-   * See https://goo.gl/xmQnxf for more information on and examples of labels.
+   * The labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters, and cannot be empty. Values can be empty, and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>

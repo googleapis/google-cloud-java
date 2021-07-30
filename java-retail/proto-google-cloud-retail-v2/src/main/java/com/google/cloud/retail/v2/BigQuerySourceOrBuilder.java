@@ -27,9 +27,53 @@ public interface BigQuerySourceOrBuilder
    *
    *
    * <pre>
-   * The project id (can be project # or id) that the BigQuery source is in with
+   * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
+   * </pre>
+   *
+   * <code>.google.type.Date partition_date = 6;</code>
+   *
+   * @return Whether the partitionDate field is set.
+   */
+  boolean hasPartitionDate();
+  /**
+   *
+   *
+   * <pre>
+   * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
+   * </pre>
+   *
+   * <code>.google.type.Date partition_date = 6;</code>
+   *
+   * @return The partitionDate.
+   */
+  com.google.type.Date getPartitionDate();
+  /**
+   *
+   *
+   * <pre>
+   * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
+   * </pre>
+   *
+   * <code>.google.type.Date partition_date = 6;</code>
+   */
+  com.google.type.DateOrBuilder getPartitionDateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The project ID (can be project # or ID) that the BigQuery source is in with
    * a length limit of 128 characters. If not specified, inherits the project
-   * id from the parent request.
+   * ID from the parent request.
    * </pre>
    *
    * <code>string project_id = 5;</code>
@@ -41,9 +85,9 @@ public interface BigQuerySourceOrBuilder
    *
    *
    * <pre>
-   * The project id (can be project # or id) that the BigQuery source is in with
+   * The project ID (can be project # or ID) that the BigQuery source is in with
    * a length limit of 128 characters. If not specified, inherits the project
-   * id from the parent request.
+   * ID from the parent request.
    * </pre>
    *
    * <code>string project_id = 5;</code>
@@ -150,7 +194,7 @@ public interface BigQuerySourceOrBuilder
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.retail.v2.UserEvent] per line.
    * * `user_event_ga360`: Using
-   *   https://support.google.com/analytics/answer/3437719?hl=en.
+   *   https://support.google.com/analytics/answer/3437719.
    * </pre>
    *
    * <code>string data_schema = 4;</code>
@@ -173,7 +217,7 @@ public interface BigQuerySourceOrBuilder
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.retail.v2.UserEvent] per line.
    * * `user_event_ga360`: Using
-   *   https://support.google.com/analytics/answer/3437719?hl=en.
+   *   https://support.google.com/analytics/answer/3437719.
    * </pre>
    *
    * <code>string data_schema = 4;</code>
@@ -181,4 +225,6 @@ public interface BigQuerySourceOrBuilder
    * @return The bytes for dataSchema.
    */
   com.google.protobuf.ByteString getDataSchemaBytes();
+
+  public com.google.cloud.retail.v2.BigQuerySource.PartitionCase getPartitionCase();
 }

@@ -29,7 +29,7 @@ public interface PurgeUserEventsRequestOrBuilder
    * <pre>
    * Required. The resource name of the catalog under which the events are
    * created. The format is
-   * "projects/${projectId}/locations/global/catalogs/${catalogId}"
+   * `projects/${projectId}/locations/global/catalogs/${catalogId}`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -43,7 +43,7 @@ public interface PurgeUserEventsRequestOrBuilder
    * <pre>
    * Required. The resource name of the catalog under which the events are
    * created. The format is
-   * "projects/${projectId}/locations/global/catalogs/${catalogId}"
+   * `projects/${projectId}/locations/global/catalogs/${catalogId}`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>

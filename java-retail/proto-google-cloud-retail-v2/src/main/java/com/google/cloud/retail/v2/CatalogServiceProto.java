@@ -39,6 +39,18 @@ public final class CatalogServiceProto {
       internal_static_google_cloud_retail_v2_UpdateCatalogRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2_UpdateCatalogRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2_SetDefaultBranchRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2_SetDefaultBranchRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2_GetDefaultBranchRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2_GetDefaultBranchRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2_GetDefaultBranchResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2_GetDefaultBranchResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -64,24 +76,43 @@ public final class CatalogServiceProto {
           + "ext_page_token\030\002 \001(\t\"~\n\024UpdateCatalogReq"
           + "uest\0225\n\007catalog\030\001 \001(\0132\037.google.cloud.ret"
           + "ail.v2.CatalogB\003\340A\002\022/\n\013update_mask\030\002 \001(\013"
-          + "2\032.google.protobuf.FieldMask2\304\003\n\016Catalog"
-          + "Service\022\250\001\n\014ListCatalogs\022+.google.cloud."
-          + "retail.v2.ListCatalogsRequest\032,.google.c"
-          + "loud.retail.v2.ListCatalogsResponse\"=\202\323\344"
-          + "\223\002.\022,/v2/{parent=projects/*/locations/*}"
-          + "/catalogs\332A\006parent\022\273\001\n\rUpdateCatalog\022,.g"
-          + "oogle.cloud.retail.v2.UpdateCatalogReque"
-          + "st\032\037.google.cloud.retail.v2.Catalog\"[\202\323\344"
-          + "\223\002?24/v2/{catalog.name=projects/*/locati"
-          + "ons/*/catalogs/*}:\007catalog\332A\023catalog,upd"
-          + "ate_mask\032I\312A\025retail.googleapis.com\322A.htt"
-          + "ps://www.googleapis.com/auth/cloud-platf"
-          + "ormB\310\001\n\032com.google.cloud.retail.v2B\023Cata"
-          + "logServiceProtoP\001Z<google.golang.org/gen"
-          + "proto/googleapis/cloud/retail/v2;retail\242"
-          + "\002\006RETAIL\252\002\026Google.Cloud.Retail.V2\312\002\026Goog"
-          + "le\\Cloud\\Retail\\V2\352\002\031Google::Cloud::Reta"
-          + "il::V2b\006proto3"
+          + "2\032.google.protobuf.FieldMask\"\222\001\n\027SetDefa"
+          + "ultBranchRequest\0223\n\007catalog\030\001 \001(\tB\"\372A\037\n\035"
+          + "retail.googleapis.com/Catalog\0224\n\tbranch_"
+          + "id\030\002 \001(\tB!\372A\036\n\034retail.googleapis.com/Bra"
+          + "nch\022\014\n\004note\030\003 \001(\t\"N\n\027GetDefaultBranchReq"
+          + "uest\0223\n\007catalog\030\001 \001(\tB\"\372A\037\n\035retail.googl"
+          + "eapis.com/Catalog\"\211\001\n\030GetDefaultBranchRe"
+          + "sponse\0221\n\006branch\030\001 \001(\tB!\372A\036\n\034retail.goog"
+          + "leapis.com/Branch\022,\n\010set_time\030\002 \001(\0132\032.go"
+          + "ogle.protobuf.Timestamp\022\014\n\004note\030\003 \001(\t2\305\006"
+          + "\n\016CatalogService\022\250\001\n\014ListCatalogs\022+.goog"
+          + "le.cloud.retail.v2.ListCatalogsRequest\032,"
+          + ".google.cloud.retail.v2.ListCatalogsResp"
+          + "onse\"=\202\323\344\223\002.\022,/v2/{parent=projects/*/loc"
+          + "ations/*}/catalogs\332A\006parent\022\273\001\n\rUpdateCa"
+          + "talog\022,.google.cloud.retail.v2.UpdateCat"
+          + "alogRequest\032\037.google.cloud.retail.v2.Cat"
+          + "alog\"[\202\323\344\223\002?24/v2/{catalog.name=projects"
+          + "/*/locations/*/catalogs/*}:\007catalog\332A\023ca"
+          + "talog,update_mask\022\262\001\n\020SetDefaultBranch\022/"
+          + ".google.cloud.retail.v2.SetDefaultBranch"
+          + "Request\032\026.google.protobuf.Empty\"U\202\323\344\223\002E\""
+          + "@/v2/{catalog=projects/*/locations/*/cat"
+          + "alogs/*}:setDefaultBranch:\001*\332A\007catalog\022\311"
+          + "\001\n\020GetDefaultBranch\022/.google.cloud.retai"
+          + "l.v2.GetDefaultBranchRequest\0320.google.cl"
+          + "oud.retail.v2.GetDefaultBranchResponse\"R"
+          + "\202\323\344\223\002B\022@/v2/{catalog=projects/*/location"
+          + "s/*/catalogs/*}:getDefaultBranch\332A\007catal"
+          + "og\032I\312A\025retail.googleapis.com\322A.https://w"
+          + "ww.googleapis.com/auth/cloud-platformB\310\001"
+          + "\n\032com.google.cloud.retail.v2B\023CatalogSer"
+          + "viceProtoP\001Z<google.golang.org/genproto/"
+          + "googleapis/cloud/retail/v2;retail\242\002\006RETA"
+          + "IL\252\002\026Google.Cloud.Retail.V2\312\002\026Google\\Clo"
+          + "ud\\Retail\\V2\352\002\031Google::Cloud::Retail::V2"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -119,6 +150,30 @@ public final class CatalogServiceProto {
             internal_static_google_cloud_retail_v2_UpdateCatalogRequest_descriptor,
             new java.lang.String[] {
               "Catalog", "UpdateMask",
+            });
+    internal_static_google_cloud_retail_v2_SetDefaultBranchRequest_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_retail_v2_SetDefaultBranchRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2_SetDefaultBranchRequest_descriptor,
+            new java.lang.String[] {
+              "Catalog", "BranchId", "Note",
+            });
+    internal_static_google_cloud_retail_v2_GetDefaultBranchRequest_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_retail_v2_GetDefaultBranchRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2_GetDefaultBranchRequest_descriptor,
+            new java.lang.String[] {
+              "Catalog",
+            });
+    internal_static_google_cloud_retail_v2_GetDefaultBranchResponse_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_retail_v2_GetDefaultBranchResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2_GetDefaultBranchResponse_descriptor,
+            new java.lang.String[] {
+              "Branch", "SetTime", "Note",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

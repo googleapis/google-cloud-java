@@ -125,6 +125,15 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
    * exists, a PERMISSION_DENIED error is returned.
    * If the [Product][google.cloud.retail.v2.Product] to delete does not exist,
    * a NOT_FOUND error is returned.
+   * The [Product][google.cloud.retail.v2.Product] to delete can neither be a
+   * [Product.Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]
+   * [Product][google.cloud.retail.v2.Product] member nor a
+   * [Product.Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+   * [Product][google.cloud.retail.v2.Product] with more than one
+   * [variants][google.cloud.retail.v2.Product.Type.VARIANT]. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * All inventory information for the named
+   * [Product][google.cloud.retail.v2.Product] will be deleted.
    * </pre>
    *
    * <code>
@@ -157,6 +166,15 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
    * exists, a PERMISSION_DENIED error is returned.
    * If the [Product][google.cloud.retail.v2.Product] to delete does not exist,
    * a NOT_FOUND error is returned.
+   * The [Product][google.cloud.retail.v2.Product] to delete can neither be a
+   * [Product.Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]
+   * [Product][google.cloud.retail.v2.Product] member nor a
+   * [Product.Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+   * [Product][google.cloud.retail.v2.Product] with more than one
+   * [variants][google.cloud.retail.v2.Product.Type.VARIANT]. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * All inventory information for the named
+   * [Product][google.cloud.retail.v2.Product] will be deleted.
    * </pre>
    *
    * <code>
@@ -508,6 +526,15 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
      * exists, a PERMISSION_DENIED error is returned.
      * If the [Product][google.cloud.retail.v2.Product] to delete does not exist,
      * a NOT_FOUND error is returned.
+     * The [Product][google.cloud.retail.v2.Product] to delete can neither be a
+     * [Product.Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]
+     * [Product][google.cloud.retail.v2.Product] member nor a
+     * [Product.Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product] with more than one
+     * [variants][google.cloud.retail.v2.Product.Type.VARIANT]. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * All inventory information for the named
+     * [Product][google.cloud.retail.v2.Product] will be deleted.
      * </pre>
      *
      * <code>
@@ -539,6 +566,15 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
      * exists, a PERMISSION_DENIED error is returned.
      * If the [Product][google.cloud.retail.v2.Product] to delete does not exist,
      * a NOT_FOUND error is returned.
+     * The [Product][google.cloud.retail.v2.Product] to delete can neither be a
+     * [Product.Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]
+     * [Product][google.cloud.retail.v2.Product] member nor a
+     * [Product.Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product] with more than one
+     * [variants][google.cloud.retail.v2.Product.Type.VARIANT]. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * All inventory information for the named
+     * [Product][google.cloud.retail.v2.Product] will be deleted.
      * </pre>
      *
      * <code>
@@ -570,6 +606,15 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
      * exists, a PERMISSION_DENIED error is returned.
      * If the [Product][google.cloud.retail.v2.Product] to delete does not exist,
      * a NOT_FOUND error is returned.
+     * The [Product][google.cloud.retail.v2.Product] to delete can neither be a
+     * [Product.Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]
+     * [Product][google.cloud.retail.v2.Product] member nor a
+     * [Product.Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product] with more than one
+     * [variants][google.cloud.retail.v2.Product.Type.VARIANT]. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * All inventory information for the named
+     * [Product][google.cloud.retail.v2.Product] will be deleted.
      * </pre>
      *
      * <code>
@@ -600,6 +645,15 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
      * exists, a PERMISSION_DENIED error is returned.
      * If the [Product][google.cloud.retail.v2.Product] to delete does not exist,
      * a NOT_FOUND error is returned.
+     * The [Product][google.cloud.retail.v2.Product] to delete can neither be a
+     * [Product.Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]
+     * [Product][google.cloud.retail.v2.Product] member nor a
+     * [Product.Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product] with more than one
+     * [variants][google.cloud.retail.v2.Product.Type.VARIANT]. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * All inventory information for the named
+     * [Product][google.cloud.retail.v2.Product] will be deleted.
      * </pre>
      *
      * <code>
@@ -626,6 +680,15 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
      * exists, a PERMISSION_DENIED error is returned.
      * If the [Product][google.cloud.retail.v2.Product] to delete does not exist,
      * a NOT_FOUND error is returned.
+     * The [Product][google.cloud.retail.v2.Product] to delete can neither be a
+     * [Product.Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]
+     * [Product][google.cloud.retail.v2.Product] member nor a
+     * [Product.Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2.Product] with more than one
+     * [variants][google.cloud.retail.v2.Product.Type.VARIANT]. Otherwise, an
+     * INVALID_ARGUMENT error is returned.
+     * All inventory information for the named
+     * [Product][google.cloud.retail.v2.Product] will be deleted.
      * </pre>
      *
      * <code>

@@ -102,6 +102,27 @@ public class MockProductServiceImpl extends ProductServiceImplBase {
   }
 
   @Override
+  public void listProducts(
+      ListProductsRequest request, StreamObserver<ListProductsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListProductsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListProductsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListProducts, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListProductsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void updateProduct(
       UpdateProductRequest request, StreamObserver<Product> responseObserver) {
     Object response = responses.poll();
@@ -157,6 +178,69 @@ public class MockProductServiceImpl extends ProductServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ImportProducts, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void setInventory(
+      SetInventoryRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetInventory, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void addFulfillmentPlaces(
+      AddFulfillmentPlacesRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AddFulfillmentPlaces, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void removeFulfillmentPlaces(
+      RemoveFulfillmentPlacesRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RemoveFulfillmentPlaces, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

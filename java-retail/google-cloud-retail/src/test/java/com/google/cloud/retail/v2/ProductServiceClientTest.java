@@ -16,6 +16,8 @@
 
 package com.google.cloud.retail.v2;
 
+import static com.google.cloud.retail.v2.ProductServiceClient.ListProductsPagedResponse;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -24,6 +26,7 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
@@ -95,16 +98,32 @@ public class ProductServiceClientTest {
                     .toString())
             .setId("id3355")
             .setPrimaryProductId("primaryProductId-857339256")
+            .addAllCollectionMemberIds(new ArrayList<String>())
+            .setGtin("gtin3183314")
             .addAllCategories(new ArrayList<String>())
             .setTitle("title110371416")
+            .addAllBrands(new ArrayList<String>())
             .setDescription("description-1724546052")
+            .setLanguageCode("languageCode-2092349083")
             .putAllAttributes(new HashMap<String, CustomAttribute>())
             .addAllTags(new ArrayList<String>())
             .setPriceInfo(PriceInfo.newBuilder().build())
+            .setRating(Rating.newBuilder().build())
             .setAvailableTime(Timestamp.newBuilder().build())
             .setAvailableQuantity(Int32Value.newBuilder().build())
+            .addAllFulfillmentInfo(new ArrayList<FulfillmentInfo>())
             .setUri("uri116076")
             .addAllImages(new ArrayList<Image>())
+            .setAudience(Audience.newBuilder().build())
+            .setColorInfo(ColorInfo.newBuilder().build())
+            .addAllSizes(new ArrayList<String>())
+            .addAllMaterials(new ArrayList<String>())
+            .addAllPatterns(new ArrayList<String>())
+            .addAllConditions(new ArrayList<String>())
+            .addAllPromotions(new ArrayList<Promotion>())
+            .setPublishTime(Timestamp.newBuilder().build())
+            .setRetrievableFields(FieldMask.newBuilder().build())
+            .addAllVariants(new ArrayList<Product>())
             .build();
     mockProductService.addResponse(expectedResponse);
 
@@ -153,16 +172,32 @@ public class ProductServiceClientTest {
                     .toString())
             .setId("id3355")
             .setPrimaryProductId("primaryProductId-857339256")
+            .addAllCollectionMemberIds(new ArrayList<String>())
+            .setGtin("gtin3183314")
             .addAllCategories(new ArrayList<String>())
             .setTitle("title110371416")
+            .addAllBrands(new ArrayList<String>())
             .setDescription("description-1724546052")
+            .setLanguageCode("languageCode-2092349083")
             .putAllAttributes(new HashMap<String, CustomAttribute>())
             .addAllTags(new ArrayList<String>())
             .setPriceInfo(PriceInfo.newBuilder().build())
+            .setRating(Rating.newBuilder().build())
             .setAvailableTime(Timestamp.newBuilder().build())
             .setAvailableQuantity(Int32Value.newBuilder().build())
+            .addAllFulfillmentInfo(new ArrayList<FulfillmentInfo>())
             .setUri("uri116076")
             .addAllImages(new ArrayList<Image>())
+            .setAudience(Audience.newBuilder().build())
+            .setColorInfo(ColorInfo.newBuilder().build())
+            .addAllSizes(new ArrayList<String>())
+            .addAllMaterials(new ArrayList<String>())
+            .addAllPatterns(new ArrayList<String>())
+            .addAllConditions(new ArrayList<String>())
+            .addAllPromotions(new ArrayList<Promotion>())
+            .setPublishTime(Timestamp.newBuilder().build())
+            .setRetrievableFields(FieldMask.newBuilder().build())
+            .addAllVariants(new ArrayList<Product>())
             .build();
     mockProductService.addResponse(expectedResponse);
 
@@ -211,16 +246,32 @@ public class ProductServiceClientTest {
                     .toString())
             .setId("id3355")
             .setPrimaryProductId("primaryProductId-857339256")
+            .addAllCollectionMemberIds(new ArrayList<String>())
+            .setGtin("gtin3183314")
             .addAllCategories(new ArrayList<String>())
             .setTitle("title110371416")
+            .addAllBrands(new ArrayList<String>())
             .setDescription("description-1724546052")
+            .setLanguageCode("languageCode-2092349083")
             .putAllAttributes(new HashMap<String, CustomAttribute>())
             .addAllTags(new ArrayList<String>())
             .setPriceInfo(PriceInfo.newBuilder().build())
+            .setRating(Rating.newBuilder().build())
             .setAvailableTime(Timestamp.newBuilder().build())
             .setAvailableQuantity(Int32Value.newBuilder().build())
+            .addAllFulfillmentInfo(new ArrayList<FulfillmentInfo>())
             .setUri("uri116076")
             .addAllImages(new ArrayList<Image>())
+            .setAudience(Audience.newBuilder().build())
+            .setColorInfo(ColorInfo.newBuilder().build())
+            .addAllSizes(new ArrayList<String>())
+            .addAllMaterials(new ArrayList<String>())
+            .addAllPatterns(new ArrayList<String>())
+            .addAllConditions(new ArrayList<String>())
+            .addAllPromotions(new ArrayList<Promotion>())
+            .setPublishTime(Timestamp.newBuilder().build())
+            .setRetrievableFields(FieldMask.newBuilder().build())
+            .addAllVariants(new ArrayList<Product>())
             .build();
     mockProductService.addResponse(expectedResponse);
 
@@ -265,16 +316,32 @@ public class ProductServiceClientTest {
                     .toString())
             .setId("id3355")
             .setPrimaryProductId("primaryProductId-857339256")
+            .addAllCollectionMemberIds(new ArrayList<String>())
+            .setGtin("gtin3183314")
             .addAllCategories(new ArrayList<String>())
             .setTitle("title110371416")
+            .addAllBrands(new ArrayList<String>())
             .setDescription("description-1724546052")
+            .setLanguageCode("languageCode-2092349083")
             .putAllAttributes(new HashMap<String, CustomAttribute>())
             .addAllTags(new ArrayList<String>())
             .setPriceInfo(PriceInfo.newBuilder().build())
+            .setRating(Rating.newBuilder().build())
             .setAvailableTime(Timestamp.newBuilder().build())
             .setAvailableQuantity(Int32Value.newBuilder().build())
+            .addAllFulfillmentInfo(new ArrayList<FulfillmentInfo>())
             .setUri("uri116076")
             .addAllImages(new ArrayList<Image>())
+            .setAudience(Audience.newBuilder().build())
+            .setColorInfo(ColorInfo.newBuilder().build())
+            .addAllSizes(new ArrayList<String>())
+            .addAllMaterials(new ArrayList<String>())
+            .addAllPatterns(new ArrayList<String>())
+            .addAllConditions(new ArrayList<String>())
+            .addAllPromotions(new ArrayList<Promotion>())
+            .setPublishTime(Timestamp.newBuilder().build())
+            .setRetrievableFields(FieldMask.newBuilder().build())
+            .addAllVariants(new ArrayList<Product>())
             .build();
     mockProductService.addResponse(expectedResponse);
 
@@ -309,6 +376,94 @@ public class ProductServiceClientTest {
   }
 
   @Test
+  public void listProductsTest() throws Exception {
+    Product responsesElement = Product.newBuilder().build();
+    ListProductsResponse expectedResponse =
+        ListProductsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllProducts(Arrays.asList(responsesElement))
+            .build();
+    mockProductService.addResponse(expectedResponse);
+
+    BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]");
+
+    ListProductsPagedResponse pagedListResponse = client.listProducts(parent);
+
+    List<Product> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getProductsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockProductService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListProductsRequest actualRequest = ((ListProductsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listProductsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockProductService.addException(exception);
+
+    try {
+      BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]");
+      client.listProducts(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listProductsTest2() throws Exception {
+    Product responsesElement = Product.newBuilder().build();
+    ListProductsResponse expectedResponse =
+        ListProductsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllProducts(Arrays.asList(responsesElement))
+            .build();
+    mockProductService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListProductsPagedResponse pagedListResponse = client.listProducts(parent);
+
+    List<Product> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getProductsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockProductService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListProductsRequest actualRequest = ((ListProductsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listProductsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockProductService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listProducts(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void updateProductTest() throws Exception {
     Product expectedResponse =
         Product.newBuilder()
@@ -317,16 +472,32 @@ public class ProductServiceClientTest {
                     .toString())
             .setId("id3355")
             .setPrimaryProductId("primaryProductId-857339256")
+            .addAllCollectionMemberIds(new ArrayList<String>())
+            .setGtin("gtin3183314")
             .addAllCategories(new ArrayList<String>())
             .setTitle("title110371416")
+            .addAllBrands(new ArrayList<String>())
             .setDescription("description-1724546052")
+            .setLanguageCode("languageCode-2092349083")
             .putAllAttributes(new HashMap<String, CustomAttribute>())
             .addAllTags(new ArrayList<String>())
             .setPriceInfo(PriceInfo.newBuilder().build())
+            .setRating(Rating.newBuilder().build())
             .setAvailableTime(Timestamp.newBuilder().build())
             .setAvailableQuantity(Int32Value.newBuilder().build())
+            .addAllFulfillmentInfo(new ArrayList<FulfillmentInfo>())
             .setUri("uri116076")
             .addAllImages(new ArrayList<Image>())
+            .setAudience(Audience.newBuilder().build())
+            .setColorInfo(ColorInfo.newBuilder().build())
+            .addAllSizes(new ArrayList<String>())
+            .addAllMaterials(new ArrayList<String>())
+            .addAllPatterns(new ArrayList<String>())
+            .addAllConditions(new ArrayList<String>())
+            .addAllPromotions(new ArrayList<Promotion>())
+            .setPublishTime(Timestamp.newBuilder().build())
+            .setRetrievableFields(FieldMask.newBuilder().build())
+            .addAllVariants(new ArrayList<Product>())
             .build();
     mockProductService.addResponse(expectedResponse);
 
@@ -450,10 +621,12 @@ public class ProductServiceClientTest {
 
     ImportProductsRequest request =
         ImportProductsRequest.newBuilder()
-            .setParent("parent-995424086")
+            .setParent(BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+            .setRequestId("requestId693933066")
             .setInputConfig(ProductInputConfig.newBuilder().build())
             .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
+            .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .build();
 
     ImportProductsResponse actualResponse = client.importProductsAsync(request).get();
@@ -464,9 +637,13 @@ public class ProductServiceClientTest {
     ImportProductsRequest actualRequest = ((ImportProductsRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getRequestId(), actualRequest.getRequestId());
     Assert.assertEquals(request.getInputConfig(), actualRequest.getInputConfig());
     Assert.assertEquals(request.getErrorsConfig(), actualRequest.getErrorsConfig());
     Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    Assert.assertEquals(request.getReconciliationMode(), actualRequest.getReconciliationMode());
+    Assert.assertEquals(
+        request.getNotificationPubsubTopic(), actualRequest.getNotificationPubsubTopic());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -481,12 +658,247 @@ public class ProductServiceClientTest {
     try {
       ImportProductsRequest request =
           ImportProductsRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(
+                  BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+              .setRequestId("requestId693933066")
               .setInputConfig(ProductInputConfig.newBuilder().build())
               .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
+              .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
               .build();
       client.importProductsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void setInventoryTest() throws Exception {
+    SetInventoryResponse expectedResponse = SetInventoryResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("setInventoryTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockProductService.addResponse(resultOperation);
+
+    Product inventory = Product.newBuilder().build();
+    FieldMask setMask = FieldMask.newBuilder().build();
+
+    SetInventoryResponse actualResponse = client.setInventoryAsync(inventory, setMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockProductService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetInventoryRequest actualRequest = ((SetInventoryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(inventory, actualRequest.getInventory());
+    Assert.assertEquals(setMask, actualRequest.getSetMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setInventoryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockProductService.addException(exception);
+
+    try {
+      Product inventory = Product.newBuilder().build();
+      FieldMask setMask = FieldMask.newBuilder().build();
+      client.setInventoryAsync(inventory, setMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void addFulfillmentPlacesTest() throws Exception {
+    AddFulfillmentPlacesResponse expectedResponse =
+        AddFulfillmentPlacesResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("addFulfillmentPlacesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockProductService.addResponse(resultOperation);
+
+    ProductName product =
+        ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]");
+
+    AddFulfillmentPlacesResponse actualResponse = client.addFulfillmentPlacesAsync(product).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockProductService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AddFulfillmentPlacesRequest actualRequest =
+        ((AddFulfillmentPlacesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(product.toString(), actualRequest.getProduct());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void addFulfillmentPlacesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockProductService.addException(exception);
+
+    try {
+      ProductName product =
+          ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]");
+      client.addFulfillmentPlacesAsync(product).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void addFulfillmentPlacesTest2() throws Exception {
+    AddFulfillmentPlacesResponse expectedResponse =
+        AddFulfillmentPlacesResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("addFulfillmentPlacesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockProductService.addResponse(resultOperation);
+
+    String product = "product-309474065";
+
+    AddFulfillmentPlacesResponse actualResponse = client.addFulfillmentPlacesAsync(product).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockProductService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AddFulfillmentPlacesRequest actualRequest =
+        ((AddFulfillmentPlacesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(product, actualRequest.getProduct());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void addFulfillmentPlacesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockProductService.addException(exception);
+
+    try {
+      String product = "product-309474065";
+      client.addFulfillmentPlacesAsync(product).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void removeFulfillmentPlacesTest() throws Exception {
+    RemoveFulfillmentPlacesResponse expectedResponse =
+        RemoveFulfillmentPlacesResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("removeFulfillmentPlacesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockProductService.addResponse(resultOperation);
+
+    ProductName product =
+        ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]");
+
+    RemoveFulfillmentPlacesResponse actualResponse =
+        client.removeFulfillmentPlacesAsync(product).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockProductService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RemoveFulfillmentPlacesRequest actualRequest =
+        ((RemoveFulfillmentPlacesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(product.toString(), actualRequest.getProduct());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void removeFulfillmentPlacesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockProductService.addException(exception);
+
+    try {
+      ProductName product =
+          ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]");
+      client.removeFulfillmentPlacesAsync(product).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void removeFulfillmentPlacesTest2() throws Exception {
+    RemoveFulfillmentPlacesResponse expectedResponse =
+        RemoveFulfillmentPlacesResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("removeFulfillmentPlacesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockProductService.addResponse(resultOperation);
+
+    String product = "product-309474065";
+
+    RemoveFulfillmentPlacesResponse actualResponse =
+        client.removeFulfillmentPlacesAsync(product).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockProductService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RemoveFulfillmentPlacesRequest actualRequest =
+        ((RemoveFulfillmentPlacesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(product, actualRequest.getProduct());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void removeFulfillmentPlacesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockProductService.addException(exception);
+
+    try {
+      String product = "product-309474065";
+      client.removeFulfillmentPlacesAsync(product).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

@@ -16,18 +16,27 @@
 
 package com.google.cloud.retail.v2;
 
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2.stub.ProductServiceStub;
 import com.google.cloud.retail.v2.stub.ProductServiceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -400,6 +409,162 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Gets a list of [Product][google.cloud.retail.v2.Product]s.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]");
+   *   for (Product element : productServiceClient.listProducts(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent branch resource name, such as
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/0`. Use `default_branch`
+   *     as the branch ID, to list products under the default branch.
+   *     <p>If the caller does not have permission to list
+   *     [Product][google.cloud.retail.v2.Product]s under this branch, regardless of whether or not
+   *     this branch exists, a PERMISSION_DENIED error is returned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProductsPagedResponse listProducts(BranchName parent) {
+    ListProductsRequest request =
+        ListProductsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listProducts(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a list of [Product][google.cloud.retail.v2.Product]s.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   String parent = BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString();
+   *   for (Product element : productServiceClient.listProducts(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent branch resource name, such as
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/0`. Use `default_branch`
+   *     as the branch ID, to list products under the default branch.
+   *     <p>If the caller does not have permission to list
+   *     [Product][google.cloud.retail.v2.Product]s under this branch, regardless of whether or not
+   *     this branch exists, a PERMISSION_DENIED error is returned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProductsPagedResponse listProducts(String parent) {
+    ListProductsRequest request = ListProductsRequest.newBuilder().setParent(parent).build();
+    return listProducts(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a list of [Product][google.cloud.retail.v2.Product]s.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   ListProductsRequest request =
+   *       ListProductsRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   for (Product element : productServiceClient.listProducts(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProductsPagedResponse listProducts(ListProductsRequest request) {
+    return listProductsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a list of [Product][google.cloud.retail.v2.Product]s.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   ListProductsRequest request =
+   *       ListProductsRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Product> future =
+   *       productServiceClient.listProductsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Product element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListProductsRequest, ListProductsPagedResponse>
+      listProductsPagedCallable() {
+    return stub.listProductsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a list of [Product][google.cloud.retail.v2.Product]s.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   ListProductsRequest request =
+   *       ListProductsRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   while (true) {
+   *     ListProductsResponse response = productServiceClient.listProductsCallable().call(request);
+   *     for (Product element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListProductsRequest, ListProductsResponse> listProductsCallable() {
+    return stub.listProductsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Updates a [Product][google.cloud.retail.v2.Product].
    *
    * <p>Sample code:
@@ -416,8 +581,9 @@ public class ProductServiceClient implements BackgroundResource {
    *     <p>If the caller does not have permission to update the
    *     [Product][google.cloud.retail.v2.Product], regardless of whether or not it exists, a
    *     PERMISSION_DENIED error is returned.
-   *     <p>If the [Product][google.cloud.retail.v2.Product] to update does not exist, a NOT_FOUND
-   *     error is returned.
+   *     <p>If the [Product][google.cloud.retail.v2.Product] to update does not exist and
+   *     [allow_missing][google.cloud.retail.v2.UpdateProductRequest.allow_missing] is not set, a
+   *     NOT_FOUND error is returned.
    * @param updateMask Indicates which fields in the provided
    *     [Product][google.cloud.retail.v2.Product] to update. The immutable and output only fields
    *     are NOT supported. If not set, all supported fields (the fields that are neither immutable
@@ -443,6 +609,7 @@ public class ProductServiceClient implements BackgroundResource {
    *       UpdateProductRequest.newBuilder()
    *           .setProduct(Product.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAllowMissing(true)
    *           .build();
    *   Product response = productServiceClient.updateProduct(request);
    * }
@@ -467,6 +634,7 @@ public class ProductServiceClient implements BackgroundResource {
    *       UpdateProductRequest.newBuilder()
    *           .setProduct(Product.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAllowMissing(true)
    *           .build();
    *   ApiFuture<Product> future = productServiceClient.updateProductCallable().futureCall(request);
    *   // Do something.
@@ -499,6 +667,15 @@ public class ProductServiceClient implements BackgroundResource {
    *     PERMISSION_DENIED error is returned.
    *     <p>If the [Product][google.cloud.retail.v2.Product] to delete does not exist, a NOT_FOUND
    *     error is returned.
+   *     <p>The [Product][google.cloud.retail.v2.Product] to delete can neither be a
+   *     [Product.Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]
+   *     [Product][google.cloud.retail.v2.Product] member nor a
+   *     [Product.Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+   *     [Product][google.cloud.retail.v2.Product] with more than one
+   *     [variants][google.cloud.retail.v2.Product.Type.VARIANT]. Otherwise, an INVALID_ARGUMENT
+   *     error is returned.
+   *     <p>All inventory information for the named [Product][google.cloud.retail.v2.Product] will
+   *     be deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteProduct(ProductName name) {
@@ -529,6 +706,15 @@ public class ProductServiceClient implements BackgroundResource {
    *     PERMISSION_DENIED error is returned.
    *     <p>If the [Product][google.cloud.retail.v2.Product] to delete does not exist, a NOT_FOUND
    *     error is returned.
+   *     <p>The [Product][google.cloud.retail.v2.Product] to delete can neither be a
+   *     [Product.Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION]
+   *     [Product][google.cloud.retail.v2.Product] member nor a
+   *     [Product.Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+   *     [Product][google.cloud.retail.v2.Product] with more than one
+   *     [variants][google.cloud.retail.v2.Product.Type.VARIANT]. Otherwise, an INVALID_ARGUMENT
+   *     error is returned.
+   *     <p>All inventory information for the named [Product][google.cloud.retail.v2.Product] will
+   *     be deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteProduct(String name) {
@@ -601,10 +787,13 @@ public class ProductServiceClient implements BackgroundResource {
    * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
    *   ImportProductsRequest request =
    *       ImportProductsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setRequestId("requestId693933066")
    *           .setInputConfig(ProductInputConfig.newBuilder().build())
    *           .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
    *           .build();
    *   ImportProductsResponse response = productServiceClient.importProductsAsync(request).get();
    * }
@@ -634,10 +823,13 @@ public class ProductServiceClient implements BackgroundResource {
    * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
    *   ImportProductsRequest request =
    *       ImportProductsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setRequestId("requestId693933066")
    *           .setInputConfig(ProductInputConfig.newBuilder().build())
    *           .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
    *           .build();
    *   OperationFuture<ImportProductsResponse, ImportMetadata> future =
    *       productServiceClient.importProductsOperationCallable().futureCall(request);
@@ -667,10 +859,13 @@ public class ProductServiceClient implements BackgroundResource {
    * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
    *   ImportProductsRequest request =
    *       ImportProductsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setRequestId("requestId693933066")
    *           .setInputConfig(ProductInputConfig.newBuilder().build())
    *           .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
    *           .build();
    *   ApiFuture<Operation> future =
    *       productServiceClient.importProductsCallable().futureCall(request);
@@ -681,6 +876,723 @@ public class ProductServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ImportProductsRequest, Operation> importProductsCallable() {
     return stub.importProductsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates inventory information for a [Product][google.cloud.retail.v2.Product] while respecting
+   * the last update timestamps of each inventory field.
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, updates are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>When inventory is updated with
+   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct], the specified inventory
+   * field value(s) will overwrite any existing value(s) while ignoring the last update time for
+   * this field. Furthermore, the last update time for the specified inventory fields will be
+   * overwritten to the time of the
+   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] or
+   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] request.
+   *
+   * <p>If no inventory fields are set in
+   * [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product], then any
+   * pre-existing inventory information for this product will be used.
+   *
+   * <p>If no inventory fields are set in [UpdateProductRequest.set_mask][], then any existing
+   * inventory information will be preserved.
+   *
+   * <p>Pre-existing inventory information can only be updated with
+   * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
+   * [AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces], and
+   * [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   Product inventory = Product.newBuilder().build();
+   *   FieldMask setMask = FieldMask.newBuilder().build();
+   *   SetInventoryResponse response =
+   *       productServiceClient.setInventoryAsync(inventory, setMask).get();
+   * }
+   * }</pre>
+   *
+   * @param inventory Required. The inventory information to update. The allowable fields to update
+   *     are:
+   *     <ul>
+   *       <li>[Product.price_info][google.cloud.retail.v2.Product.price_info]
+   *       <li>[Product.availability][google.cloud.retail.v2.Product.availability]
+   *       <li>[Product.available_quantity][google.cloud.retail.v2.Product.available_quantity]
+   *       <li>[Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info] The
+   *           updated inventory fields must be specified in
+   *           [SetInventoryRequest.set_mask][google.cloud.retail.v2.SetInventoryRequest.set_mask].
+   *     </ul>
+   *     <p>If [SetInventoryRequest.inventory.name][] is empty or invalid, an INVALID_ARGUMENT error
+   *     is returned.
+   *     <p>If the caller does not have permission to update the
+   *     [Product][google.cloud.retail.v2.Product] named in
+   *     [Product.name][google.cloud.retail.v2.Product.name], regardless of whether or not it
+   *     exists, a PERMISSION_DENIED error is returned.
+   *     <p>If the [Product][google.cloud.retail.v2.Product] to update does not have existing
+   *     inventory information, the provided inventory information will be inserted.
+   *     <p>If the [Product][google.cloud.retail.v2.Product] to update has existing inventory
+   *     information, the provided inventory information will be merged while respecting the last
+   *     update time for each inventory field, using the provided or default value for
+   *     [SetInventoryRequest.set_time][google.cloud.retail.v2.SetInventoryRequest.set_time].
+   *     <p>The last update time is recorded for the following inventory fields:
+   *     <ul>
+   *       <li>[Product.price_info][google.cloud.retail.v2.Product.price_info]
+   *       <li>[Product.availability][google.cloud.retail.v2.Product.availability]
+   *       <li>[Product.available_quantity][google.cloud.retail.v2.Product.available_quantity]
+   *       <li>[Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info]
+   *     </ul>
+   *     <p>If a full overwrite of inventory information while ignoring timestamps is needed,
+   *     [UpdateProduct][] should be invoked instead.
+   * @param setMask Indicates which inventory fields in the provided
+   *     [Product][google.cloud.retail.v2.Product] to update. If not set or set with empty paths,
+   *     all inventory fields will be updated.
+   *     <p>If an unsupported or unknown field is provided, an INVALID_ARGUMENT error is returned
+   *     and the entire update will be ignored.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SetInventoryResponse, SetInventoryMetadata> setInventoryAsync(
+      Product inventory, FieldMask setMask) {
+    SetInventoryRequest request =
+        SetInventoryRequest.newBuilder().setInventory(inventory).setSetMask(setMask).build();
+    return setInventoryAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates inventory information for a [Product][google.cloud.retail.v2.Product] while respecting
+   * the last update timestamps of each inventory field.
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, updates are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>When inventory is updated with
+   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct], the specified inventory
+   * field value(s) will overwrite any existing value(s) while ignoring the last update time for
+   * this field. Furthermore, the last update time for the specified inventory fields will be
+   * overwritten to the time of the
+   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] or
+   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] request.
+   *
+   * <p>If no inventory fields are set in
+   * [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product], then any
+   * pre-existing inventory information for this product will be used.
+   *
+   * <p>If no inventory fields are set in [UpdateProductRequest.set_mask][], then any existing
+   * inventory information will be preserved.
+   *
+   * <p>Pre-existing inventory information can only be updated with
+   * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
+   * [AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces], and
+   * [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   SetInventoryRequest request =
+   *       SetInventoryRequest.newBuilder()
+   *           .setInventory(Product.newBuilder().build())
+   *           .setSetMask(FieldMask.newBuilder().build())
+   *           .setSetTime(Timestamp.newBuilder().build())
+   *           .setAllowMissing(true)
+   *           .build();
+   *   SetInventoryResponse response = productServiceClient.setInventoryAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SetInventoryResponse, SetInventoryMetadata> setInventoryAsync(
+      SetInventoryRequest request) {
+    return setInventoryOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates inventory information for a [Product][google.cloud.retail.v2.Product] while respecting
+   * the last update timestamps of each inventory field.
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, updates are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>When inventory is updated with
+   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct], the specified inventory
+   * field value(s) will overwrite any existing value(s) while ignoring the last update time for
+   * this field. Furthermore, the last update time for the specified inventory fields will be
+   * overwritten to the time of the
+   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] or
+   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] request.
+   *
+   * <p>If no inventory fields are set in
+   * [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product], then any
+   * pre-existing inventory information for this product will be used.
+   *
+   * <p>If no inventory fields are set in [UpdateProductRequest.set_mask][], then any existing
+   * inventory information will be preserved.
+   *
+   * <p>Pre-existing inventory information can only be updated with
+   * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
+   * [AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces], and
+   * [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   SetInventoryRequest request =
+   *       SetInventoryRequest.newBuilder()
+   *           .setInventory(Product.newBuilder().build())
+   *           .setSetMask(FieldMask.newBuilder().build())
+   *           .setSetTime(Timestamp.newBuilder().build())
+   *           .setAllowMissing(true)
+   *           .build();
+   *   OperationFuture<SetInventoryResponse, SetInventoryMetadata> future =
+   *       productServiceClient.setInventoryOperationCallable().futureCall(request);
+   *   // Do something.
+   *   SetInventoryResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetInventoryRequest, SetInventoryResponse, SetInventoryMetadata>
+      setInventoryOperationCallable() {
+    return stub.setInventoryOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates inventory information for a [Product][google.cloud.retail.v2.Product] while respecting
+   * the last update timestamps of each inventory field.
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, updates are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>When inventory is updated with
+   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct], the specified inventory
+   * field value(s) will overwrite any existing value(s) while ignoring the last update time for
+   * this field. Furthermore, the last update time for the specified inventory fields will be
+   * overwritten to the time of the
+   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] or
+   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] request.
+   *
+   * <p>If no inventory fields are set in
+   * [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product], then any
+   * pre-existing inventory information for this product will be used.
+   *
+   * <p>If no inventory fields are set in [UpdateProductRequest.set_mask][], then any existing
+   * inventory information will be preserved.
+   *
+   * <p>Pre-existing inventory information can only be updated with
+   * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
+   * [AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces], and
+   * [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   SetInventoryRequest request =
+   *       SetInventoryRequest.newBuilder()
+   *           .setInventory(Product.newBuilder().build())
+   *           .setSetMask(FieldMask.newBuilder().build())
+   *           .setSetTime(Timestamp.newBuilder().build())
+   *           .setAllowMissing(true)
+   *           .build();
+   *   ApiFuture<Operation> future = productServiceClient.setInventoryCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetInventoryRequest, Operation> setInventoryCallable() {
+    return stub.setInventoryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incrementally adds place IDs to
+   * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, the added place IDs are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   ProductName product =
+   *       ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]");
+   *   AddFulfillmentPlacesResponse response =
+   *       productServiceClient.addFulfillmentPlacesAsync(product).get();
+   * }
+   * }</pre>
+   *
+   * @param product Required. Full resource name of [Product][google.cloud.retail.v2.Product], such
+   *     as
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *     <p>If the caller does not have permission to access the
+   *     [Product][google.cloud.retail.v2.Product], regardless of whether or not it exists, a
+   *     PERMISSION_DENIED error is returned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AddFulfillmentPlacesResponse, AddFulfillmentPlacesMetadata>
+      addFulfillmentPlacesAsync(ProductName product) {
+    AddFulfillmentPlacesRequest request =
+        AddFulfillmentPlacesRequest.newBuilder()
+            .setProduct(product == null ? null : product.toString())
+            .build();
+    return addFulfillmentPlacesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incrementally adds place IDs to
+   * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, the added place IDs are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   String product =
+   *       ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *           .toString();
+   *   AddFulfillmentPlacesResponse response =
+   *       productServiceClient.addFulfillmentPlacesAsync(product).get();
+   * }
+   * }</pre>
+   *
+   * @param product Required. Full resource name of [Product][google.cloud.retail.v2.Product], such
+   *     as
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *     <p>If the caller does not have permission to access the
+   *     [Product][google.cloud.retail.v2.Product], regardless of whether or not it exists, a
+   *     PERMISSION_DENIED error is returned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AddFulfillmentPlacesResponse, AddFulfillmentPlacesMetadata>
+      addFulfillmentPlacesAsync(String product) {
+    AddFulfillmentPlacesRequest request =
+        AddFulfillmentPlacesRequest.newBuilder().setProduct(product).build();
+    return addFulfillmentPlacesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incrementally adds place IDs to
+   * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, the added place IDs are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   AddFulfillmentPlacesRequest request =
+   *       AddFulfillmentPlacesRequest.newBuilder()
+   *           .setProduct(
+   *               ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *                   .toString())
+   *           .setType("type3575610")
+   *           .addAllPlaceIds(new ArrayList<String>())
+   *           .setAddTime(Timestamp.newBuilder().build())
+   *           .setAllowMissing(true)
+   *           .build();
+   *   AddFulfillmentPlacesResponse response =
+   *       productServiceClient.addFulfillmentPlacesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AddFulfillmentPlacesResponse, AddFulfillmentPlacesMetadata>
+      addFulfillmentPlacesAsync(AddFulfillmentPlacesRequest request) {
+    return addFulfillmentPlacesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incrementally adds place IDs to
+   * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, the added place IDs are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   AddFulfillmentPlacesRequest request =
+   *       AddFulfillmentPlacesRequest.newBuilder()
+   *           .setProduct(
+   *               ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *                   .toString())
+   *           .setType("type3575610")
+   *           .addAllPlaceIds(new ArrayList<String>())
+   *           .setAddTime(Timestamp.newBuilder().build())
+   *           .setAllowMissing(true)
+   *           .build();
+   *   OperationFuture<AddFulfillmentPlacesResponse, AddFulfillmentPlacesMetadata> future =
+   *       productServiceClient.addFulfillmentPlacesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AddFulfillmentPlacesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          AddFulfillmentPlacesRequest, AddFulfillmentPlacesResponse, AddFulfillmentPlacesMetadata>
+      addFulfillmentPlacesOperationCallable() {
+    return stub.addFulfillmentPlacesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incrementally adds place IDs to
+   * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, the added place IDs are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   AddFulfillmentPlacesRequest request =
+   *       AddFulfillmentPlacesRequest.newBuilder()
+   *           .setProduct(
+   *               ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *                   .toString())
+   *           .setType("type3575610")
+   *           .addAllPlaceIds(new ArrayList<String>())
+   *           .setAddTime(Timestamp.newBuilder().build())
+   *           .setAllowMissing(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       productServiceClient.addFulfillmentPlacesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AddFulfillmentPlacesRequest, Operation>
+      addFulfillmentPlacesCallable() {
+    return stub.addFulfillmentPlacesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incrementally removes place IDs from a
+   * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, the removed place IDs are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   ProductName product =
+   *       ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]");
+   *   RemoveFulfillmentPlacesResponse response =
+   *       productServiceClient.removeFulfillmentPlacesAsync(product).get();
+   * }
+   * }</pre>
+   *
+   * @param product Required. Full resource name of [Product][google.cloud.retail.v2.Product], such
+   *     as
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *     <p>If the caller does not have permission to access the
+   *     [Product][google.cloud.retail.v2.Product], regardless of whether or not it exists, a
+   *     PERMISSION_DENIED error is returned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RemoveFulfillmentPlacesResponse, RemoveFulfillmentPlacesMetadata>
+      removeFulfillmentPlacesAsync(ProductName product) {
+    RemoveFulfillmentPlacesRequest request =
+        RemoveFulfillmentPlacesRequest.newBuilder()
+            .setProduct(product == null ? null : product.toString())
+            .build();
+    return removeFulfillmentPlacesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incrementally removes place IDs from a
+   * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, the removed place IDs are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   String product =
+   *       ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *           .toString();
+   *   RemoveFulfillmentPlacesResponse response =
+   *       productServiceClient.removeFulfillmentPlacesAsync(product).get();
+   * }
+   * }</pre>
+   *
+   * @param product Required. Full resource name of [Product][google.cloud.retail.v2.Product], such
+   *     as
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *     <p>If the caller does not have permission to access the
+   *     [Product][google.cloud.retail.v2.Product], regardless of whether or not it exists, a
+   *     PERMISSION_DENIED error is returned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RemoveFulfillmentPlacesResponse, RemoveFulfillmentPlacesMetadata>
+      removeFulfillmentPlacesAsync(String product) {
+    RemoveFulfillmentPlacesRequest request =
+        RemoveFulfillmentPlacesRequest.newBuilder().setProduct(product).build();
+    return removeFulfillmentPlacesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incrementally removes place IDs from a
+   * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, the removed place IDs are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   RemoveFulfillmentPlacesRequest request =
+   *       RemoveFulfillmentPlacesRequest.newBuilder()
+   *           .setProduct(
+   *               ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *                   .toString())
+   *           .setType("type3575610")
+   *           .addAllPlaceIds(new ArrayList<String>())
+   *           .setRemoveTime(Timestamp.newBuilder().build())
+   *           .setAllowMissing(true)
+   *           .build();
+   *   RemoveFulfillmentPlacesResponse response =
+   *       productServiceClient.removeFulfillmentPlacesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RemoveFulfillmentPlacesResponse, RemoveFulfillmentPlacesMetadata>
+      removeFulfillmentPlacesAsync(RemoveFulfillmentPlacesRequest request) {
+    return removeFulfillmentPlacesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incrementally removes place IDs from a
+   * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, the removed place IDs are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   RemoveFulfillmentPlacesRequest request =
+   *       RemoveFulfillmentPlacesRequest.newBuilder()
+   *           .setProduct(
+   *               ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *                   .toString())
+   *           .setType("type3575610")
+   *           .addAllPlaceIds(new ArrayList<String>())
+   *           .setRemoveTime(Timestamp.newBuilder().build())
+   *           .setAllowMissing(true)
+   *           .build();
+   *   OperationFuture<RemoveFulfillmentPlacesResponse, RemoveFulfillmentPlacesMetadata> future =
+   *       productServiceClient.removeFulfillmentPlacesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RemoveFulfillmentPlacesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RemoveFulfillmentPlacesRequest,
+          RemoveFulfillmentPlacesResponse,
+          RemoveFulfillmentPlacesMetadata>
+      removeFulfillmentPlacesOperationCallable() {
+    return stub.removeFulfillmentPlacesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Incrementally removes place IDs from a
+   * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, the removed place IDs are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
+   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
+   * Search.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   RemoveFulfillmentPlacesRequest request =
+   *       RemoveFulfillmentPlacesRequest.newBuilder()
+   *           .setProduct(
+   *               ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *                   .toString())
+   *           .setType("type3575610")
+   *           .addAllPlaceIds(new ArrayList<String>())
+   *           .setRemoveTime(Timestamp.newBuilder().build())
+   *           .setAllowMissing(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       productServiceClient.removeFulfillmentPlacesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RemoveFulfillmentPlacesRequest, Operation>
+      removeFulfillmentPlacesCallable() {
+    return stub.removeFulfillmentPlacesCallable();
   }
 
   @Override
@@ -711,5 +1623,85 @@ public class ProductServiceClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListProductsPagedResponse
+      extends AbstractPagedListResponse<
+          ListProductsRequest,
+          ListProductsResponse,
+          Product,
+          ListProductsPage,
+          ListProductsFixedSizeCollection> {
+
+    public static ApiFuture<ListProductsPagedResponse> createAsync(
+        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        ApiFuture<ListProductsResponse> futureResponse) {
+      ApiFuture<ListProductsPage> futurePage =
+          ListProductsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListProductsPage, ListProductsPagedResponse>() {
+            @Override
+            public ListProductsPagedResponse apply(ListProductsPage input) {
+              return new ListProductsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListProductsPagedResponse(ListProductsPage page) {
+      super(page, ListProductsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListProductsPage
+      extends AbstractPage<ListProductsRequest, ListProductsResponse, Product, ListProductsPage> {
+
+    private ListProductsPage(
+        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        ListProductsResponse response) {
+      super(context, response);
+    }
+
+    private static ListProductsPage createEmptyPage() {
+      return new ListProductsPage(null, null);
+    }
+
+    @Override
+    protected ListProductsPage createPage(
+        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        ListProductsResponse response) {
+      return new ListProductsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListProductsPage> createPageAsync(
+        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        ApiFuture<ListProductsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListProductsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListProductsRequest,
+          ListProductsResponse,
+          Product,
+          ListProductsPage,
+          ListProductsFixedSizeCollection> {
+
+    private ListProductsFixedSizeCollection(List<ListProductsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListProductsFixedSizeCollection createEmptyCollection() {
+      return new ListProductsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListProductsFixedSizeCollection createCollection(
+        List<ListProductsPage> pages, int collectionSize) {
+      return new ListProductsFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

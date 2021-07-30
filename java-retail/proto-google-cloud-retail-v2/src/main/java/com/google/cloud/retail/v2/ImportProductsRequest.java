@@ -39,6 +39,9 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
 
   private ImportProductsRequest() {
     parent_ = "";
+    requestId_ = "";
+    reconciliationMode_ = 0;
+    notificationPubsubTopic_ = "";
   }
 
   @java.lang.Override
@@ -124,6 +127,27 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
 
               break;
             }
+          case 40:
+            {
+              int rawValue = input.readEnum();
+
+              reconciliationMode_ = rawValue;
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestId_ = s;
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              notificationPubsubTopic_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -158,6 +182,185 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.retail.v2.ImportProductsRequest.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Indicates how imported products are reconciled with the existing products
+   * created or imported before.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode}
+   */
+  public enum ReconciliationMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Defaults to INCREMENTAL.
+     * </pre>
+     *
+     * <code>RECONCILIATION_MODE_UNSPECIFIED = 0;</code>
+     */
+    RECONCILIATION_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Inserts new products or updates existing products.
+     * </pre>
+     *
+     * <code>INCREMENTAL = 1;</code>
+     */
+    INCREMENTAL(1),
+    /**
+     *
+     *
+     * <pre>
+     * Calculates diff and replaces the entire product dataset. Existing
+     * products may be deleted if they are not present in the source location.
+     * Can only be while using
+     * [BigQuerySource][google.cloud.retail.v2.BigQuerySource].
+     * Add the IAM permission “BigQuery Data Viewer” for
+     * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
+     * using this feature otherwise an error is thrown.
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     *
+     * <code>FULL = 2;</code>
+     */
+    FULL(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Defaults to INCREMENTAL.
+     * </pre>
+     *
+     * <code>RECONCILIATION_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int RECONCILIATION_MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Inserts new products or updates existing products.
+     * </pre>
+     *
+     * <code>INCREMENTAL = 1;</code>
+     */
+    public static final int INCREMENTAL_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Calculates diff and replaces the entire product dataset. Existing
+     * products may be deleted if they are not present in the source location.
+     * Can only be while using
+     * [BigQuerySource][google.cloud.retail.v2.BigQuerySource].
+     * Add the IAM permission “BigQuery Data Viewer” for
+     * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
+     * using this feature otherwise an error is thrown.
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     *
+     * <code>FULL = 2;</code>
+     */
+    public static final int FULL_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ReconciliationMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ReconciliationMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return RECONCILIATION_MODE_UNSPECIFIED;
+        case 1:
+          return INCREMENTAL;
+        case 2:
+          return FULL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ReconciliationMode>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ReconciliationMode>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ReconciliationMode>() {
+              public ReconciliationMode findValueByNumber(int number) {
+                return ReconciliationMode.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.retail.v2.ImportProductsRequest.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ReconciliationMode[] VALUES = values();
+
+    public static ReconciliationMode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ReconciliationMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode)
+  }
+
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -170,7 +373,9 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
    * If updateMask is specified, requires products.update permission.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -196,7 +401,9 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
    * If updateMask is specified, requires products.update permission.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -207,6 +414,69 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REQUEST_ID_FIELD_NUMBER = 6;
+  private volatile java.lang.Object requestId_;
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier provided by client, within the ancestor
+   * dataset scope. Ensures idempotency and used for request deduplication.
+   * Server-generated if unspecified. Up to 128 characters long and must match
+   * the pattern: "[a-zA-Z0-9_]+". This is returned as [Operation.name][] in
+   * [ImportMetadata][google.cloud.retail.v2.ImportMetadata].
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
+   * </pre>
+   *
+   * <code>string request_id = 6;</code>
+   *
+   * @return The requestId.
+   */
+  @java.lang.Override
+  public java.lang.String getRequestId() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier provided by client, within the ancestor
+   * dataset scope. Ensures idempotency and used for request deduplication.
+   * Server-generated if unspecified. Up to 128 characters long and must match
+   * the pattern: "[a-zA-Z0-9_]+". This is returned as [Operation.name][] in
+   * [ImportMetadata][google.cloud.retail.v2.ImportMetadata].
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
+   * </pre>
+   *
+   * <code>string request_id = 6;</code>
+   *
+   * @return The bytes for requestId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRequestIdBytes() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      requestId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -364,6 +634,115 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     return getUpdateMask();
   }
 
+  public static final int RECONCILIATION_MODE_FIELD_NUMBER = 5;
+  private int reconciliationMode_;
+  /**
+   *
+   *
+   * <pre>
+   * The mode of reconciliation between existing products and the products to be
+   * imported. Defaults to
+   * [ReconciliationMode.INCREMENTAL][google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode.INCREMENTAL].
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode reconciliation_mode = 5;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for reconciliationMode.
+   */
+  @java.lang.Override
+  public int getReconciliationModeValue() {
+    return reconciliationMode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The mode of reconciliation between existing products and the products to be
+   * imported. Defaults to
+   * [ReconciliationMode.INCREMENTAL][google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode.INCREMENTAL].
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode reconciliation_mode = 5;
+   * </code>
+   *
+   * @return The reconciliationMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode
+      getReconciliationMode() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode result =
+        com.google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode.valueOf(
+            reconciliationMode_);
+    return result == null
+        ? com.google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int NOTIFICATION_PUBSUB_TOPIC_FIELD_NUMBER = 7;
+  private volatile java.lang.Object notificationPubsubTopic_;
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic for receiving notification. If this field is set,
+   * when the import is finished, a notification will be sent to
+   * specified Pub/Sub topic. The message data will be JSON string of a
+   * [Operation][google.longrunning.Operation].
+   * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
+   * </pre>
+   *
+   * <code>string notification_pubsub_topic = 7;</code>
+   *
+   * @return The notificationPubsubTopic.
+   */
+  @java.lang.Override
+  public java.lang.String getNotificationPubsubTopic() {
+    java.lang.Object ref = notificationPubsubTopic_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      notificationPubsubTopic_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic for receiving notification. If this field is set,
+   * when the import is finished, a notification will be sent to
+   * specified Pub/Sub topic. The message data will be JSON string of a
+   * [Operation][google.longrunning.Operation].
+   * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
+   * </pre>
+   *
+   * <code>string notification_pubsub_topic = 7;</code>
+   *
+   * @return The bytes for notificationPubsubTopic.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNotificationPubsubTopicBytes() {
+    java.lang.Object ref = notificationPubsubTopic_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      notificationPubsubTopic_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -390,6 +769,18 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     if (updateMask_ != null) {
       output.writeMessage(4, getUpdateMask());
     }
+    if (reconciliationMode_
+        != com.google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode
+            .RECONCILIATION_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(5, reconciliationMode_);
+    }
+    if (!getRequestIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, requestId_);
+    }
+    if (!getNotificationPubsubTopicBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, notificationPubsubTopic_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -411,6 +802,18 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     if (updateMask_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUpdateMask());
     }
+    if (reconciliationMode_
+        != com.google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode
+            .RECONCILIATION_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, reconciliationMode_);
+    }
+    if (!getRequestIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, requestId_);
+    }
+    if (!getNotificationPubsubTopicBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, notificationPubsubTopic_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -428,6 +831,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         (com.google.cloud.retail.v2.ImportProductsRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
+    if (!getRequestId().equals(other.getRequestId())) return false;
     if (hasInputConfig() != other.hasInputConfig()) return false;
     if (hasInputConfig()) {
       if (!getInputConfig().equals(other.getInputConfig())) return false;
@@ -440,6 +844,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     if (hasUpdateMask()) {
       if (!getUpdateMask().equals(other.getUpdateMask())) return false;
     }
+    if (reconciliationMode_ != other.reconciliationMode_) return false;
+    if (!getNotificationPubsubTopic().equals(other.getNotificationPubsubTopic())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -453,6 +859,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
+    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestId().hashCode();
     if (hasInputConfig()) {
       hash = (37 * hash) + INPUT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getInputConfig().hashCode();
@@ -465,6 +873,10 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateMask().hashCode();
     }
+    hash = (37 * hash) + RECONCILIATION_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + reconciliationMode_;
+    hash = (37 * hash) + NOTIFICATION_PUBSUB_TOPIC_FIELD_NUMBER;
+    hash = (53 * hash) + getNotificationPubsubTopic().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -612,6 +1024,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       super.clear();
       parent_ = "";
 
+      requestId_ = "";
+
       if (inputConfigBuilder_ == null) {
         inputConfig_ = null;
       } else {
@@ -630,6 +1044,10 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         updateMask_ = null;
         updateMaskBuilder_ = null;
       }
+      reconciliationMode_ = 0;
+
+      notificationPubsubTopic_ = "";
+
       return this;
     }
 
@@ -658,6 +1076,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       com.google.cloud.retail.v2.ImportProductsRequest result =
           new com.google.cloud.retail.v2.ImportProductsRequest(this);
       result.parent_ = parent_;
+      result.requestId_ = requestId_;
       if (inputConfigBuilder_ == null) {
         result.inputConfig_ = inputConfig_;
       } else {
@@ -673,6 +1092,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       } else {
         result.updateMask_ = updateMaskBuilder_.build();
       }
+      result.reconciliationMode_ = reconciliationMode_;
+      result.notificationPubsubTopic_ = notificationPubsubTopic_;
       onBuilt();
       return result;
     }
@@ -727,6 +1148,10 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         parent_ = other.parent_;
         onChanged();
       }
+      if (!other.getRequestId().isEmpty()) {
+        requestId_ = other.requestId_;
+        onChanged();
+      }
       if (other.hasInputConfig()) {
         mergeInputConfig(other.getInputConfig());
       }
@@ -735,6 +1160,13 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.hasUpdateMask()) {
         mergeUpdateMask(other.getUpdateMask());
+      }
+      if (other.reconciliationMode_ != 0) {
+        setReconciliationModeValue(other.getReconciliationModeValue());
+      }
+      if (!other.getNotificationPubsubTopic().isEmpty()) {
+        notificationPubsubTopic_ = other.notificationPubsubTopic_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -776,7 +1208,9 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * If updateMask is specified, requires products.update permission.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -801,7 +1235,9 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * If updateMask is specified, requires products.update permission.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -826,7 +1262,9 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * If updateMask is specified, requires products.update permission.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -850,7 +1288,9 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * If updateMask is specified, requires products.update permission.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -870,7 +1310,9 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * If updateMask is specified, requires products.update permission.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -882,6 +1324,147 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
 
       parent_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object requestId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier provided by client, within the ancestor
+     * dataset scope. Ensures idempotency and used for request deduplication.
+     * Server-generated if unspecified. Up to 128 characters long and must match
+     * the pattern: "[a-zA-Z0-9_]+". This is returned as [Operation.name][] in
+     * [ImportMetadata][google.cloud.retail.v2.ImportMetadata].
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>string request_id = 6;</code>
+     *
+     * @return The requestId.
+     */
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier provided by client, within the ancestor
+     * dataset scope. Ensures idempotency and used for request deduplication.
+     * Server-generated if unspecified. Up to 128 characters long and must match
+     * the pattern: "[a-zA-Z0-9_]+". This is returned as [Operation.name][] in
+     * [ImportMetadata][google.cloud.retail.v2.ImportMetadata].
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>string request_id = 6;</code>
+     *
+     * @return The bytes for requestId.
+     */
+    public com.google.protobuf.ByteString getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier provided by client, within the ancestor
+     * dataset scope. Ensures idempotency and used for request deduplication.
+     * Server-generated if unspecified. Up to 128 characters long and must match
+     * the pattern: "[a-zA-Z0-9_]+". This is returned as [Operation.name][] in
+     * [ImportMetadata][google.cloud.retail.v2.ImportMetadata].
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>string request_id = 6;</code>
+     *
+     * @param value The requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      requestId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier provided by client, within the ancestor
+     * dataset scope. Ensures idempotency and used for request deduplication.
+     * Server-generated if unspecified. Up to 128 characters long and must match
+     * the pattern: "[a-zA-Z0-9_]+". This is returned as [Operation.name][] in
+     * [ImportMetadata][google.cloud.retail.v2.ImportMetadata].
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>string request_id = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestId() {
+
+      requestId_ = getDefaultInstance().getRequestId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier provided by client, within the ancestor
+     * dataset scope. Ensures idempotency and used for request deduplication.
+     * Server-generated if unspecified. Up to 128 characters long and must match
+     * the pattern: "[a-zA-Z0-9_]+". This is returned as [Operation.name][] in
+     * [ImportMetadata][google.cloud.retail.v2.ImportMetadata].
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>string request_id = 6;</code>
+     *
+     * @param value The bytes for requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      requestId_ = value;
       onChanged();
       return this;
     }
@@ -1466,6 +2049,263 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         updateMask_ = null;
       }
       return updateMaskBuilder_;
+    }
+
+    private int reconciliationMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The mode of reconciliation between existing products and the products to be
+     * imported. Defaults to
+     * [ReconciliationMode.INCREMENTAL][google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode.INCREMENTAL].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode reconciliation_mode = 5;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for reconciliationMode.
+     */
+    @java.lang.Override
+    public int getReconciliationModeValue() {
+      return reconciliationMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mode of reconciliation between existing products and the products to be
+     * imported. Defaults to
+     * [ReconciliationMode.INCREMENTAL][google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode.INCREMENTAL].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode reconciliation_mode = 5;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for reconciliationMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReconciliationModeValue(int value) {
+
+      reconciliationMode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mode of reconciliation between existing products and the products to be
+     * imported. Defaults to
+     * [ReconciliationMode.INCREMENTAL][google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode.INCREMENTAL].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode reconciliation_mode = 5;
+     * </code>
+     *
+     * @return The reconciliationMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode
+        getReconciliationMode() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode result =
+          com.google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode.valueOf(
+              reconciliationMode_);
+      return result == null
+          ? com.google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mode of reconciliation between existing products and the products to be
+     * imported. Defaults to
+     * [ReconciliationMode.INCREMENTAL][google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode.INCREMENTAL].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode reconciliation_mode = 5;
+     * </code>
+     *
+     * @param value The reconciliationMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReconciliationMode(
+        com.google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      reconciliationMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mode of reconciliation between existing products and the products to be
+     * imported. Defaults to
+     * [ReconciliationMode.INCREMENTAL][google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode.INCREMENTAL].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode reconciliation_mode = 5;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReconciliationMode() {
+
+      reconciliationMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object notificationPubsubTopic_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic for receiving notification. If this field is set,
+     * when the import is finished, a notification will be sent to
+     * specified Pub/Sub topic. The message data will be JSON string of a
+     * [Operation][google.longrunning.Operation].
+     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>string notification_pubsub_topic = 7;</code>
+     *
+     * @return The notificationPubsubTopic.
+     */
+    public java.lang.String getNotificationPubsubTopic() {
+      java.lang.Object ref = notificationPubsubTopic_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        notificationPubsubTopic_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic for receiving notification. If this field is set,
+     * when the import is finished, a notification will be sent to
+     * specified Pub/Sub topic. The message data will be JSON string of a
+     * [Operation][google.longrunning.Operation].
+     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>string notification_pubsub_topic = 7;</code>
+     *
+     * @return The bytes for notificationPubsubTopic.
+     */
+    public com.google.protobuf.ByteString getNotificationPubsubTopicBytes() {
+      java.lang.Object ref = notificationPubsubTopic_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        notificationPubsubTopic_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic for receiving notification. If this field is set,
+     * when the import is finished, a notification will be sent to
+     * specified Pub/Sub topic. The message data will be JSON string of a
+     * [Operation][google.longrunning.Operation].
+     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>string notification_pubsub_topic = 7;</code>
+     *
+     * @param value The notificationPubsubTopic to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotificationPubsubTopic(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      notificationPubsubTopic_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic for receiving notification. If this field is set,
+     * when the import is finished, a notification will be sent to
+     * specified Pub/Sub topic. The message data will be JSON string of a
+     * [Operation][google.longrunning.Operation].
+     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>string notification_pubsub_topic = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNotificationPubsubTopic() {
+
+      notificationPubsubTopic_ = getDefaultInstance().getNotificationPubsubTopic();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic for receiving notification. If this field is set,
+     * when the import is finished, a notification will be sent to
+     * specified Pub/Sub topic. The message data will be JSON string of a
+     * [Operation][google.longrunning.Operation].
+     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>string notification_pubsub_topic = 7;</code>
+     *
+     * @param value The bytes for notificationPubsubTopic to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotificationPubsubTopicBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      notificationPubsubTopic_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

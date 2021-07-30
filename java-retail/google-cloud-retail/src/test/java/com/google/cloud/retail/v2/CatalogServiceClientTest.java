@@ -27,7 +27,9 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
@@ -204,6 +206,154 @@ public class CatalogServiceClientTest {
       Catalog catalog = Catalog.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateCatalog(catalog, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setDefaultBranchTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    CatalogName catalog = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+
+    client.setDefaultBranch(catalog);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetDefaultBranchRequest actualRequest = ((SetDefaultBranchRequest) actualRequests.get(0));
+
+    Assert.assertEquals(catalog.toString(), actualRequest.getCatalog());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setDefaultBranchExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      CatalogName catalog = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+      client.setDefaultBranch(catalog);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setDefaultBranchTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String catalog = "catalog555704345";
+
+    client.setDefaultBranch(catalog);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetDefaultBranchRequest actualRequest = ((SetDefaultBranchRequest) actualRequests.get(0));
+
+    Assert.assertEquals(catalog, actualRequest.getCatalog());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setDefaultBranchExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String catalog = "catalog555704345";
+      client.setDefaultBranch(catalog);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDefaultBranchTest() throws Exception {
+    GetDefaultBranchResponse expectedResponse =
+        GetDefaultBranchResponse.newBuilder()
+            .setBranch(BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+            .setSetTime(Timestamp.newBuilder().build())
+            .setNote("note3387378")
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    CatalogName catalog = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+
+    GetDefaultBranchResponse actualResponse = client.getDefaultBranch(catalog);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDefaultBranchRequest actualRequest = ((GetDefaultBranchRequest) actualRequests.get(0));
+
+    Assert.assertEquals(catalog.toString(), actualRequest.getCatalog());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDefaultBranchExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      CatalogName catalog = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+      client.getDefaultBranch(catalog);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDefaultBranchTest2() throws Exception {
+    GetDefaultBranchResponse expectedResponse =
+        GetDefaultBranchResponse.newBuilder()
+            .setBranch(BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+            .setSetTime(Timestamp.newBuilder().build())
+            .setNote("note3387378")
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String catalog = "catalog555704345";
+
+    GetDefaultBranchResponse actualResponse = client.getDefaultBranch(catalog);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDefaultBranchRequest actualRequest = ((GetDefaultBranchRequest) actualRequests.get(0));
+
+    Assert.assertEquals(catalog, actualRequest.getCatalog());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDefaultBranchExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String catalog = "catalog555704345";
+      client.getDefaultBranch(catalog);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
