@@ -13,7 +13,6 @@ branchProtectionRules:
       - linkage-monitor
       - lint
       - clirr
-      - units (7)
       - units (8)
       - units (11)
       - 'Kokoro - Test: Integration'
@@ -29,7 +28,6 @@ branchProtectionRules:
       - linkage-monitor
       - lint
       - clirr
-      - units (7)
       - units (8)
       - units (11)
       - 'Kokoro - Test: Integration'
