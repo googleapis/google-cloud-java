@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-retail/compare/v1.1.2...v1.2.0) (2021-07-30)
+
+
+### Features
+
+* **v2:** add restricted Retail Search features ([#150](https://www.github.com/googleapis/java-retail/issues/150)) ([a9aedea](https://www.github.com/googleapis/java-retail/commit/a9aedeabd7903db8ca3bbc46fe8ece674590cd77))
+
 ### [1.1.2](https://www.github.com/googleapis/java-retail/compare/v1.1.1...v1.1.2) (2021-07-01)
 
 
