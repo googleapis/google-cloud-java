@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.2](https://www.github.com/googleapis/java-core/compare/v2.0.1...v2.0.2) (2021-08-03)
+
+
+### Features
+
+* release 2.0.2 ([#509](https://www.github.com/googleapis/java-core/issues/509)) ([afbb532](https://www.github.com/googleapis/java-core/commit/afbb532965a9ab6f9e3eafbf9d5d8502dd29d1bb))
+
 ### [2.0.1](https://www.github.com/googleapis/java-core/compare/v2.0.0...v2.0.1) (2021-08-03)
 
 
