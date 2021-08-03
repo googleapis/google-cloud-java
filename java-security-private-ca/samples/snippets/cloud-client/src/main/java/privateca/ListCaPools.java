@@ -54,8 +54,8 @@ public class ListCaPools {
           certificateAuthorityServiceClient.listCaPools(locationName).iterateAll()) {
         caPoolName = caPool.getName();
         // caPoolName represents the full resource name of the
-        // format 'projects/{project-id}/locations/{location}/ca-pools/{ca-pool-name}'.
-        // Hence stripping it down to just pool name.
+        // format 'projects/{project-id}/locations/{location}/ca-pools/{ca-pool-id}'.
+        // Hence stripping it down to just CA pool id.
         System.out.println(
             caPoolName.substring(caPoolName.lastIndexOf("/") + 1) + " " + caPool.isInitialized());
       }

@@ -33,16 +33,16 @@ public class DeleteCaPool {
     // TODO(developer): Replace these variables before running the sample.
     // location: For a list of locations, see:
     // https://cloud.google.com/certificate-authority-service/docs/locations
-    // caPoolName: The name of the CA pool to be deleted.
+    // pool_Id: The id of the CA pool to be deleted.
     String project = "your-project-id";
     String location = "ca-location";
-    String caPoolName = "ca-pool-name";
-    deleteCaPool(project, location, caPoolName);
+    String pool_Id = "ca-pool-id";
+    deleteCaPool(project, location, pool_Id);
   }
 
-  // Delete the CA pool as mentioned by the caPoolName.
+  // Delete the CA pool as mentioned by the pool_Id.
   // Before deleting the pool, all CAs in the pool MUST BE deleted.
-  public static void deleteCaPool(String project, String location, String caPoolName)
+  public static void deleteCaPool(String project, String location, String pool_Id)
       throws InterruptedException, ExecutionException, IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
@@ -51,12 +51,12 @@ public class DeleteCaPool {
     try (CertificateAuthorityServiceClient certificateAuthorityServiceClient =
         CertificateAuthorityServiceClient.create()) {
 
-      // Set the project, location and caPoolName to delete.
+      // Set the project, location and pool_Id to delete.
       CaPoolName caPool =
           CaPoolName.newBuilder()
               .setProject(project)
               .setLocation(location)
-              .setCaPool(caPoolName)
+              .setCaPool(pool_Id)
               .build();
 
       // Create the Delete request.
@@ -73,7 +73,7 @@ public class DeleteCaPool {
         return;
       }
 
-      System.out.println("Deleted CA Pool: " + caPoolName);
+      System.out.println("Deleted CA Pool: " + pool_Id);
     }
   }
 }

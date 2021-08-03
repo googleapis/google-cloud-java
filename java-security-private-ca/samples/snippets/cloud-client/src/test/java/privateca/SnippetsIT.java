@@ -57,8 +57,8 @@ public class SnippetsIT {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static String LOCATION;
-  private static String CA_POOL_NAME;
-  private static String CA_POOL_NAME_DELETE;
+  private static String CA_POOL_ID;
+  private static String CA_POOL_ID_DELETE;
   private static String CA_NAME;
   private static String CA_NAME_DELETE;
   private static String CERTIFICATE_NAME;
@@ -81,26 +81,26 @@ public class SnippetsIT {
     reqEnvVar("GOOGLE_CLOUD_PROJECT");
 
     LOCATION = "asia-south1";
-    CA_POOL_NAME = "ca-pool-" + UUID.randomUUID().toString();
-    CA_POOL_NAME_DELETE = "ca-pool-" + UUID.randomUUID().toString();
+    CA_POOL_ID = "ca-pool-" + UUID.randomUUID().toString();
+    CA_POOL_ID_DELETE = "ca-pool-" + UUID.randomUUID().toString();
     CA_NAME = "ca-name-" + UUID.randomUUID().toString();
     CA_NAME_DELETE = "ca-name-" + UUID.randomUUID().toString();
     CERTIFICATE_NAME = "certificate-name-" + UUID.randomUUID().toString();
     KEY_SIZE = 2048; // Default key size
 
     // Create CA Pool.
-    privateca.CreateCaPool.createCaPool(PROJECT_ID, LOCATION, CA_POOL_NAME);
-    privateca.CreateCaPool.createCaPool(PROJECT_ID, LOCATION, CA_POOL_NAME_DELETE);
+    privateca.CreateCaPool.createCaPool(PROJECT_ID, LOCATION, CA_POOL_ID);
+    privateca.CreateCaPool.createCaPool(PROJECT_ID, LOCATION, CA_POOL_ID_DELETE);
     sleep(5);
 
     // Create and Enable Certificate Authorities.
     privateca.CreateCertificateAuthority.createCertificateAuthority(
-        PROJECT_ID, LOCATION, CA_POOL_NAME, CA_NAME);
+        PROJECT_ID, LOCATION, CA_POOL_ID, CA_NAME);
     privateca.CreateCertificateAuthority.createCertificateAuthority(
-        PROJECT_ID, LOCATION, CA_POOL_NAME, CA_NAME_DELETE);
+        PROJECT_ID, LOCATION, CA_POOL_ID, CA_NAME_DELETE);
     sleep(10);
     privateca.EnableCertificateAuthority.enableCertificateAuthority(
-        PROJECT_ID, LOCATION, CA_POOL_NAME, CA_NAME);
+        PROJECT_ID, LOCATION, CA_POOL_ID, CA_NAME);
 
     // Create an asymmetric key pair using Bouncy Castle crypto framework.
     KeyPair asymmetricKeyPair = createAsymmetricKeyPair();
@@ -122,7 +122,7 @@ public class SnippetsIT {
 
     // Create certificate with the above generated public key.
     privateca.CreateCertificate.createCertificate(
-        PROJECT_ID, LOCATION, CA_POOL_NAME, CA_NAME, CERTIFICATE_NAME, publicKeyByteString);
+        PROJECT_ID, LOCATION, CA_POOL_ID, CA_NAME, CERTIFICATE_NAME, publicKeyByteString);
     sleep(5);
   }
 
@@ -134,9 +134,9 @@ public class SnippetsIT {
 
     // Delete CA and CA pool.
     privateca.DeleteCertificateAuthority.deleteCertificateAuthority(
-        PROJECT_ID, LOCATION, CA_POOL_NAME, CA_NAME);
+        PROJECT_ID, LOCATION, CA_POOL_ID, CA_NAME);
     sleep(5);
-    privateca.DeleteCaPool.deleteCaPool(PROJECT_ID, LOCATION, CA_POOL_NAME);
+    privateca.DeleteCaPool.deleteCaPool(PROJECT_ID, LOCATION, CA_POOL_ID);
 
     stdOut = null;
     System.setOut(null);
@@ -191,26 +191,26 @@ public class SnippetsIT {
         CertificateAuthorityServiceClient.create()) {
       String caPoolName =
           certificateAuthorityServiceClient
-              .getCaPool(CaPoolName.of(PROJECT_ID, LOCATION, CA_POOL_NAME).toString())
+              .getCaPool(CaPoolName.of(PROJECT_ID, LOCATION, CA_POOL_ID).toString())
               .getName();
       assertThat(caPoolName)
           .contains(
               String.format(
-                  "projects/%s/locations/%s/caPools/%s", PROJECT_ID, LOCATION, CA_POOL_NAME));
+                  "projects/%s/locations/%s/caPools/%s", PROJECT_ID, LOCATION, CA_POOL_ID));
     }
   }
 
   @Test
   public void testListCAPools() throws IOException {
     privateca.ListCaPools.listCaPools(PROJECT_ID, LOCATION);
-    assertThat(stdOut.toString()).contains(CA_POOL_NAME);
+    assertThat(stdOut.toString()).contains(CA_POOL_ID);
   }
 
   @Test
   public void testDeleteCAPool()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
-    privateca.DeleteCaPool.deleteCaPool(PROJECT_ID, LOCATION, CA_POOL_NAME_DELETE);
-    assertThat(stdOut.toString()).contains("Deleted CA Pool: " + CA_POOL_NAME_DELETE);
+    privateca.DeleteCaPool.deleteCaPool(PROJECT_ID, LOCATION, CA_POOL_ID_DELETE);
+    assertThat(stdOut.toString()).contains("Deleted CA Pool: " + CA_POOL_ID_DELETE);
   }
 
   @Test
@@ -220,15 +220,14 @@ public class SnippetsIT {
         CertificateAuthorityServiceClient.create()) {
       CertificateAuthority response =
           certificateAuthorityServiceClient.getCertificateAuthority(
-              CertificateAuthorityName.of(PROJECT_ID, LOCATION, CA_POOL_NAME, CA_NAME).toString());
+              CertificateAuthorityName.of(PROJECT_ID, LOCATION, CA_POOL_ID, CA_NAME).toString());
       assertThat(response.getName()).contains(CA_NAME);
     }
   }
 
   @Test
   public void testListCertificateAuthorities() throws IOException {
-    privateca.ListCertificateAuthorities.listCertificateAuthority(
-        PROJECT_ID, LOCATION, CA_POOL_NAME);
+    privateca.ListCertificateAuthorities.listCertificateAuthority(PROJECT_ID, LOCATION, CA_POOL_ID);
     assertThat(stdOut.toString()).contains(CA_NAME);
   }
 
@@ -236,10 +235,10 @@ public class SnippetsIT {
   public void testEnableDisableCertificateAuthority()
       throws InterruptedException, ExecutionException, IOException {
     privateca.EnableCertificateAuthority.enableCertificateAuthority(
-        PROJECT_ID, LOCATION, CA_POOL_NAME, CA_NAME);
+        PROJECT_ID, LOCATION, CA_POOL_ID, CA_NAME);
     assertThat(stdOut.toString()).contains("Enabled Certificate Authority : " + CA_NAME);
     privateca.DisableCertificateAuthority.disableCertificateAuthority(
-        PROJECT_ID, LOCATION, CA_POOL_NAME, CA_NAME);
+        PROJECT_ID, LOCATION, CA_POOL_ID, CA_NAME);
     assertThat(stdOut.toString()).contains("Disabled Certificate Authority : " + CA_NAME);
   }
 
@@ -247,7 +246,7 @@ public class SnippetsIT {
   public void testDeleteCertificateAuthority()
       throws InterruptedException, ExecutionException, IOException {
     privateca.DeleteCertificateAuthority.deleteCertificateAuthority(
-        PROJECT_ID, LOCATION, CA_POOL_NAME, CA_NAME_DELETE);
+        PROJECT_ID, LOCATION, CA_POOL_ID, CA_NAME_DELETE);
     assertThat(stdOut.toString())
         .contains("Successfully deleted Certificate Authority : " + CA_NAME_DELETE);
   }
@@ -258,7 +257,7 @@ public class SnippetsIT {
     try (CertificateAuthorityServiceClient certificateAuthorityServiceClient =
         CertificateAuthorityServiceClient.create()) {
       CertificateName certificateName =
-          CertificateName.of(PROJECT_ID, LOCATION, CA_POOL_NAME, CERTIFICATE_NAME);
+          CertificateName.of(PROJECT_ID, LOCATION, CA_POOL_ID, CERTIFICATE_NAME);
       Certificate certificate = certificateAuthorityServiceClient.getCertificate(certificateName);
       assertThat(certificate.getName()).contains(CERTIFICATE_NAME);
     }
@@ -266,7 +265,7 @@ public class SnippetsIT {
 
   @Test
   public void testListCertificates() throws IOException {
-    privateca.ListCertificates.listCertificates(PROJECT_ID, LOCATION, CA_POOL_NAME);
+    privateca.ListCertificates.listCertificates(PROJECT_ID, LOCATION, CA_POOL_ID);
     assertThat(stdOut.toString()).contains(CERTIFICATE_NAME);
   }
 
@@ -276,12 +275,12 @@ public class SnippetsIT {
         CertificateAuthorityServiceClient.create()) {
       // Revoke the certificate.
       privateca.RevokeCertificate.revokeCertificate(
-          PROJECT_ID, LOCATION, CA_POOL_NAME, CERTIFICATE_NAME);
+          PROJECT_ID, LOCATION, CA_POOL_ID, CERTIFICATE_NAME);
 
       // Check if the certificate has revocation details. If it does, then the certificate is
       // considered as revoked.
       CertificateName certificateName =
-          CertificateName.of(PROJECT_ID, LOCATION, CA_POOL_NAME, CERTIFICATE_NAME);
+          CertificateName.of(PROJECT_ID, LOCATION, CA_POOL_ID, CERTIFICATE_NAME);
       Assert.assertTrue(
           certificateAuthorityServiceClient.getCertificate(certificateName).hasRevocationDetails());
     }

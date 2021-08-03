@@ -33,19 +33,19 @@ public class EnableCertificateAuthority {
     // TODO(developer): Replace these variables before running the sample.
     // location: For a list of locations, see:
     // https://cloud.google.com/certificate-authority-service/docs/locations
-    // caPoolName: The name of the CA pool under which the CA is present.
+    // pool_Id: The id of the CA pool under which the CA is present.
     // certificateAuthorityName: The name of the CA to be enabled.
     String project = "your-project-id";
     String location = "ca-location";
-    String caPoolName = "ca-pool-name";
+    String pool_Id = "ca-pool-id";
     String certificateAuthorityName = "certificate-authority-name";
-    enableCertificateAuthority(project, location, caPoolName, certificateAuthorityName);
+    enableCertificateAuthority(project, location, pool_Id, certificateAuthorityName);
   }
 
   // Enable the Certificate Authority present in the given ca pool.
   // CA cannot be enabled if it has been already deleted.
   public static void enableCertificateAuthority(
-      String project, String location, String caPoolName, String certificateAuthorityName)
+      String project, String location, String pool_Id, String certificateAuthorityName)
       throws IOException, ExecutionException, InterruptedException {
     try (CertificateAuthorityServiceClient certificateAuthorityServiceClient =
         CertificateAuthorityServiceClient.create()) {
@@ -54,7 +54,7 @@ public class EnableCertificateAuthority {
           CertificateAuthorityName.newBuilder()
               .setProject(project)
               .setLocation(location)
-              .setCaPool(caPoolName)
+              .setCaPool(pool_Id)
               .setCertificateAuthority(certificateAuthorityName)
               .build();
 

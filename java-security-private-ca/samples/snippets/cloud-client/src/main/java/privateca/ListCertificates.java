@@ -28,15 +28,15 @@ public class ListCertificates {
     // TODO(developer): Replace these variables before running the sample.
     // location: For a list of locations, see:
     // https://cloud.google.com/certificate-authority-service/docs/locations
-    // caPoolName: Name of the CA pool which contains the certificates to be listed.
+    // pool_Id: Id of the CA pool which contains the certificates to be listed.
     String project = "your-project-id";
     String location = "ca-location";
-    String caPoolName = "ca-pool-name";
-    listCertificates(project, location, caPoolName);
+    String pool_Id = "ca-pool-id";
+    listCertificates(project, location, pool_Id);
   }
 
   // List Certificates present in the given CA pool.
-  public static void listCertificates(String project, String location, String caPoolName)
+  public static void listCertificates(String project, String location, String pool_Id)
       throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
@@ -49,7 +49,7 @@ public class ListCertificates {
           CaPoolName.newBuilder()
               .setProject(project)
               .setLocation(location)
-              .setCaPool(caPoolName)
+              .setCaPool(pool_Id)
               .build();
 
       // Retrieve and print the certificate names.

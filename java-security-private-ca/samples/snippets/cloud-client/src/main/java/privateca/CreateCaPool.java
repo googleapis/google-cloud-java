@@ -34,16 +34,16 @@ public class CreateCaPool {
     // TODO(developer): Replace these variables before running the sample.
     // location: For a list of locations, see:
     // https://cloud.google.com/certificate-authority-service/docs/locations
-    // caPoolName: Set a unique name for the CA pool.
+    // pool_Id: Set a unique pool_Id for the CA pool.
     String project = "your-project-id";
     String location = "ca-location";
-    String caPoolName = "ca-pool-name";
-    createCaPool(project, location, caPoolName);
+    String pool_Id = "ca-pool-id";
+    createCaPool(project, location, pool_Id);
   }
 
   // Create a Certificate Authority Pool. All certificates created under this CA pool will
   // follow the same issuance policy, IAM policies,etc.,
-  public static void createCaPool(String project, String location, String caPoolName)
+  public static void createCaPool(String project, String location, String pool_Id)
       throws InterruptedException, ExecutionException, IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
@@ -59,7 +59,7 @@ public class CreateCaPool {
       CreateCaPoolRequest caPoolRequest =
           CreateCaPoolRequest.newBuilder()
               .setParent(LocationName.of(project, location).toString())
-              .setCaPoolId(caPoolName)
+              .setCaPoolId(pool_Id)
               .setCaPool(CaPool.newBuilder().setTier(Tier.ENTERPRISE).build())
               .build();
 
@@ -73,7 +73,7 @@ public class CreateCaPool {
         return;
       }
 
-      System.out.println("CA pool created successfully: " + caPoolName);
+      System.out.println("CA pool created successfully: " + pool_Id);
     }
   }
 }

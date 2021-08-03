@@ -43,19 +43,18 @@ public class CreateCertificateAuthority {
     // TODO(developer): Replace these variables before running the sample.
     // location: For a list of locations, see:
     // https://cloud.google.com/certificate-authority-service/docs/locations
-    // caPoolName: Set it to the CA Pool under which the CA should be created.
+    // pool_Id: Set it to the CA Pool under which the CA should be created.
     // certificateAuthorityName: Unique name for the CA.
     String project = "your-project-id";
     String location = "ca-location";
-    String caPoolName = "ca-pool-name";
+    String pool_Id = "ca-pool-id";
     String certificateAuthorityName = "certificate-authority-name";
-    createCertificateAuthority(project, location, caPoolName, certificateAuthorityName);
+    createCertificateAuthority(project, location, pool_Id, certificateAuthorityName);
   }
 
-  // Create Certificate Authority which is the root CA in the given CA Pool. This CA will be
-  // responsible for signing certificates within this pool.
+  // Create Certificate Authority which is the root CA in the given CA Pool.
   public static void createCertificateAuthority(
-      String project, String location, String caPoolName, String certificateAuthorityName)
+      String project, String location, String pool_Id, String certificateAuthorityName)
       throws InterruptedException, ExecutionException, IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
@@ -68,7 +67,7 @@ public class CreateCertificateAuthority {
       String orgName = "org-name";
       int caDuration = 100000; // Validity of this CA in seconds.
 
-      // Set the types of Algorithm used to create a cloud KMS key.
+      // Set the type of Algorithm.
       KeyVersionSpec keyVersionSpec =
           KeyVersionSpec.newBuilder().setAlgorithm(SignHashAlgorithm.RSA_PKCS1_4096_SHA256).build();
 
@@ -108,7 +107,7 @@ public class CreateCertificateAuthority {
       // Create the CertificateAuthorityRequest.
       CreateCertificateAuthorityRequest certificateAuthorityRequest =
           CreateCertificateAuthorityRequest.newBuilder()
-              .setParent(CaPoolName.of(project, location, caPoolName).toString())
+              .setParent(CaPoolName.of(project, location, pool_Id).toString())
               .setCertificateAuthorityId(certificateAuthorityName)
               .setCertificateAuthority(certificateAuthority)
               .build();
