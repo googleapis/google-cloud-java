@@ -45,7 +45,7 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:20.8.0')
+implementation platform('com.google.cloud:libraries-bom:20.9.0')
 
 compile 'com.google.cloud:google-cloud-recommender'
 ```
@@ -97,7 +97,6 @@ has instructions for running the samples.
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
-| List Recommendations | [source code](https://github.com/googleapis/java-recommender/blob/master/samples/generated/src/main/java/com/google/cloud/examples/recommender/v1beta1/SampleListRecommendations.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recommender&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/recommender/v1beta1/SampleListRecommendations.java) |
 | List Recommendations | [source code](https://github.com/googleapis/java-recommender/blob/master/samples/snippets/src/main/java/com/example/recommender/ListRecommendations.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recommender&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/recommender/ListRecommendations.java) |
 
 
