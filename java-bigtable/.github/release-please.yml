@@ -7,6 +7,14 @@ branches:
     releaseType: java-lts
     branch: 1.22.0-sp
     extraFiles:
-      - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+      - >-
+        google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-yoshi
+    extraFiles:
+      - >-
+        google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+    branch: java7
 extraFiles:
   - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
