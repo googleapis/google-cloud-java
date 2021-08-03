@@ -18,17 +18,6 @@ package privateca;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 
-import com.google.cloud.kms.v1.CreateKeyRingRequest;
-import com.google.cloud.kms.v1.CryptoKey;
-import com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose;
-import com.google.cloud.kms.v1.CryptoKeyVersion;
-import com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm;
-import com.google.cloud.kms.v1.CryptoKeyVersionName;
-import com.google.cloud.kms.v1.CryptoKeyVersionTemplate;
-import com.google.cloud.kms.v1.KeyManagementServiceClient;
-import com.google.cloud.kms.v1.KeyRing;
-import com.google.cloud.kms.v1.KeyRingName;
-import com.google.cloud.kms.v1.LocationName;
 import com.google.cloud.security.privateca.v1.CaPoolName;
 import com.google.cloud.security.privateca.v1.Certificate;
 import com.google.cloud.security.privateca.v1.CertificateAuthority;
@@ -38,11 +27,22 @@ import com.google.cloud.security.privateca.v1.CertificateName;
 import com.google.protobuf.ByteString;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.PrintStream;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.security.Security;
+import java.security.interfaces.RSAPrivateKey;
+import java.security.interfaces.RSAPublicKey;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import org.bouncycastle.util.io.pem.PemObject;
+import org.bouncycastle.util.io.pem.PemWriter;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -57,15 +57,12 @@ public class SnippetsIT {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static String LOCATION;
-  private static String KMS_LOCATION;
   private static String CA_POOL_NAME;
   private static String CA_POOL_NAME_DELETE;
   private static String CA_NAME;
   private static String CA_NAME_DELETE;
   private static String CERTIFICATE_NAME;
-  private static String KEY_RING_ID;
-  private static String KEY_ID;
-  private static String VERSION_ID;
+  private static int KEY_SIZE;
 
   private ByteArrayOutputStream stdOut;
 
@@ -77,24 +74,24 @@ public class SnippetsIT {
   }
 
   @BeforeClass
-  public static void setUp() throws InterruptedException, ExecutionException, IOException {
+  public static void setUp()
+      throws IOException, ExecutionException, NoSuchProviderException, NoSuchAlgorithmException,
+          InterruptedException {
     reqEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     reqEnvVar("GOOGLE_CLOUD_PROJECT");
 
     LOCATION = "asia-south1";
-    KMS_LOCATION = "global";
     CA_POOL_NAME = "ca-pool-" + UUID.randomUUID().toString();
     CA_POOL_NAME_DELETE = "ca-pool-" + UUID.randomUUID().toString();
     CA_NAME = "ca-name-" + UUID.randomUUID().toString();
     CA_NAME_DELETE = "ca-name-" + UUID.randomUUID().toString();
     CERTIFICATE_NAME = "certificate-name-" + UUID.randomUUID().toString();
-    KEY_RING_ID = "key-ring-id-" + UUID.randomUUID().toString();
-    KEY_ID = "key-id-" + UUID.randomUUID().toString();
-    VERSION_ID = "1";
+    KEY_SIZE = 2048; // Default key size
 
     // Create CA Pool.
     privateca.CreateCaPool.createCaPool(PROJECT_ID, LOCATION, CA_POOL_NAME);
     privateca.CreateCaPool.createCaPool(PROJECT_ID, LOCATION, CA_POOL_NAME_DELETE);
+    sleep(5);
 
     // Create and Enable Certificate Authorities.
     privateca.CreateCertificateAuthority.createCertificateAuthority(
@@ -105,17 +102,27 @@ public class SnippetsIT {
     privateca.EnableCertificateAuthority.enableCertificateAuthority(
         PROJECT_ID, LOCATION, CA_POOL_NAME, CA_NAME);
 
-    // Create Asymmetric Sign Key used to sign certificate, with Cloud KMS.
-    createKeyRing();
-    sleep(5);
-    createAsymmetricSignKey();
+    // Create an asymmetric key pair using Bouncy Castle crypto framework.
+    KeyPair asymmetricKeyPair = createAsymmetricKeyPair();
 
-    // Retrieve public key from Cloud KMS and Create Certificate.
-    ByteString publicKey =
-        privateca.CreateCertificate.retrievePublicKey(
-            PROJECT_ID, KMS_LOCATION, KEY_RING_ID, KEY_ID, VERSION_ID);
+    // Cast the keys to their respective components.
+    RSAPublicKey publicKey = (RSAPublicKey) asymmetricKeyPair.getPublic();
+    RSAPrivateKey privateKey = (RSAPrivateKey) asymmetricKeyPair.getPrivate();
+
+    // Construct the PemObject for public and private keys.
+    PemObject publicKeyPemObject = new PemObject("PUBLIC KEY", publicKey.getEncoded());
+    PemObject privateKeyPemObject = new PemObject("PRIVATE KEY", privateKey.getEncoded());
+
+    // Only the public key will be used to create the certificate.
+    ByteString publicKeyByteString = convertToPemEncodedByteString(publicKeyPemObject);
+
+    // TODO (Developers): Save the private key by writing it to a file and
+    // TODO (cont): use it to verify the issued certificate.
+    ByteString privateKeyByteString = convertToPemEncodedByteString(privateKeyPemObject);
+
+    // Create certificate with the above generated public key.
     privateca.CreateCertificate.createCertificate(
-        PROJECT_ID, LOCATION, CA_POOL_NAME, CA_NAME, CERTIFICATE_NAME, publicKey);
+        PROJECT_ID, LOCATION, CA_POOL_NAME, CA_NAME, CERTIFICATE_NAME, publicKeyByteString);
     sleep(5);
   }
 
@@ -124,9 +131,6 @@ public class SnippetsIT {
 
     ByteArrayOutputStream stdOut = new ByteArrayOutputStream();
     System.setOut(new PrintStream(stdOut));
-
-    // De-provision public key.
-    cleanupCertificateSignKey();
 
     // Delete CA and CA pool.
     privateca.DeleteCertificateAuthority.deleteCertificateAuthority(
@@ -138,71 +142,34 @@ public class SnippetsIT {
     System.setOut(null);
   }
 
-  // Create a new key ring.
-  public static void createKeyRing() throws IOException {
-    // Initialize client that will be used to send requests. This client only
-    // needs to be created once, and can be reused for multiple requests. After
-    // completing all of your requests, call the "close" method on the client to
-    // safely clean up any remaining background resources.
-    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
-      // Build the parent name from the project and location.
-      LocationName locationName = LocationName.of(PROJECT_ID, KMS_LOCATION);
-
-      // Build the key ring to create.
-      KeyRing keyRing = KeyRing.newBuilder().setName(locationName.toString()).build();
-
-      // Create the key ring.
-      KeyRing createdKeyRing =
-          client.createKeyRing(
-              CreateKeyRingRequest.newBuilder()
-                  .setParent(locationName.toString())
-                  .setKeyRing(keyRing)
-                  .setKeyRingId(KEY_RING_ID)
-                  .build());
-      System.out.printf("Created key ring: %s%n", createdKeyRing.getName());
-    }
-  }
-
-  // Create a new asymmetric key for the purpose of signing and verifying data.
-  public static void createAsymmetricSignKey() throws IOException {
-    // Initialize client that will be used to send requests. This client only
-    // needs to be created once, and can be reused for multiple requests. After
-    // completing all of your requests, call the "close" method on the client to
-    // safely clean up any remaining background resources.
-    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
-      // Build the parent name from the project, location, and key ring.
-      KeyRingName keyRingName = KeyRingName.of(PROJECT_ID, KMS_LOCATION, KEY_RING_ID);
-
-      // Build the asymmetric key to create.
-      CryptoKey key =
-          CryptoKey.newBuilder()
-              .setPurpose(CryptoKeyPurpose.ASYMMETRIC_SIGN)
-              .setVersionTemplate(
-                  CryptoKeyVersionTemplate.newBuilder()
-                      .setAlgorithm(CryptoKeyVersionAlgorithm.RSA_SIGN_PKCS1_2048_SHA256))
-              .build();
-
-      // Create the key.
-      CryptoKey createdKey = client.createCryptoKey(keyRingName, KEY_ID, key);
-      System.out.printf("Created asymmetric key: %s%n", createdKey.getName());
-    }
-  }
-
-  public static void cleanupCertificateSignKey() throws IOException, InterruptedException {
-    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
-      CryptoKeyVersionName cryptoKeyVersionName =
-          CryptoKeyVersionName.of(PROJECT_ID, KMS_LOCATION, KEY_RING_ID, KEY_ID, VERSION_ID);
-      // Destroy the crypto key version.
-      CryptoKeyVersion cryptoKeyVersion = client.destroyCryptoKeyVersion(cryptoKeyVersionName);
-      sleep(5);
-      // If the response has destroy time, then the version is successfully destroyed.
-      Assert.assertTrue(cryptoKeyVersion.hasDestroyTime());
-    }
-  }
-
   // Wait for the specified amount of time.
   public static void sleep(int seconds) throws InterruptedException {
     TimeUnit.SECONDS.sleep(seconds);
+  }
+
+  // Create an asymmetric key pair to be used in certificate signing.
+  public static KeyPair createAsymmetricKeyPair()
+      throws NoSuchAlgorithmException, NoSuchProviderException {
+    Security.addProvider(new BouncyCastleProvider());
+
+    // Generate the key pair with RSA algorithm using Bouncy Castle (BC).
+    KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA", "BC");
+    generator.initialize(KEY_SIZE);
+    KeyPair keyPair = generator.generateKeyPair();
+
+    return keyPair;
+  }
+
+  // Convert the encoded PemObject to ByteString.
+  public static ByteString convertToPemEncodedByteString(PemObject pemEncodedKey)
+      throws IOException {
+    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+    PemWriter pemWriter = new PemWriter(new OutputStreamWriter(byteArrayOutputStream));
+    pemWriter.writeObject(pemEncodedKey);
+    pemWriter.close();
+    ByteString keyByteString = ByteString.copyFrom(byteArrayOutputStream.toByteArray());
+
+    return keyByteString;
   }
 
   @Before

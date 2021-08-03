@@ -18,8 +18,6 @@ package privateca;
 // [START privateca_create_certificate]
 
 import com.google.api.core.ApiFuture;
-import com.google.cloud.kms.v1.CryptoKeyVersionName;
-import com.google.cloud.kms.v1.KeyManagementServiceClient;
 import com.google.cloud.security.privateca.v1.CaPoolName;
 import com.google.cloud.security.privateca.v1.Certificate;
 import com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient;
@@ -46,24 +44,14 @@ public class CreateCertificate {
       throws InterruptedException, ExecutionException, IOException {
     // TODO(developer): Replace these variables before running the sample.
 
-    // To sign and issue a certificate, a public key is essential. Here, we are making use
-    // of Cloud KMS to retrieve an already created public key. Specify the following details to
-    // retrieve the key. For more info, see: https://cloud.google.com/kms/docs/retrieve-public-key
-    String project = "your-project-id";
-    String kmsLocation = "kms-location";
-    String keyRingId = "your-ring-id";
-    String keyId = "your-key-id";
-    String keyVersionId = "your-version-id";
-
-    // Retrieve the public key from Cloud KMS.
-    ByteString publicKeyBytes =
-        retrievePublicKey(project, kmsLocation, keyRingId, keyId, keyVersionId);
-
+    // publicKeyBytes: Public key used in signing the certificates.
     // location: For a list of locations, see:
     // https://cloud.google.com/certificate-authority-service/docs/locations
     // caPoolName: Set a unique name for the CA pool.
     // certificateAuthorityName: The name of the certificate authority which issues the certificate.
     // certificateName: Set a unique name for the certificate.
+    String project = "your-project-id";
+    ByteString publicKeyBytes = ByteString.copyFrom(new byte[] {});
     String location = "ca-location";
     String caPoolName = "ca-pool-name";
     String certificateAuthorityName = "certificate-authority-name";
@@ -74,7 +62,8 @@ public class CreateCertificate {
   }
 
   // Create a Certificate which is issued by the Certificate Authority present in the CA Pool.
-  // The key used to sign the certificate is created by the Cloud KMS.
+  // The public key used to sign the certificate can be generated using any crypto
+  // library/framework.
   public static void createCertificate(
       String project,
       String location,
@@ -99,7 +88,7 @@ public class CreateCertificate {
       String domainName = "dnsname.com";
       long certificateLifetime = 1000L;
 
-      // Set the Public Key and its format as obtained from the Cloud KMS.
+      // Set the Public Key and its format.
       PublicKey publicKey =
           PublicKey.newBuilder().setKey(publicKeyBytes).setFormat(KeyFormat.PEM).build();
 
@@ -161,25 +150,6 @@ public class CreateCertificate {
       System.out.println(response.getPemCertificate());
       // To verify the obtained certificate, use this intermediate chain list.
       System.out.println(response.getPemCertificateChainList());
-    }
-  }
-
-  // Get the public Key used for signing the certificate from Cloud KMS.
-  public static ByteString retrievePublicKey(
-      String project, String kmsLocation, String keyRingId, String keyId, String keyVersionId)
-      throws IOException {
-    // Initialize client that will be used to send requests. This client only needs to be created
-    // once, and can be reused for multiple requests. After completing all of your requests, call
-    // the `client.close()` method on the client to safely
-    // clean up any remaining background resources.
-    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
-
-      CryptoKeyVersionName keyVersionName =
-          CryptoKeyVersionName.of(project, kmsLocation, keyRingId, keyId, keyVersionId);
-      com.google.cloud.kms.v1.PublicKey publicKey = client.getPublicKey(keyVersionName);
-
-      ByteString publicKeyBytes = publicKey.getPemBytes();
-      return publicKeyBytes;
     }
   }
 }
