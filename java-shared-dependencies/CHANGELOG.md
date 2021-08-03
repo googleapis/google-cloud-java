@@ -1,5 +1,38 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-shared-dependencies/compare/1.4.0...v2.0.0) (2021-08-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* promote to 2.0.0 (#428)
+
+### Features
+
+* promote to 2.0.0 ([#428](https://www.github.com/googleapis/java-shared-dependencies/issues/428)) ([4db31f2](https://www.github.com/googleapis/java-shared-dependencies/commit/4db31f29f1668d4743e8af8996b0c4b30e6831b3))
+
+
+### Documentation
+
+* we don't use this as a parent pom ([#407](https://www.github.com/googleapis/java-shared-dependencies/issues/407)) ([4c86aaf](https://www.github.com/googleapis/java-shared-dependencies/commit/4c86aafc05097b6702056f5cb37736127b6df306))
+
+
+### Dependencies
+
+* update dependency com.fasterxml.jackson:jackson-bom to v2.12.4 ([#398](https://www.github.com/googleapis/java-shared-dependencies/issues/398)) ([f0d49b5](https://www.github.com/googleapis/java-shared-dependencies/commit/f0d49b54ba334f9351c66c9924e3d0d2ed7c0016))
+* update dependency com.google.api:api-common to v1.10.6 ([#411](https://www.github.com/googleapis/java-shared-dependencies/issues/411)) ([79801b5](https://www.github.com/googleapis/java-shared-dependencies/commit/79801b5fee08a8c97e275ed3674ab6c83b204a90))
+* update dependency com.google.api:api-common to v2 ([#414](https://www.github.com/googleapis/java-shared-dependencies/issues/414)) ([17f6e68](https://www.github.com/googleapis/java-shared-dependencies/commit/17f6e68a2792843dd41d3877c095e97c052c5ac0))
+* update dependency com.google.auth:google-auth-library-bom to v0.27.0 ([#400](https://www.github.com/googleapis/java-shared-dependencies/issues/400)) ([0d5a95b](https://www.github.com/googleapis/java-shared-dependencies/commit/0d5a95b84076684f84b0fdbb93a706113f44457d))
+* update dependency com.google.auth:google-auth-library-bom to v1 ([#413](https://www.github.com/googleapis/java-shared-dependencies/issues/413)) ([94897d3](https://www.github.com/googleapis/java-shared-dependencies/commit/94897d30bb1cac0059e272b058f6221fb7e4733f))
+* update dependency com.google.cloud:grpc-gcp to v1.1.0 ([#403](https://www.github.com/googleapis/java-shared-dependencies/issues/403)) ([3cc59f1](https://www.github.com/googleapis/java-shared-dependencies/commit/3cc59f15ebb31a7f97c9f3d78057022afabe75e9))
+* update dependency com.google.errorprone:error_prone_annotations to v2.8.0 ([#406](https://www.github.com/googleapis/java-shared-dependencies/issues/406)) ([2905787](https://www.github.com/googleapis/java-shared-dependencies/commit/29057879adeda8bc40a903ef3b5feafc83c3d972))
+* update dependency com.google.errorprone:error_prone_annotations to v2.8.1 ([#426](https://www.github.com/googleapis/java-shared-dependencies/issues/426)) ([853b68b](https://www.github.com/googleapis/java-shared-dependencies/commit/853b68b16c88c3abb745ee1f71ba4bb317cbc680))
+* update gax.version to v1.67.0 ([#405](https://www.github.com/googleapis/java-shared-dependencies/issues/405)) ([632dcd0](https://www.github.com/googleapis/java-shared-dependencies/commit/632dcd0a9f10b034a2a2ec92c7c3413490dd2a03))
+* update gax.version to v2 (major) ([#418](https://www.github.com/googleapis/java-shared-dependencies/issues/418)) ([670a9e0](https://www.github.com/googleapis/java-shared-dependencies/commit/670a9e0a9588a7e592eb5dd8c0cb9ab08e07293e))
+* update google.core.version to v1.96.1 ([#417](https://www.github.com/googleapis/java-shared-dependencies/issues/417)) ([49db9cb](https://www.github.com/googleapis/java-shared-dependencies/commit/49db9cb473c8d3d794ad57a41cfc223239482174))
+* update google.core.version to v2 (major) ([#427](https://www.github.com/googleapis/java-shared-dependencies/issues/427)) ([8cc7a92](https://www.github.com/googleapis/java-shared-dependencies/commit/8cc7a922cc3ba10a157e3649d7a783bbbcbee010))
+* update guava to 30.1.1-jre ([#423](https://www.github.com/googleapis/java-shared-dependencies/issues/423)) ([94aca59](https://www.github.com/googleapis/java-shared-dependencies/commit/94aca597804d7b45aae22811b277c44281e62d64))
+
 ## [1.4.0](https://www.github.com/googleapis/java-shared-dependencies/compare/1.3.0...v1.4.0) (2021-06-30)
 
 
