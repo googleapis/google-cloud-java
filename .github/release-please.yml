@@ -1,8 +1,12 @@
 branches:
-- branch: 1.127.12-sp
-  bumpMinorPreMajor: true
-  handleGHRelease: true
-  releaseType: java-lts
+  - branch: 1.127.12-sp
+    bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-lts
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-yoshi
+    branch: java7
 bumpMinorPreMajor: true
 handleGHRelease: true
 releaseType: java-yoshi
