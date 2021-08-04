@@ -22,7 +22,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.shell.v1.AddPublicKeyMetadata;
 import com.google.cloud.shell.v1.AddPublicKeyRequest;
@@ -44,7 +43,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -170,65 +168,50 @@ public class GrpcCloudShellServiceStub extends CloudShellServiceStub {
         GrpcCallSettings.<GetEnvironmentRequest, Environment>newBuilder()
             .setMethodDescriptor(getEnvironmentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetEnvironmentRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetEnvironmentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<StartEnvironmentRequest, Operation> startEnvironmentTransportSettings =
         GrpcCallSettings.<StartEnvironmentRequest, Operation>newBuilder()
             .setMethodDescriptor(startEnvironmentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<StartEnvironmentRequest>() {
-                  @Override
-                  public Map<String, String> extract(StartEnvironmentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<AuthorizeEnvironmentRequest, Operation> authorizeEnvironmentTransportSettings =
         GrpcCallSettings.<AuthorizeEnvironmentRequest, Operation>newBuilder()
             .setMethodDescriptor(authorizeEnvironmentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<AuthorizeEnvironmentRequest>() {
-                  @Override
-                  public Map<String, String> extract(AuthorizeEnvironmentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<AddPublicKeyRequest, Operation> addPublicKeyTransportSettings =
         GrpcCallSettings.<AddPublicKeyRequest, Operation>newBuilder()
             .setMethodDescriptor(addPublicKeyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<AddPublicKeyRequest>() {
-                  @Override
-                  public Map<String, String> extract(AddPublicKeyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("environment", String.valueOf(request.getEnvironment()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("environment", String.valueOf(request.getEnvironment()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RemovePublicKeyRequest, Operation> removePublicKeyTransportSettings =
         GrpcCallSettings.<RemovePublicKeyRequest, Operation>newBuilder()
             .setMethodDescriptor(removePublicKeyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<RemovePublicKeyRequest>() {
-                  @Override
-                  public Map<String, String> extract(RemovePublicKeyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("environment", String.valueOf(request.getEnvironment()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("environment", String.valueOf(request.getEnvironment()));
+                  return params.build();
                 })
             .build();
 
