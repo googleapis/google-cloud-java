@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.servicecontrol.v1.AllocateQuotaRequest;
 import com.google.api.servicecontrol.v1.AllocateQuotaResponse;
@@ -30,7 +29,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -103,13 +101,10 @@ public class GrpcQuotaControllerStub extends QuotaControllerStub {
         GrpcCallSettings.<AllocateQuotaRequest, AllocateQuotaResponse>newBuilder()
             .setMethodDescriptor(allocateQuotaMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<AllocateQuotaRequest>() {
-                  @Override
-                  public Map<String, String> extract(AllocateQuotaRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("service_name", String.valueOf(request.getServiceName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("service_name", String.valueOf(request.getServiceName()));
+                  return params.build();
                 })
             .build();
 

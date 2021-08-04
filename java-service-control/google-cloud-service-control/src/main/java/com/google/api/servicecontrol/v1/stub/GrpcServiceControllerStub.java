@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.servicecontrol.v1.CheckRequest;
 import com.google.api.servicecontrol.v1.CheckResponse;
@@ -32,7 +31,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -111,26 +109,20 @@ public class GrpcServiceControllerStub extends ServiceControllerStub {
         GrpcCallSettings.<CheckRequest, CheckResponse>newBuilder()
             .setMethodDescriptor(checkMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CheckRequest>() {
-                  @Override
-                  public Map<String, String> extract(CheckRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("service_name", String.valueOf(request.getServiceName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("service_name", String.valueOf(request.getServiceName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ReportRequest, ReportResponse> reportTransportSettings =
         GrpcCallSettings.<ReportRequest, ReportResponse>newBuilder()
             .setMethodDescriptor(reportMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ReportRequest>() {
-                  @Override
-                  public Map<String, String> extract(ReportRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("service_name", String.valueOf(request.getServiceName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("service_name", String.valueOf(request.getServiceName()));
+                  return params.build();
                 })
             .build();
 
