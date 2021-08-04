@@ -16,7 +16,6 @@
 
 package com.google.cloud.networksecurity.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2162,13 +2161,7 @@ public class NetworkSecurityClient implements BackgroundResource {
           ListAuthorizationPoliciesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListAuthorizationPoliciesPage, ListAuthorizationPoliciesPagedResponse>() {
-            @Override
-            public ListAuthorizationPoliciesPagedResponse apply(
-                ListAuthorizationPoliciesPage input) {
-              return new ListAuthorizationPoliciesPagedResponse(input);
-            }
-          },
+          input -> new ListAuthorizationPoliciesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2261,12 +2254,7 @@ public class NetworkSecurityClient implements BackgroundResource {
           ListServerTlsPoliciesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListServerTlsPoliciesPage, ListServerTlsPoliciesPagedResponse>() {
-            @Override
-            public ListServerTlsPoliciesPagedResponse apply(ListServerTlsPoliciesPage input) {
-              return new ListServerTlsPoliciesPagedResponse(input);
-            }
-          },
+          input -> new ListServerTlsPoliciesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2350,12 +2338,7 @@ public class NetworkSecurityClient implements BackgroundResource {
           ListClientTlsPoliciesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListClientTlsPoliciesPage, ListClientTlsPoliciesPagedResponse>() {
-            @Override
-            public ListClientTlsPoliciesPagedResponse apply(ListClientTlsPoliciesPage input) {
-              return new ListClientTlsPoliciesPagedResponse(input);
-            }
-          },
+          input -> new ListClientTlsPoliciesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
