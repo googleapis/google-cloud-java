@@ -16,7 +16,6 @@
 
 package com.google.cloud.accessapproval.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -760,12 +759,7 @@ public class AccessApprovalAdminClient implements BackgroundResource {
           ListApprovalRequestsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListApprovalRequestsPage, ListApprovalRequestsPagedResponse>() {
-            @Override
-            public ListApprovalRequestsPagedResponse apply(ListApprovalRequestsPage input) {
-              return new ListApprovalRequestsPagedResponse(input);
-            }
-          },
+          input -> new ListApprovalRequestsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
