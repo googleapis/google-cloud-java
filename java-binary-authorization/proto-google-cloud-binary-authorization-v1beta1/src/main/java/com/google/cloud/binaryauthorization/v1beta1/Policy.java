@@ -230,7 +230,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enables global policy evaluation.
+     * Enables system policy evaluation.
      * </pre>
      *
      * <code>ENABLE = 1;</code>
@@ -240,7 +240,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Disables global policy evaluation.
+     * Disables system policy evaluation.
      * </pre>
      *
      * <code>DISABLE = 2;</code>
@@ -263,7 +263,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enables global policy evaluation.
+     * Enables system policy evaluation.
      * </pre>
      *
      * <code>ENABLE = 1;</code>
@@ -273,7 +273,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Disables global policy evaluation.
+     * Disables system policy evaluation.
      * </pre>
      *
      * <code>DISABLE = 2;</code>
