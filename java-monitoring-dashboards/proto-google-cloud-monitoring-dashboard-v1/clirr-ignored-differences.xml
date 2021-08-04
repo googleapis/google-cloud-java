@@ -16,4 +16,13 @@
     <className>com/google/monitoring/dashboard/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/monitoring/dashboard/v1/DrilldownsProto</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/monitoring/dashboard/v1/ServiceMonitoringProto</className>
+  </difference>
 </differences>
