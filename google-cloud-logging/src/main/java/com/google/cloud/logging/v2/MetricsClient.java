@@ -16,7 +16,6 @@
 
 package com.google.cloud.logging.v2;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -734,12 +733,7 @@ public class MetricsClient implements BackgroundResource {
           ListLogMetricsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListLogMetricsPage, ListLogMetricsPagedResponse>() {
-            @Override
-            public ListLogMetricsPagedResponse apply(ListLogMetricsPage input) {
-              return new ListLogMetricsPagedResponse(input);
-            }
-          },
+          input -> new ListLogMetricsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

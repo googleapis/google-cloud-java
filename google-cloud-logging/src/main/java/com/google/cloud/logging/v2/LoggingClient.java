@@ -18,7 +18,6 @@ package com.google.cloud.logging.v2;
 
 import com.google.api.MonitoredResource;
 import com.google.api.MonitoredResourceDescriptor;
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1032,12 +1031,7 @@ public class LoggingClient implements BackgroundResource {
           ListLogEntriesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListLogEntriesPage, ListLogEntriesPagedResponse>() {
-            @Override
-            public ListLogEntriesPagedResponse apply(ListLogEntriesPage input) {
-              return new ListLogEntriesPagedResponse(input);
-            }
-          },
+          input -> new ListLogEntriesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1118,15 +1112,7 @@ public class LoggingClient implements BackgroundResource {
               .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              ListMonitoredResourceDescriptorsPage,
-              ListMonitoredResourceDescriptorsPagedResponse>() {
-            @Override
-            public ListMonitoredResourceDescriptorsPagedResponse apply(
-                ListMonitoredResourceDescriptorsPage input) {
-              return new ListMonitoredResourceDescriptorsPagedResponse(input);
-            }
-          },
+          input -> new ListMonitoredResourceDescriptorsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1214,14 +1200,7 @@ public class LoggingClient implements BackgroundResource {
       ApiFuture<ListLogsPage> futurePage =
           ListLogsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListLogsPage, ListLogsPagedResponse>() {
-            @Override
-            public ListLogsPagedResponse apply(ListLogsPage input) {
-              return new ListLogsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListLogsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListLogsPagedResponse(ListLogsPage page) {

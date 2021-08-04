@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.logging.v2.CreateLogMetricRequest;
@@ -38,7 +37,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -157,65 +155,50 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
             GrpcCallSettings.<ListLogMetricsRequest, ListLogMetricsResponse>newBuilder()
                 .setMethodDescriptor(listLogMetricsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListLogMetricsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListLogMetricsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetLogMetricRequest, LogMetric> getLogMetricTransportSettings =
         GrpcCallSettings.<GetLogMetricRequest, LogMetric>newBuilder()
             .setMethodDescriptor(getLogMetricMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetLogMetricRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetLogMetricRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("metric_name", String.valueOf(request.getMetricName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("metric_name", String.valueOf(request.getMetricName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateLogMetricRequest, LogMetric> createLogMetricTransportSettings =
         GrpcCallSettings.<CreateLogMetricRequest, LogMetric>newBuilder()
             .setMethodDescriptor(createLogMetricMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateLogMetricRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateLogMetricRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricTransportSettings =
         GrpcCallSettings.<UpdateLogMetricRequest, LogMetric>newBuilder()
             .setMethodDescriptor(updateLogMetricMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateLogMetricRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateLogMetricRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("metric_name", String.valueOf(request.getMetricName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("metric_name", String.valueOf(request.getMetricName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricTransportSettings =
         GrpcCallSettings.<DeleteLogMetricRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteLogMetricMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteLogMetricRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteLogMetricRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("metric_name", String.valueOf(request.getMetricName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("metric_name", String.valueOf(request.getMetricName()));
+                  return params.build();
                 })
             .build();
 
@@ -279,7 +262,13 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override
