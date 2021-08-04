@@ -16,7 +16,6 @@
 
 package com.google.api.serviceusage.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1747,12 +1746,7 @@ public class ServiceUsageClient implements BackgroundResource {
           ListServicesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListServicesPage, ListServicesPagedResponse>() {
-            @Override
-            public ListServicesPagedResponse apply(ListServicesPage input) {
-              return new ListServicesPagedResponse(input);
-            }
-          },
+          input -> new ListServicesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1831,12 +1825,7 @@ public class ServiceUsageClient implements BackgroundResource {
           ListConsumerQuotaMetricsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListConsumerQuotaMetricsPage, ListConsumerQuotaMetricsPagedResponse>() {
-            @Override
-            public ListConsumerQuotaMetricsPagedResponse apply(ListConsumerQuotaMetricsPage input) {
-              return new ListConsumerQuotaMetricsPagedResponse(input);
-            }
-          },
+          input -> new ListConsumerQuotaMetricsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1928,12 +1917,7 @@ public class ServiceUsageClient implements BackgroundResource {
           ListAdminOverridesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListAdminOverridesPage, ListAdminOverridesPagedResponse>() {
-            @Override
-            public ListAdminOverridesPagedResponse apply(ListAdminOverridesPage input) {
-              return new ListAdminOverridesPagedResponse(input);
-            }
-          },
+          input -> new ListAdminOverridesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2014,12 +1998,7 @@ public class ServiceUsageClient implements BackgroundResource {
           ListConsumerOverridesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListConsumerOverridesPage, ListConsumerOverridesPagedResponse>() {
-            @Override
-            public ListConsumerOverridesPagedResponse apply(ListConsumerOverridesPage input) {
-              return new ListConsumerOverridesPagedResponse(input);
-            }
-          },
+          input -> new ListConsumerOverridesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
