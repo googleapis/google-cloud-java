@@ -16,7 +16,6 @@
 
 package com.google.dataflow.v1beta3;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -478,12 +477,7 @@ public class MetricsV1Beta3Client implements BackgroundResource {
           GetJobExecutionDetailsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<GetJobExecutionDetailsPage, GetJobExecutionDetailsPagedResponse>() {
-            @Override
-            public GetJobExecutionDetailsPagedResponse apply(GetJobExecutionDetailsPage input) {
-              return new GetJobExecutionDetailsPagedResponse(input);
-            }
-          },
+          input -> new GetJobExecutionDetailsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -563,12 +557,7 @@ public class MetricsV1Beta3Client implements BackgroundResource {
           GetStageExecutionDetailsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<GetStageExecutionDetailsPage, GetStageExecutionDetailsPagedResponse>() {
-            @Override
-            public GetStageExecutionDetailsPagedResponse apply(GetStageExecutionDetailsPage input) {
-              return new GetStageExecutionDetailsPagedResponse(input);
-            }
-          },
+          input -> new GetStageExecutionDetailsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

@@ -16,7 +16,6 @@
 
 package com.google.dataflow.v1beta3;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -682,14 +681,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
       ApiFuture<ListJobsPage> futurePage =
           ListJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListJobsPage, ListJobsPagedResponse>() {
-            @Override
-            public ListJobsPagedResponse apply(ListJobsPage input) {
-              return new ListJobsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListJobsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListJobsPagedResponse(ListJobsPage page) {
@@ -757,12 +749,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
           AggregatedListJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<AggregatedListJobsPage, AggregatedListJobsPagedResponse>() {
-            @Override
-            public AggregatedListJobsPagedResponse apply(AggregatedListJobsPage input) {
-              return new AggregatedListJobsPagedResponse(input);
-            }
-          },
+          input -> new AggregatedListJobsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

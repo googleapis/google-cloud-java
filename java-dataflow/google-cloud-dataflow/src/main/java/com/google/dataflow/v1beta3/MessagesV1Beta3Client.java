@@ -16,7 +16,6 @@
 
 package com.google.dataflow.v1beta3;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -332,12 +331,7 @@ public class MessagesV1Beta3Client implements BackgroundResource {
           ListJobMessagesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListJobMessagesPage, ListJobMessagesPagedResponse>() {
-            @Override
-            public ListJobMessagesPagedResponse apply(ListJobMessagesPage input) {
-              return new ListJobMessagesPagedResponse(input);
-            }
-          },
+          input -> new ListJobMessagesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
