@@ -570,7 +570,13 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override
