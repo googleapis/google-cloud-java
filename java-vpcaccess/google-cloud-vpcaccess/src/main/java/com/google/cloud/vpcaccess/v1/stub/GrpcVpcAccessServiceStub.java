@@ -24,7 +24,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.vpcaccess.v1.Connector;
 import com.google.cloud.vpcaccess.v1.CreateConnectorRequest;
@@ -40,7 +39,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -151,26 +149,20 @@ public class GrpcVpcAccessServiceStub extends VpcAccessServiceStub {
         GrpcCallSettings.<CreateConnectorRequest, Operation>newBuilder()
             .setMethodDescriptor(createConnectorMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateConnectorRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateConnectorRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetConnectorRequest, Connector> getConnectorTransportSettings =
         GrpcCallSettings.<GetConnectorRequest, Connector>newBuilder()
             .setMethodDescriptor(getConnectorMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetConnectorRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetConnectorRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListConnectorsRequest, ListConnectorsResponse>
@@ -178,26 +170,20 @@ public class GrpcVpcAccessServiceStub extends VpcAccessServiceStub {
             GrpcCallSettings.<ListConnectorsRequest, ListConnectorsResponse>newBuilder()
                 .setMethodDescriptor(listConnectorsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListConnectorsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListConnectorsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteConnectorRequest, Operation> deleteConnectorTransportSettings =
         GrpcCallSettings.<DeleteConnectorRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteConnectorMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteConnectorRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteConnectorRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 

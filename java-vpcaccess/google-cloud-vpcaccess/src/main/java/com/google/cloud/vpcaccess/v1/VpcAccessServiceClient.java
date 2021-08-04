@@ -16,7 +16,6 @@
 
 package com.google.cloud.vpcaccess.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -698,12 +697,7 @@ public class VpcAccessServiceClient implements BackgroundResource {
           ListConnectorsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListConnectorsPage, ListConnectorsPagedResponse>() {
-            @Override
-            public ListConnectorsPagedResponse apply(ListConnectorsPage input) {
-              return new ListConnectorsPagedResponse(input);
-            }
-          },
+          input -> new ListConnectorsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
