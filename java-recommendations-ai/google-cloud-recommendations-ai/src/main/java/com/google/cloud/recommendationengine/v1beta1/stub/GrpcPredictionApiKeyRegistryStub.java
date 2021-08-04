@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommendationengine.v1beta1.CreatePredictionApiKeyRegistrationRequest;
 import com.google.cloud.recommendationengine.v1beta1.DeletePredictionApiKeyRegistrationRequest;
@@ -37,7 +36,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -158,14 +156,10 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                     newBuilder()
                 .setMethodDescriptor(createPredictionApiKeyRegistrationMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreatePredictionApiKeyRegistrationRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CreatePredictionApiKeyRegistrationRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -177,14 +171,10 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                     newBuilder()
                 .setMethodDescriptor(listPredictionApiKeyRegistrationsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListPredictionApiKeyRegistrationsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ListPredictionApiKeyRegistrationsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeletePredictionApiKeyRegistrationRequest, Empty>
@@ -192,14 +182,10 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
             GrpcCallSettings.<DeletePredictionApiKeyRegistrationRequest, Empty>newBuilder()
                 .setMethodDescriptor(deletePredictionApiKeyRegistrationMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeletePredictionApiKeyRegistrationRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          DeletePredictionApiKeyRegistrationRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 

@@ -16,7 +16,6 @@
 
 package com.google.cloud.recommendationengine.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -637,15 +636,7 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
               .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              ListPredictionApiKeyRegistrationsPage,
-              ListPredictionApiKeyRegistrationsPagedResponse>() {
-            @Override
-            public ListPredictionApiKeyRegistrationsPagedResponse apply(
-                ListPredictionApiKeyRegistrationsPage input) {
-              return new ListPredictionApiKeyRegistrationsPagedResponse(input);
-            }
-          },
+          input -> new ListPredictionApiKeyRegistrationsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

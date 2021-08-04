@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommendationengine.v1beta1.CatalogItem;
 import com.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest;
@@ -44,7 +43,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -185,26 +183,20 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
         GrpcCallSettings.<CreateCatalogItemRequest, CatalogItem>newBuilder()
             .setMethodDescriptor(createCatalogItemMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateCatalogItemRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateCatalogItemRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetCatalogItemRequest, CatalogItem> getCatalogItemTransportSettings =
         GrpcCallSettings.<GetCatalogItemRequest, CatalogItem>newBuilder()
             .setMethodDescriptor(getCatalogItemMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetCatalogItemRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetCatalogItemRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListCatalogItemsRequest, ListCatalogItemsResponse>
@@ -212,52 +204,40 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
             GrpcCallSettings.<ListCatalogItemsRequest, ListCatalogItemsResponse>newBuilder()
                 .setMethodDescriptor(listCatalogItemsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListCatalogItemsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListCatalogItemsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateCatalogItemRequest, CatalogItem> updateCatalogItemTransportSettings =
         GrpcCallSettings.<UpdateCatalogItemRequest, CatalogItem>newBuilder()
             .setMethodDescriptor(updateCatalogItemMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateCatalogItemRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateCatalogItemRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteCatalogItemRequest, Empty> deleteCatalogItemTransportSettings =
         GrpcCallSettings.<DeleteCatalogItemRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteCatalogItemMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteCatalogItemRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteCatalogItemRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ImportCatalogItemsRequest, Operation> importCatalogItemsTransportSettings =
         GrpcCallSettings.<ImportCatalogItemsRequest, Operation>newBuilder()
             .setMethodDescriptor(importCatalogItemsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ImportCatalogItemsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ImportCatalogItemsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
 

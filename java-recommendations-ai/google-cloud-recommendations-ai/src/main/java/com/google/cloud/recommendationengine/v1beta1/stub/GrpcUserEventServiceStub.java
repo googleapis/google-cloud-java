@@ -26,7 +26,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommendationengine.v1beta1.CollectUserEventRequest;
 import com.google.cloud.recommendationengine.v1beta1.ImportMetadata;
@@ -45,7 +44,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -175,26 +173,20 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
         GrpcCallSettings.<WriteUserEventRequest, UserEvent>newBuilder()
             .setMethodDescriptor(writeUserEventMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<WriteUserEventRequest>() {
-                  @Override
-                  public Map<String, String> extract(WriteUserEventRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CollectUserEventRequest, HttpBody> collectUserEventTransportSettings =
         GrpcCallSettings.<CollectUserEventRequest, HttpBody>newBuilder()
             .setMethodDescriptor(collectUserEventMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CollectUserEventRequest>() {
-                  @Override
-                  public Map<String, String> extract(CollectUserEventRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListUserEventsRequest, ListUserEventsResponse>
@@ -202,39 +194,30 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
             GrpcCallSettings.<ListUserEventsRequest, ListUserEventsResponse>newBuilder()
                 .setMethodDescriptor(listUserEventsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListUserEventsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListUserEventsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsTransportSettings =
         GrpcCallSettings.<PurgeUserEventsRequest, Operation>newBuilder()
             .setMethodDescriptor(purgeUserEventsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<PurgeUserEventsRequest>() {
-                  @Override
-                  public Map<String, String> extract(PurgeUserEventsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ImportUserEventsRequest, Operation> importUserEventsTransportSettings =
         GrpcCallSettings.<ImportUserEventsRequest, Operation>newBuilder()
             .setMethodDescriptor(importUserEventsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ImportUserEventsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ImportUserEventsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
 

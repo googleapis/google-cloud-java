@@ -17,7 +17,6 @@
 package com.google.cloud.recommendationengine.v1beta1;
 
 import com.google.api.HttpBody;
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1062,12 +1061,7 @@ public class UserEventServiceClient implements BackgroundResource {
           ListUserEventsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListUserEventsPage, ListUserEventsPagedResponse>() {
-            @Override
-            public ListUserEventsPagedResponse apply(ListUserEventsPage input) {
-              return new ListUserEventsPagedResponse(input);
-            }
-          },
+          input -> new ListUserEventsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
