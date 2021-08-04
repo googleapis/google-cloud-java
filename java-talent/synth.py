@@ -15,6 +15,7 @@
 """This script is used to synthesize generated parts of this library."""
 
 import synthtool.languages.java as java
+import os
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
@@ -27,7 +28,7 @@ for version in versions:
       version=version,
       bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
   )
-
+os.remove('proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchProto.java')
 java.common_templates(excludes=[
   '.kokoro/build.sh',
   '.kokoro/nightly/samples.cfg',
