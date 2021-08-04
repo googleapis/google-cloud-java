@@ -24,7 +24,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.translate.v3.BatchTranslateMetadata;
 import com.google.cloud.translate.v3.BatchTranslateResponse;
@@ -50,7 +49,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -213,13 +211,10 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
         GrpcCallSettings.<TranslateTextRequest, TranslateTextResponse>newBuilder()
             .setMethodDescriptor(translateTextMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<TranslateTextRequest>() {
-                  @Override
-                  public Map<String, String> extract(TranslateTextRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DetectLanguageRequest, DetectLanguageResponse>
@@ -227,13 +222,10 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
             GrpcCallSettings.<DetectLanguageRequest, DetectLanguageResponse>newBuilder()
                 .setMethodDescriptor(detectLanguageMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DetectLanguageRequest>() {
-                      @Override
-                      public Map<String, String> extract(DetectLanguageRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetSupportedLanguagesRequest, SupportedLanguages>
@@ -241,39 +233,30 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
             GrpcCallSettings.<GetSupportedLanguagesRequest, SupportedLanguages>newBuilder()
                 .setMethodDescriptor(getSupportedLanguagesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetSupportedLanguagesRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetSupportedLanguagesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<BatchTranslateTextRequest, Operation> batchTranslateTextTransportSettings =
         GrpcCallSettings.<BatchTranslateTextRequest, Operation>newBuilder()
             .setMethodDescriptor(batchTranslateTextMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<BatchTranslateTextRequest>() {
-                  @Override
-                  public Map<String, String> extract(BatchTranslateTextRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateGlossaryRequest, Operation> createGlossaryTransportSettings =
         GrpcCallSettings.<CreateGlossaryRequest, Operation>newBuilder()
             .setMethodDescriptor(createGlossaryMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateGlossaryRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateGlossaryRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListGlossariesRequest, ListGlossariesResponse>
@@ -281,39 +264,30 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
             GrpcCallSettings.<ListGlossariesRequest, ListGlossariesResponse>newBuilder()
                 .setMethodDescriptor(listGlossariesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListGlossariesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListGlossariesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetGlossaryRequest, Glossary> getGlossaryTransportSettings =
         GrpcCallSettings.<GetGlossaryRequest, Glossary>newBuilder()
             .setMethodDescriptor(getGlossaryMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetGlossaryRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetGlossaryRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteGlossaryRequest, Operation> deleteGlossaryTransportSettings =
         GrpcCallSettings.<DeleteGlossaryRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteGlossaryMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteGlossaryRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteGlossaryRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 
@@ -443,7 +417,13 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override
