@@ -468,4 +468,76 @@ public interface FindingOrBuilder
    * @return The bytes for canonicalName.
    */
   com.google.protobuf.ByteString getCanonicalNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The class of the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Finding.FindingClass finding_class = 17;</code>
+   *
+   * @return The enum numeric value on the wire for findingClass.
+   */
+  int getFindingClassValue();
+  /**
+   *
+   *
+   * <pre>
+   * The class of the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Finding.FindingClass finding_class = 17;</code>
+   *
+   * @return The findingClass.
+   */
+  com.google.cloud.securitycenter.v1.Finding.FindingClass getFindingClass();
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents what's commonly known as an Indicator of compromise (IoC) in
+   * computer forensics. This is an artifact observed on a network or in an
+   * operating system that, with high confidence, indicates a computer
+   * intrusion.
+   * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
+   *
+   * @return Whether the indicator field is set.
+   */
+  boolean hasIndicator();
+  /**
+   *
+   *
+   * <pre>
+   * Represents what's commonly known as an Indicator of compromise (IoC) in
+   * computer forensics. This is an artifact observed on a network or in an
+   * operating system that, with high confidence, indicates a computer
+   * intrusion.
+   * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
+   *
+   * @return The indicator.
+   */
+  com.google.cloud.securitycenter.v1.Indicator getIndicator();
+  /**
+   *
+   *
+   * <pre>
+   * Represents what's commonly known as an Indicator of compromise (IoC) in
+   * computer forensics. This is an artifact observed on a network or in an
+   * operating system that, with high confidence, indicates a computer
+   * intrusion.
+   * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
+   */
+  com.google.cloud.securitycenter.v1.IndicatorOrBuilder getIndicatorOrBuilder();
 }

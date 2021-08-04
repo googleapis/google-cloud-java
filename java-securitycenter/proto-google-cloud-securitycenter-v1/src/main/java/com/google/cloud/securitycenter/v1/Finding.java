@@ -51,6 +51,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     externalUri_ = "";
     severity_ = 0;
     canonicalName_ = "";
+    findingClass_ = 0;
   }
 
   @java.lang.Override
@@ -201,6 +202,29 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               canonicalName_ = s;
+              break;
+            }
+          case 136:
+            {
+              int rawValue = input.readEnum();
+
+              findingClass_ = rawValue;
+              break;
+            }
+          case 146:
+            {
+              com.google.cloud.securitycenter.v1.Indicator.Builder subBuilder = null;
+              if (indicator_ != null) {
+                subBuilder = indicator_.toBuilder();
+              }
+              indicator_ =
+                  input.readMessage(
+                      com.google.cloud.securitycenter.v1.Indicator.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(indicator_);
+                indicator_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -680,6 +704,211 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.securitycenter.v1.Finding.Severity)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents what kind of Finding it is.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.securitycenter.v1.Finding.FindingClass}
+   */
+  public enum FindingClass implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified finding class.
+     * </pre>
+     *
+     * <code>FINDING_CLASS_UNSPECIFIED = 0;</code>
+     */
+    FINDING_CLASS_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Describes unwanted or malicious activity.
+     * </pre>
+     *
+     * <code>THREAT = 1;</code>
+     */
+    THREAT(1),
+    /**
+     *
+     *
+     * <pre>
+     * Describes a potential weakness in software that increases risk to
+     * Confidentiality &amp; Integrity &amp; Availability.
+     * </pre>
+     *
+     * <code>VULNERABILITY = 2;</code>
+     */
+    VULNERABILITY(2),
+    /**
+     *
+     *
+     * <pre>
+     * Describes a potential weakness in cloud resource/asset configuration that
+     * increases risk.
+     * </pre>
+     *
+     * <code>MISCONFIGURATION = 3;</code>
+     */
+    MISCONFIGURATION(3),
+    /**
+     *
+     *
+     * <pre>
+     * Describes a security observation that is for informational purposes.
+     * </pre>
+     *
+     * <code>OBSERVATION = 4;</code>
+     */
+    OBSERVATION(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified finding class.
+     * </pre>
+     *
+     * <code>FINDING_CLASS_UNSPECIFIED = 0;</code>
+     */
+    public static final int FINDING_CLASS_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Describes unwanted or malicious activity.
+     * </pre>
+     *
+     * <code>THREAT = 1;</code>
+     */
+    public static final int THREAT_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Describes a potential weakness in software that increases risk to
+     * Confidentiality &amp; Integrity &amp; Availability.
+     * </pre>
+     *
+     * <code>VULNERABILITY = 2;</code>
+     */
+    public static final int VULNERABILITY_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Describes a potential weakness in cloud resource/asset configuration that
+     * increases risk.
+     * </pre>
+     *
+     * <code>MISCONFIGURATION = 3;</code>
+     */
+    public static final int MISCONFIGURATION_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Describes a security observation that is for informational purposes.
+     * </pre>
+     *
+     * <code>OBSERVATION = 4;</code>
+     */
+    public static final int OBSERVATION_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static FindingClass valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static FindingClass forNumber(int value) {
+      switch (value) {
+        case 0:
+          return FINDING_CLASS_UNSPECIFIED;
+        case 1:
+          return THREAT;
+        case 2:
+          return VULNERABILITY;
+        case 3:
+          return MISCONFIGURATION;
+        case 4:
+          return OBSERVATION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<FindingClass> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<FindingClass> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<FindingClass>() {
+          public FindingClass findValueByNumber(int number) {
+            return FindingClass.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v1.Finding.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final FindingClass[] VALUES = values();
+
+    public static FindingClass valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private FindingClass(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.securitycenter.v1.Finding.FindingClass)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -1379,6 +1608,104 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int FINDING_CLASS_FIELD_NUMBER = 17;
+  private int findingClass_;
+  /**
+   *
+   *
+   * <pre>
+   * The class of the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Finding.FindingClass finding_class = 17;</code>
+   *
+   * @return The enum numeric value on the wire for findingClass.
+   */
+  @java.lang.Override
+  public int getFindingClassValue() {
+    return findingClass_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The class of the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Finding.FindingClass finding_class = 17;</code>
+   *
+   * @return The findingClass.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Finding.FindingClass getFindingClass() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.securitycenter.v1.Finding.FindingClass result =
+        com.google.cloud.securitycenter.v1.Finding.FindingClass.valueOf(findingClass_);
+    return result == null
+        ? com.google.cloud.securitycenter.v1.Finding.FindingClass.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int INDICATOR_FIELD_NUMBER = 18;
+  private com.google.cloud.securitycenter.v1.Indicator indicator_;
+  /**
+   *
+   *
+   * <pre>
+   * Represents what's commonly known as an Indicator of compromise (IoC) in
+   * computer forensics. This is an artifact observed on a network or in an
+   * operating system that, with high confidence, indicates a computer
+   * intrusion.
+   * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
+   *
+   * @return Whether the indicator field is set.
+   */
+  @java.lang.Override
+  public boolean hasIndicator() {
+    return indicator_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents what's commonly known as an Indicator of compromise (IoC) in
+   * computer forensics. This is an artifact observed on a network or in an
+   * operating system that, with high confidence, indicates a computer
+   * intrusion.
+   * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
+   *
+   * @return The indicator.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Indicator getIndicator() {
+    return indicator_ == null
+        ? com.google.cloud.securitycenter.v1.Indicator.getDefaultInstance()
+        : indicator_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents what's commonly known as an Indicator of compromise (IoC) in
+   * computer forensics. This is an artifact observed on a network or in an
+   * operating system that, with high confidence, indicates a computer
+   * intrusion.
+   * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.IndicatorOrBuilder getIndicatorOrBuilder() {
+    return getIndicator();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1428,6 +1755,14 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getCanonicalNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, canonicalName_);
+    }
+    if (findingClass_
+        != com.google.cloud.securitycenter.v1.Finding.FindingClass.FINDING_CLASS_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(17, findingClass_);
+    }
+    if (indicator_ != null) {
+      output.writeMessage(18, getIndicator());
     }
     unknownFields.writeTo(output);
   }
@@ -1482,6 +1817,14 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (!getCanonicalNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, canonicalName_);
     }
+    if (findingClass_
+        != com.google.cloud.securitycenter.v1.Finding.FindingClass.FINDING_CLASS_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, findingClass_);
+    }
+    if (indicator_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getIndicator());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1519,6 +1862,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     if (severity_ != other.severity_) return false;
     if (!getCanonicalName().equals(other.getCanonicalName())) return false;
+    if (findingClass_ != other.findingClass_) return false;
+    if (hasIndicator() != other.hasIndicator()) return false;
+    if (hasIndicator()) {
+      if (!getIndicator().equals(other.getIndicator())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1562,6 +1910,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + severity_;
     hash = (37 * hash) + CANONICAL_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getCanonicalName().hashCode();
+    hash = (37 * hash) + FINDING_CLASS_FIELD_NUMBER;
+    hash = (53 * hash) + findingClass_;
+    if (hasIndicator()) {
+      hash = (37 * hash) + INDICATOR_FIELD_NUMBER;
+      hash = (53 * hash) + getIndicator().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1767,6 +2121,14 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
 
       canonicalName_ = "";
 
+      findingClass_ = 0;
+
+      if (indicatorBuilder_ == null) {
+        indicator_ = null;
+      } else {
+        indicator_ = null;
+        indicatorBuilder_ = null;
+      }
       return this;
     }
 
@@ -1820,6 +2182,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       result.severity_ = severity_;
       result.canonicalName_ = canonicalName_;
+      result.findingClass_ = findingClass_;
+      if (indicatorBuilder_ == null) {
+        result.indicator_ = indicator_;
+      } else {
+        result.indicator_ = indicatorBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1908,6 +2276,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (!other.getCanonicalName().isEmpty()) {
         canonicalName_ = other.canonicalName_;
         onChanged();
+      }
+      if (other.findingClass_ != 0) {
+        setFindingClassValue(other.getFindingClassValue());
+      }
+      if (other.hasIndicator()) {
+        mergeIndicator(other.getIndicator());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3685,6 +4059,321 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       canonicalName_ = value;
       onChanged();
       return this;
+    }
+
+    private int findingClass_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The class of the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Finding.FindingClass finding_class = 17;</code>
+     *
+     * @return The enum numeric value on the wire for findingClass.
+     */
+    @java.lang.Override
+    public int getFindingClassValue() {
+      return findingClass_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The class of the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Finding.FindingClass finding_class = 17;</code>
+     *
+     * @param value The enum numeric value on the wire for findingClass to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFindingClassValue(int value) {
+
+      findingClass_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The class of the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Finding.FindingClass finding_class = 17;</code>
+     *
+     * @return The findingClass.
+     */
+    @java.lang.Override
+    public com.google.cloud.securitycenter.v1.Finding.FindingClass getFindingClass() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.securitycenter.v1.Finding.FindingClass result =
+          com.google.cloud.securitycenter.v1.Finding.FindingClass.valueOf(findingClass_);
+      return result == null
+          ? com.google.cloud.securitycenter.v1.Finding.FindingClass.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The class of the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Finding.FindingClass finding_class = 17;</code>
+     *
+     * @param value The findingClass to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFindingClass(com.google.cloud.securitycenter.v1.Finding.FindingClass value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      findingClass_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The class of the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Finding.FindingClass finding_class = 17;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFindingClass() {
+
+      findingClass_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.securitycenter.v1.Indicator indicator_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Indicator,
+            com.google.cloud.securitycenter.v1.Indicator.Builder,
+            com.google.cloud.securitycenter.v1.IndicatorOrBuilder>
+        indicatorBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Represents what's commonly known as an Indicator of compromise (IoC) in
+     * computer forensics. This is an artifact observed on a network or in an
+     * operating system that, with high confidence, indicates a computer
+     * intrusion.
+     * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
+     *
+     * @return Whether the indicator field is set.
+     */
+    public boolean hasIndicator() {
+      return indicatorBuilder_ != null || indicator_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents what's commonly known as an Indicator of compromise (IoC) in
+     * computer forensics. This is an artifact observed on a network or in an
+     * operating system that, with high confidence, indicates a computer
+     * intrusion.
+     * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
+     *
+     * @return The indicator.
+     */
+    public com.google.cloud.securitycenter.v1.Indicator getIndicator() {
+      if (indicatorBuilder_ == null) {
+        return indicator_ == null
+            ? com.google.cloud.securitycenter.v1.Indicator.getDefaultInstance()
+            : indicator_;
+      } else {
+        return indicatorBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents what's commonly known as an Indicator of compromise (IoC) in
+     * computer forensics. This is an artifact observed on a network or in an
+     * operating system that, with high confidence, indicates a computer
+     * intrusion.
+     * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
+     */
+    public Builder setIndicator(com.google.cloud.securitycenter.v1.Indicator value) {
+      if (indicatorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        indicator_ = value;
+        onChanged();
+      } else {
+        indicatorBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents what's commonly known as an Indicator of compromise (IoC) in
+     * computer forensics. This is an artifact observed on a network or in an
+     * operating system that, with high confidence, indicates a computer
+     * intrusion.
+     * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
+     */
+    public Builder setIndicator(
+        com.google.cloud.securitycenter.v1.Indicator.Builder builderForValue) {
+      if (indicatorBuilder_ == null) {
+        indicator_ = builderForValue.build();
+        onChanged();
+      } else {
+        indicatorBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents what's commonly known as an Indicator of compromise (IoC) in
+     * computer forensics. This is an artifact observed on a network or in an
+     * operating system that, with high confidence, indicates a computer
+     * intrusion.
+     * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
+     */
+    public Builder mergeIndicator(com.google.cloud.securitycenter.v1.Indicator value) {
+      if (indicatorBuilder_ == null) {
+        if (indicator_ != null) {
+          indicator_ =
+              com.google.cloud.securitycenter.v1.Indicator.newBuilder(indicator_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          indicator_ = value;
+        }
+        onChanged();
+      } else {
+        indicatorBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents what's commonly known as an Indicator of compromise (IoC) in
+     * computer forensics. This is an artifact observed on a network or in an
+     * operating system that, with high confidence, indicates a computer
+     * intrusion.
+     * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
+     */
+    public Builder clearIndicator() {
+      if (indicatorBuilder_ == null) {
+        indicator_ = null;
+        onChanged();
+      } else {
+        indicator_ = null;
+        indicatorBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents what's commonly known as an Indicator of compromise (IoC) in
+     * computer forensics. This is an artifact observed on a network or in an
+     * operating system that, with high confidence, indicates a computer
+     * intrusion.
+     * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Indicator.Builder getIndicatorBuilder() {
+
+      onChanged();
+      return getIndicatorFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents what's commonly known as an Indicator of compromise (IoC) in
+     * computer forensics. This is an artifact observed on a network or in an
+     * operating system that, with high confidence, indicates a computer
+     * intrusion.
+     * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
+     */
+    public com.google.cloud.securitycenter.v1.IndicatorOrBuilder getIndicatorOrBuilder() {
+      if (indicatorBuilder_ != null) {
+        return indicatorBuilder_.getMessageOrBuilder();
+      } else {
+        return indicator_ == null
+            ? com.google.cloud.securitycenter.v1.Indicator.getDefaultInstance()
+            : indicator_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents what's commonly known as an Indicator of compromise (IoC) in
+     * computer forensics. This is an artifact observed on a network or in an
+     * operating system that, with high confidence, indicates a computer
+     * intrusion.
+     * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Indicator,
+            com.google.cloud.securitycenter.v1.Indicator.Builder,
+            com.google.cloud.securitycenter.v1.IndicatorOrBuilder>
+        getIndicatorFieldBuilder() {
+      if (indicatorBuilder_ == null) {
+        indicatorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.Indicator,
+                com.google.cloud.securitycenter.v1.Indicator.Builder,
+                com.google.cloud.securitycenter.v1.IndicatorOrBuilder>(
+                getIndicator(), getParentForChildren(), isClean());
+        indicator_ = null;
+      }
+      return indicatorBuilder_;
     }
 
     @java.lang.Override
