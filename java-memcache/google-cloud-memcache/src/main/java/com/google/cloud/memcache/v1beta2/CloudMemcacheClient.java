@@ -16,7 +16,6 @@
 
 package com.google.cloud.memcache.v1beta2;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1296,12 +1295,7 @@ public class CloudMemcacheClient implements BackgroundResource {
           ListInstancesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListInstancesPage, ListInstancesPagedResponse>() {
-            @Override
-            public ListInstancesPagedResponse apply(ListInstancesPage input) {
-              return new ListInstancesPagedResponse(input);
-            }
-          },
+          input -> new ListInstancesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
