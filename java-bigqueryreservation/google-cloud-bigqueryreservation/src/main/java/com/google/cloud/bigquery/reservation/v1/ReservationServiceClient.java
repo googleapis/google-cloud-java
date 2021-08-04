@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery.reservation.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2838,12 +2837,7 @@ public class ReservationServiceClient implements BackgroundResource {
           ListReservationsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListReservationsPage, ListReservationsPagedResponse>() {
-            @Override
-            public ListReservationsPagedResponse apply(ListReservationsPage input) {
-              return new ListReservationsPagedResponse(input);
-            }
-          },
+          input -> new ListReservationsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2922,12 +2916,7 @@ public class ReservationServiceClient implements BackgroundResource {
           ListCapacityCommitmentsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListCapacityCommitmentsPage, ListCapacityCommitmentsPagedResponse>() {
-            @Override
-            public ListCapacityCommitmentsPagedResponse apply(ListCapacityCommitmentsPage input) {
-              return new ListCapacityCommitmentsPagedResponse(input);
-            }
-          },
+          input -> new ListCapacityCommitmentsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3013,12 +3002,7 @@ public class ReservationServiceClient implements BackgroundResource {
           ListAssignmentsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListAssignmentsPage, ListAssignmentsPagedResponse>() {
-            @Override
-            public ListAssignmentsPagedResponse apply(ListAssignmentsPage input) {
-              return new ListAssignmentsPagedResponse(input);
-            }
-          },
+          input -> new ListAssignmentsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3095,12 +3079,7 @@ public class ReservationServiceClient implements BackgroundResource {
           SearchAssignmentsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchAssignmentsPage, SearchAssignmentsPagedResponse>() {
-            @Override
-            public SearchAssignmentsPagedResponse apply(SearchAssignmentsPage input) {
-              return new SearchAssignmentsPagedResponse(input);
-            }
-          },
+          input -> new SearchAssignmentsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
