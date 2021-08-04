@@ -16,7 +16,6 @@
 
 package com.google.cloud.recaptchaenterprise.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -718,14 +717,7 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
       ApiFuture<ListKeysPage> futurePage =
           ListKeysPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListKeysPage, ListKeysPagedResponse>() {
-            @Override
-            public ListKeysPagedResponse apply(ListKeysPage input) {
-              return new ListKeysPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListKeysPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListKeysPagedResponse(ListKeysPage page) {

@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -43,7 +42,6 @@ import com.google.recaptchaenterprise.v1beta1.UpdateKeyRequest;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -187,13 +185,10 @@ public class GrpcRecaptchaEnterpriseServiceV1Beta1Stub
         GrpcCallSettings.<CreateAssessmentRequest, Assessment>newBuilder()
             .setMethodDescriptor(createAssessmentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateAssessmentRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateAssessmentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<AnnotateAssessmentRequest, AnnotateAssessmentResponse>
@@ -201,78 +196,60 @@ public class GrpcRecaptchaEnterpriseServiceV1Beta1Stub
             GrpcCallSettings.<AnnotateAssessmentRequest, AnnotateAssessmentResponse>newBuilder()
                 .setMethodDescriptor(annotateAssessmentMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<AnnotateAssessmentRequest>() {
-                      @Override
-                      public Map<String, String> extract(AnnotateAssessmentRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateKeyRequest, Key> createKeyTransportSettings =
         GrpcCallSettings.<CreateKeyRequest, Key>newBuilder()
             .setMethodDescriptor(createKeyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateKeyRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateKeyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListKeysRequest, ListKeysResponse> listKeysTransportSettings =
         GrpcCallSettings.<ListKeysRequest, ListKeysResponse>newBuilder()
             .setMethodDescriptor(listKeysMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListKeysRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListKeysRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetKeyRequest, Key> getKeyTransportSettings =
         GrpcCallSettings.<GetKeyRequest, Key>newBuilder()
             .setMethodDescriptor(getKeyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetKeyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetKeyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateKeyRequest, Key> updateKeyTransportSettings =
         GrpcCallSettings.<UpdateKeyRequest, Key>newBuilder()
             .setMethodDescriptor(updateKeyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateKeyRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateKeyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("key.name", String.valueOf(request.getKey().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("key.name", String.valueOf(request.getKey().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteKeyRequest, Empty> deleteKeyTransportSettings =
         GrpcCallSettings.<DeleteKeyRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteKeyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteKeyRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteKeyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 
