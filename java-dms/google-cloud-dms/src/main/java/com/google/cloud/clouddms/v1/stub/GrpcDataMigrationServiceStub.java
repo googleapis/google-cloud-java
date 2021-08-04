@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.clouddms.v1.ConnectionProfile;
 import com.google.cloud.clouddms.v1.CreateConnectionProfileRequest;
@@ -57,7 +56,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -353,157 +351,121 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
             GrpcCallSettings.<ListMigrationJobsRequest, ListMigrationJobsResponse>newBuilder()
                 .setMethodDescriptor(listMigrationJobsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListMigrationJobsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListMigrationJobsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetMigrationJobRequest, MigrationJob> getMigrationJobTransportSettings =
         GrpcCallSettings.<GetMigrationJobRequest, MigrationJob>newBuilder()
             .setMethodDescriptor(getMigrationJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetMigrationJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetMigrationJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateMigrationJobRequest, Operation> createMigrationJobTransportSettings =
         GrpcCallSettings.<CreateMigrationJobRequest, Operation>newBuilder()
             .setMethodDescriptor(createMigrationJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateMigrationJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateMigrationJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateMigrationJobRequest, Operation> updateMigrationJobTransportSettings =
         GrpcCallSettings.<UpdateMigrationJobRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMigrationJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateMigrationJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateMigrationJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "migration_job.name", String.valueOf(request.getMigrationJob().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "migration_job.name", String.valueOf(request.getMigrationJob().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteMigrationJobRequest, Operation> deleteMigrationJobTransportSettings =
         GrpcCallSettings.<DeleteMigrationJobRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMigrationJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteMigrationJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteMigrationJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<StartMigrationJobRequest, Operation> startMigrationJobTransportSettings =
         GrpcCallSettings.<StartMigrationJobRequest, Operation>newBuilder()
             .setMethodDescriptor(startMigrationJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<StartMigrationJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(StartMigrationJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<StopMigrationJobRequest, Operation> stopMigrationJobTransportSettings =
         GrpcCallSettings.<StopMigrationJobRequest, Operation>newBuilder()
             .setMethodDescriptor(stopMigrationJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<StopMigrationJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(StopMigrationJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ResumeMigrationJobRequest, Operation> resumeMigrationJobTransportSettings =
         GrpcCallSettings.<ResumeMigrationJobRequest, Operation>newBuilder()
             .setMethodDescriptor(resumeMigrationJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ResumeMigrationJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(ResumeMigrationJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<PromoteMigrationJobRequest, Operation> promoteMigrationJobTransportSettings =
         GrpcCallSettings.<PromoteMigrationJobRequest, Operation>newBuilder()
             .setMethodDescriptor(promoteMigrationJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<PromoteMigrationJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(PromoteMigrationJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<VerifyMigrationJobRequest, Operation> verifyMigrationJobTransportSettings =
         GrpcCallSettings.<VerifyMigrationJobRequest, Operation>newBuilder()
             .setMethodDescriptor(verifyMigrationJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<VerifyMigrationJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(VerifyMigrationJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RestartMigrationJobRequest, Operation> restartMigrationJobTransportSettings =
         GrpcCallSettings.<RestartMigrationJobRequest, Operation>newBuilder()
             .setMethodDescriptor(restartMigrationJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<RestartMigrationJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(RestartMigrationJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GenerateSshScriptRequest, SshScript> generateSshScriptTransportSettings =
         GrpcCallSettings.<GenerateSshScriptRequest, SshScript>newBuilder()
             .setMethodDescriptor(generateSshScriptMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GenerateSshScriptRequest>() {
-                  @Override
-                  public Map<String, String> extract(GenerateSshScriptRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("migration_job", String.valueOf(request.getMigrationJob()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("migration_job", String.valueOf(request.getMigrationJob()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListConnectionProfilesRequest, ListConnectionProfilesResponse>
@@ -512,13 +474,10 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                 .<ListConnectionProfilesRequest, ListConnectionProfilesResponse>newBuilder()
                 .setMethodDescriptor(listConnectionProfilesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListConnectionProfilesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListConnectionProfilesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetConnectionProfileRequest, ConnectionProfile>
@@ -526,13 +485,10 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
             GrpcCallSettings.<GetConnectionProfileRequest, ConnectionProfile>newBuilder()
                 .setMethodDescriptor(getConnectionProfileMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetConnectionProfileRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetConnectionProfileRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateConnectionProfileRequest, Operation>
@@ -540,13 +496,10 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
             GrpcCallSettings.<CreateConnectionProfileRequest, Operation>newBuilder()
                 .setMethodDescriptor(createConnectionProfileMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateConnectionProfileRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateConnectionProfileRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateConnectionProfileRequest, Operation>
@@ -554,15 +507,12 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
             GrpcCallSettings.<UpdateConnectionProfileRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateConnectionProfileMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateConnectionProfileRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateConnectionProfileRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "connection_profile.name",
-                            String.valueOf(request.getConnectionProfile().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "connection_profile.name",
+                          String.valueOf(request.getConnectionProfile().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteConnectionProfileRequest, Operation>
@@ -570,13 +520,10 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
             GrpcCallSettings.<DeleteConnectionProfileRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteConnectionProfileMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteConnectionProfileRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteConnectionProfileRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 

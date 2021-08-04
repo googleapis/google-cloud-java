@@ -16,7 +16,6 @@
 
 package com.google.cloud.clouddms.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2065,12 +2064,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
           ListMigrationJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListMigrationJobsPage, ListMigrationJobsPagedResponse>() {
-            @Override
-            public ListMigrationJobsPagedResponse apply(ListMigrationJobsPage input) {
-              return new ListMigrationJobsPagedResponse(input);
-            }
-          },
+          input -> new ListMigrationJobsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2152,12 +2146,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
           ListConnectionProfilesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListConnectionProfilesPage, ListConnectionProfilesPagedResponse>() {
-            @Override
-            public ListConnectionProfilesPagedResponse apply(ListConnectionProfilesPage input) {
-              return new ListConnectionProfilesPagedResponse(input);
-            }
-          },
+          input -> new ListConnectionProfilesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
