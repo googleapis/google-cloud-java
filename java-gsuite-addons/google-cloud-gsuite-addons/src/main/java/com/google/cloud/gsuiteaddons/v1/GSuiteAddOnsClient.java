@@ -16,7 +16,6 @@
 
 package com.google.cloud.gsuiteaddons.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1098,12 +1097,7 @@ public class GSuiteAddOnsClient implements BackgroundResource {
           ListDeploymentsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListDeploymentsPage, ListDeploymentsPagedResponse>() {
-            @Override
-            public ListDeploymentsPagedResponse apply(ListDeploymentsPage input) {
-              return new ListDeploymentsPagedResponse(input);
-            }
-          },
+          input -> new ListDeploymentsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
