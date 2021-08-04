@@ -29,7 +29,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datastream.v1alpha1.ConnectionProfile;
 import com.google.cloud.datastream.v1alpha1.CreateConnectionProfileRequest;
@@ -71,7 +70,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -412,13 +410,10 @@ public class GrpcDatastreamStub extends DatastreamStub {
                 .<ListConnectionProfilesRequest, ListConnectionProfilesResponse>newBuilder()
                 .setMethodDescriptor(listConnectionProfilesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListConnectionProfilesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListConnectionProfilesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetConnectionProfileRequest, ConnectionProfile>
@@ -426,13 +421,10 @@ public class GrpcDatastreamStub extends DatastreamStub {
             GrpcCallSettings.<GetConnectionProfileRequest, ConnectionProfile>newBuilder()
                 .setMethodDescriptor(getConnectionProfileMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetConnectionProfileRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetConnectionProfileRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateConnectionProfileRequest, Operation>
@@ -440,13 +432,10 @@ public class GrpcDatastreamStub extends DatastreamStub {
             GrpcCallSettings.<CreateConnectionProfileRequest, Operation>newBuilder()
                 .setMethodDescriptor(createConnectionProfileMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateConnectionProfileRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateConnectionProfileRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateConnectionProfileRequest, Operation>
@@ -454,15 +443,12 @@ public class GrpcDatastreamStub extends DatastreamStub {
             GrpcCallSettings.<UpdateConnectionProfileRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateConnectionProfileMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateConnectionProfileRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateConnectionProfileRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "connection_profile.name",
-                            String.valueOf(request.getConnectionProfile().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "connection_profile.name",
+                          String.valueOf(request.getConnectionProfile().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteConnectionProfileRequest, Operation>
@@ -470,13 +456,10 @@ public class GrpcDatastreamStub extends DatastreamStub {
             GrpcCallSettings.<DeleteConnectionProfileRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteConnectionProfileMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteConnectionProfileRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteConnectionProfileRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DiscoverConnectionProfileRequest, DiscoverConnectionProfileResponse>
@@ -485,91 +468,70 @@ public class GrpcDatastreamStub extends DatastreamStub {
                 .<DiscoverConnectionProfileRequest, DiscoverConnectionProfileResponse>newBuilder()
                 .setMethodDescriptor(discoverConnectionProfileMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DiscoverConnectionProfileRequest>() {
-                      @Override
-                      public Map<String, String> extract(DiscoverConnectionProfileRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListStreamsRequest, ListStreamsResponse> listStreamsTransportSettings =
         GrpcCallSettings.<ListStreamsRequest, ListStreamsResponse>newBuilder()
             .setMethodDescriptor(listStreamsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListStreamsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListStreamsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetStreamRequest, Stream> getStreamTransportSettings =
         GrpcCallSettings.<GetStreamRequest, Stream>newBuilder()
             .setMethodDescriptor(getStreamMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetStreamRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetStreamRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateStreamRequest, Operation> createStreamTransportSettings =
         GrpcCallSettings.<CreateStreamRequest, Operation>newBuilder()
             .setMethodDescriptor(createStreamMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateStreamRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateStreamRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateStreamRequest, Operation> updateStreamTransportSettings =
         GrpcCallSettings.<UpdateStreamRequest, Operation>newBuilder()
             .setMethodDescriptor(updateStreamMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateStreamRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateStreamRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("stream.name", String.valueOf(request.getStream().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("stream.name", String.valueOf(request.getStream().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteStreamRequest, Operation> deleteStreamTransportSettings =
         GrpcCallSettings.<DeleteStreamRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteStreamMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteStreamRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteStreamRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<FetchErrorsRequest, Operation> fetchErrorsTransportSettings =
         GrpcCallSettings.<FetchErrorsRequest, Operation>newBuilder()
             .setMethodDescriptor(fetchErrorsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<FetchErrorsRequest>() {
-                  @Override
-                  public Map<String, String> extract(FetchErrorsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("stream", String.valueOf(request.getStream()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("stream", String.valueOf(request.getStream()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<FetchStaticIpsRequest, FetchStaticIpsResponse>
@@ -577,13 +539,10 @@ public class GrpcDatastreamStub extends DatastreamStub {
             GrpcCallSettings.<FetchStaticIpsRequest, FetchStaticIpsResponse>newBuilder()
                 .setMethodDescriptor(fetchStaticIpsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<FetchStaticIpsRequest>() {
-                      @Override
-                      public Map<String, String> extract(FetchStaticIpsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreatePrivateConnectionRequest, Operation>
@@ -591,13 +550,10 @@ public class GrpcDatastreamStub extends DatastreamStub {
             GrpcCallSettings.<CreatePrivateConnectionRequest, Operation>newBuilder()
                 .setMethodDescriptor(createPrivateConnectionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreatePrivateConnectionRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreatePrivateConnectionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetPrivateConnectionRequest, PrivateConnection>
@@ -605,13 +561,10 @@ public class GrpcDatastreamStub extends DatastreamStub {
             GrpcCallSettings.<GetPrivateConnectionRequest, PrivateConnection>newBuilder()
                 .setMethodDescriptor(getPrivateConnectionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetPrivateConnectionRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetPrivateConnectionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
@@ -620,13 +573,10 @@ public class GrpcDatastreamStub extends DatastreamStub {
                 .<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>newBuilder()
                 .setMethodDescriptor(listPrivateConnectionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListPrivateConnectionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListPrivateConnectionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeletePrivateConnectionRequest, Operation>
@@ -634,65 +584,50 @@ public class GrpcDatastreamStub extends DatastreamStub {
             GrpcCallSettings.<DeletePrivateConnectionRequest, Operation>newBuilder()
                 .setMethodDescriptor(deletePrivateConnectionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeletePrivateConnectionRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeletePrivateConnectionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateRouteRequest, Operation> createRouteTransportSettings =
         GrpcCallSettings.<CreateRouteRequest, Operation>newBuilder()
             .setMethodDescriptor(createRouteMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateRouteRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateRouteRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetRouteRequest, Route> getRouteTransportSettings =
         GrpcCallSettings.<GetRouteRequest, Route>newBuilder()
             .setMethodDescriptor(getRouteMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetRouteRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetRouteRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListRoutesRequest, ListRoutesResponse> listRoutesTransportSettings =
         GrpcCallSettings.<ListRoutesRequest, ListRoutesResponse>newBuilder()
             .setMethodDescriptor(listRoutesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListRoutesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListRoutesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteRouteRequest, Operation> deleteRouteTransportSettings =
         GrpcCallSettings.<DeleteRouteRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteRouteMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteRouteRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteRouteRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 
