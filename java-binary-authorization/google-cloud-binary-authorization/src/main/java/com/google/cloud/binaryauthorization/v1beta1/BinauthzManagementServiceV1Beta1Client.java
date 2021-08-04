@@ -16,7 +16,6 @@
 
 package com.google.cloud.binaryauthorization.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -981,12 +980,7 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
           ListAttestorsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListAttestorsPage, ListAttestorsPagedResponse>() {
-            @Override
-            public ListAttestorsPagedResponse apply(ListAttestorsPage input) {
-              return new ListAttestorsPagedResponse(input);
-            }
-          },
+          input -> new ListAttestorsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.binaryauthorization.v1beta1.Attestor;
 import com.google.cloud.binaryauthorization.v1beta1.CreateAttestorRequest;
@@ -42,7 +41,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -188,91 +186,70 @@ public class GrpcBinauthzManagementServiceV1Beta1Stub extends BinauthzManagement
         GrpcCallSettings.<GetPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdatePolicyRequest, Policy> updatePolicyTransportSettings =
         GrpcCallSettings.<UpdatePolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(updatePolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdatePolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdatePolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("policy.name", String.valueOf(request.getPolicy().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("policy.name", String.valueOf(request.getPolicy().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateAttestorRequest, Attestor> createAttestorTransportSettings =
         GrpcCallSettings.<CreateAttestorRequest, Attestor>newBuilder()
             .setMethodDescriptor(createAttestorMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateAttestorRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateAttestorRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetAttestorRequest, Attestor> getAttestorTransportSettings =
         GrpcCallSettings.<GetAttestorRequest, Attestor>newBuilder()
             .setMethodDescriptor(getAttestorMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetAttestorRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetAttestorRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateAttestorRequest, Attestor> updateAttestorTransportSettings =
         GrpcCallSettings.<UpdateAttestorRequest, Attestor>newBuilder()
             .setMethodDescriptor(updateAttestorMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateAttestorRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateAttestorRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("attestor.name", String.valueOf(request.getAttestor().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("attestor.name", String.valueOf(request.getAttestor().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListAttestorsRequest, ListAttestorsResponse> listAttestorsTransportSettings =
         GrpcCallSettings.<ListAttestorsRequest, ListAttestorsResponse>newBuilder()
             .setMethodDescriptor(listAttestorsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListAttestorsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListAttestorsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteAttestorRequest, Empty> deleteAttestorTransportSettings =
         GrpcCallSettings.<DeleteAttestorRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAttestorMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteAttestorRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteAttestorRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 
