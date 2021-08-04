@@ -16,7 +16,6 @@
 
 package com.google.area120.tables.v1alpha;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1148,14 +1147,7 @@ public class TablesServiceClient implements BackgroundResource {
       ApiFuture<ListTablesPage> futurePage =
           ListTablesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListTablesPage, ListTablesPagedResponse>() {
-            @Override
-            public ListTablesPagedResponse apply(ListTablesPage input) {
-              return new ListTablesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListTablesPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListTablesPagedResponse(ListTablesPage page) {
@@ -1229,12 +1221,7 @@ public class TablesServiceClient implements BackgroundResource {
           ListWorkspacesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListWorkspacesPage, ListWorkspacesPagedResponse>() {
-            @Override
-            public ListWorkspacesPagedResponse apply(ListWorkspacesPage input) {
-              return new ListWorkspacesPagedResponse(input);
-            }
-          },
+          input -> new ListWorkspacesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1305,14 +1292,7 @@ public class TablesServiceClient implements BackgroundResource {
       ApiFuture<ListRowsPage> futurePage =
           ListRowsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListRowsPage, ListRowsPagedResponse>() {
-            @Override
-            public ListRowsPagedResponse apply(ListRowsPage input) {
-              return new ListRowsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListRowsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListRowsPagedResponse(ListRowsPage page) {
