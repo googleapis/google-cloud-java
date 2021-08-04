@@ -26,7 +26,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.tpu.v1.AcceleratorType;
 import com.google.cloud.tpu.v1.CreateNodeRequest;
@@ -52,7 +51,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -237,91 +235,70 @@ public class GrpcTpuStub extends TpuStub {
         GrpcCallSettings.<ListNodesRequest, ListNodesResponse>newBuilder()
             .setMethodDescriptor(listNodesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListNodesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListNodesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetNodeRequest, Node> getNodeTransportSettings =
         GrpcCallSettings.<GetNodeRequest, Node>newBuilder()
             .setMethodDescriptor(getNodeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetNodeRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetNodeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateNodeRequest, Operation> createNodeTransportSettings =
         GrpcCallSettings.<CreateNodeRequest, Operation>newBuilder()
             .setMethodDescriptor(createNodeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateNodeRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateNodeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteNodeRequest, Operation> deleteNodeTransportSettings =
         GrpcCallSettings.<DeleteNodeRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteNodeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteNodeRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteNodeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ReimageNodeRequest, Operation> reimageNodeTransportSettings =
         GrpcCallSettings.<ReimageNodeRequest, Operation>newBuilder()
             .setMethodDescriptor(reimageNodeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ReimageNodeRequest>() {
-                  @Override
-                  public Map<String, String> extract(ReimageNodeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<StopNodeRequest, Operation> stopNodeTransportSettings =
         GrpcCallSettings.<StopNodeRequest, Operation>newBuilder()
             .setMethodDescriptor(stopNodeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<StopNodeRequest>() {
-                  @Override
-                  public Map<String, String> extract(StopNodeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<StartNodeRequest, Operation> startNodeTransportSettings =
         GrpcCallSettings.<StartNodeRequest, Operation>newBuilder()
             .setMethodDescriptor(startNodeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<StartNodeRequest>() {
-                  @Override
-                  public Map<String, String> extract(StartNodeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListTensorFlowVersionsRequest, ListTensorFlowVersionsResponse>
@@ -330,13 +307,10 @@ public class GrpcTpuStub extends TpuStub {
                 .<ListTensorFlowVersionsRequest, ListTensorFlowVersionsResponse>newBuilder()
                 .setMethodDescriptor(listTensorFlowVersionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListTensorFlowVersionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListTensorFlowVersionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetTensorFlowVersionRequest, TensorFlowVersion>
@@ -344,13 +318,10 @@ public class GrpcTpuStub extends TpuStub {
             GrpcCallSettings.<GetTensorFlowVersionRequest, TensorFlowVersion>newBuilder()
                 .setMethodDescriptor(getTensorFlowVersionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetTensorFlowVersionRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetTensorFlowVersionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse>
@@ -358,13 +329,10 @@ public class GrpcTpuStub extends TpuStub {
             GrpcCallSettings.<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse>newBuilder()
                 .setMethodDescriptor(listAcceleratorTypesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListAcceleratorTypesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListAcceleratorTypesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetAcceleratorTypeRequest, AcceleratorType>
@@ -372,13 +340,10 @@ public class GrpcTpuStub extends TpuStub {
             GrpcCallSettings.<GetAcceleratorTypeRequest, AcceleratorType>newBuilder()
                 .setMethodDescriptor(getAcceleratorTypeMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetAcceleratorTypeRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetAcceleratorTypeRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 

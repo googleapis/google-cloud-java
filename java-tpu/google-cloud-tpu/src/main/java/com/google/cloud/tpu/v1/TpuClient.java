@@ -16,7 +16,6 @@
 
 package com.google.cloud.tpu.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1369,14 +1368,7 @@ public class TpuClient implements BackgroundResource {
       ApiFuture<ListNodesPage> futurePage =
           ListNodesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListNodesPage, ListNodesPagedResponse>() {
-            @Override
-            public ListNodesPagedResponse apply(ListNodesPage input) {
-              return new ListNodesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListNodesPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListNodesPagedResponse(ListNodesPage page) {
@@ -1448,12 +1440,7 @@ public class TpuClient implements BackgroundResource {
           ListTensorFlowVersionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTensorFlowVersionsPage, ListTensorFlowVersionsPagedResponse>() {
-            @Override
-            public ListTensorFlowVersionsPagedResponse apply(ListTensorFlowVersionsPage input) {
-              return new ListTensorFlowVersionsPagedResponse(input);
-            }
-          },
+          input -> new ListTensorFlowVersionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1540,12 +1527,7 @@ public class TpuClient implements BackgroundResource {
           ListAcceleratorTypesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListAcceleratorTypesPage, ListAcceleratorTypesPagedResponse>() {
-            @Override
-            public ListAcceleratorTypesPagedResponse apply(ListAcceleratorTypesPage input) {
-              return new ListAcceleratorTypesPagedResponse(input);
-            }
-          },
+          input -> new ListAcceleratorTypesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
