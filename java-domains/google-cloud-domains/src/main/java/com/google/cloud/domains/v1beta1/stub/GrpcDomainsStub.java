@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.domains.v1beta1.AuthorizationCode;
 import com.google.cloud.domains.v1beta1.ConfigureContactSettingsRequest;
@@ -53,7 +52,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -281,13 +279,10 @@ public class GrpcDomainsStub extends DomainsStub {
         GrpcCallSettings.<SearchDomainsRequest, SearchDomainsResponse>newBuilder()
             .setMethodDescriptor(searchDomainsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SearchDomainsRequest>() {
-                  @Override
-                  public Map<String, String> extract(SearchDomainsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("location", String.valueOf(request.getLocation()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("location", String.valueOf(request.getLocation()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RetrieveRegisterParametersRequest, RetrieveRegisterParametersResponse>
@@ -296,27 +291,20 @@ public class GrpcDomainsStub extends DomainsStub {
                 .<RetrieveRegisterParametersRequest, RetrieveRegisterParametersResponse>newBuilder()
                 .setMethodDescriptor(retrieveRegisterParametersMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<RetrieveRegisterParametersRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          RetrieveRegisterParametersRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("location", String.valueOf(request.getLocation()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("location", String.valueOf(request.getLocation()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<RegisterDomainRequest, Operation> registerDomainTransportSettings =
         GrpcCallSettings.<RegisterDomainRequest, Operation>newBuilder()
             .setMethodDescriptor(registerDomainMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<RegisterDomainRequest>() {
-                  @Override
-                  public Map<String, String> extract(RegisterDomainRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListRegistrationsRequest, ListRegistrationsResponse>
@@ -324,40 +312,31 @@ public class GrpcDomainsStub extends DomainsStub {
             GrpcCallSettings.<ListRegistrationsRequest, ListRegistrationsResponse>newBuilder()
                 .setMethodDescriptor(listRegistrationsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListRegistrationsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListRegistrationsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetRegistrationRequest, Registration> getRegistrationTransportSettings =
         GrpcCallSettings.<GetRegistrationRequest, Registration>newBuilder()
             .setMethodDescriptor(getRegistrationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetRegistrationRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetRegistrationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateRegistrationRequest, Operation> updateRegistrationTransportSettings =
         GrpcCallSettings.<UpdateRegistrationRequest, Operation>newBuilder()
             .setMethodDescriptor(updateRegistrationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateRegistrationRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateRegistrationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "registration.name", String.valueOf(request.getRegistration().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "registration.name", String.valueOf(request.getRegistration().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ConfigureManagementSettingsRequest, Operation>
@@ -365,27 +344,20 @@ public class GrpcDomainsStub extends DomainsStub {
             GrpcCallSettings.<ConfigureManagementSettingsRequest, Operation>newBuilder()
                 .setMethodDescriptor(configureManagementSettingsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ConfigureManagementSettingsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ConfigureManagementSettingsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("registration", String.valueOf(request.getRegistration()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("registration", String.valueOf(request.getRegistration()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ConfigureDnsSettingsRequest, Operation> configureDnsSettingsTransportSettings =
         GrpcCallSettings.<ConfigureDnsSettingsRequest, Operation>newBuilder()
             .setMethodDescriptor(configureDnsSettingsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ConfigureDnsSettingsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ConfigureDnsSettingsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("registration", String.valueOf(request.getRegistration()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("registration", String.valueOf(request.getRegistration()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ConfigureContactSettingsRequest, Operation>
@@ -393,39 +365,30 @@ public class GrpcDomainsStub extends DomainsStub {
             GrpcCallSettings.<ConfigureContactSettingsRequest, Operation>newBuilder()
                 .setMethodDescriptor(configureContactSettingsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ConfigureContactSettingsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ConfigureContactSettingsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("registration", String.valueOf(request.getRegistration()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("registration", String.valueOf(request.getRegistration()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ExportRegistrationRequest, Operation> exportRegistrationTransportSettings =
         GrpcCallSettings.<ExportRegistrationRequest, Operation>newBuilder()
             .setMethodDescriptor(exportRegistrationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ExportRegistrationRequest>() {
-                  @Override
-                  public Map<String, String> extract(ExportRegistrationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteRegistrationRequest, Operation> deleteRegistrationTransportSettings =
         GrpcCallSettings.<DeleteRegistrationRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteRegistrationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteRegistrationRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteRegistrationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RetrieveAuthorizationCodeRequest, AuthorizationCode>
@@ -433,13 +396,10 @@ public class GrpcDomainsStub extends DomainsStub {
             GrpcCallSettings.<RetrieveAuthorizationCodeRequest, AuthorizationCode>newBuilder()
                 .setMethodDescriptor(retrieveAuthorizationCodeMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<RetrieveAuthorizationCodeRequest>() {
-                      @Override
-                      public Map<String, String> extract(RetrieveAuthorizationCodeRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("registration", String.valueOf(request.getRegistration()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("registration", String.valueOf(request.getRegistration()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ResetAuthorizationCodeRequest, AuthorizationCode>
@@ -447,13 +407,10 @@ public class GrpcDomainsStub extends DomainsStub {
             GrpcCallSettings.<ResetAuthorizationCodeRequest, AuthorizationCode>newBuilder()
                 .setMethodDescriptor(resetAuthorizationCodeMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ResetAuthorizationCodeRequest>() {
-                      @Override
-                      public Map<String, String> extract(ResetAuthorizationCodeRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("registration", String.valueOf(request.getRegistration()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("registration", String.valueOf(request.getRegistration()));
+                      return params.build();
                     })
                 .build();
 

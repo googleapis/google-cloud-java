@@ -16,7 +16,6 @@
 
 package com.google.cloud.domains.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2053,12 +2052,7 @@ public class DomainsClient implements BackgroundResource {
           ListRegistrationsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListRegistrationsPage, ListRegistrationsPagedResponse>() {
-            @Override
-            public ListRegistrationsPagedResponse apply(ListRegistrationsPage input) {
-              return new ListRegistrationsPagedResponse(input);
-            }
-          },
+          input -> new ListRegistrationsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
