@@ -67,7 +67,7 @@ public interface FileShareConfigOrBuilder
    *
    * <pre>
    * The resource name of the backup, in the format
-   * projects/{project_id}/locations/{location_id}/backups/{backup_id}, that
+   * `projects/{project_id}/locations/{location_id}/backups/{backup_id}`, that
    * this file share has been restored from.
    * </pre>
    *
@@ -81,7 +81,7 @@ public interface FileShareConfigOrBuilder
    *
    * <pre>
    * The resource name of the backup, in the format
-   * projects/{project_id}/locations/{location_id}/backups/{backup_id}, that
+   * `projects/{project_id}/locations/{location_id}/backups/{backup_id}`, that
    * this file share has been restored from.
    * </pre>
    *
@@ -95,7 +95,7 @@ public interface FileShareConfigOrBuilder
    *
    * <pre>
    * The resource name of the backup, in the format
-   * projects/{project_id}/locations/{location_id}/backups/{backup_id}, that
+   * `projects/{project_id}/locations/{location_id}/backups/{backup_id}`, that
    * this file share has been restored from.
    * </pre>
    *

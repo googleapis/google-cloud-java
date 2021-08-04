@@ -28,7 +28,7 @@ public interface GetBackupRequestOrBuilder
    *
    * <pre>
    * Required. The backup resource name, in the format
-   * projects/{project_number}/locations/{location}/backups/{backup_id}.
+   * `projects/{project_number}/locations/{location}/backups/{backup_id}`.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface GetBackupRequestOrBuilder
    *
    * <pre>
    * Required. The backup resource name, in the format
-   * projects/{project_number}/locations/{location}/backups/{backup_id}.
+   * `projects/{project_number}/locations/{location}/backups/{backup_id}`.
    * </pre>
    *
    * <code>

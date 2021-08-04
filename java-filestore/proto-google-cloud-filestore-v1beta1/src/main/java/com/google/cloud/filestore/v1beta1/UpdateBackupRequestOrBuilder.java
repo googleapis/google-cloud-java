@@ -27,8 +27,7 @@ public interface UpdateBackupRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [backup resource]
-   * (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+   * Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
    * </pre>
    *
    * <code>
@@ -42,8 +41,7 @@ public interface UpdateBackupRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [backup resource]
-   * (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+   * Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
    * </pre>
    *
    * <code>
@@ -57,8 +55,7 @@ public interface UpdateBackupRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [backup resource]
-   * (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+   * Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
    * </pre>
    *
    * <code>

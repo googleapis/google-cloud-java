@@ -139,8 +139,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. A [backup resource]
-   * (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+   * Required. A [backup resource][google.cloud.filestore.v1.Backup]
    * </pre>
    *
    * <code>.google.cloud.filestore.v1.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -156,8 +155,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. A [backup resource]
-   * (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+   * Required. A [backup resource][google.cloud.filestore.v1.Backup]
    * </pre>
    *
    * <code>.google.cloud.filestore.v1.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -173,8 +171,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. A [backup resource]
-   * (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+   * Required. A [backup resource][google.cloud.filestore.v1.Backup]
    * </pre>
    *
    * <code>.google.cloud.filestore.v1.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -605,8 +602,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A [backup resource]
-     * (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+     * Required. A [backup resource][google.cloud.filestore.v1.Backup]
      * </pre>
      *
      * <code>.google.cloud.filestore.v1.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -621,8 +617,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A [backup resource]
-     * (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+     * Required. A [backup resource][google.cloud.filestore.v1.Backup]
      * </pre>
      *
      * <code>.google.cloud.filestore.v1.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -643,8 +638,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A [backup resource]
-     * (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+     * Required. A [backup resource][google.cloud.filestore.v1.Backup]
      * </pre>
      *
      * <code>.google.cloud.filestore.v1.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -667,8 +661,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A [backup resource]
-     * (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+     * Required. A [backup resource][google.cloud.filestore.v1.Backup]
      * </pre>
      *
      * <code>.google.cloud.filestore.v1.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -688,8 +681,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A [backup resource]
-     * (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+     * Required. A [backup resource][google.cloud.filestore.v1.Backup]
      * </pre>
      *
      * <code>.google.cloud.filestore.v1.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -716,8 +708,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A [backup resource]
-     * (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+     * Required. A [backup resource][google.cloud.filestore.v1.Backup]
      * </pre>
      *
      * <code>.google.cloud.filestore.v1.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -738,8 +729,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A [backup resource]
-     * (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+     * Required. A [backup resource][google.cloud.filestore.v1.Backup]
      * </pre>
      *
      * <code>.google.cloud.filestore.v1.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -754,8 +744,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A [backup resource]
-     * (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+     * Required. A [backup resource][google.cloud.filestore.v1.Backup]
      * </pre>
      *
      * <code>.google.cloud.filestore.v1.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -774,8 +763,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A [backup resource]
-     * (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+     * Required. A [backup resource][google.cloud.filestore.v1.Backup]
      * </pre>
      *
      * <code>.google.cloud.filestore.v1.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];

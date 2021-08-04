@@ -118,7 +118,7 @@ public final class GetBackupRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The backup resource name, in the format
-   * projects/{project_id}/locations/{location}/backups/{backup_id}.
+   * `projects/{project_id}/locations/{location}/backups/{backup_id}`.
    * </pre>
    *
    * <code>
@@ -144,7 +144,7 @@ public final class GetBackupRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The backup resource name, in the format
-   * projects/{project_id}/locations/{location}/backups/{backup_id}.
+   * `projects/{project_id}/locations/{location}/backups/{backup_id}`.
    * </pre>
    *
    * <code>
@@ -490,7 +490,7 @@ public final class GetBackupRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The backup resource name, in the format
-     * projects/{project_id}/locations/{location}/backups/{backup_id}.
+     * `projects/{project_id}/locations/{location}/backups/{backup_id}`.
      * </pre>
      *
      * <code>
@@ -515,7 +515,7 @@ public final class GetBackupRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The backup resource name, in the format
-     * projects/{project_id}/locations/{location}/backups/{backup_id}.
+     * `projects/{project_id}/locations/{location}/backups/{backup_id}`.
      * </pre>
      *
      * <code>
@@ -540,7 +540,7 @@ public final class GetBackupRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The backup resource name, in the format
-     * projects/{project_id}/locations/{location}/backups/{backup_id}.
+     * `projects/{project_id}/locations/{location}/backups/{backup_id}`.
      * </pre>
      *
      * <code>
@@ -564,7 +564,7 @@ public final class GetBackupRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The backup resource name, in the format
-     * projects/{project_id}/locations/{location}/backups/{backup_id}.
+     * `projects/{project_id}/locations/{location}/backups/{backup_id}`.
      * </pre>
      *
      * <code>
@@ -584,7 +584,7 @@ public final class GetBackupRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The backup resource name, in the format
-     * projects/{project_id}/locations/{location}/backups/{backup_id}.
+     * `projects/{project_id}/locations/{location}/backups/{backup_id}`.
      * </pre>
      *
      * <code>

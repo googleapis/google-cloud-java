@@ -210,9 +210,9 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location for which to retrieve instance information, in
-   *     the format projects/{project_id}/locations/{location}. In Cloud Filestore, locations map to
-   *     GCP zones, for example &#42;&#42;us-west1-b&#42;&#42;. To retrieve instance information for
-   *     all locations, use "-" for the {location} value.
+   *     the format `projects/{project_id}/locations/{location}`. In Cloud Filestore, locations map
+   *     to GCP zones, for example &#42;&#42;us-west1-b&#42;&#42;. To retrieve instance information
+   *     for all locations, use "-" for the `{location}` value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInstancesPagedResponse listInstances(LocationName parent) {
@@ -240,9 +240,9 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location for which to retrieve instance information, in
-   *     the format projects/{project_id}/locations/{location}. In Cloud Filestore, locations map to
-   *     GCP zones, for example &#42;&#42;us-west1-b&#42;&#42;. To retrieve instance information for
-   *     all locations, use "-" for the {location} value.
+   *     the format `projects/{project_id}/locations/{location}`. In Cloud Filestore, locations map
+   *     to GCP zones, for example &#42;&#42;us-west1-b&#42;&#42;. To retrieve instance information
+   *     for all locations, use "-" for the `{location}` value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInstancesPagedResponse listInstances(String parent) {
@@ -363,7 +363,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The instance resource name, in the format
-   *     projects/{project_id}/locations/{location}/instances/{instance_id}.
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Instance getInstance(InstanceName name) {
@@ -387,7 +387,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The instance resource name, in the format
-   *     projects/{project_id}/locations/{location}/instances/{instance_id}.
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Instance getInstance(String name) {
@@ -463,10 +463,9 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The instance's project and location, in the format
-   *     projects/{project_id}/locations/{location}. In Cloud Filestore, locations map to GCP zones,
-   *     for example &#42;&#42;us-west1-b&#42;&#42;.
-   * @param instance Required. A [instance resource]
-   *     (/cloud-filestore/reference/rest/v1/projects.locations.instances)
+   *     `projects/{project_id}/locations/{location}`. In Cloud Filestore, locations map to GCP
+   *     zones, for example &#42;&#42;us-west1-b&#42;&#42;.
+   * @param instance Required. An [instance resource][google.cloud.filestore.v1.Instance]
    * @param instanceId Required. The name of the instance to create. The name must be unique for the
    *     specified project and location.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -502,10 +501,9 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The instance's project and location, in the format
-   *     projects/{project_id}/locations/{location}. In Cloud Filestore, locations map to GCP zones,
-   *     for example &#42;&#42;us-west1-b&#42;&#42;.
-   * @param instance Required. A [instance resource]
-   *     (/cloud-filestore/reference/rest/v1/projects.locations.instances)
+   *     `projects/{project_id}/locations/{location}`. In Cloud Filestore, locations map to GCP
+   *     zones, for example &#42;&#42;us-west1-b&#42;&#42;.
+   * @param instance Required. An [instance resource][google.cloud.filestore.v1.Instance]
    * @param instanceId Required. The name of the instance to create. The name must be unique for the
    *     specified project and location.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -819,7 +817,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The instance resource name, in the format
-   *     projects/{project_id}/locations/{location}/instances/{instance_id}
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(InstanceName name) {
@@ -843,7 +841,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The instance resource name, in the format
-   *     projects/{project_id}/locations/{location}/instances/{instance_id}
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(String name) {
@@ -942,9 +940,9 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location for which to retrieve backup information, in
-   *     the format projects/{project_number}/locations/{location}. In Cloud Filestore, backup
+   *     the format `projects/{project_number}/locations/{location}`. In Cloud Filestore, backup
    *     locations map to GCP regions, for example &#42;&#42;us-west1&#42;&#42;. To retrieve backup
-   *     information for all locations, use "-" for the {location} value.
+   *     information for all locations, use "-" for the `{location}` value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBackupsPagedResponse listBackups(LocationName parent) {
@@ -972,9 +970,9 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location for which to retrieve backup information, in
-   *     the format projects/{project_number}/locations/{location}. In Cloud Filestore, backup
+   *     the format `projects/{project_number}/locations/{location}`. In Cloud Filestore, backup
    *     locations map to GCP regions, for example &#42;&#42;us-west1&#42;&#42;. To retrieve backup
-   *     information for all locations, use "-" for the {location} value.
+   *     information for all locations, use "-" for the `{location}` value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBackupsPagedResponse listBackups(String parent) {
@@ -1095,7 +1093,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The backup resource name, in the format
-   *     projects/{project_number}/locations/{location}/backups/{backup_id}.
+   *     `projects/{project_number}/locations/{location}/backups/{backup_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Backup getBackup(BackupName name) {
@@ -1119,7 +1117,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The backup resource name, in the format
-   *     projects/{project_number}/locations/{location}/backups/{backup_id}.
+   *     `projects/{project_number}/locations/{location}/backups/{backup_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Backup getBackup(String name) {
@@ -1193,10 +1191,9 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The backup's project and location, in the format
-   *     projects/{project_number}/locations/{location}. In Cloud Filestore, backup locations map to
-   *     GCP regions, for example &#42;&#42;us-west1&#42;&#42;.
-   * @param backup Required. A [backup resource]
-   *     (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+   *     `projects/{project_number}/locations/{location}`. In Cloud Filestore, backup locations map
+   *     to GCP regions, for example &#42;&#42;us-west1&#42;&#42;.
+   * @param backup Required. A [backup resource][google.cloud.filestore.v1.Backup]
    * @param backupId Required. The ID to use for the backup. The ID must be unique within the
    *     specified project and location.
    *     <p>This value must start with a lowercase letter followed by up to 62 lowercase letters,
@@ -1233,10 +1230,9 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The backup's project and location, in the format
-   *     projects/{project_number}/locations/{location}. In Cloud Filestore, backup locations map to
-   *     GCP regions, for example &#42;&#42;us-west1&#42;&#42;.
-   * @param backup Required. A [backup resource]
-   *     (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+   *     `projects/{project_number}/locations/{location}`. In Cloud Filestore, backup locations map
+   *     to GCP regions, for example &#42;&#42;us-west1&#42;&#42;.
+   * @param backup Required. A [backup resource][google.cloud.filestore.v1.Backup]
    * @param backupId Required. The ID to use for the backup. The ID must be unique within the
    *     specified project and location.
    *     <p>This value must start with a lowercase letter followed by up to 62 lowercase letters,
@@ -1350,7 +1346,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The backup resource name, in the format
-   *     projects/{project_number}/locations/{location}/backups/{backup_id}
+   *     `projects/{project_number}/locations/{location}/backups/{backup_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(BackupName name) {
@@ -1374,7 +1370,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The backup resource name, in the format
-   *     projects/{project_number}/locations/{location}/backups/{backup_id}
+   *     `projects/{project_number}/locations/{location}/backups/{backup_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(String name) {
@@ -1471,8 +1467,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param backup Required. A [backup resource]
-   *     (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+   * @param backup Required. A [backup resource][google.cloud.filestore.v1.Backup]
    * @param updateMask Required. Mask of fields to update. At least one path must be supplied in
    *     this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

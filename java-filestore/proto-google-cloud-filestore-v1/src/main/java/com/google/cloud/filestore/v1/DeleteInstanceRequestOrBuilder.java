@@ -28,7 +28,7 @@ public interface DeleteInstanceRequestOrBuilder
    *
    * <pre>
    * Required. The instance resource name, in the format
-   * projects/{project_id}/locations/{location}/instances/{instance_id}
+   * `projects/{project_id}/locations/{location}/instances/{instance_id}`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface DeleteInstanceRequestOrBuilder
    *
    * <pre>
    * Required. The instance resource name, in the format
-   * projects/{project_id}/locations/{location}/instances/{instance_id}
+   * `projects/{project_id}/locations/{location}/instances/{instance_id}`
    * </pre>
    *
    * <code>

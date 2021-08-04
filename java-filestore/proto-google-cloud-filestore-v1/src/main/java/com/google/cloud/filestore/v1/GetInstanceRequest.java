@@ -118,7 +118,7 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The instance resource name, in the format
-   * projects/{project_id}/locations/{location}/instances/{instance_id}.
+   * `projects/{project_id}/locations/{location}/instances/{instance_id}`.
    * </pre>
    *
    * <code>
@@ -144,7 +144,7 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The instance resource name, in the format
-   * projects/{project_id}/locations/{location}/instances/{instance_id}.
+   * `projects/{project_id}/locations/{location}/instances/{instance_id}`.
    * </pre>
    *
    * <code>
@@ -489,7 +489,7 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The instance resource name, in the format
-     * projects/{project_id}/locations/{location}/instances/{instance_id}.
+     * `projects/{project_id}/locations/{location}/instances/{instance_id}`.
      * </pre>
      *
      * <code>
@@ -514,7 +514,7 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The instance resource name, in the format
-     * projects/{project_id}/locations/{location}/instances/{instance_id}.
+     * `projects/{project_id}/locations/{location}/instances/{instance_id}`.
      * </pre>
      *
      * <code>
@@ -539,7 +539,7 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The instance resource name, in the format
-     * projects/{project_id}/locations/{location}/instances/{instance_id}.
+     * `projects/{project_id}/locations/{location}/instances/{instance_id}`.
      * </pre>
      *
      * <code>
@@ -563,7 +563,7 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The instance resource name, in the format
-     * projects/{project_id}/locations/{location}/instances/{instance_id}.
+     * `projects/{project_id}/locations/{location}/instances/{instance_id}`.
      * </pre>
      *
      * <code>
@@ -583,7 +583,7 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The instance resource name, in the format
-     * projects/{project_id}/locations/{location}/instances/{instance_id}.
+     * `projects/{project_id}/locations/{location}/instances/{instance_id}`.
      * </pre>
      *
      * <code>
