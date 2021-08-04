@@ -16,7 +16,6 @@
 
 package com.google.cloud.resourcemanager.v3;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1819,14 +1818,7 @@ public class FoldersClient implements BackgroundResource {
       ApiFuture<ListFoldersPage> futurePage =
           ListFoldersPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListFoldersPage, ListFoldersPagedResponse>() {
-            @Override
-            public ListFoldersPagedResponse apply(ListFoldersPage input) {
-              return new ListFoldersPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListFoldersPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListFoldersPagedResponse(ListFoldersPage page) {
@@ -1900,12 +1892,7 @@ public class FoldersClient implements BackgroundResource {
           SearchFoldersPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchFoldersPage, SearchFoldersPagedResponse>() {
-            @Override
-            public SearchFoldersPagedResponse apply(SearchFoldersPage input) {
-              return new SearchFoldersPagedResponse(input);
-            }
-          },
+          input -> new SearchFoldersPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

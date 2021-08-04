@@ -16,7 +16,6 @@
 
 package com.google.cloud.resourcemanager.v3;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -587,12 +586,7 @@ public class TagBindingsClient implements BackgroundResource {
           ListTagBindingsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTagBindingsPage, ListTagBindingsPagedResponse>() {
-            @Override
-            public ListTagBindingsPagedResponse apply(ListTagBindingsPage input) {
-              return new ListTagBindingsPagedResponse(input);
-            }
-          },
+          input -> new ListTagBindingsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

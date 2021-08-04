@@ -16,7 +16,6 @@
 
 package com.google.cloud.resourcemanager.v3;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -789,12 +788,7 @@ public class OrganizationsClient implements BackgroundResource {
           SearchOrganizationsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchOrganizationsPage, SearchOrganizationsPagedResponse>() {
-            @Override
-            public SearchOrganizationsPagedResponse apply(SearchOrganizationsPage input) {
-              return new SearchOrganizationsPagedResponse(input);
-            }
-          },
+          input -> new SearchOrganizationsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

@@ -16,7 +16,6 @@
 
 package com.google.cloud.resourcemanager.v3;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1914,12 +1913,7 @@ public class ProjectsClient implements BackgroundResource {
           ListProjectsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListProjectsPage, ListProjectsPagedResponse>() {
-            @Override
-            public ListProjectsPagedResponse apply(ListProjectsPage input) {
-              return new ListProjectsPagedResponse(input);
-            }
-          },
+          input -> new ListProjectsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1994,12 +1988,7 @@ public class ProjectsClient implements BackgroundResource {
           SearchProjectsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchProjectsPage, SearchProjectsPagedResponse>() {
-            @Override
-            public SearchProjectsPagedResponse apply(SearchProjectsPage input) {
-              return new SearchProjectsPagedResponse(input);
-            }
-          },
+          input -> new SearchProjectsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

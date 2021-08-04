@@ -24,7 +24,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.resourcemanager.v3.CreateTagBindingMetadata;
 import com.google.cloud.resourcemanager.v3.CreateTagBindingRequest;
@@ -40,7 +39,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -149,13 +147,10 @@ public class GrpcTagBindingsStub extends TagBindingsStub {
         GrpcCallSettings.<DeleteTagBindingRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteTagBindingMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteTagBindingRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteTagBindingRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 

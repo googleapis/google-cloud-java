@@ -16,7 +16,6 @@
 
 package com.google.cloud.resourcemanager.v3;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1118,12 +1117,7 @@ public class TagValuesClient implements BackgroundResource {
           ListTagValuesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTagValuesPage, ListTagValuesPagedResponse>() {
-            @Override
-            public ListTagValuesPagedResponse apply(ListTagValuesPage input) {
-              return new ListTagValuesPagedResponse(input);
-            }
-          },
+          input -> new ListTagValuesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

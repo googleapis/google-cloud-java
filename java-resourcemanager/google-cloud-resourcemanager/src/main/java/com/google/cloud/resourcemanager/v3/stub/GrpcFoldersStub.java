@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.resourcemanager.v3.CreateFolderMetadata;
 import com.google.cloud.resourcemanager.v3.CreateFolderRequest;
@@ -54,7 +53,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -237,13 +235,10 @@ public class GrpcFoldersStub extends FoldersStub {
         GrpcCallSettings.<GetFolderRequest, Folder>newBuilder()
             .setMethodDescriptor(getFolderMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetFolderRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetFolderRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListFoldersRequest, ListFoldersResponse> listFoldersTransportSettings =
@@ -262,78 +257,60 @@ public class GrpcFoldersStub extends FoldersStub {
         GrpcCallSettings.<UpdateFolderRequest, Operation>newBuilder()
             .setMethodDescriptor(updateFolderMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateFolderRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateFolderRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("folder.name", String.valueOf(request.getFolder().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("folder.name", String.valueOf(request.getFolder().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<MoveFolderRequest, Operation> moveFolderTransportSettings =
         GrpcCallSettings.<MoveFolderRequest, Operation>newBuilder()
             .setMethodDescriptor(moveFolderMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<MoveFolderRequest>() {
-                  @Override
-                  public Map<String, String> extract(MoveFolderRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteFolderRequest, Operation> deleteFolderTransportSettings =
         GrpcCallSettings.<DeleteFolderRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteFolderMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteFolderRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteFolderRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UndeleteFolderRequest, Operation> undeleteFolderTransportSettings =
         GrpcCallSettings.<UndeleteFolderRequest, Operation>newBuilder()
             .setMethodDescriptor(undeleteFolderMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UndeleteFolderRequest>() {
-                  @Override
-                  public Map<String, String> extract(UndeleteFolderRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -341,13 +318,10 @@ public class GrpcFoldersStub extends FoldersStub {
             GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(TestIamPermissionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("resource", String.valueOf(request.getResource()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource", String.valueOf(request.getResource()));
+                      return params.build();
                     })
                 .build();
 
