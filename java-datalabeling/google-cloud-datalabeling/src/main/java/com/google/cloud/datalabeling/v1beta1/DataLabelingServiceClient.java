@@ -16,7 +16,6 @@
 
 package com.google.cloud.datalabeling.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -4466,12 +4465,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListDatasetsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListDatasetsPage, ListDatasetsPagedResponse>() {
-            @Override
-            public ListDatasetsPagedResponse apply(ListDatasetsPage input) {
-              return new ListDatasetsPagedResponse(input);
-            }
-          },
+          input -> new ListDatasetsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4546,12 +4540,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListDataItemsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListDataItemsPage, ListDataItemsPagedResponse>() {
-            @Override
-            public ListDataItemsPagedResponse apply(ListDataItemsPage input) {
-              return new ListDataItemsPagedResponse(input);
-            }
-          },
+          input -> new ListDataItemsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4628,12 +4617,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListAnnotatedDatasetsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListAnnotatedDatasetsPage, ListAnnotatedDatasetsPagedResponse>() {
-            @Override
-            public ListAnnotatedDatasetsPagedResponse apply(ListAnnotatedDatasetsPage input) {
-              return new ListAnnotatedDatasetsPagedResponse(input);
-            }
-          },
+          input -> new ListAnnotatedDatasetsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4716,12 +4700,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListExamplesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListExamplesPage, ListExamplesPagedResponse>() {
-            @Override
-            public ListExamplesPagedResponse apply(ListExamplesPage input) {
-              return new ListExamplesPagedResponse(input);
-            }
-          },
+          input -> new ListExamplesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4798,12 +4777,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListAnnotationSpecSetsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListAnnotationSpecSetsPage, ListAnnotationSpecSetsPagedResponse>() {
-            @Override
-            public ListAnnotationSpecSetsPagedResponse apply(ListAnnotationSpecSetsPage input) {
-              return new ListAnnotationSpecSetsPagedResponse(input);
-            }
-          },
+          input -> new ListAnnotationSpecSetsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4889,12 +4863,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListInstructionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListInstructionsPage, ListInstructionsPagedResponse>() {
-            @Override
-            public ListInstructionsPagedResponse apply(ListInstructionsPage input) {
-              return new ListInstructionsPagedResponse(input);
-            }
-          },
+          input -> new ListInstructionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4971,12 +4940,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
           SearchEvaluationsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchEvaluationsPage, SearchEvaluationsPagedResponse>() {
-            @Override
-            public SearchEvaluationsPagedResponse apply(SearchEvaluationsPage input) {
-              return new SearchEvaluationsPagedResponse(input);
-            }
-          },
+          input -> new SearchEvaluationsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -5057,12 +5021,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
           SearchExampleComparisonsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchExampleComparisonsPage, SearchExampleComparisonsPagedResponse>() {
-            @Override
-            public SearchExampleComparisonsPagedResponse apply(SearchExampleComparisonsPage input) {
-              return new SearchExampleComparisonsPagedResponse(input);
-            }
-          },
+          input -> new SearchExampleComparisonsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -5154,12 +5113,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListEvaluationJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListEvaluationJobsPage, ListEvaluationJobsPagedResponse>() {
-            @Override
-            public ListEvaluationJobsPagedResponse apply(ListEvaluationJobsPage input) {
-              return new ListEvaluationJobsPagedResponse(input);
-            }
-          },
+          input -> new ListEvaluationJobsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

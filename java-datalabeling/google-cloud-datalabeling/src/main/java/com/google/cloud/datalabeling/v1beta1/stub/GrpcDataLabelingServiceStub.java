@@ -33,7 +33,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datalabeling.v1beta1.AnnotatedDataset;
 import com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet;
@@ -99,7 +98,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -598,104 +596,80 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
         GrpcCallSettings.<CreateDatasetRequest, Dataset>newBuilder()
             .setMethodDescriptor(createDatasetMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateDatasetRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateDatasetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetDatasetRequest, Dataset> getDatasetTransportSettings =
         GrpcCallSettings.<GetDatasetRequest, Dataset>newBuilder()
             .setMethodDescriptor(getDatasetMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetDatasetRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetDatasetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListDatasetsRequest, ListDatasetsResponse> listDatasetsTransportSettings =
         GrpcCallSettings.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
             .setMethodDescriptor(listDatasetsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListDatasetsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListDatasetsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteDatasetRequest, Empty> deleteDatasetTransportSettings =
         GrpcCallSettings.<DeleteDatasetRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteDatasetMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteDatasetRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteDatasetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ImportDataRequest, Operation> importDataTransportSettings =
         GrpcCallSettings.<ImportDataRequest, Operation>newBuilder()
             .setMethodDescriptor(importDataMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ImportDataRequest>() {
-                  @Override
-                  public Map<String, String> extract(ImportDataRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ExportDataRequest, Operation> exportDataTransportSettings =
         GrpcCallSettings.<ExportDataRequest, Operation>newBuilder()
             .setMethodDescriptor(exportDataMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ExportDataRequest>() {
-                  @Override
-                  public Map<String, String> extract(ExportDataRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetDataItemRequest, DataItem> getDataItemTransportSettings =
         GrpcCallSettings.<GetDataItemRequest, DataItem>newBuilder()
             .setMethodDescriptor(getDataItemMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetDataItemRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetDataItemRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListDataItemsRequest, ListDataItemsResponse> listDataItemsTransportSettings =
         GrpcCallSettings.<ListDataItemsRequest, ListDataItemsResponse>newBuilder()
             .setMethodDescriptor(listDataItemsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListDataItemsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListDataItemsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetAnnotatedDatasetRequest, AnnotatedDataset>
@@ -703,13 +677,10 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             GrpcCallSettings.<GetAnnotatedDatasetRequest, AnnotatedDataset>newBuilder()
                 .setMethodDescriptor(getAnnotatedDatasetMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetAnnotatedDatasetRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetAnnotatedDatasetRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse>
@@ -718,91 +689,70 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                 .<ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse>newBuilder()
                 .setMethodDescriptor(listAnnotatedDatasetsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListAnnotatedDatasetsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListAnnotatedDatasetsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetTransportSettings =
         GrpcCallSettings.<DeleteAnnotatedDatasetRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAnnotatedDatasetMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteAnnotatedDatasetRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteAnnotatedDatasetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<LabelImageRequest, Operation> labelImageTransportSettings =
         GrpcCallSettings.<LabelImageRequest, Operation>newBuilder()
             .setMethodDescriptor(labelImageMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<LabelImageRequest>() {
-                  @Override
-                  public Map<String, String> extract(LabelImageRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<LabelVideoRequest, Operation> labelVideoTransportSettings =
         GrpcCallSettings.<LabelVideoRequest, Operation>newBuilder()
             .setMethodDescriptor(labelVideoMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<LabelVideoRequest>() {
-                  @Override
-                  public Map<String, String> extract(LabelVideoRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<LabelTextRequest, Operation> labelTextTransportSettings =
         GrpcCallSettings.<LabelTextRequest, Operation>newBuilder()
             .setMethodDescriptor(labelTextMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<LabelTextRequest>() {
-                  @Override
-                  public Map<String, String> extract(LabelTextRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetExampleRequest, Example> getExampleTransportSettings =
         GrpcCallSettings.<GetExampleRequest, Example>newBuilder()
             .setMethodDescriptor(getExampleMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetExampleRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetExampleRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListExamplesRequest, ListExamplesResponse> listExamplesTransportSettings =
         GrpcCallSettings.<ListExamplesRequest, ListExamplesResponse>newBuilder()
             .setMethodDescriptor(listExamplesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListExamplesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListExamplesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateAnnotationSpecSetRequest, AnnotationSpecSet>
@@ -810,13 +760,10 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             GrpcCallSettings.<CreateAnnotationSpecSetRequest, AnnotationSpecSet>newBuilder()
                 .setMethodDescriptor(createAnnotationSpecSetMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateAnnotationSpecSetRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateAnnotationSpecSetRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetAnnotationSpecSetRequest, AnnotationSpecSet>
@@ -824,13 +771,10 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             GrpcCallSettings.<GetAnnotationSpecSetRequest, AnnotationSpecSet>newBuilder()
                 .setMethodDescriptor(getAnnotationSpecSetMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetAnnotationSpecSetRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetAnnotationSpecSetRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse>
@@ -839,13 +783,10 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                 .<ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse>newBuilder()
                 .setMethodDescriptor(listAnnotationSpecSetsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListAnnotationSpecSetsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListAnnotationSpecSetsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteAnnotationSpecSetRequest, Empty>
@@ -853,39 +794,30 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             GrpcCallSettings.<DeleteAnnotationSpecSetRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteAnnotationSpecSetMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteAnnotationSpecSetRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteAnnotationSpecSetRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateInstructionRequest, Operation> createInstructionTransportSettings =
         GrpcCallSettings.<CreateInstructionRequest, Operation>newBuilder()
             .setMethodDescriptor(createInstructionMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateInstructionRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateInstructionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetInstructionRequest, Instruction> getInstructionTransportSettings =
         GrpcCallSettings.<GetInstructionRequest, Instruction>newBuilder()
             .setMethodDescriptor(getInstructionMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetInstructionRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetInstructionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListInstructionsRequest, ListInstructionsResponse>
@@ -893,39 +825,30 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             GrpcCallSettings.<ListInstructionsRequest, ListInstructionsResponse>newBuilder()
                 .setMethodDescriptor(listInstructionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListInstructionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListInstructionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteInstructionRequest, Empty> deleteInstructionTransportSettings =
         GrpcCallSettings.<DeleteInstructionRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteInstructionMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteInstructionRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteInstructionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetEvaluationRequest, Evaluation> getEvaluationTransportSettings =
         GrpcCallSettings.<GetEvaluationRequest, Evaluation>newBuilder()
             .setMethodDescriptor(getEvaluationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetEvaluationRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetEvaluationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SearchEvaluationsRequest, SearchEvaluationsResponse>
@@ -933,13 +856,10 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             GrpcCallSettings.<SearchEvaluationsRequest, SearchEvaluationsResponse>newBuilder()
                 .setMethodDescriptor(searchEvaluationsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SearchEvaluationsRequest>() {
-                      @Override
-                      public Map<String, String> extract(SearchEvaluationsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SearchExampleComparisonsRequest, SearchExampleComparisonsResponse>
@@ -948,13 +868,10 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                 .<SearchExampleComparisonsRequest, SearchExampleComparisonsResponse>newBuilder()
                 .setMethodDescriptor(searchExampleComparisonsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SearchExampleComparisonsRequest>() {
-                      @Override
-                      public Map<String, String> extract(SearchExampleComparisonsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateEvaluationJobRequest, EvaluationJob>
@@ -962,13 +879,10 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             GrpcCallSettings.<CreateEvaluationJobRequest, EvaluationJob>newBuilder()
                 .setMethodDescriptor(createEvaluationJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateEvaluationJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateEvaluationJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateEvaluationJobRequest, EvaluationJob>
@@ -976,67 +890,52 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             GrpcCallSettings.<UpdateEvaluationJobRequest, EvaluationJob>newBuilder()
                 .setMethodDescriptor(updateEvaluationJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateEvaluationJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateEvaluationJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "evaluation_job.name",
-                            String.valueOf(request.getEvaluationJob().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "evaluation_job.name",
+                          String.valueOf(request.getEvaluationJob().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetEvaluationJobRequest, EvaluationJob> getEvaluationJobTransportSettings =
         GrpcCallSettings.<GetEvaluationJobRequest, EvaluationJob>newBuilder()
             .setMethodDescriptor(getEvaluationJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetEvaluationJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetEvaluationJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<PauseEvaluationJobRequest, Empty> pauseEvaluationJobTransportSettings =
         GrpcCallSettings.<PauseEvaluationJobRequest, Empty>newBuilder()
             .setMethodDescriptor(pauseEvaluationJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<PauseEvaluationJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(PauseEvaluationJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobTransportSettings =
         GrpcCallSettings.<ResumeEvaluationJobRequest, Empty>newBuilder()
             .setMethodDescriptor(resumeEvaluationJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ResumeEvaluationJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(ResumeEvaluationJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobTransportSettings =
         GrpcCallSettings.<DeleteEvaluationJobRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteEvaluationJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteEvaluationJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteEvaluationJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
@@ -1044,13 +943,10 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             GrpcCallSettings.<ListEvaluationJobsRequest, ListEvaluationJobsResponse>newBuilder()
                 .setMethodDescriptor(listEvaluationJobsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListEvaluationJobsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListEvaluationJobsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 
