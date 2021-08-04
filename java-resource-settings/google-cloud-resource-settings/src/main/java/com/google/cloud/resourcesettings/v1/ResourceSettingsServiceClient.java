@@ -16,7 +16,6 @@
 
 package com.google.cloud.resourcesettings.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -560,12 +559,7 @@ public class ResourceSettingsServiceClient implements BackgroundResource {
           ListSettingsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListSettingsPage, ListSettingsPagedResponse>() {
-            @Override
-            public ListSettingsPagedResponse apply(ListSettingsPage input) {
-              return new ListSettingsPagedResponse(input);
-            }
-          },
+          input -> new ListSettingsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

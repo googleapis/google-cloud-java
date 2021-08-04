@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.resourcesettings.v1.GetSettingRequest;
 import com.google.cloud.resourcesettings.v1.ListSettingsRequest;
@@ -35,7 +34,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -132,39 +130,30 @@ public class GrpcResourceSettingsServiceStub extends ResourceSettingsServiceStub
         GrpcCallSettings.<ListSettingsRequest, ListSettingsResponse>newBuilder()
             .setMethodDescriptor(listSettingsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListSettingsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListSettingsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetSettingRequest, Setting> getSettingTransportSettings =
         GrpcCallSettings.<GetSettingRequest, Setting>newBuilder()
             .setMethodDescriptor(getSettingMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetSettingRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetSettingRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateSettingRequest, Setting> updateSettingTransportSettings =
         GrpcCallSettings.<UpdateSettingRequest, Setting>newBuilder()
             .setMethodDescriptor(updateSettingMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateSettingRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateSettingRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("setting.name", String.valueOf(request.getSetting().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("setting.name", String.valueOf(request.getSetting().getName()));
+                  return params.build();
                 })
             .build();
 
