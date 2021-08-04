@@ -22,7 +22,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -31,7 +30,6 @@ import com.google.phishingprotection.v1beta1.ReportPhishingResponse;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -110,13 +108,10 @@ public class GrpcPhishingProtectionServiceV1Beta1Stub extends PhishingProtection
             GrpcCallSettings.<ReportPhishingRequest, ReportPhishingResponse>newBuilder()
                 .setMethodDescriptor(reportPhishingMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ReportPhishingRequest>() {
-                      @Override
-                      public Map<String, String> extract(ReportPhishingRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 
