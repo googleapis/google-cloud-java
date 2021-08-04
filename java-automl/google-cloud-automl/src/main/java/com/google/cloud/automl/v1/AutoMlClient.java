@@ -16,7 +16,6 @@
 
 package com.google.cloud.automl.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2442,12 +2441,7 @@ public class AutoMlClient implements BackgroundResource {
           ListDatasetsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListDatasetsPage, ListDatasetsPagedResponse>() {
-            @Override
-            public ListDatasetsPagedResponse apply(ListDatasetsPage input) {
-              return new ListDatasetsPagedResponse(input);
-            }
-          },
+          input -> new ListDatasetsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2521,14 +2515,7 @@ public class AutoMlClient implements BackgroundResource {
       ApiFuture<ListModelsPage> futurePage =
           ListModelsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListModelsPage, ListModelsPagedResponse>() {
-            @Override
-            public ListModelsPagedResponse apply(ListModelsPage input) {
-              return new ListModelsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListModelsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListModelsPagedResponse(ListModelsPage page) {
@@ -2603,12 +2590,7 @@ public class AutoMlClient implements BackgroundResource {
           ListModelEvaluationsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListModelEvaluationsPage, ListModelEvaluationsPagedResponse>() {
-            @Override
-            public ListModelEvaluationsPagedResponse apply(ListModelEvaluationsPage input) {
-              return new ListModelEvaluationsPagedResponse(input);
-            }
-          },
+          input -> new ListModelEvaluationsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
