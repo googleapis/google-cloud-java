@@ -16,7 +16,6 @@
 
 package com.google.cloud.functions.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1191,12 +1190,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
           ListFunctionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListFunctionsPage, ListFunctionsPagedResponse>() {
-            @Override
-            public ListFunctionsPagedResponse apply(ListFunctionsPage input) {
-              return new ListFunctionsPagedResponse(input);
-            }
-          },
+          input -> new ListFunctionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
