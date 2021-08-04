@@ -244,10 +244,10 @@ public class DeviceName implements ResourceName {
     }
 
     private Builder(DeviceName deviceName) {
-      project = deviceName.project;
-      location = deviceName.location;
-      registry = deviceName.registry;
-      device = deviceName.device;
+      this.project = deviceName.project;
+      this.location = deviceName.location;
+      this.registry = deviceName.registry;
+      this.device = deviceName.device;
     }
 
     public DeviceName build() {

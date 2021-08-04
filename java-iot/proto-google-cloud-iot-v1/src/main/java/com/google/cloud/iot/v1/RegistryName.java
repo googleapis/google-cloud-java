@@ -211,9 +211,9 @@ public class RegistryName implements ResourceName {
     }
 
     private Builder(RegistryName registryName) {
-      project = registryName.project;
-      location = registryName.location;
-      registry = registryName.registry;
+      this.project = registryName.project;
+      this.location = registryName.location;
+      this.registry = registryName.registry;
     }
 
     public RegistryName build() {
