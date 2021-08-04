@@ -108,6 +108,12 @@ public class CmekSettingsName implements ResourceName {
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newProjectBuilder() {
+    return new Builder();
+  }
+
+  /** @deprecated Please use {@link #newProjectBuilder()} instead */
+  @Deprecated
   public static Builder newProjectCmekSettingsBuilder() {
     return new Builder();
   }
@@ -136,21 +142,45 @@ public class CmekSettingsName implements ResourceName {
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static CmekSettingsName ofProjectName(String project) {
+    return newBuilder().setProject(project).build();
+  }
+
+  /** @deprecated Please use {@link #ofProjectName()} instead */
+  @Deprecated
   public static CmekSettingsName ofProjectCmekSettingsName(String project) {
     return newBuilder().setProject(project).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static CmekSettingsName ofOrganizationName(String organization) {
+    return newOrganizationCmekSettingsBuilder().setOrganization(organization).build();
+  }
+
+  /** @deprecated Please use {@link #ofOrganizationName()} instead */
+  @Deprecated
   public static CmekSettingsName ofOrganizationCmekSettingsName(String organization) {
     return newOrganizationCmekSettingsBuilder().setOrganization(organization).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static CmekSettingsName ofFolderName(String folder) {
+    return newFolderCmekSettingsBuilder().setFolder(folder).build();
+  }
+
+  /** @deprecated Please use {@link #ofFolderName()} instead */
+  @Deprecated
   public static CmekSettingsName ofFolderCmekSettingsName(String folder) {
     return newFolderCmekSettingsBuilder().setFolder(folder).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static CmekSettingsName ofBillingAccountName(String billingAccount) {
+    return newBillingAccountCmekSettingsBuilder().setBillingAccount(billingAccount).build();
+  }
+
+  /** @deprecated Please use {@link #ofBillingAccountName()} instead */
+  @Deprecated
   public static CmekSettingsName ofBillingAccountCmekSettingsName(String billingAccount) {
     return newBillingAccountCmekSettingsBuilder().setBillingAccount(billingAccount).build();
   }
@@ -160,21 +190,48 @@ public class CmekSettingsName implements ResourceName {
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectName(String project) {
+    return newBuilder().setProject(project).build().toString();
+  }
+
+  /** @deprecated Please use {@link #formatProjectName()} instead */
+  @Deprecated
   public static String formatProjectCmekSettingsName(String project) {
     return newBuilder().setProject(project).build().toString();
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatOrganizationName(String organization) {
+    return newOrganizationCmekSettingsBuilder().setOrganization(organization).build().toString();
+  }
+
+  /** @deprecated Please use {@link #formatOrganizationName()} instead */
+  @Deprecated
   public static String formatOrganizationCmekSettingsName(String organization) {
     return newOrganizationCmekSettingsBuilder().setOrganization(organization).build().toString();
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatFolderName(String folder) {
+    return newFolderCmekSettingsBuilder().setFolder(folder).build().toString();
+  }
+
+  /** @deprecated Please use {@link #formatFolderName()} instead */
+  @Deprecated
   public static String formatFolderCmekSettingsName(String folder) {
     return newFolderCmekSettingsBuilder().setFolder(folder).build().toString();
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatBillingAccountName(String billingAccount) {
+    return newBillingAccountCmekSettingsBuilder()
+        .setBillingAccount(billingAccount)
+        .build()
+        .toString();
+  }
+
+  /** @deprecated Please use {@link #formatBillingAccountName()} instead */
+  @Deprecated
   public static String formatBillingAccountCmekSettingsName(String billingAccount) {
     return newBillingAccountCmekSettingsBuilder()
         .setBillingAccount(billingAccount)
