@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.video.transcoder.v1.CreateJobRequest;
 import com.google.cloud.video.transcoder.v1.CreateJobTemplateRequest;
@@ -44,7 +43,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -195,65 +193,50 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
         GrpcCallSettings.<CreateJobRequest, Job>newBuilder()
             .setMethodDescriptor(createJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         GrpcCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
             .setMethodDescriptor(listJobsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListJobsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListJobsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
         GrpcCallSettings.<GetJobRequest, Job>newBuilder()
             .setMethodDescriptor(getJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteJobRequest, Empty> deleteJobTransportSettings =
         GrpcCallSettings.<DeleteJobRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateJobTemplateRequest, JobTemplate> createJobTemplateTransportSettings =
         GrpcCallSettings.<CreateJobTemplateRequest, JobTemplate>newBuilder()
             .setMethodDescriptor(createJobTemplateMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateJobTemplateRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateJobTemplateRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListJobTemplatesRequest, ListJobTemplatesResponse>
@@ -261,39 +244,30 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
             GrpcCallSettings.<ListJobTemplatesRequest, ListJobTemplatesResponse>newBuilder()
                 .setMethodDescriptor(listJobTemplatesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListJobTemplatesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListJobTemplatesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetJobTemplateRequest, JobTemplate> getJobTemplateTransportSettings =
         GrpcCallSettings.<GetJobTemplateRequest, JobTemplate>newBuilder()
             .setMethodDescriptor(getJobTemplateMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetJobTemplateRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetJobTemplateRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteJobTemplateRequest, Empty> deleteJobTemplateTransportSettings =
         GrpcCallSettings.<DeleteJobTemplateRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteJobTemplateMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteJobTemplateRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteJobTemplateRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 

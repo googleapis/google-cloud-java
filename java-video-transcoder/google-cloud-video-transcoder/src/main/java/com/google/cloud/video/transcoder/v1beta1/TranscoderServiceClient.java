@@ -16,7 +16,6 @@
 
 package com.google.cloud.video.transcoder.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1057,14 +1056,7 @@ public class TranscoderServiceClient implements BackgroundResource {
       ApiFuture<ListJobsPage> futurePage =
           ListJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListJobsPage, ListJobsPagedResponse>() {
-            @Override
-            public ListJobsPagedResponse apply(ListJobsPage input) {
-              return new ListJobsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListJobsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListJobsPagedResponse(ListJobsPage page) {
@@ -1132,12 +1124,7 @@ public class TranscoderServiceClient implements BackgroundResource {
           ListJobTemplatesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListJobTemplatesPage, ListJobTemplatesPagedResponse>() {
-            @Override
-            public ListJobTemplatesPagedResponse apply(ListJobTemplatesPage input) {
-              return new ListJobTemplatesPagedResponse(input);
-            }
-          },
+          input -> new ListJobTemplatesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
