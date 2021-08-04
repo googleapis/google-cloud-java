@@ -256,10 +256,10 @@ public class ExampleName implements ResourceName {
     }
 
     private Builder(ExampleName exampleName) {
-      project = exampleName.project;
-      dataset = exampleName.dataset;
-      annotatedDataset = exampleName.annotatedDataset;
-      example = exampleName.example;
+      this.project = exampleName.project;
+      this.dataset = exampleName.dataset;
+      this.annotatedDataset = exampleName.annotatedDataset;
+      this.example = exampleName.example;
     }
 
     public ExampleName build() {

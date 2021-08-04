@@ -181,8 +181,8 @@ public class EvaluationJobName implements ResourceName {
     }
 
     private Builder(EvaluationJobName evaluationJobName) {
-      project = evaluationJobName.project;
-      evaluationJob = evaluationJobName.evaluationJob;
+      this.project = evaluationJobName.project;
+      this.evaluationJob = evaluationJobName.evaluationJob;
     }
 
     public EvaluationJobName build() {

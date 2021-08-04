@@ -211,9 +211,9 @@ public class EvaluationName implements ResourceName {
     }
 
     private Builder(EvaluationName evaluationName) {
-      project = evaluationName.project;
-      dataset = evaluationName.dataset;
-      evaluation = evaluationName.evaluation;
+      this.project = evaluationName.project;
+      this.dataset = evaluationName.dataset;
+      this.evaluation = evaluationName.evaluation;
     }
 
     public EvaluationName build() {

@@ -187,8 +187,8 @@ public class AnnotationSpecSetName implements ResourceName {
     }
 
     private Builder(AnnotationSpecSetName annotationSpecSetName) {
-      project = annotationSpecSetName.project;
-      annotationSpecSet = annotationSpecSetName.annotationSpecSet;
+      this.project = annotationSpecSetName.project;
+      this.annotationSpecSet = annotationSpecSetName.annotationSpecSet;
     }
 
     public AnnotationSpecSetName build() {

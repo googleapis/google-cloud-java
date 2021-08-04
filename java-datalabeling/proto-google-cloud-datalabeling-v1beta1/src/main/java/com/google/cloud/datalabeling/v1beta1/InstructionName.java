@@ -181,8 +181,8 @@ public class InstructionName implements ResourceName {
     }
 
     private Builder(InstructionName instructionName) {
-      project = instructionName.project;
-      instruction = instructionName.instruction;
+      this.project = instructionName.project;
+      this.instruction = instructionName.instruction;
     }
 
     public InstructionName build() {
