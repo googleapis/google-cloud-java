@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest;
@@ -32,7 +31,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -127,39 +125,30 @@ public class GrpcProfilerServiceStub extends ProfilerServiceStub {
         GrpcCallSettings.<CreateProfileRequest, Profile>newBuilder()
             .setMethodDescriptor(createProfileMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateProfileRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateProfileRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateOfflineProfileRequest, Profile> createOfflineProfileTransportSettings =
         GrpcCallSettings.<CreateOfflineProfileRequest, Profile>newBuilder()
             .setMethodDescriptor(createOfflineProfileMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateOfflineProfileRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateOfflineProfileRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateProfileRequest, Profile> updateProfileTransportSettings =
         GrpcCallSettings.<UpdateProfileRequest, Profile>newBuilder()
             .setMethodDescriptor(updateProfileMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateProfileRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateProfileRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("profile.name", String.valueOf(request.getProfile().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("profile.name", String.valueOf(request.getProfile().getName()));
+                  return params.build();
                 })
             .build();
 
