@@ -16,7 +16,6 @@
 
 package com.google.cloud.monitoring.dashboard.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -528,12 +527,7 @@ public class DashboardsServiceClient implements BackgroundResource {
           ListDashboardsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListDashboardsPage, ListDashboardsPagedResponse>() {
-            @Override
-            public ListDashboardsPagedResponse apply(ListDashboardsPage input) {
-              return new ListDashboardsPagedResponse(input);
-            }
-          },
+          input -> new ListDashboardsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

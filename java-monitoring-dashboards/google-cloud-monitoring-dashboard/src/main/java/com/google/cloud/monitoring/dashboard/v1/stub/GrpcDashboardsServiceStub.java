@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -38,7 +37,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -156,13 +154,10 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
         GrpcCallSettings.<CreateDashboardRequest, Dashboard>newBuilder()
             .setMethodDescriptor(createDashboardMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateDashboardRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateDashboardRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListDashboardsRequest, ListDashboardsResponse>
@@ -170,52 +165,40 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
             GrpcCallSettings.<ListDashboardsRequest, ListDashboardsResponse>newBuilder()
                 .setMethodDescriptor(listDashboardsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListDashboardsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListDashboardsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetDashboardRequest, Dashboard> getDashboardTransportSettings =
         GrpcCallSettings.<GetDashboardRequest, Dashboard>newBuilder()
             .setMethodDescriptor(getDashboardMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetDashboardRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetDashboardRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteDashboardRequest, Empty> deleteDashboardTransportSettings =
         GrpcCallSettings.<DeleteDashboardRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteDashboardMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteDashboardRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteDashboardRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateDashboardRequest, Dashboard> updateDashboardTransportSettings =
         GrpcCallSettings.<UpdateDashboardRequest, Dashboard>newBuilder()
             .setMethodDescriptor(updateDashboardMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateDashboardRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateDashboardRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("dashboard.name", String.valueOf(request.getDashboard().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("dashboard.name", String.valueOf(request.getDashboard().getName()));
+                  return params.build();
                 })
             .build();
 
