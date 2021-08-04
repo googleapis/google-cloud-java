@@ -350,7 +350,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * For convenience, the actual lifetime of an issued certificate.
-     * Corresponds to 'not_after_time' - 'not_before_time'.
      * </pre>
      *
      * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -363,7 +362,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * For convenience, the actual lifetime of an issued certificate.
-     * Corresponds to 'not_after_time' - 'not_before_time'.
      * </pre>
      *
      * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -376,7 +374,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * For convenience, the actual lifetime of an issued certificate.
-     * Corresponds to 'not_after_time' - 'not_before_time'.
      * </pre>
      *
      * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -422,7 +419,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which the certificate expires.
+     * The time after which the certificate is expired.
+     * Per RFC 5280, the validity period for a certificate is the period of time
+     * from not_before_time through not_after_time, inclusive.
+     * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -434,7 +434,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which the certificate expires.
+     * The time after which the certificate is expired.
+     * Per RFC 5280, the validity period for a certificate is the period of time
+     * from not_before_time through not_after_time, inclusive.
+     * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -446,7 +449,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which the certificate expires.
+     * The time after which the certificate is expired.
+     * Per RFC 5280, the validity period for a certificate is the period of time
+     * from not_before_time through not_after_time, inclusive.
+     * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -784,7 +790,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * For convenience, the actual lifetime of an issued certificate.
-     * Corresponds to 'not_after_time' - 'not_before_time'.
      * </pre>
      *
      * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -800,7 +805,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * For convenience, the actual lifetime of an issued certificate.
-     * Corresponds to 'not_after_time' - 'not_before_time'.
      * </pre>
      *
      * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -816,7 +820,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * For convenience, the actual lifetime of an issued certificate.
-     * Corresponds to 'not_after_time' - 'not_before_time'.
      * </pre>
      *
      * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -880,7 +883,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which the certificate expires.
+     * The time after which the certificate is expired.
+     * Per RFC 5280, the validity period for a certificate is the period of time
+     * from not_before_time through not_after_time, inclusive.
+     * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -895,7 +901,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which the certificate expires.
+     * The time after which the certificate is expired.
+     * Per RFC 5280, the validity period for a certificate is the period of time
+     * from not_before_time through not_after_time, inclusive.
+     * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -912,7 +921,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which the certificate expires.
+     * The time after which the certificate is expired.
+     * Per RFC 5280, the validity period for a certificate is the period of time
+     * from not_before_time through not_after_time, inclusive.
+     * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -1915,7 +1927,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * For convenience, the actual lifetime of an issued certificate.
-       * Corresponds to 'not_after_time' - 'not_before_time'.
        * </pre>
        *
        * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -1930,7 +1941,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * For convenience, the actual lifetime of an issued certificate.
-       * Corresponds to 'not_after_time' - 'not_before_time'.
        * </pre>
        *
        * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -1949,7 +1959,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * For convenience, the actual lifetime of an issued certificate.
-       * Corresponds to 'not_after_time' - 'not_before_time'.
        * </pre>
        *
        * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -1972,7 +1981,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * For convenience, the actual lifetime of an issued certificate.
-       * Corresponds to 'not_after_time' - 'not_before_time'.
        * </pre>
        *
        * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -1992,7 +2000,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * For convenience, the actual lifetime of an issued certificate.
-       * Corresponds to 'not_after_time' - 'not_before_time'.
        * </pre>
        *
        * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -2017,7 +2024,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * For convenience, the actual lifetime of an issued certificate.
-       * Corresponds to 'not_after_time' - 'not_before_time'.
        * </pre>
        *
        * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -2038,7 +2044,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * For convenience, the actual lifetime of an issued certificate.
-       * Corresponds to 'not_after_time' - 'not_before_time'.
        * </pre>
        *
        * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -2053,7 +2058,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * For convenience, the actual lifetime of an issued certificate.
-       * Corresponds to 'not_after_time' - 'not_before_time'.
        * </pre>
        *
        * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -2070,7 +2074,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * For convenience, the actual lifetime of an issued certificate.
-       * Corresponds to 'not_after_time' - 'not_before_time'.
        * </pre>
        *
        * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -2287,7 +2290,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * The time at which the certificate expires.
+       * The time after which the certificate is expired.
+       * Per RFC 5280, the validity period for a certificate is the period of time
+       * from not_before_time through not_after_time, inclusive.
+       * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -2301,7 +2307,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * The time at which the certificate expires.
+       * The time after which the certificate is expired.
+       * Per RFC 5280, the validity period for a certificate is the period of time
+       * from not_before_time through not_after_time, inclusive.
+       * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -2321,7 +2330,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * The time at which the certificate expires.
+       * The time after which the certificate is expired.
+       * Per RFC 5280, the validity period for a certificate is the period of time
+       * from not_before_time through not_after_time, inclusive.
+       * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -2343,7 +2355,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * The time at which the certificate expires.
+       * The time after which the certificate is expired.
+       * Per RFC 5280, the validity period for a certificate is the period of time
+       * from not_before_time through not_after_time, inclusive.
+       * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -2362,7 +2377,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * The time at which the certificate expires.
+       * The time after which the certificate is expired.
+       * Per RFC 5280, the validity period for a certificate is the period of time
+       * from not_before_time through not_after_time, inclusive.
+       * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -2388,7 +2406,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * The time at which the certificate expires.
+       * The time after which the certificate is expired.
+       * Per RFC 5280, the validity period for a certificate is the period of time
+       * from not_before_time through not_after_time, inclusive.
+       * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -2408,7 +2429,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * The time at which the certificate expires.
+       * The time after which the certificate is expired.
+       * Per RFC 5280, the validity period for a certificate is the period of time
+       * from not_before_time through not_after_time, inclusive.
+       * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -2422,7 +2446,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * The time at which the certificate expires.
+       * The time after which the certificate is expired.
+       * Per RFC 5280, the validity period for a certificate is the period of time
+       * from not_before_time through not_after_time, inclusive.
+       * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -2440,7 +2467,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * The time at which the certificate expires.
+       * The time after which the certificate is expired.
+       * Per RFC 5280, the validity period for a certificate is the period of time
+       * from not_before_time through not_after_time, inclusive.
+       * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp not_after_time = 6;</code>

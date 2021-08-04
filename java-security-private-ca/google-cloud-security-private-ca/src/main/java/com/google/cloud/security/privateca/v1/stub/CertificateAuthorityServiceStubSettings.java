@@ -203,7 +203,7 @@ public class CertificateAuthorityServiceStubSettings
   private final PagedCallSettings<ListCaPoolsRequest, ListCaPoolsResponse, ListCaPoolsPagedResponse>
       listCaPoolsSettings;
   private final UnaryCallSettings<DeleteCaPoolRequest, Operation> deleteCaPoolSettings;
-  private final OperationCallSettings<DeleteCaPoolRequest, CaPool, OperationMetadata>
+  private final OperationCallSettings<DeleteCaPoolRequest, Empty, OperationMetadata>
       deleteCaPoolOperationSettings;
   private final UnaryCallSettings<FetchCaCertsRequest, FetchCaCertsResponse> fetchCaCertsSettings;
   private final UnaryCallSettings<GetCertificateRevocationListRequest, CertificateRevocationList>
@@ -764,7 +764,7 @@ public class CertificateAuthorityServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to deleteCaPool. */
-  public OperationCallSettings<DeleteCaPoolRequest, CaPool, OperationMetadata>
+  public OperationCallSettings<DeleteCaPoolRequest, Empty, OperationMetadata>
       deleteCaPoolOperationSettings() {
     return deleteCaPoolOperationSettings;
   }
@@ -1068,7 +1068,7 @@ public class CertificateAuthorityServiceStubSettings
             ListCaPoolsRequest, ListCaPoolsResponse, ListCaPoolsPagedResponse>
         listCaPoolsSettings;
     private final UnaryCallSettings.Builder<DeleteCaPoolRequest, Operation> deleteCaPoolSettings;
-    private final OperationCallSettings.Builder<DeleteCaPoolRequest, CaPool, OperationMetadata>
+    private final OperationCallSettings.Builder<DeleteCaPoolRequest, Empty, OperationMetadata>
         deleteCaPoolOperationSettings;
     private final UnaryCallSettings.Builder<FetchCaCertsRequest, FetchCaCertsResponse>
         fetchCaCertsSettings;
@@ -1719,7 +1719,7 @@ public class CertificateAuthorityServiceStubSettings
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
                   .build())
           .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(CaPool.class))
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -2057,7 +2057,7 @@ public class CertificateAuthorityServiceStubSettings
     /** Returns the builder for the settings used for calls to deleteCaPool. */
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<DeleteCaPoolRequest, CaPool, OperationMetadata>
+    public OperationCallSettings.Builder<DeleteCaPoolRequest, Empty, OperationMetadata>
         deleteCaPoolOperationSettings() {
       return deleteCaPoolOperationSettings;
     }

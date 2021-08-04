@@ -279,7 +279,7 @@ public class CertificateAuthorityServiceSettings
   }
 
   /** Returns the object with the settings used for calls to deleteCaPool. */
-  public OperationCallSettings<DeleteCaPoolRequest, CaPool, OperationMetadata>
+  public OperationCallSettings<DeleteCaPoolRequest, Empty, OperationMetadata>
       deleteCaPoolOperationSettings() {
     return ((CertificateAuthorityServiceStubSettings) getStubSettings())
         .deleteCaPoolOperationSettings();
@@ -665,7 +665,7 @@ public class CertificateAuthorityServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteCaPool. */
-    public OperationCallSettings.Builder<DeleteCaPoolRequest, CaPool, OperationMetadata>
+    public OperationCallSettings.Builder<DeleteCaPoolRequest, Empty, OperationMetadata>
         deleteCaPoolOperationSettings() {
       return getStubSettingsBuilder().deleteCaPoolOperationSettings();
     }

@@ -351,14 +351,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate and
+     * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate and
      * includes its URL in the "Authority Information Access" X.509 extension
      * in all issued [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, the CA
      * certificate will not be published and the corresponding X.509 extension
      * will not be written in issued certificates.
      * </pre>
      *
-     * <code>bool publish_ca_cert = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bool publish_ca_cert = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The publishCaCert.
      */
@@ -368,7 +368,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRL and includes its
+     * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRL and includes its
      * URL in the "CRL Distribution Points" X.509 extension in all issued
      * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, CRLs will not be published
      * and the corresponding X.509 extension will not be written in issued
@@ -377,7 +377,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      * daily. CRLs are also rebuilt shortly after a certificate is revoked.
      * </pre>
      *
-     * <code>bool publish_crl = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bool publish_crl = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The publishCrl.
      */
@@ -486,14 +486,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate and
+     * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate and
      * includes its URL in the "Authority Information Access" X.509 extension
      * in all issued [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, the CA
      * certificate will not be published and the corresponding X.509 extension
      * will not be written in issued certificates.
      * </pre>
      *
-     * <code>bool publish_ca_cert = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bool publish_ca_cert = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The publishCaCert.
      */
@@ -508,7 +508,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRL and includes its
+     * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRL and includes its
      * URL in the "CRL Distribution Points" X.509 extension in all issued
      * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, CRLs will not be published
      * and the corresponding X.509 extension will not be written in issued
@@ -517,7 +517,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      * daily. CRLs are also rebuilt shortly after a certificate is revoked.
      * </pre>
      *
-     * <code>bool publish_crl = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bool publish_crl = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The publishCrl.
      */
@@ -877,14 +877,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate and
+       * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate and
        * includes its URL in the "Authority Information Access" X.509 extension
        * in all issued [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, the CA
        * certificate will not be published and the corresponding X.509 extension
        * will not be written in issued certificates.
        * </pre>
        *
-       * <code>bool publish_ca_cert = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>bool publish_ca_cert = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The publishCaCert.
        */
@@ -896,14 +896,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate and
+       * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate and
        * includes its URL in the "Authority Information Access" X.509 extension
        * in all issued [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, the CA
        * certificate will not be published and the corresponding X.509 extension
        * will not be written in issued certificates.
        * </pre>
        *
-       * <code>bool publish_ca_cert = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>bool publish_ca_cert = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The publishCaCert to set.
        * @return This builder for chaining.
@@ -918,14 +918,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate and
+       * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate and
        * includes its URL in the "Authority Information Access" X.509 extension
        * in all issued [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, the CA
        * certificate will not be published and the corresponding X.509 extension
        * will not be written in issued certificates.
        * </pre>
        *
-       * <code>bool publish_ca_cert = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>bool publish_ca_cert = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -941,7 +941,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRL and includes its
+       * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRL and includes its
        * URL in the "CRL Distribution Points" X.509 extension in all issued
        * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, CRLs will not be published
        * and the corresponding X.509 extension will not be written in issued
@@ -950,7 +950,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * daily. CRLs are also rebuilt shortly after a certificate is revoked.
        * </pre>
        *
-       * <code>bool publish_crl = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>bool publish_crl = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The publishCrl.
        */
@@ -962,7 +962,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRL and includes its
+       * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRL and includes its
        * URL in the "CRL Distribution Points" X.509 extension in all issued
        * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, CRLs will not be published
        * and the corresponding X.509 extension will not be written in issued
@@ -971,7 +971,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * daily. CRLs are also rebuilt shortly after a certificate is revoked.
        * </pre>
        *
-       * <code>bool publish_crl = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>bool publish_crl = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The publishCrl to set.
        * @return This builder for chaining.
@@ -986,7 +986,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRL and includes its
+       * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRL and includes its
        * URL in the "CRL Distribution Points" X.509 extension in all issued
        * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, CRLs will not be published
        * and the corresponding X.509 extension will not be written in issued
@@ -995,7 +995,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * daily. CRLs are also rebuilt shortly after a certificate is revoked.
        * </pre>
        *
-       * <code>bool publish_crl = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>bool publish_crl = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -4749,11 +4749,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
+       * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
        * specifying a CSR.
        * </pre>
        *
-       * <code>bool allow_csr_based_issuance = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>bool allow_csr_based_issuance = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The allowCsrBasedIssuance.
        */
@@ -4763,11 +4763,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
+       * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
        * specifying a [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig].
        * </pre>
        *
-       * <code>bool allow_config_based_issuance = 2 [(.google.api.field_behavior) = REQUIRED];
+       * <code>bool allow_config_based_issuance = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The allowConfigBasedIssuance.
@@ -4878,11 +4878,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
+       * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
        * specifying a CSR.
        * </pre>
        *
-       * <code>bool allow_csr_based_issuance = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>bool allow_csr_based_issuance = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The allowCsrBasedIssuance.
        */
@@ -4897,11 +4897,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
+       * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
        * specifying a [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig].
        * </pre>
        *
-       * <code>bool allow_config_based_issuance = 2 [(.google.api.field_behavior) = REQUIRED];
+       * <code>bool allow_config_based_issuance = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The allowConfigBasedIssuance.
@@ -5281,11 +5281,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
+         * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
          * specifying a CSR.
          * </pre>
          *
-         * <code>bool allow_csr_based_issuance = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>bool allow_csr_based_issuance = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The allowCsrBasedIssuance.
          */
@@ -5297,11 +5297,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
+         * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
          * specifying a CSR.
          * </pre>
          *
-         * <code>bool allow_csr_based_issuance = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>bool allow_csr_based_issuance = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The allowCsrBasedIssuance to set.
          * @return This builder for chaining.
@@ -5316,11 +5316,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
+         * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
          * specifying a CSR.
          * </pre>
          *
-         * <code>bool allow_csr_based_issuance = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>bool allow_csr_based_issuance = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return This builder for chaining.
          */
@@ -5336,11 +5336,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
+         * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
          * specifying a [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig].
          * </pre>
          *
-         * <code>bool allow_config_based_issuance = 2 [(.google.api.field_behavior) = REQUIRED];
+         * <code>bool allow_config_based_issuance = 2 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
          * @return The allowConfigBasedIssuance.
@@ -5353,11 +5353,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
+         * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
          * specifying a [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig].
          * </pre>
          *
-         * <code>bool allow_config_based_issuance = 2 [(.google.api.field_behavior) = REQUIRED];
+         * <code>bool allow_config_based_issuance = 2 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
          * @param value The allowConfigBasedIssuance to set.
@@ -5373,11 +5373,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
+         * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
          * specifying a [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig].
          * </pre>
          *
-         * <code>bool allow_config_based_issuance = 2 [(.google.api.field_behavior) = REQUIRED];
+         * <code>bool allow_config_based_issuance = 2 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
          * @return This builder for chaining.

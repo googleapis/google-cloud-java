@@ -491,7 +491,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
   private final UnaryCallable<ListCaPoolsRequest, ListCaPoolsPagedResponse>
       listCaPoolsPagedCallable;
   private final UnaryCallable<DeleteCaPoolRequest, Operation> deleteCaPoolCallable;
-  private final OperationCallable<DeleteCaPoolRequest, CaPool, OperationMetadata>
+  private final OperationCallable<DeleteCaPoolRequest, Empty, OperationMetadata>
       deleteCaPoolOperationCallable;
   private final UnaryCallable<FetchCaCertsRequest, FetchCaCertsResponse> fetchCaCertsCallable;
   private final UnaryCallable<GetCertificateRevocationListRequest, CertificateRevocationList>
@@ -1432,7 +1432,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
   }
 
   @Override
-  public OperationCallable<DeleteCaPoolRequest, CaPool, OperationMetadata>
+  public OperationCallable<DeleteCaPoolRequest, Empty, OperationMetadata>
       deleteCaPoolOperationCallable() {
     return deleteCaPoolOperationCallable;
   }
@@ -1531,7 +1531,13 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

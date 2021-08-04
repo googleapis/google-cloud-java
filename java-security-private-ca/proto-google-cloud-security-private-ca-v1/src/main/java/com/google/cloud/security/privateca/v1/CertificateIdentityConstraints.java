@@ -141,7 +141,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
    * Optional. A CEL expression that may be used to validate the resolved X.509 Subject
    * and/or Subject Alternative Name before a certificate is signed.
    * To see the full allowed syntax and some examples, see
-   * https://cloud.google.com/certificate-authority-service/docs/cel-guide
+   * https://cloud.google.com/certificate-authority-service/docs/using-cel
    * </pre>
    *
    * <code>.google.type.Expr cel_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -159,7 +159,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
    * Optional. A CEL expression that may be used to validate the resolved X.509 Subject
    * and/or Subject Alternative Name before a certificate is signed.
    * To see the full allowed syntax and some examples, see
-   * https://cloud.google.com/certificate-authority-service/docs/cel-guide
+   * https://cloud.google.com/certificate-authority-service/docs/using-cel
    * </pre>
    *
    * <code>.google.type.Expr cel_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -177,7 +177,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
    * Optional. A CEL expression that may be used to validate the resolved X.509 Subject
    * and/or Subject Alternative Name before a certificate is signed.
    * To see the full allowed syntax and some examples, see
-   * https://cloud.google.com/certificate-authority-service/docs/cel-guide
+   * https://cloud.google.com/certificate-authority-service/docs/using-cel
    * </pre>
    *
    * <code>.google.type.Expr cel_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -195,7 +195,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
    * <pre>
    * Required. If this is true, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
    * request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
-   * will be discarded. The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
+   * will be discarded.
    * </pre>
    *
    * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -212,7 +212,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
    * <pre>
    * Required. If this is true, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
    * request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
-   * will be discarded. The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
+   * will be discarded.
    * </pre>
    *
    * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -233,7 +233,6 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
    * Required. If this is true, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
    * certificate request into the signed certificate. Otherwise, the requested
    * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
-   * The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
    * </pre>
    *
    * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -252,7 +251,6 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
    * Required. If this is true, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
    * certificate request into the signed certificate. Otherwise, the requested
    * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
-   * The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
    * </pre>
    *
    * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -673,7 +671,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * Optional. A CEL expression that may be used to validate the resolved X.509 Subject
      * and/or Subject Alternative Name before a certificate is signed.
      * To see the full allowed syntax and some examples, see
-     * https://cloud.google.com/certificate-authority-service/docs/cel-guide
+     * https://cloud.google.com/certificate-authority-service/docs/using-cel
      * </pre>
      *
      * <code>.google.type.Expr cel_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -690,7 +688,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * Optional. A CEL expression that may be used to validate the resolved X.509 Subject
      * and/or Subject Alternative Name before a certificate is signed.
      * To see the full allowed syntax and some examples, see
-     * https://cloud.google.com/certificate-authority-service/docs/cel-guide
+     * https://cloud.google.com/certificate-authority-service/docs/using-cel
      * </pre>
      *
      * <code>.google.type.Expr cel_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -711,7 +709,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * Optional. A CEL expression that may be used to validate the resolved X.509 Subject
      * and/or Subject Alternative Name before a certificate is signed.
      * To see the full allowed syntax and some examples, see
-     * https://cloud.google.com/certificate-authority-service/docs/cel-guide
+     * https://cloud.google.com/certificate-authority-service/docs/using-cel
      * </pre>
      *
      * <code>.google.type.Expr cel_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -736,7 +734,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * Optional. A CEL expression that may be used to validate the resolved X.509 Subject
      * and/or Subject Alternative Name before a certificate is signed.
      * To see the full allowed syntax and some examples, see
-     * https://cloud.google.com/certificate-authority-service/docs/cel-guide
+     * https://cloud.google.com/certificate-authority-service/docs/using-cel
      * </pre>
      *
      * <code>.google.type.Expr cel_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -758,7 +756,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * Optional. A CEL expression that may be used to validate the resolved X.509 Subject
      * and/or Subject Alternative Name before a certificate is signed.
      * To see the full allowed syntax and some examples, see
-     * https://cloud.google.com/certificate-authority-service/docs/cel-guide
+     * https://cloud.google.com/certificate-authority-service/docs/using-cel
      * </pre>
      *
      * <code>.google.type.Expr cel_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -785,7 +783,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * Optional. A CEL expression that may be used to validate the resolved X.509 Subject
      * and/or Subject Alternative Name before a certificate is signed.
      * To see the full allowed syntax and some examples, see
-     * https://cloud.google.com/certificate-authority-service/docs/cel-guide
+     * https://cloud.google.com/certificate-authority-service/docs/using-cel
      * </pre>
      *
      * <code>.google.type.Expr cel_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -808,7 +806,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * Optional. A CEL expression that may be used to validate the resolved X.509 Subject
      * and/or Subject Alternative Name before a certificate is signed.
      * To see the full allowed syntax and some examples, see
-     * https://cloud.google.com/certificate-authority-service/docs/cel-guide
+     * https://cloud.google.com/certificate-authority-service/docs/using-cel
      * </pre>
      *
      * <code>.google.type.Expr cel_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -825,7 +823,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * Optional. A CEL expression that may be used to validate the resolved X.509 Subject
      * and/or Subject Alternative Name before a certificate is signed.
      * To see the full allowed syntax and some examples, see
-     * https://cloud.google.com/certificate-authority-service/docs/cel-guide
+     * https://cloud.google.com/certificate-authority-service/docs/using-cel
      * </pre>
      *
      * <code>.google.type.Expr cel_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -844,7 +842,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * Optional. A CEL expression that may be used to validate the resolved X.509 Subject
      * and/or Subject Alternative Name before a certificate is signed.
      * To see the full allowed syntax and some examples, see
-     * https://cloud.google.com/certificate-authority-service/docs/cel-guide
+     * https://cloud.google.com/certificate-authority-service/docs/using-cel
      * </pre>
      *
      * <code>.google.type.Expr cel_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -869,7 +867,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * <pre>
      * Required. If this is true, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
      * request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
-     * will be discarded. The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
+     * will be discarded.
      * </pre>
      *
      * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -886,7 +884,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * <pre>
      * Required. If this is true, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
      * request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
-     * will be discarded. The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
+     * will be discarded.
      * </pre>
      *
      * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -903,7 +901,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * <pre>
      * Required. If this is true, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
      * request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
-     * will be discarded. The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
+     * will be discarded.
      * </pre>
      *
      * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -923,7 +921,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * <pre>
      * Required. If this is true, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
      * request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
-     * will be discarded. The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
+     * will be discarded.
      * </pre>
      *
      * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -945,7 +943,6 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * Required. If this is true, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
      * certificate request into the signed certificate. Otherwise, the requested
      * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
-     * The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
      * </pre>
      *
      * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -964,7 +961,6 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * Required. If this is true, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
      * certificate request into the signed certificate. Otherwise, the requested
      * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
-     * The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
      * </pre>
      *
      * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -983,7 +979,6 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * Required. If this is true, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
      * certificate request into the signed certificate. Otherwise, the requested
      * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
-     * The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
      * </pre>
      *
      * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1005,7 +1000,6 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * Required. If this is true, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
      * certificate request into the signed certificate. Otherwise, the requested
      * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
-     * The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
      * </pre>
      *
      * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];

@@ -2858,7 +2858,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient =
    *     CertificateAuthorityServiceClient.create()) {
    *   CaPoolName name = CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]");
-   *   CaPool response = certificateAuthorityServiceClient.deleteCaPoolAsync(name).get();
+   *   certificateAuthorityServiceClient.deleteCaPoolAsync(name).get();
    * }
    * }</pre>
    *
@@ -2867,7 +2867,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/caPools/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<CaPool, OperationMetadata> deleteCaPoolAsync(CaPoolName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteCaPoolAsync(CaPoolName name) {
     DeleteCaPoolRequest request =
         DeleteCaPoolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteCaPoolAsync(request);
@@ -2883,7 +2883,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient =
    *     CertificateAuthorityServiceClient.create()) {
    *   String name = CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString();
-   *   CaPool response = certificateAuthorityServiceClient.deleteCaPoolAsync(name).get();
+   *   certificateAuthorityServiceClient.deleteCaPoolAsync(name).get();
    * }
    * }</pre>
    *
@@ -2892,7 +2892,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/caPools/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<CaPool, OperationMetadata> deleteCaPoolAsync(String name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteCaPoolAsync(String name) {
     DeleteCaPoolRequest request = DeleteCaPoolRequest.newBuilder().setName(name).build();
     return deleteCaPoolAsync(request);
   }
@@ -2911,14 +2911,14 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *           .setName(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   CaPool response = certificateAuthorityServiceClient.deleteCaPoolAsync(request).get();
+   *   certificateAuthorityServiceClient.deleteCaPoolAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<CaPool, OperationMetadata> deleteCaPoolAsync(
+  public final OperationFuture<Empty, OperationMetadata> deleteCaPoolAsync(
       DeleteCaPoolRequest request) {
     return deleteCaPoolOperationCallable().futureCall(request);
   }
@@ -2937,14 +2937,14 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *           .setName(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   OperationFuture<CaPool, OperationMetadata> future =
+   *   OperationFuture<Empty, OperationMetadata> future =
    *       certificateAuthorityServiceClient.deleteCaPoolOperationCallable().futureCall(request);
    *   // Do something.
-   *   CaPool response = future.get();
+   *   future.get();
    * }
    * }</pre>
    */
-  public final OperationCallable<DeleteCaPoolRequest, CaPool, OperationMetadata>
+  public final OperationCallable<DeleteCaPoolRequest, Empty, OperationMetadata>
       deleteCaPoolOperationCallable() {
     return stub.deleteCaPoolOperationCallable();
   }
@@ -2966,7 +2966,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *   ApiFuture<Operation> future =
    *       certificateAuthorityServiceClient.deleteCaPoolCallable().futureCall(request);
    *   // Do something.
-   *   Operation response = future.get();
+   *   future.get();
    * }
    * }</pre>
    */

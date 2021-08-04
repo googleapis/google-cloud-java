@@ -255,7 +255,7 @@ public abstract class CertificateAuthorityServiceStub implements BackgroundResou
     throw new UnsupportedOperationException("Not implemented: listCaPoolsCallable()");
   }
 
-  public OperationCallable<DeleteCaPoolRequest, CaPool, OperationMetadata>
+  public OperationCallable<DeleteCaPoolRequest, Empty, OperationMetadata>
       deleteCaPoolOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCaPoolOperationCallable()");
   }

@@ -2075,13 +2075,7 @@ public class CertificateAuthorityServiceClientTest {
 
   @Test
   public void deleteCaPoolTest() throws Exception {
-    CaPool expectedResponse =
-        CaPool.newBuilder()
-            .setName(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
-            .setIssuancePolicy(CaPool.IssuancePolicy.newBuilder().build())
-            .setPublishingOptions(CaPool.PublishingOptions.newBuilder().build())
-            .putAllLabels(new HashMap<String, String>())
-            .build();
+    Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("deleteCaPoolTest")
@@ -2092,8 +2086,7 @@ public class CertificateAuthorityServiceClientTest {
 
     CaPoolName name = CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]");
 
-    CaPool actualResponse = client.deleteCaPoolAsync(name).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
+    client.deleteCaPoolAsync(name).get();
 
     List<AbstractMessage> actualRequests = mockCertificateAuthorityService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -2124,13 +2117,7 @@ public class CertificateAuthorityServiceClientTest {
 
   @Test
   public void deleteCaPoolTest2() throws Exception {
-    CaPool expectedResponse =
-        CaPool.newBuilder()
-            .setName(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
-            .setIssuancePolicy(CaPool.IssuancePolicy.newBuilder().build())
-            .setPublishingOptions(CaPool.PublishingOptions.newBuilder().build())
-            .putAllLabels(new HashMap<String, String>())
-            .build();
+    Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("deleteCaPoolTest")
@@ -2141,8 +2128,7 @@ public class CertificateAuthorityServiceClientTest {
 
     String name = "name3373707";
 
-    CaPool actualResponse = client.deleteCaPoolAsync(name).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
+    client.deleteCaPoolAsync(name).get();
 
     List<AbstractMessage> actualRequests = mockCertificateAuthorityService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
