@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadOperationMetadata;
 import com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadRequest;
@@ -42,7 +41,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -168,65 +166,50 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
         GrpcCallSettings.<CreateWorkloadRequest, Operation>newBuilder()
             .setMethodDescriptor(createWorkloadMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateWorkloadRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateWorkloadRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateWorkloadRequest, Workload> updateWorkloadTransportSettings =
         GrpcCallSettings.<UpdateWorkloadRequest, Workload>newBuilder()
             .setMethodDescriptor(updateWorkloadMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateWorkloadRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateWorkloadRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("workload.name", String.valueOf(request.getWorkload().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("workload.name", String.valueOf(request.getWorkload().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteWorkloadRequest, Empty> deleteWorkloadTransportSettings =
         GrpcCallSettings.<DeleteWorkloadRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteWorkloadMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteWorkloadRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteWorkloadRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetWorkloadRequest, Workload> getWorkloadTransportSettings =
         GrpcCallSettings.<GetWorkloadRequest, Workload>newBuilder()
             .setMethodDescriptor(getWorkloadMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetWorkloadRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetWorkloadRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsTransportSettings =
         GrpcCallSettings.<ListWorkloadsRequest, ListWorkloadsResponse>newBuilder()
             .setMethodDescriptor(listWorkloadsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListWorkloadsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListWorkloadsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
 

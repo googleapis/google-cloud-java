@@ -16,7 +16,6 @@
 
 package com.google.cloud.assuredworkloads.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -784,12 +783,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
           ListWorkloadsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListWorkloadsPage, ListWorkloadsPagedResponse>() {
-            @Override
-            public ListWorkloadsPagedResponse apply(ListWorkloadsPage input) {
-              return new ListWorkloadsPagedResponse(input);
-            }
-          },
+          input -> new ListWorkloadsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
