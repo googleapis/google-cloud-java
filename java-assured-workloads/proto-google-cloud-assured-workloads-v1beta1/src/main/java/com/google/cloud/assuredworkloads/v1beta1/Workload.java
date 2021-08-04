@@ -430,6 +430,16 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>HITRUST = 7;</code>
      */
     HITRUST(7),
+    /**
+     *
+     *
+     * <pre>
+     * Assured Workloads For EU Regions and Support controls
+     * </pre>
+     *
+     * <code>EU_REGIONS_AND_SUPPORT = 8;</code>
+     */
+    EU_REGIONS_AND_SUPPORT(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -513,6 +523,16 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>HITRUST = 7;</code>
      */
     public static final int HITRUST_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Assured Workloads For EU Regions and Support controls
+     * </pre>
+     *
+     * <code>EU_REGIONS_AND_SUPPORT = 8;</code>
+     */
+    public static final int EU_REGIONS_AND_SUPPORT_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -554,6 +574,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           return HIPAA;
         case 7:
           return HITRUST;
+        case 8:
+          return EU_REGIONS_AND_SUPPORT;
         default:
           return null;
       }
