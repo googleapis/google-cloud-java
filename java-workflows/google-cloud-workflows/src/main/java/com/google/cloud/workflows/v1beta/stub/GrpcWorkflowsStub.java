@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.workflows.v1beta.CreateWorkflowRequest;
 import com.google.cloud.workflows.v1beta.DeleteWorkflowRequest;
@@ -42,7 +41,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -163,65 +161,50 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
         GrpcCallSettings.<ListWorkflowsRequest, ListWorkflowsResponse>newBuilder()
             .setMethodDescriptor(listWorkflowsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListWorkflowsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListWorkflowsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetWorkflowRequest, Workflow> getWorkflowTransportSettings =
         GrpcCallSettings.<GetWorkflowRequest, Workflow>newBuilder()
             .setMethodDescriptor(getWorkflowMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetWorkflowRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetWorkflowRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateWorkflowRequest, Operation> createWorkflowTransportSettings =
         GrpcCallSettings.<CreateWorkflowRequest, Operation>newBuilder()
             .setMethodDescriptor(createWorkflowMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateWorkflowRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateWorkflowRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteWorkflowRequest, Operation> deleteWorkflowTransportSettings =
         GrpcCallSettings.<DeleteWorkflowRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteWorkflowMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteWorkflowRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteWorkflowRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateWorkflowRequest, Operation> updateWorkflowTransportSettings =
         GrpcCallSettings.<UpdateWorkflowRequest, Operation>newBuilder()
             .setMethodDescriptor(updateWorkflowMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateWorkflowRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateWorkflowRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("workflow.name", String.valueOf(request.getWorkflow().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("workflow.name", String.valueOf(request.getWorkflow().getName()));
+                  return params.build();
                 })
             .build();
 
@@ -321,7 +304,13 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

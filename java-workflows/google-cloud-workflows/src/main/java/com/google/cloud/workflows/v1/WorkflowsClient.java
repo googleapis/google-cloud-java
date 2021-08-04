@@ -16,7 +16,6 @@
 
 package com.google.cloud.workflows.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -837,12 +836,7 @@ public class WorkflowsClient implements BackgroundResource {
           ListWorkflowsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListWorkflowsPage, ListWorkflowsPagedResponse>() {
-            @Override
-            public ListWorkflowsPagedResponse apply(ListWorkflowsPage input) {
-              return new ListWorkflowsPagedResponse(input);
-            }
-          },
+          input -> new ListWorkflowsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
