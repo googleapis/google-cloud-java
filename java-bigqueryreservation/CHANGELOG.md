@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-bigqueryreservation/compare/v1.2.2...v2.0.0) (2021-08-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* Java 8 breaking generator changes (#453)
+
+### Features
+
+* Java 8 breaking generator changes ([#453](https://www.github.com/googleapis/java-bigqueryreservation/issues/453)) ([abe0325](https://www.github.com/googleapis/java-bigqueryreservation/commit/abe0325237930fed2d53f6b065fba965f13d5be7))
+* trigger release ([#454](https://www.github.com/googleapis/java-bigqueryreservation/issues/454)) ([28be687](https://www.github.com/googleapis/java-bigqueryreservation/commit/28be68725ee5b3bd3bc3a6adc4b8363e9fa0624f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#452](https://www.github.com/googleapis/java-bigqueryreservation/issues/452)) ([48d4f7c](https://www.github.com/googleapis/java-bigqueryreservation/commit/48d4f7c527b78e435f6887ad57c16855ccee78eb))
+
 ### [1.2.2](https://www.github.com/googleapis/java-bigqueryreservation/compare/v1.2.1...v1.2.2) (2021-06-30)
 
 
