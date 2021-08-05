@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-bigquery/compare/v1.137.2...v2.0.0) (2021-08-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* update dependency com.google.cloud:google-cloud-shared-config to v1 (#1466)
+
+### Features
+
+* update dependency com.google.cloud:google-cloud-shared-config to v1 ([#1466](https://www.github.com/googleapis/java-bigquery/issues/1466)) ([3db013e](https://www.github.com/googleapis/java-bigquery/commit/3db013eeb01f255e1bc40af21370241761f2b519))
+
 ### [1.137.2](https://www.github.com/googleapis/java-bigquery/compare/v1.137.1...v1.137.2) (2021-08-05)
 
 
