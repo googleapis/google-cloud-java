@@ -17,4 +17,20 @@
         <className>com/google/cloud/bigquery/storage/v1/*OrBuilder</className>
         <method>boolean has*(*)</method>
     </difference>
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigquery/storage/v1/ReadSessionName</className>
+    </difference>
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigquery/storage/v1/ReadSessionName$Builder</className>
+    </difference>
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigquery/storage/v1/TableName</className>
+    </difference>
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigquery/storage/v1/TableName$Builder</className>
+    </difference>
 </differences>

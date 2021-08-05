@@ -23,7 +23,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest;
 import com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse;
@@ -41,7 +40,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -175,39 +173,30 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
         GrpcCallSettings.<CreateWriteStreamRequest, WriteStream>newBuilder()
             .setMethodDescriptor(createWriteStreamMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateWriteStreamRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateWriteStreamRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<AppendRowsRequest, AppendRowsResponse> appendRowsTransportSettings =
         GrpcCallSettings.<AppendRowsRequest, AppendRowsResponse>newBuilder()
             .setMethodDescriptor(appendRowsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<AppendRowsRequest>() {
-                  @Override
-                  public Map<String, String> extract(AppendRowsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("write_stream", String.valueOf(request.getWriteStream()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("write_stream", String.valueOf(request.getWriteStream()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetWriteStreamRequest, WriteStream> getWriteStreamTransportSettings =
         GrpcCallSettings.<GetWriteStreamRequest, WriteStream>newBuilder()
             .setMethodDescriptor(getWriteStreamMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetWriteStreamRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetWriteStreamRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<FinalizeWriteStreamRequest, FinalizeWriteStreamResponse>
@@ -215,13 +204,10 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
             GrpcCallSettings.<FinalizeWriteStreamRequest, FinalizeWriteStreamResponse>newBuilder()
                 .setMethodDescriptor(finalizeWriteStreamMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<FinalizeWriteStreamRequest>() {
-                      @Override
-                      public Map<String, String> extract(FinalizeWriteStreamRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
@@ -230,26 +216,20 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
                 .<BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>newBuilder()
                 .setMethodDescriptor(batchCommitWriteStreamsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchCommitWriteStreamsRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchCommitWriteStreamsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<FlushRowsRequest, FlushRowsResponse> flushRowsTransportSettings =
         GrpcCallSettings.<FlushRowsRequest, FlushRowsResponse>newBuilder()
             .setMethodDescriptor(flushRowsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<FlushRowsRequest>() {
-                  @Override
-                  public Map<String, String> extract(FlushRowsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("write_stream", String.valueOf(request.getWriteStream()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("write_stream", String.valueOf(request.getWriteStream()));
+                  return params.build();
                 })
             .build();
 
@@ -320,7 +300,13 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

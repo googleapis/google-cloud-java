@@ -22,7 +22,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.storage.v1beta1.Storage;
@@ -32,7 +31,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -173,33 +171,27 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
             GrpcCallSettings.<Storage.CreateReadSessionRequest, Storage.ReadSession>newBuilder()
                 .setMethodDescriptor(createReadSessionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<Storage.CreateReadSessionRequest>() {
-                      @Override
-                      public Map<String, String> extract(Storage.CreateReadSessionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "table_reference.dataset_id",
-                            String.valueOf(request.getTableReference().getDatasetId()));
-                        params.put(
-                            "table_reference.project_id",
-                            String.valueOf(request.getTableReference().getProjectId()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "table_reference.dataset_id",
+                          String.valueOf(request.getTableReference().getDatasetId()));
+                      params.put(
+                          "table_reference.project_id",
+                          String.valueOf(request.getTableReference().getProjectId()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<Storage.ReadRowsRequest, Storage.ReadRowsResponse> readRowsTransportSettings =
         GrpcCallSettings.<Storage.ReadRowsRequest, Storage.ReadRowsResponse>newBuilder()
             .setMethodDescriptor(readRowsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<Storage.ReadRowsRequest>() {
-                  @Override
-                  public Map<String, String> extract(Storage.ReadRowsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "read_position.stream.name",
-                        String.valueOf(request.getReadPosition().getStream().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "read_position.stream.name",
+                      String.valueOf(request.getReadPosition().getStream().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<
@@ -212,27 +204,20 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
                     newBuilder()
                 .setMethodDescriptor(batchCreateReadSessionStreamsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<Storage.BatchCreateReadSessionStreamsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          Storage.BatchCreateReadSessionStreamsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("session.name", String.valueOf(request.getSession().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("session.name", String.valueOf(request.getSession().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<Storage.FinalizeStreamRequest, Empty> finalizeStreamTransportSettings =
         GrpcCallSettings.<Storage.FinalizeStreamRequest, Empty>newBuilder()
             .setMethodDescriptor(finalizeStreamMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<Storage.FinalizeStreamRequest>() {
-                  @Override
-                  public Map<String, String> extract(Storage.FinalizeStreamRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("stream.name", String.valueOf(request.getStream().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("stream.name", String.valueOf(request.getStream().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<Storage.SplitReadStreamRequest, Storage.SplitReadStreamResponse>
@@ -241,15 +226,12 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
                 .<Storage.SplitReadStreamRequest, Storage.SplitReadStreamResponse>newBuilder()
                 .setMethodDescriptor(splitReadStreamMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<Storage.SplitReadStreamRequest>() {
-                      @Override
-                      public Map<String, String> extract(Storage.SplitReadStreamRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "original_stream.name",
-                            String.valueOf(request.getOriginalStream().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "original_stream.name",
+                          String.valueOf(request.getOriginalStream().getName()));
+                      return params.build();
                     })
                 .build();
 
@@ -314,7 +296,13 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

@@ -86,7 +86,7 @@ public class BaseBigQueryStorageClientTest {
   public void createReadSessionTest() throws Exception {
     Storage.ReadSession expectedResponse =
         Storage.ReadSession.newBuilder()
-            .setName(ReadSessionName.of("[PROJECT]", "[LOCATION]", "[SESSION]").toString())
+            .setName("name3373707")
             .setExpireTime(Timestamp.newBuilder().build())
             .addAllStreams(new ArrayList<Storage.Stream>())
             .setTableReference(TableReferenceProto.TableReference.newBuilder().build())
@@ -139,7 +139,7 @@ public class BaseBigQueryStorageClientTest {
   public void createReadSessionTest2() throws Exception {
     Storage.ReadSession expectedResponse =
         Storage.ReadSession.newBuilder()
-            .setName(ReadSessionName.of("[PROJECT]", "[LOCATION]", "[SESSION]").toString())
+            .setName("name3373707")
             .setExpireTime(Timestamp.newBuilder().build())
             .addAllStreams(new ArrayList<Storage.Stream>())
             .setTableReference(TableReferenceProto.TableReference.newBuilder().build())

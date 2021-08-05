@@ -85,10 +85,10 @@ public class BaseBigQueryReadClientTest {
   public void createReadSessionTest() throws Exception {
     ReadSession expectedResponse =
         ReadSession.newBuilder()
-            .setName(ReadSessionName.of("[PROJECT]", "[LOCATION]", "[SESSION]").toString())
+            .setName("name3373707")
             .setExpireTime(Timestamp.newBuilder().build())
             .setDataFormat(DataFormat.forNumber(0))
-            .setTable(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
+            .setTable("table110115790")
             .setTableModifiers(ReadSession.TableModifiers.newBuilder().build())
             .setReadOptions(ReadSession.TableReadOptions.newBuilder().build())
             .addAllStreams(new ArrayList<ReadStream>())
@@ -135,10 +135,10 @@ public class BaseBigQueryReadClientTest {
   public void createReadSessionTest2() throws Exception {
     ReadSession expectedResponse =
         ReadSession.newBuilder()
-            .setName(ReadSessionName.of("[PROJECT]", "[LOCATION]", "[SESSION]").toString())
+            .setName("name3373707")
             .setExpireTime(Timestamp.newBuilder().build())
             .setDataFormat(DataFormat.forNumber(0))
-            .setTable(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
+            .setTable("table110115790")
             .setTableModifiers(ReadSession.TableModifiers.newBuilder().build())
             .setReadOptions(ReadSession.TableReadOptions.newBuilder().build())
             .addAllStreams(new ArrayList<ReadStream>())
