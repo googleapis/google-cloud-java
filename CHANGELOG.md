@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.23.2...v2.0.0) (2021-08-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* Java 8 breaking generator changes (#1222)
+
+### Features
+
+* Java 8 breaking generator changes ([#1222](https://www.github.com/googleapis/java-bigquerystorage/issues/1222)) ([ac9103c](https://www.github.com/googleapis/java-bigquerystorage/commit/ac9103c18b96933cb724ae9c96a46005bae8160d))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20210726-1.32.1 ([#1217](https://www.github.com/googleapis/java-bigquerystorage/issues/1217)) ([2ae3d90](https://www.github.com/googleapis/java-bigquerystorage/commit/2ae3d90d25674e8520bf02c84b16efc7f40bfa83))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#1219](https://www.github.com/googleapis/java-bigquerystorage/issues/1219)) ([a83da41](https://www.github.com/googleapis/java-bigquerystorage/commit/a83da417b1260ab5086243905603152e5f8e0b97))
+
 ### [1.23.2](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.23.1...v1.23.2) (2021-07-29)
 
 
