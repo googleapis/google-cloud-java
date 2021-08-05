@@ -25,7 +25,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.securitycenter.settings.v1beta1.BatchCalculateEffectiveSettingsRequest;
 import com.google.cloud.securitycenter.settings.v1beta1.BatchCalculateEffectiveSettingsResponse;
@@ -53,7 +52,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -293,52 +291,40 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
         GrpcCallSettings.<GetServiceAccountRequest, ServiceAccount>newBuilder()
             .setMethodDescriptor(getServiceAccountMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetServiceAccountRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetServiceAccountRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetSettingsRequest, Settings> getSettingsTransportSettings =
         GrpcCallSettings.<GetSettingsRequest, Settings>newBuilder()
             .setMethodDescriptor(getSettingsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetSettingsRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetSettingsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateSettingsRequest, Settings> updateSettingsTransportSettings =
         GrpcCallSettings.<UpdateSettingsRequest, Settings>newBuilder()
             .setMethodDescriptor(updateSettingsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateSettingsRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateSettingsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("settings.name", String.valueOf(request.getSettings().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("settings.name", String.valueOf(request.getSettings().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ResetSettingsRequest, Empty> resetSettingsTransportSettings =
         GrpcCallSettings.<ResetSettingsRequest, Empty>newBuilder()
             .setMethodDescriptor(resetSettingsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ResetSettingsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ResetSettingsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<BatchGetSettingsRequest, BatchGetSettingsResponse>
@@ -346,13 +332,10 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
             GrpcCallSettings.<BatchGetSettingsRequest, BatchGetSettingsResponse>newBuilder()
                 .setMethodDescriptor(batchGetSettingsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchGetSettingsRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchGetSettingsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CalculateEffectiveSettingsRequest, Settings>
@@ -360,14 +343,10 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
             GrpcCallSettings.<CalculateEffectiveSettingsRequest, Settings>newBuilder()
                 .setMethodDescriptor(calculateEffectiveSettingsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CalculateEffectiveSettingsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CalculateEffectiveSettingsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -378,14 +357,10 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
                     newBuilder()
                 .setMethodDescriptor(batchCalculateEffectiveSettingsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchCalculateEffectiveSettingsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          BatchCalculateEffectiveSettingsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetComponentSettingsRequest, ComponentSettings>
@@ -393,13 +368,10 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
             GrpcCallSettings.<GetComponentSettingsRequest, ComponentSettings>newBuilder()
                 .setMethodDescriptor(getComponentSettingsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetComponentSettingsRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetComponentSettingsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateComponentSettingsRequest, ComponentSettings>
@@ -407,28 +379,22 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
             GrpcCallSettings.<UpdateComponentSettingsRequest, ComponentSettings>newBuilder()
                 .setMethodDescriptor(updateComponentSettingsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateComponentSettingsRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateComponentSettingsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "component_settings.name",
-                            String.valueOf(request.getComponentSettings().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "component_settings.name",
+                          String.valueOf(request.getComponentSettings().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ResetComponentSettingsRequest, Empty> resetComponentSettingsTransportSettings =
         GrpcCallSettings.<ResetComponentSettingsRequest, Empty>newBuilder()
             .setMethodDescriptor(resetComponentSettingsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ResetComponentSettingsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ResetComponentSettingsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CalculateEffectiveComponentSettingsRequest, ComponentSettings>
@@ -437,27 +403,20 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
                 .<CalculateEffectiveComponentSettingsRequest, ComponentSettings>newBuilder()
                 .setMethodDescriptor(calculateEffectiveComponentSettingsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CalculateEffectiveComponentSettingsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CalculateEffectiveComponentSettingsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListDetectorsRequest, ListDetectorsResponse> listDetectorsTransportSettings =
         GrpcCallSettings.<ListDetectorsRequest, ListDetectorsResponse>newBuilder()
             .setMethodDescriptor(listDetectorsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListDetectorsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListDetectorsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListComponentsRequest, ListComponentsResponse>
@@ -465,13 +424,10 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
             GrpcCallSettings.<ListComponentsRequest, ListComponentsResponse>newBuilder()
                 .setMethodDescriptor(listComponentsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListComponentsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListComponentsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 
@@ -629,7 +585,13 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

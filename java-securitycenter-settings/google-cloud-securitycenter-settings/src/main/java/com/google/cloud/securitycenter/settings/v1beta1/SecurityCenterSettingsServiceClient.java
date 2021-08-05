@@ -16,7 +16,6 @@
 
 package com.google.cloud.securitycenter.settings.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1514,12 +1513,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
           ListDetectorsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListDetectorsPage, ListDetectorsPagedResponse>() {
-            @Override
-            public ListDetectorsPagedResponse apply(ListDetectorsPage input) {
-              return new ListDetectorsPagedResponse(input);
-            }
-          },
+          input -> new ListDetectorsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1595,12 +1589,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
           ListComponentsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListComponentsPage, ListComponentsPagedResponse>() {
-            @Override
-            public ListComponentsPagedResponse apply(ListComponentsPage input) {
-              return new ListComponentsPagedResponse(input);
-            }
-          },
+          input -> new ListComponentsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
