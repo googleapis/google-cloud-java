@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.3.12...v2.0.0) (2021-08-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* Java 8 breaking generator changes (#960)
+
+### Features
+
+* Java 8 breaking generator changes ([#960](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/960)) ([b47c2b3](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/b47c2b3600710bb5cceeb277944550c341d07b52))
+* trigger release ([#961](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/961)) ([584e1bd](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/584e1bd4690e5c8258143c06e709a0f14d93dde8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.137.2 ([#963](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/963)) ([6c8f8f2](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/6c8f8f2bb8d4aba6a71315655f2fc52d03c792c4))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#959](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/959)) ([c8eb6a2](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/c8eb6a21b93b52ae060131f91b6763a611ca0b72))
+
 ### [1.3.12](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.3.11...v1.3.12) (2021-07-22)
 
 
