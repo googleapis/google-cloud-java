@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-bigqueryconnection/compare/v1.2.0...v2.0.0) (2021-08-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#489)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#489](https://www.github.com/googleapis/java-bigqueryconnection/issues/489)) ([7ec2db3](https://www.github.com/googleapis/java-bigqueryconnection/commit/7ec2db39034ed8caecf0da9877ffe0014e2fd528))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#490](https://www.github.com/googleapis/java-bigqueryconnection/issues/490)) ([d869030](https://www.github.com/googleapis/java-bigqueryconnection/commit/d8690307f3992ed30d56a53a701a67dc60a117be))
+
 ## [1.2.0](https://www.github.com/googleapis/java-bigqueryconnection/compare/v1.1.5...v1.2.0) (2021-07-15)
 
 
