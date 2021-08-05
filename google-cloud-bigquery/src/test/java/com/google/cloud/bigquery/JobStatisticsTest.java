@@ -322,26 +322,31 @@ public class JobStatisticsTest {
                 new com.google.api.services.bigquery.model.JobStatistics()
                     .setCreationTime(1234L)
                     .setStartTime(5678L));
+    JobStatistics jobStatistics;
 
     job.setConfiguration(
         new com.google.api.services.bigquery.model.JobConfiguration()
             .setCopy(new com.google.api.services.bigquery.model.JobConfigurationTableCopy()));
-    assertThat(JobStatistics.fromPb(job)).isInstanceOf(CopyStatistics.class);
+    jobStatistics = JobStatistics.fromPb(job);
+    assertThat(jobStatistics).isInstanceOf(CopyStatistics.class);
 
     job.setConfiguration(
         new com.google.api.services.bigquery.model.JobConfiguration()
             .setLoad(new com.google.api.services.bigquery.model.JobConfigurationLoad()));
-    assertThat(JobStatistics.fromPb(job)).isInstanceOf(LoadStatistics.class);
+    jobStatistics = JobStatistics.fromPb(job);
+    assertThat(jobStatistics).isInstanceOf(LoadStatistics.class);
 
     job.setConfiguration(
         new com.google.api.services.bigquery.model.JobConfiguration()
             .setExtract(new com.google.api.services.bigquery.model.JobConfigurationExtract()));
-    assertThat(JobStatistics.fromPb(job)).isInstanceOf(ExtractStatistics.class);
+    jobStatistics = JobStatistics.fromPb(job);
+    assertThat(jobStatistics).isInstanceOf(ExtractStatistics.class);
 
     job.setConfiguration(
         new com.google.api.services.bigquery.model.JobConfiguration()
             .setQuery(new com.google.api.services.bigquery.model.JobConfigurationQuery()));
-    assertThat(JobStatistics.fromPb(job)).isInstanceOf(QueryStatistics.class);
+    jobStatistics = JobStatistics.fromPb(job);
+    assertThat(jobStatistics).isInstanceOf(QueryStatistics.class);
   }
 
   private void compareExtractStatistics(ExtractStatistics expected, ExtractStatistics value) {
