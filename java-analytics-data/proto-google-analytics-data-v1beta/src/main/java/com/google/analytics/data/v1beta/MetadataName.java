@@ -158,7 +158,7 @@ public class MetadataName implements ResourceName {
     }
 
     private Builder(MetadataName metadataName) {
-      property = metadataName.property;
+      this.property = metadataName.property;
     }
 
     public MetadataName build() {

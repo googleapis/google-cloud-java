@@ -392,4 +392,76 @@ public interface RunRealtimeReportRequestOrBuilder
    * @return The returnPropertyQuota.
    */
   boolean getReturnPropertyQuota();
+
+  /**
+   *
+   *
+   * <pre>
+   * The minute ranges of event data to read. If unspecified, one minute range
+   * for the last 30 minutes will be used. If multiple minute ranges are
+   * requested, each response row will contain a zero based minute range index.
+   * If two minute ranges overlap, the event data for the overlapping minutes is
+   * included in the response rows for both minute ranges.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+   */
+  java.util.List<com.google.analytics.data.v1beta.MinuteRange> getMinuteRangesList();
+  /**
+   *
+   *
+   * <pre>
+   * The minute ranges of event data to read. If unspecified, one minute range
+   * for the last 30 minutes will be used. If multiple minute ranges are
+   * requested, each response row will contain a zero based minute range index.
+   * If two minute ranges overlap, the event data for the overlapping minutes is
+   * included in the response rows for both minute ranges.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+   */
+  com.google.analytics.data.v1beta.MinuteRange getMinuteRanges(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The minute ranges of event data to read. If unspecified, one minute range
+   * for the last 30 minutes will be used. If multiple minute ranges are
+   * requested, each response row will contain a zero based minute range index.
+   * If two minute ranges overlap, the event data for the overlapping minutes is
+   * included in the response rows for both minute ranges.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+   */
+  int getMinuteRangesCount();
+  /**
+   *
+   *
+   * <pre>
+   * The minute ranges of event data to read. If unspecified, one minute range
+   * for the last 30 minutes will be used. If multiple minute ranges are
+   * requested, each response row will contain a zero based minute range index.
+   * If two minute ranges overlap, the event data for the overlapping minutes is
+   * included in the response rows for both minute ranges.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+   */
+  java.util.List<? extends com.google.analytics.data.v1beta.MinuteRangeOrBuilder>
+      getMinuteRangesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The minute ranges of event data to read. If unspecified, one minute range
+   * for the last 30 minutes will be used. If multiple minute ranges are
+   * requested, each response row will contain a zero based minute range index.
+   * If two minute ranges overlap, the event data for the overlapping minutes is
+   * included in the response rows for both minute ranges.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+   */
+  com.google.analytics.data.v1beta.MinuteRangeOrBuilder getMinuteRangesOrBuilder(int index);
 }

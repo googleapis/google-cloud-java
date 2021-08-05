@@ -555,6 +555,7 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    *           .addAllMetricAggregations(new ArrayList<MetricAggregation>())
    *           .addAllOrderBys(new ArrayList<OrderBy>())
    *           .setReturnPropertyQuota(true)
+   *           .addAllMinuteRanges(new ArrayList<MinuteRange>())
    *           .build();
    *   RunRealtimeReportResponse response = betaAnalyticsDataClient.runRealtimeReport(request);
    * }
@@ -587,6 +588,7 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    *           .addAllMetricAggregations(new ArrayList<MetricAggregation>())
    *           .addAllOrderBys(new ArrayList<OrderBy>())
    *           .setReturnPropertyQuota(true)
+   *           .addAllMinuteRanges(new ArrayList<MinuteRange>())
    *           .build();
    *   ApiFuture<RunRealtimeReportResponse> future =
    *       betaAnalyticsDataClient.runRealtimeReportCallable().futureCall(request);

@@ -42,8 +42,8 @@ import org.junit.Test;
 public class BetaAnalyticsDataClientTest {
   private static MockBetaAnalyticsData mockBetaAnalyticsData;
   private static MockServiceHelper mockServiceHelper;
-  private BetaAnalyticsDataClient client;
   private LocalChannelProvider channelProvider;
+  private BetaAnalyticsDataClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -454,6 +454,7 @@ public class BetaAnalyticsDataClientTest {
             .addAllMetricAggregations(new ArrayList<MetricAggregation>())
             .addAllOrderBys(new ArrayList<OrderBy>())
             .setReturnPropertyQuota(true)
+            .addAllMinuteRanges(new ArrayList<MinuteRange>())
             .build();
 
     RunRealtimeReportResponse actualResponse = client.runRealtimeReport(request);
@@ -473,6 +474,7 @@ public class BetaAnalyticsDataClientTest {
         request.getMetricAggregationsList(), actualRequest.getMetricAggregationsList());
     Assert.assertEquals(request.getOrderBysList(), actualRequest.getOrderBysList());
     Assert.assertEquals(request.getReturnPropertyQuota(), actualRequest.getReturnPropertyQuota());
+    Assert.assertEquals(request.getMinuteRangesList(), actualRequest.getMinuteRangesList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -496,6 +498,7 @@ public class BetaAnalyticsDataClientTest {
               .addAllMetricAggregations(new ArrayList<MetricAggregation>())
               .addAllOrderBys(new ArrayList<OrderBy>())
               .setReturnPropertyQuota(true)
+              .addAllMinuteRanges(new ArrayList<MinuteRange>())
               .build();
       client.runRealtimeReport(request);
       Assert.fail("No exception raised");
