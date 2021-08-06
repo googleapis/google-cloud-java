@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest;
 import com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse;
@@ -36,7 +35,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -143,13 +141,10 @@ public class GrpcIamCredentialsStub extends IamCredentialsStub {
             GrpcCallSettings.<GenerateAccessTokenRequest, GenerateAccessTokenResponse>newBuilder()
                 .setMethodDescriptor(generateAccessTokenMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GenerateAccessTokenRequest>() {
-                      @Override
-                      public Map<String, String> extract(GenerateAccessTokenRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GenerateIdTokenRequest, GenerateIdTokenResponse>
@@ -157,39 +152,30 @@ public class GrpcIamCredentialsStub extends IamCredentialsStub {
             GrpcCallSettings.<GenerateIdTokenRequest, GenerateIdTokenResponse>newBuilder()
                 .setMethodDescriptor(generateIdTokenMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GenerateIdTokenRequest>() {
-                      @Override
-                      public Map<String, String> extract(GenerateIdTokenRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SignBlobRequest, SignBlobResponse> signBlobTransportSettings =
         GrpcCallSettings.<SignBlobRequest, SignBlobResponse>newBuilder()
             .setMethodDescriptor(signBlobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SignBlobRequest>() {
-                  @Override
-                  public Map<String, String> extract(SignBlobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SignJwtRequest, SignJwtResponse> signJwtTransportSettings =
         GrpcCallSettings.<SignJwtRequest, SignJwtResponse>newBuilder()
             .setMethodDescriptor(signJwtMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SignJwtRequest>() {
-                  @Override
-                  public Map<String, String> extract(SignJwtRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 
@@ -239,7 +225,13 @@ public class GrpcIamCredentialsStub extends IamCredentialsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override
