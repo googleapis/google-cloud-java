@@ -16,7 +16,6 @@
 
 package com.google.cloud.apigateway.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1990,12 +1989,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
           ListGatewaysPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListGatewaysPage, ListGatewaysPagedResponse>() {
-            @Override
-            public ListGatewaysPagedResponse apply(ListGatewaysPage input) {
-              return new ListGatewaysPagedResponse(input);
-            }
-          },
+          input -> new ListGatewaysPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2065,14 +2059,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
       ApiFuture<ListApisPage> futurePage =
           ListApisPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListApisPage, ListApisPagedResponse>() {
-            @Override
-            public ListApisPagedResponse apply(ListApisPage input) {
-              return new ListApisPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListApisPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListApisPagedResponse(ListApisPage page) {
@@ -2140,12 +2127,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
           ListApiConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListApiConfigsPage, ListApiConfigsPagedResponse>() {
-            @Override
-            public ListApiConfigsPagedResponse apply(ListApiConfigsPage input) {
-              return new ListApiConfigsPagedResponse(input);
-            }
-          },
+          input -> new ListApiConfigsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

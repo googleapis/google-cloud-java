@@ -26,7 +26,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apigateway.v1.Api;
 import com.google.cloud.apigateway.v1.ApiConfig;
@@ -57,7 +56,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -295,130 +293,100 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
         GrpcCallSettings.<ListGatewaysRequest, ListGatewaysResponse>newBuilder()
             .setMethodDescriptor(listGatewaysMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListGatewaysRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListGatewaysRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetGatewayRequest, Gateway> getGatewayTransportSettings =
         GrpcCallSettings.<GetGatewayRequest, Gateway>newBuilder()
             .setMethodDescriptor(getGatewayMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetGatewayRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetGatewayRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateGatewayRequest, Operation> createGatewayTransportSettings =
         GrpcCallSettings.<CreateGatewayRequest, Operation>newBuilder()
             .setMethodDescriptor(createGatewayMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateGatewayRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateGatewayRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateGatewayRequest, Operation> updateGatewayTransportSettings =
         GrpcCallSettings.<UpdateGatewayRequest, Operation>newBuilder()
             .setMethodDescriptor(updateGatewayMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateGatewayRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateGatewayRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("gateway.name", String.valueOf(request.getGateway().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("gateway.name", String.valueOf(request.getGateway().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteGatewayRequest, Operation> deleteGatewayTransportSettings =
         GrpcCallSettings.<DeleteGatewayRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteGatewayMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteGatewayRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteGatewayRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListApisRequest, ListApisResponse> listApisTransportSettings =
         GrpcCallSettings.<ListApisRequest, ListApisResponse>newBuilder()
             .setMethodDescriptor(listApisMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListApisRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListApisRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetApiRequest, Api> getApiTransportSettings =
         GrpcCallSettings.<GetApiRequest, Api>newBuilder()
             .setMethodDescriptor(getApiMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetApiRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetApiRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateApiRequest, Operation> createApiTransportSettings =
         GrpcCallSettings.<CreateApiRequest, Operation>newBuilder()
             .setMethodDescriptor(createApiMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateApiRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateApiRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateApiRequest, Operation> updateApiTransportSettings =
         GrpcCallSettings.<UpdateApiRequest, Operation>newBuilder()
             .setMethodDescriptor(updateApiMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateApiRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateApiRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("api.name", String.valueOf(request.getApi().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("api.name", String.valueOf(request.getApi().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteApiRequest, Operation> deleteApiTransportSettings =
         GrpcCallSettings.<DeleteApiRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteApiMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteApiRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteApiRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListApiConfigsRequest, ListApiConfigsResponse>
@@ -426,65 +394,50 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
             GrpcCallSettings.<ListApiConfigsRequest, ListApiConfigsResponse>newBuilder()
                 .setMethodDescriptor(listApiConfigsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListApiConfigsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListApiConfigsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetApiConfigRequest, ApiConfig> getApiConfigTransportSettings =
         GrpcCallSettings.<GetApiConfigRequest, ApiConfig>newBuilder()
             .setMethodDescriptor(getApiConfigMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetApiConfigRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetApiConfigRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateApiConfigRequest, Operation> createApiConfigTransportSettings =
         GrpcCallSettings.<CreateApiConfigRequest, Operation>newBuilder()
             .setMethodDescriptor(createApiConfigMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateApiConfigRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateApiConfigRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateApiConfigRequest, Operation> updateApiConfigTransportSettings =
         GrpcCallSettings.<UpdateApiConfigRequest, Operation>newBuilder()
             .setMethodDescriptor(updateApiConfigMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateApiConfigRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateApiConfigRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("api_config.name", String.valueOf(request.getApiConfig().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("api_config.name", String.valueOf(request.getApiConfig().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteApiConfigRequest, Operation> deleteApiConfigTransportSettings =
         GrpcCallSettings.<DeleteApiConfigRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteApiConfigMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteApiConfigRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteApiConfigRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 

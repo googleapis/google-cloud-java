@@ -617,7 +617,7 @@ public class ApiGatewayServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
-            .setManagedService(ManagedServiceName.of("[SERVICE]").toString())
+            .setManagedService("managedService2047823382")
             .build();
     mockApiGatewayService.addResponse(expectedResponse);
 
@@ -660,7 +660,7 @@ public class ApiGatewayServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
-            .setManagedService(ManagedServiceName.of("[SERVICE]").toString())
+            .setManagedService("managedService2047823382")
             .build();
     mockApiGatewayService.addResponse(expectedResponse);
 
@@ -703,7 +703,7 @@ public class ApiGatewayServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
-            .setManagedService(ManagedServiceName.of("[SERVICE]").toString())
+            .setManagedService("managedService2047823382")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -760,7 +760,7 @@ public class ApiGatewayServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
-            .setManagedService(ManagedServiceName.of("[SERVICE]").toString())
+            .setManagedService("managedService2047823382")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -817,7 +817,7 @@ public class ApiGatewayServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
-            .setManagedService(ManagedServiceName.of("[SERVICE]").toString())
+            .setManagedService("managedService2047823382")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1043,9 +1043,8 @@ public class ApiGatewayServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
-            .setGatewayServiceAccount(
-                ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
-            .setServiceConfigId(ServiceName.of("[SERVICE]", "[CONFIG]").toString())
+            .setGatewayServiceAccount("gatewayServiceAccount153690396")
+            .setServiceConfigId("serviceConfigId650537426")
             .addAllOpenapiDocuments(new ArrayList<ApiConfig.OpenApiDocument>())
             .addAllGrpcServices(new ArrayList<ApiConfig.GrpcServiceDefinition>())
             .addAllManagedServiceConfigs(new ArrayList<ApiConfig.File>())
@@ -1091,9 +1090,8 @@ public class ApiGatewayServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
-            .setGatewayServiceAccount(
-                ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
-            .setServiceConfigId(ServiceName.of("[SERVICE]", "[CONFIG]").toString())
+            .setGatewayServiceAccount("gatewayServiceAccount153690396")
+            .setServiceConfigId("serviceConfigId650537426")
             .addAllOpenapiDocuments(new ArrayList<ApiConfig.OpenApiDocument>())
             .addAllGrpcServices(new ArrayList<ApiConfig.GrpcServiceDefinition>())
             .addAllManagedServiceConfigs(new ArrayList<ApiConfig.File>())
@@ -1139,9 +1137,8 @@ public class ApiGatewayServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
-            .setGatewayServiceAccount(
-                ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
-            .setServiceConfigId(ServiceName.of("[SERVICE]", "[CONFIG]").toString())
+            .setGatewayServiceAccount("gatewayServiceAccount153690396")
+            .setServiceConfigId("serviceConfigId650537426")
             .addAllOpenapiDocuments(new ArrayList<ApiConfig.OpenApiDocument>())
             .addAllGrpcServices(new ArrayList<ApiConfig.GrpcServiceDefinition>())
             .addAllManagedServiceConfigs(new ArrayList<ApiConfig.File>())
@@ -1201,9 +1198,8 @@ public class ApiGatewayServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
-            .setGatewayServiceAccount(
-                ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
-            .setServiceConfigId(ServiceName.of("[SERVICE]", "[CONFIG]").toString())
+            .setGatewayServiceAccount("gatewayServiceAccount153690396")
+            .setServiceConfigId("serviceConfigId650537426")
             .addAllOpenapiDocuments(new ArrayList<ApiConfig.OpenApiDocument>())
             .addAllGrpcServices(new ArrayList<ApiConfig.GrpcServiceDefinition>())
             .addAllManagedServiceConfigs(new ArrayList<ApiConfig.File>())
@@ -1263,9 +1259,8 @@ public class ApiGatewayServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
-            .setGatewayServiceAccount(
-                ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
-            .setServiceConfigId(ServiceName.of("[SERVICE]", "[CONFIG]").toString())
+            .setGatewayServiceAccount("gatewayServiceAccount153690396")
+            .setServiceConfigId("serviceConfigId650537426")
             .addAllOpenapiDocuments(new ArrayList<ApiConfig.OpenApiDocument>())
             .addAllGrpcServices(new ArrayList<ApiConfig.GrpcServiceDefinition>())
             .addAllManagedServiceConfigs(new ArrayList<ApiConfig.File>())
