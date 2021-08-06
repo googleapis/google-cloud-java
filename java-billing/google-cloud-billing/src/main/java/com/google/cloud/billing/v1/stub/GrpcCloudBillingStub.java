@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.billing.v1.BillingAccount;
 import com.google.cloud.billing.v1.CreateBillingAccountRequest;
@@ -47,7 +46,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -228,13 +226,10 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
         GrpcCallSettings.<GetBillingAccountRequest, BillingAccount>newBuilder()
             .setMethodDescriptor(getBillingAccountMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetBillingAccountRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetBillingAccountRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListBillingAccountsRequest, ListBillingAccountsResponse>
@@ -247,13 +242,10 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
             GrpcCallSettings.<UpdateBillingAccountRequest, BillingAccount>newBuilder()
                 .setMethodDescriptor(updateBillingAccountMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateBillingAccountRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateBillingAccountRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateBillingAccountRequest, BillingAccount>
@@ -267,13 +259,10 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                 .<ListProjectBillingInfoRequest, ListProjectBillingInfoResponse>newBuilder()
                 .setMethodDescriptor(listProjectBillingInfoMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListProjectBillingInfoRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListProjectBillingInfoRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetProjectBillingInfoRequest, ProjectBillingInfo>
@@ -281,13 +270,10 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
             GrpcCallSettings.<GetProjectBillingInfoRequest, ProjectBillingInfo>newBuilder()
                 .setMethodDescriptor(getProjectBillingInfoMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetProjectBillingInfoRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetProjectBillingInfoRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateProjectBillingInfoRequest, ProjectBillingInfo>
@@ -295,39 +281,30 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
             GrpcCallSettings.<UpdateProjectBillingInfoRequest, ProjectBillingInfo>newBuilder()
                 .setMethodDescriptor(updateProjectBillingInfoMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateProjectBillingInfoRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateProjectBillingInfoRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -335,13 +312,10 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
             GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(TestIamPermissionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("resource", String.valueOf(request.getResource()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource", String.valueOf(request.getResource()));
+                      return params.build();
                     })
                 .build();
 

@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.billing.v1.ListServicesRequest;
 import com.google.cloud.billing.v1.ListServicesResponse;
@@ -35,7 +34,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -122,13 +120,10 @@ public class GrpcCloudCatalogStub extends CloudCatalogStub {
         GrpcCallSettings.<ListSkusRequest, ListSkusResponse>newBuilder()
             .setMethodDescriptor(listSkusMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListSkusRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListSkusRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
 

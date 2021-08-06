@@ -16,7 +16,6 @@
 
 package com.google.cloud.billing.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -442,12 +441,7 @@ public class CloudCatalogClient implements BackgroundResource {
           ListServicesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListServicesPage, ListServicesPagedResponse>() {
-            @Override
-            public ListServicesPagedResponse apply(ListServicesPage input) {
-              return new ListServicesPagedResponse(input);
-            }
-          },
+          input -> new ListServicesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -517,14 +511,7 @@ public class CloudCatalogClient implements BackgroundResource {
       ApiFuture<ListSkusPage> futurePage =
           ListSkusPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListSkusPage, ListSkusPagedResponse>() {
-            @Override
-            public ListSkusPagedResponse apply(ListSkusPage input) {
-              return new ListSkusPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListSkusPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListSkusPagedResponse(ListSkusPage page) {

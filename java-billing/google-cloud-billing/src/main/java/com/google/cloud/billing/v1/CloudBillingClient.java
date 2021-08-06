@@ -16,7 +16,6 @@
 
 package com.google.cloud.billing.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1349,12 +1348,7 @@ public class CloudBillingClient implements BackgroundResource {
           ListBillingAccountsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListBillingAccountsPage, ListBillingAccountsPagedResponse>() {
-            @Override
-            public ListBillingAccountsPagedResponse apply(ListBillingAccountsPage input) {
-              return new ListBillingAccountsPagedResponse(input);
-            }
-          },
+          input -> new ListBillingAccountsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1439,12 +1433,7 @@ public class CloudBillingClient implements BackgroundResource {
           ListProjectBillingInfoPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListProjectBillingInfoPage, ListProjectBillingInfoPagedResponse>() {
-            @Override
-            public ListProjectBillingInfoPagedResponse apply(ListProjectBillingInfoPage input) {
-              return new ListProjectBillingInfoPagedResponse(input);
-            }
-          },
+          input -> new ListProjectBillingInfoPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
