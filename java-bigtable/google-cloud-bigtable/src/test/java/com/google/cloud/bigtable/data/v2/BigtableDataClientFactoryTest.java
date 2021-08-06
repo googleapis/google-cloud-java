@@ -129,7 +129,7 @@ public class BigtableDataClientFactoryTest {
         Mockito.mock(
             ExecutorProvider.class,
             new BuilderAnswer<>(
-                ExecutorProvider.class, builder.stubSettings().getExecutorProvider()));
+                ExecutorProvider.class, builder.stubSettings().getBackgroundExecutorProvider()));
 
     watchdogProvider =
         Mockito.mock(
