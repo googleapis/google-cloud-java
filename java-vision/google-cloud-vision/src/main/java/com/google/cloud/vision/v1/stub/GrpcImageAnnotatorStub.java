@@ -22,7 +22,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.vision.v1.AsyncBatchAnnotateFilesRequest;
 import com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse;
@@ -39,7 +38,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -157,13 +155,10 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
             GrpcCallSettings.<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>newBuilder()
                 .setMethodDescriptor(batchAnnotateImagesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchAnnotateImagesRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchAnnotateImagesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>
@@ -171,13 +166,10 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
             GrpcCallSettings.<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>newBuilder()
                 .setMethodDescriptor(batchAnnotateFilesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchAnnotateFilesRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchAnnotateFilesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<AsyncBatchAnnotateImagesRequest, Operation>
@@ -185,13 +177,10 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
             GrpcCallSettings.<AsyncBatchAnnotateImagesRequest, Operation>newBuilder()
                 .setMethodDescriptor(asyncBatchAnnotateImagesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<AsyncBatchAnnotateImagesRequest>() {
-                      @Override
-                      public Map<String, String> extract(AsyncBatchAnnotateImagesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<AsyncBatchAnnotateFilesRequest, Operation>
@@ -199,13 +188,10 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
             GrpcCallSettings.<AsyncBatchAnnotateFilesRequest, Operation>newBuilder()
                 .setMethodDescriptor(asyncBatchAnnotateFilesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<AsyncBatchAnnotateFilesRequest>() {
-                      @Override
-                      public Map<String, String> extract(AsyncBatchAnnotateFilesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 
@@ -290,7 +276,13 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override
