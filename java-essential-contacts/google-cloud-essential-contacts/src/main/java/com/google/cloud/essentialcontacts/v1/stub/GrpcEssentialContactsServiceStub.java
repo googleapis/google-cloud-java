@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.essentialcontacts.v1.ComputeContactsRequest;
 import com.google.cloud.essentialcontacts.v1.ComputeContactsResponse;
@@ -42,7 +41,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -190,65 +188,50 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
         GrpcCallSettings.<CreateContactRequest, Contact>newBuilder()
             .setMethodDescriptor(createContactMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateContactRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateContactRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateContactRequest, Contact> updateContactTransportSettings =
         GrpcCallSettings.<UpdateContactRequest, Contact>newBuilder()
             .setMethodDescriptor(updateContactMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateContactRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateContactRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("contact.name", String.valueOf(request.getContact().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("contact.name", String.valueOf(request.getContact().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListContactsRequest, ListContactsResponse> listContactsTransportSettings =
         GrpcCallSettings.<ListContactsRequest, ListContactsResponse>newBuilder()
             .setMethodDescriptor(listContactsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListContactsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListContactsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetContactRequest, Contact> getContactTransportSettings =
         GrpcCallSettings.<GetContactRequest, Contact>newBuilder()
             .setMethodDescriptor(getContactMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetContactRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetContactRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteContactRequest, Empty> deleteContactTransportSettings =
         GrpcCallSettings.<DeleteContactRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteContactMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteContactRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteContactRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ComputeContactsRequest, ComputeContactsResponse>
@@ -256,26 +239,20 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
             GrpcCallSettings.<ComputeContactsRequest, ComputeContactsResponse>newBuilder()
                 .setMethodDescriptor(computeContactsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ComputeContactsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ComputeContactsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SendTestMessageRequest, Empty> sendTestMessageTransportSettings =
         GrpcCallSettings.<SendTestMessageRequest, Empty>newBuilder()
             .setMethodDescriptor(sendTestMessageMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SendTestMessageRequest>() {
-                  @Override
-                  public Map<String, String> extract(SendTestMessageRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
 

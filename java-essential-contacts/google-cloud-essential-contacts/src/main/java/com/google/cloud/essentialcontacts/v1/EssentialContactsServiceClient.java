@@ -16,7 +16,6 @@
 
 package com.google.cloud.essentialcontacts.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -990,12 +989,7 @@ public class EssentialContactsServiceClient implements BackgroundResource {
           ListContactsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListContactsPage, ListContactsPagedResponse>() {
-            @Override
-            public ListContactsPagedResponse apply(ListContactsPage input) {
-              return new ListContactsPagedResponse(input);
-            }
-          },
+          input -> new ListContactsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1070,12 +1064,7 @@ public class EssentialContactsServiceClient implements BackgroundResource {
           ComputeContactsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ComputeContactsPage, ComputeContactsPagedResponse>() {
-            @Override
-            public ComputeContactsPagedResponse apply(ComputeContactsPage input) {
-              return new ComputeContactsPagedResponse(input);
-            }
-          },
+          input -> new ComputeContactsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
