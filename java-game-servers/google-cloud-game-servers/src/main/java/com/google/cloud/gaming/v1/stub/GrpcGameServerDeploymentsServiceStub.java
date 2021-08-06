@@ -24,7 +24,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gaming.v1.CreateGameServerDeploymentRequest;
 import com.google.cloud.gaming.v1.DeleteGameServerDeploymentRequest;
@@ -48,7 +47,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -262,13 +260,10 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                 .<ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse>newBuilder()
                 .setMethodDescriptor(listGameServerDeploymentsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListGameServerDeploymentsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListGameServerDeploymentsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetGameServerDeploymentRequest, GameServerDeployment>
@@ -276,13 +271,10 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
             GrpcCallSettings.<GetGameServerDeploymentRequest, GameServerDeployment>newBuilder()
                 .setMethodDescriptor(getGameServerDeploymentMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetGameServerDeploymentRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetGameServerDeploymentRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateGameServerDeploymentRequest, Operation>
@@ -290,14 +282,10 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
             GrpcCallSettings.<CreateGameServerDeploymentRequest, Operation>newBuilder()
                 .setMethodDescriptor(createGameServerDeploymentMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateGameServerDeploymentRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CreateGameServerDeploymentRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteGameServerDeploymentRequest, Operation>
@@ -305,14 +293,10 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
             GrpcCallSettings.<DeleteGameServerDeploymentRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteGameServerDeploymentMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteGameServerDeploymentRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          DeleteGameServerDeploymentRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateGameServerDeploymentRequest, Operation>
@@ -320,16 +304,12 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
             GrpcCallSettings.<UpdateGameServerDeploymentRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateGameServerDeploymentMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateGameServerDeploymentRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          UpdateGameServerDeploymentRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "game_server_deployment.name",
-                            String.valueOf(request.getGameServerDeployment().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "game_server_deployment.name",
+                          String.valueOf(request.getGameServerDeployment().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
@@ -338,14 +318,10 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                 .<GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>newBuilder()
                 .setMethodDescriptor(getGameServerDeploymentRolloutMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetGameServerDeploymentRolloutRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          GetGameServerDeploymentRolloutRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateGameServerDeploymentRolloutRequest, Operation>
@@ -353,14 +329,10 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
             GrpcCallSettings.<UpdateGameServerDeploymentRolloutRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateGameServerDeploymentRolloutMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateGameServerDeploymentRolloutRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          UpdateGameServerDeploymentRolloutRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("rollout.name", String.valueOf(request.getRollout().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("rollout.name", String.valueOf(request.getRollout().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -372,14 +344,10 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                     newBuilder()
                 .setMethodDescriptor(previewGameServerDeploymentRolloutMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<PreviewGameServerDeploymentRolloutRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          PreviewGameServerDeploymentRolloutRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("rollout.name", String.valueOf(request.getRollout().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("rollout.name", String.valueOf(request.getRollout().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
@@ -387,13 +355,10 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
             GrpcCallSettings.<FetchDeploymentStateRequest, FetchDeploymentStateResponse>newBuilder()
                 .setMethodDescriptor(fetchDeploymentStateMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<FetchDeploymentStateRequest>() {
-                      @Override
-                      public Map<String, String> extract(FetchDeploymentStateRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 

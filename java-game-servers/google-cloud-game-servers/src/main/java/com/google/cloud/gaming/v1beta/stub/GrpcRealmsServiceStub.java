@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gaming.v1beta.CreateRealmRequest;
 import com.google.cloud.gaming.v1beta.DeleteRealmRequest;
@@ -44,7 +43,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -170,65 +168,50 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
         GrpcCallSettings.<ListRealmsRequest, ListRealmsResponse>newBuilder()
             .setMethodDescriptor(listRealmsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListRealmsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListRealmsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetRealmRequest, Realm> getRealmTransportSettings =
         GrpcCallSettings.<GetRealmRequest, Realm>newBuilder()
             .setMethodDescriptor(getRealmMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetRealmRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetRealmRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateRealmRequest, Operation> createRealmTransportSettings =
         GrpcCallSettings.<CreateRealmRequest, Operation>newBuilder()
             .setMethodDescriptor(createRealmMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateRealmRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateRealmRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteRealmRequest, Operation> deleteRealmTransportSettings =
         GrpcCallSettings.<DeleteRealmRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteRealmMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteRealmRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteRealmRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateRealmRequest, Operation> updateRealmTransportSettings =
         GrpcCallSettings.<UpdateRealmRequest, Operation>newBuilder()
             .setMethodDescriptor(updateRealmMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateRealmRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateRealmRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("realm.name", String.valueOf(request.getRealm().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("realm.name", String.valueOf(request.getRealm().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
@@ -236,13 +219,10 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
             GrpcCallSettings.<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>newBuilder()
                 .setMethodDescriptor(previewRealmUpdateMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<PreviewRealmUpdateRequest>() {
-                      @Override
-                      public Map<String, String> extract(PreviewRealmUpdateRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("realm.name", String.valueOf(request.getRealm().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("realm.name", String.valueOf(request.getRealm().getName()));
+                      return params.build();
                     })
                 .build();
 

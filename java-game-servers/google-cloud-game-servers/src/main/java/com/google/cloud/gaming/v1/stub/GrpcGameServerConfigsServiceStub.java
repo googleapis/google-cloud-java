@@ -24,7 +24,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gaming.v1.CreateGameServerConfigRequest;
 import com.google.cloud.gaming.v1.DeleteGameServerConfigRequest;
@@ -40,7 +39,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -164,13 +162,10 @@ public class GrpcGameServerConfigsServiceStub extends GameServerConfigsServiceSt
                 .<ListGameServerConfigsRequest, ListGameServerConfigsResponse>newBuilder()
                 .setMethodDescriptor(listGameServerConfigsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListGameServerConfigsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListGameServerConfigsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetGameServerConfigRequest, GameServerConfig>
@@ -178,13 +173,10 @@ public class GrpcGameServerConfigsServiceStub extends GameServerConfigsServiceSt
             GrpcCallSettings.<GetGameServerConfigRequest, GameServerConfig>newBuilder()
                 .setMethodDescriptor(getGameServerConfigMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetGameServerConfigRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetGameServerConfigRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateGameServerConfigRequest, Operation>
@@ -192,13 +184,10 @@ public class GrpcGameServerConfigsServiceStub extends GameServerConfigsServiceSt
             GrpcCallSettings.<CreateGameServerConfigRequest, Operation>newBuilder()
                 .setMethodDescriptor(createGameServerConfigMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateGameServerConfigRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateGameServerConfigRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteGameServerConfigRequest, Operation>
@@ -206,13 +195,10 @@ public class GrpcGameServerConfigsServiceStub extends GameServerConfigsServiceSt
             GrpcCallSettings.<DeleteGameServerConfigRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteGameServerConfigMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteGameServerConfigRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteGameServerConfigRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 

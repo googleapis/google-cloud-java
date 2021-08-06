@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gaming.v1beta.CreateGameServerClusterRequest;
 import com.google.cloud.gaming.v1beta.DeleteGameServerClusterRequest;
@@ -48,7 +47,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -248,13 +246,10 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
                 .<ListGameServerClustersRequest, ListGameServerClustersResponse>newBuilder()
                 .setMethodDescriptor(listGameServerClustersMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListGameServerClustersRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListGameServerClustersRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetGameServerClusterRequest, GameServerCluster>
@@ -262,13 +257,10 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
             GrpcCallSettings.<GetGameServerClusterRequest, GameServerCluster>newBuilder()
                 .setMethodDescriptor(getGameServerClusterMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetGameServerClusterRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetGameServerClusterRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateGameServerClusterRequest, Operation>
@@ -276,13 +268,10 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
             GrpcCallSettings.<CreateGameServerClusterRequest, Operation>newBuilder()
                 .setMethodDescriptor(createGameServerClusterMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateGameServerClusterRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateGameServerClusterRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<PreviewCreateGameServerClusterRequest, PreviewCreateGameServerClusterResponse>
@@ -292,14 +281,10 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
                     newBuilder()
                 .setMethodDescriptor(previewCreateGameServerClusterMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<PreviewCreateGameServerClusterRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          PreviewCreateGameServerClusterRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteGameServerClusterRequest, Operation>
@@ -307,13 +292,10 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
             GrpcCallSettings.<DeleteGameServerClusterRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteGameServerClusterMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteGameServerClusterRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteGameServerClusterRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<PreviewDeleteGameServerClusterRequest, PreviewDeleteGameServerClusterResponse>
@@ -323,14 +305,10 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
                     newBuilder()
                 .setMethodDescriptor(previewDeleteGameServerClusterMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<PreviewDeleteGameServerClusterRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          PreviewDeleteGameServerClusterRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateGameServerClusterRequest, Operation>
@@ -338,15 +316,12 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
             GrpcCallSettings.<UpdateGameServerClusterRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateGameServerClusterMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateGameServerClusterRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateGameServerClusterRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "game_server_cluster.name",
-                            String.valueOf(request.getGameServerCluster().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "game_server_cluster.name",
+                          String.valueOf(request.getGameServerCluster().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
@@ -356,16 +331,12 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
                     newBuilder()
                 .setMethodDescriptor(previewUpdateGameServerClusterMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<PreviewUpdateGameServerClusterRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          PreviewUpdateGameServerClusterRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "game_server_cluster.name",
-                            String.valueOf(request.getGameServerCluster().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "game_server_cluster.name",
+                          String.valueOf(request.getGameServerCluster().getName()));
+                      return params.build();
                     })
                 .build();
 

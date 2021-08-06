@@ -16,7 +16,6 @@
 
 package com.google.cloud.gaming.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1267,13 +1266,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
           ListGameServerDeploymentsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListGameServerDeploymentsPage, ListGameServerDeploymentsPagedResponse>() {
-            @Override
-            public ListGameServerDeploymentsPagedResponse apply(
-                ListGameServerDeploymentsPage input) {
-              return new ListGameServerDeploymentsPagedResponse(input);
-            }
-          },
+          input -> new ListGameServerDeploymentsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
