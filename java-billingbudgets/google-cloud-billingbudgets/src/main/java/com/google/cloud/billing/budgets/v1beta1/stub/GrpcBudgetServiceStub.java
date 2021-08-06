@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.billing.budgets.v1beta1.Budget;
 import com.google.cloud.billing.budgets.v1beta1.CreateBudgetRequest;
@@ -39,7 +38,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -148,65 +146,50 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
         GrpcCallSettings.<CreateBudgetRequest, Budget>newBuilder()
             .setMethodDescriptor(createBudgetMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateBudgetRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateBudgetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateBudgetRequest, Budget> updateBudgetTransportSettings =
         GrpcCallSettings.<UpdateBudgetRequest, Budget>newBuilder()
             .setMethodDescriptor(updateBudgetMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateBudgetRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateBudgetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("budget.name", String.valueOf(request.getBudget().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("budget.name", String.valueOf(request.getBudget().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetBudgetRequest, Budget> getBudgetTransportSettings =
         GrpcCallSettings.<GetBudgetRequest, Budget>newBuilder()
             .setMethodDescriptor(getBudgetMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetBudgetRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetBudgetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListBudgetsRequest, ListBudgetsResponse> listBudgetsTransportSettings =
         GrpcCallSettings.<ListBudgetsRequest, ListBudgetsResponse>newBuilder()
             .setMethodDescriptor(listBudgetsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListBudgetsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListBudgetsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteBudgetRequest, Empty> deleteBudgetTransportSettings =
         GrpcCallSettings.<DeleteBudgetRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteBudgetMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteBudgetRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteBudgetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 

@@ -16,7 +16,6 @@
 
 package com.google.cloud.billing.budgets.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -738,14 +737,7 @@ public class BudgetServiceClient implements BackgroundResource {
       ApiFuture<ListBudgetsPage> futurePage =
           ListBudgetsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListBudgetsPage, ListBudgetsPagedResponse>() {
-            @Override
-            public ListBudgetsPagedResponse apply(ListBudgetsPage input) {
-              return new ListBudgetsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListBudgetsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListBudgetsPagedResponse(ListBudgetsPage page) {
