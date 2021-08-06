@@ -70,11 +70,14 @@ public final class TensorboardTimeSeriesProto {
           + "oardTimeSeries\022\177projects/{project}/locat"
           + "ions/{location}/tensorboards/{tensorboar"
           + "d}/experiments/{experiment}/runs/{run}/t"
-          + "imeSeries/{time_series}B\216\001\n#com.google.c"
+          + "imeSeries/{time_series}B\367\001\n#com.google.c"
           + "loud.aiplatform.v1beta1B\032TensorboardTime"
           + "SeriesProtoP\001ZIgoogle.golang.org/genprot"
           + "o/googleapis/cloud/aiplatform/v1beta1;ai"
-          + "platformb\006proto3"
+          + "platform\252\002\037Google.Cloud.AIPlatform.V1Bet"
+          + "a1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"G"
+          + "oogle::Cloud::AIPlatform::V1beta1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

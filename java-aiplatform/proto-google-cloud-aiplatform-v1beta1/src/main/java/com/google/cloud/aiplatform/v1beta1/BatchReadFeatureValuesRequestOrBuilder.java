@@ -110,6 +110,41 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
+   * Similar to csv_read_instances, but from BigQuery source.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_read_instances = 5;</code>
+   *
+   * @return Whether the bigqueryReadInstances field is set.
+   */
+  boolean hasBigqueryReadInstances();
+  /**
+   *
+   *
+   * <pre>
+   * Similar to csv_read_instances, but from BigQuery source.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_read_instances = 5;</code>
+   *
+   * @return The bigqueryReadInstances.
+   */
+  com.google.cloud.aiplatform.v1beta1.BigQuerySource getBigqueryReadInstances();
+  /**
+   *
+   *
+   * <pre>
+   * Similar to csv_read_instances, but from BigQuery source.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_read_instances = 5;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.BigQuerySourceOrBuilder getBigqueryReadInstancesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The resource name of the Featurestore from which to query Feature values.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}`
@@ -184,10 +219,103 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
+   * When not empty, the specified fields in the *_read_instances source will be
+   * joined as-is in the output, in addition to those fields from the
+   * Featurestore Entity.
+   * For BigQuery source, the type of the pass-through values will be
+   * automatically inferred. For CSV source, the pass-through values will be
+   * passed as opaque bytes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField>
+      getPassThroughFieldsList();
+  /**
+   *
+   *
+   * <pre>
+   * When not empty, the specified fields in the *_read_instances source will be
+   * joined as-is in the output, in addition to those fields from the
+   * Featurestore Entity.
+   * For BigQuery source, the type of the pass-through values will be
+   * automatically inferred. For CSV source, the pass-through values will be
+   * passed as opaque bytes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+      getPassThroughFields(int index);
+  /**
+   *
+   *
+   * <pre>
+   * When not empty, the specified fields in the *_read_instances source will be
+   * joined as-is in the output, in addition to those fields from the
+   * Featurestore Entity.
+   * For BigQuery source, the type of the pass-through values will be
+   * automatically inferred. For CSV source, the pass-through values will be
+   * passed as opaque bytes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+   * </code>
+   */
+  int getPassThroughFieldsCount();
+  /**
+   *
+   *
+   * <pre>
+   * When not empty, the specified fields in the *_read_instances source will be
+   * joined as-is in the output, in addition to those fields from the
+   * Featurestore Entity.
+   * For BigQuery source, the type of the pass-through values will be
+   * automatically inferred. For CSV source, the pass-through values will be
+   * passed as opaque bytes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest
+                  .PassThroughFieldOrBuilder>
+      getPassThroughFieldsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * When not empty, the specified fields in the *_read_instances source will be
+   * joined as-is in the output, in addition to those fields from the
+   * Featurestore Entity.
+   * For BigQuery source, the type of the pass-through values will be
+   * automatically inferred. For CSV source, the pass-through values will be
+   * passed as opaque bytes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughFieldOrBuilder
+      getPassThroughFieldsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Required. Specifies EntityType grouping Features to read values of and settings.
    * Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-   * specifying entity IDs in tha EntityType in
+   * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
    * </pre>
    *
@@ -204,7 +332,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    * Required. Specifies EntityType grouping Features to read values of and settings.
    * Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-   * specifying entity IDs in tha EntityType in
+   * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
    * </pre>
    *
@@ -221,7 +349,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    * Required. Specifies EntityType grouping Features to read values of and settings.
    * Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-   * specifying entity IDs in tha EntityType in
+   * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
    * </pre>
    *
@@ -237,7 +365,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    * Required. Specifies EntityType grouping Features to read values of and settings.
    * Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-   * specifying entity IDs in tha EntityType in
+   * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
    * </pre>
    *
@@ -257,7 +385,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    * Required. Specifies EntityType grouping Features to read values of and settings.
    * Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-   * specifying entity IDs in tha EntityType in
+   * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
    * </pre>
    *

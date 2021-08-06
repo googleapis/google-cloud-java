@@ -57,11 +57,13 @@ public final class TypesProto {
           + "google/api/annotations.proto\"\033\n\tBoolArra"
           + "y\022\016\n\006values\030\001 \003(\010\"\035\n\013DoubleArray\022\016\n\006valu"
           + "es\030\001 \003(\001\"\034\n\nInt64Array\022\016\n\006values\030\001 \003(\003\"\035"
-          + "\n\013StringArray\022\016\n\006values\030\001 \003(\tB~\n#com.goo"
-          + "gle.cloud.aiplatform.v1beta1B\nTypesProto"
-          + "P\001ZIgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/aiplatform/v1beta1;aiplatformb\006p"
-          + "roto3"
+          + "\n\013StringArray\022\016\n\006values\030\001 \003(\tB\347\001\n#com.go"
+          + "ogle.cloud.aiplatform.v1beta1B\nTypesProt"
+          + "oP\001ZIgoogle.golang.org/genproto/googleap"
+          + "is/cloud/aiplatform/v1beta1;aiplatform\252\002"
+          + "\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Googl"
+          + "e\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Clo"
+          + "ud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

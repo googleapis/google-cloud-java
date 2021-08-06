@@ -47,11 +47,13 @@ public final class DeployedIndexRefProto {
           + "api/annotations.proto\"{\n\020DeployedIndexRe"
           + "f\022G\n\016index_endpoint\030\001 \001(\tB/\340A\005\372A)\n\'aipla"
           + "tform.googleapis.com/IndexEndpoint\022\036\n\021de"
-          + "ployed_index_id\030\002 \001(\tB\003\340A\005B\211\001\n#com.googl"
+          + "ployed_index_id\030\002 \001(\tB\003\340A\005B\362\001\n#com.googl"
           + "e.cloud.aiplatform.v1beta1B\025DeployedInde"
           + "xRefProtoP\001ZIgoogle.golang.org/genproto/"
           + "googleapis/cloud/aiplatform/v1beta1;aipl"
-          + "atformb\006proto3"
+          + "atform\252\002\037Google.Cloud.AIPlatform.V1Beta1"
+          + "\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goo"
+          + "gle::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

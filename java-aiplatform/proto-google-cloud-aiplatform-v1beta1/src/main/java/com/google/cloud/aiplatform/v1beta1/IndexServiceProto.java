@@ -168,10 +168,13 @@ public final class IndexServiceProto {
           + "gle.protobuf.Empty\022\027DeleteOperationMetad"
           + "ata\032M\312A\031aiplatform.googleapis.com\322A.http"
           + "s://www.googleapis.com/auth/cloud-platfo"
-          + "rmB\205\001\n#com.google.cloud.aiplatform.v1bet"
+          + "rmB\356\001\n#com.google.cloud.aiplatform.v1bet"
           + "a1B\021IndexServiceProtoP\001ZIgoogle.golang.o"
           + "rg/genproto/googleapis/cloud/aiplatform/"
-          + "v1beta1;aiplatformb\006proto3"
+          + "v1beta1;aiplatform\252\002\037Google.Cloud.AIPlat"
+          + "form.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V"
+          + "1beta1\352\002\"Google::Cloud::AIPlatform::V1be"
+          + "ta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

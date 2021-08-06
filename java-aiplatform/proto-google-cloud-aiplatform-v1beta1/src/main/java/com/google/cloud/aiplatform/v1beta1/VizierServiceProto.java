@@ -277,10 +277,13 @@ public final class VizierServiceProto {
           + "studies/*}/trials:listOptimalTrials:\001*\332A"
           + "\006parent\032M\312A\031aiplatform.googleapis.com\322A."
           + "https://www.googleapis.com/auth/cloud-pl"
-          + "atformB\206\001\n#com.google.cloud.aiplatform.v"
+          + "atformB\357\001\n#com.google.cloud.aiplatform.v"
           + "1beta1B\022VizierServiceProtoP\001ZIgoogle.gol"
           + "ang.org/genproto/googleapis/cloud/aiplat"
-          + "form/v1beta1;aiplatformb\006proto3"
+          + "form/v1beta1;aiplatform\252\002\037Google.Cloud.A"
+          + "IPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlatf"
+          + "orm\\V1beta1\352\002\"Google::Cloud::AIPlatform:"
+          + ":V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

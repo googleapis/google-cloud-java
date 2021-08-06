@@ -16,7 +16,6 @@
 
 package com.google.cloud.aiplatform.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1426,12 +1425,7 @@ public class DatasetServiceClient implements BackgroundResource {
           ListDatasetsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListDatasetsPage, ListDatasetsPagedResponse>() {
-            @Override
-            public ListDatasetsPagedResponse apply(ListDatasetsPage input) {
-              return new ListDatasetsPagedResponse(input);
-            }
-          },
+          input -> new ListDatasetsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1506,12 +1500,7 @@ public class DatasetServiceClient implements BackgroundResource {
           ListDataItemsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListDataItemsPage, ListDataItemsPagedResponse>() {
-            @Override
-            public ListDataItemsPagedResponse apply(ListDataItemsPage input) {
-              return new ListDataItemsPagedResponse(input);
-            }
-          },
+          input -> new ListDataItemsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1587,12 +1576,7 @@ public class DatasetServiceClient implements BackgroundResource {
           ListAnnotationsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListAnnotationsPage, ListAnnotationsPagedResponse>() {
-            @Override
-            public ListAnnotationsPagedResponse apply(ListAnnotationsPage input) {
-              return new ListAnnotationsPagedResponse(input);
-            }
-          },
+          input -> new ListAnnotationsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

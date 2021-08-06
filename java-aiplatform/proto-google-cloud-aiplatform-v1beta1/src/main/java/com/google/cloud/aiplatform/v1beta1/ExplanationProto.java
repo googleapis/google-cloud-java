@@ -158,10 +158,13 @@ public final class ExplanationProto {
           + "try\022\013\n\003key\030\001 \001(\t\022a\n\005value\030\002 \001(\0132R.google"
           + ".cloud.aiplatform.v1beta1.ExplanationMet"
           + "adataOverride.InputMetadataOverride:\0028\001B"
-          + "\204\001\n#com.google.cloud.aiplatform.v1beta1B"
+          + "\355\001\n#com.google.cloud.aiplatform.v1beta1B"
           + "\020ExplanationProtoP\001ZIgoogle.golang.org/g"
           + "enproto/googleapis/cloud/aiplatform/v1be"
-          + "ta1;aiplatformb\006proto3"
+          + "ta1;aiplatform\252\002\037Google.Cloud.AIPlatform"
+          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
+          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

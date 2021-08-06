@@ -16,7 +16,6 @@
 
 package com.google.cloud.aiplatform.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1566,14 +1565,7 @@ public class VizierServiceClient implements BackgroundResource {
       ApiFuture<ListStudiesPage> futurePage =
           ListStudiesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListStudiesPage, ListStudiesPagedResponse>() {
-            @Override
-            public ListStudiesPagedResponse apply(ListStudiesPage input) {
-              return new ListStudiesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListStudiesPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListStudiesPagedResponse(ListStudiesPage page) {
@@ -1646,14 +1638,7 @@ public class VizierServiceClient implements BackgroundResource {
       ApiFuture<ListTrialsPage> futurePage =
           ListTrialsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListTrialsPage, ListTrialsPagedResponse>() {
-            @Override
-            public ListTrialsPagedResponse apply(ListTrialsPage input) {
-              return new ListTrialsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListTrialsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListTrialsPagedResponse(ListTrialsPage page) {

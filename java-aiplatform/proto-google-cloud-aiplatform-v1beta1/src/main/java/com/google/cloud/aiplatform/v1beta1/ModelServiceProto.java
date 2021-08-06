@@ -244,10 +244,13 @@ public final class ModelServiceProto {
           + "/*/locations/*/models/*/evaluations/*}/s"
           + "lices\332A\006parent\032M\312A\031aiplatform.googleapis"
           + ".com\322A.https://www.googleapis.com/auth/c"
-          + "loud-platformB\205\001\n#com.google.cloud.aipla"
+          + "loud-platformB\356\001\n#com.google.cloud.aipla"
           + "tform.v1beta1B\021ModelServiceProtoP\001ZIgoog"
           + "le.golang.org/genproto/googleapis/cloud/"
-          + "aiplatform/v1beta1;aiplatformb\006proto3"
+          + "aiplatform/v1beta1;aiplatform\252\002\037Google.C"
+          + "loud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\A"
+          + "IPlatform\\V1beta1\352\002\"Google::Cloud::AIPla"
+          + "tform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

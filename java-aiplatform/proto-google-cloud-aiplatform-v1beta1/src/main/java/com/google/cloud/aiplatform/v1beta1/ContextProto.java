@@ -66,10 +66,13 @@ public final class ContextProto {
           + "atform.googleapis.com/Context\022Zprojects/"
           + "{project}/locations/{location}/metadataS"
           + "tores/{metadata_store}/contexts/{context"
-          + "}B\200\001\n#com.google.cloud.aiplatform.v1beta"
+          + "}B\351\001\n#com.google.cloud.aiplatform.v1beta"
           + "1B\014ContextProtoP\001ZIgoogle.golang.org/gen"
           + "proto/googleapis/cloud/aiplatform/v1beta"
-          + "1;aiplatformb\006proto3"
+          + "1;aiplatform\252\002\037Google.Cloud.AIPlatform.V"
+          + "1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1"
+          + "\352\002\"Google::Cloud::AIPlatform::V1beta1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

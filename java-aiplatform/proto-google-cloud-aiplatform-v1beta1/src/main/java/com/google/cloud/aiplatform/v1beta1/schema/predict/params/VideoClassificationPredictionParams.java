@@ -179,7 +179,7 @@ public final class VideoClassificationPredictionParams
    *
    *
    * <pre>
-   * Set to true to request segment-level classification. AI Platform returns
+   * Set to true to request segment-level classification. Vertex AI returns
    * labels and their confidence scores for the entire time segment of the
    * video that user specified in the input instance.
    * Default value is true
@@ -200,9 +200,9 @@ public final class VideoClassificationPredictionParams
    *
    *
    * <pre>
-   * Set to true to request shot-level classification. AI Platform determines
+   * Set to true to request shot-level classification. Vertex AI determines
    * the boundaries for each camera shot in the entire time segment of the
-   * video that user specified in the input instance. AI Platform then
+   * video that user specified in the input instance. Vertex AI then
    * returns labels and their confidence scores for each detected shot, along
    * with the start and end time of the shot.
    * WARNING: Model evaluation is not done for this classification type,
@@ -227,7 +227,7 @@ public final class VideoClassificationPredictionParams
    *
    * <pre>
    * Set to true to request classification for a video at one-second intervals.
-   * AI Platform returns labels and their confidence scores for each second of
+   * Vertex AI returns labels and their confidence scores for each second of
    * the entire time segment of the video that user specified in the input
    * WARNING: Model evaluation is not done for this classification type, the
    * quality of it depends on the training data, but there are no metrics
@@ -798,7 +798,7 @@ public final class VideoClassificationPredictionParams
      *
      *
      * <pre>
-     * Set to true to request segment-level classification. AI Platform returns
+     * Set to true to request segment-level classification. Vertex AI returns
      * labels and their confidence scores for the entire time segment of the
      * video that user specified in the input instance.
      * Default value is true
@@ -816,7 +816,7 @@ public final class VideoClassificationPredictionParams
      *
      *
      * <pre>
-     * Set to true to request segment-level classification. AI Platform returns
+     * Set to true to request segment-level classification. Vertex AI returns
      * labels and their confidence scores for the entire time segment of the
      * video that user specified in the input instance.
      * Default value is true
@@ -837,7 +837,7 @@ public final class VideoClassificationPredictionParams
      *
      *
      * <pre>
-     * Set to true to request segment-level classification. AI Platform returns
+     * Set to true to request segment-level classification. Vertex AI returns
      * labels and their confidence scores for the entire time segment of the
      * video that user specified in the input instance.
      * Default value is true
@@ -859,9 +859,9 @@ public final class VideoClassificationPredictionParams
      *
      *
      * <pre>
-     * Set to true to request shot-level classification. AI Platform determines
+     * Set to true to request shot-level classification. Vertex AI determines
      * the boundaries for each camera shot in the entire time segment of the
-     * video that user specified in the input instance. AI Platform then
+     * video that user specified in the input instance. Vertex AI then
      * returns labels and their confidence scores for each detected shot, along
      * with the start and end time of the shot.
      * WARNING: Model evaluation is not done for this classification type,
@@ -882,9 +882,9 @@ public final class VideoClassificationPredictionParams
      *
      *
      * <pre>
-     * Set to true to request shot-level classification. AI Platform determines
+     * Set to true to request shot-level classification. Vertex AI determines
      * the boundaries for each camera shot in the entire time segment of the
-     * video that user specified in the input instance. AI Platform then
+     * video that user specified in the input instance. Vertex AI then
      * returns labels and their confidence scores for each detected shot, along
      * with the start and end time of the shot.
      * WARNING: Model evaluation is not done for this classification type,
@@ -908,9 +908,9 @@ public final class VideoClassificationPredictionParams
      *
      *
      * <pre>
-     * Set to true to request shot-level classification. AI Platform determines
+     * Set to true to request shot-level classification. Vertex AI determines
      * the boundaries for each camera shot in the entire time segment of the
-     * video that user specified in the input instance. AI Platform then
+     * video that user specified in the input instance. Vertex AI then
      * returns labels and their confidence scores for each detected shot, along
      * with the start and end time of the shot.
      * WARNING: Model evaluation is not done for this classification type,
@@ -936,7 +936,7 @@ public final class VideoClassificationPredictionParams
      *
      * <pre>
      * Set to true to request classification for a video at one-second intervals.
-     * AI Platform returns labels and their confidence scores for each second of
+     * Vertex AI returns labels and their confidence scores for each second of
      * the entire time segment of the video that user specified in the input
      * WARNING: Model evaluation is not done for this classification type, the
      * quality of it depends on the training data, but there are no metrics
@@ -956,7 +956,7 @@ public final class VideoClassificationPredictionParams
      *
      * <pre>
      * Set to true to request classification for a video at one-second intervals.
-     * AI Platform returns labels and their confidence scores for each second of
+     * Vertex AI returns labels and their confidence scores for each second of
      * the entire time segment of the video that user specified in the input
      * WARNING: Model evaluation is not done for this classification type, the
      * quality of it depends on the training data, but there are no metrics
@@ -979,7 +979,7 @@ public final class VideoClassificationPredictionParams
      *
      * <pre>
      * Set to true to request classification for a video at one-second intervals.
-     * AI Platform returns labels and their confidence scores for each second of
+     * Vertex AI returns labels and their confidence scores for each second of
      * the entire time segment of the video that user specified in the input
      * WARNING: Model evaluation is not done for this classification type, the
      * quality of it depends on the training data, but there are no metrics

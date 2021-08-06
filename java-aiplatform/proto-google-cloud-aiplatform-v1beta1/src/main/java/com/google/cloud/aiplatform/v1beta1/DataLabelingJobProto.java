@@ -117,10 +117,13 @@ public final class DataLabelingJobProto {
           + "\017\n\013UNCERTAINTY\020\001B\033\n\031initial_batch_sample"
           + "_sizeB\035\n\033following_batch_sample_size\"6\n\016"
           + "TrainingConfig\022$\n\034timeout_training_milli"
-          + "_hours\030\001 \001(\003B\210\001\n#com.google.cloud.aiplat"
+          + "_hours\030\001 \001(\003B\361\001\n#com.google.cloud.aiplat"
           + "form.v1beta1B\024DataLabelingJobProtoP\001ZIgo"
           + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/aiplatform/v1beta1;aiplatformb\006proto3"
+          + "d/aiplatform/v1beta1;aiplatform\252\002\037Google"
+          + ".Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cloud"
+          + "\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIP"
+          + "latform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

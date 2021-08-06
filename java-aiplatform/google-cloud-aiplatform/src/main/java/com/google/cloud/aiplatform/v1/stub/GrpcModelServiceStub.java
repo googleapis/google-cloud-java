@@ -26,7 +26,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.DeleteModelRequest;
 import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
@@ -56,7 +55,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -238,78 +236,60 @@ public class GrpcModelServiceStub extends ModelServiceStub {
         GrpcCallSettings.<UploadModelRequest, Operation>newBuilder()
             .setMethodDescriptor(uploadModelMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UploadModelRequest>() {
-                  @Override
-                  public Map<String, String> extract(UploadModelRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetModelRequest, Model> getModelTransportSettings =
         GrpcCallSettings.<GetModelRequest, Model>newBuilder()
             .setMethodDescriptor(getModelMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetModelRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetModelRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListModelsRequest, ListModelsResponse> listModelsTransportSettings =
         GrpcCallSettings.<ListModelsRequest, ListModelsResponse>newBuilder()
             .setMethodDescriptor(listModelsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListModelsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListModelsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateModelRequest, Model> updateModelTransportSettings =
         GrpcCallSettings.<UpdateModelRequest, Model>newBuilder()
             .setMethodDescriptor(updateModelMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateModelRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateModelRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("model.name", String.valueOf(request.getModel().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("model.name", String.valueOf(request.getModel().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteModelRequest, Operation> deleteModelTransportSettings =
         GrpcCallSettings.<DeleteModelRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteModelMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteModelRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteModelRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ExportModelRequest, Operation> exportModelTransportSettings =
         GrpcCallSettings.<ExportModelRequest, Operation>newBuilder()
             .setMethodDescriptor(exportModelMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ExportModelRequest>() {
-                  @Override
-                  public Map<String, String> extract(ExportModelRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetModelEvaluationRequest, ModelEvaluation>
@@ -317,13 +297,10 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             GrpcCallSettings.<GetModelEvaluationRequest, ModelEvaluation>newBuilder()
                 .setMethodDescriptor(getModelEvaluationMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetModelEvaluationRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetModelEvaluationRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
@@ -331,13 +308,10 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             GrpcCallSettings.<ListModelEvaluationsRequest, ListModelEvaluationsResponse>newBuilder()
                 .setMethodDescriptor(listModelEvaluationsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListModelEvaluationsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListModelEvaluationsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetModelEvaluationSliceRequest, ModelEvaluationSlice>
@@ -345,13 +319,10 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             GrpcCallSettings.<GetModelEvaluationSliceRequest, ModelEvaluationSlice>newBuilder()
                 .setMethodDescriptor(getModelEvaluationSliceMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetModelEvaluationSliceRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetModelEvaluationSliceRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse>
@@ -360,13 +331,10 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                 .<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse>newBuilder()
                 .setMethodDescriptor(listModelEvaluationSlicesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListModelEvaluationSlicesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListModelEvaluationSlicesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 
@@ -538,7 +506,13 @@ public class GrpcModelServiceStub extends ModelServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

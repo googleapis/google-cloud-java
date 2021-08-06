@@ -28,29 +28,26 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
-public class TrialName implements ResourceName {
-  private static final PathTemplate PROJECT_LOCATION_STUDY_TRIAL =
+public class PipelineJobName implements ResourceName {
+  private static final PathTemplate PROJECT_LOCATION_PIPELINE_JOB =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/studies/{study}/trials/{trial}");
+          "projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}");
   private volatile Map<String, String> fieldValuesMap;
   private final String project;
   private final String location;
-  private final String study;
-  private final String trial;
+  private final String pipelineJob;
 
   @Deprecated
-  protected TrialName() {
+  protected PipelineJobName() {
     project = null;
     location = null;
-    study = null;
-    trial = null;
+    pipelineJob = null;
   }
 
-  private TrialName(Builder builder) {
+  private PipelineJobName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     location = Preconditions.checkNotNull(builder.getLocation());
-    study = Preconditions.checkNotNull(builder.getStudy());
-    trial = Preconditions.checkNotNull(builder.getTrial());
+    pipelineJob = Preconditions.checkNotNull(builder.getPipelineJob());
   }
 
   public String getProject() {
@@ -61,12 +58,8 @@ public class TrialName implements ResourceName {
     return location;
   }
 
-  public String getStudy() {
-    return study;
-  }
-
-  public String getTrial() {
-    return trial;
+  public String getPipelineJob() {
+    return pipelineJob;
   }
 
   public static Builder newBuilder() {
@@ -77,50 +70,44 @@ public class TrialName implements ResourceName {
     return new Builder(this);
   }
 
-  public static TrialName of(String project, String location, String study, String trial) {
+  public static PipelineJobName of(String project, String location, String pipelineJob) {
     return newBuilder()
         .setProject(project)
         .setLocation(location)
-        .setStudy(study)
-        .setTrial(trial)
+        .setPipelineJob(pipelineJob)
         .build();
   }
 
-  public static String format(String project, String location, String study, String trial) {
+  public static String format(String project, String location, String pipelineJob) {
     return newBuilder()
         .setProject(project)
         .setLocation(location)
-        .setStudy(study)
-        .setTrial(trial)
+        .setPipelineJob(pipelineJob)
         .build()
         .toString();
   }
 
-  public static TrialName parse(String formattedString) {
+  public static PipelineJobName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
     Map<String, String> matchMap =
-        PROJECT_LOCATION_STUDY_TRIAL.validatedMatch(
-            formattedString, "TrialName.parse: formattedString not in valid format");
-    return of(
-        matchMap.get("project"),
-        matchMap.get("location"),
-        matchMap.get("study"),
-        matchMap.get("trial"));
+        PROJECT_LOCATION_PIPELINE_JOB.validatedMatch(
+            formattedString, "PipelineJobName.parse: formattedString not in valid format");
+    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("pipeline_job"));
   }
 
-  public static List<TrialName> parseList(List<String> formattedStrings) {
-    List<TrialName> list = new ArrayList<>(formattedStrings.size());
+  public static List<PipelineJobName> parseList(List<String> formattedStrings) {
+    List<PipelineJobName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<TrialName> values) {
+  public static List<String> toStringList(List<PipelineJobName> values) {
     List<String> list = new ArrayList<>(values.size());
-    for (TrialName value : values) {
+    for (PipelineJobName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -131,7 +118,7 @@ public class TrialName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_STUDY_TRIAL.matches(formattedString);
+    return PROJECT_LOCATION_PIPELINE_JOB.matches(formattedString);
   }
 
   @Override
@@ -146,11 +133,8 @@ public class TrialName implements ResourceName {
           if (location != null) {
             fieldMapBuilder.put("location", location);
           }
-          if (study != null) {
-            fieldMapBuilder.put("study", study);
-          }
-          if (trial != null) {
-            fieldMapBuilder.put("trial", trial);
+          if (pipelineJob != null) {
+            fieldMapBuilder.put("pipeline_job", pipelineJob);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -165,8 +149,8 @@ public class TrialName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_STUDY_TRIAL.instantiate(
-        "project", project, "location", location, "study", study, "trial", trial);
+    return PROJECT_LOCATION_PIPELINE_JOB.instantiate(
+        "project", project, "location", location, "pipeline_job", pipelineJob);
   }
 
   @Override
@@ -175,11 +159,10 @@ public class TrialName implements ResourceName {
       return true;
     }
     if (o != null || getClass() == o.getClass()) {
-      TrialName that = ((TrialName) o);
+      PipelineJobName that = ((PipelineJobName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
-          && Objects.equals(this.study, that.study)
-          && Objects.equals(this.trial, that.trial);
+          && Objects.equals(this.pipelineJob, that.pipelineJob);
     }
     return false;
   }
@@ -192,18 +175,15 @@ public class TrialName implements ResourceName {
     h *= 1000003;
     h ^= Objects.hashCode(location);
     h *= 1000003;
-    h ^= Objects.hashCode(study);
-    h *= 1000003;
-    h ^= Objects.hashCode(trial);
+    h ^= Objects.hashCode(pipelineJob);
     return h;
   }
 
-  /** Builder for projects/{project}/locations/{location}/studies/{study}/trials/{trial}. */
+  /** Builder for projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}. */
   public static class Builder {
     private String project;
     private String location;
-    private String study;
-    private String trial;
+    private String pipelineJob;
 
     protected Builder() {}
 
@@ -215,12 +195,8 @@ public class TrialName implements ResourceName {
       return location;
     }
 
-    public String getStudy() {
-      return study;
-    }
-
-    public String getTrial() {
-      return trial;
+    public String getPipelineJob() {
+      return pipelineJob;
     }
 
     public Builder setProject(String project) {
@@ -233,25 +209,19 @@ public class TrialName implements ResourceName {
       return this;
     }
 
-    public Builder setStudy(String study) {
-      this.study = study;
+    public Builder setPipelineJob(String pipelineJob) {
+      this.pipelineJob = pipelineJob;
       return this;
     }
 
-    public Builder setTrial(String trial) {
-      this.trial = trial;
-      return this;
+    private Builder(PipelineJobName pipelineJobName) {
+      this.project = pipelineJobName.project;
+      this.location = pipelineJobName.location;
+      this.pipelineJob = pipelineJobName.pipelineJob;
     }
 
-    private Builder(TrialName trialName) {
-      this.project = trialName.project;
-      this.location = trialName.location;
-      this.study = trialName.study;
-      this.trial = trialName.trial;
-    }
-
-    public TrialName build() {
-      return new TrialName(this);
+    public PipelineJobName build() {
+      return new PipelineJobName(this);
     }
   }
 }

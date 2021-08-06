@@ -319,4 +319,18 @@ public interface CustomJobSpecOrBuilder
    * @return The bytes for tensorboard.
    */
   com.google.protobuf.ByteString getTensorboardBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Vertex AI will enable web portal access to the containers. The portals
+   * can be accessed on web via the URLs given by [web_access_uris][].
+   * </pre>
+   *
+   * <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableWebAccess.
+   */
+  boolean getEnableWebAccess();
 }

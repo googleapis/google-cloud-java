@@ -189,11 +189,14 @@ public final class PipelineServiceProto {
           + "\223\002A\"</v1beta1/{name=projects/*/locations"
           + "/*/pipelineJobs/*}:cancel:\001*\332A\004name\032M\312A\031"
           + "aiplatform.googleapis.com\322A.https://www."
-          + "googleapis.com/auth/cloud-platformB\210\001\n#c"
+          + "googleapis.com/auth/cloud-platformB\361\001\n#c"
           + "om.google.cloud.aiplatform.v1beta1B\024Pipe"
           + "lineServiceProtoP\001ZIgoogle.golang.org/ge"
           + "nproto/googleapis/cloud/aiplatform/v1bet"
-          + "a1;aiplatformb\006proto3"
+          + "a1;aiplatform\252\002\037Google.Cloud.AIPlatform."
+          + "V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta"
+          + "1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

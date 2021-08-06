@@ -16,7 +16,6 @@
 
 package com.google.cloud.aiplatform.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1450,12 +1449,7 @@ public class PipelineServiceClient implements BackgroundResource {
           ListTrainingPipelinesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTrainingPipelinesPage, ListTrainingPipelinesPagedResponse>() {
-            @Override
-            public ListTrainingPipelinesPagedResponse apply(ListTrainingPipelinesPage input) {
-              return new ListTrainingPipelinesPagedResponse(input);
-            }
-          },
+          input -> new ListTrainingPipelinesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1538,12 +1532,7 @@ public class PipelineServiceClient implements BackgroundResource {
           ListPipelineJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListPipelineJobsPage, ListPipelineJobsPagedResponse>() {
-            @Override
-            public ListPipelineJobsPagedResponse apply(ListPipelineJobsPage input) {
-              return new ListPipelineJobsPagedResponse(input);
-            }
-          },
+          input -> new ListPipelineJobsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

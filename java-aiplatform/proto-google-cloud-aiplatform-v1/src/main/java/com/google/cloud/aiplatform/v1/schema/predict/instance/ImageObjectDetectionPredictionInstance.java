@@ -132,7 +132,7 @@ public final class ImageObjectDetectionPredictionInstance
    *
    *
    * <pre>
-   * The image bytes or GCS URI to make the prediction on.
+   * The image bytes or Cloud Storage URI to make the prediction on.
    * </pre>
    *
    * <code>string content = 1;</code>
@@ -155,7 +155,7 @@ public final class ImageObjectDetectionPredictionInstance
    *
    *
    * <pre>
-   * The image bytes or GCS URI to make the prediction on.
+   * The image bytes or Cloud Storage URI to make the prediction on.
    * </pre>
    *
    * <code>string content = 1;</code>
@@ -636,7 +636,7 @@ public final class ImageObjectDetectionPredictionInstance
      *
      *
      * <pre>
-     * The image bytes or GCS URI to make the prediction on.
+     * The image bytes or Cloud Storage URI to make the prediction on.
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -658,7 +658,7 @@ public final class ImageObjectDetectionPredictionInstance
      *
      *
      * <pre>
-     * The image bytes or GCS URI to make the prediction on.
+     * The image bytes or Cloud Storage URI to make the prediction on.
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -680,7 +680,7 @@ public final class ImageObjectDetectionPredictionInstance
      *
      *
      * <pre>
-     * The image bytes or GCS URI to make the prediction on.
+     * The image bytes or Cloud Storage URI to make the prediction on.
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -701,7 +701,7 @@ public final class ImageObjectDetectionPredictionInstance
      *
      *
      * <pre>
-     * The image bytes or GCS URI to make the prediction on.
+     * The image bytes or Cloud Storage URI to make the prediction on.
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -718,7 +718,7 @@ public final class ImageObjectDetectionPredictionInstance
      *
      *
      * <pre>
-     * The image bytes or GCS URI to make the prediction on.
+     * The image bytes or Cloud Storage URI to make the prediction on.
      * </pre>
      *
      * <code>string content = 1;</code>

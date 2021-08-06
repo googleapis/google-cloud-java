@@ -52,10 +52,13 @@ public final class SpecialistPoolProto {
           + "x\352Au\n(aiplatform.googleapis.com/Speciali"
           + "stPool\022Iprojects/{project}/locations/{lo"
           + "cation}/specialistPools/{specialist_pool"
-          + "}B\207\001\n#com.google.cloud.aiplatform.v1beta"
+          + "}B\360\001\n#com.google.cloud.aiplatform.v1beta"
           + "1B\023SpecialistPoolProtoP\001ZIgoogle.golang."
           + "org/genproto/googleapis/cloud/aiplatform"
-          + "/v1beta1;aiplatformb\006proto3"
+          + "/v1beta1;aiplatform\252\002\037Google.Cloud.AIPla"
+          + "tform.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\"
+          + "V1beta1\352\002\"Google::Cloud::AIPlatform::V1b"
+          + "eta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -30,7 +30,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.BatchPredictionJob;
 import com.google.cloud.aiplatform.v1beta1.CancelBatchPredictionJobRequest;
@@ -80,7 +79,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -563,26 +561,20 @@ public class GrpcJobServiceStub extends JobServiceStub {
         GrpcCallSettings.<CreateCustomJobRequest, CustomJob>newBuilder()
             .setMethodDescriptor(createCustomJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateCustomJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateCustomJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetCustomJobRequest, CustomJob> getCustomJobTransportSettings =
         GrpcCallSettings.<GetCustomJobRequest, CustomJob>newBuilder()
             .setMethodDescriptor(getCustomJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetCustomJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetCustomJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListCustomJobsRequest, ListCustomJobsResponse>
@@ -590,39 +582,30 @@ public class GrpcJobServiceStub extends JobServiceStub {
             GrpcCallSettings.<ListCustomJobsRequest, ListCustomJobsResponse>newBuilder()
                 .setMethodDescriptor(listCustomJobsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListCustomJobsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListCustomJobsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteCustomJobRequest, Operation> deleteCustomJobTransportSettings =
         GrpcCallSettings.<DeleteCustomJobRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteCustomJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteCustomJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteCustomJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CancelCustomJobRequest, Empty> cancelCustomJobTransportSettings =
         GrpcCallSettings.<CancelCustomJobRequest, Empty>newBuilder()
             .setMethodDescriptor(cancelCustomJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CancelCustomJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(CancelCustomJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateDataLabelingJobRequest, DataLabelingJob>
@@ -630,13 +613,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
             GrpcCallSettings.<CreateDataLabelingJobRequest, DataLabelingJob>newBuilder()
                 .setMethodDescriptor(createDataLabelingJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateDataLabelingJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateDataLabelingJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetDataLabelingJobRequest, DataLabelingJob>
@@ -644,13 +624,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
             GrpcCallSettings.<GetDataLabelingJobRequest, DataLabelingJob>newBuilder()
                 .setMethodDescriptor(getDataLabelingJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetDataLabelingJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetDataLabelingJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse>
@@ -658,13 +635,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
             GrpcCallSettings.<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse>newBuilder()
                 .setMethodDescriptor(listDataLabelingJobsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListDataLabelingJobsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListDataLabelingJobsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteDataLabelingJobRequest, Operation>
@@ -672,26 +646,20 @@ public class GrpcJobServiceStub extends JobServiceStub {
             GrpcCallSettings.<DeleteDataLabelingJobRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteDataLabelingJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteDataLabelingJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteDataLabelingJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CancelDataLabelingJobRequest, Empty> cancelDataLabelingJobTransportSettings =
         GrpcCallSettings.<CancelDataLabelingJobRequest, Empty>newBuilder()
             .setMethodDescriptor(cancelDataLabelingJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CancelDataLabelingJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(CancelDataLabelingJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateHyperparameterTuningJobRequest, HyperparameterTuningJob>
@@ -700,14 +668,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
                 .<CreateHyperparameterTuningJobRequest, HyperparameterTuningJob>newBuilder()
                 .setMethodDescriptor(createHyperparameterTuningJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateHyperparameterTuningJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CreateHyperparameterTuningJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetHyperparameterTuningJobRequest, HyperparameterTuningJob>
@@ -716,14 +680,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
                 .<GetHyperparameterTuningJobRequest, HyperparameterTuningJob>newBuilder()
                 .setMethodDescriptor(getHyperparameterTuningJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetHyperparameterTuningJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          GetHyperparameterTuningJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse>
@@ -733,14 +693,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
                     newBuilder()
                 .setMethodDescriptor(listHyperparameterTuningJobsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListHyperparameterTuningJobsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ListHyperparameterTuningJobsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteHyperparameterTuningJobRequest, Operation>
@@ -748,14 +704,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
             GrpcCallSettings.<DeleteHyperparameterTuningJobRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteHyperparameterTuningJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteHyperparameterTuningJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          DeleteHyperparameterTuningJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CancelHyperparameterTuningJobRequest, Empty>
@@ -763,14 +715,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
             GrpcCallSettings.<CancelHyperparameterTuningJobRequest, Empty>newBuilder()
                 .setMethodDescriptor(cancelHyperparameterTuningJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CancelHyperparameterTuningJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CancelHyperparameterTuningJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateBatchPredictionJobRequest, BatchPredictionJob>
@@ -778,13 +726,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
             GrpcCallSettings.<CreateBatchPredictionJobRequest, BatchPredictionJob>newBuilder()
                 .setMethodDescriptor(createBatchPredictionJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateBatchPredictionJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateBatchPredictionJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetBatchPredictionJobRequest, BatchPredictionJob>
@@ -792,13 +737,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
             GrpcCallSettings.<GetBatchPredictionJobRequest, BatchPredictionJob>newBuilder()
                 .setMethodDescriptor(getBatchPredictionJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetBatchPredictionJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetBatchPredictionJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse>
@@ -807,13 +749,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
                 .<ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse>newBuilder()
                 .setMethodDescriptor(listBatchPredictionJobsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListBatchPredictionJobsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListBatchPredictionJobsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteBatchPredictionJobRequest, Operation>
@@ -821,13 +760,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
             GrpcCallSettings.<DeleteBatchPredictionJobRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteBatchPredictionJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteBatchPredictionJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteBatchPredictionJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CancelBatchPredictionJobRequest, Empty>
@@ -835,13 +771,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
             GrpcCallSettings.<CancelBatchPredictionJobRequest, Empty>newBuilder()
                 .setMethodDescriptor(cancelBatchPredictionJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CancelBatchPredictionJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(CancelBatchPredictionJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
@@ -851,14 +784,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
                     newBuilder()
                 .setMethodDescriptor(createModelDeploymentMonitoringJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateModelDeploymentMonitoringJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CreateModelDeploymentMonitoringJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -871,17 +800,12 @@ public class GrpcJobServiceStub extends JobServiceStub {
                     newBuilder()
                 .setMethodDescriptor(searchModelDeploymentMonitoringStatsAnomaliesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<
-                        SearchModelDeploymentMonitoringStatsAnomaliesRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          SearchModelDeploymentMonitoringStatsAnomaliesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "model_deployment_monitoring_job",
-                            String.valueOf(request.getModelDeploymentMonitoringJob()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "model_deployment_monitoring_job",
+                          String.valueOf(request.getModelDeploymentMonitoringJob()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
@@ -890,14 +814,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
                 .<GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>newBuilder()
                 .setMethodDescriptor(getModelDeploymentMonitoringJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetModelDeploymentMonitoringJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          GetModelDeploymentMonitoringJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -909,14 +829,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
                     newBuilder()
                 .setMethodDescriptor(listModelDeploymentMonitoringJobsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListModelDeploymentMonitoringJobsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ListModelDeploymentMonitoringJobsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateModelDeploymentMonitoringJobRequest, Operation>
@@ -924,16 +840,12 @@ public class GrpcJobServiceStub extends JobServiceStub {
             GrpcCallSettings.<UpdateModelDeploymentMonitoringJobRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateModelDeploymentMonitoringJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateModelDeploymentMonitoringJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          UpdateModelDeploymentMonitoringJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "model_deployment_monitoring_job.name",
-                            String.valueOf(request.getModelDeploymentMonitoringJob().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "model_deployment_monitoring_job.name",
+                          String.valueOf(request.getModelDeploymentMonitoringJob().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteModelDeploymentMonitoringJobRequest, Operation>
@@ -941,14 +853,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
             GrpcCallSettings.<DeleteModelDeploymentMonitoringJobRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteModelDeploymentMonitoringJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteModelDeploymentMonitoringJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          DeleteModelDeploymentMonitoringJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<PauseModelDeploymentMonitoringJobRequest, Empty>
@@ -956,14 +864,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
             GrpcCallSettings.<PauseModelDeploymentMonitoringJobRequest, Empty>newBuilder()
                 .setMethodDescriptor(pauseModelDeploymentMonitoringJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<PauseModelDeploymentMonitoringJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          PauseModelDeploymentMonitoringJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ResumeModelDeploymentMonitoringJobRequest, Empty>
@@ -971,14 +875,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
             GrpcCallSettings.<ResumeModelDeploymentMonitoringJobRequest, Empty>newBuilder()
                 .setMethodDescriptor(resumeModelDeploymentMonitoringJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ResumeModelDeploymentMonitoringJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ResumeModelDeploymentMonitoringJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 
@@ -1429,7 +1329,13 @@ public class GrpcJobServiceStub extends JobServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

@@ -24,7 +24,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.CreateSpecialistPoolOperationMetadata;
 import com.google.cloud.aiplatform.v1.CreateSpecialistPoolRequest;
@@ -43,7 +42,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -176,26 +174,20 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
         GrpcCallSettings.<CreateSpecialistPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(createSpecialistPoolMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateSpecialistPoolRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateSpecialistPoolRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetSpecialistPoolRequest, SpecialistPool> getSpecialistPoolTransportSettings =
         GrpcCallSettings.<GetSpecialistPoolRequest, SpecialistPool>newBuilder()
             .setMethodDescriptor(getSpecialistPoolMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetSpecialistPoolRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetSpecialistPoolRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse>
@@ -203,41 +195,32 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
             GrpcCallSettings.<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse>newBuilder()
                 .setMethodDescriptor(listSpecialistPoolsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListSpecialistPoolsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListSpecialistPoolsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteSpecialistPoolRequest, Operation> deleteSpecialistPoolTransportSettings =
         GrpcCallSettings.<DeleteSpecialistPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteSpecialistPoolMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteSpecialistPoolRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteSpecialistPoolRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateSpecialistPoolRequest, Operation> updateSpecialistPoolTransportSettings =
         GrpcCallSettings.<UpdateSpecialistPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(updateSpecialistPoolMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateSpecialistPoolRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateSpecialistPoolRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "specialist_pool.name",
-                        String.valueOf(request.getSpecialistPool().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "specialist_pool.name",
+                      String.valueOf(request.getSpecialistPool().getName()));
+                  return params.build();
                 })
             .build();
 
@@ -352,7 +335,13 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

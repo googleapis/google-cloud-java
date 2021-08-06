@@ -1507,12 +1507,10 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Metadata of feature value.
+   * Metadata of feature value.
    * </pre>
    *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14;</code>
    *
    * @return Whether the metadata field is set.
    */
@@ -1524,12 +1522,10 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Metadata of feature value.
+   * Metadata of feature value.
    * </pre>
    *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14;</code>
    *
    * @return The metadata.
    */
@@ -1543,12 +1539,10 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Metadata of feature value.
+   * Metadata of feature value.
    * </pre>
    *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14;</code>
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.FeatureValue.MetadataOrBuilder getMetadataOrBuilder() {
@@ -3403,12 +3397,10 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Metadata of feature value.
+     * Metadata of feature value.
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14;</code>
      *
      * @return Whether the metadata field is set.
      */
@@ -3419,12 +3411,10 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Metadata of feature value.
+     * Metadata of feature value.
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14;</code>
      *
      * @return The metadata.
      */
@@ -3441,12 +3431,10 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Metadata of feature value.
+     * Metadata of feature value.
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14;</code>
      */
     public Builder setMetadata(com.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata value) {
       if (metadataBuilder_ == null) {
@@ -3465,12 +3453,10 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Metadata of feature value.
+     * Metadata of feature value.
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14;</code>
      */
     public Builder setMetadata(
         com.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata.Builder builderForValue) {
@@ -3487,12 +3473,10 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Metadata of feature value.
+     * Metadata of feature value.
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14;</code>
      */
     public Builder mergeMetadata(com.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata value) {
       if (metadataBuilder_ == null) {
@@ -3515,12 +3499,10 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Metadata of feature value.
+     * Metadata of feature value.
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14;</code>
      */
     public Builder clearMetadata() {
       if (metadataBuilder_ == null) {
@@ -3537,12 +3519,10 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Metadata of feature value.
+     * Metadata of feature value.
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata.Builder getMetadataBuilder() {
 
@@ -3553,12 +3533,10 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Metadata of feature value.
+     * Metadata of feature value.
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.FeatureValue.MetadataOrBuilder
         getMetadataOrBuilder() {
@@ -3574,12 +3552,10 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Metadata of feature value.
+     * Metadata of feature value.
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata,

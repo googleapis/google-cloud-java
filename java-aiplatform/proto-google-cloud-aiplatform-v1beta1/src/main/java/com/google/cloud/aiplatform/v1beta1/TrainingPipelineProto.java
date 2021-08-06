@@ -127,11 +127,13 @@ public final class TrainingPipelineProto {
           + "edefinedSplit\022\020\n\003key\030\001 \001(\tB\003\340A\002\"q\n\016Times"
           + "tampSplit\022\031\n\021training_fraction\030\001 \001(\001\022\033\n\023"
           + "validation_fraction\030\002 \001(\001\022\025\n\rtest_fracti"
-          + "on\030\003 \001(\001\022\020\n\003key\030\004 \001(\tB\003\340A\002B\211\001\n#com.googl"
+          + "on\030\003 \001(\001\022\020\n\003key\030\004 \001(\tB\003\340A\002B\362\001\n#com.googl"
           + "e.cloud.aiplatform.v1beta1B\025TrainingPipe"
           + "lineProtoP\001ZIgoogle.golang.org/genproto/"
           + "googleapis/cloud/aiplatform/v1beta1;aipl"
-          + "atformb\006proto3"
+          + "atform\252\002\037Google.Cloud.AIPlatform.V1Beta1"
+          + "\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goo"
+          + "gle::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

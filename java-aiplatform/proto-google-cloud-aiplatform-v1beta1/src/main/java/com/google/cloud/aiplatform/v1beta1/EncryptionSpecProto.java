@@ -44,11 +44,14 @@ public final class EncryptionSpecProto {
           + "tion_spec.proto\022\037google.cloud.aiplatform"
           + ".v1beta1\032\037google/api/field_behavior.prot"
           + "o\032\034google/api/annotations.proto\"+\n\016Encry"
-          + "ptionSpec\022\031\n\014kms_key_name\030\001 \001(\tB\003\340A\002B\207\001\n"
+          + "ptionSpec\022\031\n\014kms_key_name\030\001 \001(\tB\003\340A\002B\360\001\n"
           + "#com.google.cloud.aiplatform.v1beta1B\023En"
           + "cryptionSpecProtoP\001ZIgoogle.golang.org/g"
           + "enproto/googleapis/cloud/aiplatform/v1be"
-          + "ta1;aiplatformb\006proto3"
+          + "ta1;aiplatform\252\002\037Google.Cloud.AIPlatform"
+          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
+          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

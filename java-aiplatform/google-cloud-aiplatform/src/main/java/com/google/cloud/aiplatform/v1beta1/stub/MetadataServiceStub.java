@@ -40,7 +40,9 @@ import com.google.cloud.aiplatform.v1beta1.CreateExecutionRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateMetadataSchemaRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateMetadataStoreOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateMetadataStoreRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteArtifactRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteContextRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteExecutionRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteMetadataStoreOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeleteMetadataStoreRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
@@ -63,6 +65,15 @@ import com.google.cloud.aiplatform.v1beta1.ListMetadataStoresRequest;
 import com.google.cloud.aiplatform.v1beta1.ListMetadataStoresResponse;
 import com.google.cloud.aiplatform.v1beta1.MetadataSchema;
 import com.google.cloud.aiplatform.v1beta1.MetadataStore;
+import com.google.cloud.aiplatform.v1beta1.PurgeArtifactsMetadata;
+import com.google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest;
+import com.google.cloud.aiplatform.v1beta1.PurgeArtifactsResponse;
+import com.google.cloud.aiplatform.v1beta1.PurgeContextsMetadata;
+import com.google.cloud.aiplatform.v1beta1.PurgeContextsRequest;
+import com.google.cloud.aiplatform.v1beta1.PurgeContextsResponse;
+import com.google.cloud.aiplatform.v1beta1.PurgeExecutionsMetadata;
+import com.google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest;
+import com.google.cloud.aiplatform.v1beta1.PurgeExecutionsResponse;
 import com.google.cloud.aiplatform.v1beta1.QueryArtifactLineageSubgraphRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryContextLineageSubgraphRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryExecutionInputsAndOutputsRequest;
@@ -144,6 +155,24 @@ public abstract class MetadataServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateArtifactCallable()");
   }
 
+  public OperationCallable<DeleteArtifactRequest, Empty, DeleteOperationMetadata>
+      deleteArtifactOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteArtifactOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteArtifactRequest, Operation> deleteArtifactCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteArtifactCallable()");
+  }
+
+  public OperationCallable<PurgeArtifactsRequest, PurgeArtifactsResponse, PurgeArtifactsMetadata>
+      purgeArtifactsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: purgeArtifactsOperationCallable()");
+  }
+
+  public UnaryCallable<PurgeArtifactsRequest, Operation> purgeArtifactsCallable() {
+    throw new UnsupportedOperationException("Not implemented: purgeArtifactsCallable()");
+  }
+
   public UnaryCallable<CreateContextRequest, Context> createContextCallable() {
     throw new UnsupportedOperationException("Not implemented: createContextCallable()");
   }
@@ -171,6 +200,15 @@ public abstract class MetadataServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteContextRequest, Operation> deleteContextCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteContextCallable()");
+  }
+
+  public OperationCallable<PurgeContextsRequest, PurgeContextsResponse, PurgeContextsMetadata>
+      purgeContextsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: purgeContextsOperationCallable()");
+  }
+
+  public UnaryCallable<PurgeContextsRequest, Operation> purgeContextsCallable() {
+    throw new UnsupportedOperationException("Not implemented: purgeContextsCallable()");
   }
 
   public UnaryCallable<
@@ -210,6 +248,24 @@ public abstract class MetadataServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateExecutionRequest, Execution> updateExecutionCallable() {
     throw new UnsupportedOperationException("Not implemented: updateExecutionCallable()");
+  }
+
+  public OperationCallable<DeleteExecutionRequest, Empty, DeleteOperationMetadata>
+      deleteExecutionOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteExecutionOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteExecutionRequest, Operation> deleteExecutionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteExecutionCallable()");
+  }
+
+  public OperationCallable<PurgeExecutionsRequest, PurgeExecutionsResponse, PurgeExecutionsMetadata>
+      purgeExecutionsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: purgeExecutionsOperationCallable()");
+  }
+
+  public UnaryCallable<PurgeExecutionsRequest, Operation> purgeExecutionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: purgeExecutionsCallable()");
   }
 
   public UnaryCallable<AddExecutionEventsRequest, AddExecutionEventsResponse>

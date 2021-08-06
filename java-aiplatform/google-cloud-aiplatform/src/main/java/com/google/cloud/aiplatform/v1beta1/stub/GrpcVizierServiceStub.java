@@ -26,7 +26,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.AddTrialMeasurementRequest;
 import com.google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateMetatdata;
@@ -59,7 +58,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -281,156 +279,120 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
         GrpcCallSettings.<CreateStudyRequest, Study>newBuilder()
             .setMethodDescriptor(createStudyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateStudyRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateStudyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetStudyRequest, Study> getStudyTransportSettings =
         GrpcCallSettings.<GetStudyRequest, Study>newBuilder()
             .setMethodDescriptor(getStudyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetStudyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetStudyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListStudiesRequest, ListStudiesResponse> listStudiesTransportSettings =
         GrpcCallSettings.<ListStudiesRequest, ListStudiesResponse>newBuilder()
             .setMethodDescriptor(listStudiesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListStudiesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListStudiesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteStudyRequest, Empty> deleteStudyTransportSettings =
         GrpcCallSettings.<DeleteStudyRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteStudyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteStudyRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteStudyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<LookupStudyRequest, Study> lookupStudyTransportSettings =
         GrpcCallSettings.<LookupStudyRequest, Study>newBuilder()
             .setMethodDescriptor(lookupStudyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<LookupStudyRequest>() {
-                  @Override
-                  public Map<String, String> extract(LookupStudyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SuggestTrialsRequest, Operation> suggestTrialsTransportSettings =
         GrpcCallSettings.<SuggestTrialsRequest, Operation>newBuilder()
             .setMethodDescriptor(suggestTrialsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SuggestTrialsRequest>() {
-                  @Override
-                  public Map<String, String> extract(SuggestTrialsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateTrialRequest, Trial> createTrialTransportSettings =
         GrpcCallSettings.<CreateTrialRequest, Trial>newBuilder()
             .setMethodDescriptor(createTrialMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateTrialRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateTrialRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetTrialRequest, Trial> getTrialTransportSettings =
         GrpcCallSettings.<GetTrialRequest, Trial>newBuilder()
             .setMethodDescriptor(getTrialMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetTrialRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetTrialRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListTrialsRequest, ListTrialsResponse> listTrialsTransportSettings =
         GrpcCallSettings.<ListTrialsRequest, ListTrialsResponse>newBuilder()
             .setMethodDescriptor(listTrialsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListTrialsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListTrialsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<AddTrialMeasurementRequest, Trial> addTrialMeasurementTransportSettings =
         GrpcCallSettings.<AddTrialMeasurementRequest, Trial>newBuilder()
             .setMethodDescriptor(addTrialMeasurementMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<AddTrialMeasurementRequest>() {
-                  @Override
-                  public Map<String, String> extract(AddTrialMeasurementRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("trial_name", String.valueOf(request.getTrialName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("trial_name", String.valueOf(request.getTrialName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CompleteTrialRequest, Trial> completeTrialTransportSettings =
         GrpcCallSettings.<CompleteTrialRequest, Trial>newBuilder()
             .setMethodDescriptor(completeTrialMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CompleteTrialRequest>() {
-                  @Override
-                  public Map<String, String> extract(CompleteTrialRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteTrialRequest, Empty> deleteTrialTransportSettings =
         GrpcCallSettings.<DeleteTrialRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteTrialMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteTrialRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteTrialRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CheckTrialEarlyStoppingStateRequest, Operation>
@@ -438,27 +400,20 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
             GrpcCallSettings.<CheckTrialEarlyStoppingStateRequest, Operation>newBuilder()
                 .setMethodDescriptor(checkTrialEarlyStoppingStateMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CheckTrialEarlyStoppingStateRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CheckTrialEarlyStoppingStateRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("trial_name", String.valueOf(request.getTrialName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("trial_name", String.valueOf(request.getTrialName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<StopTrialRequest, Trial> stopTrialTransportSettings =
         GrpcCallSettings.<StopTrialRequest, Trial>newBuilder()
             .setMethodDescriptor(stopTrialMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<StopTrialRequest>() {
-                  @Override
-                  public Map<String, String> extract(StopTrialRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListOptimalTrialsRequest, ListOptimalTrialsResponse>
@@ -466,13 +421,10 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
             GrpcCallSettings.<ListOptimalTrialsRequest, ListOptimalTrialsResponse>newBuilder()
                 .setMethodDescriptor(listOptimalTrialsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListOptimalTrialsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListOptimalTrialsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 
@@ -658,7 +610,13 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

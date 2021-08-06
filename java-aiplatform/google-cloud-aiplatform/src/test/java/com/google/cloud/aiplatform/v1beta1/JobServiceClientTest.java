@@ -111,6 +111,7 @@ public class JobServiceClientTest {
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .putAllWebAccessUris(new HashMap<String, String>())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -162,6 +163,7 @@ public class JobServiceClientTest {
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .putAllWebAccessUris(new HashMap<String, String>())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -213,6 +215,7 @@ public class JobServiceClientTest {
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .putAllWebAccessUris(new HashMap<String, String>())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -261,6 +264,7 @@ public class JobServiceClientTest {
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .putAllWebAccessUris(new HashMap<String, String>())
             .build();
     mockJobService.addResponse(expectedResponse);
 

@@ -819,7 +819,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. The config for monitoring objectives. This is a per DeployedModel config.
-   * Each DeployedModel needs to be configed separately.
+   * Each DeployedModel needs to be configured separately.
    * </pre>
    *
    * <code>
@@ -837,7 +837,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. The config for monitoring objectives. This is a per DeployedModel config.
-   * Each DeployedModel needs to be configed separately.
+   * Each DeployedModel needs to be configured separately.
    * </pre>
    *
    * <code>
@@ -856,7 +856,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. The config for monitoring objectives. This is a per DeployedModel config.
-   * Each DeployedModel needs to be configed separately.
+   * Each DeployedModel needs to be configured separately.
    * </pre>
    *
    * <code>
@@ -872,7 +872,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. The config for monitoring objectives. This is a per DeployedModel config.
-   * Each DeployedModel needs to be configed separately.
+   * Each DeployedModel needs to be configured separately.
    * </pre>
    *
    * <code>
@@ -889,7 +889,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. The config for monitoring objectives. This is a per DeployedModel config.
-   * Each DeployedModel needs to be configed separately.
+   * Each DeployedModel needs to be configured separately.
    * </pre>
    *
    * <code>
@@ -3192,7 +3192,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      * </pre>
      *
      * <code>
@@ -3213,7 +3213,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      * </pre>
      *
      * <code>
@@ -3232,7 +3232,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      * </pre>
      *
      * <code>
@@ -3252,7 +3252,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      * </pre>
      *
      * <code>
@@ -3279,7 +3279,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      * </pre>
      *
      * <code>
@@ -3305,7 +3305,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      * </pre>
      *
      * <code>
@@ -3331,7 +3331,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      * </pre>
      *
      * <code>
@@ -3358,7 +3358,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      * </pre>
      *
      * <code>
@@ -3382,7 +3382,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      * </pre>
      *
      * <code>
@@ -3408,7 +3408,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      * </pre>
      *
      * <code>
@@ -3435,7 +3435,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      * </pre>
      *
      * <code>
@@ -3457,7 +3457,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      * </pre>
      *
      * <code>
@@ -3479,7 +3479,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      * </pre>
      *
      * <code>
@@ -3495,7 +3495,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      * </pre>
      *
      * <code>
@@ -3515,7 +3515,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      * </pre>
      *
      * <code>
@@ -3538,7 +3538,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      * </pre>
      *
      * <code>
@@ -3557,7 +3557,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      * </pre>
      *
      * <code>
@@ -3577,7 +3577,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      * </pre>
      *
      * <code>

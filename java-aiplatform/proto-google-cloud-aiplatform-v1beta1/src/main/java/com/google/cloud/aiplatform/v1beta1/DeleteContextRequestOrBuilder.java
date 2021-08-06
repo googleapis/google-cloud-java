@@ -27,7 +27,7 @@ public interface DeleteContextRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Context to retrieve.
+   * Required. The resource name of the Context to delete.
    * Format:
    * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
    * </pre>
@@ -43,7 +43,7 @@ public interface DeleteContextRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Context to retrieve.
+   * Required. The resource name of the Context to delete.
    * Format:
    * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
    * </pre>
@@ -60,10 +60,8 @@ public interface DeleteContextRequestOrBuilder
    *
    *
    * <pre>
-   * If set to true, any child resources of this Context will be deleted.
-   * (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
-   * Context has any child resources, such as another Context, Artifact, or
-   * Execution).
+   * The force deletion semantics is still undefined.
+   * Users should not use this field.
    * </pre>
    *
    * <code>bool force = 2;</code>
@@ -71,4 +69,33 @@ public interface DeleteContextRequestOrBuilder
    * @return The force.
    */
   boolean getForce();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The etag of the Context to delete.
+   * If this is provided, it must match the server's etag. Otherwise, the
+   * request will fail with a FAILED_PRECONDITION.
+   * </pre>
+   *
+   * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The etag of the Context to delete.
+   * If this is provided, it must match the server's etag. Otherwise, the
+   * request will fail with a FAILED_PRECONDITION.
+   * </pre>
+   *
+   * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
 }

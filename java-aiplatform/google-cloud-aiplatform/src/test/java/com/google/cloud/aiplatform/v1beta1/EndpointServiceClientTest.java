@@ -102,6 +102,7 @@ public class EndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setNetwork("network1843485230")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -160,6 +161,7 @@ public class EndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setNetwork("network1843485230")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -218,6 +220,7 @@ public class EndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setNetwork("network1843485230")
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
@@ -265,6 +268,7 @@ public class EndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setNetwork("network1843485230")
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
@@ -400,6 +404,7 @@ public class EndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setNetwork("network1843485230")
             .build();
     mockEndpointService.addResponse(expectedResponse);
 

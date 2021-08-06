@@ -16,7 +16,6 @@
 
 package com.google.cloud.aiplatform.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1121,12 +1120,7 @@ public class IndexEndpointServiceClient implements BackgroundResource {
           ListIndexEndpointsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListIndexEndpointsPage, ListIndexEndpointsPagedResponse>() {
-            @Override
-            public ListIndexEndpointsPagedResponse apply(ListIndexEndpointsPage input) {
-              return new ListIndexEndpointsPagedResponse(input);
-            }
-          },
+          input -> new ListIndexEndpointsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

@@ -38,7 +38,9 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     super(builder);
   }
 
-  private DedicatedResources() {}
+  private DedicatedResources() {
+    autoscalingMetricSpecs_ = java.util.Collections.emptyList();
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -59,6 +61,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -95,6 +98,19 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
               maxReplicaCount_ = input.readInt32();
               break;
             }
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                autoscalingMetricSpecs_ =
+                    new java.util.ArrayList<com.google.cloud.aiplatform.v1.AutoscalingMetricSpec>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              autoscalingMetricSpecs_.add(
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1.AutoscalingMetricSpec.parser(),
+                      extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -109,6 +125,9 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        autoscalingMetricSpecs_ = java.util.Collections.unmodifiableList(autoscalingMetricSpecs_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -190,12 +209,10 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. Immutable. The minimum number of machine replicas this DeployedModel will be always
-   * deployed on. If traffic against it increases, it may dynamically be
+   * deployed on. This value must be greater than or equal to 1.
+   * If traffic against the DeployedModel increases, it may dynamically be
    * deployed onto more replicas, and as traffic decreases, some of these extra
    * replicas may be freed.
-   * Note: if [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
-   * above 0, currently the model will be always deployed precisely on
-   * [min_replica_count][google.cloud.aiplatform.v1.DedicatedResources.min_replica_count].
    * </pre>
    *
    * <code>
@@ -234,6 +251,168 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     return maxReplicaCount_;
   }
 
+  public static final int AUTOSCALING_METRIC_SPECS_FIELD_NUMBER = 4;
+  private java.util.List<com.google.cloud.aiplatform.v1.AutoscalingMetricSpec>
+      autoscalingMetricSpecs_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The metric specifications that overrides a resource
+   * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+   * target value (default to 60 if not set). At most one entry is allowed per
+   * metric.
+   * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+   * above 0, the autoscaling will be based on both CPU utilization and
+   * accelerator's duty cycle metrics and scale up when either metrics exceeds
+   * its target value while scale down if both metrics are under their target
+   * value. The default target value is 60 for both metrics.
+   * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+   * 0, the autoscaling will be based on CPU utilization metric only with
+   * default target value 60 if not explicitly set.
+   * For example, in the case of Online Prediction, if you want to override
+   * target CPU utilization to 80, you should set
+   * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+   * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+   * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1.AutoscalingMetricSpec>
+      getAutoscalingMetricSpecsList() {
+    return autoscalingMetricSpecs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The metric specifications that overrides a resource
+   * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+   * target value (default to 60 if not set). At most one entry is allowed per
+   * metric.
+   * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+   * above 0, the autoscaling will be based on both CPU utilization and
+   * accelerator's duty cycle metrics and scale up when either metrics exceeds
+   * its target value while scale down if both metrics are under their target
+   * value. The default target value is 60 for both metrics.
+   * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+   * 0, the autoscaling will be based on CPU utilization metric only with
+   * default target value 60 if not explicitly set.
+   * For example, in the case of Online Prediction, if you want to override
+   * target CPU utilization to 80, you should set
+   * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+   * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+   * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1.AutoscalingMetricSpecOrBuilder>
+      getAutoscalingMetricSpecsOrBuilderList() {
+    return autoscalingMetricSpecs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The metric specifications that overrides a resource
+   * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+   * target value (default to 60 if not set). At most one entry is allowed per
+   * metric.
+   * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+   * above 0, the autoscaling will be based on both CPU utilization and
+   * accelerator's duty cycle metrics and scale up when either metrics exceeds
+   * its target value while scale down if both metrics are under their target
+   * value. The default target value is 60 for both metrics.
+   * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+   * 0, the autoscaling will be based on CPU utilization metric only with
+   * default target value 60 if not explicitly set.
+   * For example, in the case of Online Prediction, if you want to override
+   * target CPU utilization to 80, you should set
+   * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+   * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+   * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public int getAutoscalingMetricSpecsCount() {
+    return autoscalingMetricSpecs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The metric specifications that overrides a resource
+   * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+   * target value (default to 60 if not set). At most one entry is allowed per
+   * metric.
+   * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+   * above 0, the autoscaling will be based on both CPU utilization and
+   * accelerator's duty cycle metrics and scale up when either metrics exceeds
+   * its target value while scale down if both metrics are under their target
+   * value. The default target value is 60 for both metrics.
+   * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+   * 0, the autoscaling will be based on CPU utilization metric only with
+   * default target value 60 if not explicitly set.
+   * For example, in the case of Online Prediction, if you want to override
+   * target CPU utilization to 80, you should set
+   * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+   * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+   * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.AutoscalingMetricSpec getAutoscalingMetricSpecs(int index) {
+    return autoscalingMetricSpecs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The metric specifications that overrides a resource
+   * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+   * target value (default to 60 if not set). At most one entry is allowed per
+   * metric.
+   * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+   * above 0, the autoscaling will be based on both CPU utilization and
+   * accelerator's duty cycle metrics and scale up when either metrics exceeds
+   * its target value while scale down if both metrics are under their target
+   * value. The default target value is 60 for both metrics.
+   * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+   * 0, the autoscaling will be based on CPU utilization metric only with
+   * default target value 60 if not explicitly set.
+   * For example, in the case of Online Prediction, if you want to override
+   * target CPU utilization to 80, you should set
+   * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+   * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+   * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.AutoscalingMetricSpecOrBuilder
+      getAutoscalingMetricSpecsOrBuilder(int index) {
+    return autoscalingMetricSpecs_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -257,6 +436,9 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     if (maxReplicaCount_ != 0) {
       output.writeInt32(3, maxReplicaCount_);
     }
+    for (int i = 0; i < autoscalingMetricSpecs_.size(); i++) {
+      output.writeMessage(4, autoscalingMetricSpecs_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -274,6 +456,11 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     }
     if (maxReplicaCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, maxReplicaCount_);
+    }
+    for (int i = 0; i < autoscalingMetricSpecs_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, autoscalingMetricSpecs_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -297,6 +484,8 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     }
     if (getMinReplicaCount() != other.getMinReplicaCount()) return false;
     if (getMaxReplicaCount() != other.getMaxReplicaCount()) return false;
+    if (!getAutoscalingMetricSpecsList().equals(other.getAutoscalingMetricSpecsList()))
+      return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -316,6 +505,10 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getMinReplicaCount();
     hash = (37 * hash) + MAX_REPLICA_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getMaxReplicaCount();
+    if (getAutoscalingMetricSpecsCount() > 0) {
+      hash = (37 * hash) + AUTOSCALING_METRIC_SPECS_FIELD_NUMBER;
+      hash = (53 * hash) + getAutoscalingMetricSpecsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -456,7 +649,9 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getAutoscalingMetricSpecsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -472,6 +667,12 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
 
       maxReplicaCount_ = 0;
 
+      if (autoscalingMetricSpecsBuilder_ == null) {
+        autoscalingMetricSpecs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        autoscalingMetricSpecsBuilder_.clear();
+      }
       return this;
     }
 
@@ -499,6 +700,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1.DedicatedResources buildPartial() {
       com.google.cloud.aiplatform.v1.DedicatedResources result =
           new com.google.cloud.aiplatform.v1.DedicatedResources(this);
+      int from_bitField0_ = bitField0_;
       if (machineSpecBuilder_ == null) {
         result.machineSpec_ = machineSpec_;
       } else {
@@ -506,6 +708,15 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       }
       result.minReplicaCount_ = minReplicaCount_;
       result.maxReplicaCount_ = maxReplicaCount_;
+      if (autoscalingMetricSpecsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          autoscalingMetricSpecs_ = java.util.Collections.unmodifiableList(autoscalingMetricSpecs_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.autoscalingMetricSpecs_ = autoscalingMetricSpecs_;
+      } else {
+        result.autoscalingMetricSpecs_ = autoscalingMetricSpecsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -565,6 +776,33 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       if (other.getMaxReplicaCount() != 0) {
         setMaxReplicaCount(other.getMaxReplicaCount());
       }
+      if (autoscalingMetricSpecsBuilder_ == null) {
+        if (!other.autoscalingMetricSpecs_.isEmpty()) {
+          if (autoscalingMetricSpecs_.isEmpty()) {
+            autoscalingMetricSpecs_ = other.autoscalingMetricSpecs_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureAutoscalingMetricSpecsIsMutable();
+            autoscalingMetricSpecs_.addAll(other.autoscalingMetricSpecs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.autoscalingMetricSpecs_.isEmpty()) {
+          if (autoscalingMetricSpecsBuilder_.isEmpty()) {
+            autoscalingMetricSpecsBuilder_.dispose();
+            autoscalingMetricSpecsBuilder_ = null;
+            autoscalingMetricSpecs_ = other.autoscalingMetricSpecs_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            autoscalingMetricSpecsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAutoscalingMetricSpecsFieldBuilder()
+                    : null;
+          } else {
+            autoscalingMetricSpecsBuilder_.addAllMessages(other.autoscalingMetricSpecs_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -594,6 +832,8 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1.MachineSpec machineSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -805,12 +1045,10 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Immutable. The minimum number of machine replicas this DeployedModel will be always
-     * deployed on. If traffic against it increases, it may dynamically be
+     * deployed on. This value must be greater than or equal to 1.
+     * If traffic against the DeployedModel increases, it may dynamically be
      * deployed onto more replicas, and as traffic decreases, some of these extra
      * replicas may be freed.
-     * Note: if [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
-     * above 0, currently the model will be always deployed precisely on
-     * [min_replica_count][google.cloud.aiplatform.v1.DedicatedResources.min_replica_count].
      * </pre>
      *
      * <code>
@@ -828,12 +1066,10 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Immutable. The minimum number of machine replicas this DeployedModel will be always
-     * deployed on. If traffic against it increases, it may dynamically be
+     * deployed on. This value must be greater than or equal to 1.
+     * If traffic against the DeployedModel increases, it may dynamically be
      * deployed onto more replicas, and as traffic decreases, some of these extra
      * replicas may be freed.
-     * Note: if [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
-     * above 0, currently the model will be always deployed precisely on
-     * [min_replica_count][google.cloud.aiplatform.v1.DedicatedResources.min_replica_count].
      * </pre>
      *
      * <code>
@@ -854,12 +1090,10 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Immutable. The minimum number of machine replicas this DeployedModel will be always
-     * deployed on. If traffic against it increases, it may dynamically be
+     * deployed on. This value must be greater than or equal to 1.
+     * If traffic against the DeployedModel increases, it may dynamically be
      * deployed onto more replicas, and as traffic decreases, some of these extra
      * replicas may be freed.
-     * Note: if [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
-     * above 0, currently the model will be always deployed precisely on
-     * [min_replica_count][google.cloud.aiplatform.v1.DedicatedResources.min_replica_count].
      * </pre>
      *
      * <code>
@@ -946,6 +1180,695 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       maxReplicaCount_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1.AutoscalingMetricSpec>
+        autoscalingMetricSpecs_ = java.util.Collections.emptyList();
+
+    private void ensureAutoscalingMetricSpecsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        autoscalingMetricSpecs_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1.AutoscalingMetricSpec>(
+                autoscalingMetricSpecs_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.AutoscalingMetricSpec,
+            com.google.cloud.aiplatform.v1.AutoscalingMetricSpec.Builder,
+            com.google.cloud.aiplatform.v1.AutoscalingMetricSpecOrBuilder>
+        autoscalingMetricSpecsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The metric specifications that overrides a resource
+     * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+     * target value (default to 60 if not set). At most one entry is allowed per
+     * metric.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * above 0, the autoscaling will be based on both CPU utilization and
+     * accelerator's duty cycle metrics and scale up when either metrics exceeds
+     * its target value while scale down if both metrics are under their target
+     * value. The default target value is 60 for both metrics.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * 0, the autoscaling will be based on CPU utilization metric only with
+     * default target value 60 if not explicitly set.
+     * For example, in the case of Online Prediction, if you want to override
+     * target CPU utilization to 80, you should set
+     * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+     * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+     * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.AutoscalingMetricSpec>
+        getAutoscalingMetricSpecsList() {
+      if (autoscalingMetricSpecsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(autoscalingMetricSpecs_);
+      } else {
+        return autoscalingMetricSpecsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The metric specifications that overrides a resource
+     * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+     * target value (default to 60 if not set). At most one entry is allowed per
+     * metric.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * above 0, the autoscaling will be based on both CPU utilization and
+     * accelerator's duty cycle metrics and scale up when either metrics exceeds
+     * its target value while scale down if both metrics are under their target
+     * value. The default target value is 60 for both metrics.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * 0, the autoscaling will be based on CPU utilization metric only with
+     * default target value 60 if not explicitly set.
+     * For example, in the case of Online Prediction, if you want to override
+     * target CPU utilization to 80, you should set
+     * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+     * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+     * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public int getAutoscalingMetricSpecsCount() {
+      if (autoscalingMetricSpecsBuilder_ == null) {
+        return autoscalingMetricSpecs_.size();
+      } else {
+        return autoscalingMetricSpecsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The metric specifications that overrides a resource
+     * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+     * target value (default to 60 if not set). At most one entry is allowed per
+     * metric.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * above 0, the autoscaling will be based on both CPU utilization and
+     * accelerator's duty cycle metrics and scale up when either metrics exceeds
+     * its target value while scale down if both metrics are under their target
+     * value. The default target value is 60 for both metrics.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * 0, the autoscaling will be based on CPU utilization metric only with
+     * default target value 60 if not explicitly set.
+     * For example, in the case of Online Prediction, if you want to override
+     * target CPU utilization to 80, you should set
+     * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+     * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+     * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.AutoscalingMetricSpec getAutoscalingMetricSpecs(
+        int index) {
+      if (autoscalingMetricSpecsBuilder_ == null) {
+        return autoscalingMetricSpecs_.get(index);
+      } else {
+        return autoscalingMetricSpecsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The metric specifications that overrides a resource
+     * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+     * target value (default to 60 if not set). At most one entry is allowed per
+     * metric.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * above 0, the autoscaling will be based on both CPU utilization and
+     * accelerator's duty cycle metrics and scale up when either metrics exceeds
+     * its target value while scale down if both metrics are under their target
+     * value. The default target value is 60 for both metrics.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * 0, the autoscaling will be based on CPU utilization metric only with
+     * default target value 60 if not explicitly set.
+     * For example, in the case of Online Prediction, if you want to override
+     * target CPU utilization to 80, you should set
+     * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+     * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+     * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setAutoscalingMetricSpecs(
+        int index, com.google.cloud.aiplatform.v1.AutoscalingMetricSpec value) {
+      if (autoscalingMetricSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAutoscalingMetricSpecsIsMutable();
+        autoscalingMetricSpecs_.set(index, value);
+        onChanged();
+      } else {
+        autoscalingMetricSpecsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The metric specifications that overrides a resource
+     * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+     * target value (default to 60 if not set). At most one entry is allowed per
+     * metric.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * above 0, the autoscaling will be based on both CPU utilization and
+     * accelerator's duty cycle metrics and scale up when either metrics exceeds
+     * its target value while scale down if both metrics are under their target
+     * value. The default target value is 60 for both metrics.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * 0, the autoscaling will be based on CPU utilization metric only with
+     * default target value 60 if not explicitly set.
+     * For example, in the case of Online Prediction, if you want to override
+     * target CPU utilization to 80, you should set
+     * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+     * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+     * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setAutoscalingMetricSpecs(
+        int index, com.google.cloud.aiplatform.v1.AutoscalingMetricSpec.Builder builderForValue) {
+      if (autoscalingMetricSpecsBuilder_ == null) {
+        ensureAutoscalingMetricSpecsIsMutable();
+        autoscalingMetricSpecs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        autoscalingMetricSpecsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The metric specifications that overrides a resource
+     * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+     * target value (default to 60 if not set). At most one entry is allowed per
+     * metric.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * above 0, the autoscaling will be based on both CPU utilization and
+     * accelerator's duty cycle metrics and scale up when either metrics exceeds
+     * its target value while scale down if both metrics are under their target
+     * value. The default target value is 60 for both metrics.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * 0, the autoscaling will be based on CPU utilization metric only with
+     * default target value 60 if not explicitly set.
+     * For example, in the case of Online Prediction, if you want to override
+     * target CPU utilization to 80, you should set
+     * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+     * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+     * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder addAutoscalingMetricSpecs(
+        com.google.cloud.aiplatform.v1.AutoscalingMetricSpec value) {
+      if (autoscalingMetricSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAutoscalingMetricSpecsIsMutable();
+        autoscalingMetricSpecs_.add(value);
+        onChanged();
+      } else {
+        autoscalingMetricSpecsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The metric specifications that overrides a resource
+     * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+     * target value (default to 60 if not set). At most one entry is allowed per
+     * metric.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * above 0, the autoscaling will be based on both CPU utilization and
+     * accelerator's duty cycle metrics and scale up when either metrics exceeds
+     * its target value while scale down if both metrics are under their target
+     * value. The default target value is 60 for both metrics.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * 0, the autoscaling will be based on CPU utilization metric only with
+     * default target value 60 if not explicitly set.
+     * For example, in the case of Online Prediction, if you want to override
+     * target CPU utilization to 80, you should set
+     * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+     * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+     * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder addAutoscalingMetricSpecs(
+        int index, com.google.cloud.aiplatform.v1.AutoscalingMetricSpec value) {
+      if (autoscalingMetricSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAutoscalingMetricSpecsIsMutable();
+        autoscalingMetricSpecs_.add(index, value);
+        onChanged();
+      } else {
+        autoscalingMetricSpecsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The metric specifications that overrides a resource
+     * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+     * target value (default to 60 if not set). At most one entry is allowed per
+     * metric.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * above 0, the autoscaling will be based on both CPU utilization and
+     * accelerator's duty cycle metrics and scale up when either metrics exceeds
+     * its target value while scale down if both metrics are under their target
+     * value. The default target value is 60 for both metrics.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * 0, the autoscaling will be based on CPU utilization metric only with
+     * default target value 60 if not explicitly set.
+     * For example, in the case of Online Prediction, if you want to override
+     * target CPU utilization to 80, you should set
+     * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+     * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+     * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder addAutoscalingMetricSpecs(
+        com.google.cloud.aiplatform.v1.AutoscalingMetricSpec.Builder builderForValue) {
+      if (autoscalingMetricSpecsBuilder_ == null) {
+        ensureAutoscalingMetricSpecsIsMutable();
+        autoscalingMetricSpecs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        autoscalingMetricSpecsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The metric specifications that overrides a resource
+     * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+     * target value (default to 60 if not set). At most one entry is allowed per
+     * metric.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * above 0, the autoscaling will be based on both CPU utilization and
+     * accelerator's duty cycle metrics and scale up when either metrics exceeds
+     * its target value while scale down if both metrics are under their target
+     * value. The default target value is 60 for both metrics.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * 0, the autoscaling will be based on CPU utilization metric only with
+     * default target value 60 if not explicitly set.
+     * For example, in the case of Online Prediction, if you want to override
+     * target CPU utilization to 80, you should set
+     * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+     * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+     * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder addAutoscalingMetricSpecs(
+        int index, com.google.cloud.aiplatform.v1.AutoscalingMetricSpec.Builder builderForValue) {
+      if (autoscalingMetricSpecsBuilder_ == null) {
+        ensureAutoscalingMetricSpecsIsMutable();
+        autoscalingMetricSpecs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        autoscalingMetricSpecsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The metric specifications that overrides a resource
+     * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+     * target value (default to 60 if not set). At most one entry is allowed per
+     * metric.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * above 0, the autoscaling will be based on both CPU utilization and
+     * accelerator's duty cycle metrics and scale up when either metrics exceeds
+     * its target value while scale down if both metrics are under their target
+     * value. The default target value is 60 for both metrics.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * 0, the autoscaling will be based on CPU utilization metric only with
+     * default target value 60 if not explicitly set.
+     * For example, in the case of Online Prediction, if you want to override
+     * target CPU utilization to 80, you should set
+     * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+     * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+     * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder addAllAutoscalingMetricSpecs(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.AutoscalingMetricSpec> values) {
+      if (autoscalingMetricSpecsBuilder_ == null) {
+        ensureAutoscalingMetricSpecsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, autoscalingMetricSpecs_);
+        onChanged();
+      } else {
+        autoscalingMetricSpecsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The metric specifications that overrides a resource
+     * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+     * target value (default to 60 if not set). At most one entry is allowed per
+     * metric.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * above 0, the autoscaling will be based on both CPU utilization and
+     * accelerator's duty cycle metrics and scale up when either metrics exceeds
+     * its target value while scale down if both metrics are under their target
+     * value. The default target value is 60 for both metrics.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * 0, the autoscaling will be based on CPU utilization metric only with
+     * default target value 60 if not explicitly set.
+     * For example, in the case of Online Prediction, if you want to override
+     * target CPU utilization to 80, you should set
+     * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+     * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+     * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearAutoscalingMetricSpecs() {
+      if (autoscalingMetricSpecsBuilder_ == null) {
+        autoscalingMetricSpecs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        autoscalingMetricSpecsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The metric specifications that overrides a resource
+     * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+     * target value (default to 60 if not set). At most one entry is allowed per
+     * metric.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * above 0, the autoscaling will be based on both CPU utilization and
+     * accelerator's duty cycle metrics and scale up when either metrics exceeds
+     * its target value while scale down if both metrics are under their target
+     * value. The default target value is 60 for both metrics.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * 0, the autoscaling will be based on CPU utilization metric only with
+     * default target value 60 if not explicitly set.
+     * For example, in the case of Online Prediction, if you want to override
+     * target CPU utilization to 80, you should set
+     * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+     * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+     * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder removeAutoscalingMetricSpecs(int index) {
+      if (autoscalingMetricSpecsBuilder_ == null) {
+        ensureAutoscalingMetricSpecsIsMutable();
+        autoscalingMetricSpecs_.remove(index);
+        onChanged();
+      } else {
+        autoscalingMetricSpecsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The metric specifications that overrides a resource
+     * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+     * target value (default to 60 if not set). At most one entry is allowed per
+     * metric.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * above 0, the autoscaling will be based on both CPU utilization and
+     * accelerator's duty cycle metrics and scale up when either metrics exceeds
+     * its target value while scale down if both metrics are under their target
+     * value. The default target value is 60 for both metrics.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * 0, the autoscaling will be based on CPU utilization metric only with
+     * default target value 60 if not explicitly set.
+     * For example, in the case of Online Prediction, if you want to override
+     * target CPU utilization to 80, you should set
+     * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+     * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+     * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.AutoscalingMetricSpec.Builder
+        getAutoscalingMetricSpecsBuilder(int index) {
+      return getAutoscalingMetricSpecsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The metric specifications that overrides a resource
+     * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+     * target value (default to 60 if not set). At most one entry is allowed per
+     * metric.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * above 0, the autoscaling will be based on both CPU utilization and
+     * accelerator's duty cycle metrics and scale up when either metrics exceeds
+     * its target value while scale down if both metrics are under their target
+     * value. The default target value is 60 for both metrics.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * 0, the autoscaling will be based on CPU utilization metric only with
+     * default target value 60 if not explicitly set.
+     * For example, in the case of Online Prediction, if you want to override
+     * target CPU utilization to 80, you should set
+     * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+     * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+     * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.AutoscalingMetricSpecOrBuilder
+        getAutoscalingMetricSpecsOrBuilder(int index) {
+      if (autoscalingMetricSpecsBuilder_ == null) {
+        return autoscalingMetricSpecs_.get(index);
+      } else {
+        return autoscalingMetricSpecsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The metric specifications that overrides a resource
+     * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+     * target value (default to 60 if not set). At most one entry is allowed per
+     * metric.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * above 0, the autoscaling will be based on both CPU utilization and
+     * accelerator's duty cycle metrics and scale up when either metrics exceeds
+     * its target value while scale down if both metrics are under their target
+     * value. The default target value is 60 for both metrics.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * 0, the autoscaling will be based on CPU utilization metric only with
+     * default target value 60 if not explicitly set.
+     * For example, in the case of Online Prediction, if you want to override
+     * target CPU utilization to 80, you should set
+     * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+     * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+     * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1.AutoscalingMetricSpecOrBuilder>
+        getAutoscalingMetricSpecsOrBuilderList() {
+      if (autoscalingMetricSpecsBuilder_ != null) {
+        return autoscalingMetricSpecsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(autoscalingMetricSpecs_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The metric specifications that overrides a resource
+     * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+     * target value (default to 60 if not set). At most one entry is allowed per
+     * metric.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * above 0, the autoscaling will be based on both CPU utilization and
+     * accelerator's duty cycle metrics and scale up when either metrics exceeds
+     * its target value while scale down if both metrics are under their target
+     * value. The default target value is 60 for both metrics.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * 0, the autoscaling will be based on CPU utilization metric only with
+     * default target value 60 if not explicitly set.
+     * For example, in the case of Online Prediction, if you want to override
+     * target CPU utilization to 80, you should set
+     * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+     * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+     * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.AutoscalingMetricSpec.Builder
+        addAutoscalingMetricSpecsBuilder() {
+      return getAutoscalingMetricSpecsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1.AutoscalingMetricSpec.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The metric specifications that overrides a resource
+     * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+     * target value (default to 60 if not set). At most one entry is allowed per
+     * metric.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * above 0, the autoscaling will be based on both CPU utilization and
+     * accelerator's duty cycle metrics and scale up when either metrics exceeds
+     * its target value while scale down if both metrics are under their target
+     * value. The default target value is 60 for both metrics.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * 0, the autoscaling will be based on CPU utilization metric only with
+     * default target value 60 if not explicitly set.
+     * For example, in the case of Online Prediction, if you want to override
+     * target CPU utilization to 80, you should set
+     * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+     * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+     * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.AutoscalingMetricSpec.Builder
+        addAutoscalingMetricSpecsBuilder(int index) {
+      return getAutoscalingMetricSpecsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.aiplatform.v1.AutoscalingMetricSpec.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The metric specifications that overrides a resource
+     * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+     * target value (default to 60 if not set). At most one entry is allowed per
+     * metric.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * above 0, the autoscaling will be based on both CPU utilization and
+     * accelerator's duty cycle metrics and scale up when either metrics exceeds
+     * its target value while scale down if both metrics are under their target
+     * value. The default target value is 60 for both metrics.
+     * If [machine_spec.accelerator_count][google.cloud.aiplatform.v1.MachineSpec.accelerator_count] is
+     * 0, the autoscaling will be based on CPU utilization metric only with
+     * default target value 60 if not explicitly set.
+     * For example, in the case of Online Prediction, if you want to override
+     * target CPU utilization to 80, you should set
+     * [autoscaling_metric_specs.metric_name][google.cloud.aiplatform.v1.AutoscalingMetricSpec.metric_name]
+     * to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+     * [autoscaling_metric_specs.target][google.cloud.aiplatform.v1.AutoscalingMetricSpec.target] to `80`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.AutoscalingMetricSpec autoscaling_metric_specs = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.AutoscalingMetricSpec.Builder>
+        getAutoscalingMetricSpecsBuilderList() {
+      return getAutoscalingMetricSpecsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.AutoscalingMetricSpec,
+            com.google.cloud.aiplatform.v1.AutoscalingMetricSpec.Builder,
+            com.google.cloud.aiplatform.v1.AutoscalingMetricSpecOrBuilder>
+        getAutoscalingMetricSpecsFieldBuilder() {
+      if (autoscalingMetricSpecsBuilder_ == null) {
+        autoscalingMetricSpecsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.AutoscalingMetricSpec,
+                com.google.cloud.aiplatform.v1.AutoscalingMetricSpec.Builder,
+                com.google.cloud.aiplatform.v1.AutoscalingMetricSpecOrBuilder>(
+                autoscalingMetricSpecs_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        autoscalingMetricSpecs_ = null;
+      }
+      return autoscalingMetricSpecsBuilder_;
     }
 
     @java.lang.Override

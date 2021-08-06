@@ -185,11 +185,13 @@ public final class MigrationServiceProto {
           + "esourcesResponse\022&BatchMigrateResourcesO"
           + "perationMetadata\032M\312A\031aiplatform.googleap"
           + "is.com\322A.https://www.googleapis.com/auth"
-          + "/cloud-platformB\211\001\n#com.google.cloud.aip"
+          + "/cloud-platformB\362\001\n#com.google.cloud.aip"
           + "latform.v1beta1B\025MigrationServiceProtoP\001"
           + "ZIgoogle.golang.org/genproto/googleapis/"
-          + "cloud/aiplatform/v1beta1;aiplatformb\006pro"
-          + "to3"
+          + "cloud/aiplatform/v1beta1;aiplatform\252\002\037Go"
+          + "ogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\C"
+          + "loud\\AIPlatform\\V1beta1\352\002\"Google::Cloud:"
+          + ":AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

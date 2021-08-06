@@ -22,7 +22,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest;
@@ -33,7 +32,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -130,13 +128,10 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
             GrpcCallSettings.<ReadFeatureValuesRequest, ReadFeatureValuesResponse>newBuilder()
                 .setMethodDescriptor(readFeatureValuesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ReadFeatureValuesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ReadFeatureValuesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("entity_type", String.valueOf(request.getEntityType()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("entity_type", String.valueOf(request.getEntityType()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<StreamingReadFeatureValuesRequest, ReadFeatureValuesResponse>
@@ -145,14 +140,10 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
                 .<StreamingReadFeatureValuesRequest, ReadFeatureValuesResponse>newBuilder()
                 .setMethodDescriptor(streamingReadFeatureValuesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<StreamingReadFeatureValuesRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          StreamingReadFeatureValuesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("entity_type", String.valueOf(request.getEntityType()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("entity_type", String.valueOf(request.getEntityType()));
+                      return params.build();
                     })
                 .build();
 
@@ -189,7 +180,13 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

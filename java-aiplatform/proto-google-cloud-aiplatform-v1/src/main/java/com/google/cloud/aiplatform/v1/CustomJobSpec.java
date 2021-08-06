@@ -380,7 +380,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * unspecified, the job is not peered with any network.
    * </pre>
    *
-   * <code>string network = 5;</code>
+   * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The network.
    */
@@ -411,7 +411,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * unspecified, the job is not peered with any network.
    * </pre>
    *
-   * <code>string network = 5;</code>
+   * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for network.
    */
@@ -1727,7 +1727,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The network.
      */
@@ -1757,7 +1757,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for network.
      */
@@ -1787,7 +1787,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The network to set.
      * @return This builder for chaining.
@@ -1816,7 +1816,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -1841,7 +1841,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for network to set.
      * @return This builder for chaining.

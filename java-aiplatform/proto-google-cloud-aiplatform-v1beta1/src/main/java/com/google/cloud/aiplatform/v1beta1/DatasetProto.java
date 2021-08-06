@@ -88,11 +88,13 @@ public final class DatasetProto {
           + "rce\"\211\001\n\020ExportDataConfig\022J\n\017gcs_destinat"
           + "ion\030\001 \001(\0132/.google.cloud.aiplatform.v1be"
           + "ta1.GcsDestinationH\000\022\032\n\022annotations_filt"
-          + "er\030\002 \001(\tB\r\n\013destinationB\200\001\n#com.google.c"
+          + "er\030\002 \001(\tB\r\n\013destinationB\351\001\n#com.google.c"
           + "loud.aiplatform.v1beta1B\014DatasetProtoP\001Z"
           + "Igoogle.golang.org/genproto/googleapis/c"
-          + "loud/aiplatform/v1beta1;aiplatformb\006prot"
-          + "o3"
+          + "loud/aiplatform/v1beta1;aiplatform\252\002\037Goo"
+          + "gle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cl"
+          + "oud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::"
+          + "AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

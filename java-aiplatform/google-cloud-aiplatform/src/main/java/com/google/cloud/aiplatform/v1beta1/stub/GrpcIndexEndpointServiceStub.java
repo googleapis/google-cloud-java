@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.CreateIndexEndpointOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateIndexEndpointRequest;
@@ -49,7 +48,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -208,26 +206,20 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
         GrpcCallSettings.<CreateIndexEndpointRequest, Operation>newBuilder()
             .setMethodDescriptor(createIndexEndpointMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateIndexEndpointRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateIndexEndpointRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetIndexEndpointRequest, IndexEndpoint> getIndexEndpointTransportSettings =
         GrpcCallSettings.<GetIndexEndpointRequest, IndexEndpoint>newBuilder()
             .setMethodDescriptor(getIndexEndpointMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetIndexEndpointRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetIndexEndpointRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListIndexEndpointsRequest, ListIndexEndpointsResponse>
@@ -235,13 +227,10 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
             GrpcCallSettings.<ListIndexEndpointsRequest, ListIndexEndpointsResponse>newBuilder()
                 .setMethodDescriptor(listIndexEndpointsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListIndexEndpointsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListIndexEndpointsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateIndexEndpointRequest, IndexEndpoint>
@@ -249,54 +238,42 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
             GrpcCallSettings.<UpdateIndexEndpointRequest, IndexEndpoint>newBuilder()
                 .setMethodDescriptor(updateIndexEndpointMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateIndexEndpointRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateIndexEndpointRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "index_endpoint.name",
-                            String.valueOf(request.getIndexEndpoint().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "index_endpoint.name",
+                          String.valueOf(request.getIndexEndpoint().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteIndexEndpointRequest, Operation> deleteIndexEndpointTransportSettings =
         GrpcCallSettings.<DeleteIndexEndpointRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteIndexEndpointMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteIndexEndpointRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteIndexEndpointRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeployIndexRequest, Operation> deployIndexTransportSettings =
         GrpcCallSettings.<DeployIndexRequest, Operation>newBuilder()
             .setMethodDescriptor(deployIndexMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeployIndexRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeployIndexRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("index_endpoint", String.valueOf(request.getIndexEndpoint()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("index_endpoint", String.valueOf(request.getIndexEndpoint()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UndeployIndexRequest, Operation> undeployIndexTransportSettings =
         GrpcCallSettings.<UndeployIndexRequest, Operation>newBuilder()
             .setMethodDescriptor(undeployIndexMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UndeployIndexRequest>() {
-                  @Override
-                  public Map<String, String> extract(UndeployIndexRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("index_endpoint", String.valueOf(request.getIndexEndpoint()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("index_endpoint", String.valueOf(request.getIndexEndpoint()));
+                  return params.build();
                 })
             .build();
 
@@ -437,7 +414,13 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

@@ -40,6 +40,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
 
   private BatchReadFeatureValuesRequest() {
     featurestore_ = "";
+    passThroughFields_ = java.util.Collections.emptyList();
     entityTypeSpecs_ = java.util.Collections.emptyList();
   }
 
@@ -114,19 +115,54 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
 
               break;
             }
+          case 42:
+            {
+              com.google.cloud.aiplatform.v1beta1.BigQuerySource.Builder subBuilder = null;
+              if (readOptionCase_ == 5) {
+                subBuilder =
+                    ((com.google.cloud.aiplatform.v1beta1.BigQuerySource) readOption_).toBuilder();
+              }
+              readOption_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.BigQuerySource.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.aiplatform.v1beta1.BigQuerySource) readOption_);
+                readOption_ = subBuilder.buildPartial();
+              }
+              readOptionCase_ = 5;
+              break;
+            }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 entityTypeSpecs_ =
                     new java.util.ArrayList<
                         com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest
                             .EntityTypeSpec>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               entityTypeSpecs_.add(
                   input.readMessage(
                       com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest
                           .EntityTypeSpec.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 66:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                passThroughFields_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest
+                            .PassThroughField>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              passThroughFields_.add(
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest
+                          .PassThroughField.parser(),
                       extensionRegistry));
               break;
             }
@@ -144,8 +180,11 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         entityTypeSpecs_ = java.util.Collections.unmodifiableList(entityTypeSpecs_);
+      }
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        passThroughFields_ = java.util.Collections.unmodifiableList(passThroughFields_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -165,6 +204,705 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         .ensureFieldAccessorsInitialized(
             com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.class,
             com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.Builder.class);
+  }
+
+  public interface PassThroughFieldOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the field in the CSV header or the name of the column in
+     * BigQuery table. The naming restriction is the same as [Feature.name][google.cloud.aiplatform.v1beta1.Feature.name].
+     * </pre>
+     *
+     * <code>string field_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The fieldName.
+     */
+    java.lang.String getFieldName();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the field in the CSV header or the name of the column in
+     * BigQuery table. The naming restriction is the same as [Feature.name][google.cloud.aiplatform.v1beta1.Feature.name].
+     * </pre>
+     *
+     * <code>string field_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for fieldName.
+     */
+    com.google.protobuf.ByteString getFieldNameBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Describe pass-through fields in read_instance source.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField}
+   */
+  public static final class PassThroughField extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField)
+      PassThroughFieldOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PassThroughField.newBuilder() to construct.
+    private PassThroughField(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PassThroughField() {
+      fieldName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PassThroughField();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private PassThroughField(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                fieldName_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_BatchReadFeatureValuesRequest_PassThroughField_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_BatchReadFeatureValuesRequest_PassThroughField_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+                  .class,
+              com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+                  .Builder.class);
+    }
+
+    public static final int FIELD_NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object fieldName_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the field in the CSV header or the name of the column in
+     * BigQuery table. The naming restriction is the same as [Feature.name][google.cloud.aiplatform.v1beta1.Feature.name].
+     * </pre>
+     *
+     * <code>string field_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The fieldName.
+     */
+    @java.lang.Override
+    public java.lang.String getFieldName() {
+      java.lang.Object ref = fieldName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fieldName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the field in the CSV header or the name of the column in
+     * BigQuery table. The naming restriction is the same as [Feature.name][google.cloud.aiplatform.v1beta1.Feature.name].
+     * </pre>
+     *
+     * <code>string field_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for fieldName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getFieldNameBytes() {
+      java.lang.Object ref = fieldName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        fieldName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!getFieldNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fieldName_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getFieldNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fieldName_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField other =
+          (com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField) obj;
+
+      if (!getFieldName().equals(other.getFieldName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FIELD_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getFieldName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describe pass-through fields in read_instance source.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField)
+        com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest
+            .PassThroughFieldOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_BatchReadFeatureValuesRequest_PassThroughField_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_BatchReadFeatureValuesRequest_PassThroughField_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+                    .class,
+                com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        fieldName_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_BatchReadFeatureValuesRequest_PassThroughField_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+          build() {
+        com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+          buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField result =
+            new com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField(
+                this);
+        result.fieldName_ = fieldName_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+              other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+                .getDefaultInstance()) return this;
+        if (!other.getFieldName().isEmpty()) {
+          fieldName_ = other.fieldName_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+            parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object fieldName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the field in the CSV header or the name of the column in
+       * BigQuery table. The naming restriction is the same as [Feature.name][google.cloud.aiplatform.v1beta1.Feature.name].
+       * </pre>
+       *
+       * <code>string field_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The fieldName.
+       */
+      public java.lang.String getFieldName() {
+        java.lang.Object ref = fieldName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fieldName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the field in the CSV header or the name of the column in
+       * BigQuery table. The naming restriction is the same as [Feature.name][google.cloud.aiplatform.v1beta1.Feature.name].
+       * </pre>
+       *
+       * <code>string field_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for fieldName.
+       */
+      public com.google.protobuf.ByteString getFieldNameBytes() {
+        java.lang.Object ref = fieldName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          fieldName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the field in the CSV header or the name of the column in
+       * BigQuery table. The naming restriction is the same as [Feature.name][google.cloud.aiplatform.v1beta1.Feature.name].
+       * </pre>
+       *
+       * <code>string field_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The fieldName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFieldName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        fieldName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the field in the CSV header or the name of the column in
+       * BigQuery table. The naming restriction is the same as [Feature.name][google.cloud.aiplatform.v1beta1.Feature.name].
+       * </pre>
+       *
+       * <code>string field_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFieldName() {
+
+        fieldName_ = getDefaultInstance().getFieldName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the field in the CSV header or the name of the column in
+       * BigQuery table. The naming restriction is the same as [Feature.name][google.cloud.aiplatform.v1beta1.Feature.name].
+       * </pre>
+       *
+       * <code>string field_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for fieldName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFieldNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        fieldName_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField)
+    private static final com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest
+            .PassThroughField
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PassThroughField> PARSER =
+        new com.google.protobuf.AbstractParser<PassThroughField>() {
+          @java.lang.Override
+          public PassThroughField parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new PassThroughField(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<PassThroughField> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PassThroughField> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public interface EntityTypeSpecOrBuilder
@@ -1829,6 +2567,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CSV_READ_INSTANCES(3),
+    BIGQUERY_READ_INSTANCES(5),
     READOPTION_NOT_SET(0);
     private final int value;
 
@@ -1849,6 +2588,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       switch (value) {
         case 3:
           return CSV_READ_INSTANCES;
+        case 5:
+          return BIGQUERY_READ_INSTANCES;
         case 0:
           return READOPTION_NOT_SET;
         default:
@@ -1964,6 +2705,58 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     return com.google.cloud.aiplatform.v1beta1.CsvSource.getDefaultInstance();
   }
 
+  public static final int BIGQUERY_READ_INSTANCES_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Similar to csv_read_instances, but from BigQuery source.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_read_instances = 5;</code>
+   *
+   * @return Whether the bigqueryReadInstances field is set.
+   */
+  @java.lang.Override
+  public boolean hasBigqueryReadInstances() {
+    return readOptionCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Similar to csv_read_instances, but from BigQuery source.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_read_instances = 5;</code>
+   *
+   * @return The bigqueryReadInstances.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.BigQuerySource getBigqueryReadInstances() {
+    if (readOptionCase_ == 5) {
+      return (com.google.cloud.aiplatform.v1beta1.BigQuerySource) readOption_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.BigQuerySource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Similar to csv_read_instances, but from BigQuery source.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_read_instances = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.BigQuerySourceOrBuilder
+      getBigqueryReadInstancesOrBuilder() {
+    if (readOptionCase_ == 5) {
+      return (com.google.cloud.aiplatform.v1beta1.BigQuerySource) readOption_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.BigQuerySource.getDefaultInstance();
+  }
+
   public static final int FEATURESTORE_FIELD_NUMBER = 1;
   private volatile java.lang.Object featurestore_;
   /**
@@ -2076,6 +2869,119 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     return getDestination();
   }
 
+  public static final int PASS_THROUGH_FIELDS_FIELD_NUMBER = 8;
+  private java.util.List<
+          com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField>
+      passThroughFields_;
+  /**
+   *
+   *
+   * <pre>
+   * When not empty, the specified fields in the *_read_instances source will be
+   * joined as-is in the output, in addition to those fields from the
+   * Featurestore Entity.
+   * For BigQuery source, the type of the pass-through values will be
+   * automatically inferred. For CSV source, the pass-through values will be
+   * passed as opaque bytes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField>
+      getPassThroughFieldsList() {
+    return passThroughFields_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * When not empty, the specified fields in the *_read_instances source will be
+   * joined as-is in the output, in addition to those fields from the
+   * Featurestore Entity.
+   * For BigQuery source, the type of the pass-through values will be
+   * automatically inferred. For CSV source, the pass-through values will be
+   * passed as opaque bytes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest
+                  .PassThroughFieldOrBuilder>
+      getPassThroughFieldsOrBuilderList() {
+    return passThroughFields_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * When not empty, the specified fields in the *_read_instances source will be
+   * joined as-is in the output, in addition to those fields from the
+   * Featurestore Entity.
+   * For BigQuery source, the type of the pass-through values will be
+   * automatically inferred. For CSV source, the pass-through values will be
+   * passed as opaque bytes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+   * </code>
+   */
+  @java.lang.Override
+  public int getPassThroughFieldsCount() {
+    return passThroughFields_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * When not empty, the specified fields in the *_read_instances source will be
+   * joined as-is in the output, in addition to those fields from the
+   * Featurestore Entity.
+   * For BigQuery source, the type of the pass-through values will be
+   * automatically inferred. For CSV source, the pass-through values will be
+   * passed as opaque bytes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+      getPassThroughFields(int index) {
+    return passThroughFields_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * When not empty, the specified fields in the *_read_instances source will be
+   * joined as-is in the output, in addition to those fields from the
+   * Featurestore Entity.
+   * For BigQuery source, the type of the pass-through values will be
+   * automatically inferred. For CSV source, the pass-through values will be
+   * passed as opaque bytes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughFieldOrBuilder
+      getPassThroughFieldsOrBuilder(int index) {
+    return passThroughFields_.get(index);
+  }
+
   public static final int ENTITY_TYPE_SPECS_FIELD_NUMBER = 7;
   private java.util.List<
           com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.EntityTypeSpec>
@@ -2087,7 +2993,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    * Required. Specifies EntityType grouping Features to read values of and settings.
    * Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-   * specifying entity IDs in tha EntityType in
+   * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
    * </pre>
    *
@@ -2108,7 +3014,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    * Required. Specifies EntityType grouping Features to read values of and settings.
    * Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-   * specifying entity IDs in tha EntityType in
+   * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
    * </pre>
    *
@@ -2131,7 +3037,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    * Required. Specifies EntityType grouping Features to read values of and settings.
    * Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-   * specifying entity IDs in tha EntityType in
+   * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
    * </pre>
    *
@@ -2150,7 +3056,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    * Required. Specifies EntityType grouping Features to read values of and settings.
    * Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-   * specifying entity IDs in tha EntityType in
+   * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
    * </pre>
    *
@@ -2170,7 +3076,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    * Required. Specifies EntityType grouping Features to read values of and settings.
    * Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-   * specifying entity IDs in tha EntityType in
+   * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
    * </pre>
    *
@@ -2207,8 +3113,14 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     if (destination_ != null) {
       output.writeMessage(4, getDestination());
     }
+    if (readOptionCase_ == 5) {
+      output.writeMessage(5, (com.google.cloud.aiplatform.v1beta1.BigQuerySource) readOption_);
+    }
     for (int i = 0; i < entityTypeSpecs_.size(); i++) {
       output.writeMessage(7, entityTypeSpecs_.get(i));
+    }
+    for (int i = 0; i < passThroughFields_.size(); i++) {
+      output.writeMessage(8, passThroughFields_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -2230,8 +3142,17 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     if (destination_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDestination());
     }
+    if (readOptionCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.aiplatform.v1beta1.BigQuerySource) readOption_);
+    }
     for (int i = 0; i < entityTypeSpecs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, entityTypeSpecs_.get(i));
+    }
+    for (int i = 0; i < passThroughFields_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(8, passThroughFields_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2254,11 +3175,15 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     if (hasDestination()) {
       if (!getDestination().equals(other.getDestination())) return false;
     }
+    if (!getPassThroughFieldsList().equals(other.getPassThroughFieldsList())) return false;
     if (!getEntityTypeSpecsList().equals(other.getEntityTypeSpecsList())) return false;
     if (!getReadOptionCase().equals(other.getReadOptionCase())) return false;
     switch (readOptionCase_) {
       case 3:
         if (!getCsvReadInstances().equals(other.getCsvReadInstances())) return false;
+        break;
+      case 5:
+        if (!getBigqueryReadInstances().equals(other.getBigqueryReadInstances())) return false;
         break;
       case 0:
       default:
@@ -2280,6 +3205,10 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
       hash = (53 * hash) + getDestination().hashCode();
     }
+    if (getPassThroughFieldsCount() > 0) {
+      hash = (37 * hash) + PASS_THROUGH_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getPassThroughFieldsList().hashCode();
+    }
     if (getEntityTypeSpecsCount() > 0) {
       hash = (37 * hash) + ENTITY_TYPE_SPECS_FIELD_NUMBER;
       hash = (53 * hash) + getEntityTypeSpecsList().hashCode();
@@ -2288,6 +3217,10 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       case 3:
         hash = (37 * hash) + CSV_READ_INSTANCES_FIELD_NUMBER;
         hash = (53 * hash) + getCsvReadInstances().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + BIGQUERY_READ_INSTANCES_FIELD_NUMBER;
+        hash = (53 * hash) + getBigqueryReadInstances().hashCode();
         break;
       case 0:
       default:
@@ -2436,6 +3369,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getPassThroughFieldsFieldBuilder();
         getEntityTypeSpecsFieldBuilder();
       }
     }
@@ -2451,9 +3385,15 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         destination_ = null;
         destinationBuilder_ = null;
       }
+      if (passThroughFieldsBuilder_ == null) {
+        passThroughFields_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        passThroughFieldsBuilder_.clear();
+      }
       if (entityTypeSpecsBuilder_ == null) {
         entityTypeSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         entityTypeSpecsBuilder_.clear();
       }
@@ -2495,16 +3435,32 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
           result.readOption_ = csvReadInstancesBuilder_.build();
         }
       }
+      if (readOptionCase_ == 5) {
+        if (bigqueryReadInstancesBuilder_ == null) {
+          result.readOption_ = readOption_;
+        } else {
+          result.readOption_ = bigqueryReadInstancesBuilder_.build();
+        }
+      }
       result.featurestore_ = featurestore_;
       if (destinationBuilder_ == null) {
         result.destination_ = destination_;
       } else {
         result.destination_ = destinationBuilder_.build();
       }
-      if (entityTypeSpecsBuilder_ == null) {
+      if (passThroughFieldsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          entityTypeSpecs_ = java.util.Collections.unmodifiableList(entityTypeSpecs_);
+          passThroughFields_ = java.util.Collections.unmodifiableList(passThroughFields_);
           bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.passThroughFields_ = passThroughFields_;
+      } else {
+        result.passThroughFields_ = passThroughFieldsBuilder_.build();
+      }
+      if (entityTypeSpecsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          entityTypeSpecs_ = java.util.Collections.unmodifiableList(entityTypeSpecs_);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.entityTypeSpecs_ = entityTypeSpecs_;
       } else {
@@ -2570,11 +3526,38 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       if (other.hasDestination()) {
         mergeDestination(other.getDestination());
       }
+      if (passThroughFieldsBuilder_ == null) {
+        if (!other.passThroughFields_.isEmpty()) {
+          if (passThroughFields_.isEmpty()) {
+            passThroughFields_ = other.passThroughFields_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensurePassThroughFieldsIsMutable();
+            passThroughFields_.addAll(other.passThroughFields_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.passThroughFields_.isEmpty()) {
+          if (passThroughFieldsBuilder_.isEmpty()) {
+            passThroughFieldsBuilder_.dispose();
+            passThroughFieldsBuilder_ = null;
+            passThroughFields_ = other.passThroughFields_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            passThroughFieldsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPassThroughFieldsFieldBuilder()
+                    : null;
+          } else {
+            passThroughFieldsBuilder_.addAllMessages(other.passThroughFields_);
+          }
+        }
+      }
       if (entityTypeSpecsBuilder_ == null) {
         if (!other.entityTypeSpecs_.isEmpty()) {
           if (entityTypeSpecs_.isEmpty()) {
             entityTypeSpecs_ = other.entityTypeSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureEntityTypeSpecsIsMutable();
             entityTypeSpecs_.addAll(other.entityTypeSpecs_);
@@ -2587,7 +3570,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
             entityTypeSpecsBuilder_.dispose();
             entityTypeSpecsBuilder_ = null;
             entityTypeSpecs_ = other.entityTypeSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             entityTypeSpecsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEntityTypeSpecsFieldBuilder()
@@ -2601,6 +3584,11 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         case CSV_READ_INSTANCES:
           {
             mergeCsvReadInstances(other.getCsvReadInstances());
+            break;
+          }
+        case BIGQUERY_READ_INSTANCES:
+          {
+            mergeBigqueryReadInstances(other.getBigqueryReadInstances());
             break;
           }
         case READOPTION_NOT_SET:
@@ -3008,6 +3996,220 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       return csvReadInstancesBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.BigQuerySource,
+            com.google.cloud.aiplatform.v1beta1.BigQuerySource.Builder,
+            com.google.cloud.aiplatform.v1beta1.BigQuerySourceOrBuilder>
+        bigqueryReadInstancesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Similar to csv_read_instances, but from BigQuery source.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_read_instances = 5;</code>
+     *
+     * @return Whether the bigqueryReadInstances field is set.
+     */
+    @java.lang.Override
+    public boolean hasBigqueryReadInstances() {
+      return readOptionCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Similar to csv_read_instances, but from BigQuery source.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_read_instances = 5;</code>
+     *
+     * @return The bigqueryReadInstances.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.BigQuerySource getBigqueryReadInstances() {
+      if (bigqueryReadInstancesBuilder_ == null) {
+        if (readOptionCase_ == 5) {
+          return (com.google.cloud.aiplatform.v1beta1.BigQuerySource) readOption_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.BigQuerySource.getDefaultInstance();
+      } else {
+        if (readOptionCase_ == 5) {
+          return bigqueryReadInstancesBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.BigQuerySource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Similar to csv_read_instances, but from BigQuery source.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_read_instances = 5;</code>
+     */
+    public Builder setBigqueryReadInstances(
+        com.google.cloud.aiplatform.v1beta1.BigQuerySource value) {
+      if (bigqueryReadInstancesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        readOption_ = value;
+        onChanged();
+      } else {
+        bigqueryReadInstancesBuilder_.setMessage(value);
+      }
+      readOptionCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Similar to csv_read_instances, but from BigQuery source.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_read_instances = 5;</code>
+     */
+    public Builder setBigqueryReadInstances(
+        com.google.cloud.aiplatform.v1beta1.BigQuerySource.Builder builderForValue) {
+      if (bigqueryReadInstancesBuilder_ == null) {
+        readOption_ = builderForValue.build();
+        onChanged();
+      } else {
+        bigqueryReadInstancesBuilder_.setMessage(builderForValue.build());
+      }
+      readOptionCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Similar to csv_read_instances, but from BigQuery source.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_read_instances = 5;</code>
+     */
+    public Builder mergeBigqueryReadInstances(
+        com.google.cloud.aiplatform.v1beta1.BigQuerySource value) {
+      if (bigqueryReadInstancesBuilder_ == null) {
+        if (readOptionCase_ == 5
+            && readOption_
+                != com.google.cloud.aiplatform.v1beta1.BigQuerySource.getDefaultInstance()) {
+          readOption_ =
+              com.google.cloud.aiplatform.v1beta1.BigQuerySource.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.BigQuerySource) readOption_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          readOption_ = value;
+        }
+        onChanged();
+      } else {
+        if (readOptionCase_ == 5) {
+          bigqueryReadInstancesBuilder_.mergeFrom(value);
+        }
+        bigqueryReadInstancesBuilder_.setMessage(value);
+      }
+      readOptionCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Similar to csv_read_instances, but from BigQuery source.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_read_instances = 5;</code>
+     */
+    public Builder clearBigqueryReadInstances() {
+      if (bigqueryReadInstancesBuilder_ == null) {
+        if (readOptionCase_ == 5) {
+          readOptionCase_ = 0;
+          readOption_ = null;
+          onChanged();
+        }
+      } else {
+        if (readOptionCase_ == 5) {
+          readOptionCase_ = 0;
+          readOption_ = null;
+        }
+        bigqueryReadInstancesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Similar to csv_read_instances, but from BigQuery source.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_read_instances = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BigQuerySource.Builder
+        getBigqueryReadInstancesBuilder() {
+      return getBigqueryReadInstancesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Similar to csv_read_instances, but from BigQuery source.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_read_instances = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.BigQuerySourceOrBuilder
+        getBigqueryReadInstancesOrBuilder() {
+      if ((readOptionCase_ == 5) && (bigqueryReadInstancesBuilder_ != null)) {
+        return bigqueryReadInstancesBuilder_.getMessageOrBuilder();
+      } else {
+        if (readOptionCase_ == 5) {
+          return (com.google.cloud.aiplatform.v1beta1.BigQuerySource) readOption_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.BigQuerySource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Similar to csv_read_instances, but from BigQuery source.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.BigQuerySource bigquery_read_instances = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.BigQuerySource,
+            com.google.cloud.aiplatform.v1beta1.BigQuerySource.Builder,
+            com.google.cloud.aiplatform.v1beta1.BigQuerySourceOrBuilder>
+        getBigqueryReadInstancesFieldBuilder() {
+      if (bigqueryReadInstancesBuilder_ == null) {
+        if (!(readOptionCase_ == 5)) {
+          readOption_ = com.google.cloud.aiplatform.v1beta1.BigQuerySource.getDefaultInstance();
+        }
+        bigqueryReadInstancesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.BigQuerySource,
+                com.google.cloud.aiplatform.v1beta1.BigQuerySource.Builder,
+                com.google.cloud.aiplatform.v1beta1.BigQuerySourceOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.BigQuerySource) readOption_,
+                getParentForChildren(),
+                isClean());
+        readOption_ = null;
+      }
+      readOptionCase_ = 5;
+      onChanged();
+      ;
+      return bigqueryReadInstancesBuilder_;
+    }
+
     private java.lang.Object featurestore_ = "";
     /**
      *
@@ -3343,16 +4545,540 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     }
 
     private java.util.List<
+            com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField>
+        passThroughFields_ = java.util.Collections.emptyList();
+
+    private void ensurePassThroughFieldsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        passThroughFields_ =
+            new java.util.ArrayList<
+                com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField>(
+                passThroughFields_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField,
+            com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+                .Builder,
+            com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest
+                .PassThroughFieldOrBuilder>
+        passThroughFieldsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * When not empty, the specified fields in the *_read_instances source will be
+     * joined as-is in the output, in addition to those fields from the
+     * Featurestore Entity.
+     * For BigQuery source, the type of the pass-through values will be
+     * automatically inferred. For CSV source, the pass-through values will be
+     * passed as opaque bytes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField>
+        getPassThroughFieldsList() {
+      if (passThroughFieldsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(passThroughFields_);
+      } else {
+        return passThroughFieldsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When not empty, the specified fields in the *_read_instances source will be
+     * joined as-is in the output, in addition to those fields from the
+     * Featurestore Entity.
+     * For BigQuery source, the type of the pass-through values will be
+     * automatically inferred. For CSV source, the pass-through values will be
+     * passed as opaque bytes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+     * </code>
+     */
+    public int getPassThroughFieldsCount() {
+      if (passThroughFieldsBuilder_ == null) {
+        return passThroughFields_.size();
+      } else {
+        return passThroughFieldsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When not empty, the specified fields in the *_read_instances source will be
+     * joined as-is in the output, in addition to those fields from the
+     * Featurestore Entity.
+     * For BigQuery source, the type of the pass-through values will be
+     * automatically inferred. For CSV source, the pass-through values will be
+     * passed as opaque bytes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+        getPassThroughFields(int index) {
+      if (passThroughFieldsBuilder_ == null) {
+        return passThroughFields_.get(index);
+      } else {
+        return passThroughFieldsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When not empty, the specified fields in the *_read_instances source will be
+     * joined as-is in the output, in addition to those fields from the
+     * Featurestore Entity.
+     * For BigQuery source, the type of the pass-through values will be
+     * automatically inferred. For CSV source, the pass-through values will be
+     * passed as opaque bytes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+     * </code>
+     */
+    public Builder setPassThroughFields(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField value) {
+      if (passThroughFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePassThroughFieldsIsMutable();
+        passThroughFields_.set(index, value);
+        onChanged();
+      } else {
+        passThroughFieldsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When not empty, the specified fields in the *_read_instances source will be
+     * joined as-is in the output, in addition to those fields from the
+     * Featurestore Entity.
+     * For BigQuery source, the type of the pass-through values will be
+     * automatically inferred. For CSV source, the pass-through values will be
+     * passed as opaque bytes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+     * </code>
+     */
+    public Builder setPassThroughFields(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField.Builder
+            builderForValue) {
+      if (passThroughFieldsBuilder_ == null) {
+        ensurePassThroughFieldsIsMutable();
+        passThroughFields_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        passThroughFieldsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When not empty, the specified fields in the *_read_instances source will be
+     * joined as-is in the output, in addition to those fields from the
+     * Featurestore Entity.
+     * For BigQuery source, the type of the pass-through values will be
+     * automatically inferred. For CSV source, the pass-through values will be
+     * passed as opaque bytes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+     * </code>
+     */
+    public Builder addPassThroughFields(
+        com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField value) {
+      if (passThroughFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePassThroughFieldsIsMutable();
+        passThroughFields_.add(value);
+        onChanged();
+      } else {
+        passThroughFieldsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When not empty, the specified fields in the *_read_instances source will be
+     * joined as-is in the output, in addition to those fields from the
+     * Featurestore Entity.
+     * For BigQuery source, the type of the pass-through values will be
+     * automatically inferred. For CSV source, the pass-through values will be
+     * passed as opaque bytes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+     * </code>
+     */
+    public Builder addPassThroughFields(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField value) {
+      if (passThroughFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePassThroughFieldsIsMutable();
+        passThroughFields_.add(index, value);
+        onChanged();
+      } else {
+        passThroughFieldsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When not empty, the specified fields in the *_read_instances source will be
+     * joined as-is in the output, in addition to those fields from the
+     * Featurestore Entity.
+     * For BigQuery source, the type of the pass-through values will be
+     * automatically inferred. For CSV source, the pass-through values will be
+     * passed as opaque bytes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+     * </code>
+     */
+    public Builder addPassThroughFields(
+        com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField.Builder
+            builderForValue) {
+      if (passThroughFieldsBuilder_ == null) {
+        ensurePassThroughFieldsIsMutable();
+        passThroughFields_.add(builderForValue.build());
+        onChanged();
+      } else {
+        passThroughFieldsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When not empty, the specified fields in the *_read_instances source will be
+     * joined as-is in the output, in addition to those fields from the
+     * Featurestore Entity.
+     * For BigQuery source, the type of the pass-through values will be
+     * automatically inferred. For CSV source, the pass-through values will be
+     * passed as opaque bytes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+     * </code>
+     */
+    public Builder addPassThroughFields(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField.Builder
+            builderForValue) {
+      if (passThroughFieldsBuilder_ == null) {
+        ensurePassThroughFieldsIsMutable();
+        passThroughFields_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        passThroughFieldsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When not empty, the specified fields in the *_read_instances source will be
+     * joined as-is in the output, in addition to those fields from the
+     * Featurestore Entity.
+     * For BigQuery source, the type of the pass-through values will be
+     * automatically inferred. For CSV source, the pass-through values will be
+     * passed as opaque bytes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+     * </code>
+     */
+    public Builder addAllPassThroughFields(
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest
+                        .PassThroughField>
+            values) {
+      if (passThroughFieldsBuilder_ == null) {
+        ensurePassThroughFieldsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, passThroughFields_);
+        onChanged();
+      } else {
+        passThroughFieldsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When not empty, the specified fields in the *_read_instances source will be
+     * joined as-is in the output, in addition to those fields from the
+     * Featurestore Entity.
+     * For BigQuery source, the type of the pass-through values will be
+     * automatically inferred. For CSV source, the pass-through values will be
+     * passed as opaque bytes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+     * </code>
+     */
+    public Builder clearPassThroughFields() {
+      if (passThroughFieldsBuilder_ == null) {
+        passThroughFields_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        passThroughFieldsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When not empty, the specified fields in the *_read_instances source will be
+     * joined as-is in the output, in addition to those fields from the
+     * Featurestore Entity.
+     * For BigQuery source, the type of the pass-through values will be
+     * automatically inferred. For CSV source, the pass-through values will be
+     * passed as opaque bytes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+     * </code>
+     */
+    public Builder removePassThroughFields(int index) {
+      if (passThroughFieldsBuilder_ == null) {
+        ensurePassThroughFieldsIsMutable();
+        passThroughFields_.remove(index);
+        onChanged();
+      } else {
+        passThroughFieldsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When not empty, the specified fields in the *_read_instances source will be
+     * joined as-is in the output, in addition to those fields from the
+     * Featurestore Entity.
+     * For BigQuery source, the type of the pass-through values will be
+     * automatically inferred. For CSV source, the pass-through values will be
+     * passed as opaque bytes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+            .Builder
+        getPassThroughFieldsBuilder(int index) {
+      return getPassThroughFieldsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When not empty, the specified fields in the *_read_instances source will be
+     * joined as-is in the output, in addition to those fields from the
+     * Featurestore Entity.
+     * For BigQuery source, the type of the pass-through values will be
+     * automatically inferred. For CSV source, the pass-through values will be
+     * passed as opaque bytes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest
+            .PassThroughFieldOrBuilder
+        getPassThroughFieldsOrBuilder(int index) {
+      if (passThroughFieldsBuilder_ == null) {
+        return passThroughFields_.get(index);
+      } else {
+        return passThroughFieldsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When not empty, the specified fields in the *_read_instances source will be
+     * joined as-is in the output, in addition to those fields from the
+     * Featurestore Entity.
+     * For BigQuery source, the type of the pass-through values will be
+     * automatically inferred. For CSV source, the pass-through values will be
+     * passed as opaque bytes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest
+                    .PassThroughFieldOrBuilder>
+        getPassThroughFieldsOrBuilderList() {
+      if (passThroughFieldsBuilder_ != null) {
+        return passThroughFieldsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(passThroughFields_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When not empty, the specified fields in the *_read_instances source will be
+     * joined as-is in the output, in addition to those fields from the
+     * Featurestore Entity.
+     * For BigQuery source, the type of the pass-through values will be
+     * automatically inferred. For CSV source, the pass-through values will be
+     * passed as opaque bytes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+            .Builder
+        addPassThroughFieldsBuilder() {
+      return getPassThroughFieldsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When not empty, the specified fields in the *_read_instances source will be
+     * joined as-is in the output, in addition to those fields from the
+     * Featurestore Entity.
+     * For BigQuery source, the type of the pass-through values will be
+     * automatically inferred. For CSV source, the pass-through values will be
+     * passed as opaque bytes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+            .Builder
+        addPassThroughFieldsBuilder(int index) {
+      return getPassThroughFieldsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When not empty, the specified fields in the *_read_instances source will be
+     * joined as-is in the output, in addition to those fields from the
+     * Featurestore Entity.
+     * For BigQuery source, the type of the pass-through values will be
+     * automatically inferred. For CSV source, the pass-through values will be
+     * passed as opaque bytes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField pass_through_fields = 8;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+                .Builder>
+        getPassThroughFieldsBuilderList() {
+      return getPassThroughFieldsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField,
+            com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+                .Builder,
+            com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest
+                .PassThroughFieldOrBuilder>
+        getPassThroughFieldsFieldBuilder() {
+      if (passThroughFieldsBuilder_ == null) {
+        passThroughFieldsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField,
+                com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField
+                    .Builder,
+                com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest
+                    .PassThroughFieldOrBuilder>(
+                passThroughFields_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        passThroughFields_ = null;
+      }
+      return passThroughFieldsBuilder_;
+    }
+
+    private java.util.List<
             com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.EntityTypeSpec>
         entityTypeSpecs_ = java.util.Collections.emptyList();
 
     private void ensureEntityTypeSpecsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         entityTypeSpecs_ =
             new java.util.ArrayList<
                 com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.EntityTypeSpec>(
                 entityTypeSpecs_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -3371,7 +5097,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      * </pre>
      *
@@ -3395,7 +5121,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      * </pre>
      *
@@ -3417,7 +5143,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      * </pre>
      *
@@ -3440,7 +5166,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      * </pre>
      *
@@ -3470,7 +5196,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      * </pre>
      *
@@ -3498,7 +5224,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      * </pre>
      *
@@ -3527,7 +5253,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      * </pre>
      *
@@ -3557,7 +5283,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      * </pre>
      *
@@ -3584,7 +5310,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      * </pre>
      *
@@ -3612,7 +5338,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      * </pre>
      *
@@ -3642,7 +5368,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      * </pre>
      *
@@ -3653,7 +5379,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     public Builder clearEntityTypeSpecs() {
       if (entityTypeSpecsBuilder_ == null) {
         entityTypeSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         entityTypeSpecsBuilder_.clear();
@@ -3667,7 +5393,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      * </pre>
      *
@@ -3692,7 +5418,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      * </pre>
      *
@@ -3711,7 +5437,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      * </pre>
      *
@@ -3734,7 +5460,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      * </pre>
      *
@@ -3760,7 +5486,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      * </pre>
      *
@@ -3782,7 +5508,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      * </pre>
      *
@@ -3805,7 +5531,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      * </pre>
      *
@@ -3836,7 +5562,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
                 com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest
                     .EntityTypeSpecOrBuilder>(
                 entityTypeSpecs_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         entityTypeSpecs_ = null;

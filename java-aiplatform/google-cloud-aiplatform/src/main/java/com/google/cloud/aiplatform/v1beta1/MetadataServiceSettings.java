@@ -134,6 +134,29 @@ public class MetadataServiceSettings extends ClientSettings<MetadataServiceSetti
     return ((MetadataServiceStubSettings) getStubSettings()).updateArtifactSettings();
   }
 
+  /** Returns the object with the settings used for calls to deleteArtifact. */
+  public UnaryCallSettings<DeleteArtifactRequest, Operation> deleteArtifactSettings() {
+    return ((MetadataServiceStubSettings) getStubSettings()).deleteArtifactSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteArtifact. */
+  public OperationCallSettings<DeleteArtifactRequest, Empty, DeleteOperationMetadata>
+      deleteArtifactOperationSettings() {
+    return ((MetadataServiceStubSettings) getStubSettings()).deleteArtifactOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeArtifacts. */
+  public UnaryCallSettings<PurgeArtifactsRequest, Operation> purgeArtifactsSettings() {
+    return ((MetadataServiceStubSettings) getStubSettings()).purgeArtifactsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeArtifacts. */
+  public OperationCallSettings<
+          PurgeArtifactsRequest, PurgeArtifactsResponse, PurgeArtifactsMetadata>
+      purgeArtifactsOperationSettings() {
+    return ((MetadataServiceStubSettings) getStubSettings()).purgeArtifactsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to createContext. */
   public UnaryCallSettings<CreateContextRequest, Context> createContextSettings() {
     return ((MetadataServiceStubSettings) getStubSettings()).createContextSettings();
@@ -164,6 +187,17 @@ public class MetadataServiceSettings extends ClientSettings<MetadataServiceSetti
   public OperationCallSettings<DeleteContextRequest, Empty, DeleteOperationMetadata>
       deleteContextOperationSettings() {
     return ((MetadataServiceStubSettings) getStubSettings()).deleteContextOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeContexts. */
+  public UnaryCallSettings<PurgeContextsRequest, Operation> purgeContextsSettings() {
+    return ((MetadataServiceStubSettings) getStubSettings()).purgeContextsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeContexts. */
+  public OperationCallSettings<PurgeContextsRequest, PurgeContextsResponse, PurgeContextsMetadata>
+      purgeContextsOperationSettings() {
+    return ((MetadataServiceStubSettings) getStubSettings()).purgeContextsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to addContextArtifactsAndExecutions. */
@@ -206,6 +240,29 @@ public class MetadataServiceSettings extends ClientSettings<MetadataServiceSetti
   /** Returns the object with the settings used for calls to updateExecution. */
   public UnaryCallSettings<UpdateExecutionRequest, Execution> updateExecutionSettings() {
     return ((MetadataServiceStubSettings) getStubSettings()).updateExecutionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteExecution. */
+  public UnaryCallSettings<DeleteExecutionRequest, Operation> deleteExecutionSettings() {
+    return ((MetadataServiceStubSettings) getStubSettings()).deleteExecutionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteExecution. */
+  public OperationCallSettings<DeleteExecutionRequest, Empty, DeleteOperationMetadata>
+      deleteExecutionOperationSettings() {
+    return ((MetadataServiceStubSettings) getStubSettings()).deleteExecutionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeExecutions. */
+  public UnaryCallSettings<PurgeExecutionsRequest, Operation> purgeExecutionsSettings() {
+    return ((MetadataServiceStubSettings) getStubSettings()).purgeExecutionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeExecutions. */
+  public OperationCallSettings<
+          PurgeExecutionsRequest, PurgeExecutionsResponse, PurgeExecutionsMetadata>
+      purgeExecutionsOperationSettings() {
+    return ((MetadataServiceStubSettings) getStubSettings()).purgeExecutionsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to addExecutionEvents. */
@@ -330,14 +387,13 @@ public class MetadataServiceSettings extends ClientSettings<MetadataServiceSetti
       return ((MetadataServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) {
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
@@ -404,6 +460,29 @@ public class MetadataServiceSettings extends ClientSettings<MetadataServiceSetti
       return getStubSettingsBuilder().updateArtifactSettings();
     }
 
+    /** Returns the builder for the settings used for calls to deleteArtifact. */
+    public UnaryCallSettings.Builder<DeleteArtifactRequest, Operation> deleteArtifactSettings() {
+      return getStubSettingsBuilder().deleteArtifactSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteArtifact. */
+    public OperationCallSettings.Builder<DeleteArtifactRequest, Empty, DeleteOperationMetadata>
+        deleteArtifactOperationSettings() {
+      return getStubSettingsBuilder().deleteArtifactOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeArtifacts. */
+    public UnaryCallSettings.Builder<PurgeArtifactsRequest, Operation> purgeArtifactsSettings() {
+      return getStubSettingsBuilder().purgeArtifactsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeArtifacts. */
+    public OperationCallSettings.Builder<
+            PurgeArtifactsRequest, PurgeArtifactsResponse, PurgeArtifactsMetadata>
+        purgeArtifactsOperationSettings() {
+      return getStubSettingsBuilder().purgeArtifactsOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createContext. */
     public UnaryCallSettings.Builder<CreateContextRequest, Context> createContextSettings() {
       return getStubSettingsBuilder().createContextSettings();
@@ -435,6 +514,18 @@ public class MetadataServiceSettings extends ClientSettings<MetadataServiceSetti
     public OperationCallSettings.Builder<DeleteContextRequest, Empty, DeleteOperationMetadata>
         deleteContextOperationSettings() {
       return getStubSettingsBuilder().deleteContextOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeContexts. */
+    public UnaryCallSettings.Builder<PurgeContextsRequest, Operation> purgeContextsSettings() {
+      return getStubSettingsBuilder().purgeContextsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeContexts. */
+    public OperationCallSettings.Builder<
+            PurgeContextsRequest, PurgeContextsResponse, PurgeContextsMetadata>
+        purgeContextsOperationSettings() {
+      return getStubSettingsBuilder().purgeContextsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to addContextArtifactsAndExecutions. */
@@ -476,6 +567,29 @@ public class MetadataServiceSettings extends ClientSettings<MetadataServiceSetti
     /** Returns the builder for the settings used for calls to updateExecution. */
     public UnaryCallSettings.Builder<UpdateExecutionRequest, Execution> updateExecutionSettings() {
       return getStubSettingsBuilder().updateExecutionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExecution. */
+    public UnaryCallSettings.Builder<DeleteExecutionRequest, Operation> deleteExecutionSettings() {
+      return getStubSettingsBuilder().deleteExecutionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExecution. */
+    public OperationCallSettings.Builder<DeleteExecutionRequest, Empty, DeleteOperationMetadata>
+        deleteExecutionOperationSettings() {
+      return getStubSettingsBuilder().deleteExecutionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeExecutions. */
+    public UnaryCallSettings.Builder<PurgeExecutionsRequest, Operation> purgeExecutionsSettings() {
+      return getStubSettingsBuilder().purgeExecutionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeExecutions. */
+    public OperationCallSettings.Builder<
+            PurgeExecutionsRequest, PurgeExecutionsResponse, PurgeExecutionsMetadata>
+        purgeExecutionsOperationSettings() {
+      return getStubSettingsBuilder().purgeExecutionsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to addExecutionEvents. */

@@ -58,4 +58,29 @@ public interface DeployIndexOperationMetadataOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.GenericOperationMetadataOrBuilder
       getGenericMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The unique index id specified by user
+   * </pre>
+   *
+   * <code>string deployed_index_id = 2;</code>
+   *
+   * @return The deployedIndexId.
+   */
+  java.lang.String getDeployedIndexId();
+  /**
+   *
+   *
+   * <pre>
+   * The unique index id specified by user
+   * </pre>
+   *
+   * <code>string deployed_index_id = 2;</code>
+   *
+   * @return The bytes for deployedIndexId.
+   */
+  com.google.protobuf.ByteString getDeployedIndexIdBytes();
 }

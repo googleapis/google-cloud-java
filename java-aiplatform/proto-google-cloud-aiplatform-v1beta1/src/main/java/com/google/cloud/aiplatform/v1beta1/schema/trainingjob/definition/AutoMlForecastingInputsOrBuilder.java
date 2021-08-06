@@ -681,4 +681,55 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return The bytes for validationOptions.
    */
   com.google.protobuf.ByteString getValidationOptionsBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Additional experiment flags for the time series forcasting training.
+   * </pre>
+   *
+   * <code>repeated string additional_experiments = 25;</code>
+   *
+   * @return A list containing the additionalExperiments.
+   */
+  java.util.List<java.lang.String> getAdditionalExperimentsList();
+  /**
+   *
+   *
+   * <pre>
+   * Additional experiment flags for the time series forcasting training.
+   * </pre>
+   *
+   * <code>repeated string additional_experiments = 25;</code>
+   *
+   * @return The count of additionalExperiments.
+   */
+  int getAdditionalExperimentsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Additional experiment flags for the time series forcasting training.
+   * </pre>
+   *
+   * <code>repeated string additional_experiments = 25;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The additionalExperiments at the given index.
+   */
+  java.lang.String getAdditionalExperiments(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Additional experiment flags for the time series forcasting training.
+   * </pre>
+   *
+   * <code>repeated string additional_experiments = 25;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalExperiments at the given index.
+   */
+  com.google.protobuf.ByteString getAdditionalExperimentsBytes(int index);
 }

@@ -16,7 +16,6 @@
 
 package com.google.cloud.aiplatform.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -862,12 +861,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
           ListSpecialistPoolsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListSpecialistPoolsPage, ListSpecialistPoolsPagedResponse>() {
-            @Override
-            public ListSpecialistPoolsPagedResponse apply(ListSpecialistPoolsPage input) {
-              return new ListSpecialistPoolsPagedResponse(input);
-            }
-          },
+          input -> new ListSpecialistPoolsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

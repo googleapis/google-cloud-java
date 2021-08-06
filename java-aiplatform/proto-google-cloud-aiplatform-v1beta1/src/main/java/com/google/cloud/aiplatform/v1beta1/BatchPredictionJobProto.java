@@ -73,7 +73,7 @@ public final class BatchPredictionJobProto {
           + "1beta1/model_monitoring.proto\032\034google/pr"
           + "otobuf/struct.proto\032\037google/protobuf/tim"
           + "estamp.proto\032\027google/rpc/status.proto\032\034g"
-          + "oogle/api/annotations.proto\"\353\020\n\022BatchPre"
+          + "oogle/api/annotations.proto\"\220\021\n\022BatchPre"
           + "dictionJob\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014display"
           + "_name\030\002 \001(\tB\003\340A\002\0226\n\005model\030\003 \001(\tB\'\340A\002\372A!\n"
           + "\037aiplatform.googleapis.com/Model\022Z\n\014inpu"
@@ -120,18 +120,21 @@ public final class BatchPredictionJobProto {
           + "\024bigquery_destination\030\003 \001(\01324.google.clo"
           + "ud.aiplatform.v1beta1.BigQueryDestinatio"
           + "nH\000\022\037\n\022predictions_format\030\001 \001(\tB\003\340A\002B\r\n\013"
-          + "destination\032l\n\nOutputInfo\022#\n\024gcs_output_"
-          + "directory\030\001 \001(\tB\003\340A\003H\000\022&\n\027bigquery_outpu"
-          + "t_dataset\030\002 \001(\tB\003\340A\003H\000B\021\n\017output_locatio"
-          + "n\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
-          + " \001(\t:\0028\001:\206\001\352A\202\001\n,aiplatform.googleapis.c"
-          + "om/BatchPredictionJob\022Rprojects/{project"
-          + "}/locations/{location}/batchPredictionJo"
-          + "bs/{batch_prediction_job}B\213\001\n#com.google"
-          + ".cloud.aiplatform.v1beta1B\027BatchPredicti"
-          + "onJobProtoP\001ZIgoogle.golang.org/genproto"
-          + "/googleapis/cloud/aiplatform/v1beta1;aip"
-          + "latformb\006proto3"
+          + "destination\032\220\001\n\nOutputInfo\022#\n\024gcs_output"
+          + "_directory\030\001 \001(\tB\003\340A\003H\000\022&\n\027bigquery_outp"
+          + "ut_dataset\030\002 \001(\tB\003\340A\003H\000\022\"\n\025bigquery_outp"
+          + "ut_table\030\004 \001(\tB\003\340A\003B\021\n\017output_location\032-"
+          + "\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
+          + "\t:\0028\001:\206\001\352A\202\001\n,aiplatform.googleapis.com/"
+          + "BatchPredictionJob\022Rprojects/{project}/l"
+          + "ocations/{location}/batchPredictionJobs/"
+          + "{batch_prediction_job}B\364\001\n#com.google.cl"
+          + "oud.aiplatform.v1beta1B\027BatchPredictionJ"
+          + "obProtoP\001ZIgoogle.golang.org/genproto/go"
+          + "ogleapis/cloud/aiplatform/v1beta1;aiplat"
+          + "form\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002"
+          + "\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Googl"
+          + "e::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -209,7 +212,10 @@ public final class BatchPredictionJobProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_OutputInfo_descriptor,
             new java.lang.String[] {
-              "GcsOutputDirectory", "BigqueryOutputDataset", "OutputLocation",
+              "GcsOutputDirectory",
+              "BigqueryOutputDataset",
+              "BigqueryOutputTable",
+              "OutputLocation",
             });
     internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_LabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_descriptor

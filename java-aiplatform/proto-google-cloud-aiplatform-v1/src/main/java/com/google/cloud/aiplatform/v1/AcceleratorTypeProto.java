@@ -37,18 +37,18 @@ public final class AcceleratorTypeProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/aiplatform/v1/accelerator"
           + "_type.proto\022\032google.cloud.aiplatform.v1\032"
-          + "\034google/api/annotations.proto*\271\001\n\017Accele"
+          + "\034google/api/annotations.proto*\270\001\n\017Accele"
           + "ratorType\022 \n\034ACCELERATOR_TYPE_UNSPECIFIE"
           + "D\020\000\022\024\n\020NVIDIA_TESLA_K80\020\001\022\025\n\021NVIDIA_TESL"
           + "A_P100\020\002\022\025\n\021NVIDIA_TESLA_V100\020\003\022\023\n\017NVIDI"
-          + "A_TESLA_P4\020\004\022\023\n\017NVIDIA_TESLA_T4\020\005\022\n\n\006TPU"
-          + "_V2\020\006\022\n\n\006TPU_V3\020\007B\330\001\n\036com.google.cloud.a"
-          + "iplatform.v1B\024AcceleratorTypeProtoP\001ZDgo"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/aiplatform/v1;aiplatform\252\002\032Google.Clou"
-          + "d.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatfor"
-          + "m\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pr"
-          + "oto3"
+          + "A_TESLA_P4\020\004\022\023\n\017NVIDIA_TESLA_T4\020\005\022\025\n\021NVI"
+          + "DIA_TESLA_A100\020\010B\330\001\n\036com.google.cloud.ai"
+          + "platform.v1B\024AcceleratorTypeProtoP\001ZDgoo"
+          + "gle.golang.org/genproto/googleapis/cloud"
+          + "/aiplatform/v1;aiplatform\252\002\032Google.Cloud"
+          + ".AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatform"
+          + "\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

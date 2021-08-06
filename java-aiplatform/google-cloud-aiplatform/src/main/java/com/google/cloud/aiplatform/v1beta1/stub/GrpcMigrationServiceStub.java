@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest;
@@ -38,7 +37,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -139,13 +137,10 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                 .<SearchMigratableResourcesRequest, SearchMigratableResourcesResponse>newBuilder()
                 .setMethodDescriptor(searchMigratableResourcesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SearchMigratableResourcesRequest>() {
-                      @Override
-                      public Map<String, String> extract(SearchMigratableResourcesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<BatchMigrateResourcesRequest, Operation>
@@ -153,13 +148,10 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
             GrpcCallSettings.<BatchMigrateResourcesRequest, Operation>newBuilder()
                 .setMethodDescriptor(batchMigrateResourcesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchMigrateResourcesRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchMigrateResourcesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 
@@ -221,7 +213,13 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

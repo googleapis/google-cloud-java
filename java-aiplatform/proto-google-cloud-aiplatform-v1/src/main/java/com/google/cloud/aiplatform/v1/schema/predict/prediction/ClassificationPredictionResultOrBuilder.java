@@ -27,8 +27,7 @@ public interface ClassificationPredictionResultOrBuilder
    *
    *
    * <pre>
-   * The resource IDs of the AnnotationSpecs that had been identified, ordered
-   * by the confidence score descendingly.
+   * The resource IDs of the AnnotationSpecs that had been identified.
    * </pre>
    *
    * <code>repeated int64 ids = 1;</code>
@@ -40,8 +39,7 @@ public interface ClassificationPredictionResultOrBuilder
    *
    *
    * <pre>
-   * The resource IDs of the AnnotationSpecs that had been identified, ordered
-   * by the confidence score descendingly.
+   * The resource IDs of the AnnotationSpecs that had been identified.
    * </pre>
    *
    * <code>repeated int64 ids = 1;</code>
@@ -53,8 +51,7 @@ public interface ClassificationPredictionResultOrBuilder
    *
    *
    * <pre>
-   * The resource IDs of the AnnotationSpecs that had been identified, ordered
-   * by the confidence score descendingly.
+   * The resource IDs of the AnnotationSpecs that had been identified.
    * </pre>
    *
    * <code>repeated int64 ids = 1;</code>

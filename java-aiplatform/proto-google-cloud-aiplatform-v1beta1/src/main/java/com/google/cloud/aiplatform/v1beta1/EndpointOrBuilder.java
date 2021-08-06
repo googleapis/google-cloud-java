@@ -470,4 +470,45 @@ public interface EndpointOrBuilder
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10;</code>
    */
   com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The full name of the Google Compute Engine
+   * [network](/compute/docs/networks-and-firewalls#networks) to which the
+   * Endpoint should be peered.
+   * Private services access must already be configured for the network. If left
+   * unspecified, the Endpoint is not peered with any network.
+   * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
+   * projects/{project}/global/networks/{network}.
+   * Where {project} is a project number, as in '12345', and {network} is
+   * network name.
+   * </pre>
+   *
+   * <code>string network = 13 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The network.
+   */
+  java.lang.String getNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * The full name of the Google Compute Engine
+   * [network](/compute/docs/networks-and-firewalls#networks) to which the
+   * Endpoint should be peered.
+   * Private services access must already be configured for the network. If left
+   * unspecified, the Endpoint is not peered with any network.
+   * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
+   * projects/{project}/global/networks/{network}.
+   * Where {project} is a project number, as in '12345', and {network} is
+   * network name.
+   * </pre>
+   *
+   * <code>string network = 13 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for network.
+   */
+  com.google.protobuf.ByteString getNetworkBytes();
 }

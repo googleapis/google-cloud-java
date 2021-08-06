@@ -90,10 +90,13 @@ public final class IoProto {
           + "cs_destination\030\001 \001(\0132/.google.cloud.aipl"
           + "atform.v1beta1.GcsDestinationB\003\340A\002\"7\n\034Co"
           + "ntainerRegistryDestination\022\027\n\noutput_uri"
-          + "\030\001 \001(\tB\003\340A\002B{\n#com.google.cloud.aiplatfo"
-          + "rm.v1beta1B\007IoProtoP\001ZIgoogle.golang.org"
-          + "/genproto/googleapis/cloud/aiplatform/v1"
-          + "beta1;aiplatformb\006proto3"
+          + "\030\001 \001(\tB\003\340A\002B\344\001\n#com.google.cloud.aiplatf"
+          + "orm.v1beta1B\007IoProtoP\001ZIgoogle.golang.or"
+          + "g/genproto/googleapis/cloud/aiplatform/v"
+          + "1beta1;aiplatform\252\002\037Google.Cloud.AIPlatf"
+          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
+          + "beta1\352\002\"Google::Cloud::AIPlatform::V1bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

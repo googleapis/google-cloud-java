@@ -218,6 +218,23 @@ public final class CustomJob extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 130:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                webAccessUris_ =
+                    com.google.protobuf.MapField.newMapField(
+                        WebAccessUrisDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> webAccessUris__ =
+                  input.readMessage(
+                      WebAccessUrisDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              webAccessUris_
+                  .getMutableMap()
+                  .put(webAccessUris__.getKey(), webAccessUris__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -248,6 +265,8 @@ public final class CustomJob extends com.google.protobuf.GeneratedMessageV3
     switch (number) {
       case 11:
         return internalGetLabels();
+      case 16:
+        return internalGetWebAccessUris();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -878,6 +897,123 @@ public final class CustomJob extends com.google.protobuf.GeneratedMessageV3
     return getEncryptionSpec();
   }
 
+  public static final int WEB_ACCESS_URIS_FIELD_NUMBER = 16;
+
+  private static final class WebAccessUrisDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.aiplatform.v1beta1.CustomJobProto
+                .internal_static_google_cloud_aiplatform_v1beta1_CustomJob_WebAccessUrisEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> webAccessUris_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetWebAccessUris() {
+    if (webAccessUris_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          WebAccessUrisDefaultEntryHolder.defaultEntry);
+    }
+    return webAccessUris_;
+  }
+
+  public int getWebAccessUrisCount() {
+    return internalGetWebAccessUris().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The web access URIs for the training job.
+   * The keys are the node names in the training jobs, e.g. workerpool0-0.
+   * The values are the URIs for each node's web portal in the job.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsWebAccessUris(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetWebAccessUris().getMap().containsKey(key);
+  }
+  /** Use {@link #getWebAccessUrisMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getWebAccessUris() {
+    return getWebAccessUrisMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The web access URIs for the training job.
+   * The keys are the node names in the training jobs, e.g. workerpool0-0.
+   * The values are the URIs for each node's web portal in the job.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getWebAccessUrisMap() {
+    return internalGetWebAccessUris().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The web access URIs for the training job.
+   * The keys are the node names in the training jobs, e.g. workerpool0-0.
+   * The values are the URIs for each node's web portal in the job.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getWebAccessUrisOrDefault(
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetWebAccessUris().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The web access URIs for the training job.
+   * The keys are the node names in the training jobs, e.g. workerpool0-0.
+   * The values are the URIs for each node's web portal in the job.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getWebAccessUrisOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetWebAccessUris().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -924,6 +1060,8 @@ public final class CustomJob extends com.google.protobuf.GeneratedMessageV3
     if (encryptionSpec_ != null) {
       output.writeMessage(12, getEncryptionSpec());
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetWebAccessUris(), WebAccessUrisDefaultEntryHolder.defaultEntry, 16);
     unknownFields.writeTo(output);
   }
 
@@ -973,6 +1111,16 @@ public final class CustomJob extends com.google.protobuf.GeneratedMessageV3
     if (encryptionSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getEncryptionSpec());
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetWebAccessUris().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> webAccessUris__ =
+          WebAccessUrisDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, webAccessUris__);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1021,6 +1169,7 @@ public final class CustomJob extends com.google.protobuf.GeneratedMessageV3
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
     }
+    if (!internalGetWebAccessUris().equals(other.internalGetWebAccessUris())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1069,6 +1218,10 @@ public final class CustomJob extends com.google.protobuf.GeneratedMessageV3
     if (hasEncryptionSpec()) {
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionSpec().hashCode();
+    }
+    if (!internalGetWebAccessUris().getMap().isEmpty()) {
+      hash = (37 * hash) + WEB_ACCESS_URIS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetWebAccessUris().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1196,6 +1349,8 @@ public final class CustomJob extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 11:
           return internalGetLabels();
+        case 16:
+          return internalGetWebAccessUris();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1206,6 +1361,8 @@ public final class CustomJob extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 11:
           return internalGetMutableLabels();
+        case 16:
+          return internalGetMutableWebAccessUris();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1287,6 +1444,7 @@ public final class CustomJob extends com.google.protobuf.GeneratedMessageV3
         encryptionSpec_ = null;
         encryptionSpecBuilder_ = null;
       }
+      internalGetMutableWebAccessUris().clear();
       return this;
     }
 
@@ -1355,6 +1513,8 @@ public final class CustomJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.encryptionSpec_ = encryptionSpecBuilder_.build();
       }
+      result.webAccessUris_ = internalGetWebAccessUris();
+      result.webAccessUris_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -1437,6 +1597,7 @@ public final class CustomJob extends com.google.protobuf.GeneratedMessageV3
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
       }
+      internalGetMutableWebAccessUris().mergeFrom(other.internalGetWebAccessUris());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -3361,6 +3522,194 @@ public final class CustomJob extends com.google.protobuf.GeneratedMessageV3
         encryptionSpec_ = null;
       }
       return encryptionSpecBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> webAccessUris_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetWebAccessUris() {
+      if (webAccessUris_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            WebAccessUrisDefaultEntryHolder.defaultEntry);
+      }
+      return webAccessUris_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableWebAccessUris() {
+      onChanged();
+      ;
+      if (webAccessUris_ == null) {
+        webAccessUris_ =
+            com.google.protobuf.MapField.newMapField(WebAccessUrisDefaultEntryHolder.defaultEntry);
+      }
+      if (!webAccessUris_.isMutable()) {
+        webAccessUris_ = webAccessUris_.copy();
+      }
+      return webAccessUris_;
+    }
+
+    public int getWebAccessUrisCount() {
+      return internalGetWebAccessUris().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The web access URIs for the training job.
+     * The keys are the node names in the training jobs, e.g. workerpool0-0.
+     * The values are the URIs for each node's web portal in the job.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsWebAccessUris(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetWebAccessUris().getMap().containsKey(key);
+    }
+    /** Use {@link #getWebAccessUrisMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getWebAccessUris() {
+      return getWebAccessUrisMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The web access URIs for the training job.
+     * The keys are the node names in the training jobs, e.g. workerpool0-0.
+     * The values are the URIs for each node's web portal in the job.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getWebAccessUrisMap() {
+      return internalGetWebAccessUris().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The web access URIs for the training job.
+     * The keys are the node names in the training jobs, e.g. workerpool0-0.
+     * The values are the URIs for each node's web portal in the job.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getWebAccessUrisOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetWebAccessUris().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The web access URIs for the training job.
+     * The keys are the node names in the training jobs, e.g. workerpool0-0.
+     * The values are the URIs for each node's web portal in the job.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getWebAccessUrisOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetWebAccessUris().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearWebAccessUris() {
+      internalGetMutableWebAccessUris().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The web access URIs for the training job.
+     * The keys are the node names in the training jobs, e.g. workerpool0-0.
+     * The values are the URIs for each node's web portal in the job.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeWebAccessUris(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableWebAccessUris().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableWebAccessUris() {
+      return internalGetMutableWebAccessUris().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The web access URIs for the training job.
+     * The keys are the node names in the training jobs, e.g. workerpool0-0.
+     * The values are the URIs for each node's web portal in the job.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putWebAccessUris(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableWebAccessUris().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The web access URIs for the training job.
+     * The keys are the node names in the training jobs, e.g. workerpool0-0.
+     * The values are the URIs for each node's web portal in the job.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putAllWebAccessUris(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableWebAccessUris().getMutableMap().putAll(values);
+      return this;
     }
 
     @java.lang.Override

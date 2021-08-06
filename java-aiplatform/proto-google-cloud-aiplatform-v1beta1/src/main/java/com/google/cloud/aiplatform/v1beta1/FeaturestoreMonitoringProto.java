@@ -47,17 +47,21 @@ public final class FeaturestoreMonitoringProto {
       "\n=google/cloud/aiplatform/v1beta1/featur"
           + "estore_monitoring.proto\022\037google.cloud.ai"
           + "platform.v1beta1\032\036google/protobuf/durati"
-          + "on.proto\032\034google/api/annotations.proto\"\347"
-          + "\001\n\034FeaturestoreMonitoringConfig\022i\n\021snaps"
+          + "on.proto\032\034google/api/annotations.proto\"\211"
+          + "\002\n\034FeaturestoreMonitoringConfig\022i\n\021snaps"
           + "hot_analysis\030\001 \001(\0132N.google.cloud.aiplat"
           + "form.v1beta1.FeaturestoreMonitoringConfi"
-          + "g.SnapshotAnalysis\032\\\n\020SnapshotAnalysis\022\020"
+          + "g.SnapshotAnalysis\032~\n\020SnapshotAnalysis\022\020"
           + "\n\010disabled\030\001 \001(\010\0226\n\023monitoring_interval\030"
-          + "\002 \001(\0132\031.google.protobuf.DurationB\217\001\n#com"
-          + ".google.cloud.aiplatform.v1beta1B\033Featur"
-          + "estoreMonitoringProtoP\001ZIgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/aiplatform/"
-          + "v1beta1;aiplatformb\006proto3"
+          + "\002 \001(\0132\031.google.protobuf.Duration\022 \n\030moni"
+          + "toring_interval_days\030\003 \001(\005B\370\001\n#com.googl"
+          + "e.cloud.aiplatform.v1beta1B\033Featurestore"
+          + "MonitoringProtoP\001ZIgoogle.golang.org/gen"
+          + "proto/googleapis/cloud/aiplatform/v1beta"
+          + "1;aiplatform\252\002\037Google.Cloud.AIPlatform.V"
+          + "1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1"
+          + "\352\002\"Google::Cloud::AIPlatform::V1beta1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -82,7 +86,7 @@ public final class FeaturestoreMonitoringProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_SnapshotAnalysis_descriptor,
             new java.lang.String[] {
-              "Disabled", "MonitoringInterval",
+              "Disabled", "MonitoringInterval", "MonitoringIntervalDays",
             });
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();

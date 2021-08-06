@@ -56,45 +56,48 @@ public final class PredictionServiceProto {
           + "tion_service.proto\022\037google.cloud.aiplatf"
           + "orm.v1beta1\032\034google/api/annotations.prot"
           + "o\032\027google/api/client.proto\032\037google/api/f"
-          + "ield_behavior.proto\032\031google/api/resource"
-          + ".proto\0321google/cloud/aiplatform/v1beta1/"
-          + "explanation.proto\032\034google/protobuf/struc"
-          + "t.proto\"\252\001\n\016PredictRequest\022<\n\010endpoint\030\001"
-          + " \001(\tB*\340A\002\372A$\n\"aiplatform.googleapis.com/"
-          + "Endpoint\022.\n\tinstances\030\002 \003(\0132\026.google.pro"
-          + "tobuf.ValueB\003\340A\002\022*\n\nparameters\030\003 \001(\0132\026.g"
-          + "oogle.protobuf.Value\"Y\n\017PredictResponse\022"
-          + "+\n\013predictions\030\001 \003(\0132\026.google.protobuf.V"
-          + "alue\022\031\n\021deployed_model_id\030\002 \001(\t\"\242\002\n\016Expl"
-          + "ainRequest\022<\n\010endpoint\030\001 \001(\tB*\340A\002\372A$\n\"ai"
-          + "platform.googleapis.com/Endpoint\022.\n\tinst"
-          + "ances\030\002 \003(\0132\026.google.protobuf.ValueB\003\340A\002"
-          + "\022*\n\nparameters\030\004 \001(\0132\026.google.protobuf.V"
-          + "alue\022[\n\031explanation_spec_override\030\005 \001(\0132"
-          + "8.google.cloud.aiplatform.v1beta1.Explan"
-          + "ationSpecOverride\022\031\n\021deployed_model_id\030\003"
-          + " \001(\t\"\235\001\n\017ExplainResponse\022B\n\014explanations"
-          + "\030\001 \003(\0132,.google.cloud.aiplatform.v1beta1"
-          + ".Explanation\022\031\n\021deployed_model_id\030\002 \001(\t\022"
-          + "+\n\013predictions\030\003 \003(\0132\026.google.protobuf.V"
-          + "alue2\250\004\n\021PredictionService\022\327\001\n\007Predict\022/"
-          + ".google.cloud.aiplatform.v1beta1.Predict"
-          + "Request\0320.google.cloud.aiplatform.v1beta"
-          + "1.PredictResponse\"i\202\323\344\223\002C\">/v1beta1/{end"
-          + "point=projects/*/locations/*/endpoints/*"
-          + "}:predict:\001*\332A\035endpoint,instances,parame"
-          + "ters\022\351\001\n\007Explain\022/.google.cloud.aiplatfo"
-          + "rm.v1beta1.ExplainRequest\0320.google.cloud"
-          + ".aiplatform.v1beta1.ExplainResponse\"{\202\323\344"
-          + "\223\002C\">/v1beta1/{endpoint=projects/*/locat"
-          + "ions/*/endpoints/*}:explain:\001*\332A/endpoin"
-          + "t,instances,parameters,deployed_model_id"
-          + "\032M\312A\031aiplatform.googleapis.com\322A.https:/"
-          + "/www.googleapis.com/auth/cloud-platformB"
-          + "\212\001\n#com.google.cloud.aiplatform.v1beta1B"
-          + "\026PredictionServiceProtoP\001ZIgoogle.golang"
-          + ".org/genproto/googleapis/cloud/aiplatfor"
-          + "m/v1beta1;aiplatformb\006proto3"
+          + "ield_behavior.proto\032\031google/api/httpbody"
+          + ".proto\032\031google/api/resource.proto\0321googl"
+          + "e/cloud/aiplatform/v1beta1/explanation.p"
+          + "roto\032\034google/protobuf/struct.proto\"\252\001\n\016P"
+          + "redictRequest\022<\n\010endpoint\030\001 \001(\tB*\340A\002\372A$\n"
+          + "\"aiplatform.googleapis.com/Endpoint\022.\n\ti"
+          + "nstances\030\002 \003(\0132\026.google.protobuf.ValueB\003"
+          + "\340A\002\022*\n\nparameters\030\003 \001(\0132\026.google.protobu"
+          + "f.Value\"Y\n\017PredictResponse\022+\n\013prediction"
+          + "s\030\001 \003(\0132\026.google.protobuf.Value\022\031\n\021deplo"
+          + "yed_model_id\030\002 \001(\t\"\242\002\n\016ExplainRequest\022<\n"
+          + "\010endpoint\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.goog"
+          + "leapis.com/Endpoint\022.\n\tinstances\030\002 \003(\0132\026"
+          + ".google.protobuf.ValueB\003\340A\002\022*\n\nparameter"
+          + "s\030\004 \001(\0132\026.google.protobuf.Value\022[\n\031expla"
+          + "nation_spec_override\030\005 \001(\01328.google.clou"
+          + "d.aiplatform.v1beta1.ExplanationSpecOver"
+          + "ride\022\031\n\021deployed_model_id\030\003 \001(\t\"\235\001\n\017Expl"
+          + "ainResponse\022B\n\014explanations\030\001 \003(\0132,.goog"
+          + "le.cloud.aiplatform.v1beta1.Explanation\022"
+          + "\031\n\021deployed_model_id\030\002 \001(\t\022+\n\013prediction"
+          + "s\030\003 \003(\0132\026.google.protobuf.Value2\250\004\n\021Pred"
+          + "ictionService\022\327\001\n\007Predict\022/.google.cloud"
+          + ".aiplatform.v1beta1.PredictRequest\0320.goo"
+          + "gle.cloud.aiplatform.v1beta1.PredictResp"
+          + "onse\"i\202\323\344\223\002C\">/v1beta1/{endpoint=project"
+          + "s/*/locations/*/endpoints/*}:predict:\001*\332"
+          + "A\035endpoint,instances,parameters\022\351\001\n\007Expl"
+          + "ain\022/.google.cloud.aiplatform.v1beta1.Ex"
+          + "plainRequest\0320.google.cloud.aiplatform.v"
+          + "1beta1.ExplainResponse\"{\202\323\344\223\002C\">/v1beta1"
+          + "/{endpoint=projects/*/locations/*/endpoi"
+          + "nts/*}:explain:\001*\332A/endpoint,instances,p"
+          + "arameters,deployed_model_id\032M\312A\031aiplatfo"
+          + "rm.googleapis.com\322A.https://www.googleap"
+          + "is.com/auth/cloud-platformB\363\001\n#com.googl"
+          + "e.cloud.aiplatform.v1beta1B\026PredictionSe"
+          + "rviceProtoP\001ZIgoogle.golang.org/genproto"
+          + "/googleapis/cloud/aiplatform/v1beta1;aip"
+          + "latform\252\002\037Google.Cloud.AIPlatform.V1Beta"
+          + "1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Go"
+          + "ogle::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -103,6 +106,7 @@ public final class PredictionServiceProto {
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.HttpBodyProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.ExplanationProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
@@ -152,6 +156,7 @@ public final class PredictionServiceProto {
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.HttpBodyProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.ExplanationProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();

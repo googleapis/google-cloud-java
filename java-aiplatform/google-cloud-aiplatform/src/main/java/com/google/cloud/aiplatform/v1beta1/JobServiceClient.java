@@ -16,7 +16,6 @@
 
 package com.google.cloud.aiplatform.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -3745,12 +3744,7 @@ public class JobServiceClient implements BackgroundResource {
           ListCustomJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListCustomJobsPage, ListCustomJobsPagedResponse>() {
-            @Override
-            public ListCustomJobsPagedResponse apply(ListCustomJobsPage input) {
-              return new ListCustomJobsPagedResponse(input);
-            }
-          },
+          input -> new ListCustomJobsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3827,12 +3821,7 @@ public class JobServiceClient implements BackgroundResource {
           ListDataLabelingJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListDataLabelingJobsPage, ListDataLabelingJobsPagedResponse>() {
-            @Override
-            public ListDataLabelingJobsPagedResponse apply(ListDataLabelingJobsPage input) {
-              return new ListDataLabelingJobsPagedResponse(input);
-            }
-          },
+          input -> new ListDataLabelingJobsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3920,14 +3909,7 @@ public class JobServiceClient implements BackgroundResource {
               .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              ListHyperparameterTuningJobsPage, ListHyperparameterTuningJobsPagedResponse>() {
-            @Override
-            public ListHyperparameterTuningJobsPagedResponse apply(
-                ListHyperparameterTuningJobsPage input) {
-              return new ListHyperparameterTuningJobsPagedResponse(input);
-            }
-          },
+          input -> new ListHyperparameterTuningJobsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4021,12 +4003,7 @@ public class JobServiceClient implements BackgroundResource {
           ListBatchPredictionJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListBatchPredictionJobsPage, ListBatchPredictionJobsPagedResponse>() {
-            @Override
-            public ListBatchPredictionJobsPagedResponse apply(ListBatchPredictionJobsPage input) {
-              return new ListBatchPredictionJobsPagedResponse(input);
-            }
-          },
+          input -> new ListBatchPredictionJobsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4117,15 +4094,7 @@ public class JobServiceClient implements BackgroundResource {
               .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              SearchModelDeploymentMonitoringStatsAnomaliesPage,
-              SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse>() {
-            @Override
-            public SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse apply(
-                SearchModelDeploymentMonitoringStatsAnomaliesPage input) {
-              return new SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse(input);
-            }
-          },
+          input -> new SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4227,15 +4196,7 @@ public class JobServiceClient implements BackgroundResource {
               .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              ListModelDeploymentMonitoringJobsPage,
-              ListModelDeploymentMonitoringJobsPagedResponse>() {
-            @Override
-            public ListModelDeploymentMonitoringJobsPagedResponse apply(
-                ListModelDeploymentMonitoringJobsPage input) {
-              return new ListModelDeploymentMonitoringJobsPagedResponse(input);
-            }
-          },
+          input -> new ListModelDeploymentMonitoringJobsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

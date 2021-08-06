@@ -72,4 +72,21 @@
     <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/Annotated*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/Annotation*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/NetworkName*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/VersionName*</className>
+  </difference>
 </differences>

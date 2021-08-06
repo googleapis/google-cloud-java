@@ -165,4 +165,109 @@ public class MockPipelineServiceImpl extends PipelineServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void createPipelineJob(
+      CreatePipelineJobRequest request, StreamObserver<PipelineJob> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PipelineJob) {
+      requests.add(request);
+      responseObserver.onNext(((PipelineJob) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreatePipelineJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PipelineJob.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getPipelineJob(
+      GetPipelineJobRequest request, StreamObserver<PipelineJob> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PipelineJob) {
+      requests.add(request);
+      responseObserver.onNext(((PipelineJob) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetPipelineJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PipelineJob.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listPipelineJobs(
+      ListPipelineJobsRequest request, StreamObserver<ListPipelineJobsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListPipelineJobsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListPipelineJobsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPipelineJobs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListPipelineJobsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deletePipelineJob(
+      DeletePipelineJobRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeletePipelineJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void cancelPipelineJob(
+      CancelPipelineJobRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelPipelineJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

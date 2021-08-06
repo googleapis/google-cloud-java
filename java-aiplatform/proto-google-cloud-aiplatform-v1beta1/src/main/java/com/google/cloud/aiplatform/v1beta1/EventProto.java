@@ -59,10 +59,13 @@ public final class EventProto {
           + "cloud.aiplatform.v1beta1.Event.LabelsEnt"
           + "ry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
           + "\002 \001(\t:\0028\001\"3\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022"
-          + "\t\n\005INPUT\020\001\022\n\n\006OUTPUT\020\002B~\n#com.google.clo"
-          + "ud.aiplatform.v1beta1B\nEventProtoP\001ZIgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/aiplatform/v1beta1;aiplatformb\006proto3"
+          + "\t\n\005INPUT\020\001\022\n\n\006OUTPUT\020\002B\347\001\n#com.google.cl"
+          + "oud.aiplatform.v1beta1B\nEventProtoP\001ZIgo"
+          + "ogle.golang.org/genproto/googleapis/clou"
+          + "d/aiplatform/v1beta1;aiplatform\252\002\037Google"
+          + ".Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cloud"
+          + "\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIP"
+          + "latform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

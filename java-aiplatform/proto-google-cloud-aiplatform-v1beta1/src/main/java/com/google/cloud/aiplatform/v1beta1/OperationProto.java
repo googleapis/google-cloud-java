@@ -56,11 +56,13 @@ public final class OperationProto {
           + ".google.protobuf.TimestampB\003\340A\003\"n\n\027Delet"
           + "eOperationMetadata\022S\n\020generic_metadata\030\001"
           + " \001(\01329.google.cloud.aiplatform.v1beta1.G"
-          + "enericOperationMetadataB\202\001\n#com.google.c"
+          + "enericOperationMetadataB\353\001\n#com.google.c"
           + "loud.aiplatform.v1beta1B\016OperationProtoP"
           + "\001ZIgoogle.golang.org/genproto/googleapis"
-          + "/cloud/aiplatform/v1beta1;aiplatformb\006pr"
-          + "oto3"
+          + "/cloud/aiplatform/v1beta1;aiplatform\252\002\037G"
+          + "oogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\"
+          + "Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud"
+          + "::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -40,9 +40,13 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Trial() {
+    name_ = "";
     id_ = "";
     state_ = 0;
     parameters_ = java.util.Collections.emptyList();
+    measurements_ = java.util.Collections.emptyList();
+    clientId_ = "";
+    infeasibleReason_ = "";
     customJob_ = "";
   }
 
@@ -76,6 +80,13 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -118,6 +129,18 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 50:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                measurements_ =
+                    new java.util.ArrayList<com.google.cloud.aiplatform.v1.Measurement>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              measurements_.add(
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1.Measurement.parser(), extensionRegistry));
+              break;
+            }
           case 58:
             {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
@@ -148,6 +171,20 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 74:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientId_ = s;
+              break;
+            }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              infeasibleReason_ = s;
+              break;
+            }
           case 90:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -171,6 +208,9 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         parameters_ = java.util.Collections.unmodifiableList(parameters_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        measurements_ = java.util.Collections.unmodifiableList(measurements_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -1442,6 +1482,55 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource name of the Trial assigned by the service.
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource name of the Trial assigned by the service.
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object id_;
   /**
@@ -1664,6 +1753,95 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
     return getFinalMeasurement();
   }
 
+  public static final int MEASUREMENTS_FIELD_NUMBER = 6;
+  private java.util.List<com.google.cloud.aiplatform.v1.Measurement> measurements_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of measurements that are strictly lexicographically
+   * ordered by their induced tuples (steps, elapsed_duration).
+   * These are used for early stopping computations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1.Measurement> getMeasurementsList() {
+    return measurements_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of measurements that are strictly lexicographically
+   * ordered by their induced tuples (steps, elapsed_duration).
+   * These are used for early stopping computations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1.MeasurementOrBuilder>
+      getMeasurementsOrBuilderList() {
+    return measurements_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of measurements that are strictly lexicographically
+   * ordered by their induced tuples (steps, elapsed_duration).
+   * These are used for early stopping computations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getMeasurementsCount() {
+    return measurements_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of measurements that are strictly lexicographically
+   * ordered by their induced tuples (steps, elapsed_duration).
+   * These are used for early stopping computations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Measurement getMeasurements(int index) {
+    return measurements_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of measurements that are strictly lexicographically
+   * ordered by their induced tuples (steps, elapsed_duration).
+   * These are used for early stopping computations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.MeasurementOrBuilder getMeasurementsOrBuilder(int index) {
+    return measurements_.get(index);
+  }
+
   public static final int START_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp startTime_;
   /**
@@ -1762,6 +1940,120 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
     return getEndTime();
   }
 
+  public static final int CLIENT_ID_FIELD_NUMBER = 9;
+  private volatile java.lang.Object clientId_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The identifier of the client that originally requested this Trial.
+   * Each client is identified by a unique client_id. When a client
+   * asks for a suggestion, Vizier will assign it a Trial. The client should
+   * evaluate the Trial, complete it, and report back to Vizier.
+   * If suggestion is asked again by same client_id before the Trial is
+   * completed, the same Trial will be returned. Multiple clients with
+   * different client_ids can ask for suggestions simultaneously, each of them
+   * will get their own Trial.
+   * </pre>
+   *
+   * <code>string client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clientId.
+   */
+  @java.lang.Override
+  public java.lang.String getClientId() {
+    java.lang.Object ref = clientId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      clientId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The identifier of the client that originally requested this Trial.
+   * Each client is identified by a unique client_id. When a client
+   * asks for a suggestion, Vizier will assign it a Trial. The client should
+   * evaluate the Trial, complete it, and report back to Vizier.
+   * If suggestion is asked again by same client_id before the Trial is
+   * completed, the same Trial will be returned. Multiple clients with
+   * different client_ids can ask for suggestions simultaneously, each of them
+   * will get their own Trial.
+   * </pre>
+   *
+   * <code>string client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for clientId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getClientIdBytes() {
+    java.lang.Object ref = clientId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      clientId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int INFEASIBLE_REASON_FIELD_NUMBER = 10;
+  private volatile java.lang.Object infeasibleReason_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A human readable string describing why the Trial is
+   * infeasible. This is set only if Trial state is `INFEASIBLE`.
+   * </pre>
+   *
+   * <code>string infeasible_reason = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The infeasibleReason.
+   */
+  @java.lang.Override
+  public java.lang.String getInfeasibleReason() {
+    java.lang.Object ref = infeasibleReason_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      infeasibleReason_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A human readable string describing why the Trial is
+   * infeasible. This is set only if Trial state is `INFEASIBLE`.
+   * </pre>
+   *
+   * <code>string infeasible_reason = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for infeasibleReason.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getInfeasibleReasonBytes() {
+    java.lang.Object ref = infeasibleReason_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      infeasibleReason_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int CUSTOM_JOB_FIELD_NUMBER = 11;
   private volatile java.lang.Object customJob_;
   /**
@@ -1831,6 +2123,9 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    }
     if (!getIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
     }
@@ -1843,11 +2138,20 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
     if (finalMeasurement_ != null) {
       output.writeMessage(5, getFinalMeasurement());
     }
+    for (int i = 0; i < measurements_.size(); i++) {
+      output.writeMessage(6, measurements_.get(i));
+    }
     if (startTime_ != null) {
       output.writeMessage(7, getStartTime());
     }
     if (endTime_ != null) {
       output.writeMessage(8, getEndTime());
+    }
+    if (!getClientIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, clientId_);
+    }
+    if (!getInfeasibleReasonBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, infeasibleReason_);
     }
     if (!getCustomJobBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, customJob_);
@@ -1861,6 +2165,9 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
     if (!getIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
     }
@@ -1873,11 +2180,20 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
     if (finalMeasurement_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getFinalMeasurement());
     }
+    for (int i = 0; i < measurements_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, measurements_.get(i));
+    }
     if (startTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getStartTime());
     }
     if (endTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getEndTime());
+    }
+    if (!getClientIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, clientId_);
+    }
+    if (!getInfeasibleReasonBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, infeasibleReason_);
     }
     if (!getCustomJobBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, customJob_);
@@ -1897,6 +2213,7 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.aiplatform.v1.Trial other = (com.google.cloud.aiplatform.v1.Trial) obj;
 
+    if (!getName().equals(other.getName())) return false;
     if (!getId().equals(other.getId())) return false;
     if (state_ != other.state_) return false;
     if (!getParametersList().equals(other.getParametersList())) return false;
@@ -1904,6 +2221,7 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
     if (hasFinalMeasurement()) {
       if (!getFinalMeasurement().equals(other.getFinalMeasurement())) return false;
     }
+    if (!getMeasurementsList().equals(other.getMeasurementsList())) return false;
     if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
       if (!getStartTime().equals(other.getStartTime())) return false;
@@ -1912,6 +2230,8 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
     if (hasEndTime()) {
       if (!getEndTime().equals(other.getEndTime())) return false;
     }
+    if (!getClientId().equals(other.getClientId())) return false;
+    if (!getInfeasibleReason().equals(other.getInfeasibleReason())) return false;
     if (!getCustomJob().equals(other.getCustomJob())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1924,6 +2244,8 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + STATE_FIELD_NUMBER;
@@ -1936,6 +2258,10 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + FINAL_MEASUREMENT_FIELD_NUMBER;
       hash = (53 * hash) + getFinalMeasurement().hashCode();
     }
+    if (getMeasurementsCount() > 0) {
+      hash = (37 * hash) + MEASUREMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getMeasurementsList().hashCode();
+    }
     if (hasStartTime()) {
       hash = (37 * hash) + START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getStartTime().hashCode();
@@ -1944,6 +2270,10 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime().hashCode();
     }
+    hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getClientId().hashCode();
+    hash = (37 * hash) + INFEASIBLE_REASON_FIELD_NUMBER;
+    hash = (53 * hash) + getInfeasibleReason().hashCode();
     hash = (37 * hash) + CUSTOM_JOB_FIELD_NUMBER;
     hash = (53 * hash) + getCustomJob().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -2088,12 +2418,15 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getParametersFieldBuilder();
+        getMeasurementsFieldBuilder();
       }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      name_ = "";
+
       id_ = "";
 
       state_ = 0;
@@ -2110,6 +2443,12 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
         finalMeasurement_ = null;
         finalMeasurementBuilder_ = null;
       }
+      if (measurementsBuilder_ == null) {
+        measurements_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        measurementsBuilder_.clear();
+      }
       if (startTimeBuilder_ == null) {
         startTime_ = null;
       } else {
@@ -2122,6 +2461,10 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
         endTime_ = null;
         endTimeBuilder_ = null;
       }
+      clientId_ = "";
+
+      infeasibleReason_ = "";
+
       customJob_ = "";
 
       return this;
@@ -2151,6 +2494,7 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.Trial buildPartial() {
       com.google.cloud.aiplatform.v1.Trial result = new com.google.cloud.aiplatform.v1.Trial(this);
       int from_bitField0_ = bitField0_;
+      result.name_ = name_;
       result.id_ = id_;
       result.state_ = state_;
       if (parametersBuilder_ == null) {
@@ -2167,6 +2511,15 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.finalMeasurement_ = finalMeasurementBuilder_.build();
       }
+      if (measurementsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          measurements_ = java.util.Collections.unmodifiableList(measurements_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.measurements_ = measurements_;
+      } else {
+        result.measurements_ = measurementsBuilder_.build();
+      }
       if (startTimeBuilder_ == null) {
         result.startTime_ = startTime_;
       } else {
@@ -2177,6 +2530,8 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.endTime_ = endTimeBuilder_.build();
       }
+      result.clientId_ = clientId_;
+      result.infeasibleReason_ = infeasibleReason_;
       result.customJob_ = customJob_;
       onBuilt();
       return result;
@@ -2227,6 +2582,10 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.aiplatform.v1.Trial other) {
       if (other == com.google.cloud.aiplatform.v1.Trial.getDefaultInstance()) return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
         onChanged();
@@ -2264,11 +2623,46 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
       if (other.hasFinalMeasurement()) {
         mergeFinalMeasurement(other.getFinalMeasurement());
       }
+      if (measurementsBuilder_ == null) {
+        if (!other.measurements_.isEmpty()) {
+          if (measurements_.isEmpty()) {
+            measurements_ = other.measurements_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureMeasurementsIsMutable();
+            measurements_.addAll(other.measurements_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.measurements_.isEmpty()) {
+          if (measurementsBuilder_.isEmpty()) {
+            measurementsBuilder_.dispose();
+            measurementsBuilder_ = null;
+            measurements_ = other.measurements_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            measurementsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getMeasurementsFieldBuilder()
+                    : null;
+          } else {
+            measurementsBuilder_.addAllMessages(other.measurements_);
+          }
+        }
+      }
       if (other.hasStartTime()) {
         mergeStartTime(other.getStartTime());
       }
       if (other.hasEndTime()) {
         mergeEndTime(other.getEndTime());
+      }
+      if (!other.getClientId().isEmpty()) {
+        clientId_ = other.clientId_;
+        onChanged();
+      }
+      if (!other.getInfeasibleReason().isEmpty()) {
+        infeasibleReason_ = other.infeasibleReason_;
+        onChanged();
       }
       if (!other.getCustomJob().isEmpty()) {
         customJob_ = other.customJob_;
@@ -2304,6 +2698,112 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource name of the Trial assigned by the service.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource name of the Trial assigned by the service.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource name of the Trial assigned by the service.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource name of the Trial assigned by the service.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource name of the Trial assigned by the service.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
 
     private java.lang.Object id_ = "";
     /**
@@ -3104,6 +3604,429 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
       return finalMeasurementBuilder_;
     }
 
+    private java.util.List<com.google.cloud.aiplatform.v1.Measurement> measurements_ =
+        java.util.Collections.emptyList();
+
+    private void ensureMeasurementsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        measurements_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1.Measurement>(measurements_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.Measurement,
+            com.google.cloud.aiplatform.v1.Measurement.Builder,
+            com.google.cloud.aiplatform.v1.MeasurementOrBuilder>
+        measurementsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.Measurement> getMeasurementsList() {
+      if (measurementsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(measurements_);
+      } else {
+        return measurementsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getMeasurementsCount() {
+      if (measurementsBuilder_ == null) {
+        return measurements_.size();
+      } else {
+        return measurementsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.Measurement getMeasurements(int index) {
+      if (measurementsBuilder_ == null) {
+        return measurements_.get(index);
+      } else {
+        return measurementsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMeasurements(int index, com.google.cloud.aiplatform.v1.Measurement value) {
+      if (measurementsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMeasurementsIsMutable();
+        measurements_.set(index, value);
+        onChanged();
+      } else {
+        measurementsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMeasurements(
+        int index, com.google.cloud.aiplatform.v1.Measurement.Builder builderForValue) {
+      if (measurementsBuilder_ == null) {
+        ensureMeasurementsIsMutable();
+        measurements_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        measurementsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addMeasurements(com.google.cloud.aiplatform.v1.Measurement value) {
+      if (measurementsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMeasurementsIsMutable();
+        measurements_.add(value);
+        onChanged();
+      } else {
+        measurementsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addMeasurements(int index, com.google.cloud.aiplatform.v1.Measurement value) {
+      if (measurementsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMeasurementsIsMutable();
+        measurements_.add(index, value);
+        onChanged();
+      } else {
+        measurementsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addMeasurements(
+        com.google.cloud.aiplatform.v1.Measurement.Builder builderForValue) {
+      if (measurementsBuilder_ == null) {
+        ensureMeasurementsIsMutable();
+        measurements_.add(builderForValue.build());
+        onChanged();
+      } else {
+        measurementsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addMeasurements(
+        int index, com.google.cloud.aiplatform.v1.Measurement.Builder builderForValue) {
+      if (measurementsBuilder_ == null) {
+        ensureMeasurementsIsMutable();
+        measurements_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        measurementsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllMeasurements(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.Measurement> values) {
+      if (measurementsBuilder_ == null) {
+        ensureMeasurementsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, measurements_);
+        onChanged();
+      } else {
+        measurementsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearMeasurements() {
+      if (measurementsBuilder_ == null) {
+        measurements_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        measurementsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeMeasurements(int index) {
+      if (measurementsBuilder_ == null) {
+        ensureMeasurementsIsMutable();
+        measurements_.remove(index);
+        onChanged();
+      } else {
+        measurementsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.Measurement.Builder getMeasurementsBuilder(int index) {
+      return getMeasurementsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.MeasurementOrBuilder getMeasurementsOrBuilder(int index) {
+      if (measurementsBuilder_ == null) {
+        return measurements_.get(index);
+      } else {
+        return measurementsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1.MeasurementOrBuilder>
+        getMeasurementsOrBuilderList() {
+      if (measurementsBuilder_ != null) {
+        return measurementsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(measurements_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.Measurement.Builder addMeasurementsBuilder() {
+      return getMeasurementsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1.Measurement.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.Measurement.Builder addMeasurementsBuilder(int index) {
+      return getMeasurementsFieldBuilder()
+          .addBuilder(index, com.google.cloud.aiplatform.v1.Measurement.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.Measurement.Builder>
+        getMeasurementsBuilderList() {
+      return getMeasurementsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.Measurement,
+            com.google.cloud.aiplatform.v1.Measurement.Builder,
+            com.google.cloud.aiplatform.v1.MeasurementOrBuilder>
+        getMeasurementsFieldBuilder() {
+      if (measurementsBuilder_ == null) {
+        measurementsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.Measurement,
+                com.google.cloud.aiplatform.v1.Measurement.Builder,
+                com.google.cloud.aiplatform.v1.MeasurementOrBuilder>(
+                measurements_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        measurements_ = null;
+      }
+      return measurementsBuilder_;
+    }
+
     private com.google.protobuf.Timestamp startTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -3478,6 +4401,258 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
         endTime_ = null;
       }
       return endTimeBuilder_;
+    }
+
+    private java.lang.Object clientId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The identifier of the client that originally requested this Trial.
+     * Each client is identified by a unique client_id. When a client
+     * asks for a suggestion, Vizier will assign it a Trial. The client should
+     * evaluate the Trial, complete it, and report back to Vizier.
+     * If suggestion is asked again by same client_id before the Trial is
+     * completed, the same Trial will be returned. Multiple clients with
+     * different client_ids can ask for suggestions simultaneously, each of them
+     * will get their own Trial.
+     * </pre>
+     *
+     * <code>string client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The clientId.
+     */
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The identifier of the client that originally requested this Trial.
+     * Each client is identified by a unique client_id. When a client
+     * asks for a suggestion, Vizier will assign it a Trial. The client should
+     * evaluate the Trial, complete it, and report back to Vizier.
+     * If suggestion is asked again by same client_id before the Trial is
+     * completed, the same Trial will be returned. Multiple clients with
+     * different client_ids can ask for suggestions simultaneously, each of them
+     * will get their own Trial.
+     * </pre>
+     *
+     * <code>string client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for clientId.
+     */
+    public com.google.protobuf.ByteString getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The identifier of the client that originally requested this Trial.
+     * Each client is identified by a unique client_id. When a client
+     * asks for a suggestion, Vizier will assign it a Trial. The client should
+     * evaluate the Trial, complete it, and report back to Vizier.
+     * If suggestion is asked again by same client_id before the Trial is
+     * completed, the same Trial will be returned. Multiple clients with
+     * different client_ids can ask for suggestions simultaneously, each of them
+     * will get their own Trial.
+     * </pre>
+     *
+     * <code>string client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The clientId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      clientId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The identifier of the client that originally requested this Trial.
+     * Each client is identified by a unique client_id. When a client
+     * asks for a suggestion, Vizier will assign it a Trial. The client should
+     * evaluate the Trial, complete it, and report back to Vizier.
+     * If suggestion is asked again by same client_id before the Trial is
+     * completed, the same Trial will be returned. Multiple clients with
+     * different client_ids can ask for suggestions simultaneously, each of them
+     * will get their own Trial.
+     * </pre>
+     *
+     * <code>string client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClientId() {
+
+      clientId_ = getDefaultInstance().getClientId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The identifier of the client that originally requested this Trial.
+     * Each client is identified by a unique client_id. When a client
+     * asks for a suggestion, Vizier will assign it a Trial. The client should
+     * evaluate the Trial, complete it, and report back to Vizier.
+     * If suggestion is asked again by same client_id before the Trial is
+     * completed, the same Trial will be returned. Multiple clients with
+     * different client_ids can ask for suggestions simultaneously, each of them
+     * will get their own Trial.
+     * </pre>
+     *
+     * <code>string client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for clientId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      clientId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object infeasibleReason_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A human readable string describing why the Trial is
+     * infeasible. This is set only if Trial state is `INFEASIBLE`.
+     * </pre>
+     *
+     * <code>string infeasible_reason = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The infeasibleReason.
+     */
+    public java.lang.String getInfeasibleReason() {
+      java.lang.Object ref = infeasibleReason_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        infeasibleReason_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A human readable string describing why the Trial is
+     * infeasible. This is set only if Trial state is `INFEASIBLE`.
+     * </pre>
+     *
+     * <code>string infeasible_reason = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for infeasibleReason.
+     */
+    public com.google.protobuf.ByteString getInfeasibleReasonBytes() {
+      java.lang.Object ref = infeasibleReason_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        infeasibleReason_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A human readable string describing why the Trial is
+     * infeasible. This is set only if Trial state is `INFEASIBLE`.
+     * </pre>
+     *
+     * <code>string infeasible_reason = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The infeasibleReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInfeasibleReason(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      infeasibleReason_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A human readable string describing why the Trial is
+     * infeasible. This is set only if Trial state is `INFEASIBLE`.
+     * </pre>
+     *
+     * <code>string infeasible_reason = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInfeasibleReason() {
+
+      infeasibleReason_ = getDefaultInstance().getInfeasibleReason();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A human readable string describing why the Trial is
+     * infeasible. This is set only if Trial state is `INFEASIBLE`.
+     * </pre>
+     *
+     * <code>string infeasible_reason = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for infeasibleReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInfeasibleReasonBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      infeasibleReason_ = value;
+      onChanged();
+      return this;
     }
 
     private java.lang.Object customJob_ = "";

@@ -128,11 +128,14 @@ public final class ExplanationMetadataProto {
           + "ta1.ExplanationMetadata.InputMetadata:\0028"
           + "\001\032s\n\014OutputsEntry\022\013\n\003key\030\001 \001(\t\022R\n\005value\030"
           + "\002 \001(\0132C.google.cloud.aiplatform.v1beta1."
-          + "ExplanationMetadata.OutputMetadata:\0028\001B\214"
+          + "ExplanationMetadata.OutputMetadata:\0028\001B\365"
           + "\001\n#com.google.cloud.aiplatform.v1beta1B\030"
           + "ExplanationMetadataProtoP\001ZIgoogle.golan"
           + "g.org/genproto/googleapis/cloud/aiplatfo"
-          + "rm/v1beta1;aiplatformb\006proto3"
+          + "rm/v1beta1;aiplatform\252\002\037Google.Cloud.AIP"
+          + "latform.V1Beta1\312\002\037Google\\Cloud\\AIPlatfor"
+          + "m\\V1beta1\352\002\"Google::Cloud::AIPlatform::V"
+          + "1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -64,9 +64,9 @@ public interface StreamingReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. IDs of entities to read Feature values of. For example,
-   * for a machine learning model predicting user clicks on a website, an
-   * entity ID could be "user_123".
+   * Required. IDs of entities to read Feature values of. The maximum number of IDs is
+   * 100. For example, for a machine learning model predicting user clicks on a
+   * website, an entity ID could be "user_123".
    * </pre>
    *
    * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -78,9 +78,9 @@ public interface StreamingReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. IDs of entities to read Feature values of. For example,
-   * for a machine learning model predicting user clicks on a website, an
-   * entity ID could be "user_123".
+   * Required. IDs of entities to read Feature values of. The maximum number of IDs is
+   * 100. For example, for a machine learning model predicting user clicks on a
+   * website, an entity ID could be "user_123".
    * </pre>
    *
    * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -92,9 +92,9 @@ public interface StreamingReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. IDs of entities to read Feature values of. For example,
-   * for a machine learning model predicting user clicks on a website, an
-   * entity ID could be "user_123".
+   * Required. IDs of entities to read Feature values of. The maximum number of IDs is
+   * 100. For example, for a machine learning model predicting user clicks on a
+   * website, an entity ID could be "user_123".
    * </pre>
    *
    * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -107,9 +107,9 @@ public interface StreamingReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. IDs of entities to read Feature values of. For example,
-   * for a machine learning model predicting user clicks on a website, an
-   * entity ID could be "user_123".
+   * Required. IDs of entities to read Feature values of. The maximum number of IDs is
+   * 100. For example, for a machine learning model predicting user clicks on a
+   * website, an entity ID could be "user_123".
    * </pre>
    *
    * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -123,7 +123,8 @@ public interface StreamingReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Selector choosing Features of the target EntityType.
+   * Required. Selector choosing Features of the target EntityType. Feature IDs will be
+   * deduplicated.
    * </pre>
    *
    * <code>
@@ -137,7 +138,8 @@ public interface StreamingReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Selector choosing Features of the target EntityType.
+   * Required. Selector choosing Features of the target EntityType. Feature IDs will be
+   * deduplicated.
    * </pre>
    *
    * <code>
@@ -151,7 +153,8 @@ public interface StreamingReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Selector choosing Features of the target EntityType.
+   * Required. Selector choosing Features of the target EntityType. Feature IDs will be
+   * deduplicated.
    * </pre>
    *
    * <code>

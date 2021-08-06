@@ -85,11 +85,13 @@ public final class TensorboardDataProto {
           + "boardBlobSequence\022@\n\006values\030\001 \003(\01320.goog"
           + "le.cloud.aiplatform.v1beta1.TensorboardB"
           + "lob\"5\n\017TensorboardBlob\022\017\n\002id\030\001 \001(\tB\003\340A\003\022"
-          + "\021\n\004data\030\002 \001(\014B\003\340A\001B\210\001\n#com.google.cloud."
+          + "\021\n\004data\030\002 \001(\014B\003\340A\001B\361\001\n#com.google.cloud."
           + "aiplatform.v1beta1B\024TensorboardDataProto"
           + "P\001ZIgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/aiplatform/v1beta1;aiplatformb\006p"
-          + "roto3"
+          + "s/cloud/aiplatform/v1beta1;aiplatform\252\002\037"
+          + "Google.Cloud.AIPlatform.V1Beta1\312\002\037Google"
+          + "\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Clou"
+          + "d::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

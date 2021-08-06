@@ -483,11 +483,13 @@ public final class TensorboardServiceProto {
           + "ries/*}:exportTensorboardTimeSeries:\001*\332A"
           + "\027tensorboard_time_series\032M\312A\031aiplatform."
           + "googleapis.com\322A.https://www.googleapis."
-          + "com/auth/cloud-platformB\213\001\n#com.google.c"
+          + "com/auth/cloud-platformB\364\001\n#com.google.c"
           + "loud.aiplatform.v1beta1B\027TensorboardServ"
           + "iceProtoP\001ZIgoogle.golang.org/genproto/g"
           + "oogleapis/cloud/aiplatform/v1beta1;aipla"
-          + "tformb\006proto3"
+          + "tform\252\002\037Google.Cloud.AIPlatform.V1Beta1\312"
+          + "\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goog"
+          + "le::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -37,6 +37,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
     transformations_ = java.util.Collections.emptyList();
     optimizationObjective_ = "";
     weightColumnName_ = "";
+    additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -155,6 +156,16 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
               break;
             }
+          case 90:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                additionalExperiments_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              additionalExperiments_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -171,6 +182,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         transformations_ = java.util.Collections.unmodifiableList(transformations_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        additionalExperiments_ = additionalExperiments_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -10310,6 +10324,67 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
     return getExportEvaluatedDataItemsConfig();
   }
 
+  public static final int ADDITIONAL_EXPERIMENTS_FIELD_NUMBER = 11;
+  private com.google.protobuf.LazyStringList additionalExperiments_;
+  /**
+   *
+   *
+   * <pre>
+   * Additional experiment flags for the Tables training pipeline.
+   * </pre>
+   *
+   * <code>repeated string additional_experiments = 11;</code>
+   *
+   * @return A list containing the additionalExperiments.
+   */
+  public com.google.protobuf.ProtocolStringList getAdditionalExperimentsList() {
+    return additionalExperiments_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional experiment flags for the Tables training pipeline.
+   * </pre>
+   *
+   * <code>repeated string additional_experiments = 11;</code>
+   *
+   * @return The count of additionalExperiments.
+   */
+  public int getAdditionalExperimentsCount() {
+    return additionalExperiments_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional experiment flags for the Tables training pipeline.
+   * </pre>
+   *
+   * <code>repeated string additional_experiments = 11;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The additionalExperiments at the given index.
+   */
+  public java.lang.String getAdditionalExperiments(int index) {
+    return additionalExperiments_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional experiment flags for the Tables training pipeline.
+   * </pre>
+   *
+   * <code>repeated string additional_experiments = 11;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalExperiments at the given index.
+   */
+  public com.google.protobuf.ByteString getAdditionalExperimentsBytes(int index) {
+    return additionalExperiments_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -10353,6 +10428,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
     }
     if (exportEvaluatedDataItemsConfig_ != null) {
       output.writeMessage(10, getExportEvaluatedDataItemsConfig());
+    }
+    for (int i = 0; i < additionalExperiments_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 11, additionalExperiments_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -10399,6 +10478,14 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, getExportEvaluatedDataItemsConfig());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < additionalExperiments_.size(); i++) {
+        dataSize += computeStringSizeNoTag(additionalExperiments_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAdditionalExperimentsList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -10430,6 +10517,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       if (!getExportEvaluatedDataItemsConfig().equals(other.getExportEvaluatedDataItemsConfig()))
         return false;
     }
+    if (!getAdditionalExperimentsList().equals(other.getAdditionalExperimentsList())) return false;
     if (!getAdditionalOptimizationObjectiveConfigCase()
         .equals(other.getAdditionalOptimizationObjectiveConfigCase())) return false;
     switch (additionalOptimizationObjectiveConfigCase_) {
@@ -10476,6 +10564,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
     if (hasExportEvaluatedDataItemsConfig()) {
       hash = (37 * hash) + EXPORT_EVALUATED_DATA_ITEMS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getExportEvaluatedDataItemsConfig().hashCode();
+    }
+    if (getAdditionalExperimentsCount() > 0) {
+      hash = (37 * hash) + ADDITIONAL_EXPERIMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalExperimentsList().hashCode();
     }
     switch (additionalOptimizationObjectiveConfigCase_) {
       case 5:
@@ -10665,6 +10757,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         exportEvaluatedDataItemsConfig_ = null;
         exportEvaluatedDataItemsConfigBuilder_ = null;
       }
+      additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       additionalOptimizationObjectiveConfigCase_ = 0;
       additionalOptimizationObjectiveConfig_ = null;
       return this;
@@ -10725,6 +10819,11 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       } else {
         result.exportEvaluatedDataItemsConfig_ = exportEvaluatedDataItemsConfigBuilder_.build();
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        additionalExperiments_ = additionalExperiments_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.additionalExperiments_ = additionalExperiments_;
       result.additionalOptimizationObjectiveConfigCase_ =
           additionalOptimizationObjectiveConfigCase_;
       onBuilt();
@@ -10834,6 +10933,16 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasExportEvaluatedDataItemsConfig()) {
         mergeExportEvaluatedDataItemsConfig(other.getExportEvaluatedDataItemsConfig());
+      }
+      if (!other.additionalExperiments_.isEmpty()) {
+        if (additionalExperiments_.isEmpty()) {
+          additionalExperiments_ = other.additionalExperiments_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureAdditionalExperimentsIsMutable();
+          additionalExperiments_.addAll(other.additionalExperiments_);
+        }
+        onChanged();
       }
       switch (other.getAdditionalOptimizationObjectiveConfigCase()) {
         case OPTIMIZATION_OBJECTIVE_RECALL_VALUE:
@@ -12502,6 +12611,175 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         exportEvaluatedDataItemsConfig_ = null;
       }
       return exportEvaluatedDataItemsConfigBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList additionalExperiments_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureAdditionalExperimentsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        additionalExperiments_ =
+            new com.google.protobuf.LazyStringArrayList(additionalExperiments_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional experiment flags for the Tables training pipeline.
+     * </pre>
+     *
+     * <code>repeated string additional_experiments = 11;</code>
+     *
+     * @return A list containing the additionalExperiments.
+     */
+    public com.google.protobuf.ProtocolStringList getAdditionalExperimentsList() {
+      return additionalExperiments_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional experiment flags for the Tables training pipeline.
+     * </pre>
+     *
+     * <code>repeated string additional_experiments = 11;</code>
+     *
+     * @return The count of additionalExperiments.
+     */
+    public int getAdditionalExperimentsCount() {
+      return additionalExperiments_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional experiment flags for the Tables training pipeline.
+     * </pre>
+     *
+     * <code>repeated string additional_experiments = 11;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The additionalExperiments at the given index.
+     */
+    public java.lang.String getAdditionalExperiments(int index) {
+      return additionalExperiments_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional experiment flags for the Tables training pipeline.
+     * </pre>
+     *
+     * <code>repeated string additional_experiments = 11;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the additionalExperiments at the given index.
+     */
+    public com.google.protobuf.ByteString getAdditionalExperimentsBytes(int index) {
+      return additionalExperiments_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional experiment flags for the Tables training pipeline.
+     * </pre>
+     *
+     * <code>repeated string additional_experiments = 11;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The additionalExperiments to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdditionalExperiments(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdditionalExperimentsIsMutable();
+      additionalExperiments_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional experiment flags for the Tables training pipeline.
+     * </pre>
+     *
+     * <code>repeated string additional_experiments = 11;</code>
+     *
+     * @param value The additionalExperiments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalExperiments(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdditionalExperimentsIsMutable();
+      additionalExperiments_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional experiment flags for the Tables training pipeline.
+     * </pre>
+     *
+     * <code>repeated string additional_experiments = 11;</code>
+     *
+     * @param values The additionalExperiments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdditionalExperiments(java.lang.Iterable<java.lang.String> values) {
+      ensureAdditionalExperimentsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, additionalExperiments_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional experiment flags for the Tables training pipeline.
+     * </pre>
+     *
+     * <code>repeated string additional_experiments = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdditionalExperiments() {
+      additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional experiment flags for the Tables training pipeline.
+     * </pre>
+     *
+     * <code>repeated string additional_experiments = 11;</code>
+     *
+     * @param value The bytes of the additionalExperiments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalExperimentsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAdditionalExperimentsIsMutable();
+      additionalExperiments_.add(value);
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

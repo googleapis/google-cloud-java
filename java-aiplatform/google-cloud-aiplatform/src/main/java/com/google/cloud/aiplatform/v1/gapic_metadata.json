@@ -202,17 +202,32 @@
         "grpc": {
           "libraryClient": "PipelineServiceClient",
           "rpcs": {
+            "CancelPipelineJob": {
+              "methods": ["cancelPipelineJob", "cancelPipelineJob", "cancelPipelineJob", "cancelPipelineJobCallable"]
+            },
             "CancelTrainingPipeline": {
               "methods": ["cancelTrainingPipeline", "cancelTrainingPipeline", "cancelTrainingPipeline", "cancelTrainingPipelineCallable"]
+            },
+            "CreatePipelineJob": {
+              "methods": ["createPipelineJob", "createPipelineJob", "createPipelineJob", "createPipelineJobCallable"]
             },
             "CreateTrainingPipeline": {
               "methods": ["createTrainingPipeline", "createTrainingPipeline", "createTrainingPipeline", "createTrainingPipelineCallable"]
             },
+            "DeletePipelineJob": {
+              "methods": ["deletePipelineJobAsync", "deletePipelineJobAsync", "deletePipelineJobAsync", "deletePipelineJobOperationCallable", "deletePipelineJobCallable"]
+            },
             "DeleteTrainingPipeline": {
               "methods": ["deleteTrainingPipelineAsync", "deleteTrainingPipelineAsync", "deleteTrainingPipelineAsync", "deleteTrainingPipelineOperationCallable", "deleteTrainingPipelineCallable"]
             },
+            "GetPipelineJob": {
+              "methods": ["getPipelineJob", "getPipelineJob", "getPipelineJob", "getPipelineJobCallable"]
+            },
             "GetTrainingPipeline": {
               "methods": ["getTrainingPipeline", "getTrainingPipeline", "getTrainingPipeline", "getTrainingPipelineCallable"]
+            },
+            "ListPipelineJobs": {
+              "methods": ["listPipelineJobs", "listPipelineJobs", "listPipelineJobs", "listPipelineJobsPagedCallable", "listPipelineJobsCallable"]
             },
             "ListTrainingPipelines": {
               "methods": ["listTrainingPipelines", "listTrainingPipelines", "listTrainingPipelines", "listTrainingPipelinesPagedCallable", "listTrainingPipelinesCallable"]

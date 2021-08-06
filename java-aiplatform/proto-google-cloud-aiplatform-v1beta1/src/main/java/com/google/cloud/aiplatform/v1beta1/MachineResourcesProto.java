@@ -90,11 +90,13 @@ public final class MachineResourcesProto {
           + " \001(\001B\003\340A\003\"=\n\010DiskSpec\022\026\n\016boot_disk_type\030"
           + "\001 \001(\t\022\031\n\021boot_disk_size_gb\030\002 \001(\005\"A\n\025Auto"
           + "scalingMetricSpec\022\030\n\013metric_name\030\001 \001(\tB\003"
-          + "\340A\002\022\016\n\006target\030\002 \001(\005B\211\001\n#com.google.cloud"
+          + "\340A\002\022\016\n\006target\030\002 \001(\005B\362\001\n#com.google.cloud"
           + ".aiplatform.v1beta1B\025MachineResourcesPro"
           + "toP\001ZIgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/aiplatform/v1beta1;aiplatformb"
-          + "\006proto3"
+          + "pis/cloud/aiplatform/v1beta1;aiplatform\252"
+          + "\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Goog"
+          + "le\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cl"
+          + "oud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -37,6 +37,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -574,6 +575,7 @@ public class VizierServiceClientTest {
             .setClientId("clientId908408390")
             .setInfeasibleReason("infeasibleReason1040725388")
             .setCustomJob(CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]").toString())
+            .putAllWebAccessUris(new HashMap<String, String>())
             .build();
     mockVizierService.addResponse(expectedResponse);
 
@@ -624,6 +626,7 @@ public class VizierServiceClientTest {
             .setClientId("clientId908408390")
             .setInfeasibleReason("infeasibleReason1040725388")
             .setCustomJob(CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]").toString())
+            .putAllWebAccessUris(new HashMap<String, String>())
             .build();
     mockVizierService.addResponse(expectedResponse);
 
@@ -674,6 +677,7 @@ public class VizierServiceClientTest {
             .setClientId("clientId908408390")
             .setInfeasibleReason("infeasibleReason1040725388")
             .setCustomJob(CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]").toString())
+            .putAllWebAccessUris(new HashMap<String, String>())
             .build();
     mockVizierService.addResponse(expectedResponse);
 
@@ -721,6 +725,7 @@ public class VizierServiceClientTest {
             .setClientId("clientId908408390")
             .setInfeasibleReason("infeasibleReason1040725388")
             .setCustomJob(CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]").toString())
+            .putAllWebAccessUris(new HashMap<String, String>())
             .build();
     mockVizierService.addResponse(expectedResponse);
 
@@ -856,6 +861,7 @@ public class VizierServiceClientTest {
             .setClientId("clientId908408390")
             .setInfeasibleReason("infeasibleReason1040725388")
             .setCustomJob(CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]").toString())
+            .putAllWebAccessUris(new HashMap<String, String>())
             .build();
     mockVizierService.addResponse(expectedResponse);
 
@@ -913,6 +919,7 @@ public class VizierServiceClientTest {
             .setClientId("clientId908408390")
             .setInfeasibleReason("infeasibleReason1040725388")
             .setCustomJob(CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]").toString())
+            .putAllWebAccessUris(new HashMap<String, String>())
             .build();
     mockVizierService.addResponse(expectedResponse);
 
@@ -1096,6 +1103,7 @@ public class VizierServiceClientTest {
             .setClientId("clientId908408390")
             .setInfeasibleReason("infeasibleReason1040725388")
             .setCustomJob(CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]").toString())
+            .putAllWebAccessUris(new HashMap<String, String>())
             .build();
     mockVizierService.addResponse(expectedResponse);
 

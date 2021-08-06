@@ -16,7 +16,6 @@
 
 package com.google.cloud.aiplatform.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1144,6 +1143,269 @@ public class MetadataServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Deletes an Artifact.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   ArtifactName name =
+   *       ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]");
+   *   metadataServiceClient.deleteArtifactAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Artifact to delete. Format:
+   *     projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteArtifactAsync(
+      ArtifactName name) {
+    DeleteArtifactRequest request =
+        DeleteArtifactRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteArtifactAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an Artifact.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   String name =
+   *       ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]").toString();
+   *   metadataServiceClient.deleteArtifactAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Artifact to delete. Format:
+   *     projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteArtifactAsync(String name) {
+    DeleteArtifactRequest request = DeleteArtifactRequest.newBuilder().setName(name).build();
+    return deleteArtifactAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an Artifact.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   DeleteArtifactRequest request =
+   *       DeleteArtifactRequest.newBuilder()
+   *           .setName(
+   *               ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   metadataServiceClient.deleteArtifactAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteArtifactAsync(
+      DeleteArtifactRequest request) {
+    return deleteArtifactOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an Artifact.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   DeleteArtifactRequest request =
+   *       DeleteArtifactRequest.newBuilder()
+   *           .setName(
+   *               ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   OperationFuture<Empty, DeleteOperationMetadata> future =
+   *       metadataServiceClient.deleteArtifactOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteArtifactRequest, Empty, DeleteOperationMetadata>
+      deleteArtifactOperationCallable() {
+    return stub.deleteArtifactOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an Artifact.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   DeleteArtifactRequest request =
+   *       DeleteArtifactRequest.newBuilder()
+   *           .setName(
+   *               ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       metadataServiceClient.deleteArtifactCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteArtifactRequest, Operation> deleteArtifactCallable() {
+    return stub.deleteArtifactCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Purges Artifacts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   MetadataStoreName parent =
+   *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
+   *   PurgeArtifactsResponse response = metadataServiceClient.purgeArtifactsAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The metadata store to purge Artifacts from. Format:
+   *     projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PurgeArtifactsResponse, PurgeArtifactsMetadata> purgeArtifactsAsync(
+      MetadataStoreName parent) {
+    PurgeArtifactsRequest request =
+        PurgeArtifactsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return purgeArtifactsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Purges Artifacts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   String parent =
+   *       ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]").toString();
+   *   PurgeArtifactsResponse response = metadataServiceClient.purgeArtifactsAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The metadata store to purge Artifacts from. Format:
+   *     projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PurgeArtifactsResponse, PurgeArtifactsMetadata> purgeArtifactsAsync(
+      String parent) {
+    PurgeArtifactsRequest request = PurgeArtifactsRequest.newBuilder().setParent(parent).build();
+    return purgeArtifactsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Purges Artifacts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   PurgeArtifactsRequest request =
+   *       PurgeArtifactsRequest.newBuilder()
+   *           .setParent(
+   *               ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   PurgeArtifactsResponse response = metadataServiceClient.purgeArtifactsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PurgeArtifactsResponse, PurgeArtifactsMetadata> purgeArtifactsAsync(
+      PurgeArtifactsRequest request) {
+    return purgeArtifactsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Purges Artifacts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   PurgeArtifactsRequest request =
+   *       PurgeArtifactsRequest.newBuilder()
+   *           .setParent(
+   *               ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<PurgeArtifactsResponse, PurgeArtifactsMetadata> future =
+   *       metadataServiceClient.purgeArtifactsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PurgeArtifactsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          PurgeArtifactsRequest, PurgeArtifactsResponse, PurgeArtifactsMetadata>
+      purgeArtifactsOperationCallable() {
+    return stub.purgeArtifactsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Purges Artifacts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   PurgeArtifactsRequest request =
+   *       PurgeArtifactsRequest.newBuilder()
+   *           .setParent(
+   *               ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       metadataServiceClient.purgeArtifactsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PurgeArtifactsRequest, Operation> purgeArtifactsCallable() {
+    return stub.purgeArtifactsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a Context associated with a MetadataStore.
    *
    * <p>Sample code:
@@ -1601,7 +1863,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the Context to retrieve. Format:
+   * @param name Required. The resource name of the Context to delete. Format:
    *     projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1626,7 +1888,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the Context to retrieve. Format:
+   * @param name Required. The resource name of the Context to delete. Format:
    *     projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1649,6 +1911,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *               ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]")
    *                   .toString())
    *           .setForce(true)
+   *           .setEtag("etag3123477")
    *           .build();
    *   metadataServiceClient.deleteContextAsync(request).get();
    * }
@@ -1676,6 +1939,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *               ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]")
    *                   .toString())
    *           .setForce(true)
+   *           .setEtag("etag3123477")
    *           .build();
    *   OperationFuture<Empty, DeleteOperationMetadata> future =
    *       metadataServiceClient.deleteContextOperationCallable().futureCall(request);
@@ -1703,6 +1967,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *               ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]")
    *                   .toString())
    *           .setForce(true)
+   *           .setEtag("etag3123477")
    *           .build();
    *   ApiFuture<Operation> future =
    *       metadataServiceClient.deleteContextCallable().futureCall(request);
@@ -1713,6 +1978,140 @@ public class MetadataServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteContextRequest, Operation> deleteContextCallable() {
     return stub.deleteContextCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Purges Contexts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   MetadataStoreName parent =
+   *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
+   *   PurgeContextsResponse response = metadataServiceClient.purgeContextsAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The metadata store to purge Contexts from. Format:
+   *     projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PurgeContextsResponse, PurgeContextsMetadata> purgeContextsAsync(
+      MetadataStoreName parent) {
+    PurgeContextsRequest request =
+        PurgeContextsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return purgeContextsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Purges Contexts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   String parent =
+   *       ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]").toString();
+   *   PurgeContextsResponse response = metadataServiceClient.purgeContextsAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The metadata store to purge Contexts from. Format:
+   *     projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PurgeContextsResponse, PurgeContextsMetadata> purgeContextsAsync(
+      String parent) {
+    PurgeContextsRequest request = PurgeContextsRequest.newBuilder().setParent(parent).build();
+    return purgeContextsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Purges Contexts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   PurgeContextsRequest request =
+   *       PurgeContextsRequest.newBuilder()
+   *           .setParent(
+   *               ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   PurgeContextsResponse response = metadataServiceClient.purgeContextsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PurgeContextsResponse, PurgeContextsMetadata> purgeContextsAsync(
+      PurgeContextsRequest request) {
+    return purgeContextsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Purges Contexts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   PurgeContextsRequest request =
+   *       PurgeContextsRequest.newBuilder()
+   *           .setParent(
+   *               ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<PurgeContextsResponse, PurgeContextsMetadata> future =
+   *       metadataServiceClient.purgeContextsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PurgeContextsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PurgeContextsRequest, PurgeContextsResponse, PurgeContextsMetadata>
+      purgeContextsOperationCallable() {
+    return stub.purgeContextsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Purges Contexts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   PurgeContextsRequest request =
+   *       PurgeContextsRequest.newBuilder()
+   *           .setParent(
+   *               ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       metadataServiceClient.purgeContextsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PurgeContextsRequest, Operation> purgeContextsCallable() {
+    return stub.purgeContextsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2554,6 +2953,269 @@ public class MetadataServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Deletes an Execution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   ExecutionName name =
+   *       ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]");
+   *   metadataServiceClient.deleteExecutionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Execution to delete. Format:
+   *     projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteExecutionAsync(
+      ExecutionName name) {
+    DeleteExecutionRequest request =
+        DeleteExecutionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteExecutionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an Execution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   String name =
+   *       ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]").toString();
+   *   metadataServiceClient.deleteExecutionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Execution to delete. Format:
+   *     projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteExecutionAsync(String name) {
+    DeleteExecutionRequest request = DeleteExecutionRequest.newBuilder().setName(name).build();
+    return deleteExecutionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an Execution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   DeleteExecutionRequest request =
+   *       DeleteExecutionRequest.newBuilder()
+   *           .setName(
+   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   metadataServiceClient.deleteExecutionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteExecutionAsync(
+      DeleteExecutionRequest request) {
+    return deleteExecutionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an Execution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   DeleteExecutionRequest request =
+   *       DeleteExecutionRequest.newBuilder()
+   *           .setName(
+   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   OperationFuture<Empty, DeleteOperationMetadata> future =
+   *       metadataServiceClient.deleteExecutionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteExecutionRequest, Empty, DeleteOperationMetadata>
+      deleteExecutionOperationCallable() {
+    return stub.deleteExecutionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an Execution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   DeleteExecutionRequest request =
+   *       DeleteExecutionRequest.newBuilder()
+   *           .setName(
+   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       metadataServiceClient.deleteExecutionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteExecutionRequest, Operation> deleteExecutionCallable() {
+    return stub.deleteExecutionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Purges Executions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   MetadataStoreName parent =
+   *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
+   *   PurgeExecutionsResponse response = metadataServiceClient.purgeExecutionsAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The metadata store to purge Executions from. Format:
+   *     projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PurgeExecutionsResponse, PurgeExecutionsMetadata>
+      purgeExecutionsAsync(MetadataStoreName parent) {
+    PurgeExecutionsRequest request =
+        PurgeExecutionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return purgeExecutionsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Purges Executions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   String parent =
+   *       ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]").toString();
+   *   PurgeExecutionsResponse response = metadataServiceClient.purgeExecutionsAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The metadata store to purge Executions from. Format:
+   *     projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PurgeExecutionsResponse, PurgeExecutionsMetadata>
+      purgeExecutionsAsync(String parent) {
+    PurgeExecutionsRequest request = PurgeExecutionsRequest.newBuilder().setParent(parent).build();
+    return purgeExecutionsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Purges Executions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   PurgeExecutionsRequest request =
+   *       PurgeExecutionsRequest.newBuilder()
+   *           .setParent(
+   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   PurgeExecutionsResponse response = metadataServiceClient.purgeExecutionsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PurgeExecutionsResponse, PurgeExecutionsMetadata>
+      purgeExecutionsAsync(PurgeExecutionsRequest request) {
+    return purgeExecutionsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Purges Executions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   PurgeExecutionsRequest request =
+   *       PurgeExecutionsRequest.newBuilder()
+   *           .setParent(
+   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<PurgeExecutionsResponse, PurgeExecutionsMetadata> future =
+   *       metadataServiceClient.purgeExecutionsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PurgeExecutionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          PurgeExecutionsRequest, PurgeExecutionsResponse, PurgeExecutionsMetadata>
+      purgeExecutionsOperationCallable() {
+    return stub.purgeExecutionsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Purges Executions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   PurgeExecutionsRequest request =
+   *       PurgeExecutionsRequest.newBuilder()
+   *           .setParent(
+   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       metadataServiceClient.purgeExecutionsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PurgeExecutionsRequest, Operation> purgeExecutionsCallable() {
+    return stub.purgeExecutionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Adds Events to the specified Execution. An Event indicates whether an Artifact was used as an
    * input or output for an Execution. If an Event already exists between the Execution and the
    * Artifact, the Event is skipped.
@@ -3338,12 +4000,7 @@ public class MetadataServiceClient implements BackgroundResource {
           ListMetadataStoresPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListMetadataStoresPage, ListMetadataStoresPagedResponse>() {
-            @Override
-            public ListMetadataStoresPagedResponse apply(ListMetadataStoresPage input) {
-              return new ListMetadataStoresPagedResponse(input);
-            }
-          },
+          input -> new ListMetadataStoresPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3423,12 +4080,7 @@ public class MetadataServiceClient implements BackgroundResource {
           ListArtifactsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListArtifactsPage, ListArtifactsPagedResponse>() {
-            @Override
-            public ListArtifactsPagedResponse apply(ListArtifactsPage input) {
-              return new ListArtifactsPagedResponse(input);
-            }
-          },
+          input -> new ListArtifactsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3504,12 +4156,7 @@ public class MetadataServiceClient implements BackgroundResource {
           ListContextsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListContextsPage, ListContextsPagedResponse>() {
-            @Override
-            public ListContextsPagedResponse apply(ListContextsPage input) {
-              return new ListContextsPagedResponse(input);
-            }
-          },
+          input -> new ListContextsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3584,12 +4231,7 @@ public class MetadataServiceClient implements BackgroundResource {
           ListExecutionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListExecutionsPage, ListExecutionsPagedResponse>() {
-            @Override
-            public ListExecutionsPagedResponse apply(ListExecutionsPage input) {
-              return new ListExecutionsPagedResponse(input);
-            }
-          },
+          input -> new ListExecutionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3666,12 +4308,7 @@ public class MetadataServiceClient implements BackgroundResource {
           ListMetadataSchemasPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListMetadataSchemasPage, ListMetadataSchemasPagedResponse>() {
-            @Override
-            public ListMetadataSchemasPagedResponse apply(ListMetadataSchemasPage input) {
-              return new ListMetadataSchemasPagedResponse(input);
-            }
-          },
+          input -> new ListMetadataSchemasPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

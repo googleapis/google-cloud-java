@@ -123,10 +123,13 @@ public final class ModelProto {
           + "%.google.cloud.aiplatform.v1beta1.PortB\003"
           + "\340A\005\022\032\n\rpredict_route\030\006 \001(\tB\003\340A\005\022\031\n\014healt"
           + "h_route\030\007 \001(\tB\003\340A\005\"\036\n\004Port\022\026\n\016container_"
-          + "port\030\003 \001(\005B~\n#com.google.cloud.aiplatfor"
-          + "m.v1beta1B\nModelProtoP\001ZIgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/aiplatform/"
-          + "v1beta1;aiplatformb\006proto3"
+          + "port\030\003 \001(\005B\347\001\n#com.google.cloud.aiplatfo"
+          + "rm.v1beta1B\nModelProtoP\001ZIgoogle.golang."
+          + "org/genproto/googleapis/cloud/aiplatform"
+          + "/v1beta1;aiplatform\252\002\037Google.Cloud.AIPla"
+          + "tform.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\"
+          + "V1beta1\352\002\"Google::Cloud::AIPlatform::V1b"
+          + "eta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

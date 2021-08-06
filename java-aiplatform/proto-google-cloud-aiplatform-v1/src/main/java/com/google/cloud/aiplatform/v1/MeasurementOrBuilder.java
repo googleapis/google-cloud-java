@@ -27,6 +27,47 @@ public interface MeasurementOrBuilder
    *
    *
    * <pre>
+   * Output only. Time that the Trial has been running at the point of this Measurement.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration elapsed_duration = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the elapsedDuration field is set.
+   */
+  boolean hasElapsedDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time that the Trial has been running at the point of this Measurement.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration elapsed_duration = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The elapsedDuration.
+   */
+  com.google.protobuf.Duration getElapsedDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time that the Trial has been running at the point of this Measurement.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration elapsed_duration = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getElapsedDurationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The number of steps the machine learning model has been trained for.
    * Must be non-negative.
    * </pre>

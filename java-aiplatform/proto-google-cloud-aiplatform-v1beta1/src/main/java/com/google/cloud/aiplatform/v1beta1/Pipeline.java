@@ -177,12 +177,15 @@ public final class Pipeline {
           + "atform.googleapis.com/CustomJob\032O\n\017Custo"
           + "mJobDetail\0228\n\003job\030\001 \001(\tB+\340A\003\372A%\n#aiplatf"
           + "orm.googleapis.com/CustomJob:\002\030\001B\t\n\007deta"
-          + "ilsB\315\001\n#com.google.cloud.aiplatform.v1be"
+          + "ilsB\266\002\n#com.google.cloud.aiplatform.v1be"
           + "ta1B\010PipelineP\001ZIgoogle.golang.org/genpr"
           + "oto/googleapis/cloud/aiplatform/v1beta1;"
-          + "aiplatform\352AN\n\036compute.googleapis.com/Ne"
-          + "twork\022,projects/{project}/global/network"
-          + "s/{network}b\006proto3"
+          + "aiplatform\252\002\037Google.Cloud.AIPlatform.V1B"
+          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
+          + "\"Google::Cloud::AIPlatform::V1beta1\352AN\n\036"
+          + "compute.googleapis.com/Network\022,projects"
+          + "/{project}/global/networks/{network}b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

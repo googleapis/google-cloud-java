@@ -50,10 +50,13 @@ public final class FeatureMonitoringStatsProto {
           + "ly_detection_threshold\030\t \001(\001\022.\n\nstart_ti"
           + "me\030\007 \001(\0132\032.google.protobuf.Timestamp\022,\n\010"
           + "end_time\030\010 \001(\0132\032.google.protobuf.Timesta"
-          + "mpB\217\001\n#com.google.cloud.aiplatform.v1bet"
+          + "mpB\370\001\n#com.google.cloud.aiplatform.v1bet"
           + "a1B\033FeatureMonitoringStatsProtoP\001ZIgoogl"
           + "e.golang.org/genproto/googleapis/cloud/a"
-          + "iplatform/v1beta1;aiplatformb\006proto3"
+          + "iplatform/v1beta1;aiplatform\252\002\037Google.Cl"
+          + "oud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AI"
+          + "Platform\\V1beta1\352\002\"Google::Cloud::AIPlat"
+          + "form::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

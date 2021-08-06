@@ -141,6 +141,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
               tensorboard_ = s;
               break;
             }
+          case 80:
+            {
+              enableWebAccess_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -592,6 +597,25 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int ENABLE_WEB_ACCESS_FIELD_NUMBER = 10;
+  private boolean enableWebAccess_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Vertex AI will enable web portal access to the containers. The portals
+   * can be accessed on web via the URLs given by [web_access_uris][].
+   * </pre>
+   *
+   * <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableWebAccess.
+   */
+  @java.lang.Override
+  public boolean getEnableWebAccess() {
+    return enableWebAccess_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -624,6 +648,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     if (!getTensorboardBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, tensorboard_);
     }
+    if (enableWebAccess_ != false) {
+      output.writeBool(10, enableWebAccess_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -650,6 +677,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getTensorboardBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, tensorboard_);
+    }
+    if (enableWebAccess_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, enableWebAccess_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -679,6 +709,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       if (!getBaseOutputDirectory().equals(other.getBaseOutputDirectory())) return false;
     }
     if (!getTensorboard().equals(other.getTensorboard())) return false;
+    if (getEnableWebAccess() != other.getEnableWebAccess()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -708,6 +739,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + TENSORBOARD_FIELD_NUMBER;
     hash = (53 * hash) + getTensorboard().hashCode();
+    hash = (37 * hash) + ENABLE_WEB_ACCESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableWebAccess());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -879,6 +912,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       tensorboard_ = "";
 
+      enableWebAccess_ = false;
+
       return this;
     }
 
@@ -929,6 +964,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         result.baseOutputDirectory_ = baseOutputDirectoryBuilder_.build();
       }
       result.tensorboard_ = tensorboard_;
+      result.enableWebAccess_ = enableWebAccess_;
       onBuilt();
       return result;
     }
@@ -1023,6 +1059,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       if (!other.getTensorboard().isEmpty()) {
         tensorboard_ = other.tensorboard_;
         onChanged();
+      }
+      if (other.getEnableWebAccess() != false) {
+        setEnableWebAccess(other.getEnableWebAccess());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2400,6 +2439,61 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       tensorboard_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableWebAccess_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Vertex AI will enable web portal access to the containers. The portals
+     * can be accessed on web via the URLs given by [web_access_uris][].
+     * </pre>
+     *
+     * <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableWebAccess.
+     */
+    @java.lang.Override
+    public boolean getEnableWebAccess() {
+      return enableWebAccess_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Vertex AI will enable web portal access to the containers. The portals
+     * can be accessed on web via the URLs given by [web_access_uris][].
+     * </pre>
+     *
+     * <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableWebAccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableWebAccess(boolean value) {
+
+      enableWebAccess_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Vertex AI will enable web portal access to the containers. The portals
+     * can be accessed on web via the URLs given by [web_access_uris][].
+     * </pre>
+     *
+     * <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableWebAccess() {
+
+      enableWebAccess_ = false;
       onChanged();
       return this;
     }

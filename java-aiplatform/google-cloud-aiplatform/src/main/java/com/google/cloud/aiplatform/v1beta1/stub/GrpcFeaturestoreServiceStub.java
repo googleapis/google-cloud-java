@@ -28,7 +28,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesRequest;
@@ -77,7 +76,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -426,26 +424,20 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
         GrpcCallSettings.<CreateFeaturestoreRequest, Operation>newBuilder()
             .setMethodDescriptor(createFeaturestoreMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateFeaturestoreRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateFeaturestoreRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetFeaturestoreRequest, Featurestore> getFeaturestoreTransportSettings =
         GrpcCallSettings.<GetFeaturestoreRequest, Featurestore>newBuilder()
             .setMethodDescriptor(getFeaturestoreMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetFeaturestoreRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetFeaturestoreRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListFeaturestoresRequest, ListFeaturestoresResponse>
@@ -453,66 +445,51 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             GrpcCallSettings.<ListFeaturestoresRequest, ListFeaturestoresResponse>newBuilder()
                 .setMethodDescriptor(listFeaturestoresMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListFeaturestoresRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListFeaturestoresRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateFeaturestoreRequest, Operation> updateFeaturestoreTransportSettings =
         GrpcCallSettings.<UpdateFeaturestoreRequest, Operation>newBuilder()
             .setMethodDescriptor(updateFeaturestoreMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateFeaturestoreRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateFeaturestoreRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "featurestore.name", String.valueOf(request.getFeaturestore().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "featurestore.name", String.valueOf(request.getFeaturestore().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteFeaturestoreRequest, Operation> deleteFeaturestoreTransportSettings =
         GrpcCallSettings.<DeleteFeaturestoreRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteFeaturestoreMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteFeaturestoreRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteFeaturestoreRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateEntityTypeRequest, Operation> createEntityTypeTransportSettings =
         GrpcCallSettings.<CreateEntityTypeRequest, Operation>newBuilder()
             .setMethodDescriptor(createEntityTypeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateEntityTypeRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateEntityTypeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetEntityTypeRequest, EntityType> getEntityTypeTransportSettings =
         GrpcCallSettings.<GetEntityTypeRequest, EntityType>newBuilder()
             .setMethodDescriptor(getEntityTypeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetEntityTypeRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetEntityTypeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListEntityTypesRequest, ListEntityTypesResponse>
@@ -520,131 +497,100 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             GrpcCallSettings.<ListEntityTypesRequest, ListEntityTypesResponse>newBuilder()
                 .setMethodDescriptor(listEntityTypesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListEntityTypesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListEntityTypesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateEntityTypeRequest, EntityType> updateEntityTypeTransportSettings =
         GrpcCallSettings.<UpdateEntityTypeRequest, EntityType>newBuilder()
             .setMethodDescriptor(updateEntityTypeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateEntityTypeRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateEntityTypeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "entity_type.name", String.valueOf(request.getEntityType().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("entity_type.name", String.valueOf(request.getEntityType().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteEntityTypeRequest, Operation> deleteEntityTypeTransportSettings =
         GrpcCallSettings.<DeleteEntityTypeRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteEntityTypeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteEntityTypeRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteEntityTypeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateFeatureRequest, Operation> createFeatureTransportSettings =
         GrpcCallSettings.<CreateFeatureRequest, Operation>newBuilder()
             .setMethodDescriptor(createFeatureMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateFeatureRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateFeatureRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesTransportSettings =
         GrpcCallSettings.<BatchCreateFeaturesRequest, Operation>newBuilder()
             .setMethodDescriptor(batchCreateFeaturesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<BatchCreateFeaturesRequest>() {
-                  @Override
-                  public Map<String, String> extract(BatchCreateFeaturesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetFeatureRequest, Feature> getFeatureTransportSettings =
         GrpcCallSettings.<GetFeatureRequest, Feature>newBuilder()
             .setMethodDescriptor(getFeatureMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetFeatureRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetFeatureRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListFeaturesRequest, ListFeaturesResponse> listFeaturesTransportSettings =
         GrpcCallSettings.<ListFeaturesRequest, ListFeaturesResponse>newBuilder()
             .setMethodDescriptor(listFeaturesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListFeaturesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListFeaturesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateFeatureRequest, Feature> updateFeatureTransportSettings =
         GrpcCallSettings.<UpdateFeatureRequest, Feature>newBuilder()
             .setMethodDescriptor(updateFeatureMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateFeatureRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateFeatureRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("feature.name", String.valueOf(request.getFeature().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("feature.name", String.valueOf(request.getFeature().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteFeatureRequest, Operation> deleteFeatureTransportSettings =
         GrpcCallSettings.<DeleteFeatureRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteFeatureMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteFeatureRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteFeatureRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ImportFeatureValuesRequest, Operation> importFeatureValuesTransportSettings =
         GrpcCallSettings.<ImportFeatureValuesRequest, Operation>newBuilder()
             .setMethodDescriptor(importFeatureValuesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ImportFeatureValuesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ImportFeatureValuesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("entity_type", String.valueOf(request.getEntityType()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("entity_type", String.valueOf(request.getEntityType()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<BatchReadFeatureValuesRequest, Operation>
@@ -652,26 +598,20 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             GrpcCallSettings.<BatchReadFeatureValuesRequest, Operation>newBuilder()
                 .setMethodDescriptor(batchReadFeatureValuesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchReadFeatureValuesRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchReadFeatureValuesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("featurestore", String.valueOf(request.getFeaturestore()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("featurestore", String.valueOf(request.getFeaturestore()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ExportFeatureValuesRequest, Operation> exportFeatureValuesTransportSettings =
         GrpcCallSettings.<ExportFeatureValuesRequest, Operation>newBuilder()
             .setMethodDescriptor(exportFeatureValuesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ExportFeatureValuesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ExportFeatureValuesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("entity_type", String.valueOf(request.getEntityType()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("entity_type", String.valueOf(request.getEntityType()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SearchFeaturesRequest, SearchFeaturesResponse>
@@ -679,13 +619,10 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             GrpcCallSettings.<SearchFeaturesRequest, SearchFeaturesResponse>newBuilder()
                 .setMethodDescriptor(searchFeaturesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SearchFeaturesRequest>() {
-                      @Override
-                      public Map<String, String> extract(SearchFeaturesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("location", String.valueOf(request.getLocation()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("location", String.valueOf(request.getLocation()));
+                      return params.build();
                     })
                 .build();
 
@@ -1060,7 +997,13 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

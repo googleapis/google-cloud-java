@@ -334,8 +334,14 @@
             "CreateMetadataStore": {
               "methods": ["createMetadataStoreAsync", "createMetadataStoreAsync", "createMetadataStoreAsync", "createMetadataStoreOperationCallable", "createMetadataStoreCallable"]
             },
+            "DeleteArtifact": {
+              "methods": ["deleteArtifactAsync", "deleteArtifactAsync", "deleteArtifactAsync", "deleteArtifactOperationCallable", "deleteArtifactCallable"]
+            },
             "DeleteContext": {
               "methods": ["deleteContextAsync", "deleteContextAsync", "deleteContextAsync", "deleteContextOperationCallable", "deleteContextCallable"]
+            },
+            "DeleteExecution": {
+              "methods": ["deleteExecutionAsync", "deleteExecutionAsync", "deleteExecutionAsync", "deleteExecutionOperationCallable", "deleteExecutionCallable"]
             },
             "DeleteMetadataStore": {
               "methods": ["deleteMetadataStoreAsync", "deleteMetadataStoreAsync", "deleteMetadataStoreAsync", "deleteMetadataStoreOperationCallable", "deleteMetadataStoreCallable"]
@@ -369,6 +375,15 @@
             },
             "ListMetadataStores": {
               "methods": ["listMetadataStores", "listMetadataStores", "listMetadataStores", "listMetadataStoresPagedCallable", "listMetadataStoresCallable"]
+            },
+            "PurgeArtifacts": {
+              "methods": ["purgeArtifactsAsync", "purgeArtifactsAsync", "purgeArtifactsAsync", "purgeArtifactsOperationCallable", "purgeArtifactsCallable"]
+            },
+            "PurgeContexts": {
+              "methods": ["purgeContextsAsync", "purgeContextsAsync", "purgeContextsAsync", "purgeContextsOperationCallable", "purgeContextsCallable"]
+            },
+            "PurgeExecutions": {
+              "methods": ["purgeExecutionsAsync", "purgeExecutionsAsync", "purgeExecutionsAsync", "purgeExecutionsOperationCallable", "purgeExecutionsCallable"]
             },
             "QueryArtifactLineageSubgraph": {
               "methods": ["queryArtifactLineageSubgraph", "queryArtifactLineageSubgraph", "queryArtifactLineageSubgraph", "queryArtifactLineageSubgraphCallable"]

@@ -194,10 +194,13 @@ public final class EndpointServiceProto {
           + "yModelResponse\022\036UndeployModelOperationMe"
           + "tadata\032M\312A\031aiplatform.googleapis.com\322A.h"
           + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tformB\210\001\n#com.google.cloud.aiplatform.v1"
+          + "tformB\361\001\n#com.google.cloud.aiplatform.v1"
           + "beta1B\024EndpointServiceProtoP\001ZIgoogle.go"
           + "lang.org/genproto/googleapis/cloud/aipla"
-          + "tform/v1beta1;aiplatformb\006proto3"
+          + "tform/v1beta1;aiplatform\252\002\037Google.Cloud."
+          + "AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlat"
+          + "form\\V1beta1\352\002\"Google::Cloud::AIPlatform"
+          + "::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

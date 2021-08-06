@@ -42,11 +42,13 @@ public final class AcceleratorTypeProto {
           + "UNSPECIFIED\020\000\022\024\n\020NVIDIA_TESLA_K80\020\001\022\025\n\021N"
           + "VIDIA_TESLA_P100\020\002\022\025\n\021NVIDIA_TESLA_V100\020"
           + "\003\022\023\n\017NVIDIA_TESLA_P4\020\004\022\023\n\017NVIDIA_TESLA_T"
-          + "4\020\005\022\025\n\021NVIDIA_TESLA_A100\020\010B\210\001\n#com.googl"
+          + "4\020\005\022\025\n\021NVIDIA_TESLA_A100\020\010B\361\001\n#com.googl"
           + "e.cloud.aiplatform.v1beta1B\024AcceleratorT"
           + "ypeProtoP\001ZIgoogle.golang.org/genproto/g"
           + "oogleapis/cloud/aiplatform/v1beta1;aipla"
-          + "tformb\006proto3"
+          + "tform\252\002\037Google.Cloud.AIPlatform.V1Beta1\312"
+          + "\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goog"
+          + "le::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

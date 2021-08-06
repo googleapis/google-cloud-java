@@ -824,6 +824,187 @@ public class MetadataServiceClientTest {
   }
 
   @Test
+  public void deleteArtifactTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteArtifactTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMetadataService.addResponse(resultOperation);
+
+    ArtifactName name =
+        ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]");
+
+    client.deleteArtifactAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteArtifactRequest actualRequest = ((DeleteArtifactRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteArtifactExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      ArtifactName name =
+          ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]");
+      client.deleteArtifactAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteArtifactTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteArtifactTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMetadataService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteArtifactAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteArtifactRequest actualRequest = ((DeleteArtifactRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteArtifactExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteArtifactAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void purgeArtifactsTest() throws Exception {
+    PurgeArtifactsResponse expectedResponse =
+        PurgeArtifactsResponse.newBuilder()
+            .setPurgeCount(575305851)
+            .addAllPurgeSample(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("purgeArtifactsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMetadataService.addResponse(resultOperation);
+
+    MetadataStoreName parent = MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
+
+    PurgeArtifactsResponse actualResponse = client.purgeArtifactsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PurgeArtifactsRequest actualRequest = ((PurgeArtifactsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void purgeArtifactsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      MetadataStoreName parent =
+          MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
+      client.purgeArtifactsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void purgeArtifactsTest2() throws Exception {
+    PurgeArtifactsResponse expectedResponse =
+        PurgeArtifactsResponse.newBuilder()
+            .setPurgeCount(575305851)
+            .addAllPurgeSample(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("purgeArtifactsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMetadataService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+
+    PurgeArtifactsResponse actualResponse = client.purgeArtifactsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PurgeArtifactsRequest actualRequest = ((PurgeArtifactsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void purgeArtifactsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.purgeArtifactsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void createContextTest() throws Exception {
     Context expectedResponse =
         Context.newBuilder()
@@ -1254,6 +1435,101 @@ public class MetadataServiceClientTest {
     try {
       String name = "name3373707";
       client.deleteContextAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void purgeContextsTest() throws Exception {
+    PurgeContextsResponse expectedResponse =
+        PurgeContextsResponse.newBuilder()
+            .setPurgeCount(575305851)
+            .addAllPurgeSample(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("purgeContextsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMetadataService.addResponse(resultOperation);
+
+    MetadataStoreName parent = MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
+
+    PurgeContextsResponse actualResponse = client.purgeContextsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PurgeContextsRequest actualRequest = ((PurgeContextsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void purgeContextsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      MetadataStoreName parent =
+          MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
+      client.purgeContextsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void purgeContextsTest2() throws Exception {
+    PurgeContextsResponse expectedResponse =
+        PurgeContextsResponse.newBuilder()
+            .setPurgeCount(575305851)
+            .addAllPurgeSample(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("purgeContextsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMetadataService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+
+    PurgeContextsResponse actualResponse = client.purgeContextsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PurgeContextsRequest actualRequest = ((PurgeContextsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void purgeContextsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.purgeContextsAsync(parent).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -1863,6 +2139,187 @@ public class MetadataServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteExecutionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteExecutionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMetadataService.addResponse(resultOperation);
+
+    ExecutionName name =
+        ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]");
+
+    client.deleteExecutionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteExecutionRequest actualRequest = ((DeleteExecutionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteExecutionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      ExecutionName name =
+          ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]");
+      client.deleteExecutionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteExecutionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteExecutionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMetadataService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteExecutionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteExecutionRequest actualRequest = ((DeleteExecutionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteExecutionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteExecutionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void purgeExecutionsTest() throws Exception {
+    PurgeExecutionsResponse expectedResponse =
+        PurgeExecutionsResponse.newBuilder()
+            .setPurgeCount(575305851)
+            .addAllPurgeSample(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("purgeExecutionsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMetadataService.addResponse(resultOperation);
+
+    MetadataStoreName parent = MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
+
+    PurgeExecutionsResponse actualResponse = client.purgeExecutionsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PurgeExecutionsRequest actualRequest = ((PurgeExecutionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void purgeExecutionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      MetadataStoreName parent =
+          MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
+      client.purgeExecutionsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void purgeExecutionsTest2() throws Exception {
+    PurgeExecutionsResponse expectedResponse =
+        PurgeExecutionsResponse.newBuilder()
+            .setPurgeCount(575305851)
+            .addAllPurgeSample(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("purgeExecutionsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMetadataService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+
+    PurgeExecutionsResponse actualResponse = client.purgeExecutionsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PurgeExecutionsRequest actualRequest = ((PurgeExecutionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void purgeExecutionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.purgeExecutionsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

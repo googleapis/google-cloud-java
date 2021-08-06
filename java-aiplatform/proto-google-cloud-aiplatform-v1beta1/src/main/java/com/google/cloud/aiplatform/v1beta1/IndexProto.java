@@ -65,10 +65,13 @@ public final class IndexProto {
           + "belsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
           + "\001:]\352AZ\n\037aiplatform.googleapis.com/Index\022"
           + "7projects/{project}/locations/{location}"
-          + "/indexes/{index}B~\n#com.google.cloud.aip"
-          + "latform.v1beta1B\nIndexProtoP\001ZIgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/aipla"
-          + "tform/v1beta1;aiplatformb\006proto3"
+          + "/indexes/{index}B\347\001\n#com.google.cloud.ai"
+          + "platform.v1beta1B\nIndexProtoP\001ZIgoogle.g"
+          + "olang.org/genproto/googleapis/cloud/aipl"
+          + "atform/v1beta1;aiplatform\252\002\037Google.Cloud"
+          + ".AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPla"
+          + "tform\\V1beta1\352\002\"Google::Cloud::AIPlatfor"
+          + "m::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

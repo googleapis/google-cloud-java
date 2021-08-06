@@ -26,7 +26,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest;
@@ -50,7 +49,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -246,13 +244,10 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
             GrpcCallSettings.<CreateTrainingPipelineRequest, TrainingPipeline>newBuilder()
                 .setMethodDescriptor(createTrainingPipelineMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateTrainingPipelineRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateTrainingPipelineRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetTrainingPipelineRequest, TrainingPipeline>
@@ -260,13 +255,10 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
             GrpcCallSettings.<GetTrainingPipelineRequest, TrainingPipeline>newBuilder()
                 .setMethodDescriptor(getTrainingPipelineMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetTrainingPipelineRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetTrainingPipelineRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListTrainingPipelinesRequest, ListTrainingPipelinesResponse>
@@ -275,13 +267,10 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                 .<ListTrainingPipelinesRequest, ListTrainingPipelinesResponse>newBuilder()
                 .setMethodDescriptor(listTrainingPipelinesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListTrainingPipelinesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListTrainingPipelinesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteTrainingPipelineRequest, Operation>
@@ -289,52 +278,40 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
             GrpcCallSettings.<DeleteTrainingPipelineRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteTrainingPipelineMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteTrainingPipelineRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteTrainingPipelineRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CancelTrainingPipelineRequest, Empty> cancelTrainingPipelineTransportSettings =
         GrpcCallSettings.<CancelTrainingPipelineRequest, Empty>newBuilder()
             .setMethodDescriptor(cancelTrainingPipelineMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CancelTrainingPipelineRequest>() {
-                  @Override
-                  public Map<String, String> extract(CancelTrainingPipelineRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreatePipelineJobRequest, PipelineJob> createPipelineJobTransportSettings =
         GrpcCallSettings.<CreatePipelineJobRequest, PipelineJob>newBuilder()
             .setMethodDescriptor(createPipelineJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreatePipelineJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreatePipelineJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetPipelineJobRequest, PipelineJob> getPipelineJobTransportSettings =
         GrpcCallSettings.<GetPipelineJobRequest, PipelineJob>newBuilder()
             .setMethodDescriptor(getPipelineJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetPipelineJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetPipelineJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListPipelineJobsRequest, ListPipelineJobsResponse>
@@ -342,39 +319,30 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
             GrpcCallSettings.<ListPipelineJobsRequest, ListPipelineJobsResponse>newBuilder()
                 .setMethodDescriptor(listPipelineJobsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListPipelineJobsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListPipelineJobsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeletePipelineJobRequest, Operation> deletePipelineJobTransportSettings =
         GrpcCallSettings.<DeletePipelineJobRequest, Operation>newBuilder()
             .setMethodDescriptor(deletePipelineJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeletePipelineJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeletePipelineJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CancelPipelineJobRequest, Empty> cancelPipelineJobTransportSettings =
         GrpcCallSettings.<CancelPipelineJobRequest, Empty>newBuilder()
             .setMethodDescriptor(cancelPipelineJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CancelPipelineJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(CancelPipelineJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 
@@ -532,7 +500,13 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

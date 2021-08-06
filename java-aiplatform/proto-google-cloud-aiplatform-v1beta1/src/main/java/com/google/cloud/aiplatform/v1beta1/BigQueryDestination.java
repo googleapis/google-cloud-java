@@ -123,7 +123,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * table must not exist.
    * Accepted forms:
    * *  BigQuery path. For example:
-   * `bq://projectId` or `bq://projectId.bqDatasetId.bqTableId`.
+   * `bq://projectId` or `bq://projectId.bqDatasetId` or
+   * `bq://projectId.bqDatasetId.bqTableId`.
    * </pre>
    *
    * <code>string output_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -152,7 +153,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * table must not exist.
    * Accepted forms:
    * *  BigQuery path. For example:
-   * `bq://projectId` or `bq://projectId.bqDatasetId.bqTableId`.
+   * `bq://projectId` or `bq://projectId.bqDatasetId` or
+   * `bq://projectId.bqDatasetId.bqTableId`.
    * </pre>
    *
    * <code>string output_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -502,7 +504,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * table must not exist.
      * Accepted forms:
      * *  BigQuery path. For example:
-     * `bq://projectId` or `bq://projectId.bqDatasetId.bqTableId`.
+     * `bq://projectId` or `bq://projectId.bqDatasetId` or
+     * `bq://projectId.bqDatasetId.bqTableId`.
      * </pre>
      *
      * <code>string output_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -530,7 +533,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * table must not exist.
      * Accepted forms:
      * *  BigQuery path. For example:
-     * `bq://projectId` or `bq://projectId.bqDatasetId.bqTableId`.
+     * `bq://projectId` or `bq://projectId.bqDatasetId` or
+     * `bq://projectId.bqDatasetId.bqTableId`.
      * </pre>
      *
      * <code>string output_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -558,7 +562,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * table must not exist.
      * Accepted forms:
      * *  BigQuery path. For example:
-     * `bq://projectId` or `bq://projectId.bqDatasetId.bqTableId`.
+     * `bq://projectId` or `bq://projectId.bqDatasetId` or
+     * `bq://projectId.bqDatasetId.bqTableId`.
      * </pre>
      *
      * <code>string output_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -585,7 +590,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * table must not exist.
      * Accepted forms:
      * *  BigQuery path. For example:
-     * `bq://projectId` or `bq://projectId.bqDatasetId.bqTableId`.
+     * `bq://projectId` or `bq://projectId.bqDatasetId` or
+     * `bq://projectId.bqDatasetId.bqTableId`.
      * </pre>
      *
      * <code>string output_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -608,7 +614,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * table must not exist.
      * Accepted forms:
      * *  BigQuery path. For example:
-     * `bq://projectId` or `bq://projectId.bqDatasetId.bqTableId`.
+     * `bq://projectId` or `bq://projectId.bqDatasetId` or
+     * `bq://projectId.bqDatasetId.bqTableId`.
      * </pre>
      *
      * <code>string output_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>

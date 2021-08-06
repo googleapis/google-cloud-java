@@ -65,11 +65,13 @@ public final class EntityTypeProto {
           + ":\0028\001:\212\001\352A\206\001\n$aiplatform.googleapis.com/E"
           + "ntityType\022^projects/{project}/locations/"
           + "{location}/featurestores/{featurestore}/"
-          + "entityTypes/{entity_type}B\203\001\n#com.google"
+          + "entityTypes/{entity_type}B\354\001\n#com.google"
           + ".cloud.aiplatform.v1beta1B\017EntityTypePro"
           + "toP\001ZIgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/aiplatform/v1beta1;aiplatformb"
-          + "\006proto3"
+          + "pis/cloud/aiplatform/v1beta1;aiplatform\252"
+          + "\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Goog"
+          + "le\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cl"
+          + "oud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

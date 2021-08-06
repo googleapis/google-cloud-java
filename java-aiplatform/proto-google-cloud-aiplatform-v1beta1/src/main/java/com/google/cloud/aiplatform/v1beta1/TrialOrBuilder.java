@@ -449,4 +449,78 @@ public interface TrialOrBuilder
    * @return The bytes for customJob.
    */
   com.google.protobuf.ByteString getCustomJobBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The web access URIs for the training job.
+   * The keys are the node names in the training jobs, e.g. workerpool0-0.
+   * The values are the URIs for each node's web portal in the job.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; web_access_uris = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getWebAccessUrisCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The web access URIs for the training job.
+   * The keys are the node names in the training jobs, e.g. workerpool0-0.
+   * The values are the URIs for each node's web portal in the job.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; web_access_uris = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  boolean containsWebAccessUris(java.lang.String key);
+  /** Use {@link #getWebAccessUrisMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getWebAccessUris();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The web access URIs for the training job.
+   * The keys are the node names in the training jobs, e.g. workerpool0-0.
+   * The values are the URIs for each node's web portal in the job.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; web_access_uris = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getWebAccessUrisMap();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The web access URIs for the training job.
+   * The keys are the node names in the training jobs, e.g. workerpool0-0.
+   * The values are the URIs for each node's web portal in the job.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; web_access_uris = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.lang.String getWebAccessUrisOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The web access URIs for the training job.
+   * The keys are the node names in the training jobs, e.g. workerpool0-0.
+   * The values are the URIs for each node's web portal in the job.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; web_access_uris = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.lang.String getWebAccessUrisOrThrow(java.lang.String key);
 }

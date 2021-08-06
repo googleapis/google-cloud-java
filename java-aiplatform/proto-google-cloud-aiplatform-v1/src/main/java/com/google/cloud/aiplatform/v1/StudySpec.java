@@ -2439,6 +2439,39 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return The maxValue.
        */
       double getMaxValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * A default value for a `DOUBLE` parameter that is assumed to be a
+       * relatively good starting point.  Unset value signals that there is no
+       * offered starting point.
+       * Currently only supported by the Vizier service. Not supported by
+       * HyperparamterTuningJob or TrainingPipeline.
+       * </pre>
+       *
+       * <code>double default_value = 4;</code>
+       *
+       * @return Whether the defaultValue field is set.
+       */
+      boolean hasDefaultValue();
+      /**
+       *
+       *
+       * <pre>
+       * A default value for a `DOUBLE` parameter that is assumed to be a
+       * relatively good starting point.  Unset value signals that there is no
+       * offered starting point.
+       * Currently only supported by the Vizier service. Not supported by
+       * HyperparamterTuningJob or TrainingPipeline.
+       * </pre>
+       *
+       * <code>double default_value = 4;</code>
+       *
+       * @return The defaultValue.
+       */
+      double getDefaultValue();
     }
     /**
      *
@@ -2480,6 +2513,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
+        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -2498,6 +2532,12 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               case 17:
                 {
                   maxValue_ = input.readDouble();
+                  break;
+                }
+              case 33:
+                {
+                  bitField0_ |= 0x00000001;
+                  defaultValue_ = input.readDouble();
                   break;
                 }
               default:
@@ -2536,6 +2576,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                     .class);
       }
 
+      private int bitField0_;
       public static final int MIN_VALUE_FIELD_NUMBER = 1;
       private double minValue_;
       /**
@@ -2572,6 +2613,47 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         return maxValue_;
       }
 
+      public static final int DEFAULT_VALUE_FIELD_NUMBER = 4;
+      private double defaultValue_;
+      /**
+       *
+       *
+       * <pre>
+       * A default value for a `DOUBLE` parameter that is assumed to be a
+       * relatively good starting point.  Unset value signals that there is no
+       * offered starting point.
+       * Currently only supported by the Vizier service. Not supported by
+       * HyperparamterTuningJob or TrainingPipeline.
+       * </pre>
+       *
+       * <code>double default_value = 4;</code>
+       *
+       * @return Whether the defaultValue field is set.
+       */
+      @java.lang.Override
+      public boolean hasDefaultValue() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A default value for a `DOUBLE` parameter that is assumed to be a
+       * relatively good starting point.  Unset value signals that there is no
+       * offered starting point.
+       * Currently only supported by the Vizier service. Not supported by
+       * HyperparamterTuningJob or TrainingPipeline.
+       * </pre>
+       *
+       * <code>double default_value = 4;</code>
+       *
+       * @return The defaultValue.
+       */
+      @java.lang.Override
+      public double getDefaultValue() {
+        return defaultValue_;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -2592,6 +2674,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (maxValue_ != 0D) {
           output.writeDouble(2, maxValue_);
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeDouble(4, defaultValue_);
+        }
         unknownFields.writeTo(output);
       }
 
@@ -2606,6 +2691,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
         if (maxValue_ != 0D) {
           size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, maxValue_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, defaultValue_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -2628,6 +2716,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             != java.lang.Double.doubleToLongBits(other.getMinValue())) return false;
         if (java.lang.Double.doubleToLongBits(getMaxValue())
             != java.lang.Double.doubleToLongBits(other.getMaxValue())) return false;
+        if (hasDefaultValue() != other.hasDefaultValue()) return false;
+        if (hasDefaultValue()) {
+          if (java.lang.Double.doubleToLongBits(getDefaultValue())
+              != java.lang.Double.doubleToLongBits(other.getDefaultValue())) return false;
+        }
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -2649,6 +2742,13 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             (53 * hash)
                 + com.google.protobuf.Internal.hashLong(
                     java.lang.Double.doubleToLongBits(getMaxValue()));
+        if (hasDefaultValue()) {
+          hash = (37 * hash) + DEFAULT_VALUE_FIELD_NUMBER;
+          hash =
+              (53 * hash)
+                  + com.google.protobuf.Internal.hashLong(
+                      java.lang.Double.doubleToLongBits(getDefaultValue()));
+        }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -2811,6 +2911,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
           maxValue_ = 0D;
 
+          defaultValue_ = 0D;
+          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -2842,8 +2944,15 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             buildPartial() {
           com.google.cloud.aiplatform.v1.StudySpec.ParameterSpec.DoubleValueSpec result =
               new com.google.cloud.aiplatform.v1.StudySpec.ParameterSpec.DoubleValueSpec(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
           result.minValue_ = minValue_;
           result.maxValue_ = maxValue_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.defaultValue_ = defaultValue_;
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -2906,6 +3015,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           if (other.getMaxValue() != 0D) {
             setMaxValue(other.getMaxValue());
           }
+          if (other.hasDefaultValue()) {
+            setDefaultValue(other.getDefaultValue());
+          }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
@@ -2937,6 +3049,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
+        private int bitField0_;
 
         private double minValue_;
         /**
@@ -3042,6 +3156,89 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private double defaultValue_;
+        /**
+         *
+         *
+         * <pre>
+         * A default value for a `DOUBLE` parameter that is assumed to be a
+         * relatively good starting point.  Unset value signals that there is no
+         * offered starting point.
+         * Currently only supported by the Vizier service. Not supported by
+         * HyperparamterTuningJob or TrainingPipeline.
+         * </pre>
+         *
+         * <code>double default_value = 4;</code>
+         *
+         * @return Whether the defaultValue field is set.
+         */
+        @java.lang.Override
+        public boolean hasDefaultValue() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A default value for a `DOUBLE` parameter that is assumed to be a
+         * relatively good starting point.  Unset value signals that there is no
+         * offered starting point.
+         * Currently only supported by the Vizier service. Not supported by
+         * HyperparamterTuningJob or TrainingPipeline.
+         * </pre>
+         *
+         * <code>double default_value = 4;</code>
+         *
+         * @return The defaultValue.
+         */
+        @java.lang.Override
+        public double getDefaultValue() {
+          return defaultValue_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A default value for a `DOUBLE` parameter that is assumed to be a
+         * relatively good starting point.  Unset value signals that there is no
+         * offered starting point.
+         * Currently only supported by the Vizier service. Not supported by
+         * HyperparamterTuningJob or TrainingPipeline.
+         * </pre>
+         *
+         * <code>double default_value = 4;</code>
+         *
+         * @param value The defaultValue to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDefaultValue(double value) {
+          bitField0_ |= 0x00000001;
+          defaultValue_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A default value for a `DOUBLE` parameter that is assumed to be a
+         * relatively good starting point.  Unset value signals that there is no
+         * offered starting point.
+         * Currently only supported by the Vizier service. Not supported by
+         * HyperparamterTuningJob or TrainingPipeline.
+         * </pre>
+         *
+         * <code>double default_value = 4;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDefaultValue() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          defaultValue_ = 0D;
+          onChanged();
+          return this;
+        }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3128,6 +3325,39 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return The maxValue.
        */
       long getMaxValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * A default value for an `INTEGER` parameter that is assumed to be a
+       * relatively good starting point.  Unset value signals that there is no
+       * offered starting point.
+       * Currently only supported by the Vizier service. Not supported by
+       * HyperparamterTuningJob or TrainingPipeline.
+       * </pre>
+       *
+       * <code>int64 default_value = 4;</code>
+       *
+       * @return Whether the defaultValue field is set.
+       */
+      boolean hasDefaultValue();
+      /**
+       *
+       *
+       * <pre>
+       * A default value for an `INTEGER` parameter that is assumed to be a
+       * relatively good starting point.  Unset value signals that there is no
+       * offered starting point.
+       * Currently only supported by the Vizier service. Not supported by
+       * HyperparamterTuningJob or TrainingPipeline.
+       * </pre>
+       *
+       * <code>int64 default_value = 4;</code>
+       *
+       * @return The defaultValue.
+       */
+      long getDefaultValue();
     }
     /**
      *
@@ -3169,6 +3399,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
+        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -3187,6 +3418,12 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               case 16:
                 {
                   maxValue_ = input.readInt64();
+                  break;
+                }
+              case 32:
+                {
+                  bitField0_ |= 0x00000001;
+                  defaultValue_ = input.readInt64();
                   break;
                 }
               default:
@@ -3225,6 +3462,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                     .class);
       }
 
+      private int bitField0_;
       public static final int MIN_VALUE_FIELD_NUMBER = 1;
       private long minValue_;
       /**
@@ -3261,6 +3499,47 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         return maxValue_;
       }
 
+      public static final int DEFAULT_VALUE_FIELD_NUMBER = 4;
+      private long defaultValue_;
+      /**
+       *
+       *
+       * <pre>
+       * A default value for an `INTEGER` parameter that is assumed to be a
+       * relatively good starting point.  Unset value signals that there is no
+       * offered starting point.
+       * Currently only supported by the Vizier service. Not supported by
+       * HyperparamterTuningJob or TrainingPipeline.
+       * </pre>
+       *
+       * <code>int64 default_value = 4;</code>
+       *
+       * @return Whether the defaultValue field is set.
+       */
+      @java.lang.Override
+      public boolean hasDefaultValue() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A default value for an `INTEGER` parameter that is assumed to be a
+       * relatively good starting point.  Unset value signals that there is no
+       * offered starting point.
+       * Currently only supported by the Vizier service. Not supported by
+       * HyperparamterTuningJob or TrainingPipeline.
+       * </pre>
+       *
+       * <code>int64 default_value = 4;</code>
+       *
+       * @return The defaultValue.
+       */
+      @java.lang.Override
+      public long getDefaultValue() {
+        return defaultValue_;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -3281,6 +3560,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (maxValue_ != 0L) {
           output.writeInt64(2, maxValue_);
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeInt64(4, defaultValue_);
+        }
         unknownFields.writeTo(output);
       }
 
@@ -3295,6 +3577,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
         if (maxValue_ != 0L) {
           size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, maxValue_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, defaultValue_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -3315,6 +3600,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
         if (getMinValue() != other.getMinValue()) return false;
         if (getMaxValue() != other.getMaxValue()) return false;
+        if (hasDefaultValue() != other.hasDefaultValue()) return false;
+        if (hasDefaultValue()) {
+          if (getDefaultValue() != other.getDefaultValue()) return false;
+        }
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -3330,6 +3619,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMinValue());
         hash = (37 * hash) + MAX_VALUE_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxValue());
+        if (hasDefaultValue()) {
+          hash = (37 * hash) + DEFAULT_VALUE_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDefaultValue());
+        }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -3492,6 +3785,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
           maxValue_ = 0L;
 
+          defaultValue_ = 0L;
+          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -3523,8 +3818,15 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             buildPartial() {
           com.google.cloud.aiplatform.v1.StudySpec.ParameterSpec.IntegerValueSpec result =
               new com.google.cloud.aiplatform.v1.StudySpec.ParameterSpec.IntegerValueSpec(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
           result.minValue_ = minValue_;
           result.maxValue_ = maxValue_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.defaultValue_ = defaultValue_;
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -3587,6 +3889,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           if (other.getMaxValue() != 0L) {
             setMaxValue(other.getMaxValue());
           }
+          if (other.hasDefaultValue()) {
+            setDefaultValue(other.getDefaultValue());
+          }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
@@ -3618,6 +3923,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
+        private int bitField0_;
 
         private long minValue_;
         /**
@@ -3719,6 +4026,89 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         public Builder clearMaxValue() {
 
           maxValue_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private long defaultValue_;
+        /**
+         *
+         *
+         * <pre>
+         * A default value for an `INTEGER` parameter that is assumed to be a
+         * relatively good starting point.  Unset value signals that there is no
+         * offered starting point.
+         * Currently only supported by the Vizier service. Not supported by
+         * HyperparamterTuningJob or TrainingPipeline.
+         * </pre>
+         *
+         * <code>int64 default_value = 4;</code>
+         *
+         * @return Whether the defaultValue field is set.
+         */
+        @java.lang.Override
+        public boolean hasDefaultValue() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A default value for an `INTEGER` parameter that is assumed to be a
+         * relatively good starting point.  Unset value signals that there is no
+         * offered starting point.
+         * Currently only supported by the Vizier service. Not supported by
+         * HyperparamterTuningJob or TrainingPipeline.
+         * </pre>
+         *
+         * <code>int64 default_value = 4;</code>
+         *
+         * @return The defaultValue.
+         */
+        @java.lang.Override
+        public long getDefaultValue() {
+          return defaultValue_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A default value for an `INTEGER` parameter that is assumed to be a
+         * relatively good starting point.  Unset value signals that there is no
+         * offered starting point.
+         * Currently only supported by the Vizier service. Not supported by
+         * HyperparamterTuningJob or TrainingPipeline.
+         * </pre>
+         *
+         * <code>int64 default_value = 4;</code>
+         *
+         * @param value The defaultValue to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDefaultValue(long value) {
+          bitField0_ |= 0x00000001;
+          defaultValue_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A default value for an `INTEGER` parameter that is assumed to be a
+         * relatively good starting point.  Unset value signals that there is no
+         * offered starting point.
+         * Currently only supported by the Vizier service. Not supported by
+         * HyperparamterTuningJob or TrainingPipeline.
+         * </pre>
+         *
+         * <code>int64 default_value = 4;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDefaultValue() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          defaultValue_ = 0L;
           onChanged();
           return this;
         }
@@ -3834,6 +4224,55 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return The bytes of the values at the given index.
        */
       com.google.protobuf.ByteString getValuesBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * A default value for a `CATEGORICAL` parameter that is assumed to be a
+       * relatively good starting point.  Unset value signals that there is no
+       * offered starting point.
+       * Currently only supported by the Vizier service. Not supported by
+       * HyperparamterTuningJob or TrainingPipeline.
+       * </pre>
+       *
+       * <code>string default_value = 3;</code>
+       *
+       * @return Whether the defaultValue field is set.
+       */
+      boolean hasDefaultValue();
+      /**
+       *
+       *
+       * <pre>
+       * A default value for a `CATEGORICAL` parameter that is assumed to be a
+       * relatively good starting point.  Unset value signals that there is no
+       * offered starting point.
+       * Currently only supported by the Vizier service. Not supported by
+       * HyperparamterTuningJob or TrainingPipeline.
+       * </pre>
+       *
+       * <code>string default_value = 3;</code>
+       *
+       * @return The defaultValue.
+       */
+      java.lang.String getDefaultValue();
+      /**
+       *
+       *
+       * <pre>
+       * A default value for a `CATEGORICAL` parameter that is assumed to be a
+       * relatively good starting point.  Unset value signals that there is no
+       * offered starting point.
+       * Currently only supported by the Vizier service. Not supported by
+       * HyperparamterTuningJob or TrainingPipeline.
+       * </pre>
+       *
+       * <code>string default_value = 3;</code>
+       *
+       * @return The bytes for defaultValue.
+       */
+      com.google.protobuf.ByteString getDefaultValueBytes();
     }
     /**
      *
@@ -3856,6 +4295,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
       private CategoricalValueSpec() {
         values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        defaultValue_ = "";
       }
 
       @java.lang.Override
@@ -3898,6 +4338,13 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                   values_.add(s);
                   break;
                 }
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  defaultValue_ = s;
+                  break;
+                }
               default:
                 {
                   if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -3937,6 +4384,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                     .class);
       }
 
+      private int bitField0_;
       public static final int VALUES_FIELD_NUMBER = 1;
       private com.google.protobuf.LazyStringList values_;
       /**
@@ -3998,6 +4446,82 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         return values_.getByteString(index);
       }
 
+      public static final int DEFAULT_VALUE_FIELD_NUMBER = 3;
+      private volatile java.lang.Object defaultValue_;
+      /**
+       *
+       *
+       * <pre>
+       * A default value for a `CATEGORICAL` parameter that is assumed to be a
+       * relatively good starting point.  Unset value signals that there is no
+       * offered starting point.
+       * Currently only supported by the Vizier service. Not supported by
+       * HyperparamterTuningJob or TrainingPipeline.
+       * </pre>
+       *
+       * <code>string default_value = 3;</code>
+       *
+       * @return Whether the defaultValue field is set.
+       */
+      @java.lang.Override
+      public boolean hasDefaultValue() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A default value for a `CATEGORICAL` parameter that is assumed to be a
+       * relatively good starting point.  Unset value signals that there is no
+       * offered starting point.
+       * Currently only supported by the Vizier service. Not supported by
+       * HyperparamterTuningJob or TrainingPipeline.
+       * </pre>
+       *
+       * <code>string default_value = 3;</code>
+       *
+       * @return The defaultValue.
+       */
+      @java.lang.Override
+      public java.lang.String getDefaultValue() {
+        java.lang.Object ref = defaultValue_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          defaultValue_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A default value for a `CATEGORICAL` parameter that is assumed to be a
+       * relatively good starting point.  Unset value signals that there is no
+       * offered starting point.
+       * Currently only supported by the Vizier service. Not supported by
+       * HyperparamterTuningJob or TrainingPipeline.
+       * </pre>
+       *
+       * <code>string default_value = 3;</code>
+       *
+       * @return The bytes for defaultValue.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDefaultValueBytes() {
+        java.lang.Object ref = defaultValue_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          defaultValue_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -4015,6 +4539,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < values_.size(); i++) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, values_.getRaw(i));
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, defaultValue_);
+        }
         unknownFields.writeTo(output);
       }
 
@@ -4031,6 +4558,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           }
           size += dataSize;
           size += 1 * getValuesList().size();
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, defaultValue_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -4051,6 +4581,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             (com.google.cloud.aiplatform.v1.StudySpec.ParameterSpec.CategoricalValueSpec) obj;
 
         if (!getValuesList().equals(other.getValuesList())) return false;
+        if (hasDefaultValue() != other.hasDefaultValue()) return false;
+        if (hasDefaultValue()) {
+          if (!getDefaultValue().equals(other.getDefaultValue())) return false;
+        }
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -4065,6 +4599,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (getValuesCount() > 0) {
           hash = (37 * hash) + VALUES_FIELD_NUMBER;
           hash = (53 * hash) + getValuesList().hashCode();
+        }
+        if (hasDefaultValue()) {
+          hash = (37 * hash) + DEFAULT_VALUE_FIELD_NUMBER;
+          hash = (53 * hash) + getDefaultValue().hashCode();
         }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -4227,6 +4765,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           super.clear();
           values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000001);
+          defaultValue_ = "";
+          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -4259,11 +4799,17 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1.StudySpec.ParameterSpec.CategoricalValueSpec result =
               new com.google.cloud.aiplatform.v1.StudySpec.ParameterSpec.CategoricalValueSpec(this);
           int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
           if (((bitField0_ & 0x00000001) != 0)) {
             values_ = values_.getUnmodifiableView();
             bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.values_ = values_;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.defaultValue_ = defaultValue_;
+          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -4330,6 +4876,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               ensureValuesIsMutable();
               values_.addAll(other.values_);
             }
+            onChanged();
+          }
+          if (other.hasDefaultValue()) {
+            bitField0_ |= 0x00000002;
+            defaultValue_ = other.defaultValue_;
             onChanged();
           }
           this.mergeUnknownFields(other.unknownFields);
@@ -4534,6 +5085,150 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private java.lang.Object defaultValue_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * A default value for a `CATEGORICAL` parameter that is assumed to be a
+         * relatively good starting point.  Unset value signals that there is no
+         * offered starting point.
+         * Currently only supported by the Vizier service. Not supported by
+         * HyperparamterTuningJob or TrainingPipeline.
+         * </pre>
+         *
+         * <code>string default_value = 3;</code>
+         *
+         * @return Whether the defaultValue field is set.
+         */
+        public boolean hasDefaultValue() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A default value for a `CATEGORICAL` parameter that is assumed to be a
+         * relatively good starting point.  Unset value signals that there is no
+         * offered starting point.
+         * Currently only supported by the Vizier service. Not supported by
+         * HyperparamterTuningJob or TrainingPipeline.
+         * </pre>
+         *
+         * <code>string default_value = 3;</code>
+         *
+         * @return The defaultValue.
+         */
+        public java.lang.String getDefaultValue() {
+          java.lang.Object ref = defaultValue_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            defaultValue_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A default value for a `CATEGORICAL` parameter that is assumed to be a
+         * relatively good starting point.  Unset value signals that there is no
+         * offered starting point.
+         * Currently only supported by the Vizier service. Not supported by
+         * HyperparamterTuningJob or TrainingPipeline.
+         * </pre>
+         *
+         * <code>string default_value = 3;</code>
+         *
+         * @return The bytes for defaultValue.
+         */
+        public com.google.protobuf.ByteString getDefaultValueBytes() {
+          java.lang.Object ref = defaultValue_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            defaultValue_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A default value for a `CATEGORICAL` parameter that is assumed to be a
+         * relatively good starting point.  Unset value signals that there is no
+         * offered starting point.
+         * Currently only supported by the Vizier service. Not supported by
+         * HyperparamterTuningJob or TrainingPipeline.
+         * </pre>
+         *
+         * <code>string default_value = 3;</code>
+         *
+         * @param value The defaultValue to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDefaultValue(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000002;
+          defaultValue_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A default value for a `CATEGORICAL` parameter that is assumed to be a
+         * relatively good starting point.  Unset value signals that there is no
+         * offered starting point.
+         * Currently only supported by the Vizier service. Not supported by
+         * HyperparamterTuningJob or TrainingPipeline.
+         * </pre>
+         *
+         * <code>string default_value = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDefaultValue() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          defaultValue_ = getDefaultInstance().getDefaultValue();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A default value for a `CATEGORICAL` parameter that is assumed to be a
+         * relatively good starting point.  Unset value signals that there is no
+         * offered starting point.
+         * Currently only supported by the Vizier service. Not supported by
+         * HyperparamterTuningJob or TrainingPipeline.
+         * </pre>
+         *
+         * <code>string default_value = 3;</code>
+         *
+         * @param value The bytes for defaultValue to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDefaultValueBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          bitField0_ |= 0x00000002;
+          defaultValue_ = value;
+          onChanged();
+          return this;
+        }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4642,6 +5337,41 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return The values at the given index.
        */
       double getValues(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * A default value for a `DISCRETE` parameter that is assumed to be a
+       * relatively good starting point.  Unset value signals that there is no
+       * offered starting point.  It automatically rounds to the
+       * nearest feasible discrete point.
+       * Currently only supported by the Vizier service. Not supported by
+       * HyperparamterTuningJob or TrainingPipeline.
+       * </pre>
+       *
+       * <code>double default_value = 3;</code>
+       *
+       * @return Whether the defaultValue field is set.
+       */
+      boolean hasDefaultValue();
+      /**
+       *
+       *
+       * <pre>
+       * A default value for a `DISCRETE` parameter that is assumed to be a
+       * relatively good starting point.  Unset value signals that there is no
+       * offered starting point.  It automatically rounds to the
+       * nearest feasible discrete point.
+       * Currently only supported by the Vizier service. Not supported by
+       * HyperparamterTuningJob or TrainingPipeline.
+       * </pre>
+       *
+       * <code>double default_value = 3;</code>
+       *
+       * @return The defaultValue.
+       */
+      double getDefaultValue();
     }
     /**
      *
@@ -4719,6 +5449,12 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                   input.popLimit(limit);
                   break;
                 }
+              case 25:
+                {
+                  bitField0_ |= 0x00000001;
+                  defaultValue_ = input.readDouble();
+                  break;
+                }
               default:
                 {
                   if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -4758,6 +5494,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                     .class);
       }
 
+      private int bitField0_;
       public static final int VALUES_FIELD_NUMBER = 1;
       private com.google.protobuf.Internal.DoubleList values_;
       /**
@@ -4816,6 +5553,49 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
       private int valuesMemoizedSerializedSize = -1;
 
+      public static final int DEFAULT_VALUE_FIELD_NUMBER = 3;
+      private double defaultValue_;
+      /**
+       *
+       *
+       * <pre>
+       * A default value for a `DISCRETE` parameter that is assumed to be a
+       * relatively good starting point.  Unset value signals that there is no
+       * offered starting point.  It automatically rounds to the
+       * nearest feasible discrete point.
+       * Currently only supported by the Vizier service. Not supported by
+       * HyperparamterTuningJob or TrainingPipeline.
+       * </pre>
+       *
+       * <code>double default_value = 3;</code>
+       *
+       * @return Whether the defaultValue field is set.
+       */
+      @java.lang.Override
+      public boolean hasDefaultValue() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A default value for a `DISCRETE` parameter that is assumed to be a
+       * relatively good starting point.  Unset value signals that there is no
+       * offered starting point.  It automatically rounds to the
+       * nearest feasible discrete point.
+       * Currently only supported by the Vizier service. Not supported by
+       * HyperparamterTuningJob or TrainingPipeline.
+       * </pre>
+       *
+       * <code>double default_value = 3;</code>
+       *
+       * @return The defaultValue.
+       */
+      @java.lang.Override
+      public double getDefaultValue() {
+        return defaultValue_;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -4838,6 +5618,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < values_.size(); i++) {
           output.writeDoubleNoTag(values_.getDouble(i));
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeDouble(3, defaultValue_);
+        }
         unknownFields.writeTo(output);
       }
 
@@ -4857,6 +5640,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           }
           valuesMemoizedSerializedSize = dataSize;
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, defaultValue_);
+        }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
@@ -4875,6 +5661,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             (com.google.cloud.aiplatform.v1.StudySpec.ParameterSpec.DiscreteValueSpec) obj;
 
         if (!getValuesList().equals(other.getValuesList())) return false;
+        if (hasDefaultValue() != other.hasDefaultValue()) return false;
+        if (hasDefaultValue()) {
+          if (java.lang.Double.doubleToLongBits(getDefaultValue())
+              != java.lang.Double.doubleToLongBits(other.getDefaultValue())) return false;
+        }
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -4889,6 +5680,13 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (getValuesCount() > 0) {
           hash = (37 * hash) + VALUES_FIELD_NUMBER;
           hash = (53 * hash) + getValuesList().hashCode();
+        }
+        if (hasDefaultValue()) {
+          hash = (37 * hash) + DEFAULT_VALUE_FIELD_NUMBER;
+          hash =
+              (53 * hash)
+                  + com.google.protobuf.Internal.hashLong(
+                      java.lang.Double.doubleToLongBits(getDefaultValue()));
         }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -5050,6 +5848,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           super.clear();
           values_ = emptyDoubleList();
           bitField0_ = (bitField0_ & ~0x00000001);
+          defaultValue_ = 0D;
+          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -5082,11 +5882,17 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1.StudySpec.ParameterSpec.DiscreteValueSpec result =
               new com.google.cloud.aiplatform.v1.StudySpec.ParameterSpec.DiscreteValueSpec(this);
           int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
           if (((bitField0_ & 0x00000001) != 0)) {
             values_.makeImmutable();
             bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.values_ = values_;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.defaultValue_ = defaultValue_;
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -5152,6 +5958,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               values_.addAll(other.values_);
             }
             onChanged();
+          }
+          if (other.hasDefaultValue()) {
+            setDefaultValue(other.getDefaultValue());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -5330,6 +6139,93 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         public Builder clearValues() {
           values_ = emptyDoubleList();
           bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        private double defaultValue_;
+        /**
+         *
+         *
+         * <pre>
+         * A default value for a `DISCRETE` parameter that is assumed to be a
+         * relatively good starting point.  Unset value signals that there is no
+         * offered starting point.  It automatically rounds to the
+         * nearest feasible discrete point.
+         * Currently only supported by the Vizier service. Not supported by
+         * HyperparamterTuningJob or TrainingPipeline.
+         * </pre>
+         *
+         * <code>double default_value = 3;</code>
+         *
+         * @return Whether the defaultValue field is set.
+         */
+        @java.lang.Override
+        public boolean hasDefaultValue() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A default value for a `DISCRETE` parameter that is assumed to be a
+         * relatively good starting point.  Unset value signals that there is no
+         * offered starting point.  It automatically rounds to the
+         * nearest feasible discrete point.
+         * Currently only supported by the Vizier service. Not supported by
+         * HyperparamterTuningJob or TrainingPipeline.
+         * </pre>
+         *
+         * <code>double default_value = 3;</code>
+         *
+         * @return The defaultValue.
+         */
+        @java.lang.Override
+        public double getDefaultValue() {
+          return defaultValue_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A default value for a `DISCRETE` parameter that is assumed to be a
+         * relatively good starting point.  Unset value signals that there is no
+         * offered starting point.  It automatically rounds to the
+         * nearest feasible discrete point.
+         * Currently only supported by the Vizier service. Not supported by
+         * HyperparamterTuningJob or TrainingPipeline.
+         * </pre>
+         *
+         * <code>double default_value = 3;</code>
+         *
+         * @param value The defaultValue to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDefaultValue(double value) {
+          bitField0_ |= 0x00000002;
+          defaultValue_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A default value for a `DISCRETE` parameter that is assumed to be a
+         * relatively good starting point.  Unset value signals that there is no
+         * offered starting point.  It automatically rounds to the
+         * nearest feasible discrete point.
+         * Currently only supported by the Vizier service. Not supported by
+         * HyperparamterTuningJob or TrainingPipeline.
+         * </pre>
+         *
+         * <code>double default_value = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDefaultValue() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          defaultValue_ = 0D;
           onChanged();
           return this;
         }

@@ -47,11 +47,13 @@ public final class DeployedModelNameProto {
           + "api/annotations.proto\"p\n\020DeployedModelRe"
           + "f\022<\n\010endpoint\030\001 \001(\tB*\340A\005\372A$\n\"aiplatform."
           + "googleapis.com/Endpoint\022\036\n\021deployed_mode"
-          + "l_id\030\002 \001(\tB\003\340A\005B\212\001\n#com.google.cloud.aip"
+          + "l_id\030\002 \001(\tB\003\340A\005B\363\001\n#com.google.cloud.aip"
           + "latform.v1beta1B\026DeployedModelNameProtoP"
           + "\001ZIgoogle.golang.org/genproto/googleapis"
-          + "/cloud/aiplatform/v1beta1;aiplatformb\006pr"
-          + "oto3"
+          + "/cloud/aiplatform/v1beta1;aiplatform\252\002\037G"
+          + "oogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\"
+          + "Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud"
+          + "::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

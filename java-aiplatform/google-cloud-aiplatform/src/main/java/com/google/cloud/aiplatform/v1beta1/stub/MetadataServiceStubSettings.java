@@ -62,7 +62,9 @@ import com.google.cloud.aiplatform.v1beta1.CreateExecutionRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateMetadataSchemaRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateMetadataStoreOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateMetadataStoreRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteArtifactRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteContextRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteExecutionRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteMetadataStoreOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeleteMetadataStoreRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
@@ -85,6 +87,15 @@ import com.google.cloud.aiplatform.v1beta1.ListMetadataStoresRequest;
 import com.google.cloud.aiplatform.v1beta1.ListMetadataStoresResponse;
 import com.google.cloud.aiplatform.v1beta1.MetadataSchema;
 import com.google.cloud.aiplatform.v1beta1.MetadataStore;
+import com.google.cloud.aiplatform.v1beta1.PurgeArtifactsMetadata;
+import com.google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest;
+import com.google.cloud.aiplatform.v1beta1.PurgeArtifactsResponse;
+import com.google.cloud.aiplatform.v1beta1.PurgeContextsMetadata;
+import com.google.cloud.aiplatform.v1beta1.PurgeContextsRequest;
+import com.google.cloud.aiplatform.v1beta1.PurgeContextsResponse;
+import com.google.cloud.aiplatform.v1beta1.PurgeExecutionsMetadata;
+import com.google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest;
+import com.google.cloud.aiplatform.v1beta1.PurgeExecutionsResponse;
 import com.google.cloud.aiplatform.v1beta1.QueryArtifactLineageSubgraphRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryContextLineageSubgraphRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryExecutionInputsAndOutputsRequest;
@@ -161,6 +172,13 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
           ListArtifactsRequest, ListArtifactsResponse, ListArtifactsPagedResponse>
       listArtifactsSettings;
   private final UnaryCallSettings<UpdateArtifactRequest, Artifact> updateArtifactSettings;
+  private final UnaryCallSettings<DeleteArtifactRequest, Operation> deleteArtifactSettings;
+  private final OperationCallSettings<DeleteArtifactRequest, Empty, DeleteOperationMetadata>
+      deleteArtifactOperationSettings;
+  private final UnaryCallSettings<PurgeArtifactsRequest, Operation> purgeArtifactsSettings;
+  private final OperationCallSettings<
+          PurgeArtifactsRequest, PurgeArtifactsResponse, PurgeArtifactsMetadata>
+      purgeArtifactsOperationSettings;
   private final UnaryCallSettings<CreateContextRequest, Context> createContextSettings;
   private final UnaryCallSettings<GetContextRequest, Context> getContextSettings;
   private final PagedCallSettings<
@@ -170,6 +188,10 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
   private final UnaryCallSettings<DeleteContextRequest, Operation> deleteContextSettings;
   private final OperationCallSettings<DeleteContextRequest, Empty, DeleteOperationMetadata>
       deleteContextOperationSettings;
+  private final UnaryCallSettings<PurgeContextsRequest, Operation> purgeContextsSettings;
+  private final OperationCallSettings<
+          PurgeContextsRequest, PurgeContextsResponse, PurgeContextsMetadata>
+      purgeContextsOperationSettings;
   private final UnaryCallSettings<
           AddContextArtifactsAndExecutionsRequest, AddContextArtifactsAndExecutionsResponse>
       addContextArtifactsAndExecutionsSettings;
@@ -183,6 +205,13 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
           ListExecutionsRequest, ListExecutionsResponse, ListExecutionsPagedResponse>
       listExecutionsSettings;
   private final UnaryCallSettings<UpdateExecutionRequest, Execution> updateExecutionSettings;
+  private final UnaryCallSettings<DeleteExecutionRequest, Operation> deleteExecutionSettings;
+  private final OperationCallSettings<DeleteExecutionRequest, Empty, DeleteOperationMetadata>
+      deleteExecutionOperationSettings;
+  private final UnaryCallSettings<PurgeExecutionsRequest, Operation> purgeExecutionsSettings;
+  private final OperationCallSettings<
+          PurgeExecutionsRequest, PurgeExecutionsResponse, PurgeExecutionsMetadata>
+      purgeExecutionsOperationSettings;
   private final UnaryCallSettings<AddExecutionEventsRequest, AddExecutionEventsResponse>
       addExecutionEventsSettings;
   private final UnaryCallSettings<QueryExecutionInputsAndOutputsRequest, LineageSubgraph>
@@ -536,6 +565,29 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     return updateArtifactSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteArtifact. */
+  public UnaryCallSettings<DeleteArtifactRequest, Operation> deleteArtifactSettings() {
+    return deleteArtifactSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteArtifact. */
+  public OperationCallSettings<DeleteArtifactRequest, Empty, DeleteOperationMetadata>
+      deleteArtifactOperationSettings() {
+    return deleteArtifactOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeArtifacts. */
+  public UnaryCallSettings<PurgeArtifactsRequest, Operation> purgeArtifactsSettings() {
+    return purgeArtifactsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeArtifacts. */
+  public OperationCallSettings<
+          PurgeArtifactsRequest, PurgeArtifactsResponse, PurgeArtifactsMetadata>
+      purgeArtifactsOperationSettings() {
+    return purgeArtifactsOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to createContext. */
   public UnaryCallSettings<CreateContextRequest, Context> createContextSettings() {
     return createContextSettings;
@@ -566,6 +618,17 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
   public OperationCallSettings<DeleteContextRequest, Empty, DeleteOperationMetadata>
       deleteContextOperationSettings() {
     return deleteContextOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeContexts. */
+  public UnaryCallSettings<PurgeContextsRequest, Operation> purgeContextsSettings() {
+    return purgeContextsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeContexts. */
+  public OperationCallSettings<PurgeContextsRequest, PurgeContextsResponse, PurgeContextsMetadata>
+      purgeContextsOperationSettings() {
+    return purgeContextsOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to addContextArtifactsAndExecutions. */
@@ -607,6 +670,29 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
   /** Returns the object with the settings used for calls to updateExecution. */
   public UnaryCallSettings<UpdateExecutionRequest, Execution> updateExecutionSettings() {
     return updateExecutionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteExecution. */
+  public UnaryCallSettings<DeleteExecutionRequest, Operation> deleteExecutionSettings() {
+    return deleteExecutionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteExecution. */
+  public OperationCallSettings<DeleteExecutionRequest, Empty, DeleteOperationMetadata>
+      deleteExecutionOperationSettings() {
+    return deleteExecutionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeExecutions. */
+  public UnaryCallSettings<PurgeExecutionsRequest, Operation> purgeExecutionsSettings() {
+    return purgeExecutionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeExecutions. */
+  public OperationCallSettings<
+          PurgeExecutionsRequest, PurgeExecutionsResponse, PurgeExecutionsMetadata>
+      purgeExecutionsOperationSettings() {
+    return purgeExecutionsOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to addExecutionEvents. */
@@ -731,12 +817,18 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     getArtifactSettings = settingsBuilder.getArtifactSettings().build();
     listArtifactsSettings = settingsBuilder.listArtifactsSettings().build();
     updateArtifactSettings = settingsBuilder.updateArtifactSettings().build();
+    deleteArtifactSettings = settingsBuilder.deleteArtifactSettings().build();
+    deleteArtifactOperationSettings = settingsBuilder.deleteArtifactOperationSettings().build();
+    purgeArtifactsSettings = settingsBuilder.purgeArtifactsSettings().build();
+    purgeArtifactsOperationSettings = settingsBuilder.purgeArtifactsOperationSettings().build();
     createContextSettings = settingsBuilder.createContextSettings().build();
     getContextSettings = settingsBuilder.getContextSettings().build();
     listContextsSettings = settingsBuilder.listContextsSettings().build();
     updateContextSettings = settingsBuilder.updateContextSettings().build();
     deleteContextSettings = settingsBuilder.deleteContextSettings().build();
     deleteContextOperationSettings = settingsBuilder.deleteContextOperationSettings().build();
+    purgeContextsSettings = settingsBuilder.purgeContextsSettings().build();
+    purgeContextsOperationSettings = settingsBuilder.purgeContextsOperationSettings().build();
     addContextArtifactsAndExecutionsSettings =
         settingsBuilder.addContextArtifactsAndExecutionsSettings().build();
     addContextChildrenSettings = settingsBuilder.addContextChildrenSettings().build();
@@ -746,6 +838,10 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     getExecutionSettings = settingsBuilder.getExecutionSettings().build();
     listExecutionsSettings = settingsBuilder.listExecutionsSettings().build();
     updateExecutionSettings = settingsBuilder.updateExecutionSettings().build();
+    deleteExecutionSettings = settingsBuilder.deleteExecutionSettings().build();
+    deleteExecutionOperationSettings = settingsBuilder.deleteExecutionOperationSettings().build();
+    purgeExecutionsSettings = settingsBuilder.purgeExecutionsSettings().build();
+    purgeExecutionsOperationSettings = settingsBuilder.purgeExecutionsOperationSettings().build();
     addExecutionEventsSettings = settingsBuilder.addExecutionEventsSettings().build();
     queryExecutionInputsAndOutputsSettings =
         settingsBuilder.queryExecutionInputsAndOutputsSettings().build();
@@ -780,6 +876,16 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
             ListArtifactsRequest, ListArtifactsResponse, ListArtifactsPagedResponse>
         listArtifactsSettings;
     private final UnaryCallSettings.Builder<UpdateArtifactRequest, Artifact> updateArtifactSettings;
+    private final UnaryCallSettings.Builder<DeleteArtifactRequest, Operation>
+        deleteArtifactSettings;
+    private final OperationCallSettings.Builder<
+            DeleteArtifactRequest, Empty, DeleteOperationMetadata>
+        deleteArtifactOperationSettings;
+    private final UnaryCallSettings.Builder<PurgeArtifactsRequest, Operation>
+        purgeArtifactsSettings;
+    private final OperationCallSettings.Builder<
+            PurgeArtifactsRequest, PurgeArtifactsResponse, PurgeArtifactsMetadata>
+        purgeArtifactsOperationSettings;
     private final UnaryCallSettings.Builder<CreateContextRequest, Context> createContextSettings;
     private final UnaryCallSettings.Builder<GetContextRequest, Context> getContextSettings;
     private final PagedCallSettings.Builder<
@@ -790,6 +896,10 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     private final OperationCallSettings.Builder<
             DeleteContextRequest, Empty, DeleteOperationMetadata>
         deleteContextOperationSettings;
+    private final UnaryCallSettings.Builder<PurgeContextsRequest, Operation> purgeContextsSettings;
+    private final OperationCallSettings.Builder<
+            PurgeContextsRequest, PurgeContextsResponse, PurgeContextsMetadata>
+        purgeContextsOperationSettings;
     private final UnaryCallSettings.Builder<
             AddContextArtifactsAndExecutionsRequest, AddContextArtifactsAndExecutionsResponse>
         addContextArtifactsAndExecutionsSettings;
@@ -805,6 +915,16 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
         listExecutionsSettings;
     private final UnaryCallSettings.Builder<UpdateExecutionRequest, Execution>
         updateExecutionSettings;
+    private final UnaryCallSettings.Builder<DeleteExecutionRequest, Operation>
+        deleteExecutionSettings;
+    private final OperationCallSettings.Builder<
+            DeleteExecutionRequest, Empty, DeleteOperationMetadata>
+        deleteExecutionOperationSettings;
+    private final UnaryCallSettings.Builder<PurgeExecutionsRequest, Operation>
+        purgeExecutionsSettings;
+    private final OperationCallSettings.Builder<
+            PurgeExecutionsRequest, PurgeExecutionsResponse, PurgeExecutionsMetadata>
+        purgeExecutionsOperationSettings;
     private final UnaryCallSettings.Builder<AddExecutionEventsRequest, AddExecutionEventsResponse>
         addExecutionEventsSettings;
     private final UnaryCallSettings.Builder<QueryExecutionInputsAndOutputsRequest, LineageSubgraph>
@@ -867,12 +987,18 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
       getArtifactSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listArtifactsSettings = PagedCallSettings.newBuilder(LIST_ARTIFACTS_PAGE_STR_FACT);
       updateArtifactSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteArtifactSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteArtifactOperationSettings = OperationCallSettings.newBuilder();
+      purgeArtifactsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      purgeArtifactsOperationSettings = OperationCallSettings.newBuilder();
       createContextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getContextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listContextsSettings = PagedCallSettings.newBuilder(LIST_CONTEXTS_PAGE_STR_FACT);
       updateContextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteContextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteContextOperationSettings = OperationCallSettings.newBuilder();
+      purgeContextsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      purgeContextsOperationSettings = OperationCallSettings.newBuilder();
       addContextArtifactsAndExecutionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       addContextChildrenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       queryContextLineageSubgraphSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -880,6 +1006,10 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
       getExecutionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listExecutionsSettings = PagedCallSettings.newBuilder(LIST_EXECUTIONS_PAGE_STR_FACT);
       updateExecutionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteExecutionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteExecutionOperationSettings = OperationCallSettings.newBuilder();
+      purgeExecutionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      purgeExecutionsOperationSettings = OperationCallSettings.newBuilder();
       addExecutionEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       queryExecutionInputsAndOutputsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createMetadataSchemaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -898,11 +1028,14 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
               getArtifactSettings,
               listArtifactsSettings,
               updateArtifactSettings,
+              deleteArtifactSettings,
+              purgeArtifactsSettings,
               createContextSettings,
               getContextSettings,
               listContextsSettings,
               updateContextSettings,
               deleteContextSettings,
+              purgeContextsSettings,
               addContextArtifactsAndExecutionsSettings,
               addContextChildrenSettings,
               queryContextLineageSubgraphSettings,
@@ -910,6 +1043,8 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
               getExecutionSettings,
               listExecutionsSettings,
               updateExecutionSettings,
+              deleteExecutionSettings,
+              purgeExecutionsSettings,
               addExecutionEventsSettings,
               queryExecutionInputsAndOutputsSettings,
               createMetadataSchemaSettings,
@@ -934,12 +1069,18 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
       getArtifactSettings = settings.getArtifactSettings.toBuilder();
       listArtifactsSettings = settings.listArtifactsSettings.toBuilder();
       updateArtifactSettings = settings.updateArtifactSettings.toBuilder();
+      deleteArtifactSettings = settings.deleteArtifactSettings.toBuilder();
+      deleteArtifactOperationSettings = settings.deleteArtifactOperationSettings.toBuilder();
+      purgeArtifactsSettings = settings.purgeArtifactsSettings.toBuilder();
+      purgeArtifactsOperationSettings = settings.purgeArtifactsOperationSettings.toBuilder();
       createContextSettings = settings.createContextSettings.toBuilder();
       getContextSettings = settings.getContextSettings.toBuilder();
       listContextsSettings = settings.listContextsSettings.toBuilder();
       updateContextSettings = settings.updateContextSettings.toBuilder();
       deleteContextSettings = settings.deleteContextSettings.toBuilder();
       deleteContextOperationSettings = settings.deleteContextOperationSettings.toBuilder();
+      purgeContextsSettings = settings.purgeContextsSettings.toBuilder();
+      purgeContextsOperationSettings = settings.purgeContextsOperationSettings.toBuilder();
       addContextArtifactsAndExecutionsSettings =
           settings.addContextArtifactsAndExecutionsSettings.toBuilder();
       addContextChildrenSettings = settings.addContextChildrenSettings.toBuilder();
@@ -949,6 +1090,10 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
       getExecutionSettings = settings.getExecutionSettings.toBuilder();
       listExecutionsSettings = settings.listExecutionsSettings.toBuilder();
       updateExecutionSettings = settings.updateExecutionSettings.toBuilder();
+      deleteExecutionSettings = settings.deleteExecutionSettings.toBuilder();
+      deleteExecutionOperationSettings = settings.deleteExecutionOperationSettings.toBuilder();
+      purgeExecutionsSettings = settings.purgeExecutionsSettings.toBuilder();
+      purgeExecutionsOperationSettings = settings.purgeExecutionsOperationSettings.toBuilder();
       addExecutionEventsSettings = settings.addExecutionEventsSettings.toBuilder();
       queryExecutionInputsAndOutputsSettings =
           settings.queryExecutionInputsAndOutputsSettings.toBuilder();
@@ -968,11 +1113,14 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
               getArtifactSettings,
               listArtifactsSettings,
               updateArtifactSettings,
+              deleteArtifactSettings,
+              purgeArtifactsSettings,
               createContextSettings,
               getContextSettings,
               listContextsSettings,
               updateContextSettings,
               deleteContextSettings,
+              purgeContextsSettings,
               addContextArtifactsAndExecutionsSettings,
               addContextChildrenSettings,
               queryContextLineageSubgraphSettings,
@@ -980,6 +1128,8 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
               getExecutionSettings,
               listExecutionsSettings,
               updateExecutionSettings,
+              deleteExecutionSettings,
+              purgeExecutionsSettings,
               addExecutionEventsSettings,
               queryExecutionInputsAndOutputsSettings,
               createMetadataSchemaSettings,
@@ -1043,6 +1193,16 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
 
       builder
+          .deleteArtifactSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .purgeArtifactsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .createContextSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
@@ -1066,6 +1226,11 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
           .deleteContextSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
+
+      builder
+          .purgeContextsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .addContextArtifactsAndExecutionsSettings()
@@ -1101,6 +1266,16 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
           .updateExecutionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
+
+      builder
+          .deleteExecutionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .purgeExecutionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .addExecutionEventsSettings()
@@ -1183,6 +1358,54 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
                       .build()));
 
       builder
+          .deleteArtifactOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteArtifactRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .purgeArtifactsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PurgeArtifactsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(PurgeArtifactsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(PurgeArtifactsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteContextOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -1206,17 +1429,88 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .purgeContextsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PurgeContextsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(PurgeContextsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(PurgeContextsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteExecutionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteExecutionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .purgeExecutionsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PurgeExecutionsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(PurgeExecutionsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(PurgeExecutionsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
@@ -1290,6 +1584,33 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
       return updateArtifactSettings;
     }
 
+    /** Returns the builder for the settings used for calls to deleteArtifact. */
+    public UnaryCallSettings.Builder<DeleteArtifactRequest, Operation> deleteArtifactSettings() {
+      return deleteArtifactSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteArtifact. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteArtifactRequest, Empty, DeleteOperationMetadata>
+        deleteArtifactOperationSettings() {
+      return deleteArtifactOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to purgeArtifacts. */
+    public UnaryCallSettings.Builder<PurgeArtifactsRequest, Operation> purgeArtifactsSettings() {
+      return purgeArtifactsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to purgeArtifacts. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            PurgeArtifactsRequest, PurgeArtifactsResponse, PurgeArtifactsMetadata>
+        purgeArtifactsOperationSettings() {
+      return purgeArtifactsOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createContext. */
     public UnaryCallSettings.Builder<CreateContextRequest, Context> createContextSettings() {
       return createContextSettings;
@@ -1323,6 +1644,20 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     public OperationCallSettings.Builder<DeleteContextRequest, Empty, DeleteOperationMetadata>
         deleteContextOperationSettings() {
       return deleteContextOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to purgeContexts. */
+    public UnaryCallSettings.Builder<PurgeContextsRequest, Operation> purgeContextsSettings() {
+      return purgeContextsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to purgeContexts. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            PurgeContextsRequest, PurgeContextsResponse, PurgeContextsMetadata>
+        purgeContextsOperationSettings() {
+      return purgeContextsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to addContextArtifactsAndExecutions. */
@@ -1364,6 +1699,33 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     /** Returns the builder for the settings used for calls to updateExecution. */
     public UnaryCallSettings.Builder<UpdateExecutionRequest, Execution> updateExecutionSettings() {
       return updateExecutionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExecution. */
+    public UnaryCallSettings.Builder<DeleteExecutionRequest, Operation> deleteExecutionSettings() {
+      return deleteExecutionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExecution. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteExecutionRequest, Empty, DeleteOperationMetadata>
+        deleteExecutionOperationSettings() {
+      return deleteExecutionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to purgeExecutions. */
+    public UnaryCallSettings.Builder<PurgeExecutionsRequest, Operation> purgeExecutionsSettings() {
+      return purgeExecutionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to purgeExecutions. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            PurgeExecutionsRequest, PurgeExecutionsResponse, PurgeExecutionsMetadata>
+        purgeExecutionsOperationSettings() {
+      return purgeExecutionsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to addExecutionEvents. */

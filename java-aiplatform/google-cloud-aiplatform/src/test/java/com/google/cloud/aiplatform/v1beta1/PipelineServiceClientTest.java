@@ -583,7 +583,7 @@ public class PipelineServiceClientTest {
             .setRuntimeConfig(PipelineJob.RuntimeConfig.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
-            .setNetwork(NetworkName.of("[PROJECT]", "[NETWORK]").toString())
+            .setNetwork("network1843485230")
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -641,7 +641,7 @@ public class PipelineServiceClientTest {
             .setRuntimeConfig(PipelineJob.RuntimeConfig.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
-            .setNetwork(NetworkName.of("[PROJECT]", "[NETWORK]").toString())
+            .setNetwork("network1843485230")
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -699,7 +699,7 @@ public class PipelineServiceClientTest {
             .setRuntimeConfig(PipelineJob.RuntimeConfig.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
-            .setNetwork(NetworkName.of("[PROJECT]", "[NETWORK]").toString())
+            .setNetwork("network1843485230")
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -751,7 +751,7 @@ public class PipelineServiceClientTest {
             .setRuntimeConfig(PipelineJob.RuntimeConfig.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
-            .setNetwork(NetworkName.of("[PROJECT]", "[NETWORK]").toString())
+            .setNetwork("network1843485230")
             .build();
     mockPipelineService.addResponse(expectedResponse);
 

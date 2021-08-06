@@ -47,10 +47,13 @@ public final class CompletionStatsProto {
           + "annotations.proto\"j\n\017CompletionStats\022\035\n\020"
           + "successful_count\030\001 \001(\003B\003\340A\003\022\031\n\014failed_co"
           + "unt\030\002 \001(\003B\003\340A\003\022\035\n\020incomplete_count\030\003 \001(\003"
-          + "B\003\340A\003B\210\001\n#com.google.cloud.aiplatform.v1"
+          + "B\003\340A\003B\361\001\n#com.google.cloud.aiplatform.v1"
           + "beta1B\024CompletionStatsProtoP\001ZIgoogle.go"
           + "lang.org/genproto/googleapis/cloud/aipla"
-          + "tform/v1beta1;aiplatformb\006proto3"
+          + "tform/v1beta1;aiplatform\252\002\037Google.Cloud."
+          + "AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlat"
+          + "form\\V1beta1\352\002\"Google::Cloud::AIPlatform"
+          + "::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

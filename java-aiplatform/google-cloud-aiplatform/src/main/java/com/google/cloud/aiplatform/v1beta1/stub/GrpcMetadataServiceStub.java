@@ -29,7 +29,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.AddContextArtifactsAndExecutionsRequest;
 import com.google.cloud.aiplatform.v1beta1.AddContextArtifactsAndExecutionsResponse;
@@ -45,7 +44,9 @@ import com.google.cloud.aiplatform.v1beta1.CreateExecutionRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateMetadataSchemaRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateMetadataStoreOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateMetadataStoreRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteArtifactRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteContextRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteExecutionRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteMetadataStoreOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeleteMetadataStoreRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
@@ -68,6 +69,15 @@ import com.google.cloud.aiplatform.v1beta1.ListMetadataStoresRequest;
 import com.google.cloud.aiplatform.v1beta1.ListMetadataStoresResponse;
 import com.google.cloud.aiplatform.v1beta1.MetadataSchema;
 import com.google.cloud.aiplatform.v1beta1.MetadataStore;
+import com.google.cloud.aiplatform.v1beta1.PurgeArtifactsMetadata;
+import com.google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest;
+import com.google.cloud.aiplatform.v1beta1.PurgeArtifactsResponse;
+import com.google.cloud.aiplatform.v1beta1.PurgeContextsMetadata;
+import com.google.cloud.aiplatform.v1beta1.PurgeContextsRequest;
+import com.google.cloud.aiplatform.v1beta1.PurgeContextsResponse;
+import com.google.cloud.aiplatform.v1beta1.PurgeExecutionsMetadata;
+import com.google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest;
+import com.google.cloud.aiplatform.v1beta1.PurgeExecutionsResponse;
 import com.google.cloud.aiplatform.v1beta1.QueryArtifactLineageSubgraphRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryContextLineageSubgraphRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryExecutionInputsAndOutputsRequest;
@@ -81,7 +91,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -177,6 +186,26 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Artifact.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<DeleteArtifactRequest, Operation>
+      deleteArtifactMethodDescriptor =
+          MethodDescriptor.<DeleteArtifactRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.MetadataService/DeleteArtifact")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteArtifactRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<PurgeArtifactsRequest, Operation>
+      purgeArtifactsMethodDescriptor =
+          MethodDescriptor.<PurgeArtifactsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.MetadataService/PurgeArtifacts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PurgeArtifactsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CreateContextRequest, Context>
       createContextMethodDescriptor =
           MethodDescriptor.<CreateContextRequest, Context>newBuilder()
@@ -222,6 +251,16 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1beta1.MetadataService/DeleteContext")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteContextRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<PurgeContextsRequest, Operation>
+      purgeContextsMethodDescriptor =
+          MethodDescriptor.<PurgeContextsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.MetadataService/PurgeContexts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PurgeContextsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -303,6 +342,26 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateExecutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Execution.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteExecutionRequest, Operation>
+      deleteExecutionMethodDescriptor =
+          MethodDescriptor.<DeleteExecutionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.MetadataService/DeleteExecution")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteExecutionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<PurgeExecutionsRequest, Operation>
+      purgeExecutionsMethodDescriptor =
+          MethodDescriptor.<PurgeExecutionsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.MetadataService/PurgeExecutions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PurgeExecutionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<AddExecutionEventsRequest, AddExecutionEventsResponse>
@@ -392,6 +451,13 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
   private final UnaryCallable<ListArtifactsRequest, ListArtifactsPagedResponse>
       listArtifactsPagedCallable;
   private final UnaryCallable<UpdateArtifactRequest, Artifact> updateArtifactCallable;
+  private final UnaryCallable<DeleteArtifactRequest, Operation> deleteArtifactCallable;
+  private final OperationCallable<DeleteArtifactRequest, Empty, DeleteOperationMetadata>
+      deleteArtifactOperationCallable;
+  private final UnaryCallable<PurgeArtifactsRequest, Operation> purgeArtifactsCallable;
+  private final OperationCallable<
+          PurgeArtifactsRequest, PurgeArtifactsResponse, PurgeArtifactsMetadata>
+      purgeArtifactsOperationCallable;
   private final UnaryCallable<CreateContextRequest, Context> createContextCallable;
   private final UnaryCallable<GetContextRequest, Context> getContextCallable;
   private final UnaryCallable<ListContextsRequest, ListContextsResponse> listContextsCallable;
@@ -401,6 +467,10 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
   private final UnaryCallable<DeleteContextRequest, Operation> deleteContextCallable;
   private final OperationCallable<DeleteContextRequest, Empty, DeleteOperationMetadata>
       deleteContextOperationCallable;
+  private final UnaryCallable<PurgeContextsRequest, Operation> purgeContextsCallable;
+  private final OperationCallable<
+          PurgeContextsRequest, PurgeContextsResponse, PurgeContextsMetadata>
+      purgeContextsOperationCallable;
   private final UnaryCallable<
           AddContextArtifactsAndExecutionsRequest, AddContextArtifactsAndExecutionsResponse>
       addContextArtifactsAndExecutionsCallable;
@@ -414,6 +484,13 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
   private final UnaryCallable<ListExecutionsRequest, ListExecutionsPagedResponse>
       listExecutionsPagedCallable;
   private final UnaryCallable<UpdateExecutionRequest, Execution> updateExecutionCallable;
+  private final UnaryCallable<DeleteExecutionRequest, Operation> deleteExecutionCallable;
+  private final OperationCallable<DeleteExecutionRequest, Empty, DeleteOperationMetadata>
+      deleteExecutionOperationCallable;
+  private final UnaryCallable<PurgeExecutionsRequest, Operation> purgeExecutionsCallable;
+  private final OperationCallable<
+          PurgeExecutionsRequest, PurgeExecutionsResponse, PurgeExecutionsMetadata>
+      purgeExecutionsOperationCallable;
   private final UnaryCallable<AddExecutionEventsRequest, AddExecutionEventsResponse>
       addExecutionEventsCallable;
   private final UnaryCallable<QueryExecutionInputsAndOutputsRequest, LineageSubgraph>
@@ -476,26 +553,20 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
         GrpcCallSettings.<CreateMetadataStoreRequest, Operation>newBuilder()
             .setMethodDescriptor(createMetadataStoreMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateMetadataStoreRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateMetadataStoreRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetMetadataStoreRequest, MetadataStore> getMetadataStoreTransportSettings =
         GrpcCallSettings.<GetMetadataStoreRequest, MetadataStore>newBuilder()
             .setMethodDescriptor(getMetadataStoreMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetMetadataStoreRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetMetadataStoreRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListMetadataStoresRequest, ListMetadataStoresResponse>
@@ -503,143 +574,140 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             GrpcCallSettings.<ListMetadataStoresRequest, ListMetadataStoresResponse>newBuilder()
                 .setMethodDescriptor(listMetadataStoresMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListMetadataStoresRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListMetadataStoresRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteMetadataStoreRequest, Operation> deleteMetadataStoreTransportSettings =
         GrpcCallSettings.<DeleteMetadataStoreRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMetadataStoreMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteMetadataStoreRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteMetadataStoreRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateArtifactRequest, Artifact> createArtifactTransportSettings =
         GrpcCallSettings.<CreateArtifactRequest, Artifact>newBuilder()
             .setMethodDescriptor(createArtifactMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateArtifactRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateArtifactRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetArtifactRequest, Artifact> getArtifactTransportSettings =
         GrpcCallSettings.<GetArtifactRequest, Artifact>newBuilder()
             .setMethodDescriptor(getArtifactMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetArtifactRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetArtifactRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListArtifactsRequest, ListArtifactsResponse> listArtifactsTransportSettings =
         GrpcCallSettings.<ListArtifactsRequest, ListArtifactsResponse>newBuilder()
             .setMethodDescriptor(listArtifactsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListArtifactsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListArtifactsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateArtifactRequest, Artifact> updateArtifactTransportSettings =
         GrpcCallSettings.<UpdateArtifactRequest, Artifact>newBuilder()
             .setMethodDescriptor(updateArtifactMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateArtifactRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateArtifactRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("artifact.name", String.valueOf(request.getArtifact().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("artifact.name", String.valueOf(request.getArtifact().getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteArtifactRequest, Operation> deleteArtifactTransportSettings =
+        GrpcCallSettings.<DeleteArtifactRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteArtifactMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<PurgeArtifactsRequest, Operation> purgeArtifactsTransportSettings =
+        GrpcCallSettings.<PurgeArtifactsRequest, Operation>newBuilder()
+            .setMethodDescriptor(purgeArtifactsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateContextRequest, Context> createContextTransportSettings =
         GrpcCallSettings.<CreateContextRequest, Context>newBuilder()
             .setMethodDescriptor(createContextMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateContextRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateContextRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetContextRequest, Context> getContextTransportSettings =
         GrpcCallSettings.<GetContextRequest, Context>newBuilder()
             .setMethodDescriptor(getContextMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetContextRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetContextRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListContextsRequest, ListContextsResponse> listContextsTransportSettings =
         GrpcCallSettings.<ListContextsRequest, ListContextsResponse>newBuilder()
             .setMethodDescriptor(listContextsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListContextsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListContextsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateContextRequest, Context> updateContextTransportSettings =
         GrpcCallSettings.<UpdateContextRequest, Context>newBuilder()
             .setMethodDescriptor(updateContextMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateContextRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateContextRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("context.name", String.valueOf(request.getContext().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("context.name", String.valueOf(request.getContext().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteContextRequest, Operation> deleteContextTransportSettings =
         GrpcCallSettings.<DeleteContextRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteContextMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteContextRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteContextRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<PurgeContextsRequest, Operation> purgeContextsTransportSettings =
+        GrpcCallSettings.<PurgeContextsRequest, Operation>newBuilder()
+            .setMethodDescriptor(purgeContextsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<
@@ -650,14 +718,10 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                     newBuilder()
                 .setMethodDescriptor(addContextArtifactsAndExecutionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<AddContextArtifactsAndExecutionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          AddContextArtifactsAndExecutionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("context", String.valueOf(request.getContext()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("context", String.valueOf(request.getContext()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<AddContextChildrenRequest, AddContextChildrenResponse>
@@ -665,13 +729,10 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             GrpcCallSettings.<AddContextChildrenRequest, AddContextChildrenResponse>newBuilder()
                 .setMethodDescriptor(addContextChildrenMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<AddContextChildrenRequest>() {
-                      @Override
-                      public Map<String, String> extract(AddContextChildrenRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("context", String.valueOf(request.getContext()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("context", String.valueOf(request.getContext()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<QueryContextLineageSubgraphRequest, LineageSubgraph>
@@ -679,40 +740,30 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             GrpcCallSettings.<QueryContextLineageSubgraphRequest, LineageSubgraph>newBuilder()
                 .setMethodDescriptor(queryContextLineageSubgraphMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<QueryContextLineageSubgraphRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          QueryContextLineageSubgraphRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("context", String.valueOf(request.getContext()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("context", String.valueOf(request.getContext()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateExecutionRequest, Execution> createExecutionTransportSettings =
         GrpcCallSettings.<CreateExecutionRequest, Execution>newBuilder()
             .setMethodDescriptor(createExecutionMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateExecutionRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateExecutionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetExecutionRequest, Execution> getExecutionTransportSettings =
         GrpcCallSettings.<GetExecutionRequest, Execution>newBuilder()
             .setMethodDescriptor(getExecutionMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetExecutionRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetExecutionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListExecutionsRequest, ListExecutionsResponse>
@@ -720,26 +771,40 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             GrpcCallSettings.<ListExecutionsRequest, ListExecutionsResponse>newBuilder()
                 .setMethodDescriptor(listExecutionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListExecutionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListExecutionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateExecutionRequest, Execution> updateExecutionTransportSettings =
         GrpcCallSettings.<UpdateExecutionRequest, Execution>newBuilder()
             .setMethodDescriptor(updateExecutionMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateExecutionRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateExecutionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("execution.name", String.valueOf(request.getExecution().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("execution.name", String.valueOf(request.getExecution().getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteExecutionRequest, Operation> deleteExecutionTransportSettings =
+        GrpcCallSettings.<DeleteExecutionRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteExecutionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<PurgeExecutionsRequest, Operation> purgeExecutionsTransportSettings =
+        GrpcCallSettings.<PurgeExecutionsRequest, Operation>newBuilder()
+            .setMethodDescriptor(purgeExecutionsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<AddExecutionEventsRequest, AddExecutionEventsResponse>
@@ -747,13 +812,10 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             GrpcCallSettings.<AddExecutionEventsRequest, AddExecutionEventsResponse>newBuilder()
                 .setMethodDescriptor(addExecutionEventsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<AddExecutionEventsRequest>() {
-                      @Override
-                      public Map<String, String> extract(AddExecutionEventsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("execution", String.valueOf(request.getExecution()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("execution", String.valueOf(request.getExecution()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<QueryExecutionInputsAndOutputsRequest, LineageSubgraph>
@@ -761,14 +823,10 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             GrpcCallSettings.<QueryExecutionInputsAndOutputsRequest, LineageSubgraph>newBuilder()
                 .setMethodDescriptor(queryExecutionInputsAndOutputsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<QueryExecutionInputsAndOutputsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          QueryExecutionInputsAndOutputsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("execution", String.valueOf(request.getExecution()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("execution", String.valueOf(request.getExecution()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateMetadataSchemaRequest, MetadataSchema>
@@ -776,26 +834,20 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             GrpcCallSettings.<CreateMetadataSchemaRequest, MetadataSchema>newBuilder()
                 .setMethodDescriptor(createMetadataSchemaMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateMetadataSchemaRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateMetadataSchemaRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetMetadataSchemaRequest, MetadataSchema> getMetadataSchemaTransportSettings =
         GrpcCallSettings.<GetMetadataSchemaRequest, MetadataSchema>newBuilder()
             .setMethodDescriptor(getMetadataSchemaMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetMetadataSchemaRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetMetadataSchemaRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListMetadataSchemasRequest, ListMetadataSchemasResponse>
@@ -803,13 +855,10 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             GrpcCallSettings.<ListMetadataSchemasRequest, ListMetadataSchemasResponse>newBuilder()
                 .setMethodDescriptor(listMetadataSchemasMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListMetadataSchemasRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListMetadataSchemasRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<QueryArtifactLineageSubgraphRequest, LineageSubgraph>
@@ -817,14 +866,10 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             GrpcCallSettings.<QueryArtifactLineageSubgraphRequest, LineageSubgraph>newBuilder()
                 .setMethodDescriptor(queryArtifactLineageSubgraphMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<QueryArtifactLineageSubgraphRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          QueryArtifactLineageSubgraphRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("artifact", String.valueOf(request.getArtifact()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("artifact", String.valueOf(request.getArtifact()));
+                      return params.build();
                     })
                 .build();
 
@@ -878,6 +923,24 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
     this.updateArtifactCallable =
         callableFactory.createUnaryCallable(
             updateArtifactTransportSettings, settings.updateArtifactSettings(), clientContext);
+    this.deleteArtifactCallable =
+        callableFactory.createUnaryCallable(
+            deleteArtifactTransportSettings, settings.deleteArtifactSettings(), clientContext);
+    this.deleteArtifactOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteArtifactTransportSettings,
+            settings.deleteArtifactOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.purgeArtifactsCallable =
+        callableFactory.createUnaryCallable(
+            purgeArtifactsTransportSettings, settings.purgeArtifactsSettings(), clientContext);
+    this.purgeArtifactsOperationCallable =
+        callableFactory.createOperationCallable(
+            purgeArtifactsTransportSettings,
+            settings.purgeArtifactsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.createContextCallable =
         callableFactory.createUnaryCallable(
             createContextTransportSettings, settings.createContextSettings(), clientContext);
@@ -900,6 +963,15 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
         callableFactory.createOperationCallable(
             deleteContextTransportSettings,
             settings.deleteContextOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.purgeContextsCallable =
+        callableFactory.createUnaryCallable(
+            purgeContextsTransportSettings, settings.purgeContextsSettings(), clientContext);
+    this.purgeContextsOperationCallable =
+        callableFactory.createOperationCallable(
+            purgeContextsTransportSettings,
+            settings.purgeContextsOperationSettings(),
             clientContext,
             operationsStub);
     this.addContextArtifactsAndExecutionsCallable =
@@ -932,6 +1004,24 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
     this.updateExecutionCallable =
         callableFactory.createUnaryCallable(
             updateExecutionTransportSettings, settings.updateExecutionSettings(), clientContext);
+    this.deleteExecutionCallable =
+        callableFactory.createUnaryCallable(
+            deleteExecutionTransportSettings, settings.deleteExecutionSettings(), clientContext);
+    this.deleteExecutionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteExecutionTransportSettings,
+            settings.deleteExecutionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.purgeExecutionsCallable =
+        callableFactory.createUnaryCallable(
+            purgeExecutionsTransportSettings, settings.purgeExecutionsSettings(), clientContext);
+    this.purgeExecutionsOperationCallable =
+        callableFactory.createOperationCallable(
+            purgeExecutionsTransportSettings,
+            settings.purgeExecutionsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.addExecutionEventsCallable =
         callableFactory.createUnaryCallable(
             addExecutionEventsTransportSettings,
@@ -1043,6 +1133,28 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
   }
 
   @Override
+  public UnaryCallable<DeleteArtifactRequest, Operation> deleteArtifactCallable() {
+    return deleteArtifactCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteArtifactRequest, Empty, DeleteOperationMetadata>
+      deleteArtifactOperationCallable() {
+    return deleteArtifactOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PurgeArtifactsRequest, Operation> purgeArtifactsCallable() {
+    return purgeArtifactsCallable;
+  }
+
+  @Override
+  public OperationCallable<PurgeArtifactsRequest, PurgeArtifactsResponse, PurgeArtifactsMetadata>
+      purgeArtifactsOperationCallable() {
+    return purgeArtifactsOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateContextRequest, Context> createContextCallable() {
     return createContextCallable;
   }
@@ -1076,6 +1188,17 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
   public OperationCallable<DeleteContextRequest, Empty, DeleteOperationMetadata>
       deleteContextOperationCallable() {
     return deleteContextOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PurgeContextsRequest, Operation> purgeContextsCallable() {
+    return purgeContextsCallable;
+  }
+
+  @Override
+  public OperationCallable<PurgeContextsRequest, PurgeContextsResponse, PurgeContextsMetadata>
+      purgeContextsOperationCallable() {
+    return purgeContextsOperationCallable;
   }
 
   @Override
@@ -1124,6 +1247,28 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
   }
 
   @Override
+  public UnaryCallable<DeleteExecutionRequest, Operation> deleteExecutionCallable() {
+    return deleteExecutionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteExecutionRequest, Empty, DeleteOperationMetadata>
+      deleteExecutionOperationCallable() {
+    return deleteExecutionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PurgeExecutionsRequest, Operation> purgeExecutionsCallable() {
+    return purgeExecutionsCallable;
+  }
+
+  @Override
+  public OperationCallable<PurgeExecutionsRequest, PurgeExecutionsResponse, PurgeExecutionsMetadata>
+      purgeExecutionsOperationCallable() {
+    return purgeExecutionsOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<AddExecutionEventsRequest, AddExecutionEventsResponse>
       addExecutionEventsCallable() {
     return addExecutionEventsCallable;
@@ -1165,7 +1310,13 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override
