@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.documentai.v1beta3.BatchProcessMetadata;
 import com.google.cloud.documentai.v1beta3.BatchProcessRequest;
@@ -56,7 +55,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -243,26 +241,20 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
         GrpcCallSettings.<ProcessRequest, ProcessResponse>newBuilder()
             .setMethodDescriptor(processDocumentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ProcessRequest>() {
-                  @Override
-                  public Map<String, String> extract(ProcessRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<BatchProcessRequest, Operation> batchProcessDocumentsTransportSettings =
         GrpcCallSettings.<BatchProcessRequest, Operation>newBuilder()
             .setMethodDescriptor(batchProcessDocumentsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<BatchProcessRequest>() {
-                  @Override
-                  public Map<String, String> extract(BatchProcessRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<FetchProcessorTypesRequest, FetchProcessorTypesResponse>
@@ -270,13 +262,10 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
             GrpcCallSettings.<FetchProcessorTypesRequest, FetchProcessorTypesResponse>newBuilder()
                 .setMethodDescriptor(fetchProcessorTypesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<FetchProcessorTypesRequest>() {
-                      @Override
-                      public Map<String, String> extract(FetchProcessorTypesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListProcessorsRequest, ListProcessorsResponse>
@@ -284,79 +273,60 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
             GrpcCallSettings.<ListProcessorsRequest, ListProcessorsResponse>newBuilder()
                 .setMethodDescriptor(listProcessorsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListProcessorsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListProcessorsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateProcessorRequest, Processor> createProcessorTransportSettings =
         GrpcCallSettings.<CreateProcessorRequest, Processor>newBuilder()
             .setMethodDescriptor(createProcessorMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateProcessorRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateProcessorRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteProcessorRequest, Operation> deleteProcessorTransportSettings =
         GrpcCallSettings.<DeleteProcessorRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteProcessorMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteProcessorRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteProcessorRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<EnableProcessorRequest, Operation> enableProcessorTransportSettings =
         GrpcCallSettings.<EnableProcessorRequest, Operation>newBuilder()
             .setMethodDescriptor(enableProcessorMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<EnableProcessorRequest>() {
-                  @Override
-                  public Map<String, String> extract(EnableProcessorRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DisableProcessorRequest, Operation> disableProcessorTransportSettings =
         GrpcCallSettings.<DisableProcessorRequest, Operation>newBuilder()
             .setMethodDescriptor(disableProcessorMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DisableProcessorRequest>() {
-                  @Override
-                  public Map<String, String> extract(DisableProcessorRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ReviewDocumentRequest, Operation> reviewDocumentTransportSettings =
         GrpcCallSettings.<ReviewDocumentRequest, Operation>newBuilder()
             .setMethodDescriptor(reviewDocumentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ReviewDocumentRequest>() {
-                  @Override
-                  public Map<String, String> extract(ReviewDocumentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "human_review_config", String.valueOf(request.getHumanReviewConfig()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("human_review_config", String.valueOf(request.getHumanReviewConfig()));
+                  return params.build();
                 })
             .build();
 

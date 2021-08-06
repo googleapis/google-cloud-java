@@ -22,7 +22,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.documentai.v1.BatchProcessMetadata;
 import com.google.cloud.documentai.v1.BatchProcessRequest;
@@ -38,7 +37,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -139,40 +137,30 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
         GrpcCallSettings.<ProcessRequest, ProcessResponse>newBuilder()
             .setMethodDescriptor(processDocumentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ProcessRequest>() {
-                  @Override
-                  public Map<String, String> extract(ProcessRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<BatchProcessRequest, Operation> batchProcessDocumentsTransportSettings =
         GrpcCallSettings.<BatchProcessRequest, Operation>newBuilder()
             .setMethodDescriptor(batchProcessDocumentsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<BatchProcessRequest>() {
-                  @Override
-                  public Map<String, String> extract(BatchProcessRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ReviewDocumentRequest, Operation> reviewDocumentTransportSettings =
         GrpcCallSettings.<ReviewDocumentRequest, Operation>newBuilder()
             .setMethodDescriptor(reviewDocumentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ReviewDocumentRequest>() {
-                  @Override
-                  public Map<String, String> extract(ReviewDocumentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "human_review_config", String.valueOf(request.getHumanReviewConfig()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("human_review_config", String.valueOf(request.getHumanReviewConfig()));
+                  return params.build();
                 })
             .build();
 

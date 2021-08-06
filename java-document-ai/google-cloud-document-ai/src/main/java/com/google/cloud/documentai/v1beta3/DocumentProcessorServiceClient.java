@@ -16,7 +16,6 @@
 
 package com.google.cloud.documentai.v1beta3;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1247,12 +1246,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
           ListProcessorsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListProcessorsPage, ListProcessorsPagedResponse>() {
-            @Override
-            public ListProcessorsPagedResponse apply(ListProcessorsPage input) {
-              return new ListProcessorsPagedResponse(input);
-            }
-          },
+          input -> new ListProcessorsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

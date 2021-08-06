@@ -23,7 +23,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.documentai.v1beta2.BatchProcessDocumentsRequest;
 import com.google.cloud.documentai.v1beta2.BatchProcessDocumentsResponse;
@@ -36,7 +35,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -130,26 +128,20 @@ public class GrpcDocumentUnderstandingServiceStub extends DocumentUnderstandingS
             GrpcCallSettings.<BatchProcessDocumentsRequest, Operation>newBuilder()
                 .setMethodDescriptor(batchProcessDocumentsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchProcessDocumentsRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchProcessDocumentsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ProcessDocumentRequest, Document> processDocumentTransportSettings =
         GrpcCallSettings.<ProcessDocumentRequest, Document>newBuilder()
             .setMethodDescriptor(processDocumentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ProcessDocumentRequest>() {
-                  @Override
-                  public Map<String, String> extract(ProcessDocumentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
 
