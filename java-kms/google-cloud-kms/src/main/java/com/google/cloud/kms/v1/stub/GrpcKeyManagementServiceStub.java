@@ -26,7 +26,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.kms.v1.AsymmetricDecryptRequest;
 import com.google.cloud.kms.v1.AsymmetricDecryptResponse;
@@ -74,7 +73,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -433,13 +431,10 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
         GrpcCallSettings.<ListKeyRingsRequest, ListKeyRingsResponse>newBuilder()
             .setMethodDescriptor(listKeyRingsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListKeyRingsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListKeyRingsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListCryptoKeysRequest, ListCryptoKeysResponse>
@@ -447,13 +442,10 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
             GrpcCallSettings.<ListCryptoKeysRequest, ListCryptoKeysResponse>newBuilder()
                 .setMethodDescriptor(listCryptoKeysMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListCryptoKeysRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListCryptoKeysRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse>
@@ -462,13 +454,10 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                 .<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse>newBuilder()
                 .setMethodDescriptor(listCryptoKeyVersionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListCryptoKeyVersionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListCryptoKeyVersionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListImportJobsRequest, ListImportJobsResponse>
@@ -476,39 +465,30 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
             GrpcCallSettings.<ListImportJobsRequest, ListImportJobsResponse>newBuilder()
                 .setMethodDescriptor(listImportJobsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListImportJobsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListImportJobsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetKeyRingRequest, KeyRing> getKeyRingTransportSettings =
         GrpcCallSettings.<GetKeyRingRequest, KeyRing>newBuilder()
             .setMethodDescriptor(getKeyRingMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetKeyRingRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetKeyRingRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetCryptoKeyRequest, CryptoKey> getCryptoKeyTransportSettings =
         GrpcCallSettings.<GetCryptoKeyRequest, CryptoKey>newBuilder()
             .setMethodDescriptor(getCryptoKeyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetCryptoKeyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetCryptoKeyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetCryptoKeyVersionRequest, CryptoKeyVersion>
@@ -516,65 +496,50 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
             GrpcCallSettings.<GetCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
                 .setMethodDescriptor(getCryptoKeyVersionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetCryptoKeyVersionRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetCryptoKeyVersionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetPublicKeyRequest, PublicKey> getPublicKeyTransportSettings =
         GrpcCallSettings.<GetPublicKeyRequest, PublicKey>newBuilder()
             .setMethodDescriptor(getPublicKeyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetPublicKeyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetPublicKeyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetImportJobRequest, ImportJob> getImportJobTransportSettings =
         GrpcCallSettings.<GetImportJobRequest, ImportJob>newBuilder()
             .setMethodDescriptor(getImportJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetImportJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetImportJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateKeyRingRequest, KeyRing> createKeyRingTransportSettings =
         GrpcCallSettings.<CreateKeyRingRequest, KeyRing>newBuilder()
             .setMethodDescriptor(createKeyRingMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateKeyRingRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateKeyRingRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateCryptoKeyRequest, CryptoKey> createCryptoKeyTransportSettings =
         GrpcCallSettings.<CreateCryptoKeyRequest, CryptoKey>newBuilder()
             .setMethodDescriptor(createCryptoKeyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateCryptoKeyRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateCryptoKeyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
@@ -582,13 +547,10 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
             GrpcCallSettings.<CreateCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
                 .setMethodDescriptor(createCryptoKeyVersionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateCryptoKeyVersionRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateCryptoKeyVersionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
@@ -596,39 +558,30 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
             GrpcCallSettings.<ImportCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
                 .setMethodDescriptor(importCryptoKeyVersionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ImportCryptoKeyVersionRequest>() {
-                      @Override
-                      public Map<String, String> extract(ImportCryptoKeyVersionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateImportJobRequest, ImportJob> createImportJobTransportSettings =
         GrpcCallSettings.<CreateImportJobRequest, ImportJob>newBuilder()
             .setMethodDescriptor(createImportJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateImportJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateImportJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateCryptoKeyRequest, CryptoKey> updateCryptoKeyTransportSettings =
         GrpcCallSettings.<UpdateCryptoKeyRequest, CryptoKey>newBuilder()
             .setMethodDescriptor(updateCryptoKeyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateCryptoKeyRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateCryptoKeyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("crypto_key.name", String.valueOf(request.getCryptoKey().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("crypto_key.name", String.valueOf(request.getCryptoKey().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateCryptoKeyVersionRequest, CryptoKeyVersion>
@@ -636,41 +589,32 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
             GrpcCallSettings.<UpdateCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
                 .setMethodDescriptor(updateCryptoKeyVersionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateCryptoKeyVersionRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateCryptoKeyVersionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "crypto_key_version.name",
-                            String.valueOf(request.getCryptoKeyVersion().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "crypto_key_version.name",
+                          String.valueOf(request.getCryptoKeyVersion().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<EncryptRequest, EncryptResponse> encryptTransportSettings =
         GrpcCallSettings.<EncryptRequest, EncryptResponse>newBuilder()
             .setMethodDescriptor(encryptMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<EncryptRequest>() {
-                  @Override
-                  public Map<String, String> extract(EncryptRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DecryptRequest, DecryptResponse> decryptTransportSettings =
         GrpcCallSettings.<DecryptRequest, DecryptResponse>newBuilder()
             .setMethodDescriptor(decryptMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DecryptRequest>() {
-                  @Override
-                  public Map<String, String> extract(DecryptRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<AsymmetricSignRequest, AsymmetricSignResponse>
@@ -678,13 +622,10 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
             GrpcCallSettings.<AsymmetricSignRequest, AsymmetricSignResponse>newBuilder()
                 .setMethodDescriptor(asymmetricSignMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<AsymmetricSignRequest>() {
-                      @Override
-                      public Map<String, String> extract(AsymmetricSignRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
@@ -692,13 +633,10 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
             GrpcCallSettings.<AsymmetricDecryptRequest, AsymmetricDecryptResponse>newBuilder()
                 .setMethodDescriptor(asymmetricDecryptMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<AsymmetricDecryptRequest>() {
-                      @Override
-                      public Map<String, String> extract(AsymmetricDecryptRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
@@ -706,14 +644,10 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
             GrpcCallSettings.<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>newBuilder()
                 .setMethodDescriptor(updateCryptoKeyPrimaryVersionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateCryptoKeyPrimaryVersionRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          UpdateCryptoKeyPrimaryVersionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
@@ -721,13 +655,10 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
             GrpcCallSettings.<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
                 .setMethodDescriptor(destroyCryptoKeyVersionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DestroyCryptoKeyVersionRequest>() {
-                      @Override
-                      public Map<String, String> extract(DestroyCryptoKeyVersionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
@@ -735,39 +666,30 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
             GrpcCallSettings.<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
                 .setMethodDescriptor(restoreCryptoKeyVersionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<RestoreCryptoKeyVersionRequest>() {
-                      @Override
-                      public Map<String, String> extract(RestoreCryptoKeyVersionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -775,13 +697,10 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
             GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(TestIamPermissionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("resource", String.valueOf(request.getResource()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource", String.valueOf(request.getResource()));
+                      return params.build();
                     })
                 .build();
 
@@ -1070,7 +989,13 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override
