@@ -141,7 +141,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -149,7 +148,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -1139,13 +1137,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
         GrpcCallSettings.<GetAccountRequest, Account>newBuilder()
             .setMethodDescriptor(getAccountMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetAccountRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetAccountRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListAccountsRequest, ListAccountsResponse> listAccountsTransportSettings =
@@ -1156,26 +1151,20 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
         GrpcCallSettings.<DeleteAccountRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAccountMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteAccountRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteAccountRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateAccountRequest, Account> updateAccountTransportSettings =
         GrpcCallSettings.<UpdateAccountRequest, Account>newBuilder()
             .setMethodDescriptor(updateAccountMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateAccountRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateAccountRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("account.name", String.valueOf(request.getAccount().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("account.name", String.valueOf(request.getAccount().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ProvisionAccountTicketRequest, ProvisionAccountTicketResponse>
@@ -1193,13 +1182,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
         GrpcCallSettings.<GetPropertyRequest, Property>newBuilder()
             .setMethodDescriptor(getPropertyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetPropertyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetPropertyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListPropertiesRequest, ListPropertiesResponse>
@@ -1215,39 +1201,30 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
         GrpcCallSettings.<DeletePropertyRequest, Property>newBuilder()
             .setMethodDescriptor(deletePropertyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeletePropertyRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeletePropertyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdatePropertyRequest, Property> updatePropertyTransportSettings =
         GrpcCallSettings.<UpdatePropertyRequest, Property>newBuilder()
             .setMethodDescriptor(updatePropertyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdatePropertyRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdatePropertyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("property.name", String.valueOf(request.getProperty().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("property.name", String.valueOf(request.getProperty().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetUserLinkRequest, UserLink> getUserLinkTransportSettings =
         GrpcCallSettings.<GetUserLinkRequest, UserLink>newBuilder()
             .setMethodDescriptor(getUserLinkMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetUserLinkRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetUserLinkRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
@@ -1255,26 +1232,20 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<BatchGetUserLinksRequest, BatchGetUserLinksResponse>newBuilder()
                 .setMethodDescriptor(batchGetUserLinksMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchGetUserLinksRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchGetUserLinksRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListUserLinksRequest, ListUserLinksResponse> listUserLinksTransportSettings =
         GrpcCallSettings.<ListUserLinksRequest, ListUserLinksResponse>newBuilder()
             .setMethodDescriptor(listUserLinksMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListUserLinksRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListUserLinksRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<AuditUserLinksRequest, AuditUserLinksResponse>
@@ -1282,26 +1253,20 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<AuditUserLinksRequest, AuditUserLinksResponse>newBuilder()
                 .setMethodDescriptor(auditUserLinksMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<AuditUserLinksRequest>() {
-                      @Override
-                      public Map<String, String> extract(AuditUserLinksRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateUserLinkRequest, UserLink> createUserLinkTransportSettings =
         GrpcCallSettings.<CreateUserLinkRequest, UserLink>newBuilder()
             .setMethodDescriptor(createUserLinkMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateUserLinkRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateUserLinkRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>
@@ -1309,26 +1274,20 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>newBuilder()
                 .setMethodDescriptor(batchCreateUserLinksMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchCreateUserLinksRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchCreateUserLinksRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateUserLinkRequest, UserLink> updateUserLinkTransportSettings =
         GrpcCallSettings.<UpdateUserLinkRequest, UserLink>newBuilder()
             .setMethodDescriptor(updateUserLinkMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateUserLinkRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateUserLinkRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("user_link.name", String.valueOf(request.getUserLink().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("user_link.name", String.valueOf(request.getUserLink().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>
@@ -1336,65 +1295,50 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>newBuilder()
                 .setMethodDescriptor(batchUpdateUserLinksMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchUpdateUserLinksRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchUpdateUserLinksRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteUserLinkRequest, Empty> deleteUserLinkTransportSettings =
         GrpcCallSettings.<DeleteUserLinkRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteUserLinkMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteUserLinkRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteUserLinkRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksTransportSettings =
         GrpcCallSettings.<BatchDeleteUserLinksRequest, Empty>newBuilder()
             .setMethodDescriptor(batchDeleteUserLinksMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<BatchDeleteUserLinksRequest>() {
-                  @Override
-                  public Map<String, String> extract(BatchDeleteUserLinksRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetWebDataStreamRequest, WebDataStream> getWebDataStreamTransportSettings =
         GrpcCallSettings.<GetWebDataStreamRequest, WebDataStream>newBuilder()
             .setMethodDescriptor(getWebDataStreamMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetWebDataStreamRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetWebDataStreamRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteWebDataStreamRequest, Empty> deleteWebDataStreamTransportSettings =
         GrpcCallSettings.<DeleteWebDataStreamRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteWebDataStreamMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteWebDataStreamRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteWebDataStreamRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateWebDataStreamRequest, WebDataStream>
@@ -1402,15 +1346,12 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<UpdateWebDataStreamRequest, WebDataStream>newBuilder()
                 .setMethodDescriptor(updateWebDataStreamMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateWebDataStreamRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateWebDataStreamRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "web_data_stream.name",
-                            String.valueOf(request.getWebDataStream().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "web_data_stream.name",
+                          String.valueOf(request.getWebDataStream().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateWebDataStreamRequest, WebDataStream>
@@ -1418,13 +1359,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<CreateWebDataStreamRequest, WebDataStream>newBuilder()
                 .setMethodDescriptor(createWebDataStreamMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateWebDataStreamRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateWebDataStreamRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListWebDataStreamsRequest, ListWebDataStreamsResponse>
@@ -1432,13 +1370,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<ListWebDataStreamsRequest, ListWebDataStreamsResponse>newBuilder()
                 .setMethodDescriptor(listWebDataStreamsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListWebDataStreamsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListWebDataStreamsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetIosAppDataStreamRequest, IosAppDataStream>
@@ -1446,26 +1381,20 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<GetIosAppDataStreamRequest, IosAppDataStream>newBuilder()
                 .setMethodDescriptor(getIosAppDataStreamMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetIosAppDataStreamRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetIosAppDataStreamRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteIosAppDataStreamRequest, Empty> deleteIosAppDataStreamTransportSettings =
         GrpcCallSettings.<DeleteIosAppDataStreamRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteIosAppDataStreamMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteIosAppDataStreamRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteIosAppDataStreamRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateIosAppDataStreamRequest, IosAppDataStream>
@@ -1473,15 +1402,12 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<UpdateIosAppDataStreamRequest, IosAppDataStream>newBuilder()
                 .setMethodDescriptor(updateIosAppDataStreamMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateIosAppDataStreamRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateIosAppDataStreamRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "ios_app_data_stream.name",
-                            String.valueOf(request.getIosAppDataStream().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "ios_app_data_stream.name",
+                          String.valueOf(request.getIosAppDataStream().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse>
@@ -1490,13 +1416,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse>newBuilder()
                 .setMethodDescriptor(listIosAppDataStreamsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListIosAppDataStreamsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListIosAppDataStreamsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetAndroidAppDataStreamRequest, AndroidAppDataStream>
@@ -1504,13 +1427,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<GetAndroidAppDataStreamRequest, AndroidAppDataStream>newBuilder()
                 .setMethodDescriptor(getAndroidAppDataStreamMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetAndroidAppDataStreamRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetAndroidAppDataStreamRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteAndroidAppDataStreamRequest, Empty>
@@ -1518,14 +1438,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<DeleteAndroidAppDataStreamRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteAndroidAppDataStreamMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteAndroidAppDataStreamRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          DeleteAndroidAppDataStreamRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
@@ -1533,16 +1449,12 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>newBuilder()
                 .setMethodDescriptor(updateAndroidAppDataStreamMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateAndroidAppDataStreamRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          UpdateAndroidAppDataStreamRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "android_app_data_stream.name",
-                            String.valueOf(request.getAndroidAppDataStream().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "android_app_data_stream.name",
+                          String.valueOf(request.getAndroidAppDataStream().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse>
@@ -1551,13 +1463,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse>newBuilder()
                 .setMethodDescriptor(listAndroidAppDataStreamsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListAndroidAppDataStreamsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListAndroidAppDataStreamsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
@@ -1566,14 +1475,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>newBuilder()
                 .setMethodDescriptor(getEnhancedMeasurementSettingsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetEnhancedMeasurementSettingsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          GetEnhancedMeasurementSettingsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
@@ -1582,56 +1487,43 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>newBuilder()
                 .setMethodDescriptor(updateEnhancedMeasurementSettingsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateEnhancedMeasurementSettingsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          UpdateEnhancedMeasurementSettingsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "enhanced_measurement_settings.name",
-                            String.valueOf(request.getEnhancedMeasurementSettings().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "enhanced_measurement_settings.name",
+                          String.valueOf(request.getEnhancedMeasurementSettings().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateFirebaseLinkRequest, FirebaseLink> createFirebaseLinkTransportSettings =
         GrpcCallSettings.<CreateFirebaseLinkRequest, FirebaseLink>newBuilder()
             .setMethodDescriptor(createFirebaseLinkMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateFirebaseLinkRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateFirebaseLinkRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateFirebaseLinkRequest, FirebaseLink> updateFirebaseLinkTransportSettings =
         GrpcCallSettings.<UpdateFirebaseLinkRequest, FirebaseLink>newBuilder()
             .setMethodDescriptor(updateFirebaseLinkMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateFirebaseLinkRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateFirebaseLinkRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "firebase_link.name", String.valueOf(request.getFirebaseLink().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "firebase_link.name", String.valueOf(request.getFirebaseLink().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkTransportSettings =
         GrpcCallSettings.<DeleteFirebaseLinkRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteFirebaseLinkMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteFirebaseLinkRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteFirebaseLinkRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
@@ -1639,26 +1531,20 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<ListFirebaseLinksRequest, ListFirebaseLinksResponse>newBuilder()
                 .setMethodDescriptor(listFirebaseLinksMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListFirebaseLinksRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListFirebaseLinksRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetGlobalSiteTagRequest, GlobalSiteTag> getGlobalSiteTagTransportSettings =
         GrpcCallSettings.<GetGlobalSiteTagRequest, GlobalSiteTag>newBuilder()
             .setMethodDescriptor(getGlobalSiteTagMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetGlobalSiteTagRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetGlobalSiteTagRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateGoogleAdsLinkRequest, GoogleAdsLink>
@@ -1666,13 +1552,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<CreateGoogleAdsLinkRequest, GoogleAdsLink>newBuilder()
                 .setMethodDescriptor(createGoogleAdsLinkMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateGoogleAdsLinkRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateGoogleAdsLinkRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateGoogleAdsLinkRequest, GoogleAdsLink>
@@ -1680,28 +1563,22 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<UpdateGoogleAdsLinkRequest, GoogleAdsLink>newBuilder()
                 .setMethodDescriptor(updateGoogleAdsLinkMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateGoogleAdsLinkRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateGoogleAdsLinkRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "google_ads_link.name",
-                            String.valueOf(request.getGoogleAdsLink().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "google_ads_link.name",
+                          String.valueOf(request.getGoogleAdsLink().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteGoogleAdsLinkRequest, Empty> deleteGoogleAdsLinkTransportSettings =
         GrpcCallSettings.<DeleteGoogleAdsLinkRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteGoogleAdsLinkMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteGoogleAdsLinkRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteGoogleAdsLinkRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse>
@@ -1709,13 +1586,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse>newBuilder()
                 .setMethodDescriptor(listGoogleAdsLinksMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListGoogleAdsLinksRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListGoogleAdsLinksRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetDataSharingSettingsRequest, DataSharingSettings>
@@ -1723,13 +1597,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<GetDataSharingSettingsRequest, DataSharingSettings>newBuilder()
                 .setMethodDescriptor(getDataSharingSettingsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetDataSharingSettingsRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetDataSharingSettingsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
@@ -1738,14 +1609,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>newBuilder()
                 .setMethodDescriptor(getMeasurementProtocolSecretMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetMeasurementProtocolSecretRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          GetMeasurementProtocolSecretRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListMeasurementProtocolSecretsRequest, ListMeasurementProtocolSecretsResponse>
@@ -1755,14 +1622,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                     newBuilder()
                 .setMethodDescriptor(listMeasurementProtocolSecretsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListMeasurementProtocolSecretsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ListMeasurementProtocolSecretsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
@@ -1771,14 +1634,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .<CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>newBuilder()
                 .setMethodDescriptor(createMeasurementProtocolSecretMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateMeasurementProtocolSecretRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CreateMeasurementProtocolSecretRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteMeasurementProtocolSecretRequest, Empty>
@@ -1786,14 +1645,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<DeleteMeasurementProtocolSecretRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteMeasurementProtocolSecretMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteMeasurementProtocolSecretRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          DeleteMeasurementProtocolSecretRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
@@ -1802,16 +1657,12 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>newBuilder()
                 .setMethodDescriptor(updateMeasurementProtocolSecretMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateMeasurementProtocolSecretRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          UpdateMeasurementProtocolSecretRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "measurement_protocol_secret.name",
-                            String.valueOf(request.getMeasurementProtocolSecret().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "measurement_protocol_secret.name",
+                          String.valueOf(request.getMeasurementProtocolSecret().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
@@ -1820,13 +1671,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>newBuilder()
                 .setMethodDescriptor(searchChangeHistoryEventsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SearchChangeHistoryEventsRequest>() {
-                      @Override
-                      public Map<String, String> extract(SearchChangeHistoryEventsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("account", String.valueOf(request.getAccount()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("account", String.valueOf(request.getAccount()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>
@@ -1834,13 +1682,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>newBuilder()
                 .setMethodDescriptor(getGoogleSignalsSettingsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetGoogleSignalsSettingsRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetGoogleSignalsSettingsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>
@@ -1848,16 +1693,12 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>newBuilder()
                 .setMethodDescriptor(updateGoogleSignalsSettingsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateGoogleSignalsSettingsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          UpdateGoogleSignalsSettingsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "google_signals_settings.name",
-                            String.valueOf(request.getGoogleSignalsSettings().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "google_signals_settings.name",
+                          String.valueOf(request.getGoogleSignalsSettings().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateConversionEventRequest, ConversionEvent>
@@ -1865,13 +1706,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<CreateConversionEventRequest, ConversionEvent>newBuilder()
                 .setMethodDescriptor(createConversionEventMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateConversionEventRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateConversionEventRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetConversionEventRequest, ConversionEvent>
@@ -1879,26 +1717,20 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<GetConversionEventRequest, ConversionEvent>newBuilder()
                 .setMethodDescriptor(getConversionEventMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetConversionEventRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetConversionEventRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteConversionEventRequest, Empty> deleteConversionEventTransportSettings =
         GrpcCallSettings.<DeleteConversionEventRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteConversionEventMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteConversionEventRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteConversionEventRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListConversionEventsRequest, ListConversionEventsResponse>
@@ -1906,13 +1738,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<ListConversionEventsRequest, ListConversionEventsResponse>newBuilder()
                 .setMethodDescriptor(listConversionEventsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListConversionEventsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListConversionEventsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateCustomDimensionRequest, CustomDimension>
@@ -1920,13 +1749,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<CreateCustomDimensionRequest, CustomDimension>newBuilder()
                 .setMethodDescriptor(createCustomDimensionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateCustomDimensionRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateCustomDimensionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateCustomDimensionRequest, CustomDimension>
@@ -1934,15 +1760,12 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<UpdateCustomDimensionRequest, CustomDimension>newBuilder()
                 .setMethodDescriptor(updateCustomDimensionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateCustomDimensionRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateCustomDimensionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "custom_dimension.name",
-                            String.valueOf(request.getCustomDimension().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "custom_dimension.name",
+                          String.valueOf(request.getCustomDimension().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListCustomDimensionsRequest, ListCustomDimensionsResponse>
@@ -1950,26 +1773,20 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<ListCustomDimensionsRequest, ListCustomDimensionsResponse>newBuilder()
                 .setMethodDescriptor(listCustomDimensionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListCustomDimensionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListCustomDimensionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ArchiveCustomDimensionRequest, Empty> archiveCustomDimensionTransportSettings =
         GrpcCallSettings.<ArchiveCustomDimensionRequest, Empty>newBuilder()
             .setMethodDescriptor(archiveCustomDimensionMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ArchiveCustomDimensionRequest>() {
-                  @Override
-                  public Map<String, String> extract(ArchiveCustomDimensionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetCustomDimensionRequest, CustomDimension>
@@ -1977,40 +1794,31 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<GetCustomDimensionRequest, CustomDimension>newBuilder()
                 .setMethodDescriptor(getCustomDimensionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetCustomDimensionRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetCustomDimensionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateCustomMetricRequest, CustomMetric> createCustomMetricTransportSettings =
         GrpcCallSettings.<CreateCustomMetricRequest, CustomMetric>newBuilder()
             .setMethodDescriptor(createCustomMetricMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateCustomMetricRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateCustomMetricRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateCustomMetricRequest, CustomMetric> updateCustomMetricTransportSettings =
         GrpcCallSettings.<UpdateCustomMetricRequest, CustomMetric>newBuilder()
             .setMethodDescriptor(updateCustomMetricMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateCustomMetricRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateCustomMetricRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "custom_metric.name", String.valueOf(request.getCustomMetric().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "custom_metric.name", String.valueOf(request.getCustomMetric().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListCustomMetricsRequest, ListCustomMetricsResponse>
@@ -2018,39 +1826,30 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<ListCustomMetricsRequest, ListCustomMetricsResponse>newBuilder()
                 .setMethodDescriptor(listCustomMetricsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListCustomMetricsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListCustomMetricsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ArchiveCustomMetricRequest, Empty> archiveCustomMetricTransportSettings =
         GrpcCallSettings.<ArchiveCustomMetricRequest, Empty>newBuilder()
             .setMethodDescriptor(archiveCustomMetricMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ArchiveCustomMetricRequest>() {
-                  @Override
-                  public Map<String, String> extract(ArchiveCustomMetricRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetCustomMetricRequest, CustomMetric> getCustomMetricTransportSettings =
         GrpcCallSettings.<GetCustomMetricRequest, CustomMetric>newBuilder()
             .setMethodDescriptor(getCustomMetricMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetCustomMetricRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetCustomMetricRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 
@@ -2898,7 +2697,13 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

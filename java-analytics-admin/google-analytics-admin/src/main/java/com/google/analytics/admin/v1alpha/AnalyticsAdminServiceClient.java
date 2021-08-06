@@ -18,7 +18,6 @@ package com.google.analytics.admin.v1alpha;
 
 import com.google.analytics.admin.v1alpha.stub.AnalyticsAdminServiceStub;
 import com.google.analytics.admin.v1alpha.stub.AnalyticsAdminServiceStubSettings;
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -7349,12 +7348,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListAccountsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListAccountsPage, ListAccountsPagedResponse>() {
-            @Override
-            public ListAccountsPagedResponse apply(ListAccountsPage input) {
-              return new ListAccountsPagedResponse(input);
-            }
-          },
+          input -> new ListAccountsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -7430,12 +7424,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListAccountSummariesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListAccountSummariesPage, ListAccountSummariesPagedResponse>() {
-            @Override
-            public ListAccountSummariesPagedResponse apply(ListAccountSummariesPage input) {
-              return new ListAccountSummariesPagedResponse(input);
-            }
-          },
+          input -> new ListAccountSummariesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -7518,12 +7507,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListPropertiesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListPropertiesPage, ListPropertiesPagedResponse>() {
-            @Override
-            public ListPropertiesPagedResponse apply(ListPropertiesPage input) {
-              return new ListPropertiesPagedResponse(input);
-            }
-          },
+          input -> new ListPropertiesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -7599,12 +7583,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListUserLinksPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListUserLinksPage, ListUserLinksPagedResponse>() {
-            @Override
-            public ListUserLinksPagedResponse apply(ListUserLinksPage input) {
-              return new ListUserLinksPagedResponse(input);
-            }
-          },
+          input -> new ListUserLinksPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -7680,12 +7659,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           AuditUserLinksPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<AuditUserLinksPage, AuditUserLinksPagedResponse>() {
-            @Override
-            public AuditUserLinksPagedResponse apply(AuditUserLinksPage input) {
-              return new AuditUserLinksPagedResponse(input);
-            }
-          },
+          input -> new AuditUserLinksPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -7761,12 +7735,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListWebDataStreamsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListWebDataStreamsPage, ListWebDataStreamsPagedResponse>() {
-            @Override
-            public ListWebDataStreamsPagedResponse apply(ListWebDataStreamsPage input) {
-              return new ListWebDataStreamsPagedResponse(input);
-            }
-          },
+          input -> new ListWebDataStreamsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -7847,12 +7816,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListIosAppDataStreamsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListIosAppDataStreamsPage, ListIosAppDataStreamsPagedResponse>() {
-            @Override
-            public ListIosAppDataStreamsPagedResponse apply(ListIosAppDataStreamsPage input) {
-              return new ListIosAppDataStreamsPagedResponse(input);
-            }
-          },
+          input -> new ListIosAppDataStreamsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -7939,13 +7903,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListAndroidAppDataStreamsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListAndroidAppDataStreamsPage, ListAndroidAppDataStreamsPagedResponse>() {
-            @Override
-            public ListAndroidAppDataStreamsPagedResponse apply(
-                ListAndroidAppDataStreamsPage input) {
-              return new ListAndroidAppDataStreamsPagedResponse(input);
-            }
-          },
+          input -> new ListAndroidAppDataStreamsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -8037,12 +7995,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListFirebaseLinksPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListFirebaseLinksPage, ListFirebaseLinksPagedResponse>() {
-            @Override
-            public ListFirebaseLinksPagedResponse apply(ListFirebaseLinksPage input) {
-              return new ListFirebaseLinksPagedResponse(input);
-            }
-          },
+          input -> new ListFirebaseLinksPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -8122,12 +8075,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListGoogleAdsLinksPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListGoogleAdsLinksPage, ListGoogleAdsLinksPagedResponse>() {
-            @Override
-            public ListGoogleAdsLinksPagedResponse apply(ListGoogleAdsLinksPage input) {
-              return new ListGoogleAdsLinksPagedResponse(input);
-            }
-          },
+          input -> new ListGoogleAdsLinksPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -8212,14 +8160,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
               .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              ListMeasurementProtocolSecretsPage, ListMeasurementProtocolSecretsPagedResponse>() {
-            @Override
-            public ListMeasurementProtocolSecretsPagedResponse apply(
-                ListMeasurementProtocolSecretsPage input) {
-              return new ListMeasurementProtocolSecretsPagedResponse(input);
-            }
-          },
+          input -> new ListMeasurementProtocolSecretsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -8315,13 +8256,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           SearchChangeHistoryEventsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchChangeHistoryEventsPage, SearchChangeHistoryEventsPagedResponse>() {
-            @Override
-            public SearchChangeHistoryEventsPagedResponse apply(
-                SearchChangeHistoryEventsPage input) {
-              return new SearchChangeHistoryEventsPagedResponse(input);
-            }
-          },
+          input -> new SearchChangeHistoryEventsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -8414,12 +8349,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListConversionEventsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListConversionEventsPage, ListConversionEventsPagedResponse>() {
-            @Override
-            public ListConversionEventsPagedResponse apply(ListConversionEventsPage input) {
-              return new ListConversionEventsPagedResponse(input);
-            }
-          },
+          input -> new ListConversionEventsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -8503,12 +8433,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListCustomDimensionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListCustomDimensionsPage, ListCustomDimensionsPagedResponse>() {
-            @Override
-            public ListCustomDimensionsPagedResponse apply(ListCustomDimensionsPage input) {
-              return new ListCustomDimensionsPagedResponse(input);
-            }
-          },
+          input -> new ListCustomDimensionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -8591,12 +8516,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListCustomMetricsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListCustomMetricsPage, ListCustomMetricsPagedResponse>() {
-            @Override
-            public ListCustomMetricsPagedResponse apply(ListCustomMetricsPage input) {
-              return new ListCustomMetricsPagedResponse(input);
-            }
-          },
+          input -> new ListCustomMetricsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

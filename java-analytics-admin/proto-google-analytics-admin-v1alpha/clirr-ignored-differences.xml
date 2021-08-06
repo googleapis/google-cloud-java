@@ -32,4 +32,8 @@
     <differenceType>8001</differenceType>
     <className>com/google/analytics/admin/v1alpha/Create*</className>
   </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AccountSummary*</className>
+  </difference>
 </differences>
