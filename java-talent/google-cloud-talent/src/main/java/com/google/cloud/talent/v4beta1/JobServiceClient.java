@@ -16,7 +16,6 @@
 
 package com.google.cloud.talent.v4beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1633,14 +1632,7 @@ public class JobServiceClient implements BackgroundResource {
       ApiFuture<ListJobsPage> futurePage =
           ListJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListJobsPage, ListJobsPagedResponse>() {
-            @Override
-            public ListJobsPagedResponse apply(ListJobsPage input) {
-              return new ListJobsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListJobsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListJobsPagedResponse(ListJobsPage page) {
@@ -1707,14 +1699,7 @@ public class JobServiceClient implements BackgroundResource {
       ApiFuture<SearchJobsPage> futurePage =
           SearchJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<SearchJobsPage, SearchJobsPagedResponse>() {
-            @Override
-            public SearchJobsPagedResponse apply(SearchJobsPage input) {
-              return new SearchJobsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new SearchJobsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private SearchJobsPagedResponse(SearchJobsPage page) {
@@ -1789,12 +1774,7 @@ public class JobServiceClient implements BackgroundResource {
           SearchJobsForAlertPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchJobsForAlertPage, SearchJobsForAlertPagedResponse>() {
-            @Override
-            public SearchJobsForAlertPagedResponse apply(SearchJobsForAlertPage input) {
-              return new SearchJobsForAlertPagedResponse(input);
-            }
-          },
+          input -> new SearchJobsForAlertPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

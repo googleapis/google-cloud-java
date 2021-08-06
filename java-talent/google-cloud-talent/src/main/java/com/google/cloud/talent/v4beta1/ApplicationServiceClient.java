@@ -16,7 +16,6 @@
 
 package com.google.cloud.talent.v4beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -721,12 +720,7 @@ public class ApplicationServiceClient implements BackgroundResource {
           ListApplicationsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListApplicationsPage, ListApplicationsPagedResponse>() {
-            @Override
-            public ListApplicationsPagedResponse apply(ListApplicationsPage input) {
-              return new ListApplicationsPagedResponse(input);
-            }
-          },
+          input -> new ListApplicationsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

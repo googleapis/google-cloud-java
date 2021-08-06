@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.talent.v4beta1.CreateTenantRequest;
 import com.google.cloud.talent.v4beta1.DeleteTenantRequest;
@@ -39,7 +38,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -148,65 +146,50 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
         GrpcCallSettings.<CreateTenantRequest, Tenant>newBuilder()
             .setMethodDescriptor(createTenantMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateTenantRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateTenantRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetTenantRequest, Tenant> getTenantTransportSettings =
         GrpcCallSettings.<GetTenantRequest, Tenant>newBuilder()
             .setMethodDescriptor(getTenantMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetTenantRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetTenantRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateTenantRequest, Tenant> updateTenantTransportSettings =
         GrpcCallSettings.<UpdateTenantRequest, Tenant>newBuilder()
             .setMethodDescriptor(updateTenantMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateTenantRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateTenantRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("tenant.name", String.valueOf(request.getTenant().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("tenant.name", String.valueOf(request.getTenant().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteTenantRequest, Empty> deleteTenantTransportSettings =
         GrpcCallSettings.<DeleteTenantRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteTenantMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteTenantRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteTenantRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListTenantsRequest, ListTenantsResponse> listTenantsTransportSettings =
         GrpcCallSettings.<ListTenantsRequest, ListTenantsResponse>newBuilder()
             .setMethodDescriptor(listTenantsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListTenantsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListTenantsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
 
@@ -269,7 +252,13 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

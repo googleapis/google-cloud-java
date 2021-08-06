@@ -25,7 +25,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.talent.v4beta1.CreateProfileRequest;
 import com.google.cloud.talent.v4beta1.DeleteProfileRequest;
@@ -42,7 +41,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -171,65 +169,50 @@ public class GrpcProfileServiceStub extends ProfileServiceStub {
         GrpcCallSettings.<ListProfilesRequest, ListProfilesResponse>newBuilder()
             .setMethodDescriptor(listProfilesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListProfilesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListProfilesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateProfileRequest, Profile> createProfileTransportSettings =
         GrpcCallSettings.<CreateProfileRequest, Profile>newBuilder()
             .setMethodDescriptor(createProfileMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateProfileRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateProfileRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetProfileRequest, Profile> getProfileTransportSettings =
         GrpcCallSettings.<GetProfileRequest, Profile>newBuilder()
             .setMethodDescriptor(getProfileMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetProfileRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetProfileRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateProfileRequest, Profile> updateProfileTransportSettings =
         GrpcCallSettings.<UpdateProfileRequest, Profile>newBuilder()
             .setMethodDescriptor(updateProfileMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateProfileRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateProfileRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("profile.name", String.valueOf(request.getProfile().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("profile.name", String.valueOf(request.getProfile().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteProfileRequest, Empty> deleteProfileTransportSettings =
         GrpcCallSettings.<DeleteProfileRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteProfileMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteProfileRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteProfileRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SearchProfilesRequest, SearchProfilesResponse>
@@ -237,13 +220,10 @@ public class GrpcProfileServiceStub extends ProfileServiceStub {
             GrpcCallSettings.<SearchProfilesRequest, SearchProfilesResponse>newBuilder()
                 .setMethodDescriptor(searchProfilesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SearchProfilesRequest>() {
-                      @Override
-                      public Map<String, String> extract(SearchProfilesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 
@@ -323,7 +303,13 @@ public class GrpcProfileServiceStub extends ProfileServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

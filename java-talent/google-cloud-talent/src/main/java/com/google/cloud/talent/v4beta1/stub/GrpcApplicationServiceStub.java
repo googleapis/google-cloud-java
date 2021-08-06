@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.talent.v4beta1.Application;
 import com.google.cloud.talent.v4beta1.CreateApplicationRequest;
@@ -39,7 +38,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -160,53 +158,41 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
         GrpcCallSettings.<CreateApplicationRequest, Application>newBuilder()
             .setMethodDescriptor(createApplicationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateApplicationRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateApplicationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetApplicationRequest, Application> getApplicationTransportSettings =
         GrpcCallSettings.<GetApplicationRequest, Application>newBuilder()
             .setMethodDescriptor(getApplicationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetApplicationRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetApplicationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateApplicationRequest, Application> updateApplicationTransportSettings =
         GrpcCallSettings.<UpdateApplicationRequest, Application>newBuilder()
             .setMethodDescriptor(updateApplicationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateApplicationRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateApplicationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "application.name", String.valueOf(request.getApplication().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "application.name", String.valueOf(request.getApplication().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteApplicationRequest, Empty> deleteApplicationTransportSettings =
         GrpcCallSettings.<DeleteApplicationRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteApplicationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteApplicationRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteApplicationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListApplicationsRequest, ListApplicationsResponse>
@@ -214,13 +200,10 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
             GrpcCallSettings.<ListApplicationsRequest, ListApplicationsResponse>newBuilder()
                 .setMethodDescriptor(listApplicationsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListApplicationsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListApplicationsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 
@@ -291,7 +274,13 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override
