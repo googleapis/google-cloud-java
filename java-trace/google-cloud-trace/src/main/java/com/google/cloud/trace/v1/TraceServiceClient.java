@@ -16,7 +16,6 @@
 
 package com.google.cloud.trace.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -473,14 +472,7 @@ public class TraceServiceClient implements BackgroundResource {
       ApiFuture<ListTracesPage> futurePage =
           ListTracesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListTracesPage, ListTracesPagedResponse>() {
-            @Override
-            public ListTracesPagedResponse apply(ListTracesPage input) {
-              return new ListTracesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListTracesPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListTracesPagedResponse(ListTracesPage page) {
