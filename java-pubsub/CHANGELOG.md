@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.113.6](https://www.github.com/googleapis/java-pubsub/compare/v1.113.5...v1.113.6) (2021-08-06)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2 ([#759](https://www.github.com/googleapis/java-pubsub/issues/759)) ([9afc2a3](https://www.github.com/googleapis/java-pubsub/commit/9afc2a3d0b94cf71feda5fed23841bdb7814f422))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#762](https://www.github.com/googleapis/java-pubsub/issues/762)) ([ee939c2](https://www.github.com/googleapis/java-pubsub/commit/ee939c2166ec3dfea0e6132f6198e3a7693659a1))
+* update dependency com.google.errorprone:error_prone_annotations to v2.8.0 ([#745](https://www.github.com/googleapis/java-pubsub/issues/745)) ([554d602](https://www.github.com/googleapis/java-pubsub/commit/554d60273b53ab4a06b13fa0c39b13e3c3e815e1))
+* update dependency com.google.errorprone:error_prone_annotations to v2.8.1 ([#758](https://www.github.com/googleapis/java-pubsub/issues/758)) ([09650e4](https://www.github.com/googleapis/java-pubsub/commit/09650e4d1201be0c738b8853d9271084c808c2be))
+
 ### [1.113.5](https://www.github.com/googleapis/java-pubsub/compare/v1.113.4...v1.113.5) (2021-07-02)
 
 
