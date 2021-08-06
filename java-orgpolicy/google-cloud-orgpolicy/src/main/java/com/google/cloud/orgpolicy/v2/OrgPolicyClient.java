@@ -16,7 +16,6 @@
 
 package com.google.cloud.orgpolicy.v2;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1244,12 +1243,7 @@ public class OrgPolicyClient implements BackgroundResource {
           ListConstraintsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListConstraintsPage, ListConstraintsPagedResponse>() {
-            @Override
-            public ListConstraintsPagedResponse apply(ListConstraintsPage input) {
-              return new ListConstraintsPagedResponse(input);
-            }
-          },
+          input -> new ListConstraintsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1326,12 +1320,7 @@ public class OrgPolicyClient implements BackgroundResource {
           ListPoliciesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListPoliciesPage, ListPoliciesPagedResponse>() {
-            @Override
-            public ListPoliciesPagedResponse apply(ListPoliciesPage input) {
-              return new ListPoliciesPagedResponse(input);
-            }
-          },
+          input -> new ListPoliciesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
