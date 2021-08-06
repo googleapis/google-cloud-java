@@ -16,7 +16,6 @@
 
 package com.google.cloud.managedidentities.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1537,14 +1536,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
       ApiFuture<ListDomainsPage> futurePage =
           ListDomainsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListDomainsPage, ListDomainsPagedResponse>() {
-            @Override
-            public ListDomainsPagedResponse apply(ListDomainsPage input) {
-              return new ListDomainsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListDomainsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListDomainsPagedResponse(ListDomainsPage page) {

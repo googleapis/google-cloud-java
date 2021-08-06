@@ -24,7 +24,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.managedidentities.v1.AttachTrustRequest;
 import com.google.cloud.managedidentities.v1.CreateMicrosoftAdDomainRequest;
@@ -47,7 +46,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -240,13 +238,10 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
             GrpcCallSettings.<CreateMicrosoftAdDomainRequest, Operation>newBuilder()
                 .setMethodDescriptor(createMicrosoftAdDomainMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateMicrosoftAdDomainRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateMicrosoftAdDomainRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ResetAdminPasswordRequest, ResetAdminPasswordResponse>
@@ -254,117 +249,90 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
             GrpcCallSettings.<ResetAdminPasswordRequest, ResetAdminPasswordResponse>newBuilder()
                 .setMethodDescriptor(resetAdminPasswordMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ResetAdminPasswordRequest>() {
-                      @Override
-                      public Map<String, String> extract(ResetAdminPasswordRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListDomainsRequest, ListDomainsResponse> listDomainsTransportSettings =
         GrpcCallSettings.<ListDomainsRequest, ListDomainsResponse>newBuilder()
             .setMethodDescriptor(listDomainsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListDomainsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListDomainsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetDomainRequest, Domain> getDomainTransportSettings =
         GrpcCallSettings.<GetDomainRequest, Domain>newBuilder()
             .setMethodDescriptor(getDomainMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetDomainRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetDomainRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateDomainRequest, Operation> updateDomainTransportSettings =
         GrpcCallSettings.<UpdateDomainRequest, Operation>newBuilder()
             .setMethodDescriptor(updateDomainMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateDomainRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateDomainRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("domain.name", String.valueOf(request.getDomain().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("domain.name", String.valueOf(request.getDomain().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteDomainRequest, Operation> deleteDomainTransportSettings =
         GrpcCallSettings.<DeleteDomainRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteDomainMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteDomainRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteDomainRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<AttachTrustRequest, Operation> attachTrustTransportSettings =
         GrpcCallSettings.<AttachTrustRequest, Operation>newBuilder()
             .setMethodDescriptor(attachTrustMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<AttachTrustRequest>() {
-                  @Override
-                  public Map<String, String> extract(AttachTrustRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ReconfigureTrustRequest, Operation> reconfigureTrustTransportSettings =
         GrpcCallSettings.<ReconfigureTrustRequest, Operation>newBuilder()
             .setMethodDescriptor(reconfigureTrustMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ReconfigureTrustRequest>() {
-                  @Override
-                  public Map<String, String> extract(ReconfigureTrustRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DetachTrustRequest, Operation> detachTrustTransportSettings =
         GrpcCallSettings.<DetachTrustRequest, Operation>newBuilder()
             .setMethodDescriptor(detachTrustMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DetachTrustRequest>() {
-                  @Override
-                  public Map<String, String> extract(DetachTrustRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ValidateTrustRequest, Operation> validateTrustTransportSettings =
         GrpcCallSettings.<ValidateTrustRequest, Operation>newBuilder()
             .setMethodDescriptor(validateTrustMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ValidateTrustRequest>() {
-                  @Override
-                  public Map<String, String> extract(ValidateTrustRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 
@@ -554,7 +522,13 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override
