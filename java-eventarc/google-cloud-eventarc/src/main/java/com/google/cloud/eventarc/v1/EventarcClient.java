@@ -16,7 +16,6 @@
 
 package com.google.cloud.eventarc.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -822,12 +821,7 @@ public class EventarcClient implements BackgroundResource {
           ListTriggersPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTriggersPage, ListTriggersPagedResponse>() {
-            @Override
-            public ListTriggersPagedResponse apply(ListTriggersPage input) {
-              return new ListTriggersPagedResponse(input);
-            }
-          },
+          input -> new ListTriggersPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

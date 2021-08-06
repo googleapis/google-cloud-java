@@ -16,4 +16,8 @@
     <className>com/google/cloud/eventarc/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/eventarc/v1/Service*</className>
+  </difference>
 </differences>
