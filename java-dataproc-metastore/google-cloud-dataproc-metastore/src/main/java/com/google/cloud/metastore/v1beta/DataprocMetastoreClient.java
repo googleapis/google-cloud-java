@@ -16,7 +16,6 @@
 
 package com.google.cloud.metastore.v1beta;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2182,12 +2181,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
           ListServicesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListServicesPage, ListServicesPagedResponse>() {
-            @Override
-            public ListServicesPagedResponse apply(ListServicesPage input) {
-              return new ListServicesPagedResponse(input);
-            }
-          },
+          input -> new ListServicesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2263,12 +2257,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
           ListMetadataImportsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListMetadataImportsPage, ListMetadataImportsPagedResponse>() {
-            @Override
-            public ListMetadataImportsPagedResponse apply(ListMetadataImportsPage input) {
-              return new ListMetadataImportsPagedResponse(input);
-            }
-          },
+          input -> new ListMetadataImportsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2350,14 +2339,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
       ApiFuture<ListBackupsPage> futurePage =
           ListBackupsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListBackupsPage, ListBackupsPagedResponse>() {
-            @Override
-            public ListBackupsPagedResponse apply(ListBackupsPage input) {
-              return new ListBackupsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListBackupsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListBackupsPagedResponse(ListBackupsPage page) {

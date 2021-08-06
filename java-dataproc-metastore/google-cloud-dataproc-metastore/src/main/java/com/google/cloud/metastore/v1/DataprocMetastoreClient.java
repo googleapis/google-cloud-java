@@ -16,7 +16,6 @@
 
 package com.google.cloud.metastore.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1462,12 +1461,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
           ListServicesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListServicesPage, ListServicesPagedResponse>() {
-            @Override
-            public ListServicesPagedResponse apply(ListServicesPage input) {
-              return new ListServicesPagedResponse(input);
-            }
-          },
+          input -> new ListServicesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1543,12 +1537,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
           ListMetadataImportsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListMetadataImportsPage, ListMetadataImportsPagedResponse>() {
-            @Override
-            public ListMetadataImportsPagedResponse apply(ListMetadataImportsPage input) {
-              return new ListMetadataImportsPagedResponse(input);
-            }
-          },
+          input -> new ListMetadataImportsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

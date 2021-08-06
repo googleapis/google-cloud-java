@@ -16,4 +16,8 @@
     <className>com/google/cloud/metastore/v1beta/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/metastore/v1beta/Network*</className>
+  </difference>
 </differences>
