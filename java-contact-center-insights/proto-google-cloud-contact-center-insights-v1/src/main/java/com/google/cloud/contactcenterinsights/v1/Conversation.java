@@ -1542,12 +1542,12 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant participant = 8;
+       * .google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;
        * </code>
        *
-       * @return Whether the participant field is set.
+       * @return Whether the segmentParticipant field is set.
        */
-      boolean hasParticipant();
+      boolean hasSegmentParticipant();
       /**
        *
        *
@@ -1556,14 +1556,12 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant participant = 8;
+       * .google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;
        * </code>
        *
-       * @return The participant.
+       * @return The segmentParticipant.
        */
-      com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-              .Participant
-          getParticipant();
+      com.google.cloud.contactcenterinsights.v1.ConversationParticipant getSegmentParticipant();
       /**
        *
        *
@@ -1572,12 +1570,11 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant participant = 8;
+       * .google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;
        * </code>
        */
-      com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-              .ParticipantOrBuilder
-          getParticipantOrBuilder();
+      com.google.cloud.contactcenterinsights.v1.ConversationParticipantOrBuilder
+          getSegmentParticipantOrBuilder();
     }
     /**
      *
@@ -1675,22 +1672,21 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                   channelTag_ = input.readInt32();
                   break;
                 }
-              case 66:
+              case 74:
                 {
-                  com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                          .TranscriptSegment.Participant.Builder
+                  com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Builder
                       subBuilder = null;
-                  if (participant_ != null) {
-                    subBuilder = participant_.toBuilder();
+                  if (segmentParticipant_ != null) {
+                    subBuilder = segmentParticipant_.toBuilder();
                   }
-                  participant_ =
+                  segmentParticipant_ =
                       input.readMessage(
-                          com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                              .TranscriptSegment.Participant.parser(),
+                          com.google.cloud.contactcenterinsights.v1.ConversationParticipant
+                              .parser(),
                           extensionRegistry);
                   if (subBuilder != null) {
-                    subBuilder.mergeFrom(participant_);
-                    participant_ = subBuilder.buildPartial();
+                    subBuilder.mergeFrom(segmentParticipant_);
+                    segmentParticipant_ = subBuilder.buildPartial();
                   }
 
                   break;
@@ -3224,1148 +3220,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
-      public interface ParticipantOrBuilder
-          extends
-          // @@protoc_insertion_point(interface_extends:google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant)
-          com.google.protobuf.MessageOrBuilder {
-
-        /**
-         *
-         *
-         * <pre>
-         * The name of the Dialogflow participant. Format:
-         * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
-         * </pre>
-         *
-         * <code>string dialogflow_participant = 1;</code>
-         *
-         * @return The dialogflowParticipant.
-         */
-        java.lang.String getDialogflowParticipant();
-        /**
-         *
-         *
-         * <pre>
-         * The name of the Dialogflow participant. Format:
-         * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
-         * </pre>
-         *
-         * <code>string dialogflow_participant = 1;</code>
-         *
-         * @return The bytes for dialogflowParticipant.
-         */
-        com.google.protobuf.ByteString getDialogflowParticipantBytes();
-
-        /**
-         *
-         *
-         * <pre>
-         * The role of the participant.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant.Role role = 2;
-         * </code>
-         *
-         * @return The enum numeric value on the wire for role.
-         */
-        int getRoleValue();
-        /**
-         *
-         *
-         * <pre>
-         * The role of the participant.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant.Role role = 2;
-         * </code>
-         *
-         * @return The role.
-         */
-        com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                .Participant.Role
-            getRole();
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The participant of the transcript segment.
-       * </pre>
-       *
-       * Protobuf type {@code
-       * google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant}
-       */
-      public static final class Participant extends com.google.protobuf.GeneratedMessageV3
-          implements
-          // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant)
-          ParticipantOrBuilder {
-        private static final long serialVersionUID = 0L;
-        // Use Participant.newBuilder() to construct.
-        private Participant(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-          super(builder);
-        }
-
-        private Participant() {
-          dialogflowParticipant_ = "";
-          role_ = 0;
-        }
-
-        @java.lang.Override
-        @SuppressWarnings({"unused"})
-        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-          return new Participant();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
-        private Participant(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 10:
-                  {
-                    java.lang.String s = input.readStringRequireUtf8();
-
-                    dialogflowParticipant_ = s;
-                    break;
-                  }
-                case 16:
-                  {
-                    int rawValue = input.readEnum();
-
-                    role_ = rawValue;
-                    break;
-                  }
-                default:
-                  {
-                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(this);
-          } finally {
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-          }
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.contactcenterinsights.v1.ResourcesProto
-              .internal_static_google_cloud_contactcenterinsights_v1_Conversation_Transcript_TranscriptSegment_Participant_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.google.cloud.contactcenterinsights.v1.ResourcesProto
-              .internal_static_google_cloud_contactcenterinsights_v1_Conversation_Transcript_TranscriptSegment_Participant_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                      .TranscriptSegment.Participant.class,
-                  com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                      .TranscriptSegment.Participant.Builder.class);
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * The role of the participant.
-         * </pre>
-         *
-         * Protobuf enum {@code
-         * google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant.Role}
-         */
-        public enum Role implements com.google.protobuf.ProtocolMessageEnum {
-          /**
-           *
-           *
-           * <pre>
-           * Participant's role is not set.
-           * </pre>
-           *
-           * <code>ROLE_UNSPECIFIED = 0;</code>
-           */
-          ROLE_UNSPECIFIED(0),
-          /**
-           *
-           *
-           * <pre>
-           * Participant is a human agent.
-           * </pre>
-           *
-           * <code>HUMAN_AGENT = 1;</code>
-           */
-          HUMAN_AGENT(1),
-          /**
-           *
-           *
-           * <pre>
-           * Participant is an automated agent.
-           * </pre>
-           *
-           * <code>AUTOMATED_AGENT = 2;</code>
-           */
-          AUTOMATED_AGENT(2),
-          /**
-           *
-           *
-           * <pre>
-           * Participant is an end user who conversed with the contact center.
-           * </pre>
-           *
-           * <code>END_USER = 3;</code>
-           */
-          END_USER(3),
-          UNRECOGNIZED(-1),
-          ;
-
-          /**
-           *
-           *
-           * <pre>
-           * Participant's role is not set.
-           * </pre>
-           *
-           * <code>ROLE_UNSPECIFIED = 0;</code>
-           */
-          public static final int ROLE_UNSPECIFIED_VALUE = 0;
-          /**
-           *
-           *
-           * <pre>
-           * Participant is a human agent.
-           * </pre>
-           *
-           * <code>HUMAN_AGENT = 1;</code>
-           */
-          public static final int HUMAN_AGENT_VALUE = 1;
-          /**
-           *
-           *
-           * <pre>
-           * Participant is an automated agent.
-           * </pre>
-           *
-           * <code>AUTOMATED_AGENT = 2;</code>
-           */
-          public static final int AUTOMATED_AGENT_VALUE = 2;
-          /**
-           *
-           *
-           * <pre>
-           * Participant is an end user who conversed with the contact center.
-           * </pre>
-           *
-           * <code>END_USER = 3;</code>
-           */
-          public static final int END_USER_VALUE = 3;
-
-          public final int getNumber() {
-            if (this == UNRECOGNIZED) {
-              throw new java.lang.IllegalArgumentException(
-                  "Can't get the number of an unknown enum value.");
-            }
-            return value;
-          }
-
-          /**
-           * @param value The numeric wire value of the corresponding enum entry.
-           * @return The enum associated with the given numeric wire value.
-           * @deprecated Use {@link #forNumber(int)} instead.
-           */
-          @java.lang.Deprecated
-          public static Role valueOf(int value) {
-            return forNumber(value);
-          }
-
-          /**
-           * @param value The numeric wire value of the corresponding enum entry.
-           * @return The enum associated with the given numeric wire value.
-           */
-          public static Role forNumber(int value) {
-            switch (value) {
-              case 0:
-                return ROLE_UNSPECIFIED;
-              case 1:
-                return HUMAN_AGENT;
-              case 2:
-                return AUTOMATED_AGENT;
-              case 3:
-                return END_USER;
-              default:
-                return null;
-            }
-          }
-
-          public static com.google.protobuf.Internal.EnumLiteMap<Role> internalGetValueMap() {
-            return internalValueMap;
-          }
-
-          private static final com.google.protobuf.Internal.EnumLiteMap<Role> internalValueMap =
-              new com.google.protobuf.Internal.EnumLiteMap<Role>() {
-                public Role findValueByNumber(int number) {
-                  return Role.forNumber(number);
-                }
-              };
-
-          public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-            if (this == UNRECOGNIZED) {
-              throw new java.lang.IllegalStateException(
-                  "Can't get the descriptor of an unrecognized enum value.");
-            }
-            return getDescriptor().getValues().get(ordinal());
-          }
-
-          public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
-            return getDescriptor();
-          }
-
-          public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-            return com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                .TranscriptSegment.Participant.getDescriptor()
-                .getEnumTypes()
-                .get(0);
-          }
-
-          private static final Role[] VALUES = values();
-
-          public static Role valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-            if (desc.getType() != getDescriptor()) {
-              throw new java.lang.IllegalArgumentException(
-                  "EnumValueDescriptor is not for this type.");
-            }
-            if (desc.getIndex() == -1) {
-              return UNRECOGNIZED;
-            }
-            return VALUES[desc.getIndex()];
-          }
-
-          private final int value;
-
-          private Role(int value) {
-            this.value = value;
-          }
-
-          // @@protoc_insertion_point(enum_scope:google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant.Role)
-        }
-
-        public static final int DIALOGFLOW_PARTICIPANT_FIELD_NUMBER = 1;
-        private volatile java.lang.Object dialogflowParticipant_;
-        /**
-         *
-         *
-         * <pre>
-         * The name of the Dialogflow participant. Format:
-         * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
-         * </pre>
-         *
-         * <code>string dialogflow_participant = 1;</code>
-         *
-         * @return The dialogflowParticipant.
-         */
-        @java.lang.Override
-        public java.lang.String getDialogflowParticipant() {
-          java.lang.Object ref = dialogflowParticipant_;
-          if (ref instanceof java.lang.String) {
-            return (java.lang.String) ref;
-          } else {
-            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            dialogflowParticipant_ = s;
-            return s;
-          }
-        }
-        /**
-         *
-         *
-         * <pre>
-         * The name of the Dialogflow participant. Format:
-         * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
-         * </pre>
-         *
-         * <code>string dialogflow_participant = 1;</code>
-         *
-         * @return The bytes for dialogflowParticipant.
-         */
-        @java.lang.Override
-        public com.google.protobuf.ByteString getDialogflowParticipantBytes() {
-          java.lang.Object ref = dialogflowParticipant_;
-          if (ref instanceof java.lang.String) {
-            com.google.protobuf.ByteString b =
-                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-            dialogflowParticipant_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-
-        public static final int ROLE_FIELD_NUMBER = 2;
-        private int role_;
-        /**
-         *
-         *
-         * <pre>
-         * The role of the participant.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant.Role role = 2;
-         * </code>
-         *
-         * @return The enum numeric value on the wire for role.
-         */
-        @java.lang.Override
-        public int getRoleValue() {
-          return role_;
-        }
-        /**
-         *
-         *
-         * <pre>
-         * The role of the participant.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant.Role role = 2;
-         * </code>
-         *
-         * @return The role.
-         */
-        @java.lang.Override
-        public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                .Participant.Role
-            getRole() {
-          @SuppressWarnings("deprecation")
-          com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                  .Participant.Role
-              result =
-                  com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                      .TranscriptSegment.Participant.Role.valueOf(role_);
-          return result == null
-              ? com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                  .Participant.Role.UNRECOGNIZED
-              : result;
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-          byte isInitialized = memoizedIsInitialized;
-          if (isInitialized == 1) return true;
-          if (isInitialized == 0) return false;
-
-          memoizedIsInitialized = 1;
-          return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-            throws java.io.IOException {
-          if (!getDialogflowParticipantBytes().isEmpty()) {
-            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dialogflowParticipant_);
-          }
-          if (role_
-              != com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                  .Participant.Role.ROLE_UNSPECIFIED
-                  .getNumber()) {
-            output.writeEnum(2, role_);
-          }
-          unknownFields.writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-          int size = memoizedSize;
-          if (size != -1) return size;
-
-          size = 0;
-          if (!getDialogflowParticipantBytes().isEmpty()) {
-            size +=
-                com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dialogflowParticipant_);
-          }
-          if (role_
-              != com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                  .Participant.Role.ROLE_UNSPECIFIED
-                  .getNumber()) {
-            size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, role_);
-          }
-          size += unknownFields.getSerializedSize();
-          memoizedSize = size;
-          return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-          if (obj == this) {
-            return true;
-          }
-          if (!(obj
-              instanceof
-              com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                  .Participant)) {
-            return super.equals(obj);
-          }
-          com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                  .Participant
-              other =
-                  (com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                          .TranscriptSegment.Participant)
-                      obj;
-
-          if (!getDialogflowParticipant().equals(other.getDialogflowParticipant())) return false;
-          if (role_ != other.role_) return false;
-          if (!unknownFields.equals(other.unknownFields)) return false;
-          return true;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-          if (memoizedHashCode != 0) {
-            return memoizedHashCode;
-          }
-          int hash = 41;
-          hash = (19 * hash) + getDescriptor().hashCode();
-          hash = (37 * hash) + DIALOGFLOW_PARTICIPANT_FIELD_NUMBER;
-          hash = (53 * hash) + getDialogflowParticipant().hashCode();
-          hash = (37 * hash) + ROLE_FIELD_NUMBER;
-          hash = (53 * hash) + role_;
-          hash = (29 * hash) + unknownFields.hashCode();
-          memoizedHashCode = hash;
-          return hash;
-        }
-
-        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                .TranscriptSegment.Participant
-            parseFrom(java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
-        }
-
-        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                .TranscriptSegment.Participant
-            parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                .TranscriptSegment.Participant
-            parseFrom(com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
-        }
-
-        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                .TranscriptSegment.Participant
-            parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                .TranscriptSegment.Participant
-            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
-        }
-
-        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                .TranscriptSegment.Participant
-            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                .TranscriptSegment.Participant
-            parseFrom(java.io.InputStream input) throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                .TranscriptSegment.Participant
-            parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-              PARSER, input, extensionRegistry);
-        }
-
-        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                .TranscriptSegment.Participant
-            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-              PARSER, input);
-        }
-
-        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                .TranscriptSegment.Participant
-            parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-              PARSER, input, extensionRegistry);
-        }
-
-        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                .TranscriptSegment.Participant
-            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                .TranscriptSegment.Participant
-            parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-              PARSER, input, extensionRegistry);
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-          return newBuilder();
-        }
-
-        public static Builder newBuilder() {
-          return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(
-            com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                    .Participant
-                prototype) {
-          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          Builder builder = new Builder(parent);
-          return builder;
-        }
-        /**
-         *
-         *
-         * <pre>
-         * The participant of the transcript segment.
-         * </pre>
-         *
-         * Protobuf type {@code
-         * google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant}
-         */
-        public static final class Builder
-            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-            implements
-            // @@protoc_insertion_point(builder_implements:google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant)
-            com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                .ParticipantOrBuilder {
-          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return com.google.cloud.contactcenterinsights.v1.ResourcesProto
-                .internal_static_google_cloud_contactcenterinsights_v1_Conversation_Transcript_TranscriptSegment_Participant_descriptor;
-          }
-
-          @java.lang.Override
-          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-              internalGetFieldAccessorTable() {
-            return com.google.cloud.contactcenterinsights.v1.ResourcesProto
-                .internal_static_google_cloud_contactcenterinsights_v1_Conversation_Transcript_TranscriptSegment_Participant_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                    com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                        .TranscriptSegment.Participant.class,
-                    com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                        .TranscriptSegment.Participant.Builder.class);
-          }
-
-          // Construct using
-          // com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
-
-          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            super(parent);
-            maybeForceBuilderInitialization();
-          }
-
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
-          }
-
-          @java.lang.Override
-          public Builder clear() {
-            super.clear();
-            dialogflowParticipant_ = "";
-
-            role_ = 0;
-
-            return this;
-          }
-
-          @java.lang.Override
-          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-            return com.google.cloud.contactcenterinsights.v1.ResourcesProto
-                .internal_static_google_cloud_contactcenterinsights_v1_Conversation_Transcript_TranscriptSegment_Participant_descriptor;
-          }
-
-          @java.lang.Override
-          public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                  .Participant
-              getDefaultInstanceForType() {
-            return com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                .TranscriptSegment.Participant.getDefaultInstance();
-          }
-
-          @java.lang.Override
-          public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                  .Participant
-              build() {
-            com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                    .Participant
-                result = buildPartial();
-            if (!result.isInitialized()) {
-              throw newUninitializedMessageException(result);
-            }
-            return result;
-          }
-
-          @java.lang.Override
-          public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                  .Participant
-              buildPartial() {
-            com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                    .Participant
-                result =
-                    new com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                        .TranscriptSegment.Participant(this);
-            result.dialogflowParticipant_ = dialogflowParticipant_;
-            result.role_ = role_;
-            onBuilt();
-            return result;
-          }
-
-          @java.lang.Override
-          public Builder clone() {
-            return super.clone();
-          }
-
-          @java.lang.Override
-          public Builder setField(
-              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-            return super.setField(field, value);
-          }
-
-          @java.lang.Override
-          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-            return super.clearField(field);
-          }
-
-          @java.lang.Override
-          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-            return super.clearOneof(oneof);
-          }
-
-          @java.lang.Override
-          public Builder setRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              int index,
-              java.lang.Object value) {
-            return super.setRepeatedField(field, index, value);
-          }
-
-          @java.lang.Override
-          public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-            return super.addRepeatedField(field, value);
-          }
-
-          @java.lang.Override
-          public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other
-                instanceof
-                com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                    .Participant) {
-              return mergeFrom(
-                  (com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                          .TranscriptSegment.Participant)
-                      other);
-            } else {
-              super.mergeFrom(other);
-              return this;
-            }
-          }
-
-          public Builder mergeFrom(
-              com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                      .Participant
-                  other) {
-            if (other
-                == com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                    .TranscriptSegment.Participant.getDefaultInstance()) return this;
-            if (!other.getDialogflowParticipant().isEmpty()) {
-              dialogflowParticipant_ = other.dialogflowParticipant_;
-              onChanged();
-            }
-            if (other.role_ != 0) {
-              setRoleValue(other.getRoleValue());
-            }
-            this.mergeUnknownFields(other.unknownFields);
-            onChanged();
-            return this;
-          }
-
-          @java.lang.Override
-          public final boolean isInitialized() {
-            return true;
-          }
-
-          @java.lang.Override
-          public Builder mergeFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-            com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                    .Participant
-                parsedMessage = null;
-            try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage =
-                  (com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                          .TranscriptSegment.Participant)
-                      e.getUnfinishedMessage();
-              throw e.unwrapIOException();
-            } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
-            return this;
-          }
-
-          private java.lang.Object dialogflowParticipant_ = "";
-          /**
-           *
-           *
-           * <pre>
-           * The name of the Dialogflow participant. Format:
-           * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
-           * </pre>
-           *
-           * <code>string dialogflow_participant = 1;</code>
-           *
-           * @return The dialogflowParticipant.
-           */
-          public java.lang.String getDialogflowParticipant() {
-            java.lang.Object ref = dialogflowParticipant_;
-            if (!(ref instanceof java.lang.String)) {
-              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-              java.lang.String s = bs.toStringUtf8();
-              dialogflowParticipant_ = s;
-              return s;
-            } else {
-              return (java.lang.String) ref;
-            }
-          }
-          /**
-           *
-           *
-           * <pre>
-           * The name of the Dialogflow participant. Format:
-           * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
-           * </pre>
-           *
-           * <code>string dialogflow_participant = 1;</code>
-           *
-           * @return The bytes for dialogflowParticipant.
-           */
-          public com.google.protobuf.ByteString getDialogflowParticipantBytes() {
-            java.lang.Object ref = dialogflowParticipant_;
-            if (ref instanceof String) {
-              com.google.protobuf.ByteString b =
-                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-              dialogflowParticipant_ = b;
-              return b;
-            } else {
-              return (com.google.protobuf.ByteString) ref;
-            }
-          }
-          /**
-           *
-           *
-           * <pre>
-           * The name of the Dialogflow participant. Format:
-           * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
-           * </pre>
-           *
-           * <code>string dialogflow_participant = 1;</code>
-           *
-           * @param value The dialogflowParticipant to set.
-           * @return This builder for chaining.
-           */
-          public Builder setDialogflowParticipant(java.lang.String value) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-
-            dialogflowParticipant_ = value;
-            onChanged();
-            return this;
-          }
-          /**
-           *
-           *
-           * <pre>
-           * The name of the Dialogflow participant. Format:
-           * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
-           * </pre>
-           *
-           * <code>string dialogflow_participant = 1;</code>
-           *
-           * @return This builder for chaining.
-           */
-          public Builder clearDialogflowParticipant() {
-
-            dialogflowParticipant_ = getDefaultInstance().getDialogflowParticipant();
-            onChanged();
-            return this;
-          }
-          /**
-           *
-           *
-           * <pre>
-           * The name of the Dialogflow participant. Format:
-           * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
-           * </pre>
-           *
-           * <code>string dialogflow_participant = 1;</code>
-           *
-           * @param value The bytes for dialogflowParticipant to set.
-           * @return This builder for chaining.
-           */
-          public Builder setDialogflowParticipantBytes(com.google.protobuf.ByteString value) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            checkByteStringIsUtf8(value);
-
-            dialogflowParticipant_ = value;
-            onChanged();
-            return this;
-          }
-
-          private int role_ = 0;
-          /**
-           *
-           *
-           * <pre>
-           * The role of the participant.
-           * </pre>
-           *
-           * <code>
-           * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant.Role role = 2;
-           * </code>
-           *
-           * @return The enum numeric value on the wire for role.
-           */
-          @java.lang.Override
-          public int getRoleValue() {
-            return role_;
-          }
-          /**
-           *
-           *
-           * <pre>
-           * The role of the participant.
-           * </pre>
-           *
-           * <code>
-           * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant.Role role = 2;
-           * </code>
-           *
-           * @param value The enum numeric value on the wire for role to set.
-           * @return This builder for chaining.
-           */
-          public Builder setRoleValue(int value) {
-
-            role_ = value;
-            onChanged();
-            return this;
-          }
-          /**
-           *
-           *
-           * <pre>
-           * The role of the participant.
-           * </pre>
-           *
-           * <code>
-           * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant.Role role = 2;
-           * </code>
-           *
-           * @return The role.
-           */
-          @java.lang.Override
-          public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                  .Participant.Role
-              getRole() {
-            @SuppressWarnings("deprecation")
-            com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                    .Participant.Role
-                result =
-                    com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                        .TranscriptSegment.Participant.Role.valueOf(role_);
-            return result == null
-                ? com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                    .TranscriptSegment.Participant.Role.UNRECOGNIZED
-                : result;
-          }
-          /**
-           *
-           *
-           * <pre>
-           * The role of the participant.
-           * </pre>
-           *
-           * <code>
-           * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant.Role role = 2;
-           * </code>
-           *
-           * @param value The role to set.
-           * @return This builder for chaining.
-           */
-          public Builder setRole(
-              com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                      .Participant.Role
-                  value) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-
-            role_ = value.getNumber();
-            onChanged();
-            return this;
-          }
-          /**
-           *
-           *
-           * <pre>
-           * The role of the participant.
-           * </pre>
-           *
-           * <code>
-           * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant.Role role = 2;
-           * </code>
-           *
-           * @return This builder for chaining.
-           */
-          public Builder clearRole() {
-
-            role_ = 0;
-            onChanged();
-            return this;
-          }
-
-          @java.lang.Override
-          public final Builder setUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return super.setUnknownFields(unknownFields);
-          }
-
-          @java.lang.Override
-          public final Builder mergeUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return super.mergeUnknownFields(unknownFields);
-          }
-
-          // @@protoc_insertion_point(builder_scope:google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant)
-        }
-
-        // @@protoc_insertion_point(class_scope:google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant)
-        private static final com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                .TranscriptSegment.Participant
-            DEFAULT_INSTANCE;
-
-        static {
-          DEFAULT_INSTANCE =
-              new com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                  .TranscriptSegment.Participant();
-        }
-
-        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                .TranscriptSegment.Participant
-            getDefaultInstance() {
-          return DEFAULT_INSTANCE;
-        }
-
-        private static final com.google.protobuf.Parser<Participant> PARSER =
-            new com.google.protobuf.AbstractParser<Participant>() {
-              @java.lang.Override
-              public Participant parsePartialFrom(
-                  com.google.protobuf.CodedInputStream input,
-                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                  throws com.google.protobuf.InvalidProtocolBufferException {
-                return new Participant(input, extensionRegistry);
-              }
-            };
-
-        public static com.google.protobuf.Parser<Participant> parser() {
-          return PARSER;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<Participant> getParserForType() {
-          return PARSER;
-        }
-
-        @java.lang.Override
-        public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                .Participant
-            getDefaultInstanceForType() {
-          return DEFAULT_INSTANCE;
-        }
-      }
-
       public static final int TEXT_FIELD_NUMBER = 1;
       private volatile java.lang.Object text_;
       /**
@@ -4600,10 +3454,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         return channelTag_;
       }
 
-      public static final int PARTICIPANT_FIELD_NUMBER = 8;
-      private com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-              .Participant
-          participant_;
+      public static final int SEGMENT_PARTICIPANT_FIELD_NUMBER = 9;
+      private com.google.cloud.contactcenterinsights.v1.ConversationParticipant segmentParticipant_;
       /**
        *
        *
@@ -4612,14 +3464,14 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant participant = 8;
+       * .google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;
        * </code>
        *
-       * @return Whether the participant field is set.
+       * @return Whether the segmentParticipant field is set.
        */
       @java.lang.Override
-      public boolean hasParticipant() {
-        return participant_ != null;
+      public boolean hasSegmentParticipant() {
+        return segmentParticipant_ != null;
       }
       /**
        *
@@ -4629,19 +3481,17 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant participant = 8;
+       * .google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;
        * </code>
        *
-       * @return The participant.
+       * @return The segmentParticipant.
        */
       @java.lang.Override
-      public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-              .Participant
-          getParticipant() {
-        return participant_ == null
-            ? com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                .Participant.getDefaultInstance()
-            : participant_;
+      public com.google.cloud.contactcenterinsights.v1.ConversationParticipant
+          getSegmentParticipant() {
+        return segmentParticipant_ == null
+            ? com.google.cloud.contactcenterinsights.v1.ConversationParticipant.getDefaultInstance()
+            : segmentParticipant_;
       }
       /**
        *
@@ -4651,14 +3501,13 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant participant = 8;
+       * .google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;
        * </code>
        */
       @java.lang.Override
-      public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-              .ParticipantOrBuilder
-          getParticipantOrBuilder() {
-        return getParticipant();
+      public com.google.cloud.contactcenterinsights.v1.ConversationParticipantOrBuilder
+          getSegmentParticipantOrBuilder() {
+        return getSegmentParticipant();
       }
 
       private byte memoizedIsInitialized = -1;
@@ -4690,8 +3539,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         if (channelTag_ != 0) {
           output.writeInt32(5, channelTag_);
         }
-        if (participant_ != null) {
-          output.writeMessage(8, getParticipant());
+        if (segmentParticipant_ != null) {
+          output.writeMessage(9, getSegmentParticipant());
         }
         unknownFields.writeTo(output);
       }
@@ -4717,8 +3566,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         if (channelTag_ != 0) {
           size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, channelTag_);
         }
-        if (participant_ != null) {
-          size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getParticipant());
+        if (segmentParticipant_ != null) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(9, getSegmentParticipant());
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -4745,9 +3595,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         if (!getWordsList().equals(other.getWordsList())) return false;
         if (!getLanguageCode().equals(other.getLanguageCode())) return false;
         if (getChannelTag() != other.getChannelTag()) return false;
-        if (hasParticipant() != other.hasParticipant()) return false;
-        if (hasParticipant()) {
-          if (!getParticipant().equals(other.getParticipant())) return false;
+        if (hasSegmentParticipant() != other.hasSegmentParticipant()) return false;
+        if (hasSegmentParticipant()) {
+          if (!getSegmentParticipant().equals(other.getSegmentParticipant())) return false;
         }
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
@@ -4772,9 +3622,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getLanguageCode().hashCode();
         hash = (37 * hash) + CHANNEL_TAG_FIELD_NUMBER;
         hash = (53 * hash) + getChannelTag();
-        if (hasParticipant()) {
-          hash = (37 * hash) + PARTICIPANT_FIELD_NUMBER;
-          hash = (53 * hash) + getParticipant().hashCode();
+        if (hasSegmentParticipant()) {
+          hash = (37 * hash) + SEGMENT_PARTICIPANT_FIELD_NUMBER;
+          hash = (53 * hash) + getSegmentParticipant().hashCode();
         }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -4966,11 +3816,11 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
           channelTag_ = 0;
 
-          if (participantBuilder_ == null) {
-            participant_ = null;
+          if (segmentParticipantBuilder_ == null) {
+            segmentParticipant_ = null;
           } else {
-            participant_ = null;
-            participantBuilder_ = null;
+            segmentParticipant_ = null;
+            segmentParticipantBuilder_ = null;
           }
           return this;
         }
@@ -5020,10 +3870,10 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           }
           result.languageCode_ = languageCode_;
           result.channelTag_ = channelTag_;
-          if (participantBuilder_ == null) {
-            result.participant_ = participant_;
+          if (segmentParticipantBuilder_ == null) {
+            result.segmentParticipant_ = segmentParticipant_;
           } else {
-            result.participant_ = participantBuilder_.build();
+            result.segmentParticipant_ = segmentParticipantBuilder_.build();
           }
           onBuilt();
           return result;
@@ -5126,8 +3976,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           if (other.getChannelTag() != 0) {
             setChannelTag(other.getChannelTag());
           }
-          if (other.hasParticipant()) {
-            mergeParticipant(other.getParticipant());
+          if (other.hasSegmentParticipant()) {
+            mergeSegmentParticipant(other.getSegmentParticipant());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -5948,17 +4798,13 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
-        private com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                .Participant
-            participant_;
+        private com.google.cloud.contactcenterinsights.v1.ConversationParticipant
+            segmentParticipant_;
         private com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                    .Participant,
-                com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                    .Participant.Builder,
-                com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                    .ParticipantOrBuilder>
-            participantBuilder_;
+                com.google.cloud.contactcenterinsights.v1.ConversationParticipant,
+                com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Builder,
+                com.google.cloud.contactcenterinsights.v1.ConversationParticipantOrBuilder>
+            segmentParticipantBuilder_;
         /**
          *
          *
@@ -5967,13 +4813,13 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant participant = 8;
+         * .google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;
          * </code>
          *
-         * @return Whether the participant field is set.
+         * @return Whether the segmentParticipant field is set.
          */
-        public boolean hasParticipant() {
-          return participantBuilder_ != null || participant_ != null;
+        public boolean hasSegmentParticipant() {
+          return segmentParticipantBuilder_ != null || segmentParticipant_ != null;
         }
         /**
          *
@@ -5983,21 +4829,20 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant participant = 8;
+         * .google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;
          * </code>
          *
-         * @return The participant.
+         * @return The segmentParticipant.
          */
-        public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                .Participant
-            getParticipant() {
-          if (participantBuilder_ == null) {
-            return participant_ == null
-                ? com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                    .TranscriptSegment.Participant.getDefaultInstance()
-                : participant_;
+        public com.google.cloud.contactcenterinsights.v1.ConversationParticipant
+            getSegmentParticipant() {
+          if (segmentParticipantBuilder_ == null) {
+            return segmentParticipant_ == null
+                ? com.google.cloud.contactcenterinsights.v1.ConversationParticipant
+                    .getDefaultInstance()
+                : segmentParticipant_;
           } else {
-            return participantBuilder_.getMessage();
+            return segmentParticipantBuilder_.getMessage();
           }
         }
         /**
@@ -6008,21 +4853,19 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant participant = 8;
+         * .google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;
          * </code>
          */
-        public Builder setParticipant(
-            com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                    .Participant
-                value) {
-          if (participantBuilder_ == null) {
+        public Builder setSegmentParticipant(
+            com.google.cloud.contactcenterinsights.v1.ConversationParticipant value) {
+          if (segmentParticipantBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
             }
-            participant_ = value;
+            segmentParticipant_ = value;
             onChanged();
           } else {
-            participantBuilder_.setMessage(value);
+            segmentParticipantBuilder_.setMessage(value);
           }
 
           return this;
@@ -6035,18 +4878,17 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant participant = 8;
+         * .google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;
          * </code>
          */
-        public Builder setParticipant(
-            com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                    .Participant.Builder
+        public Builder setSegmentParticipant(
+            com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Builder
                 builderForValue) {
-          if (participantBuilder_ == null) {
-            participant_ = builderForValue.build();
+          if (segmentParticipantBuilder_ == null) {
+            segmentParticipant_ = builderForValue.build();
             onChanged();
           } else {
-            participantBuilder_.setMessage(builderForValue.build());
+            segmentParticipantBuilder_.setMessage(builderForValue.build());
           }
 
           return this;
@@ -6059,26 +4901,24 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant participant = 8;
+         * .google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;
          * </code>
          */
-        public Builder mergeParticipant(
-            com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                    .Participant
-                value) {
-          if (participantBuilder_ == null) {
-            if (participant_ != null) {
-              participant_ =
-                  com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                      .TranscriptSegment.Participant.newBuilder(participant_)
+        public Builder mergeSegmentParticipant(
+            com.google.cloud.contactcenterinsights.v1.ConversationParticipant value) {
+          if (segmentParticipantBuilder_ == null) {
+            if (segmentParticipant_ != null) {
+              segmentParticipant_ =
+                  com.google.cloud.contactcenterinsights.v1.ConversationParticipant.newBuilder(
+                          segmentParticipant_)
                       .mergeFrom(value)
                       .buildPartial();
             } else {
-              participant_ = value;
+              segmentParticipant_ = value;
             }
             onChanged();
           } else {
-            participantBuilder_.mergeFrom(value);
+            segmentParticipantBuilder_.mergeFrom(value);
           }
 
           return this;
@@ -6091,16 +4931,16 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant participant = 8;
+         * .google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;
          * </code>
          */
-        public Builder clearParticipant() {
-          if (participantBuilder_ == null) {
-            participant_ = null;
+        public Builder clearSegmentParticipant() {
+          if (segmentParticipantBuilder_ == null) {
+            segmentParticipant_ = null;
             onChanged();
           } else {
-            participant_ = null;
-            participantBuilder_ = null;
+            segmentParticipant_ = null;
+            segmentParticipantBuilder_ = null;
           }
 
           return this;
@@ -6113,15 +4953,14 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant participant = 8;
+         * .google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;
          * </code>
          */
-        public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                .Participant.Builder
-            getParticipantBuilder() {
+        public com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Builder
+            getSegmentParticipantBuilder() {
 
           onChanged();
-          return getParticipantFieldBuilder().getBuilder();
+          return getSegmentParticipantFieldBuilder().getBuilder();
         }
         /**
          *
@@ -6131,19 +4970,18 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant participant = 8;
+         * .google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;
          * </code>
          */
-        public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                .ParticipantOrBuilder
-            getParticipantOrBuilder() {
-          if (participantBuilder_ != null) {
-            return participantBuilder_.getMessageOrBuilder();
+        public com.google.cloud.contactcenterinsights.v1.ConversationParticipantOrBuilder
+            getSegmentParticipantOrBuilder() {
+          if (segmentParticipantBuilder_ != null) {
+            return segmentParticipantBuilder_.getMessageOrBuilder();
           } else {
-            return participant_ == null
-                ? com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                    .TranscriptSegment.Participant.getDefaultInstance()
-                : participant_;
+            return segmentParticipant_ == null
+                ? com.google.cloud.contactcenterinsights.v1.ConversationParticipant
+                    .getDefaultInstance()
+                : segmentParticipant_;
           }
         }
         /**
@@ -6154,30 +4992,24 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant participant = 8;
+         * .google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;
          * </code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                    .Participant,
-                com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                    .Participant.Builder,
-                com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
-                    .ParticipantOrBuilder>
-            getParticipantFieldBuilder() {
-          if (participantBuilder_ == null) {
-            participantBuilder_ =
+                com.google.cloud.contactcenterinsights.v1.ConversationParticipant,
+                com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Builder,
+                com.google.cloud.contactcenterinsights.v1.ConversationParticipantOrBuilder>
+            getSegmentParticipantFieldBuilder() {
+          if (segmentParticipantBuilder_ == null) {
+            segmentParticipantBuilder_ =
                 new com.google.protobuf.SingleFieldBuilderV3<
-                    com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                        .TranscriptSegment.Participant,
-                    com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                        .TranscriptSegment.Participant.Builder,
-                    com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
-                        .TranscriptSegment.ParticipantOrBuilder>(
-                    getParticipant(), getParentForChildren(), isClean());
-            participant_ = null;
+                    com.google.cloud.contactcenterinsights.v1.ConversationParticipant,
+                    com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Builder,
+                    com.google.cloud.contactcenterinsights.v1.ConversationParticipantOrBuilder>(
+                    getSegmentParticipant(), getParentForChildren(), isClean());
+            segmentParticipant_ = null;
           }
-          return participantBuilder_;
+          return segmentParticipantBuilder_;
         }
 
         @java.lang.Override

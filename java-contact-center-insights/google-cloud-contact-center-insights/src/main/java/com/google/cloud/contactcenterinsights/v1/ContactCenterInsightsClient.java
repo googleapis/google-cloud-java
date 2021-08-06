@@ -16,7 +16,6 @@
 
 package com.google.cloud.contactcenterinsights.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2589,12 +2588,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListConversationsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListConversationsPage, ListConversationsPagedResponse>() {
-            @Override
-            public ListConversationsPagedResponse apply(ListConversationsPage input) {
-              return new ListConversationsPagedResponse(input);
-            }
-          },
+          input -> new ListConversationsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2674,12 +2668,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListAnalysesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListAnalysesPage, ListAnalysesPagedResponse>() {
-            @Override
-            public ListAnalysesPagedResponse apply(ListAnalysesPage input) {
-              return new ListAnalysesPagedResponse(input);
-            }
-          },
+          input -> new ListAnalysesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2754,12 +2743,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListPhraseMatchersPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListPhraseMatchersPage, ListPhraseMatchersPagedResponse>() {
-            @Override
-            public ListPhraseMatchersPagedResponse apply(ListPhraseMatchersPage input) {
-              return new ListPhraseMatchersPagedResponse(input);
-            }
-          },
+          input -> new ListPhraseMatchersPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

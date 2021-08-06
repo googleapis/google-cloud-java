@@ -27,50 +27,6 @@ public interface AnnotationBoundaryOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use `word_index` for the detailed boundary.
-   * The time offset of this boundary with respect to the start time of the
-   * first word in the transcript piece.
-   * </pre>
-   *
-   * <code>.google.protobuf.Duration time_offset = 2 [deprecated = true];</code>
-   *
-   * @return Whether the timeOffset field is set.
-   */
-  @java.lang.Deprecated
-  boolean hasTimeOffset();
-  /**
-   *
-   *
-   * <pre>
-   * Deprecated: Use `word_index` for the detailed boundary.
-   * The time offset of this boundary with respect to the start time of the
-   * first word in the transcript piece.
-   * </pre>
-   *
-   * <code>.google.protobuf.Duration time_offset = 2 [deprecated = true];</code>
-   *
-   * @return The timeOffset.
-   */
-  @java.lang.Deprecated
-  com.google.protobuf.Duration getTimeOffset();
-  /**
-   *
-   *
-   * <pre>
-   * Deprecated: Use `word_index` for the detailed boundary.
-   * The time offset of this boundary with respect to the start time of the
-   * first word in the transcript piece.
-   * </pre>
-   *
-   * <code>.google.protobuf.Duration time_offset = 2 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated
-  com.google.protobuf.DurationOrBuilder getTimeOffsetOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
    * The word index of this boundary with respect to the first word in the
    * transcript piece. This index starts at zero.
    * </pre>

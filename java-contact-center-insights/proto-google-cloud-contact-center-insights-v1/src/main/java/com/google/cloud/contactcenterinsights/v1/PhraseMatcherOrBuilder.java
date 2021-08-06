@@ -330,4 +330,35 @@ public interface PhraseMatcherOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getActivationUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The role whose utterances the phrase matcher should be matched
+   * against. If the role is ROLE_UNSPECIFIED it will be matched against any
+   * utterances in the transcript.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role role_match = 10;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for roleMatch.
+   */
+  int getRoleMatchValue();
+  /**
+   *
+   *
+   * <pre>
+   * The role whose utterances the phrase matcher should be matched
+   * against. If the role is ROLE_UNSPECIFIED it will be matched against any
+   * utterances in the transcript.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role role_match = 10;
+   * </code>
+   *
+   * @return The roleMatch.
+   */
+  com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role getRoleMatch();
 }

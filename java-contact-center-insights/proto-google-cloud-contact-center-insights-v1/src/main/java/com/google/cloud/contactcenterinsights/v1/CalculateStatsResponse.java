@@ -146,6 +146,25 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
               issueMatches_.getMutableMap().put(issueMatches__.getKey(), issueMatches__.getValue());
               break;
             }
+          case 58:
+            {
+              com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Builder
+                  subBuilder = null;
+              if (conversationCountTimeSeries_ != null) {
+                subBuilder = conversationCountTimeSeries_.toBuilder();
+              }
+              conversationCountTimeSeries_ =
+                  input.readMessage(
+                      com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(conversationCountTimeSeries_);
+                conversationCountTimeSeries_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -193,6 +212,2441 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         .ensureFieldAccessorsInitialized(
             com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.class,
             com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.Builder.class);
+  }
+
+  public interface TimeSeriesOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The duration of each interval.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration interval_duration = 1;</code>
+     *
+     * @return Whether the intervalDuration field is set.
+     */
+    boolean hasIntervalDuration();
+    /**
+     *
+     *
+     * <pre>
+     * The duration of each interval.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration interval_duration = 1;</code>
+     *
+     * @return The intervalDuration.
+     */
+    com.google.protobuf.Duration getIntervalDuration();
+    /**
+     *
+     *
+     * <pre>
+     * The duration of each interval.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration interval_duration = 1;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getIntervalDurationOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of intervals from earliest to latest, where each interval
+     * represents the number of conversations that transpired during the time
+     * window.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+     * </code>
+     */
+    java.util.List<
+            com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval>
+        getPointsList();
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of intervals from earliest to latest, where each interval
+     * represents the number of conversations that transpired during the time
+     * window.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+     * </code>
+     */
+    com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval getPoints(
+        int index);
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of intervals from earliest to latest, where each interval
+     * represents the number of conversations that transpired during the time
+     * window.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+     * </code>
+     */
+    int getPointsCount();
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of intervals from earliest to latest, where each interval
+     * represents the number of conversations that transpired during the time
+     * window.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                    .IntervalOrBuilder>
+        getPointsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of intervals from earliest to latest, where each interval
+     * represents the number of conversations that transpired during the time
+     * window.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+     * </code>
+     */
+    com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.IntervalOrBuilder
+        getPointsOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A time series representing conversations over time.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries}
+   */
+  public static final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries)
+      TimeSeriesOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use TimeSeries.newBuilder() to construct.
+    private TimeSeries(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TimeSeries() {
+      points_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TimeSeries();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private TimeSeries(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.protobuf.Duration.Builder subBuilder = null;
+                if (intervalDuration_ != null) {
+                  subBuilder = intervalDuration_.toBuilder();
+                }
+                intervalDuration_ =
+                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(intervalDuration_);
+                  intervalDuration_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            case 18:
+              {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  points_ =
+                      new java.util.ArrayList<
+                          com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse
+                              .TimeSeries.Interval>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                points_.add(
+                    input.readMessage(
+                        com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                            .Interval.parser(),
+                        extensionRegistry));
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          points_ = java.util.Collections.unmodifiableList(points_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
+          .internal_static_google_cloud_contactcenterinsights_v1_CalculateStatsResponse_TimeSeries_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
+          .internal_static_google_cloud_contactcenterinsights_v1_CalculateStatsResponse_TimeSeries_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.class,
+              com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Builder
+                  .class);
+    }
+
+    public interface IntervalOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The start time of this interval.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       *
+       * @return Whether the startTime field is set.
+       */
+      boolean hasStartTime();
+      /**
+       *
+       *
+       * <pre>
+       * The start time of this interval.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       *
+       * @return The startTime.
+       */
+      com.google.protobuf.Timestamp getStartTime();
+      /**
+       *
+       *
+       * <pre>
+       * The start time of this interval.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       */
+      com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * The number of conversations created in this interval.
+       * </pre>
+       *
+       * <code>int32 conversation_count = 2;</code>
+       *
+       * @return The conversationCount.
+       */
+      int getConversationCount();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A single interval in a time series.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval}
+     */
+    public static final class Interval extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval)
+        IntervalOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use Interval.newBuilder() to construct.
+      private Interval(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Interval() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Interval();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      private Interval(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.protobuf.Timestamp.Builder subBuilder = null;
+                  if (startTime_ != null) {
+                    subBuilder = startTime_.toBuilder();
+                  }
+                  startTime_ =
+                      input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(startTime_);
+                    startTime_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+              case 16:
+                {
+                  conversationCount_ = input.readInt32();
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
+            .internal_static_google_cloud_contactcenterinsights_v1_CalculateStatsResponse_TimeSeries_Interval_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
+            .internal_static_google_cloud_contactcenterinsights_v1_CalculateStatsResponse_TimeSeries_Interval_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+                    .class,
+                com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+                    .Builder.class);
+      }
+
+      public static final int START_TIME_FIELD_NUMBER = 1;
+      private com.google.protobuf.Timestamp startTime_;
+      /**
+       *
+       *
+       * <pre>
+       * The start time of this interval.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       *
+       * @return Whether the startTime field is set.
+       */
+      @java.lang.Override
+      public boolean hasStartTime() {
+        return startTime_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The start time of this interval.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       *
+       * @return The startTime.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Timestamp getStartTime() {
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The start time of this interval.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+        return getStartTime();
+      }
+
+      public static final int CONVERSATION_COUNT_FIELD_NUMBER = 2;
+      private int conversationCount_;
+      /**
+       *
+       *
+       * <pre>
+       * The number of conversations created in this interval.
+       * </pre>
+       *
+       * <code>int32 conversation_count = 2;</code>
+       *
+       * @return The conversationCount.
+       */
+      @java.lang.Override
+      public int getConversationCount() {
+        return conversationCount_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (startTime_ != null) {
+          output.writeMessage(1, getStartTime());
+        }
+        if (conversationCount_ != 0) {
+          output.writeInt32(2, conversationCount_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (startTime_ != null) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getStartTime());
+        }
+        if (conversationCount_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, conversationCount_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval other =
+            (com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval)
+                obj;
+
+        if (hasStartTime() != other.hasStartTime()) return false;
+        if (hasStartTime()) {
+          if (!getStartTime().equals(other.getStartTime())) return false;
+        }
+        if (getConversationCount() != other.getConversationCount()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasStartTime()) {
+          hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+          hash = (53 * hash) + getStartTime().hashCode();
+        }
+        hash = (37 * hash) + CONVERSATION_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getConversationCount();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+              .Interval
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+              .Interval
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+              .Interval
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+              .Interval
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+              .Interval
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+              .Interval
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+              .Interval
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+              .Interval
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+              .Interval
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+              .Interval
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+              .Interval
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+              .Interval
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A single interval in a time series.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval)
+          com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+              .IntervalOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
+              .internal_static_google_cloud_contactcenterinsights_v1_CalculateStatsResponse_TimeSeries_Interval_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
+              .internal_static_google_cloud_contactcenterinsights_v1_CalculateStatsResponse_TimeSeries_Interval_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                      .Interval.class,
+                  com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                      .Interval.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          if (startTimeBuilder_ == null) {
+            startTime_ = null;
+          } else {
+            startTime_ = null;
+            startTimeBuilder_ = null;
+          }
+          conversationCount_ = 0;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
+              .internal_static_google_cloud_contactcenterinsights_v1_CalculateStatsResponse_TimeSeries_Interval_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+            getDefaultInstanceForType() {
+          return com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+              .Interval.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+            build() {
+          com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+            buildPartial() {
+          com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+              result =
+                  new com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                      .Interval(this);
+          if (startTimeBuilder_ == null) {
+            result.startTime_ = startTime_;
+          } else {
+            result.startTime_ = startTimeBuilder_.build();
+          }
+          result.conversationCount_ = conversationCount_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                  .Interval) {
+            return mergeFrom(
+                (com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                        .Interval)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+                other) {
+          if (other
+              == com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                  .Interval.getDefaultInstance()) return this;
+          if (other.hasStartTime()) {
+            mergeStartTime(other.getStartTime());
+          }
+          if (other.getConversationCount() != 0) {
+            setConversationCount(other.getConversationCount());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+              parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage =
+                (com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                        .Interval)
+                    e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private com.google.protobuf.Timestamp startTime_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>
+            startTimeBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * The start time of this interval.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp start_time = 1;</code>
+         *
+         * @return Whether the startTime field is set.
+         */
+        public boolean hasStartTime() {
+          return startTimeBuilder_ != null || startTime_ != null;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The start time of this interval.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp start_time = 1;</code>
+         *
+         * @return The startTime.
+         */
+        public com.google.protobuf.Timestamp getStartTime() {
+          if (startTimeBuilder_ == null) {
+            return startTime_ == null
+                ? com.google.protobuf.Timestamp.getDefaultInstance()
+                : startTime_;
+          } else {
+            return startTimeBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The start time of this interval.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp start_time = 1;</code>
+         */
+        public Builder setStartTime(com.google.protobuf.Timestamp value) {
+          if (startTimeBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            startTime_ = value;
+            onChanged();
+          } else {
+            startTimeBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The start time of this interval.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp start_time = 1;</code>
+         */
+        public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+          if (startTimeBuilder_ == null) {
+            startTime_ = builderForValue.build();
+            onChanged();
+          } else {
+            startTimeBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The start time of this interval.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp start_time = 1;</code>
+         */
+        public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
+          if (startTimeBuilder_ == null) {
+            if (startTime_ != null) {
+              startTime_ =
+                  com.google.protobuf.Timestamp.newBuilder(startTime_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              startTime_ = value;
+            }
+            onChanged();
+          } else {
+            startTimeBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The start time of this interval.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp start_time = 1;</code>
+         */
+        public Builder clearStartTime() {
+          if (startTimeBuilder_ == null) {
+            startTime_ = null;
+            onChanged();
+          } else {
+            startTime_ = null;
+            startTimeBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The start time of this interval.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp start_time = 1;</code>
+         */
+        public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
+
+          onChanged();
+          return getStartTimeFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The start time of this interval.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp start_time = 1;</code>
+         */
+        public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+          if (startTimeBuilder_ != null) {
+            return startTimeBuilder_.getMessageOrBuilder();
+          } else {
+            return startTime_ == null
+                ? com.google.protobuf.Timestamp.getDefaultInstance()
+                : startTime_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The start time of this interval.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp start_time = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>
+            getStartTimeFieldBuilder() {
+          if (startTimeBuilder_ == null) {
+            startTimeBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.Timestamp,
+                    com.google.protobuf.Timestamp.Builder,
+                    com.google.protobuf.TimestampOrBuilder>(
+                    getStartTime(), getParentForChildren(), isClean());
+            startTime_ = null;
+          }
+          return startTimeBuilder_;
+        }
+
+        private int conversationCount_;
+        /**
+         *
+         *
+         * <pre>
+         * The number of conversations created in this interval.
+         * </pre>
+         *
+         * <code>int32 conversation_count = 2;</code>
+         *
+         * @return The conversationCount.
+         */
+        @java.lang.Override
+        public int getConversationCount() {
+          return conversationCount_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number of conversations created in this interval.
+         * </pre>
+         *
+         * <code>int32 conversation_count = 2;</code>
+         *
+         * @param value The conversationCount to set.
+         * @return This builder for chaining.
+         */
+        public Builder setConversationCount(int value) {
+
+          conversationCount_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number of conversations created in this interval.
+         * </pre>
+         *
+         * <code>int32 conversation_count = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearConversationCount() {
+
+          conversationCount_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval)
+      private static final com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse
+              .TimeSeries.Interval
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                .Interval();
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+              .Interval
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Interval> PARSER =
+          new com.google.protobuf.AbstractParser<Interval>() {
+            @java.lang.Override
+            public Interval parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new Interval(input, extensionRegistry);
+            }
+          };
+
+      public static com.google.protobuf.Parser<Interval> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Interval> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int INTERVAL_DURATION_FIELD_NUMBER = 1;
+    private com.google.protobuf.Duration intervalDuration_;
+    /**
+     *
+     *
+     * <pre>
+     * The duration of each interval.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration interval_duration = 1;</code>
+     *
+     * @return Whether the intervalDuration field is set.
+     */
+    @java.lang.Override
+    public boolean hasIntervalDuration() {
+      return intervalDuration_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The duration of each interval.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration interval_duration = 1;</code>
+     *
+     * @return The intervalDuration.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getIntervalDuration() {
+      return intervalDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : intervalDuration_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The duration of each interval.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration interval_duration = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getIntervalDurationOrBuilder() {
+      return getIntervalDuration();
+    }
+
+    public static final int POINTS_FIELD_NUMBER = 2;
+    private java.util.List<
+            com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval>
+        points_;
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of intervals from earliest to latest, where each interval
+     * represents the number of conversations that transpired during the time
+     * window.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval>
+        getPointsList() {
+      return points_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of intervals from earliest to latest, where each interval
+     * represents the number of conversations that transpired during the time
+     * window.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                    .IntervalOrBuilder>
+        getPointsOrBuilderList() {
+      return points_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of intervals from earliest to latest, where each interval
+     * represents the number of conversations that transpired during the time
+     * window.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public int getPointsCount() {
+      return points_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of intervals from earliest to latest, where each interval
+     * represents the number of conversations that transpired during the time
+     * window.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+        getPoints(int index) {
+      return points_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of intervals from earliest to latest, where each interval
+     * represents the number of conversations that transpired during the time
+     * window.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+            .IntervalOrBuilder
+        getPointsOrBuilder(int index) {
+      return points_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (intervalDuration_ != null) {
+        output.writeMessage(1, getIntervalDuration());
+      }
+      for (int i = 0; i < points_.size(); i++) {
+        output.writeMessage(2, points_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (intervalDuration_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getIntervalDuration());
+      }
+      for (int i = 0; i < points_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, points_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries other =
+          (com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries) obj;
+
+      if (hasIntervalDuration() != other.hasIntervalDuration()) return false;
+      if (hasIntervalDuration()) {
+        if (!getIntervalDuration().equals(other.getIntervalDuration())) return false;
+      }
+      if (!getPointsList().equals(other.getPointsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasIntervalDuration()) {
+        hash = (37 * hash) + INTERVAL_DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getIntervalDuration().hashCode();
+      }
+      if (getPointsCount() > 0) {
+        hash = (37 * hash) + POINTS_FIELD_NUMBER;
+        hash = (53 * hash) + getPointsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A time series representing conversations over time.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries)
+        com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeriesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
+            .internal_static_google_cloud_contactcenterinsights_v1_CalculateStatsResponse_TimeSeries_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
+            .internal_static_google_cloud_contactcenterinsights_v1_CalculateStatsResponse_TimeSeries_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.class,
+                com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getPointsFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (intervalDurationBuilder_ == null) {
+          intervalDuration_ = null;
+        } else {
+          intervalDuration_ = null;
+          intervalDurationBuilder_ = null;
+        }
+        if (pointsBuilder_ == null) {
+          points_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          pointsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
+            .internal_static_google_cloud_contactcenterinsights_v1_CalculateStatsResponse_TimeSeries_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+          getDefaultInstanceForType() {
+        return com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries build() {
+        com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+          buildPartial() {
+        com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries result =
+            new com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries(this);
+        int from_bitField0_ = bitField0_;
+        if (intervalDurationBuilder_ == null) {
+          result.intervalDuration_ = intervalDuration_;
+        } else {
+          result.intervalDuration_ = intervalDurationBuilder_.build();
+        }
+        if (pointsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            points_ = java.util.Collections.unmodifiableList(points_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.points_ = points_;
+        } else {
+          result.points_ = pointsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries) {
+          return mergeFrom(
+              (com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries other) {
+        if (other
+            == com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                .getDefaultInstance()) return this;
+        if (other.hasIntervalDuration()) {
+          mergeIntervalDuration(other.getIntervalDuration());
+        }
+        if (pointsBuilder_ == null) {
+          if (!other.points_.isEmpty()) {
+            if (points_.isEmpty()) {
+              points_ = other.points_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensurePointsIsMutable();
+              points_.addAll(other.points_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.points_.isEmpty()) {
+            if (pointsBuilder_.isEmpty()) {
+              pointsBuilder_.dispose();
+              pointsBuilder_ = null;
+              points_ = other.points_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              pointsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getPointsFieldBuilder()
+                      : null;
+            } else {
+              pointsBuilder_.addAllMessages(other.points_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Duration intervalDuration_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          intervalDurationBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The duration of each interval.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration interval_duration = 1;</code>
+       *
+       * @return Whether the intervalDuration field is set.
+       */
+      public boolean hasIntervalDuration() {
+        return intervalDurationBuilder_ != null || intervalDuration_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The duration of each interval.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration interval_duration = 1;</code>
+       *
+       * @return The intervalDuration.
+       */
+      public com.google.protobuf.Duration getIntervalDuration() {
+        if (intervalDurationBuilder_ == null) {
+          return intervalDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : intervalDuration_;
+        } else {
+          return intervalDurationBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The duration of each interval.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration interval_duration = 1;</code>
+       */
+      public Builder setIntervalDuration(com.google.protobuf.Duration value) {
+        if (intervalDurationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          intervalDuration_ = value;
+          onChanged();
+        } else {
+          intervalDurationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The duration of each interval.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration interval_duration = 1;</code>
+       */
+      public Builder setIntervalDuration(com.google.protobuf.Duration.Builder builderForValue) {
+        if (intervalDurationBuilder_ == null) {
+          intervalDuration_ = builderForValue.build();
+          onChanged();
+        } else {
+          intervalDurationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The duration of each interval.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration interval_duration = 1;</code>
+       */
+      public Builder mergeIntervalDuration(com.google.protobuf.Duration value) {
+        if (intervalDurationBuilder_ == null) {
+          if (intervalDuration_ != null) {
+            intervalDuration_ =
+                com.google.protobuf.Duration.newBuilder(intervalDuration_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            intervalDuration_ = value;
+          }
+          onChanged();
+        } else {
+          intervalDurationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The duration of each interval.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration interval_duration = 1;</code>
+       */
+      public Builder clearIntervalDuration() {
+        if (intervalDurationBuilder_ == null) {
+          intervalDuration_ = null;
+          onChanged();
+        } else {
+          intervalDuration_ = null;
+          intervalDurationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The duration of each interval.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration interval_duration = 1;</code>
+       */
+      public com.google.protobuf.Duration.Builder getIntervalDurationBuilder() {
+
+        onChanged();
+        return getIntervalDurationFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The duration of each interval.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration interval_duration = 1;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getIntervalDurationOrBuilder() {
+        if (intervalDurationBuilder_ != null) {
+          return intervalDurationBuilder_.getMessageOrBuilder();
+        } else {
+          return intervalDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : intervalDuration_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The duration of each interval.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration interval_duration = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getIntervalDurationFieldBuilder() {
+        if (intervalDurationBuilder_ == null) {
+          intervalDurationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getIntervalDuration(), getParentForChildren(), isClean());
+          intervalDuration_ = null;
+        }
+        return intervalDurationBuilder_;
+      }
+
+      private java.util.List<
+              com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval>
+          points_ = java.util.Collections.emptyList();
+
+      private void ensurePointsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          points_ =
+              new java.util.ArrayList<
+                  com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                      .Interval>(points_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval,
+              com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+                  .Builder,
+              com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                  .IntervalOrBuilder>
+          pointsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of intervals from earliest to latest, where each interval
+       * represents the number of conversations that transpired during the time
+       * window.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval>
+          getPointsList() {
+        if (pointsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(points_);
+        } else {
+          return pointsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of intervals from earliest to latest, where each interval
+       * represents the number of conversations that transpired during the time
+       * window.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+       * </code>
+       */
+      public int getPointsCount() {
+        if (pointsBuilder_ == null) {
+          return points_.size();
+        } else {
+          return pointsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of intervals from earliest to latest, where each interval
+       * represents the number of conversations that transpired during the time
+       * window.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+       * </code>
+       */
+      public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+          getPoints(int index) {
+        if (pointsBuilder_ == null) {
+          return points_.get(index);
+        } else {
+          return pointsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of intervals from earliest to latest, where each interval
+       * represents the number of conversations that transpired during the time
+       * window.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+       * </code>
+       */
+      public Builder setPoints(
+          int index,
+          com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+              value) {
+        if (pointsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePointsIsMutable();
+          points_.set(index, value);
+          onChanged();
+        } else {
+          pointsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of intervals from earliest to latest, where each interval
+       * represents the number of conversations that transpired during the time
+       * window.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+       * </code>
+       */
+      public Builder setPoints(
+          int index,
+          com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+                  .Builder
+              builderForValue) {
+        if (pointsBuilder_ == null) {
+          ensurePointsIsMutable();
+          points_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          pointsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of intervals from earliest to latest, where each interval
+       * represents the number of conversations that transpired during the time
+       * window.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+       * </code>
+       */
+      public Builder addPoints(
+          com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+              value) {
+        if (pointsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePointsIsMutable();
+          points_.add(value);
+          onChanged();
+        } else {
+          pointsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of intervals from earliest to latest, where each interval
+       * represents the number of conversations that transpired during the time
+       * window.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+       * </code>
+       */
+      public Builder addPoints(
+          int index,
+          com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+              value) {
+        if (pointsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePointsIsMutable();
+          points_.add(index, value);
+          onChanged();
+        } else {
+          pointsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of intervals from earliest to latest, where each interval
+       * represents the number of conversations that transpired during the time
+       * window.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+       * </code>
+       */
+      public Builder addPoints(
+          com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+                  .Builder
+              builderForValue) {
+        if (pointsBuilder_ == null) {
+          ensurePointsIsMutable();
+          points_.add(builderForValue.build());
+          onChanged();
+        } else {
+          pointsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of intervals from earliest to latest, where each interval
+       * represents the number of conversations that transpired during the time
+       * window.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+       * </code>
+       */
+      public Builder addPoints(
+          int index,
+          com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+                  .Builder
+              builderForValue) {
+        if (pointsBuilder_ == null) {
+          ensurePointsIsMutable();
+          points_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          pointsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of intervals from earliest to latest, where each interval
+       * represents the number of conversations that transpired during the time
+       * window.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+       * </code>
+       */
+      public Builder addAllPoints(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                          .Interval>
+              values) {
+        if (pointsBuilder_ == null) {
+          ensurePointsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, points_);
+          onChanged();
+        } else {
+          pointsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of intervals from earliest to latest, where each interval
+       * represents the number of conversations that transpired during the time
+       * window.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+       * </code>
+       */
+      public Builder clearPoints() {
+        if (pointsBuilder_ == null) {
+          points_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          pointsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of intervals from earliest to latest, where each interval
+       * represents the number of conversations that transpired during the time
+       * window.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+       * </code>
+       */
+      public Builder removePoints(int index) {
+        if (pointsBuilder_ == null) {
+          ensurePointsIsMutable();
+          points_.remove(index);
+          onChanged();
+        } else {
+          pointsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of intervals from earliest to latest, where each interval
+       * represents the number of conversations that transpired during the time
+       * window.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+       * </code>
+       */
+      public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+              .Builder
+          getPointsBuilder(int index) {
+        return getPointsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of intervals from earliest to latest, where each interval
+       * represents the number of conversations that transpired during the time
+       * window.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+       * </code>
+       */
+      public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+              .IntervalOrBuilder
+          getPointsOrBuilder(int index) {
+        if (pointsBuilder_ == null) {
+          return points_.get(index);
+        } else {
+          return pointsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of intervals from earliest to latest, where each interval
+       * represents the number of conversations that transpired during the time
+       * window.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                      .IntervalOrBuilder>
+          getPointsOrBuilderList() {
+        if (pointsBuilder_ != null) {
+          return pointsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(points_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of intervals from earliest to latest, where each interval
+       * represents the number of conversations that transpired during the time
+       * window.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+       * </code>
+       */
+      public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+              .Builder
+          addPointsBuilder() {
+        return getPointsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of intervals from earliest to latest, where each interval
+       * represents the number of conversations that transpired during the time
+       * window.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+       * </code>
+       */
+      public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+              .Builder
+          addPointsBuilder(int index) {
+        return getPointsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of intervals from earliest to latest, where each interval
+       * represents the number of conversations that transpired during the time
+       * window.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval points = 2;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+                  .Builder>
+          getPointsBuilderList() {
+        return getPointsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval,
+              com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+                  .Builder,
+              com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                  .IntervalOrBuilder>
+          getPointsFieldBuilder() {
+        if (pointsBuilder_ == null) {
+          pointsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                      .Interval,
+                  com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                      .Interval.Builder,
+                  com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                      .IntervalOrBuilder>(
+                  points_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+          points_ = null;
+        }
+        return pointsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries)
+    private static final com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries();
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TimeSeries> PARSER =
+        new com.google.protobuf.AbstractParser<TimeSeries>() {
+          @java.lang.Override
+          public TimeSeries parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new TimeSeries(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<TimeSeries> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TimeSeries> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public static final int AVERAGE_DURATION_FIELD_NUMBER = 1;
@@ -608,6 +3062,67 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     return map.get(key);
   }
 
+  public static final int CONVERSATION_COUNT_TIME_SERIES_FIELD_NUMBER = 7;
+  private com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+      conversationCountTimeSeries_;
+  /**
+   *
+   *
+   * <pre>
+   * A time series representing the count of conversations created over time
+   * that match that requested filter criteria.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversation_count_time_series = 7;
+   * </code>
+   *
+   * @return Whether the conversationCountTimeSeries field is set.
+   */
+  @java.lang.Override
+  public boolean hasConversationCountTimeSeries() {
+    return conversationCountTimeSeries_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A time series representing the count of conversations created over time
+   * that match that requested filter criteria.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversation_count_time_series = 7;
+   * </code>
+   *
+   * @return The conversationCountTimeSeries.
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+      getConversationCountTimeSeries() {
+    return conversationCountTimeSeries_ == null
+        ? com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+            .getDefaultInstance()
+        : conversationCountTimeSeries_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A time series representing the count of conversations created over time
+   * that match that requested filter criteria.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversation_count_time_series = 7;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeriesOrBuilder
+      getConversationCountTimeSeriesOrBuilder() {
+    return getConversationCountTimeSeries();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -643,6 +3158,9 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         5);
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetIssueMatches(), IssueMatchesDefaultEntryHolder.defaultEntry, 6);
+    if (conversationCountTimeSeries_ != null) {
+      output.writeMessage(7, getConversationCountTimeSeries());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -693,6 +3211,11 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, issueMatches__);
     }
+    if (conversationCountTimeSeries_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, getConversationCountTimeSeries());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -720,6 +3243,11 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     if (!internalGetCustomHighlighterMatches().equals(other.internalGetCustomHighlighterMatches()))
       return false;
     if (!internalGetIssueMatches().equals(other.internalGetIssueMatches())) return false;
+    if (hasConversationCountTimeSeries() != other.hasConversationCountTimeSeries()) return false;
+    if (hasConversationCountTimeSeries()) {
+      if (!getConversationCountTimeSeries().equals(other.getConversationCountTimeSeries()))
+        return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -750,6 +3278,10 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     if (!internalGetIssueMatches().getMap().isEmpty()) {
       hash = (37 * hash) + ISSUE_MATCHES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetIssueMatches().hashCode();
+    }
+    if (hasConversationCountTimeSeries()) {
+      hash = (37 * hash) + CONVERSATION_COUNT_TIME_SERIES_FIELD_NUMBER;
+      hash = (53 * hash) + getConversationCountTimeSeries().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -938,6 +3470,12 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       internalGetMutableSmartHighlighterMatches().clear();
       internalGetMutableCustomHighlighterMatches().clear();
       internalGetMutableIssueMatches().clear();
+      if (conversationCountTimeSeriesBuilder_ == null) {
+        conversationCountTimeSeries_ = null;
+      } else {
+        conversationCountTimeSeries_ = null;
+        conversationCountTimeSeriesBuilder_ = null;
+      }
       return this;
     }
 
@@ -980,6 +3518,11 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       result.customHighlighterMatches_.makeImmutable();
       result.issueMatches_ = internalGetIssueMatches();
       result.issueMatches_.makeImmutable();
+      if (conversationCountTimeSeriesBuilder_ == null) {
+        result.conversationCountTimeSeries_ = conversationCountTimeSeries_;
+      } else {
+        result.conversationCountTimeSeries_ = conversationCountTimeSeriesBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1046,6 +3589,9 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       internalGetMutableCustomHighlighterMatches()
           .mergeFrom(other.internalGetCustomHighlighterMatches());
       internalGetMutableIssueMatches().mergeFrom(other.internalGetIssueMatches());
+      if (other.hasConversationCountTimeSeries()) {
+        mergeConversationCountTimeSeries(other.getConversationCountTimeSeries());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1891,6 +4437,230 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public Builder putAllIssueMatches(java.util.Map<java.lang.String, java.lang.Integer> values) {
       internalGetMutableIssueMatches().getMutableMap().putAll(values);
       return this;
+    }
+
+    private com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+        conversationCountTimeSeries_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries,
+            com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Builder,
+            com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeriesOrBuilder>
+        conversationCountTimeSeriesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A time series representing the count of conversations created over time
+     * that match that requested filter criteria.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversation_count_time_series = 7;
+     * </code>
+     *
+     * @return Whether the conversationCountTimeSeries field is set.
+     */
+    public boolean hasConversationCountTimeSeries() {
+      return conversationCountTimeSeriesBuilder_ != null || conversationCountTimeSeries_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A time series representing the count of conversations created over time
+     * that match that requested filter criteria.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversation_count_time_series = 7;
+     * </code>
+     *
+     * @return The conversationCountTimeSeries.
+     */
+    public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+        getConversationCountTimeSeries() {
+      if (conversationCountTimeSeriesBuilder_ == null) {
+        return conversationCountTimeSeries_ == null
+            ? com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                .getDefaultInstance()
+            : conversationCountTimeSeries_;
+      } else {
+        return conversationCountTimeSeriesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A time series representing the count of conversations created over time
+     * that match that requested filter criteria.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversation_count_time_series = 7;
+     * </code>
+     */
+    public Builder setConversationCountTimeSeries(
+        com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries value) {
+      if (conversationCountTimeSeriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        conversationCountTimeSeries_ = value;
+        onChanged();
+      } else {
+        conversationCountTimeSeriesBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A time series representing the count of conversations created over time
+     * that match that requested filter criteria.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversation_count_time_series = 7;
+     * </code>
+     */
+    public Builder setConversationCountTimeSeries(
+        com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Builder
+            builderForValue) {
+      if (conversationCountTimeSeriesBuilder_ == null) {
+        conversationCountTimeSeries_ = builderForValue.build();
+        onChanged();
+      } else {
+        conversationCountTimeSeriesBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A time series representing the count of conversations created over time
+     * that match that requested filter criteria.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversation_count_time_series = 7;
+     * </code>
+     */
+    public Builder mergeConversationCountTimeSeries(
+        com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries value) {
+      if (conversationCountTimeSeriesBuilder_ == null) {
+        if (conversationCountTimeSeries_ != null) {
+          conversationCountTimeSeries_ =
+              com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                  .newBuilder(conversationCountTimeSeries_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          conversationCountTimeSeries_ = value;
+        }
+        onChanged();
+      } else {
+        conversationCountTimeSeriesBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A time series representing the count of conversations created over time
+     * that match that requested filter criteria.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversation_count_time_series = 7;
+     * </code>
+     */
+    public Builder clearConversationCountTimeSeries() {
+      if (conversationCountTimeSeriesBuilder_ == null) {
+        conversationCountTimeSeries_ = null;
+        onChanged();
+      } else {
+        conversationCountTimeSeries_ = null;
+        conversationCountTimeSeriesBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A time series representing the count of conversations created over time
+     * that match that requested filter criteria.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversation_count_time_series = 7;
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Builder
+        getConversationCountTimeSeriesBuilder() {
+
+      onChanged();
+      return getConversationCountTimeSeriesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A time series representing the count of conversations created over time
+     * that match that requested filter criteria.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversation_count_time_series = 7;
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeriesOrBuilder
+        getConversationCountTimeSeriesOrBuilder() {
+      if (conversationCountTimeSeriesBuilder_ != null) {
+        return conversationCountTimeSeriesBuilder_.getMessageOrBuilder();
+      } else {
+        return conversationCountTimeSeries_ == null
+            ? com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                .getDefaultInstance()
+            : conversationCountTimeSeries_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A time series representing the count of conversations created over time
+     * that match that requested filter criteria.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversation_count_time_series = 7;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries,
+            com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Builder,
+            com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeriesOrBuilder>
+        getConversationCountTimeSeriesFieldBuilder() {
+      if (conversationCountTimeSeriesBuilder_ == null) {
+        conversationCountTimeSeriesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries,
+                com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Builder,
+                com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse
+                    .TimeSeriesOrBuilder>(
+                getConversationCountTimeSeries(), getParentForChildren(), isClean());
+        conversationCountTimeSeries_ = null;
+      }
+      return conversationCountTimeSeriesBuilder_;
     }
 
     @java.lang.Override

@@ -16,4 +16,33 @@
     <className>com/google/cloud/contactcenterinsights/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/contactcenterinsights/v1/AnnotationBoundary*</className>
+    <method>*TimeOffset*</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/contactcenterinsights/v1/Conversation$Transcript*</className>
+    <method>*Participant*</method>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/contactcenterinsights/v1/AnnotationBoundary*</className>
+    <field>*FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/contactcenterinsights/v1/Conversation*</className>
+    <field>*FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/contactcenterinsights/v1/AnnotationBoundary*</className>
+    <field>*TIME_OFFSET</field>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/contactcenterinsights/v1/Conversation*</className>
+  </difference>
 </differences>

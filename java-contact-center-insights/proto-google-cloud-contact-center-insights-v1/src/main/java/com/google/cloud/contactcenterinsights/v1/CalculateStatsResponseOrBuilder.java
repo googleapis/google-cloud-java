@@ -273,4 +273,50 @@ public interface CalculateStatsResponseOrBuilder
    * <code>map&lt;string, int32&gt; issue_matches = 6;</code>
    */
   int getIssueMatchesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * A time series representing the count of conversations created over time
+   * that match that requested filter criteria.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversation_count_time_series = 7;
+   * </code>
+   *
+   * @return Whether the conversationCountTimeSeries field is set.
+   */
+  boolean hasConversationCountTimeSeries();
+  /**
+   *
+   *
+   * <pre>
+   * A time series representing the count of conversations created over time
+   * that match that requested filter criteria.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversation_count_time_series = 7;
+   * </code>
+   *
+   * @return The conversationCountTimeSeries.
+   */
+  com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+      getConversationCountTimeSeries();
+  /**
+   *
+   *
+   * <pre>
+   * A time series representing the count of conversations created over time
+   * that match that requested filter criteria.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversation_count_time_series = 7;
+   * </code>
+   */
+  com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeriesOrBuilder
+      getConversationCountTimeSeriesOrBuilder();
 }

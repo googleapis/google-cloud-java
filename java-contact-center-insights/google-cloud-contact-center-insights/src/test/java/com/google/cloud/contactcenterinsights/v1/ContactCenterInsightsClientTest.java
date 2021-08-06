@@ -1695,6 +1695,7 @@ public class ContactCenterInsightsClientTest {
             .putAllSmartHighlighterMatches(new HashMap<String, Integer>())
             .putAllCustomHighlighterMatches(new HashMap<String, Integer>())
             .putAllIssueMatches(new HashMap<String, Integer>())
+            .setConversationCountTimeSeries(CalculateStatsResponse.TimeSeries.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -1738,6 +1739,7 @@ public class ContactCenterInsightsClientTest {
             .putAllSmartHighlighterMatches(new HashMap<String, Integer>())
             .putAllCustomHighlighterMatches(new HashMap<String, Integer>())
             .putAllIssueMatches(new HashMap<String, Integer>())
+            .setConversationCountTimeSeries(CalculateStatsResponse.TimeSeries.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
