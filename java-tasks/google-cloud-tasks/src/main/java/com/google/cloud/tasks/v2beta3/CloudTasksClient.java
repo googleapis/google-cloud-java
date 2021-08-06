@@ -16,7 +16,6 @@
 
 package com.google.cloud.tasks.v2beta3;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2291,14 +2290,7 @@ public class CloudTasksClient implements BackgroundResource {
       ApiFuture<ListQueuesPage> futurePage =
           ListQueuesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListQueuesPage, ListQueuesPagedResponse>() {
-            @Override
-            public ListQueuesPagedResponse apply(ListQueuesPage input) {
-              return new ListQueuesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListQueuesPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListQueuesPagedResponse(ListQueuesPage page) {
@@ -2367,14 +2359,7 @@ public class CloudTasksClient implements BackgroundResource {
       ApiFuture<ListTasksPage> futurePage =
           ListTasksPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListTasksPage, ListTasksPagedResponse>() {
-            @Override
-            public ListTasksPagedResponse apply(ListTasksPage input) {
-              return new ListTasksPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListTasksPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListTasksPagedResponse(ListTasksPage page) {
