@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.0.0](https://www.github.com/googleapis/java-logging/compare/v2.3.2...v3.0.0) (2021-08-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#605)
+
+### Features
+
+* deprecate methods ([#587](https://www.github.com/googleapis/java-logging/issues/587)) ([85e496d](https://www.github.com/googleapis/java-logging/commit/85e496d5884143ecc6cd1757fcce31d5b83ecda5))
+* release gapic-generator-java v2.0.0 ([#605](https://www.github.com/googleapis/java-logging/issues/605)) ([8fa5c5a](https://www.github.com/googleapis/java-logging/commit/8fa5c5ae1d76d9a0959add1036300a799918dcb4))
+
+
+### Bug Fixes
+
+* describe authorization required for service object ([#582](https://www.github.com/googleapis/java-logging/issues/582)) ([4fd3cdc](https://www.github.com/googleapis/java-logging/commit/4fd3cdc4b4c564da026a0a424ba8d49c8390982e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#606](https://www.github.com/googleapis/java-logging/issues/606)) ([99cb3a0](https://www.github.com/googleapis/java-logging/commit/99cb3a005f2775034d2df207dcb1a6c7f19b6fd4))
+
 ### [2.3.2](https://www.github.com/googleapis/java-logging/compare/v2.3.1...v2.3.2) (2021-07-01)
 
 
