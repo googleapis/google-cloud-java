@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -41,7 +40,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -184,13 +182,10 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
                 .<ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse>newBuilder()
                 .setMethodDescriptor(listUptimeCheckConfigsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListUptimeCheckConfigsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListUptimeCheckConfigsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetUptimeCheckConfigRequest, UptimeCheckConfig>
@@ -198,13 +193,10 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
             GrpcCallSettings.<GetUptimeCheckConfigRequest, UptimeCheckConfig>newBuilder()
                 .setMethodDescriptor(getUptimeCheckConfigMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetUptimeCheckConfigRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetUptimeCheckConfigRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateUptimeCheckConfigRequest, UptimeCheckConfig>
@@ -212,13 +204,10 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
             GrpcCallSettings.<CreateUptimeCheckConfigRequest, UptimeCheckConfig>newBuilder()
                 .setMethodDescriptor(createUptimeCheckConfigMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateUptimeCheckConfigRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateUptimeCheckConfigRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
@@ -226,15 +215,12 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
             GrpcCallSettings.<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>newBuilder()
                 .setMethodDescriptor(updateUptimeCheckConfigMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateUptimeCheckConfigRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateUptimeCheckConfigRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "uptime_check_config.name",
-                            String.valueOf(request.getUptimeCheckConfig().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "uptime_check_config.name",
+                          String.valueOf(request.getUptimeCheckConfig().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteUptimeCheckConfigRequest, Empty>
@@ -242,13 +228,10 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
             GrpcCallSettings.<DeleteUptimeCheckConfigRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteUptimeCheckConfigMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteUptimeCheckConfigRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteUptimeCheckConfigRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse>
@@ -355,7 +338,13 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

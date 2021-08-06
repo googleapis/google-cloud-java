@@ -16,7 +16,6 @@
 
 package com.google.cloud.monitoring.v3;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1443,12 +1442,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
           ListServicesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListServicesPage, ListServicesPagedResponse>() {
-            @Override
-            public ListServicesPagedResponse apply(ListServicesPage input) {
-              return new ListServicesPagedResponse(input);
-            }
-          },
+          input -> new ListServicesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1527,14 +1521,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
           ListServiceLevelObjectivesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              ListServiceLevelObjectivesPage, ListServiceLevelObjectivesPagedResponse>() {
-            @Override
-            public ListServiceLevelObjectivesPagedResponse apply(
-                ListServiceLevelObjectivesPage input) {
-              return new ListServiceLevelObjectivesPagedResponse(input);
-            }
-          },
+          input -> new ListServiceLevelObjectivesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -32,7 +31,6 @@ import com.google.monitoring.v3.QueryTimeSeriesResponse;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -107,13 +105,10 @@ public class GrpcQueryServiceStub extends QueryServiceStub {
             GrpcCallSettings.<QueryTimeSeriesRequest, QueryTimeSeriesResponse>newBuilder()
                 .setMethodDescriptor(queryTimeSeriesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<QueryTimeSeriesRequest>() {
-                      @Override
-                      public Map<String, String> extract(QueryTimeSeriesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 
@@ -145,7 +140,13 @@ public class GrpcQueryServiceStub extends QueryServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

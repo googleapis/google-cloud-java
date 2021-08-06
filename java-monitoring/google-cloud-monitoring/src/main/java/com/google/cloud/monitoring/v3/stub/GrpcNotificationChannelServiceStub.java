@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -47,7 +46,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -284,14 +282,10 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                     newBuilder()
                 .setMethodDescriptor(listNotificationChannelDescriptorsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListNotificationChannelDescriptorsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ListNotificationChannelDescriptorsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetNotificationChannelDescriptorRequest, NotificationChannelDescriptor>
@@ -301,14 +295,10 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                     newBuilder()
                 .setMethodDescriptor(getNotificationChannelDescriptorMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetNotificationChannelDescriptorRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          GetNotificationChannelDescriptorRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListNotificationChannelsRequest, ListNotificationChannelsResponse>
@@ -317,13 +307,10 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                 .<ListNotificationChannelsRequest, ListNotificationChannelsResponse>newBuilder()
                 .setMethodDescriptor(listNotificationChannelsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListNotificationChannelsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListNotificationChannelsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetNotificationChannelRequest, NotificationChannel>
@@ -331,13 +318,10 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
             GrpcCallSettings.<GetNotificationChannelRequest, NotificationChannel>newBuilder()
                 .setMethodDescriptor(getNotificationChannelMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetNotificationChannelRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetNotificationChannelRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateNotificationChannelRequest, NotificationChannel>
@@ -345,13 +329,10 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
             GrpcCallSettings.<CreateNotificationChannelRequest, NotificationChannel>newBuilder()
                 .setMethodDescriptor(createNotificationChannelMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateNotificationChannelRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateNotificationChannelRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateNotificationChannelRequest, NotificationChannel>
@@ -359,15 +340,12 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
             GrpcCallSettings.<UpdateNotificationChannelRequest, NotificationChannel>newBuilder()
                 .setMethodDescriptor(updateNotificationChannelMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateNotificationChannelRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateNotificationChannelRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "notification_channel.name",
-                            String.valueOf(request.getNotificationChannel().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "notification_channel.name",
+                          String.valueOf(request.getNotificationChannel().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteNotificationChannelRequest, Empty>
@@ -375,13 +353,10 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
             GrpcCallSettings.<DeleteNotificationChannelRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteNotificationChannelMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteNotificationChannelRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteNotificationChannelRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SendNotificationChannelVerificationCodeRequest, Empty>
@@ -389,14 +364,10 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
             GrpcCallSettings.<SendNotificationChannelVerificationCodeRequest, Empty>newBuilder()
                 .setMethodDescriptor(sendNotificationChannelVerificationCodeMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SendNotificationChannelVerificationCodeRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          SendNotificationChannelVerificationCodeRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -409,14 +380,10 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                     newBuilder()
                 .setMethodDescriptor(getNotificationChannelVerificationCodeMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetNotificationChannelVerificationCodeRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          GetNotificationChannelVerificationCodeRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<VerifyNotificationChannelRequest, NotificationChannel>
@@ -424,13 +391,10 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
             GrpcCallSettings.<VerifyNotificationChannelRequest, NotificationChannel>newBuilder()
                 .setMethodDescriptor(verifyNotificationChannelMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<VerifyNotificationChannelRequest>() {
-                      @Override
-                      public Map<String, String> extract(VerifyNotificationChannelRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 
@@ -582,7 +546,13 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

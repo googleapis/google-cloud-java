@@ -17,7 +17,6 @@
 package com.google.cloud.monitoring.v3;
 
 import com.google.api.MonitoredResource;
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -956,14 +955,7 @@ public class GroupServiceClient implements BackgroundResource {
       ApiFuture<ListGroupsPage> futurePage =
           ListGroupsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListGroupsPage, ListGroupsPagedResponse>() {
-            @Override
-            public ListGroupsPagedResponse apply(ListGroupsPage input) {
-              return new ListGroupsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListGroupsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListGroupsPagedResponse(ListGroupsPage page) {
@@ -1037,12 +1029,7 @@ public class GroupServiceClient implements BackgroundResource {
           ListGroupMembersPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListGroupMembersPage, ListGroupMembersPagedResponse>() {
-            @Override
-            public ListGroupMembersPagedResponse apply(ListGroupMembersPage input) {
-              return new ListGroupMembersPagedResponse(input);
-            }
-          },
+          input -> new ListGroupMembersPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

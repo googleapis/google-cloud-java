@@ -16,7 +16,6 @@
 
 package com.google.cloud.monitoring.v3;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1831,15 +1830,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
               .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              ListNotificationChannelDescriptorsPage,
-              ListNotificationChannelDescriptorsPagedResponse>() {
-            @Override
-            public ListNotificationChannelDescriptorsPagedResponse apply(
-                ListNotificationChannelDescriptorsPage input) {
-              return new ListNotificationChannelDescriptorsPagedResponse(input);
-            }
-          },
+          input -> new ListNotificationChannelDescriptorsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1936,12 +1927,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
           ListNotificationChannelsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListNotificationChannelsPage, ListNotificationChannelsPagedResponse>() {
-            @Override
-            public ListNotificationChannelsPagedResponse apply(ListNotificationChannelsPage input) {
-              return new ListNotificationChannelsPagedResponse(input);
-            }
-          },
+          input -> new ListNotificationChannelsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

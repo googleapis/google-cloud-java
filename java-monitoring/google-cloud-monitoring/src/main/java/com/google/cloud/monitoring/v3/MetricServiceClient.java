@@ -18,7 +18,6 @@ package com.google.cloud.monitoring.v3;
 
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1602,15 +1601,7 @@ public class MetricServiceClient implements BackgroundResource {
               .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              ListMonitoredResourceDescriptorsPage,
-              ListMonitoredResourceDescriptorsPagedResponse>() {
-            @Override
-            public ListMonitoredResourceDescriptorsPagedResponse apply(
-                ListMonitoredResourceDescriptorsPage input) {
-              return new ListMonitoredResourceDescriptorsPagedResponse(input);
-            }
-          },
+          input -> new ListMonitoredResourceDescriptorsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1704,12 +1695,7 @@ public class MetricServiceClient implements BackgroundResource {
           ListMetricDescriptorsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListMetricDescriptorsPage, ListMetricDescriptorsPagedResponse>() {
-            @Override
-            public ListMetricDescriptorsPagedResponse apply(ListMetricDescriptorsPage input) {
-              return new ListMetricDescriptorsPagedResponse(input);
-            }
-          },
+          input -> new ListMetricDescriptorsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1792,12 +1778,7 @@ public class MetricServiceClient implements BackgroundResource {
           ListTimeSeriesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTimeSeriesPage, ListTimeSeriesPagedResponse>() {
-            @Override
-            public ListTimeSeriesPagedResponse apply(ListTimeSeriesPage input) {
-              return new ListTimeSeriesPagedResponse(input);
-            }
-          },
+          input -> new ListTimeSeriesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

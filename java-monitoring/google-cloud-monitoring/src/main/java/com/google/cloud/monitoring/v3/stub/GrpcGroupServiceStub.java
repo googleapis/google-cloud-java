@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -41,7 +40,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -162,65 +160,50 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
         GrpcCallSettings.<ListGroupsRequest, ListGroupsResponse>newBuilder()
             .setMethodDescriptor(listGroupsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListGroupsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListGroupsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetGroupRequest, Group> getGroupTransportSettings =
         GrpcCallSettings.<GetGroupRequest, Group>newBuilder()
             .setMethodDescriptor(getGroupMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetGroupRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetGroupRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateGroupRequest, Group> createGroupTransportSettings =
         GrpcCallSettings.<CreateGroupRequest, Group>newBuilder()
             .setMethodDescriptor(createGroupMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateGroupRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateGroupRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateGroupRequest, Group> updateGroupTransportSettings =
         GrpcCallSettings.<UpdateGroupRequest, Group>newBuilder()
             .setMethodDescriptor(updateGroupMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateGroupRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateGroupRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("group.name", String.valueOf(request.getGroup().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("group.name", String.valueOf(request.getGroup().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteGroupRequest, Empty> deleteGroupTransportSettings =
         GrpcCallSettings.<DeleteGroupRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteGroupMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteGroupRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteGroupRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListGroupMembersRequest, ListGroupMembersResponse>
@@ -228,13 +211,10 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
             GrpcCallSettings.<ListGroupMembersRequest, ListGroupMembersResponse>newBuilder()
                 .setMethodDescriptor(listGroupMembersMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListGroupMembersRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListGroupMembersRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 
@@ -315,7 +295,13 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

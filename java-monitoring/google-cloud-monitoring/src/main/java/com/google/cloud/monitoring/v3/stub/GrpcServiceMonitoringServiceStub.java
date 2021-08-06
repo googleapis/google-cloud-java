@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -46,7 +45,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -235,65 +233,50 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
         GrpcCallSettings.<CreateServiceRequest, Service>newBuilder()
             .setMethodDescriptor(createServiceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateServiceRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateServiceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetServiceRequest, Service> getServiceTransportSettings =
         GrpcCallSettings.<GetServiceRequest, Service>newBuilder()
             .setMethodDescriptor(getServiceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetServiceRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetServiceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListServicesRequest, ListServicesResponse> listServicesTransportSettings =
         GrpcCallSettings.<ListServicesRequest, ListServicesResponse>newBuilder()
             .setMethodDescriptor(listServicesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListServicesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListServicesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateServiceRequest, Service> updateServiceTransportSettings =
         GrpcCallSettings.<UpdateServiceRequest, Service>newBuilder()
             .setMethodDescriptor(updateServiceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateServiceRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateServiceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("service.name", String.valueOf(request.getService().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("service.name", String.valueOf(request.getService().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteServiceRequest, Empty> deleteServiceTransportSettings =
         GrpcCallSettings.<DeleteServiceRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteServiceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteServiceRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteServiceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateServiceLevelObjectiveRequest, ServiceLevelObjective>
@@ -301,14 +284,10 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
             GrpcCallSettings.<CreateServiceLevelObjectiveRequest, ServiceLevelObjective>newBuilder()
                 .setMethodDescriptor(createServiceLevelObjectiveMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateServiceLevelObjectiveRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CreateServiceLevelObjectiveRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetServiceLevelObjectiveRequest, ServiceLevelObjective>
@@ -316,13 +295,10 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
             GrpcCallSettings.<GetServiceLevelObjectiveRequest, ServiceLevelObjective>newBuilder()
                 .setMethodDescriptor(getServiceLevelObjectiveMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetServiceLevelObjectiveRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetServiceLevelObjectiveRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListServiceLevelObjectivesRequest, ListServiceLevelObjectivesResponse>
@@ -331,14 +307,10 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
                 .<ListServiceLevelObjectivesRequest, ListServiceLevelObjectivesResponse>newBuilder()
                 .setMethodDescriptor(listServiceLevelObjectivesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListServiceLevelObjectivesRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ListServiceLevelObjectivesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateServiceLevelObjectiveRequest, ServiceLevelObjective>
@@ -346,16 +318,12 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
             GrpcCallSettings.<UpdateServiceLevelObjectiveRequest, ServiceLevelObjective>newBuilder()
                 .setMethodDescriptor(updateServiceLevelObjectiveMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateServiceLevelObjectiveRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          UpdateServiceLevelObjectiveRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "service_level_objective.name",
-                            String.valueOf(request.getServiceLevelObjective().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "service_level_objective.name",
+                          String.valueOf(request.getServiceLevelObjective().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteServiceLevelObjectiveRequest, Empty>
@@ -363,14 +331,10 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
             GrpcCallSettings.<DeleteServiceLevelObjectiveRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteServiceLevelObjectiveMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteServiceLevelObjectiveRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          DeleteServiceLevelObjectiveRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 
@@ -499,7 +463,13 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override
