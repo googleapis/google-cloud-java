@@ -16,7 +16,6 @@
 
 package com.google.cloud.workflows.executions.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -639,12 +638,7 @@ public class ExecutionsClient implements BackgroundResource {
           ListExecutionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListExecutionsPage, ListExecutionsPagedResponse>() {
-            @Override
-            public ListExecutionsPagedResponse apply(ListExecutionsPage input) {
-              return new ListExecutionsPagedResponse(input);
-            }
-          },
+          input -> new ListExecutionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

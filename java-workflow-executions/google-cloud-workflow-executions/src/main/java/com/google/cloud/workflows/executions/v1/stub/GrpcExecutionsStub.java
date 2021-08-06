@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.workflows.executions.v1.CancelExecutionRequest;
 import com.google.cloud.workflows.executions.v1.CreateExecutionRequest;
@@ -36,7 +35,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -142,52 +140,40 @@ public class GrpcExecutionsStub extends ExecutionsStub {
             GrpcCallSettings.<ListExecutionsRequest, ListExecutionsResponse>newBuilder()
                 .setMethodDescriptor(listExecutionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListExecutionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListExecutionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateExecutionRequest, Execution> createExecutionTransportSettings =
         GrpcCallSettings.<CreateExecutionRequest, Execution>newBuilder()
             .setMethodDescriptor(createExecutionMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateExecutionRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateExecutionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetExecutionRequest, Execution> getExecutionTransportSettings =
         GrpcCallSettings.<GetExecutionRequest, Execution>newBuilder()
             .setMethodDescriptor(getExecutionMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetExecutionRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetExecutionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CancelExecutionRequest, Execution> cancelExecutionTransportSettings =
         GrpcCallSettings.<CancelExecutionRequest, Execution>newBuilder()
             .setMethodDescriptor(cancelExecutionMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CancelExecutionRequest>() {
-                  @Override
-                  public Map<String, String> extract(CancelExecutionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 
@@ -243,7 +229,13 @@ public class GrpcExecutionsStub extends ExecutionsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override
