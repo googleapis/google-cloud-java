@@ -1,5 +1,41 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-aiplatform/compare/v1.0.2...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* Removes breaking change from v1 version of AI Platform protos
+* release gapic-generator-java v2.0.0 (#603)
+
+### Features
+
+* Adds BigQuery output table field to batch prediction job output config [#449](https://www.github.com/googleapis/java-aiplatform/issues/449) ([a00087e](https://www.github.com/googleapis/java-aiplatform/commit/a00087eeb93ba3d1f158bfa00f02aad9b413a132))
+* Adds CustomJob.web_access_uris, CustomJob.enable_web_access fields ([a00087e](https://www.github.com/googleapis/java-aiplatform/commit/a00087eeb93ba3d1f158bfa00f02aad9b413a132))
+* Adds Endpoint.network, Endpoint.private_endpoints fields and PrivateEndpoints message ([a00087e](https://www.github.com/googleapis/java-aiplatform/commit/a00087eeb93ba3d1f158bfa00f02aad9b413a132))
+* Adds Execution.State constants: CACHED and CANCELLED ([a00087e](https://www.github.com/googleapis/java-aiplatform/commit/a00087eeb93ba3d1f158bfa00f02aad9b413a132))
+* Adds Feature Store features ([a00087e](https://www.github.com/googleapis/java-aiplatform/commit/a00087eeb93ba3d1f158bfa00f02aad9b413a132))
+* Adds fields to Study message ([a00087e](https://www.github.com/googleapis/java-aiplatform/commit/a00087eeb93ba3d1f158bfa00f02aad9b413a132))
+* Adds IndexEndpoint.private_ip_ranges field ([a00087e](https://www.github.com/googleapis/java-aiplatform/commit/a00087eeb93ba3d1f158bfa00f02aad9b413a132))
+* Adds IndexEndpointService.deployed_index_id field ([a00087e](https://www.github.com/googleapis/java-aiplatform/commit/a00087eeb93ba3d1f158bfa00f02aad9b413a132))
+* Adds MetadataService.DeleteArtifact and DeleteExecution methods ([a00087e](https://www.github.com/googleapis/java-aiplatform/commit/a00087eeb93ba3d1f158bfa00f02aad9b413a132))
+* Adds ModelMonitoringObjectConfig.explanation_config field and ModelMonitoringObjectConfig.ExplanationConfig message ([a00087e](https://www.github.com/googleapis/java-aiplatform/commit/a00087eeb93ba3d1f158bfa00f02aad9b413a132))
+* Adds ModelMonitoringObjectiveConfig.TrainingPredictionSkewDetectionConfig.attribution_score_skew_thresholds and ModelMonitoringObjectiveConfig.PredictionDriftDetectionConfig.attribution_score_drift_threshold fields ([a00087e](https://www.github.com/googleapis/java-aiplatform/commit/a00087eeb93ba3d1f158bfa00f02aad9b413a132))
+* release gapic-generator-java v2.0.0 ([#603](https://www.github.com/googleapis/java-aiplatform/issues/603)) ([a00087e](https://www.github.com/googleapis/java-aiplatform/commit/a00087eeb93ba3d1f158bfa00f02aad9b413a132))
+* Removes breaking change from v1 version of AI Platform protos ([a00087e](https://www.github.com/googleapis/java-aiplatform/commit/a00087eeb93ba3d1f158bfa00f02aad9b413a132))
+
+
+### Bug Fixes
+
+* add check exceptions for removing accelerator types ([#446](https://www.github.com/googleapis/java-aiplatform/issues/446)) ([789e343](https://www.github.com/googleapis/java-aiplatform/commit/789e34331d00ff4416eac2ac612e1cdd70a4cbd1))
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-aiplatform-v1beta1 to v0.5.2 ([#434](https://www.github.com/googleapis/java-aiplatform/issues/434)) ([14100d8](https://www.github.com/googleapis/java-aiplatform/commit/14100d8c4d2f585213137fc3219df6fb9424c071))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#602](https://www.github.com/googleapis/java-aiplatform/issues/602)) ([ad91862](https://www.github.com/googleapis/java-aiplatform/commit/ad918628a999521a1da0b5cb9e8478ed8d7e18cd))
+* update dependency com.google.cloud:google-cloud-storage to v1.118.0 ([#440](https://www.github.com/googleapis/java-aiplatform/issues/440)) ([bd94ebc](https://www.github.com/googleapis/java-aiplatform/commit/bd94ebc1586e742c1d7fc8037e5b127f224325dc))
+
 ### [1.0.2](https://www.github.com/googleapis/java-aiplatform/compare/v1.0.1...v1.0.2) (2021-07-07)
 
 
