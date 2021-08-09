@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-domains/compare/v0.2.1...v0.3.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#81)
+
+### Features
+
+* add v1alpha2 client ([9273c0e](https://www.github.com/googleapis/java-domains/commit/9273c0e3ed57ba439ce19167a2e8dabf2fbce620))
+* release gapic-generator-java v2.0.0 ([#81](https://www.github.com/googleapis/java-domains/issues/81)) ([0d0f822](https://www.github.com/googleapis/java-domains/commit/0d0f822a517d4b506c379ac9e2637d14ecb10db1))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-domains/issues/1130)) ([#62](https://www.github.com/googleapis/java-domains/issues/62)) ([9e8a91d](https://www.github.com/googleapis/java-domains/commit/9e8a91d221cc1eaf4805cfbc6b7c425c83f0fea5))
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-domains/issues/1154)) ([#67](https://www.github.com/googleapis/java-domains/issues/67)) ([025fbaa](https://www.github.com/googleapis/java-domains/commit/025fbaa45da9bd835de1959aeb9c9b7b223252f5)), closes [#1146](https://www.github.com/googleapis/java-domains/issues/1146) [#1147](https://www.github.com/googleapis/java-domains/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#63](https://www.github.com/googleapis/java-domains/issues/63)) ([5cb105d](https://www.github.com/googleapis/java-domains/commit/5cb105da21601d1a5071c89ae32506b7453aae57))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#82](https://www.github.com/googleapis/java-domains/issues/82)) ([42ac002](https://www.github.com/googleapis/java-domains/commit/42ac002a80fd3fe67ffce0a8643b79e9e0795bf2))
+
 ### [0.2.1](https://www.github.com/googleapis/java-domains/compare/v0.2.0...v0.2.1) (2021-06-09)
 
 
