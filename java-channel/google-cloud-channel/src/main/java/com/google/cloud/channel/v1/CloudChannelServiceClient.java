@@ -16,7 +16,6 @@
 
 package com.google.cloud.channel.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -4328,12 +4327,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListCustomersPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListCustomersPage, ListCustomersPagedResponse>() {
-            @Override
-            public ListCustomersPagedResponse apply(ListCustomersPage input) {
-              return new ListCustomersPagedResponse(input);
-            }
-          },
+          input -> new ListCustomersPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4409,12 +4403,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListEntitlementsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListEntitlementsPage, ListEntitlementsPagedResponse>() {
-            @Override
-            public ListEntitlementsPagedResponse apply(ListEntitlementsPage input) {
-              return new ListEntitlementsPagedResponse(input);
-            }
-          },
+          input -> new ListEntitlementsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4492,12 +4481,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListTransferableSkusPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTransferableSkusPage, ListTransferableSkusPagedResponse>() {
-            @Override
-            public ListTransferableSkusPagedResponse apply(ListTransferableSkusPage input) {
-              return new ListTransferableSkusPagedResponse(input);
-            }
-          },
+          input -> new ListTransferableSkusPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4582,12 +4566,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListTransferableOffersPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTransferableOffersPage, ListTransferableOffersPagedResponse>() {
-            @Override
-            public ListTransferableOffersPagedResponse apply(ListTransferableOffersPage input) {
-              return new ListTransferableOffersPagedResponse(input);
-            }
-          },
+          input -> new ListTransferableOffersPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4675,12 +4654,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListChannelPartnerLinksPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListChannelPartnerLinksPage, ListChannelPartnerLinksPagedResponse>() {
-            @Override
-            public ListChannelPartnerLinksPagedResponse apply(ListChannelPartnerLinksPage input) {
-              return new ListChannelPartnerLinksPagedResponse(input);
-            }
-          },
+          input -> new ListChannelPartnerLinksPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4766,12 +4740,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListProductsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListProductsPage, ListProductsPagedResponse>() {
-            @Override
-            public ListProductsPagedResponse apply(ListProductsPage input) {
-              return new ListProductsPagedResponse(input);
-            }
-          },
+          input -> new ListProductsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4841,14 +4810,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
       ApiFuture<ListSkusPage> futurePage =
           ListSkusPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListSkusPage, ListSkusPagedResponse>() {
-            @Override
-            public ListSkusPagedResponse apply(ListSkusPage input) {
-              return new ListSkusPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListSkusPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListSkusPagedResponse(ListSkusPage page) {
@@ -4915,14 +4877,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
       ApiFuture<ListOffersPage> futurePage =
           ListOffersPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListOffersPage, ListOffersPagedResponse>() {
-            @Override
-            public ListOffersPagedResponse apply(ListOffersPage input) {
-              return new ListOffersPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListOffersPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListOffersPagedResponse(ListOffersPage page) {
@@ -4997,12 +4952,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListPurchasableSkusPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListPurchasableSkusPage, ListPurchasableSkusPagedResponse>() {
-            @Override
-            public ListPurchasableSkusPagedResponse apply(ListPurchasableSkusPage input) {
-              return new ListPurchasableSkusPagedResponse(input);
-            }
-          },
+          input -> new ListPurchasableSkusPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -5086,12 +5036,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListPurchasableOffersPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListPurchasableOffersPage, ListPurchasableOffersPagedResponse>() {
-            @Override
-            public ListPurchasableOffersPagedResponse apply(ListPurchasableOffersPage input) {
-              return new ListPurchasableOffersPagedResponse(input);
-            }
-          },
+          input -> new ListPurchasableOffersPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -5174,12 +5119,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListSubscribersPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListSubscribersPage, ListSubscribersPagedResponse>() {
-            @Override
-            public ListSubscribersPagedResponse apply(ListSubscribersPage input) {
-              return new ListSubscribersPagedResponse(input);
-            }
-          },
+          input -> new ListSubscribersPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
