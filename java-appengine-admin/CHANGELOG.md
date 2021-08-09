@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-appengine-admin/compare/v1.0.1...v2.0.0) (2021-08-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#91)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#91](https://www.github.com/googleapis/java-appengine-admin/issues/91)) ([0882fa3](https://www.github.com/googleapis/java-appengine-admin/commit/0882fa3bed0ef62a24535caa747ea556e0a6ad1f))
+
 ### [1.0.1](https://www.github.com/googleapis/java-appengine-admin/compare/v1.0.0...v1.0.1) (2021-08-06)
 
 
