@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-dms/compare/v1.0.0...v2.0.0) (2021-08-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#74)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#74](https://www.github.com/googleapis/java-dms/issues/74)) ([fe4563c](https://www.github.com/googleapis/java-dms/commit/fe4563c2bda378e449670aa8d7b5b9316ef15e45))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-dms/issues/1154)) ([#59](https://www.github.com/googleapis/java-dms/issues/59)) ([26704fc](https://www.github.com/googleapis/java-dms/commit/26704fccc5e9f3fbfc226f80b37118b730302d9a)), closes [#1146](https://www.github.com/googleapis/java-dms/issues/1146) [#1147](https://www.github.com/googleapis/java-dms/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#75](https://www.github.com/googleapis/java-dms/issues/75)) ([cf68a56](https://www.github.com/googleapis/java-dms/commit/cf68a56e8a51e2561b43395bf48672dc62291709))
+
 ## [1.0.0](https://www.github.com/googleapis/java-dms/compare/v0.1.3...v1.0.0) (2021-07-02)
 
 
