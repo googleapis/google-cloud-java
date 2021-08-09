@@ -153,10 +153,15 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
   public OperationCallSettings<
           AnalyzeIamPolicyLongrunningRequest,
           AnalyzeIamPolicyLongrunningResponse,
-          AnalyzeIamPolicyLongrunningRequest>
+          AnalyzeIamPolicyLongrunningMetadata>
       analyzeIamPolicyLongrunningOperationSettings() {
     return ((AssetServiceStubSettings) getStubSettings())
         .analyzeIamPolicyLongrunningOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to analyzeMove. */
+  public UnaryCallSettings<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveSettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).analyzeMoveSettings();
   }
 
   public static final AssetServiceSettings create(AssetServiceStubSettings stub)
@@ -338,9 +343,15 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
     public OperationCallSettings.Builder<
             AnalyzeIamPolicyLongrunningRequest,
             AnalyzeIamPolicyLongrunningResponse,
-            AnalyzeIamPolicyLongrunningRequest>
+            AnalyzeIamPolicyLongrunningMetadata>
         analyzeIamPolicyLongrunningOperationSettings() {
       return getStubSettingsBuilder().analyzeIamPolicyLongrunningOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to analyzeMove. */
+    public UnaryCallSettings.Builder<AnalyzeMoveRequest, AnalyzeMoveResponse>
+        analyzeMoveSettings() {
+      return getStubSettingsBuilder().analyzeMoveSettings();
     }
 
     @Override

@@ -925,8 +925,8 @@ public class AssetServiceClient implements BackgroundResource {
    *       <li>`kmsKey:key` to find Cloud resources encrypted with a customer-managed encryption key
    *           whose name contains the word "key".
    *       <li>`state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a word.
-   *       <li>`NOT state:ACTIVE` to find {{gcp_name}} resources whose state doesn't contain
-   *           "ACTIVE" as a word.
+   *       <li>`NOT state:ACTIVE` to find Cloud resources whose state doesn't contain "ACTIVE" as a
+   *           word.
    *       <li>`createTime&lt;1609459200` to find Cloud resources that were created before
    *           "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of "2021-01-01 00:00:00
    *           UTC" in seconds.
@@ -986,6 +986,7 @@ public class AssetServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setReadMask(FieldMask.newBuilder().build())
    *           .build();
    *   for (ResourceSearchResult element :
    *       assetServiceClient.searchAllResources(request).iterateAll()) {
@@ -1020,6 +1021,7 @@ public class AssetServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setReadMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<ResourceSearchResult> future =
    *       assetServiceClient.searchAllResourcesPagedCallable().futureCall(request);
@@ -1053,6 +1055,7 @@ public class AssetServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setReadMask(FieldMask.newBuilder().build())
    *           .build();
    *   while (true) {
    *     SearchAllResourcesResponse response =
@@ -1315,8 +1318,8 @@ public class AssetServiceClient implements BackgroundResource {
    * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method
    * implements the [google.longrunning.Operation][google.longrunning.Operation], which allows you
    * to track the operation status. We recommend intervals of at least 2 seconds with exponential
-   * backoff retry to poll the operation result. The metadata contains the request to help callers
-   * to map responses to requests.
+   * backoff retry to poll the operation result. The metadata contains the metadata for the
+   * long-running operation.
    *
    * <p>Sample code:
    *
@@ -1336,7 +1339,7 @@ public class AssetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<
-          AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest>
+          AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningMetadata>
       analyzeIamPolicyLongrunningAsync(AnalyzeIamPolicyLongrunningRequest request) {
     return analyzeIamPolicyLongrunningOperationCallable().futureCall(request);
   }
@@ -1349,8 +1352,8 @@ public class AssetServiceClient implements BackgroundResource {
    * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method
    * implements the [google.longrunning.Operation][google.longrunning.Operation], which allows you
    * to track the operation status. We recommend intervals of at least 2 seconds with exponential
-   * backoff retry to poll the operation result. The metadata contains the request to help callers
-   * to map responses to requests.
+   * backoff retry to poll the operation result. The metadata contains the metadata for the
+   * long-running operation.
    *
    * <p>Sample code:
    *
@@ -1361,7 +1364,7 @@ public class AssetServiceClient implements BackgroundResource {
    *           .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
    *           .setOutputConfig(IamPolicyAnalysisOutputConfig.newBuilder().build())
    *           .build();
-   *   OperationFuture<AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest>
+   *   OperationFuture<AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningMetadata>
    *       future =
    *           assetServiceClient.analyzeIamPolicyLongrunningOperationCallable().futureCall(request);
    *   // Do something.
@@ -1372,7 +1375,7 @@ public class AssetServiceClient implements BackgroundResource {
   public final OperationCallable<
           AnalyzeIamPolicyLongrunningRequest,
           AnalyzeIamPolicyLongrunningResponse,
-          AnalyzeIamPolicyLongrunningRequest>
+          AnalyzeIamPolicyLongrunningMetadata>
       analyzeIamPolicyLongrunningOperationCallable() {
     return stub.analyzeIamPolicyLongrunningOperationCallable();
   }
@@ -1385,8 +1388,8 @@ public class AssetServiceClient implements BackgroundResource {
    * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method
    * implements the [google.longrunning.Operation][google.longrunning.Operation], which allows you
    * to track the operation status. We recommend intervals of at least 2 seconds with exponential
-   * backoff retry to poll the operation result. The metadata contains the request to help callers
-   * to map responses to requests.
+   * backoff retry to poll the operation result. The metadata contains the metadata for the
+   * long-running operation.
    *
    * <p>Sample code:
    *
@@ -1407,6 +1410,60 @@ public class AssetServiceClient implements BackgroundResource {
   public final UnaryCallable<AnalyzeIamPolicyLongrunningRequest, Operation>
       analyzeIamPolicyLongrunningCallable() {
     return stub.analyzeIamPolicyLongrunningCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyze moving a resource to a specified destination without kicking off the actual move. The
+   * analysis is best effort depending on the user's permissions of viewing different hierarchical
+   * policies and configurations. The policies and configuration are subject to change before the
+   * actual resource migration takes place.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   AnalyzeMoveRequest request =
+   *       AnalyzeMoveRequest.newBuilder()
+   *           .setResource("resource-341064690")
+   *           .setDestinationParent("destinationParent-1733659048")
+   *           .build();
+   *   AnalyzeMoveResponse response = assetServiceClient.analyzeMove(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeMoveResponse analyzeMove(AnalyzeMoveRequest request) {
+    return analyzeMoveCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyze moving a resource to a specified destination without kicking off the actual move. The
+   * analysis is best effort depending on the user's permissions of viewing different hierarchical
+   * policies and configurations. The policies and configuration are subject to change before the
+   * actual resource migration takes place.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   AnalyzeMoveRequest request =
+   *       AnalyzeMoveRequest.newBuilder()
+   *           .setResource("resource-341064690")
+   *           .setDestinationParent("destinationParent-1733659048")
+   *           .build();
+   *   ApiFuture<AnalyzeMoveResponse> future =
+   *       assetServiceClient.analyzeMoveCallable().futureCall(request);
+   *   // Do something.
+   *   AnalyzeMoveResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveCallable() {
+    return stub.analyzeMoveCallable();
   }
 
   @Override

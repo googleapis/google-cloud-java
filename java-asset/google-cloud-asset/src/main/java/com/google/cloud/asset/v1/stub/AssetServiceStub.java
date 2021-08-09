@@ -23,10 +23,13 @@ import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllResourcesPag
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningResponse;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyRequest;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyResponse;
+import com.google.cloud.asset.v1.AnalyzeMoveRequest;
+import com.google.cloud.asset.v1.AnalyzeMoveResponse;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse;
 import com.google.cloud.asset.v1.CreateFeedRequest;
@@ -132,7 +135,7 @@ public abstract class AssetServiceStub implements BackgroundResource {
   public OperationCallable<
           AnalyzeIamPolicyLongrunningRequest,
           AnalyzeIamPolicyLongrunningResponse,
-          AnalyzeIamPolicyLongrunningRequest>
+          AnalyzeIamPolicyLongrunningMetadata>
       analyzeIamPolicyLongrunningOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: analyzeIamPolicyLongrunningOperationCallable()");
@@ -142,6 +145,10 @@ public abstract class AssetServiceStub implements BackgroundResource {
       analyzeIamPolicyLongrunningCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: analyzeIamPolicyLongrunningCallable()");
+  }
+
+  public UnaryCallable<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveCallable() {
+    throw new UnsupportedOperationException("Not implemented: analyzeMoveCallable()");
   }
 
   @Override

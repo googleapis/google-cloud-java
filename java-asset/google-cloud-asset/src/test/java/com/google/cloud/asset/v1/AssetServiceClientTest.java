@@ -777,4 +777,50 @@ public class AssetServiceClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+
+  @Test
+  public void analyzeMoveTest() throws Exception {
+    AnalyzeMoveResponse expectedResponse =
+        AnalyzeMoveResponse.newBuilder().addAllMoveAnalysis(new ArrayList<MoveAnalysis>()).build();
+    mockAssetService.addResponse(expectedResponse);
+
+    AnalyzeMoveRequest request =
+        AnalyzeMoveRequest.newBuilder()
+            .setResource("resource-341064690")
+            .setDestinationParent("destinationParent-1733659048")
+            .build();
+
+    AnalyzeMoveResponse actualResponse = client.analyzeMove(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnalyzeMoveRequest actualRequest = ((AnalyzeMoveRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getDestinationParent(), actualRequest.getDestinationParent());
+    Assert.assertEquals(request.getView(), actualRequest.getView());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void analyzeMoveExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      AnalyzeMoveRequest request =
+          AnalyzeMoveRequest.newBuilder()
+              .setResource("resource-341064690")
+              .setDestinationParent("destinationParent-1733659048")
+              .build();
+      client.analyzeMove(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

@@ -90,8 +90,8 @@ public interface SearchAllResourcesRequestOrBuilder
    *   encryption key whose name contains the word "key".
    * * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
    *   word.
-   * * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
-   *   doesn't contain "ACTIVE" as a word.
+   * * `NOT state:ACTIVE` to find Cloud resources whose state doesn't contain
+   *   "ACTIVE" as a word.
    * * `createTime&lt;1609459200` to find Cloud resources that were created before
    *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
    *   "2021-01-01 00:00:00 UTC" in seconds.
@@ -139,8 +139,8 @@ public interface SearchAllResourcesRequestOrBuilder
    *   encryption key whose name contains the word "key".
    * * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
    *   word.
-   * * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
-   *   doesn't contain "ACTIVE" as a word.
+   * * `NOT state:ACTIVE` to find Cloud resources whose state doesn't contain
+   *   "ACTIVE" as a word.
    * * `createTime&lt;1609459200` to find Cloud resources that were created before
    *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
    *   "2021-01-01 00:00:00 UTC" in seconds.
@@ -363,4 +363,114 @@ public interface SearchAllResourcesRequestOrBuilder
    * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString getOrderByBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A comma-separated list of fields specifying which fields to be returned in
+   * ResourceSearchResult. Only '*' or combination of top level fields can be
+   * specified. Field names of both snake_case and camelCase are supported.
+   * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   * The read_mask paths must be valid field paths listed but not limited to
+   * (both snake_case and camelCase are supported):
+   *   * name
+   *   * assetType
+   *   * project
+   *   * displayName
+   *   * description
+   *   * location
+   *   * labels
+   *   * networkTags
+   *   * kmsKey
+   *   * createTime
+   *   * updateTime
+   *   * state
+   *   * additionalAttributes
+   *   * versionedResources
+   * If read_mask is not specified, all fields except versionedResources will
+   * be returned.
+   * If only '*' is specified, all fields including versionedResources will be
+   * returned.
+   * Any invalid field path will trigger INVALID_ARGUMENT error.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the readMask field is set.
+   */
+  boolean hasReadMask();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A comma-separated list of fields specifying which fields to be returned in
+   * ResourceSearchResult. Only '*' or combination of top level fields can be
+   * specified. Field names of both snake_case and camelCase are supported.
+   * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   * The read_mask paths must be valid field paths listed but not limited to
+   * (both snake_case and camelCase are supported):
+   *   * name
+   *   * assetType
+   *   * project
+   *   * displayName
+   *   * description
+   *   * location
+   *   * labels
+   *   * networkTags
+   *   * kmsKey
+   *   * createTime
+   *   * updateTime
+   *   * state
+   *   * additionalAttributes
+   *   * versionedResources
+   * If read_mask is not specified, all fields except versionedResources will
+   * be returned.
+   * If only '*' is specified, all fields including versionedResources will be
+   * returned.
+   * Any invalid field path will trigger INVALID_ARGUMENT error.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The readMask.
+   */
+  com.google.protobuf.FieldMask getReadMask();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A comma-separated list of fields specifying which fields to be returned in
+   * ResourceSearchResult. Only '*' or combination of top level fields can be
+   * specified. Field names of both snake_case and camelCase are supported.
+   * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   * The read_mask paths must be valid field paths listed but not limited to
+   * (both snake_case and camelCase are supported):
+   *   * name
+   *   * assetType
+   *   * project
+   *   * displayName
+   *   * description
+   *   * location
+   *   * labels
+   *   * networkTags
+   *   * kmsKey
+   *   * createTime
+   *   * updateTime
+   *   * state
+   *   * additionalAttributes
+   *   * versionedResources
+   * If read_mask is not specified, all fields except versionedResources will
+   * be returned.
+   * If only '*' is specified, all fields including versionedResources will be
+   * returned.
+   * Any invalid field path will trigger INVALID_ARGUMENT error.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder();
 }

@@ -16,6 +16,9 @@
             "AnalyzeIamPolicyLongrunning": {
               "methods": ["analyzeIamPolicyLongrunningAsync", "analyzeIamPolicyLongrunningOperationCallable", "analyzeIamPolicyLongrunningCallable"]
             },
+            "AnalyzeMove": {
+              "methods": ["analyzeMove", "analyzeMoveCallable"]
+            },
             "BatchGetAssetsHistory": {
               "methods": ["batchGetAssetsHistory", "batchGetAssetsHistoryCallable"]
             },

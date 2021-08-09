@@ -28,10 +28,13 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningResponse;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyRequest;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyResponse;
+import com.google.cloud.asset.v1.AnalyzeMoveRequest;
+import com.google.cloud.asset.v1.AnalyzeMoveResponse;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse;
 import com.google.cloud.asset.v1.CreateFeedRequest;
@@ -181,6 +184,16 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<AnalyzeMoveRequest, AnalyzeMoveResponse>
+      analyzeMoveMethodDescriptor =
+          MethodDescriptor.<AnalyzeMoveRequest, AnalyzeMoveResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.asset.v1.AssetService/AnalyzeMove")
+              .setRequestMarshaller(ProtoUtils.marshaller(AnalyzeMoveRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AnalyzeMoveResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ExportAssetsRequest, Operation> exportAssetsCallable;
   private final OperationCallable<ExportAssetsRequest, ExportAssetsResponse, ExportAssetsRequest>
       exportAssetsOperationCallable;
@@ -208,8 +221,9 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
   private final OperationCallable<
           AnalyzeIamPolicyLongrunningRequest,
           AnalyzeIamPolicyLongrunningResponse,
-          AnalyzeIamPolicyLongrunningRequest>
+          AnalyzeIamPolicyLongrunningMetadata>
       analyzeIamPolicyLongrunningOperationCallable;
+  private final UnaryCallable<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -420,6 +434,19 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveTransportSettings =
+        GrpcCallSettings.<AnalyzeMoveRequest, AnalyzeMoveResponse>newBuilder()
+            .setMethodDescriptor(analyzeMoveMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<AnalyzeMoveRequest>() {
+                  @Override
+                  public Map<String, String> extract(AnalyzeMoveRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.exportAssetsCallable =
         callableFactory.createUnaryCallable(
@@ -490,6 +517,9 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
             settings.analyzeIamPolicyLongrunningOperationSettings(),
             clientContext,
             operationsStub);
+    this.analyzeMoveCallable =
+        callableFactory.createUnaryCallable(
+            analyzeMoveTransportSettings, settings.analyzeMoveSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -591,14 +621,25 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
   public OperationCallable<
           AnalyzeIamPolicyLongrunningRequest,
           AnalyzeIamPolicyLongrunningResponse,
-          AnalyzeIamPolicyLongrunningRequest>
+          AnalyzeIamPolicyLongrunningMetadata>
       analyzeIamPolicyLongrunningOperationCallable() {
     return analyzeIamPolicyLongrunningOperationCallable;
   }
 
   @Override
+  public UnaryCallable<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveCallable() {
+    return analyzeMoveCallable;
+  }
+
+  @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

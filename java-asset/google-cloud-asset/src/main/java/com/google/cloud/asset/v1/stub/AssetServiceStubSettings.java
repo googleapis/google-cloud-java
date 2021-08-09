@@ -46,10 +46,13 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningResponse;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyRequest;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyResponse;
+import com.google.cloud.asset.v1.AnalyzeMoveRequest;
+import com.google.cloud.asset.v1.AnalyzeMoveResponse;
 import com.google.cloud.asset.v1.Asset;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse;
@@ -147,8 +150,9 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
   private final OperationCallSettings<
           AnalyzeIamPolicyLongrunningRequest,
           AnalyzeIamPolicyLongrunningResponse,
-          AnalyzeIamPolicyLongrunningRequest>
+          AnalyzeIamPolicyLongrunningMetadata>
       analyzeIamPolicyLongrunningOperationSettings;
+  private final UnaryCallSettings<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveSettings;
 
   private static final PagedListDescriptor<ListAssetsRequest, ListAssetsResponse, Asset>
       LIST_ASSETS_PAGE_STR_DESC =
@@ -413,9 +417,14 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
   public OperationCallSettings<
           AnalyzeIamPolicyLongrunningRequest,
           AnalyzeIamPolicyLongrunningResponse,
-          AnalyzeIamPolicyLongrunningRequest>
+          AnalyzeIamPolicyLongrunningMetadata>
       analyzeIamPolicyLongrunningOperationSettings() {
     return analyzeIamPolicyLongrunningOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to analyzeMove. */
+  public UnaryCallSettings<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveSettings() {
+    return analyzeMoveSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -508,6 +517,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
         settingsBuilder.analyzeIamPolicyLongrunningSettings().build();
     analyzeIamPolicyLongrunningOperationSettings =
         settingsBuilder.analyzeIamPolicyLongrunningOperationSettings().build();
+    analyzeMoveSettings = settingsBuilder.analyzeMoveSettings().build();
   }
 
   /** Builder for AssetServiceStubSettings. */
@@ -543,8 +553,10 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     private final OperationCallSettings.Builder<
             AnalyzeIamPolicyLongrunningRequest,
             AnalyzeIamPolicyLongrunningResponse,
-            AnalyzeIamPolicyLongrunningRequest>
+            AnalyzeIamPolicyLongrunningMetadata>
         analyzeIamPolicyLongrunningOperationSettings;
+    private final UnaryCallSettings.Builder<AnalyzeMoveRequest, AnalyzeMoveResponse>
+        analyzeMoveSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -564,6 +576,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
       definitions.put(
           "retry_policy_3_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -613,6 +626,8 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
               .setTotalTimeout(Duration.ofMillis(300000L))
               .build();
       definitions.put("retry_policy_3_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -638,6 +653,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
       analyzeIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       analyzeIamPolicyLongrunningSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       analyzeIamPolicyLongrunningOperationSettings = OperationCallSettings.newBuilder();
+      analyzeMoveSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -652,7 +668,8 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
               searchAllResourcesSettings,
               searchAllIamPoliciesSettings,
               analyzeIamPolicySettings,
-              analyzeIamPolicyLongrunningSettings);
+              analyzeIamPolicyLongrunningSettings,
+              analyzeMoveSettings);
       initDefaults(this);
     }
 
@@ -675,6 +692,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           settings.analyzeIamPolicyLongrunningSettings.toBuilder();
       analyzeIamPolicyLongrunningOperationSettings =
           settings.analyzeIamPolicyLongrunningOperationSettings.toBuilder();
+      analyzeMoveSettings = settings.analyzeMoveSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -689,7 +707,8 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
               searchAllResourcesSettings,
               searchAllIamPoliciesSettings,
               analyzeIamPolicySettings,
-              analyzeIamPolicyLongrunningSettings);
+              analyzeIamPolicyLongrunningSettings,
+              analyzeMoveSettings);
     }
 
     private static Builder createDefault() {
@@ -767,6 +786,11 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
+          .analyzeMoveSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .exportAssetsOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -804,7 +828,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
                   AnalyzeIamPolicyLongrunningResponse.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(
-                  AnalyzeIamPolicyLongrunningRequest.class))
+                  AnalyzeIamPolicyLongrunningMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -921,9 +945,15 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     public OperationCallSettings.Builder<
             AnalyzeIamPolicyLongrunningRequest,
             AnalyzeIamPolicyLongrunningResponse,
-            AnalyzeIamPolicyLongrunningRequest>
+            AnalyzeIamPolicyLongrunningMetadata>
         analyzeIamPolicyLongrunningOperationSettings() {
       return analyzeIamPolicyLongrunningOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to analyzeMove. */
+    public UnaryCallSettings.Builder<AnalyzeMoveRequest, AnalyzeMoveResponse>
+        analyzeMoveSettings() {
+      return analyzeMoveSettings;
     }
 
     @Override

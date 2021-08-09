@@ -561,6 +561,50 @@ public final class AssetServiceGrpc {
     return getAnalyzeIamPolicyLongrunningMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.AnalyzeMoveRequest,
+          com.google.cloud.asset.v1.AnalyzeMoveResponse>
+      getAnalyzeMoveMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AnalyzeMove",
+      requestType = com.google.cloud.asset.v1.AnalyzeMoveRequest.class,
+      responseType = com.google.cloud.asset.v1.AnalyzeMoveResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.AnalyzeMoveRequest,
+          com.google.cloud.asset.v1.AnalyzeMoveResponse>
+      getAnalyzeMoveMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.AnalyzeMoveRequest,
+            com.google.cloud.asset.v1.AnalyzeMoveResponse>
+        getAnalyzeMoveMethod;
+    if ((getAnalyzeMoveMethod = AssetServiceGrpc.getAnalyzeMoveMethod) == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getAnalyzeMoveMethod = AssetServiceGrpc.getAnalyzeMoveMethod) == null) {
+          AssetServiceGrpc.getAnalyzeMoveMethod =
+              getAnalyzeMoveMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.AnalyzeMoveRequest,
+                          com.google.cloud.asset.v1.AnalyzeMoveResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AnalyzeMove"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.AnalyzeMoveRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.AnalyzeMoveResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new AssetServiceMethodDescriptorSupplier("AnalyzeMove"))
+                      .build();
+        }
+      }
+    }
+    return getAnalyzeMoveMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AssetServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AssetServiceStub> factory =
@@ -800,7 +844,7 @@ public final class AssetServiceGrpc {
      * [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
      * status. We recommend intervals of at least 2 seconds with exponential
      * backoff retry to poll the operation result. The metadata contains the
-     * request to help callers to map responses to requests.
+     * metadata for the long-running operation.
      * </pre>
      */
     public void analyzeIamPolicyLongrunning(
@@ -808,6 +852,25 @@ public final class AssetServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getAnalyzeIamPolicyLongrunningMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyze moving a resource to a specified destination without kicking off
+     * the actual move. The analysis is best effort depending on the user's
+     * permissions of viewing different hierarchical policies and configurations.
+     * The policies and configuration are subject to change before the actual
+     * resource migration takes place.
+     * </pre>
+     */
+    public void analyzeMove(
+        com.google.cloud.asset.v1.AnalyzeMoveRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.AnalyzeMoveResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAnalyzeMoveMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -890,6 +953,12 @@ public final class AssetServiceGrpc {
                       com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest,
                       com.google.longrunning.Operation>(
                       this, METHODID_ANALYZE_IAM_POLICY_LONGRUNNING)))
+          .addMethod(
+              getAnalyzeMoveMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.AnalyzeMoveRequest,
+                      com.google.cloud.asset.v1.AnalyzeMoveResponse>(this, METHODID_ANALYZE_MOVE)))
           .build();
     }
   }
@@ -1117,7 +1186,7 @@ public final class AssetServiceGrpc {
      * [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
      * status. We recommend intervals of at least 2 seconds with exponential
      * backoff retry to poll the operation result. The metadata contains the
-     * request to help callers to map responses to requests.
+     * metadata for the long-running operation.
      * </pre>
      */
     public void analyzeIamPolicyLongrunning(
@@ -1125,6 +1194,27 @@ public final class AssetServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAnalyzeIamPolicyLongrunningMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyze moving a resource to a specified destination without kicking off
+     * the actual move. The analysis is best effort depending on the user's
+     * permissions of viewing different hierarchical policies and configurations.
+     * The policies and configuration are subject to change before the actual
+     * resource migration takes place.
+     * </pre>
+     */
+    public void analyzeMove(
+        com.google.cloud.asset.v1.AnalyzeMoveRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.AnalyzeMoveResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAnalyzeMoveMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1328,13 +1418,30 @@ public final class AssetServiceGrpc {
      * [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
      * status. We recommend intervals of at least 2 seconds with exponential
      * backoff retry to poll the operation result. The metadata contains the
-     * request to help callers to map responses to requests.
+     * metadata for the long-running operation.
      * </pre>
      */
     public com.google.longrunning.Operation analyzeIamPolicyLongrunning(
         com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAnalyzeIamPolicyLongrunningMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyze moving a resource to a specified destination without kicking off
+     * the actual move. The analysis is best effort depending on the user's
+     * permissions of viewing different hierarchical policies and configurations.
+     * The policies and configuration are subject to change before the actual
+     * resource migration takes place.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.AnalyzeMoveResponse analyzeMove(
+        com.google.cloud.asset.v1.AnalyzeMoveRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeMoveMethod(), getCallOptions(), request);
     }
   }
 
@@ -1542,7 +1649,7 @@ public final class AssetServiceGrpc {
      * [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
      * status. We recommend intervals of at least 2 seconds with exponential
      * backoff retry to poll the operation result. The metadata contains the
-     * request to help callers to map responses to requests.
+     * metadata for the long-running operation.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1550,6 +1657,24 @@ public final class AssetServiceGrpc {
             com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAnalyzeIamPolicyLongrunningMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyze moving a resource to a specified destination without kicking off
+     * the actual move. The analysis is best effort depending on the user's
+     * permissions of viewing different hierarchical policies and configurations.
+     * The policies and configuration are subject to change before the actual
+     * resource migration takes place.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.asset.v1.AnalyzeMoveResponse>
+        analyzeMove(com.google.cloud.asset.v1.AnalyzeMoveRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAnalyzeMoveMethod(), getCallOptions()), request);
     }
   }
 
@@ -1565,6 +1690,7 @@ public final class AssetServiceGrpc {
   private static final int METHODID_SEARCH_ALL_IAM_POLICIES = 9;
   private static final int METHODID_ANALYZE_IAM_POLICY = 10;
   private static final int METHODID_ANALYZE_IAM_POLICY_LONGRUNNING = 11;
+  private static final int METHODID_ANALYZE_MOVE = 12;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1649,6 +1775,12 @@ public final class AssetServiceGrpc {
               (com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_ANALYZE_MOVE:
+          serviceImpl.analyzeMove(
+              (com.google.cloud.asset.v1.AnalyzeMoveRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.AnalyzeMoveResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -1725,6 +1857,7 @@ public final class AssetServiceGrpc {
                       .addMethod(getSearchAllIamPoliciesMethod())
                       .addMethod(getAnalyzeIamPolicyMethod())
                       .addMethod(getAnalyzeIamPolicyLongrunningMethod())
+                      .addMethod(getAnalyzeMoveMethod())
                       .build();
         }
       }

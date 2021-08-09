@@ -50,6 +50,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     kmsKey_ = "";
     state_ = "";
     parentFullResourceName_ = "";
+    versionedResources_ = java.util.Collections.emptyList();
+    attachedResources_ = java.util.Collections.emptyList();
     parentAssetType_ = "";
   }
 
@@ -207,6 +209,18 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
               state_ = s;
               break;
             }
+          case 130:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                versionedResources_ =
+                    new java.util.ArrayList<com.google.cloud.asset.v1.VersionedResource>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              versionedResources_.add(
+                  input.readMessage(
+                      com.google.cloud.asset.v1.VersionedResource.parser(), extensionRegistry));
+              break;
+            }
           case 138:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -229,6 +243,18 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
               java.lang.String s = input.readStringRequireUtf8();
 
               parentFullResourceName_ = s;
+              break;
+            }
+          case 162:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                attachedResources_ =
+                    new java.util.ArrayList<com.google.cloud.asset.v1.AttachedResource>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              attachedResources_.add(
+                  input.readMessage(
+                      com.google.cloud.asset.v1.AttachedResource.parser(), extensionRegistry));
               break;
             }
           case 826:
@@ -255,8 +281,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         networkTags_ = networkTags_.getUnmodifiableView();
       }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        versionedResources_ = java.util.Collections.unmodifiableList(versionedResources_);
+      }
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         folders_ = folders_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        attachedResources_ = java.util.Collections.unmodifiableList(attachedResources_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -1447,6 +1479,196 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int VERSIONED_RESOURCES_FIELD_NUMBER = 16;
+  private java.util.List<com.google.cloud.asset.v1.VersionedResource> versionedResources_;
+  /**
+   *
+   *
+   * <pre>
+   * Versioned resource representations of this resource. This is repeated
+   * because there could be multiple versions of resource representations during
+   * version migration.
+   * This `versioned_resources` field is not searchable. Some attributes of the
+   * resource representations are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.asset.v1.VersionedResource> getVersionedResourcesList() {
+    return versionedResources_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Versioned resource representations of this resource. This is repeated
+   * because there could be multiple versions of resource representations during
+   * version migration.
+   * This `versioned_resources` field is not searchable. Some attributes of the
+   * resource representations are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.asset.v1.VersionedResourceOrBuilder>
+      getVersionedResourcesOrBuilderList() {
+    return versionedResources_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Versioned resource representations of this resource. This is repeated
+   * because there could be multiple versions of resource representations during
+   * version migration.
+   * This `versioned_resources` field is not searchable. Some attributes of the
+   * resource representations are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+   */
+  @java.lang.Override
+  public int getVersionedResourcesCount() {
+    return versionedResources_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Versioned resource representations of this resource. This is repeated
+   * because there could be multiple versions of resource representations during
+   * version migration.
+   * This `versioned_resources` field is not searchable. Some attributes of the
+   * resource representations are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.VersionedResource getVersionedResources(int index) {
+    return versionedResources_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Versioned resource representations of this resource. This is repeated
+   * because there could be multiple versions of resource representations during
+   * version migration.
+   * This `versioned_resources` field is not searchable. Some attributes of the
+   * resource representations are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.VersionedResourceOrBuilder getVersionedResourcesOrBuilder(
+      int index) {
+    return versionedResources_.get(index);
+  }
+
+  public static final int ATTACHED_RESOURCES_FIELD_NUMBER = 20;
+  private java.util.List<com.google.cloud.asset.v1.AttachedResource> attachedResources_;
+  /**
+   *
+   *
+   * <pre>
+   * Attached resources of this resource. For example, an OSConfig
+   * Inventory is an attached resource of a Compute Instance. This field is
+   * repeated because a resource could have multiple attached resources.
+   * This `attached_resources` field is not searchable. Some attributes
+   * of the attached resources are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.asset.v1.AttachedResource> getAttachedResourcesList() {
+    return attachedResources_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Attached resources of this resource. For example, an OSConfig
+   * Inventory is an attached resource of a Compute Instance. This field is
+   * repeated because a resource could have multiple attached resources.
+   * This `attached_resources` field is not searchable. Some attributes
+   * of the attached resources are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.asset.v1.AttachedResourceOrBuilder>
+      getAttachedResourcesOrBuilderList() {
+    return attachedResources_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Attached resources of this resource. For example, an OSConfig
+   * Inventory is an attached resource of a Compute Instance. This field is
+   * repeated because a resource could have multiple attached resources.
+   * This `attached_resources` field is not searchable. Some attributes
+   * of the attached resources are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+   */
+  @java.lang.Override
+  public int getAttachedResourcesCount() {
+    return attachedResources_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Attached resources of this resource. For example, an OSConfig
+   * Inventory is an attached resource of a Compute Instance. This field is
+   * repeated because a resource could have multiple attached resources.
+   * This `attached_resources` field is not searchable. Some attributes
+   * of the attached resources are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.AttachedResource getAttachedResources(int index) {
+    return attachedResources_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Attached resources of this resource. For example, an OSConfig
+   * Inventory is an attached resource of a Compute Instance. This field is
+   * repeated because a resource could have multiple attached resources.
+   * This `attached_resources` field is not searchable. Some attributes
+   * of the attached resources are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.AttachedResourceOrBuilder getAttachedResourcesOrBuilder(
+      int index) {
+    return attachedResources_.get(index);
+  }
+
   public static final int PARENT_ASSET_TYPE_FIELD_NUMBER = 103;
   private volatile java.lang.Object parentAssetType_;
   /**
@@ -1558,6 +1780,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     if (!getStateBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, state_);
     }
+    for (int i = 0; i < versionedResources_.size(); i++) {
+      output.writeMessage(16, versionedResources_.get(i));
+    }
     for (int i = 0; i < folders_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, folders_.getRaw(i));
     }
@@ -1566,6 +1791,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
     if (!getParentFullResourceNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, parentFullResourceName_);
+    }
+    for (int i = 0; i < attachedResources_.size(); i++) {
+      output.writeMessage(20, attachedResources_.get(i));
     }
     if (!getParentAssetTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 103, parentAssetType_);
@@ -1631,6 +1859,10 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     if (!getStateBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, state_);
     }
+    for (int i = 0; i < versionedResources_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(16, versionedResources_.get(i));
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < folders_.size(); i++) {
@@ -1644,6 +1876,10 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
     if (!getParentFullResourceNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, parentFullResourceName_);
+    }
+    for (int i = 0; i < attachedResources_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(20, attachedResources_.get(i));
     }
     if (!getParentAssetTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(103, parentAssetType_);
@@ -1689,6 +1925,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (!getAdditionalAttributes().equals(other.getAdditionalAttributes())) return false;
     }
     if (!getParentFullResourceName().equals(other.getParentFullResourceName())) return false;
+    if (!getVersionedResourcesList().equals(other.getVersionedResourcesList())) return false;
+    if (!getAttachedResourcesList().equals(other.getAttachedResourcesList())) return false;
     if (!getParentAssetType().equals(other.getParentAssetType())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1745,6 +1983,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + PARENT_FULL_RESOURCE_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getParentFullResourceName().hashCode();
+    if (getVersionedResourcesCount() > 0) {
+      hash = (37 * hash) + VERSIONED_RESOURCES_FIELD_NUMBER;
+      hash = (53 * hash) + getVersionedResourcesList().hashCode();
+    }
+    if (getAttachedResourcesCount() > 0) {
+      hash = (37 * hash) + ATTACHED_RESOURCES_FIELD_NUMBER;
+      hash = (53 * hash) + getAttachedResourcesList().hashCode();
+    }
     hash = (37 * hash) + PARENT_ASSET_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getParentAssetType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -1906,7 +2152,10 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getVersionedResourcesFieldBuilder();
+        getAttachedResourcesFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1955,6 +2204,18 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       parentFullResourceName_ = "";
 
+      if (versionedResourcesBuilder_ == null) {
+        versionedResources_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        versionedResourcesBuilder_.clear();
+      }
+      if (attachedResourcesBuilder_ == null) {
+        attachedResources_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      } else {
+        attachedResourcesBuilder_.clear();
+      }
       parentAssetType_ = "";
 
       return this;
@@ -2022,6 +2283,24 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         result.additionalAttributes_ = additionalAttributesBuilder_.build();
       }
       result.parentFullResourceName_ = parentFullResourceName_;
+      if (versionedResourcesBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          versionedResources_ = java.util.Collections.unmodifiableList(versionedResources_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.versionedResources_ = versionedResources_;
+      } else {
+        result.versionedResources_ = versionedResourcesBuilder_.build();
+      }
+      if (attachedResourcesBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          attachedResources_ = java.util.Collections.unmodifiableList(attachedResources_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.attachedResources_ = attachedResources_;
+      } else {
+        result.attachedResources_ = attachedResourcesBuilder_.build();
+      }
       result.parentAssetType_ = parentAssetType_;
       onBuilt();
       return result;
@@ -2141,6 +2420,60 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (!other.getParentFullResourceName().isEmpty()) {
         parentFullResourceName_ = other.parentFullResourceName_;
         onChanged();
+      }
+      if (versionedResourcesBuilder_ == null) {
+        if (!other.versionedResources_.isEmpty()) {
+          if (versionedResources_.isEmpty()) {
+            versionedResources_ = other.versionedResources_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureVersionedResourcesIsMutable();
+            versionedResources_.addAll(other.versionedResources_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.versionedResources_.isEmpty()) {
+          if (versionedResourcesBuilder_.isEmpty()) {
+            versionedResourcesBuilder_.dispose();
+            versionedResourcesBuilder_ = null;
+            versionedResources_ = other.versionedResources_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            versionedResourcesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getVersionedResourcesFieldBuilder()
+                    : null;
+          } else {
+            versionedResourcesBuilder_.addAllMessages(other.versionedResources_);
+          }
+        }
+      }
+      if (attachedResourcesBuilder_ == null) {
+        if (!other.attachedResources_.isEmpty()) {
+          if (attachedResources_.isEmpty()) {
+            attachedResources_ = other.attachedResources_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureAttachedResourcesIsMutable();
+            attachedResources_.addAll(other.attachedResources_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.attachedResources_.isEmpty()) {
+          if (attachedResourcesBuilder_.isEmpty()) {
+            attachedResourcesBuilder_.dispose();
+            attachedResourcesBuilder_ = null;
+            attachedResources_ = other.attachedResources_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            attachedResourcesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAttachedResourcesFieldBuilder()
+                    : null;
+          } else {
+            attachedResourcesBuilder_.addAllMessages(other.attachedResources_);
+          }
+        }
       }
       if (!other.getParentAssetType().isEmpty()) {
         parentAssetType_ = other.parentAssetType_;
@@ -5057,6 +5390,905 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       parentFullResourceName_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.asset.v1.VersionedResource> versionedResources_ =
+        java.util.Collections.emptyList();
+
+    private void ensureVersionedResourcesIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        versionedResources_ =
+            new java.util.ArrayList<com.google.cloud.asset.v1.VersionedResource>(
+                versionedResources_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.asset.v1.VersionedResource,
+            com.google.cloud.asset.v1.VersionedResource.Builder,
+            com.google.cloud.asset.v1.VersionedResourceOrBuilder>
+        versionedResourcesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Versioned resource representations of this resource. This is repeated
+     * because there could be multiple versions of resource representations during
+     * version migration.
+     * This `versioned_resources` field is not searchable. Some attributes of the
+     * resource representations are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+     */
+    public java.util.List<com.google.cloud.asset.v1.VersionedResource> getVersionedResourcesList() {
+      if (versionedResourcesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(versionedResources_);
+      } else {
+        return versionedResourcesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Versioned resource representations of this resource. This is repeated
+     * because there could be multiple versions of resource representations during
+     * version migration.
+     * This `versioned_resources` field is not searchable. Some attributes of the
+     * resource representations are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+     */
+    public int getVersionedResourcesCount() {
+      if (versionedResourcesBuilder_ == null) {
+        return versionedResources_.size();
+      } else {
+        return versionedResourcesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Versioned resource representations of this resource. This is repeated
+     * because there could be multiple versions of resource representations during
+     * version migration.
+     * This `versioned_resources` field is not searchable. Some attributes of the
+     * resource representations are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+     */
+    public com.google.cloud.asset.v1.VersionedResource getVersionedResources(int index) {
+      if (versionedResourcesBuilder_ == null) {
+        return versionedResources_.get(index);
+      } else {
+        return versionedResourcesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Versioned resource representations of this resource. This is repeated
+     * because there could be multiple versions of resource representations during
+     * version migration.
+     * This `versioned_resources` field is not searchable. Some attributes of the
+     * resource representations are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+     */
+    public Builder setVersionedResources(
+        int index, com.google.cloud.asset.v1.VersionedResource value) {
+      if (versionedResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVersionedResourcesIsMutable();
+        versionedResources_.set(index, value);
+        onChanged();
+      } else {
+        versionedResourcesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Versioned resource representations of this resource. This is repeated
+     * because there could be multiple versions of resource representations during
+     * version migration.
+     * This `versioned_resources` field is not searchable. Some attributes of the
+     * resource representations are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+     */
+    public Builder setVersionedResources(
+        int index, com.google.cloud.asset.v1.VersionedResource.Builder builderForValue) {
+      if (versionedResourcesBuilder_ == null) {
+        ensureVersionedResourcesIsMutable();
+        versionedResources_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        versionedResourcesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Versioned resource representations of this resource. This is repeated
+     * because there could be multiple versions of resource representations during
+     * version migration.
+     * This `versioned_resources` field is not searchable. Some attributes of the
+     * resource representations are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+     */
+    public Builder addVersionedResources(com.google.cloud.asset.v1.VersionedResource value) {
+      if (versionedResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVersionedResourcesIsMutable();
+        versionedResources_.add(value);
+        onChanged();
+      } else {
+        versionedResourcesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Versioned resource representations of this resource. This is repeated
+     * because there could be multiple versions of resource representations during
+     * version migration.
+     * This `versioned_resources` field is not searchable. Some attributes of the
+     * resource representations are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+     */
+    public Builder addVersionedResources(
+        int index, com.google.cloud.asset.v1.VersionedResource value) {
+      if (versionedResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVersionedResourcesIsMutable();
+        versionedResources_.add(index, value);
+        onChanged();
+      } else {
+        versionedResourcesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Versioned resource representations of this resource. This is repeated
+     * because there could be multiple versions of resource representations during
+     * version migration.
+     * This `versioned_resources` field is not searchable. Some attributes of the
+     * resource representations are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+     */
+    public Builder addVersionedResources(
+        com.google.cloud.asset.v1.VersionedResource.Builder builderForValue) {
+      if (versionedResourcesBuilder_ == null) {
+        ensureVersionedResourcesIsMutable();
+        versionedResources_.add(builderForValue.build());
+        onChanged();
+      } else {
+        versionedResourcesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Versioned resource representations of this resource. This is repeated
+     * because there could be multiple versions of resource representations during
+     * version migration.
+     * This `versioned_resources` field is not searchable. Some attributes of the
+     * resource representations are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+     */
+    public Builder addVersionedResources(
+        int index, com.google.cloud.asset.v1.VersionedResource.Builder builderForValue) {
+      if (versionedResourcesBuilder_ == null) {
+        ensureVersionedResourcesIsMutable();
+        versionedResources_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        versionedResourcesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Versioned resource representations of this resource. This is repeated
+     * because there could be multiple versions of resource representations during
+     * version migration.
+     * This `versioned_resources` field is not searchable. Some attributes of the
+     * resource representations are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+     */
+    public Builder addAllVersionedResources(
+        java.lang.Iterable<? extends com.google.cloud.asset.v1.VersionedResource> values) {
+      if (versionedResourcesBuilder_ == null) {
+        ensureVersionedResourcesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, versionedResources_);
+        onChanged();
+      } else {
+        versionedResourcesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Versioned resource representations of this resource. This is repeated
+     * because there could be multiple versions of resource representations during
+     * version migration.
+     * This `versioned_resources` field is not searchable. Some attributes of the
+     * resource representations are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+     */
+    public Builder clearVersionedResources() {
+      if (versionedResourcesBuilder_ == null) {
+        versionedResources_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        versionedResourcesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Versioned resource representations of this resource. This is repeated
+     * because there could be multiple versions of resource representations during
+     * version migration.
+     * This `versioned_resources` field is not searchable. Some attributes of the
+     * resource representations are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+     */
+    public Builder removeVersionedResources(int index) {
+      if (versionedResourcesBuilder_ == null) {
+        ensureVersionedResourcesIsMutable();
+        versionedResources_.remove(index);
+        onChanged();
+      } else {
+        versionedResourcesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Versioned resource representations of this resource. This is repeated
+     * because there could be multiple versions of resource representations during
+     * version migration.
+     * This `versioned_resources` field is not searchable. Some attributes of the
+     * resource representations are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+     */
+    public com.google.cloud.asset.v1.VersionedResource.Builder getVersionedResourcesBuilder(
+        int index) {
+      return getVersionedResourcesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Versioned resource representations of this resource. This is repeated
+     * because there could be multiple versions of resource representations during
+     * version migration.
+     * This `versioned_resources` field is not searchable. Some attributes of the
+     * resource representations are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+     */
+    public com.google.cloud.asset.v1.VersionedResourceOrBuilder getVersionedResourcesOrBuilder(
+        int index) {
+      if (versionedResourcesBuilder_ == null) {
+        return versionedResources_.get(index);
+      } else {
+        return versionedResourcesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Versioned resource representations of this resource. This is repeated
+     * because there could be multiple versions of resource representations during
+     * version migration.
+     * This `versioned_resources` field is not searchable. Some attributes of the
+     * resource representations are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+     */
+    public java.util.List<? extends com.google.cloud.asset.v1.VersionedResourceOrBuilder>
+        getVersionedResourcesOrBuilderList() {
+      if (versionedResourcesBuilder_ != null) {
+        return versionedResourcesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(versionedResources_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Versioned resource representations of this resource. This is repeated
+     * because there could be multiple versions of resource representations during
+     * version migration.
+     * This `versioned_resources` field is not searchable. Some attributes of the
+     * resource representations are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+     */
+    public com.google.cloud.asset.v1.VersionedResource.Builder addVersionedResourcesBuilder() {
+      return getVersionedResourcesFieldBuilder()
+          .addBuilder(com.google.cloud.asset.v1.VersionedResource.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Versioned resource representations of this resource. This is repeated
+     * because there could be multiple versions of resource representations during
+     * version migration.
+     * This `versioned_resources` field is not searchable. Some attributes of the
+     * resource representations are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+     */
+    public com.google.cloud.asset.v1.VersionedResource.Builder addVersionedResourcesBuilder(
+        int index) {
+      return getVersionedResourcesFieldBuilder()
+          .addBuilder(index, com.google.cloud.asset.v1.VersionedResource.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Versioned resource representations of this resource. This is repeated
+     * because there could be multiple versions of resource representations during
+     * version migration.
+     * This `versioned_resources` field is not searchable. Some attributes of the
+     * resource representations are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+     */
+    public java.util.List<com.google.cloud.asset.v1.VersionedResource.Builder>
+        getVersionedResourcesBuilderList() {
+      return getVersionedResourcesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.asset.v1.VersionedResource,
+            com.google.cloud.asset.v1.VersionedResource.Builder,
+            com.google.cloud.asset.v1.VersionedResourceOrBuilder>
+        getVersionedResourcesFieldBuilder() {
+      if (versionedResourcesBuilder_ == null) {
+        versionedResourcesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.asset.v1.VersionedResource,
+                com.google.cloud.asset.v1.VersionedResource.Builder,
+                com.google.cloud.asset.v1.VersionedResourceOrBuilder>(
+                versionedResources_,
+                ((bitField0_ & 0x00000008) != 0),
+                getParentForChildren(),
+                isClean());
+        versionedResources_ = null;
+      }
+      return versionedResourcesBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.asset.v1.AttachedResource> attachedResources_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAttachedResourcesIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        attachedResources_ =
+            new java.util.ArrayList<com.google.cloud.asset.v1.AttachedResource>(attachedResources_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.asset.v1.AttachedResource,
+            com.google.cloud.asset.v1.AttachedResource.Builder,
+            com.google.cloud.asset.v1.AttachedResourceOrBuilder>
+        attachedResourcesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Attached resources of this resource. For example, an OSConfig
+     * Inventory is an attached resource of a Compute Instance. This field is
+     * repeated because a resource could have multiple attached resources.
+     * This `attached_resources` field is not searchable. Some attributes
+     * of the attached resources are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+     */
+    public java.util.List<com.google.cloud.asset.v1.AttachedResource> getAttachedResourcesList() {
+      if (attachedResourcesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(attachedResources_);
+      } else {
+        return attachedResourcesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Attached resources of this resource. For example, an OSConfig
+     * Inventory is an attached resource of a Compute Instance. This field is
+     * repeated because a resource could have multiple attached resources.
+     * This `attached_resources` field is not searchable. Some attributes
+     * of the attached resources are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+     */
+    public int getAttachedResourcesCount() {
+      if (attachedResourcesBuilder_ == null) {
+        return attachedResources_.size();
+      } else {
+        return attachedResourcesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Attached resources of this resource. For example, an OSConfig
+     * Inventory is an attached resource of a Compute Instance. This field is
+     * repeated because a resource could have multiple attached resources.
+     * This `attached_resources` field is not searchable. Some attributes
+     * of the attached resources are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+     */
+    public com.google.cloud.asset.v1.AttachedResource getAttachedResources(int index) {
+      if (attachedResourcesBuilder_ == null) {
+        return attachedResources_.get(index);
+      } else {
+        return attachedResourcesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Attached resources of this resource. For example, an OSConfig
+     * Inventory is an attached resource of a Compute Instance. This field is
+     * repeated because a resource could have multiple attached resources.
+     * This `attached_resources` field is not searchable. Some attributes
+     * of the attached resources are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+     */
+    public Builder setAttachedResources(
+        int index, com.google.cloud.asset.v1.AttachedResource value) {
+      if (attachedResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAttachedResourcesIsMutable();
+        attachedResources_.set(index, value);
+        onChanged();
+      } else {
+        attachedResourcesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Attached resources of this resource. For example, an OSConfig
+     * Inventory is an attached resource of a Compute Instance. This field is
+     * repeated because a resource could have multiple attached resources.
+     * This `attached_resources` field is not searchable. Some attributes
+     * of the attached resources are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+     */
+    public Builder setAttachedResources(
+        int index, com.google.cloud.asset.v1.AttachedResource.Builder builderForValue) {
+      if (attachedResourcesBuilder_ == null) {
+        ensureAttachedResourcesIsMutable();
+        attachedResources_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        attachedResourcesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Attached resources of this resource. For example, an OSConfig
+     * Inventory is an attached resource of a Compute Instance. This field is
+     * repeated because a resource could have multiple attached resources.
+     * This `attached_resources` field is not searchable. Some attributes
+     * of the attached resources are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+     */
+    public Builder addAttachedResources(com.google.cloud.asset.v1.AttachedResource value) {
+      if (attachedResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAttachedResourcesIsMutable();
+        attachedResources_.add(value);
+        onChanged();
+      } else {
+        attachedResourcesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Attached resources of this resource. For example, an OSConfig
+     * Inventory is an attached resource of a Compute Instance. This field is
+     * repeated because a resource could have multiple attached resources.
+     * This `attached_resources` field is not searchable. Some attributes
+     * of the attached resources are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+     */
+    public Builder addAttachedResources(
+        int index, com.google.cloud.asset.v1.AttachedResource value) {
+      if (attachedResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAttachedResourcesIsMutable();
+        attachedResources_.add(index, value);
+        onChanged();
+      } else {
+        attachedResourcesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Attached resources of this resource. For example, an OSConfig
+     * Inventory is an attached resource of a Compute Instance. This field is
+     * repeated because a resource could have multiple attached resources.
+     * This `attached_resources` field is not searchable. Some attributes
+     * of the attached resources are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+     */
+    public Builder addAttachedResources(
+        com.google.cloud.asset.v1.AttachedResource.Builder builderForValue) {
+      if (attachedResourcesBuilder_ == null) {
+        ensureAttachedResourcesIsMutable();
+        attachedResources_.add(builderForValue.build());
+        onChanged();
+      } else {
+        attachedResourcesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Attached resources of this resource. For example, an OSConfig
+     * Inventory is an attached resource of a Compute Instance. This field is
+     * repeated because a resource could have multiple attached resources.
+     * This `attached_resources` field is not searchable. Some attributes
+     * of the attached resources are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+     */
+    public Builder addAttachedResources(
+        int index, com.google.cloud.asset.v1.AttachedResource.Builder builderForValue) {
+      if (attachedResourcesBuilder_ == null) {
+        ensureAttachedResourcesIsMutable();
+        attachedResources_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        attachedResourcesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Attached resources of this resource. For example, an OSConfig
+     * Inventory is an attached resource of a Compute Instance. This field is
+     * repeated because a resource could have multiple attached resources.
+     * This `attached_resources` field is not searchable. Some attributes
+     * of the attached resources are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+     */
+    public Builder addAllAttachedResources(
+        java.lang.Iterable<? extends com.google.cloud.asset.v1.AttachedResource> values) {
+      if (attachedResourcesBuilder_ == null) {
+        ensureAttachedResourcesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, attachedResources_);
+        onChanged();
+      } else {
+        attachedResourcesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Attached resources of this resource. For example, an OSConfig
+     * Inventory is an attached resource of a Compute Instance. This field is
+     * repeated because a resource could have multiple attached resources.
+     * This `attached_resources` field is not searchable. Some attributes
+     * of the attached resources are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+     */
+    public Builder clearAttachedResources() {
+      if (attachedResourcesBuilder_ == null) {
+        attachedResources_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        attachedResourcesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Attached resources of this resource. For example, an OSConfig
+     * Inventory is an attached resource of a Compute Instance. This field is
+     * repeated because a resource could have multiple attached resources.
+     * This `attached_resources` field is not searchable. Some attributes
+     * of the attached resources are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+     */
+    public Builder removeAttachedResources(int index) {
+      if (attachedResourcesBuilder_ == null) {
+        ensureAttachedResourcesIsMutable();
+        attachedResources_.remove(index);
+        onChanged();
+      } else {
+        attachedResourcesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Attached resources of this resource. For example, an OSConfig
+     * Inventory is an attached resource of a Compute Instance. This field is
+     * repeated because a resource could have multiple attached resources.
+     * This `attached_resources` field is not searchable. Some attributes
+     * of the attached resources are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+     */
+    public com.google.cloud.asset.v1.AttachedResource.Builder getAttachedResourcesBuilder(
+        int index) {
+      return getAttachedResourcesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Attached resources of this resource. For example, an OSConfig
+     * Inventory is an attached resource of a Compute Instance. This field is
+     * repeated because a resource could have multiple attached resources.
+     * This `attached_resources` field is not searchable. Some attributes
+     * of the attached resources are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+     */
+    public com.google.cloud.asset.v1.AttachedResourceOrBuilder getAttachedResourcesOrBuilder(
+        int index) {
+      if (attachedResourcesBuilder_ == null) {
+        return attachedResources_.get(index);
+      } else {
+        return attachedResourcesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Attached resources of this resource. For example, an OSConfig
+     * Inventory is an attached resource of a Compute Instance. This field is
+     * repeated because a resource could have multiple attached resources.
+     * This `attached_resources` field is not searchable. Some attributes
+     * of the attached resources are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+     */
+    public java.util.List<? extends com.google.cloud.asset.v1.AttachedResourceOrBuilder>
+        getAttachedResourcesOrBuilderList() {
+      if (attachedResourcesBuilder_ != null) {
+        return attachedResourcesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(attachedResources_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Attached resources of this resource. For example, an OSConfig
+     * Inventory is an attached resource of a Compute Instance. This field is
+     * repeated because a resource could have multiple attached resources.
+     * This `attached_resources` field is not searchable. Some attributes
+     * of the attached resources are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+     */
+    public com.google.cloud.asset.v1.AttachedResource.Builder addAttachedResourcesBuilder() {
+      return getAttachedResourcesFieldBuilder()
+          .addBuilder(com.google.cloud.asset.v1.AttachedResource.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Attached resources of this resource. For example, an OSConfig
+     * Inventory is an attached resource of a Compute Instance. This field is
+     * repeated because a resource could have multiple attached resources.
+     * This `attached_resources` field is not searchable. Some attributes
+     * of the attached resources are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+     */
+    public com.google.cloud.asset.v1.AttachedResource.Builder addAttachedResourcesBuilder(
+        int index) {
+      return getAttachedResourcesFieldBuilder()
+          .addBuilder(index, com.google.cloud.asset.v1.AttachedResource.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Attached resources of this resource. For example, an OSConfig
+     * Inventory is an attached resource of a Compute Instance. This field is
+     * repeated because a resource could have multiple attached resources.
+     * This `attached_resources` field is not searchable. Some attributes
+     * of the attached resources are exposed in `additional_attributes` field, so
+     * as to allow users to search on them.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+     */
+    public java.util.List<com.google.cloud.asset.v1.AttachedResource.Builder>
+        getAttachedResourcesBuilderList() {
+      return getAttachedResourcesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.asset.v1.AttachedResource,
+            com.google.cloud.asset.v1.AttachedResource.Builder,
+            com.google.cloud.asset.v1.AttachedResourceOrBuilder>
+        getAttachedResourcesFieldBuilder() {
+      if (attachedResourcesBuilder_ == null) {
+        attachedResourcesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.asset.v1.AttachedResource,
+                com.google.cloud.asset.v1.AttachedResource.Builder,
+                com.google.cloud.asset.v1.AttachedResourceOrBuilder>(
+                attachedResources_,
+                ((bitField0_ & 0x00000010) != 0),
+                getParentForChildren(),
+                isClean());
+        attachedResources_ = null;
+      }
+      return attachedResourcesBuilder_;
     }
 
     private java.lang.Object parentAssetType_ = "";

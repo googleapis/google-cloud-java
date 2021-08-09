@@ -855,6 +855,160 @@ public interface ResourceSearchResultOrBuilder
    *
    *
    * <pre>
+   * Versioned resource representations of this resource. This is repeated
+   * because there could be multiple versions of resource representations during
+   * version migration.
+   * This `versioned_resources` field is not searchable. Some attributes of the
+   * resource representations are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+   */
+  java.util.List<com.google.cloud.asset.v1.VersionedResource> getVersionedResourcesList();
+  /**
+   *
+   *
+   * <pre>
+   * Versioned resource representations of this resource. This is repeated
+   * because there could be multiple versions of resource representations during
+   * version migration.
+   * This `versioned_resources` field is not searchable. Some attributes of the
+   * resource representations are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+   */
+  com.google.cloud.asset.v1.VersionedResource getVersionedResources(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Versioned resource representations of this resource. This is repeated
+   * because there could be multiple versions of resource representations during
+   * version migration.
+   * This `versioned_resources` field is not searchable. Some attributes of the
+   * resource representations are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+   */
+  int getVersionedResourcesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Versioned resource representations of this resource. This is repeated
+   * because there could be multiple versions of resource representations during
+   * version migration.
+   * This `versioned_resources` field is not searchable. Some attributes of the
+   * resource representations are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+   */
+  java.util.List<? extends com.google.cloud.asset.v1.VersionedResourceOrBuilder>
+      getVersionedResourcesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Versioned resource representations of this resource. This is repeated
+   * because there could be multiple versions of resource representations during
+   * version migration.
+   * This `versioned_resources` field is not searchable. Some attributes of the
+   * resource representations are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
+   */
+  com.google.cloud.asset.v1.VersionedResourceOrBuilder getVersionedResourcesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Attached resources of this resource. For example, an OSConfig
+   * Inventory is an attached resource of a Compute Instance. This field is
+   * repeated because a resource could have multiple attached resources.
+   * This `attached_resources` field is not searchable. Some attributes
+   * of the attached resources are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+   */
+  java.util.List<com.google.cloud.asset.v1.AttachedResource> getAttachedResourcesList();
+  /**
+   *
+   *
+   * <pre>
+   * Attached resources of this resource. For example, an OSConfig
+   * Inventory is an attached resource of a Compute Instance. This field is
+   * repeated because a resource could have multiple attached resources.
+   * This `attached_resources` field is not searchable. Some attributes
+   * of the attached resources are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+   */
+  com.google.cloud.asset.v1.AttachedResource getAttachedResources(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Attached resources of this resource. For example, an OSConfig
+   * Inventory is an attached resource of a Compute Instance. This field is
+   * repeated because a resource could have multiple attached resources.
+   * This `attached_resources` field is not searchable. Some attributes
+   * of the attached resources are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+   */
+  int getAttachedResourcesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Attached resources of this resource. For example, an OSConfig
+   * Inventory is an attached resource of a Compute Instance. This field is
+   * repeated because a resource could have multiple attached resources.
+   * This `attached_resources` field is not searchable. Some attributes
+   * of the attached resources are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+   */
+  java.util.List<? extends com.google.cloud.asset.v1.AttachedResourceOrBuilder>
+      getAttachedResourcesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Attached resources of this resource. For example, an OSConfig
+   * Inventory is an attached resource of a Compute Instance. This field is
+   * repeated because a resource could have multiple attached resources.
+   * This `attached_resources` field is not searchable. Some attributes
+   * of the attached resources are exposed in `additional_attributes` field, so
+   * as to allow users to search on them.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
+   */
+  com.google.cloud.asset.v1.AttachedResourceOrBuilder getAttachedResourcesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * The type of this resource's immediate parent, if there is one.
    * To search against the `parent_asset_type`:
    * * use a field query. Example:

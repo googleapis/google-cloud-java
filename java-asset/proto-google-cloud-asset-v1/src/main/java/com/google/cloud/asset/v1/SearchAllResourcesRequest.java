@@ -118,6 +118,21 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
               orderBy_ = s;
               break;
             }
+          case 66:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (readMask_ != null) {
+                subBuilder = readMask_.toBuilder();
+              }
+              readMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(readMask_);
+                readMask_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -248,8 +263,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *   encryption key whose name contains the word "key".
    * * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
    *   word.
-   * * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
-   *   doesn't contain "ACTIVE" as a word.
+   * * `NOT state:ACTIVE` to find Cloud resources whose state doesn't contain
+   *   "ACTIVE" as a word.
    * * `createTime&lt;1609459200` to find Cloud resources that were created before
    *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
    *   "2021-01-01 00:00:00 UTC" in seconds.
@@ -308,8 +323,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *   encryption key whose name contains the word "key".
    * * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
    *   word.
-   * * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
-   *   doesn't contain "ACTIVE" as a word.
+   * * `NOT state:ACTIVE` to find Cloud resources whose state doesn't contain
+   *   "ACTIVE" as a word.
    * * `createTime&lt;1609459200` to find Cloud resources that were created before
    *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
    *   "2021-01-01 00:00:00 UTC" in seconds.
@@ -607,6 +622,127 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     }
   }
 
+  public static final int READ_MASK_FIELD_NUMBER = 8;
+  private com.google.protobuf.FieldMask readMask_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A comma-separated list of fields specifying which fields to be returned in
+   * ResourceSearchResult. Only '*' or combination of top level fields can be
+   * specified. Field names of both snake_case and camelCase are supported.
+   * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   * The read_mask paths must be valid field paths listed but not limited to
+   * (both snake_case and camelCase are supported):
+   *   * name
+   *   * assetType
+   *   * project
+   *   * displayName
+   *   * description
+   *   * location
+   *   * labels
+   *   * networkTags
+   *   * kmsKey
+   *   * createTime
+   *   * updateTime
+   *   * state
+   *   * additionalAttributes
+   *   * versionedResources
+   * If read_mask is not specified, all fields except versionedResources will
+   * be returned.
+   * If only '*' is specified, all fields including versionedResources will be
+   * returned.
+   * Any invalid field path will trigger INVALID_ARGUMENT error.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the readMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasReadMask() {
+    return readMask_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A comma-separated list of fields specifying which fields to be returned in
+   * ResourceSearchResult. Only '*' or combination of top level fields can be
+   * specified. Field names of both snake_case and camelCase are supported.
+   * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   * The read_mask paths must be valid field paths listed but not limited to
+   * (both snake_case and camelCase are supported):
+   *   * name
+   *   * assetType
+   *   * project
+   *   * displayName
+   *   * description
+   *   * location
+   *   * labels
+   *   * networkTags
+   *   * kmsKey
+   *   * createTime
+   *   * updateTime
+   *   * state
+   *   * additionalAttributes
+   *   * versionedResources
+   * If read_mask is not specified, all fields except versionedResources will
+   * be returned.
+   * If only '*' is specified, all fields including versionedResources will be
+   * returned.
+   * Any invalid field path will trigger INVALID_ARGUMENT error.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The readMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getReadMask() {
+    return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A comma-separated list of fields specifying which fields to be returned in
+   * ResourceSearchResult. Only '*' or combination of top level fields can be
+   * specified. Field names of both snake_case and camelCase are supported.
+   * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   * The read_mask paths must be valid field paths listed but not limited to
+   * (both snake_case and camelCase are supported):
+   *   * name
+   *   * assetType
+   *   * project
+   *   * displayName
+   *   * description
+   *   * location
+   *   * labels
+   *   * networkTags
+   *   * kmsKey
+   *   * createTime
+   *   * updateTime
+   *   * state
+   *   * additionalAttributes
+   *   * versionedResources
+   * If read_mask is not specified, all fields except versionedResources will
+   * be returned.
+   * If only '*' is specified, all fields including versionedResources will be
+   * returned.
+   * Any invalid field path will trigger INVALID_ARGUMENT error.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder() {
+    return getReadMask();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -638,6 +774,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     }
     if (!getOrderByBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, orderBy_);
+    }
+    if (readMask_ != null) {
+      output.writeMessage(8, getReadMask());
     }
     unknownFields.writeTo(output);
   }
@@ -671,6 +810,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     if (!getOrderByBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, orderBy_);
     }
+    if (readMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getReadMask());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -693,6 +835,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
+    if (hasReadMask() != other.hasReadMask()) return false;
+    if (hasReadMask()) {
+      if (!getReadMask().equals(other.getReadMask())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -718,6 +864,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
     hash = (53 * hash) + getOrderBy().hashCode();
+    if (hasReadMask()) {
+      hash = (37 * hash) + READ_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getReadMask().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -875,6 +1025,12 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
 
       orderBy_ = "";
 
+      if (readMaskBuilder_ == null) {
+        readMask_ = null;
+      } else {
+        readMask_ = null;
+        readMaskBuilder_ = null;
+      }
       return this;
     }
 
@@ -913,6 +1069,11 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
       result.orderBy_ = orderBy_;
+      if (readMaskBuilder_ == null) {
+        result.readMask_ = readMask_;
+      } else {
+        result.readMask_ = readMaskBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -991,6 +1152,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       if (!other.getOrderBy().isEmpty()) {
         orderBy_ = other.orderBy_;
         onChanged();
+      }
+      if (other.hasReadMask()) {
+        mergeReadMask(other.getReadMask());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1197,8 +1361,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   encryption key whose name contains the word "key".
      * * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
      *   word.
-     * * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
-     *   doesn't contain "ACTIVE" as a word.
+     * * `NOT state:ACTIVE` to find Cloud resources whose state doesn't contain
+     *   "ACTIVE" as a word.
      * * `createTime&lt;1609459200` to find Cloud resources that were created before
      *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
      *   "2021-01-01 00:00:00 UTC" in seconds.
@@ -1256,8 +1420,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   encryption key whose name contains the word "key".
      * * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
      *   word.
-     * * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
-     *   doesn't contain "ACTIVE" as a word.
+     * * `NOT state:ACTIVE` to find Cloud resources whose state doesn't contain
+     *   "ACTIVE" as a word.
      * * `createTime&lt;1609459200` to find Cloud resources that were created before
      *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
      *   "2021-01-01 00:00:00 UTC" in seconds.
@@ -1315,8 +1479,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   encryption key whose name contains the word "key".
      * * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
      *   word.
-     * * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
-     *   doesn't contain "ACTIVE" as a word.
+     * * `NOT state:ACTIVE` to find Cloud resources whose state doesn't contain
+     *   "ACTIVE" as a word.
      * * `createTime&lt;1609459200` to find Cloud resources that were created before
      *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
      *   "2021-01-01 00:00:00 UTC" in seconds.
@@ -1373,8 +1537,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   encryption key whose name contains the word "key".
      * * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
      *   word.
-     * * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
-     *   doesn't contain "ACTIVE" as a word.
+     * * `NOT state:ACTIVE` to find Cloud resources whose state doesn't contain
+     *   "ACTIVE" as a word.
      * * `createTime&lt;1609459200` to find Cloud resources that were created before
      *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
      *   "2021-01-01 00:00:00 UTC" in seconds.
@@ -1427,8 +1591,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   encryption key whose name contains the word "key".
      * * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
      *   word.
-     * * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
-     *   doesn't contain "ACTIVE" as a word.
+     * * `NOT state:ACTIVE` to find Cloud resources whose state doesn't contain
+     *   "ACTIVE" as a word.
      * * `createTime&lt;1609459200` to find Cloud resources that were created before
      *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
      *   "2021-01-01 00:00:00 UTC" in seconds.
@@ -2100,6 +2264,410 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       orderBy_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.FieldMask readMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        readMaskBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A comma-separated list of fields specifying which fields to be returned in
+     * ResourceSearchResult. Only '*' or combination of top level fields can be
+     * specified. Field names of both snake_case and camelCase are supported.
+     * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     * The read_mask paths must be valid field paths listed but not limited to
+     * (both snake_case and camelCase are supported):
+     *   * name
+     *   * assetType
+     *   * project
+     *   * displayName
+     *   * description
+     *   * location
+     *   * labels
+     *   * networkTags
+     *   * kmsKey
+     *   * createTime
+     *   * updateTime
+     *   * state
+     *   * additionalAttributes
+     *   * versionedResources
+     * If read_mask is not specified, all fields except versionedResources will
+     * be returned.
+     * If only '*' is specified, all fields including versionedResources will be
+     * returned.
+     * Any invalid field path will trigger INVALID_ARGUMENT error.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the readMask field is set.
+     */
+    public boolean hasReadMask() {
+      return readMaskBuilder_ != null || readMask_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A comma-separated list of fields specifying which fields to be returned in
+     * ResourceSearchResult. Only '*' or combination of top level fields can be
+     * specified. Field names of both snake_case and camelCase are supported.
+     * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     * The read_mask paths must be valid field paths listed but not limited to
+     * (both snake_case and camelCase are supported):
+     *   * name
+     *   * assetType
+     *   * project
+     *   * displayName
+     *   * description
+     *   * location
+     *   * labels
+     *   * networkTags
+     *   * kmsKey
+     *   * createTime
+     *   * updateTime
+     *   * state
+     *   * additionalAttributes
+     *   * versionedResources
+     * If read_mask is not specified, all fields except versionedResources will
+     * be returned.
+     * If only '*' is specified, all fields including versionedResources will be
+     * returned.
+     * Any invalid field path will trigger INVALID_ARGUMENT error.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The readMask.
+     */
+    public com.google.protobuf.FieldMask getReadMask() {
+      if (readMaskBuilder_ == null) {
+        return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
+      } else {
+        return readMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A comma-separated list of fields specifying which fields to be returned in
+     * ResourceSearchResult. Only '*' or combination of top level fields can be
+     * specified. Field names of both snake_case and camelCase are supported.
+     * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     * The read_mask paths must be valid field paths listed but not limited to
+     * (both snake_case and camelCase are supported):
+     *   * name
+     *   * assetType
+     *   * project
+     *   * displayName
+     *   * description
+     *   * location
+     *   * labels
+     *   * networkTags
+     *   * kmsKey
+     *   * createTime
+     *   * updateTime
+     *   * state
+     *   * additionalAttributes
+     *   * versionedResources
+     * If read_mask is not specified, all fields except versionedResources will
+     * be returned.
+     * If only '*' is specified, all fields including versionedResources will be
+     * returned.
+     * Any invalid field path will trigger INVALID_ARGUMENT error.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setReadMask(com.google.protobuf.FieldMask value) {
+      if (readMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        readMask_ = value;
+        onChanged();
+      } else {
+        readMaskBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A comma-separated list of fields specifying which fields to be returned in
+     * ResourceSearchResult. Only '*' or combination of top level fields can be
+     * specified. Field names of both snake_case and camelCase are supported.
+     * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     * The read_mask paths must be valid field paths listed but not limited to
+     * (both snake_case and camelCase are supported):
+     *   * name
+     *   * assetType
+     *   * project
+     *   * displayName
+     *   * description
+     *   * location
+     *   * labels
+     *   * networkTags
+     *   * kmsKey
+     *   * createTime
+     *   * updateTime
+     *   * state
+     *   * additionalAttributes
+     *   * versionedResources
+     * If read_mask is not specified, all fields except versionedResources will
+     * be returned.
+     * If only '*' is specified, all fields including versionedResources will be
+     * returned.
+     * Any invalid field path will trigger INVALID_ARGUMENT error.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setReadMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (readMaskBuilder_ == null) {
+        readMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        readMaskBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A comma-separated list of fields specifying which fields to be returned in
+     * ResourceSearchResult. Only '*' or combination of top level fields can be
+     * specified. Field names of both snake_case and camelCase are supported.
+     * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     * The read_mask paths must be valid field paths listed but not limited to
+     * (both snake_case and camelCase are supported):
+     *   * name
+     *   * assetType
+     *   * project
+     *   * displayName
+     *   * description
+     *   * location
+     *   * labels
+     *   * networkTags
+     *   * kmsKey
+     *   * createTime
+     *   * updateTime
+     *   * state
+     *   * additionalAttributes
+     *   * versionedResources
+     * If read_mask is not specified, all fields except versionedResources will
+     * be returned.
+     * If only '*' is specified, all fields including versionedResources will be
+     * returned.
+     * Any invalid field path will trigger INVALID_ARGUMENT error.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeReadMask(com.google.protobuf.FieldMask value) {
+      if (readMaskBuilder_ == null) {
+        if (readMask_ != null) {
+          readMask_ =
+              com.google.protobuf.FieldMask.newBuilder(readMask_).mergeFrom(value).buildPartial();
+        } else {
+          readMask_ = value;
+        }
+        onChanged();
+      } else {
+        readMaskBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A comma-separated list of fields specifying which fields to be returned in
+     * ResourceSearchResult. Only '*' or combination of top level fields can be
+     * specified. Field names of both snake_case and camelCase are supported.
+     * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     * The read_mask paths must be valid field paths listed but not limited to
+     * (both snake_case and camelCase are supported):
+     *   * name
+     *   * assetType
+     *   * project
+     *   * displayName
+     *   * description
+     *   * location
+     *   * labels
+     *   * networkTags
+     *   * kmsKey
+     *   * createTime
+     *   * updateTime
+     *   * state
+     *   * additionalAttributes
+     *   * versionedResources
+     * If read_mask is not specified, all fields except versionedResources will
+     * be returned.
+     * If only '*' is specified, all fields including versionedResources will be
+     * returned.
+     * Any invalid field path will trigger INVALID_ARGUMENT error.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearReadMask() {
+      if (readMaskBuilder_ == null) {
+        readMask_ = null;
+        onChanged();
+      } else {
+        readMask_ = null;
+        readMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A comma-separated list of fields specifying which fields to be returned in
+     * ResourceSearchResult. Only '*' or combination of top level fields can be
+     * specified. Field names of both snake_case and camelCase are supported.
+     * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     * The read_mask paths must be valid field paths listed but not limited to
+     * (both snake_case and camelCase are supported):
+     *   * name
+     *   * assetType
+     *   * project
+     *   * displayName
+     *   * description
+     *   * location
+     *   * labels
+     *   * networkTags
+     *   * kmsKey
+     *   * createTime
+     *   * updateTime
+     *   * state
+     *   * additionalAttributes
+     *   * versionedResources
+     * If read_mask is not specified, all fields except versionedResources will
+     * be returned.
+     * If only '*' is specified, all fields including versionedResources will be
+     * returned.
+     * Any invalid field path will trigger INVALID_ARGUMENT error.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.FieldMask.Builder getReadMaskBuilder() {
+
+      onChanged();
+      return getReadMaskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A comma-separated list of fields specifying which fields to be returned in
+     * ResourceSearchResult. Only '*' or combination of top level fields can be
+     * specified. Field names of both snake_case and camelCase are supported.
+     * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     * The read_mask paths must be valid field paths listed but not limited to
+     * (both snake_case and camelCase are supported):
+     *   * name
+     *   * assetType
+     *   * project
+     *   * displayName
+     *   * description
+     *   * location
+     *   * labels
+     *   * networkTags
+     *   * kmsKey
+     *   * createTime
+     *   * updateTime
+     *   * state
+     *   * additionalAttributes
+     *   * versionedResources
+     * If read_mask is not specified, all fields except versionedResources will
+     * be returned.
+     * If only '*' is specified, all fields including versionedResources will be
+     * returned.
+     * Any invalid field path will trigger INVALID_ARGUMENT error.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder() {
+      if (readMaskBuilder_ != null) {
+        return readMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A comma-separated list of fields specifying which fields to be returned in
+     * ResourceSearchResult. Only '*' or combination of top level fields can be
+     * specified. Field names of both snake_case and camelCase are supported.
+     * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     * The read_mask paths must be valid field paths listed but not limited to
+     * (both snake_case and camelCase are supported):
+     *   * name
+     *   * assetType
+     *   * project
+     *   * displayName
+     *   * description
+     *   * location
+     *   * labels
+     *   * networkTags
+     *   * kmsKey
+     *   * createTime
+     *   * updateTime
+     *   * state
+     *   * additionalAttributes
+     *   * versionedResources
+     * If read_mask is not specified, all fields except versionedResources will
+     * be returned.
+     * If only '*' is specified, all fields including versionedResources will be
+     * returned.
+     * Any invalid field path will trigger INVALID_ARGUMENT error.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        getReadMaskFieldBuilder() {
+      if (readMaskBuilder_ == null) {
+        readMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getReadMask(), getParentForChildren(), isClean());
+        readMask_ = null;
+      }
+      return readMaskBuilder_;
     }
 
     @java.lang.Override

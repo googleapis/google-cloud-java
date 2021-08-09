@@ -524,7 +524,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * == true") will only publish Asset deletions. Other fields of `Expr` are
    * optional.
    * See our [user
-   * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+   * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
    * for detailed instructions.
    * </pre>
    *
@@ -549,7 +549,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * == true") will only publish Asset deletions. Other fields of `Expr` are
    * optional.
    * See our [user
-   * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+   * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
    * for detailed instructions.
    * </pre>
    *
@@ -574,7 +574,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * == true") will only publish Asset deletions. Other fields of `Expr` are
    * optional.
    * See our [user
-   * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+   * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
    * for detailed instructions.
    * </pre>
    *
@@ -1953,7 +1953,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
      * See our [user
-     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
      * </pre>
      *
@@ -1977,7 +1977,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
      * See our [user
-     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
      * </pre>
      *
@@ -2005,7 +2005,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
      * See our [user
-     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
      * </pre>
      *
@@ -2037,7 +2037,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
      * See our [user
-     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
      * </pre>
      *
@@ -2066,7 +2066,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
      * See our [user
-     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
      * </pre>
      *
@@ -2099,7 +2099,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
      * See our [user
-     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
      * </pre>
      *
@@ -2129,7 +2129,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
      * See our [user
-     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
      * </pre>
      *
@@ -2153,7 +2153,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
      * See our [user
-     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
      * </pre>
      *
@@ -2179,7 +2179,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
      * See our [user
-     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
      * </pre>
      *
