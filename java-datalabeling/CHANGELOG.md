@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.121.0](https://www.github.com/googleapis/java-datalabeling/compare/v0.120.2...v0.121.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#567)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#567](https://www.github.com/googleapis/java-datalabeling/issues/567)) ([a6f9f4e](https://www.github.com/googleapis/java-datalabeling/commit/a6f9f4e7dbea8354e57c6845a0770a65e232cb26))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-datalabeling/issues/1154)) ([#534](https://www.github.com/googleapis/java-datalabeling/issues/534)) ([9528a9f](https://www.github.com/googleapis/java-datalabeling/commit/9528a9f149dd2e5a8ab9bf628d9c13baffab65fd)), closes [#1146](https://www.github.com/googleapis/java-datalabeling/issues/1146) [#1147](https://www.github.com/googleapis/java-datalabeling/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#568](https://www.github.com/googleapis/java-datalabeling/issues/568)) ([4f38bc2](https://www.github.com/googleapis/java-datalabeling/commit/4f38bc2a8cbd418c612adf29ca456c43d7c6d22d))
+
 ### [0.120.2](https://www.github.com/googleapis/java-datalabeling/compare/v0.120.1...v0.120.2) (2021-07-01)
 
 
