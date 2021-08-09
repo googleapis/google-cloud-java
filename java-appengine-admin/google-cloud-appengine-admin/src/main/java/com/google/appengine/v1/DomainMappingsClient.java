@@ -16,7 +16,6 @@
 
 package com.google.appengine.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -576,12 +575,7 @@ public class DomainMappingsClient implements BackgroundResource {
           ListDomainMappingsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListDomainMappingsPage, ListDomainMappingsPagedResponse>() {
-            @Override
-            public ListDomainMappingsPagedResponse apply(ListDomainMappingsPage input) {
-              return new ListDomainMappingsPagedResponse(input);
-            }
-          },
+          input -> new ListDomainMappingsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

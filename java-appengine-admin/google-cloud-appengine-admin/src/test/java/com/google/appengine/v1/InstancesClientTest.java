@@ -144,7 +144,7 @@ public class InstancesClientTest {
   public void getInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[APP]", "[SERVICE]", "[VERSION]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setId("id3355")
             .setAppEngineRelease("appEngineRelease-1601369404")
             .setVmName("vmName-813643294")
@@ -240,7 +240,7 @@ public class InstancesClientTest {
   public void debugInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[APP]", "[SERVICE]", "[VERSION]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setId("id3355")
             .setAppEngineRelease("appEngineRelease-1601369404")
             .setVmName("vmName-813643294")

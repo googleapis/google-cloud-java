@@ -22,7 +22,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.appengine.v1.Application;
 import com.google.appengine.v1.CreateApplicationRequest;
@@ -36,7 +35,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -145,13 +143,10 @@ public class GrpcApplicationsStub extends ApplicationsStub {
         GrpcCallSettings.<GetApplicationRequest, Application>newBuilder()
             .setMethodDescriptor(getApplicationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetApplicationRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetApplicationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateApplicationRequest, Operation> createApplicationTransportSettings =
@@ -162,26 +157,20 @@ public class GrpcApplicationsStub extends ApplicationsStub {
         GrpcCallSettings.<UpdateApplicationRequest, Operation>newBuilder()
             .setMethodDescriptor(updateApplicationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateApplicationRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateApplicationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RepairApplicationRequest, Operation> repairApplicationTransportSettings =
         GrpcCallSettings.<RepairApplicationRequest, Operation>newBuilder()
             .setMethodDescriptor(repairApplicationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<RepairApplicationRequest>() {
-                  @Override
-                  public Map<String, String> extract(RepairApplicationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 

@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.appengine.v1.ListAuthorizedDomainsRequest;
 import com.google.appengine.v1.ListAuthorizedDomainsResponse;
@@ -32,7 +31,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -110,13 +108,10 @@ public class GrpcAuthorizedDomainsStub extends AuthorizedDomainsStub {
                 .<ListAuthorizedDomainsRequest, ListAuthorizedDomainsResponse>newBuilder()
                 .setMethodDescriptor(listAuthorizedDomainsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListAuthorizedDomainsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListAuthorizedDomainsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 

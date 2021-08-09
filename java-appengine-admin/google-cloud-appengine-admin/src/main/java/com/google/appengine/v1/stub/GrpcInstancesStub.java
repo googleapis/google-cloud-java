@@ -24,7 +24,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.appengine.v1.DebugInstanceRequest;
 import com.google.appengine.v1.DeleteInstanceRequest;
@@ -40,7 +39,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -147,52 +145,40 @@ public class GrpcInstancesStub extends InstancesStub {
         GrpcCallSettings.<ListInstancesRequest, ListInstancesResponse>newBuilder()
             .setMethodDescriptor(listInstancesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListInstancesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListInstancesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
             .setMethodDescriptor(getInstanceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetInstanceRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetInstanceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
         GrpcCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteInstanceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteInstanceRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteInstanceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DebugInstanceRequest, Operation> debugInstanceTransportSettings =
         GrpcCallSettings.<DebugInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(debugInstanceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DebugInstanceRequest>() {
-                  @Override
-                  public Map<String, String> extract(DebugInstanceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 

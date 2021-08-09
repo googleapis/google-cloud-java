@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.appengine.v1.BatchUpdateIngressRulesRequest;
 import com.google.appengine.v1.BatchUpdateIngressRulesResponse;
@@ -40,7 +39,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -171,13 +169,10 @@ public class GrpcFirewallStub extends FirewallStub {
             GrpcCallSettings.<ListIngressRulesRequest, ListIngressRulesResponse>newBuilder()
                 .setMethodDescriptor(listIngressRulesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListIngressRulesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListIngressRulesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<BatchUpdateIngressRulesRequest, BatchUpdateIngressRulesResponse>
@@ -186,65 +181,50 @@ public class GrpcFirewallStub extends FirewallStub {
                 .<BatchUpdateIngressRulesRequest, BatchUpdateIngressRulesResponse>newBuilder()
                 .setMethodDescriptor(batchUpdateIngressRulesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchUpdateIngressRulesRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchUpdateIngressRulesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateIngressRuleRequest, FirewallRule> createIngressRuleTransportSettings =
         GrpcCallSettings.<CreateIngressRuleRequest, FirewallRule>newBuilder()
             .setMethodDescriptor(createIngressRuleMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateIngressRuleRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateIngressRuleRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetIngressRuleRequest, FirewallRule> getIngressRuleTransportSettings =
         GrpcCallSettings.<GetIngressRuleRequest, FirewallRule>newBuilder()
             .setMethodDescriptor(getIngressRuleMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetIngressRuleRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetIngressRuleRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateIngressRuleRequest, FirewallRule> updateIngressRuleTransportSettings =
         GrpcCallSettings.<UpdateIngressRuleRequest, FirewallRule>newBuilder()
             .setMethodDescriptor(updateIngressRuleMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateIngressRuleRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateIngressRuleRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteIngressRuleRequest, Empty> deleteIngressRuleTransportSettings =
         GrpcCallSettings.<DeleteIngressRuleRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteIngressRuleMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteIngressRuleRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteIngressRuleRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 

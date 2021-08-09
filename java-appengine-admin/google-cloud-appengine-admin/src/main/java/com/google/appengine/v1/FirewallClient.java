@@ -16,7 +16,6 @@
 
 package com.google.appengine.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -534,12 +533,7 @@ public class FirewallClient implements BackgroundResource {
           ListIngressRulesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListIngressRulesPage, ListIngressRulesPagedResponse>() {
-            @Override
-            public ListIngressRulesPagedResponse apply(ListIngressRulesPage input) {
-              return new ListIngressRulesPagedResponse(input);
-            }
-          },
+          input -> new ListIngressRulesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
