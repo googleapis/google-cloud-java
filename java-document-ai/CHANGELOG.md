@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-document-ai/compare/v1.2.1...v2.0.0) (2021-08-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#574)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#574](https://www.github.com/googleapis/java-document-ai/issues/574)) ([c3418bd](https://www.github.com/googleapis/java-document-ai/commit/c3418bdbddfb99ff80c231500f031d95d4cd067c))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-document-ai/issues/1154)) ([#548](https://www.github.com/googleapis/java-document-ai/issues/548)) ([49bc6cf](https://www.github.com/googleapis/java-document-ai/commit/49bc6cfd1c1f734db488a7d3e5d2d2b9ab2c89d6)), closes [#1146](https://www.github.com/googleapis/java-document-ai/issues/1146) [#1147](https://www.github.com/googleapis/java-document-ai/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#575](https://www.github.com/googleapis/java-document-ai/issues/575)) ([c0866a0](https://www.github.com/googleapis/java-document-ai/commit/c0866a0caf3996f63de8f4e800da83373b4a9ebe))
+* update dependency com.google.cloud:google-cloud-storage to v2 ([#579](https://www.github.com/googleapis/java-document-ai/issues/579)) ([b52532b](https://www.github.com/googleapis/java-document-ai/commit/b52532bc9f50792e2ee16eab6217f6d1051118f8))
+
 ### [1.2.1](https://www.github.com/googleapis/java-document-ai/compare/v1.2.0...v1.2.1) (2021-07-14)
 
 
