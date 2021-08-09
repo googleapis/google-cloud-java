@@ -203,8 +203,8 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Token to retrieve the next page of results. It is set to empty if no items
-   * remain in results.
+   * Pagination token of the next results page. Empty if there are
+   * no more items in results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -227,8 +227,8 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Token to retrieve the next page of results. It is set to empty if no items
-   * remain in results.
+   * Pagination token of the next results page. Empty if there are
+   * no more items in results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -975,8 +975,8 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Token to retrieve the next page of results. It is set to empty if no items
-     * remain in results.
+     * Pagination token of the next results page. Empty if there are
+     * no more items in results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -998,8 +998,8 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Token to retrieve the next page of results. It is set to empty if no items
-     * remain in results.
+     * Pagination token of the next results page. Empty if there are
+     * no more items in results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1021,8 +1021,8 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Token to retrieve the next page of results. It is set to empty if no items
-     * remain in results.
+     * Pagination token of the next results page. Empty if there are
+     * no more items in results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1043,8 +1043,8 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Token to retrieve the next page of results. It is set to empty if no items
-     * remain in results.
+     * Pagination token of the next results page. Empty if there are
+     * no more items in results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1061,8 +1061,8 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Token to retrieve the next page of results. It is set to empty if no items
-     * remain in results.
+     * Pagination token of the next results page. Empty if there are
+     * no more items in results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

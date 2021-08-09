@@ -27,8 +27,8 @@ public interface UpdateTaxonomyRequestOrBuilder
    *
    *
    * <pre>
-   * The taxonomy to update. Only description, display_name, and activated
-   * policy types can be updated.
+   * The taxonomy to update. You can update only its description, display name,
+   * and activated policy types.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 1;</code>
@@ -40,8 +40,8 @@ public interface UpdateTaxonomyRequestOrBuilder
    *
    *
    * <pre>
-   * The taxonomy to update. Only description, display_name, and activated
-   * policy types can be updated.
+   * The taxonomy to update. You can update only its description, display name,
+   * and activated policy types.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 1;</code>
@@ -53,8 +53,8 @@ public interface UpdateTaxonomyRequestOrBuilder
    *
    *
    * <pre>
-   * The taxonomy to update. Only description, display_name, and activated
-   * policy types can be updated.
+   * The taxonomy to update. You can update only its description, display name,
+   * and activated policy types.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 1;</code>
@@ -65,10 +65,10 @@ public interface UpdateTaxonomyRequestOrBuilder
    *
    *
    * <pre>
-   * The update mask applies to the resource. For the `FieldMask` definition,
-   * see
-   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-   * If not set, defaults to all of the fields that are allowed to update.
+   * Specifies fields to update. If not set, defaults to all fields you can
+   * update.
+   * For more information, see [FieldMask]
+   * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -80,10 +80,10 @@ public interface UpdateTaxonomyRequestOrBuilder
    *
    *
    * <pre>
-   * The update mask applies to the resource. For the `FieldMask` definition,
-   * see
-   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-   * If not set, defaults to all of the fields that are allowed to update.
+   * Specifies fields to update. If not set, defaults to all fields you can
+   * update.
+   * For more information, see [FieldMask]
+   * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -95,10 +95,10 @@ public interface UpdateTaxonomyRequestOrBuilder
    *
    *
    * <pre>
-   * The update mask applies to the resource. For the `FieldMask` definition,
-   * see
-   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-   * If not set, defaults to all of the fields that are allowed to update.
+   * Specifies fields to update. If not set, defaults to all fields you can
+   * update.
+   * For more information, see [FieldMask]
+   * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

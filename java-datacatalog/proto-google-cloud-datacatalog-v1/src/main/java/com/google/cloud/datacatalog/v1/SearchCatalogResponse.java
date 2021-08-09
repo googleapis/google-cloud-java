@@ -220,7 +220,8 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The token that can be used to retrieve the next page of results.
+   * Pagination token that can be used in subsequent calls to retrieve the next
+   * page of results.
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
@@ -243,7 +244,8 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The token that can be used to retrieve the next page of results.
+   * Pagination token that can be used in subsequent calls to retrieve the next
+   * page of results.
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
@@ -269,10 +271,11 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Unreachable locations. Search result does not include data from those
-   * locations. Users can get additional information on the error by repeating
-   * the search request with a more restrictive parameter -- setting the value
-   * for `SearchDataCatalogRequest.scope.restricted_locations`.
+   * Unreachable locations. Search results don't include data from those
+   * locations.
+   * To get additional information on an error, repeat the search request and
+   * restrict it to specific locations by setting the
+   * `SearchCatalogRequest.scope.restricted_locations` parameter.
    * </pre>
    *
    * <code>repeated string unreachable = 6;</code>
@@ -286,10 +289,11 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Unreachable locations. Search result does not include data from those
-   * locations. Users can get additional information on the error by repeating
-   * the search request with a more restrictive parameter -- setting the value
-   * for `SearchDataCatalogRequest.scope.restricted_locations`.
+   * Unreachable locations. Search results don't include data from those
+   * locations.
+   * To get additional information on an error, repeat the search request and
+   * restrict it to specific locations by setting the
+   * `SearchCatalogRequest.scope.restricted_locations` parameter.
    * </pre>
    *
    * <code>repeated string unreachable = 6;</code>
@@ -303,10 +307,11 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Unreachable locations. Search result does not include data from those
-   * locations. Users can get additional information on the error by repeating
-   * the search request with a more restrictive parameter -- setting the value
-   * for `SearchDataCatalogRequest.scope.restricted_locations`.
+   * Unreachable locations. Search results don't include data from those
+   * locations.
+   * To get additional information on an error, repeat the search request and
+   * restrict it to specific locations by setting the
+   * `SearchCatalogRequest.scope.restricted_locations` parameter.
    * </pre>
    *
    * <code>repeated string unreachable = 6;</code>
@@ -321,10 +326,11 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Unreachable locations. Search result does not include data from those
-   * locations. Users can get additional information on the error by repeating
-   * the search request with a more restrictive parameter -- setting the value
-   * for `SearchDataCatalogRequest.scope.restricted_locations`.
+   * Unreachable locations. Search results don't include data from those
+   * locations.
+   * To get additional information on an error, repeat the search request and
+   * restrict it to specific locations by setting the
+   * `SearchCatalogRequest.scope.restricted_locations` parameter.
    * </pre>
    *
    * <code>repeated string unreachable = 6;</code>
@@ -1109,7 +1115,8 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The token that can be used to retrieve the next page of results.
+     * Pagination token that can be used in subsequent calls to retrieve the next
+     * page of results.
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
@@ -1131,7 +1138,8 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The token that can be used to retrieve the next page of results.
+     * Pagination token that can be used in subsequent calls to retrieve the next
+     * page of results.
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
@@ -1153,7 +1161,8 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The token that can be used to retrieve the next page of results.
+     * Pagination token that can be used in subsequent calls to retrieve the next
+     * page of results.
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
@@ -1174,7 +1183,8 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The token that can be used to retrieve the next page of results.
+     * Pagination token that can be used in subsequent calls to retrieve the next
+     * page of results.
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
@@ -1191,7 +1201,8 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The token that can be used to retrieve the next page of results.
+     * Pagination token that can be used in subsequent calls to retrieve the next
+     * page of results.
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
@@ -1223,10 +1234,11 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Unreachable locations. Search result does not include data from those
-     * locations. Users can get additional information on the error by repeating
-     * the search request with a more restrictive parameter -- setting the value
-     * for `SearchDataCatalogRequest.scope.restricted_locations`.
+     * Unreachable locations. Search results don't include data from those
+     * locations.
+     * To get additional information on an error, repeat the search request and
+     * restrict it to specific locations by setting the
+     * `SearchCatalogRequest.scope.restricted_locations` parameter.
      * </pre>
      *
      * <code>repeated string unreachable = 6;</code>
@@ -1240,10 +1252,11 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Unreachable locations. Search result does not include data from those
-     * locations. Users can get additional information on the error by repeating
-     * the search request with a more restrictive parameter -- setting the value
-     * for `SearchDataCatalogRequest.scope.restricted_locations`.
+     * Unreachable locations. Search results don't include data from those
+     * locations.
+     * To get additional information on an error, repeat the search request and
+     * restrict it to specific locations by setting the
+     * `SearchCatalogRequest.scope.restricted_locations` parameter.
      * </pre>
      *
      * <code>repeated string unreachable = 6;</code>
@@ -1257,10 +1270,11 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Unreachable locations. Search result does not include data from those
-     * locations. Users can get additional information on the error by repeating
-     * the search request with a more restrictive parameter -- setting the value
-     * for `SearchDataCatalogRequest.scope.restricted_locations`.
+     * Unreachable locations. Search results don't include data from those
+     * locations.
+     * To get additional information on an error, repeat the search request and
+     * restrict it to specific locations by setting the
+     * `SearchCatalogRequest.scope.restricted_locations` parameter.
      * </pre>
      *
      * <code>repeated string unreachable = 6;</code>
@@ -1275,10 +1289,11 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Unreachable locations. Search result does not include data from those
-     * locations. Users can get additional information on the error by repeating
-     * the search request with a more restrictive parameter -- setting the value
-     * for `SearchDataCatalogRequest.scope.restricted_locations`.
+     * Unreachable locations. Search results don't include data from those
+     * locations.
+     * To get additional information on an error, repeat the search request and
+     * restrict it to specific locations by setting the
+     * `SearchCatalogRequest.scope.restricted_locations` parameter.
      * </pre>
      *
      * <code>repeated string unreachable = 6;</code>
@@ -1293,10 +1308,11 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Unreachable locations. Search result does not include data from those
-     * locations. Users can get additional information on the error by repeating
-     * the search request with a more restrictive parameter -- setting the value
-     * for `SearchDataCatalogRequest.scope.restricted_locations`.
+     * Unreachable locations. Search results don't include data from those
+     * locations.
+     * To get additional information on an error, repeat the search request and
+     * restrict it to specific locations by setting the
+     * `SearchCatalogRequest.scope.restricted_locations` parameter.
      * </pre>
      *
      * <code>repeated string unreachable = 6;</code>
@@ -1318,10 +1334,11 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Unreachable locations. Search result does not include data from those
-     * locations. Users can get additional information on the error by repeating
-     * the search request with a more restrictive parameter -- setting the value
-     * for `SearchDataCatalogRequest.scope.restricted_locations`.
+     * Unreachable locations. Search results don't include data from those
+     * locations.
+     * To get additional information on an error, repeat the search request and
+     * restrict it to specific locations by setting the
+     * `SearchCatalogRequest.scope.restricted_locations` parameter.
      * </pre>
      *
      * <code>repeated string unreachable = 6;</code>
@@ -1342,10 +1359,11 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Unreachable locations. Search result does not include data from those
-     * locations. Users can get additional information on the error by repeating
-     * the search request with a more restrictive parameter -- setting the value
-     * for `SearchDataCatalogRequest.scope.restricted_locations`.
+     * Unreachable locations. Search results don't include data from those
+     * locations.
+     * To get additional information on an error, repeat the search request and
+     * restrict it to specific locations by setting the
+     * `SearchCatalogRequest.scope.restricted_locations` parameter.
      * </pre>
      *
      * <code>repeated string unreachable = 6;</code>
@@ -1363,10 +1381,11 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Unreachable locations. Search result does not include data from those
-     * locations. Users can get additional information on the error by repeating
-     * the search request with a more restrictive parameter -- setting the value
-     * for `SearchDataCatalogRequest.scope.restricted_locations`.
+     * Unreachable locations. Search results don't include data from those
+     * locations.
+     * To get additional information on an error, repeat the search request and
+     * restrict it to specific locations by setting the
+     * `SearchCatalogRequest.scope.restricted_locations` parameter.
      * </pre>
      *
      * <code>repeated string unreachable = 6;</code>
@@ -1383,10 +1402,11 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Unreachable locations. Search result does not include data from those
-     * locations. Users can get additional information on the error by repeating
-     * the search request with a more restrictive parameter -- setting the value
-     * for `SearchDataCatalogRequest.scope.restricted_locations`.
+     * Unreachable locations. Search results don't include data from those
+     * locations.
+     * To get additional information on an error, repeat the search request and
+     * restrict it to specific locations by setting the
+     * `SearchCatalogRequest.scope.restricted_locations` parameter.
      * </pre>
      *
      * <code>repeated string unreachable = 6;</code>

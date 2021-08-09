@@ -52,8 +52,8 @@ public interface SerializedTaxonomyOrBuilder
    *
    *
    * <pre>
-   * Description of the serialized taxonomy. At most 2000 bytes when encoded in
-   * UTF-8. If not set, defaults to an empty description.
+   * Description of the serialized taxonomy. At most 2000 bytes when
+   * encoded in UTF-8. If not set, defaults to an empty description.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -65,8 +65,8 @@ public interface SerializedTaxonomyOrBuilder
    *
    *
    * <pre>
-   * Description of the serialized taxonomy. At most 2000 bytes when encoded in
-   * UTF-8. If not set, defaults to an empty description.
+   * Description of the serialized taxonomy. At most 2000 bytes when
+   * encoded in UTF-8. If not set, defaults to an empty description.
    * </pre>
    *
    * <code>string description = 2;</code>

@@ -27,8 +27,7 @@ public interface DeleteEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the entry. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   * Required. The name of the entry to delete.
    * </pre>
    *
    * <code>
@@ -42,8 +41,7 @@ public interface DeleteEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the entry. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   * Required. The name of the entry to delete.
    * </pre>
    *
    * <code>

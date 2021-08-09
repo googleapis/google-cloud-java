@@ -27,7 +27,7 @@ public interface ExportTaxonomiesResponseOrBuilder
    *
    *
    * <pre>
-   * List of taxonomies and policy tags as nested protos.
+   * List of taxonomies and policy tags as nested protocol buffers.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -37,7 +37,7 @@ public interface ExportTaxonomiesResponseOrBuilder
    *
    *
    * <pre>
-   * List of taxonomies and policy tags as nested protos.
+   * List of taxonomies and policy tags as nested protocol buffers.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -47,7 +47,7 @@ public interface ExportTaxonomiesResponseOrBuilder
    *
    *
    * <pre>
-   * List of taxonomies and policy tags as nested protos.
+   * List of taxonomies and policy tags as nested protocol buffers.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -57,7 +57,7 @@ public interface ExportTaxonomiesResponseOrBuilder
    *
    *
    * <pre>
-   * List of taxonomies and policy tags as nested protos.
+   * List of taxonomies and policy tags as nested protocol buffers.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -68,7 +68,7 @@ public interface ExportTaxonomiesResponseOrBuilder
    *
    *
    * <pre>
-   * List of taxonomies and policy tags as nested protos.
+   * List of taxonomies and policy tags as nested protocol buffers.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>

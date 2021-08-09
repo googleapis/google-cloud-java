@@ -56,7 +56,7 @@ public interface CreateTaxonomyRequestOrBuilder
    *
    *
    * <pre>
-   * The taxonomy to be created.
+   * The taxonomy to create.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>
@@ -68,7 +68,7 @@ public interface CreateTaxonomyRequestOrBuilder
    *
    *
    * <pre>
-   * The taxonomy to be created.
+   * The taxonomy to create.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>
@@ -80,7 +80,7 @@ public interface CreateTaxonomyRequestOrBuilder
    *
    *
    * <pre>
-   * The taxonomy to be created.
+   * The taxonomy to create.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>

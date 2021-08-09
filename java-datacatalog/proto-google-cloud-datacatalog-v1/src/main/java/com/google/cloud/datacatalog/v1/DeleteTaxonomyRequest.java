@@ -118,8 +118,8 @@ public final class DeleteTaxonomyRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Resource name of the taxonomy to be deleted. All policy tags in
-   * this taxonomy will also be deleted.
+   * Required. Resource name of the taxonomy to delete.
+   * Note: All policy tags in this taxonomy are also deleted.
    * </pre>
    *
    * <code>
@@ -144,8 +144,8 @@ public final class DeleteTaxonomyRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Resource name of the taxonomy to be deleted. All policy tags in
-   * this taxonomy will also be deleted.
+   * Required. Resource name of the taxonomy to delete.
+   * Note: All policy tags in this taxonomy are also deleted.
    * </pre>
    *
    * <code>
@@ -492,8 +492,8 @@ public final class DeleteTaxonomyRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Resource name of the taxonomy to be deleted. All policy tags in
-     * this taxonomy will also be deleted.
+     * Required. Resource name of the taxonomy to delete.
+     * Note: All policy tags in this taxonomy are also deleted.
      * </pre>
      *
      * <code>
@@ -517,8 +517,8 @@ public final class DeleteTaxonomyRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Resource name of the taxonomy to be deleted. All policy tags in
-     * this taxonomy will also be deleted.
+     * Required. Resource name of the taxonomy to delete.
+     * Note: All policy tags in this taxonomy are also deleted.
      * </pre>
      *
      * <code>
@@ -542,8 +542,8 @@ public final class DeleteTaxonomyRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Resource name of the taxonomy to be deleted. All policy tags in
-     * this taxonomy will also be deleted.
+     * Required. Resource name of the taxonomy to delete.
+     * Note: All policy tags in this taxonomy are also deleted.
      * </pre>
      *
      * <code>
@@ -566,8 +566,8 @@ public final class DeleteTaxonomyRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Resource name of the taxonomy to be deleted. All policy tags in
-     * this taxonomy will also be deleted.
+     * Required. Resource name of the taxonomy to delete.
+     * Note: All policy tags in this taxonomy are also deleted.
      * </pre>
      *
      * <code>
@@ -586,8 +586,8 @@ public final class DeleteTaxonomyRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Resource name of the taxonomy to be deleted. All policy tags in
-     * this taxonomy will also be deleted.
+     * Required. Resource name of the taxonomy to delete.
+     * Note: All policy tags in this taxonomy are also deleted.
      * </pre>
      *
      * <code>

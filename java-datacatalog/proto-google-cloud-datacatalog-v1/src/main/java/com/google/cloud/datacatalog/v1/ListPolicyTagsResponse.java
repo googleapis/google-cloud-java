@@ -134,7 +134,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The policy tags that are in the requested taxonomy.
+   * The policy tags that belong to the taxonomy.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -147,7 +147,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The policy tags that are in the requested taxonomy.
+   * The policy tags that belong to the taxonomy.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -161,7 +161,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The policy tags that are in the requested taxonomy.
+   * The policy tags that belong to the taxonomy.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -174,7 +174,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The policy tags that are in the requested taxonomy.
+   * The policy tags that belong to the taxonomy.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -187,7 +187,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The policy tags that are in the requested taxonomy.
+   * The policy tags that belong to the taxonomy.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -203,7 +203,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Token used to retrieve the next page of results, or empty if there are no
+   * Pagination token of the next results page. Empty if there are no
    * more results in the list.
    * </pre>
    *
@@ -227,7 +227,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Token used to retrieve the next page of results, or empty if there are no
+   * Pagination token of the next results page. Empty if there are no
    * more results in the list.
    * </pre>
    *
@@ -647,7 +647,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -663,7 +663,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -679,7 +679,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -695,7 +695,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -717,7 +717,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -737,7 +737,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -759,7 +759,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -781,7 +781,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -801,7 +801,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -821,7 +821,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -841,7 +841,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -860,7 +860,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -879,7 +879,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -891,7 +891,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -907,7 +907,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -924,7 +924,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -937,7 +937,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -950,7 +950,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -982,7 +982,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Token used to retrieve the next page of results, or empty if there are no
+     * Pagination token of the next results page. Empty if there are no
      * more results in the list.
      * </pre>
      *
@@ -1005,7 +1005,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Token used to retrieve the next page of results, or empty if there are no
+     * Pagination token of the next results page. Empty if there are no
      * more results in the list.
      * </pre>
      *
@@ -1028,7 +1028,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Token used to retrieve the next page of results, or empty if there are no
+     * Pagination token of the next results page. Empty if there are no
      * more results in the list.
      * </pre>
      *
@@ -1050,7 +1050,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Token used to retrieve the next page of results, or empty if there are no
+     * Pagination token of the next results page. Empty if there are no
      * more results in the list.
      * </pre>
      *
@@ -1068,7 +1068,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Token used to retrieve the next page of results, or empty if there are no
+     * Pagination token of the next results page. Empty if there are no
      * more results in the list.
      * </pre>
      *

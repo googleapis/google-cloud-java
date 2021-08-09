@@ -78,6 +78,58 @@ public class PolicyTagManagerSerializationClientTest {
   }
 
   @Test
+  public void replaceTaxonomyTest() throws Exception {
+    Taxonomy expectedResponse =
+        Taxonomy.newBuilder()
+            .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setPolicyTagCount(1074340189)
+            .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
+            .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .build();
+    mockPolicyTagManagerSerialization.addResponse(expectedResponse);
+
+    ReplaceTaxonomyRequest request =
+        ReplaceTaxonomyRequest.newBuilder()
+            .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+            .setSerializedTaxonomy(SerializedTaxonomy.newBuilder().build())
+            .build();
+
+    Taxonomy actualResponse = client.replaceTaxonomy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPolicyTagManagerSerialization.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ReplaceTaxonomyRequest actualRequest = ((ReplaceTaxonomyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getSerializedTaxonomy(), actualRequest.getSerializedTaxonomy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void replaceTaxonomyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPolicyTagManagerSerialization.addException(exception);
+
+    try {
+      ReplaceTaxonomyRequest request =
+          ReplaceTaxonomyRequest.newBuilder()
+              .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+              .setSerializedTaxonomy(SerializedTaxonomy.newBuilder().build())
+              .build();
+      client.replaceTaxonomy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void importTaxonomiesTest() throws Exception {
     ImportTaxonomiesResponse expectedResponse =
         ImportTaxonomiesResponse.newBuilder().addAllTaxonomies(new ArrayList<Taxonomy>()).build();

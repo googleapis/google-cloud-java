@@ -118,7 +118,7 @@ public final class GetPolicyTagRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Resource name of the requested policy tag.
+   * Required. Resource name of the policy tag.
    * </pre>
    *
    * <code>
@@ -143,7 +143,7 @@ public final class GetPolicyTagRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Resource name of the requested policy tag.
+   * Required. Resource name of the policy tag.
    * </pre>
    *
    * <code>
@@ -489,7 +489,7 @@ public final class GetPolicyTagRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Resource name of the requested policy tag.
+     * Required. Resource name of the policy tag.
      * </pre>
      *
      * <code>
@@ -513,7 +513,7 @@ public final class GetPolicyTagRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Resource name of the requested policy tag.
+     * Required. Resource name of the policy tag.
      * </pre>
      *
      * <code>
@@ -537,7 +537,7 @@ public final class GetPolicyTagRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Resource name of the requested policy tag.
+     * Required. Resource name of the policy tag.
      * </pre>
      *
      * <code>
@@ -560,7 +560,7 @@ public final class GetPolicyTagRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Resource name of the requested policy tag.
+     * Required. Resource name of the policy tag.
      * </pre>
      *
      * <code>
@@ -579,7 +579,7 @@ public final class GetPolicyTagRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Resource name of the requested policy tag.
+     * Required. Resource name of the policy tag.
      * </pre>
      *
      * <code>

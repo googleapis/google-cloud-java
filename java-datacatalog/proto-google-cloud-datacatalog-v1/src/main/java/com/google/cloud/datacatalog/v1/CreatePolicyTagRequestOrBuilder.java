@@ -27,7 +27,8 @@ public interface CreatePolicyTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the taxonomy that the policy tag will belong to.
+   * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
+   * /&gt;
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface CreatePolicyTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the taxonomy that the policy tag will belong to.
+   * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
+   * /&gt;
    * </pre>
    *
    * <code>
@@ -56,7 +58,7 @@ public interface CreatePolicyTagRequestOrBuilder
    *
    *
    * <pre>
-   * The policy tag to be created.
+   * The policy tag to create.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 2;</code>
@@ -68,7 +70,7 @@ public interface CreatePolicyTagRequestOrBuilder
    *
    *
    * <pre>
-   * The policy tag to be created.
+   * The policy tag to create.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 2;</code>
@@ -80,7 +82,7 @@ public interface CreatePolicyTagRequestOrBuilder
    *
    *
    * <pre>
-   * The policy tag to be created.
+   * The policy tag to create.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 2;</code>

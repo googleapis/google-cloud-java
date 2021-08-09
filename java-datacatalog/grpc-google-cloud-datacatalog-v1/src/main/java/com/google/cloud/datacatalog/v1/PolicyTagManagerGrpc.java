@@ -21,7 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Policy Tag Manager API service allows clients to manage their policy tags and
+ * Policy Tag Manager API service allows you to manage your policy tags and
  * taxonomies.
  * Policy tags are used to tag BigQuery columns and apply additional access
  * control policies. A taxonomy is a hierarchical grouping of policy tags that
@@ -661,7 +661,7 @@ public final class PolicyTagManagerGrpc {
    *
    *
    * <pre>
-   * Policy Tag Manager API service allows clients to manage their policy tags and
+   * Policy Tag Manager API service allows you to manage your policy tags and
    * taxonomies.
    * Policy tags are used to tag BigQuery columns and apply additional access
    * control policies. A taxonomy is a hierarchical grouping of policy tags that
@@ -674,8 +674,8 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Creates a taxonomy in a specified project. The taxonomy is initially empty,
-     * i.e., does not contain policy tags.
+     * Creates a taxonomy in a specified project.
+     * The taxonomy is initially empty, that is, it doesn't contain policy tags.
      * </pre>
      */
     public void createTaxonomy(
@@ -689,7 +689,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Deletes a taxonomy. This method will also delete all policy tags in this
+     * Deletes a taxonomy, including all policy tags in this
      * taxonomy, their associated policies, and the policy tags references from
      * BigQuery columns.
      * </pre>
@@ -705,7 +705,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Updates a taxonomy. This method can update the taxonomy's display name,
+     * Updates a taxonomy, including its display name,
      * description, and activated policy types.
      * </pre>
      */
@@ -720,8 +720,8 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Lists all taxonomies in a project in a particular location that the caller
-     * has permission to view.
+     * Lists all taxonomies in a project in a particular location that you
+     * have a permission to view.
      * </pre>
      */
     public void listTaxonomies(
@@ -764,11 +764,11 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Deletes a policy tag. This method also deletes:
-     * * all of its descendant policy tags, if any
-     * * the policies associated with the policy tag and its descendants
-     * * references from BigQuery table schema of the policy tag and its
-     *   descendants.
+     * Deletes a policy tag together with the following:
+     * * All of its descendant policy tags, if any
+     * * Policies associated with the policy tag and its descendants
+     * * References from BigQuery table schema of the policy tag and its
+     *   descendants
      * </pre>
      */
     public void deletePolicyTag(
@@ -782,7 +782,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Updates a policy tag. This method can update the policy tag's display
+     * Updates a policy tag, including its display
      * name, description, and parent policy tag.
      * </pre>
      */
@@ -854,7 +854,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Returns the permissions that a caller has on a specified policy tag or
+     * Returns your permissions on a specified policy tag or
      * taxonomy.
      * </pre>
      */
@@ -958,7 +958,7 @@ public final class PolicyTagManagerGrpc {
    *
    *
    * <pre>
-   * Policy Tag Manager API service allows clients to manage their policy tags and
+   * Policy Tag Manager API service allows you to manage your policy tags and
    * taxonomies.
    * Policy tags are used to tag BigQuery columns and apply additional access
    * control policies. A taxonomy is a hierarchical grouping of policy tags that
@@ -980,8 +980,8 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Creates a taxonomy in a specified project. The taxonomy is initially empty,
-     * i.e., does not contain policy tags.
+     * Creates a taxonomy in a specified project.
+     * The taxonomy is initially empty, that is, it doesn't contain policy tags.
      * </pre>
      */
     public void createTaxonomy(
@@ -997,7 +997,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Deletes a taxonomy. This method will also delete all policy tags in this
+     * Deletes a taxonomy, including all policy tags in this
      * taxonomy, their associated policies, and the policy tags references from
      * BigQuery columns.
      * </pre>
@@ -1015,7 +1015,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Updates a taxonomy. This method can update the taxonomy's display name,
+     * Updates a taxonomy, including its display name,
      * description, and activated policy types.
      * </pre>
      */
@@ -1032,8 +1032,8 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Lists all taxonomies in a project in a particular location that the caller
-     * has permission to view.
+     * Lists all taxonomies in a project in a particular location that you
+     * have a permission to view.
      * </pre>
      */
     public void listTaxonomies(
@@ -1082,11 +1082,11 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Deletes a policy tag. This method also deletes:
-     * * all of its descendant policy tags, if any
-     * * the policies associated with the policy tag and its descendants
-     * * references from BigQuery table schema of the policy tag and its
-     *   descendants.
+     * Deletes a policy tag together with the following:
+     * * All of its descendant policy tags, if any
+     * * Policies associated with the policy tag and its descendants
+     * * References from BigQuery table schema of the policy tag and its
+     *   descendants
      * </pre>
      */
     public void deletePolicyTag(
@@ -1102,7 +1102,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Updates a policy tag. This method can update the policy tag's display
+     * Updates a policy tag, including its display
      * name, description, and parent policy tag.
      * </pre>
      */
@@ -1184,7 +1184,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Returns the permissions that a caller has on a specified policy tag or
+     * Returns your permissions on a specified policy tag or
      * taxonomy.
      * </pre>
      */
@@ -1203,7 +1203,7 @@ public final class PolicyTagManagerGrpc {
    *
    *
    * <pre>
-   * Policy Tag Manager API service allows clients to manage their policy tags and
+   * Policy Tag Manager API service allows you to manage your policy tags and
    * taxonomies.
    * Policy tags are used to tag BigQuery columns and apply additional access
    * control policies. A taxonomy is a hierarchical grouping of policy tags that
@@ -1226,8 +1226,8 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Creates a taxonomy in a specified project. The taxonomy is initially empty,
-     * i.e., does not contain policy tags.
+     * Creates a taxonomy in a specified project.
+     * The taxonomy is initially empty, that is, it doesn't contain policy tags.
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.Taxonomy createTaxonomy(
@@ -1240,7 +1240,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Deletes a taxonomy. This method will also delete all policy tags in this
+     * Deletes a taxonomy, including all policy tags in this
      * taxonomy, their associated policies, and the policy tags references from
      * BigQuery columns.
      * </pre>
@@ -1255,7 +1255,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Updates a taxonomy. This method can update the taxonomy's display name,
+     * Updates a taxonomy, including its display name,
      * description, and activated policy types.
      * </pre>
      */
@@ -1269,8 +1269,8 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Lists all taxonomies in a project in a particular location that the caller
-     * has permission to view.
+     * Lists all taxonomies in a project in a particular location that you
+     * have a permission to view.
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.ListTaxonomiesResponse listTaxonomies(
@@ -1309,11 +1309,11 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Deletes a policy tag. This method also deletes:
-     * * all of its descendant policy tags, if any
-     * * the policies associated with the policy tag and its descendants
-     * * references from BigQuery table schema of the policy tag and its
-     *   descendants.
+     * Deletes a policy tag together with the following:
+     * * All of its descendant policy tags, if any
+     * * Policies associated with the policy tag and its descendants
+     * * References from BigQuery table schema of the policy tag and its
+     *   descendants
      * </pre>
      */
     public com.google.protobuf.Empty deletePolicyTag(
@@ -1326,7 +1326,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Updates a policy tag. This method can update the policy tag's display
+     * Updates a policy tag, including its display
      * name, description, and parent policy tag.
      * </pre>
      */
@@ -1390,7 +1390,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Returns the permissions that a caller has on a specified policy tag or
+     * Returns your permissions on a specified policy tag or
      * taxonomy.
      * </pre>
      */
@@ -1405,7 +1405,7 @@ public final class PolicyTagManagerGrpc {
    *
    *
    * <pre>
-   * Policy Tag Manager API service allows clients to manage their policy tags and
+   * Policy Tag Manager API service allows you to manage your policy tags and
    * taxonomies.
    * Policy tags are used to tag BigQuery columns and apply additional access
    * control policies. A taxonomy is a hierarchical grouping of policy tags that
@@ -1428,8 +1428,8 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Creates a taxonomy in a specified project. The taxonomy is initially empty,
-     * i.e., does not contain policy tags.
+     * Creates a taxonomy in a specified project.
+     * The taxonomy is initially empty, that is, it doesn't contain policy tags.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1443,7 +1443,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Deletes a taxonomy. This method will also delete all policy tags in this
+     * Deletes a taxonomy, including all policy tags in this
      * taxonomy, their associated policies, and the policy tags references from
      * BigQuery columns.
      * </pre>
@@ -1458,7 +1458,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Updates a taxonomy. This method can update the taxonomy's display name,
+     * Updates a taxonomy, including its display name,
      * description, and activated policy types.
      * </pre>
      */
@@ -1473,8 +1473,8 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Lists all taxonomies in a project in a particular location that the caller
-     * has permission to view.
+     * Lists all taxonomies in a project in a particular location that you
+     * have a permission to view.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1516,11 +1516,11 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Deletes a policy tag. This method also deletes:
-     * * all of its descendant policy tags, if any
-     * * the policies associated with the policy tag and its descendants
-     * * references from BigQuery table schema of the policy tag and its
-     *   descendants.
+     * Deletes a policy tag together with the following:
+     * * All of its descendant policy tags, if any
+     * * Policies associated with the policy tag and its descendants
+     * * References from BigQuery table schema of the policy tag and its
+     *   descendants
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -1533,7 +1533,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Updates a policy tag. This method can update the policy tag's display
+     * Updates a policy tag, including its display
      * name, description, and parent policy tag.
      * </pre>
      */
@@ -1602,7 +1602,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Returns the permissions that a caller has on a specified policy tag or
+     * Returns your permissions on a specified policy tag or
      * taxonomy.
      * </pre>
      */

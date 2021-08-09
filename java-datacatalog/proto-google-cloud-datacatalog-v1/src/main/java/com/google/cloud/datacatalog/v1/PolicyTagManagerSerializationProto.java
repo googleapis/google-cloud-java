@@ -36,6 +36,10 @@ public final class PolicyTagManagerSerializationProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datacatalog_v1_SerializedPolicyTag_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_v1_ReplaceTaxonomyRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_v1_ReplaceTaxonomyRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datacatalog_v1_ImportTaxonomiesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datacatalog_v1_ImportTaxonomiesRequest_fieldAccessorTable;
@@ -85,46 +89,54 @@ public final class PolicyTagManagerSerializationProto {
           + "\014display_name\030\002 \001(\tB\003\340A\002\022\023\n\013description\030"
           + "\003 \001(\t\022K\n\021child_policy_tags\030\004 \003(\01320.googl"
           + "e.cloud.datacatalog.v1.SerializedPolicyT"
-          + "ag\"\367\001\n\027ImportTaxonomiesRequest\022;\n\006parent"
-          + "\030\001 \001(\tB+\340A\002\372A%\022#datacatalog.googleapis.c"
-          + "om/Taxonomy\022B\n\rinline_source\030\002 \001(\0132).goo"
-          + "gle.cloud.datacatalog.v1.InlineSourceH\000\022"
-          + "Q\n\025cross_regional_source\030\003 \001(\01320.google."
-          + "cloud.datacatalog.v1.CrossRegionalSource"
-          + "H\000B\010\n\006source\"X\n\014InlineSource\022H\n\ntaxonomi"
-          + "es\030\001 \003(\0132/.google.cloud.datacatalog.v1.S"
-          + "erializedTaxonomyB\003\340A\002\"T\n\023CrossRegionalS"
-          + "ource\022=\n\010taxonomy\030\001 \001(\tB+\340A\002\372A%\n#datacat"
-          + "alog.googleapis.com/Taxonomy\"U\n\030ImportTa"
-          + "xonomiesResponse\0229\n\ntaxonomies\030\001 \003(\0132%.g"
-          + "oogle.cloud.datacatalog.v1.Taxonomy\"\307\001\n\027"
-          + "ExportTaxonomiesRequest\022;\n\006parent\030\001 \001(\tB"
-          + "+\340A\002\372A%\022#datacatalog.googleapis.com/Taxo"
-          + "nomy\022?\n\ntaxonomies\030\002 \003(\tB+\340A\002\372A%\n#dataca"
-          + "talog.googleapis.com/Taxonomy\022\037\n\025seriali"
-          + "zed_taxonomies\030\003 \001(\010H\000B\r\n\013destination\"_\n"
-          + "\030ExportTaxonomiesResponse\022C\n\ntaxonomies\030"
-          + "\001 \003(\0132/.google.cloud.datacatalog.v1.Seri"
-          + "alizedTaxonomy2\364\003\n\035PolicyTagManagerSeria"
-          + "lization\022\301\001\n\020ImportTaxonomies\0224.google.c"
-          + "loud.datacatalog.v1.ImportTaxonomiesRequ"
-          + "est\0325.google.cloud.datacatalog.v1.Import"
-          + "TaxonomiesResponse\"@\202\323\344\223\002:\"5/v1/{parent="
-          + "projects/*/locations/*}/taxonomies:impor"
-          + "t:\001*\022\276\001\n\020ExportTaxonomies\0224.google.cloud"
-          + ".datacatalog.v1.ExportTaxonomiesRequest\032"
-          + "5.google.cloud.datacatalog.v1.ExportTaxo"
-          + "nomiesResponse\"=\202\323\344\223\0027\0225/v1/{parent=proj"
-          + "ects/*/locations/*}/taxonomies:export\032N\312"
-          + "A\032datacatalog.googleapis.com\322A.https://w"
-          + "ww.googleapis.com/auth/cloud-platformB\357\001"
-          + "\n\037com.google.cloud.datacatalog.v1B\"Polic"
-          + "yTagManagerSerializationProtoP\001ZFgoogle."
-          + "golang.org/genproto/googleapis/cloud/dat"
-          + "acatalog/v1;datacatalog\370\001\001\252\002\033Google.Clou"
-          + "d.DataCatalog.V1\312\002\033Google\\Cloud\\DataCata"
-          + "log\\V1\352\002\036Google::Cloud::DataCatalog::V1b"
-          + "\006proto3"
+          + "ag\"\246\001\n\026ReplaceTaxonomyRequest\0229\n\004name\030\001 "
+          + "\001(\tB+\340A\002\372A%\n#datacatalog.googleapis.com/"
+          + "Taxonomy\022Q\n\023serialized_taxonomy\030\002 \001(\0132/."
+          + "google.cloud.datacatalog.v1.SerializedTa"
+          + "xonomyB\003\340A\002\"\367\001\n\027ImportTaxonomiesRequest\022"
+          + ";\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#datacatalog.goo"
+          + "gleapis.com/Taxonomy\022B\n\rinline_source\030\002 "
+          + "\001(\0132).google.cloud.datacatalog.v1.Inline"
+          + "SourceH\000\022Q\n\025cross_regional_source\030\003 \001(\0132"
+          + "0.google.cloud.datacatalog.v1.CrossRegio"
+          + "nalSourceH\000B\010\n\006source\"X\n\014InlineSource\022H\n"
+          + "\ntaxonomies\030\001 \003(\0132/.google.cloud.datacat"
+          + "alog.v1.SerializedTaxonomyB\003\340A\002\"T\n\023Cross"
+          + "RegionalSource\022=\n\010taxonomy\030\001 \001(\tB+\340A\002\372A%"
+          + "\n#datacatalog.googleapis.com/Taxonomy\"U\n"
+          + "\030ImportTaxonomiesResponse\0229\n\ntaxonomies\030"
+          + "\001 \003(\0132%.google.cloud.datacatalog.v1.Taxo"
+          + "nomy\"\307\001\n\027ExportTaxonomiesRequest\022;\n\006pare"
+          + "nt\030\001 \001(\tB+\340A\002\372A%\022#datacatalog.googleapis"
+          + ".com/Taxonomy\022?\n\ntaxonomies\030\002 \003(\tB+\340A\002\372A"
+          + "%\n#datacatalog.googleapis.com/Taxonomy\022\037"
+          + "\n\025serialized_taxonomies\030\003 \001(\010H\000B\r\n\013desti"
+          + "nation\"_\n\030ExportTaxonomiesResponse\022C\n\nta"
+          + "xonomies\030\001 \003(\0132/.google.cloud.datacatalo"
+          + "g.v1.SerializedTaxonomy2\247\005\n\035PolicyTagMan"
+          + "agerSerialization\022\260\001\n\017ReplaceTaxonomy\0223."
+          + "google.cloud.datacatalog.v1.ReplaceTaxon"
+          + "omyRequest\032%.google.cloud.datacatalog.v1"
+          + ".Taxonomy\"A\202\323\344\223\002;\"6/v1/{name=projects/*/"
+          + "locations/*/taxonomies/*}:replace:\001*\022\301\001\n"
+          + "\020ImportTaxonomies\0224.google.cloud.datacat"
+          + "alog.v1.ImportTaxonomiesRequest\0325.google"
+          + ".cloud.datacatalog.v1.ImportTaxonomiesRe"
+          + "sponse\"@\202\323\344\223\002:\"5/v1/{parent=projects/*/l"
+          + "ocations/*}/taxonomies:import:\001*\022\276\001\n\020Exp"
+          + "ortTaxonomies\0224.google.cloud.datacatalog"
+          + ".v1.ExportTaxonomiesRequest\0325.google.clo"
+          + "ud.datacatalog.v1.ExportTaxonomiesRespon"
+          + "se\"=\202\323\344\223\0027\0225/v1/{parent=projects/*/locat"
+          + "ions/*}/taxonomies:export\032N\312A\032datacatalo"
+          + "g.googleapis.com\322A.https://www.googleapi"
+          + "s.com/auth/cloud-platformB\357\001\n\037com.google"
+          + ".cloud.datacatalog.v1B\"PolicyTagManagerS"
+          + "erializationProtoP\001ZFgoogle.golang.org/g"
+          + "enproto/googleapis/cloud/datacatalog/v1;"
+          + "datacatalog\370\001\001\252\002\033Google.Cloud.DataCatalo"
+          + "g.V1\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036Goo"
+          + "gle::Cloud::DataCatalog::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -153,8 +165,16 @@ public final class PolicyTagManagerSerializationProto {
             new java.lang.String[] {
               "PolicyTag", "DisplayName", "Description", "ChildPolicyTags",
             });
-    internal_static_google_cloud_datacatalog_v1_ImportTaxonomiesRequest_descriptor =
+    internal_static_google_cloud_datacatalog_v1_ReplaceTaxonomyRequest_descriptor =
         getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_datacatalog_v1_ReplaceTaxonomyRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_v1_ReplaceTaxonomyRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "SerializedTaxonomy",
+            });
+    internal_static_google_cloud_datacatalog_v1_ImportTaxonomiesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_datacatalog_v1_ImportTaxonomiesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_ImportTaxonomiesRequest_descriptor,
@@ -162,7 +182,7 @@ public final class PolicyTagManagerSerializationProto {
               "Parent", "InlineSource", "CrossRegionalSource", "Source",
             });
     internal_static_google_cloud_datacatalog_v1_InlineSource_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_datacatalog_v1_InlineSource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_InlineSource_descriptor,
@@ -170,7 +190,7 @@ public final class PolicyTagManagerSerializationProto {
               "Taxonomies",
             });
     internal_static_google_cloud_datacatalog_v1_CrossRegionalSource_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_datacatalog_v1_CrossRegionalSource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_CrossRegionalSource_descriptor,
@@ -178,7 +198,7 @@ public final class PolicyTagManagerSerializationProto {
               "Taxonomy",
             });
     internal_static_google_cloud_datacatalog_v1_ImportTaxonomiesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_datacatalog_v1_ImportTaxonomiesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_ImportTaxonomiesResponse_descriptor,
@@ -186,7 +206,7 @@ public final class PolicyTagManagerSerializationProto {
               "Taxonomies",
             });
     internal_static_google_cloud_datacatalog_v1_ExportTaxonomiesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_datacatalog_v1_ExportTaxonomiesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_ExportTaxonomiesRequest_descriptor,
@@ -194,7 +214,7 @@ public final class PolicyTagManagerSerializationProto {
               "Parent", "Taxonomies", "SerializedTaxonomies", "Destination",
             });
     internal_static_google_cloud_datacatalog_v1_ExportTaxonomiesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_datacatalog_v1_ExportTaxonomiesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_ExportTaxonomiesResponse_descriptor,

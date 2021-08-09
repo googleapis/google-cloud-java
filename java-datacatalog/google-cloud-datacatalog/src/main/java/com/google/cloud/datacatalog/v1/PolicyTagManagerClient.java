@@ -42,8 +42,8 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Policy Tag Manager API service allows clients to manage their policy tags
- * and taxonomies.
+ * Service Description: Policy Tag Manager API service allows you to manage your policy tags and
+ * taxonomies.
  *
  * <p>Policy tags are used to tag BigQuery columns and apply additional access control policies. A
  * taxonomy is a hierarchical grouping of policy tags that classify data along a common axis.
@@ -163,8 +163,9 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a taxonomy in a specified project. The taxonomy is initially empty, i.e., does not
-   * contain policy tags.
+   * Creates a taxonomy in a specified project.
+   *
+   * <p>The taxonomy is initially empty, that is, it doesn't contain policy tags.
    *
    * <p>Sample code:
    *
@@ -177,7 +178,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the project that the taxonomy will belong to.
-   * @param taxonomy The taxonomy to be created.
+   * @param taxonomy The taxonomy to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Taxonomy createTaxonomy(LocationName parent, Taxonomy taxonomy) {
@@ -191,8 +192,9 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a taxonomy in a specified project. The taxonomy is initially empty, i.e., does not
-   * contain policy tags.
+   * Creates a taxonomy in a specified project.
+   *
+   * <p>The taxonomy is initially empty, that is, it doesn't contain policy tags.
    *
    * <p>Sample code:
    *
@@ -205,7 +207,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the project that the taxonomy will belong to.
-   * @param taxonomy The taxonomy to be created.
+   * @param taxonomy The taxonomy to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Taxonomy createTaxonomy(String parent, Taxonomy taxonomy) {
@@ -216,8 +218,9 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a taxonomy in a specified project. The taxonomy is initially empty, i.e., does not
-   * contain policy tags.
+   * Creates a taxonomy in a specified project.
+   *
+   * <p>The taxonomy is initially empty, that is, it doesn't contain policy tags.
    *
    * <p>Sample code:
    *
@@ -241,8 +244,9 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a taxonomy in a specified project. The taxonomy is initially empty, i.e., does not
-   * contain policy tags.
+   * Creates a taxonomy in a specified project.
+   *
+   * <p>The taxonomy is initially empty, that is, it doesn't contain policy tags.
    *
    * <p>Sample code:
    *
@@ -266,8 +270,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a taxonomy. This method will also delete all policy tags in this taxonomy, their
-   * associated policies, and the policy tags references from BigQuery columns.
+   * Deletes a taxonomy, including all policy tags in this taxonomy, their associated policies, and
+   * the policy tags references from BigQuery columns.
    *
    * <p>Sample code:
    *
@@ -278,8 +282,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the taxonomy to be deleted. All policy tags in this
-   *     taxonomy will also be deleted.
+   * @param name Required. Resource name of the taxonomy to delete.
+   *     <p>Note: All policy tags in this taxonomy are also deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTaxonomy(TaxonomyName name) {
@@ -290,8 +294,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a taxonomy. This method will also delete all policy tags in this taxonomy, their
-   * associated policies, and the policy tags references from BigQuery columns.
+   * Deletes a taxonomy, including all policy tags in this taxonomy, their associated policies, and
+   * the policy tags references from BigQuery columns.
    *
    * <p>Sample code:
    *
@@ -302,8 +306,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the taxonomy to be deleted. All policy tags in this
-   *     taxonomy will also be deleted.
+   * @param name Required. Resource name of the taxonomy to delete.
+   *     <p>Note: All policy tags in this taxonomy are also deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTaxonomy(String name) {
@@ -313,8 +317,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a taxonomy. This method will also delete all policy tags in this taxonomy, their
-   * associated policies, and the policy tags references from BigQuery columns.
+   * Deletes a taxonomy, including all policy tags in this taxonomy, their associated policies, and
+   * the policy tags references from BigQuery columns.
    *
    * <p>Sample code:
    *
@@ -337,8 +341,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a taxonomy. This method will also delete all policy tags in this taxonomy, their
-   * associated policies, and the policy tags references from BigQuery columns.
+   * Deletes a taxonomy, including all policy tags in this taxonomy, their associated policies, and
+   * the policy tags references from BigQuery columns.
    *
    * <p>Sample code:
    *
@@ -360,8 +364,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a taxonomy. This method can update the taxonomy's display name, description, and
-   * activated policy types.
+   * Updates a taxonomy, including its display name, description, and activated policy types.
    *
    * <p>Sample code:
    *
@@ -372,8 +375,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param taxonomy The taxonomy to update. Only description, display_name, and activated policy
-   *     types can be updated.
+   * @param taxonomy The taxonomy to update. You can update only its description, display name, and
+   *     activated policy types.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Taxonomy updateTaxonomy(Taxonomy taxonomy) {
@@ -384,8 +387,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a taxonomy. This method can update the taxonomy's display name, description, and
-   * activated policy types.
+   * Updates a taxonomy, including its display name, description, and activated policy types.
    *
    * <p>Sample code:
    *
@@ -409,8 +411,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a taxonomy. This method can update the taxonomy's display name, description, and
-   * activated policy types.
+   * Updates a taxonomy, including its display name, description, and activated policy types.
    *
    * <p>Sample code:
    *
@@ -434,8 +435,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all taxonomies in a project in a particular location that the caller has permission to
-   * view.
+   * Lists all taxonomies in a project in a particular location that you have a permission to view.
    *
    * <p>Sample code:
    *
@@ -461,8 +461,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all taxonomies in a project in a particular location that the caller has permission to
-   * view.
+   * Lists all taxonomies in a project in a particular location that you have a permission to view.
    *
    * <p>Sample code:
    *
@@ -485,8 +484,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all taxonomies in a project in a particular location that the caller has permission to
-   * view.
+   * Lists all taxonomies in a project in a particular location that you have a permission to view.
    *
    * <p>Sample code:
    *
@@ -513,8 +511,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all taxonomies in a project in a particular location that the caller has permission to
-   * view.
+   * Lists all taxonomies in a project in a particular location that you have a permission to view.
    *
    * <p>Sample code:
    *
@@ -542,8 +539,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all taxonomies in a project in a particular location that the caller has permission to
-   * view.
+   * Lists all taxonomies in a project in a particular location that you have a permission to view.
    *
    * <p>Sample code:
    *
@@ -589,7 +585,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the requested taxonomy.
+   * @param name Required. Resource name of the taxonomy to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Taxonomy getTaxonomy(TaxonomyName name) {
@@ -611,7 +607,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the requested taxonomy.
+   * @param name Required. Resource name of the taxonomy to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Taxonomy getTaxonomy(String name) {
@@ -678,8 +674,9 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Resource name of the taxonomy that the policy tag will belong to.
-   * @param policyTag The policy tag to be created.
+   * @param parent Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br
+   *     /&gt;&lt;br /&gt;
+   * @param policyTag The policy tag to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PolicyTag createPolicyTag(TaxonomyName parent, PolicyTag policyTag) {
@@ -706,8 +703,9 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Resource name of the taxonomy that the policy tag will belong to.
-   * @param policyTag The policy tag to be created.
+   * @param parent Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br
+   *     /&gt;&lt;br /&gt;
+   * @param policyTag The policy tag to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PolicyTag createPolicyTag(String parent, PolicyTag policyTag) {
@@ -770,12 +768,12 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a policy tag. This method also deletes:
+   * Deletes a policy tag together with the following:
    *
    * <ul>
-   *   <li>all of its descendant policy tags, if any
-   *   <li>the policies associated with the policy tag and its descendants
-   *   <li>references from BigQuery table schema of the policy tag and its descendants.
+   *   <li>All of its descendant policy tags, if any
+   *   <li>Policies associated with the policy tag and its descendants
+   *   <li>References from BigQuery table schema of the policy tag and its descendants
    * </ul>
    *
    * <p>Sample code:
@@ -788,8 +786,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the policy tag to be deleted. All of its descendant
-   *     policy tags will also be deleted.
+   * @param name Required. Resource name of the policy tag to delete.
+   *     <p>Note: All of its descendant policy tags are also deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deletePolicyTag(PolicyTagName name) {
@@ -800,12 +798,12 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a policy tag. This method also deletes:
+   * Deletes a policy tag together with the following:
    *
    * <ul>
-   *   <li>all of its descendant policy tags, if any
-   *   <li>the policies associated with the policy tag and its descendants
-   *   <li>references from BigQuery table schema of the policy tag and its descendants.
+   *   <li>All of its descendant policy tags, if any
+   *   <li>Policies associated with the policy tag and its descendants
+   *   <li>References from BigQuery table schema of the policy tag and its descendants
    * </ul>
    *
    * <p>Sample code:
@@ -818,8 +816,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the policy tag to be deleted. All of its descendant
-   *     policy tags will also be deleted.
+   * @param name Required. Resource name of the policy tag to delete.
+   *     <p>Note: All of its descendant policy tags are also deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deletePolicyTag(String name) {
@@ -829,12 +827,12 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a policy tag. This method also deletes:
+   * Deletes a policy tag together with the following:
    *
    * <ul>
-   *   <li>all of its descendant policy tags, if any
-   *   <li>the policies associated with the policy tag and its descendants
-   *   <li>references from BigQuery table schema of the policy tag and its descendants.
+   *   <li>All of its descendant policy tags, if any
+   *   <li>Policies associated with the policy tag and its descendants
+   *   <li>References from BigQuery table schema of the policy tag and its descendants
    * </ul>
    *
    * <p>Sample code:
@@ -860,12 +858,12 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a policy tag. This method also deletes:
+   * Deletes a policy tag together with the following:
    *
    * <ul>
-   *   <li>all of its descendant policy tags, if any
-   *   <li>the policies associated with the policy tag and its descendants
-   *   <li>references from BigQuery table schema of the policy tag and its descendants.
+   *   <li>All of its descendant policy tags, if any
+   *   <li>Policies associated with the policy tag and its descendants
+   *   <li>References from BigQuery table schema of the policy tag and its descendants
    * </ul>
    *
    * <p>Sample code:
@@ -891,8 +889,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a policy tag. This method can update the policy tag's display name, description, and
-   * parent policy tag.
+   * Updates a policy tag, including its display name, description, and parent policy tag.
    *
    * <p>Sample code:
    *
@@ -903,8 +900,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param policyTag The policy tag to update. Only the description, display_name, and
-   *     parent_policy_tag fields can be updated.
+   * @param policyTag The policy tag to update. You can update only its description, display name,
+   *     and parent policy tag fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PolicyTag updatePolicyTag(PolicyTag policyTag) {
@@ -915,8 +912,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a policy tag. This method can update the policy tag's display name, description, and
-   * parent policy tag.
+   * Updates a policy tag, including its display name, description, and parent policy tag.
    *
    * <p>Sample code:
    *
@@ -940,8 +936,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a policy tag. This method can update the policy tag's display name, description, and
-   * parent policy tag.
+   * Updates a policy tag, including its display name, description, and parent policy tag.
    *
    * <p>Sample code:
    *
@@ -1123,7 +1118,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the requested policy tag.
+   * @param name Required. Resource name of the policy tag.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PolicyTag getPolicyTag(PolicyTagName name) {
@@ -1146,7 +1141,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the requested policy tag.
+   * @param name Required. Resource name of the policy tag.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PolicyTag getPolicyTag(String name) {
@@ -1300,7 +1295,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the permissions that a caller has on a specified policy tag or taxonomy.
+   * Returns your permissions on a specified policy tag or taxonomy.
    *
    * <p>Sample code:
    *
@@ -1324,7 +1319,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the permissions that a caller has on a specified policy tag or taxonomy.
+   * Returns your permissions on a specified policy tag or taxonomy.
    *
    * <p>Sample code:
    *

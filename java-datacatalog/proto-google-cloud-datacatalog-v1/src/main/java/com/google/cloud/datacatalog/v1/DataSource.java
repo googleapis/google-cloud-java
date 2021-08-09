@@ -22,7 +22,7 @@ package com.google.cloud.datacatalog.v1;
  *
  *
  * <pre>
- * Describes the physical location of an entry.
+ * Physical location of an entry.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.v1.DataSource}
@@ -123,7 +123,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Service name where the data is stored.
+   * Name of a service that stores the data.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.datacatalog.v1.DataSource.Service}
@@ -282,7 +282,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Service in which the data is physically stored.
+   * Service that physically stores the data.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.DataSource.Service service = 1;</code>
@@ -297,7 +297,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Service in which the data is physically stored.
+   * Service that physically stores the data.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.DataSource.Service service = 1;</code>
@@ -320,8 +320,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Full name of the resource as defined by the service, e.g.
-   * //bigquery.googleapis.com/projects/{project_id}/locations/{location}/datasets/{dataset_id}/tables/{table_id}
+   * Full name of a resource as defined by the service. For example:
+   * `//bigquery.googleapis.com/projects/{PROJECT_ID}/locations/{LOCATION}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
    * </pre>
    *
    * <code>string resource = 2;</code>
@@ -344,8 +344,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Full name of the resource as defined by the service, e.g.
-   * //bigquery.googleapis.com/projects/{project_id}/locations/{location}/datasets/{dataset_id}/tables/{table_id}
+   * Full name of a resource as defined by the service. For example:
+   * `//bigquery.googleapis.com/projects/{PROJECT_ID}/locations/{LOCATION}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
    * </pre>
    *
    * <code>string resource = 2;</code>
@@ -539,7 +539,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Describes the physical location of an entry.
+   * Physical location of an entry.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.v1.DataSource}
@@ -703,7 +703,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service in which the data is physically stored.
+     * Service that physically stores the data.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DataSource.Service service = 1;</code>
@@ -718,7 +718,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service in which the data is physically stored.
+     * Service that physically stores the data.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DataSource.Service service = 1;</code>
@@ -736,7 +736,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service in which the data is physically stored.
+     * Service that physically stores the data.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DataSource.Service service = 1;</code>
@@ -756,7 +756,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service in which the data is physically stored.
+     * Service that physically stores the data.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DataSource.Service service = 1;</code>
@@ -777,7 +777,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service in which the data is physically stored.
+     * Service that physically stores the data.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DataSource.Service service = 1;</code>
@@ -796,8 +796,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full name of the resource as defined by the service, e.g.
-     * //bigquery.googleapis.com/projects/{project_id}/locations/{location}/datasets/{dataset_id}/tables/{table_id}
+     * Full name of a resource as defined by the service. For example:
+     * `//bigquery.googleapis.com/projects/{PROJECT_ID}/locations/{LOCATION}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
      * </pre>
      *
      * <code>string resource = 2;</code>
@@ -819,8 +819,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full name of the resource as defined by the service, e.g.
-     * //bigquery.googleapis.com/projects/{project_id}/locations/{location}/datasets/{dataset_id}/tables/{table_id}
+     * Full name of a resource as defined by the service. For example:
+     * `//bigquery.googleapis.com/projects/{PROJECT_ID}/locations/{LOCATION}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
      * </pre>
      *
      * <code>string resource = 2;</code>
@@ -842,8 +842,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full name of the resource as defined by the service, e.g.
-     * //bigquery.googleapis.com/projects/{project_id}/locations/{location}/datasets/{dataset_id}/tables/{table_id}
+     * Full name of a resource as defined by the service. For example:
+     * `//bigquery.googleapis.com/projects/{PROJECT_ID}/locations/{LOCATION}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
      * </pre>
      *
      * <code>string resource = 2;</code>
@@ -864,8 +864,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full name of the resource as defined by the service, e.g.
-     * //bigquery.googleapis.com/projects/{project_id}/locations/{location}/datasets/{dataset_id}/tables/{table_id}
+     * Full name of a resource as defined by the service. For example:
+     * `//bigquery.googleapis.com/projects/{PROJECT_ID}/locations/{LOCATION}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
      * </pre>
      *
      * <code>string resource = 2;</code>
@@ -882,8 +882,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full name of the resource as defined by the service, e.g.
-     * //bigquery.googleapis.com/projects/{project_id}/locations/{location}/datasets/{dataset_id}/tables/{table_id}
+     * Full name of a resource as defined by the service. For example:
+     * `//bigquery.googleapis.com/projects/{PROJECT_ID}/locations/{LOCATION}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
      * </pre>
      *
      * <code>string resource = 2;</code>

@@ -140,7 +140,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The template to update. The "name" field must be set.
+   * Required. The template to update. The `name` field must be set.
    * </pre>
    *
    * <code>
@@ -157,7 +157,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The template to update. The "name" field must be set.
+   * Required. The template to update. The `name` field must be set.
    * </pre>
    *
    * <code>
@@ -176,7 +176,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The template to update. The "name" field must be set.
+   * Required. The template to update. The `name` field must be set.
    * </pre>
    *
    * <code>
@@ -196,7 +196,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    * <pre>
    * Names of fields whose values to overwrite on a tag template. Currently,
    * only `display_name` can be overwritten.
-   * In general, if this parameter is absent or empty, all modifiable fields
+   * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
    * </pre>
@@ -215,7 +215,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    * <pre>
    * Names of fields whose values to overwrite on a tag template. Currently,
    * only `display_name` can be overwritten.
-   * In general, if this parameter is absent or empty, all modifiable fields
+   * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
    * </pre>
@@ -234,7 +234,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    * <pre>
    * Names of fields whose values to overwrite on a tag template. Currently,
    * only `display_name` can be overwritten.
-   * In general, if this parameter is absent or empty, all modifiable fields
+   * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
    * </pre>
@@ -616,7 +616,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      * </pre>
      *
      * <code>
@@ -632,7 +632,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      * </pre>
      *
      * <code>
@@ -654,7 +654,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      * </pre>
      *
      * <code>
@@ -678,7 +678,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      * </pre>
      *
      * <code>
@@ -700,7 +700,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      * </pre>
      *
      * <code>
@@ -728,7 +728,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      * </pre>
      *
      * <code>
@@ -750,7 +750,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      * </pre>
      *
      * <code>
@@ -766,7 +766,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      * </pre>
      *
      * <code>
@@ -786,7 +786,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      * </pre>
      *
      * <code>
@@ -822,7 +822,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      * </pre>
@@ -840,7 +840,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      * </pre>
@@ -864,7 +864,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      * </pre>
@@ -890,7 +890,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      * </pre>
@@ -913,7 +913,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      * </pre>
@@ -941,7 +941,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      * </pre>
@@ -965,7 +965,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      * </pre>
@@ -983,7 +983,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      * </pre>
@@ -1005,7 +1005,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      * </pre>

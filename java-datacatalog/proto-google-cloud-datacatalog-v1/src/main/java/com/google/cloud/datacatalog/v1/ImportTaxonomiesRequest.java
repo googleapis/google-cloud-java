@@ -251,7 +251,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Inline source used for taxonomies import.
+   * Inline source taxonomy to import.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -266,7 +266,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Inline source used for taxonomies import.
+   * Inline source taxonomy to import.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -284,7 +284,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Inline source used for taxonomies import.
+   * Inline source taxonomy to import.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -302,7 +302,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Cross-regional source taxonomy to be imported.
+   * Cross-regional source taxonomy to import.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -317,7 +317,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Cross-regional source taxonomy to be imported.
+   * Cross-regional source taxonomy to import.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -335,7 +335,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Cross-regional source taxonomy to be imported.
+   * Cross-regional source taxonomy to import.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -880,7 +880,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -895,7 +895,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -920,7 +920,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -942,7 +942,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -962,7 +962,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -993,7 +993,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -1018,7 +1018,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -1030,7 +1030,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -1050,7 +1050,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -1089,7 +1089,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -1104,7 +1104,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -1129,7 +1129,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -1152,7 +1152,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -1172,7 +1172,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -1205,7 +1205,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -1230,7 +1230,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -1243,7 +1243,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -1264,7 +1264,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>

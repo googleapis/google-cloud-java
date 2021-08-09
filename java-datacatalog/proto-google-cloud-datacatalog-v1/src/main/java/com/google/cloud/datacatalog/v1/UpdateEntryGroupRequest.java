@@ -140,7 +140,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The updated entry group. "name" field must be set.
+   * Required. Updates for the entry group. The `name` field must be set.
    * </pre>
    *
    * <code>
@@ -157,7 +157,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The updated entry group. "name" field must be set.
+   * Required. Updates for the entry group. The `name` field must be set.
    * </pre>
    *
    * <code>
@@ -176,7 +176,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The updated entry group. "name" field must be set.
+   * Required. Updates for the entry group. The `name` field must be set.
    * </pre>
    *
    * <code>
@@ -613,7 +613,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The updated entry group. "name" field must be set.
+     * Required. Updates for the entry group. The `name` field must be set.
      * </pre>
      *
      * <code>
@@ -629,7 +629,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The updated entry group. "name" field must be set.
+     * Required. Updates for the entry group. The `name` field must be set.
      * </pre>
      *
      * <code>
@@ -651,7 +651,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The updated entry group. "name" field must be set.
+     * Required. Updates for the entry group. The `name` field must be set.
      * </pre>
      *
      * <code>
@@ -675,7 +675,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The updated entry group. "name" field must be set.
+     * Required. Updates for the entry group. The `name` field must be set.
      * </pre>
      *
      * <code>
@@ -697,7 +697,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The updated entry group. "name" field must be set.
+     * Required. Updates for the entry group. The `name` field must be set.
      * </pre>
      *
      * <code>
@@ -725,7 +725,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The updated entry group. "name" field must be set.
+     * Required. Updates for the entry group. The `name` field must be set.
      * </pre>
      *
      * <code>
@@ -747,7 +747,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The updated entry group. "name" field must be set.
+     * Required. Updates for the entry group. The `name` field must be set.
      * </pre>
      *
      * <code>
@@ -763,7 +763,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The updated entry group. "name" field must be set.
+     * Required. Updates for the entry group. The `name` field must be set.
      * </pre>
      *
      * <code>
@@ -783,7 +783,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The updated entry group. "name" field must be set.
+     * Required. Updates for the entry group. The `name` field must be set.
      * </pre>
      *
      * <code>

@@ -22,8 +22,7 @@ package com.google.cloud.datacatalog.v1;
  *
  *
  * <pre>
- * This enum describes all the possible systems that Data Catalog integrates
- * with.
+ * This enum lists all the systems that Data Catalog integrates with.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.datacatalog.v1.IntegratedSystem}

@@ -133,8 +133,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The name of the entry group. For example,
-   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+   * Required. The name of the entry group to get.
    * </pre>
    *
    * <code>
@@ -159,8 +158,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The name of the entry group. For example,
-   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+   * Required. The name of the entry group to get.
    * </pre>
    *
    * <code>
@@ -188,7 +186,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The fields to return. If not set or empty, all fields are returned.
+   * The fields to return. If empty or omitted, all fields are returned.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -203,7 +201,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The fields to return. If not set or empty, all fields are returned.
+   * The fields to return. If empty or omitted, all fields are returned.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -218,7 +216,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The fields to return. If not set or empty, all fields are returned.
+   * The fields to return. If empty or omitted, all fields are returned.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -580,8 +578,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the entry group. For example,
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+     * Required. The name of the entry group to get.
      * </pre>
      *
      * <code>
@@ -605,8 +602,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the entry group. For example,
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+     * Required. The name of the entry group to get.
      * </pre>
      *
      * <code>
@@ -630,8 +626,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the entry group. For example,
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+     * Required. The name of the entry group to get.
      * </pre>
      *
      * <code>
@@ -654,8 +649,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the entry group. For example,
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+     * Required. The name of the entry group to get.
      * </pre>
      *
      * <code>
@@ -674,8 +668,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the entry group. For example,
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+     * Required. The name of the entry group to get.
      * </pre>
      *
      * <code>
@@ -706,7 +699,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The fields to return. If not set or empty, all fields are returned.
+     * The fields to return. If empty or omitted, all fields are returned.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -720,7 +713,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The fields to return. If not set or empty, all fields are returned.
+     * The fields to return. If empty or omitted, all fields are returned.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -738,7 +731,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The fields to return. If not set or empty, all fields are returned.
+     * The fields to return. If empty or omitted, all fields are returned.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -760,7 +753,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The fields to return. If not set or empty, all fields are returned.
+     * The fields to return. If empty or omitted, all fields are returned.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -779,7 +772,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The fields to return. If not set or empty, all fields are returned.
+     * The fields to return. If empty or omitted, all fields are returned.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -803,7 +796,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The fields to return. If not set or empty, all fields are returned.
+     * The fields to return. If empty or omitted, all fields are returned.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -823,7 +816,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The fields to return. If not set or empty, all fields are returned.
+     * The fields to return. If empty or omitted, all fields are returned.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -837,7 +830,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The fields to return. If not set or empty, all fields are returned.
+     * The fields to return. If empty or omitted, all fields are returned.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -853,7 +846,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The fields to return. If not set or empty, all fields are returned.
+     * The fields to return. If empty or omitted, all fields are returned.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask read_mask = 2;</code>

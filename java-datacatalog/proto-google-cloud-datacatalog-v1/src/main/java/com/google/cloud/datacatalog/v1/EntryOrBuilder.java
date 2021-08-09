@@ -28,8 +28,6 @@ public interface EntryOrBuilder
    *
    * <pre>
    * Output only. The resource name of an entry in URL format.
-   * Example:
-   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
    * Note: The entry itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
@@ -46,8 +44,6 @@ public interface EntryOrBuilder
    *
    * <pre>
    * Output only. The resource name of an entry in URL format.
-   * Example:
-   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
    * Note: The entry itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
@@ -65,12 +61,12 @@ public interface EntryOrBuilder
    *
    * <pre>
    * The resource this metadata entry refers to.
-   * For Google Cloud Platform resources, `linked_resource` is the [full name of
-   * the
-   * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
+   * For Google Cloud Platform resources, `linked_resource` is the
+   * [Full Resource Name]
+   * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
-   * `//bigquery.googleapis.com/projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
-   * Output only when entry is one of the types in the `EntryType` enum.
+   * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+   * Output only when the entry is one of the types in the `EntryType` enum.
    * For entries with a `user_specified_type`, this field is optional and
    * defaults to an empty string.
    * The resource string must contain only letters (a-z, A-Z), numbers (0-9),
@@ -89,12 +85,12 @@ public interface EntryOrBuilder
    *
    * <pre>
    * The resource this metadata entry refers to.
-   * For Google Cloud Platform resources, `linked_resource` is the [full name of
-   * the
-   * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
+   * For Google Cloud Platform resources, `linked_resource` is the
+   * [Full Resource Name]
+   * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
-   * `//bigquery.googleapis.com/projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
-   * Output only when entry is one of the types in the `EntryType` enum.
+   * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+   * Output only when the entry is one of the types in the `EntryType` enum.
    * For entries with a `user_specified_type`, this field is optional and
    * defaults to an empty string.
    * The resource string must contain only letters (a-z, A-Z), numbers (0-9),
@@ -122,7 +118,7 @@ public interface EntryOrBuilder
    * * For regionalized resources:
    *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
    * Example for a DPMS table:
-   * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+   * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
    * </pre>
    *
    * <code>string fully_qualified_name = 29;</code>
@@ -143,7 +139,7 @@ public interface EntryOrBuilder
    * * For regionalized resources:
    *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
    * Example for a DPMS table:
-   * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+   * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
    * </pre>
    *
    * <code>string fully_qualified_name = 29;</code>
@@ -157,7 +153,9 @@ public interface EntryOrBuilder
    *
    * <pre>
    * The type of the entry.
-   * Only used for Entries with types in the EntryType enum.
+   * Only used for entries with types listed in the `EntryType` enum.
+   * Currently, only `FILESET` enum value is allowed. All other entries
+   * created in Data Catalog must use the `user_specified_type`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.EntryType type = 2;</code>
@@ -170,7 +168,9 @@ public interface EntryOrBuilder
    *
    * <pre>
    * The type of the entry.
-   * Only used for Entries with types in the EntryType enum.
+   * Only used for entries with types listed in the `EntryType` enum.
+   * Currently, only `FILESET` enum value is allowed. All other entries
+   * created in Data Catalog must use the `user_specified_type`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.EntryType type = 2;</code>
@@ -183,7 +183,9 @@ public interface EntryOrBuilder
    *
    * <pre>
    * The type of the entry.
-   * Only used for Entries with types in the EntryType enum.
+   * Only used for entries with types listed in the `EntryType` enum.
+   * Currently, only `FILESET` enum value is allowed. All other entries
+   * created in Data Catalog must use the `user_specified_type`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.EntryType type = 2;</code>
@@ -196,15 +198,16 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Entry type if it does not fit any of the input-allowed values listed in
-   * `EntryType` enum above. When creating an entry, users should check the
-   * enum values first, if nothing matches the entry to be created, then
-   * provide a custom value, for example "my_special_type".
-   * `user_specified_type` strings must begin with a letter or underscore and
-   * can only contain letters, numbers, and underscores; are case insensitive;
-   * must be at least 1 character and at most 64 characters long.
-   * Currently, only FILESET enum value is allowed. All other entries created
-   * through Data Catalog must use `user_specified_type`.
+   * Custom entry type that doesn't match any of the values allowed for input
+   * and listed in the `EntryType` enum.
+   * When creating an entry, first check the type values in the enum.
+   * If there are no appropriate types for the new entry,
+   * provide a custom value, for example, `my_special_type`.
+   * The `user_specified_type` string has the following limitations:
+   * * Is case insensitive.
+   * * Must begin with a letter or underscore.
+   * * Can only contain letters, numbers, and underscores.
+   * * Must be at least 1 character and at most 64 characters long.
    * </pre>
    *
    * <code>string user_specified_type = 16;</code>
@@ -216,15 +219,16 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Entry type if it does not fit any of the input-allowed values listed in
-   * `EntryType` enum above. When creating an entry, users should check the
-   * enum values first, if nothing matches the entry to be created, then
-   * provide a custom value, for example "my_special_type".
-   * `user_specified_type` strings must begin with a letter or underscore and
-   * can only contain letters, numbers, and underscores; are case insensitive;
-   * must be at least 1 character and at most 64 characters long.
-   * Currently, only FILESET enum value is allowed. All other entries created
-   * through Data Catalog must use `user_specified_type`.
+   * Custom entry type that doesn't match any of the values allowed for input
+   * and listed in the `EntryType` enum.
+   * When creating an entry, first check the type values in the enum.
+   * If there are no appropriate types for the new entry,
+   * provide a custom value, for example, `my_special_type`.
+   * The `user_specified_type` string has the following limitations:
+   * * Is case insensitive.
+   * * Must begin with a letter or underscore.
+   * * Can only contain letters, numbers, and underscores.
+   * * Must be at least 1 character and at most 64 characters long.
    * </pre>
    *
    * <code>string user_specified_type = 16;</code>
@@ -236,15 +240,16 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Entry type if it does not fit any of the input-allowed values listed in
-   * `EntryType` enum above. When creating an entry, users should check the
-   * enum values first, if nothing matches the entry to be created, then
-   * provide a custom value, for example "my_special_type".
-   * `user_specified_type` strings must begin with a letter or underscore and
-   * can only contain letters, numbers, and underscores; are case insensitive;
-   * must be at least 1 character and at most 64 characters long.
-   * Currently, only FILESET enum value is allowed. All other entries created
-   * through Data Catalog must use `user_specified_type`.
+   * Custom entry type that doesn't match any of the values allowed for input
+   * and listed in the `EntryType` enum.
+   * When creating an entry, first check the type values in the enum.
+   * If there are no appropriate types for the new entry,
+   * provide a custom value, for example, `my_special_type`.
+   * The `user_specified_type` string has the following limitations:
+   * * Is case insensitive.
+   * * Must begin with a letter or underscore.
+   * * Can only contain letters, numbers, and underscores.
+   * * Must be at least 1 character and at most 64 characters long.
    * </pre>
    *
    * <code>string user_specified_type = 16;</code>
@@ -257,8 +262,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. This field indicates the entry's source system that Data Catalog
-   * integrates with, such as BigQuery or Pub/Sub.
+   * Output only. Indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore.
    * </pre>
    *
    * <code>
@@ -272,8 +277,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. This field indicates the entry's source system that Data Catalog
-   * integrates with, such as BigQuery or Pub/Sub.
+   * Output only. Indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore.
    * </pre>
    *
    * <code>
@@ -287,8 +292,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. This field indicates the entry's source system that Data Catalog
-   * integrates with, such as BigQuery or Pub/Sub.
+   * Output only. Indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore.
    * </pre>
    *
    * <code>
@@ -303,11 +308,13 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * This field indicates the entry's source system that Data Catalog does not
-   * integrate with. `user_specified_system` strings must begin with a letter
-   * or underscore and can only contain letters, numbers, and underscores; are
-   * case insensitive; must be at least 1 character and at most 64 characters
-   * long.
+   * Indicates the entry's source system that Data Catalog doesn't
+   * automatically integrate with.
+   * The `user_specified_system` string has the following limitations:
+   * * Is case insensitive.
+   * * Must begin with a letter or underscore.
+   * * Can only contain letters, numbers, and underscores.
+   * * Must be at least 1 character and at most 64 characters long.
    * </pre>
    *
    * <code>string user_specified_system = 18;</code>
@@ -319,11 +326,13 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * This field indicates the entry's source system that Data Catalog does not
-   * integrate with. `user_specified_system` strings must begin with a letter
-   * or underscore and can only contain letters, numbers, and underscores; are
-   * case insensitive; must be at least 1 character and at most 64 characters
-   * long.
+   * Indicates the entry's source system that Data Catalog doesn't
+   * automatically integrate with.
+   * The `user_specified_system` string has the following limitations:
+   * * Is case insensitive.
+   * * Must begin with a letter or underscore.
+   * * Can only contain letters, numbers, and underscores.
+   * * Must be at least 1 character and at most 64 characters long.
    * </pre>
    *
    * <code>string user_specified_system = 18;</code>
@@ -335,11 +344,13 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * This field indicates the entry's source system that Data Catalog does not
-   * integrate with. `user_specified_system` strings must begin with a letter
-   * or underscore and can only contain letters, numbers, and underscores; are
-   * case insensitive; must be at least 1 character and at most 64 characters
-   * long.
+   * Indicates the entry's source system that Data Catalog doesn't
+   * automatically integrate with.
+   * The `user_specified_system` string has the following limitations:
+   * * Is case insensitive.
+   * * Must begin with a letter or underscore.
+   * * Can only contain letters, numbers, and underscores.
+   * * Must be at least 1 character and at most 64 characters long.
    * </pre>
    *
    * <code>string user_specified_system = 18;</code>
@@ -352,8 +363,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Specification that applies to a Cloud Storage fileset. This is only valid
-   * on entries of type FILESET.
+   * Specification that applies to a Cloud Storage fileset. Valid only
+   * for entries with the `FILESET` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
@@ -365,8 +376,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Specification that applies to a Cloud Storage fileset. This is only valid
-   * on entries of type FILESET.
+   * Specification that applies to a Cloud Storage fileset. Valid only
+   * for entries with the `FILESET` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
@@ -378,8 +389,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Specification that applies to a Cloud Storage fileset. This is only valid
-   * on entries of type FILESET.
+   * Specification that applies to a Cloud Storage fileset. Valid only
+   * for entries with the `FILESET` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
@@ -390,8 +401,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Specification that applies to a BigQuery table. This is only valid on
-   * entries of type `TABLE`.
+   * Specification that applies to a BigQuery table. Valid only for
+   * entries with the `TABLE` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
@@ -403,8 +414,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Specification that applies to a BigQuery table. This is only valid on
-   * entries of type `TABLE`.
+   * Specification that applies to a BigQuery table. Valid only for
+   * entries with the `TABLE` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
@@ -416,8 +427,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Specification that applies to a BigQuery table. This is only valid on
-   * entries of type `TABLE`.
+   * Specification that applies to a BigQuery table. Valid only for
+   * entries with the `TABLE` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
@@ -428,9 +439,10 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Specification for a group of BigQuery tables with name pattern
-   * `[prefix]YYYYMMDD`. Context:
-   * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
+   * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
+   * name pattern.
+   * For more information, see [Introduction to partitioned tables]
+   * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
@@ -443,9 +455,10 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Specification for a group of BigQuery tables with name pattern
-   * `[prefix]YYYYMMDD`. Context:
-   * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
+   * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
+   * name pattern.
+   * For more information, see [Introduction to partitioned tables]
+   * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
@@ -458,9 +471,10 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Specification for a group of BigQuery tables with name pattern
-   * `[prefix]YYYYMMDD`. Context:
-   * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
+   * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
+   * name pattern.
+   * For more information, see [Introduction to partitioned tables]
+   * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
@@ -473,8 +487,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Specification that applies to a table resource. Only valid
-   * for entries of `TABLE` type.
+   * Specification that applies to a table resource. Valid only
+   * for entries with the `TABLE` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -486,8 +500,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Specification that applies to a table resource. Only valid
-   * for entries of `TABLE` type.
+   * Specification that applies to a table resource. Valid only
+   * for entries with the `TABLE` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -499,13 +513,93 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Specification that applies to a table resource. Only valid
-   * for entries of `TABLE` type.
+   * Specification that applies to a table resource. Valid only
+   * for entries with the `TABLE` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
    */
   com.google.cloud.datacatalog.v1.DatabaseTableSpecOrBuilder getDatabaseTableSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a data source connection. Valid only
+   * for entries with the `DATA_SOURCE_CONNECTION` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DataSourceConnectionSpec data_source_connection_spec = 27;
+   * </code>
+   *
+   * @return Whether the dataSourceConnectionSpec field is set.
+   */
+  boolean hasDataSourceConnectionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a data source connection. Valid only
+   * for entries with the `DATA_SOURCE_CONNECTION` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DataSourceConnectionSpec data_source_connection_spec = 27;
+   * </code>
+   *
+   * @return The dataSourceConnectionSpec.
+   */
+  com.google.cloud.datacatalog.v1.DataSourceConnectionSpec getDataSourceConnectionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a data source connection. Valid only
+   * for entries with the `DATA_SOURCE_CONNECTION` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DataSourceConnectionSpec data_source_connection_spec = 27;
+   * </code>
+   */
+  com.google.cloud.datacatalog.v1.DataSourceConnectionSpecOrBuilder
+      getDataSourceConnectionSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a user-defined function or procedure. Valid
+   * only for entries with the `ROUTINE` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.RoutineSpec routine_spec = 28;</code>
+   *
+   * @return Whether the routineSpec field is set.
+   */
+  boolean hasRoutineSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a user-defined function or procedure. Valid
+   * only for entries with the `ROUTINE` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.RoutineSpec routine_spec = 28;</code>
+   *
+   * @return The routineSpec.
+   */
+  com.google.cloud.datacatalog.v1.RoutineSpec getRoutineSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a user-defined function or procedure. Valid
+   * only for entries with the `ROUTINE` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.RoutineSpec routine_spec = 28;</code>
+   */
+  com.google.cloud.datacatalog.v1.RoutineSpecOrBuilder getRoutineSpecOrBuilder();
 
   /**
    *
@@ -616,10 +710,11 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Timestamps about the underlying resource, not about this Data Catalog
-   * entry. Output only when Entry is of type in the EntryType enum. For entries
-   * with user_specified_type, this field is optional and defaults to an empty
-   * timestamp.
+   * Timestamps from the underlying resource, not from the Data Catalog
+   * entry.
+   * Output only when the entry has a type listed in the `EntryType` enum.
+   * For entries with `user_specified_type`, this field is optional and defaults
+   * to an empty timestamp.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -631,10 +726,11 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Timestamps about the underlying resource, not about this Data Catalog
-   * entry. Output only when Entry is of type in the EntryType enum. For entries
-   * with user_specified_type, this field is optional and defaults to an empty
-   * timestamp.
+   * Timestamps from the underlying resource, not from the Data Catalog
+   * entry.
+   * Output only when the entry has a type listed in the `EntryType` enum.
+   * For entries with `user_specified_type`, this field is optional and defaults
+   * to an empty timestamp.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -646,15 +742,126 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Timestamps about the underlying resource, not about this Data Catalog
-   * entry. Output only when Entry is of type in the EntryType enum. For entries
-   * with user_specified_type, this field is optional and defaults to an empty
-   * timestamp.
+   * Timestamps from the underlying resource, not from the Data Catalog
+   * entry.
+   * Output only when the entry has a type listed in the `EntryType` enum.
+   * For entries with `user_specified_type`, this field is optional and defaults
+   * to an empty timestamp.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
    */
   com.google.cloud.datacatalog.v1.SystemTimestampsOrBuilder getSourceSystemTimestampsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource usage statistics.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the usageSignal field is set.
+   */
+  boolean hasUsageSignal();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource usage statistics.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The usageSignal.
+   */
+  com.google.cloud.datacatalog.v1.UsageSignal getUsageSignal();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource usage statistics.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.datacatalog.v1.UsageSignalOrBuilder getUsageSignalOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Cloud labels attached to the entry.
+   * In Data Catalog, you can create and modify labels attached only to custom
+   * entries. Synced entries have unmodifiable labels that come from the source
+   * system.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 14;</code>
+   */
+  int getLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud labels attached to the entry.
+   * In Data Catalog, you can create and modify labels attached only to custom
+   * entries. Synced entries have unmodifiable labels that come from the source
+   * system.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 14;</code>
+   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud labels attached to the entry.
+   * In Data Catalog, you can create and modify labels attached only to custom
+   * entries. Synced entries have unmodifiable labels that come from the source
+   * system.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 14;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud labels attached to the entry.
+   * In Data Catalog, you can create and modify labels attached only to custom
+   * entries. Synced entries have unmodifiable labels that come from the source
+   * system.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 14;</code>
+   */
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Cloud labels attached to the entry.
+   * In Data Catalog, you can create and modify labels attached only to custom
+   * entries. Synced entries have unmodifiable labels that come from the source
+   * system.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 14;</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 
   /**
    *

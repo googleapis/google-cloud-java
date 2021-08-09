@@ -22,8 +22,9 @@ package com.google.cloud.datacatalog.v1;
  *
  *
  * <pre>
- * Message representing a taxonomy, including its policy tags in hierarchy, as a
- * nested proto. Used for taxonomy replacement, import, and export.
+ * A nested protocol buffer that represents a taxonomy and the hierarchy of its
+ * policy tags. Used for taxonomy replacement, import, and
+ * export.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.v1.SerializedTaxonomy}
@@ -222,8 +223,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Description of the serialized taxonomy. At most 2000 bytes when encoded in
-   * UTF-8. If not set, defaults to an empty description.
+   * Description of the serialized taxonomy. At most 2000 bytes when
+   * encoded in UTF-8. If not set, defaults to an empty description.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -246,8 +247,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Description of the serialized taxonomy. At most 2000 bytes when encoded in
-   * UTF-8. If not set, defaults to an empty description.
+   * Description of the serialized taxonomy. At most 2000 bytes when
+   * encoded in UTF-8. If not set, defaults to an empty description.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -652,8 +653,9 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Message representing a taxonomy, including its policy tags in hierarchy, as a
-   * nested proto. Used for taxonomy replacement, import, and export.
+   * A nested protocol buffer that represents a taxonomy and the hierarchy of its
+   * policy tags. Used for taxonomy replacement, import, and
+   * export.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.v1.SerializedTaxonomy}
@@ -990,8 +992,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Description of the serialized taxonomy. At most 2000 bytes when encoded in
-     * UTF-8. If not set, defaults to an empty description.
+     * Description of the serialized taxonomy. At most 2000 bytes when
+     * encoded in UTF-8. If not set, defaults to an empty description.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1013,8 +1015,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Description of the serialized taxonomy. At most 2000 bytes when encoded in
-     * UTF-8. If not set, defaults to an empty description.
+     * Description of the serialized taxonomy. At most 2000 bytes when
+     * encoded in UTF-8. If not set, defaults to an empty description.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1036,8 +1038,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Description of the serialized taxonomy. At most 2000 bytes when encoded in
-     * UTF-8. If not set, defaults to an empty description.
+     * Description of the serialized taxonomy. At most 2000 bytes when
+     * encoded in UTF-8. If not set, defaults to an empty description.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1058,8 +1060,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Description of the serialized taxonomy. At most 2000 bytes when encoded in
-     * UTF-8. If not set, defaults to an empty description.
+     * Description of the serialized taxonomy. At most 2000 bytes when
+     * encoded in UTF-8. If not set, defaults to an empty description.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1076,8 +1078,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Description of the serialized taxonomy. At most 2000 bytes when encoded in
-     * UTF-8. If not set, defaults to an empty description.
+     * Description of the serialized taxonomy. At most 2000 bytes when
+     * encoded in UTF-8. If not set, defaults to an empty description.
      * </pre>
      *
      * <code>string description = 2;</code>

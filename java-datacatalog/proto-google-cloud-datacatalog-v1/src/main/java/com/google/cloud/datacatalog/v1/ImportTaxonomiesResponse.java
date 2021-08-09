@@ -126,7 +126,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Taxonomies that were imported.
+   * Imported taxonomies.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -139,7 +139,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Taxonomies that were imported.
+   * Imported taxonomies.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -153,7 +153,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Taxonomies that were imported.
+   * Imported taxonomies.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -166,7 +166,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Taxonomies that were imported.
+   * Imported taxonomies.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -179,7 +179,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Taxonomies that were imported.
+   * Imported taxonomies.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -572,7 +572,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -588,7 +588,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -604,7 +604,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -620,7 +620,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -642,7 +642,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -662,7 +662,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -684,7 +684,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -706,7 +706,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -725,7 +725,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -745,7 +745,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -765,7 +765,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -784,7 +784,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -803,7 +803,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -815,7 +815,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -831,7 +831,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -848,7 +848,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -861,7 +861,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -874,7 +874,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>

@@ -27,7 +27,7 @@ public interface FieldTypeOrBuilder
    *
    *
    * <pre>
-   * Represents primitive types - string, bool etc.
+   * Primitive types, such as string, boolean, etc.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.FieldType.PrimitiveType primitive_type = 1;</code>
@@ -39,7 +39,7 @@ public interface FieldTypeOrBuilder
    *
    *
    * <pre>
-   * Represents primitive types - string, bool etc.
+   * Primitive types, such as string, boolean, etc.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.FieldType.PrimitiveType primitive_type = 1;</code>
@@ -51,7 +51,7 @@ public interface FieldTypeOrBuilder
    *
    *
    * <pre>
-   * Represents primitive types - string, bool etc.
+   * Primitive types, such as string, boolean, etc.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.FieldType.PrimitiveType primitive_type = 1;</code>
@@ -64,7 +64,7 @@ public interface FieldTypeOrBuilder
    *
    *
    * <pre>
-   * Represents an enum type.
+   * An enum type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.FieldType.EnumType enum_type = 2;</code>
@@ -76,7 +76,7 @@ public interface FieldTypeOrBuilder
    *
    *
    * <pre>
-   * Represents an enum type.
+   * An enum type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.FieldType.EnumType enum_type = 2;</code>
@@ -88,7 +88,7 @@ public interface FieldTypeOrBuilder
    *
    *
    * <pre>
-   * Represents an enum type.
+   * An enum type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.FieldType.EnumType enum_type = 2;</code>

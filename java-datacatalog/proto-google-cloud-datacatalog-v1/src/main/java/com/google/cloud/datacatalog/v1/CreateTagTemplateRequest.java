@@ -144,8 +144,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. The name of the project and the template location
    * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-   * Example:
-   * * projects/{project_id}/locations/us-central1
    * </pre>
    *
    * <code>
@@ -172,8 +170,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. The name of the project and the template location
    * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-   * Example:
-   * * projects/{project_id}/locations/us-central1
    * </pre>
    *
    * <code>
@@ -675,8 +671,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The name of the project and the template location
      * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-     * Example:
-     * * projects/{project_id}/locations/us-central1
      * </pre>
      *
      * <code>
@@ -702,8 +696,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The name of the project and the template location
      * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-     * Example:
-     * * projects/{project_id}/locations/us-central1
      * </pre>
      *
      * <code>
@@ -729,8 +721,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The name of the project and the template location
      * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-     * Example:
-     * * projects/{project_id}/locations/us-central1
      * </pre>
      *
      * <code>
@@ -755,8 +745,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The name of the project and the template location
      * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-     * Example:
-     * * projects/{project_id}/locations/us-central1
      * </pre>
      *
      * <code>
@@ -777,8 +765,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The name of the project and the template location
      * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-     * Example:
-     * * projects/{project_id}/locations/us-central1
      * </pre>
      *
      * <code>

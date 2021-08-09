@@ -27,12 +27,10 @@ public interface ListTagsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the Data Catalog resource to list the tags of. The resource
-   * could be an [Entry][google.cloud.datacatalog.v1.Entry] or an
-   * [EntryGroup][google.cloud.datacatalog.v1.EntryGroup].
-   * Examples:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   * Required. The name of the Data Catalog resource to list the tags of.
+   * The resource can be an [Entry][google.cloud.datacatalog.v1.Entry]
+   * or an [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]
+   * (without `/entries/{entries}` at the end).
    * </pre>
    *
    * <code>
@@ -46,12 +44,10 @@ public interface ListTagsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the Data Catalog resource to list the tags of. The resource
-   * could be an [Entry][google.cloud.datacatalog.v1.Entry] or an
-   * [EntryGroup][google.cloud.datacatalog.v1.EntryGroup].
-   * Examples:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   * Required. The name of the Data Catalog resource to list the tags of.
+   * The resource can be an [Entry][google.cloud.datacatalog.v1.Entry]
+   * or an [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]
+   * (without `/entries/{entries}` at the end).
    * </pre>
    *
    * <code>
@@ -66,7 +62,7 @@ public interface ListTagsRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of tags to return. Default is 10. Max limit is 1000.
+   * The maximum number of tags to return. Default is 10. Maximum limit is 1000.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -79,8 +75,8 @@ public interface ListTagsRequestOrBuilder
    *
    *
    * <pre>
-   * Token that specifies which page is requested. If empty, the first page is
-   * returned.
+   * Pagination token that specifies the next page to return. If empty, the
+   * first page is returned.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -92,8 +88,8 @@ public interface ListTagsRequestOrBuilder
    *
    *
    * <pre>
-   * Token that specifies which page is requested. If empty, the first page is
-   * returned.
+   * Pagination token that specifies the next page to return. If empty, the
+   * first page is returned.
    * </pre>
    *
    * <code>string page_token = 3;</code>

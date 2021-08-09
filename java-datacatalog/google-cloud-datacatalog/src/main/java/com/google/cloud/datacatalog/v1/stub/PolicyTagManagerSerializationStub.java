@@ -22,6 +22,8 @@ import com.google.cloud.datacatalog.v1.ExportTaxonomiesRequest;
 import com.google.cloud.datacatalog.v1.ExportTaxonomiesResponse;
 import com.google.cloud.datacatalog.v1.ImportTaxonomiesRequest;
 import com.google.cloud.datacatalog.v1.ImportTaxonomiesResponse;
+import com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest;
+import com.google.cloud.datacatalog.v1.Taxonomy;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -32,6 +34,10 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class PolicyTagManagerSerializationStub implements BackgroundResource {
+
+  public UnaryCallable<ReplaceTaxonomyRequest, Taxonomy> replaceTaxonomyCallable() {
+    throw new UnsupportedOperationException("Not implemented: replaceTaxonomyCallable()");
+  }
 
   public UnaryCallable<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
       importTaxonomiesCallable() {

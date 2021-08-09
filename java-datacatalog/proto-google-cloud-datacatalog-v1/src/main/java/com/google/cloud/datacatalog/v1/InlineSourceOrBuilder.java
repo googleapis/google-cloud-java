@@ -27,7 +27,7 @@ public interface InlineSourceOrBuilder
    *
    *
    * <pre>
-   * Required. Taxonomies to be imported.
+   * Required. Taxonomies to import.
    * </pre>
    *
    * <code>
@@ -39,7 +39,7 @@ public interface InlineSourceOrBuilder
    *
    *
    * <pre>
-   * Required. Taxonomies to be imported.
+   * Required. Taxonomies to import.
    * </pre>
    *
    * <code>
@@ -51,7 +51,7 @@ public interface InlineSourceOrBuilder
    *
    *
    * <pre>
-   * Required. Taxonomies to be imported.
+   * Required. Taxonomies to import.
    * </pre>
    *
    * <code>
@@ -63,7 +63,7 @@ public interface InlineSourceOrBuilder
    *
    *
    * <pre>
-   * Required. Taxonomies to be imported.
+   * Required. Taxonomies to import.
    * </pre>
    *
    * <code>
@@ -76,7 +76,7 @@ public interface InlineSourceOrBuilder
    *
    *
    * <pre>
-   * Required. Taxonomies to be imported.
+   * Required. Taxonomies to import.
    * </pre>
    *
    * <code>

@@ -22,8 +22,8 @@ package com.google.cloud.datacatalog.v1;
  *
  *
  * <pre>
- * Message representing one policy tag, including all its descendant policy
- * tags, as a nested proto.
+ * A nested protocol buffer that represents a policy tag and all its
+ * descendants.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.v1.SerializedPolicyTag}
@@ -153,7 +153,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Resource name of the policy tag.
-   * This field will be ignored when calling ImportTaxonomies.
+   * This field is ignored when calling `ImportTaxonomies`.
    * </pre>
    *
    * <code>string policy_tag = 1;</code>
@@ -177,7 +177,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Resource name of the policy tag.
-   * This field will be ignored when calling ImportTaxonomies.
+   * This field is ignored when calling `ImportTaxonomies`.
    * </pre>
    *
    * <code>string policy_tag = 1;</code>
@@ -203,7 +203,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+   * Required. Display name of the policy tag. At most 200 bytes when encoded
+   * in UTF-8.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -226,7 +227,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+   * Required. Display name of the policy tag. At most 200 bytes when encoded
+   * in UTF-8.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -252,8 +254,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Description of the serialized policy tag. The length of the description is
-   * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+   * Description of the serialized policy tag. At most
+   * 2000 bytes when encoded in UTF-8. If not set, defaults to an
    * empty description.
    * </pre>
    *
@@ -277,8 +279,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Description of the serialized policy tag. The length of the description is
-   * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+   * Description of the serialized policy tag. At most
+   * 2000 bytes when encoded in UTF-8. If not set, defaults to an
    * empty description.
    * </pre>
    *
@@ -562,8 +564,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Message representing one policy tag, including all its descendant policy
-   * tags, as a nested proto.
+   * A nested protocol buffer that represents a policy tag and all its
+   * descendants.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.v1.SerializedPolicyTag}
@@ -785,7 +787,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Resource name of the policy tag.
-     * This field will be ignored when calling ImportTaxonomies.
+     * This field is ignored when calling `ImportTaxonomies`.
      * </pre>
      *
      * <code>string policy_tag = 1;</code>
@@ -808,7 +810,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Resource name of the policy tag.
-     * This field will be ignored when calling ImportTaxonomies.
+     * This field is ignored when calling `ImportTaxonomies`.
      * </pre>
      *
      * <code>string policy_tag = 1;</code>
@@ -831,7 +833,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Resource name of the policy tag.
-     * This field will be ignored when calling ImportTaxonomies.
+     * This field is ignored when calling `ImportTaxonomies`.
      * </pre>
      *
      * <code>string policy_tag = 1;</code>
@@ -853,7 +855,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Resource name of the policy tag.
-     * This field will be ignored when calling ImportTaxonomies.
+     * This field is ignored when calling `ImportTaxonomies`.
      * </pre>
      *
      * <code>string policy_tag = 1;</code>
@@ -871,7 +873,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Resource name of the policy tag.
-     * This field will be ignored when calling ImportTaxonomies.
+     * This field is ignored when calling `ImportTaxonomies`.
      * </pre>
      *
      * <code>string policy_tag = 1;</code>
@@ -895,7 +897,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+     * Required. Display name of the policy tag. At most 200 bytes when encoded
+     * in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -917,7 +920,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+     * Required. Display name of the policy tag. At most 200 bytes when encoded
+     * in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -939,7 +943,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+     * Required. Display name of the policy tag. At most 200 bytes when encoded
+     * in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -960,7 +965,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+     * Required. Display name of the policy tag. At most 200 bytes when encoded
+     * in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -977,7 +983,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+     * Required. Display name of the policy tag. At most 200 bytes when encoded
+     * in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1001,8 +1008,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Description of the serialized policy tag. The length of the description is
-     * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+     * Description of the serialized policy tag. At most
+     * 2000 bytes when encoded in UTF-8. If not set, defaults to an
      * empty description.
      * </pre>
      *
@@ -1025,8 +1032,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Description of the serialized policy tag. The length of the description is
-     * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+     * Description of the serialized policy tag. At most
+     * 2000 bytes when encoded in UTF-8. If not set, defaults to an
      * empty description.
      * </pre>
      *
@@ -1049,8 +1056,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Description of the serialized policy tag. The length of the description is
-     * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+     * Description of the serialized policy tag. At most
+     * 2000 bytes when encoded in UTF-8. If not set, defaults to an
      * empty description.
      * </pre>
      *
@@ -1072,8 +1079,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Description of the serialized policy tag. The length of the description is
-     * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+     * Description of the serialized policy tag. At most
+     * 2000 bytes when encoded in UTF-8. If not set, defaults to an
      * empty description.
      * </pre>
      *
@@ -1091,8 +1098,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Description of the serialized policy tag. The length of the description is
-     * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+     * Description of the serialized policy tag. At most
+     * 2000 bytes when encoded in UTF-8. If not set, defaults to an
      * empty description.
      * </pre>
      *

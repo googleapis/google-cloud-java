@@ -27,7 +27,7 @@ public interface GetTaxonomyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the requested taxonomy.
+   * Required. Resource name of the taxonomy to get.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface GetTaxonomyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the requested taxonomy.
+   * Required. Resource name of the taxonomy to get.
    * </pre>
    *
    * <code>

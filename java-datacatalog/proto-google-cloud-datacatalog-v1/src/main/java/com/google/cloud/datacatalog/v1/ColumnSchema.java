@@ -22,7 +22,7 @@ package com.google.cloud.datacatalog.v1;
  *
  *
  * <pre>
- * Representation of a column within a schema. Columns could be nested inside
+ * A column within a schema. Columns can be nested inside
  * other columns.
  * </pre>
  *
@@ -316,7 +316,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A column's mode indicates if values in this column are required,
+   * Optional. A column's mode indicates whether values in this column are required,
    * nullable, or repeated.
    * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
    * Default mode is `NULLABLE`.
@@ -342,7 +342,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A column's mode indicates if values in this column are required,
+   * Optional. A column's mode indicates whether values in this column are required,
    * nullable, or repeated.
    * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
    * Default mode is `NULLABLE`.
@@ -645,7 +645,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Representation of a column within a schema. Columns could be nested inside
+   * A column within a schema. Columns can be nested inside
    * other columns.
    * </pre>
    *
@@ -1215,7 +1215,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A column's mode indicates if values in this column are required,
+     * Optional. A column's mode indicates whether values in this column are required,
      * nullable, or repeated.
      * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      * Default mode is `NULLABLE`.
@@ -1240,7 +1240,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A column's mode indicates if values in this column are required,
+     * Optional. A column's mode indicates whether values in this column are required,
      * nullable, or repeated.
      * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      * Default mode is `NULLABLE`.
@@ -1265,7 +1265,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A column's mode indicates if values in this column are required,
+     * Optional. A column's mode indicates whether values in this column are required,
      * nullable, or repeated.
      * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      * Default mode is `NULLABLE`.
@@ -1289,7 +1289,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A column's mode indicates if values in this column are required,
+     * Optional. A column's mode indicates whether values in this column are required,
      * nullable, or repeated.
      * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      * Default mode is `NULLABLE`.
@@ -1309,7 +1309,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A column's mode indicates if values in this column are required,
+     * Optional. A column's mode indicates whether values in this column are required,
      * nullable, or repeated.
      * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      * Default mode is `NULLABLE`.

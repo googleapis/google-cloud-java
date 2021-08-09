@@ -27,8 +27,8 @@ public interface DeletePolicyTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the policy tag to be deleted. All of its descendant
-   * policy tags will also be deleted.
+   * Required. Resource name of the policy tag to delete.
+   * Note: All of its descendant policy tags are also deleted.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface DeletePolicyTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the policy tag to be deleted. All of its descendant
-   * policy tags will also be deleted.
+   * Required. Resource name of the policy tag to delete.
+   * Note: All of its descendant policy tags are also deleted.
    * </pre>
    *
    * <code>

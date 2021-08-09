@@ -19,8 +19,8 @@
  *
  * <p>======================= DataCatalogClient =======================
  *
- * <p>Service Description: Data Catalog API service allows clients to discover, understand, and
- * manage their data.
+ * <p>Service Description: Data Catalog API service allows you to discover, understand, and manage
+ * your data.
  *
  * <p>Sample for DataCatalogClient:
  *
@@ -35,8 +35,8 @@
  *
  * <p>======================= PolicyTagManagerClient =======================
  *
- * <p>Service Description: Policy Tag Manager API service allows clients to manage their policy tags
- * and taxonomies.
+ * <p>Service Description: Policy Tag Manager API service allows you to manage your policy tags and
+ * taxonomies.
  *
  * <p>Policy tags are used to tag BigQuery columns and apply additional access control policies. A
  * taxonomy is a hierarchical grouping of policy tags that classify data along a common axis.
@@ -53,21 +53,22 @@
  *
  * <p>======================= PolicyTagManagerSerializationClient =======================
  *
- * <p>Service Description: Policy Tag Manager serialization API service allows clients to manipulate
- * their policy tags and taxonomies in serialized format, where taxonomy is a hierarchical group of
- * policy tags.
+ * <p>Service Description: Policy Tag Manager Serialization API service allows you to manipulate
+ * your policy tags and taxonomies in a serialized format.
+ *
+ * <p>Taxonomy is a hierarchical group of policy tags.
  *
  * <p>Sample for PolicyTagManagerSerializationClient:
  *
  * <pre>{@code
  * try (PolicyTagManagerSerializationClient policyTagManagerSerializationClient =
  *     PolicyTagManagerSerializationClient.create()) {
- *   ImportTaxonomiesRequest request =
- *       ImportTaxonomiesRequest.newBuilder()
- *           .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+ *   ReplaceTaxonomyRequest request =
+ *       ReplaceTaxonomyRequest.newBuilder()
+ *           .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+ *           .setSerializedTaxonomy(SerializedTaxonomy.newBuilder().build())
  *           .build();
- *   ImportTaxonomiesResponse response =
- *       policyTagManagerSerializationClient.importTaxonomies(request);
+ *   Taxonomy response = policyTagManagerSerializationClient.replaceTaxonomy(request);
  * }
  * }</pre>
  */

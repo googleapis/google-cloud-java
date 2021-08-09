@@ -126,8 +126,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The name of the tag template. Example:
-   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+   * Required. The name of the tag template.
    * </pre>
    *
    * <code>
@@ -152,8 +151,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The name of the tag template. Example:
-   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+   * Required. The name of the tag template.
    * </pre>
    *
    * <code>
@@ -568,8 +566,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+     * Required. The name of the tag template.
      * </pre>
      *
      * <code>
@@ -593,8 +590,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+     * Required. The name of the tag template.
      * </pre>
      *
      * <code>
@@ -618,8 +614,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+     * Required. The name of the tag template.
      * </pre>
      *
      * <code>
@@ -642,8 +637,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+     * Required. The name of the tag template.
      * </pre>
      *
      * <code>
@@ -662,8 +656,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+     * Required. The name of the tag template.
      * </pre>
      *
      * <code>

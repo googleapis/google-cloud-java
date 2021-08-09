@@ -27,8 +27,7 @@ public interface DeleteEntryGroupRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the entry group. For example,
-   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+   * Required. The name of the entry group to delete.
    * </pre>
    *
    * <code>
@@ -42,8 +41,7 @@ public interface DeleteEntryGroupRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the entry group. For example,
-   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+   * Required. The name of the entry group to delete.
    * </pre>
    *
    * <code>

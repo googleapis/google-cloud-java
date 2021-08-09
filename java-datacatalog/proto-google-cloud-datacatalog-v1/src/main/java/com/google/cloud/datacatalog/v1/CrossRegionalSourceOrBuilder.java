@@ -27,7 +27,7 @@ public interface CrossRegionalSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the source taxonomy to be imported.
+   * Required. The resource name of the source taxonomy to import.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface CrossRegionalSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the source taxonomy to be imported.
+   * Required. The resource name of the source taxonomy to import.
    * </pre>
    *
    * <code>

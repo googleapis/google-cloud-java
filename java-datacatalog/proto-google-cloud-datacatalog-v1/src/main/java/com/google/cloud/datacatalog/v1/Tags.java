@@ -89,47 +89,48 @@ public final class Tags {
           + "1.TagField:\0028\001:\201\001\352A~\n\036datacatalog.google"
           + "apis.com/Tag\022\\projects/{project}/locatio"
           + "ns/{location}/entryGroups/{entry_group}/"
-          + "entries/{entry}/tags/{tag}B\007\n\005scope\"\250\002\n\010"
+          + "entries/{entry}/tags/{tag}B\007\n\005scope\"\302\002\n\010"
           + "TagField\022\031\n\014display_name\030\001 \001(\tB\003\340A\003\022\026\n\014d"
           + "ouble_value\030\002 \001(\001H\000\022\026\n\014string_value\030\003 \001("
           + "\tH\000\022\024\n\nbool_value\030\004 \001(\010H\000\0225\n\017timestamp_v"
           + "alue\030\005 \001(\0132\032.google.protobuf.TimestampH\000"
           + "\022E\n\nenum_value\030\006 \001(\0132/.google.cloud.data"
-          + "catalog.v1.TagField.EnumValueH\000\022\022\n\005order"
-          + "\030\007 \001(\005B\003\340A\003\032!\n\tEnumValue\022\024\n\014display_name"
-          + "\030\001 \001(\tB\006\n\004kind\"\314\002\n\013TagTemplate\022\014\n\004name\030\001"
-          + " \001(\t\022\024\n\014display_name\030\002 \001(\t\022I\n\006fields\030\003 \003"
-          + "(\01324.google.cloud.datacatalog.v1.TagTemp"
-          + "late.FieldsEntryB\003\340A\002\032\\\n\013FieldsEntry\022\013\n\003"
-          + "key\030\001 \001(\t\022<\n\005value\030\002 \001(\0132-.google.cloud."
-          + "datacatalog.v1.TagTemplateField:\0028\001:p\352Am"
-          + "\n&datacatalog.googleapis.com/TagTemplate"
-          + "\022Cprojects/{project}/locations/{location"
-          + "}/tagTemplates/{tag_template}\"\267\002\n\020TagTem"
-          + "plateField\022\021\n\004name\030\006 \001(\tB\003\340A\003\022\024\n\014display"
-          + "_name\030\001 \001(\t\0229\n\004type\030\002 \001(\0132&.google.cloud"
-          + ".datacatalog.v1.FieldTypeB\003\340A\002\022\023\n\013is_req"
-          + "uired\030\003 \001(\010\022\023\n\013description\030\004 \001(\t\022\r\n\005orde"
-          + "r\030\005 \001(\005:\205\001\352A\201\001\n+datacatalog.googleapis.c"
-          + "om/TagTemplateField\022Rprojects/{project}/"
-          + "locations/{location}/tagTemplates/{tag_t"
-          + "emplate}/fields/{field}\"\230\003\n\tFieldType\022N\n"
-          + "\016primitive_type\030\001 \001(\01624.google.cloud.dat"
-          + "acatalog.v1.FieldType.PrimitiveTypeH\000\022D\n"
-          + "\tenum_type\030\002 \001(\0132/.google.cloud.datacata"
-          + "log.v1.FieldType.EnumTypeH\000\032\205\001\n\010EnumType"
-          + "\022Q\n\016allowed_values\030\001 \003(\01329.google.cloud."
-          + "datacatalog.v1.FieldType.EnumType.EnumVa"
-          + "lue\032&\n\tEnumValue\022\031\n\014display_name\030\001 \001(\tB\003"
-          + "\340A\002\"`\n\rPrimitiveType\022\036\n\032PRIMITIVE_TYPE_U"
-          + "NSPECIFIED\020\000\022\n\n\006DOUBLE\020\001\022\n\n\006STRING\020\002\022\010\n\004"
-          + "BOOL\020\003\022\r\n\tTIMESTAMP\020\004B\013\n\ttype_declB\313\001\n\037c"
-          + "om.google.cloud.datacatalog.v1P\001ZFgoogle"
-          + ".golang.org/genproto/googleapis/cloud/da"
-          + "tacatalog/v1;datacatalog\370\001\001\252\002\033Google.Clo"
-          + "ud.DataCatalog.V1\312\002\033Google\\Cloud\\DataCat"
-          + "alog\\V1\352\002\036Google::Cloud::DataCatalog::V1"
-          + "b\006proto3"
+          + "catalog.v1.TagField.EnumValueH\000\022\030\n\016richt"
+          + "ext_value\030\010 \001(\tH\000\022\022\n\005order\030\007 \001(\005B\003\340A\003\032!\n"
+          + "\tEnumValue\022\024\n\014display_name\030\001 \001(\tB\006\n\004kind"
+          + "\"\352\002\n\013TagTemplate\022\014\n\004name\030\001 \001(\t\022\024\n\014displa"
+          + "y_name\030\002 \001(\t\022\034\n\024is_publicly_readable\030\005 \001"
+          + "(\010\022I\n\006fields\030\003 \003(\01324.google.cloud.dataca"
+          + "talog.v1.TagTemplate.FieldsEntryB\003\340A\002\032\\\n"
+          + "\013FieldsEntry\022\013\n\003key\030\001 \001(\t\022<\n\005value\030\002 \001(\013"
+          + "2-.google.cloud.datacatalog.v1.TagTempla"
+          + "teField:\0028\001:p\352Am\n&datacatalog.googleapis"
+          + ".com/TagTemplate\022Cprojects/{project}/loc"
+          + "ations/{location}/tagTemplates/{tag_temp"
+          + "late}\"\267\002\n\020TagTemplateField\022\021\n\004name\030\006 \001(\t"
+          + "B\003\340A\003\022\024\n\014display_name\030\001 \001(\t\0229\n\004type\030\002 \001("
+          + "\0132&.google.cloud.datacatalog.v1.FieldTyp"
+          + "eB\003\340A\002\022\023\n\013is_required\030\003 \001(\010\022\023\n\013descripti"
+          + "on\030\004 \001(\t\022\r\n\005order\030\005 \001(\005:\205\001\352A\201\001\n+datacata"
+          + "log.googleapis.com/TagTemplateField\022Rpro"
+          + "jects/{project}/locations/{location}/tag"
+          + "Templates/{tag_template}/fields/{field}\""
+          + "\246\003\n\tFieldType\022N\n\016primitive_type\030\001 \001(\01624."
+          + "google.cloud.datacatalog.v1.FieldType.Pr"
+          + "imitiveTypeH\000\022D\n\tenum_type\030\002 \001(\0132/.googl"
+          + "e.cloud.datacatalog.v1.FieldType.EnumTyp"
+          + "eH\000\032\205\001\n\010EnumType\022Q\n\016allowed_values\030\001 \003(\013"
+          + "29.google.cloud.datacatalog.v1.FieldType"
+          + ".EnumType.EnumValue\032&\n\tEnumValue\022\031\n\014disp"
+          + "lay_name\030\001 \001(\tB\003\340A\002\"n\n\rPrimitiveType\022\036\n\032"
+          + "PRIMITIVE_TYPE_UNSPECIFIED\020\000\022\n\n\006DOUBLE\020\001"
+          + "\022\n\n\006STRING\020\002\022\010\n\004BOOL\020\003\022\r\n\tTIMESTAMP\020\004\022\014\n"
+          + "\010RICHTEXT\020\005B\013\n\ttype_declB\313\001\n\037com.google."
+          + "cloud.datacatalog.v1P\001ZFgoogle.golang.or"
+          + "g/genproto/googleapis/cloud/datacatalog/"
+          + "v1;datacatalog\370\001\001\252\002\033Google.Cloud.DataCat"
+          + "alog.V1\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036"
+          + "Google::Cloud::DataCatalog::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -167,6 +168,7 @@ public final class Tags {
               "BoolValue",
               "TimestampValue",
               "EnumValue",
+              "RichtextValue",
               "Order",
               "Kind",
             });
@@ -184,7 +186,7 @@ public final class Tags {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_TagTemplate_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "Fields",
+              "Name", "DisplayName", "IsPubliclyReadable", "Fields",
             });
     internal_static_google_cloud_datacatalog_v1_TagTemplate_FieldsEntry_descriptor =
         internal_static_google_cloud_datacatalog_v1_TagTemplate_descriptor.getNestedTypes().get(0);

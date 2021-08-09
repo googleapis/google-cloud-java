@@ -27,8 +27,7 @@ public interface RenameTagTemplateFieldEnumValueRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the enum field value. Example:
-   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}
+   * Required. The name of the enum field value.
    * </pre>
    *
    * <code>
@@ -42,8 +41,7 @@ public interface RenameTagTemplateFieldEnumValueRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the enum field value. Example:
-   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}
+   * Required. The name of the enum field value.
    * </pre>
    *
    * <code>

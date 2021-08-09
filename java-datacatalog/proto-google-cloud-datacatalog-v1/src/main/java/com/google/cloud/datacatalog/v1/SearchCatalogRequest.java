@@ -159,9 +159,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of organization IDs to search within. To find your organization
-     * ID, follow instructions in
-     * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
+     * The list of organization IDs to search within.
+     * To find your organization ID, follow the steps from
+     * [Creating and managing organizations]
+     * (/resource-manager/docs/creating-managing-organization).
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
@@ -173,9 +174,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of organization IDs to search within. To find your organization
-     * ID, follow instructions in
-     * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
+     * The list of organization IDs to search within.
+     * To find your organization ID, follow the steps from
+     * [Creating and managing organizations]
+     * (/resource-manager/docs/creating-managing-organization).
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
@@ -187,9 +189,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of organization IDs to search within. To find your organization
-     * ID, follow instructions in
-     * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
+     * The list of organization IDs to search within.
+     * To find your organization ID, follow the steps from
+     * [Creating and managing organizations]
+     * (/resource-manager/docs/creating-managing-organization).
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
@@ -202,9 +205,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of organization IDs to search within. To find your organization
-     * ID, follow instructions in
-     * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
+     * The list of organization IDs to search within.
+     * To find your organization ID, follow the steps from
+     * [Creating and managing organizations]
+     * (/resource-manager/docs/creating-managing-organization).
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
@@ -218,9 +222,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of project IDs to search within. To learn more about the
-     * distinction between project names/IDs/numbers, go to
-     * https://cloud.google.com/docs/overview/#projects.
+     * The list of project IDs to search within.
+     * For more information on the distinction between project names, IDs, and
+     * numbers, see [Projects](/docs/overview/#projects).
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
@@ -232,9 +236,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of project IDs to search within. To learn more about the
-     * distinction between project names/IDs/numbers, go to
-     * https://cloud.google.com/docs/overview/#projects.
+     * The list of project IDs to search within.
+     * For more information on the distinction between project names, IDs, and
+     * numbers, see [Projects](/docs/overview/#projects).
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
@@ -246,9 +250,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of project IDs to search within. To learn more about the
-     * distinction between project names/IDs/numbers, go to
-     * https://cloud.google.com/docs/overview/#projects.
+     * The list of project IDs to search within.
+     * For more information on the distinction between project names, IDs, and
+     * numbers, see [Projects](/docs/overview/#projects).
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
@@ -261,9 +265,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of project IDs to search within. To learn more about the
-     * distinction between project names/IDs/numbers, go to
-     * https://cloud.google.com/docs/overview/#projects.
+     * The list of project IDs to search within.
+     * For more information on the distinction between project names, IDs, and
+     * numbers, see [Projects](/docs/overview/#projects).
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
@@ -277,10 +281,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If `true`, include Google Cloud Platform (GCP) public datasets in the
-     * search results. Info on GCP public datasets is available at
-     * https://cloud.google.com/public-datasets/. By default, GCP public
-     * datasets are excluded.
+     * If `true`, include Google Cloud Platform (GCP) public datasets in
+     * search results. By default, they are excluded.
+     * See [Google Cloud Public Datasets](/public-datasets) for more
+     * information.
      * </pre>
      *
      * <code>bool include_gcp_public_datasets = 7;</code>
@@ -293,16 +297,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of locations to search within.
-     * 1. If empty, search will be performed in all locations;
-     * 2. If any of the locations are NOT [supported
-     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
-     * error will be returned;
-     * 3. Otherwise, search only the given locations for matching results.
-     * Typical usage is to leave this field empty. When a location is
-     * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
-     * users can repeat the search request with this parameter set to get
-     * additional information on the error.
+     * Optional. The list of locations to search within. If empty, all locations are
+     * searched.
+     * Returns an error if any location in the list isn't one of the [Supported
+     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+     * If a location is unreachable, its name is returned in the
+     * `SearchCatalogResponse.unreachable` field. To get additional information
+     * on the error, repeat the search request and set the location name as the
+     * value of this parameter.
      * </pre>
      *
      * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -315,16 +317,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of locations to search within.
-     * 1. If empty, search will be performed in all locations;
-     * 2. If any of the locations are NOT [supported
-     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
-     * error will be returned;
-     * 3. Otherwise, search only the given locations for matching results.
-     * Typical usage is to leave this field empty. When a location is
-     * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
-     * users can repeat the search request with this parameter set to get
-     * additional information on the error.
+     * Optional. The list of locations to search within. If empty, all locations are
+     * searched.
+     * Returns an error if any location in the list isn't one of the [Supported
+     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+     * If a location is unreachable, its name is returned in the
+     * `SearchCatalogResponse.unreachable` field. To get additional information
+     * on the error, repeat the search request and set the location name as the
+     * value of this parameter.
      * </pre>
      *
      * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -337,16 +337,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of locations to search within.
-     * 1. If empty, search will be performed in all locations;
-     * 2. If any of the locations are NOT [supported
-     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
-     * error will be returned;
-     * 3. Otherwise, search only the given locations for matching results.
-     * Typical usage is to leave this field empty. When a location is
-     * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
-     * users can repeat the search request with this parameter set to get
-     * additional information on the error.
+     * Optional. The list of locations to search within. If empty, all locations are
+     * searched.
+     * Returns an error if any location in the list isn't one of the [Supported
+     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+     * If a location is unreachable, its name is returned in the
+     * `SearchCatalogResponse.unreachable` field. To get additional information
+     * on the error, repeat the search request and set the location name as the
+     * value of this parameter.
      * </pre>
      *
      * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -360,16 +358,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of locations to search within.
-     * 1. If empty, search will be performed in all locations;
-     * 2. If any of the locations are NOT [supported
-     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
-     * error will be returned;
-     * 3. Otherwise, search only the given locations for matching results.
-     * Typical usage is to leave this field empty. When a location is
-     * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
-     * users can repeat the search request with this parameter set to get
-     * additional information on the error.
+     * Optional. The list of locations to search within. If empty, all locations are
+     * searched.
+     * Returns an error if any location in the list isn't one of the [Supported
+     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+     * If a location is unreachable, its name is returned in the
+     * `SearchCatalogResponse.unreachable` field. To get additional information
+     * on the error, repeat the search request and set the location name as the
+     * value of this parameter.
      * </pre>
      *
      * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -379,6 +375,27 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * @return The bytes of the restrictedLocations at the given index.
      */
     com.google.protobuf.ByteString getRestrictedLocationsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `true`, include [public tag
+     * templates][google.cloud.datacatalog.v1.TagTemplate.is_publicly_readable]
+     * in the search results. By default, they are included only if you have
+     * explicit permissions on them to view them. For example, if you are the
+     * owner.
+     * Other scope fields, for example, ``include_org_ids``,
+     * still restrict the returned public tag templates and at least one of
+     * them is required.
+     * </pre>
+     *
+     * <code>bool include_public_tag_templates = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The includePublicTagTemplates.
+     */
+    boolean getIncludePublicTagTemplates();
   }
   /**
    *
@@ -470,6 +487,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
                 restrictedLocations_.add(s);
                 break;
               }
+            case 152:
+              {
+                includePublicTagTemplates_ = input.readBool();
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -519,9 +541,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of organization IDs to search within. To find your organization
-     * ID, follow instructions in
-     * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
+     * The list of organization IDs to search within.
+     * To find your organization ID, follow the steps from
+     * [Creating and managing organizations]
+     * (/resource-manager/docs/creating-managing-organization).
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
@@ -535,9 +558,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of organization IDs to search within. To find your organization
-     * ID, follow instructions in
-     * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
+     * The list of organization IDs to search within.
+     * To find your organization ID, follow the steps from
+     * [Creating and managing organizations]
+     * (/resource-manager/docs/creating-managing-organization).
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
@@ -551,9 +575,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of organization IDs to search within. To find your organization
-     * ID, follow instructions in
-     * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
+     * The list of organization IDs to search within.
+     * To find your organization ID, follow the steps from
+     * [Creating and managing organizations]
+     * (/resource-manager/docs/creating-managing-organization).
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
@@ -568,9 +593,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of organization IDs to search within. To find your organization
-     * ID, follow instructions in
-     * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
+     * The list of organization IDs to search within.
+     * To find your organization ID, follow the steps from
+     * [Creating and managing organizations]
+     * (/resource-manager/docs/creating-managing-organization).
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
@@ -588,9 +614,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of project IDs to search within. To learn more about the
-     * distinction between project names/IDs/numbers, go to
-     * https://cloud.google.com/docs/overview/#projects.
+     * The list of project IDs to search within.
+     * For more information on the distinction between project names, IDs, and
+     * numbers, see [Projects](/docs/overview/#projects).
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
@@ -604,9 +630,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of project IDs to search within. To learn more about the
-     * distinction between project names/IDs/numbers, go to
-     * https://cloud.google.com/docs/overview/#projects.
+     * The list of project IDs to search within.
+     * For more information on the distinction between project names, IDs, and
+     * numbers, see [Projects](/docs/overview/#projects).
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
@@ -620,9 +646,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of project IDs to search within. To learn more about the
-     * distinction between project names/IDs/numbers, go to
-     * https://cloud.google.com/docs/overview/#projects.
+     * The list of project IDs to search within.
+     * For more information on the distinction between project names, IDs, and
+     * numbers, see [Projects](/docs/overview/#projects).
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
@@ -637,9 +663,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of project IDs to search within. To learn more about the
-     * distinction between project names/IDs/numbers, go to
-     * https://cloud.google.com/docs/overview/#projects.
+     * The list of project IDs to search within.
+     * For more information on the distinction between project names, IDs, and
+     * numbers, see [Projects](/docs/overview/#projects).
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
@@ -657,10 +683,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If `true`, include Google Cloud Platform (GCP) public datasets in the
-     * search results. Info on GCP public datasets is available at
-     * https://cloud.google.com/public-datasets/. By default, GCP public
-     * datasets are excluded.
+     * If `true`, include Google Cloud Platform (GCP) public datasets in
+     * search results. By default, they are excluded.
+     * See [Google Cloud Public Datasets](/public-datasets) for more
+     * information.
      * </pre>
      *
      * <code>bool include_gcp_public_datasets = 7;</code>
@@ -678,16 +704,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of locations to search within.
-     * 1. If empty, search will be performed in all locations;
-     * 2. If any of the locations are NOT [supported
-     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
-     * error will be returned;
-     * 3. Otherwise, search only the given locations for matching results.
-     * Typical usage is to leave this field empty. When a location is
-     * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
-     * users can repeat the search request with this parameter set to get
-     * additional information on the error.
+     * Optional. The list of locations to search within. If empty, all locations are
+     * searched.
+     * Returns an error if any location in the list isn't one of the [Supported
+     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+     * If a location is unreachable, its name is returned in the
+     * `SearchCatalogResponse.unreachable` field. To get additional information
+     * on the error, repeat the search request and set the location name as the
+     * value of this parameter.
      * </pre>
      *
      * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -702,16 +726,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of locations to search within.
-     * 1. If empty, search will be performed in all locations;
-     * 2. If any of the locations are NOT [supported
-     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
-     * error will be returned;
-     * 3. Otherwise, search only the given locations for matching results.
-     * Typical usage is to leave this field empty. When a location is
-     * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
-     * users can repeat the search request with this parameter set to get
-     * additional information on the error.
+     * Optional. The list of locations to search within. If empty, all locations are
+     * searched.
+     * Returns an error if any location in the list isn't one of the [Supported
+     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+     * If a location is unreachable, its name is returned in the
+     * `SearchCatalogResponse.unreachable` field. To get additional information
+     * on the error, repeat the search request and set the location name as the
+     * value of this parameter.
      * </pre>
      *
      * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -726,16 +748,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of locations to search within.
-     * 1. If empty, search will be performed in all locations;
-     * 2. If any of the locations are NOT [supported
-     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
-     * error will be returned;
-     * 3. Otherwise, search only the given locations for matching results.
-     * Typical usage is to leave this field empty. When a location is
-     * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
-     * users can repeat the search request with this parameter set to get
-     * additional information on the error.
+     * Optional. The list of locations to search within. If empty, all locations are
+     * searched.
+     * Returns an error if any location in the list isn't one of the [Supported
+     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+     * If a location is unreachable, its name is returned in the
+     * `SearchCatalogResponse.unreachable` field. To get additional information
+     * on the error, repeat the search request and set the location name as the
+     * value of this parameter.
      * </pre>
      *
      * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -751,16 +771,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of locations to search within.
-     * 1. If empty, search will be performed in all locations;
-     * 2. If any of the locations are NOT [supported
-     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
-     * error will be returned;
-     * 3. Otherwise, search only the given locations for matching results.
-     * Typical usage is to leave this field empty. When a location is
-     * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
-     * users can repeat the search request with this parameter set to get
-     * additional information on the error.
+     * Optional. The list of locations to search within. If empty, all locations are
+     * searched.
+     * Returns an error if any location in the list isn't one of the [Supported
+     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+     * If a location is unreachable, its name is returned in the
+     * `SearchCatalogResponse.unreachable` field. To get additional information
+     * on the error, repeat the search request and set the location name as the
+     * value of this parameter.
      * </pre>
      *
      * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -771,6 +789,32 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      */
     public com.google.protobuf.ByteString getRestrictedLocationsBytes(int index) {
       return restrictedLocations_.getByteString(index);
+    }
+
+    public static final int INCLUDE_PUBLIC_TAG_TEMPLATES_FIELD_NUMBER = 19;
+    private boolean includePublicTagTemplates_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `true`, include [public tag
+     * templates][google.cloud.datacatalog.v1.TagTemplate.is_publicly_readable]
+     * in the search results. By default, they are included only if you have
+     * explicit permissions on them to view them. For example, if you are the
+     * owner.
+     * Other scope fields, for example, ``include_org_ids``,
+     * still restrict the returned public tag templates and at least one of
+     * them is required.
+     * </pre>
+     *
+     * <code>bool include_public_tag_templates = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The includePublicTagTemplates.
+     */
+    @java.lang.Override
+    public boolean getIncludePublicTagTemplates() {
+      return includePublicTagTemplates_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -799,6 +843,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       for (int i = 0; i < restrictedLocations_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(
             output, 16, restrictedLocations_.getRaw(i));
+      }
+      if (includePublicTagTemplates_ != false) {
+        output.writeBool(19, includePublicTagTemplates_);
       }
       unknownFields.writeTo(output);
     }
@@ -836,6 +883,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         size += dataSize;
         size += 2 * getRestrictedLocationsList().size();
       }
+      if (includePublicTagTemplates_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(19, includePublicTagTemplates_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -856,6 +907,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       if (!getIncludeProjectIdsList().equals(other.getIncludeProjectIdsList())) return false;
       if (getIncludeGcpPublicDatasets() != other.getIncludeGcpPublicDatasets()) return false;
       if (!getRestrictedLocationsList().equals(other.getRestrictedLocationsList())) return false;
+      if (getIncludePublicTagTemplates() != other.getIncludePublicTagTemplates()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -881,6 +933,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         hash = (37 * hash) + RESTRICTED_LOCATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getRestrictedLocationsList().hashCode();
       }
+      hash = (37 * hash) + INCLUDE_PUBLIC_TAG_TEMPLATES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludePublicTagTemplates());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1037,6 +1091,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
 
         restrictedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
+        includePublicTagTemplates_ = false;
+
         return this;
       }
 
@@ -1082,6 +1138,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.restrictedLocations_ = restrictedLocations_;
+        result.includePublicTagTemplates_ = includePublicTagTemplates_;
         onBuilt();
         return result;
       }
@@ -1168,6 +1225,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
           }
           onChanged();
         }
+        if (other.getIncludePublicTagTemplates() != false) {
+          setIncludePublicTagTemplates(other.getIncludePublicTagTemplates());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1213,9 +1273,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The list of organization IDs to search within. To find your organization
-       * ID, follow instructions in
-       * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
+       * The list of organization IDs to search within.
+       * To find your organization ID, follow the steps from
+       * [Creating and managing organizations]
+       * (/resource-manager/docs/creating-managing-organization).
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
@@ -1229,9 +1290,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The list of organization IDs to search within. To find your organization
-       * ID, follow instructions in
-       * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
+       * The list of organization IDs to search within.
+       * To find your organization ID, follow the steps from
+       * [Creating and managing organizations]
+       * (/resource-manager/docs/creating-managing-organization).
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
@@ -1245,9 +1307,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The list of organization IDs to search within. To find your organization
-       * ID, follow instructions in
-       * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
+       * The list of organization IDs to search within.
+       * To find your organization ID, follow the steps from
+       * [Creating and managing organizations]
+       * (/resource-manager/docs/creating-managing-organization).
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
@@ -1262,9 +1325,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The list of organization IDs to search within. To find your organization
-       * ID, follow instructions in
-       * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
+       * The list of organization IDs to search within.
+       * To find your organization ID, follow the steps from
+       * [Creating and managing organizations]
+       * (/resource-manager/docs/creating-managing-organization).
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
@@ -1279,9 +1343,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The list of organization IDs to search within. To find your organization
-       * ID, follow instructions in
-       * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
+       * The list of organization IDs to search within.
+       * To find your organization ID, follow the steps from
+       * [Creating and managing organizations]
+       * (/resource-manager/docs/creating-managing-organization).
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
@@ -1303,9 +1368,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The list of organization IDs to search within. To find your organization
-       * ID, follow instructions in
-       * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
+       * The list of organization IDs to search within.
+       * To find your organization ID, follow the steps from
+       * [Creating and managing organizations]
+       * (/resource-manager/docs/creating-managing-organization).
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
@@ -1326,9 +1392,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The list of organization IDs to search within. To find your organization
-       * ID, follow instructions in
-       * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
+       * The list of organization IDs to search within.
+       * To find your organization ID, follow the steps from
+       * [Creating and managing organizations]
+       * (/resource-manager/docs/creating-managing-organization).
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
@@ -1346,9 +1413,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The list of organization IDs to search within. To find your organization
-       * ID, follow instructions in
-       * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
+       * The list of organization IDs to search within.
+       * To find your organization ID, follow the steps from
+       * [Creating and managing organizations]
+       * (/resource-manager/docs/creating-managing-organization).
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
@@ -1365,9 +1433,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The list of organization IDs to search within. To find your organization
-       * ID, follow instructions in
-       * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
+       * The list of organization IDs to search within.
+       * To find your organization ID, follow the steps from
+       * [Creating and managing organizations]
+       * (/resource-manager/docs/creating-managing-organization).
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
@@ -1399,9 +1468,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The list of project IDs to search within. To learn more about the
-       * distinction between project names/IDs/numbers, go to
-       * https://cloud.google.com/docs/overview/#projects.
+       * The list of project IDs to search within.
+       * For more information on the distinction between project names, IDs, and
+       * numbers, see [Projects](/docs/overview/#projects).
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
@@ -1415,9 +1484,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The list of project IDs to search within. To learn more about the
-       * distinction between project names/IDs/numbers, go to
-       * https://cloud.google.com/docs/overview/#projects.
+       * The list of project IDs to search within.
+       * For more information on the distinction between project names, IDs, and
+       * numbers, see [Projects](/docs/overview/#projects).
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
@@ -1431,9 +1500,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The list of project IDs to search within. To learn more about the
-       * distinction between project names/IDs/numbers, go to
-       * https://cloud.google.com/docs/overview/#projects.
+       * The list of project IDs to search within.
+       * For more information on the distinction between project names, IDs, and
+       * numbers, see [Projects](/docs/overview/#projects).
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
@@ -1448,9 +1517,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The list of project IDs to search within. To learn more about the
-       * distinction between project names/IDs/numbers, go to
-       * https://cloud.google.com/docs/overview/#projects.
+       * The list of project IDs to search within.
+       * For more information on the distinction between project names, IDs, and
+       * numbers, see [Projects](/docs/overview/#projects).
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
@@ -1465,9 +1534,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The list of project IDs to search within. To learn more about the
-       * distinction between project names/IDs/numbers, go to
-       * https://cloud.google.com/docs/overview/#projects.
+       * The list of project IDs to search within.
+       * For more information on the distinction between project names, IDs, and
+       * numbers, see [Projects](/docs/overview/#projects).
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
@@ -1489,9 +1558,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The list of project IDs to search within. To learn more about the
-       * distinction between project names/IDs/numbers, go to
-       * https://cloud.google.com/docs/overview/#projects.
+       * The list of project IDs to search within.
+       * For more information on the distinction between project names, IDs, and
+       * numbers, see [Projects](/docs/overview/#projects).
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
@@ -1512,9 +1581,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The list of project IDs to search within. To learn more about the
-       * distinction between project names/IDs/numbers, go to
-       * https://cloud.google.com/docs/overview/#projects.
+       * The list of project IDs to search within.
+       * For more information on the distinction between project names, IDs, and
+       * numbers, see [Projects](/docs/overview/#projects).
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
@@ -1532,9 +1601,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The list of project IDs to search within. To learn more about the
-       * distinction between project names/IDs/numbers, go to
-       * https://cloud.google.com/docs/overview/#projects.
+       * The list of project IDs to search within.
+       * For more information on the distinction between project names, IDs, and
+       * numbers, see [Projects](/docs/overview/#projects).
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
@@ -1551,9 +1620,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The list of project IDs to search within. To learn more about the
-       * distinction between project names/IDs/numbers, go to
-       * https://cloud.google.com/docs/overview/#projects.
+       * The list of project IDs to search within.
+       * For more information on the distinction between project names, IDs, and
+       * numbers, see [Projects](/docs/overview/#projects).
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
@@ -1577,10 +1646,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * If `true`, include Google Cloud Platform (GCP) public datasets in the
-       * search results. Info on GCP public datasets is available at
-       * https://cloud.google.com/public-datasets/. By default, GCP public
-       * datasets are excluded.
+       * If `true`, include Google Cloud Platform (GCP) public datasets in
+       * search results. By default, they are excluded.
+       * See [Google Cloud Public Datasets](/public-datasets) for more
+       * information.
        * </pre>
        *
        * <code>bool include_gcp_public_datasets = 7;</code>
@@ -1595,10 +1664,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * If `true`, include Google Cloud Platform (GCP) public datasets in the
-       * search results. Info on GCP public datasets is available at
-       * https://cloud.google.com/public-datasets/. By default, GCP public
-       * datasets are excluded.
+       * If `true`, include Google Cloud Platform (GCP) public datasets in
+       * search results. By default, they are excluded.
+       * See [Google Cloud Public Datasets](/public-datasets) for more
+       * information.
        * </pre>
        *
        * <code>bool include_gcp_public_datasets = 7;</code>
@@ -1616,10 +1685,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * If `true`, include Google Cloud Platform (GCP) public datasets in the
-       * search results. Info on GCP public datasets is available at
-       * https://cloud.google.com/public-datasets/. By default, GCP public
-       * datasets are excluded.
+       * If `true`, include Google Cloud Platform (GCP) public datasets in
+       * search results. By default, they are excluded.
+       * See [Google Cloud Public Datasets](/public-datasets) for more
+       * information.
        * </pre>
        *
        * <code>bool include_gcp_public_datasets = 7;</code>
@@ -1646,16 +1715,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. The list of locations to search within.
-       * 1. If empty, search will be performed in all locations;
-       * 2. If any of the locations are NOT [supported
-       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
-       * error will be returned;
-       * 3. Otherwise, search only the given locations for matching results.
-       * Typical usage is to leave this field empty. When a location is
-       * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
-       * users can repeat the search request with this parameter set to get
-       * additional information on the error.
+       * Optional. The list of locations to search within. If empty, all locations are
+       * searched.
+       * Returns an error if any location in the list isn't one of the [Supported
+       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+       * If a location is unreachable, its name is returned in the
+       * `SearchCatalogResponse.unreachable` field. To get additional information
+       * on the error, repeat the search request and set the location name as the
+       * value of this parameter.
        * </pre>
        *
        * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -1670,16 +1737,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. The list of locations to search within.
-       * 1. If empty, search will be performed in all locations;
-       * 2. If any of the locations are NOT [supported
-       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
-       * error will be returned;
-       * 3. Otherwise, search only the given locations for matching results.
-       * Typical usage is to leave this field empty. When a location is
-       * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
-       * users can repeat the search request with this parameter set to get
-       * additional information on the error.
+       * Optional. The list of locations to search within. If empty, all locations are
+       * searched.
+       * Returns an error if any location in the list isn't one of the [Supported
+       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+       * If a location is unreachable, its name is returned in the
+       * `SearchCatalogResponse.unreachable` field. To get additional information
+       * on the error, repeat the search request and set the location name as the
+       * value of this parameter.
        * </pre>
        *
        * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -1694,16 +1759,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. The list of locations to search within.
-       * 1. If empty, search will be performed in all locations;
-       * 2. If any of the locations are NOT [supported
-       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
-       * error will be returned;
-       * 3. Otherwise, search only the given locations for matching results.
-       * Typical usage is to leave this field empty. When a location is
-       * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
-       * users can repeat the search request with this parameter set to get
-       * additional information on the error.
+       * Optional. The list of locations to search within. If empty, all locations are
+       * searched.
+       * Returns an error if any location in the list isn't one of the [Supported
+       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+       * If a location is unreachable, its name is returned in the
+       * `SearchCatalogResponse.unreachable` field. To get additional information
+       * on the error, repeat the search request and set the location name as the
+       * value of this parameter.
        * </pre>
        *
        * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -1719,16 +1782,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. The list of locations to search within.
-       * 1. If empty, search will be performed in all locations;
-       * 2. If any of the locations are NOT [supported
-       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
-       * error will be returned;
-       * 3. Otherwise, search only the given locations for matching results.
-       * Typical usage is to leave this field empty. When a location is
-       * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
-       * users can repeat the search request with this parameter set to get
-       * additional information on the error.
+       * Optional. The list of locations to search within. If empty, all locations are
+       * searched.
+       * Returns an error if any location in the list isn't one of the [Supported
+       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+       * If a location is unreachable, its name is returned in the
+       * `SearchCatalogResponse.unreachable` field. To get additional information
+       * on the error, repeat the search request and set the location name as the
+       * value of this parameter.
        * </pre>
        *
        * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -1744,16 +1805,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. The list of locations to search within.
-       * 1. If empty, search will be performed in all locations;
-       * 2. If any of the locations are NOT [supported
-       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
-       * error will be returned;
-       * 3. Otherwise, search only the given locations for matching results.
-       * Typical usage is to leave this field empty. When a location is
-       * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
-       * users can repeat the search request with this parameter set to get
-       * additional information on the error.
+       * Optional. The list of locations to search within. If empty, all locations are
+       * searched.
+       * Returns an error if any location in the list isn't one of the [Supported
+       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+       * If a location is unreachable, its name is returned in the
+       * `SearchCatalogResponse.unreachable` field. To get additional information
+       * on the error, repeat the search request and set the location name as the
+       * value of this parameter.
        * </pre>
        *
        * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -1776,16 +1835,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. The list of locations to search within.
-       * 1. If empty, search will be performed in all locations;
-       * 2. If any of the locations are NOT [supported
-       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
-       * error will be returned;
-       * 3. Otherwise, search only the given locations for matching results.
-       * Typical usage is to leave this field empty. When a location is
-       * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
-       * users can repeat the search request with this parameter set to get
-       * additional information on the error.
+       * Optional. The list of locations to search within. If empty, all locations are
+       * searched.
+       * Returns an error if any location in the list isn't one of the [Supported
+       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+       * If a location is unreachable, its name is returned in the
+       * `SearchCatalogResponse.unreachable` field. To get additional information
+       * on the error, repeat the search request and set the location name as the
+       * value of this parameter.
        * </pre>
        *
        * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -1807,16 +1864,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. The list of locations to search within.
-       * 1. If empty, search will be performed in all locations;
-       * 2. If any of the locations are NOT [supported
-       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
-       * error will be returned;
-       * 3. Otherwise, search only the given locations for matching results.
-       * Typical usage is to leave this field empty. When a location is
-       * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
-       * users can repeat the search request with this parameter set to get
-       * additional information on the error.
+       * Optional. The list of locations to search within. If empty, all locations are
+       * searched.
+       * Returns an error if any location in the list isn't one of the [Supported
+       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+       * If a location is unreachable, its name is returned in the
+       * `SearchCatalogResponse.unreachable` field. To get additional information
+       * on the error, repeat the search request and set the location name as the
+       * value of this parameter.
        * </pre>
        *
        * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -1835,16 +1890,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. The list of locations to search within.
-       * 1. If empty, search will be performed in all locations;
-       * 2. If any of the locations are NOT [supported
-       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
-       * error will be returned;
-       * 3. Otherwise, search only the given locations for matching results.
-       * Typical usage is to leave this field empty. When a location is
-       * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
-       * users can repeat the search request with this parameter set to get
-       * additional information on the error.
+       * Optional. The list of locations to search within. If empty, all locations are
+       * searched.
+       * Returns an error if any location in the list isn't one of the [Supported
+       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+       * If a location is unreachable, its name is returned in the
+       * `SearchCatalogResponse.unreachable` field. To get additional information
+       * on the error, repeat the search request and set the location name as the
+       * value of this parameter.
        * </pre>
        *
        * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -1862,16 +1915,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. The list of locations to search within.
-       * 1. If empty, search will be performed in all locations;
-       * 2. If any of the locations are NOT [supported
-       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
-       * error will be returned;
-       * 3. Otherwise, search only the given locations for matching results.
-       * Typical usage is to leave this field empty. When a location is
-       * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
-       * users can repeat the search request with this parameter set to get
-       * additional information on the error.
+       * Optional. The list of locations to search within. If empty, all locations are
+       * searched.
+       * Returns an error if any location in the list isn't one of the [Supported
+       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+       * If a location is unreachable, its name is returned in the
+       * `SearchCatalogResponse.unreachable` field. To get additional information
+       * on the error, repeat the search request and set the location name as the
+       * value of this parameter.
        * </pre>
        *
        * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -1887,6 +1938,82 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         checkByteStringIsUtf8(value);
         ensureRestrictedLocationsIsMutable();
         restrictedLocations_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private boolean includePublicTagTemplates_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If `true`, include [public tag
+       * templates][google.cloud.datacatalog.v1.TagTemplate.is_publicly_readable]
+       * in the search results. By default, they are included only if you have
+       * explicit permissions on them to view them. For example, if you are the
+       * owner.
+       * Other scope fields, for example, ``include_org_ids``,
+       * still restrict the returned public tag templates and at least one of
+       * them is required.
+       * </pre>
+       *
+       * <code>bool include_public_tag_templates = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The includePublicTagTemplates.
+       */
+      @java.lang.Override
+      public boolean getIncludePublicTagTemplates() {
+        return includePublicTagTemplates_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If `true`, include [public tag
+       * templates][google.cloud.datacatalog.v1.TagTemplate.is_publicly_readable]
+       * in the search results. By default, they are included only if you have
+       * explicit permissions on them to view them. For example, if you are the
+       * owner.
+       * Other scope fields, for example, ``include_org_ids``,
+       * still restrict the returned public tag templates and at least one of
+       * them is required.
+       * </pre>
+       *
+       * <code>bool include_public_tag_templates = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The includePublicTagTemplates to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIncludePublicTagTemplates(boolean value) {
+
+        includePublicTagTemplates_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If `true`, include [public tag
+       * templates][google.cloud.datacatalog.v1.TagTemplate.is_publicly_readable]
+       * in the search results. By default, they are included only if you have
+       * explicit permissions on them to view them. For example, if you are the
+       * owner.
+       * Other scope fields, for example, ``include_org_ids``,
+       * still restrict the returned public tag templates and at least one of
+       * them is required.
+       * </pre>
+       *
+       * <code>bool include_public_tag_templates = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIncludePublicTagTemplates() {
+
+        includePublicTagTemplates_ = false;
         onChanged();
         return this;
       }
@@ -1950,10 +2077,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The scope of this search request. A `scope` that has empty
-   * `include_org_ids`, `include_project_ids` AND false
-   * `include_gcp_public_datasets` is considered invalid. Data Catalog will
-   * return an error in such a case.
+   * Required. The scope of this search request.
+   * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
+   * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
+   * the request returns an error.
    * </pre>
    *
    * <code>
@@ -1970,10 +2097,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The scope of this search request. A `scope` that has empty
-   * `include_org_ids`, `include_project_ids` AND false
-   * `include_gcp_public_datasets` is considered invalid. Data Catalog will
-   * return an error in such a case.
+   * Required. The scope of this search request.
+   * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
+   * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
+   * the request returns an error.
    * </pre>
    *
    * <code>
@@ -1992,10 +2119,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The scope of this search request. A `scope` that has empty
-   * `include_org_ids`, `include_project_ids` AND false
-   * `include_gcp_public_datasets` is considered invalid. Data Catalog will
-   * return an error in such a case.
+   * Required. The scope of this search request.
+   * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
+   * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
+   * the request returns an error.
    * </pre>
    *
    * <code>
@@ -2013,16 +2140,15 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The query string in search query syntax. An empty query string will result
-   * in all data assets (in the specified scope) that the user has access to.
-   * Query strings can be simple as "x" or more qualified as:
-   * * name:x
-   * * column:x
-   * * description:y
-   * Note: Query tokens need to have a minimum of 3 characters for substring
-   * matching to work correctly. See [Data Catalog Search
-   * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
-   * for more information.
+   * Optional. The query string with a minimum of 3 characters and specific syntax.
+   * For more information, see
+   * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+   * An empty query string returns all data assets (in the specified scope)
+   * that you have access to.
+   * A query string can be a simple `xyz` or qualified by predicates:
+   * * `name:x`
+   * * `column:y`
+   * * `description:z`
    * </pre>
    *
    * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2045,16 +2171,15 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The query string in search query syntax. An empty query string will result
-   * in all data assets (in the specified scope) that the user has access to.
-   * Query strings can be simple as "x" or more qualified as:
-   * * name:x
-   * * column:x
-   * * description:y
-   * Note: Query tokens need to have a minimum of 3 characters for substring
-   * matching to work correctly. See [Data Catalog Search
-   * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
-   * for more information.
+   * Optional. The query string with a minimum of 3 characters and specific syntax.
+   * For more information, see
+   * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+   * An empty query string returns all data assets (in the specified scope)
+   * that you have access to.
+   * A query string can be a simple `xyz` or qualified by predicates:
+   * * `name:x`
+   * * `column:y`
+   * * `description:z`
    * </pre>
    *
    * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2080,8 +2205,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Number of results in the search page. If &lt;=0 then defaults to 10. Max limit
-   * for page_size is 1000. Throws an invalid argument for page_size &gt; 1000.
+   * Number of results to return in a single search page.
+   * Can't be negative or 0, defaults to 10 in this case.
+   * The maximum number is 1000. If exceeded, throws an "invalid argument"
+   * exception.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -2099,12 +2226,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
-   * indicates that this is a continuation of a prior
+   * Optional. Pagination token that, if specified, returns the next page of search
+   * results. If empty, returns the first page.
+   * This token is returned in the [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
+   * field of the response to a previous
    * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
-   * call, and that the system should return the next page of data. If empty,
-   * the first page is returned.
+   * call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2127,12 +2254,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
-   * indicates that this is a continuation of a prior
+   * Optional. Pagination token that, if specified, returns the next page of search
+   * results. If empty, returns the first page.
+   * This token is returned in the [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
+   * field of the response to a previous
    * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
-   * call, and that the system should return the next page of data. If empty,
-   * the first page is returned.
+   * call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2158,12 +2285,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Specifies the ordering of results, currently supported case-sensitive
-   * choices are:
-   *   * `relevance`, only supports descending
-   *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
-   *     specified
-   * If not specified, defaults to `relevance` descending.
+   * Specifies the order of results.
+   * Currently supported case-sensitive values are:
+   * * `relevance` that can only be descending
+   * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
+   * If this parameter is omitted, it defaults to the descending `relevance`.
    * </pre>
    *
    * <code>string order_by = 5;</code>
@@ -2186,12 +2312,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Specifies the ordering of results, currently supported case-sensitive
-   * choices are:
-   *   * `relevance`, only supports descending
-   *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
-   *     specified
-   * If not specified, defaults to `relevance` descending.
+   * Specifies the order of results.
+   * Currently supported case-sensitive values are:
+   * * `relevance` that can only be descending
+   * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
+   * If this parameter is omitted, it defaults to the descending `relevance`.
    * </pre>
    *
    * <code>string order_by = 5;</code>
@@ -2615,10 +2740,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The scope of this search request. A `scope` that has empty
-     * `include_org_ids`, `include_project_ids` AND false
-     * `include_gcp_public_datasets` is considered invalid. Data Catalog will
-     * return an error in such a case.
+     * Required. The scope of this search request.
+     * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
+     * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
+     * the request returns an error.
      * </pre>
      *
      * <code>
@@ -2634,10 +2759,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The scope of this search request. A `scope` that has empty
-     * `include_org_ids`, `include_project_ids` AND false
-     * `include_gcp_public_datasets` is considered invalid. Data Catalog will
-     * return an error in such a case.
+     * Required. The scope of this search request.
+     * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
+     * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
+     * the request returns an error.
      * </pre>
      *
      * <code>
@@ -2659,10 +2784,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The scope of this search request. A `scope` that has empty
-     * `include_org_ids`, `include_project_ids` AND false
-     * `include_gcp_public_datasets` is considered invalid. Data Catalog will
-     * return an error in such a case.
+     * Required. The scope of this search request.
+     * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
+     * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
+     * the request returns an error.
      * </pre>
      *
      * <code>
@@ -2686,10 +2811,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The scope of this search request. A `scope` that has empty
-     * `include_org_ids`, `include_project_ids` AND false
-     * `include_gcp_public_datasets` is considered invalid. Data Catalog will
-     * return an error in such a case.
+     * Required. The scope of this search request.
+     * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
+     * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
+     * the request returns an error.
      * </pre>
      *
      * <code>
@@ -2711,10 +2836,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The scope of this search request. A `scope` that has empty
-     * `include_org_ids`, `include_project_ids` AND false
-     * `include_gcp_public_datasets` is considered invalid. Data Catalog will
-     * return an error in such a case.
+     * Required. The scope of this search request.
+     * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
+     * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
+     * the request returns an error.
      * </pre>
      *
      * <code>
@@ -2742,10 +2867,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The scope of this search request. A `scope` that has empty
-     * `include_org_ids`, `include_project_ids` AND false
-     * `include_gcp_public_datasets` is considered invalid. Data Catalog will
-     * return an error in such a case.
+     * Required. The scope of this search request.
+     * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
+     * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
+     * the request returns an error.
      * </pre>
      *
      * <code>
@@ -2767,10 +2892,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The scope of this search request. A `scope` that has empty
-     * `include_org_ids`, `include_project_ids` AND false
-     * `include_gcp_public_datasets` is considered invalid. Data Catalog will
-     * return an error in such a case.
+     * Required. The scope of this search request.
+     * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
+     * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
+     * the request returns an error.
      * </pre>
      *
      * <code>
@@ -2786,10 +2911,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The scope of this search request. A `scope` that has empty
-     * `include_org_ids`, `include_project_ids` AND false
-     * `include_gcp_public_datasets` is considered invalid. Data Catalog will
-     * return an error in such a case.
+     * Required. The scope of this search request.
+     * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
+     * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
+     * the request returns an error.
      * </pre>
      *
      * <code>
@@ -2809,10 +2934,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The scope of this search request. A `scope` that has empty
-     * `include_org_ids`, `include_project_ids` AND false
-     * `include_gcp_public_datasets` is considered invalid. Data Catalog will
-     * return an error in such a case.
+     * Required. The scope of this search request.
+     * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
+     * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
+     * the request returns an error.
      * </pre>
      *
      * <code>
@@ -2841,16 +2966,15 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The query string in search query syntax. An empty query string will result
-     * in all data assets (in the specified scope) that the user has access to.
-     * Query strings can be simple as "x" or more qualified as:
-     * * name:x
-     * * column:x
-     * * description:y
-     * Note: Query tokens need to have a minimum of 3 characters for substring
-     * matching to work correctly. See [Data Catalog Search
-     * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
-     * for more information.
+     * Optional. The query string with a minimum of 3 characters and specific syntax.
+     * For more information, see
+     * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+     * An empty query string returns all data assets (in the specified scope)
+     * that you have access to.
+     * A query string can be a simple `xyz` or qualified by predicates:
+     * * `name:x`
+     * * `column:y`
+     * * `description:z`
      * </pre>
      *
      * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2872,16 +2996,15 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The query string in search query syntax. An empty query string will result
-     * in all data assets (in the specified scope) that the user has access to.
-     * Query strings can be simple as "x" or more qualified as:
-     * * name:x
-     * * column:x
-     * * description:y
-     * Note: Query tokens need to have a minimum of 3 characters for substring
-     * matching to work correctly. See [Data Catalog Search
-     * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
-     * for more information.
+     * Optional. The query string with a minimum of 3 characters and specific syntax.
+     * For more information, see
+     * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+     * An empty query string returns all data assets (in the specified scope)
+     * that you have access to.
+     * A query string can be a simple `xyz` or qualified by predicates:
+     * * `name:x`
+     * * `column:y`
+     * * `description:z`
      * </pre>
      *
      * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2903,16 +3026,15 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The query string in search query syntax. An empty query string will result
-     * in all data assets (in the specified scope) that the user has access to.
-     * Query strings can be simple as "x" or more qualified as:
-     * * name:x
-     * * column:x
-     * * description:y
-     * Note: Query tokens need to have a minimum of 3 characters for substring
-     * matching to work correctly. See [Data Catalog Search
-     * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
-     * for more information.
+     * Optional. The query string with a minimum of 3 characters and specific syntax.
+     * For more information, see
+     * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+     * An empty query string returns all data assets (in the specified scope)
+     * that you have access to.
+     * A query string can be a simple `xyz` or qualified by predicates:
+     * * `name:x`
+     * * `column:y`
+     * * `description:z`
      * </pre>
      *
      * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2933,16 +3055,15 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The query string in search query syntax. An empty query string will result
-     * in all data assets (in the specified scope) that the user has access to.
-     * Query strings can be simple as "x" or more qualified as:
-     * * name:x
-     * * column:x
-     * * description:y
-     * Note: Query tokens need to have a minimum of 3 characters for substring
-     * matching to work correctly. See [Data Catalog Search
-     * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
-     * for more information.
+     * Optional. The query string with a minimum of 3 characters and specific syntax.
+     * For more information, see
+     * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+     * An empty query string returns all data assets (in the specified scope)
+     * that you have access to.
+     * A query string can be a simple `xyz` or qualified by predicates:
+     * * `name:x`
+     * * `column:y`
+     * * `description:z`
      * </pre>
      *
      * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2959,16 +3080,15 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The query string in search query syntax. An empty query string will result
-     * in all data assets (in the specified scope) that the user has access to.
-     * Query strings can be simple as "x" or more qualified as:
-     * * name:x
-     * * column:x
-     * * description:y
-     * Note: Query tokens need to have a minimum of 3 characters for substring
-     * matching to work correctly. See [Data Catalog Search
-     * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
-     * for more information.
+     * Optional. The query string with a minimum of 3 characters and specific syntax.
+     * For more information, see
+     * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+     * An empty query string returns all data assets (in the specified scope)
+     * that you have access to.
+     * A query string can be a simple `xyz` or qualified by predicates:
+     * * `name:x`
+     * * `column:y`
+     * * `description:z`
      * </pre>
      *
      * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2992,8 +3112,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Number of results in the search page. If &lt;=0 then defaults to 10. Max limit
-     * for page_size is 1000. Throws an invalid argument for page_size &gt; 1000.
+     * Number of results to return in a single search page.
+     * Can't be negative or 0, defaults to 10 in this case.
+     * The maximum number is 1000. If exceeded, throws an "invalid argument"
+     * exception.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -3008,8 +3130,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Number of results in the search page. If &lt;=0 then defaults to 10. Max limit
-     * for page_size is 1000. Throws an invalid argument for page_size &gt; 1000.
+     * Number of results to return in a single search page.
+     * Can't be negative or 0, defaults to 10 in this case.
+     * The maximum number is 1000. If exceeded, throws an "invalid argument"
+     * exception.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -3027,8 +3151,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Number of results in the search page. If &lt;=0 then defaults to 10. Max limit
-     * for page_size is 1000. Throws an invalid argument for page_size &gt; 1000.
+     * Number of results to return in a single search page.
+     * Can't be negative or 0, defaults to 10 in this case.
+     * The maximum number is 1000. If exceeded, throws an "invalid argument"
+     * exception.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -3047,12 +3173,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * Optional. Pagination token that, if specified, returns the next page of search
+     * results. If empty, returns the first page.
+     * This token is returned in the [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
+     * field of the response to a previous
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
-     * call, and that the system should return the next page of data. If empty,
-     * the first page is returned.
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3074,12 +3200,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * Optional. Pagination token that, if specified, returns the next page of search
+     * results. If empty, returns the first page.
+     * This token is returned in the [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
+     * field of the response to a previous
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
-     * call, and that the system should return the next page of data. If empty,
-     * the first page is returned.
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3101,12 +3227,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * Optional. Pagination token that, if specified, returns the next page of search
+     * results. If empty, returns the first page.
+     * This token is returned in the [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
+     * field of the response to a previous
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
-     * call, and that the system should return the next page of data. If empty,
-     * the first page is returned.
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3127,12 +3253,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * Optional. Pagination token that, if specified, returns the next page of search
+     * results. If empty, returns the first page.
+     * This token is returned in the [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
+     * field of the response to a previous
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
-     * call, and that the system should return the next page of data. If empty,
-     * the first page is returned.
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3149,12 +3275,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * Optional. Pagination token that, if specified, returns the next page of search
+     * results. If empty, returns the first page.
+     * This token is returned in the [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
+     * field of the response to a previous
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
-     * call, and that the system should return the next page of data. If empty,
-     * the first page is returned.
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3178,12 +3304,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the ordering of results, currently supported case-sensitive
-     * choices are:
-     *   * `relevance`, only supports descending
-     *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
-     *     specified
-     * If not specified, defaults to `relevance` descending.
+     * Specifies the order of results.
+     * Currently supported case-sensitive values are:
+     * * `relevance` that can only be descending
+     * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
+     * If this parameter is omitted, it defaults to the descending `relevance`.
      * </pre>
      *
      * <code>string order_by = 5;</code>
@@ -3205,12 +3330,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the ordering of results, currently supported case-sensitive
-     * choices are:
-     *   * `relevance`, only supports descending
-     *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
-     *     specified
-     * If not specified, defaults to `relevance` descending.
+     * Specifies the order of results.
+     * Currently supported case-sensitive values are:
+     * * `relevance` that can only be descending
+     * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
+     * If this parameter is omitted, it defaults to the descending `relevance`.
      * </pre>
      *
      * <code>string order_by = 5;</code>
@@ -3232,12 +3356,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the ordering of results, currently supported case-sensitive
-     * choices are:
-     *   * `relevance`, only supports descending
-     *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
-     *     specified
-     * If not specified, defaults to `relevance` descending.
+     * Specifies the order of results.
+     * Currently supported case-sensitive values are:
+     * * `relevance` that can only be descending
+     * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
+     * If this parameter is omitted, it defaults to the descending `relevance`.
      * </pre>
      *
      * <code>string order_by = 5;</code>
@@ -3258,12 +3381,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the ordering of results, currently supported case-sensitive
-     * choices are:
-     *   * `relevance`, only supports descending
-     *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
-     *     specified
-     * If not specified, defaults to `relevance` descending.
+     * Specifies the order of results.
+     * Currently supported case-sensitive values are:
+     * * `relevance` that can only be descending
+     * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
+     * If this parameter is omitted, it defaults to the descending `relevance`.
      * </pre>
      *
      * <code>string order_by = 5;</code>
@@ -3280,12 +3402,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the ordering of results, currently supported case-sensitive
-     * choices are:
-     *   * `relevance`, only supports descending
-     *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
-     *     specified
-     * If not specified, defaults to `relevance` descending.
+     * Specifies the order of results.
+     * Currently supported case-sensitive values are:
+     * * `relevance` that can only be descending
+     * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
+     * If this parameter is omitted, it defaults to the descending `relevance`.
      * </pre>
      *
      * <code>string order_by = 5;</code>

@@ -27,7 +27,7 @@ public interface GcsFileSpecOrBuilder
    *
    *
    * <pre>
-   * Required. The full file path. Example: `gs://bucket_name/a/b.txt`.
+   * Required. Full file path. Example: `gs://bucket_name/a/b.txt`.
    * </pre>
    *
    * <code>string file_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -39,7 +39,7 @@ public interface GcsFileSpecOrBuilder
    *
    *
    * <pre>
-   * Required. The full file path. Example: `gs://bucket_name/a/b.txt`.
+   * Required. Full file path. Example: `gs://bucket_name/a/b.txt`.
    * </pre>
    *
    * <code>string file_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -52,7 +52,7 @@ public interface GcsFileSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about the Cloud Storage file.
+   * Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.
    * </pre>
    *
    * <code>
@@ -66,7 +66,7 @@ public interface GcsFileSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about the Cloud Storage file.
+   * Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.
    * </pre>
    *
    * <code>
@@ -80,7 +80,7 @@ public interface GcsFileSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about the Cloud Storage file.
+   * Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.
    * </pre>
    *
    * <code>
@@ -93,7 +93,7 @@ public interface GcsFileSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. The size of the file, in bytes.
+   * Output only. File size in bytes.
    * </pre>
    *
    * <code>int64 size_bytes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

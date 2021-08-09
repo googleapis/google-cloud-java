@@ -140,8 +140,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The policy tag to update. Only the description, display_name, and
-   * parent_policy_tag fields can be updated.
+   * The policy tag to update. You can update only its description, display
+   * name, and parent policy tag fields.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 1;</code>
@@ -156,8 +156,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The policy tag to update. Only the description, display_name, and
-   * parent_policy_tag fields can be updated.
+   * The policy tag to update. You can update only its description, display
+   * name, and parent policy tag fields.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 1;</code>
@@ -174,8 +174,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The policy tag to update. Only the description, display_name, and
-   * parent_policy_tag fields can be updated.
+   * The policy tag to update. You can update only its description, display
+   * name, and parent policy tag fields.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 1;</code>
@@ -191,13 +191,11 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The update mask applies to the resource. Only display_name, description and
-   * parent_policy_tag can be updated and thus can be listed in the mask. If
-   * update_mask is not provided, all allowed fields (i.e. display_name,
-   * description and parent) will be updated. For more information including the
-   * `FieldMask` definition, see
-   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-   * If not set, defaults to all of the fields that are allowed to update.
+   * Specifies the fields to update.
+   * You can update only display name, description, and parent policy tag.
+   * If not set, defaults to all updatable fields.
+   * For more information, see [FieldMask]
+   * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -212,13 +210,11 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The update mask applies to the resource. Only display_name, description and
-   * parent_policy_tag can be updated and thus can be listed in the mask. If
-   * update_mask is not provided, all allowed fields (i.e. display_name,
-   * description and parent) will be updated. For more information including the
-   * `FieldMask` definition, see
-   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-   * If not set, defaults to all of the fields that are allowed to update.
+   * Specifies the fields to update.
+   * You can update only display name, description, and parent policy tag.
+   * If not set, defaults to all updatable fields.
+   * For more information, see [FieldMask]
+   * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -233,13 +229,11 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The update mask applies to the resource. Only display_name, description and
-   * parent_policy_tag can be updated and thus can be listed in the mask. If
-   * update_mask is not provided, all allowed fields (i.e. display_name,
-   * description and parent) will be updated. For more information including the
-   * `FieldMask` definition, see
-   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-   * If not set, defaults to all of the fields that are allowed to update.
+   * Specifies the fields to update.
+   * You can update only display name, description, and parent policy tag.
+   * If not set, defaults to all updatable fields.
+   * For more information, see [FieldMask]
+   * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -619,8 +613,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tag to update. Only the description, display_name, and
-     * parent_policy_tag fields can be updated.
+     * The policy tag to update. You can update only its description, display
+     * name, and parent policy tag fields.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 1;</code>
@@ -634,8 +628,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tag to update. Only the description, display_name, and
-     * parent_policy_tag fields can be updated.
+     * The policy tag to update. You can update only its description, display
+     * name, and parent policy tag fields.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 1;</code>
@@ -655,8 +649,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tag to update. Only the description, display_name, and
-     * parent_policy_tag fields can be updated.
+     * The policy tag to update. You can update only its description, display
+     * name, and parent policy tag fields.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 1;</code>
@@ -678,8 +672,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tag to update. Only the description, display_name, and
-     * parent_policy_tag fields can be updated.
+     * The policy tag to update. You can update only its description, display
+     * name, and parent policy tag fields.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 1;</code>
@@ -698,8 +692,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tag to update. Only the description, display_name, and
-     * parent_policy_tag fields can be updated.
+     * The policy tag to update. You can update only its description, display
+     * name, and parent policy tag fields.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 1;</code>
@@ -725,8 +719,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tag to update. Only the description, display_name, and
-     * parent_policy_tag fields can be updated.
+     * The policy tag to update. You can update only its description, display
+     * name, and parent policy tag fields.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 1;</code>
@@ -746,8 +740,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tag to update. Only the description, display_name, and
-     * parent_policy_tag fields can be updated.
+     * The policy tag to update. You can update only its description, display
+     * name, and parent policy tag fields.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 1;</code>
@@ -761,8 +755,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tag to update. Only the description, display_name, and
-     * parent_policy_tag fields can be updated.
+     * The policy tag to update. You can update only its description, display
+     * name, and parent policy tag fields.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 1;</code>
@@ -780,8 +774,8 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The policy tag to update. Only the description, display_name, and
-     * parent_policy_tag fields can be updated.
+     * The policy tag to update. You can update only its description, display
+     * name, and parent policy tag fields.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 1;</code>
@@ -813,13 +807,11 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The update mask applies to the resource. Only display_name, description and
-     * parent_policy_tag can be updated and thus can be listed in the mask. If
-     * update_mask is not provided, all allowed fields (i.e. display_name,
-     * description and parent) will be updated. For more information including the
-     * `FieldMask` definition, see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-     * If not set, defaults to all of the fields that are allowed to update.
+     * Specifies the fields to update.
+     * You can update only display name, description, and parent policy tag.
+     * If not set, defaults to all updatable fields.
+     * For more information, see [FieldMask]
+     * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -833,13 +825,11 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The update mask applies to the resource. Only display_name, description and
-     * parent_policy_tag can be updated and thus can be listed in the mask. If
-     * update_mask is not provided, all allowed fields (i.e. display_name,
-     * description and parent) will be updated. For more information including the
-     * `FieldMask` definition, see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-     * If not set, defaults to all of the fields that are allowed to update.
+     * Specifies the fields to update.
+     * You can update only display name, description, and parent policy tag.
+     * If not set, defaults to all updatable fields.
+     * For more information, see [FieldMask]
+     * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -859,13 +849,11 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The update mask applies to the resource. Only display_name, description and
-     * parent_policy_tag can be updated and thus can be listed in the mask. If
-     * update_mask is not provided, all allowed fields (i.e. display_name,
-     * description and parent) will be updated. For more information including the
-     * `FieldMask` definition, see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-     * If not set, defaults to all of the fields that are allowed to update.
+     * Specifies the fields to update.
+     * You can update only display name, description, and parent policy tag.
+     * If not set, defaults to all updatable fields.
+     * For more information, see [FieldMask]
+     * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -887,13 +875,11 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The update mask applies to the resource. Only display_name, description and
-     * parent_policy_tag can be updated and thus can be listed in the mask. If
-     * update_mask is not provided, all allowed fields (i.e. display_name,
-     * description and parent) will be updated. For more information including the
-     * `FieldMask` definition, see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-     * If not set, defaults to all of the fields that are allowed to update.
+     * Specifies the fields to update.
+     * You can update only display name, description, and parent policy tag.
+     * If not set, defaults to all updatable fields.
+     * For more information, see [FieldMask]
+     * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -912,13 +898,11 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The update mask applies to the resource. Only display_name, description and
-     * parent_policy_tag can be updated and thus can be listed in the mask. If
-     * update_mask is not provided, all allowed fields (i.e. display_name,
-     * description and parent) will be updated. For more information including the
-     * `FieldMask` definition, see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-     * If not set, defaults to all of the fields that are allowed to update.
+     * Specifies the fields to update.
+     * You can update only display name, description, and parent policy tag.
+     * If not set, defaults to all updatable fields.
+     * For more information, see [FieldMask]
+     * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -942,13 +926,11 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The update mask applies to the resource. Only display_name, description and
-     * parent_policy_tag can be updated and thus can be listed in the mask. If
-     * update_mask is not provided, all allowed fields (i.e. display_name,
-     * description and parent) will be updated. For more information including the
-     * `FieldMask` definition, see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-     * If not set, defaults to all of the fields that are allowed to update.
+     * Specifies the fields to update.
+     * You can update only display name, description, and parent policy tag.
+     * If not set, defaults to all updatable fields.
+     * For more information, see [FieldMask]
+     * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -968,13 +950,11 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The update mask applies to the resource. Only display_name, description and
-     * parent_policy_tag can be updated and thus can be listed in the mask. If
-     * update_mask is not provided, all allowed fields (i.e. display_name,
-     * description and parent) will be updated. For more information including the
-     * `FieldMask` definition, see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-     * If not set, defaults to all of the fields that are allowed to update.
+     * Specifies the fields to update.
+     * You can update only display name, description, and parent policy tag.
+     * If not set, defaults to all updatable fields.
+     * For more information, see [FieldMask]
+     * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -988,13 +968,11 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The update mask applies to the resource. Only display_name, description and
-     * parent_policy_tag can be updated and thus can be listed in the mask. If
-     * update_mask is not provided, all allowed fields (i.e. display_name,
-     * description and parent) will be updated. For more information including the
-     * `FieldMask` definition, see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-     * If not set, defaults to all of the fields that are allowed to update.
+     * Specifies the fields to update.
+     * You can update only display name, description, and parent policy tag.
+     * If not set, defaults to all updatable fields.
+     * For more information, see [FieldMask]
+     * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1012,13 +990,11 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The update mask applies to the resource. Only display_name, description and
-     * parent_policy_tag can be updated and thus can be listed in the mask. If
-     * update_mask is not provided, all allowed fields (i.e. display_name,
-     * description and parent) will be updated. For more information including the
-     * `FieldMask` definition, see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-     * If not set, defaults to all of the fields that are allowed to update.
+     * Specifies the fields to update.
+     * You can update only display name, description, and parent policy tag.
+     * If not set, defaults to all updatable fields.
+     * For more information, see [FieldMask]
+     * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

@@ -56,8 +56,8 @@ public interface BigQueryTableSpecOrBuilder
    *
    *
    * <pre>
-   * Table view specification. This field should only be populated if
-   * `table_source_type` is `BIGQUERY_VIEW`.
+   * Table view specification. Populated only if
+   * the `table_source_type` is `BIGQUERY_VIEW`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.ViewSpec view_spec = 2;</code>
@@ -69,8 +69,8 @@ public interface BigQueryTableSpecOrBuilder
    *
    *
    * <pre>
-   * Table view specification. This field should only be populated if
-   * `table_source_type` is `BIGQUERY_VIEW`.
+   * Table view specification. Populated only if
+   * the `table_source_type` is `BIGQUERY_VIEW`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.ViewSpec view_spec = 2;</code>
@@ -82,8 +82,8 @@ public interface BigQueryTableSpecOrBuilder
    *
    *
    * <pre>
-   * Table view specification. This field should only be populated if
-   * `table_source_type` is `BIGQUERY_VIEW`.
+   * Table view specification. Populated only if
+   * the `table_source_type` is `BIGQUERY_VIEW`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.ViewSpec view_spec = 2;</code>
@@ -94,8 +94,8 @@ public interface BigQueryTableSpecOrBuilder
    *
    *
    * <pre>
-   * Spec of a BigQuery table. This field should only be populated if
-   * `table_source_type` is `BIGQUERY_TABLE`.
+   * Specification of a BigQuery table. Populated only if
+   * the `table_source_type` is `BIGQUERY_TABLE`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.TableSpec table_spec = 3;</code>
@@ -107,8 +107,8 @@ public interface BigQueryTableSpecOrBuilder
    *
    *
    * <pre>
-   * Spec of a BigQuery table. This field should only be populated if
-   * `table_source_type` is `BIGQUERY_TABLE`.
+   * Specification of a BigQuery table. Populated only if
+   * the `table_source_type` is `BIGQUERY_TABLE`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.TableSpec table_spec = 3;</code>
@@ -120,8 +120,8 @@ public interface BigQueryTableSpecOrBuilder
    *
    *
    * <pre>
-   * Spec of a BigQuery table. This field should only be populated if
-   * `table_source_type` is `BIGQUERY_TABLE`.
+   * Specification of a BigQuery table. Populated only if
+   * the `table_source_type` is `BIGQUERY_TABLE`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.TableSpec table_spec = 3;</code>

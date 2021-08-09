@@ -27,6 +27,8 @@ import com.google.cloud.datacatalog.v1.ExportTaxonomiesRequest;
 import com.google.cloud.datacatalog.v1.ExportTaxonomiesResponse;
 import com.google.cloud.datacatalog.v1.ImportTaxonomiesRequest;
 import com.google.cloud.datacatalog.v1.ImportTaxonomiesResponse;
+import com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest;
+import com.google.cloud.datacatalog.v1.Taxonomy;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -44,6 +46,17 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSerializationStub {
+  private static final MethodDescriptor<ReplaceTaxonomyRequest, Taxonomy>
+      replaceTaxonomyMethodDescriptor =
+          MethodDescriptor.<ReplaceTaxonomyRequest, Taxonomy>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datacatalog.v1.PolicyTagManagerSerialization/ReplaceTaxonomy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ReplaceTaxonomyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Taxonomy.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
       importTaxonomiesMethodDescriptor =
           MethodDescriptor.<ImportTaxonomiesRequest, ImportTaxonomiesResponse>newBuilder()
@@ -68,6 +81,7 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
                   ProtoUtils.marshaller(ExportTaxonomiesResponse.getDefaultInstance()))
               .build();
 
+  private final UnaryCallable<ReplaceTaxonomyRequest, Taxonomy> replaceTaxonomyCallable;
   private final UnaryCallable<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
       importTaxonomiesCallable;
   private final UnaryCallable<ExportTaxonomiesRequest, ExportTaxonomiesResponse>
@@ -120,6 +134,19 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<ReplaceTaxonomyRequest, Taxonomy> replaceTaxonomyTransportSettings =
+        GrpcCallSettings.<ReplaceTaxonomyRequest, Taxonomy>newBuilder()
+            .setMethodDescriptor(replaceTaxonomyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ReplaceTaxonomyRequest>() {
+                  @Override
+                  public Map<String, String> extract(ReplaceTaxonomyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
         importTaxonomiesTransportSettings =
             GrpcCallSettings.<ImportTaxonomiesRequest, ImportTaxonomiesResponse>newBuilder()
@@ -149,6 +176,9 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
                     })
                 .build();
 
+    this.replaceTaxonomyCallable =
+        callableFactory.createUnaryCallable(
+            replaceTaxonomyTransportSettings, settings.replaceTaxonomySettings(), clientContext);
     this.importTaxonomiesCallable =
         callableFactory.createUnaryCallable(
             importTaxonomiesTransportSettings, settings.importTaxonomiesSettings(), clientContext);
@@ -162,6 +192,11 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
 
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<ReplaceTaxonomyRequest, Taxonomy> replaceTaxonomyCallable() {
+    return replaceTaxonomyCallable;
   }
 
   @Override

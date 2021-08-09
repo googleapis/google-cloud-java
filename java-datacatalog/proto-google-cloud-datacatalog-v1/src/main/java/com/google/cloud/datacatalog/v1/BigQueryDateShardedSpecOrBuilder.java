@@ -28,8 +28,8 @@ public interface BigQueryDateShardedSpecOrBuilder
    *
    * <pre>
    * Output only. The Data Catalog resource name of the dataset entry the current table
-   * belongs to, for example,
-   * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}`.
+   * belongs to. For example:
+   * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
    * </pre>
    *
    * <code>
@@ -44,8 +44,8 @@ public interface BigQueryDateShardedSpecOrBuilder
    *
    * <pre>
    * Output only. The Data Catalog resource name of the dataset entry the current table
-   * belongs to, for example,
-   * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}`.
+   * belongs to. For example:
+   * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
    * </pre>
    *
    * <code>
@@ -60,8 +60,9 @@ public interface BigQueryDateShardedSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. The table name prefix of the shards. The name of any given shard is
-   * `[table_prefix]YYYYMMDD`, for example, for shard `MyTable20180101`, the
+   * Output only. The table name prefix of the shards.
+   * The name of any given shard is `[table_prefix]YYYYMMDD`.
+   * For example, for the `MyTable20180101` shard, the
    * `table_prefix` is `MyTable`.
    * </pre>
    *
@@ -74,8 +75,9 @@ public interface BigQueryDateShardedSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. The table name prefix of the shards. The name of any given shard is
-   * `[table_prefix]YYYYMMDD`, for example, for shard `MyTable20180101`, the
+   * Output only. The table name prefix of the shards.
+   * The name of any given shard is `[table_prefix]YYYYMMDD`.
+   * For example, for the `MyTable20180101` shard, the
    * `table_prefix` is `MyTable`.
    * </pre>
    *

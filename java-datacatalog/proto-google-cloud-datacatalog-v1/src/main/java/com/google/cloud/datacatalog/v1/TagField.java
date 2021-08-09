@@ -22,7 +22,7 @@ package com.google.cloud.datacatalog.v1;
  *
  *
  * <pre>
- * Contains the value and supporting information for a field within
+ * Contains the value and additional information on a field within
  * a [Tag][google.cloud.datacatalog.v1.Tag].
  * </pre>
  *
@@ -134,6 +134,13 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
               order_ = input.readInt32();
               break;
             }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              kindCase_ = 8;
+              kind_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -202,7 +209,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Holds an enum value.
+   * An enum value.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.v1.TagField.EnumValue}
@@ -504,7 +511,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds an enum value.
+     * An enum value.
      * </pre>
      *
      * Protobuf type {@code google.cloud.datacatalog.v1.TagField.EnumValue}
@@ -832,6 +839,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     BOOL_VALUE(4),
     TIMESTAMP_VALUE(5),
     ENUM_VALUE(6),
+    RICHTEXT_VALUE(8),
     KIND_NOT_SET(0);
     private final int value;
 
@@ -860,6 +868,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
           return TIMESTAMP_VALUE;
         case 6:
           return ENUM_VALUE;
+        case 8:
+          return RICHTEXT_VALUE;
         case 0:
           return KIND_NOT_SET;
         default:
@@ -930,7 +940,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Holds the value for a tag field with double type.
+   * The value of a tag field with a double type.
    * </pre>
    *
    * <code>double double_value = 2;</code>
@@ -945,7 +955,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Holds the value for a tag field with double type.
+   * The value of a tag field with a double type.
    * </pre>
    *
    * <code>double double_value = 2;</code>
@@ -965,7 +975,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Holds the value for a tag field with string type.
+   * The value of a tag field with a string type.
    * The maximum length is 2000 UTF-8 characters.
    * </pre>
    *
@@ -980,7 +990,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Holds the value for a tag field with string type.
+   * The value of a tag field with a string type.
    * The maximum length is 2000 UTF-8 characters.
    * </pre>
    *
@@ -1008,7 +1018,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Holds the value for a tag field with string type.
+   * The value of a tag field with a string type.
    * The maximum length is 2000 UTF-8 characters.
    * </pre>
    *
@@ -1038,7 +1048,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Holds the value for a tag field with boolean type.
+   * The value of a tag field with a boolean type.
    * </pre>
    *
    * <code>bool bool_value = 4;</code>
@@ -1053,7 +1063,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Holds the value for a tag field with boolean type.
+   * The value of a tag field with a boolean type.
    * </pre>
    *
    * <code>bool bool_value = 4;</code>
@@ -1073,7 +1083,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Holds the value for a tag field with timestamp type.
+   * The value of a tag field with a timestamp type.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
@@ -1088,7 +1098,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Holds the value for a tag field with timestamp type.
+   * The value of a tag field with a timestamp type.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
@@ -1106,7 +1116,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Holds the value for a tag field with timestamp type.
+   * The value of a tag field with a timestamp type.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
@@ -1124,8 +1134,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Holds the value for a tag field with enum type. This value must be
-   * one of the allowed values in the definition of this enum.
+   * The value of a tag field with an enum type.
+   * This value must be one of the allowed values listed in this enum.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.TagField.EnumValue enum_value = 6;</code>
@@ -1140,8 +1150,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Holds the value for a tag field with enum type. This value must be
-   * one of the allowed values in the definition of this enum.
+   * The value of a tag field with an enum type.
+   * This value must be one of the allowed values listed in this enum.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.TagField.EnumValue enum_value = 6;</code>
@@ -1159,8 +1169,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Holds the value for a tag field with enum type. This value must be
-   * one of the allowed values in the definition of this enum.
+   * The value of a tag field with an enum type.
+   * This value must be one of the allowed values listed in this enum.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.TagField.EnumValue enum_value = 6;</code>
@@ -1173,17 +1183,96 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.datacatalog.v1.TagField.EnumValue.getDefaultInstance();
   }
 
+  public static final int RICHTEXT_VALUE_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * The value of a tag field with a rich text type.
+   * The maximum length is 10 MiB as this value holds HTML descriptions
+   * including encoded images. The maximum length of the text without images
+   * is 100 KiB.
+   * </pre>
+   *
+   * <code>string richtext_value = 8;</code>
+   *
+   * @return Whether the richtextValue field is set.
+   */
+  public boolean hasRichtextValue() {
+    return kindCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The value of a tag field with a rich text type.
+   * The maximum length is 10 MiB as this value holds HTML descriptions
+   * including encoded images. The maximum length of the text without images
+   * is 100 KiB.
+   * </pre>
+   *
+   * <code>string richtext_value = 8;</code>
+   *
+   * @return The richtextValue.
+   */
+  public java.lang.String getRichtextValue() {
+    java.lang.Object ref = "";
+    if (kindCase_ == 8) {
+      ref = kind_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (kindCase_ == 8) {
+        kind_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The value of a tag field with a rich text type.
+   * The maximum length is 10 MiB as this value holds HTML descriptions
+   * including encoded images. The maximum length of the text without images
+   * is 100 KiB.
+   * </pre>
+   *
+   * <code>string richtext_value = 8;</code>
+   *
+   * @return The bytes for richtextValue.
+   */
+  public com.google.protobuf.ByteString getRichtextValueBytes() {
+    java.lang.Object ref = "";
+    if (kindCase_ == 8) {
+      ref = kind_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (kindCase_ == 8) {
+        kind_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ORDER_FIELD_NUMBER = 7;
   private int order_;
   /**
    *
    *
    * <pre>
-   * Output only. The order of this field with respect to other fields in this tag. It can be
-   * set in [Tag][google.cloud.datacatalog.v1.TagTemplateField.order]. For
-   * example, a higher value can indicate a more important field. The value can
-   * be negative. Multiple fields can have the same order, and field orders
-   * within a tag do not have to be sequential.
+   * Output only. The order of this field with respect to other fields in this tag. Can be
+   * set by [Tag][google.cloud.datacatalog.v1.TagTemplateField.order].
+   * For example, a higher value can indicate a more important field.
+   * The value can be negative. Multiple fields can have the same order, and
+   * field orders within a tag don't have to be sequential.
    * </pre>
    *
    * <code>int32 order = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1230,6 +1319,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     if (order_ != 0) {
       output.writeInt32(7, order_);
     }
+    if (kindCase_ == 8) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, kind_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1268,6 +1360,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     if (order_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, order_);
     }
+    if (kindCase_ == 8) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, kind_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1302,6 +1397,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         break;
       case 6:
         if (!getEnumValue().equals(other.getEnumValue())) return false;
+        break;
+      case 8:
+        if (!getRichtextValue().equals(other.getRichtextValue())) return false;
         break;
       case 0:
       default:
@@ -1344,6 +1442,10 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       case 6:
         hash = (37 * hash) + ENUM_VALUE_FIELD_NUMBER;
         hash = (53 * hash) + getEnumValue().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + RICHTEXT_VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getRichtextValue().hashCode();
         break;
       case 0:
       default:
@@ -1452,7 +1554,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Contains the value and supporting information for a field within
+   * Contains the value and additional information on a field within
    * a [Tag][google.cloud.datacatalog.v1.Tag].
    * </pre>
    *
@@ -1551,6 +1653,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
           result.kind_ = enumValueBuilder_.build();
         }
       }
+      if (kindCase_ == 8) {
+        result.kind_ = kind_;
+      }
       result.order_ = order_;
       result.kindCase_ = kindCase_;
       onBuilt();
@@ -1635,6 +1740,13 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         case ENUM_VALUE:
           {
             mergeEnumValue(other.getEnumValue());
+            break;
+          }
+        case RICHTEXT_VALUE:
+          {
+            kindCase_ = 8;
+            kind_ = other.kind_;
+            onChanged();
             break;
           }
         case KIND_NOT_SET:
@@ -1795,7 +1907,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with double type.
+     * The value of a tag field with a double type.
      * </pre>
      *
      * <code>double double_value = 2;</code>
@@ -1809,7 +1921,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with double type.
+     * The value of a tag field with a double type.
      * </pre>
      *
      * <code>double double_value = 2;</code>
@@ -1826,7 +1938,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with double type.
+     * The value of a tag field with a double type.
      * </pre>
      *
      * <code>double double_value = 2;</code>
@@ -1844,7 +1956,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with double type.
+     * The value of a tag field with a double type.
      * </pre>
      *
      * <code>double double_value = 2;</code>
@@ -1864,7 +1976,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with string type.
+     * The value of a tag field with a string type.
      * The maximum length is 2000 UTF-8 characters.
      * </pre>
      *
@@ -1880,7 +1992,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with string type.
+     * The value of a tag field with a string type.
      * The maximum length is 2000 UTF-8 characters.
      * </pre>
      *
@@ -1909,7 +2021,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with string type.
+     * The value of a tag field with a string type.
      * The maximum length is 2000 UTF-8 characters.
      * </pre>
      *
@@ -1938,7 +2050,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with string type.
+     * The value of a tag field with a string type.
      * The maximum length is 2000 UTF-8 characters.
      * </pre>
      *
@@ -1960,7 +2072,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with string type.
+     * The value of a tag field with a string type.
      * The maximum length is 2000 UTF-8 characters.
      * </pre>
      *
@@ -1980,7 +2092,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with string type.
+     * The value of a tag field with a string type.
      * The maximum length is 2000 UTF-8 characters.
      * </pre>
      *
@@ -2004,7 +2116,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with boolean type.
+     * The value of a tag field with a boolean type.
      * </pre>
      *
      * <code>bool bool_value = 4;</code>
@@ -2018,7 +2130,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with boolean type.
+     * The value of a tag field with a boolean type.
      * </pre>
      *
      * <code>bool bool_value = 4;</code>
@@ -2035,7 +2147,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with boolean type.
+     * The value of a tag field with a boolean type.
      * </pre>
      *
      * <code>bool bool_value = 4;</code>
@@ -2053,7 +2165,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with boolean type.
+     * The value of a tag field with a boolean type.
      * </pre>
      *
      * <code>bool bool_value = 4;</code>
@@ -2078,7 +2190,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with timestamp type.
+     * The value of a tag field with a timestamp type.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
@@ -2093,7 +2205,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with timestamp type.
+     * The value of a tag field with a timestamp type.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
@@ -2118,7 +2230,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with timestamp type.
+     * The value of a tag field with a timestamp type.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
@@ -2140,7 +2252,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with timestamp type.
+     * The value of a tag field with a timestamp type.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
@@ -2159,7 +2271,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with timestamp type.
+     * The value of a tag field with a timestamp type.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
@@ -2188,7 +2300,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with timestamp type.
+     * The value of a tag field with a timestamp type.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
@@ -2213,7 +2325,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with timestamp type.
+     * The value of a tag field with a timestamp type.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
@@ -2225,7 +2337,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with timestamp type.
+     * The value of a tag field with a timestamp type.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
@@ -2245,7 +2357,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with timestamp type.
+     * The value of a tag field with a timestamp type.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
@@ -2282,8 +2394,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with enum type. This value must be
-     * one of the allowed values in the definition of this enum.
+     * The value of a tag field with an enum type.
+     * This value must be one of the allowed values listed in this enum.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TagField.EnumValue enum_value = 6;</code>
@@ -2298,8 +2410,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with enum type. This value must be
-     * one of the allowed values in the definition of this enum.
+     * The value of a tag field with an enum type.
+     * This value must be one of the allowed values listed in this enum.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TagField.EnumValue enum_value = 6;</code>
@@ -2324,8 +2436,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with enum type. This value must be
-     * one of the allowed values in the definition of this enum.
+     * The value of a tag field with an enum type.
+     * This value must be one of the allowed values listed in this enum.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TagField.EnumValue enum_value = 6;</code>
@@ -2347,8 +2459,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with enum type. This value must be
-     * one of the allowed values in the definition of this enum.
+     * The value of a tag field with an enum type.
+     * This value must be one of the allowed values listed in this enum.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TagField.EnumValue enum_value = 6;</code>
@@ -2368,8 +2480,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with enum type. This value must be
-     * one of the allowed values in the definition of this enum.
+     * The value of a tag field with an enum type.
+     * This value must be one of the allowed values listed in this enum.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TagField.EnumValue enum_value = 6;</code>
@@ -2400,8 +2512,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with enum type. This value must be
-     * one of the allowed values in the definition of this enum.
+     * The value of a tag field with an enum type.
+     * This value must be one of the allowed values listed in this enum.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TagField.EnumValue enum_value = 6;</code>
@@ -2426,8 +2538,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with enum type. This value must be
-     * one of the allowed values in the definition of this enum.
+     * The value of a tag field with an enum type.
+     * This value must be one of the allowed values listed in this enum.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TagField.EnumValue enum_value = 6;</code>
@@ -2439,8 +2551,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with enum type. This value must be
-     * one of the allowed values in the definition of this enum.
+     * The value of a tag field with an enum type.
+     * This value must be one of the allowed values listed in this enum.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TagField.EnumValue enum_value = 6;</code>
@@ -2460,8 +2572,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Holds the value for a tag field with enum type. This value must be
-     * one of the allowed values in the definition of this enum.
+     * The value of a tag field with an enum type.
+     * This value must be one of the allowed values listed in this enum.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TagField.EnumValue enum_value = 6;</code>
@@ -2491,16 +2603,168 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       return enumValueBuilder_;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The value of a tag field with a rich text type.
+     * The maximum length is 10 MiB as this value holds HTML descriptions
+     * including encoded images. The maximum length of the text without images
+     * is 100 KiB.
+     * </pre>
+     *
+     * <code>string richtext_value = 8;</code>
+     *
+     * @return Whether the richtextValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasRichtextValue() {
+      return kindCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The value of a tag field with a rich text type.
+     * The maximum length is 10 MiB as this value holds HTML descriptions
+     * including encoded images. The maximum length of the text without images
+     * is 100 KiB.
+     * </pre>
+     *
+     * <code>string richtext_value = 8;</code>
+     *
+     * @return The richtextValue.
+     */
+    @java.lang.Override
+    public java.lang.String getRichtextValue() {
+      java.lang.Object ref = "";
+      if (kindCase_ == 8) {
+        ref = kind_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (kindCase_ == 8) {
+          kind_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The value of a tag field with a rich text type.
+     * The maximum length is 10 MiB as this value holds HTML descriptions
+     * including encoded images. The maximum length of the text without images
+     * is 100 KiB.
+     * </pre>
+     *
+     * <code>string richtext_value = 8;</code>
+     *
+     * @return The bytes for richtextValue.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRichtextValueBytes() {
+      java.lang.Object ref = "";
+      if (kindCase_ == 8) {
+        ref = kind_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (kindCase_ == 8) {
+          kind_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The value of a tag field with a rich text type.
+     * The maximum length is 10 MiB as this value holds HTML descriptions
+     * including encoded images. The maximum length of the text without images
+     * is 100 KiB.
+     * </pre>
+     *
+     * <code>string richtext_value = 8;</code>
+     *
+     * @param value The richtextValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRichtextValue(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kindCase_ = 8;
+      kind_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The value of a tag field with a rich text type.
+     * The maximum length is 10 MiB as this value holds HTML descriptions
+     * including encoded images. The maximum length of the text without images
+     * is 100 KiB.
+     * </pre>
+     *
+     * <code>string richtext_value = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRichtextValue() {
+      if (kindCase_ == 8) {
+        kindCase_ = 0;
+        kind_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The value of a tag field with a rich text type.
+     * The maximum length is 10 MiB as this value holds HTML descriptions
+     * including encoded images. The maximum length of the text without images
+     * is 100 KiB.
+     * </pre>
+     *
+     * <code>string richtext_value = 8;</code>
+     *
+     * @param value The bytes for richtextValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRichtextValueBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kindCase_ = 8;
+      kind_ = value;
+      onChanged();
+      return this;
+    }
+
     private int order_;
     /**
      *
      *
      * <pre>
-     * Output only. The order of this field with respect to other fields in this tag. It can be
-     * set in [Tag][google.cloud.datacatalog.v1.TagTemplateField.order]. For
-     * example, a higher value can indicate a more important field. The value can
-     * be negative. Multiple fields can have the same order, and field orders
-     * within a tag do not have to be sequential.
+     * Output only. The order of this field with respect to other fields in this tag. Can be
+     * set by [Tag][google.cloud.datacatalog.v1.TagTemplateField.order].
+     * For example, a higher value can indicate a more important field.
+     * The value can be negative. Multiple fields can have the same order, and
+     * field orders within a tag don't have to be sequential.
      * </pre>
      *
      * <code>int32 order = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2515,11 +2779,11 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The order of this field with respect to other fields in this tag. It can be
-     * set in [Tag][google.cloud.datacatalog.v1.TagTemplateField.order]. For
-     * example, a higher value can indicate a more important field. The value can
-     * be negative. Multiple fields can have the same order, and field orders
-     * within a tag do not have to be sequential.
+     * Output only. The order of this field with respect to other fields in this tag. Can be
+     * set by [Tag][google.cloud.datacatalog.v1.TagTemplateField.order].
+     * For example, a higher value can indicate a more important field.
+     * The value can be negative. Multiple fields can have the same order, and
+     * field orders within a tag don't have to be sequential.
      * </pre>
      *
      * <code>int32 order = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2537,11 +2801,11 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The order of this field with respect to other fields in this tag. It can be
-     * set in [Tag][google.cloud.datacatalog.v1.TagTemplateField.order]. For
-     * example, a higher value can indicate a more important field. The value can
-     * be negative. Multiple fields can have the same order, and field orders
-     * within a tag do not have to be sequential.
+     * Output only. The order of this field with respect to other fields in this tag. Can be
+     * set by [Tag][google.cloud.datacatalog.v1.TagTemplateField.order].
+     * For example, a higher value can indicate a more important field.
+     * The value can be negative. Multiple fields can have the same order, and
+     * field orders within a tag don't have to be sequential.
      * </pre>
      *
      * <code>int32 order = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

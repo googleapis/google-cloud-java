@@ -156,6 +156,9 @@
             },
             "ImportTaxonomies": {
               "methods": ["importTaxonomies", "importTaxonomiesCallable"]
+            },
+            "ReplaceTaxonomy": {
+              "methods": ["replaceTaxonomy", "replaceTaxonomyCallable"]
             }
           }
         }

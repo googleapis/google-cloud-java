@@ -27,9 +27,8 @@ public interface ListEntryGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the location that contains the entry groups, which can be
-   * provided in URL format. Example:
-   * * projects/{project_id}/locations/{location}
+   * Required. The name of the location that contains the entry groups to list.
+   * Can be provided as a URL.
    * </pre>
    *
    * <code>
@@ -43,9 +42,8 @@ public interface ListEntryGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the location that contains the entry groups, which can be
-   * provided in URL format. Example:
-   * * projects/{project_id}/locations/{location}
+   * Required. The name of the location that contains the entry groups to list.
+   * Can be provided as a URL.
    * </pre>
    *
    * <code>
@@ -60,8 +58,9 @@ public interface ListEntryGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of items to return. Default is 10. Max limit is 1000.
-   * Throws an invalid argument for `page_size &gt; 1000`.
+   * Optional. The maximum number of items to return.
+   * Default is 10. Maximum limit is 1000.
+   * Throws an invalid argument if `page_size` is greater than 1000.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -74,8 +73,8 @@ public interface ListEntryGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Token that specifies which page is requested. If empty, the first page is
-   * returned.
+   * Optional. Pagination token that specifies the next page to return.
+   * If empty, returns the first page.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87,8 +86,8 @@ public interface ListEntryGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Token that specifies which page is requested. If empty, the first page is
-   * returned.
+   * Optional. Pagination token that specifies the next page to return.
+   * If empty, returns the first page.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

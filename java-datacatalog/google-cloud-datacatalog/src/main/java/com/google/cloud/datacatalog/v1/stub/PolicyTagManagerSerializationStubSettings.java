@@ -35,6 +35,8 @@ import com.google.cloud.datacatalog.v1.ExportTaxonomiesRequest;
 import com.google.cloud.datacatalog.v1.ExportTaxonomiesResponse;
 import com.google.cloud.datacatalog.v1.ImportTaxonomiesRequest;
 import com.google.cloud.datacatalog.v1.ImportTaxonomiesResponse;
+import com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest;
+import com.google.cloud.datacatalog.v1.Taxonomy;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -59,16 +61,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of importTaxonomies to 30 seconds:
+ * <p>For example, to set the total timeout of replaceTaxonomy to 30 seconds:
  *
  * <pre>{@code
  * PolicyTagManagerSerializationStubSettings.Builder policyTagManagerSerializationSettingsBuilder =
  *     PolicyTagManagerSerializationStubSettings.newBuilder();
  * policyTagManagerSerializationSettingsBuilder
- *     .importTaxonomiesSettings()
+ *     .replaceTaxonomySettings()
  *     .setRetrySettings(
  *         policyTagManagerSerializationSettingsBuilder
- *             .importTaxonomiesSettings()
+ *             .replaceTaxonomySettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -84,10 +86,16 @@ public class PolicyTagManagerSerializationStubSettings
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
+  private final UnaryCallSettings<ReplaceTaxonomyRequest, Taxonomy> replaceTaxonomySettings;
   private final UnaryCallSettings<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
       importTaxonomiesSettings;
   private final UnaryCallSettings<ExportTaxonomiesRequest, ExportTaxonomiesResponse>
       exportTaxonomiesSettings;
+
+  /** Returns the object with the settings used for calls to replaceTaxonomy. */
+  public UnaryCallSettings<ReplaceTaxonomyRequest, Taxonomy> replaceTaxonomySettings() {
+    return replaceTaxonomySettings;
+  }
 
   /** Returns the object with the settings used for calls to importTaxonomies. */
   public UnaryCallSettings<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
@@ -176,6 +184,7 @@ public class PolicyTagManagerSerializationStubSettings
   protected PolicyTagManagerSerializationStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    replaceTaxonomySettings = settingsBuilder.replaceTaxonomySettings().build();
     importTaxonomiesSettings = settingsBuilder.importTaxonomiesSettings().build();
     exportTaxonomiesSettings = settingsBuilder.exportTaxonomiesSettings().build();
   }
@@ -184,6 +193,8 @@ public class PolicyTagManagerSerializationStubSettings
   public static class Builder
       extends StubSettings.Builder<PolicyTagManagerSerializationStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final UnaryCallSettings.Builder<ReplaceTaxonomyRequest, Taxonomy>
+        replaceTaxonomySettings;
     private final UnaryCallSettings.Builder<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
         importTaxonomiesSettings;
     private final UnaryCallSettings.Builder<ExportTaxonomiesRequest, ExportTaxonomiesResponse>
@@ -222,24 +233,26 @@ public class PolicyTagManagerSerializationStubSettings
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      replaceTaxonomySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importTaxonomiesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       exportTaxonomiesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              importTaxonomiesSettings, exportTaxonomiesSettings);
+              replaceTaxonomySettings, importTaxonomiesSettings, exportTaxonomiesSettings);
       initDefaults(this);
     }
 
     protected Builder(PolicyTagManagerSerializationStubSettings settings) {
       super(settings);
 
+      replaceTaxonomySettings = settings.replaceTaxonomySettings.toBuilder();
       importTaxonomiesSettings = settings.importTaxonomiesSettings.toBuilder();
       exportTaxonomiesSettings = settings.exportTaxonomiesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              importTaxonomiesSettings, exportTaxonomiesSettings);
+              replaceTaxonomySettings, importTaxonomiesSettings, exportTaxonomiesSettings);
     }
 
     private static Builder createDefault() {
@@ -256,6 +269,11 @@ public class PolicyTagManagerSerializationStubSettings
     }
 
     private static Builder initDefaults(Builder builder) {
+      builder
+          .replaceTaxonomySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
       builder
           .importTaxonomiesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
@@ -283,6 +301,11 @@ public class PolicyTagManagerSerializationStubSettings
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to replaceTaxonomy. */
+    public UnaryCallSettings.Builder<ReplaceTaxonomyRequest, Taxonomy> replaceTaxonomySettings() {
+      return replaceTaxonomySettings;
     }
 
     /** Returns the builder for the settings used for calls to importTaxonomies. */

@@ -29,8 +29,6 @@ public interface CreateTagTemplateFieldRequestOrBuilder
    * <pre>
    * Required. The name of the project and the template location
    * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-   * Example:
-   * * projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
    * </pre>
    *
    * <code>
@@ -46,8 +44,6 @@ public interface CreateTagTemplateFieldRequestOrBuilder
    * <pre>
    * Required. The name of the project and the template location
    * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-   * Example:
-   * * projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
    * </pre>
    *
    * <code>

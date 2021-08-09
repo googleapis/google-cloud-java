@@ -27,7 +27,7 @@ public interface ImportTaxonomiesResponseOrBuilder
    *
    *
    * <pre>
-   * Taxonomies that were imported.
+   * Imported taxonomies.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -37,7 +37,7 @@ public interface ImportTaxonomiesResponseOrBuilder
    *
    *
    * <pre>
-   * Taxonomies that were imported.
+   * Imported taxonomies.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -47,7 +47,7 @@ public interface ImportTaxonomiesResponseOrBuilder
    *
    *
    * <pre>
-   * Taxonomies that were imported.
+   * Imported taxonomies.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -57,7 +57,7 @@ public interface ImportTaxonomiesResponseOrBuilder
    *
    *
    * <pre>
-   * Taxonomies that were imported.
+   * Imported taxonomies.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -68,7 +68,7 @@ public interface ImportTaxonomiesResponseOrBuilder
    *
    *
    * <pre>
-   * Taxonomies that were imported.
+   * Imported taxonomies.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>

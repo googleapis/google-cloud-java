@@ -142,8 +142,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The name of the project this entry group belongs to. Example:
-   * `projects/{project_id}/locations/{location}`
+   * Required. The names of the project and location that the new entry group belongs to.
    * Note: The entry group itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
@@ -170,8 +169,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The name of the project this entry group belongs to. Example:
-   * `projects/{project_id}/locations/{location}`
+   * Required. The names of the project and location that the new entry group belongs to.
    * Note: The entry group itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
@@ -256,7 +254,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The entry group to create. Defaults to an empty entry group.
+   * The entry group to create. Defaults to empty.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.EntryGroup entry_group = 2;</code>
@@ -271,7 +269,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The entry group to create. Defaults to an empty entry group.
+   * The entry group to create. Defaults to empty.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.EntryGroup entry_group = 2;</code>
@@ -288,7 +286,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The entry group to create. Defaults to an empty entry group.
+   * The entry group to create. Defaults to empty.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.EntryGroup entry_group = 2;</code>
@@ -667,8 +665,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project this entry group belongs to. Example:
-     * `projects/{project_id}/locations/{location}`
+     * Required. The names of the project and location that the new entry group belongs to.
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -694,8 +691,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project this entry group belongs to. Example:
-     * `projects/{project_id}/locations/{location}`
+     * Required. The names of the project and location that the new entry group belongs to.
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -721,8 +717,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project this entry group belongs to. Example:
-     * `projects/{project_id}/locations/{location}`
+     * Required. The names of the project and location that the new entry group belongs to.
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -747,8 +742,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project this entry group belongs to. Example:
-     * `projects/{project_id}/locations/{location}`
+     * Required. The names of the project and location that the new entry group belongs to.
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -769,8 +763,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project this entry group belongs to. Example:
-     * `projects/{project_id}/locations/{location}`
+     * Required. The names of the project and location that the new entry group belongs to.
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -924,7 +917,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The entry group to create. Defaults to an empty entry group.
+     * The entry group to create. Defaults to empty.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.EntryGroup entry_group = 2;</code>
@@ -938,7 +931,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The entry group to create. Defaults to an empty entry group.
+     * The entry group to create. Defaults to empty.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.EntryGroup entry_group = 2;</code>
@@ -958,7 +951,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The entry group to create. Defaults to an empty entry group.
+     * The entry group to create. Defaults to empty.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.EntryGroup entry_group = 2;</code>
@@ -980,7 +973,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The entry group to create. Defaults to an empty entry group.
+     * The entry group to create. Defaults to empty.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.EntryGroup entry_group = 2;</code>
@@ -1000,7 +993,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The entry group to create. Defaults to an empty entry group.
+     * The entry group to create. Defaults to empty.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.EntryGroup entry_group = 2;</code>
@@ -1026,7 +1019,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The entry group to create. Defaults to an empty entry group.
+     * The entry group to create. Defaults to empty.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.EntryGroup entry_group = 2;</code>
@@ -1046,7 +1039,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The entry group to create. Defaults to an empty entry group.
+     * The entry group to create. Defaults to empty.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.EntryGroup entry_group = 2;</code>
@@ -1060,7 +1053,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The entry group to create. Defaults to an empty entry group.
+     * The entry group to create. Defaults to empty.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.EntryGroup entry_group = 2;</code>
@@ -1078,7 +1071,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The entry group to create. Defaults to an empty entry group.
+     * The entry group to create. Defaults to empty.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.EntryGroup entry_group = 2;</code>

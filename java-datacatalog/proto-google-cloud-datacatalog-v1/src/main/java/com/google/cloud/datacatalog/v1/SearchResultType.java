@@ -22,7 +22,7 @@ package com.google.cloud.datacatalog.v1;
  *
  *
  * <pre>
- * The different types of resources that can be returned in search.
+ * The resource types that can be returned in search results.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.datacatalog.v1.SearchResultType}

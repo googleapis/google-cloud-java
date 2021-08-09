@@ -59,6 +59,27 @@ public class MockPolicyTagManagerSerializationImpl extends PolicyTagManagerSeria
   }
 
   @Override
+  public void replaceTaxonomy(
+      ReplaceTaxonomyRequest request, StreamObserver<Taxonomy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Taxonomy) {
+      requests.add(request);
+      responseObserver.onNext(((Taxonomy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReplaceTaxonomy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Taxonomy.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void importTaxonomies(
       ImportTaxonomiesRequest request, StreamObserver<ImportTaxonomiesResponse> responseObserver) {
     Object response = responses.poll();

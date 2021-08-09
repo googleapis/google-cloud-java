@@ -27,8 +27,7 @@ public interface TagTemplateOrBuilder
    *
    *
    * <pre>
-   * The resource name of the tag template in URL format. Example:
-   * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+   * The resource name of the tag template in URL format.
    * Note: The tag template itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
@@ -42,8 +41,7 @@ public interface TagTemplateOrBuilder
    *
    *
    * <pre>
-   * The resource name of the tag template in URL format. Example:
-   * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+   * The resource name of the tag template in URL format.
    * Note: The tag template itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
@@ -89,13 +87,48 @@ public interface TagTemplateOrBuilder
    *
    *
    * <pre>
+   * Indicates whether this is a public tag template.
+   * Every user has view access to a *public* tag template by default.
+   * This means that:
+   *   * Every user can use this tag template to tag an entry.
+   *   * If an entry is tagged using the tag template, the tag is always
+   *     shown in the response to ``ListTags`` called on the entry.
+   *   * To get the template using the GetTagTemplate method, you
+   *     need view access either on the project or the organization the tag
+   *     template resides in but no other permission is needed.
+   *   * Operations on the tag template other than viewing (for example,
+   *     editing IAM policies) follow standard IAM structures.
+   * Tags created with a public tag template are referred to as public tags.
+   * You can search for a public tag by value with a
+   * simple search query instead of using a ``tag:`` predicate.
+   * Public tag templates may not appear in search results depending on scope,
+   * see:
+   * [include_public_tag_templates][google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates]
+   * Note: If an [IAM domain
+   * restriction](https://cloud.google.com/resource-manager/docs/organization-policy/restricting-domains)
+   * is configured in the tag template's location, the public access will not be
+   * enabled but the simple search for tag values will still work.
+   * </pre>
+   *
+   * <code>bool is_publicly_readable = 5;</code>
+   *
+   * @return The isPubliclyReadable.
+   */
+  boolean getIsPubliclyReadable();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. Map of tag template field IDs to the settings for the field.
-   * This map is an exhaustive list of the allowed fields. This map must contain
+   * This map is an exhaustive list of the allowed fields. The map must contain
    * at least one field and at most 500 fields.
-   * The keys to this map are tag template field IDs. Field IDs can contain
-   * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-   * Field IDs must be at least 1 character long and at most
-   * 64 characters long. Field IDs must start with a letter or underscore.
+   * The keys to this map are tag template field IDs. The IDs have the
+   * following limitations:
+   * * Can contain uppercase and lowercase letters, numbers (0-9) and
+   *   underscores (_).
+   * * Must be at least 1 character and at most 64 characters long.
+   * * Must start with a letter or underscore.
    * </pre>
    *
    * <code>
@@ -108,12 +141,14 @@ public interface TagTemplateOrBuilder
    *
    * <pre>
    * Required. Map of tag template field IDs to the settings for the field.
-   * This map is an exhaustive list of the allowed fields. This map must contain
+   * This map is an exhaustive list of the allowed fields. The map must contain
    * at least one field and at most 500 fields.
-   * The keys to this map are tag template field IDs. Field IDs can contain
-   * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-   * Field IDs must be at least 1 character long and at most
-   * 64 characters long. Field IDs must start with a letter or underscore.
+   * The keys to this map are tag template field IDs. The IDs have the
+   * following limitations:
+   * * Can contain uppercase and lowercase letters, numbers (0-9) and
+   *   underscores (_).
+   * * Must be at least 1 character and at most 64 characters long.
+   * * Must start with a letter or underscore.
    * </pre>
    *
    * <code>
@@ -129,12 +164,14 @@ public interface TagTemplateOrBuilder
    *
    * <pre>
    * Required. Map of tag template field IDs to the settings for the field.
-   * This map is an exhaustive list of the allowed fields. This map must contain
+   * This map is an exhaustive list of the allowed fields. The map must contain
    * at least one field and at most 500 fields.
-   * The keys to this map are tag template field IDs. Field IDs can contain
-   * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-   * Field IDs must be at least 1 character long and at most
-   * 64 characters long. Field IDs must start with a letter or underscore.
+   * The keys to this map are tag template field IDs. The IDs have the
+   * following limitations:
+   * * Can contain uppercase and lowercase letters, numbers (0-9) and
+   *   underscores (_).
+   * * Must be at least 1 character and at most 64 characters long.
+   * * Must start with a letter or underscore.
    * </pre>
    *
    * <code>
@@ -147,12 +184,14 @@ public interface TagTemplateOrBuilder
    *
    * <pre>
    * Required. Map of tag template field IDs to the settings for the field.
-   * This map is an exhaustive list of the allowed fields. This map must contain
+   * This map is an exhaustive list of the allowed fields. The map must contain
    * at least one field and at most 500 fields.
-   * The keys to this map are tag template field IDs. Field IDs can contain
-   * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-   * Field IDs must be at least 1 character long and at most
-   * 64 characters long. Field IDs must start with a letter or underscore.
+   * The keys to this map are tag template field IDs. The IDs have the
+   * following limitations:
+   * * Can contain uppercase and lowercase letters, numbers (0-9) and
+   *   underscores (_).
+   * * Must be at least 1 character and at most 64 characters long.
+   * * Must start with a letter or underscore.
    * </pre>
    *
    * <code>
@@ -166,12 +205,14 @@ public interface TagTemplateOrBuilder
    *
    * <pre>
    * Required. Map of tag template field IDs to the settings for the field.
-   * This map is an exhaustive list of the allowed fields. This map must contain
+   * This map is an exhaustive list of the allowed fields. The map must contain
    * at least one field and at most 500 fields.
-   * The keys to this map are tag template field IDs. Field IDs can contain
-   * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-   * Field IDs must be at least 1 character long and at most
-   * 64 characters long. Field IDs must start with a letter or underscore.
+   * The keys to this map are tag template field IDs. The IDs have the
+   * following limitations:
+   * * Can contain uppercase and lowercase letters, numbers (0-9) and
+   *   underscores (_).
+   * * Must be at least 1 character and at most 64 characters long.
+   * * Must start with a letter or underscore.
    * </pre>
    *
    * <code>

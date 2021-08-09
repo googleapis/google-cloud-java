@@ -27,8 +27,7 @@ public interface DeleteTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the tag to delete. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+   * Required. The name of the tag to delete.
    * </pre>
    *
    * <code>
@@ -42,8 +41,7 @@ public interface DeleteTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the tag to delete. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+   * Required. The name of the tag to delete.
    * </pre>
    *
    * <code>

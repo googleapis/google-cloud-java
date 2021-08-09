@@ -27,9 +27,10 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Policy Tag Manager serialization API service allows clients to manipulate
- * their policy tags and taxonomies in serialized format, where taxonomy is a hierarchical group of
- * policy tags.
+ * Service Description: Policy Tag Manager Serialization API service allows you to manipulate your
+ * policy tags and taxonomies in a serialized format.
+ *
+ * <p>Taxonomy is a hierarchical group of policy tags.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -37,12 +38,12 @@ import javax.annotation.Generated;
  * <pre>{@code
  * try (PolicyTagManagerSerializationClient policyTagManagerSerializationClient =
  *     PolicyTagManagerSerializationClient.create()) {
- *   ImportTaxonomiesRequest request =
- *       ImportTaxonomiesRequest.newBuilder()
- *           .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+ *   ReplaceTaxonomyRequest request =
+ *       ReplaceTaxonomyRequest.newBuilder()
+ *           .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+ *           .setSerializedTaxonomy(SerializedTaxonomy.newBuilder().build())
  *           .build();
- *   ImportTaxonomiesResponse response =
- *       policyTagManagerSerializationClient.importTaxonomies(request);
+ *   Taxonomy response = policyTagManagerSerializationClient.replaceTaxonomy(request);
  * }
  * }</pre>
  *
@@ -154,14 +155,82 @@ public class PolicyTagManagerSerializationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates new taxonomies (including their policy tags) by importing from inlined source or
-   * cross-regional source. New taxonomies will be created in a given parent project.
+   * Replaces (updates) a taxonomy and all its policy tags.
    *
-   * <p>If using the cross-regional source, a new taxonomy is created by copying from a source in
-   * another region.
+   * <p>The taxonomy and its entire hierarchy of policy tags must be represented literally by
+   * `SerializedTaxonomy` and the nested `SerializedPolicyTag` messages.
    *
-   * <p>If using the inlined source, this method provides a way to bulk create taxonomies and policy
-   * tags using nested proto structure.
+   * <p>This operation automatically does the following:
+   *
+   * <p>- Deletes the existing policy tags that are missing from the `SerializedPolicyTag`. -
+   * Creates policy tags that don't have resource names. They are considered new. - Updates policy
+   * tags with valid resources names accordingly.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PolicyTagManagerSerializationClient policyTagManagerSerializationClient =
+   *     PolicyTagManagerSerializationClient.create()) {
+   *   ReplaceTaxonomyRequest request =
+   *       ReplaceTaxonomyRequest.newBuilder()
+   *           .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setSerializedTaxonomy(SerializedTaxonomy.newBuilder().build())
+   *           .build();
+   *   Taxonomy response = policyTagManagerSerializationClient.replaceTaxonomy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Taxonomy replaceTaxonomy(ReplaceTaxonomyRequest request) {
+    return replaceTaxonomyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Replaces (updates) a taxonomy and all its policy tags.
+   *
+   * <p>The taxonomy and its entire hierarchy of policy tags must be represented literally by
+   * `SerializedTaxonomy` and the nested `SerializedPolicyTag` messages.
+   *
+   * <p>This operation automatically does the following:
+   *
+   * <p>- Deletes the existing policy tags that are missing from the `SerializedPolicyTag`. -
+   * Creates policy tags that don't have resource names. They are considered new. - Updates policy
+   * tags with valid resources names accordingly.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PolicyTagManagerSerializationClient policyTagManagerSerializationClient =
+   *     PolicyTagManagerSerializationClient.create()) {
+   *   ReplaceTaxonomyRequest request =
+   *       ReplaceTaxonomyRequest.newBuilder()
+   *           .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setSerializedTaxonomy(SerializedTaxonomy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Taxonomy> future =
+   *       policyTagManagerSerializationClient.replaceTaxonomyCallable().futureCall(request);
+   *   // Do something.
+   *   Taxonomy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ReplaceTaxonomyRequest, Taxonomy> replaceTaxonomyCallable() {
+    return stub.replaceTaxonomyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new taxonomies (including their policy tags) in a given project by importing from
+   * inlined or cross-regional sources.
+   *
+   * <p>For a cross-regional source, new taxonomies are created by copying from a source in another
+   * region.
+   *
+   * <p>For an inlined source, taxonomies and policy tags are created in bulk using nested protocol
+   * buffer structures.
    *
    * <p>Sample code:
    *
@@ -186,14 +255,14 @@ public class PolicyTagManagerSerializationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates new taxonomies (including their policy tags) by importing from inlined source or
-   * cross-regional source. New taxonomies will be created in a given parent project.
+   * Creates new taxonomies (including their policy tags) in a given project by importing from
+   * inlined or cross-regional sources.
    *
-   * <p>If using the cross-regional source, a new taxonomy is created by copying from a source in
-   * another region.
+   * <p>For a cross-regional source, new taxonomies are created by copying from a source in another
+   * region.
    *
-   * <p>If using the inlined source, this method provides a way to bulk create taxonomies and policy
-   * tags using nested proto structure.
+   * <p>For an inlined source, taxonomies and policy tags are created in bulk using nested protocol
+   * buffer structures.
    *
    * <p>Sample code:
    *
@@ -218,11 +287,11 @@ public class PolicyTagManagerSerializationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports taxonomies as the requested type and returns the taxonomies including their policy
-   * tags. The requested taxonomies must belong to one project.
+   * Exports taxonomies in the requested type and returns them, including their policy tags. The
+   * requested taxonomies must belong to the same project.
    *
-   * <p>SerializedTaxonomy protos with nested policy tags that are generated by this method can be
-   * used as input for future ImportTaxonomies calls.
+   * <p>This method generates `SerializedTaxonomy` protocol buffers with nested policy tags that can
+   * be used as input for `ImportTaxonomies` calls.
    *
    * <p>Sample code:
    *
@@ -248,11 +317,11 @@ public class PolicyTagManagerSerializationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports taxonomies as the requested type and returns the taxonomies including their policy
-   * tags. The requested taxonomies must belong to one project.
+   * Exports taxonomies in the requested type and returns them, including their policy tags. The
+   * requested taxonomies must belong to the same project.
    *
-   * <p>SerializedTaxonomy protos with nested policy tags that are generated by this method can be
-   * used as input for future ImportTaxonomies calls.
+   * <p>This method generates `SerializedTaxonomy` protocol buffers with nested policy tags that can
+   * be used as input for `ImportTaxonomies` calls.
    *
    * <p>Sample code:
    *

@@ -11,16 +11,16 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "551681f25e36b11829e87e580281350461f4f3f5",
-        "internalRef": "379784268"
+        "sha": "5b1f7cf1d2e2f8ab028a7090d0981fc774028906",
+        "internalRef": "387350333"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "551681f25e36b11829e87e580281350461f4f3f5",
-        "internalRef": "379784268"
+        "sha": "5b1f7cf1d2e2f8ab028a7090d0981fc774028906",
+        "internalRef": "387350333"
       }
     },
     {
@@ -186,10 +186,17 @@
     "grpc-google-cloud-datacatalog-v1beta1/src/main/java/com/google/cloud/datacatalog/v1beta1/PolicyTagManagerSerializationGrpc.java",
     "java.header",
     "license-checks.xml",
+    "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/BigQueryConnectionSpec.java",
+    "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/BigQueryConnectionSpecOrBuilder.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/BigQueryDateShardedSpec.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/BigQueryDateShardedSpecOrBuilder.java",
+    "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/BigQueryProto.java",
+    "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/BigQueryRoutineSpec.java",
+    "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/BigQueryRoutineSpecOrBuilder.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/BigQueryTableSpec.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/BigQueryTableSpecOrBuilder.java",
+    "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/CloudSqlBigQueryConnectionSpec.java",
+    "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/CloudSqlBigQueryConnectionSpecOrBuilder.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/ColumnSchema.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/ColumnSchemaOrBuilder.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/Common.java",
@@ -210,6 +217,8 @@
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/CrossRegionalSource.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/CrossRegionalSourceOrBuilder.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/DataSource.java",
+    "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/DataSourceConnectionSpec.java",
+    "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/DataSourceConnectionSpecOrBuilder.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/DataSourceOrBuilder.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/DataSourceProto.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/DatabaseTableSpec.java",
@@ -296,6 +305,10 @@
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/RenameTagTemplateFieldEnumValueRequestOrBuilder.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/RenameTagTemplateFieldRequest.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/RenameTagTemplateFieldRequestOrBuilder.java",
+    "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/ReplaceTaxonomyRequest.java",
+    "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/ReplaceTaxonomyRequestOrBuilder.java",
+    "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/RoutineSpec.java",
+    "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/RoutineSpecOrBuilder.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/Schema.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/SchemaOrBuilder.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/SchemaOuterClass.java",
@@ -348,8 +361,14 @@
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/UpdateTagTemplateRequestOrBuilder.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/UpdateTaxonomyRequest.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/UpdateTaxonomyRequestOrBuilder.java",
+    "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/Usage.java",
+    "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/UsageSignal.java",
+    "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/UsageSignalOrBuilder.java",
+    "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/UsageStats.java",
+    "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/UsageStatsOrBuilder.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/ViewSpec.java",
     "proto-google-cloud-datacatalog-v1/src/main/java/com/google/cloud/datacatalog/v1/ViewSpecOrBuilder.java",
+    "proto-google-cloud-datacatalog-v1/src/main/proto/google/cloud/datacatalog/v1/bigquery.proto",
     "proto-google-cloud-datacatalog-v1/src/main/proto/google/cloud/datacatalog/v1/common.proto",
     "proto-google-cloud-datacatalog-v1/src/main/proto/google/cloud/datacatalog/v1/data_source.proto",
     "proto-google-cloud-datacatalog-v1/src/main/proto/google/cloud/datacatalog/v1/datacatalog.proto",
@@ -361,6 +380,7 @@
     "proto-google-cloud-datacatalog-v1/src/main/proto/google/cloud/datacatalog/v1/table_spec.proto",
     "proto-google-cloud-datacatalog-v1/src/main/proto/google/cloud/datacatalog/v1/tags.proto",
     "proto-google-cloud-datacatalog-v1/src/main/proto/google/cloud/datacatalog/v1/timestamps.proto",
+    "proto-google-cloud-datacatalog-v1/src/main/proto/google/cloud/datacatalog/v1/usage.proto",
     "proto-google-cloud-datacatalog-v1beta1/src/main/java/com/google/cloud/datacatalog/v1beta1/BigQueryDateShardedSpec.java",
     "proto-google-cloud-datacatalog-v1beta1/src/main/java/com/google/cloud/datacatalog/v1beta1/BigQueryDateShardedSpecOrBuilder.java",
     "proto-google-cloud-datacatalog-v1beta1/src/main/java/com/google/cloud/datacatalog/v1beta1/BigQueryTableSpec.java",

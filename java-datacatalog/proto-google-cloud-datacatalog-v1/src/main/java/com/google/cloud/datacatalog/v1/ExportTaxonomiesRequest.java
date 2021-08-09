@@ -236,7 +236,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Resource names of the taxonomies to be exported.
+   * Required. Resource names of the taxonomies to export.
    * </pre>
    *
    * <code>
@@ -252,7 +252,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Resource names of the taxonomies to be exported.
+   * Required. Resource names of the taxonomies to export.
    * </pre>
    *
    * <code>
@@ -268,7 +268,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Resource names of the taxonomies to be exported.
+   * Required. Resource names of the taxonomies to export.
    * </pre>
    *
    * <code>
@@ -285,7 +285,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Resource names of the taxonomies to be exported.
+   * Required. Resource names of the taxonomies to export.
    * </pre>
    *
    * <code>
@@ -304,8 +304,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Export taxonomies as serialized taxonomies, which contain all the policy
-   * tags as nested protos.
+   * Serialized export taxonomies that contain all the policy
+   * tags as nested protocol buffers.
    * </pre>
    *
    * <code>bool serialized_taxonomies = 3;</code>
@@ -320,8 +320,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Export taxonomies as serialized taxonomies, which contain all the policy
-   * tags as nested protos.
+   * Serialized export taxonomies that contain all the policy
+   * tags as nested protocol buffers.
    * </pre>
    *
    * <code>bool serialized_taxonomies = 3;</code>
@@ -876,7 +876,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      * </pre>
      *
      * <code>
@@ -892,7 +892,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      * </pre>
      *
      * <code>
@@ -908,7 +908,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      * </pre>
      *
      * <code>
@@ -925,7 +925,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      * </pre>
      *
      * <code>
@@ -942,7 +942,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      * </pre>
      *
      * <code>
@@ -966,7 +966,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      * </pre>
      *
      * <code>
@@ -989,7 +989,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      * </pre>
      *
      * <code>
@@ -1009,7 +1009,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      * </pre>
      *
      * <code>
@@ -1028,7 +1028,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      * </pre>
      *
      * <code>
@@ -1053,8 +1053,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Export taxonomies as serialized taxonomies, which contain all the policy
-     * tags as nested protos.
+     * Serialized export taxonomies that contain all the policy
+     * tags as nested protocol buffers.
      * </pre>
      *
      * <code>bool serialized_taxonomies = 3;</code>
@@ -1068,8 +1068,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Export taxonomies as serialized taxonomies, which contain all the policy
-     * tags as nested protos.
+     * Serialized export taxonomies that contain all the policy
+     * tags as nested protocol buffers.
      * </pre>
      *
      * <code>bool serialized_taxonomies = 3;</code>
@@ -1086,8 +1086,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Export taxonomies as serialized taxonomies, which contain all the policy
-     * tags as nested protos.
+     * Serialized export taxonomies that contain all the policy
+     * tags as nested protocol buffers.
      * </pre>
      *
      * <code>bool serialized_taxonomies = 3;</code>
@@ -1105,8 +1105,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Export taxonomies as serialized taxonomies, which contain all the policy
-     * tags as nested protos.
+     * Serialized export taxonomies that contain all the policy
+     * tags as nested protocol buffers.
      * </pre>
      *
      * <code>bool serialized_taxonomies = 3;</code>

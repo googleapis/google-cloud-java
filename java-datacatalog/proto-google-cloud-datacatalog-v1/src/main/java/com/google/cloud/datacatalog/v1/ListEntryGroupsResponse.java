@@ -135,7 +135,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * EntryGroup details.
+   * Entry group details.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -148,7 +148,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * EntryGroup details.
+   * Entry group details.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -162,7 +162,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * EntryGroup details.
+   * Entry group details.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -175,7 +175,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * EntryGroup details.
+   * Entry group details.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -188,7 +188,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * EntryGroup details.
+   * Entry group details.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -204,8 +204,8 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Token to retrieve the next page of results. It is set to empty if no items
-   * remain in results.
+   * Pagination token to specify in the next call to retrieve the next page of
+   * results. Empty if there are no more items.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -228,8 +228,8 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Token to retrieve the next page of results. It is set to empty if no items
-   * remain in results.
+   * Pagination token to specify in the next call to retrieve the next page of
+   * results. Empty if there are no more items.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -648,7 +648,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * EntryGroup details.
+     * Entry group details.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -664,7 +664,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * EntryGroup details.
+     * Entry group details.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -680,7 +680,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * EntryGroup details.
+     * Entry group details.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -696,7 +696,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * EntryGroup details.
+     * Entry group details.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -718,7 +718,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * EntryGroup details.
+     * Entry group details.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -738,7 +738,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * EntryGroup details.
+     * Entry group details.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -760,7 +760,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * EntryGroup details.
+     * Entry group details.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -782,7 +782,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * EntryGroup details.
+     * Entry group details.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -802,7 +802,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * EntryGroup details.
+     * Entry group details.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -822,7 +822,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * EntryGroup details.
+     * Entry group details.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -842,7 +842,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * EntryGroup details.
+     * Entry group details.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -861,7 +861,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * EntryGroup details.
+     * Entry group details.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -880,7 +880,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * EntryGroup details.
+     * Entry group details.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -892,7 +892,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * EntryGroup details.
+     * Entry group details.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -908,7 +908,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * EntryGroup details.
+     * Entry group details.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -925,7 +925,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * EntryGroup details.
+     * Entry group details.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -938,7 +938,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * EntryGroup details.
+     * Entry group details.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -951,7 +951,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * EntryGroup details.
+     * Entry group details.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -983,8 +983,8 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Token to retrieve the next page of results. It is set to empty if no items
-     * remain in results.
+     * Pagination token to specify in the next call to retrieve the next page of
+     * results. Empty if there are no more items.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1006,8 +1006,8 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Token to retrieve the next page of results. It is set to empty if no items
-     * remain in results.
+     * Pagination token to specify in the next call to retrieve the next page of
+     * results. Empty if there are no more items.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1029,8 +1029,8 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Token to retrieve the next page of results. It is set to empty if no items
-     * remain in results.
+     * Pagination token to specify in the next call to retrieve the next page of
+     * results. Empty if there are no more items.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1051,8 +1051,8 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Token to retrieve the next page of results. It is set to empty if no items
-     * remain in results.
+     * Pagination token to specify in the next call to retrieve the next page of
+     * results. Empty if there are no more items.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1069,8 +1069,8 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Token to retrieve the next page of results. It is set to empty if no items
-     * remain in results.
+     * Pagination token to specify in the next call to retrieve the next page of
+     * results. Empty if there are no more items.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

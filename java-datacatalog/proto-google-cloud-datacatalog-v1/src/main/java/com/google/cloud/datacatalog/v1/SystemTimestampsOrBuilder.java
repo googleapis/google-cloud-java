@@ -27,7 +27,7 @@ public interface SystemTimestampsOrBuilder
    *
    *
    * <pre>
-   * The creation time of the resource within the given system.
+   * Creation timestamp of the resource within the given system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -39,7 +39,7 @@ public interface SystemTimestampsOrBuilder
    *
    *
    * <pre>
-   * The creation time of the resource within the given system.
+   * Creation timestamp of the resource within the given system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -51,7 +51,7 @@ public interface SystemTimestampsOrBuilder
    *
    *
    * <pre>
-   * The creation time of the resource within the given system.
+   * Creation timestamp of the resource within the given system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -62,7 +62,12 @@ public interface SystemTimestampsOrBuilder
    *
    *
    * <pre>
-   * The last-modified time of the resource within the given system.
+   * Timestamp of the last modification of the resource or its metadata within
+   * a given system.
+   * Note: Depending on the source system, not every modification updates this
+   * timestamp.
+   * For example, BigQuery timestamps every metadata modification but not data
+   * or permission changes.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -74,7 +79,12 @@ public interface SystemTimestampsOrBuilder
    *
    *
    * <pre>
-   * The last-modified time of the resource within the given system.
+   * Timestamp of the last modification of the resource or its metadata within
+   * a given system.
+   * Note: Depending on the source system, not every modification updates this
+   * timestamp.
+   * For example, BigQuery timestamps every metadata modification but not data
+   * or permission changes.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -86,7 +96,12 @@ public interface SystemTimestampsOrBuilder
    *
    *
    * <pre>
-   * The last-modified time of the resource within the given system.
+   * Timestamp of the last modification of the resource or its metadata within
+   * a given system.
+   * Note: Depending on the source system, not every modification updates this
+   * timestamp.
+   * For example, BigQuery timestamps every metadata modification but not data
+   * or permission changes.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -97,8 +112,8 @@ public interface SystemTimestampsOrBuilder
    *
    *
    * <pre>
-   * Output only. The expiration time of the resource within the given system.
-   * Currently only apllicable to BigQuery resources.
+   * Output only. Expiration timestamp of the resource within the given system.
+   * Currently only applicable to BigQuery resources.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -111,8 +126,8 @@ public interface SystemTimestampsOrBuilder
    *
    *
    * <pre>
-   * Output only. The expiration time of the resource within the given system.
-   * Currently only apllicable to BigQuery resources.
+   * Output only. Expiration timestamp of the resource within the given system.
+   * Currently only applicable to BigQuery resources.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -125,8 +140,8 @@ public interface SystemTimestampsOrBuilder
    *
    *
    * <pre>
-   * Output only. The expiration time of the resource within the given system.
-   * Currently only apllicable to BigQuery resources.
+   * Output only. Expiration timestamp of the resource within the given system.
+   * Currently only applicable to BigQuery resources.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];

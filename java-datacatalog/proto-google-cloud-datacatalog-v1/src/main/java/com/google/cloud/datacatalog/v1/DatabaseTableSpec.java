@@ -22,8 +22,8 @@ package com.google.cloud.datacatalog.v1;
  *
  *
  * <pre>
- * Specification that applies to a table resource. Only valid
- * for entries of `TABLE` type.
+ * Specification that applies to a table resource. Valid only
+ * for entries with the `TABLE` type.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.v1.DatabaseTableSpec}
@@ -476,8 +476,8 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specification that applies to a table resource. Only valid
-   * for entries of `TABLE` type.
+   * Specification that applies to a table resource. Valid only
+   * for entries with the `TABLE` type.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.v1.DatabaseTableSpec}

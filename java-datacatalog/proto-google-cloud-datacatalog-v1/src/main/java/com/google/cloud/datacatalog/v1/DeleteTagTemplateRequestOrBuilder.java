@@ -27,8 +27,7 @@ public interface DeleteTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the tag template to delete. Example:
-   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+   * Required. The name of the tag template to delete.
    * </pre>
    *
    * <code>
@@ -42,8 +41,7 @@ public interface DeleteTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the tag template to delete. Example:
-   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+   * Required. The name of the tag template to delete.
    * </pre>
    *
    * <code>
@@ -58,9 +56,8 @@ public interface DeleteTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Currently, this field must always be set to `true`.
-   * This confirms the deletion of any possible tags using this template.
-   * `force = false` will be supported in the future.
+   * Required. If true, deletes all tags that use this template.
+   * Currently, `true` is the only supported value.
    * </pre>
    *
    * <code>bool force = 2 [(.google.api.field_behavior) = REQUIRED];</code>

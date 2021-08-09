@@ -656,6 +656,8 @@ public class DataCatalogClientTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .setDataSource(DataSource.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -707,6 +709,8 @@ public class DataCatalogClientTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .setDataSource(DataSource.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -758,6 +762,8 @@ public class DataCatalogClientTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .setDataSource(DataSource.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -803,6 +809,8 @@ public class DataCatalogClientTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .setDataSource(DataSource.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -919,6 +927,8 @@ public class DataCatalogClientTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .setDataSource(DataSource.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -964,6 +974,8 @@ public class DataCatalogClientTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .setDataSource(DataSource.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -1009,6 +1021,8 @@ public class DataCatalogClientTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .setDataSource(DataSource.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -1139,6 +1153,7 @@ public class DataCatalogClientTest {
         TagTemplate.newBuilder()
             .setName(TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString())
             .setDisplayName("displayName1714148973")
+            .setIsPubliclyReadable(true)
             .putAllFields(new HashMap<String, TagTemplateField>())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -1185,6 +1200,7 @@ public class DataCatalogClientTest {
         TagTemplate.newBuilder()
             .setName(TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString())
             .setDisplayName("displayName1714148973")
+            .setIsPubliclyReadable(true)
             .putAllFields(new HashMap<String, TagTemplateField>())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -1231,6 +1247,7 @@ public class DataCatalogClientTest {
         TagTemplate.newBuilder()
             .setName(TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString())
             .setDisplayName("displayName1714148973")
+            .setIsPubliclyReadable(true)
             .putAllFields(new HashMap<String, TagTemplateField>())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -1271,6 +1288,7 @@ public class DataCatalogClientTest {
         TagTemplate.newBuilder()
             .setName(TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString())
             .setDisplayName("displayName1714148973")
+            .setIsPubliclyReadable(true)
             .putAllFields(new HashMap<String, TagTemplateField>())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -1311,6 +1329,7 @@ public class DataCatalogClientTest {
         TagTemplate.newBuilder()
             .setName(TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString())
             .setDisplayName("displayName1714148973")
+            .setIsPubliclyReadable(true)
             .putAllFields(new HashMap<String, TagTemplateField>())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -1351,6 +1370,7 @@ public class DataCatalogClientTest {
         TagTemplate.newBuilder()
             .setName(TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString())
             .setDisplayName("displayName1714148973")
+            .setIsPubliclyReadable(true)
             .putAllFields(new HashMap<String, TagTemplateField>())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
