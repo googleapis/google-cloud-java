@@ -16,7 +16,6 @@
 
 package com.google.cloud.datafusion.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -822,12 +821,7 @@ public class DataFusionClient implements BackgroundResource {
           ListAvailableVersionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListAvailableVersionsPage, ListAvailableVersionsPagedResponse>() {
-            @Override
-            public ListAvailableVersionsPagedResponse apply(ListAvailableVersionsPage input) {
-              return new ListAvailableVersionsPagedResponse(input);
-            }
-          },
+          input -> new ListAvailableVersionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -907,12 +901,7 @@ public class DataFusionClient implements BackgroundResource {
           ListInstancesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListInstancesPage, ListInstancesPagedResponse>() {
-            @Override
-            public ListInstancesPagedResponse apply(ListInstancesPage input) {
-              return new ListInstancesPagedResponse(input);
-            }
-          },
+          input -> new ListInstancesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

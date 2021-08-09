@@ -199,7 +199,7 @@ public class DataFusionClientTest {
   public void getInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setDescription("description-1724546052")
             .setEnableStackdriverLogging(true)
             .setEnableStackdriverMonitoring(true)
@@ -261,7 +261,7 @@ public class DataFusionClientTest {
   public void createInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setDescription("description-1724546052")
             .setEnableStackdriverLogging(true)
             .setEnableStackdriverMonitoring(true)
@@ -379,7 +379,7 @@ public class DataFusionClientTest {
   public void updateInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setDescription("description-1724546052")
             .setEnableStackdriverLogging(true)
             .setEnableStackdriverMonitoring(true)
@@ -452,7 +452,7 @@ public class DataFusionClientTest {
   public void restartInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setDescription("description-1724546052")
             .setEnableStackdriverLogging(true)
             .setEnableStackdriverMonitoring(true)

@@ -28,7 +28,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datafusion.v1beta1.AddDnsPeeringRequest;
 import com.google.cloud.datafusion.v1beta1.AddDnsPeeringResponse;
@@ -59,7 +58,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -291,104 +289,80 @@ public class GrpcDataFusionStub extends DataFusionStub {
                 .<ListAvailableVersionsRequest, ListAvailableVersionsResponse>newBuilder()
                 .setMethodDescriptor(listAvailableVersionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListAvailableVersionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListAvailableVersionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListInstancesRequest, ListInstancesResponse> listInstancesTransportSettings =
         GrpcCallSettings.<ListInstancesRequest, ListInstancesResponse>newBuilder()
             .setMethodDescriptor(listInstancesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListInstancesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListInstancesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
             .setMethodDescriptor(getInstanceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetInstanceRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetInstanceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         GrpcCallSettings.<CreateInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(createInstanceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateInstanceRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateInstanceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
         GrpcCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteInstanceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteInstanceRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteInstanceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         GrpcCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(updateInstanceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateInstanceRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateInstanceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("instance.name", String.valueOf(request.getInstance().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("instance.name", String.valueOf(request.getInstance().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RestartInstanceRequest, Operation> restartInstanceTransportSettings =
         GrpcCallSettings.<RestartInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(restartInstanceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<RestartInstanceRequest>() {
-                  @Override
-                  public Map<String, String> extract(RestartInstanceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpgradeInstanceRequest, Operation> upgradeInstanceTransportSettings =
         GrpcCallSettings.<UpgradeInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(upgradeInstanceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpgradeInstanceRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpgradeInstanceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RemoveIamPolicyRequest, RemoveIamPolicyResponse>
@@ -396,13 +370,10 @@ public class GrpcDataFusionStub extends DataFusionStub {
             GrpcCallSettings.<RemoveIamPolicyRequest, RemoveIamPolicyResponse>newBuilder()
                 .setMethodDescriptor(removeIamPolicyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<RemoveIamPolicyRequest>() {
-                      @Override
-                      public Map<String, String> extract(RemoveIamPolicyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("resource", String.valueOf(request.getResource()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource", String.valueOf(request.getResource()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListNamespacesRequest, ListNamespacesResponse>
@@ -410,26 +381,20 @@ public class GrpcDataFusionStub extends DataFusionStub {
             GrpcCallSettings.<ListNamespacesRequest, ListNamespacesResponse>newBuilder()
                 .setMethodDescriptor(listNamespacesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListNamespacesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListNamespacesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<AddDnsPeeringRequest, AddDnsPeeringResponse> addDnsPeeringTransportSettings =
         GrpcCallSettings.<AddDnsPeeringRequest, AddDnsPeeringResponse>newBuilder()
             .setMethodDescriptor(addDnsPeeringMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<AddDnsPeeringRequest>() {
-                  @Override
-                  public Map<String, String> extract(AddDnsPeeringRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RemoveDnsPeeringRequest, RemoveDnsPeeringResponse>
@@ -437,13 +402,10 @@ public class GrpcDataFusionStub extends DataFusionStub {
             GrpcCallSettings.<RemoveDnsPeeringRequest, RemoveDnsPeeringResponse>newBuilder()
                 .setMethodDescriptor(removeDnsPeeringMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<RemoveDnsPeeringRequest>() {
-                      @Override
-                      public Map<String, String> extract(RemoveDnsPeeringRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListDnsPeeringsRequest, ListDnsPeeringsResponse>
@@ -451,13 +413,10 @@ public class GrpcDataFusionStub extends DataFusionStub {
             GrpcCallSettings.<ListDnsPeeringsRequest, ListDnsPeeringsResponse>newBuilder()
                 .setMethodDescriptor(listDnsPeeringsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListDnsPeeringsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListDnsPeeringsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 
