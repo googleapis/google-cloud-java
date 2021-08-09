@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/googleapis/java-analytics-admin/compare/v0.4.0...v0.5.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#257)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#257](https://www.github.com/googleapis/java-analytics-admin/issues/257)) ([ebbc014](https://www.github.com/googleapis/java-analytics-admin/commit/ebbc014dfde8577e1331bc09ecc2abae3e5b2f82))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-analytics-admin/issues/1130)) ([#232](https://www.github.com/googleapis/java-analytics-admin/issues/232)) ([7dffdfc](https://www.github.com/googleapis/java-analytics-admin/commit/7dffdfcfa03bd9df5d3a0678a816bdc5339dcb11))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#234](https://www.github.com/googleapis/java-analytics-admin/issues/234)) ([fdd111a](https://www.github.com/googleapis/java-analytics-admin/commit/fdd111a9791d2f2f0b32d3a439023a34fd67656a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#258](https://www.github.com/googleapis/java-analytics-admin/issues/258)) ([315f245](https://www.github.com/googleapis/java-analytics-admin/commit/315f245df1b516966b19a6a0980c3967cd4aca51))
+
 ## [0.4.0](https://www.github.com/googleapis/java-analytics-admin/compare/v0.3.2...v0.4.0) (2021-06-15)
 
 
