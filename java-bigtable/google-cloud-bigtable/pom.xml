@@ -235,6 +235,8 @@
       <artifactId>truth</artifactId>
       <scope>test</scope>
       <exclusions>
+        <!-- TODO: consider a different approach -->
+        <!-- exclude to resolve conflict with guava -->
         <exclusion>
           <groupId>org.checkerframework</groupId>
           <artifactId>checker-qual</artifactId>
@@ -246,6 +248,8 @@
       <artifactId>truth-proto-extension</artifactId>
       <scope>test</scope>
       <exclusions>
+        <!-- TODO: consider a different approach -->
+        <!-- exclude to resolve conflict with guava -->
         <exclusion>
           <groupId>org.checkerframework</groupId>
           <artifactId>checker-qual</artifactId>

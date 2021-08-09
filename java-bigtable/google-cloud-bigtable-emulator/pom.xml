@@ -150,6 +150,14 @@
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
       <scope>test</scope>
+      <exclusions>
+        <!-- TODO: consider a different approach -->
+        <!-- exclude to resolve conflict with guava -->
+        <exclusion>
+          <groupId>org.checkerframework</groupId>
+          <artifactId>checker-qual</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <dependency>
