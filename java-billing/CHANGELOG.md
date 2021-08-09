@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-billing/compare/v1.2.2...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#485)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#485](https://www.github.com/googleapis/java-billing/issues/485)) ([733fd5e](https://www.github.com/googleapis/java-billing/commit/733fd5e936cfee9dc26ab0de2ea8c7549a3851a6))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-billing/issues/1154)) ([#456](https://www.github.com/googleapis/java-billing/issues/456)) ([224ef7c](https://www.github.com/googleapis/java-billing/commit/224ef7c5fee2ae1c2bcc770436720266b61444c9)), closes [#1146](https://www.github.com/googleapis/java-billing/issues/1146) [#1147](https://www.github.com/googleapis/java-billing/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#486](https://www.github.com/googleapis/java-billing/issues/486)) ([f81ad04](https://www.github.com/googleapis/java-billing/commit/f81ad04d2c6ea5d53e5525b28eb4f04792339c89))
+
 ### [1.2.2](https://www.github.com/googleapis/java-billing/compare/v1.2.1...v1.2.2) (2021-07-05)
 
 
