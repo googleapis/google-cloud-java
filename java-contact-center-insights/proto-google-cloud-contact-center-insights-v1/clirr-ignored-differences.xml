@@ -29,7 +29,12 @@
   <difference>
     <differenceType>6011</differenceType>
     <className>com/google/cloud/contactcenterinsights/v1/AnnotationBoundary*</className>
-    <field>*FIELD_NUMBER</field>
+    <field>TIME_OFFSET*</field>
+  </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/contactcenterinsights/v1/AnnotationBoundary*</className>
+    <field>TIME_OFFSET*</field>
   </difference>
   <difference>
     <differenceType>6011</differenceType>
