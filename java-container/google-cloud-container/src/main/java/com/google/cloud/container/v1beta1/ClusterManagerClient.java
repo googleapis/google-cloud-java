@@ -16,7 +16,6 @@
 
 package com.google.cloud.container.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -3176,12 +3175,7 @@ public class ClusterManagerClient implements BackgroundResource {
           ListUsableSubnetworksPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListUsableSubnetworksPage, ListUsableSubnetworksPagedResponse>() {
-            @Override
-            public ListUsableSubnetworksPagedResponse apply(ListUsableSubnetworksPage input) {
-              return new ListUsableSubnetworksPagedResponse(input);
-            }
-          },
+          input -> new ListUsableSubnetworksPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

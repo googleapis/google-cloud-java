@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.container.v1beta1.CancelOperationRequest;
@@ -75,7 +74,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -502,79 +500,64 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
         GrpcCallSettings.<ListClustersRequest, ListClustersResponse>newBuilder()
             .setMethodDescriptor(listClustersMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListClustersRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListClustersRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         GrpcCallSettings.<GetClusterRequest, Cluster>newBuilder()
             .setMethodDescriptor(getClusterMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetClusterRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetClusterRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         GrpcCallSettings.<CreateClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(createClusterMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateClusterRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateClusterRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         GrpcCallSettings.<UpdateClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(updateClusterMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateClusterRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateClusterRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateNodePoolRequest, Operation> updateNodePoolTransportSettings =
         GrpcCallSettings.<UpdateNodePoolRequest, Operation>newBuilder()
             .setMethodDescriptor(updateNodePoolMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateNodePoolRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateNodePoolRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("node_pool_id", String.valueOf(request.getNodePoolId()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("node_pool_id", String.valueOf(request.getNodePoolId()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SetNodePoolAutoscalingRequest, Operation>
@@ -582,129 +565,105 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
             GrpcCallSettings.<SetNodePoolAutoscalingRequest, Operation>newBuilder()
                 .setMethodDescriptor(setNodePoolAutoscalingMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SetNodePoolAutoscalingRequest>() {
-                      @Override
-                      public Map<String, String> extract(SetNodePoolAutoscalingRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("cluster_id", String.valueOf(request.getClusterId()));
-                        params.put("name", String.valueOf(request.getName()));
-                        params.put("node_pool_id", String.valueOf(request.getNodePoolId()));
-                        params.put("project_id", String.valueOf(request.getProjectId()));
-                        params.put("zone", String.valueOf(request.getZone()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("cluster_id", String.valueOf(request.getClusterId()));
+                      params.put("name", String.valueOf(request.getName()));
+                      params.put("node_pool_id", String.valueOf(request.getNodePoolId()));
+                      params.put("project_id", String.valueOf(request.getProjectId()));
+                      params.put("zone", String.valueOf(request.getZone()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SetLoggingServiceRequest, Operation> setLoggingServiceTransportSettings =
         GrpcCallSettings.<SetLoggingServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(setLoggingServiceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetLoggingServiceRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetLoggingServiceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SetMonitoringServiceRequest, Operation> setMonitoringServiceTransportSettings =
         GrpcCallSettings.<SetMonitoringServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(setMonitoringServiceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetMonitoringServiceRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetMonitoringServiceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SetAddonsConfigRequest, Operation> setAddonsConfigTransportSettings =
         GrpcCallSettings.<SetAddonsConfigRequest, Operation>newBuilder()
             .setMethodDescriptor(setAddonsConfigMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetAddonsConfigRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetAddonsConfigRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SetLocationsRequest, Operation> setLocationsTransportSettings =
         GrpcCallSettings.<SetLocationsRequest, Operation>newBuilder()
             .setMethodDescriptor(setLocationsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetLocationsRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetLocationsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateMasterRequest, Operation> updateMasterTransportSettings =
         GrpcCallSettings.<UpdateMasterRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMasterMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateMasterRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateMasterRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SetMasterAuthRequest, Operation> setMasterAuthTransportSettings =
         GrpcCallSettings.<SetMasterAuthRequest, Operation>newBuilder()
             .setMethodDescriptor(setMasterAuthMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetMasterAuthRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetMasterAuthRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteClusterRequest, Operation> deleteClusterTransportSettings =
         GrpcCallSettings.<DeleteClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteClusterMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteClusterRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteClusterRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListOperationsRequest, ListOperationsResponse>
@@ -712,78 +671,63 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
             GrpcCallSettings.<ListOperationsRequest, ListOperationsResponse>newBuilder()
                 .setMethodDescriptor(listOperationsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListOperationsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListOperationsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        params.put("project_id", String.valueOf(request.getProjectId()));
-                        params.put("zone", String.valueOf(request.getZone()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      params.put("project_id", String.valueOf(request.getProjectId()));
+                      params.put("zone", String.valueOf(request.getZone()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetOperationRequest, Operation> getOperationTransportSettings =
         GrpcCallSettings.<GetOperationRequest, Operation>newBuilder()
             .setMethodDescriptor(getOperationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetOperationRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetOperationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("operation_id", String.valueOf(request.getOperationId()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("operation_id", String.valueOf(request.getOperationId()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CancelOperationRequest, Empty> cancelOperationTransportSettings =
         GrpcCallSettings.<CancelOperationRequest, Empty>newBuilder()
             .setMethodDescriptor(cancelOperationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CancelOperationRequest>() {
-                  @Override
-                  public Map<String, String> extract(CancelOperationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("operation_id", String.valueOf(request.getOperationId()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("operation_id", String.valueOf(request.getOperationId()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetServerConfigRequest, ServerConfig> getServerConfigTransportSettings =
         GrpcCallSettings.<GetServerConfigRequest, ServerConfig>newBuilder()
             .setMethodDescriptor(getServerConfigMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetServerConfigRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetServerConfigRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsTransportSettings =
         GrpcCallSettings.<ListNodePoolsRequest, ListNodePoolsResponse>newBuilder()
             .setMethodDescriptor(listNodePoolsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListNodePoolsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListNodePoolsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("parent", String.valueOf(request.getParent()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("parent", String.valueOf(request.getParent()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetJSONWebKeysRequest, GetJSONWebKeysResponse>
@@ -791,63 +735,51 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
             GrpcCallSettings.<GetJSONWebKeysRequest, GetJSONWebKeysResponse>newBuilder()
                 .setMethodDescriptor(getJSONWebKeysMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetJSONWebKeysRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetJSONWebKeysRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetNodePoolRequest, NodePool> getNodePoolTransportSettings =
         GrpcCallSettings.<GetNodePoolRequest, NodePool>newBuilder()
             .setMethodDescriptor(getNodePoolMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetNodePoolRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetNodePoolRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("node_pool_id", String.valueOf(request.getNodePoolId()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("node_pool_id", String.valueOf(request.getNodePoolId()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateNodePoolRequest, Operation> createNodePoolTransportSettings =
         GrpcCallSettings.<CreateNodePoolRequest, Operation>newBuilder()
             .setMethodDescriptor(createNodePoolMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateNodePoolRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateNodePoolRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("parent", String.valueOf(request.getParent()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("parent", String.valueOf(request.getParent()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteNodePoolRequest, Operation> deleteNodePoolTransportSettings =
         GrpcCallSettings.<DeleteNodePoolRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteNodePoolMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteNodePoolRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteNodePoolRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("node_pool_id", String.valueOf(request.getNodePoolId()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("node_pool_id", String.valueOf(request.getNodePoolId()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RollbackNodePoolUpgradeRequest, Operation>
@@ -855,17 +787,14 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
             GrpcCallSettings.<RollbackNodePoolUpgradeRequest, Operation>newBuilder()
                 .setMethodDescriptor(rollbackNodePoolUpgradeMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<RollbackNodePoolUpgradeRequest>() {
-                      @Override
-                      public Map<String, String> extract(RollbackNodePoolUpgradeRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("cluster_id", String.valueOf(request.getClusterId()));
-                        params.put("name", String.valueOf(request.getName()));
-                        params.put("node_pool_id", String.valueOf(request.getNodePoolId()));
-                        params.put("project_id", String.valueOf(request.getProjectId()));
-                        params.put("zone", String.valueOf(request.getZone()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("cluster_id", String.valueOf(request.getClusterId()));
+                      params.put("name", String.valueOf(request.getName()));
+                      params.put("node_pool_id", String.valueOf(request.getNodePoolId()));
+                      params.put("project_id", String.valueOf(request.getProjectId()));
+                      params.put("zone", String.valueOf(request.getZone()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SetNodePoolManagementRequest, Operation>
@@ -873,130 +802,106 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
             GrpcCallSettings.<SetNodePoolManagementRequest, Operation>newBuilder()
                 .setMethodDescriptor(setNodePoolManagementMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SetNodePoolManagementRequest>() {
-                      @Override
-                      public Map<String, String> extract(SetNodePoolManagementRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("cluster_id", String.valueOf(request.getClusterId()));
-                        params.put("name", String.valueOf(request.getName()));
-                        params.put("node_pool_id", String.valueOf(request.getNodePoolId()));
-                        params.put("project_id", String.valueOf(request.getProjectId()));
-                        params.put("zone", String.valueOf(request.getZone()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("cluster_id", String.valueOf(request.getClusterId()));
+                      params.put("name", String.valueOf(request.getName()));
+                      params.put("node_pool_id", String.valueOf(request.getNodePoolId()));
+                      params.put("project_id", String.valueOf(request.getProjectId()));
+                      params.put("zone", String.valueOf(request.getZone()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SetLabelsRequest, Operation> setLabelsTransportSettings =
         GrpcCallSettings.<SetLabelsRequest, Operation>newBuilder()
             .setMethodDescriptor(setLabelsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetLabelsRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetLabelsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SetLegacyAbacRequest, Operation> setLegacyAbacTransportSettings =
         GrpcCallSettings.<SetLegacyAbacRequest, Operation>newBuilder()
             .setMethodDescriptor(setLegacyAbacMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetLegacyAbacRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetLegacyAbacRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<StartIPRotationRequest, Operation> startIPRotationTransportSettings =
         GrpcCallSettings.<StartIPRotationRequest, Operation>newBuilder()
             .setMethodDescriptor(startIPRotationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<StartIPRotationRequest>() {
-                  @Override
-                  public Map<String, String> extract(StartIPRotationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CompleteIPRotationRequest, Operation> completeIPRotationTransportSettings =
         GrpcCallSettings.<CompleteIPRotationRequest, Operation>newBuilder()
             .setMethodDescriptor(completeIPRotationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CompleteIPRotationRequest>() {
-                  @Override
-                  public Map<String, String> extract(CompleteIPRotationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SetNodePoolSizeRequest, Operation> setNodePoolSizeTransportSettings =
         GrpcCallSettings.<SetNodePoolSizeRequest, Operation>newBuilder()
             .setMethodDescriptor(setNodePoolSizeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetNodePoolSizeRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetNodePoolSizeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("node_pool_id", String.valueOf(request.getNodePoolId()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("node_pool_id", String.valueOf(request.getNodePoolId()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SetNetworkPolicyRequest, Operation> setNetworkPolicyTransportSettings =
         GrpcCallSettings.<SetNetworkPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(setNetworkPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetNetworkPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetNetworkPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SetMaintenancePolicyRequest, Operation> setMaintenancePolicyTransportSettings =
         GrpcCallSettings.<SetMaintenancePolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(setMaintenancePolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetMaintenancePolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetMaintenancePolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("cluster_id", String.valueOf(request.getClusterId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("zone", String.valueOf(request.getZone()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster_id", String.valueOf(request.getClusterId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("zone", String.valueOf(request.getZone()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>
@@ -1005,26 +910,20 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                 .<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>newBuilder()
                 .setMethodDescriptor(listUsableSubnetworksMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListUsableSubnetworksRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListUsableSubnetworksRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListLocationsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListLocationsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
 
