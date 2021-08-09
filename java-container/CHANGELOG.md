@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-container/compare/v1.5.0...v2.0.0) (2021-08-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#534)
+
+### Features
+
+* allow updating security group on existing clusters ([#504](https://www.github.com/googleapis/java-container/issues/504)) ([4eca02d](https://www.github.com/googleapis/java-container/commit/4eca02dcf92cbb0da49baee599d284bf13e94d4f))
+* release gapic-generator-java v2.0.0 ([#534](https://www.github.com/googleapis/java-container/issues/534)) ([f7c7f6e](https://www.github.com/googleapis/java-container/commit/f7c7f6e4c14dd06e7f6b49799c004db36eb71f7c))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-container/issues/1154)) ([#506](https://www.github.com/googleapis/java-container/issues/506)) ([b502054](https://www.github.com/googleapis/java-container/commit/b5020541ebd3d0b72c15c07445e1511899a8d994)), closes [#1146](https://www.github.com/googleapis/java-container/issues/1146) [#1147](https://www.github.com/googleapis/java-container/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#535](https://www.github.com/googleapis/java-container/issues/535)) ([cdc76a2](https://www.github.com/googleapis/java-container/commit/cdc76a24cc744e11e605e5023d809b1095f7c405))
+
 ## [1.5.0](https://www.github.com/googleapis/java-container/compare/v1.4.0...v1.5.0) (2021-07-05)
 
 
