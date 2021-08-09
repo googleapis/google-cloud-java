@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-dataproc-metastore/compare/v1.0.2...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#86)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#86](https://www.github.com/googleapis/java-dataproc-metastore/issues/86)) ([9d4e3f6](https://www.github.com/googleapis/java-dataproc-metastore/commit/9d4e3f6079fbcfb8f7c21851a53549147658b5a7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#87](https://www.github.com/googleapis/java-dataproc-metastore/issues/87)) ([4841ed8](https://www.github.com/googleapis/java-dataproc-metastore/commit/4841ed87c79b73dff85a6140411b0865d824bac8))
+
 ### [1.0.2](https://www.github.com/googleapis/java-dataproc-metastore/compare/v1.0.1...v1.0.2) (2021-07-01)
 
 
