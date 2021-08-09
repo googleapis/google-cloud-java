@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.5.0](https://www.github.com/googleapis/java-datacatalog/compare/v1.4.2...v1.5.0) (2021-08-09)
+
+
+### Features
+
+* Added support for BigQuery connections entries feat: Added support for BigQuery routines entries feat: Added usage_signal field feat: Added labels field feat: Added ReplaceTaxonomy in Policy Tag Manager Serialization API feat: Added support for public tag templates feat: Added support for rich text tags docs: Documentation improvements ([#587](https://www.github.com/googleapis/java-datacatalog/issues/587)) ([2e7535b](https://www.github.com/googleapis/java-datacatalog/commit/2e7535b13cd6fb1ffa1caa8cb818f6d9be63a247))
+
+
+### Documentation
+
+* **samples:** adds samples from documentation with correct region tags ([#392](https://www.github.com/googleapis/java-datacatalog/issues/392)) ([eff2228](https://www.github.com/googleapis/java-datacatalog/commit/eff2228a09fc16d5b682740727f425d4290e1058))
+
 ### [1.4.2](https://www.github.com/googleapis/java-datacatalog/compare/v1.4.1...v1.4.2) (2021-07-05)
 
 
