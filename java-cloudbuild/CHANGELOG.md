@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.0.0](https://www.github.com/googleapis/java-cloudbuild/compare/v2.6.4...v3.0.0) (2021-08-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* Proto had a prior definitions of WorkerPool resources which were never supported. This change replaces those resources with definitions that are currently supported.
+
+### Features
+
+* add a WorkerPools API ([fedb5cf](https://www.github.com/googleapis/java-cloudbuild/commit/fedb5cfbcc71383999a739cb41ca7a2ad86170a1))
+* Implementation of Build Failure Info: - Added message FailureInfo field ([fedb5cf](https://www.github.com/googleapis/java-cloudbuild/commit/fedb5cfbcc71383999a739cb41ca7a2ad86170a1))
+* release gapic-generator-java v2.0.0 ([#554](https://www.github.com/googleapis/java-cloudbuild/issues/554)) ([fedb5cf](https://www.github.com/googleapis/java-cloudbuild/commit/fedb5cfbcc71383999a739cb41ca7a2ad86170a1))
+
+
+### Documentation
+
+* Add a new build phase SETUPBUILD for timing information ([fedb5cf](https://www.github.com/googleapis/java-cloudbuild/commit/fedb5cfbcc71383999a739cb41ca7a2ad86170a1))
+
 ### [2.6.4](https://www.github.com/googleapis/java-cloudbuild/compare/v2.6.3...v2.6.4) (2021-08-06)
 
 
