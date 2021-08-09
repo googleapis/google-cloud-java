@@ -16,15 +16,15 @@
 
 package com.example.asset;
 
+import com.google.cloud.asset.v1.AssetServiceClient;
+import com.google.cloud.asset.v1.AssetServiceClient.ListAssetsPagedResponse;
+import com.google.cloud.asset.v1.ContentType;
+import com.google.cloud.asset.v1.ListAssetsRequest;
+import com.google.cloud.asset.v1.ProjectName;
+import java.util.Arrays;
+
 // [START asset_quickstart_list_assets]
 // Imports the Google Cloud client library
-
-import com.google.cloud.asset.v1.ProjectName;
-import com.google.cloud.asset.v1p5beta1.AssetServiceClient;
-import com.google.cloud.asset.v1p5beta1.AssetServiceClient.ListAssetsPagedResponse;
-import com.google.cloud.asset.v1p5beta1.ContentType;
-import com.google.cloud.asset.v1p5beta1.ListAssetsRequest;
-import java.util.Arrays;
 
 public class ListAssetsExample {
 
@@ -38,7 +38,7 @@ public class ListAssetsExample {
     String[] assetTypes = {"YOUR_ASSET_TYPES_TO_LIST"};
     // The asset content type to list. E.g., ContentType.CONTENT_TYPE_UNSPECIFIED.
     // See full list of content types at
-    // https://cloud.google.com/asset-inventory/docs/reference/rpc/google.cloud.asset.v1p5beta1#contenttype
+    // https://cloud.google.com/asset-inventory/docs/reference/rpc/google.cloud.asset.v1#contenttype
     ContentType contentType = ContentType.CONTENT_TYPE_UNSPECIFIED;
     listAssets(projectId, assetTypes, contentType);
   }
